@@ -1,0 +1,15 @@
+owner = Y11
+controller = Y11
+capital = "Ilheus"
+is_city = yes
+culture = roman
+religion = hellenic_pagan
+trade_goods = cocoa
+base_tax = 2
+base_production = 4
+base_manpower = 1
+add_core = Y11
+discovered_by = south_american
+native_size = 10
+native_ferocity = 1
+native_hostileness = 2

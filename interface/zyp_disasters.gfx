@@ -1,0 +1,16 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_disaster_golden_republic_disaster"
+		texturefile = "gfx//interface//disasters//golden_republic_disaster.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_disaster_x_disaster"
+		texturefile = "gfx//interface//disasters//x_disaster.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+}

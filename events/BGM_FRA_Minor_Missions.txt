@@ -1,0 +1,228 @@
+namespace = BGM_FRA_minor_missions
+
+# choose your strat
+country_event = {
+	id = BGM_FRA_minor_missions.1
+	title = "BGM_FRA_minor_missions.1.t"
+	desc = "BGM_FRA_minor_missions.1.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_minor_missions.1.a" #We will respond in the long run by moderating
+		set_country_flag = dip_strat
+	}
+	
+	option = {
+		name = "BGM_FRA_minor_missions.1.b" #Take a hardline approach
+		set_country_flag = mil_strat
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = {
+	id = BGM_FRA_minor_missions.2
+	title = "BGM_FRA_minor_missions.2.t"
+	desc = "BGM_FRA_minor_missions.2.d"
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = "BGM_FRA_minor_missions.2.a" #get fucked
+		hidden_effect = {
+			every_subject_country = {
+				grant_independence = yes
+			}
+		}
+		custom_tooltip = fra_breakup_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = poitevin
+				}
+				cede_province = POI
+				add_core = POI
+			}
+			every_owned_province = {
+				limit = {
+					culture = champenois
+				}
+				cede_province = CHP
+				add_core = CHP
+			}
+			every_owned_province = {
+				limit = {
+					culture = burgundian
+				}
+				cede_province = BUR
+				add_core = BUR
+			}
+			every_owned_province = {
+				limit = {
+					culture = frainc_comtou
+				}
+				cede_province = FCO
+				add_core = FCO
+			}
+			every_owned_province = {
+				limit = {
+					culture = picard
+				}
+				cede_province = PIC
+				add_core = PIC
+			}
+			every_owned_province = {
+				limit = {
+					culture = angevin
+				}
+				cede_province = MNE
+				add_core = MNE
+			}
+			every_owned_province = {
+				limit = {
+					culture = breton
+				}
+				cede_province = BRI
+				add_core = BRI
+			}
+			every_owned_province = {
+				limit = {
+					culture = normand
+				}
+				cede_province = NOR
+				add_core = NOR
+			}
+			every_owned_province = {
+				limit = {
+					culture = wallonian
+				}
+				cede_province = HAI
+				add_core = HAI
+			}
+			every_owned_province = {
+				limit = {
+					culture = lorrain
+				}
+				cede_province = LOR
+				add_core = LOR
+			}
+			every_owned_province = {
+				limit = {
+					culture = gascon
+				}
+				cede_province = GUY
+				add_core = GUY
+			}
+			every_owned_province = {
+				limit = {
+					culture = lengadocian
+				}
+				cede_province = TOU
+				add_core = TOU
+			}
+			every_owned_province = {
+				limit = {
+					culture = auvergnat
+				}
+				cede_province = AUV
+				add_core = AUV
+			}
+			every_owned_province = {
+				limit = {
+					culture = occitain
+				}
+				cede_province = PRO
+				add_core = PRO
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = arpitan
+						culture = lyonnais
+					}
+				}
+				cede_province = DAU
+				add_core = DAU
+			}
+			every_owned_province = {
+				limit = {
+					culture = savoyard
+				}
+				cede_province = SAV
+				add_core = SAV
+			}
+			every_owned_province = {
+				limit = {
+					culture = swiss
+				}
+				cede_province = SWI
+				add_core = SWI
+			}
+			every_owned_province = {
+				limit = {
+					culture = bourbonnais_culture
+				}
+				cede_province = BOU
+				add_core = BOU
+			}
+			every_owned_province = {
+				limit = {
+					culture = limousin
+				}
+				cede_province = LIM
+				add_core = LIM
+			}
+			every_owned_province = {
+				limit = {
+					area = ile_de_france_area
+				}
+				cede_province = IDF
+				add_core = IDF
+			}
+			every_owned_province = {
+				limit = {
+					area = luxemburg_area
+				}
+				cede_province = LUX
+				add_core = LUX
+			}
+			every_owned_province = {
+				limit = {
+					culture = flemish
+				}
+				cede_province = FLA
+				add_core = FLA
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = brabantian
+						culture = limburgish
+					}
+				}
+				cede_province = BRB
+				add_core = BRB
+			}
+			every_owned_province = {
+				limit = {
+					culture = dutch
+				}
+				cede_province = HOL
+				add_core = HOL
+			}
+		}
+		add_legitimacy = -100
+		add_stability = -3
+		add_prestige = -200
+		every_owned_province = {
+			add_unrest = 25
+		}
+	}
+}

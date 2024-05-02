@@ -1,0 +1,241 @@
+ck2_converter_generated = yes
+graphical_culture = easterngfx
+color = { 143 141 128 }
+revolutionary_colors = { 1 0 4 }
+historical_idea_groups = {
+	innovativeness_ideas
+	offensive_ideas
+	diplomatic_ideas
+	quality_ideas
+	economic_ideas
+	trade_ideas
+	defensive_ideas
+	administrative_ideas
+}
+historical_units = {
+	austrian_grenzer
+	austrian_hussar
+	austrian_tercio
+	dutch_maurician
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	prussian_drill
+	prussian_frederickian
+	prussian_uhlan
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Audra #0" = -1
+	"Aul #0" = 0
+	"Ausra #0" = -1
+	"Bajoras #1" = 10
+	"Betten #0" = -1
+	"Bezprzym #1" = 10
+	"Birute #0" = -1
+	"Budo #1" = 10
+	"Dagas #0" = -1
+	"Dagonis #0" = 0
+	"Ekkelis #0" = 0
+	"Galindas #1" = 10
+	"Gerkus #0" = -1
+	"Glande #0" = 0
+	"Golding #0" = 0
+	"Grasus #0" = -1
+	"Gulbis #0" = -1
+	"Jauguttis #1" = 10
+	"Jevna #0" = -1
+	"Karatas #0" = 0
+	"Lagle #0" = -1
+	"Laima #0" = -1
+	"Milzas #2" = 10
+	"Niglas #0" = 0
+	"Nomedas #0" = 0
+	"Pekko #0" = 0
+	"Prusas #1" = 10
+	"Przybyslaw #1" = 10
+	"Siegfried #0" = 0
+	"Sisko #0" = -1
+	"Ulinniks #0" = 0
+}
+leader_names = {
+	"Arnim"
+	"Arnswald"
+	"Below"
+	"Billerbeck"
+	"Blankensee"
+	"Briesen"
+	"Cisielsky"
+	"Finck"
+	"Höltzendorff"
+	"Knobelsdorf"
+	"Kreytz"
+	"Linkendorf"
+	"Münchov"
+	"Perlkowski"
+	"Posadofsky"
+	"Riwotzki"
+	"Schach"
+	"Schnittern"
+	"Selasinky"
+	"Treskaw"
+	"Truxes"
+	"Ucklanski"
+	"Zitzwitz"
+	"von Anhalt-Dessau"
+	"von Bimback"
+	"von Bühler"
+	"von Derfflinger"
+	"von Dessau"
+	"von Dossow"
+	"von Hohenlohe"
+	"von Hohenzollern"
+	"von Kyau"
+	"von Mach"
+	"von Manstein"
+	"von Merckatz"
+	"von Plothow"
+	"von Preußen"
+	"von Quernheimberg"
+	"von Quitzow"
+	"von Rauch"
+	"von Rottenburg"
+	"von Rüts"
+	"von Schwerin"
+	"von Seel"
+	"von Stille"
+	"von Taubeneck"
+	"von Wermsdorff"
+	"von Ziethen"
+}
+ship_names = {
+	"Afrikaner"
+	"Amazone"
+	"Arminius"
+	"Barbarossa"
+	"Basilisk"
+	"Berlin"
+	"Bersteinfänger"
+	"Bielefeld"
+	"Blitz"
+	"Brandenburgischer Dragoner"
+	"Britannia"
+	"Bulle"
+	"Camaeleon"
+	"Charlotte Louise"
+	"Churfürst von Brandenburg"
+	"Churfürtstlische Liebjagd"
+	"Churprinz"
+	"Churprinz von Brandenburg"
+	"Clementia"
+	"Cleve"
+	"Clevesche Lindenbaum"
+	"Comet"
+	"Cyclop"
+	"Danzig"
+	"Delphin"
+	"Derffinger"
+	"Die Sieben Provinzien"
+	"Dorothea"
+	"Drache"
+	"Eichhorn"
+	"Falke"
+	"Fliegender Drache"
+	"Fortuna"
+	"Frauenlob"
+	"Frede"
+	"Friedrich Carl"
+	"Friedrich Wilhelm"
+	"Friedrich Wilhelm zu Pferde"
+	"Fuchs"
+	"Gazelle"
+	"Gefion"
+	"Goldener Löve"
+	"Grafschaft Mark"
+	"Grille"
+	"Grossfriedrichburg"
+	"Große Jacht"
+	"Grüner Drache"
+	"Habicht"
+	"Hansa"
+	"Hay"
+	"Hela"
+	"Hertha"
+	"Herzogtum Cleve"
+	"Hyäne"
+	"Jupiter"
+	"Kastell Spandau"
+	"Kronprinz"
+	"Kronprinz van Preußen"
+	"König Wilhelm"
+	"König von Preußen"
+	"König von Spanien"
+	"Leopard"
+	"Littauer Bauer"
+	"Makarele"
+	"Maria"
+	"Maria Catharina"
+	"Markgraf von Brandenburg"
+	"Mars"
+	"Merkur"
+	"Meteor"
+	"Mohrian"
+	"Morian"
+	"Mummelpot"
+	"Musquito"
+	"Natter"
+	"Neptun"
+	"Niobe"
+	"Nordischer Löve"
+	"Pallas"
+	"Pax"
+	"Pfeil"
+	"Pierlepomp"
+	"Post"
+	"Potsdam"
+	"Preußischer Adler"
+	"Princess Maria"
+	"Prinz Adalbert"
+	"Prinz Ludwig"
+	"Prinz Philipp"
+	"Prinz Wilhelm"
+	"Prinz von Preußen"
+	"Prinzess Maria"
+	"Prosperpina"
+	"Rommelpot"
+	"Rosenfelde"
+	"Rother Löve"
+	"Rover"
+	"Salamander"
+	"Sankt Johannes der Täufer"
+	"Sankt Josef"
+	"Sankt Peter"
+	"Schloss Oranienburg"
+	"Schwalbe"
+	"Seeritter"
+	"Spandau"
+	"Sperber"
+	"Stad Emden"
+	"Stralsund"
+	"Thetis"
+	"Tiger"
+	"Undine"
+	"Vineta"
+	"Vogel Greif"
+	"Wappen von Brandenburg"
+	"Wappen von Cleve"
+	"Wasserhund"
+	"Wespe"
+	"Wilhelmine Margrethe"
+	"Wolkensäule"
+}
+army_names = {
+	"Königliche Armee"
+}
+fleet_names = {
+	"Ost See Squadron"
+}
+preferred_religion = protestant

@@ -1,0 +1,67 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_inflation_arrows_strip"	
+		texturefile = "gfx\\interface\\inflation_arrows_strip.dds"
+		noOfFrames = 5
+	}
+	
+
+	spriteType = {
+		name = "GFX_nocorruption"
+		texturefile = "gfx//interface//nocorruption.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_adm_reduce_corruption"
+		texturefile = "gfx//interface//adm_reduce_corruption_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_dip_reduce_corruption"
+		texturefile = "gfx//interface//dip_reduce_corruption_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_mil_reduce_corruption"
+		texturefile = "gfx//interface//mil_reduce_corruption_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_money_reduce_corruption"
+		texturefile = "gfx//interface//money_reduce_corruption_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+
+	spriteType = {
+		name = "GFX_reduce_inflation_money"
+		texturefile = "gfx//interface//reduce_inflation_money_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_bgm_reduce_inflation"
+		texturefile = "gfx//interface//reduce_inflation_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
+	spriteType = {
+		name = "GFX_bgm_raise_wartax"
+		texturefile = "gfx//interface//bgm_wartax.dds"
+		noOfFrames = 2
+	}
+
+	textSpriteType = {
+		name = "GFX_take_loan_button"
+		texturefile = "gfx/interface/take_loan_button.dds"
+	}
+}

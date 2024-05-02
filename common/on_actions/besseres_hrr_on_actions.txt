@@ -1,0 +1,46 @@
+# Called whenever a new emperor is elected
+# FROM = Previous Emperor
+# ROOT = New Emperor
+on_emperor_elected = {
+	
+	# Imperial Agenda:
+	FROM = {
+		country_event = { id = besseres_hrr_imperial_agenda_events.2 }
+	}
+	country_event = { id = besseres_hrr_imperial_agenda_events.2 }
+	if = {
+		limit = {
+			NOT = { has_country_flag = enacted_imperial_agenda_decision }
+		}
+		country_event = { id = besseres_hrr_imperial_agenda_events.8 }
+	}
+	else = {
+		country_event = { id = besseres_hrr_imperial_agenda_events.8 days = 20 }
+	}
+
+	# Imperial Privileges:
+	country_event = { id = besseres_hrr_imperial_privileges_events.1 }
+
+	# Imperial Ban:
+	if = {
+		limit = {
+			NOT = { has_ruler_flag = ruler_of_hre }
+			NOT = { has_heir_flag = ruler_of_hre }
+		}
+		every_country = {
+			limit = {
+				has_country_flag = hree_imperial_ban_country_flag
+			}
+			hree_lift_imperial_ban_from_this = yes
+		}
+	}
+
+	# Imperial Incidents:
+	set_ruler_flag = ruler_of_hre
+	if = {
+		limit = {
+			has_regency = yes
+		}
+		set_heir_flag = ruler_of_hre
+	}
+}

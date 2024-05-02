@@ -1,0 +1,49 @@
+government = monarchy
+add_government_reform = byzantine_warlord
+government_rank = 3
+technology_group = eastern
+religion = orthodox
+primary_culture = pontic_greek
+capital = 330
+historical_friend = FEO
+1424.11.11= {
+	#monarch = {
+	#	name = "Athena"
+	#	dynasty = "Olympian"
+	#	adm = 10
+	#	dip = 10
+	#	mil = 10
+	#	birth_date = 1.1.1
+	#	female = yes
+	#	religion = hellenic_pagan
+	#	culture = greek
+	#}
+	monarch = {
+		name = "Alexios"
+		dynasty = "Komnenos"
+		adm = 6
+		dip = 6
+		mil = 6
+		birth_date = 1424.3.27
+		religion = orthodox
+		culture = pontic_greek
+	}
+	add_ruler_personality = absentminded_personality
+	add_ruler_personality = integrator_personality
+	add_ruler_personality = ballistics_expert_personality
+	add_ruler_personality = fortification_engineer_personality
+	add_ruler_personality = artisan_personality
+	add_ruler_modifier = {
+		name = keep_jacoba_alive
+		duration = -1
+		hidden = yes
+	}
+}
+1444.11.11= {
+	add_prestige = 84
+	add_treasury = 63
+	add_opinion = {
+		who = FEO
+		modifier = tre_feo_friendship
+	}
+}

@@ -1,0 +1,41 @@
+government = tribal
+add_government_reform = tribal_confederacy
+government_rank = 1
+technology_group = sub_saharan
+religion = shamanism
+primary_culture = hausa
+capital = 1148
+fixed_capital = 1148
+1444.11.11= {
+	monarch = {
+		name = "Jibril"
+		dynasty = "Gobirawa"
+		adm = 4
+		dip = 2
+		mil = 3
+		birth_date = 1421.3.27
+		religion = shamanism
+		culture = hausa
+	}
+	add_ruler_personality = martial_educator_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Magajiya"
+		dynasty = "Daura"
+		adm = 4
+		dip = 4
+		mil = 3
+		country_of_origin = Z84
+		birth_date = 1423.11.18
+		death_date = 1483.11.18
+		female = yes
+		religion = shamanism
+		culture = hausa
+	}
+	add_queen_personality = fertile_personality
+	add_queen_personality = righteous_personality
+}
+1444.11.11= {
+	add_prestige = -50
+	add_treasury = 0
+}

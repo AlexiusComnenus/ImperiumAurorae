@@ -1,0 +1,101 @@
+country_decisions = {
+	#Finland
+	restore_finland = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = FIN }
+			NOT = { exists = FIN }
+			OR = {
+				primary_culture = finnish
+				primary_culture = karelian
+				primary_culture = sapmi
+				culture_group = finno_ugric
+			}
+		}
+
+		allow = {
+			owns = 29
+			owns = 31
+			owns = 4124
+			owns = 32
+			is_at_war = no
+			is_nomad = no
+		}
+		effect = {
+			#IF = {
+			#	28 = {
+			#		move_capital_effect = yes
+			#	}
+			#}
+			change_tag = FIN
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			swap_non_generic_missions = yes
+			set_government_rank = 2
+			add_prestige = 10
+			add_core = 28 #Helsinki
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Transylvania
+	restore_transylvania = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = FIN }
+			NOT = { exists = TRA }
+			primary_culture = transylvanian
+		}
+
+		allow = {
+			owns = 4128
+			owns = 1951
+			owns = 156
+			is_at_war = no
+			is_nomad = no
+		}
+		effect = {
+			#IF = {
+			#	28 = {
+			#		move_capital_effect = yes
+			#	}
+			#}
+			change_tag = TRA
+			on_change_tag_effect = yes
+			restore_country_name_effect = yes
+			swap_non_generic_missions = yes
+			set_government_rank = 2
+			add_prestige = 10
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

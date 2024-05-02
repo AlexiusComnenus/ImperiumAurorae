@@ -1,0 +1,144 @@
+
+#Swedish Relations / Baltic Diplomacy Gothenburg/Dutch/Trade increase
+#Bakker-Schut
+
+#dom_ned_uncat_1_group = {
+#	slot = 1
+#	generic = no
+#	ai = yes
+#	potential = {
+#		OR = {
+#			tag = NED tag = HOL tag = UTR tag = GEL tag = FRI tag = EFR tag = GRN tag = FLA tag = BRB tag = IJS tag = HAI tag = LUX tag = VOC
+#		}
+#		NOT = { map_setup = map_setup_random }
+#	}
+#	has_country_shield = yes
+#	
+#	dom_ned_1 = {
+#		icon = mission_hanseatic_city
+#		required_missions = { }
+#		position = 19
+#		#completed_by = around 1500-1600, with Mercator, Genna Frisius, Ortellius
+#		
+#		trigger = {
+#			papal_influence = 50
+#		}
+#		effect = {
+#			if = {
+#				limit = { religion = catholic }
+#				if = { limit = { 98 = { has_cardinal = no } }
+#					98 = {
+#						add_cardinal = yes 				
+#					}
+#					else = {
+#						random_owned_province = {
+#							limit = { has_cardinal = no } 
+#							add_cardinal = yes 
+#						}
+#					}
+#				}
+#			}
+#		}
+#		ai_weight = {
+#			factor = 500	#Historical mission
+#		}
+#	}
+#}
+#
+dom_ned_uncat_1_group = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NED tag = HOL tag = UTR tag = GEL tag = FRI tag = EFR tag = GRN tag = FLA tag = BRB tag = IJS tag = HAI tag = LUX tag = VOC
+		}
+		always = no
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	dom_ned_test1 = {
+		icon = mission_hanseatic_city
+		required_missions = { }
+		position = 19
+		#completed_by = around 1500-1600, with Mercator, Genna Frisius, Ortellius
+		
+		trigger = {
+			num_of_voc_indiamen = 10
+		}
+		effect = {
+			add_prestige_or_monarch_power = { amount = 25 }
+			add_stability_or_adm_power = yes 
+				change_ruler_stat = {
+					stat = dip
+					amount = 2
+				}
+				
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				custom_tooltip = por_more_likely_to_get_expansionist_tt
+				set_country_flag = por_more_likely_to_get_expansionist_flag 
+				change_ruler_stat = {
+					stat = dip
+					amount = 1
+				}
+			}
+			else = {
+				change_ruler_stat = {
+					stat = dip
+					amount = 2
+				}
+				add_prestige_or_monarch_power = { amount = 10 }
+			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
+	}
+	dom_ned_test2 = {
+		icon = mission_hanseatic_city
+		required_missions = { }
+		position = 20
+		#completed_by = around 1500-1600, with Mercator, Genna Frisius, Ortellius
+		
+		trigger = {
+			reform_level = 4
+		}
+		effect = {
+			set_country_flag = enable_tercios_reform_flag
+			add_government_reform = tercios_reform
+			if = {
+				limit = { has_dlc = "Cradle of Civilization" }
+				add_army_professionalism = 0.05
+			}
+			else = { add_army_tradition = 10 }
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				795 = {
+					set_great_project_tier_2 = {
+						type = potosi
+					}
+				}
+			}
+			490 = {
+				add_base_production = 3
+				if = {
+					limit = {
+						NOT = {
+							trade_goods = sugar
+						}
+					}
+					change_trade_goods = sugar
+				}
+			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
+	}
+	
+			
+}

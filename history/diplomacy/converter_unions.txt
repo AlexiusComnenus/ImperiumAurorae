@@ -1,0 +1,145 @@
+union=
+{
+	first="Z25"
+	second="Z26"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="ARA"
+	second="AMG"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z25"
+	second="Z31"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z52"
+	second="Z60"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="SCO"
+	second="BRI"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="WLS"
+	second="Z49"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="MLO"
+	second="SAV"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z32"
+	second="Z33"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z32"
+	second="Z36"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+
+union=
+{
+	first="POL"
+	second="HUN"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="PLT"
+	second="SMO"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="HAB"
+	second="STY"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="BAD"
+	second="TTL"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="BAD"
+	second="Z61"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z94"
+	second="NOV"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Z94"
+	second="Y23"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union=
+{
+	first="Y07"
+	second="Y03"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+union = 
+{
+	first = "MOD"
+	second = "BYT"
+	start_date = "1444.11.11"
+	end_date = "1836.1.1"
+}
+

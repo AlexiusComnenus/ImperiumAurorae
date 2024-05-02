@@ -1,0 +1,941 @@
+country_decisions = {
+
+	# Spawn Revolutionary Guards
+	dray_spawn_revolutionary_guards = {
+#		color = { 175  85  43 }
+		color = { 183  88  44 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_revguard = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+			OR = {
+				has_country_flag = dray_chose_mass_rev_guards
+				has_country_flag = dray_chose_professional_rev_guards
+				has_country_flag = dray_chose_vanguard_rev_guards
+				has_country_flag = dray_chose_elite_rev_guards
+			}
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 20
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_revguard = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_revolutionary_guards_tt
+			hidden_effect = {
+				if = {
+					# REVOLUTIONARY GUARDS
+					limit = {
+						dray_below_limit_revguard = yes
+					}
+					dray_build_to_limit_revguard = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 999
+		}
+		ai_importance = 999
+	}
+
+	# Spawn Winged Hussars
+	dray_spawn_hussars = {
+		color = { 191  116  78 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_hussar = yes
+			NOT = { has_country_modifier = dray_two_month_timer }
+		}
+		allow = {
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_hussar = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_hussars_tt
+			hidden_effect = {
+				if = {
+					# WINGED HUSSARS
+					limit = {
+						dray_below_limit_hussar = yes
+					}
+					dray_build_to_limit_hussar = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_two_month_timer
+					duration = 61
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 888
+		}
+		ai_importance = 888
+	}
+
+	# Spawn Caroleans
+	dray_spawn_caroleans = {
+		color = { 35  179  198 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_carolean = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_carolean = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_caroleans_tt
+			hidden_effect = {
+				if = {
+					# CAROLEANS
+					limit = {
+						dray_below_limit_carolean = yes
+					}
+					dray_build_to_limit_carolean = yes
+				}
+				# Checked Locally
+				add_country_modifier = {
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 888
+		}
+		ai_importance = 888
+	}
+
+	# Spawn Samurai
+	dray_spawn_samurai = {
+#		color = { 114  42  44 }
+		color = { 122  44  46 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_samurai = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_samurai = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_samurai_tt
+			hidden_effect = {
+				if = {
+					# SAMURAI
+					limit = {
+						dray_below_limit_samurai = yes
+					}
+					dray_build_to_limit_samurai = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 888
+		}
+		ai_importance = 888
+	}
+	
+	# Spawn Tercios
+	dray_spawn_tercios = {
+#		color = { 153  130  64 }
+		color = { 153  130  64 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_tercio = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_tercio = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_tercios_tt
+			hidden_effect = {
+				if = {
+					# TERCIOS
+					limit = {
+						dray_below_limit_tercio = yes
+					}
+					dray_build_to_limit_tercio = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 777
+		}
+		ai_importance = 777
+	}
+	
+	# Spawn Musketeers
+	dray_spawn_musketeers = {
+#		color = { 85  141  178 }
+		color = { 87  148  186 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_musketeer = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_musketeer = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_musketeers_tt
+			hidden_effect = {
+				if = {
+					# MUSKETEERS
+					limit = {
+						dray_below_limit_musketeer = yes
+					}
+					dray_build_to_limit_musketeer = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 666
+		}
+		ai_importance = 666
+	}
+	
+	# Spawn Streltsy
+	dray_spawn_streltsy = {
+#		color = { 126  130  140 }
+		color = { 131  136  147 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_streltsy = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+#			manpower_percentage = 0.1
+#			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_streltsy = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_streltsy_tt
+			hidden_effect = {
+				if = {
+					# STRELTSY
+					limit = {
+						dray_below_limit_streltsy = yes
+					}
+					dray_build_to_limit_streltsy = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 555
+		}
+		ai_importance = 555
+	}
+	
+	# Spawn Cossacks
+	dray_spawn_cossacks = {
+#		color = { 168  126  37 }
+		color = { 175  130  38 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_cossack = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_cossack = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_cossacks_tt
+			hidden_effect = {
+				if = {
+					# COSSACKS
+					limit = {
+						dray_below_limit_cossack = yes
+					}
+					dray_build_to_limit_cossack = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 444
+		}
+		ai_importance = 444
+	}
+	
+	# Spawn Mamluks
+	dray_spawn_mamluks = {
+#		color = { 198  117  130 }
+		color = { 206  121  135 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_mamluk = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_mamluk = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_mamluks_tt
+			hidden_effect = {
+				if = {
+					# MAMLUKS
+					limit = {
+						dray_below_limit_mamluk = yes
+					}
+					dray_build_to_limit_mamluk = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 333
+		}
+		ai_importance = 333
+	}
+	
+	# Spawn Rajputs
+	dray_spawn_rajputs = {
+#		color = { 153  100  188 }
+		color = { 159  104  196 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_rajput = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_rajput = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_rajputs_tt
+			hidden_effect = {
+				if = {
+					# RAJPUTS
+					limit = {
+						dray_below_limit_rajput = yes
+					}
+					dray_build_to_limit_rajput = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 222
+		}
+		ai_importance = 222
+	}
+	
+	# Spawn Qizilbash
+	dray_spawn_qizilbash = {
+#		color = { 211  118  110 }
+		color = { 219  121  114 }
+		major = yes
+		potential = {
+			ai = yes
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_qizilbash = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 7
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_qizilbash = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_qizilbash_tt
+			hidden_effect = {
+				if = {
+					# QIZILBASH
+					limit = {
+						dray_below_limit_qizilbash = yes
+					}
+					dray_build_to_limit_qizilbash = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 111
+		}
+		ai_importance = 111
+	}
+
+	# Spawn Janissaries
+	dray_spawn_janissaries = {
+		color = { 104  163  99 }
+		major = yes
+		potential = {
+			ai = yes
+			mil_tech = 4
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			any_owned_province = {
+				NOT = { religion_group = ROOT }
+			}
+			dray_below_limit_janissary = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+			NOT = {
+				OR = {
+					has_disaster_progress = {
+						disaster = janissary_decadence
+						value = 1
+					}
+					has_disaster_progress = {
+						disaster = estate_janissary_disaster
+						value = 1
+					}
+					has_disaster = janissary_decadence
+					has_disaster = estate_janissary_disaster
+				}
+			}
+		}
+		allow = {
+			mil_power = 300
+			is_in_deficit = no
+#			years_of_income = 0.1
+#			treasury = 5
+			manpower_percentage = 0.1
+			manpower = 5
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_janissary = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_janissaries_tt
+			hidden_effect = {
+				if = {
+					# JANISSARIES
+					limit = {
+						dray_below_limit_janissary = yes
+					}
+					dray_build_to_limit_janissary = yes
+				}
+				# Checked Locally
+				add_country_modifier = {
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		ai_importance = 25
+	}
+
+	# Spawn Cawa
+	dray_spawn_cawa = {
+		color = { 45  127  109 }
+		major = yes
+		potential = {
+			ai = yes
+			mil_tech = 4
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_cawa = yes
+			NOT = { has_country_modifier = dray_three_month_timer }
+		}
+		allow = {
+			mil_power = 200
+			is_in_deficit = no
+#			years_of_income = 0.1
+#			treasury = 5
+			manpower_percentage = 0.05
+			manpower = 2.5
+			NOT = { army_size_percentage = 1 }
+			dray_below_limit_cawa = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_cawa_tt
+			hidden_effect = {
+				if = {
+					# CAWA
+					limit = {
+						dray_below_limit_cawa = yes
+					}
+					dray_build_to_limit_cawa = yes
+				}
+				# Checked Locally
+				add_country_modifier = {
+					name = dray_three_month_timer
+					duration = 91
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 25
+		}
+		ai_importance = 25
+	}	
+	
+	# Spawn Man Of Wars
+	dray_spawn_man_of_wars = {
+		color = { 204  99  99 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+			dray_below_limit_manofwar = yes
+			NOT = { has_country_modifier = dray_naval_two_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 45
+			sailors_percentage = 0.2
+			sailors = 350
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_manofwar = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_man_of_wars_tt
+			hidden_effect = {
+				if = {
+					# MAN OF WARS
+					limit = {
+						dray_below_limit_manofwar = yes
+					}
+					dray_build_to_limit_manofwar = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_two_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		ai_importance = 200
+	}
+	
+	# Spawn Galleons
+	dray_spawn_galleons = {
+		color = { 147  140  122 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}
+			}
+			dray_below_limit_galleon = yes
+			NOT = { has_country_modifier = dray_naval_two_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 45
+			sailors_percentage = 0.2
+			sailors = 350
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_galleon = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_galleons_tt
+			hidden_effect = {
+				if = {
+					# GALLEONS
+					limit = {
+						dray_below_limit_galleon = yes
+					}
+					dray_build_to_limit_galleon = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_two_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 200
+		}
+		ai_importance = 200
+	}
+	
+	# Spawn VOC Indiamen
+	dray_spawn_voc_indiamen = {
+		color = { 196  127  0 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no	
+			}
+			dray_below_limit_vocindiamen = yes
+			NOT = { has_country_modifier = dray_naval_one_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 20
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_vocindiamen = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_voc_indiamen_tt
+			hidden_effect = {
+				if = {
+					# VOC INDIAMEN
+					limit = {
+						dray_below_limit_vocindiamen = yes
+					}
+					dray_build_to_limit_vocindiamen = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_one_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 100
+	}
+	
+	# Spawn Caravels
+	dray_spawn_caravels = {
+		color = { 155  138  113 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}
+			}
+			dray_below_limit_caravel = yes
+			NOT = { has_country_modifier = dray_naval_one_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 20
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_caravel = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_caravels_tt
+			hidden_effect = {
+				if = {
+					# CARAVELS
+					limit = {
+						dray_below_limit_caravel = yes
+					}
+					dray_build_to_limit_caravel = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_one_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 100
+	}
+	
+	# Spawn Geobukseon
+	dray_spawn_geobukseon = {
+		color = { 70  170  135 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+			}
+			dray_below_limit_geobukseon = yes
+			NOT = { has_country_modifier = dray_naval_one_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_geobukseon = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_geobukseon_tt
+			hidden_effect = {
+				if = {
+					# GEOBUKSEON
+					limit = {
+						dray_below_limit_geobukseon = yes
+					}
+					dray_build_to_limit_geobukseon = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_one_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 75
+		}
+		ai_importance = 75
+	}
+	
+	# Spawn Galleasses
+	dray_spawn_galleass = {
+		color = { 122  158  91 }
+		major = yes
+		potential = {
+			ai = yes
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+			dray_below_limit_galleass = yes
+			NOT = { has_country_modifier = dray_naval_one_year_timer }
+		}
+		allow = {
+			is_in_deficit = no
+			years_of_income = 0.2
+			treasury = 10
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			dray_below_limit_galleass = yes
+		}
+		effect = {
+			custom_tooltip = dray_spawn_galleass_tt
+			hidden_effect = {
+				if = {
+					# GALLEASSES
+					limit = {
+						dray_below_limit_galleass = yes
+					}
+					dray_build_to_limit_galleass = yes
+				}
+				# Checked Locally
+				add_country_modifier = { 
+					name = dray_naval_one_year_timer
+					duration = 730
+					hidden = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 75
+		}
+		ai_importance = 75
+	}
+}

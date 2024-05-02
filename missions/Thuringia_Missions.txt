@@ -1,0 +1,2014 @@
+# Baguette writing, Alexios coding (poor Alexios)
+
+thuringia_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_rally_the_survivors = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				army_size_percentage = 1
+				num_of_generals = 1
+			}
+			else = {
+				OR = {
+					is_at_war = yes
+					AND = {
+						army_size_percentage = 1
+						num_of_generals = 1
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_manpower = 5
+			add_country_modifier = {
+				name = thu_secret_rallying
+				duration = 7300
+			}
+		}
+	}
+	
+	thu_legion_of_konrad = {
+		icon = generality_lands
+		required_missions = {
+			thu_rally_the_survivors
+			thu_left_hand_of_konrad
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			always = yes
+		}
+		
+		effect = {
+			add_casus_belli = {
+				target = HES
+				type = cb_fabricated_claims
+				months = 1200
+			}
+			add_country_modifier = {
+				name = thu_for_konrad
+				duration = 7300
+			}
+		}
+	}
+	
+	thu_bring_back_the_heir = {
+		icon = generality_lands
+		required_missions = {
+			thu_legion_of_konrad
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = HES }
+				war_with = HES
+				war_score_against = {
+					who = HES
+					value = 85
+				}
+			}
+			else = {
+				NOT = { exists = HES }
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { exists = HES }
+				country_event = { id = ia_flavor_thu.5 }
+			}
+			else = {
+				define_ruler = {
+					dynasty = "Ludowinger"
+					culture = ROOT
+					religion = ROOT
+				}
+			}
+			
+			add_casus_belli = {
+				target = MAI
+				type = cb_fabricated_claims
+				months = 1200
+			}
+			
+			add_adm_power = 200
+			clr_country_flag = eternal_regency
+		}
+	}
+	
+	thu_the_younger_brother = {
+		icon = generality_lands
+		required_missions = {
+			thu_bring_back_the_heir
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = MAI }
+				war_with = MAI
+				war_score_against = {
+					who = MAI
+					value = 85
+				}
+			}
+			else = {
+				NOT = { exists = MAI }
+			}
+		}
+		
+		effect = {
+			
+			add_casus_belli = {
+				target = FRN
+				type = cb_fabricated_claims
+				months = 1200
+			}
+			
+			if = {
+				limit = { exists = MAI }
+				white_peace = MAI
+				create_subject = {
+					subject_type = vassal
+					subject = MAI
+				}
+				MAI = { add_liberty_desire = -150 }
+			}
+			
+			define_general = {
+				shock = 3
+				fire = 2
+				manuever = 3
+				siege = 4
+				name = "Magneric Ludowinger"
+			}
+			
+			if = {
+				limit = { has_country_modifier = thu_horrible_council }
+				add_country_modifier = {
+					name = thu_magneric_relief
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	thu_amends_with_the_daughter = {
+		icon = generality_lands
+		required_missions = {
+			thu_the_younger_brother
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = FRN }
+				war_with = FRN
+				war_score_against = {
+					who = FRN
+					value = 85
+				}
+			}
+			else = {
+				NOT = { exists = FRN }
+			}
+		}
+		
+		effect = {
+			
+			if = {
+				limit = { exists = FRN }
+				white_peace = FRN
+				create_subject = {
+					subject_type = vassal
+					subject = FRN
+				}
+				FRN = { add_liberty_desire = -150 }
+			}
+			
+			define_advisor = {
+				type = diplomat
+				name = "Theolinda Ludowinger"
+				skill = 3
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	
+	thu_legacy_restored = {
+		icon = generality_lands
+		required_missions = {
+			thu_amends_with_the_daughter
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = HES }
+				HES = { 
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+					trust = { who = ROOT value = 70 }
+				}
+			}
+			else = {
+				NOT = { exists = HES }
+			}
+			
+			if = {
+				limit = { exists = MAI }
+				MAI = { 
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+					trust = { who = ROOT value = 70 }
+				}
+			}
+			else = {
+				NOT = { exists = MAI }
+			}
+			
+			if = {
+				limit = { exists = FRN }
+				FRN = { 
+					is_subject_of = ROOT
+					NOT = { liberty_desire = 50 }
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+					trust = { who = ROOT value = 70 }
+				}
+			}
+			else = {
+				NOT = { exists = FRN }
+			}
+		}
+		
+		effect = {
+			add_stability = 2
+			add_prestige = 50
+			add_country_modifier = {
+				name = thu_ludowinger_legacy_secured
+				duration = -1
+			}
+			add_country_modifier = {
+				name = thu_quick_integration
+				duration = 3650
+			}
+		}
+	}
+}
+
+thuringia_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_left_hand_of_konrad = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			has_estate_privilege = estate_nobles_advisors
+			treasury = 40
+		}
+		
+		effect = {
+			define_advisor = {
+				type = army_reformer
+				name = "Hermann von Weimar"
+				skill = 2
+				location = 4743
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	
+	thu_engaging_in_diplomacy = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				has_spy_network_in = {
+					who = SAX
+					value = 50
+				}
+				reverse_has_opinion = {
+					who = SAX
+					value = 25
+				}
+			}
+			#manpower = 10
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_thu.3 }
+		}
+	}
+}
+
+thuringia_missions_column_2_rebellious = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_rebellious_flag
+		NOT = { has_country_flag = thu_conciliatory_flag }
+	}
+	has_country_shield = yes
+	
+	thu_the_rebellion = {
+		icon = generality_lands
+		required_missions = {
+			thu_engaging_in_diplomacy
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			treasury = 100
+			has_spy_network_in = {
+				who = SAX
+				value = 50
+			}
+			manpower = 5
+		}
+		
+		effect = {
+			add_treasury = -100
+			SAX = { country_event = { id = ia_flavor_thu.7 } }
+		}
+	}
+	
+	thu_denounce_the_antipope = {
+		icon = generality_lands
+		required_missions = {
+			thu_the_rebellion
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			has_estate_privilege = estate_church_one_faith_one_culture
+			OR = {
+				NOT = { exists = FAP }
+				NOT = {
+					reverse_has_opinion = {
+						who = FAP
+						value = -100
+					}
+				}
+			}
+			OR = {
+				inquisitor = 1
+				theologian = 1
+			}
+		}
+		
+		effect = {
+			add_historical_rival = FAP
+			FAP = { add_historical_rival = ROOT }
+			
+			add_papal_influence = 50
+			
+			add_historical_friend = PAP
+			PAP = { add_historical_friend = ROOT }
+		}
+	}
+	
+	thu_stir_unrest = {
+		icon = generality_lands
+		required_missions = {
+			thu_denounce_the_antipope
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			has_spy_network_in = {
+				who = SAX
+				value = 70
+			}
+			treasury = 200
+			dip_power = 200
+		}
+		
+		effect = {
+			add_treasury = -200
+			add_dip_power = -200
+			4773 = {
+				change_religion = catholic
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+			4742 = {
+				change_religion = catholic
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+			4741 = {
+				change_religion = catholic
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+			58 = {
+				change_religion = catholic
+				add_permanent_province_modifier = {
+					name = religious_zeal_at_conv
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	thu_spread_the_resistance = {
+		icon = generality_lands
+		required_missions = {
+			thu_stir_unrest
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { any_known_country = { has_reform = saxon_feudalism } }
+				OR = {
+					diplomat = 2
+					spymaster = 2
+				}
+				prestige = 30
+				calc_true_if = {
+					all_country = {
+						OR = {
+							is_subject_of_type = saxon_daimyo
+							is_subject_of_type = german_march
+						}
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					amount = 5
+				}
+			}
+			else = {
+				NOT = { any_known_country = { has_reform = saxon_feudalism } }
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { any_known_country = { has_reform = saxon_feudalism } }
+				overlord = {
+					add_country_modifier = {
+						name = thu_the_resistance
+						duration = 36500
+					}
+				}
+				add_country_modifier = {
+					name = thu_resistance_leader
+					duration = 36500
+				}
+			}
+			else = {
+				add_prestige = 10
+			}
+		}
+	}
+}
+
+thuringia_missions_column_2_conciliatory = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_conciliatory_flag
+		NOT = { has_country_flag = thu_rebellious_flag }
+	}
+	has_country_shield = yes
+	
+	thu_bury_the_hatchet = {
+		icon = generality_lands
+		required_missions = {
+			thu_engaging_in_diplomacy
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			treasury = 100
+			manpower = 10
+			reverse_has_opinion = {
+				who = SAX
+				value = 25
+			}
+		}
+		
+		effect = {
+			add_treasury = -100
+			add_manpower = -10
+			country_event = { id = ia_flavor_thu.8 }
+		}
+	}
+	
+	thu_align_with_german_pope = {
+		icon = generality_lands
+		required_missions = {
+			thu_bury_the_hatchet
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				theologian = 1
+				inquisitor = 1
+			}
+			OR = {
+				religion = fraticelli
+				reverse_has_opinion = {
+					who = SAX
+					value = 100
+				}
+			}
+			has_estate_privilege = estate_church_religious_diplomats
+		}
+		
+		effect = {
+			if = {
+				limit = { NOT = { religion = fraticelli }}
+				hidden_effect = {
+					every_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = fraticelli
+					}
+				}
+				change_religion = fraticelli
+			}
+			capital_scope = {
+				if = {
+					limit = { has_building = temple }
+					remove_building = temple
+					add_building = cathedral
+				}
+				else_if = {
+					limit = { has_building = cathedral }
+					add_base_tax = 2
+				}
+				else = {
+					add_building = temple
+				}
+			}
+		}
+	}
+	
+	thu_show_devotion = {
+		icon = generality_lands
+		required_missions = {
+			thu_align_with_german_pope
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = FAP
+				value = 200
+			}
+			NOT = { is_excommunicated = yes }
+		}
+		
+		effect = {
+			add_papal_influence = 100
+			add_adm_power = 100
+			add_country_modifier = {
+				name = thu_religious_devotion
+				duration = 18250
+			}
+		}
+	}
+	
+	thu_contribute_to_saxon_efforts = {
+		icon = generality_lands
+		required_missions = {
+			thu_show_devotion
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { has_reform = thu_saxon_march_reform }
+				treasury = 300
+				manpower = 10
+			}
+			else_if = {
+				limit = { has_reform = thu_saxon_recruitment_reform }
+				treasury = 500
+				manpower = 20
+			}
+			else = {
+				treasury = 400
+				manpower = 15
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { has_reform = thu_saxon_march_reform }
+				add_treasury = -300
+				add_manpower = -10
+			}
+			else_if = {
+				limit = { has_reform = thu_saxon_recruitment_reform }
+				add_treasury = -500
+				add_manpower = -20
+			}
+			else = {
+				add_treasury = -400
+				add_manpower = -15
+			}
+			
+			custom_tooltip = thu_duties_increased_tt
+		}
+	}
+}
+
+thuringia_missions_column_2_part_3 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_from_the_ashes_of_old = {
+		icon = generality_lands
+		required_missions = {
+			thu_legacy_restored
+			thu_fruitful_measures
+			thu_reorganize_land
+			thu_rebuild_herrenhaus
+		}
+		position = 7
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				mission_completed = thu_contribute_to_saxon_efforts
+				mission_completed = thu_spread_the_resistance
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_stability = 1
+			
+			set_country_flag = thu_unlock_tier2_flag
+			
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+thuringia_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_a_helping_hand = {
+		icon = generality_lands
+		required_missions = {
+			thu_wounds_of_battle
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = MEI }
+				MEI = {
+					is_subject_of = ROOT
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = sent_gift
+						value = 25
+					}
+				}
+			}
+			else = {
+				owns = 61
+			}
+			61 = { development = 15 }
+		}
+		
+		effect = {
+			61 = { 
+				add_permanent_province_modifier = {
+					name = thu_a_helping_hand_mod
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	thu_restoring_dresden = {
+		icon = generality_lands
+		required_missions = {
+			thu_a_helping_hand
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 61
+			
+			61 = { 
+				development = 25
+				has_tax_building_trigger = yes
+				has_trade_building_trigger = yes
+				has_production_building_trigger = yes
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		
+		effect = {
+			61 = { 
+				if = {
+					limit = { province_has_center_of_trade_of_level = 3 }
+					add_base_production = 2
+				}
+				else = {
+					add_center_of_trade_level = 1
+				}
+				if = {
+					limit = { has_building = temple }
+					remove_building = temple
+					add_building = cathedral
+				}
+				else = { add_base_tax = 2 }
+				if = {
+					limit = { has_building = marketplace }
+					remove_building = marketplace
+					add_building = trade_depot
+				}
+				else = { add_base_production = 2 }
+				if = {
+					limit = { has_building = workshop }
+					remove_building = workshop
+					add_building = counting_house
+				}
+				else = { add_base_production = 2 }
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+			}
+		}
+	}
+	
+	thu_organize_the_relief_effort = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				mission_completed = thu_bury_the_hatchet
+				mission_completed = thu_the_rebellion
+			}
+			
+			treasury = 90
+			manpower = 9
+			
+		}
+		
+		effect = {
+			add_treasury = -90
+			add_manpower = -9
+			thuringia_area = {
+				add_province_modifier = {
+					name = thu_search_and_rescue
+					duration = 3650
+				}
+				add_base_manpower = 3
+			}
+			
+			set_country_flag = thu_search_and_rescue_flag
+		}
+	}
+	
+	thu_jumpstart_reconstruction_efforts = {
+		icon = generality_lands
+		required_missions = {
+			thu_organize_the_relief_effort
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			treasury = 500
+			adm_power = 200
+		}
+		
+		effect = {
+			add_treasury = -500
+			add_adm_power = -200
+			add_country_modifier = {
+				name = thu_jumpstarting_reconstruction
+				duration = 1825
+			}
+		}
+	}
+	
+	thu_fruitful_measures = {
+		icon = generality_lands
+		required_missions = {
+			thu_jumpstart_reconstruction_efforts
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			all_owned_province = {
+				NOT = { devastation = 0.1 }
+				development = 15
+				has_production_building_trigger = yes
+				has_tax_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			custom_tooltip = thu_fruitful_measures_tt
+			if = {
+				limit = { has_country_modifier = thu_jumpstarting_reconstruction }
+				add_country_modifier = {
+					name = thu_organized_construction_efforts
+					duration = -1
+				}
+			}
+			
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+thuringia_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_wounds_of_battle = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { exists = MEI }
+				OR = {
+					MEI = {
+						alliance_with = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 125
+						}
+					}
+					is_rival = MEI
+					is_enemy = MEI
+				}
+			}
+			else = {
+				NOT = { exists = MEI }
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					MEI = {
+						alliance_with = ROOT
+					}
+				}
+				create_march = MEI
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						is_rival = MEI
+						is_enemy = MEI
+					}
+				}
+				add_casus_belli = {
+					target = MEI
+					type = cb_fabricated_claims
+					months = 1200
+				}
+			}
+		}
+	}
+	
+	thu_thuringian_reunion = {
+		icon = generality_lands
+		required_missions = {
+			thu_wounds_of_battle
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				MEI = {
+					is_subject_of = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+					NOT = { liberty_desire = 1 }
+				}
+				war_score_against = {
+					who = MEI
+					value = 85
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					war_with = MEI
+				}
+				country_event = { id = ia_flavor_thu.6 }
+			}
+			add_historical_friend = MEI
+			MEI = { add_historical_friend = ROOT }
+			add_country_modifier = {
+				name = thu_the_reunion
+				duration = 9175
+			}
+		}
+	}
+	
+	thu_meissen_guard = {
+		icon = generality_lands
+		required_missions = {
+			thu_thuringian_reunion
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			MEI = {
+				is_subject_of = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 200
+				}
+				trust = { who = ROOT value = 50 }
+				NOT = { liberty_desire = 1 }
+			}
+			manpower = 10
+			treasury = 100
+			has_regency = no
+		}
+		
+		effect = {
+			add_treasury = -100
+			add_manpower = -10
+			
+			inherit = MEI
+			
+			custom_tooltip = meissener_guard_tt
+			hidden_effect = { set_country_flag = enable_meissen_guard }
+		}
+	}
+	
+	thu_reorganize_land = {
+		icon = generality_lands
+		required_missions = {
+			thu_tend_to_farmers
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				base_tax = 6
+			}
+			if = {
+				limit = { has_global_flag = tradegood_marcin }
+				thuringia_area = {
+					type = all
+					has_building = road_network
+				}
+			}
+		}
+		
+		effect = {
+			thuringia_area = {
+				add_province_modifier = {
+					name = thu_reorganized_farmsteads
+					duration = -1
+				}
+				add_base_tax = 2
+			}
+		}
+	}
+}
+
+thuringia_missions_column_4_disappeared = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+		always = no
+	}
+	has_country_shield = yes
+	
+	thu_merchants_from_across_germany = {
+		icon = generality_lands
+		required_missions = {
+			thu_rebuild_herrenhaus
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			63 = {
+				has_trade_building_trigger = yes
+				base_tax = 3
+				province_has_center_of_trade_of_level = 2
+			}
+		}
+		
+		effect = {
+			4743 = { center_of_trade = 1 }
+			
+			custom_tooltip = thu_enable_export_grain_tt
+			set_country_flag = thu_export_grain_flag
+		}
+	}
+	
+	thu_meet_growing_demands = {
+		icon = generality_lands
+		required_missions = {
+			thu_merchants_from_across_germany
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			4743 = {
+				has_trade_building_trigger = yes
+				base_production = 10
+				province_has_center_of_trade_of_level = 2
+			}
+			63 = {
+				has_trade_building_trigger = yes
+				base_production = 15
+				base_tax = 5
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		
+		effect = {
+			63 = { add_permanent_province_modifier = { name = thu_major_grain_hub 	duration = -1 } }
+			4743 = { add_permanent_province_modifier = { name = thu_minor_grain_hub 	duration = -1 } }
+			country_event = { id = ia_flavor_thu.10 }
+		}
+	}
+}
+
+thuringia_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+	}
+	has_country_shield = yes
+	
+	thu_mending_the_land = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				NOT = { devastation = 0.01 }
+				num_of_times_improved = 2
+			}
+		}
+		
+		effect = {
+			thuringia_area = {
+				remove_province_modifier = thu_devastated_countryside
+				change_trade_goods = grain
+				add_province_modifier = {
+					name = thu_reconstruction_effort
+					duration = 18250
+				}
+			}
+			south_saxony_area = {
+				remove_province_modifier = thu_devastated_countryside
+			}
+		}
+	}
+	
+	thu_tend_to_farmers = {
+		icon = generality_lands
+		required_missions = {
+			thu_mending_the_land
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_production_building_trigger = yes
+				base_production = 8
+			}
+		}
+		
+		effect = {
+			thuringia_area = {
+				
+				add_province_triggered_modifier = thu_major_wheat_fields
+			}
+		}
+	}
+	
+	thu_rebuild_herrenhaus = {
+		icon = generality_lands
+		required_missions = {
+			thu_tend_to_farmers
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = farm_estate
+				base_production = 10
+			}
+		}
+		
+		effect = {
+			thuringia_area = {
+				remove_province_triggered_modifier = thu_major_wheat_fields
+				add_province_triggered_modifier = thu_breadbasket_of_germany
+			}
+		}
+	}
+}
+
+thuringia_missions_column_5_disappeared = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+		always = no
+	}
+	has_country_shield = yes
+
+	thu_supply_konrads_legions = {
+		icon = generality_lands
+		required_missions = {
+			thu_rebuild_herrenhaus
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_manpower_building_trigger = yes
+				base_manpower = 6
+				has_supply_depot = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = thu_rations
+				duration = -1
+			}
+		}
+	}
+	
+	thu_expand_legions = {
+		icon = generality_lands
+		required_missions = {
+			thu_supply_konrads_legions
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_forcelimit_building_trigger = yes
+				base_manpower = 10			
+			}
+			army_size = 40
+		}
+		
+		effect = {
+			thuringia_area = {
+				add_province_modifier = {
+					name = thu_home_of_konrads_legions
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	thu_evolution_of_the_supply_trains = {
+		icon = generality_lands
+		required_missions = {
+			thu_expand_legions
+			thu_meet_growing_demands
+		}
+		position = 7
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 4716
+			4716 = { NOT = { local_autonomy = 50 } }
+			4716 = {
+				base_production = 6
+				has_production_building_trigger = yes
+				has_manufactory_trigger = yes
+			}
+		}
+		
+		effect = {
+			4716 = {
+				add_permanent_province_modifier = {
+					name = thu_horses_and_wagons
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = thu_expansion_of_supply_trains
+				duration = -1
+			}
+		}
+	}
+}
+
+thuringia_missions_column_1_tier2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+	}
+	has_country_shield = yes
+}
+
+thuringia_missions_column_2_tier2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+	}
+	has_country_shield = yes
+	
+	thu_address_the_corrupt_council = {
+		icon = generality_lands
+		required_missions = {
+			thu_from_the_ashes_of_old
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			stability = 3
+		}
+		
+		effect = {
+			define_advisor = {
+				type = spymaster
+				skill = 3
+				cost_multiplier = 0.25
+			}
+		}
+	}
+	
+	thu_making_our_choice = {
+		icon = generality_lands
+		required_missions = {
+			thu_address_the_corrupt_council
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			spymaster = 3
+		}
+		
+		effect = {
+			custom_tooltip = thu_enables_council_decisions_tt
+			
+			set_country_flag = enable_thu_council_decisions_flag
+		}
+	}
+	
+	thu_abandon_feudal_system = {
+		icon = generality_lands
+		required_missions = {
+			thu_making_our_choice
+		}
+		position = 10
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			stability = 2
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 5
+				}
+			}
+			statesman = 2
+			reform_level = 3
+			NOT = { has_estate_privilege = estate_nobles_land_rights }
+		}
+		
+		effect = {
+			add_government_reform = autocracy_reform
+			
+			remove_country_modifier = thu_magneric_relief
+			remove_country_modifier = thu_horrible_council
+		}
+	}
+}
+
+thuringia_missions_column_3_tier2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+	}
+	has_country_shield = yes
+}
+
+thuringia_missions_column_4_tier2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+	}
+	has_country_shield = yes
+	
+	thu_fate_of_the_neighbors = {
+		icon = generality_lands
+		required_missions = {
+			thu_from_the_ashes_of_old
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			num_of_generals = 2
+			army_size = 20
+			land_forcelimit = 20
+		}
+		
+		effect = {
+			every_province = {
+				limit = { OR = { culture = hessian	culture = franconian } NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	thu_along_the_rhine = {
+		icon = generality_lands
+		required_missions = {
+			thu_fate_of_the_neighbors
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			north_rhine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_or_non_sovereign_subject_of = 69 # dortmund ha ha
+		}
+		
+		effect = {
+			82 = { add_permanent_claim = ROOT }
+			2972 = { add_permanent_claim = ROOT }
+			4775 = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	thu_future_of_the_rhine = {
+		icon = generality_lands
+		required_missions = {
+			thu_along_the_rhine
+		}
+		position = 10
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2975
+			owns_or_non_sovereign_subject_of = 69
+			owns_or_non_sovereign_subject_of = 84
+			owns_or_non_sovereign_subject_of = 85
+			OR = {
+				AND = {
+					2975 = { NOT = {unrest = 0 }}
+					69 = { NOT = {unrest = 0 }}
+					84 = { NOT = {unrest = 0 }}
+					85 = { NOT = {unrest = 0 }}
+					NOT = { exists = KLE }
+				}
+				KLE = {
+					is_subject_of = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+					trust = { who = ROOT value = 60 }
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					KLE = {
+						is_subject_of = ROOT
+					}
+				}
+				if = {
+					KLE = { NOT = { owns = 2975 } }
+					2975 = {
+						cede_province = KLE
+						remove_core = ROOT
+						add_core = KLE
+					}
+				}
+				if = {
+					KLE = { NOT = { owns = 69 } }
+					69 = {
+						cede_province = KLE
+						remove_core = ROOT
+						add_core = KLE
+					}
+				}
+				if = {
+					KLE = { NOT = { owns = 84 } }
+					84 = {
+						cede_province = KLE
+						remove_core = ROOT
+						add_core = KLE
+					}
+				}
+				if = {
+					KLE = { NOT = { owns = 85 } }
+					85 = {
+						cede_province = KLE
+						remove_core = ROOT
+						add_core = KLE
+					}
+				}
+			}
+			else = {
+				2975 = { add_province_modifier = { name = thu_rhine_development	duration = -1 } }
+				69 = { add_province_modifier = { name = thu_rhine_development	duration = -1 } }
+				84 = { add_province_modifier = { name = thu_rhine_development	duration = -1 } }
+				85 = { add_province_modifier = { name = thu_rhine_development	duration = -1 } }
+			}
+		}
+	}
+	
+	thu_into_westfalen = {
+		icon = generality_lands
+		required_missions = {
+			thu_future_of_the_rhine
+		}
+		position = 11
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			82 = { country_or_non_sovereign_subject_holds = ROOT }
+			2972 = { country_or_non_sovereign_subject_holds = ROOT }
+			4775 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		effect = {
+			north_westphalia_area = { add_permanent_claim = ROOT }
+			add_casus_belli = {
+				target = KOL
+				type = cb_fabricated_claims
+				months = 1200
+			}
+		}
+	}
+	thu_fate_of_koln = {
+		icon = generality_lands
+		required_missions = {
+			thu_into_westfalen
+		}
+		position = 12
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2973
+			owns_or_non_sovereign_subject_of = 56
+			owns_or_non_sovereign_subject_of = 86
+			OR = {
+				AND = {
+					owns = 2973
+					owns = 56
+					owns = 86
+					NOT = { exists = KOL }
+				}
+				KOL = {
+					is_subject_of = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+					#trust = { who = ROOT value = 60 }
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					KOL = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						#trust = { who = ROOT value = 60 }
+					}
+				}
+				add_historical_friend = KOL
+				KOL = {
+					add_historical_friend = ROOT
+					add_liberty_desire = -50
+				}
+			}
+			else = {
+				add_treasury = 500
+				add_mil_power = 100
+				2973 = {
+					add_base_tax = -2
+					add_base_production = -2
+					add_base_manpower = -2
+				}
+				56 = {
+					add_base_tax = -2
+					add_base_production = -2
+					add_base_manpower = -2
+				}
+				86 = {
+					add_base_tax = -2
+					add_base_production = -2
+					add_base_manpower = -2
+				}
+			}
+		}
+	}
+	
+	thu_stabilize_the_realm = {
+		icon = generality_lands
+		required_missions = {
+			thu_fate_of_koln
+			thu_guard_the_frontiers
+		}
+		position = 13
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			unrest = 0
+		}
+		
+		trigger = {
+			prestige = 50
+			stability = 3
+			NOT = {
+				any_owned_province = { unrest = 0 }
+			}
+			NOT = {
+				any_subject_country = { liberty_desire = 30 }
+			}
+		}
+		
+		effect = {
+			custom_tooltip = "Rewards will change if we have 3 or more subjects."
+			
+			if = {
+				limit = {
+					num_of_subjects = 3
+				}
+				add_country_modifier = {
+					name = thu_the_many_hands
+					duration = -1
+				}
+			}
+			else = {
+				add_mil_power = 100
+				add_country_modifier = {
+					name = thu_glory_to_thuringia
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	thu_let_me_catch_my_breath = {
+		icon = generality_lands
+		required_missions = {
+			thu_stabilize_the_realm
+		}
+		position = 14
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = { 
+				limit = { has_global_flag = tradegood_marcin }
+				4744 = {
+					has_building = road_network
+				}
+			}
+			else = {
+				4744 = {
+					num_of_buildings_in_province = 3
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_thu.15 }
+		}
+	}
+}
+
+thuringia_missions_column_5_tier2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = THU
+		has_country_flag = thu_unlock_tier2_flag
+	}
+	has_country_shield = yes
+	
+	thu_rebuild_our_fortifications = {
+		icon = generality_lands
+		required_missions = {
+			thu_fate_of_the_neighbors
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			thuringia_area = {
+				type = all
+				base_manpower = 8
+			}
+			2965 = { province_has_current_tech_fort_trigger = yes }
+			63 = { province_has_current_tech_fort_trigger = yes }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = thu_rebuilt_forts
+				duration = 7300
+			}
+		}
+	}
+	
+	thu_protect_franconia = {
+		icon = generality_lands
+		required_missions = {
+			thu_rebuild_our_fortifications
+		}
+		position = 10
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				franconia_area = {
+					type = all
+					owned_by = ROOT
+				}
+				franconia_area = {
+					type = all
+					owner = { overlord = { tag = ROOT } }
+				}
+			}
+			OR = {
+				upper_franconia_area = {
+					type = all
+					owned_by = ROOT
+				}
+				upper_franconia_area = {
+					type = all
+					owner = { overlord = { tag = ROOT } }
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					franconia_area = {
+						type = all
+						owned_by = ROOT
+					}
+					upper_franconia_area = {
+						type = all
+						owned_by = ROOT
+					}
+				}
+				every_owned_province = {
+					limit = { OR = { area = franconia_area 	area = upper_franconia_area } }
+					add_nationalism = -10
+				}
+			}
+			else = { add_dip_power = 50		add_mil_power = 50 }
+		}
+	}
+	
+	thu_franconia_reconstruction = {
+		icon = generality_lands
+		required_missions = {
+			thu_protect_franconia
+		}
+		position = 11
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			treasury = 1000
+			adm_power = 100
+		}
+		
+		effect = {
+			
+			add_adm_power = -100
+			add_treasury = -1000
+			
+			every_owned_province = {
+				limit = { OR = { area = franconia_area 	area = upper_franconia_area } }
+				add_province_modifier = {
+					name = thu_franconian_reconstruction_mod
+					duration = -7300
+				}
+			}
+		}
+	}
+	
+	thu_guard_the_frontiers = {
+		icon = generality_lands
+		required_missions = {
+			thu_franconia_reconstruction
+		}
+		position = 12
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			4717 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				base_manpower = 6
+				province_has_current_tech_fort_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+			4715 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				base_manpower = 6
+				province_has_current_tech_fort_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { has_country_modifier = thu_rebuilt_forts }
+				remove_country_modifier = thu_rebuilt_forts
+			}
+			add_country_modifier = {
+				name = thu_rebuilt_forts
+				duration = 7300
+			}
+			4717 = {
+				add_permanent_province_modifier = {
+					name = thu_expanded_fortifications_mod
+					duration = -1
+				}
+			}
+			4715 = {
+				add_permanent_province_modifier = {
+					name = thu_expanded_fortifications_mod
+					duration = -1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+ck2_converter_generated = yes
+graphical_culture = muslimgfx
+color = { 235 255 220 }
+revolutionary_colors = { 6 0 10 }
+historical_idea_groups = {
+	humanist_ideas
+	defensive_ideas
+	trade_ideas
+	offensive_ideas
+	spy_ideas
+	diplomatic_ideas
+	economic_ideas
+	administrative_ideas
+}
+historical_units = {
+	bhonsle_cavalry
+	indian_arquebusier
+	indian_elephant
+	indian_footsoldier
+	indian_rifle
+	mughal_mansabdar
+	mughal_musketeer
+	rajput_hill_fighters
+	rajput_musketeer
+	sikh_hit_and_run
+	tipu_sultan_rocket
+}
+monarch_names = {
+	"Ali #0" = 0
+	"Anushirvan #0" = 0
+	"Ayeshah #0" = 0
+	"Burandokht #0" = -1
+	"Bustenai #0" = 0
+	"Fariborz #1" = 10
+	"Farva #0" = -1
+	"Fereedun #0" = 0
+	"Ghiyath #1" = 10
+	"Godarz #0" = 0
+	"Gulru #0" = 0
+	"Hafez #0" = 0
+	"Jahandar #0" = 0
+	"Jamshid #0" = 0
+	"Khashayar #0" = 0
+	"Khodadad #1" = 10
+	"Kinah #0" = -1
+	"Kunwarpal #0" = 0
+	"Kuvalayapida #1" = 10
+	"Lalitadiyta-Muktapida #1" = 10
+	"Morad #0" = 0
+	"Moska #0" = -1
+	"Mu'izz #1" = 10
+	"Nazgol #0" = -1
+	"Parvaneh #0" = -1
+	"Peksen #0" = -1
+	"Rajiya #0" = -1
+	"Rukh ad-Din #0" = 0
+	"Saad #0" = 0
+	"Sadri #0" = 0
+	"Salomeh #0" = -1
+	"Serife #0" = -1
+	"Shihab ad-Din #0" = 0
+	"Shokouh #0" = -1
+	"Säm #1" = 10
+	"Tunggi #0" = -1
+	"Vajraditya #1" = 10
+	"Vali #0" = 0
+	"Yamin ad-Din Bahram #0" = 0
+	"Zakaria #0" = 0
+	"Zohreh #0" = -1
+}
+leader_names = {
+	"Afghani"
+	"Ambar"
+	"Ameerun"
+	"Ardastani"
+	"Astarabadi"
+	"Badakhshi"
+	"Beg"
+	"Bhutto"
+	"Bukhari"
+	"Changezi"
+	"Chughtai"
+	"Ghuri"
+	"Gilani"
+	"Hamadani"
+	"Hasanabadi"
+	"Hussaini"
+	"Jahan"
+	"Jurjani"
+	"Kabuli"
+	"Kamaluddin"
+	"Karbali"
+	"Khan"
+	"Kirmani"
+	"Kurd"
+	"Latif"
+	"Mazandarani"
+	"Mirza"
+	"Musharif"
+	"Nagar"
+	"Nasseruddin"
+	"Nazirun"
+	"Qadir"
+	"Qummi"
+	"Ra'ana"
+	"Radhidun"
+	"Rumi"
+	"Safsikhan"
+	"Shahabuddin"
+	"Sharif"
+	"Simnani"
+	"Sinan"
+	"Singh"
+	"Sistani"
+	"Uzbek"
+	"Wazirun"
+	"Zahiruddin"
+}
+ship_names = {
+	"Alia"
+	"Aurangabad"
+	"Devki"
+	"Fatimah"
+	"Godvari"
+	"Gulbargah"
+	"Jalsena"
+	"Kala Jahazi"
+	"Khan"
+	"Lal Jahazi"
+	"Nausena"
+	"Nav ka Yudh"
+	"Niknaz"
+	"Nila Jahazi"
+	"Niloufa"
+	"Noor"
+	"Sagar"
+	"Salima"
+	"Shameena"
+	"Spiti"
+	"Suhalia"
+	"Yamuna"
+	"Yasmine"
+}

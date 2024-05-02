@@ -1,0 +1,106 @@
+eternal_emperor = {
+	allow = {
+		is_admiral = no
+		tag = Z17
+		is_year = 1820
+	}
+	
+	shock_damage = 0.15
+	siege_ability = 0.25
+	army_tradition_from_battle = 1
+	cavalry_flanking = 0.5
+	force_march_free = yes
+	land_morale = 0.2
+	fire_damage_received = -0.10
+	movement_speed = 0.15
+}
+
+aurora_trained = {
+	allow = {
+		is_admiral = no
+		Z17 = {
+			has_estate = estate_aurora
+		}
+		religion = Z17
+	}
+	
+	shock_damage = 0.10
+	cavalry_flanking = 0.5
+	movement_speed = 0.10
+}
+
+templar_knight = {
+	allow = {
+		is_admiral = no
+		exists = TEM
+		OR = {
+			AND = {
+				TEM = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				has_matching_religion = TEM
+			}
+			alliance_with = TEM
+			tag = TEM
+		}
+	}
+	
+	cavalry_power = 0.15
+	morale_damage_received = -0.25
+}
+
+voice_of_god_generaltrait = {
+	allow = {
+		is_admiral = no
+		tag = TEM
+		is_year = 1820
+	}
+	
+	morale_damage_received = -0.25
+	morale_damage = 0.10	
+	land_attrition = -0.50
+	shock_damage_received = -0.2
+	force_march_free = yes
+	army_tradition_from_battle = 1
+}
+
+war_druid = {
+	allow = {
+		is_admiral = no
+		OR = {
+			AND = {
+				HSC = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				has_matching_religion = HSC
+			}
+			alliance_with = HSC
+			tag = HSC
+		}
+	}
+	
+	land_attrition = -0.25
+	fire_damage = 0.10
+	fire_damage_received = -0.20
+	shock_damage = -0.20
+}
+
+soi_logistics_genius = {
+	allow = {
+		is_admiral = no
+		OR = {
+			has_country_modifier = logistics_school_mod
+			any_ally = { has_country_modifier = logistics_school_mod }
+		}
+	}
+	
+	land_attrition = -0.20
+	movement_speed = 0.15
+	siege_ability = 0.25
+}

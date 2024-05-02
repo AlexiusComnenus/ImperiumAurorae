@@ -1,0 +1,111 @@
+government = monarchy
+add_government_reform = saxon_fief_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = thuringian
+capital = 63
+set_country_flag = eternal_regency
+1544.11.11= {
+	monarch = {
+		name = "Ludwig IV"
+		dynasty = "Ludowinger"
+		adm = 3
+		dip = 2
+		mil = 1
+		birth_date = 1384.10.28
+		religion = catholic
+		culture = thuringian
+	}
+	add_ruler_personality = charismatic_negotiator_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Bourgogne"
+		dynasty = "de Genève"
+		adm = 5
+		dip = 3
+		mil = 4
+		country_of_origin = THU
+		birth_date = 1416.6.24
+		death_date = 1476.6.24
+		female = yes
+		religion = catholic
+		culture = burgundian
+	}
+	add_queen_personality = tactical_genius_personality
+	add_queen_personality = tolerant_personality
+	heir = {
+		name = "Gotthard"
+		monarch_name = "Gotthard"
+		dynasty = "Ludowinger"
+		adm = 4
+		dip = 4
+		mil = 6
+		birth_date = 1402.9.6
+		death_date = 1467.9.6
+		claim = 89
+		religion = catholic
+		culture = thuringian
+	}
+	add_heir_personality = bold_fighter_personality
+	add_heir_personality = craven_personality
+}
+1444.11.11= {
+	add_prestige = -42
+	add_country_modifier = { name = thu_nobles_privileges duration = -1 }
+	set_estate_privilege = estate_nobles_land_rights
+	set_estate_privilege = estate_nobles_nobility_primacy
+	set_estate_privilege = estate_nobles_officer_corp
+	set_estate_privilege = estate_nobles_levies
+	set_estate_privilege = estate_nobles_supremacy_over_crown
+	set_estate_privilege = estate_nobles_noble_officer_right
+	set_estate_privilege = estate_nobles_force_conscription
+	add_manpower = -5
+	add_legitimacy = -80
+	add_corruption = 5
+	add_stability = -1
+}
+1444.11.11= {
+	monarch = {
+		name = "Konrad"
+		dynasty = "Ludowinger"
+		adm = 99
+		dip = 99
+		mil = 99
+		birth_date = 1384.10.28
+		religion = catholic
+		culture = thuringian
+	}
+	queen = {
+		name = "Kriegszeitregentschaftsgroßrat"
+		dynasty = "von Thüringen"
+		country_of_origin = THU
+		adm = 0
+		dip = 0
+		mil = 0
+		birth_date = 1384.10.28
+		death_date = 1467.9.6
+		religion = catholic
+		culture = thuringian
+		#regency = { estate = estate_nobles }
+	}
+	add_queen_personality = immortal_personality
+	heir = {
+		name = "Placeholder"
+		monarch_name = "Placeholder"
+		dynasty = "von Thüringen"
+		adm = 0
+		dip = 0
+		mil = 0
+		birth_date = 1442.9.6
+		death_date = 1467.9.6
+		claim = 0
+		religion = catholic
+		culture = thuringian
+	}
+	add_heir_personality = immortal_personality
+	
+}
+add_mil_power = -1400
+add_dip_power = -1400
+add_adm_power = -1400

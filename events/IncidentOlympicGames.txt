@@ -1,0 +1,107 @@
+### Olympic Games revived ###
+### By Alexios ###
+
+namespace = incident_olympics
+
+country_event = {
+	id = incident_olympics.1
+	title = incident_olympics.1.t
+	desc = incident_olympics.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		1773 = {
+			OR = {
+				is_part_of_hre = yes
+				religion = hellenic_pagan_reformed
+			}
+		}
+		emperor = {
+			is_at_war = no
+		}
+		is_emperor = yes
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		set_global_flag = olympics_incident_flag
+	}
+	
+	option = { # Convene the Confluence!
+		name = incident_olympics.1.a
+		ai_chance = { factor = 100 }
+		set_imperial_incident = incident_olympics
+		#custom_tooltip = olympics_incident_tt
+		#hidden_effect = { # doesn't happen automatically when removed from empire through script
+		#	every_owned_province = {
+		#		limit = {
+		#			is_part_of_hre = yes
+		#		}
+		#		add_claim = emperor
+		#	}
+		#}
+		add_prestige = 10
+		add_dip_power = 100
+	}
+}
+
+# dummy incident for the emperor
+country_event = {
+	id = incident_olympics.2
+	title = incident_olympics.2.t
+	desc = incident_olympics.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # take the province
+		name = incident_olympics.2.a
+		ai_chance = { factor = 100 }
+		add_imperial_influence = -10
+		custom_tooltip = emperor_claims_athens_tt
+		hidden_effect = {
+			1773 = {
+				add_core = emperor
+				cede_province = emperor
+				add_province_modifier = {
+					name = hosts_olympics
+					duration = -1
+				}
+			}
+		}
+	}
+	option = { # leave the province alone
+		name = incident_olympics.2.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1000
+				emperor = {
+					owns = 1773
+				}
+			}
+		}
+		1773 = {
+			add_province_modifier = {
+				name = hosts_olympics
+				duration = -1
+			}
+		}
+	}
+	option = { # why bother?
+		name = incident_olympics.2.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}

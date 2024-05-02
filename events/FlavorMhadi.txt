@@ -1,0 +1,48 @@
+namespace = mhadi
+normal_or_historical_nations = yes
+
+country_event = {
+	id = mhadi.1
+	title = mhadi.1.title
+	desc = mhadi.1.desc
+	picture = SIEGE_PRAGUE_CASTLE_eventPicture
+
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		at_war_with_religious_enemy = yes
+		tag = YOR
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# Those from other faiths defy our rule! Bye the grace of Jehovah we shall drive them from the subcontinent of Eden!
+		name = mhadi.1.a
+		ai_chance = { 
+			factor = 100
+		}			
+		define_ruler_to_general = {
+			fire = 3
+			shock = 6
+			manuever = 3
+			siege = 6
+		}
+		add_mil_power = 100
+		add_yearly_manpower = 1
+		india_superregion = { 
+			add_permanent_claim = ROOT	
+		}
+	}
+	
+	option = {	# We must let greed overcome our piety
+		name = mhadi.1.b
+		ai_chance = { 
+			factor = 0
+		}			
+		add_prestige = 30
+        add_adm_power = 200	
+	}
+}

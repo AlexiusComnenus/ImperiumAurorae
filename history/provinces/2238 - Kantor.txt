@@ -1,0 +1,13 @@
+owner = MAL
+controller = MAL
+capital = "Sutuco"
+is_city = yes
+culture = senegambian
+religion = shamanism
+trade_goods = ivory
+base_tax = 1
+base_production = 1
+base_manpower = 1
+add_core = KBU
+add_core = MAL
+discovered_by = sub_saharan

@@ -1,0 +1,22 @@
+ck2_converter_generated = yes
+graphical_culture = asiangfx
+color = { 162 133 85 }
+monarch_names = {
+	"Aberikos #0" = 0
+	"Anthinos #0" = 0
+	"Chrissa #0" = -1
+	"Eirpanome #1" = 10
+	"Elitovios #0" = 0
+	"Guanzhi #0" = 0
+	"Hanifa #0" = -1
+	"Ji #0" = 0
+	"Jiongxiu #0" = 0
+	"Kerike #0" = -1
+	"Manyue #0" = -10
+	"Philemon #0" = 0
+	"Shuo #1" = 10
+	"Silko #1" = 1
+	"Xiuying #0" = -1
+	"Zahra #0" = -1
+	"Zhi #1" = 10
+}

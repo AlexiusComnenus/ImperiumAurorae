@@ -1,0 +1,18 @@
+ck2_converter_generated = yes
+graphical_culture = inuitgfx
+color = { 95 50 20 }
+monarch_names = {
+	"Alik #1" = 10
+	"Hasaba #1" = 10
+	"Kako #1" = 10
+	"Kat #0" = -1
+	"Khatyako #0" = -1
+	"Kolik #2" = 10
+	"Mandak #1" = 10
+	"Num #0" = 0
+	"Samatu #1" = 10
+	"Sarak #1" = 10
+	"Somatu #1" = 10
+	"Xëryuchi #0" = 0
+	"Yurak #1" = 10
+}

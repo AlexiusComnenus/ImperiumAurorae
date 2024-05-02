@@ -1,0 +1,113 @@
+namespace = LOT_events
+
+# move the court to Aachen?
+country_event = {
+	id = LOT_events.1
+	title = LOT_events.1.t
+	desc = LOT_events.1.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = "LOT_events.1.a"
+		set_capital = 1878
+		set_country_flag = aachen_capital
+		custom_tooltip = zyp_lot_aac_tooltip
+	}
+	option = { #no
+		name = "LOT_events.1.b"
+		custom_tooltip = zyp_lot_sec_tooltip
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+#Resettlement into the cities
+province_event = {
+	id = LOT_events.2
+	title = LOT_events.2.t
+	desc = LOT_events.2.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		owner = {
+			has_country_flag = lot_western_colonialism
+		}
+		NOT = { devastation = 5 }
+		OR = {
+			trade_goods = cloth
+			trade_goods = iron
+			trade_goods = copper
+			trade_goods = coal
+			trade_goods = paper
+			trade_goods = glass
+			trade_goods = dyes
+			trade_goods = gold
+			development = 20
+			province_has_center_of_trade_of_level = 3
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+		
+		modifier = {
+			factor = 0.75
+			is_prosperous = yes
+		}
+	}
+	
+	option = {
+		name = LOT_events.2.a
+		random_list = {
+			40 = {
+				add_base_tax = 1
+			}
+			40 = {
+				add_base_production = 1
+			}
+			20 = {
+				add_base_manpower = 1
+			}
+		}
+		random_list = {
+			80 = {
+
+			}
+			20 = {
+				change_culture = owner
+			}
+		}
+	}
+}
+
+# fate of the west?
+country_event = {
+	id = LOT_events.3
+	title = LOT_events.3.t
+	desc = LOT_events.3.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #yes
+		name = "LOT_events.3.a"
+		set_country_flag = lot_western_colonialism
+		custom_tooltip = zyp_lot_col_tooltip
+		ai_chance = { #this will require more effort than the ai is willing to put in, i believe
+			factor = 0
+		}
+	}
+	option = { #no
+		name = "LOT_events.3.b"
+		set_country_flag = lot_tolerance
+		custom_tooltip = zyp_lot_tol_tooltip
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}

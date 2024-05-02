@@ -1,0 +1,17 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_aachener_dom"	
+		texturefile = "gfx//interface//great_projects//great_project_aachener_dom.dds"
+	}
+
+}
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_schloss_nanzig"	
+		texturefile = "gfx//interface//great_projects//great_project_schloss_nanzig.dds"
+	}
+
+}

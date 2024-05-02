@@ -1,0 +1,40 @@
+government = tribal
+add_government_reform = great_man
+government_rank = 1
+technology_group = eastern
+religion = paulician
+primary_culture = estonian
+capital = 37
+1444.11.11= {
+	monarch = {
+		name = "Lembitu II"
+		dynasty = "Lembi"
+		adm = 3
+		dip = 3
+		mil = 2
+		birth_date = 1426.11.23
+		religion = paulician
+		culture = estonian
+	}
+	add_ruler_personality = midas_touched_personality
+	add_ruler_personality = scholar_personality
+	queen = {
+		name = "Kivutar"
+		dynasty = "Savolainen"
+		adm = 3
+		dip = 3
+		mil = 4
+		country_of_origin = Z50
+		birth_date = 1426.3.3
+		death_date = 1486.3.3
+		female = yes
+		religion = catholic
+		culture = finnish
+	}
+	add_queen_personality = loose_lips_personality
+	add_queen_personality = silver_tongue_personality
+}
+1444.11.11= {
+	add_prestige = -50
+	add_treasury = 41
+}

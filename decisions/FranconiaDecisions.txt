@@ -1,0 +1,22 @@
+country_decisions = {
+	fkn_explore_for_new_vineyards = { #Reduce inflation
+		potential = {
+			has_country_flag = fkn_enable_wine_creation
+			NOT = {
+				check_variable = {
+					which = fkn_enable_wine_creation
+					value = 6
+				}
+			}
+		}
+		allow = {
+			any_owned_province = { has_state_edict = fkn_wine_state_edict }
+		}
+		effect = {
+			country_event = { id = ia_flavor_fkn.5 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

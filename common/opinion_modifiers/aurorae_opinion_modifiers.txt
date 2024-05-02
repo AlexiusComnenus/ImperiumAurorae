@@ -1,0 +1,35 @@
+aggressive_expansion = {
+	opinion = -1
+	months = 0
+	yearly_decay = 2.5
+	min = -200
+}
+
+gra_sunni_victory = {
+	opinion = 50                
+    years = 100                 
+}
+
+sax_exploitative_alliance = {
+	opinion = -150                
+    yearly_decay = 10                
+}
+
+religious_defection = {
+	opinion = -100                
+    yearly_decay = 2             
+}
+
+joined_the_flock = {
+	opinion = 50                
+    yearly_decay = 1                
+}
+
+tre_feo_friendship = {
+	opinion = 250
+}
+
+z42_desecrated_kaaba = {
+	opinion = -1000                
+    years = 1000                
+}

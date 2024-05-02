@@ -1,0 +1,115 @@
+ck2_converter_generated = yes
+graphical_culture = indiangfx
+color = { 232 79 142 }
+revolutionary_colors = { 0 10 0 }
+historical_idea_groups = {
+	offensive_ideas
+	administrative_ideas
+	economic_ideas
+	defensive_ideas
+	humanist_ideas
+	aristocracy_ideas
+	diplomatic_ideas
+	trade_ideas
+}
+historical_units = {
+	bhonsle_infantry
+	indian_arquebusier
+	indian_elephant
+	indian_footsoldier
+	indian_shock_cavalry
+	maharathan_guerilla_warfare
+	mughal_mansabdar
+	rajput_hill_fighters
+	reformed_mughal_musketeer
+	sikh_rifle
+	south_indian_musketeer
+	tipu_sultan_rocket
+}
+monarch_names = {
+	"Asaga #0" = 0
+	"Avinita #1" = 10
+	"Bhavanaga #0" = -1
+	"Bhuvikarma #1" = 10
+	"Bijjabbe #0" = -1
+	"Butuga #1" = 10
+	"Chandrabbalabbe #0" = -1
+	"Chinnambike #0" = -1
+	"Durvinita #1" = 10
+	"Eccavarâkan #0" = 0
+	"Ereganga #2" = 10
+	"Ereyanga #1" = 10
+	"Harihara #0" = 0
+	"Harivarman #1" = 10
+	"Hariyadevi #0" = -1
+	"Kamadeva #0" = 0
+	"Karka #0" = 0
+	"Karmavati #0" = -1
+	"Kiriyasaga #0" = 0
+	"Konganivarman #1" = 10
+	"Krishnadevaraya #0" = 0
+	"Kundakadevi #0" = -1
+	"Madhava #2" = 10
+	"Marulaganga #1" = 10
+	"Mushkara #1" = 10
+	"Narasimha #4" = 10
+	"Neetimarga #1" = 10
+	"Permanadi #0" = 0
+	"Pertal #0" = -1
+	"Polavira #1" = 10
+	"Pulakesi #0" = 0
+	"Rachamala #5" = 10
+	"Shivamara #2" = 10
+	"Singhana #0" = 0
+	"Somesvara #2" = 10
+	"Sripadaraya #0" = 0
+	"Sripurusha #1" = 10
+	"Srivikrama #1" = 10
+	"Sunita #0" = -1
+	"Thimma #0" = 0
+	"Veeraballala #2" = 10
+	"Venkatrao #0" = 0
+	"Vijnanavati #0" = -1
+	"Vikramaditya #1" = 10
+	"Vinayaditya #1" = 10
+	"Vishnugopa #1" = 10
+	"Vishnuvardhana #1" = 10
+	"Yachamanedu #0" = 0
+	"Yashoda #0" = -1
+}
+leader_names = {
+	"Bahadur"
+	"Chetty"
+	"Khader"
+	"Khan"
+	"Khan Wallajah"
+	"Mudaliar"
+	"Rajapopalachari"
+	"Reddy"
+	"Saluva"
+	"Sastri"
+	"Thondaiman"
+	"ul Umra"
+}
+ship_names = {
+	"Chambal"
+	"Devi"
+	"Durga"
+	"Ganga"
+	"Gayatri"
+	"Jalsena"
+	"Kala Jahazi"
+	"Lakshmi"
+	"Lal Jahazi"
+	"Nausena"
+	"Nav ka Yudh"
+	"Nila Jahazi"
+	"Parvati"
+	"Radha"
+	"Ratri"
+	"Sagar"
+	"Sarasvati"
+	"Sita"
+	"Spiti"
+	"Yamuna"
+}

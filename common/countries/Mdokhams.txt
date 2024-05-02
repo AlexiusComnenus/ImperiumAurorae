@@ -1,0 +1,115 @@
+ck2_converter_generated = yes
+graphical_culture = asiangfx
+color = { 33 168 103 }
+revolutionary_colors = { 8 15 8 }
+historical_idea_groups = {
+	religious_ideas
+	offensive_ideas
+	trade_ideas
+	defensive_ideas
+	economic_ideas
+	spy_ideas
+	diplomatic_ideas
+	administrative_ideas
+}
+historical_units = {
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	east_asian_spearmen
+	eastern_bow
+	reformed_asian_cavalry
+	reformed_asian_musketeer
+}
+monarch_names = {
+	"Bum #0" = -1
+	"Bumphulwa #0" = -1
+	"Burtam #0" = -1
+	"Chokey #0" = 0
+	"Chöying #0" = -1
+	"Dagmo #0" = -1
+	"Degyal #0" = 0
+	"Dondup #0" = 0
+	"Dragpa Gyaltsen #0" = 0
+	"Lhakee #0" = -1
+	"Nyima #0" = 0
+	"Oghul #0" = -1
+	"Palchen Opoche #0" = 0
+	"Sadmarkar #0" = -1
+	"Sal #0" = -1
+	"Shanglon #1" = 10
+	"Sumnang #0" = 0
+	"Sönam Gyeltsen #0" = 0
+	"Tongtsen #0" = 0
+	"Tori #0" = 0
+	"Tricham #0" = -1
+	"Trikar #0" = -1
+	"Trisu #0" = 0
+	"Tritsen #0" = 0
+	"Tsogyal #0" = -1
+	"Yondagmo #0" = -1
+	"Yongten #0" = 0
+	"Zangmo #0" = -1
+	"Zimun #0" = 0
+}
+leader_names = {
+	"Bal"
+	"Bri"
+	"Bro"
+	"Chespong"
+	"Cogro"
+	"Dbas"
+	"Dbra"
+	"Dru"
+	"Gnon"
+	"Gnyags"
+	"Khjungpo"
+	"Khu"
+	"Khun"
+	"Lang"
+	"Ldong"
+	"Lig"
+	"Mchims"
+	"Mgar"
+	"Mgus"
+	"Mjang"
+	"Mkar"
+	"Mnyammed"
+	"Mong"
+	"Nganlam"
+	"Nyang"
+	"Phjongsrgjas"
+	"Rinspungs"
+	"Rlangs"
+	"Rma"
+	"Rmu"
+	"Sba"
+	"Sbas"
+	"Se"
+	"Sgro"
+	"Shudpu"
+	"Snang"
+	"Snyiba"
+	"Stong"
+	"Thonmi"
+	"Zhang"
+	"Zhingshag"
+}
+ship_names = {
+	"Barkam"
+	"Dartsendo"
+	"Gartse"
+	"Gyantse"
+	"Lhasa"
+	"Lhotse"
+	"Makalu"
+	"Nagqu"
+	"Nedong"
+	"Nyingchi"
+	"Pelbar"
+	"Qamdo"
+	"Sakya"
+	"Shigatse"
+	"Tinggri"
+}

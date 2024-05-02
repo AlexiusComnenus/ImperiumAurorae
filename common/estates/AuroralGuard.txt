@@ -1,0 +1,64 @@
+estate_aurora = {
+	icon = 4
+	
+
+	# If true, country will get estate
+	
+	trigger = {	
+		tag = Z17
+		mission_completed = antioch_establish_aurora
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		cavalry_cost = -0.25
+		cavalry_power = 0.25
+		cav_to_inf_ratio = 0.10
+	}
+	country_modifier_neutral = {
+		cavalry_power = 0.25
+	}	
+	country_modifier_angry = {
+		cavalry_cost = 0.25
+		cavalry_power = -0.25
+		global_unrest = 10
+	}
+	land_ownership_modifier = {
+		aurora_loyalty_modifier = 0.2
+		aurora_influence_modifier = 0.2
+	}
+
+	# Influence modifiers
+	base_influence = 30
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+			}
+		}
+		influence = -40
+	}
+	
+	loyalty_modifier = {
+	
+	}
+
+	privileges = {
+		establish_aurora
+		greek_katafraktoi
+		kurdish_skirmishers
+		persian_cataphracts
+		french_chevaliers
+		slavic_hussars
+		landsknecht_auxiliaries
+		romanian_stakes
+	}
+
+	color = { 200 150 150 }
+}

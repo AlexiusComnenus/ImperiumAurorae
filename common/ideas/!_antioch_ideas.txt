@@ -1,0 +1,44 @@
+antioch_ideas = {
+	start = {
+		monthly_reform_progress_modifier = 0.1
+		cavalry_cost = -0.2
+		may_recruit_female_generals = yes
+	}
+	bonus = {
+		imperial_authority = 0.15
+		manpower_against_imperial_enemies = 40000
+	}
+	trigger = {
+		tag = Z17
+	}
+	free = yes
+
+	knights_of_dawn = {
+		cavalry_power = 0.15
+		cav_to_inf_ratio = 0.25
+	}
+	enlightened_subjects = {
+		vassal_forcelimit_bonus = 0.50
+		vassal_income = 0.25
+	}
+	infinite_journey_home = {
+		envoy_travel_time = -0.2
+		warscore_cost_vs_other_religion = -0.15
+	}
+	shining_banners = {
+		shock_damage = 0.15
+		cavalry_flanking = 0.25
+	}
+	bringers_of_light = {
+		improve_relation_modifier = 0.20
+		liberty_desire_from_subject_development = -0.25
+	}
+	forward_to_glory = {
+		army_tradition_from_battle = 0.50
+		cavalry_shock = 0.5
+	}
+	root_of_englightenment = {
+		innovativeness_gain = 0.25
+		institution_spread_from_true_faith = 0.5
+	}
+}

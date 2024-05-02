@@ -1,0 +1,287 @@
+regnum_gothorum_reform = {
+	icon = "legislative_sejm_reform"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			have_had_reform = regnum_gothorum_reform
+			has_reform = regnum_gothorum_reform
+		}
+		OR = {
+			tag = VAL
+			was_tag = VAL
+		}
+		primary_culture = visigothic
+	}
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	
+	fixed_rank = 2
+	
+	modifiers = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+		innovativeness_gain = 0.5
+		free_policy = 1
+		female_advisor_chance = 0.25
+		nobles_influence_modifier = -0.15
+		church_influence_modifier = -0.15
+		has_tercio = yes
+		allowed_tercio_fraction = 0.25
+		diplomatic_upkeep = 3
+		max_absolutism = 10
+	}
+	
+	custom_attributes = {
+		personal_union_war_contribution = yes
+		locked_government_type = yes
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		#government_abilities = {
+		#	naval_professionalism_mechanic
+		#}
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+visigothic_inquisition = {
+	icon = "religious_permanent_revolution_reform"
+	allow_normal_conversion = no
+	force_conversion_gives_global_holy_war_released_modifier = yes
+	lock_level_when_selected = yes
+	
+	potential = {
+		tag = VAL
+	}
+	trigger = {
+		OR = {
+			have_had_reform = visigothic_inquisition
+			has_reform = visigothic_inquisition
+		}
+		religion = protestant
+		primary_culture = visigothic
+	}
+	effect = {
+		custom_tooltip = world_crusade_tt
+		hidden_effect = {
+			if = {
+				limit = { is_defender_of_faith = yes }
+				add_country_modifier = {
+					name = gov_improved_defender_of_faith_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	post_removed_effect = {
+		remove_country_modifier = gov_improved_defender_of_faith_mod
+	}
+	custom_attributes = {
+		improved_defender_of_faith = yes	#Being Defender of Faith increases Dip Rep, Tolerance and Morale	
+		gain_monarch_power_from_force_converting = yes
+		same_religion_subject_bonus = yes
+	}
+	modifiers = {
+		enforce_religion_cost = -0.3
+		church_power_modifier = 0.2
+		global_missionary_strength = 0.03
+		tolerance_own = 2
+		tolerance_heretic = -3
+		tolerance_heathen = -3
+		relation_with_heretics = -50
+		relation_with_heathens = -30
+		relation_with_same_religion = 20
+		reverse_relation_with_same_religion = 20
+		church_loyalty_modifier = 0.10
+		all_estate_influence_modifier = -0.10
+		max_absolutism_effect = 0.1
+	}
+	ai = {
+		factor = 1000
+	}
+}
+
+imperium_gothorum_reform = {
+	icon = "legislative_sejm_reform"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			have_had_reform = imperium_gothorum_reform
+			has_reform = imperium_gothorum_reform
+		}
+		OR = {
+			tag = VAL
+			was_tag = VAL
+		}
+		primary_culture = visigothic
+	}
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	
+	fixed_rank = 3
+	
+	modifiers = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+		innovativeness_gain = 0.75
+		free_policy = 2
+		female_advisor_chance = 0.25
+		nobles_influence_modifier = -0.2
+		church_influence_modifier = -0.2
+		has_tercio = yes
+		allowed_tercio_fraction = 0.5
+		diplomatic_upkeep = 1
+		num_accepted_cultures = 2
+		max_absolutism = 20
+	}
+	
+	custom_attributes = {
+		personal_union_war_contribution = yes
+		locked_government_type = yes
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		#government_abilities = {
+		#	naval_professionalism_mechanic
+		#}
+	}
+}
+
+valencia_curtail_feudalism = {
+	icon = "absolutist_france_reform"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			tag = VAL
+			was_tag = VAL
+		}
+	}
+	trigger = {
+		OR = {
+			tag = VAL 
+			was_tag = VAL
+		}
+		OR = {
+			has_reform = valencia_curtail_feudalism
+			have_had_reform = valencia_curtail_feudalism
+		}
+		primary_culture = visigothic
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 30
+	nation_designer_trigger = {
+		culture = visigothic
+		technology_group = western
+	}
+	lock_level_when_selected = yes
+
+	modifiers = {
+		all_estate_influence_modifier = -0.1
+		nobles_loyalty_modifier = -0.25
+		church_loyalty_modifier = -0.05
+		max_absolutism = 10
+		global_autonomy = -0.05
+		autonomy_change_time = -0.25
+	}
+
+	custom_attributes = {
+		seizing_land_no_rebels = yes
+		diet_increases_not_influence = yes
+	}
+}
+
+valencia_bureaucracy = {
+	icon = "hispanic_monarchy"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			tag = VAL
+			was_tag = VAL
+		}
+	}
+	trigger = { 
+		tag = VAL 
+		OR = {
+			has_reform = valencia_bureaucracy
+			have_had_reform = valencia_bureaucracy
+		}
+		primary_culture = visigothic
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 30
+	nation_designer_trigger = {
+		culture = visigothic
+		technology_group = western
+	}
+	lock_level_when_selected = yes
+
+	government_abilities = {
+		system_of_councils_mechanic
+	}
+	modifiers = {
+		allow_free_estate_privilege_revocation = yes
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
+		advisor_cost = -0.15
+		advisor_pool = 1
+		max_absolutism = 10
+	}
+}
+
+valencia_parliament = {
+	icon = "british_monarchy"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = valencia_parliament
+			have_had_reform = valencia_parliament
+		}
+		tag = VAL
+	}
+	
+	trigger = {
+		tag = VAL 
+		OR = {
+			has_reform = valencia_parliament
+			have_had_reform = valencia_parliament
+		}
+		primary_culture = visigothic
+	}
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	modifiers = {
+		max_absolutism = 10
+		parliament_backing_chance = 0.10
+		parliament_effect_duration = 5
+		advisor_pool = 2
+		state_maintenance_modifier = -0.25
+	}
+	
+	custom_attributes = {
+		halved_parliament_bribes = yes
+		can_force_issue_through = yes
+		blocked_call_diet = yes
+	}
+	
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+	}
+	ai = {
+		factor = 1000
+	}
+}

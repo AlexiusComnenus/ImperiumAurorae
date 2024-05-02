@@ -1,0 +1,15 @@
+owner = PTG
+controller = PTG
+capital = "Parnaiba"
+is_city = yes
+culture = tupinamba
+religion = hellenic_pagan
+trade_goods = unknown
+base_tax = 1
+base_production = 1
+base_manpower = 1
+add_core = PTG
+discovered_by = south_american
+native_size = 15
+native_ferocity = 1
+native_hostileness = 3

@@ -1,0 +1,13 @@
+owner = CYI
+controller = CYI
+capital = "Bozhou"
+is_city = yes
+culture = yi
+religion = animism
+trade_goods = grain
+base_tax = 2
+base_production = 2
+base_manpower = 2
+add_core = CYI
+discovered_by = chinese
+discovered_by = nomad_group

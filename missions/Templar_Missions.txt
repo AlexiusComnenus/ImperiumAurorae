@@ -1,0 +1,1707 @@
+
+templar_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEM
+	}
+	has_country_shield = yes
+	
+	templar_valencia_relations = {
+		icon = friends_in_high_places
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = VAL
+				value = 50
+			}
+		}
+		
+		effect = {
+			create_alliance = VAL
+		}
+	}
+	
+	templar_strategic_partnership = {
+		icon = bohemian_crystal
+		required_missions = {
+			templar_valencia_relations
+		}
+		position = 2
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = VAL
+				value = 150
+			}
+			any_ally = {
+				tag = VAL
+				trust = { 
+					who = TEM 
+					value = 70 
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencian_naval_supplies
+				duration = -1
+			}
+			random_country = {
+				limit = {
+					tag = VAL
+				}
+				add_country_modifier = {
+					name = templaric_auxiliaries
+					duration = -1
+				}
+			}
+			1750 = {
+				change_trade_goods = naval_supplies
+			}
+			4560 = {
+				change_trade_goods = naval_supplies
+			}
+			custom_tooltip = strategic_partnership_tt
+		}
+	}
+	
+	templar_valencia_union = {
+		icon = imperial_ascendancy
+		required_missions = {
+			templar_strategic_partnership
+		}
+		position = 3
+		
+		trigger = {
+			OR = {
+				reverse_has_opinion = {
+					who = VAL
+					value = 200
+				}
+				reverse_has_opinion = {
+					who = SPA
+					value = 200
+				}
+			}
+			any_ally = {
+				OR = {
+					tag = VAL
+					was_tag = VAL
+				}
+				trust = { 
+					who = TEM 
+					value = 90 
+				}
+				NOT = {
+					military_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
+		}
+		
+		effect = {
+			random_ally = {
+				limit = {
+					OR = {
+						tag = VAL
+						was_tag = VAL
+					}
+				}
+				country_event = { id = ia_flavor_tem.6 }
+			}
+			custom_tooltip = valencian_pu_tt
+		}
+	}
+	
+	templar_internal_focus = {
+		icon = centralized_empire
+		required_missions = {
+		}
+		position = 4
+		
+		trigger = {
+			has_idea_group = religious_ideas
+		}
+		
+		effect = {
+			333 = {
+				add_province_modifier = {
+					name = templaric_building_project
+					duration = 3650
+				}
+			}
+			4560 = {
+				add_province_modifier = {
+					name = templaric_building_project
+					duration = 3650
+				}
+			}
+			4559 = {
+				add_province_modifier = {
+					name = templaric_building_project
+					duration = 3650
+				}
+			}
+		}
+	}
+	
+	templar_belearic_development = {
+		icon = ansbach_succession
+		required_missions = {
+			templar_internal_focus
+		}
+		position = 5
+		
+		trigger = {
+			333 = {
+				num_of_buildings_in_province = 3
+			}
+			4560 = {
+				num_of_buildings_in_province = 3
+			}
+			4559 = {
+				num_of_buildings_in_province = 3
+			}
+			full_idea_group = religious_ideas
+		}
+		
+		effect = {
+			333 = {
+				add_province_triggered_modifier = beleares_flourishing
+				center_of_trade = 1
+			}
+			4560 = {
+				add_province_triggered_modifier = beleares_flourishing
+			}
+			4559 = {
+				add_province_triggered_modifier = beleares_flourishing
+				#change_trade_goods = glass
+			}
+		}
+	}
+	
+	templar_convert_provinces = {
+		icon = holy_state
+		required_missions = {
+			templar_belearic_development
+		}
+		position = 6
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = obj_convert_10_provinces_tooltip
+				check_variable = { which = num_converted_religion value = 10 }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templaric_recruitment
+				duration = -1
+			}
+		}
+	}
+	
+	templar_external_focus = {
+		icon = answer_the_roman_question
+		required_missions = {
+		}
+		position = 7
+		
+		trigger = {
+			has_idea_group = theocracy_gov_ideas
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_expansion_drive
+				duration = 7300
+			}
+		}
+	}
+	
+	templar_sizable_navy = {
+		icon = crusader_fleet
+		required_missions = {
+			templar_external_focus
+		}
+		position = 8
+		
+		trigger = {
+			num_of_transport = 20
+			OR = {
+				num_of_galley = 30
+				num_of_heavy_ship = 10
+			}
+			has_flagship = yes
+			full_idea_group = theocracy_gov_ideas
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_marines
+				duration = -1
+			}
+		}
+	}
+	
+	templar_expansion = {
+		icon = feast_of_pheasants
+		required_missions = {
+			templar_sizable_navy
+		}
+		position = 9
+		
+		trigger = {
+			num_of_trusted_allies = 1
+			num_of_subjects = 2
+			num_of_states = 5
+			num_accepted_cultures = 3
+			reform_level = 7
+		}
+		
+		effect = {
+			change_dip = 1
+			add_government_reform = foreign_talents_reform
+			333 = {
+				add_permanent_province_modifier	 = {
+					name = templar_tercios
+					duration = -1
+					hidden = yes
+				}
+			}
+			4560 = {
+				add_permanent_province_modifier	 = {
+					name = templar_tercios
+					duration = -1
+					hidden = yes
+				}
+			}
+			4559 = {
+				add_permanent_province_modifier	 = {
+					name = templar_tercios
+					duration = -1
+					hidden = yes
+				}
+			}
+		}
+	}
+	
+	templar_mission_of_discovery = {
+		icon = mission_norwegian_ship
+		required_missions = {
+			
+		}
+		position = 10
+		
+		trigger = {
+			OR = {
+				any_owned_province = {
+					area = macaronesia_area
+				}
+				KCL = {
+					is_subject_of = ROOT
+				}
+				KOS = {
+					is_subject_of = ROOT
+				}
+			}
+			OR = {
+				exploration_ideas = 3
+				any_subject_country = {
+					exploration_ideas = 3
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_colonial_ventures
+				duration = 7300
+			}
+			create_explorer = { tradition = 50 }
+			create_conquistador = { tradition = 50 }
+			guinea_region = { add_permanent_claim = ROOT }
+			kongo_region = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	templar_mission_of_civilization = {
+		icon = mission_marines
+		required_missions = {
+			templar_mission_of_discovery
+		}
+		position = 11
+		
+		trigger = {
+			OR = {
+				any_subject_country = {
+					is_colonial_nation = yes
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 10
+					OR = {
+						region = guinea_region
+						region = niger_region
+						region = sahel_region
+						region = central_africa_region
+						region = kongo_region
+						region = south_africa_region
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_colonial_conquests
+				duration = -1
+			}
+			
+			every_subject_country = {
+				limit = { is_colonial_nation = yes }
+				add_country_modifier = {
+					name = templar_colonial_funding
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	templar_mission_of_education = {
+		icon = mission_ruler_of_north_america
+		required_missions = {
+			templar_mission_of_civilization
+		}
+		position = 12
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 100
+				OR = {
+					NOT = { continent = europe }
+					region = guinea_region
+					region = niger_region
+					region = sahel_region
+					region = central_africa_region
+					region = kongo_region
+					region = south_africa_region
+				}
+				religion = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_colonial_success
+				duration = -1
+			}
+			
+			every_subject_country = {
+				limit = { is_colonial_nation = yes }
+				add_country_modifier = {
+					name = templar_colonial_military
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+templar_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEM
+	}
+	has_country_shield = yes
+	
+	templar_establish_banks = {
+		icon = dominant_economy
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			333 = {
+				has_building = temple
+				
+			}
+			if = {
+				limit = { ai = no }
+				treasury = 200
+				333 = {
+					fort_level = 3
+				}
+			}
+		}
+		
+		effect = {
+			333 = {
+				add_permanent_province_modifier = {
+					name = templar_bank
+					duration = -1
+				}
+				change_trade_goods = gold
+			}
+		}
+	}
+	
+	templar_the_reformation = {
+		icon = chivalry_is_not_dead
+		required_missions = {
+			
+		}
+		position = 5
+		
+		trigger = {
+			is_religion_enabled = protestant
+		}
+		
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = ROOT
+							culture_group = ROOT
+							has_owner_accepted_culture = yes
+						}
+						has_owner_religion = yes
+					}
+					change_religion = protestant
+				}
+			}
+			custom_tooltip = religion_flip_templarite_tt
+			change_religion = protestant
+			capital_scope = {
+				if = {
+					limit = { NOT = { religion = protestant } }
+					change_religion = protestant
+					add_permanent_province_modifier = {
+						name = "religious_zeal_at_conv"
+						duration = 9000
+					}
+				}
+			}
+			add_country_modifier = {
+				name = conversion_zeal
+				duration = 3650
+			}
+			add_devotion = 100
+			add_prestige = 100
+		}
+	}
+	
+	templar_missives_of_the_word = {
+		icon = a_center_of_religion
+		required_missions = {
+			templar_the_reformation
+		}
+		position = 6
+		
+		trigger = {
+			religious_unity = 1
+			reform_level = 4
+			religion = protestant
+		}
+		
+		effect = {
+			add_government_reform = templar_crusade_reform	
+		}
+	}
+	
+	templar_spread_the_word = {
+		icon = knights_of_the_new_world
+		required_missions = {
+			templar_missives_of_the_word
+		}
+		position = 7
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				OR = {
+					is_defender_of_faith_of_tier = 4
+					any_ally = {
+						is_defender_of_faith_of_tier = 4
+					}
+					overlord = {
+						is_defender_of_faith_of_tier = 4
+					}
+				}
+			}
+			else = { is_year = 1550 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = crusaders_rallied
+				duration = 3650
+			}
+		}
+	}
+	
+}
+
+templar_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEM
+	}
+	has_country_shield = yes
+	
+	templar_spy_efforts = {
+		icon = plague_doctor_training
+		required_missions = {
+			templar_establish_banks
+			templar_protect_pilgrims
+		}
+		position = 2
+		
+		trigger = {
+			treasury = 100
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_spies
+				duration = -1
+			}
+			add_treasury = -100
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+		}
+	}
+	
+	templar_nail_of_true_cross = {
+		icon = show_piety
+		required_missions = {
+			templar_spy_efforts
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				if = {
+					limit = {
+						151 = {
+							owner = {
+								is_subject = yes
+							}
+						}
+					}
+					OR = {
+						151 = {
+							owner = {
+								overlord = {
+									has_spy_network_from = {
+										who = ROOT
+										value = 50
+									}
+								}
+							}
+						}
+						controls = 151
+					}
+				} else {
+					OR = {
+						151 = {
+							owner = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 50
+								}
+							}
+						}
+						controls = 151
+					}
+				}
+			}
+			else = { is_year = 1500 }
+			
+			treasury = 50
+			dip_power = 50
+		}
+		
+		effect = {
+			add_treasury = -50
+			add_dip_power = -50
+			add_country_modifier = {
+				name = nail_of_the_true_cross
+				duration = -1
+			}
+		}
+	}
+	
+	templar_seamless_robe_of_jesus = {
+		icon = mlo_renaissance_city
+		required_missions = {
+			templar_nail_of_true_cross
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			province_id = 80
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				if = {
+					limit = {
+						80 = {
+							owner = {
+								is_subject = yes
+							}
+						}
+					}
+					OR = {
+						80 = {
+							owner = {
+								overlord = {
+									has_spy_network_from = {
+										who = ROOT
+										value = 60
+									}
+								}
+							}
+						}
+						controls = 80
+					}
+				} else {
+					OR = {
+						80 = {
+							owner = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 60
+								}
+							}
+						}
+						controls = 80
+					}
+				}
+			}
+			else = {
+				is_year  = 1510
+			}
+			
+			treasury = 100
+			dip_power = 50
+		}
+		
+		effect = {
+			add_treasury = -100
+			add_dip_power = -50
+			add_country_modifier = {
+				name = seamless_robe_of_jesus
+				duration = -1
+			}
+		}
+	}
+	
+	templar_crown_of_thorns = {
+		icon = spread_the_von_wettins
+		required_missions = {
+			templar_seamless_robe_of_jesus
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+			province_id = 183
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				if = {
+					limit = {
+						183 = {
+							owner = {
+								is_subject = yes
+							}
+						}
+					}
+					OR = {
+						183 = {
+							owner = {
+								overlord = {
+									has_spy_network_from = {
+										who = ROOT
+										value = 70
+									}
+								}
+							}
+						}
+						controls = 183
+					}
+				} else {
+					OR = {
+						183 = {
+							owner = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 70
+								}
+							}
+						}
+						controls = 183
+					}
+				}
+			}
+			else = { is_year = 1520 }
+			treasury = 100
+			dip_power = 50
+		}
+		
+		effect = {
+			add_treasury = -100
+			add_dip_power = -50
+			add_country_modifier = {
+				name = crown_of_thorns_tem
+				duration = -1
+			}
+		}
+	}
+	
+	templar_bones_of_st_peter = {
+		icon = shield_of_christendom
+		required_missions = {
+			templar_crown_of_thorns
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			province_id = 43
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				if = {
+					limit = {
+						43 = {
+							owner = {
+								is_subject = yes
+							}
+						}
+					}
+					OR = {
+						43 = {
+							owner = {
+								overlord = {
+									has_spy_network_from = {
+										who = ROOT
+										value = 80
+									}
+								}
+							}
+						}
+						controls = 43
+					}
+				} else {
+					OR = {
+						43 = {
+							owner = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 80
+								}
+							}
+						}
+						controls = 43
+					}
+				}
+			}
+			else = { is_year = 1530 }
+			
+			treasury = 200
+			dip_power = 100
+		}
+		
+		effect = {
+			add_treasury = -200
+			add_dip_power = -100
+			add_country_modifier = {
+				name = bones_of_st_peter
+				duration = -1
+			}
+		}
+	}
+	
+	templar_holy_grail = {
+		icon = the_fountain_of_youth
+		required_missions = {
+			templar_bones_of_st_peter
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			province_id = 378
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				OR = {
+					controls = 378
+					378 = {
+						owner = {
+							has_spy_network_from = {
+								who = ROOT
+								value = 90
+							}
+						}
+					}
+				}
+			}
+			else = { is_year = 1540 }
+			
+			treasury = 200
+			dip_power = 100
+		}
+		
+		effect = {
+			add_treasury = -200
+			add_dip_power = -100
+			add_country_modifier = {
+				name = holy_grail
+				duration = -1
+			}
+		}
+	}
+	
+	templar_final_crusade = {
+		icon = league_of_the_public_weal
+		required_missions = {
+			templar_holy_grail
+			templar_spread_the_word
+		}
+		position = 8
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				treasury = 2000
+				manpower = 100
+			}
+			else = {
+				is_year = 1575
+			}
+			#manpower_percentage = 0.9
+			is_at_war = no
+			has_reform = templar_crusade_reform
+			religion = protestant
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.3
+			}
+			custom_tooltip = final_crusade_tt
+		}
+	}
+	
+	templar_lance_of_longinus = {
+		icon = kingdom_of_heaven
+		required_missions = {
+			templar_final_crusade
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			province_id = 379
+		}
+		
+		trigger = {
+			OR = {
+				controls = 379
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lance_of_longinus
+				duration = -1
+			}
+		}
+	}
+	
+	templar_slay_yanshing = {
+		icon = la_marseillaise
+		required_missions = {
+			templar_lance_of_longinus
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			province_id = 2313
+		}
+		
+		trigger = {
+			controls = 2313
+			war_score_against = {
+				who = Z17
+				value = 90
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.4
+			}
+		}
+	}
+}
+
+templar_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEM
+	}
+	has_country_shield = yes
+	
+	templar_protect_pilgrims = {
+		icon = kingdom_of_cyprus
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				custom_trigger_tooltip = {
+					tooltip = templar_protect_pilgrims_tt
+					check_variable = {
+						which = protected_pilgrims
+						value = 5
+					}
+				}
+			} 
+			else = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = templar_protect_pilgrims_tt
+						check_variable = {
+							which = protected_pilgrims
+							value = 5
+						}
+					}
+					is_year = 1490
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = protecting_pilgrims
+				duration = -1
+			}
+			add_prestige = 20
+			add_devotion = 20
+		}
+	}
+	
+	templar_lead_reformation = {
+		icon = geneva_conventions
+		required_missions = {
+			
+		}
+		
+		trigger = {	
+			calc_true_if = {
+				all_country = {
+					religion = ROOT
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				amount = 20
+			}
+			OR = {
+				is_defender_of_faith = yes
+				any_ally = {
+					is_defender_of_faith = yes
+				}
+				overlord = {
+					is_defender_of_faith = yes
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { is_religion_enabled = protestant }
+					}
+				}
+				add_reform_desire = 1
+				country_event = {
+					id = 2001
+					days = 5
+				}
+			}
+			
+				add_country_modifier = {
+					name = leading_the_reformation
+					duration = -1
+				}
+		}
+		
+		position = 3	
+	}
+	
+	templar_sieze_sicily = {
+		icon = king_of_naples
+		required_missions = {
+			templar_begin_mediterranean_campaign
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				area = naples_area
+				area = calabria_area
+				area = western_sicily_area
+				area = sicily_area
+			}
+		}
+		
+		trigger = {	
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 5
+				OR = {
+					area = naples_area
+					area = calabria_area
+					area = western_sicily_area
+					area = sicily_area
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = naples_area
+						area = calabria_area
+						area = western_sicily_area
+						area = sicily_area
+					}
+				}
+				add_nationalism = -5
+			}
+			add_adm_power = 100
+		}	
+	}
+	
+	templar_reclaim_malta = {
+		icon = fight_bosnian_heresies
+		required_missions = {
+			templar_sieze_sicily
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			province_id = 126
+		}
+		
+		trigger = {	
+			owns_or_subject_of = 126
+		}
+		
+		effect = {
+			aegean_archipelago_area = {
+				add_permanent_claim = ROOT
+			}
+			163 = {
+				add_permanent_claim = ROOT
+			}
+			321 = {
+				add_permanent_claim = ROOT
+			}
+			add_dip_power = 100
+		}	
+	}
+	
+	templar_fortify_malta = {
+		icon = fortify_malta
+		required_missions = {
+			templar_reclaim_malta
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			province_id = 126
+		}
+		
+		trigger = {	
+			126 = {
+				fort_level = 2
+				religion = ROOT
+			}
+		}
+		
+		effect = {
+			126 = {
+				change_culture = ROOT
+				add_permanent_province_modifier = {
+					name = templar_malta_forts
+					duration = -1
+				}
+			}
+		}	
+	}
+}
+
+templar_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEM
+	}
+	has_country_shield = yes
+	
+	templar_compete_vandals = {
+		icon = challenge_spanish_power
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			OR = {
+				AND = {
+					num_of_galley = TUN
+					num_of_heavy_ship = TUN
+					#num_of_transport = 10
+					army_size = TUN
+					manpower_percentage = 0.5
+				}
+				NOT = { exists = TUN }
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.2
+				days = 5
+			}
+			add_country_modifier = {
+				name = templar_disembarking
+				duration = 3650
+			}
+		}
+	}
+	
+	templar_pacify_vandals = {
+		icon = consolidate_switzerland
+		required_missions = {
+			templar_compete_vandals
+		}
+		position = 2
+		
+		trigger = {
+			OR = {
+				any_subject_country = {
+					tag = TUN
+				}
+				TUN = {
+					religion = ROOT
+					is_subject = no
+				}
+				owns_all_provinces = {
+					area = tunisia_area
+				}
+				NOT = { exists = TUN }
+			}
+			
+		}
+		
+		effect = {
+			custom_tooltip = fate_vandalia
+			if = {
+				limit = {
+					any_subject_country = {
+						tag = TUN
+					}
+				}
+				add_country_modifier = {
+					name = templar_barbary
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					owns_all_provinces = {
+						area = tunisia_area
+					}
+				}
+				tunisia_area = {
+					change_religion = ROOT
+					add_nationalism = -5
+				}
+			}
+			else_if = {
+				limit = {
+					TUN = {
+						religion = ROOT
+						is_subject = no
+					}
+				}
+				add_historical_friend = TUN
+				TUN = {
+					add_historical_friend = TEM
+				}
+				create_alliance = TUN
+				add_country_modifier = {
+					name = templar_vandal_crusade
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	templar_compete_morocco = {
+		icon = consolidate_the_stadholders
+		required_missions = {
+			templar_pacify_vandals
+		}
+		position = 3
+		
+		trigger = {
+			OR = {
+				AND = {
+					num_of_galley = MOR
+					num_of_heavy_ship = MOR
+					exists = MOR
+				}
+				AND = {
+					num_of_galley = Y30
+					num_of_heavy_ship = Y30
+					exists = Y30
+				}
+				AND = {
+					num_of_galley = Y31
+					num_of_heavy_ship = Y31
+					exists = Y31
+				}
+				AND = {
+					NOT = { exists = MOR }
+					NOT = { exists = Y30 }
+					NOT = { exists = Y31 }
+				}
+			}
+			
+		}
+		
+		effect = {
+			barbary_coast_area = {
+				add_claim = ROOT
+			}
+			algiers_area = {
+				add_claim = ROOT
+			}
+			add_country_modifier = {
+				name = moroccan_crusade
+				duration = 7300
+			}
+			if = {
+				limit = {
+					KCL = { is_subject = no }
+				}
+				KCL = {
+					country_event = {
+						id = ia_flavor_tem.17
+						days = 5
+					}
+				}
+			}
+			if = {
+				limit = {
+					KOS = { is_subject = no }
+				}
+				KOS = {
+					country_event = {
+						id = ia_flavor_tem.17
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	
+	templar_complete_reconquista = {
+		icon = convert_the_holy_lands
+		required_missions = {
+			templar_compete_morocco
+		}
+		position = 4
+		
+		trigger = {
+			iberia_region = {
+				type = all
+				owner = { religion_group = christian }
+			}
+			maghreb_region = {
+				type = all
+				owner = { religion_group = christian }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_reconquista
+				duration = -1
+			}
+		}
+	}
+	
+	templar_begin_mediterranean_campaign = {
+		icon = imperial_navy
+		required_missions = {
+			
+		}
+		position = 5
+		
+		trigger = {
+			naval_forcelimit = 20
+			navy_size = 20
+		}
+		
+		effect = {
+			provence_area = {
+				add_permanent_claim = ROOT
+			}
+			corsica_sardinia_area = {
+				add_permanent_claim = ROOT
+			}
+			liguria_area = {
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			naples_area = {
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				add_permanent_claim = ROOT
+			}
+			capital_scope = {
+				ROOT = { galley = PREV }
+				ROOT = { galley = PREV }
+				ROOT = { galley = PREV }
+				ROOT = { galley = PREV }
+			}
+		}
+	}
+	
+	templar_take_provence = {
+		icon = develop_provence
+		required_missions = {
+			templar_begin_mediterranean_campaign
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				area = liguria_area
+				area = provence_area
+			}
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 3
+				OR = {
+					area = liguria_area
+					area = provence_area
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = liguria_area
+						area = provence_area
+					}
+				}
+				add_nationalism = -5
+			}
+			add_adm_power = 100
+		}
+	}
+	
+	templar_defeat_genoa = {
+		icon = Burn_Wooden_Wall
+		required_missions = {
+			templar_take_provence
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			area = corsica_sardinia_area
+		}
+		
+		trigger = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_subjects_with = {
+					value = 3
+					OR = {
+						area = corsica_sardinia_area
+					}
+				}
+				AND = {
+					exists = SAR
+					exists = COR
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = corsica_sardinia_area
+					}
+				}
+				add_nationalism = -5
+			}
+			add_dip_power = 100
+			IF = {
+				limit = {
+					exists = COR
+					NOT = { 
+						COR = {
+							religion = ROOT
+						}
+					}
+				}
+				COR = {
+					change_religion = ROOT
+				}
+			}
+			IF = {
+				limit = {
+					exists = SAR
+					NOT = { 
+						SAR = {
+							religion = ROOT
+						}
+					}
+				}
+				SAR = {
+					change_religion = ROOT
+				}
+			}
+			2954 = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	templar_aegean_foothold = {
+		icon = foothold_in_greece
+		required_missions = {
+			templar_defeat_genoa
+			templar_reclaim_malta
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				area = aegean_archipelago_area
+				province_id = 163
+				province_id = 321
+			}
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 4
+				OR = {
+					area = aegean_archipelago_area
+					province_id = 163
+					province_id = 321
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = aegean_archipelago_area
+						province_id = 163
+						province_id = 321
+					}
+				}
+				add_permanent_province_modifier = {
+					name = templar_aegean_forts
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	templar_latin_empire = {
+		icon = mission_plc_purple_phoenix
+		required_missions = {
+			templar_aegean_foothold
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		
+		trigger = {
+			owns = 151
+		}
+		
+		effect = {
+			GRE = {
+				inherit = BYZ
+			}
+			151 = {
+				add_core = LAE
+			}
+			every_province = {
+				limit = { culture = greek }
+				add_core = LAE
+			}
+			release = LAE
+			LAE = {
+				change_religion = ROOT
+				change_government = monarchy
+			}
+			create_march = LAE
+		}
+	}
+	
+	templar_first_reform = {
+		icon = mission_united_knight_order
+		required_missions = {
+			
+		}
+		position = 10
+		
+		trigger = {
+			army_professionalism = 0.25
+			army_tradition = 50
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.18
+			}
+			add_country_modifier = {
+				name = templar_maneuver_boost_1
+				duration = -1
+			}
+		}
+	}
+	
+	templar_second_reform = {
+		icon = spa_reform_tercios
+		required_missions = {
+			templar_first_reform
+		}
+		position = 11
+		
+		trigger = {
+			army_professionalism = 0.50
+			army_tradition = 75
+			religion = protestant
+			calc_true_if = {
+				all_country = {
+					religion = ROOT
+				}
+				amount = 20
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.18
+			}
+			add_country_modifier = {
+				name = templar_maneuver_boost_2
+				duration = -1
+			}
+		}
+	}
+	
+	templar_third_reform = {
+		icon = mission_modern_knight_army
+		required_missions = {
+			templar_second_reform
+		}
+		position = 12
+		
+		trigger = {
+			army_professionalism = 0.75
+			army_tradition = 75
+			religion = protestant
+			OR = {
+				is_defender_of_faith_of_tier = 5
+				overlord = { 
+					tag = VAL
+					religion = protestant
+					is_defender_of_faith_of_tier = 5 
+				}
+				any_ally = {
+					tag = VAL
+					religion = protestant
+					is_defender_of_faith_of_tier = 5
+				}
+				is_hegemon = yes
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_tem.18
+			}
+			add_country_modifier = {
+				name = templar_maneuver_boost_3
+				duration = -1
+			}
+		}
+	}
+}

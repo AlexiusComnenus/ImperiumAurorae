@@ -1,0 +1,40 @@
+VAL_ideas = {
+	start = {
+		technology_cost = -0.1
+		global_sailors_modifier = 0.5
+	}
+	bonus = {
+		manpower_in_own_culture_provinces = 0.25
+	}
+	trigger = {
+		tag = VAL
+	}
+	free = yes
+
+	shield_against_pirates = {
+		naval_tradition_from_battle = 0.5
+		defensiveness = 0.15
+	}
+	gothica_resurgent = {
+		culture_conversion_cost = -0.20
+		same_culture_advisor_cost = -0.15
+	}
+	roman_jurisprudence = {
+		monthly_reform_progress_modifier = 0.3
+	}
+	grand_arsenal = {
+		global_ship_cost = -0.10
+		ship_durability = 0.10
+	}
+	val_embrace_the_reformation = {
+		cb_on_religious_enemies = yes
+		enforce_religion_cost = -0.25
+	}
+	life_on_the_sea = {
+		allowed_marine_fraction = 0.5
+		sailors_recovery_speed = 0.5
+	}
+	from_the_ashes = {
+		morale_damage_received = -0.1
+	}
+}

@@ -1,0 +1,140 @@
+on_startup = {
+	events = {
+		ia_flavor_val.7
+		almohads_crisis.0
+		ia_flavor_gra.1
+		ia_flavor_sax.26
+		ia_flavor_sax.28
+		#ivycurse.102
+		ia_flavor_thu.4
+		ia_tutorial.1
+	}
+}
+
+on_new_term_election = {
+	events = {
+		ia_flavor_gra.5 #Event for Granada to select their next capital
+	}
+}
+
+on_death_election = {
+	events = {
+		ia_flavor_gra.5 #Event for Granada to select their next capital
+	}
+}
+
+on_war_won = {
+	events = {
+		ia_flavor_hes.4
+	}
+}
+
+on_heir_death = {
+	if = {
+		limit = { tag = Z17 }
+		country_event = { id = antioch.8 }
+	}
+}
+
+on_yearly_pulse_2 = {
+	events = {
+		saxon_province.1
+		besseres_hrr_imperial_diet_events.1000
+		dutch_domination.60
+		dotfset.26
+		dotfset.24
+		ia_flavor_sax.27
+		ia_flavor_hes.2
+		ia_flavor_thu.1
+		ia_flavor_val.12
+		ia_flavor_val.13
+		incident_AOL.1
+		dotfset.27
+		ia_flavor_sax.29
+	}
+	random_events = {
+		250 = ia_flavor_sax.22
+		250 = ia_flavor_sax.23
+		75 = ia_flavor_tem.11
+		
+		1000 = 0
+	}
+}
+
+on_monthly_pulse = {
+	#events = {
+	#	ia_flavor_tem.25
+	#}
+	if = {
+		limit = { 
+			is_in_war = {
+				casus_belli = cb_final_crusade
+			}
+		}
+		country_event = { id = ia_flavor_tem.25 }
+	}
+}
+
+on_conquistador_empty = {
+	random_events = {
+		10 = seven_cities_events.1
+		10 = seven_cities_events.2
+		10 = seven_cities_events.3
+		10 = seven_cities_events.4
+		10 = seven_cities_events.5
+		10 = seven_cities_events.6
+		10 = seven_cities_events.7
+		10 = seven_cities_events.8
+
+		10 = seven_cities_events.100
+		10 = seven_cities_events.101
+		10 = seven_cities_events.102
+		10 = seven_cities_events.103
+		10 = seven_cities_events.104
+		10 = seven_cities_events.105
+
+		50 = seven_cities_events.200
+		50 = seven_cities_events.201
+		50 = seven_cities_events.202
+		50 = seven_cities_events.203
+		50 = seven_cities_events.204
+		50 = seven_cities_events.205
+		50 = seven_cities_events.206
+		50 = seven_cities_events.207
+		50 = seven_cities_events.208
+		50 = seven_cities_events.209
+		50 = seven_cities_events.210
+		50 = seven_cities_events.211
+		50 = seven_cities_events.212
+		50 = seven_cities_events.213
+		50 = seven_cities_events.214
+		50 = seven_cities_events.215
+		50 = seven_cities_events.216
+		50 = seven_cities_events.217
+		50 = seven_cities_events.218
+		50 = seven_cities_events.219
+		50 = seven_cities_events.220
+		50 = seven_cities_events.221
+		50 = seven_cities_events.222
+		50 = seven_cities_events.223
+
+		10 = seven_cities_events.302
+		10 = seven_cities_events.303
+		10 = seven_cities_events.308
+		10 = seven_cities_events.309
+
+		10 = seven_cities_events.400
+		10 = seven_cities_events.401
+		10 = seven_cities_events.402
+		10 = seven_cities_events.405
+		10 = seven_cities_events.406
+		10 = seven_cities_events.407
+		10 = seven_cities_events.408
+		10 = seven_cities_events.409
+		10 = seven_cities_events.410
+		10 = seven_cities_events.413
+		10 = seven_cities_events.414
+
+		300 = 0
+	}
+}

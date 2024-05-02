@@ -1,0 +1,55 @@
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 2
+technology_group = nomad_group
+religion = khurmazta
+primary_culture = khazak
+capital = 465
+1444.11.11= {
+	monarch = {
+		name = "Iskender"
+		dynasty = "Oghuz"
+		adm = 2
+		dip = 3
+		mil = 2
+		birth_date = 1379.1.1
+		religion = khurmazta
+		culture = khazak
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Gunduz"
+		dynasty = "Dulo"
+		adm = 4
+		dip = 3
+		mil = 3
+		country_of_origin = NOG
+		birth_date = 1399.2.7
+		death_date = 1459.2.7
+		female = yes
+		religion = khurmazta
+		culture = bashkir
+	}
+	add_queen_personality = scholar_personality
+	add_queen_personality = tolerant_personality
+	heir = {
+		name = "Dukak"
+		monarch_name = "Dukak"
+		dynasty = "Oghuz"
+		adm = 6
+		dip = 6
+		mil = 4
+		birth_date = 1406.11.13
+		death_date = 1471.11.13
+		claim = 89
+		religion = khurmazta
+		culture = turkmeni
+	}
+	add_heir_personality = strict_personality
+	add_heir_personality = tactical_genius_personality
+}
+1444.11.11= {
+	add_prestige = 75
+	add_treasury = 50
+}

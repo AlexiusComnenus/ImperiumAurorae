@@ -1,0 +1,34 @@
+﻿l_english:
+ change_deity.1.t: Change our current patron deity.
+ change_deity.1.d: Select a patron deity to worship.
+ change_deity.1.a: Iupiter
+ change_deity.2.a: Iuno
+ change_deity.3.a: Neptunus
+ change_deity.4.a: Venus
+ change_deity.5.a: Mars
+ change_deity.6.a: Ceres
+ change_deity.7.a: Vulcan
+ change_deity.8.a: Minerva
+ change_deity.9.a: Diana
+ change_deity.10.a: Apollo
+ change_deity.11.a: Mercury
+ change_deity.12.a: Vesta
+ 
+ restore_finland: Restore Finland
+ restore_transylvania: Restore Transylvania
+ 
+ estate_aurora: Auroral Guard
+ aurora_loyalty_modifier: Enthusiasm of the Aurora
+ aurora_influence_modifier: Strength of the Aurora
+ establish_aurora: Establish the Auroral Guard
+ greek_katafraktoi: Greek Katafraktoi
+ kurdish_skirmishers: Kurdish Skirmishers
+ french_chavaliers: French Chevaliers
+ slavic_hussars: Slavic Hussars
+ landsknecht_auxiliaries: Landsknecht Foot-Knights
+ romanian_stakes: Romanian Stake-smiths
+ 
+ antioch_convert_rome_title: Convert Rome
+ antioch_convert_rome_desc: Rome has only recenly been integrated into our Enlightened Realm, and indeed, many still cling to the old ways there and resist assimilation. This cannot stand!
+ antioch_purge_catholics_title: Purge the Catholics
+ antioch_purge_catholics_desc: While they have nominally bent the knee, the Crusaders still spout zealous rhetoric and come scandalously close to spitting in our face. They shall be brought to heel.

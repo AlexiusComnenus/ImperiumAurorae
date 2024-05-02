@@ -1,0 +1,208 @@
+# The Aurora Guard
+merc_aurora_knights = {
+    regiments_per_development = 0.06
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	#mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	counts_towards_force_limit = no
+	cavalry_weight = 1
+	home_province = 2313
+	sprites = { dlc003_pol_sprite_pack }
+    trigger = {
+		OR = {
+			is_emperor = yes
+			tag = Z17
+		}
+	}
+	cost_modifier = 2
+	modifier = {
+		cavalry_power = 0.15
+		morale_damage_received = -0.25
+		force_march_free = yes
+		cav_to_inf_ratio = 1
+		manpower_recovery_speed = -0.50
+		may_recruit_female_generals = yes
+        female_advisor_chance = 0.5
+		morale_damage = 0.50
+		cavalry_shock = 1
+		shock_damage = 0.20
+		leader_land_shock = 6
+		leader_land_manuever = 2	
+		leader_siege = 2
+		reinforce_speed = -0.50
+		global_manpower_modifier = -0.25
+		max_general_shock = 3
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.50
+	}
+}
+
+merc_order_of_dawn = {
+    regiments_per_development = 0.06
+	cavalry_weight = 1
+	home_province = 2313
+	sprites = { dlc003_pol_sprite_pack }
+    trigger = {
+		is_emperor = no
+		religion = hellenic_pagan_reformed
+	}
+	cost_modifier = 1.5
+	counts_towards_force_limit = no
+	mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	modifier = {
+		cavalry_power = 0.15
+		cav_to_inf_ratio = 1
+		manpower_recovery_speed = -0.25
+		may_recruit_female_generals = yes
+        female_advisor_chance = 0.5
+		shock_damage = 0.10
+		morale_damage = 0.50
+		cavalry_shock = 1
+		leader_land_shock = 6
+		leader_land_manuever = 2	
+		leader_siege = 2
+		reinforce_speed = -0.25
+		max_general_shock = 3
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.25
+	}
+}
+
+merc_templar_knights = {
+    regiments_per_development = 0.06
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	#mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	counts_towards_force_limit = no
+	cavalry_weight = 0.8
+	artillery_weight = 0.2
+	home_province = 333
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			tag = TEM
+			any_ally = {
+				tag = TEM
+			}
+			any_subject_country = {
+				tag = TEM
+			}
+		}
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+	}
+	cost_modifier = 1.5
+	modifier = {
+		cavalry_power = 0.25
+		morale_damage_received = -0.15
+		force_march_free = yes
+		cav_to_inf_ratio = 1
+		manpower_recovery_speed = -0.25	
+		leader_land_shock = 6
+		leader_land_manuever = 6
+		max_general_maneuver = 3
+		shock_damage_received = -0.20
+		shock_damage = 0.10
+		reinforce_speed = -0.5
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.50
+	}
+}
+
+merc_varangian_guard = {
+    regiments_per_development = 0.06
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0.33
+	home_province = 151
+	counts_towards_force_limit = no
+	sprites = { dlc116_NOR_sprite_pack }
+    trigger = {
+		tag = BYZ
+		owns = 151
+	}
+	cost_modifier = 1.5
+	modifier = {
+		infantry_power = 0.5
+		morale_damage_received = -0.50
+		force_march_free = yes
+		manpower_recovery_speed = -0.5
+		leader_land_shock = 3
+		leader_land_fire = 3
+		shock_damage = 0.10
+		reinforce_speed = -0.50
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.50
+	}
+}
+
+merc_legion_of_dusk = {
+    regiments_per_development = 0.08
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0.33
+	home_province = 333
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		OR = {
+			is_in_war = {
+				attacker_leader = Z17
+			}
+			is_in_war = {
+				defender_leader = Z17
+			}
+		}
+		has_global_flag = legion_of_dusk_established
+		is_year = 1500
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+	}
+	cost_modifier = 1.25
+	modifier = {
+		infantry_power = 0.3
+		morale_damage_received = -0.4
+		force_march_free = yes
+		manpower_recovery_speed = -0.5
+		leader_land_shock = 2
+		leader_land_fire = 6
+		max_general_fire = 3
+		shock_damage_received = -0.30
+		fire_damage = 0.30
+		shock_damage = -0.10
+		reinforce_speed = -0.50
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.50
+	}
+}
+
+merc_meissen_guard = {
+    regiments_per_development = 0.04
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0.33
+	home_province = 61
+	counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		has_country_flag = enable_meissen_guard
+	}
+	cost_modifier = 0.5
+	modifier = {
+		land_morale = 0.20
+		force_march_free = yes
+		manpower_recovery_speed = 0.5
+		leader_land_shock = 3
+		leader_land_fire = 3
+		discipline = 0.10
+		shock_damage = 0.20
+		reinforce_speed = 0.50
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+	}
+}
+
+# some good sprite packs
+# sprites = { dlc029_pap_sprite_pack dlc040_pap_sprite_pack westerngfx_sprite_pack }

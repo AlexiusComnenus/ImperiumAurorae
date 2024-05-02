@@ -1,0 +1,198 @@
+namespace = LOT_d_events
+
+# golden republic disaster
+country_event = {
+	id = LOT_d_events.1
+	title = LOT_d_events.1.t
+	desc = {
+		trigger = {
+			legitimacy = 50
+		}
+		desc = LOT_d_events.1.da
+	}
+	desc = {
+		trigger = {
+			NOT = { legitimacy = 50 }
+		}
+		desc = LOT_d_events.1.db
+	}
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #don't cave to them
+		name = zyp_lot_fight_event_loc
+	}
+	option = { #concede defeat
+		name = "LOT_d_events.1.b"
+		set_country_flag = lot_concede_golden
+		custom_tooltip = glr_lost_lot
+		change_tag = GLR
+		change_government = republic
+		add_government_reform = golden_republic_reform
+		add_years_of_income = 0.5
+		custom_tooltip = glr_abdication
+		hidden_effect = {
+			kill_ruler = yes
+		}
+		country_event = {
+			id = ideagroups.1
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				has_country_flag = lot_concede_golden
+			}
+			change_tag = GLR
+		}
+	}
+}
+
+#conclusion
+country_event = {
+	id = LOT_d_events.2
+	title = LOT_d_events.2.t
+	desc = {
+		trigger = {
+			has_country_flag = lot_concede_golden
+		}
+		desc = LOT_d_events.2.da
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = lot_concede_golden }
+		}
+		desc = LOT_d_events.2.db
+	}
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #royalist victory
+		name = "LOT_d_events.2.a"
+
+		add_years_of_income = 0.5
+		add_country_modifier = {
+			name = lot_defeated_republicans
+			duration = -1
+		}
+	}
+	option = { #golden republicans win
+		name = "LOT_d_events.2.b"
+		trigger = {
+			has_country_flag = lot_concede_golden
+		}
+		custom_tooltip = glr_lost_lot
+		change_tag = GLR
+		change_government = republic
+		add_government_reform = golden_republic_reform
+		add_years_of_income = 0.5
+	}
+
+	after = {
+		set_country_flag = lot_golden_republic_disaster_concluded
+		every_owned_province = {
+			limit = {
+				has_province_modifier = local_sabotage
+			}
+			remove_province_modifier = local_sabotage
+		}
+	}
+}
+
+#revolt
+province_event = {
+	id = LOT_d_events.3
+	title = LOT_d_events.3.t
+	desc = LOT_d_events.3.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		owner = {
+			has_disaster = golden_republic_disaster
+		}
+		controlled_by = owner
+		NOT = {
+			devastation = 25
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+		
+		modifier = {
+			factor = 0.75
+			unrest = 5
+		}
+
+		modifier = {
+			factor = 0.5
+			unrest = 10
+		}
+	}
+	
+	option = {
+		name = LOT_events.3.a
+		random_list = {
+			50 = {
+				spawn_rebels = {
+					size = 1
+					type = revolutionary_rebels
+				}
+			}
+			25 = {
+				spawn_rebels = {
+					size = 2
+					type = revolutionary_rebels
+				}
+			}
+			25 = {
+				spawn_rebels = {
+					size = 3
+					type = revolutionary_rebels
+				}
+			}
+		}
+	}
+}
+
+#popular sabotage
+province_event = {
+	id = LOT_d_events.4
+	title = LOT_d_events.4.t
+	desc = LOT_d_events.4.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		owner = {
+			has_disaster = golden_republic_disaster
+		}
+		controlled_by = owner
+		NOT = {
+			devastation = 25
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+		
+		modifier = {
+			factor = 0.75
+			unrest = 5
+		}
+
+		modifier = {
+			factor = 0.5
+			unrest = 10
+		}
+	}
+	
+	option = {
+		name = LOT_events.3.a
+		add_province_modifier = {
+			name = local_sabotage
+			duration = -1
+		}
+	}
+}

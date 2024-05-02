@@ -1,0 +1,96 @@
+# Pereyaslavl stub
+
+Z47_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z47
+	}
+	has_country_shield = yes
+	
+	Z47_stop_paying_tribute = {
+		icon = assert_our_sovereignty
+		required_missions = {
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			NOT = { is_subject = yes }
+		}
+		
+		effect = {
+			add_prestige = 10
+			add_legitimacy = 10
+			
+			create_general = { tradition = 50 add_siege = 3}
+			
+			if = {
+				limit = { ai = yes }
+				KIE = {
+					every_core_province = {
+						add_core = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	Z47_vengeance = {
+		icon = mission_fall_of_third_rome
+		required_missions = {
+			Z47_stop_paying_tribute
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			OR = {
+				NOT = { exists = Z00 }
+				has_won_war_against = {
+					who = Z00
+					max_years_since = 5
+				}
+			}
+		}
+		
+		effect = {
+			add_army_tradition = 25
+			
+		}
+	}
+	
+	Z47_retake_kyiv = {
+		icon = mission_develop_kiev
+		required_missions = {
+			Z47_vengeance
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			owns = 280 #Kyiv
+		}
+		
+		effect = {
+			
+			KIE = {
+				every_core_province = {
+					add_core = ROOT
+				}
+			}
+			
+			add_prestige = 20
+		}
+	}
+}

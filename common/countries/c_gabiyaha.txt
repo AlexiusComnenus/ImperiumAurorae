@@ -1,0 +1,11 @@
+ck2_converter_generated = yes
+graphical_culture = asiangfx
+color = { 6 255 77 }
+monarch_names = {
+	"Gun #0" = 0
+	"Xian #0" = 0
+	"Xu #0" = 0
+	"Ye #0" = 0
+	"Yuanchong #0" = 0
+	"Yuanhua #0" = -1
+}

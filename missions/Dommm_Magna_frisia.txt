@@ -1,0 +1,614 @@
+#
+#dom_ned_magna_frisia_slot_1_branch = {
+#	slot = 1
+#	generic = no
+#	ai = yes
+#	potential_on_load = {
+#		has_dlc = "Emperor"
+#	}
+#	potential = {
+#		has_dlc = "Emperor"
+#		mission_completed = dom_fri_magna_frisia
+#		#has_country_flag = dom_ned_modded_missions
+#		NOT = { map_setup = map_setup_random }
+#	}
+#	has_country_shield = yes
+#	
+#	dom_fri_strengthen_the_vroedschappen = {
+#		icon = strengthen_the_vroedschappen
+#		required_missions = { dom_ned_form_dutch_republic }
+#		position = 19
+#		#completed_by
+#		
+#		provinces_to_highlight = {
+#			region = low_countries_region
+#			NOT = {
+#				development = 25
+#				OR = {
+#					has_building = workshop
+#					has_building = counting_house
+#					has_building = marketplace
+#					has_building = trade_depot
+#					has_building = stock_exchange
+#				}
+#				OR = {
+#					has_building = courthouse
+#					has_building = town_hall
+#				}
+#				OR = {
+#					has_building = dock
+#					has_building = drydock
+#					has_building = shipyard
+#					has_building = grand_shipyard
+#				}
+#			}
+#		}
+#		
+#		trigger = {
+#			if = {
+#				limit = {
+#					has_estate = estate_burghers
+#				}
+#			
+#				estate_loyalty = {
+#					estate = estate_burghers
+#					loyalty = 50
+#				}
+#			}
+#			crown_land_share = 60
+#			num_of_owned_provinces_with = {
+#				value = 4
+#				region = low_countries_region
+#				development = 25
+#				OR = {
+#					has_building = workshop
+#					has_building = counting_house
+#					has_building = marketplace
+#					has_building = trade_depot
+#					has_building = stock_exchange
+#				}
+#				OR = {
+#					has_building = courthouse
+#					has_building = town_hall
+#				}
+#				OR = {
+#					has_building = dock
+#					has_building = drydock
+#					has_building = shipyard
+#					has_building = grand_shipyard
+#				}
+#			}
+#		}
+#		
+#		effect = {
+#			add_dip_power = 100
+#			add_mercantilism = 10
+#			#custom_tooltip
+#			#hidden_effect
+#			every_owned_province = {
+#				limit = {
+#					region = low_countries_region
+#					development = 25
+#					OR = {
+#						has_building = workshop
+#						has_building = counting_house
+#						has_building = marketplace
+#						has_building = trade_depot
+#						has_building = stock_exchange
+#					}
+#					OR = {
+#						has_building = courthouse
+#						has_building = town_hall
+#					}
+#					OR = {
+#						has_building = dock
+#						has_building = drydock
+#						has_building = shipyard
+#						has_building = grand_shipyard
+#					}
+#				}
+#				add_province_modifier = {
+#					name = ned_city_investments
+#					duration = -1
+#				}
+#			}
+#			if = {
+#				limit = {
+#					OR = {
+#						has_reform = dutch_republic
+#						has_reform = states_general_reform
+#					}
+#				}
+#				change_statists_vs_orangists = -0.1
+#			}
+#			else_if = {
+#				limit = {
+#					government = republic
+#					NOT = { has_reform = dutch_republic }
+#				}
+#				add_republican_tradition = 25
+#			}
+#			add_country_modifier = {
+#				name = ned_statist_influences
+#				duration = -1
+#			}
+#		}
+#	}
+#	
+#	dom_fri_frisian_polder = {
+#		icon = mission_advance_to_the_dnieper
+#		required_missions = { dom_ned_form_dutch_republic }
+#		position = 20
+#		#completed_by
+#		
+#		trigger = {
+#			if = { 
+#				limit = { has_dlc = "Leviathan" }
+#				97 = { 
+#					owned_by = ROOT 
+#					has_great_project = {
+#						type = dutch_polders
+#						tier = 3 
+#					}
+#				}
+#			}
+#			else = { 
+#				97 = { 
+#					owned_by = ROOT 
+#					development = 50 
+#				} 
+#			}
+#		}
+#		effect = {
+#			#custom_tooltip = dutch_polders_development_tt
+#			#hidden_effect =
+#			every_owned_province = {
+#				limit = {
+#					has_port = yes
+#					region = low_countries_region
+#				}
+#				add_base_production = 1
+#			}
+#			#if = {
+#			#	limit = { has_dlc = "Leviathan" } 
+#			#	custom_tooltip = ned_polder_bonus_tt
+#			#	custom_tooltip = ned_25_25_tt
+#			#	hidden_effect = {
+#			#		every_ally = {
+#			#			limit = {
+#			#				has_opinion = {
+#			#					who = ROOT 
+#			#					value = 50
+#			#				}
+#			#			}
+#			#			ROOT = {
+#			#				add_trust = {
+#			#					who = PREV
+#			#					value = 25
+#			#					mutual = yes
+#			#				}
+#			#				add_favors = {
+#			#					who = PREV
+#			#					amount = 25
+#			#				}
+#			#			}
+#			#		}
+#			#	}
+#			#}
+#		}
+#	}
+#}
+#
+#dom_ned_magna_frisia_slot_2_branch = {
+#	slot = 2
+#	generic = no
+#	ai = yes
+#	potential_on_load = {
+#		has_dlc = "Emperor"
+#	}
+#	potential = {
+#		has_dlc = "Emperor"
+#		mission_completed = dom_fri_magna_frisia
+#		#has_country_flag = dom_ned_modded_missions
+#		NOT = { map_setup = map_setup_random }
+#	}
+#	has_country_shield = yes
+#	
+#	dom_fri_maurician_reforms = {
+#		icon = consolidate_the_stadholders
+#		required_missions = { dom_ned_form_dutch_republic }
+#		position = 19
+#		#completed_by = 1580.1.1
+#		
+#		provinces_to_highlight = {
+#			region = low_countries_region
+#			NOT = {
+#				OR = {
+#					has_building = barracks
+#					has_building = training_fields
+#				}
+#				OR = {
+#					has_building = regimental_camp
+#					has_building = conscription_center
+#				}
+#				OR = {
+#					has_building = temple
+#					has_building = cathedral
+#				}
+#			}
+#		}
+#		
+#		trigger = {
+#			army_tradition = 50
+#			army_professionalism = 0.30
+#			army_size = 40
+#			num_of_owned_provinces_with = {
+#				value = 4
+#				region = low_countries_region
+#				OR = {
+#					has_building = barracks
+#					has_building = training_fields
+#				}
+#				OR = {
+#					has_building = regimental_camp
+#					has_building = conscription_center
+#				}
+#				OR = {
+#					has_building = temple
+#					has_building = cathedral
+#				}
+#			}
+#		}
+#		effect = {
+#			add_mil_power = 250
+#			if = {
+#				limit = {
+#					OR = {
+#						has_reform = dutch_republic
+#						has_reform = states_general_reform
+#					}
+#				}
+#				change_statists_vs_orangists = 0.1
+#			}
+#			else_if = {
+#				limit = {
+#					government = monarchy
+#					NOT = {has_reform = states_general_reform }
+#				}
+#				add_legitimacy = 25
+#			}
+#			add_country_modifier = {
+#				name = ned_orangist_influences
+#				duration = -1
+#			}
+#		}
+#	}
+#}
+#
+#dom_ned_magna_frisia_slot_3_branch = {
+#	slot = 3
+#	generic = no
+#	ai = yes
+#	potential_on_load = {
+#		has_dlc = "Emperor"
+#	}
+#	potential = {
+#		has_dlc = "Emperor"
+#		mission_completed = dom_fri_magna_frisia
+#		#has_country_flag = dom_ned_modded_missions
+#		NOT = { map_setup = map_setup_random }
+#	}
+#	has_country_shield = yes
+#		
+#	dom_fri_eastern_business = {
+#		icon = mission_rb_prospect_for_coal
+#		required_missions = { dom_ned_form_dutch_republic }
+#		position = 20
+#		#completed_by
+#		
+#		#maybe better as a branch mission
+#		
+#		provinces_to_highlight = {
+#			OR = {
+#				area = lower_rhineland_area
+#				area = north_rhine_area
+#				area = westphalia_area
+#				area = north_westphalia_area
+#				area = hesse_area
+#				area = weser_area
+#			}
+#		}
+#		
+#		trigger = {
+#			OR = {
+#			num_of_owned_provinces_with = {
+#				value = 10
+#				OR = {
+#					area = lower_rhineland_area
+#					area = north_rhine_area
+#					area = westphalia_area
+#					area = north_westphalia_area
+#					area = hesse_area
+#					area = weser_area
+#				}
+#			}
+#				1876 = { #Rhineland
+#					trade_share = {
+#						country = ROOT
+#						share = 50
+#					}
+#				}
+#			}
+#			#owns_or_non_sovereign_subject_of = 2973 #Ownership of Lingen
+#			#owns_or_non_sovereign_subject_of = 83 #Nassau
+#			
+#			#retake claims
+#			#make money in germany
+#			#
+#		}
+#		effect = {
+#			#diplomatic relations
+#			add_mil_power = 100
+#		}
+#	}
+#	
+#	dom_fri_early_industrialization = {
+#		icon = mission_rb_build_furnaces
+#		required_missions = { dom_fri_eastern_business }
+#		position = 21
+#		#completed_by
+#		
+#		#maybe better as a branch mission
+#		
+#		provinces_to_highlight = {
+#			OR = {
+#				trade_goods = coal
+#				any_owned_province = {
+#					OR = {
+#						area = lower_rhineland_area
+#						area = north_rhine_area
+#						area = westphalia_area
+#						area = north_westphalia_area
+#						area = hesse_area
+#						area = weser_area
+#					}
+#				}
+#			}
+#		}
+#		
+#		trigger = {
+#			OR = {
+#				AND = {
+#				num_of_owned_provinces_with = {
+#					value = 5
+#					OR = {
+#						area = lower_rhineland_area
+#						area = north_rhine_area
+#						area = westphalia_area
+#						area = north_westphalia_area
+#						area = hesse_area
+#						area = weser_area
+#					}
+#					has_manufactory_trigger = yes
+#				}
+#				coal = 2
+#				}
+#				AND = {
+#					coal = 5
+#					production_leader = {
+#						trade_goods = coal
+#					}
+#				}
+#			}
+#			#owns_or_non_sovereign_subject_of = 2973 #Ownership of Lingen
+#			#owns_or_non_sovereign_subject_of = 83 #Nassau
+#			
+#			#retake claims
+#			#make money in germany
+#			#
+#		}
+#		effect = {
+#			if = {
+#				limit = { has_dlc = "Rule Britannia" }
+#				custom_tooltip = earlier_coal_available_tt
+#			}
+#			set_country_flag = earlier_coal_available
+#			custom_tooltip = tooltip_wip
+#			every_owned_province = {
+#				limit = {
+#					has_latent_trade_goods = coal 
+#				}
+#				add_base_production = 1
+#			}
+#		}
+#	}
+#}
+#
+#dom_ned_magna_frisia_slot_4_branch = {
+#	slot = 4
+#	generic = no
+#	ai = yes
+#	potential_on_load = {
+#		has_dlc = "Emperor"
+#	}
+#	potential = {
+#		has_dlc = "Emperor"
+#		mission_completed = dom_fri_magna_frisia
+#		#has_country_flag = dom_ned_modded_missions
+#		NOT = { map_setup = map_setup_random }
+#	}
+#	has_country_shield = yes
+#	
+#	dom_fri_raid_medway = {
+#		icon = mission_pirate_fleet
+#		required_missions = { dom_ned_form_dutch_republic }
+#		position = 19
+#		completed_by = 1667.6.1
+#		
+#		trigger = { #check for war or something
+#			235 = {
+#				num_of_units_in_province = {
+#					who = ROOT
+#					type = marine_infantry
+#					amount = 1
+#				}
+#			}
+#			num_of_captured_ships_with_boarding_doctrine = 5
+#			#any_war_enemy_country = {
+#			#	any_owned_province = {
+#			#		has_port = yes
+#			#		is_controlled_by = ROOT
+#			#	}
+#			#}
+#		}
+#		effect = {			
+#			if = {
+#				limit = {
+#					exists = ENG
+#					NOT = { exists = GBR }
+#					ENG = { 
+#						valid_for_personal_unions_trigger = yes
+#					}
+#					religion_group = christian
+#					OR = {
+#						AND = {
+#							has_dlc = "Res Publica"
+#							has_states_general_mechanic = yes
+#							is_orangists_in_power = yes
+#						}
+#						government = monarchy
+#					}
+#				}
+#				add_casus_belli = {
+#					type = cb_restore_personal_union
+#					months = 300
+#					target = ENG
+#				}
+#			}
+#			else_if = {
+#				limit = {
+#					exists = GBR
+#					GBR = {
+#						valid_for_personal_unions_trigger = yes
+#					}
+#					religion_group = christian
+#					OR = {
+#						AND = {
+#							has_dlc = "Res Publica"
+#							has_states_general_mechanic = yes
+#							is_orangists_in_power = yes
+#						}
+#						government = monarchy
+#					}
+#				}
+#				add_casus_belli = {
+#					type = cb_restore_personal_union
+#					months = 300
+#					target = GBR
+#				}
+#			}
+#			else = {
+#				home_counties_area = {
+#					limit = {
+#						NOT = { is_permanent_claim = ROOT }
+#						NOT = { is_core = ROOT	}
+#					}
+#					add_permanent_claim = ROOT
+#				}
+#				east_anglia_area = {
+#					limit = {
+#						NOT = { is_permanent_claim = ROOT }
+#						NOT = { is_core = ROOT	}
+#					}
+#					add_permanent_claim = ROOT
+#				}
+#				east_midlands_area = {
+#					limit = {
+#						NOT = { is_permanent_claim = ROOT }
+#						NOT = { is_core = ROOT	}
+#					}
+#					add_permanent_claim = ROOT
+#				}
+#			}
+#		}
+#	}
+#	
+#	dom_fri_the_glorious_revolution = {
+#		icon = the_glorious_revolution
+#		required_missions = { dom_fri_raid_medway }
+#		position = 20
+#		completed_by = 1689.1.1
+#		
+#		ai_weight = {
+#			factor = 3
+#			modifier = {
+#				factor = 0
+#				home_counties_area = {
+#					owner = {
+#						alliance_with = ROOT
+#					}
+#				}
+#			}
+#		}
+#		
+#		provinces_to_highlight = {
+#			OR = {
+#				area = home_counties_area
+#				area = east_anglia_area
+#				area = east_midlands_area
+#			}
+#			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+#		}
+#		trigger = {
+#			home_counties_area = {
+#				type = all
+#				country_or_non_sovereign_subject_holds = ROOT
+#			}
+#			east_anglia_area = {
+#				type = all
+#				country_or_non_sovereign_subject_holds = ROOT
+#			}
+#			east_midlands_area = {
+#				type = all
+#				country_or_non_sovereign_subject_holds = ROOT
+#			}
+#		}
+#		effect = {
+#			1269 = {
+#				add_trade_modifier = {
+#					who = root
+#					duration = 7300
+#					power = 30
+#					key = DUTCH_CHANNEL_SUPREMACY
+#				}
+#			}
+#			if = {
+#				limit = {
+#					OR = {
+#						has_reform = dutch_republic
+#						has_reform = states_general_reform
+#					}
+#				}
+#				change_statists_vs_orangists = 0.2
+#			}
+#			else_if = {
+#				limit = {
+#					government = monarchy
+#					NOT = { has_reform = states_general_reform }
+#				}
+#				add_legitimacy = 20
+#			}
+#			else_if = {
+#				limit = {
+#					government = republic
+#					NOT = { has_reform = states_general_reform }
+#				}
+#				add_republican_tradition = 20
+#			}
+#			else = {
+#				add_prestige_or_monarch_power = { amount = 10 }
+# 				add_adm_power = 100
+#			}
+#		}
+#	}
+#}

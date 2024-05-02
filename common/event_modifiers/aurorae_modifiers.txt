@@ -1,0 +1,295 @@
+forced_hellenic_jerusalem = {
+	prestige = 1
+	legitimacy = 1
+}
+
+antioch_unified_house = {
+	reasons_to_elect = 100
+	imperial_authority_value = 0.05
+	reverse_relation_with_same_religion = 10
+	relation_with_same_religion = 20
+}
+
+sicilian_galleys = {
+	galley_power = 0.10
+}
+
+french_feudalism = {
+	diplomatic_upkeep = 1
+	vassal_forcelimit_bonus = 0.5
+}
+
+italian_economics = {
+	global_trade_goods_size_modifier = 0.05
+	trade_efficiency = 0.1	
+}
+
+antioch_development_project = {
+	local_development_cost = -0.25
+	trade_goods_size = 1
+	local_tax_modifier = 0.5
+	local_great_project_upgrade_cost = -0.25
+}
+
+apostolic_finisher = {
+	liberty_desire_from_subject_development = -0.25
+	can_fabricate_for_vassals = yes
+	can_transfer_vassal_wargoal = yes
+	relation_with_same_religion = 40
+	reverse_relation_with_same_religion = 20
+}
+
+defeated_rum = {
+	army_tradition = 0.5
+}
+
+balkan_resilience = {
+	land_attrition = -0.10
+	fort_maintenance_modifier = -0.25
+}
+
+prague_finisher = {
+	reform_progress_growth = 0.15
+	governing_capacity_modifier = 0.1
+}
+
+armenian_forts = {
+	num_accepted_cultures = 1
+	defensiveness = 0.15
+}
+
+imperial_border_prince = {
+	defensiveness = 0.5
+	land_maintenance_modifier = -0.25
+}
+
+romanian_supply = {
+	global_supply_limit_modifier = 0.25
+	land_attrition = -0.10
+}
+
+lighthouse_finisher = {
+	trade_steering = 0.1
+	own_coast_naval_combat_bonus = 1
+}
+
+kurdish_nomadism = {
+	num_accepted_cultures = 1
+	movement_speed = 0.10
+	caravan_power = 0.1
+}
+
+persian_administrators = {
+	num_accepted_cultures = 1
+	core_creation = -0.10
+	state_maintenance_modifier = -0.25
+}
+
+mongol_mobility = {
+	num_accepted_cultures = 1
+	movement_speed = 0.10
+	cavalry_flanking = 0.5
+}
+
+german_efficiency = {
+	administrative_efficiency = 0.05
+}
+
+forced_assimilation = {
+	local_culture_conversion_cost = -0.50
+	local_unrest = 5
+}
+
+reunification_enthusiasm = {
+	land_morale = 0.10
+	recover_army_morale_speed = 0.10
+	naval_morale = 0.1
+	recover_navy_morale_speed = 0.1
+	land_maintenance_modifier = -0.10
+	naval_maintenance_modifier = -0.1
+}
+
+antioch_cav_support = {
+	cavalry_cost = -0.20
+	cavalry_power = 0.20
+	cav_to_inf_ratio = 0.25
+}	
+
+antioch_support_deserts = {
+	cavalry_cost = 0.2
+	cavalry_power = -0.3
+	diplomatic_reputation = -1
+}
+
+yanshing_injured = {
+	prestige = -1
+	land_morale = -0.10
+}
+
+imperial_charter = {
+	global_foreign_trade_power = 0.15
+	relation_with_same_religion = 10
+	reverse_relation_with_same_religion = 10
+}
+
+genoa_stands_alone = {
+	global_prov_trade_power_modifier = 0.15
+	relation_with_same_religion = -10
+	reverse_relation_with_same_religion = -10
+}
+
+recently_recruited_aurora = {
+}
+
+hosts_olympics = {
+	prestige = 1
+	local_development_cost = -0.25
+	province_trade_power_value = 30
+}
+
+yanshing_distracted = {
+	prestige = -5
+	state_maintenance_modifier = 0.5
+	administrative_efficiency = -0.1
+	can_not_declare_war = yes
+}
+
+antioch_dragon_princess = {
+	global_tax_modifier = 0.20
+	build_time = -0.20
+	national_focus_years = -2
+	parliament_backing_chance = 0.10
+}
+
+reined_genoa = {
+	galley_power = 0.1
+	galley_cost = -0.1
+}
+
+the_great_war = {
+	war_exhaustion = -0.10
+}
+
+suddenpacifism = {
+	can_not_declare_war = yes
+}
+
+auroral_silk = {
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.25
+	province_trade_power_value = 0.5
+	trade_value = 1
+}
+
+draconic_jade = {
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.5
+	trade_value = 2
+}
+
+desert_alchemical_foundries = {
+	local_development_cost = -0.6
+	local_governing_cost = 0.5
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 2
+	local_production_efficiency = 0.20
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.25
+	trade_value = 1
+}
+
+normal_alchemical_foundries = {
+	local_development_cost = -0.1
+	local_governing_cost = 0.5
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 2
+	local_production_efficiency = 0.20
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.25
+	trade_value = 1
+}
+
+fra_welsh_cooperation_modifier = {
+	army_tradition_decay = -0.01
+	infantry_fire = 0.25
+	num_accepted_cultures = 1
+}
+
+final_crusade_struggle = {
+	movement_speed = 0.20
+	drill_decay_modifier = -0.25
+	cavalry_flanking = 0.5
+	recover_army_morale_speed = 0.25
+	siege_ability = -0.25
+	global_supply_limit_modifier = 5
+}
+
+damascene_steel = {
+	shock_damage_received = -0.025
+	shock_damage = 0.025
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.5
+	province_trade_power_modifier = 0.5
+}
+
+dragon_equality_reforms = {
+	female_advisor_chance = 0.15
+	innovativeness_gain = 0.25
+	institution_spread_from_true_faith = 0.1
+	advisor_pool = 2
+}
+
+breach_of_harmony = {
+	diplomatic_reputation = -2
+	improve_relation_modifier = -0.25
+	ae_impact = 0.25
+	reverse_relation_with_same_religion = -40
+}
+
+tengbala_fresh_conversion = {
+	global_missionary_strength = 0.10
+	missionaries = 2
+}
+
+landsknecht_auxiliaries_mod = { 
+	reinforce_speed = 0.25
+	land_attrition = -0.50
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+slavic_hussars_mod = { 
+	cavalry_flanking = 0.50
+	cavalry_power = 0.15
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+french_chevaliers_mod = { 
+	cavalry_power = 0.10
+	recover_army_morale_speed = 0.25
+	morale_damage_received = -0.10
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+persian_cataphracts_mod = { 
+	cavalry_shock = 0.25
+	cavalry_power = 0.15
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+kurdish_skirmishers_mod = { 
+	cavalry_flanking = 0.50
+	cavalry_fire = 0.5
+	land_maintenance_modifier = 0.25
+	is_hussars_modifier = yes
+}
+
+greek_katafraktoi_mod = {
+	shock_damage = 0.15
+	morale_damage = 0.10
+	land_maintenance_modifier = 0.25	
+	is_hussars_modifier = yes
+}

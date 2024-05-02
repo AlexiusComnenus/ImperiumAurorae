@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = prussian
+capital = 50
+historical_friend = HSA
+1440.9.21= {
+	monarch = {
+		name = "Siegfried IV"
+		dynasty = "Askanier"
+		birth_date = 1413.11.19
+		adm = 0
+		dip = 3
+		mil = 5
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = incorruptible_personality
+	add_ruler_personality = inspiring_leader_personality
+	queen = {
+		country_of_origin = MEI
+		name = "Catherine"
+		dynasty = "Wettin"
+		birth_date = 1421.1.1
+		death_date = 1476.8.23
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

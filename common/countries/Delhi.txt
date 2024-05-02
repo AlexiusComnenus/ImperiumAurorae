@@ -1,0 +1,121 @@
+ck2_converter_generated = yes
+graphical_culture = muslimgfx
+color = { 157 200 42 }
+revolutionary_colors = { 10 4 13 }
+historical_idea_groups = {
+	quantity_ideas
+	offensive_ideas
+	economic_ideas
+	defensive_ideas
+	trade_ideas
+	diplomatic_ideas
+	administrative_ideas
+	aristocracy_ideas
+}
+historical_units = {
+	bhonsle_cavalry
+	indian_arquebusier
+	indian_elephant
+	indian_footsoldier
+	indian_rifle
+	mughal_mansabdar
+	mughal_musketeer
+	rajput_hill_fighters
+	rajput_musketeer
+	sikh_hit_and_run
+	tipu_sultan_rocket
+}
+monarch_names = {
+	"Afsin #0" = 0
+	"Ahmet #0" = 0
+	"Ajit #0" = 0
+	"Alkan #0" = 0
+	"Alïp #0" = 0
+	"Aram #1" = 10
+	"Aydogdu #0" = 0
+	"Ayla #0" = -1
+	"Ayse #0" = -1
+	"Balaban #0" = 0
+	"Basbuga #0" = 0
+	"Batuhan #0" = 0
+	"Baturay #0" = 0
+	"Bozan #0" = 0
+	"Bulend #0" = 0
+	"Chananel #0" = 0
+	"Dayaram #0" = 0
+	"Dharmamahadevi #0" = -1
+	"Dhruvadevi #0" = -1
+	"Dilber #0" = -1
+	"Gumus #0" = -1
+	"Hasan #0" = 0
+	"Hizir #0" = 0
+	"Ipek #0" = -1
+	"Ipekel #0" = -1
+	"Jasapala #0" = 0
+	"Jodhabai #0" = -1
+	"Kamala #0" = -1
+	"Karatay #0" = 0
+	"Kutalmis #0" = 0
+	"Mahdokht #0" = -1
+	"Mahidevi #0" = -1
+	"Mala #0" = -1
+	"Mang #0" = 0
+	"Mehmed #0" = 0
+	"Mursel #0" = 0
+	"Mutlu #0" = -1
+	"Nergis #0" = -1
+	"Peksen #0" = -1
+	"Popatrajji #0" = 0
+	"Qutb-ud-din Aibak #1" = 10
+	"Sabhirai #0" = -1
+	"Saltuk #1" = 10
+	"Samur #0" = -1
+	"Savur #0" = 0
+	"Serife #0" = -1
+	"Sinan #0" = 0
+	"Sirin #0" = -1
+	"Yakut #0" = 0
+	"Yunus #0" = 0
+	"Zahra #0" = -1
+	"Çilen #0" = -1
+	"Çiltanesi #0" = -1
+}
+leader_names = {
+	"Ali"
+	"Azad"
+	"Bhutto"
+	"Hussein"
+	"Jahan"
+	"Khan"
+	"Lodi"
+	"Lohia"
+	"Musharif"
+	"Nagar"
+	"Nazimuddin"
+	"Ra'ana"
+	"Sharif"
+	"Sharma"
+	"Sinan"
+	"Singh"
+	"Viqar-ul-Mulk"
+}
+ship_names = {
+	"Alia"
+	"Chambal"
+	"Fatimah"
+	"Ganges"
+	"Jalsena"
+	"Kala Jahazi"
+	"Khan"
+	"Lal Jahazi"
+	"Nausena"
+	"Nav ka Yudh"
+	"Niknaz"
+	"Nila Jahazi"
+	"Niloufa"
+	"Noor"
+	"Sagar"
+	"Spiti"
+	"Yamuna"
+	"Yasmine"
+}

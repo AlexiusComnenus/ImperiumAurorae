@@ -1,0 +1,11 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+religion = bogomilist
+primary_culture = bulgarian
+capital = 150
+
+add_stability = -2
+add_manpower = -10
+add_prestige = -100

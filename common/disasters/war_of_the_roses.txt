@@ -1,0 +1,126 @@
+war_of_the_roses = {
+	potential = {
+		OR = {
+			NOT = { current_age = age_of_discovery }
+			mission_completed = sax_control_germany
+		}
+		normal_or_historical_nations = yes
+		government = monarchy
+		has_reform = saxon_feudalism
+		NOT = { has_country_flag = had_saxon_crisis  }
+		#num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+		#	value = 50
+		#	culture_group = germanic
+		#}
+	}
+
+
+
+	can_start = {
+		OR = {
+			current_age = age_of_reformation
+			mission_completed = sax_control_germany
+		}
+		has_any_disaster = no
+		has_reform = saxon_feudalism
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			NOT = { has_reform = saxon_feudalism }
+		}
+	}
+	
+	ended_by_country_breaking_to_rebels = no
+	
+	
+	progress = {
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 99 }
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				ruler_has_personality = righteous_personality
+				ruler_has_personality = strict_personality
+				ruler_has_personality = obsessive_perfectionist_personality
+				ruler_has_personality = reformist_personality
+				ruler_has_personality = absolutist_personality
+			}
+		}
+		modifier = {
+			factor = -0.5
+			OR = {
+				ruler_has_personality = lawgiver_personality
+				ruler_has_personality = charismatic_negotiator_personality
+				ruler_has_personality = silver_tongue_personality
+				ruler_has_personality = intricate_web_weaver_personality
+				ruler_has_personality = well_connected_personality
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			ADM = 3
+		}		
+		modifier = {
+			factor = -0.5
+			DIP = 5
+		}		
+		modifier = {
+			factor = 0.5
+			MIL = 3
+		}		
+		
+	}
+	
+	can_end = {
+		OR = {
+			AND = {
+				NOT = { num_of_rebel_controlled_provinces = 5 }
+				custom_trigger_tooltip = {
+					tooltip = has_resolved_centralization_chain
+					has_country_flag = centralization_chain_ended
+				}
+				is_at_war = no
+			}
+			NOT = { has_reform = saxon_feudalism }
+		}
+	}
+	
+
+
+
+	modifier = {
+		stability_cost_modifier = 1
+		reduced_liberty_desire = -10
+		stability_cost_to_declare_war = 2
+		can_not_declare_war = yes
+	}	
+	
+	
+	on_start = saxon_crisis.0
+	on_end = saxon_crisis.100
+	
+	on_monthly = {
+		events = {
+			saxon_crisis.15
+			saxon_crisis.16
+			saxon_crisis.17
+			saxon_crisis.19
+		}
+		random_events = { 
+			900 = 0
+			80 = saxon_crisis.11
+			60 = saxon_crisis.12
+			180 = saxon_crisis.13
+			60 = saxon_crisis.14
+		}
+	}
+}
+

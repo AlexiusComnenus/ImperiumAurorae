@@ -1,0 +1,40 @@
+hsc_ideas = {
+	start = {
+		infantry_power = 0.10
+		global_missionary_strength = 0.02
+	}
+	bonus = {
+		build_cost = -0.1
+	}
+	trigger = {
+		tag = HSC
+	}
+	free = yes
+
+	oath_of_service = {
+		manpower_recovery_speed = 0.20
+	}
+	the_great_voyage = {
+		colonists = 1
+	}
+	brothers_of_the_land = {
+		native_uprising_chance = -0.50
+		native_assimilation = 0.50
+	}
+	druidic_teachings = {
+		culture_conversion_cost = -0.20
+	}
+	natures_love = {
+		tolerance_own = 3
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+	the_land_is_alive = {
+		land_attrition = -0.10
+		hostile_attrition = 2
+		max_hostile_attrition = 1
+	}
+	traditional_craftsmanship = {
+		production_efficiency = 0.15
+	}
+}

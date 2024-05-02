@@ -1,0 +1,13 @@
+owner = HUA
+controller = HUA
+capital = "Ganzhou"
+is_city = yes
+culture = hakka
+religion = confucianism
+trade_goods = grain
+base_tax = 4
+base_production = 4
+base_manpower = 2
+add_core = HUA
+discovered_by = chinese
+discovered_by = nomad_group

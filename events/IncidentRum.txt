@@ -1,0 +1,219 @@
+### The Purge of Rum ###
+### By Alexios ###
+
+namespace = incident_rum
+
+country_event = {
+	id = incident_rum.1
+	title = incident_rum.1.t
+	desc = incident_rum.1.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		OR = { 
+			AND = {
+				exists = RUM
+				RUM = { is_part_of_hre = no }
+				RUM = { NOT = { is_subject_of = ROOT } }
+			}
+			AND = {
+				exists = BYZ
+				BYZ = { NOT = { is_subject_of = ROOT } }
+				BYZ = { is_part_of_hre = no }
+			}
+		}
+		is_emperor = yes
+		emperor = {
+			has_country_modifier = antioch_unified_house
+			is_at_war = no
+		}
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_global_flag = rum_incident_flag
+		hidden_effect = {
+			set_variable = {
+				which = numByzProvinces
+				value = 0
+			}
+			set_variable = {
+				which = numRumProvinces
+				value = 0
+			}
+			every_province = {
+				limit = {
+					region = anatolia_region
+					OR = { 
+						owner = { tag = BYZ }
+						owner = { is_subject_of = BYZ }
+					}
+				}
+				ROOT = {
+					change_variable = {
+						which = numByzProvinces
+						value = 1
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					region = anatolia_region
+					OR = { 
+						owner = { tag = RUM }
+						owner = { is_subject_of = RUM }
+					}
+				}
+				ROOT = {
+					change_variable = {
+						which = numRumProvinces
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						BYZ = { is_part_of_hre = yes }
+						BYZ = { is_subject_of = ROOT }
+					}
+				}
+				set_variable = {
+					which = numByzProvinces
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						RUM = { is_part_of_hre = yes }
+						RUM = { is_subject_of = ROOT }
+					}
+				}
+				set_variable = {
+					which = numRumProvinces
+					value = 0
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = numByzProvinces
+						which = numRumProvinces
+					}
+				}
+				BYZ = { save_global_event_target_as = anatoliakilltarget }
+			}
+			else = {
+				RUM = { save_global_event_target_as = anatoliakilltarget }
+			}
+			add_country_modifier = {
+				name = suddenpacifism
+				duration = 730
+			}
+		}
+	}
+	
+	option = { # Convene the Confluence!
+		name = incident_rum.1.a
+		ai_chance = { factor = 100 }
+		set_imperial_incident = incident_rum
+	}
+}
+
+# dummy incident for the emperor
+country_event = {
+	id = incident_rum.2
+	title = incident_rum.2.t
+	desc = incident_rum.2.d
+	picture = SHIP_SAILING_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # Reichskrieg!
+		name = incident_rum.2.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = rum_reichskrieg_tt
+		hidden_effect = {
+			emperor = {
+				country_event = {
+					id = incident_rum.3
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # Do it yourself
+		name = incident_rum.2.b
+		ai_chance = {
+			factor = 20
+		}
+		custom_tooltip = rum_crusade_tt
+		hidden_effect = {
+			emperor = {
+				country_event = {
+					id = incident_rum.4
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # not our problem
+		name = incident_rum.2.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = incident_rum.3
+	title = incident_rum.3.t
+	desc = incident_rum.3.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #War!
+		name = incident_rum.3.a
+		ai_chance = {
+			factor = 80
+		}
+		declare_war_with_cb = {
+			who = event_target:anatoliakilltarget
+			casus_belli = cb_imperial_realm_war
+		}
+	}
+}
+
+country_event = {
+	id = incident_rum.4
+	title = incident_rum.4.t
+	desc = incident_rum.4.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #War!
+		name = incident_rum.4.a
+		ai_chance = {
+			factor = 80
+		}
+		declare_war_with_cb = {
+			who = event_target:anatoliakilltarget
+			casus_belli = cb_antioch_crusade
+		}
+	}
+}

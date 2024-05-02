@@ -1,0 +1,392 @@
+# This file now contains generic rhenish/westphalian missions instead
+
+westphalian_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = { 
+			#tag = KLE
+			tag = OSN
+			tag = MUN
+			tag = RVA
+			tag = KOL
+			tag = LPP
+			tag = PAD
+			tag = HAN
+			tag = BRG
+			tag = AAC
+			tag = TRI
+			tag = MAI
+			tag = FRN
+			tag = NSA
+		}
+		NOT = { has_country_flag = kle_hes_flag }
+	}
+	has_country_shield = yes
+	
+	wes_fortify_the_city = {
+		icon = generality_lands
+		required_missions = {
+			wes_raise_the_guard
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			capital_scope = {
+				fort_level = 3
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_base_manpower = 2
+				add_base_tax = 2
+			}
+		}
+	}
+}
+
+westphalian_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = { 
+			tag = KLE
+			tag = OSN
+			tag = MUN
+			tag = RVA
+			tag = KOL
+			tag = LPP
+			tag = PAD
+			tag = HAN
+			tag = BRG
+			tag = AAC
+			tag = TRI
+			tag = MAI
+			tag = FRN
+			tag = NSA
+		}
+		NOT = { has_country_flag = kle_hes_flag }
+	}
+	has_country_shield = yes
+	
+	wes_raise_the_guard = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_generals = 1
+				army_size_percentage = 1
+			}
+			else = {
+				is_at_war = yes
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = wes_raised_the_guard
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	wes_sphere_of_influence = {
+		icon = generality_lands
+		required_missions = {
+			wes_raise_the_guard
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			capital_scope = {
+				area_for_scope_province = { 
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			create_general = { tradition = 70 }	
+			every_province = {
+				limit = { culture = ROOT }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	wes_unify_the_cities = {
+		icon = generality_lands
+		required_missions = {
+			wes_sphere_of_influence
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = "All provinces with permanent claims are owned by us or a subject."
+				all_province = {
+					OR = {	
+						NOT = { is_permanent_claim = ROOT }
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_mil_power = 50
+			add_dip_power = 50
+			add_adm_power = 50
+		}
+	}
+}
+
+westphalian_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = { 
+			tag = KLE
+			tag = OSN
+			tag = MUN
+			tag = RVA
+			tag = KOL
+			tag = LPP
+			tag = PAD
+			tag = HAN
+			tag = BRG
+			tag = AAC
+			tag = TRI
+			tag = MAI
+			tag = FRN
+			tag = NSA
+		}
+		NOT = { has_country_flag = kle_hes_flag }
+	}
+	has_country_shield = yes
+	
+	wes_invest_in_local_guilds = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			capital_scope = { base_production = 8 }
+			capital_scope = { has_production_building_trigger = yes }
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = wes_flourishing_guilds
+					duration = 7300
+				}
+				remove_building = workshop
+				add_building = counting_house
+			}
+		}
+	}
+	
+	wes_industrial_heartlands = {
+		icon = generality_lands
+		required_missions = {
+			wes_invest_in_local_guilds
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			capital_scope = { base_production = 12 }
+			capital_scope = { has_manufactory_trigger = yes }
+		}
+		
+		effect = {
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = wes_industry_heartland
+					duration = -1
+				}
+				add_base_manpower = 2
+				add_base_tax = 2
+				add_base_production = 2
+			}
+		}
+	}
+}
+
+westphalian_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = { 
+			tag = KLE
+			tag = OSN
+			tag = MUN
+			tag = RVA
+			tag = KOL
+			tag = LPP
+			tag = PAD
+			tag = HAN
+			tag = BRG
+			tag = AAC
+			tag = TRI
+			tag = MAI
+			tag = FRN
+			tag = NSA
+		}
+		NOT = { has_country_flag = kle_hes_flag }
+	}
+	has_country_shield = yes
+	
+	wes_seize_church_lands = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			capital_scope = { 
+				num_of_units_in_province = {
+					who = ROOT
+					amount = 7
+				}
+			}
+			NOT = { government = theocracy }
+		}
+		
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -100
+			}
+			change_estate_land_share = {
+				estate = estate_church
+				share = -10
+			}
+			add_estate_loyalty_modifier = {
+				estate = estate_church
+				desc = "Seized Church Lands"
+				loyalty = -50
+				duration = 36500
+			}
+			add_estate_influence_modifier = {
+				estate = estate_church
+				desc = "Seized Church Lands"
+				influence = -20
+				duration = 36500
+			}
+			capital_scope = { add_base_tax = 2	pretender_rebels = 1 }
+			add_country_modifier = {
+				name = wes_recent_reforms
+				duration = 3650
+			}
+		}
+	}
+	
+	wes_religious_freedom = {
+		icon = generality_lands
+		required_missions = {
+			wes_seize_church_lands
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 10
+				}
+			}
+			NOT = { government = theocracy }
+			NOT = { has_country_modifier = wes_recent_reforms }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = wes_recent_reforms
+				duration = 7300
+			}
+			add_country_modifier = {
+				name = wes_religious_freedom_modifier
+				duration = -1
+			}
+		}
+	}
+	
+	wes_abolish_organized_religion = {
+		icon = generality_lands
+		required_missions = {
+			wes_religious_freedom
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 0
+				}
+			}
+			NOT = { government = theocracy }
+			NOT = { has_country_modifier = wes_recent_reforms }
+			reform_level = 4
+		}
+		
+		effect = {
+			add_government_reform = separate_clergy_from_state_affairs_reform
+			set_country_flag = allow_church_separation
+		}
+	}
+}

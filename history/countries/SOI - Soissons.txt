@@ -1,0 +1,64 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = gaulic
+religion = waldensian
+technology_group = western
+capital = 182 #Soissons
+fixed_capital = 182
+
+
+461.11.1 = {
+	monarch = {
+		name = "Aegidius"
+		dynasty = "Syagrii"
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}
+
+465.1.1 = {
+	monarch = {
+		name = "Syagrius"
+		dynasty = "Syagrii"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+511.11.27 = {
+	monarch = {
+		name = "Chlothar I"
+		dynasty = "Meroveching"
+		birth_date = 497.1.1
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}
+
+511.11.27 = {
+	heir = {
+		name = "Charibert"
+		monarch_name = "Charibert"
+		dynasty = "Meroveching"
+		birth_date = 517.1.1
+		death_date = 567.12.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+
+561.11.29 = {
+	monarch = {
+		name = "Chilperic I"
+		dynasty = "Meroveching"
+		birth_date = 539.1.1
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}

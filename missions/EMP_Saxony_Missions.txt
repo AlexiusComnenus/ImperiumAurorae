@@ -1,0 +1,1228 @@
+ia_sax_mission_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sax_subjugate_flander = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			area = flanders_area
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			owns_all_provinces = {
+				area = flanders_area
+			}
+		}
+		
+		effect = {
+			custom_tooltip = picardie_release_tt
+			custom_tooltip = paradox_lies_tt
+			
+			add_mil_power = 100
+			FLA = {
+				add_liberty_desire = -15	
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = { 
+						OR = {
+							NOT = { exists = PIC } 
+							PIC = { is_subject = no }
+						}
+					}
+					every_owned_province = {
+						limit = { culture = normand }
+						cede_province = PIC
+					}
+					every_subject_country = {
+						every_owned_province = {
+							limit = { culture = normand }
+							cede_province = PIC
+						}
+					}
+					
+					create_subject = {
+						subject_type = saxon_daimyo
+						subject = PIC
+					}
+					PIC = {
+						add_government_reform = saxon_fief_reform
+					}
+				}
+			}
+			
+			hidden_effect = {
+				44 = {
+					add_permanent_claim = ROOT
+				}
+				54 = {
+					add_permanent_claim = ROOT
+				}
+				55 = {
+					add_permanent_claim = ROOT
+				}
+				1857 = {
+					add_permanent_claim = ROOT
+				}
+				1874 = {
+					add_permanent_claim = ROOT
+				}
+				4771 = {
+					add_permanent_claim = ROOT
+				}
+				53 = {
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	sax_reclaim_coastline = {
+		icon = mission_northumberland_coast
+		required_missions = {
+			sax_subjugate_flander sax_reclaim_wallonia
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 44
+				province_id = 54
+				province_id = 55
+				province_id = 1857
+				province_id = 1874
+				province_id = 4771
+				province_id = 53
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			owns_or_subject_of = 44
+			owns_or_subject_of = 54
+			owns_or_subject_of = 55
+			owns_or_subject_of = 1857
+			owns_or_subject_of = 1874
+			owns_or_subject_of = 4771
+			owns_or_subject_of = 53
+		}
+		
+		effect = {
+			custom_tooltip = reclaim_coastline_tt
+			
+			1744 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 5475
+					power = 25
+					key = sax_stranglehold
+				}
+			}
+			add_mercantilism = 5
+			
+			add_country_modifier = {
+				name = sax_better_embargo
+				duration = 9125
+			}
+			
+			hidden_effect = {
+				if = {
+					limit = { ai = no }
+					every_subject_country = {
+						limit = { 
+							is_subject_of_type = tributary_state
+							OR = {
+								tag = HAM
+								tag = OLD
+								tag = LAU
+								tag = BRE
+								tag = DTT
+								tag = VER
+								tag = LUN
+							}
+						}
+						ROOT = {
+							create_subject = {
+								subject_type = saxon_daimyo
+								subject = PREV
+							}
+						}
+						add_government_reform = saxon_fief_reform
+					}
+				}
+				else = {
+					every_subject_country = {
+						limit = { 
+							OR = {
+								tag = HAM
+								tag = OLD
+								tag = LAU
+								tag = BRE
+								tag = DTT
+								tag = VER
+								tag = LUN
+							}
+						}
+						ROOT = {
+							inherit = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	sax_subjugate_lubeck = {
+		icon = mission_plc_prevent_deluge
+		required_missions = {
+			sax_reclaim_coastline
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			area = mecklenburg_area
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			OR = {
+				owns_all_provinces = { area = mecklenburg_area }
+				HSA = { is_subject_of_type = saxon_daimyo }
+			}
+		}
+		
+		effect = {
+			custom_tooltip = paradox_lies_tt
+			add_country_modifier = {
+				name = sax_baltic_trade
+				duration = -1
+			}
+			
+			45 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 5475
+					power = 25
+					key = sax_stranglehold
+				}
+			}
+		}
+	}
+	
+	sax_control_germany = {
+		icon = bohemian_borderlands
+		required_missions = {
+			sax_subjugate_lubeck
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			owner = {
+				culture_group = germanic
+				NOT = { primary_culture = teuton }
+				NOT = { primary_culture = anglo_saxon }
+				any_owned_province = {
+					culture_group = germanic
+					NOT = { culture = teuton }
+					NOT = { culture = anglo_saxon }
+				}
+				NOT = { is_subject_of = ROOT }
+				NOT = { overlord = { is_subject_of = ROOT } }
+				NOT = { tag = ROOT }
+			}
+		}
+		
+		trigger = {
+			is_at_war = no
+			custom_trigger_tooltip = {
+				tooltip = sax_control_germany_tt
+				all_known_country = {
+					OR = {
+						NOT = { culture_group = germanic }
+						primary_culture = teuton
+						primary_culture = anglo_saxon
+						NOT = {
+							any_owned_province = {
+								culture_group = germanic
+								NOT = { culture = teuton }
+								NOT = { culture = anglo_saxon }
+							}
+						}
+						OR = {
+							is_subject_of = ROOT
+							overlord = { is_subject_of = ROOT }
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = sax_unified_germany
+				duration = 18250
+			}
+			
+			add_country_modifier = {
+				name = sax_germanic_unity
+				duration = -1
+			}
+			
+			change_adm = 2
+			change_dip = 2
+			change_mil = 2
+			
+			custom_tooltip = can_begin_sax_disaster_tt
+		}
+	}
+}
+
+ia_sax_mission_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sax_reclaim_wallonia = {
+		icon = king_of_france
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			is_core = HAI
+			NOT = { owned_by = HAI }
+			OR = {
+				province_id = 1743
+				province_id = 181
+			}
+		}
+		
+		trigger = {
+			owns_or_subject_of = 1743
+			owns_or_subject_of = 181
+		}
+		
+		effect = {
+			HAI = { add_liberty_desire = -25 }
+			add_prestige = 10
+		}
+	}
+	
+	sax_loyal_subjects = {
+		icon = imperial_ascendancy
+		required_missions = {
+			
+		}
+		position = 2
+		
+		
+		trigger = {
+			calc_true_if = {
+				all_country = {
+					is_subject_of = ROOT
+					is_subject_of_type = saxon_daimyo
+				}
+				amount = 15
+			}
+			custom_trigger_tooltip = {
+				tooltip = all_fiefs_loyal_tt
+				OR = {
+					all_subject_country = {
+						OR = { 
+							NOT = { is_subject_of_type = saxon_daimyo }
+							NOT = { liberty_desire = 50 }
+						}
+					}
+					ai = yes
+				}
+			}
+			reform_level = 3
+		}
+		
+		effect = {
+			add_stability = 1
+			add_government_reform = sax_feudalism_reform
+		}
+	}
+	
+	sax_dealing_with_nobility = {
+		icon = immaculate_government
+		required_missions = {
+			sax_loyal_subjects
+		}
+		position = 3
+		
+		
+		trigger = {
+			IF = {
+				limit = { ai = no }
+				OR = {
+					AND = {
+						num_of_estate_privileges = {
+							estate = estate_nobles
+							value = 6
+						}
+						estate_loyalty = {
+							estate = estate_nobles
+							loyalty = 80
+						}
+					}
+					AND = {
+						NOT = {
+							num_of_estate_privileges = {
+								estate = estate_nobles
+								value = 3
+							}
+						}
+						NOT = {
+							estate_influence = {
+								estate = estate_nobles
+								influence = 40
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = sax_nobles_choice_tt
+			
+			IF = {
+				limit = {
+					NOT = {
+						num_of_estate_privileges = {
+							estate = estate_nobles
+							value = 3
+						}
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_nobles
+							influence = 40
+						}
+					}
+				}
+				
+				add_country_modifier = {
+					name = sax_nobles_supressed
+					duration = -1
+				}
+				change_estate_land_share = {
+					estate = estate_nobles
+					share = -5
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = sax_nobles_partnership
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	sax_religious_conformity = {
+		icon = chivalry_is_not_dead
+		required_missions = {
+			sax_dealing_with_nobility
+		}
+		position = 4
+		
+		
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_subject_country = {
+						religion = protestant
+					}
+					amount = 5
+				}
+				religion = protestant
+				AND = {
+					current_age = age_of_reformation
+					any_subject_country = {
+						tag = FAP
+					}
+					calc_true_if = {
+						all_subject_country = {
+							NOT = { religion = protestant }
+						}
+						amount = 10
+					}
+				}
+				has_disaster = war_of_the_roses
+			}
+		}
+		
+		effect = {
+			custom_tooltip = sax_religious_conformity_tt
+			
+			country_event = {
+				id = ia_flavor_sax.20
+			}
+		}
+	}
+}
+
+ia_sax_mission_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sax_humiliate_poland = {
+		icon = invade_poland
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			owned_by = POL
+		}
+		
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							NOT = { exists = PLC }
+							has_won_war_against = {
+								who = POL
+								max_years_since = 3
+							}
+						}
+						AND = {
+							exists = PLC
+							has_won_war_against = {
+								who = PLC
+								max_years_since = 3
+							}
+						}
+					}
+					OR = {
+						POL = { humiliated_by = ROOT }
+						PLC = { humiliated_by = ROOT }
+					}
+				}
+				AND = {
+					NOT = { exists = PLC }
+					NOT = { exists = POL }
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = sax_humiliated_pol
+				duration = 7300
+			}
+			if = {
+				limit = { exists = POL }
+				add_casus_belli = {
+					target = POL
+					type = cb_saxon_dismantle
+					months = 1200
+				}
+			}
+			if = {
+				limit = { exists = PLC }
+				add_casus_belli = {
+					target = PLC
+					type = cb_saxon_dismantle
+					months = 1200
+				}
+			}
+		}
+	}
+	
+	sax_dismantle_poland = {
+		icon = mission_the_polish_throne
+		required_missions = {
+			sax_humiliate_poland
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			owned_by = POL
+		}
+		
+		trigger = {
+			OR = {
+				AND = {
+					exists = SIL
+					exists = MAZ
+					exists = KRA
+					exists = Z74
+					POL = { NOT = { num_of_subjects = 1 } }
+					PLC = { NOT = { num_of_subjects = 1 } }
+				}
+				AND = {
+					NOT = { exists = POL }
+					NOT = { exists = PLC }
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = sax_polish_campaign
+				duration = 7300
+			}
+			custom_tooltip = can_subjugate_poles_tt
+		}
+	}
+}
+
+ia_sax_mission_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sax_revive_hannover = {
+		icon = mission_pol_develop_countryside
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			province_id = 1758
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				1758 = {
+					religion = ROOT
+					num_of_times_improved = 10
+					is_prosperous = yes
+				}
+			}
+			else = {
+				is_year = 1455
+			}
+			owns = 1758
+		}
+		
+		effect = {
+			set_capital = 1758
+			1758 = {
+				add_permanent_province_modifier = {
+					name = old_saxon_capital
+					duration = -1
+				}
+			}
+			if = { 
+				limit = { ai = yes }
+				1758 = {
+					add_base_tax = 4
+					add_base_production = 4
+					add_base_manpower = 4
+				}
+			}
+		}
+	}
+}
+
+ia_sax_mission_3_tge = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+		has_global_flag = tradegood_marcin
+	}
+	has_country_shield = yes
+	
+	sax_salt_monopoly = {
+		icon = mission_pol_tend_east
+		required_missions = {
+			sax_silver_standard
+		}
+		position = 3
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				trade_goods = salt
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = salt
+				key = saxon_salt_monopoly
+				value = 0.5
+				duration = -1
+			}
+		}
+	}
+	
+	sax_beer_monopoly = {
+		icon = establish_oktoberfest
+		required_missions = {
+			sax_salt_monopoly
+		}
+		position = 4
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 12
+				trade_goods = beer
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = beer
+				key = saxon_beer_monopoly
+				value = 0.25
+				duration = -1
+			}
+		}
+	}
+}
+
+ia_sax_mission_4_tge = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+		has_global_flag = tradegood_marcin
+	}
+	has_country_shield = yes
+	
+	sax_silver_standard = {
+		icon = chater_the_voc
+		required_missions = {
+			sax_revive_hannover
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 57
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				57 = {
+					num_of_times_improved = 10
+					is_prosperous = yes
+				}
+				adm_power = 100
+				NOT = { inflation = 2 }
+			}
+			else = {
+				is_year = 1465
+			}
+			owns_or_non_sovereign_subject_of = 57
+		}
+		
+		effect = {
+			57 = {
+				add_permanent_province_modifier = {
+					name = sax_royal_mint
+					duration = -1
+				}
+			}
+			add_adm_power = -100
+			if = {
+				limit = { ai = yes }
+				57 = {
+					add_base_manpower = 3
+					add_base_production = 6
+					add_base_tax = 3
+				}
+			}
+		}
+	}
+	
+	sax_leather_production = {
+		icon = hispaniae
+		required_missions = {
+			sax_silver_standard
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4772
+				province_id = 4771
+			}
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				4772 = {
+					num_of_times_improved = 5
+					is_prosperous = yes
+					num_of_buildings_in_province = 3
+				}
+				4771 = {
+					num_of_times_improved = 5
+					is_prosperous = yes
+					num_of_buildings_in_province = 3
+				}
+				dip_power = 100
+			}
+			else = {
+				is_year = 1500
+			}
+			owns_or_non_sovereign_subject_of = 4772
+			owns_or_non_sovereign_subject_of = 4771
+		}
+		
+		effect = {
+			4772 = {
+				change_trade_goods = leather
+				add_base_production = 4
+				add_base_manpower = 3
+			}
+			4771 = {
+				change_trade_goods = leather
+				add_base_production = 4
+				add_base_manpower = 3
+			}
+			add_dip_power = -100
+			if = {
+				limit = { ai = yes }
+				4772 = {
+					add_base_manpower = 4
+					add_base_production = 6
+					add_base_tax = 2
+				}
+				4771 = {
+					add_base_manpower = 4
+					add_base_production = 6
+					add_base_tax = 2
+				}
+			}
+		}
+	}
+	
+	sax_altmark_uniforms = {
+		icon = mission_plc_lifetime_of_war
+		required_missions = {
+			sax_leather_production
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			province_id = 2964
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				2964 = {
+					num_of_times_improved = 10
+					is_prosperous = yes
+					num_of_buildings_in_province = 4
+				}
+				mil_power = 100
+				years_of_income = 1
+			}
+			else = {
+				is_year = 1520
+			}
+			owns_or_non_sovereign_subject_of = 2964
+			
+		}
+		
+		effect = {
+			2964 = {
+				change_trade_goods = uniforms
+				add_base_production = 2
+				add_base_manpower = 2
+				add_permanent_province_modifier = {
+					name = sax_uniforms
+					duration = -1
+				}
+			}
+			add_mil_power = -100
+			add_years_of_income = -1
+			if = {
+				limit = { ai = yes }
+				add_years_of_income = 1
+				2964 = {
+					add_base_manpower = 5
+					add_base_production = 7
+					add_base_tax = 3
+				}
+			}
+		}
+	}
+}
+
+ia_sax_mission_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	sax_danish_relations = {
+		icon = friends_in_high_places
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			owned_by = DAN
+		}
+		
+		trigger = {
+			OR = {
+				alliance_with = DAN
+				AND = {
+					NOT = { alliance_with = DAN }
+					any_ally = { 
+						OR = {
+							is_rival = DAN
+							is_enemy = DAN
+						}
+						OR = {
+							tag = NOR
+							tag = SWE
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			custom_tooltip = sax_branch_tt
+			if = {
+				limit = { alliance_with = DAN }
+				add_historical_friend = DAN
+				DAN = { add_historical_friend = ROOT }
+				hidden_effect = { 
+					set_country_flag = sax_befriend_dan 
+					swap_non_generic_missions = yes
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { alliance_with = DAN }
+					any_ally = { 
+						OR = {
+							is_rival = DAN
+							is_enemy = DAN
+						}
+						OR = {
+							tag = NOR
+							tag = SWE
+						}
+					}
+				}
+				random_ally = {
+					limit = {
+						OR = {
+							is_rival = DAN
+							is_enemy = DAN
+						}
+						OR = {
+							tag = NOR
+							tag = SWE
+						}
+					}
+					add_historical_friend = ROOT
+					ROOT = {
+						add_historical_friend = PREV
+					}
+				}
+				hidden_effect = { 
+					set_country_flag = sax_hate_dan
+					swap_non_generic_missions = yes
+				}
+			}
+		}
+	}
+}
+
+saxon_missions_5_branching = {
+	slot = 5
+	generic = no
+	ai = yes
+	
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = sax_befriend_dan } 
+		NOT = { has_country_flag = sax_hate_dan }
+	}
+	has_country_shield = yes
+	
+	sax_branch_mission_1 = { 
+		icon = mission_unknown_mission
+		required_missions = { sax_danish_relations }
+		position = 2
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			custom_tooltip = sax_friends_with_denmark_tt
+		}
+	}
+	
+	sax_branch_mission_2 = { 
+		icon = mission_unknown_mission
+		required_missions = { sax_branch_mission_1 }
+		position = 3 
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			custom_tooltip = sax_interactions_with_friend_tt
+		}
+	}
+}
+
+saxon_missions_5_branching_1 = {
+	slot = 5
+	generic = no
+	ai = yes
+	
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = sax_befriend_dan
+		NOT = { has_country_flag = sax_hate_dan }
+	}
+	has_country_shield = yes
+	
+	sax_branch_mission_1_befriend = { 
+		icon = mission_crown_of_denmark
+		required_missions = { sax_danish_relations }
+		position = 2
+		trigger = { 
+			alliance_with = DAN
+			DAN = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				trust = {
+					who = ROOT
+					value = 80
+				}
+			}
+		}
+		effect = { 
+			DAN = {
+				add_casus_belli = {
+					target = NOR
+					type = cb_restore_personal_union
+					months = 1200
+				}
+				add_casus_belli = {
+					target = SWE
+					type = cb_restore_personal_union
+					months = 1200
+				}
+			}
+			hidden_effect = { set_country_flag = sax_befriended_sca }
+		}
+	}
+	
+	sax_branch_mission_2_befriend = { 
+		icon = mission_baltic_empire
+		required_missions = { sax_branch_mission_1_befriend }
+		position = 3 
+		trigger = { 
+			SCA = {
+				exists = yes
+				alliance_with = ROOT
+				was_tag = DAN
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				trust = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = { 
+			SCA = {
+				add_country_modifier = {
+					name = sax_sca_partnership
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = sax_sca_partnership
+				duration = -1
+			}
+			hidden_effect = { set_country_flag = sax_sca_success }
+		}
+	}
+}	
+
+saxon_missions_5_branching_2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	
+	potential = {
+		has_reform = saxon_feudalism
+		tag = SAX
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = sax_befriend_dan }
+		has_country_flag = sax_hate_dan
+	}
+	has_country_shield = yes
+	
+	sax_branch_mission_1_enemy = { 
+		icon = mission_crown_of_norway
+		required_missions = { sax_danish_relations }
+		position = 2
+		trigger = { 
+			any_ally = {
+				OR = {
+					tag = NOR
+					tag = SWE
+				}
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				trust = {
+					who = ROOT
+					value = 80
+				}
+				historical_friend_with = ROOT
+			}
+		}
+		effect = { 
+			custom_tooltip = sax_our_chosen_ally_tt
+			random_ally = {
+				limit = {
+					OR = {
+						tag = NOR
+						tag = SWE
+					}
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+					trust = {
+						who = ROOT
+						value = 80
+					}
+					historical_friend_with = ROOT
+				}
+				add_casus_belli = {
+					target = NOR
+					type = cb_restore_personal_union
+					months = 1200
+				}
+				add_casus_belli = {
+					target = SWE
+					type = cb_restore_personal_union
+					months = 1200
+				}
+				add_casus_belli = {
+					target = DAN
+					type = cb_restore_personal_union
+					months = 1200
+				}
+			}
+			hidden_effect = { set_country_flag = sax_befriended_sca }
+		}
+	}
+	
+	sax_branch_mission_2_enemy = { 
+		icon = mission_baltic_empire
+		required_missions = { sax_branch_mission_1_enemy }
+		position = 3 
+		trigger = { 
+			SCA = {
+				exists = yes
+				alliance_with = ROOT
+				NOT = { was_tag = DAN }
+				historical_friend_with = ROOT
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				trust = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = { 
+			SCA = {
+				add_country_modifier = {
+					name = sax_sca_partnership
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = sax_sca_partnership
+				duration = -1
+			}
+			hidden_effect = { set_country_flag = sax_sca_success }
+		}
+	}
+}		
+
+

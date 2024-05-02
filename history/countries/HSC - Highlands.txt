@@ -1,0 +1,22 @@
+government = theocracy
+add_government_reform = gaelic_council_elders
+government_rank = 1
+technology_group = western
+religion = druidic_pagan
+primary_culture = pictish
+capital = 251
+1444.11.11= {
+	monarch = {
+		name = "Aveline"
+		adm = 4
+		dip = 4
+		mil = 5
+		birth_date = 1394.9.26
+		religion = druidic_pagan
+		culture = pictish
+		female = yes
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = conqueror_personality
+	#add_ruler_personality = immortal_personality
+}

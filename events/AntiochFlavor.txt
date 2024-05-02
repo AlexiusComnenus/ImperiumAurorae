@@ -1,0 +1,1855 @@
+##############################
+# Antioch Flavor Events (and some byzantine stuff)
+#                            
+# Written by Alexios
+##############################
+
+namespace = antioch
+normal_or_historical_nations = yes
+
+country_event = {
+	id = antioch.1
+	title = antioch.1.title
+	desc = antioch.1.desc
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = antioch.1.a
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			151 = {
+				owned_by = Z17
+			}
+		}
+		
+		151 = {
+			change_culture = xizho
+			change_religion = hellenic_pagan_reformed
+			add_nationalism = 20
+			set_in_empire = yes	
+		}
+		thrace_area = {
+			add_province_modifier = {
+				name = forced_assimilation
+				duration = 36500
+			}
+		}
+		macedonia_area = {
+			add_province_modifier = {
+				name = forced_assimilation
+				duration = 36500
+			}
+		}
+		morea_area = {
+			add_province_modifier = {
+				name = forced_assimilation
+				duration = 36500
+			}
+		}
+		northern_greece_area = {
+			add_province_modifier = {
+				name = forced_assimilation
+				duration = 36500
+			}
+		}
+	}
+	
+	option = {
+		name = antioch.1.b
+		
+		thrace_area = {
+			add_core = BYZ
+			IF = {
+				limit = {
+					owned_by = Z17
+				}
+				cede_province = BYZ
+			}
+		}
+		macedonia_area = {
+			add_core = BYZ
+			IF = {
+				limit = {
+					owned_by = Z17
+				}
+				cede_province = BYZ
+			}
+		}
+		morea_area = {
+			add_core = BYZ
+			IF = {
+				limit = {
+					owned_by = Z17
+				}
+				cede_province = BYZ
+			}
+		}
+		northern_greece_area = {
+			add_core = BYZ
+			IF = {
+				limit = {
+					owned_by = Z17
+				}
+				cede_province = BYZ
+			}
+		}
+		151 = {
+			cede_province = BYZ
+		}
+		Z17 = {
+			create_subject = {
+				subject_type = aurora_beneficiary
+				subject = BYZ
+			}
+		}
+		BYZ = {
+			set_in_empire = yes
+		}
+	}
+}
+
+country_event = {
+	id = antioch.2
+	title = antioch.2.title
+	desc = antioch.2.desc
+	picture = HRE_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = { #hell no?
+		name = antioch.2.a
+		ai_chance = {
+			factor = 0
+		}
+		
+		add_prestige = 10
+	}
+	
+	option = { #yes
+		name = antioch.2.b
+		
+		add_treasury = -100
+		add_historical_friend = Z17
+		#Z17 = { add_historical_friend = ROOT }
+		add_country_modifier = {
+			name = antioch_cav_support
+			duration = -1
+		}
+		set_country_flag = antioch_help
+		custom_tooltip = reckoning_tooltip
+		hidden_effect = {
+			country_event = {
+				id = antioch.3
+				days = 18250
+				random = 3650
+			}
+		}
+		Z17 = {
+			country_event = {
+				id = antioch.7
+				days = 30
+			}
+			add_historical_friend = ROOT
+		}
+	}
+}
+
+country_event = {
+	id = antioch.3
+	title = antioch.3.title
+	desc = antioch.3.desc
+	picture = COURT_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = faced_antioch_reckoning }
+	}
+	
+	option = { #bugger off!
+		name = antioch.3.a
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			NOT = { is_subject_of = emperor }
+		}
+		
+		add_prestige = 25
+		remove_historical_friend = Z17
+		add_historical_rival = Z17
+		Z17 = {
+			remove_historical_friend = ROOT
+			add_historical_rival = ROOT
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 12000
+			}
+			country_event = { id = antioch.4 }
+		}
+		clr_country_flag = antioch_help
+		clr_global_flag = antioch_puppet_victory
+		add_army_tradition = -15
+		add_yearly_manpower = -2.5
+		remove_country_modifier = antioch_cav_support
+		add_country_modifier = {
+			name = antioch_support_deserts
+			duration = 3650
+		}
+		set_country_flag = faced_antioch_reckoning
+	}
+	
+	option = { #compromise
+		name = antioch.3.b
+		ai_chance = {
+			factor = 40
+		}
+		trigger = {
+			NOT = { is_subject_of = emperor }
+		}
+		
+		Z17 = { remove_historical_friend = ROOT }
+		remove_historical_friend = Z17
+		Z17 = { country_event = { id = antioch.5 } }
+		remove_country_modifier = antioch_cav_support
+		add_army_tradition = -25
+		clr_country_flag = antioch_help
+		clr_global_flag = antioch_puppet_victory
+		
+		set_in_empire = yes
+		set_country_flag = faced_antioch_reckoning
+	}
+	
+	option = { #yes
+		name = antioch.3.c
+		ai_chance = {
+			factor = 40
+		}
+		trigger = {
+			OR = { 
+				tag = BYZ
+				tag = Z44
+				is_subject_of = emperor
+			}
+		}
+		
+		Z17 = { 
+			country_event = { id = antioch.6 }
+			create_subject = {
+				subject = PREV
+				subject_type = aurora_beneficiary
+			}
+			add_historical_friend = ROOT
+		}
+		
+		set_in_empire = yes
+		set_country_flag = faced_antioch_reckoning
+	}
+}
+
+country_event = {
+	id = antioch.4
+	title = antioch.4.title
+	desc = antioch.4.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	option = {#how dare they!
+		name = antioch.4.a
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = antioch.5
+	title = antioch.5.title
+	desc = antioch.5.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	option = {#ok then
+		name = antioch.5.a
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = antioch.6
+	title = antioch.6.title
+	desc = antioch.6.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	option = {#Great!
+		name = antioch.6.a
+		add_prestige = 10
+	}
+}
+
+country_event = {
+	id = antioch.7
+	title = antioch.7.title
+	desc = antioch.7.desc
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	option = {
+		name = antioch.7.a
+		add_treasury = 100
+	}
+}
+# Yangshing is injured
+country_event = { 
+	id = antioch.8
+	title = antioch.8.title
+	desc = antioch.8.desc
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		tag = Z17
+		has_heir = no
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = antioch.8.a
+		add_stability = -1
+		add_war_exhaustion = 1
+		add_country_modifier = {
+			name = yanshing_injured
+			duration = 730
+		}
+		define_heir = {
+			dynasty = ROOT
+			name = "Yangshing"
+			age = 20
+			adm = 0
+			dip = 0
+			mil = 0
+			claim = 100
+			no_consort_with_heir = yes
+		}
+		add_heir_personality = immortal_personality
+	}
+}
+
+country_event = { 
+	id = antioch.9
+	title = antioch.9.title
+	desc = antioch.9.desc
+	picture = REFORM_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {  #stand alone
+		name = antioch.9.a
+		
+		ai_chance = { factor = 0 }
+		add_prestige = 10
+	}
+	
+	option = {
+		name = antioch.9.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				alliance_with = emperor
+			}
+		}
+		
+		create_alliance = Z17
+	}
+	
+	option = {
+		name = antioch.9.c
+		ai_chance = {
+			factor = 50
+		}
+		
+		Z17 = {
+			create_subject = {
+				subject_type = aurora_beneficiary
+				subject = PREV
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = antioch.10
+	title = antioch.10.title
+	desc = antioch.10.desc
+	picture = east_asian_LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_saved_name = {
+			key = root_name_male
+			type = advisor
+			scope = ROOT
+		}
+		set_saved_name = {
+			key = root_name_female
+			type = advisor
+			female = yes
+			scope = ROOT
+		}
+	}
+	
+	option = {  #recruit general
+		name = antioch.10.a
+		
+		add_prestige = 10
+		if = {
+			limit = { army_tradition = 75 }
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 3
+						shock = 8
+						manuever = 5
+						siege = 3
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 3
+						shock = 8
+						manuever = 5
+						siege = 3
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { army_tradition = 50 }
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 2
+						shock = 7
+						manuever = 4
+						siege = 2
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 2
+						shock = 7
+						manuever = 4
+						siege = 2
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 6
+						manuever = 3
+						siege = 1
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 6
+						manuever = 3
+						siege = 1
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		add_mil_power = -50
+		if = {
+			limit = { NOT = { tag = Z17 } }
+			add_treasury = -100
+		}
+		add_country_modifier = {
+			name = recently_recruited_aurora
+			duration = 3650
+		}
+	}
+}
+
+country_event = { 
+	id = antioch.11
+	title = antioch.11.title
+	desc = antioch.11.desc
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_saved_name = {
+			key = root_name_male
+			type = advisor
+			scope = ROOT
+		}
+		set_saved_name = {
+			key = root_name_female
+			type = advisor
+			female = yes
+			scope = ROOT
+		}
+	}
+	
+	option = {  #recruit general
+		name = antioch.11.a
+		
+		add_prestige = 10
+		if = {
+			limit = { army_tradition = 75 }
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 3
+						shock = 7
+						manuever = 4
+						siege = 3
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 3
+						shock = 7
+						manuever = 4
+						siege = 3
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { army_tradition = 50 }
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 2
+						shock = 6
+						manuever = 3
+						siege = 2
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 2
+						shock = 6
+						manuever = 3
+						siege = 2
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 5
+						manuever = 2
+						siege = 1
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 5
+						manuever = 2
+						siege = 1
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		add_mil_power = -50
+		add_treasury = -300
+		add_country_modifier = {
+			name = recently_recruited_aurora
+			duration = 3650
+		}
+		add_spy_network_in = {
+			who = Z17
+			value = -60
+		}
+	}
+}
+
+country_event = {
+	id = antioch.12
+	title = antioch.12.t
+	desc = antioch.12.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		exists = Z17
+		is_emperor = yes
+		tag = Z17
+	}
+	
+	mean_time_to_happen = {
+		months = 360
+		#days = 1
+	}
+	
+	immediate = {
+		set_global_flag = yanshing_dreams
+	}
+	
+	option = { # What an odd dream...
+		name = antioch.12.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			country_event = {
+				id = antioch.13
+				days = 50
+			}
+		}
+	}
+}
+
+country_event = {
+	id = antioch.13
+	title = antioch.13.t
+	desc = antioch.13.d
+	picture = east_asian_LAND_MILITARY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # Send out the searches!
+		name = antioch.13.a
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+			name = yanshing_distracted
+			duration = 720
+		}
+		hidden_effect = {
+			country_event = {
+				id = antioch.14
+				days = 200
+			}
+		}
+	}
+}
+
+country_event = {
+	id = antioch.14
+	title = antioch.14.t
+	desc = antioch.14.d
+	picture = DragonPrincess_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # Finally!
+		name = antioch.14.a
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+			name = antioch_dragon_princess
+			duration = -1
+		}
+		define_consort = {
+			name = "Long'er"
+			culture = xizho
+			dynasty = "Yang"
+			adm = 6
+			dip = 5
+			mil = 3
+			female = yes
+			age = 200
+		}
+		add_queen_personality = immortal_personality
+		remove_ruler_personality = immortal_loneliness_personality
+		add_ruler_personality = immortal_flame_personality
+		remove_ruler_personality = immortal_conceit_personality
+		add_ruler_personality = immortal_wisdom_personality
+		change_dip = 1
+		change_mil = 1
+	}
+}
+
+country_event = {
+	id = antioch.15
+	title = antioch.15.t
+	desc = antioch.15.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		exists = Z17
+		is_emperor = yes
+		tag = Z17
+		is_year = 1460
+		ai = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	immediate = {
+		set_global_flag = antioch_ai_hacks_1
+	}
+	
+	option = { # Lmao AI gets to cheat cus it sucks too hard otherwise RIP
+		name = antioch.15.a
+		ai_chance = { factor = 100 }
+		KOJ = {
+			inherit = Z34
+			change_religion = hellenic_pagan_reformed
+		}
+		inherit = Z87
+		inherit = Z75
+		inherit = SYR
+		118 = { change_religion = ROOT }
+	}
+}
+
+country_event = {
+	id = antioch.16
+	title = antioch.16.t
+	desc = antioch.16.d
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		exists = Z17
+		is_emperor = yes
+		tag = Z17
+		is_year = 1470
+		ai = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	immediate = {
+		set_global_flag = antioch_ai_hacks_2
+	}
+	
+	option = { # Lmao AI gets to cheat cus it sucks too hard otherwise RIP
+		name = antioch.16.a
+		ai_chance = { factor = 100 }
+		every_known_country = {
+			limit = {
+				any_owned_province = {
+					area = lazio_area
+				}
+			}
+			country_event = { id = antioch.26 }
+		}
+	}
+}
+
+country_event = {
+	id = antioch.17
+	title = antioch.17.t
+	desc = antioch.17.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		religion = hellenic_pagan_reformed
+		NOT = { culture_group = xizho_group }
+		NOT = { primary_culture = outremer }
+		NOT = { primary_culture = maltese }
+		OR = {
+			culture_group = latin
+			culture_group = french
+			culture_group = iberian
+			culture_group = maghrebi
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		#days = 1
+	}
+	
+	major = yes
+	
+	option = { # embrace the change
+		name = antioch.17.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				culture_group = latin
+			}
+			change_primary_culture = idali
+		}
+		else_if = {
+			limit = {
+				AND = {
+					culture_group = french
+					NOT = { culture = outremer }
+				}
+			}
+			change_primary_culture = falanke
+		}
+		else_if = {
+			limit = {
+				culture_group = iberian
+			}
+			change_primary_culture = xibanya
+		}
+		else_if = {
+			limit = {
+				culture_group = maghrebi
+			}
+			change_primary_culture = beifei
+		}
+		add_accepted_culture = xizho
+		capital_scope = {
+			change_culture = xizho
+			change_religion = hellenic_pagan_reformed
+		}
+		random_owned_province = {
+			limit = {
+				religion = ROOT
+			}
+			change_culture = ROOT
+		}
+		add_stability = 2
+		add_legitimacy = 10
+		add_republican_tradition = 5
+	}
+	option = {
+		name = antioch.17.b
+		ai_chance = { factor = 0 }
+		
+		add_prestige = -10
+		add_stability = -1
+	}
+}
+
+province_event = {
+	id = antioch.18
+	title = antioch.18.t
+	desc = antioch.18.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	goto = ROOT
+	
+	trigger = {
+		religion = hellenic_pagan_reformed
+		NOT = { culture_group = xizho_group }
+		NOT = { culture = outremer }
+		NOT = { culture = maltese }
+		OR = {
+			culture_group = latin
+			culture_group = french
+			culture_group = iberian
+			culture_group = maghrebi
+			culture = turkish
+			culture = al_suryah_arabic
+			AND = {
+				owner = { has_country_flag = z42_assimilate_feijiao_flag }
+				OR = {
+					culture_group = sudanese
+					culture_group = cushitic
+				}
+			}
+		}
+		
+		owner = {
+			religion = hellenic_pagan_reformed
+			culture_group = xizho_group
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = antioch.18.a
+		
+		if = {
+			limit = {
+				culture_group = latin
+			}
+			change_culture = idali
+		}
+		else_if = {
+			limit = {
+				AND = {
+					culture_group = french
+					NOT = { culture = outremer }
+				}
+			}
+			change_culture = falanke
+		}
+		else_if = {
+			limit = {
+				culture_group = iberian
+			}
+			change_culture = xibanya
+		}
+		else_if = {
+			limit = {
+				culture_group = maghrebi
+			}
+			change_culture = beifei
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture = turkish
+					culture = al_suryah_arabic
+				}
+			}
+			change_culture = xizho
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture_group = sudanese
+					culture_group = cushitic
+				}
+			}
+			change_culture = feijiao
+		}
+	}
+}
+
+country_event = {  # TGE missions show
+	id = antioch.19
+	title = antioch.19.t
+	desc = antioch.19.d
+	picture = BIG_BOOK_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		is_emperor = yes
+		tag = Z17
+		has_global_flag = tradegood_marcin
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = antioch.19.a
+		swap_non_generic_missions = yes
+		SAX = {
+			swap_non_generic_missions = yes
+		}
+		Z42 = {
+			swap_non_generic_missions = yes
+		}
+		hidden_effect = {
+			4703 = {
+				change_trade_goods = tin
+			}
+			2802 = {
+				change_trade_goods = lead
+			}
+			1228 = {
+				change_trade_goods = tin
+			}
+			4171 = {
+				change_trade_goods = tin
+			}
+		}
+	}
+}
+
+country_event = {  # Unlawful territory
+	id = antioch.20
+	title = antioch.20.t
+	desc = antioch.20.d
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	
+	trigger = {
+		is_emperor = yes
+		is_bankrupt = no
+		#manpower_percentage = 0.75
+		NOT = { war_exhaustion = 0.5 }
+		NOT = { has_country_modifier = block_antioch_event_20 }
+		is_at_war = no
+		any_known_country = {
+			NOT = { truce_with = ROOT }
+			is_subject = no
+			NOT = { is_part_of_hre = yes }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 1
+				is_part_of_hre = yes
+			}
+		}
+		ai = yes
+	}
+	
+	immediate = {
+        hidden_effect = {
+            random_known_country = {
+				limit = {
+					NOT = { truce_with = ROOT }
+					is_subject = no
+					NOT = { is_part_of_hre = yes }
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 1
+						is_part_of_hre = yes
+					}
+				}
+				save_global_event_target_as = antioch_war_target
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# Ultimatum
+		name = antioch.20.a
+		ai_chance = { 
+			factor = 100
+		}
+		
+		event_target:antioch_war_target = {
+			country_event = { id = antioch.21 }
+		}
+	}
+	
+	option = {	# Back off
+		name = antioch.20.b
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 10000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:antioch_war_target = {
+					is_in_coalition = yes
+				}
+			}
+			modifier = {
+				factor = 10000
+				event_target:antioch_war_target = {
+					army_strength = {
+						who = ROOT
+						value = 2
+					}
+				}
+			}
+		}
+		
+		add_prestige = -10
+		add_country_modifier = {
+			name = block_antioch_event_20
+			duration = 3650
+			hidden = yes
+		}
+	}
+}
+
+country_event = {  # Intruder: Ultimatum from Antioch
+	id = antioch.21
+	title = antioch.21.t
+	desc = antioch.21.d
+	picture = east_asian_BATTLE_eventPicture
+    is_triggered_only = yes
+	
+	immediate = {
+		add_country_modifier = {
+			name = suddenpacifism
+			duration = 365
+			hidden = yes
+		}
+	}
+	
+	major = yes
+	
+	option = {	# Accept
+		name = antioch.21.a
+		ai_chance = { 
+			factor = 75
+		}
+		
+		add_truce_with = emperor
+		emperor = {
+			add_truce_with = ROOT
+		}
+		add_country_modifier = {
+			name = shameful_grovelling_lite_version
+			duration = 1825
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			remove_core = ROOT
+			random_core_country = {
+				limit = {
+					PREV = {
+						culture = PREV
+					}
+				}
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			remove_core = ROOT
+			random_core_country = {
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+		every_subject_country = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			grant_independence = yes
+		}
+		every_subject_country = {
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				remove_core = PREV
+				random_core_country = {
+					limit = {
+						PREV = {
+							culture = PREV
+						}
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				remove_core = PREV
+				random_core_country = {
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				set_in_empire = no
+			}
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+		}
+	}
+	
+	option = {	# Fight!
+		name = antioch.21.b
+		ai_chance = { 
+			factor = 25
+		}
+		
+		custom_tooltip = every_ally_without_90_trust_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = {
+						trust = {
+							who = ROOT
+							value = 90
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+		
+		emperor = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_imperial_realm_war
+			}
+		}
+	}
+}
+
+country_event = {  # Dragon Princess Reforms
+	id = antioch.22
+	title = antioch.22.t
+	desc = antioch.22.d
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		is_emperor = yes
+		tag = Z17
+		has_country_modifier = antioch_dragon_princess
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		set_global_flag = dragon_princess_reforms
+	}
+	
+	option = {
+		name = antioch.22.a
+		
+		add_country_modifier = {
+			name = dragon_equality_reforms
+			duration = -1
+		}
+		custom_tooltip = dragon_princess_reforms_tt
+		hidden_effect = {
+			every_known_country = {
+				limit = { religion = hellenic_pagan_reformed }
+				add_country_modifier = {
+					name = dragon_equality_reforms
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = {  # Radiant City
+	id = antioch.23
+	title = antioch.23.t
+	desc = antioch.23.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	#major = yes
+	
+	trigger = {
+		is_emperor = yes
+		tag = Z17
+		has_country_modifier = antioch_dragon_princess
+		owns = 2313
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = antioch.23.a
+		
+		2313 = {
+			add_province_triggered_modifier = shining_city_antioch
+		}
+		add_adm_power = -200
+		add_dip_power = -200
+		add_mil_power = -200
+	}
+}
+
+country_event = {  # Antioch dotf
+	id = antioch.24
+	title = antioch.24.t
+	desc = antioch.24.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		is_emperor = yes
+		has_country_modifier = antioch_unified_house
+		owns = 2313
+		NOT = {
+			any_country = {
+				religion = ROOT
+				is_defender_of_faith = yes
+			}
+		}
+		ai = yes
+		NOT = { war_exhaustion = 2 }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	
+	option = {
+		name = antioch.24.a
+		set_defender_of_the_faith = {
+			who = ROOT 
+			religion = ROOT 
+		}
+	}
+}
+
+country_event = {  # Antioch fix wrong religion
+	id = antioch.25
+	title = antioch.25.t
+	desc = antioch.25.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		tag = Z17
+		NOT = { religion = hellenic_pagan_reformed }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	
+	option = {
+		name = antioch.25.a
+		change_religion = hellenic_pagan_reformed
+		if = {
+			limit = { hre_religion_treaty = no }
+			set_emperor = yes
+		}
+	}
+}
+
+country_event = {
+	id = antioch.26
+	title = antioch.26.t
+	desc = antioch.26.d
+	picture = REVOLT_HUNGARIAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # yes
+		name = antioch.26.a
+		ai_chance = { factor = 100 }
+		lazio_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			change_religion = hellenic_pagan_reformed
+			cede_province = Z17
+			add_core = Z17
+		}
+	}
+	
+	option = { # no and go to war
+		name = antioch.26.b
+		ai_chance = { factor = 0 }
+		declare_war = Z17
+		lazio_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			change_religion = hellenic_pagan_reformed
+			#cede_province = Z17
+			add_core = Z17
+			change_controller = Z17
+			infantry = Z17
+			infantry = Z17
+			cavalry = Z17
+			cavalry = Z17
+			cavalry = Z17
+		}
+	}
+}
+
+country_event = {  # Dragon Princess Reforms
+	id = antioch.27
+	title = antioch.27.t
+	desc = antioch.27.d
+	picture = REFORM_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			event_target:imperial_deserter_country = {
+				set_in_empire = no
+			}
+		}
+	}
+	
+	option = {
+		name = antioch.27.a
+		ai_chance = { factor = 100 }
+		
+		add_casus_belli = {
+			target = event_target:imperial_deserter_country
+			type = cb_reintegrate_into_hre
+			months = 1200
+		}
+		
+		if = {
+			limit = { ai = yes }
+			declare_war_with_cb = {
+				who = event_target:imperial_deserter_country
+				casus_belli = cb_reintegrate_into_hre
+			}
+		}
+	}
+	
+	option = {
+		name = antioch.27.b
+		ai_chance = { factor = 0 }
+		
+		add_prestige = -20
+	}
+}
+
+country_event = {  # Proclamation of the Aurora
+	id = antioch.100
+	title = antioch.100.t
+	desc = antioch.100.d
+	picture = east_asian_REFORM_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = antioch.100.a
+		enable_hre_leagues = yes
+		
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					NOT = { is_subject = yes }
+					same_continent = ROOT
+				}
+				country_event = {
+					id = antioch.101
+					days = 1
+					random = 20
+				}
+			}
+			country_event = {
+				id = antioch.102
+				days = 365
+			}
+			add_country_modifier = {
+				name = suddenpacifism
+				duration = 730
+				hidden = yes
+			}
+		}
+	}
+}
+
+country_event = {  # Response to the Proclamation of the Aurora
+	id = antioch.101
+	title = antioch.101.t
+	desc = antioch.101.d
+	picture = east_asian_COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		every_war_enemy_country = { white_peace = ROOT }
+		add_country_modifier = {
+			name = suddenpacifism
+			duration = 730
+			hidden = yes
+		}
+	}
+	
+	option = {	# rally to the emperor!
+		name = antioch.101.a
+		trigger = {
+			OR = {
+				religion = hellenic_pagan_reformed
+				religion = confucianism
+				is_part_of_hre = yes
+				any_ally = {
+					is_emperor = yes
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { religion = hellenic_pagan_reformed }
+			}
+			change_religion = hellenic_pagan_reformed
+			capital_scope = {
+				change_religion = hellenic_pagan_reformed
+			}
+		}
+		if = {
+			limit = {
+				NOT = { is_part_of_hre = yes }
+			}
+			set_in_empire = yes
+		}
+		join_league = emperor
+	}
+	option = {	# Never!
+		name = antioch.101.b
+		trigger = {
+			NOT = {
+				OR = {
+					religion = hellenic_pagan_reformed
+					religion = confucianism
+					is_part_of_hre = yes
+					any_ally = {
+						is_emperor = yes
+					}
+				}
+			}
+		}
+		
+		join_league = protestant
+	}
+	option = {	# Player option to refuse even if aligned
+		name = antioch.101.c
+		trigger = {
+			OR = {
+				religion = hellenic_pagan_reformed
+				religion = confucianism
+				any_ally = {
+					is_emperor = yes
+				}
+			}
+			NOT = { ai = yes }
+			NOT = { is_part_of_hre = yes }
+		}
+		
+		join_league = protestant
+	}
+	option = {	# Player option to accept even if not aligned
+		name = antioch.101.e
+		trigger = {
+			NOT = {
+				OR = {
+					religion = hellenic_pagan_reformed
+					religion = confucianism
+					is_part_of_hre = yes
+					any_ally = {
+						is_emperor = yes
+					}
+				}
+			}
+			NOT = { ai = yes }
+		}
+		
+		if = {
+			limit = {
+				NOT = { religion = hellenic_pagan_reformed }
+			}
+			change_religion = hellenic_pagan_reformed
+			capital_scope = {
+				change_religion = hellenic_pagan_reformed
+			}
+		}
+		if = {
+			limit = {
+				NOT = { is_part_of_hre = yes }
+			}
+			set_in_empire = yes
+		}
+		join_league = emperor
+	}
+}
+
+country_event = {  # War of Harmony
+	id = antioch.102
+	title = antioch.102.t
+	desc = antioch.102.d
+	picture = east_asian_BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = {
+		every_war_enemy_country = { white_peace = ROOT }
+	}
+	
+	option = {
+		name = antioch.102.a
+		
+		random_known_country = {
+			limit = {
+				is_league_leader = yes
+				in_league = protestant
+			}
+			
+			save_event_target_as = enemy_leader
+			declare_war_with_cb = {
+				who = emperor
+				casus_belli = cb_harmonic_convergence
+			}
+		}	
+		
+		#hidden_effect = {
+		#	every_known_country = {
+		#		limit = { is_league_friend = ROOT }
+		#		country_event = {
+		#			id = antioch.105
+		#			days = 1
+		#			random = 20
+		#		}
+		#	}
+		#}
+	}
+	
+	option = {
+		name = antioch.102.b
+		trigger = { NOT = { always = yes } }
+		
+		set_global_flag	= can_declare_harmonic_war
+	}
+}
+
+country_event = {  # War of Harmony, Antioch Wins
+	id = antioch.103
+	title = antioch.103.t
+	desc = antioch.103.d
+	picture = east_asian_UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = antioch.103.a
+	}
+}
+
+country_event = {  # War of Harmony, Antioch Loses
+	id = antioch.104
+	title = antioch.104.t
+	desc = antioch.104.d
+	picture = ORTHODOX_ICON_FLAG_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = antioch.104.a
+	}
+}
+
+country_event = {  # War of Harmony, Antioch Call to Arms
+	id = antioch.105
+	title = antioch.105.t
+	desc = antioch.105.d
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = antioch.105.a
+		join_all_offensive_wars_of = emperor
+	}
+}
+
+country_event = { # end the war after 30 years
+	id = antioch.106
+	title = antioch.106.t
+	desc = antioch.106.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	
+	trigger = {
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = emperor
+				casus_belli = cb_harmonic_convergence
+				#duration = 10950
+				duration = 7300
+			}
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = emperor
+				casus_belli = cb_harmonic_convergence
+				#duration = 10950
+				duration = 1940
+				war_score = 97
+			}
+			AND = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = emperor
+					casus_belli = cb_harmonic_convergence
+					#duration = 10950
+					duration = 1940
+				}
+				NOT = {
+					war_score_against = {
+						who = emperor
+						value = -97
+					}
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	major = yes
+	
+	option = {
+		name = antioch.106.a
+		trigger = {
+			war_score_against = {
+				who = emperor
+				value = 90
+			}
+		}
+		
+		every_war_enemy_country = {
+			limit = {
+				is_in_war = { 
+					casus_belli = cb_harmonic_convergence
+				}
+			}
+			country_event = {
+				id = ia_flavor_tem.12
+				days = 1
+				random = 20
+			}
+		}
+		set_hre_religion_treaty = yes
+		country_event = {
+			id = antioch.104
+		}
+		white_peace = emperor	
+	}
+	option = {
+		name = antioch.106.b
+		trigger = {
+			war_score_against = {
+				who = emperor
+				value = -90
+			}
+			NOT = {
+				war_score_against = {
+					who = emperor
+					value = 90
+				}
+			}
+		}
+		
+		white_peace = emperor
+		set_hre_religion_locked = yes	
+	}
+	
+	option = {
+		name = antioch.106.c
+		trigger = {
+			NOT = {
+				war_score_against = {
+					who = emperor
+					value = -90
+				}
+			}
+		}
+		
+		emperor = {
+			every_war_enemy_country = {
+				limit = {
+					is_in_war = { 
+						casus_belli = cb_harmonic_convergence
+					}
+				}
+				#country_event = {
+				#	id = ia_flavor_tem.12
+				#	days = 1
+				#	random = 20
+				#}
+				define_ruler = {
+					dynasty = emperor
+					religion = emperor
+					culture = emperor
+				}
+				kill_heir = {}
+				change_religion = hellenic_pagan_reformed
+				capital_scope = {
+					change_religion = hellenic_pagan_reformed
+				}
+				set_in_empire = yes
+			}
+			set_hre_religion_locked = yes
+			country_event = {
+				id = antioch.103
+			}
+		}
+		white_peace = emperor
+	}
+}

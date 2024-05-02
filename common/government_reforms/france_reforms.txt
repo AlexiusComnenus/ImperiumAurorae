@@ -1,0 +1,84 @@
+
+feudal_france_reform = {
+	icon = "feudal_france_reform"
+	allow_normal_conversion = no
+	potential = { 
+		OR = {
+			tag = FRA
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = feudal_france_reform
+			}
+		}
+	}
+	fixed_rank = 2
+	lock_level_when_selected = yes
+
+	modifiers = {
+		#global_manpower_modifier = 0.1
+		nobles_influence_modifier = 0.1
+		vassal_income = 0.25
+		vassal_forcelimit_bonus = 0.5
+		max_absolutism = -50
+		relation_with_same_culture_group = -100
+		relation_with_same_culture = -100
+		#core_creation = 0.2
+		ae_impact = 0.25
+		reduced_liberty_desire = 30
+		diplomatic_annexation_cost = -0.20
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		has_appanages = yes
+	}
+}
+
+appanage_reform = {
+	icon = "nobleman"
+	allow_normal_conversion = no
+	potential = {
+		is_subject_of_type = appanage
+	}
+	replacement_on_independence_war = independent_appanage_reform
+	fixed_rank = 1
+	maintain_dynasty = yes
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	modifiers = {
+		global_manpower_modifier = 0.15
+		nobles_loyalty_modifier = 0.15
+		nobles_influence_modifier = 0.10
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+independent_appanage_reform = {
+	icon = "nobleman"
+	allow_normal_conversion = no
+	potential = {
+		culture_group = french
+		is_subject = no
+		NOT = { tag = FRA }
+	}
+	maintain_dynasty = yes
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	modifiers = {
+		global_manpower_modifier = 0.15
+		nobles_loyalty_modifier = 0.05
+		nobles_influence_modifier = 0.10
+		relation_with_same_culture_group = -50
+		relation_with_same_culture = -50
+		#core_creation = 0.15
+		ae_impact = 0.20
+		reduced_liberty_desire = 20
+		diplomatic_annexation_cost = -0.10
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		has_appanages = yes
+	}
+}

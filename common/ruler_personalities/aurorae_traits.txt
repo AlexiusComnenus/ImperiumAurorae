@@ -1,0 +1,814 @@
+immortal_conceit_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	
+	reduced_liberty_desire = -10
+	global_unrest = 2
+	idea_cost = 0.025
+	discipline = 0.05
+	global_spy_defence = -0.25
+	
+	easy_war_chance_multiplier = 5
+	enemy_strength_multiplier = 0.75
+	fair_fights = no
+	underestimate_ae = yes
+	wants_land = yes
+	wants_disclose_attack = yes
+	wants_threaten_war = yes
+	random_insults = yes
+	different_religion_war_multiplier = 2
+	war_chance_multiplier = 2
+	other_ai_peace_term_bonus = 25
+	
+	nation_designer_cost = 200
+}
+
+immortal_loneliness_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	improve_relation_modifier = -0.25
+	leader_cost = 0.10
+	global_tax_modifier = 0.20
+	army_tradition_decay = -0.02
+	advisor_pool = -1
+	
+	royal_marriage_acceptance = -1000
+	wants_avoid_ugly_borders = yes
+	heretic_ally_acceptance = -30
+	heathen_ally_acceptance = -20
+	wants_condottieri = no
+	wants_avoid_debase = yes
+	wants_avoid_loans = yes
+	nation_designer_cost = 200
+}
+
+immortal_flame_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	advisor_cost = -0.15
+	improve_relation_modifier = 0.15
+	army_tradition_decay = -0.01
+	
+	royal_marriage_acceptance = -1000
+	different_religion_war_multiplier = 2
+	war_chance_multiplier = 2
+	wants_land = yes
+	wants_condottieri = yes
+	heretic_ally_acceptance = -20
+	heathen_ally_acceptance = -10
+	#peace_desire = -10
+	wants_disclose_attack = yes
+	nation_designer_cost = 200
+}
+
+immortal_wisdom_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	reduced_liberty_desire = 10
+	global_unrest = -1
+	stability_cost_modifier = -0.5
+	global_spy_defence = 0.25
+	
+	building_budget_multiplier = 2
+	easy_war_chance_multiplier = 5
+	wants_avoid_ugly_borders = yes
+	gift_chance = 50
+	knowledge_sharing = yes
+	other_ai_help_us_multiplier = 10
+	wants_avoid_debase = yes
+	wants_avoid_loans = yes
+	fair_fights = no
+	other_ai_peace_term_bonus = 25
+}
+
+mad_dragon_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	morale_damage_received = -2
+	morale_damage = 0.5
+	discipline = -0.2
+	defensiveness = -0.5
+	siege_ability = 5
+	movement_speed = 2
+	fire_damage_received = 1.5
+	shock_damage = 1
+	shock_damage_received = 0.5
+	recover_army_morale_speed = 5
+	diplomatic_reputation = -20
+	diplomatic_upkeep = -4
+	improve_relation_modifier = -1
+	wants_land = yes
+}
+
+dragons_lament_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = Z17
+			is_year = 1970
+		}
+	}
+	
+	extra_manpower_at_religious_war = yes	
+	cavalry_cost = -1
+	hostile_attrition = 20
+	max_hostile_attrition = 30
+	war_exhaustion = -1
+	capped_by_forcelimit = yes
+	reduced_stab_impacts = yes
+	ae_impact = 1
+	advisor_cost = 5
+	reinforce_speed = 3
+	wants_land = yes
+}
+
+voice_of_god_personality = {
+	ruler_allow = {
+		allow = {
+			ruler_has_personality = immortal_personality
+			tag = TEM
+			is_year = 1970
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_has_personality = immortal_personality
+			tag = TEM
+			is_year = 1970
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_has_personality = immortal_personality
+			tag = TEM
+			is_year = 1970
+		}
+	}
+	
+	extra_manpower_at_religious_war = yes
+	war_exhaustion = -0.05
+	capped_by_forcelimit = yes
+	reduced_stab_impacts = yes
+	ae_impact = 0.25
+	diplomatic_reputation = 20
+	improve_relation_modifier = -1
+	relation_with_heretics = -100
+	relation_with_heathens = -100
+	relation_with_same_religion = 50
+#	reverse_relation_with_heretics = -100
+#	reverse_relation_with_heathens = -100
+	reverse_relation_with_same_religion = 50
+	
+	wants_land = yes
+	wants_avoid_ugly_borders = yes
+	different_religion_war_multiplier = 10
+	war_chance_multiplier = 2
+	wants_land = yes
+	wants_avoid_debase = yes
+	wants_avoid_loans = yes
+	other_ai_peace_term_bonus = 25
+}
+
+visions_of_the_past_personality = {
+	ruler_allow = {
+		allow = {
+			always = no
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			always = no
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			always = no
+		}
+	}
+	
+	monarch_lifespan = 1
+	diplomatic_reputation = -1
+	
+	wants_land = yes
+	wants_avoid_ugly_borders = yes
+	war_chance_multiplier = 2
+	wants_land = yes
+	wants_avoid_debase = yes
+	wants_avoid_loans = yes
+	other_ai_peace_term_bonus = 25
+}
+
+
+possessed_by_majorian_personality = {
+	ruler_allow = {
+		allow = {
+			always = no
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			always = no
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			always = no
+		}
+	}
+	
+	province_warscore_cost = -0.1
+	core_creation = -0.1
+	advisor_cost = -0.1
+	
+	wants_land = yes
+	wants_avoid_ugly_borders = yes
+	war_chance_multiplier = 2
+	wants_land = yes
+	wants_avoid_debase = yes
+	wants_avoid_loans = yes
+	other_ai_peace_term_bonus = 25
+}
+
+
+fortification_engineer_personality = {
+	ruler_allow = {
+		allow = {
+			MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_monarch_leader = yes
+			}
+			modifier = {
+				factor = 2
+				MIL = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_heir_leader = yes
+			}
+			modifier = {
+				factor = 2
+				heir_MIL = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_MIL = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 2
+				consort_MIL = 6
+			}
+		}
+	}
+
+	allow = {
+	}
+	
+	chance = {
+	}
+	
+	defensiveness = 0.10
+	garrison_damage = 0.25
+	nation_designer_cost = 5
+} #1 better
+
+ballistics_expert_personality = {
+	ruler_allow = {
+		allow = {
+			MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 5
+				is_monarch_leader = yes
+			}
+			modifier = {
+				factor = 2
+				MIL = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_MIL = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 5
+				is_heir_leader = yes
+			}
+			modifier = {
+				factor = 2
+				heir_MIL = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_MIL = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 2
+				consort_MIL = 6
+			}
+		}
+	}
+
+	allow = {
+	}
+	
+	chance = {
+	}
+	
+	infantry_power = 0.05
+	artillery_power = 0.05
+	nation_designer_cost = 5
+} #1 better
+
+integrator_personality = {
+	ruler_allow = {
+		allow = {
+			ADM = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				ADM = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_ADM = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				heir_ADM = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_ADM = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_ADM = 6
+			}
+		}
+	}
+
+	allow = {
+	}
+	
+	chance = {
+	}
+	
+	core_creation = -0.075
+	diplomatic_annexation_cost = -0.075
+	nation_designer_cost = 5
+	
+	wants_avoid_ugly_borders = yes
+} #1 better
+
+artisan_personality = {
+	ruler_allow = {
+		allow = {
+			DIP = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				DIP = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_DIP = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				heir_DIP = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_DIP = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_DIP = 6
+			}
+		}
+	}
+
+	allow = {
+	}
+	
+	chance = {
+	}
+	
+	production_efficiency = 0.10
+	nation_designer_cost = 5
+	
+} #1 better
+
+lavish_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { mil = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				is_monarch_leader = no
+			}
+			modifier = {
+				factor = 2
+				NOT = { mil = 2}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_MIL = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				is_heir_leader = no
+			}
+			modifier = {
+				factor = 2
+				NOT = { heir_MIL = 2}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_MIL = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = 2
+				NOT = { consort_MIL = 2}
+			}
+		}
+	}
+	
+	allow = {
+	}
+	
+	chance = {
+		
+	}
+	enemy_strength_multiplier = 1.25
+	
+	discipline = -0.025
+	nation_designer_cost = -2
+}
+
+paranoid_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { mil = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				is_monarch_leader = no
+			}
+			modifier = {
+				factor = 2
+				NOT = { mil = 2}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_MIL = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				is_heir_leader = no
+			}
+			modifier = {
+				factor = 2
+				NOT = { heir_MIL = 2}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_MIL = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = 2
+				NOT = { consort_MIL = 2}
+			}
+		}
+	}
+	
+	allow = {
+	}
+	
+	chance = {
+		
+	}
+	enemy_strength_multiplier = 1.5
+	
+	army_tradition_decay = 0.01
+	improve_relation_modifier = -0.15
+	nation_designer_cost = -2
+}
+
+absentminded_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { adm = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 2
+				NOT = { adm = 2}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_ADM = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 2
+				NOT = { heir_ADM = 2}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_ADM = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = 2
+				NOT = { consort_ADM = 2}
+			}
+		}
+	}
+	
+	allow = {
+	}
+	
+	chance = {
+		
+	}
+	
+	global_autonomy = 0.025
+	nation_designer_cost = -2
+}
+
+fierce_negotiator_personality = {
+	ruler_allow = {
+		allow = {
+			DIP = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				DIP = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_DIP = 3
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				heir_DIP = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_DIP = 3
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_DIP = 6
+			}
+		}
+	}
+
+	allow = {
+		
+	}
+	
+	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
+	}
+	
+	other_ai_peace_term_bonus = 15
+	
+	merc_maintenance_modifier = -0.25
+	nation_designer_cost = 2
+} #1 easier event

@@ -1,0 +1,33 @@
+# Triggered modifiers are here.
+# these are checked for each countries once/month and then applied.
+#
+# Effects are fully scriptable here.
+
+###########################################
+japanese_samurai_mission = {
+	potential = {
+		mission_completed = dom_ned_japanese_friendship
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				alliance_with = JAP
+				JAP = {
+					trust = { who = ROOT value = 75 } 
+				}
+			}
+			AND = {
+				accepted_culture = japanese
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					region = japan_region
+					value = 25
+				}
+			}
+		}
+	}
+
+	has_samurai = yes
+	allowed_samurai_fraction = 0.1 
+}
+###########################################

@@ -1,0 +1,200 @@
+### The matter of Naxos ###
+### By Alexios ###
+
+namespace = incident_naxos
+
+country_event = {
+	id = incident_naxos.1
+	title = incident_naxos.1.t
+	desc = incident_naxos.1.d
+	picture = SHIP_SAILING_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		NAX = {
+			is_part_of_hre = yes
+			has_reform = pirate_republic_reform
+		}
+		151 = { #Constantinople
+			trade_share = {
+				country = Z17
+				share = 10
+			}
+		}
+		is_emperor = yes
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	immediate = {
+		set_global_flag = naxos_incident_flag
+	}
+	
+	option = { # Convene the Confluence!
+		name = incident_naxos.1.a
+		ai_chance = { factor = 100 }
+		set_imperial_incident = incident_naxos
+		#custom_tooltip = naxos_incident_tt
+		#hidden_effect = { # doesn't happen automatically when removed from empire through script
+		#	every_owned_province = {
+		#		limit = {
+		#			is_part_of_hre = yes
+		#		}
+		#		add_claim = emperor
+		#	}
+		#}
+	}
+}
+
+# dummy incident for the emperor
+country_event = {
+	id = incident_naxos.2
+	title = incident_naxos.2.t
+	desc = incident_naxos.2.d
+	picture = SHIP_SAILING_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # free city
+		name = incident_naxos.2.a
+		ai_chance = { factor = 20 }
+		custom_tooltip = naxos_free_city_tt
+		hidden_effect = {
+			NAX = {
+				country_event = {
+					id = incident_naxos.3
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # privateer republic
+		name = incident_naxos.2.b
+		ai_chance = {
+			factor = 80
+		}
+		custom_tooltip = naxos_privateer_republic_tt
+		hidden_effect = {
+			NAX = {
+				country_event = {
+					id = incident_naxos.4
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # not our problem, somehow?
+		name = incident_naxos.2.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = incident_naxos.3
+	title = incident_naxos.3.t
+	desc = incident_naxos.3.d
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #accept
+		name = incident_naxos.3.a
+		ai_chance = {
+			factor = 80
+		}
+		change_religion = hellenic_pagan_reformed
+		add_government_reform = free_city
+	}
+	
+	option = { #refuse
+		name = incident_naxos.3.b
+		ai_chance = {
+			factor = 20
+		}
+		emperor = {
+			country_event = {
+				id = incident_naxos.5
+				days = 5
+			}
+		}
+		add_prestige = 25
+	}
+}
+
+country_event = {
+	id = incident_naxos.4
+	title = incident_naxos.4.t
+	desc = incident_naxos.4.d
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #accept
+		name = incident_naxos.4.a
+		ai_chance = {
+			factor = 80
+		}
+		change_religion = hellenic_pagan_reformed
+		add_government_reform = privateer_republic
+	}
+	
+	option = { #refuse
+		name = incident_naxos.4.b
+		ai_chance = {
+			factor = 20
+		}
+		emperor = {
+			country_event = {
+				id = incident_naxos.5
+				days = 5
+			}
+		}
+		add_prestige = 25
+	}
+}
+
+country_event = {
+	id = incident_naxos.5
+	title = incident_naxos.5.t
+	desc = incident_naxos.5.d
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #Outrageous!
+		name = incident_naxos.5.a
+		ai_chance = {
+			factor = 80
+		}
+		declare_war_with_cb = {
+			who = NAX
+			casus_belli = cb_antioch_crusade
+		}
+	}
+	
+	option = { # Later...
+		name = incident_naxos.5.b
+		ai_chance = {
+			factor = 20
+		}
+		add_casus_belli = {
+			target = NAX
+			type = cb_change_government
+			months = 1200
+		}
+		add_prestige = -10
+	}
+}

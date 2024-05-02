@@ -1,0 +1,14 @@
+owner = TNG
+controller = TNG
+capital = "Huaiqing"
+is_city = yes
+culture = jin
+religion = mahayana
+trade_goods = grain
+base_tax = 3
+base_production = 3
+base_manpower = 2
+add_core = JIN
+add_core = TNG
+discovered_by = chinese
+discovered_by = nomad_group

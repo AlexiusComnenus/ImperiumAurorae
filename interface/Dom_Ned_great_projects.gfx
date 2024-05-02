@@ -1,0 +1,43 @@
+spriteTypes = {
+
+	#spriteType = {
+	#	name = "GFX_great_project_hollandse_polders"	
+	#	texturefile = "gfx//interface//great_projects//great_project_hollandse_polders_3.dds"
+	#}
+	spriteType = {
+		name = "GFX_great_project_fortress_of_luxemburg"	
+		texturefile = "gfx//interface//great_projects//great_project_fortress_of_luxemburg.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_palace_of_coudenberg"	
+		texturefile = "gfx//interface//great_projects//great_project_palace_of_coudenberg.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_brugge_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_brugge_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_gent_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_gent_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_antwerp_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_antwerp_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_zeeland_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_zeeland_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_den_haag_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_den_haag_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_amsterdam_dike"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_amsterdam_dike.dds"
+	}
+	spriteType = { 
+		name = "GFX_great_project_fu_admiralty_amsterdam"	
+		texturefile = "gfx//interface//great_projects//great_project_fu_admiralty_amsterdam.dds"
+	}
+}	

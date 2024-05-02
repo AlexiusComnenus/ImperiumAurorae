@@ -1,0 +1,7 @@
+government = republic
+add_government_reform = almohad_commune_reform
+government_rank = 2
+technology_group = muslim
+religion = yazidi
+primary_culture = moroccan
+capital = 343

@@ -1,0 +1,55 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = ruthenian
+capital = 1941
+1444.11.11= {
+	monarch = {
+		name = "Yuriy II"
+		dynasty = "Rurikovich"
+		adm = 3
+		dip = 1
+		mil = 3
+		birth_date = 1395.12.25
+		religion = orthodox
+		culture = ruthenian
+	}
+	add_ruler_personality = benevolent_personality
+	add_ruler_personality = righteous_personality
+	queen = {
+		name = "Alexandra"
+		dynasty = "of Rasiv"
+		adm = 3
+		dip = 2
+		mil = 3
+		country_of_origin = Z63
+		birth_date = 1398.3.18
+		death_date = 1458.3.18
+		female = yes
+		religion = orthodox
+		culture = byelorussian
+	}
+	add_queen_personality = free_thinker_personality
+	add_queen_personality = greedy_personality
+	heir = {
+		name = "Briachislav"
+		monarch_name = "Briachislav II"
+		dynasty = "Rurikovich"
+		adm = 5
+		dip = 6
+		mil = 4
+		birth_date = 1418.11.24
+		death_date = 1483.11.24
+		claim = 89
+		religion = orthodox
+		culture = byelorussian
+	}
+	add_heir_personality = free_thinker_personality
+	add_heir_personality = sinner_personality
+}
+1444.11.11= {
+	add_prestige = 82
+	add_treasury = 29
+}

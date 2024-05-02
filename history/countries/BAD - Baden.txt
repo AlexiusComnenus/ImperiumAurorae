@@ -1,0 +1,40 @@
+government = monarchy
+add_government_reform = grand_duchy_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = swabian
+capital = 72
+1444.11.11= {
+	monarch = {
+		name = "Jakob III"
+		dynasty = "von Zähringen"
+		adm = 3
+		dip = 3
+		mil = 2
+		birth_date = 1428.4.26
+		religion = catholic
+		culture = swabian
+	}
+	add_ruler_personality = free_thinker_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Klementia"
+		dynasty = "de Beaumont"
+		adm = 3
+		dip = 4
+		mil = 4
+		country_of_origin = CRN
+		birth_date = 1428.9.3
+		death_date = 1488.9.3
+		female = yes
+		religion = catholic
+		culture = cornish
+	}
+	add_queen_personality = free_thinker_personality
+	add_queen_personality = lawgiver_personality
+}
+1444.11.11= {
+	add_prestige = 5
+	add_treasury = 46
+}

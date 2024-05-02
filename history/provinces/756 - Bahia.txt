@@ -1,0 +1,16 @@
+owner = Y11
+controller = Y11
+capital = "Nova Roma"
+is_city = yes
+culture = roman
+religion = hellenic_pagan
+trade_goods = naval_supplies
+fort_15th = yes
+add_core = Y11
+base_tax = 3
+base_production = 5
+base_manpower = 2
+extra_cost = 8
+center_of_trade = 1
+discovered_by = south_american
+

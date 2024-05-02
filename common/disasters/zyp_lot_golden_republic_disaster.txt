@@ -1,0 +1,81 @@
+golden_republic_disaster = {
+	potential = {
+		NOT = { has_country_flag = lot_golden_republic_disaster_concluded }
+		tag = LOT
+		government = monarchy
+		NOT = { adm_tech = 15 }
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { adm_tech = 15 }
+		NOT = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 40
+			}
+		}
+		OR = {
+			NOT = { stability = 0 }
+			unrest = 0
+		}
+	}
+	
+	can_stop = {
+		adm_tech = 15
+	}
+	
+	progress = {
+		modifier = {
+			factor = 2
+			num_of_loans = 1
+		}
+		modifier = {
+			factor = 2
+			religion = reformed
+		}
+		modifier = {
+			factor = 2
+			religion = fraticelli
+		}
+		modifier = {
+			factor = 2
+			NOT = { prestige = 0 }
+		}
+
+		modifier = {
+			factor = 3
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 6
+			NOT = { stability = -2 }
+		}
+
+		modifier = {
+			factor = 9
+			is_at_war = yes
+			NOT = { war_score = -50 }
+		}
+	}
+	
+	can_end = {
+		stability = 3
+		NOT = { unrest = 1 }
+	}
+	
+	modifier = {
+		stability_cost_modifier = 1
+		global_unrest = 10
+		global_tax_modifier = -0.25
+		trade_goods_size_modifier = -0.25
+	}
+	
+	on_start = LOT_d_events.1
+	on_end = LOT_d_events.2
+	
+	on_monthly = {
+		events = {
+		}
+	}
+}

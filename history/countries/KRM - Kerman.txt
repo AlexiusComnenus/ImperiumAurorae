@@ -1,0 +1,61 @@
+government = monarchy
+add_government_reform = diadochos_reform
+government_rank = 1
+technology_group = eastern
+religion = manichean
+primary_culture = seleucian
+capital = 2220
+add_accepted_culture = kirgiz
+1444.11.11= {
+	monarch = {
+		name = "Antiochos XIV"
+		dynasty = "Seleukídai"
+		adm = 3
+		dip = 3
+		mil = 5
+		birth_date = 1402.9.17
+		religion = manichean
+		culture = seleucian
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Delbar"
+		dynasty = "Assadid"
+		adm = 3
+		dip = 2
+		mil = 2
+		country_of_origin = ARL
+		birth_date = 1393.8.13
+		death_date = 1453.8.13
+		female = yes
+		religion = sunni
+		culture = azerbaijani
+	}
+	add_queen_personality = lawgiver_personality
+	add_queen_personality = secretive_personality
+	heir = {
+		name = "Antiochos"
+		monarch_name = "Antiochos XV"
+		dynasty = "Seleukídai"
+		adm = 4
+		dip = 2
+		mil = 5
+		birth_date = 1436.10.15
+		death_date = 1501.10.15
+		claim = 89
+		religion = manichean
+		culture = seleucian
+	}
+	add_heir_personality = zealot_personality
+}
+1444.11.11= {
+	add_prestige = 65
+	add_treasury = 44
+	define_ruler_to_general = {
+		fire = 4
+		shock = 3
+		manuever = 3
+		siege = 2
+	}
+}

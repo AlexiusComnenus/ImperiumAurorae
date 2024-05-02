@@ -1,0 +1,38 @@
+tripolitania_ideas = {
+	start = {
+		movement_speed = 0.15
+		num_accepted_cultures = 2
+	}
+	bonus = {
+		discipline = 0.05
+	}
+	trigger = {
+		tag = Z62
+	}
+	free = yes
+
+	z62_assimilation_of_berbers = {
+		galley_power = 0.15
+		culture_conversion_time = -0.5
+	}
+	z62_the_western_gate = {
+		global_foreign_trade_power = 0.15
+		trade_steering = 0.25
+	}
+	z62_cross_sahara = {
+		land_attrition = -0.20
+	}
+	z62_nomadic_recruits = {
+		cavalry_flanking = 0.50
+		caravan_power = 0.25
+	}
+	z62_disciples_of_alchemy = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	z62_palace_of_mirage = {
+		innovativeness_gain = 0.5
+	}
+	z62_shifting_bastion = {
+		own_territory_dice_roll_bonus = 1	
+	}
+}

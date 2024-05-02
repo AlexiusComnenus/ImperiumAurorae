@@ -1,0 +1,145 @@
+﻿l_english:
+ 
+ #Mission Tooltips
+ 
+ gra_across_gibraltar_tt:0 "\nIf we are allied to the §YAlmohads§!, trust will grow between our nations by §G25§!. Otherwise, if they have §Y150§! opinion of us we will gain an §Yalliance§!. If we are §Yrivals§!, we will gain §G30§! trade power in §YSafi§!."
+ gra_great_mosques_tt:0 "§G5§! tax development will be distributed between our provinces that fulfill the requirement"
+ gra_christian_cities_tt:0 "\nWe will declare an §Roffensive§! war against every christian country that holds a province in Northern Morocco. If the Almohads have at least §Y75§! trust towards us, they will join our side"
+ gra_federal_emirate_tt:0 "We will chose whether to keep our itinerant capital or centralise the power in one of our provinces. Additionaly, our Iberian provinces will be easier to govern."
+ gra_military_piety_tt:0 "\nThe §Yclergy§! privilege §YExpansionist Zealotry§! will give additional bonuses"
+ gra_has_itinerant_capital_yes:0 "Every §Yelection cycle§!, our court will move to a different province giving various bonuses"
+ 
+ #Event tooltips
+ 
+ ia_flavor_gra.1.a.tt:0 "This will unlock the §Ymonarchy§! path for §YGranada§!, leading to the restoration of a §YSunni§! dynasty to §YAndalusia§!\n"
+ ia_flavor_gra.1.b.tt:0 "This will unlock the §Yrepublic§! path for §YGranada§!, leading to the foundation of the §YBaetic League§!. \n\n§RThis will prevent forming Andalusia§!\n"
+ 
+ #Name overwrite
+ 
+ BAETIC_LEAGUE:0 "Baetic League"
+ BAETIC_LEAGUE_ADJ:0 "Baetic"
+ BAETIC_LEAGUE_ADJ2:0 "Baetic"
+ 
+ #Missions
+ 
+ granada_cadiz_navy_title:0 "The Quadisian Navy"
+ granada_cadiz_navy_desc:0 "Ever since the Christians conquered the northern Moroccan cities, our navy has been in disrepair. The fact that about half the navy is in the Zikri followers' hands doesn't help either. Putting the shipyards to work is necessary to avoid suffering another defeat."
+ granada_across_gibraltar_title:0 "Across Jabal Tarik"
+ granada_across_gibraltar_desc:0 "Across the straight where Tarik launched his invasion, there are now Christhans. Not any Christians, but those that have proved more hostile to us. Diplomatic relations with our brethen in the other side is essential to protect our independance."
+ granada_sevilla_admiralty_title:0 "Isbiliyan Admiralty"
+ granada_sevilla_admiralty_desc:0 "An Andalusian admiral is not someone you should underestimate. The Isbiliyan Naval School is among the best officer schools in the Mediterranean. And with our investment, it will be second only to Antioch."
+ granada_malaga_trade_title:0 "Flourishing Malaqan Trade"
+ granada_malaga_trade_desc:0 "Our naval policy has enabled traders in our seas to feel protected. Further protecting their interests will lead to an economic boom in some of our provinces."
+ granada_finish_the_orders_title:0 "Finish the Atlantic Orders"
+ granada_finish_the_orders_desc:0 "When the christians held their crusades against our brethen, some of their orders used the opportunity to take to the seas and become the scourge of the Atlantic. These thieves who pretend to act under their god must be dealt with and their lairs cleansed."
+ granada_great_mosques_title:0 "Rebuild the Great Mosques"
+ granada_great_mosques_desc:0 "Al-Andalus used to be a land of great mosques. With collective effort we can reestablish some of our leading institutions, and attract more people to our faith."
+ granada_christian_cities_title:0 "End Christian Occupation"
+ granada_christian_cities_desc:0 "North Morocco is used by the christians as a bargaining chip against us. This cannot stand, and continued Christian aggression will only meet one response: war."
+ granada_secure_straight_title:0 "Secure the Straight"
+ granada_secure_straight_desc:0 "Securing North Morocco is not just a religious quest, but also a practical objective: controling both sides of the straigth will grant us a monoply on trade passing through."
+ granada_protect_almeria_title:0 "Protect the Marriyan Coast"
+ granada_protect_almeria_desc:0 "Foreign pirate raids have always been a problem for anyone near the sea. For us, this threat has historically come from the Arian kingdoms of Carthage. We must build the necessary protections in our maritime cities, specifically in Marriya."
+ granada_baetic_range_title:0 "The Baetic Range"
+ granada_baetic_range_desc:0 "The mountains of Upper Andalusia offer extraordinary protection for anyone seeking safety in times of war. We must consolidate this region, as well as the valley of the Guadalquivir to the North. The liberation of our homeland is at hand."
+ granada_constitution_title:0 "A New Constitution"
+ granada_constitution_desc:0 "The Constitution of Quadis - a series of treaties and oaths between the Amirs of Andalusia that seeks to end years of internal squabbles and unbalanced power. We must work towards an administration that can oversee the implementation of these documents."
+ granada_ibn_ali_reforms_title:0 "Ibn Ali's Reforms"
+ granada_ibn_ali_reforms_desc:0 "There are calls to reform our court: to make it grandious, but also balanced and flexible. We must gather a host of advisors and take them through our country to oversee the development of our cities."
+ granada_leagues_taifas_title:0 "The League's Taifas"
+ granada_leagues_taifas_desc:0 "One disadvantage of our decentralisation policies is not having a united national army. We should seek to keep a record of whatever men will defend their Taifa in return for greater autonomy."
+ granada_unite_alandalus_title:0 "Unite the Al-Andalus"
+ granada_unite_alandalus_desc:0 "Victory is at hand, we shall seize the opportunity and take out the few remaining Christian kingdoms. At last we have united the peoples of Al-Andalus."
+ granada_federal_emirate_title:0 "A New Emirate"
+ granada_federal_emirate_desc:0 "After having united the Al-Andalus, or Hispania, a choice must be made. Either we optimize our itinerant court or we centralize power in a single province."
+ granada_jaen_defense_title:0 "Jayyan's Defense"
+ granada_jaen_defense_desc:0 "Jayyan is a land of castles, serving as the border with the Christian kingdoms. As such we must preserve that defensive complex and use its blueprint elsewhere."
+ granada_granada_militias_title:0 "The Granatan Militia"
+ granada_granada_militias_desc:0 "One of the most ambitious defensive projects: meant to make the mountains unsurpassable. But to achieve it we must have the support of the locals."
+ granada_push_north_title:0 "Push North"
+ granada_push_north_desc:0 "The kingdoms to our North are weak in their infighting, as we once were. It is now our time to strike."
+ granada_bane_fraticelli_title:0 "Bane of the Fraticelli"
+ granada_bane_fraticelli_desc:0 "Some of the Christians fashion themselves after a poverty lifestyle and as such rebelled against an oppulent Pope. We laugh at their miserable conditions and mark them as our next target."
+ granada_sunni_army_title:0 "Raise the Sunni Army"
+ granada_sunni_army_desc:0 "While there is not total agreement between the republican and monarchical factions in our government, there is one thing we have in common: our faith. We must raise an army that is loyal to our cause, or at least part of it."
+ granada_military_piety_title:0 "Military Piety"
+ granada_military_piety_desc:0 "Fielding a large army with our limited resources is not easy, but we take this as an oportunity to distiguish the mort pious individuals and give them powerful positions in our military and, to some extent, our government."
+ granada_sunni_victory_title:0 "A Sunni Victory"
+ granada_sunni_victory_desc:0 "At last we have united our people, under one banner and under one faith."
+ granada_cordoba_modern_thought_title:0 "Qurtuban Modern Thought"
+ granada_cordoba_modern_thought_desc:0 "The Renaissance has spread throught the Christian world, and effectively to us too. While it is not traditional for islamic art to present classical aspects of symbolism and alegory, the religious and artistic comunities of our nation have adapted some of these styles."
+ granada_catholic_holdouts_title:0 "The Last Visigoths"
+ granada_catholic_holdouts_desc:0 "The Catholic Visigoths in Valencia had for centuries enjoyed autonomy under islamic rule. We shall offer them centuries more of protection, by force if necessary."
+ 
+ #Events
+ 
+ ia_flavor_gra.1.t:0 "The Nasrid Rebellion"
+ ia_flavor_gra.1.desc:0 "Wartorn fields, dried out rivers and empty cities. Such is the sad state of the once-mighty Al-Andalus. Yet the Andalusian people are still divided - more so than ever before. The Nasrid rebelled against the tyrant heretic Sultan, and are now in a position to claim the sultanate for themselves.\n\nHowever, the question of the future of our nation is in active debate. No one argues agains unity in faith, but an increasingly powerful faction advocates for a decentralised approach to our ruling: one without a Sultan, but with a council of Emirs."
+ ia_flavor_gra.1.a:0 "We need a Sultan! The Qurtuban elites can be ignored."
+ ia_flavor_gra.1.b:0 "Accept their request, we will not follow another tyrant."
+ ia_flavor_gra.2.t:0 "The Rif Rebellion"
+ ia_flavor_gra.2.desc:0 "Rising against their oppressing overlords, our brethen in North Morocco call for help. Their poorly planed rebellion has already been met with steel, but can we withstand this violence against people of our faith?"
+ ia_flavor_gra.2.b:0 "To war! Let the christians tremble in fear."
+ ia_flavor_gra.3.t:0 "A message of hope"
+ ia_flavor_gra.3.desc:0 "Word is spreading through the islamic world of our deeds in Iberia. The restoration of southern Al-Andalus is celebrated from Fez to Malaya."
+ ia_flavor_gra.3.a:0 "United in faith, we will rise again."
+ ia_flavor_gra.4.t:0 "The pirates of the East"
+ ia_flavor_gra.4.desc:0 "The vandalic kingdoms have always been a thorn on our side. This cannot be tolerated any further. Now that effective defenses have been built in our homeland it is time to strike, and remove this threat."
+ ia_flavor_gra.4.a:0 "Push them to the mountains. They cannot threaten us from there."
+ ia_flavor_gra.4.b:0 "Demand an oath of alligeance. They may bleed our enemies dry."
+ ia_flavor_gra.5.t:0 "The next capital"
+ ia_flavor_gra.5.desc:0 "It is time to change the location of our court. The council has put forward a list of provinces that would be fitting to host us for now. While we have to abide this list, our word will be final in which of them gets chosen."
+ ia_flavor_gra.5.a:0 "Our central heartland offers a better position."
+ ia_flavor_gra.5.b:0 "Let us focus on the Atlanntic and the new opportunities it offers."
+ ia_flavor_gra.5.c:0 "We must rule from our Mediterranean taifas, thriving with trade."
+ ia_flavor_gra.5.d:0 "Our armies cannot be complacent, we will focus on hunting and drilling."
+ ia_flavor_gra.5.e:0 "There is one key aspect to achieve victory: we will have the high ground."
+ ia_flavor_gra.6.t:0 "A modern administration"
+ ia_flavor_gra.6.desc:0 "Times are changing and the logistical nightmare of an itinerant court is beginning to show its marks. Amirs from all our taifas have gathered in an extraordinary meeting to adress this issue. Many call for a permanent capital and a larger participation of the elites in the central government.\n\nIs it now the time to take a turn in our path? Or should we invest instead in adapting modern policies to our tradition?"
+ ia_flavor_gra.6.a:0 "Increase the powers of the Amirs, and convene a permanent council."
+ ia_flavor_gra.6.b:0 "We cannot abandon our roots."
+ ia_flavor_gra.7.t:0 "The League of Al-Andalus"
+ ia_flavor_gra.7.desc:0 "Victory! The Christians have been at last driven from the Al-Andalus. Truly a great day for both muslims all over the world, and the Dhimmi that prosper in our Taifas."
+ ia_flavor_gra.7.a:0 "The White Phoenix Rises!"
+ 
+ #Event Modifiers
+ 
+ gra_new_trade:0 "New Trade Routes"
+ gra_loyal_republic:0 "Loyal to the Republic"
+ gra_defensive_operations:0 "Defensive Operations"
+ gra_islamic_renaissance:0 "Center of Islamic Renaissance"
+ gra_sevilla_admiralty:0 "Isbiliyan Admiralty"
+ gra_republican_zeal:0 "Republican Zeal"
+ gra_cap_center:0 "Central Capital"
+ gra_cap_center_big:0 "Central Capital"
+ gra_cap_atlantic:0 "Atlantic Capital"
+ gra_cap_atlantic_big:0 "Atlantic Capital"
+ gra_cap_med:0 "Mediterranean Capital"
+ gra_cap_med_big:0 "Mediterranean Capital"
+ gra_cap_tree:0 "Woodland Capital"
+ gra_cap_tree_big:0 "Woodland Capital"
+ gra_cap_mountain:0 "Highland Capital"
+ gra_cap_mountain_big:0 "Highland Capital"
+ gra_capital_buff:0 "Capital of the Baetic League"
+ gra_iberian_integration:0 "Al-Andalus Centralized Taifa"
+ 
+ #Opinion Modifiers
+ 
+ gra_sunni_victory:0 "Sunni Victory in Iberia"
+ 
+ #Province Triggered Modifiers
+ 
+ gra_local_militia:0 "Active Granatan Militias"
+ 
+ #Governments
+ 
+ baetic_league_government:0 "Baetic League"
+ baetic_league_government_desc:0 "In this loose federation of Taifa Emirates it is common protection that rules supreme. The balance of power between Emirs must be mantained to ensure that no tyrants will rise again."
+ flexible_council_reform:0 "Wandering Council"
+ flexible_council_reform_desc:0 "Named by Ibn Ali, one of the most important statesmen in the League, a form of government where the capital is not fixed, but changes every few years to ensure all parts of our realm get deserved attention.\n\nEvery §Yelection cycle§!, our court will move to a different province giving various bonuses"
+ autonomous_taifas_reform:0 "Autonomous Taifas"
+ autonomous_taifas_reform_desc:0 "Giving additional autonomy to our already independant-minded Taifa might appear like lunacy for other countries. But it also means that they rely more on the independance only we can give them, and they comply with our manpower requests in times of war."
+ rule_of_amirs_reform:0 "Rule of Amirs"
+ rule_of_amirs_reform_desc:0 "The seat of power is concentrated, and bureaucrats now work to centralize the furthest reaches of our League. But our dislike for tyrany did not falter: the power is still distributed among the Emirs in a balanced manner."
+ provincial_republic_reform:0 "Provincial Republic"
+ provincial_republic_reform_desc:0 "Advancements in administrative capacity are not entirely incompatible with an itinerant capital. In this Republic our conquests are difficult to integrate without straining the government's capacity."

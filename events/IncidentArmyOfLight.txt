@@ -1,0 +1,213 @@
+### Arrival of the Army of Light ###
+### By Alexios ###
+
+namespace = incident_AOL
+
+country_event = {
+	id = incident_AOL.1
+	title = incident_AOL.1.t
+	desc = incident_AOL.1.d
+	picture = east_asian_BATTLE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		is_institution_enabled = new_world_i
+		is_emperor = yes
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_global_flag = AOL_incident_flag
+	}
+	
+	option = { # Convene the Confluence!
+		name = incident_AOL.1.a
+		ai_chance = { factor = 100 }
+		set_imperial_incident = army_of_light_incident
+		#custom_tooltip = olympics_incident_tt
+		#hidden_effect = { # doesn't happen automatically when removed from empire through script
+		#	every_owned_province = {
+		#		limit = {
+		#			is_part_of_hre = yes
+		#		}
+		#		add_claim = emperor
+		#	}
+		#}
+	}
+}
+
+# dummy incident for the emperor
+country_event = {
+	id = incident_AOL.2
+	title = incident_AOL.2.t
+	desc = incident_AOL.2.d
+	picture = east_asian_BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # everyone chips in
+		name = incident_AOL.2.a
+		ai_chance = { factor = 80 }
+		add_imperial_influence = -10
+		custom_tooltip = aol_everyone_contributes_tt
+		hidden_effect = {
+			1249 = {
+				cede_province = emperor
+				change_culture = emperor
+				change_religion = emperor
+				add_core = AOL
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			1162 = {
+				cede_province = emperor
+				change_culture = emperor
+				change_religion = emperor
+				add_core = AOL
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			emperor = { release = AOL } 
+			every_country = {
+				limit = { is_part_of_hre = yes }
+				add_manpower = -1
+				add_treasury = -20
+				AOL = {
+					add_manpower = 1
+					add_treasury = 20
+				}
+			}
+			AOL = {
+				add_country_modifier = {
+					name = aol_starter_bonus
+					hidden = yes
+					duration = 7300
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0
+						cavalry = 0.8
+						artillery = 0.2
+					}
+				}
+				set_in_empire = yes
+				change_government = theocracy
+				add_government_reform = auroral_horde
+				define_general = {
+					fire = 6
+					shock = 10
+					manuever = 6
+					siege = 10
+					trait = aurora_trained
+					name = "Xuenyuan Wangliang"
+				}
+			}
+			niger_region = { add_permanent_claim = AOL }
+			sahel_region = { add_permanent_claim = AOL }
+			guinea_region = { add_permanent_claim = AOL }
+		}
+	}
+	option = { # just the emperor
+		name = incident_AOL.2.b
+		ai_chance = {
+			factor = 20
+		}
+		emperor = { add_treasury = -500 	add_manpower = -20 }
+		
+		hidden_effect = {
+			1249 = {
+				cede_province = emperor
+				change_culture = emperor
+				change_religion = emperor
+				add_core = AOL
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			1162 = {
+				cede_province = emperor
+				change_culture = emperor
+				change_religion = emperor
+				add_core = AOL
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			emperor = { release = AOL } 
+			AOL = {
+				add_country_modifier = {
+					name = aol_starter_bonus
+					hidden = yes
+					duration = 7300
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0
+						cavalry = 0.8
+						artillery = 0.2
+					}
+				}
+				set_in_empire = yes
+				change_government = theocracy
+				add_government_reform = auroral_horde
+				define_general = {
+					fire = 6
+					shock = 10
+					manuever = 6
+					siege = 10
+					trait = aurora_trained
+					name = "Xuenyuan Wangliang"
+				}
+				add_treasury = 200 	
+				add_manpower = 10
+			}
+			niger_region = { add_permanent_claim = AOL }
+			sahel_region = { add_permanent_claim = AOL }
+			guinea_region = { add_permanent_claim = AOL }
+		}
+	}
+}

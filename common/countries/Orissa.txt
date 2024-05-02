@@ -1,0 +1,95 @@
+ck2_converter_generated = yes
+graphical_culture = indiangfx
+color = { 210 106 47 }
+revolutionary_colors = { 5 8 0 }
+historical_idea_groups = {
+	religious_ideas
+	offensive_ideas
+	trade_ideas
+	quantity_ideas
+	defensive_ideas
+	economic_ideas
+	diplomatic_ideas
+	spy_ideas
+}
+historical_units = {
+	indian_archers
+	indian_arquebusier
+	indian_footsoldier
+	indian_rifle
+	sikh_hit_and_run
+	tipu_sultan_rocket
+}
+monarch_names = {
+	"Anangabhima #2" = 10
+	"Anubai #0" = -1
+	"Bhupendra #1" = 10
+	"Birsa #0" = 0
+	"Ceyyacôlam #0" = -1
+	"Chodaganga #1" = 10
+	"Devavati #0" = -1
+	"Dibyasingha #0" = 0
+	"Durgaraja #0" = 0
+	"Jahangir #0" = 0
+	"Kamarnava #1" = 10
+	"Khadaga #1" = 10
+	"Nanmani #0" = -1
+	"Nayanadevi #0" = -1
+	"Padmanava #0" = 0
+	"Puranjaya #0" = 0
+	"Ragaraja #1" = 10
+	"Raghava #1" = 10
+	"Rajaraja #1" = 10
+	"Sankaravarman #0" = 0
+	"Sudevaraja #0" = 0
+	"Yajnavati #0" = -1
+}
+leader_names = {
+	"Bhowarbar"
+	"Bidyadhar"
+	"Dassa"
+	"Deo"
+	"Deva"
+	"Gajapati"
+	"Kalinga"
+	"Nayudu"
+	"Patra"
+	"Poosapati"
+	"Rai"
+	"Ratha"
+	"Reddy"
+	"Roy"
+	"Santra"
+	"Singhar"
+	"Sinha"
+	"Uria"
+	"Vansa"
+	"Vasireddy"
+	"Velama"
+}
+ship_names = {
+	"Baitarani"
+	"Balasore"
+	"Balugaon"
+	"Behrampur"
+	"Bhubeneswar"
+	"Brahmani"
+	"Chandipur"
+	"Chilka"
+	"Cuttack"
+	"Durga"
+	"Gopalpur"
+	"Jagannath"
+	"Juggernaut"
+	"Kalijai"
+	"Konark"
+	"Lakshmi"
+	"Mahanadi"
+	"Nalabana"
+	"Paradeep"
+	"Parvati"
+	"Puri"
+	"Radha"
+	"Sarasvati"
+	"Satapada"
+}

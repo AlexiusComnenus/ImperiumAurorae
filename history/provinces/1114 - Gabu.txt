@@ -1,0 +1,15 @@
+owner = MAL
+controller = MAL
+capital = "Kansala"
+is_city = yes
+culture = senegambian
+religion = shamanism
+trade_goods = ivory
+base_tax = 3
+base_production = 3
+base_manpower = 2
+extra_cost = 8
+center_of_trade = 1
+add_core = KBU
+add_core = MAL
+discovered_by = sub_saharan

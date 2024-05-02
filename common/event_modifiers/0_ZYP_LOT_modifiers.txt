@@ -1,0 +1,90 @@
+lot_cult_1 = { #flemish
+	num_accepted_cultures = 1
+}
+
+lot_cult_2 = { #dutch
+	num_accepted_cultures = 1
+}
+
+lot_cult_3 = { #frisian
+	num_accepted_cultures = 1
+}
+
+lot_court_wealth = {
+	advisor_cost = -0.15
+	build_cost = -0.15
+}
+
+lot_aachen_prestige = {
+	local_development_cost_modifier = -0.2 #local_development_cost = -0.2
+	local_build_cost = -0.2
+}
+
+lot_nanziger_prestige = {
+	local_development_cost_modifier = -0.2 #local_development_cost = -0.2
+	local_tax_modifier = 0.25
+}
+
+lot_western_marches = {
+	vassal_manpower_bonus = 0.25
+	vassal_forcelimit_bonus = 0.25
+	vassal_income = 0.25
+}
+
+lot_cloth_production = {
+	production_efficiency = 0.1
+}
+
+lot_hollandic_trade = {
+	trade_efficiency = 0.2
+	mercantilism_cost = -0.25
+}
+
+lot_new_admin = {
+	country_admin_power = 1
+	state_governing_cost = -0.1
+}
+
+lot_everlasting_prestige = {
+	land_morale = 0.15
+	prestige_decay = -0.01
+}
+
+lot_humanist_rule = {
+	no_religion_penalty = yes
+	tolerance_of_heretics_capacity = 2
+	tolerance_of_heathens_capacity = 2
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+	global_unrest = -2
+}
+
+lot_iron_fist = {
+	culture_conversion_cost = -0.25
+	culture_conversion_time = -0.5
+	development_cost_in_primary_culture = -0.1
+	global_unrest = 2
+}
+
+lot_carolingian_revenge_modifier = {
+	diplomatic_reputation = 2
+	monarch_admin_power = 1
+	monarch_diplomatic_power = 1
+	monarch_military_power = 1
+	max_absolutism = 10	
+}
+
+#################
+#GOLDEN REPUBLIC#
+#################
+
+lot_defeated_republicans = {
+	burghers_influence_modifier = -0.1
+	max_absolutism = 10
+	discipline = 0.025
+}
+
+local_sabotage = {
+	trade_goods_size_modifier = -0.5
+	local_autonomy = 0.5
+}

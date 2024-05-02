@@ -1,0 +1,21 @@
+golden_republic_reform = {
+	icon = "parliament_hall"
+	allow_normal_conversion = no
+	potential = {
+		has_reform = golden_republic_reform
+	}
+	
+	valid_for_nation_designer = no
+	
+	modifiers = {
+		religious_unity = 0.1
+		land_morale = 0.1
+		development_cost = -0.1
+		nobles_influence_modifier = -0.1
+		church_influence_modifier = -0.05
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	has_term_election = yes
+}

@@ -1,0 +1,1546 @@
+franconian_minor_missions_col1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		primary_culture = franconian
+	}
+	potential = {
+		primary_culture = franconian
+	}
+	has_country_shield = yes
+	
+	fkn_rally_the_franken = {
+		icon = mission_italian_condottiere
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				army_size_percentage = 1
+			}
+			else = {
+				OR = { army_size_percentage = 0.85	is_at_war = yes }
+			}
+		}
+		
+		effect = {
+			upper_franconia_area = { add_permanent_claim = ROOT }
+			franconia_area = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	fkn_southern_campaign = {
+		icon = mission_landsknecht_soldier
+		required_missions = {
+			fkn_talented_general
+			fkn_rally_the_franken
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			area = franconia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_adm_power = 30
+			add_dip_power = 30
+			add_mil_power = 30
+		}
+	}
+	
+	fkn_safeguard_the_realm = {
+		icon = fortress_of_belgrade
+		required_missions = {
+			fkn_northern_campaign
+			fkn_southern_campaign
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = { area = upper_franconia_area 	area = franconia_area }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			upper_franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = { ai = no }
+				4715 = {
+					province_has_current_tech_fort_trigger = yes
+					has_manpower_building_trigger = yes
+				}
+				4717 = {
+					province_has_current_tech_fort_trigger = yes
+					has_manpower_building_trigger = yes
+				}
+			}
+		}
+		
+		effect = {
+			4715 = {
+				add_base_manpower = 3
+				add_permanent_province_modifier = {
+					name = fkn_franconian_castles
+					duration = -1
+				}
+			}
+			4717 = {
+				add_base_manpower = 3
+				add_permanent_province_modifier = {
+					name = fkn_franconian_castles
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+franconian_minor_missions_col2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		primary_culture = franconian
+	}
+	potential = {
+		primary_culture = franconian
+	}
+	has_country_shield = yes
+	
+	fkn_talented_general = {
+		icon = mission_alliances
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				has_estate_privilege = estate_nobles_advisors
+				treasury = 30
+			}
+			else = {
+				treasury = 30
+				is_year = 1446
+			}
+		}
+		
+		effect = {
+			create_general = { tradition = 80 }	
+			add_country_modifier = {
+				name = fkn_new_talented_general
+				duration = 7300
+			}
+		}
+	}
+	
+	fkn_northern_campaign = {
+		icon = mission_conquer_50_development
+		required_missions = {
+			fkn_talented_general
+			fkn_rally_the_franken
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			area = upper_franconia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			upper_franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_adm_power = 30
+			add_dip_power = 30
+			add_mil_power = 30
+		}
+	}
+	
+	fkn_franken_realm = {
+		icon = mission_conquer_50_development
+		required_missions = {
+			fkn_northern_campaign
+			fkn_southern_campaign
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = { area = upper_franconia_area 	area = franconia_area }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			upper_franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			if = {
+				limit = { ai = no }
+				stability = 2
+				prestige = 30
+				franconia_area = {
+					type = all
+					has_state_edict = edict_advancement_effort
+				}
+				upper_franconia_area = {
+					type = all
+					has_state_edict = edict_advancement_effort
+				}
+			}
+		}
+		
+		effect = {
+			franconia_area = {
+				add_nationalism = -20
+				set_local_autonomy = 0
+			}
+			upper_franconia_area = {
+				add_nationalism = -20
+				set_local_autonomy = 0
+			}
+			
+			if = {
+				limit = { NOT = { has_institution = renaissance } }
+				capital_scope = { 
+					add_institution_embracement = {
+						which = renaissance
+						value = 50
+					}
+				}
+			}
+			
+			add_country_modifier = {
+				name = fkn_into_future
+				duration = 7300
+			}
+		}
+	}
+}
+
+franconian_minor_missions_col3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		primary_culture = franconian
+	}
+	potential = {
+		primary_culture = franconian
+	}
+	has_country_shield = yes
+
+	fkn_mandatory_military_service = {
+		icon = mission_rb_unite_the_clans
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					base_manpower = 6
+					has_state_edict = edict_promote_military_recruitment
+				}
+			}
+			else = {
+				OR = {
+					grown_by_development = 25
+					capital_scope = {
+						base_manpower = 6
+						has_state_edict = edict_promote_military_recruitment
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_base_manpower = 3
+				add_province_modifier = {
+					name = fkn_mandatory_military_service_province_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_new_barracks = {
+		icon = mission_assemble_an_army
+		required_missions = {
+			fkn_mandatory_military_service
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					base_manpower = 12
+					has_state_edict = edict_promote_military_recruitment
+					has_manpower_building_trigger = yes
+				}
+			}
+			else = {
+				OR = {
+					is_year = 1485
+					grown_by_development = 40
+					capital_scope = {
+						base_manpower = 12
+						has_manpower_building_trigger = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_base_manpower = 3
+				remove_province_modifier = fkn_mandatory_military_service_province_mod
+				add_province_modifier = {
+					name = fkn_mandatory_military_service_province_mod_t2
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_expand_military_facilities = {
+		icon = mission_pol_revival_krakow
+		required_missions = {
+			fkn_new_barracks
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					province_has_current_tech_fort_trigger = yes
+					has_state_edict = edict_promote_military_recruitment
+					has_forcelimit_building_trigger = yes
+				}
+				has_estate_privilege = estate_nobles_levies
+			}
+			else = {
+				OR = {
+					is_year = 1500
+					grown_by_development = 60
+					capital_scope = {
+						province_has_current_tech_fort_trigger = yes
+						has_forcelimit_building_trigger = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = fkn_expand_military_facilities_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_grand_capital = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_expand_military_facilities
+			fkn_safeguard_the_realm
+			fkn_franken_realm
+			fkn_bastion_of_safety
+			fkn_invest_in_manufacturing
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					development = 35
+					num_of_buildings_in_province = 5
+				}
+			}
+			else = {
+				OR = {
+					is_year = 1500
+					grown_by_development = 60
+					capital_scope = {
+						development = 35
+						num_of_buildings_in_province = 5
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = capital_of_the_franken
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+franconian_minor_missions_col4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		primary_culture = franconian
+	}
+	potential = {
+		primary_culture = franconian
+	}
+	has_country_shield = yes
+	
+	fkn_restoring_the_capital = {
+		icon = mission_colonial
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					num_of_times_improved = 3
+					has_state_edict = edict_encourage_development
+				}
+			}
+			else = {
+				OR = {
+					is_year = 1465
+					capital_scope = {
+						num_of_times_improved = 3
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = fkn_rebuilding_the_city
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	fkn_refuge_for_the_faithful = {
+		icon = mission_hands_praying
+		required_missions = {
+			fkn_restoring_the_capital
+			fkn_funds_of_the_crown
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					base_tax = 6
+					has_tax_building_trigger = yes
+				}
+			}
+			else = {
+				OR = {
+					is_year = 1470
+					capital_scope = {
+						base_tax = 6
+						has_tax_building_trigger = yes
+					}
+				}
+			}
+		}
+		
+		effect = {
+			capital_scope = {
+				add_base_tax = 3
+			}
+			add_country_modifier = {
+				name = fkn_a_place_to_mourn
+				duration = 7300
+			}
+		}
+	}
+	
+	fkn_bastion_of_safety = {
+		icon = fight_bosnian_heresies
+		required_missions = {
+			fkn_refuge_for_the_faithful
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					province_has_current_tech_fort_trigger = yes
+					has_building = ramparts
+				}
+			}
+			else = {
+				OR = {
+					is_year = 1485
+					capital_scope = {
+						province_has_current_tech_fort_trigger = yes
+						has_building = ramparts
+					}
+				}
+			}
+			manpower = 5
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = fkn_permanent_capital_garrisons
+					duration = -1
+				}
+			}
+			add_manpower = -5
+		}
+	}
+}
+
+franconian_minor_missions_col5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+		primary_culture = franconian
+	}
+	potential = {
+		primary_culture = franconian
+	}
+	has_country_shield = yes
+	
+	fkn_funds_of_the_crown = {
+		icon = mission_african_gold
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				treasurer = 1
+			}
+			else = {
+				has_advisor = yes
+			}
+			treasury = 100
+		}
+		
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = fkn_capital_construction_spree
+					duration = 9125
+				}
+			}
+		}
+	}
+	
+	fkn_support_the_local_guilds = {
+		icon = mission_trade_company_region_abroad
+		required_missions = {
+			fkn_funds_of_the_crown
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					num_of_buildings_in_province = 3
+					has_state_edict = edict_encourage_development
+				}
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 60
+				}
+			}
+			else = {
+				OR = {
+					capital_scope = {
+						num_of_buildings_in_province = 3
+					}
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 60
+					}
+					is_year = 1480
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = fkn_enables_artisans_tt
+			set_country_flag = fkn_enable_artisan_guilds_flag
+		}
+	}
+	
+	fkn_invest_in_manufacturing = {
+		icon = mission_high_income
+		required_missions = {
+			fkn_support_the_local_guilds
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					base_production = 10
+					has_state_edict = edict_encourage_development
+					has_production_building_trigger = yes
+				}
+				treasury = 150
+			}
+			else = {
+				OR = {
+					capital_scope = {
+						has_production_building_trigger = yes
+					}
+					is_year = 1485
+				}
+			}
+		}
+		
+		effect = {
+			add_treasury = -150
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = fkn_manufacturing_hub
+				}
+			}
+		}
+	}
+}
+
+franconian_missions_col1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		tag = FKN
+	}
+	potential = {
+		tag = FKN
+	}
+	has_country_shield = yes
+}
+
+franconian_missions_col2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		tag = FKN
+	}
+	potential = {
+		tag = FKN
+	}
+	has_country_shield = yes
+	
+	fkn_united_and_indivisible = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_grand_capital
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { is_subject = yes }
+				overlord = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			else = {
+				num_of_allies = 3
+				prestige = 50
+			}
+			upper_franconia_area = {
+				type = all
+				is_core = yes
+				owned_by = ROOT
+			}
+			franconia_area = {
+				type = all
+				is_core = yes
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			upper_franconia_area = {
+				add_prosperity = 100
+			}
+			franconia_area = {
+				add_prosperity = 100
+			}
+			hidden_effect = {
+				every_owned_province = {
+					every_core_country = {
+						limit = { NOT = { tag = ROOT } }
+						PREV = { remove_core = PREV }
+					}
+				}
+			}
+			country_event = { id = ia_flavor_fkn.4 }
+		}
+	}
+	
+	fkn_connections_in_swabia = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_united_and_indivisible
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				any_ally = {
+					primary_culture = swabian
+					has_opinion = {
+						who = ROOT
+						value = 190
+					}
+					trust = { who = ROOT value = 80 }
+				}
+				any_owned_province = {
+					culture = swabian
+					any_core_country = {
+						exists = no
+						primary_culture = swabian
+					}
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					any_ally = {
+						primary_culture = swabian
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+						trust = { who = ROOT value = 80 }
+					}
+				}
+				random_ally = {
+					limit = {
+						primary_culture = swabian
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+						trust = { who = ROOT value = 80 }
+					}
+					ROOT = { vassalize = PREV }
+					every_province = {
+						limit = { culture = swabian }
+						add_core = PREV
+					}
+				}
+			}
+			else = {
+				random_owned_province = {
+					limit = { 
+						culture = swabian
+						any_core_country = {
+							exists = no
+							primary_culture = swabian
+						}
+					}
+					random_core_country = {
+						limit = {
+							exists = no
+							primary_culture = swabian
+						}
+						every_province = {
+							limit = { culture = swabian }
+							add_core = PREV
+						}
+						ROOT = { release = PREV	vassalize = PREV }
+					}
+				}
+			}
+		}
+	}
+	
+	fkn_swabia_united = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_connections_in_swabia
+		}
+		position = 7
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 8
+					culture = swabian
+				}
+			}
+			else = {
+				any_subject_country = {
+					tag = SWA
+					all_core_province = {
+						owned_by = SWA
+					}
+				}
+				
+			}
+		}
+		
+		effect = {
+			add_historical_friend = SWA
+			SWA = { add_historical_friend = ROOT }
+		}
+	}
+	
+	fkn_future_of_swabia = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_swabia_united
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				OR = {
+					SWA = {
+						is_subject_of = ROOT
+						all_owned_province = {
+							NOT = { devastation = 0.1 }
+							NOT = { unrest = 0 }
+						}
+					}
+					all_owned_province = {
+						OR = {
+							NOT = { culture = swabian }
+							AND = {
+								NOT = { devastation = 0.1 }
+								NOT = { unrest = 0 }
+							}
+						}
+					}
+				}
+			}
+			else = {
+				SWA = {
+					is_subject_of = ROOT
+					all_owned_province = {
+						NOT = { devastation = 0.1 }
+						NOT = { unrest = 0 }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			SWA = { 
+				add_country_modifier = {
+					name = fkn_swabian_bonus
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_assert_suzerainty = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_crush_bavarian_spirit
+			fkn_future_of_swabia
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			all_subject_country = {
+				NOT = { liberty_desire = 40 }
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = fkn_marcher_lords_reform
+			}
+			else = {
+				add_prestige = 50
+			}
+		}
+	}
+	
+	fkn_city_no_more = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_assert_suzerainty
+		}
+		position = 10
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			reform_level = 6
+		}
+		
+		effect = {
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = fkn_franken_council
+			}
+			else = {
+				add_prestige = 50
+			}
+		}
+	}
+}
+
+franconian_missions_col3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		tag = FKN
+	}
+	potential = {
+		tag = FKN
+	}
+	has_country_shield = yes
+	
+	fkn_claims_in_bavaria = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_united_and_indivisible
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			upper_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_mil_power = 50
+			add_treasury = 100
+			
+			lower_bavaria_area = {
+				add_permanent_claim = ROOT
+			}
+			east_bavaria_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	fkn_end_bavarian_threat = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_claims_in_bavaria
+		}
+		position = 7
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			upper_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_bavaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_mil_power = 100
+			add_prestige = 20
+			
+			add_power_projection = { 
+				type = mission_rewards_power_projection
+				amount = 10 
+			}
+		}
+	}
+	
+	fkn_crush_bavarian_spirit = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_end_bavarian_threat
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			upper_bavaria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			lower_bavaria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			east_bavaria_area = {
+				type = all
+				owned_by = ROOT
+			}
+			if = {
+				limit = { ai = no }
+				upper_bavaria_area = {
+					type = all
+					units_in_province = 3
+					units_in_province = ROOT
+				}
+				lower_bavaria_area = {
+					type = all
+					units_in_province = 3
+					units_in_province = ROOT
+				}
+				east_bavaria_area = {
+					type = all
+					units_in_province = 3
+					units_in_province = ROOT
+				}
+				num_of_generals = 3
+			}
+		}
+		
+		effect = {
+			add_country_modifier = { id = ia_flavor_fkn.6 }
+		}
+	}
+}
+
+franconian_missions_col4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		tag = FKN
+	}
+	potential = {
+		tag = FKN
+	}
+	has_country_shield = yes
+	
+	fkn_nursing_our_lands = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_grand_capital
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				upper_franconia_area = {
+					type = all
+					has_state_edict = edict_encourage_development
+					num_of_times_improved = 3
+				}
+				franconia_area = {
+					type = all
+					has_state_edict = edict_encourage_development
+					num_of_times_improved = 3
+				}
+			}
+			else = {
+				
+			}
+			upper_franconia_area = {
+				type = all
+				is_prosperous = yes
+			}
+			franconia_area = {
+				type = all
+				is_prosperous = yes
+			}
+		}
+		
+		effect = {
+			upper_franconia_area = {
+				add_province_modifier = {
+					name = fkn_tending_our_lands
+					duration = 7300
+				}
+			}
+			franconia_area = {
+				add_province_modifier = {
+					name = fkn_tending_our_lands
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	fkn_tradition_of_wine = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_nursing_our_lands
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				79 = {
+					base_production = 8
+					has_production_building_trigger = yes
+				}
+			}
+			else = {
+				
+			}
+			owns_or_non_sovereign_subject_of = 79
+		}
+		
+		effect = {
+			79 = {
+				change_province_name = "Castell"
+				add_permanent_province_modifier = {
+					name = fkn_wurzburg_vineyards
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_expand_the_vineyards = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_tradition_of_wine
+		}
+		position = 7
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				71 = {
+					base_production = 6
+					has_production_building_trigger = yes
+				}
+				4718 = {
+					base_production = 6
+					has_production_building_trigger = yes
+				}
+			}
+			else = {
+				
+			}
+			owns_or_non_sovereign_subject_of = 71
+			owns_or_non_sovereign_subject_of = 4718
+		}
+		
+		effect = {
+			71 = {
+				add_permanent_province_modifier = {
+					name = fkn_wurzburg_vineyards
+					duration = -1
+				}
+				change_trade_goods = wine
+			}
+			4718 = {
+				add_permanent_province_modifier = {
+					name = fkn_wurzburg_vineyards
+					duration = -1
+				}
+				change_trade_goods = wine
+			}
+		}
+	}
+	
+	fkn_surveying_new_vineyards = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_expand_the_vineyards
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				natural_scientist = 3
+			}
+			else = {
+				
+			}
+			innovativeness = 10
+			adm_power = 150
+		}
+		
+		effect = {
+			set_country_flag = fkn_enable_wine_creation
+			
+			custom_tooltip = fkn_explain_vineyards_tt
+			
+			hidden_effect = {
+				set_variable = {
+					which = fknNumTimesCreatedWine
+					value = 0
+				}
+			}
+		}
+	}
+	
+	fkn_building_new_cellars = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_surveying_new_vineyards
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_owned_provinces_with = {
+					value = 10
+					trade_goods = wine
+					base_production = 10
+					has_production_building_trigger = yes
+					has_building = farm_estate
+				}
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					value = 10
+					trade_goods = wine
+				}
+			}
+		}
+		
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 2
+				trigger = {
+					trade_goods = wine
+				}
+				custom_tooltip = fkn_2_years_wine_income_reward_tt
+			}
+			
+			every_owned_province = {
+				limit = { trade_goods = wine }
+				add_province_triggered_modifier = fkn_brand_protection_province_mod
+			}
+		}
+	}
+}
+
+franconian_missions_col5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+		tag = FKN
+	}
+	potential = {
+		tag = FKN
+	}
+	has_country_shield = yes
+	
+	fkn_infiltrate_french_markets = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_grand_capital
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				spymaster = 2
+				188 = { has_merchant = ROOT }
+			}
+			else = {
+				is_year = 1550
+			}
+		}
+		
+		effect = {
+			#custom_tooltip = "News From France should happen here but hasn't been coded yet."
+			country_event = { id = ia_flavor_fkn.1 }
+		}
+	}
+	
+	fkn_perfect_heist = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_infiltrate_french_markets
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				OR = {
+					owns_or_non_sovereign_subject_of = 75
+					75 = {
+						owner = {
+							has_spy_network_from = {
+								who = ROOT
+								value = 75
+							}
+						}
+					}
+				}
+			}
+			else = {
+				is_year = 1560
+			}
+			treasury = 200
+		}
+		
+		effect = {
+			#custom_tooltip = "Under Cover of Darkness should happen here but hasn't been coded yet."
+			country_event = { id = ia_flavor_fkn.2 }
+		}
+	}
+	
+	fkn_introducing_the_strain = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_perfect_heist
+			fkn_expand_the_vineyards
+		}
+		position = 8
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				79 = { base_production = 12 }
+				treasury = 500
+			}
+			else = {
+				is_year = 1580
+			}
+			dip_power = 200
+		}
+		
+		effect = {
+			add_dip_power = -200
+			if = {
+				limit = { ai = no }
+				add_treasury = -500
+			}
+			79 = {
+				add_permanent_province_modifier = {
+					name = fkn_introducing_silvaner_strain
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	fkn_vineyards_of_castell = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_introducing_the_strain
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				79 = { 
+					base_production = 15 
+					num_of_times_expanded_infrastructure = 2
+				}
+			}
+			else = {
+				is_year = 1585
+			}
+		}
+		
+		effect = {
+			79 = {
+				add_permanent_province_modifier = {
+					name = fkn_preparing_castell_vineyards
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	fkn_first_sowing = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_vineyards_of_castell
+		}
+		position = 10
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				79 = { 
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 5
+					}
+				}
+				treasury = 100
+			}
+			else = {
+				is_year = 1590
+			}
+			is_month = 9
+		}
+		
+		effect = {
+			if = {
+				limit = { ai = no }
+				add_treasury = -100
+			}
+			country_event = { id = ia_flavor_fkn.3 }
+		}
+	}
+}

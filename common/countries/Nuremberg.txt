@@ -1,0 +1,117 @@
+ck2_converter_generated = yes
+graphical_culture = westerngfx
+color = { 243 112 15 }
+revolutionary_colors = { 5 8 0 }
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	religious_ideas
+	economic_ideas
+	innovativeness_ideas
+	offensive_ideas
+	spy_ideas
+	administrative_ideas
+}
+historical_units = {
+	austrian_grenzer
+	austrian_hussar
+	austrian_jaeger
+	austrian_tercio
+	austrian_white_coat
+	dutch_maurician
+	halberd_infantry
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	swiss_landsknechten
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Aliénor #0" = -1
+	"Arnulf #2" = 10
+	"Barbara #0" = -1
+	"Berengar #2" = 10
+	"Bernhard #0" = 0
+	"Berthold #1" = 10
+	"Eberhard #1" = 10
+	"Elazar #0" = 0
+	"Emmerich #0" = 0
+	"Ernst #2" = 10
+	"Friedrich #3" = 10
+	"Garibald #2" = 10
+	"Gebhard #1" = 10
+	"Gottfried #2" = 10
+	"Grifo #1" = 10
+	"Grimoald #1" = 10
+	"Gudrun #0" = -1
+	"Heinrich #8" = 10
+	"Hugbert #1" = 10
+	"Karl #2" = 10
+	"Katharina #0" = -1
+	"Konrad #2" = 10
+	"Kuno #1" = 10
+	"Lantpert #1" = 10
+	"Leopold #1" = 10
+	"Lothaire #1" = 10
+	"Louis #1" = 10
+	"Ludwig #3" = 10
+	"Odilo #1" = 10
+	"Otto #2" = 10
+	"Sofie #0" = -1
+	"Tassilo #3" = 10
+	"Theobald #1" = 10
+	"Theodbert #1" = 10
+	"Theodo #2" = 10
+	"Ulrich #0" = 0
+	"Wenzel #0" = 0
+	"Wolfram #0" = 0
+}
+leader_names = {
+	"Ebner von Eschenbach"
+	"Fürer von Haimendorf"
+	"Geuder von Heroldsberg"
+	"Gugel von Brand und Diepoltsdorf"
+	"Haller von Hallerstein"
+	"Harsdorf von Enderndorf"
+	"Holzschuher von Harrlach"
+	"Imhoff"
+	"Kress von Kressenstein"
+	"Löffelholz von Kolberg"
+	"Oelhafen von Schöllenbach"
+	"Praun"
+	"Stromer von Reichenbach"
+	"Tucher von Simmelsdorf"
+	"Volckamer von Kirchensittenbach"
+	"Welser von Neunhof und zu Beerbach"
+	"von Altenthann und Weiherhaus"
+}
+ship_names = {
+	"Andechs"
+	"Augsburg"
+	"Burgau"
+	"Diessen"
+	"Friedberg"
+	"Graf von Andechs"
+	"Graf von Bogen"
+	"Graf von Diepolding"
+	"Graf von Sulzbach"
+	"Kempten"
+	"König Arnulf"
+	"Lindau"
+	"Memmingen"
+	"Mindel"
+	"Nürnberg"
+	"Oettingen"
+	"Otto"
+	"St. Kilian"
+	"St. Sebaldus"
+	"Straubing"
+	"Tassilo III"
+	"Wittelsbach"
+	"Wolfstein"
+}
+army_names = {
+	"Armee von $PROVINCE$"
+}

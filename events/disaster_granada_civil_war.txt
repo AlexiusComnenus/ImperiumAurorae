@@ -1,0 +1,930 @@
+namespace = almohads_crisis
+
+# granada_civil_war
+country_event = {
+	id = almohads_crisis.0
+	title = almohads_crisis.0.t
+	desc = almohads_crisis.0.d
+	picture = FAMINE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MOR
+		NOT = { is_year = 1450 }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = almohads_crisis.0.a #Well then.
+		add_country_modifier = {
+			name = "aftermath_african_crusade"
+			duration = 7300
+		}
+		add_war_exhaustion = 10
+	}
+}
+
+country_event = {
+	id = almohads_crisis.1
+	title = "almohads_crisis.1.t"
+	desc = "almohads_crisis.1.desc"
+	picture = CIVIL_WAR_eventPicture
+
+	major = yes
+	# this = country seeing popup, from = original event scope
+	#major_trigger = {
+	#	capital_scope = {
+	#		OR = {
+	#			region = iberia_region
+	#			area = northern_morocco_area
+	#			area = western_morocco_area
+	#			area = marrekesh_area
+	#		}
+	#	}
+	#}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+					tag = MOR
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = particularist_rebels
+						religion = ROOT
+						size = 3
+					}
+					add_local_autonomy = 25
+				}
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						religion = ROOT
+						size = 3
+					}
+				}
+			}
+			set_country_flag = had_almohad_crisis
+			country_event = {
+				id = almohads_crisis.3
+				days = 30
+			}
+		}
+	}
+	
+	
+	option = {
+		name = "almohads_crisis.1.a"			# Crush them!
+		add_legitimacy = -50
+		add_stability = -2
+	}
+}
+
+# End of Civil War
+country_event = {
+	id = almohads_crisis.2
+	title = "almohads_crisis.2.t"
+	desc = "almohads_crisis.2.desc"
+	picture = ANGRY_MOB_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "almohads_crisis.2.a"
+		add_legitimacy = 20
+		add_republican_tradition = 10
+		add_stability = 2
+		set_country_flag = almohads_crisis_over
+		remove_country_modifier = moroccan_war_enthusiasm
+		add_country_modifier = {
+			name = recovery_from_crisis
+			duration = 7300
+		}
+	}
+}
+
+country_event = {  # wattasid uprising
+	id = almohads_crisis.3
+	title = "almohads_crisis.3.t"
+	desc = "almohads_crisis.3.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#government = monarchy
+		tag = MOR
+	}
+	
+	immediate = {
+		hidden_effect = {
+			2469 = {
+				add_core = Y30
+			}
+			4564 = {
+				add_core = Y30
+			}
+			342 = {
+				add_core = Y30
+			}
+			release = Y30
+			
+			Y30 = {
+				define_ruler = {
+					name = "Yahya"
+					dynasty = "Wattasid"
+					adm = 5
+					dip = 3
+					mil = 5
+					age = 60
+					claim = 100
+				}
+				define_heir = {
+					dynasty = "Wattasid"
+					religion = hellenic_pagan_reformed
+					block_disinherit = yes
+					adm = 2
+					dip = 6
+					mil = 6
+					age = 23
+					claim = 100
+				}
+				add_disaster_progress = {
+					disaster = granada_succession_war
+					value = 100
+				}
+				add_government_reform = wattasid_sultanate
+				add_country_modifier = {
+					name = moroccan_war_enthusiasm
+					duration = -1
+				}			
+				add_truce_with = ARA
+				add_truce_with = CAS
+				add_truce_with = VAL
+				add_truce_with = TUN
+				add_truce_with = POR
+				add_truce_with = LON
+				add_truce_with = TEU
+				add_truce_with = ALG
+				add_treasury = 200
+				add_manpower = 8
+			}
+			
+			2469 = {
+				build_to_forcelimit = {
+					infantry = 0.75
+					cavalry = 0.25
+					galley = 0.5
+					heavy_ship = 0.5
+				}
+			}
+			
+			country_event = {
+				id = almohads_crisis.4
+				days = 30
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.3.a"
+		declare_war_with_cb = {
+			who = Y30
+			casus_belli = cb_morroco_civil_war
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "almohads_crisis.3.b"
+		declare_war_with_cb = {
+			who = Y30
+			casus_belli = cb_morroco_civil_war
+		}
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.8
+				cavalry = 0.2
+			}
+		}
+		switch_tag = Y30
+	}
+	
+}
+
+country_event = {  # southern uprising
+	id = almohads_crisis.4
+	title = "almohads_crisis.4.t"
+	desc = "almohads_crisis.4.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#government = monarchy
+		tag = MOR
+	}
+	
+	immediate = {
+		hidden_effect = {
+			release_all_subjects = yes
+			release = MRK
+			release = SOS
+			release = TFL
+		}
+		country_event = {
+			id = almohads_crisis.5
+			days = 30
+		}
+	}
+	
+	option = { #Intolerable!
+		name = "almohads_crisis.4.a"
+		MRK = {
+			create_alliance = SOS
+			create_alliance = TFL
+			form_coalition_against = MOR
+		}
+		SOS = {
+			create_alliance = TFL
+			form_coalition_against = MOR
+		}
+		TFL = {
+			form_coalition_against = MOR
+		}
+		declare_war_with_cb = {
+			who = MRK
+			casus_belli = cb_annex
+		}
+	}
+	option = { # There is nothing we can do
+		name = "almohads_crisis.4.b"
+		add_truce_with = MRK
+		add_truce_with = SOS
+		add_truce_with = TFL
+		add_prestige = -30
+	}
+	
+}
+
+country_event = {  # Revolutionary uprising
+	id = almohads_crisis.5
+	title = "almohads_crisis.5.t"
+	desc = "almohads_crisis.5.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = MOR
+	}
+	
+	immediate = {
+		hidden_effect = {
+			2461 = {
+				add_core = Y31
+			}
+			2457 = {
+				add_core = Y31
+			}
+			4562 = {
+				add_core = Y31
+			}
+			2465 = {
+				add_core = Y31
+			}
+			336 = {
+				add_core = Y31
+			}
+			337 = {
+				add_core = Y31
+			}
+			2462 = {
+				add_core = Y31
+			}
+			2459 = {
+				add_core = Y31
+			}
+			2456 = {
+				add_core = Y31
+			}
+			release = Y31
+			
+			Y31 = {
+				define_ruler = {
+					name = "Alvalad Imir ibn Saleninid"
+					adm = 5
+					dip = 5
+					mil = 3
+					age = 20
+				}
+				add_disaster_progress = {
+					disaster = granada_succession_war
+					value = 100
+				}
+				add_government_reform = almohad_commune_reform
+				add_country_modifier = {
+					name = moroccan_war_enthusiasm
+					duration = -1
+				}
+							
+				add_truce_with = ARA
+				add_truce_with = CAS
+				add_truce_with = VAL
+				add_truce_with = TUN
+				add_truce_with = POR
+				add_truce_with = LON
+				add_truce_with = TEU
+				add_truce_with = ALG
+				add_treasury = 50
+				add_manpower = 1
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.5.a"
+		declare_war_with_cb = {
+			who = Y31
+			casus_belli = cb_morroco_civil_war
+		}
+		Y30 = {
+			declare_war_with_cb = {
+				who = Y31
+				casus_belli = cb_morroco_civil_war
+			}
+		}
+		2461 = {
+				build_to_forcelimit = {
+					infantry = 0.9
+					cavalry = 0.1
+					galley = 0.25
+					heavy_ship = 0.25
+				}
+		}
+		Y31 = {
+			add_treasury = 300
+			add_manpower = 15
+		}
+	}
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = "almohads_crisis.5.b"
+		declare_war_with_cb = {
+			who = Y31
+			casus_belli = cb_morroco_civil_war
+		}
+		Y30 = {
+			declare_war_with_cb = {
+				who = Y31
+				casus_belli = cb_morroco_civil_war
+			}
+		}
+		
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.8
+				cavalry = 0.2
+			}
+		}
+		2461 = {
+				build_to_forcelimit = {
+					infantry = 0.7
+					cavalry = 0.1
+					galley = 0.25
+					heavy_ship = 0.25
+				}
+			}
+		switch_tag = Y31
+	}
+}
+
+country_event = {  # almohad uprising
+	id = almohads_crisis.6
+	title = "almohads_crisis.6.t"
+	desc = "almohads_crisis.6.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = republic
+		tag = MOR
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 1
+						leader = "Stembanos"
+						leader_dynasty = "Almohad"
+					}
+					add_local_autonomy = 25
+				}
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 2
+						leader = "Stembanos"
+						leader_dynasty = "Almohad"
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 2
+						leader = "Stembanos"
+						leader_dynasty = "Almohad"
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.6.a"
+	}
+	
+}
+
+country_event = {  # wattasid uprising
+	id = almohads_crisis.7
+	title = "almohads_crisis.7.t"
+	desc = "almohads_crisis.7.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			government = republic
+			dynasty = "Almohad"
+		}
+		tag = MOR
+		NOT = { is_year = 1440 }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 1
+						leader = "Yahya"
+						leader_dynasty = "Wattasid"
+					}
+					add_local_autonomy = 25
+				}
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 2
+						leader = "Yahya"
+						leader_dynasty = "Wattasid"
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						religion = ROOT
+						size = 2
+						leader = "Yahya"
+						leader_dynasty = "Wattasid"
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.7.a"
+	}
+	
+}
+
+country_event = {  # particularist uprising
+	id = almohads_crisis.8
+	title = "almohads_crisis.8.t"
+	desc = "almohads_crisis.8.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = MOR
+			tag = Y31
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = particularist_rebels
+						religion = ROOT
+						size = 1
+					}
+					add_local_autonomy = 25
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = particularist_rebels
+						religion = ROOT
+						size = 2
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.8.a"
+	}
+	
+}
+
+country_event = {  # peasant uprising
+	id = almohads_crisis.9
+	title = "almohads_crisis.9.t"
+	desc = "almohads_crisis.9.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = monarchy
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = anti_tax_rebels
+						religion = ROOT
+						size = 1
+						friend = Y31
+					}
+					add_local_autonomy = 25
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = anti_tax_rebels
+						religion = ROOT
+						size = 2
+						friend = Y31
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.9.a"
+	}
+	
+}
+
+country_event = {  # peasant uprising
+	id = almohads_crisis.10
+	title = "almohads_crisis.10.t"
+	desc = "almohads_crisis.10.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = MOR
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = leadered_peasant_rebels
+						religion = ROOT
+						size = 1
+						friend = Y31
+					}
+					add_local_autonomy = 25
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = leadered_peasant_rebels
+						religion = ROOT
+						size = 2
+						friend = Y31
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.10.a"
+	}
+	
+}
+
+country_event = {  # noble uprising
+	id = almohads_crisis.11
+	title = "almohads_crisis.11.t"
+	desc = "almohads_crisis.11.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = republic
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_core = ROOT
+						is_capital = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_core = ROOT 
+						is_capital = no
+					}
+					spawn_rebels = {
+						type = noble_rebels
+						religion = ROOT
+						size = 1
+					}
+					add_local_autonomy = 25
+				}
+			}
+			else = {
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						religion = ROOT
+						size = 2
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.11.a"
+	}
+	
+}
+
+country_event = {  # nationalist uprising
+	id = almohads_crisis.12
+	title = "almohads_crisis.12.t"
+	desc = "almohads_crisis.12.desc"
+	picture = CIVIL_WAR_eventPicture
+	
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			is_capital = no
+			has_owner_culture = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						is_capital = no
+						has_owner_culture = no
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_capital = no
+						has_owner_culture = no
+					}
+					spawn_rebels = {
+						type = nationalist_rebels
+						religion = ROOT
+						size = 1
+					}
+					add_local_autonomy = 25
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "almohads_crisis.12.a"
+	}
+	
+}
+
+country_event = {	#loyalist victory
+	id = almohads_crisis.13
+	title = almohads_crisis.13.t
+	desc = almohads_crisis.13.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {
+        name = almohads_crisis.13.a
+        ai_chance = { factor = 100 }
+		every_owned_province = {
+			remove_core = ROOT
+			cede_province = MOR
+		}
+		#FROM = {
+		#	if = {
+		#		limit = { NOT = { tag = Z43 } }
+		#		add_treasury = 500
+		#		add_manpower = 15
+		#	}
+		#	else = {
+		#		add_treasury = 250
+		#		add_manpower = 7
+		#	}
+		#}
+		
+		add_treasury = 300
+		add_manpower = 10
+	}
+}
+
+country_event = {	# Pretender victory
+	id = almohads_crisis.14
+	title = almohads_crisis.14.t
+	desc = almohads_crisis.14.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {
+        name = almohads_crisis.14.a
+        ai_chance = { factor = 100 }
+		every_owned_province = {
+			remove_core = ROOT
+			add_core = Y30
+			cede_province = Y30
+		}
+		#FROM = {
+		#	if = {
+		#		limit = { NOT = { tag = Z43 } }
+		#		add_treasury = 500
+		#		add_manpower = 15
+		#	}
+		#	else = {
+		#		add_treasury = 250
+		#		add_manpower = 7
+		#	}
+		#}
+		
+		add_treasury = 300
+		add_manpower = 10
+	}
+}
+
+country_event = {	# Commune victory
+	id = almohads_crisis.15
+	title = almohads_crisis.15.t
+	desc = almohads_crisis.15.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {
+        name = almohads_crisis.15.a
+        ai_chance = { factor = 100 }
+		disband_rebels = anti_tax_rebels
+		disband_rebels = leadered_peasant_rebels
+		every_owned_province = {
+			remove_core = ROOT
+			add_core = Y31
+			cede_province = Y31
+		}
+		
+		#FROM = {
+		#	if = {
+		#		limit = { NOT = { tag = Z43 } }
+		#		add_treasury = 500
+		#		add_manpower = 15
+		#	}
+		#	else = {
+		#		add_treasury = 250
+		#		add_manpower = 7
+		#	}
+		#}
+		
+		add_treasury = 300
+		add_manpower = 10
+	}
+}

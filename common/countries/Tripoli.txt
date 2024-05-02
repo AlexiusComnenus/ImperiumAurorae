@@ -1,0 +1,136 @@
+ck2_converter_generated = yes
+graphical_culture = asiangfx
+color = { 25 105 90 }
+revolutionary_colors = { 16 1 10 }
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	religious_ideas
+	maritime_ideas
+	administrative_ideas
+	offensive_ideas
+	economic_ideas
+	expansion_ideas
+}
+historical_units = {
+	ali_bey_reformed_infantry
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_dragoon
+	muslim_mass_infantry
+}
+monarch_names = {
+	"A'man #0" = -1
+	"Abdallah #1" = 10
+	"Abdullah #1" = 10
+	"Ahmad #1" = 10
+	"Alisia #0" = -1
+	"Aloisia #0" = -1
+	"Anfòs-Jordan #1" = 10
+	"Anzong #0" = -1
+	"Arjeta #0" = -1
+	"Asid #1" = 10
+	"Berenice #0" = -1
+	"Bertrand #1" = 10
+	"Bohemond #1" = 10
+	"Can #0" = 0
+	"Chengsi #0" = 0
+	"Chuanzhu #0" = -1
+	"Clorinda #0" = -1
+	"Constanza #0" = -1
+	"Delinda #0" = -1
+	"Ermenegilda #0" = -1
+	"Euphemia #0" = -1
+	"Fengniang #0" = -1
+	"Filippa #0" = -1
+	"Froizza #0" = -1
+	"Fujin #0" = -1
+	"Helvoise #0" = -1
+	"Hodierne #0" = -1
+	"Hongmin #0" = 0
+	"Ieremias #0" = 0
+	"Jeanne #0" = -1
+	"Ji #0" = 0
+	"Jianrong #0" = -1
+	"Jing #0" = 0
+	"Jinluan #0" = -1
+	"Keratza #0" = -1
+	"Laura #0" = -1
+	"Letizia #0" = -1
+	"Lingji #0" = -1
+	"Lucrezia #0" = -1
+	"Marie #0" = -1
+	"Mathilde #0" = -1
+	"Myassa #0" = -1
+	"Nishde #0" = 0
+	"Nunzia #0" = -1
+	"Orgueilleuse #0" = -1
+	"Panpan #0" = -1
+	"Pecoraro #0" = 0
+	"Pons #1" = 10
+	"Qinke #0" = 0
+	"Raimond #4" = 10
+	"Rhodanthe #0" = -1
+	"Sengru #0" = 0
+	"Sheng #0" = 0
+	"Sophia #0" = -1
+	"Spinetto #0" = 0
+	"Taszellayt #0" = -1
+	"Xiangxian #0" = 0
+	"Yangshing #1" = 10
+	"Yaoqin #0" = 0
+	"Yazid #1" = 10
+	"Yifu #0" = 0
+	"Yiyang #0" = -1
+	"Yuanheng #0" = 0
+	"Yunu #0" = -1
+	"Zafir #1" = 10
+	"Zhonghua #0" = -1
+}
+leader_names = {
+	"Asim"
+	"Asker"
+	"Emin"
+	"Halid"
+	"Izzet"
+	"Nazhar"
+	"Nedim"
+	"Negib"
+	"Nuri"
+	"Reis"
+}
+ship_names = {
+	"Akhir"
+	"Awwal"
+	"Ba'ith"
+	"Barr"
+	"Batin"
+	"Hamid"
+	"Haqq"
+	"Hayy"
+	"Majid"
+	"Matin"
+	"Mu'akhkhir"
+	"Mu'id"
+	"Mubdi"
+	"Muhsi"
+	"Muhyi"
+	"Mumit"
+	"Muqaddim"
+	"Muqtadir"
+	"Muta'al"
+	"Qadir"
+	"Qawiyy"
+	"Qayyum"
+	"Samad"
+	"Shahid"
+	"Tawwab"
+	"Wahid"
+	"Wajid"
+	"Wakil"
+	"Wali"
+	"Waliyy"
+	"Zahir"
+}

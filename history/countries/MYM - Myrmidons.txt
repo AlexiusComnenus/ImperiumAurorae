@@ -1,0 +1,8 @@
+government = theocracy
+add_government_reform = myrmidons_government
+government_rank = 1
+technology_group = high_american
+religion = hellenic_pagan_reformed
+primary_culture = xizho
+add_accepted_culture = greek
+capital = 487

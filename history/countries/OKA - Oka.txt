@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = paulician
+primary_culture = ryazanian
+capital = 297
+fixed_capital = 297
+1444.11.11= {
+	monarch = {
+		name = "(Regency Council)"
+		adm = 2
+		dip = 2
+		mil = 2
+		birth_date = 1.1.1
+		regent = yes
+		religion = paulician
+		culture = ryazanian
+	}
+	heir = {
+		name = "Mikhail"
+		dynasty = "Kobilyn"
+		adm = 4
+		dip = 4
+		mil = 4
+		birth_date = 1435.1.5
+		death_date = 1500.1.5
+		claim = 89
+		religion = paulician
+		culture = ryazanian
+	}
+}
+1444.11.11= {
+	add_prestige = -50
+	add_treasury = 49
+}

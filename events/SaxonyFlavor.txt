@@ -1,0 +1,2055 @@
+##############################
+# Saxon Flavor Events 
+#                            
+# Written by Alexios
+##############################
+namespace = ia_flavor_sax
+
+country_event = {  # Dec the goddamn war for AI
+	id = ia_flavor_sax.1
+	title = ia_flavor_sax.1.t
+	desc = ia_flavor_sax.1.d
+	picture = CONQUEST_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		#is_at_war = no
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		NOT = { war_exhaustion = 2 }
+		any_known_country = {
+			any_neighbor_country = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+				}
+			}
+			NOT = { truce_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			NOT = { war_with = ROOT }
+			NOT = { primary_culture = teuton }
+			NOT = { primary_culture = anglo_saxon }
+			culture_group = germanic
+			is_subject = no
+		}
+		has_any_disaster = no
+	}
+	
+	immediate = {
+        hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+			if = {
+				limit = {
+					any_known_country = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						culture_group = germanic
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						NOT = { war_with = ROOT }
+						ai = no
+						is_subject = no
+					}
+				}
+				random_known_country = {
+					limit = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						NOT = { war_with = ROOT }
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						culture_group = germanic
+						ai = no
+						is_subject = no
+					}
+					save_global_event_target_as = saxony_war_target
+				}
+			}
+			else = {
+				random_known_country = {
+					limit = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						culture_group = germanic
+						NOT = { war_with = ROOT }
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						is_subject = no
+					}
+					save_global_event_target_as = saxony_war_target
+				}
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {	# Demand the Sachsengeld
+		name = ia_flavor_sax.1.a
+		ai_chance = { 
+			factor = 33
+			modifier = {
+				factor = 3
+				num_of_loans = 1
+			}
+		}
+		
+		event_target:saxony_war_target = {
+			country_event = { id = ia_flavor_sax.2 days = 5 }
+		}
+	}
+	
+	option = {	# Demand the levy
+		name = ia_flavor_sax.1.b
+		ai_chance = { 
+			factor = 33
+			modifier = {
+				factor = 3
+				NOT = { manpower_percentage = 0.8 }
+			}
+		}
+		
+		event_target:saxony_war_target = {
+			country_event = { id = ia_flavor_sax.3 days = 5 }
+		}		
+	}
+	
+	option = {	# Demand obesiance
+		name = ia_flavor_sax.1.c
+		ai_chance = { factor = 33 }
+		
+		event_target:saxony_war_target = {
+			country_event = { id = ia_flavor_sax.4 days = 5 }
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.1.e
+		ai_chance = { 
+			factor = 33
+			modifier = {
+				factor = 10
+				NOT = { 
+					army_strength = {
+						who = event_target:saxony_war_target
+						value = 1.25
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				event_target:saxony_war_target = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target = {
+					is_in_coalition = yes
+
+				}
+			}
+		}
+		
+		add_prestige = -5
+	}
+}
+
+country_event = {  # Sachsengeld
+	id = ia_flavor_sax.2
+	title = ia_flavor_sax.2.t
+	desc = ia_flavor_sax.2.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.2.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 3
+				NOT = { 
+					army_strength = {
+						who = event_target:saxon_king
+						value = 0.8
+					}
+				}
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.5 days = 5 }
+		}
+		add_treasury = -100
+		add_truce_with = event_target:saxon_king
+	}
+	
+	option = {
+		name = ia_flavor_sax.2.b
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 5
+				army_strength = {
+					who = event_target:saxon_king
+					value = 1
+				}	
+			}
+			modifier = {
+				factor = 3
+				num_of_loans = 1	
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.8 days = 5 }
+		}
+	}
+}
+
+country_event = {  # The Levy
+	id = ia_flavor_sax.3
+	title = ia_flavor_sax.3.t
+	desc = ia_flavor_sax.3.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.3.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 3
+				NOT = { 
+					army_strength = {
+						who = event_target:saxon_king
+						value = 0.8
+					}
+				}
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.6 days = 5 }
+		}
+		add_manpower = -1
+		add_truce_with = event_target:saxon_king
+	}
+	
+	option = {
+		name = ia_flavor_sax.3.b
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 5
+				army_strength = {
+					who = event_target:saxon_king
+					value = 1
+				}	
+			}
+			modifier = {
+				factor = 3
+				NOT = { manpower_percentage = 0.5 }	
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.8 days = 5 }
+		}
+	}
+}
+
+country_event = {  # Grovel
+	id = ia_flavor_sax.4
+	title = ia_flavor_sax.4.t
+	desc = ia_flavor_sax.4.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.4.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 3
+				NOT = { 
+					army_strength = {
+						who = event_target:saxon_king
+						value = 0.8
+					}
+				}
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.7 days = 5 }
+		}
+		add_prestige = -30
+		add_legitimacy = -20
+		add_truce_with = event_target:saxon_king
+	}
+	
+	option = {
+		name = ia_flavor_sax.4.b
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 5
+				army_strength = {
+					who = event_target:saxon_king
+					value = 1
+				}	
+			}
+			modifier = {
+				factor = 3
+				NOT = { legitimacy_equivalent = 80 }	
+			}
+		}
+		
+		event_target:saxon_king = {
+			country_event = { id = ia_flavor_sax.8 days = 5 }
+		}
+	}
+}
+
+country_event = {  # Sachsengeld received
+	id = ia_flavor_sax.5
+	title = ia_flavor_sax.5.t
+	desc = ia_flavor_sax.5.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.5.a
+		
+		add_treasury = 100
+		add_truce_with = event_target:saxony_war_target
+	}
+}
+
+country_event = {  # Levy received
+	id = ia_flavor_sax.6
+	title = ia_flavor_sax.6.t
+	desc = ia_flavor_sax.6.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.6.a
+		
+		add_manpower = 1
+		add_truce_with = event_target:saxony_war_target
+	}
+}
+
+country_event = {  # Grovelling received
+	id = ia_flavor_sax.7
+	title = ia_flavor_sax.7.t
+	desc = ia_flavor_sax.7.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.7.a
+		
+		add_prestige = 10
+		add_legitimacy = 5
+		add_truce_with = event_target:saxony_war_target
+	}
+}
+
+country_event = {  # They refuse
+	id = ia_flavor_sax.8
+	title = ia_flavor_sax.8.t
+	desc = ia_flavor_sax.8.d
+	picture = CONQUEST_eventPicture
+    is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_sax.8.a
+		
+		declare_war_with_cb = {
+			who = event_target:saxony_war_target
+			casus_belli = cb_saxon_subjugation
+		}
+	}
+	
+	option = {
+		trigger = {
+			ai = no
+		}
+		name = ia_flavor_sax.8.b
+		
+		add_prestige = -20
+	}
+}
+
+country_event = {  # The Levy
+	id = ia_flavor_sax.9
+	title = ia_flavor_sax.9.t
+	desc = ia_flavor_sax.9.d
+	picture = CONQUEST_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		has_subject_of_type = saxon_daimyo
+		NOT = { manpower_percentage = 3 }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = ia_flavor_sax.9.a
+		trigger = {
+			ai = no
+		}
+		
+		custom_tooltip = 250_manpower_from_each_loyal_subject_tt
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+					NOT = { liberty_desire = 50 }
+				}
+				add_manpower = -0.25
+				ROOT = {
+					add_manpower = 0.25
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.9.a
+		trigger = {
+			ai = yes
+		}
+		
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = saxon_daimyo
+				NOT = { liberty_desire = 50 }
+			}
+			add_manpower = -0.25
+			ROOT = {
+				add_manpower = 0.75
+			}
+		}
+	}
+}
+
+country_event = {  # Dec the goddamn war for AI
+	id = ia_flavor_sax.10
+	title = ia_flavor_sax.10.t
+	desc = ia_flavor_sax.10.d
+	picture = CONQUEST_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		is_at_war = no
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		ai = yes
+		NOT = { war_exhaustion = 0.5 }
+		has_any_disaster = no
+	}
+	
+	immediate = {
+        hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+            random_known_country = {
+				limit = {
+					any_neighbor_country = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					NOT = { truce_with = ROOT }
+					NOT = { war_with = ROOT }
+					NOT = { is_subject = yes }
+					NOT = { alliance_with = ROOT }
+					NOT = { culture_group = germanic }
+					NOT = { primary_culture = teuton }
+					NOT = { primary_culture = anglo_saxon }
+				}
+				save_global_event_target_as = saxony_war_target_tributary
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		months = 72
+	}
+	
+	option = {
+		name = ia_flavor_sax.10.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 10
+					army_strength = {
+						who = event_target:saxony_war_target_tributary
+						value = 2
+					}
+			}
+			modifier = {
+				factor = 2
+				event_target:saxony_war_target_tributary = {
+					NOT = {	
+						any_ally = {
+							army_strength = {
+								who = ROOT
+								value = 0.8
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				coalition_target = ROOT
+			}
+		}
+		
+		declare_war_with_cb = {
+			who = event_target:saxony_war_target_tributary
+			casus_belli = cb_saxon_tributary
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.10.b
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 10
+				NOT = { 
+					army_strength = {
+						who = event_target:saxony_war_target_tributary
+						value = 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				event_target:saxony_war_target_tributary = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 0.8
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target_tributary = {
+					is_in_coalition = yes
+
+				}
+			}
+		}
+		
+		add_prestige = -1
+	}
+}
+
+country_event = {  # Too big nono
+	id = ia_flavor_sax.11
+	title = ia_flavor_sax.11.t
+	desc = ia_flavor_sax.11.d
+	picture = LIBERUM_VETO_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		has_any_disaster = no
+		is_bankrupt = no
+		#manpower_percentage = 0.25
+		NOT = { war_exhaustion = 1 }
+		NOT = { has_country_modifier = block_event_11 }
+		any_known_country = {
+			NOT = { truce_with = ROOT }
+			NOT = { is_subject = yes }
+			NOT = { war_with = ROOT }
+			culture_group = germanic
+			NOT = { primary_culture = teuton }
+			NOT = { primary_culture = anglo_saxon }
+			NOT = { primary_culture = baltic_german }
+			same_continent = ROOT
+			OR = {
+				AND = {
+					total_development = 200
+					tag = BOH
+				}
+				AND = {
+					total_development = 100
+					NOT = { tag = BOH }
+				}
+			}
+		}
+	}
+	
+	immediate = {
+        hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+            random_known_country = {
+				limit = {
+					NOT = { truce_with = ROOT }
+					NOT = { is_subject = yes }
+					NOT = { war_with = ROOT }
+					culture_group = germanic
+					NOT = { primary_culture = teuton }
+					NOT = { primary_culture = anglo_saxon }
+					NOT = { primary_culture = baltic_german }
+					same_continent = ROOT
+					OR = {
+						AND = {
+							total_development = 200
+							tag = BOH
+						}
+						AND = {
+							total_development = 100
+							NOT = { tag = BOH }
+						}
+					}
+				}
+				save_global_event_target_as = saxony_war_target_dismantle
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# Issue the Ultimatum
+		name = ia_flavor_sax.11.a
+		ai_chance = { 
+			factor = 100
+		}
+		
+		event_target:saxony_war_target_dismantle = {
+			country_event = { id = ia_flavor_sax.12 }
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.11.b
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 10000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target_dismantle = {
+					is_in_coalition = yes
+				}
+			}
+		}
+		
+		add_prestige = -1
+		add_country_modifier = {
+			name = block_event_11
+			duration = 365
+			hidden = yes
+		}
+	}
+}
+
+country_event = {  # Grew too much ultimatum
+	id = ia_flavor_sax.12
+	title = ia_flavor_sax.12.t
+	desc = ia_flavor_sax.12.d
+	picture = LIBERUM_VETO_eventPicture
+    is_triggered_only = yes
+	
+	immediate = {
+		add_country_modifier = {
+			name = suddenpacifism
+			duration = 365
+			hidden = yes
+		}
+	}
+	
+	option = {	# Accept
+		name = ia_flavor_sax.12.a
+		ai_chance = { 
+			factor = 50
+		}
+		
+		add_truce_with = event_target:saxon_king
+		event_target:saxon_king = {
+			add_truce_with = ROOT
+		}
+		add_country_modifier = {
+			name = shameful_grovelling
+			duration = 1825
+		}
+	}
+	
+	option = {	# Become Vassal
+		name = ia_flavor_sax.12.b
+		ai_chance = { 
+			factor = 0
+		}
+		
+		event_target:saxon_king = {
+			create_subject = {
+				subject_type = saxon_daimyo
+				subject = ROOT
+			}
+		}
+		add_government_reform = saxon_fief_reform
+	}
+	
+	option = {	# Fight!
+		name = ia_flavor_sax.12.c
+		ai_chance = { 
+			factor = 50
+		}
+		
+		custom_tooltip = every_ally_without_90_trust_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = {
+						trust = {
+							who = ROOT
+							value = 90
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+		
+		event_target:saxon_king = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_dismantle
+			}
+		}
+	}
+}
+
+country_event = {  # Bully France
+	id = ia_flavor_sax.13
+	title = ia_flavor_sax.13.t
+	desc = ia_flavor_sax.13.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		is_at_war = no
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		FRA = {
+			NOT = { truce_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			any_owned_province = {
+				is_core = HAI
+			}
+		}
+		HAI = { is_subject_of = ROOT }
+		NOT = { is_year = 1460 }
+		NOT = { has_global_flag = sax_bullied_france }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	immediate = { 
+		hidden_effect = {
+			set_global_flag = sax_bullied_france 
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+		}
+	}
+	
+	option = {	# Issue the Ultimatum
+		name = ia_flavor_sax.13.a
+		ai_chance = { 
+			factor = 1000
+		}
+		
+		FRA = {
+			country_event = { id = ia_flavor_sax.14 }
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.13.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige = -50
+	}
+}
+
+country_event = {  # France: Ultimatum from Saxonia
+	id = ia_flavor_sax.14
+	title = ia_flavor_sax.14.t
+	desc = ia_flavor_sax.14.d
+	picture = REFORM_eventPicture
+    is_triggered_only = yes
+	
+	immediate = {
+		add_country_modifier = {
+			name = suddenpacifism
+			duration = 365
+			hidden = yes
+		}
+	}
+	
+	major = yes
+	
+	option = {	# Accept
+		name = ia_flavor_sax.14.a
+		ai_chance = { 
+			factor = 90
+		}
+		
+		add_truce_with = event_target:saxon_king
+		event_target:saxon_king = {
+			add_truce_with = ROOT
+		}
+		add_country_modifier = {
+			name = shameful_grovelling_lite_version
+			duration = 1825
+		}
+		every_owned_province = {
+			limit = { is_core = HAI }
+			cede_province = HAI
+		}
+	}
+	
+	option = {	# Fight!
+		name = ia_flavor_sax.14.b
+		ai_chance = { 
+			factor = 10
+		}
+		
+		custom_tooltip = every_ally_without_90_trust_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = {
+						trust = {
+							who = ROOT
+							value = 90
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+		
+		event_target:saxon_king = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_dismantle
+			}
+		}
+	}
+}
+
+
+country_event = {  # Bully Flanders
+	id = ia_flavor_sax.15
+	title = ia_flavor_sax.15.t
+	desc = ia_flavor_sax.15.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		FLA = {
+			NOT = { truce_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			NOT = { war_with = ROOT }
+		}
+		has_global_flag = sax_bullied_france
+		NOT = { is_year = 1470 }
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	immediate = { 
+		hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+			set_global_flag = sax_bullied_flanders 
+		}
+	}
+	
+	option = {	# Issue the Ultimatum
+		name = ia_flavor_sax.15.a
+		ai_chance = { 
+			factor = 1000
+		}
+		
+		FLA = {
+			country_event = { id = ia_flavor_sax.16 }
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.15.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige = -50
+	}
+}
+
+country_event = {  # Flanders: Ultimatum from Saxonia
+	id = ia_flavor_sax.16
+	title = ia_flavor_sax.16.t
+	desc = ia_flavor_sax.16.d
+	picture = REFORM_eventPicture
+    is_triggered_only = yes
+	
+	major = yes
+	
+	option = {	# Accept
+		name = ia_flavor_sax.16.a
+		ai_chance = { 
+			factor = 90
+		}
+		
+		#add_truce_with = event_target:saxon_king
+		#event_target:saxon_king = {
+		#	add_truce_with = ROOT
+		#}
+		add_country_modifier = {
+			name = shameful_grovelling_lite_version
+			duration = 1825
+		}
+		event_target:saxon_king = {
+			create_subject = {
+				subject_type = saxon_daimyo
+				subject = ROOT
+			}
+		}
+		add_government_reform = saxon_fief_reform
+	}
+	
+	option = {	# Fight!
+		name = ia_flavor_sax.16.b
+		ai_chance = { 
+			factor = 10
+		}
+		
+		custom_tooltip = every_ally_without_90_trust_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = {
+						trust = {
+							who = ROOT
+							value = 90
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+		
+		event_target:saxon_king = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_subjugation
+			}
+		}
+	}
+}
+
+country_event = {  # Dec the goddamn war for AI
+	id = ia_flavor_sax.17
+	title = ia_flavor_sax.17.t
+	desc = ia_flavor_sax.17.d
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		has_any_disaster = no
+		is_at_war = no
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		NOT = { war_exhaustion = 1 }
+		any_known_country = {
+			any_neighbor_country = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+				}
+			}
+			NOT = { truce_with = ROOT }
+			NOT = { war_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			culture_group = germanic
+			NOT = { primary_culture = teuton }
+			NOT = { primary_culture = anglo_saxon }
+			is_subject = no
+		}
+		ai = yes
+		has_global_flag = sax_bullied_flanders
+		has_global_flag = sax_bullied_france
+	}
+	
+	immediate = {
+        hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+			if = {
+				limit = {
+					any_known_country = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { war_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						culture_group = germanic
+						is_subject = no
+						ai = no
+					}
+				}
+				random_known_country = {
+					limit = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { war_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						culture_group = germanic
+						is_subject = no
+						ai = no
+					}
+					save_global_event_target_as = saxony_war_target
+				}
+			}
+			else = {
+				random_known_country = {
+					limit = {
+						any_neighbor_country = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+							}
+						}
+						NOT = { truce_with = ROOT }
+						NOT = { war_with = ROOT }
+						NOT = { is_subject_of = ROOT }
+						NOT = { primary_culture = teuton }
+						NOT = { primary_culture = anglo_saxon }
+						culture_group = germanic
+						is_subject = no
+					}
+					save_global_event_target_as = saxony_war_target
+				}
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {	# Attack
+		name = ia_flavor_sax.17.a
+		ai_chance = { 
+			factor = 10
+		}
+		
+		declare_war_with_cb = {
+			who = event_target:saxony_war_target
+			casus_belli = cb_saxon_subjugation
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.17.e
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 10
+				NOT = { 
+					army_strength = {
+						who = event_target:saxony_war_target
+						value = 1.25
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				event_target:saxony_war_target = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 1
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target = {
+					is_in_coalition = yes
+
+				}
+			}
+		}
+		
+		add_prestige = -1
+	}
+}
+
+country_event = {  # Outsider took germanic land
+	id = ia_flavor_sax.18
+	title = ia_flavor_sax.18.t
+	desc = ia_flavor_sax.18.d
+	picture = GENERALS_DISCUSSING_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		has_any_disaster = no
+		is_bankrupt = no
+		manpower_percentage = 0.5
+		NOT = { war_exhaustion = 0.5 }
+		NOT = { has_country_modifier = block_event_18 }
+		any_known_country = {
+			NOT = { truce_with = ROOT }
+			NOT = { is_subject_of = ROOT }
+			NOT = { war_with = ROOT }
+			NOT = { culture_group = germanic }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 1
+				culture_group = germanic
+				NOT = { culture = teuton }
+				NOT = { culture = anglo_saxon }
+			}
+		}
+		OR = {
+			AND = {
+				has_global_flag = sax_bullied_flanders
+				has_global_flag = sax_bullied_france
+			}
+			is_year = 1470
+		}
+	}
+	
+	immediate = {
+        hidden_effect = {
+			ROOT = {
+				save_global_event_target_as = saxon_king
+			}
+            random_known_country = {
+				limit = {
+					NOT = { truce_with = ROOT }
+					NOT = { is_subject_of = ROOT }
+					NOT = { war_with = ROOT }
+					NOT = { culture_group = germanic }
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 1
+						culture_group = germanic
+						NOT = { culture = teuton }
+						NOT = { culture = anglo_saxon }
+					}
+				}
+				save_global_event_target_as = saxony_war_target_foreign_incursion
+			}
+        }
+    }
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# Issue the Ultimatum
+		name = ia_flavor_sax.18.a
+		ai_chance = { 
+			factor = 100
+		}
+		
+		event_target:saxony_war_target_foreign_incursion = {
+			country_event = { id = ia_flavor_sax.19 }
+		}
+	}
+	
+	option = {	# Back off
+		name = ia_flavor_sax.18.b
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 10000
+				coalition_target = ROOT
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target_foreign_incursion = {
+					is_in_coalition = yes
+				}
+			}
+			modifier = {
+				factor = 10000
+				event_target:saxony_war_target_foreign_incursion = {
+					army_strength = {
+						who = ROOT
+						value = 1.2
+					}
+				}
+			}
+		}
+		
+		add_prestige = -10
+		add_country_modifier = {
+			name = block_event_18
+			duration = 3650
+			hidden = yes
+		}
+	}
+}
+
+country_event = {  # Intruder: Ultimatum from Saxonia
+	id = ia_flavor_sax.19
+	title = ia_flavor_sax.19.t
+	desc = ia_flavor_sax.19.d
+	picture = GENERALS_DISCUSSING_eventPicture
+    is_triggered_only = yes
+	
+	immediate = {
+		add_country_modifier = {
+			name = suddenpacifism
+			duration = 365
+			hidden = yes
+		}
+	}
+	
+	major = yes
+	
+	option = {	# Accept
+		name = ia_flavor_sax.19.a
+		ai_chance = { 
+			factor = 75
+		}
+		
+		add_truce_with = event_target:saxon_king
+		event_target:saxon_king = {
+			add_truce_with = ROOT
+		}
+		add_country_modifier = {
+			name = shameful_grovelling_lite_version
+			duration = 1825
+		}
+		every_owned_province = {
+			limit = {
+				culture_group = germanic
+				NOT = { culture = teuton }
+				NOT = { culture = anglo_saxon }
+			}
+			remove_core = ROOT
+			random_core_country = {
+				limit = {
+					PREV = {
+						culture = PREV
+					}
+				}
+				if = {
+					limit = { NOT = { exists = PREV } }
+					ROOT = { release = PREV }
+				}
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				culture_group = germanic
+				NOT = { culture = teuton }
+				NOT = { culture = anglo_saxon }
+			}
+			remove_core = ROOT
+			random_core_country = {
+				limit = {
+					culture_group = germanic
+				}
+				if = {
+					limit = { NOT = { exists = PREV } }
+					ROOT = { release = PREV }
+				}
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+		every_subject_country = {
+			limit = {
+				culture_group = germanic
+				NOT = { primary_culture = teuton }
+				NOT = { primary_culture = anglo_saxon }
+			}
+			grant_independence = yes
+		}
+	}
+	
+	option = {	# Fight!
+		name = ia_flavor_sax.19.b
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 2000
+				tag = Z17
+			}
+		}
+		
+		custom_tooltip = every_ally_without_90_trust_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = {
+						trust = {
+							who = ROOT
+							value = 90
+						}
+					}
+				}
+				break_alliance = ROOT
+			}
+		}
+		
+		event_target:saxon_king = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_dismantle
+			}
+		}
+	}
+}
+
+country_event = {  # Religious Question
+	id = ia_flavor_sax.20
+	title = ia_flavor_sax.20.t
+	desc = ia_flavor_sax.20.d
+	picture = CATHOLIC_RULERS_PRAYING_eventPicture
+    is_triggered_only = yes
+	
+	major = yes
+	
+	option = {	# enforce frati
+		name = ia_flavor_sax.20.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_subject_country = {
+						tag = FAP
+					}
+				}
+			}
+		}
+		
+		if = {
+			limit = { NOT = { religion = fraticelli } }
+			change_religion = fraticelli
+			add_prestige = 100
+			add_country_modifier = {
+				name = conversion_zeal
+				duration = 3650
+			}
+		}
+		custom_tooltip = sax_unlocks_conformity_decision_tt
+		hidden_effect = {
+			set_country_flag = sax_enable_conformity_decision
+		}
+	}
+	
+	option = {	# enforce templarite
+		name = ia_flavor_sax.20.b
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0 
+				any_subject_country = {
+					tag = FAP
+				}
+			}
+		}
+		
+		if = {
+			limit = { NOT = { religion = protestant } }
+			change_religion = protestant
+			add_prestige = 100
+			add_country_modifier = {
+				name = conversion_zeal
+				duration = 3650
+			}
+		}
+		custom_tooltip = sax_unlocks_conformity_decision_tt
+		hidden_effect = {
+			set_country_flag = sax_enable_conformity_decision
+		}
+	}
+	
+	option = {	# tolerance
+		name = ia_flavor_sax.20.c
+		ai_chance = { 
+			factor = 50
+		}
+		
+		add_country_modifier = {
+			name = sax_religious_tolerance
+			duration = -1
+		}
+	}
+}
+
+country_event = {  # The Kingdom is Defunct
+	id = ia_flavor_sax.21
+	title = ia_flavor_sax.21.t
+	desc = ia_flavor_sax.21.d
+	picture = REVOLT_HUNGARIAN_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		NOT = { has_subject_of_type = saxon_daimyo }
+		NOT = { has_subject_of_type = german_march } 
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = ia_flavor_sax.21.a
+		
+		remove_government_reform = saxon_feudalism
+		add_prestige = -200
+		add_stability = -4
+		add_legitimacy = -100
+	}
+}
+	
+country_event = {  # Low admin ruler
+	id = ia_flavor_sax.22
+	title = ia_flavor_sax.22.t
+	desc = ia_flavor_sax.22.d
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		NOT = { adm = 3 }
+		NOT = { has_country_modifier = sax_taxation_failure }
+		NOT = { has_country_modifier = sax_loophole_crackdown }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ia_flavor_sax.22.a
+		
+		add_country_modifier = {
+			name = sax_taxation_failure
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.22.b
+		
+		add_country_modifier = {
+			name = sax_loophole_crackdown
+			duration = 3650
+		}
+		
+		custom_tooltip = sax_loophole_crackdown_tt
+		
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+				}
+				ROOT = {
+					add_adm_power = -5
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+					NOT = { liberty_desire = 50 }
+				}
+				add_treasury = -20
+				ROOT = {
+					add_treasury = 20
+				}
+			}
+		}
+	}
+}
+
+country_event = {  # Good dip ruler
+	id = ia_flavor_sax.23
+	title = ia_flavor_sax.23.t
+	desc = ia_flavor_sax.23.d
+	picture = KING_DOING_GREAT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		OR = { 
+			dip = 4 
+			ruler_has_personality = righteous_personality
+			ruler_has_personality = benevolent_personality
+		}
+		NOT = { ruler_has_personality = cruel_personality }
+		NOT = { ruler_has_personality = malevolent_personality }
+		NOT = { has_country_modifier = sax_grateful_fiefs }
+		NOT = { has_country_modifier = sax_loyalty_to_crown }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = ia_flavor_sax.23.a
+		
+		add_country_modifier = {
+			name = sax_grateful_fiefs
+			duration = 9125
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.23.b
+		
+		
+		
+		custom_tooltip = sax_loyalty_to_crown_tt
+		
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+					NOT = { liberty_desire = 50 }
+				}
+				ROOT = {
+					add_dip_power = -5
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+					liberty_desire = 50
+				}
+				add_liberty_desire = 10	
+			}
+		}
+		
+		add_country_modifier = {
+			name = sax_loyalty_to_crown
+			duration = 9125
+		}
+	}
+}
+
+country_event = {  # Nobles sabotage alliance
+	id = ia_flavor_sax.24
+	title = ia_flavor_sax.24.t
+	desc = ia_flavor_sax.24.d
+	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		any_ally = {
+			NOT = { culture_group = scandinavian }
+			NOT = { culture_group = germanic }
+		}
+		NOT = { has_country_modifier = block_event_24 }
+	}
+	
+	immediate = {
+		random_ally = {
+			limit = {  
+				NOT = { culture_group = scandinavian }
+				NOT = { culture_group = germanic }
+			}
+			save_global_event_target_as = sax_player_ally
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = ia_flavor_sax.24.a
+		
+		add_stability = -1
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = block_event_24
+				duration = 1825
+				hidden = yes
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.24.b
+		
+		break_alliance = event_target:sax_player_ally
+		add_opinion = {
+			who = event_target:sax_player_ally
+			modifier = sax_exploitative_alliance
+			years = 50
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {  # No player alliances with Antioch for no reason
+	id = ia_flavor_sax.25
+	title = ia_flavor_sax.25.t
+	desc = ia_flavor_sax.25.d
+	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		ai = no
+		NOT = { culture_group = xizho_group }
+		NOT = { religion = hellenic_pagan_reformed }
+		NOT = { culture_group = byzantine }
+		any_ally = {
+			tag = Z17
+		}
+	}
+	
+	#immediate = {
+	#	random_ally = {
+	#		limit = { 
+	#			ai = no 
+	#			NOT = { culture_group = scandinavian }
+	#			NOT = { culture_group = germanic }
+	#		}
+	#		save_global_event_target_as = sax_player_ally
+	#	}
+	#}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = ia_flavor_sax.25.a
+		
+		add_stability = -6
+		add_prestige = -200
+		
+		change_religion = hellenic_pagan_reformed
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = ia_flavor_sax.25.b
+		
+		break_alliance = Z17
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {  # Fate of Thuringia startup event
+	id = ia_flavor_sax.26
+	title = ia_flavor_sax.26.t
+	desc = ia_flavor_sax.26.d
+	picture = KING_DOING_GREAT_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	#hidden = yes
+	
+	trigger = {
+		has_reform = saxon_feudalism
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	#
+	#option = {	# forgiving
+	#	name = ia_flavor_sax.26.a
+	#	
+	#	every_owned_province = {
+	#		limit = { is_core = MEI }
+	#		cede_province = MEI
+	#	}
+	#	every_owned_province = {
+	#		limit = { is_core = THU }
+	#		cede_province = THU
+	#	}
+	#	
+	#	
+	#	ai_chance = {
+	#		factor = 50
+	#	}
+	#}
+	
+	option = {	# oppressive
+		name = ia_flavor_sax.26.b
+		
+		every_owned_province = {
+			limit = { is_core = THU }
+			add_province_modifier = {
+				name = thuringians_oppressed
+				duration = 36500
+			}
+			add_nationalism = 20
+			if = {
+				limit = { ROOT = { ai = yes } }
+				add_core = ROOT
+			}
+		}
+		every_owned_province = {
+			limit = { is_core = MEI	 NOT = { is_core = THU } }
+			add_province_modifier = {
+				name = thuringians_oppressed
+				duration = 36500
+			}
+			add_nationalism = 20
+			if = {
+				limit = { ROOT = { ai = yes } }
+				add_core = ROOT
+			}
+		}
+		MEI = {
+			add_liberty_desire = 30
+		}
+		THU = {
+			add_liberty_desire = 30
+		}
+		thuringia_area = {
+			add_permanent_province_modifier = {
+				name = thu_devastated_countryside
+				duration = 18750
+			}
+			add_devastation = 10
+		}
+		south_saxony_area = {
+			add_permanent_province_modifier = {
+				name = thu_devastated_countryside
+				duration = 18750
+			}
+			add_devastation = 10
+		}
+		
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = {  
+	id = ia_flavor_sax.27
+	title = ia_flavor_sax.27.t
+	desc = ia_flavor_sax.27.d
+	picture = KING_DOING_GREAT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes
+		has_reform = saxon_feudalism
+		NOT = { german_march = 3 }
+		NOT = { has_any_disaster = yes }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# appoint
+		name = ia_flavor_sax.27.a
+		
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = saxon_daimyo
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_saved_event_target = powerful_vassal }
+						army_size = event_target:powerful_vassal
+					}
+				}
+				save_event_target_as = powerful_vassal
+			}
+		}
+		
+		create_subject = {
+			subject_type = german_march
+			subject = event_target:powerful_vassal
+		}
+		
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+	option = {	
+		name = ia_flavor_sax.27.b
+		
+		
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {  # Bully France, but for Hainut
+	id = ia_flavor_sax.28
+	title = ia_flavor_sax.28.t
+	desc = ia_flavor_sax.28.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		any_known_country = {
+			has_reform = saxon_feudalism
+		}
+		NOT = { is_year = 1460 }
+		NOT = { has_global_flag = sax_bullied_france }
+		tag = HAI
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Swear Fealty
+		name = ia_flavor_sax.28.a
+		ai_chance = { 
+			factor = 1000
+		}
+		
+		random_known_country = {
+			limit = { has_reform = saxon_feudalism }
+			create_subject = {
+				subject_type = saxon_daimyo
+				subject = ROOT
+			}
+		}
+		add_government_reform = saxon_fief_reform
+	}
+	
+	option = {	# We'll do it on our own
+		name = ia_flavor_sax.28.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige = 25
+		set_global_flag = sax_bullied_france
+	}
+}
+
+country_event = {  # Can't hold non-german land
+	id = ia_flavor_sax.29
+	title = ia_flavor_sax.29.t
+	desc = ia_flavor_sax.29.d
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+		any_owned_province = {
+			NOT = { culture_group = germanic }
+			NOT = { has_province_modifier = non_germanic_land_penalty_sax }
+		}
+	}
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Release it
+		name = ia_flavor_sax.29.a
+		ai_chance = { 
+			factor = 1000
+		}
+		
+		every_owned_province = {
+			limit = {
+				NOT = { culture_group = germanic }
+				NOT = { has_province_modifier = non_germanic_land_penalty_sax }
+			}
+			remove_core = ROOT
+			random_core_country = {
+				limit = {
+					PREV = {
+						culture = PREV
+						NOT = { PREV = { tag = ROOT } }
+					}
+				}
+				if = {
+					limit = { NOT = { exists = PREV } }
+					ROOT = { release = PREV }
+				}
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				NOT = { culture_group = germanic }
+				NOT = { has_province_modifier = non_germanic_land_penalty_sax }
+			}
+			remove_core = ROOT
+			random_core_country = {
+				limit = {
+					PREV = {
+						culture_group = PREV
+						NOT = { PREV = { tag = ROOT } }
+					}
+				}
+				if = {
+					limit = { NOT = { exists = PREV } }
+					ROOT = { release = PREV }
+				}
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
+	}
+	
+	option = {	# We'll do it on our own
+		name = ia_flavor_sax.29.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		every_owned_province = {
+			limit = {
+				NOT = { culture_group = germanic }
+				NOT = { has_province_modifier = non_germanic_land_penalty_sax }
+			}
+			
+			add_province_modifier = {
+				name = non_germanic_land_penalty_sax
+				duration = 3650
+			}
+		}
+	}
+}

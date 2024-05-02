@@ -1,0 +1,12 @@
+ck2_converter_generated = yes
+graphical_culture = inuitgfx
+color = { 170 50 50 }
+monarch_names = {
+	"Arp #0" = 0
+	"Hurmetõiv #0" = 0
+	"Kahrulemb #0" = 0
+	"Kaido #0" = 0
+	"Sulev #0" = 0
+	"Tõivulemb #0" = 0
+	"Vihavald #0" = 0
+}

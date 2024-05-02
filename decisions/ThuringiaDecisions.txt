@@ -1,0 +1,95 @@
+country_decisions = {
+	thu_revoke_conscription_decision = { #Reduce inflation
+		potential = {
+			has_country_flag = enable_thu_council_decisions_flag
+			NOT = { has_country_flag = thu_revoked_conscription_flag }
+			has_estate_privilege = estate_nobles_force_conscription
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -1
+			remove_estate_privilege = estate_nobles_force_conscription
+			hidden_effect = {
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						size = 3
+					}
+				}
+				set_country_flag = thu_revoked_conscription_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	thu_revoke_levies_decision = { #Reduce inflation
+		potential = {
+			has_country_flag = enable_thu_council_decisions_flag
+			NOT = { has_country_flag = thu_revoked_levies_flag }
+			has_estate_privilege = estate_nobles_levies
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -1
+			remove_estate_privilege = estate_nobles_levies
+			hidden_effect = {
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						size = 3
+					}
+				}
+				set_country_flag = thu_revoked_levies_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	thu_revoke_officer_rights_decision = { #Reduce inflation
+		potential = {
+			has_country_flag = enable_thu_council_decisions_flag
+			NOT = { has_country_flag = thu_revoked_officer_rights_flag }
+			OR = {
+				has_estate_privilege = estate_nobles_noble_officer_right
+				has_estate_privilege = estate_nobles_officer_corp
+			}
+		}
+		allow = {
+			stability = 2
+			is_at_war = no
+		}
+		effect = {
+			add_stability = -1
+			remove_estate_privilege = estate_nobles_noble_officer_right
+			remove_estate_privilege = estate_nobles_officer_corp
+			hidden_effect = {
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						size = 3
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						type = noble_rebels
+						size = 3
+					}
+				}
+				set_country_flag = thu_revoked_officer_rights_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

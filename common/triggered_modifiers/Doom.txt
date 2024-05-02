@@ -1,0 +1,72 @@
+PlsJustDie = {
+	potential = {
+		OR = { 
+			tag = Z00
+			#tag = GJN
+		}
+	}
+	trigger = {
+		always = yes
+	}
+	governing_capacity_modifier = -0.5
+	yearly_corruption = 2.5
+	global_unrest = +10
+	num_accepted_cultures = -20
+	liberty_desire_from_subject_development = 1
+	diplomatic_upkeep = -5
+}
+
+GoColonize = {
+	potential = {
+		OR = {
+			tag = KOS
+			tag = KCL
+			tag = JOM
+			tag = MYM
+			tag = Y11
+			tag = ICE
+			tag = KOI
+		}
+		always = no
+	}
+	trigger = {
+		ai = yes
+	}
+	
+	colonists = 1
+	#range = 1
+	#global_colonial_growth = 20
+	#colonist_placement_chance = 0.20
+	free_maintenance_on_expl_conq = yes
+	native_uprising_chance = -1
+	native_assimilation = 0.25
+	may_explore = yes
+	global_tax_income = 72
+	colony_cost_modifier = -1
+}
+
+GoColonizeEarlyBoost = {
+	potential = {
+		OR = {
+			tag = JOM
+			tag = MYM
+			tag = Y11
+			tag = ICE
+			tag = KOI
+		}
+	}
+	trigger = {
+		ai = yes
+		NOT = { is_year = 1460 }
+	}
+	
+	colonists = 1
+	global_colonial_growth = 40
+	colonist_placement_chance = 0.40
+	free_maintenance_on_expl_conq = yes
+	native_uprising_chance = -1
+	native_assimilation = 0.25
+	may_explore = yes
+	global_tax_income = 72
+	colony_cost_modifier = -1
+}

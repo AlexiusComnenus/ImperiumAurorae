@@ -1,0 +1,150 @@
+almohad_commune_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "revolutionary_republic"
+	potential = {
+		has_reform = almohad_commune_reform
+	}
+	legacy_equivalent = revolutionary_republic
+	valid_for_new_country = no
+	valid_for_nation_designer = no
+	republican_name = yes
+	royal_marriage = no
+	uses_revolutionary_zeal = yes
+	revolutionary = yes
+
+	modifiers = {
+		land_morale = 0.1
+		max_revolutionary_zeal = 50
+		monarch_lifespan = -0.25
+		global_trade_goods_size_modifier = -0.1
+		global_tax_modifier = 0.75
+		global_trade_power = -0.25
+		trade_efficiency = -0.25
+	}
+	#fixed_rank = 3
+	effect = {
+		custom_tooltip = break_every_non_rev_republic_alliance_tt
+		hidden_effect = {
+			every_ally = {
+				limit = {
+					NOT = { government = republic }
+					is_revolutionary = no
+				}
+				ROOT = { break_alliance = PREV }
+			}
+		}
+	}
+
+	custom_attributes = {
+		cannot_ally_non_republics_or_non_rev = yes
+		enables_plutocratic_idea_group = no
+		enables_aristocratic_idea_group = no
+		locked_government_type = yes
+		disables_estate_dhimmi = yes
+		disables_estate_church = yes
+		disables_estate_brahmins = yes
+		disables_estate_maratha = yes
+		disables_estate_nobles = yes
+		disables_estate_vaisyas = yes
+		disables_estate_burghers = yes
+		disables_estate_jains = yes
+		disables_estate_rajput = yes
+		
+		lottery_election = yes
+		election_on_death = yes
+		bonus_stats_for_elected_ruler = yes
+		has_term_election = no
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "Rights of Man"
+		}
+		factions = {
+			rr_jacobins
+			rr_royalists
+			rr_girondists
+		}
+	}
+}
+
+corrupt_almohad_sultanate = {
+	icon = "muslim"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		has_reform = corrupt_almohad_sultanate
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	nation_designer_trigger = {
+		religion_group = muslim
+	}
+
+	legacy_equivalent = iqta_legacy
+	queen = no
+	modifiers = {
+		global_unrest = 1
+		yearly_corruption = 0.1
+		advisor_cost = 0.25
+		build_cost = -0.1
+		build_time = -0.25
+		development_cost = -0.1
+		administrative_efficiency = -0.1
+	}
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		government_abilities = {
+			iqta_mechanic
+		}
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+wattasid_sultanate = {
+	icon = "muslim"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		has_reform = wattasid_sultanate
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	nation_designer_trigger = {
+		religion_group = muslim
+	}
+
+	legacy_equivalent = iqta_legacy
+	queen = no
+	modifiers = {
+		global_unrest = -1
+		yearly_corruption = -0.1
+		global_tax_modifier = 0.1
+		build_time = 0.10
+		development_cost = -0.05
+		administrative_efficiency = 0.05
+		technology_cost = 0.05
+		idea_cost = 0.05
+		innovativeness_gain = -0.25
+	}
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		government_abilities = {
+			iqta_mechanic
+		}
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
+	}
+}

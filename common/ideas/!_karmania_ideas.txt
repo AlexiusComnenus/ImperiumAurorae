@@ -1,0 +1,41 @@
+diadochi_ideas = {
+	start = {
+		core_creation = -0.15
+		years_of_nationalism = -5
+	}
+	bonus = {
+		ae_impact = -0.2
+	}
+	trigger = {
+		culture = seleucian
+	}
+	free = yes
+	
+	krm_phalanx = {
+		has_tercio = yes
+		allowed_tercio_fraction = 0.25
+	}
+	krm_indian_ocean_traders = {
+		global_ship_trade_power = 1
+	}
+	krm_bam_citadel = {
+		defensiveness = 0.15
+		fort_maintenance_modifier = -0.10
+	}
+	krm_companion_cavalry = {
+		cavalry_power = 0.10
+		cavalry_flanking = 1
+	}
+	krm_alexanders_acceptance = {
+		num_accepted_cultures = 2
+		promote_culture_cost = -0.5
+	}
+	krm_alexandrias_everywhere = {
+		development_cost = -0.15
+	}
+	krm_monument_constructors = {
+		great_project_upgrade_cost = -0.15
+		great_project_upgrade_time = -0.15
+		build_cost = -0.05
+	}
+}

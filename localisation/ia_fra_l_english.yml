@@ -1,0 +1,60 @@
+﻿l_english:
+ 
+ lessons_fighting_germanics: "Centuries of War"
+ lessons_fighting_germanics_desc: "Our centuries of war fighting our former cousins turned to enemies, the vile Saxons, have taught us many valuable lessons and nurtured a warrior spirit in our soldiers."
+ fra_industrialism: "Spirit of French Efficiency"
+ fra_industrialism_desc: "Beset with enemies from all sides, be they Germanic, Xizho, or Visigothic, we have no choice but to invest in making every one of our subjects as efficient as possible, that we may have the strength to face our foes."
+
+ #Mechanics Tooltips
+ cb_french_reunification: "Reunification of France"
+ cb_french_reunification_desc: "A divided France will inevitably lead to outside powers taking advantage of our weakness to encroach. We must reunify swiftly."
+
+ #Government
+ independent_appanage_reform: "Independent Appanage"
+ independent_appanage_reform_desc: "De Jure a vassal of France, this Appanage has gained de facto independence due to the weakness of the French Crown."
+ 
+ #Modifiers
+ fra_welsh_cooperation_modifier: "Brythonic-French Bond of Cooperation"
+ 
+ #Missions
+ fra_reconquer_norm_title: "Reconquer Normandy"
+ fra_reconquer_norm_desc: "The Duchy of Normandy is a de jure subject of the French Crown. It is time to return them to our rule."
+ fra_burg_reconquest_title: "Reconquer Burgundy"
+ fra_burg_reconquest_desc: "The upstart Dukes of Burgundy fancy themselves to be strong and independent. Let us remind them that this is in fact utterly false."
+ fra_navy_mission_calais_ia_title: "Port of Calais"
+ fra_navy_mission_calais_ia_desc: "The port of Calais is the closest location to the Brittanic isles. If we are to strike a blow at the Saxons either in Germany or in London, occupying Calais is a good first step."
+ fra_auld_alliance_ia_title: "Hen Gynghrair"
+ fra_auld_alliance_ia_desc: "We have long maintained royal ties and a defensive alliance with the Welsh due to our shared suffering from a Saxon problem. If we were to formalize our ties further it could only aid our joint efforts against our mutual enemies."
+ fra_relations_with_wls_crn_tt: "If we complete the mission via relations with either @[WLS.GetTag] [WLS.GetName] or @[CRN.GetTag] [CRN.GetName]:"
+ fra_london_ia_title: "London Calling"
+ fra_london_ia_desc: "Ever a useful puppet of the hated Saxons, @[Z21.GetTag] [Z21.GetName] continues to be a thorn in our side. We must defeat them at sea and on land to end this threat on our flank once and for all!"
+ fra_brittanic_isles_title: "Pacify the Isles"
+ fra_brittanic_isles_desc: "Some Saxon holdouts along with some pagans still remain on the Brittanic Isles. The road to breaking all of their backs, however, is wide open."
+ fra_event_insight_203_tt_ia: "This event will allow us to choose whether we with to integrate Brythonic elements into our facets of administration or completely reshape the cultural map of the Isles"
+ fra_provencal_question_ia_title: "Provencal Question"
+ fra_provencal_question_ia_desc: "The Duchy of Provence used to be ruled by our cadet branch the House of Anjou, until they went extinct in the male line. Rightfully, by Salic Law, the duchy ought to have reverted to the Crown, but instead the Catalan House de Barcelona claimed the duchy by right of marriage, which is not recognized by Salic Law. It is time to rectify this situation."
+ fra_ducal_lands_avignon_ia_title: "Papal Lands in Avignon"
+ fra_ducal_lands_avignon_ia_desc: "The Papacy still maintains legal ownership of the lands in Avignon, but has long abandoned any attempt at exerting this legal control ever since their exile from Rome and refuge in Poland. However, they chafe under Polish control and would likely be delighted to return to Italy if we offered to restore their lands. We could start by restoring the Papacy to Avignon and stealing Papal control from the Poles. On the other hand, we could simply continue to ignore their legal claim to Avignon and conquer Italy for ourselves."
+ fra_steal_the_pope: "If we choose to align with the Papacy, they will lose their holdings in Poland and instead move to Avignon! By following our other mission tree branch in Italy and handing provinces to the Pope, we will have a chance to ally and later vassalize them."
+ fra_border_saxony_title: "Face Saxonia"
+ fra_border_saxony_desc: "For too long has Saxonia rested on their laurels. They think themselves rulers of the world, and spit on our face! It is time to end them and avenge Charlemagne."
+ fra_push_imperial_line_ia_title: "Strike the underbelly"
+ fra_push_imperial_line_ia_desc: "Saxonia's grip on South Germany is weak and fragmented. We should strike swiftly and circumvent their fortresses in the Low Countries."
+ fra_humiliate_saxonia_title: "Humiliate Saxonia"
+ fra_humiliate_saxonia_desc: "Let us show to the world that Saxonia is weak and their so-called rule over Germany is as hollow as their souls!"
+ fra_FRANCIA_name: "Francia"
+ fra_FRANCIA_name_ADJ: "Francian"
+ fra_declaratio_francia_title: "Declaratio Francia"
+ fra_declaratio_francia_desc: "Charlemagne can rest easy, now."
+ fra_dismantled_saxonia_tt: "Has dismantled Saxonia, ensuring they have no subjects remaining."
+ fra_dismantle_saxonia_title: "Dismantle Saxonia"
+ fra_dismantle_saxonia_desc: "The ill-fated charade that calls themselves the Kings of Germany is naught but a sad state of affairs and clear delusional thinking. All they know to do is hold their eons-old defeat of Charlemagne over our heads and pretend to be superior. Their complacency and self-righteousness shall be their downfall!"
+ 
+ # events
+ flavor_fra.203.t.ia: "Peace in the Isles"
+ flavor_fra.203.d.ia.1: "Our domination in the Isles is complete. In the wake of the fall of the native Brythonic and Saxon kingdoms, they have left us the curse of handling an economy in shambles and headless peoples led astray without us to guide them. Shall we consider integrating the native elites into our new administration, despite their past mismanagement, or shall we enforce their conformity to our rules and customs?"
+ flavor_fra.203.d.ia.2: "Our ally's domination in the Isles is complete. In the process, our shared experiences have provided us with the opportunity to learn much of their ways, and they of ours. Many Brythonic officers and nobles now serve France loyally, and vice versa."
+ flavor_fra.106.ia.t: "Capetian House of Anjou"
+ flavor_fra.106.ia.d: "The Duchy of Provence used to be ruled by the House of Anjou, a cadet branch of the Capetian House ruling France. After they died out in the male line, the Catalan House de Barcelona inherited the duchy due to a marriage with the daughter of the former duke. Now, France is reminding us that under French Salic Law, inheritance is technically not permitted through the female line. If we do not swear our fealty to them, they will denounce us to all the world as illegitimate rulers in Provence."
+ flavor_fra.106.ia.a: "We have no choice but to accept"
+ flavor_fra.106.ia.b: "Never! To arms!"

@@ -1,0 +1,114 @@
+gra_new_trade = {
+	colonists = 1
+	global_colonial_growth = 20
+}
+
+gra_loyal_republic = {
+	land_morale = 0.15
+	land_maintenance_modifier = -0.10
+}
+
+gra_defensive_operations = {
+	local_defensiveness = 0.25
+}
+
+gra_islamic_renaissance = {
+	local_institution_spread = 0.25
+	innovativeness_gain = 0.5
+	technology_cost = -0.05
+}
+
+gra_sevilla_admiralty = {
+	admiral_cost = -0.1
+	navy_tradition_decay = -0.01
+	leader_naval_manuever = 1
+}
+
+gra_republican_zeal = {
+	republican_tradition = 0.3
+	prestige = 0.5
+} 
+
+gra_cap_center = {
+	reform_progress_growth = 0.5
+	advisor_cost = -0.15
+	development_cost = -0.05
+	republican_tradition = -0.2
+}
+
+gra_cap_center_big = {
+	reform_progress_growth = 0.75
+	advisor_cost = -0.15
+	development_cost = -0.10
+}
+
+gra_cap_atlantic = {
+	heavy_ship_power = 0.15
+	naval_morale = 0.15
+	global_colonial_growth = 30
+	global_manpower_modifier = -0.10
+}
+
+gra_cap_atlantic_big = {
+	heavy_ship_power = 0.25
+	naval_morale = 0.25
+	global_colonial_growth = 50
+}
+
+gra_cap_med = {
+	galley_power = 0.15
+	trade_efficiency = 0.15
+	global_prov_trade_power_modifier = 0.2
+	land_forcelimit_modifier = -0.10
+}
+
+gra_cap_med_big = {
+	galley_power = 0.25
+	trade_efficiency = 0.25
+	global_trade_power = 0.2
+}
+
+gra_cap_tree = {
+	drill_gain_modifier = 0.75
+	drill_decay_modifier = -0.25
+	movement_speed = 0.15
+	land_attrition = -0.20
+	monthly_piety = -0.001
+	diplomatic_reputation = -1
+}
+
+gra_cap_tree_big = {
+	drill_gain_modifier = 1.0
+	drill_decay_modifier = -0.40
+	movement_speed = 0.25
+	land_attrition = -0.30
+	fire_damage = 0.10
+	monthly_piety = -0.001
+}
+
+gra_cap_mountain = {
+	attack_bonus_in_capital_terrain = 1
+	defensiveness = 0.20
+	global_spy_defence = 0.3
+	same_culture_advisor_cost = -0.25
+	all_estate_loyalty_equilibrium = -0.05
+}
+
+gra_cap_mountain_big = {
+	global_defender_dice_roll_bonus = 1
+	defensiveness = 0.33
+	global_spy_defence = 0.5
+	same_culture_advisor_cost = -0.30
+}
+
+gra_capital_buff = {
+	local_manpower_modifier = 0.10
+	local_development_cost = -0.10
+	trade_goods_size_modifier = 0.10
+	local_culture_conversion_cost = -0.25
+	local_missionary_strength = 0.02
+}
+
+gra_iberian_integration = {
+		local_governing_cost = -0.75
+}

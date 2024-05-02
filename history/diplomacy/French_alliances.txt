@@ -1,0 +1,27 @@
+royal_marriage = {
+	first = FRA
+	second = WLS
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}
+
+royal_marriage = {
+	first = PLT
+	second = KRL
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}
+
+royal_marriage = {
+	first = NRM
+	second = BER
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}
+
+royal_marriage = {
+	first = Z42
+	second = Z18
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}

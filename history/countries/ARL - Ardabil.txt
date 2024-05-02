@@ -1,0 +1,10 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+government_rank = 1
+technology_group = muslim
+religion = sunni
+primary_culture = azerbaijani
+capital = 424
+religious_school = jafari_school
+add_accepted_culture = persian
+add_army_professionalism = 0.05

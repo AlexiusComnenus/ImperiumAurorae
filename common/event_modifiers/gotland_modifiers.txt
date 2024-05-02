@@ -1,0 +1,40 @@
+got_hunter_of_kings = {
+	diplomatic_reputation = -5
+	ae_impact = 0.25
+	global_unrest = 5
+	harsh_treatment_cost = -0.75
+}
+
+emigration_got_sax = {
+	global_manpower_modifier = -0.10
+	production_efficiency = -0.10
+}
+
+danish_exiles = {
+	local_manpower_modifier = 0.25
+	local_tax_modifier = 0.25
+	local_culture_conversion_cost = 100
+	local_autonomy = 0.10
+	trade_goods_size_modifier = 0.20
+}
+
+new_pirate_capital = {
+	local_build_cost = -0.25
+	local_build_cost = -0.25
+	local_development_cost = -0.25
+}
+
+autonomous_saxon_communities = {
+	local_culture_conversion_cost = 1
+	local_missionary_strength = -0.05
+	local_tolerance_of_heathens = 3
+	local_religious_unity_contribution = -1
+	local_autonomy = 0.10
+	local_development_cost = -0.1
+	local_production_efficiency = 0.25
+}
+
+sax_got_looting_tactics = {
+	loot_amount = 0.50
+	available_province_loot = 0.25
+}

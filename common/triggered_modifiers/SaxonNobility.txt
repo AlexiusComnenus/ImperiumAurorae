@@ -1,0 +1,286 @@
+AngryNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 15
+			}
+		}
+	}
+	army_tradition = -1
+	vassal_forcelimit_bonus = -0.25
+	vassal_income = -0.25
+	reduced_liberty_desire = -20
+}
+
+GrumpyNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 15
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 30
+			}
+		}
+	}
+	army_tradition = -0.5
+	vassal_forcelimit_bonus = -0.1
+	vassal_income = -0.1
+	reduced_liberty_desire = -10
+}
+
+DissatisfiedNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 30
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 50
+			}
+		}
+	}
+	#army_tradition = -0.5
+	vassal_forcelimit_bonus = -0.05
+	vassal_income = -0.05
+	reduced_liberty_desire = -5
+}
+
+SatisfiedNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 50
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 70
+			}
+		}
+	}
+	army_tradition = 0.25
+	vassal_forcelimit_bonus = 0.1
+	vassal_income = 0.05
+	reduced_liberty_desire = 5
+	technology_cost = 0.05
+	global_institution_spread = -0.1
+}
+
+HappyNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 70
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 85
+			}
+		}
+	}
+	army_tradition = 0.5
+	vassal_forcelimit_bonus = 0.2
+	vassal_income = 0.1
+	reduced_liberty_desire = 10
+	technology_cost = 0.10
+	global_institution_spread = -0.2
+}
+
+LoyalNobility = {
+	potential = {
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 85
+		}
+	}
+	army_tradition = 1
+	vassal_forcelimit_bonus = 0.5
+	vassal_income = 0.2
+	reduced_liberty_desire = 20
+	technology_cost = 0.15
+	global_institution_spread = -0.3
+}
+
+SaxonCheats = {
+	potential = {
+		ai = yes
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		ai = yes
+		has_reform = saxon_feudalism
+	}
+	
+	ae_impact = -0.25
+	improve_relation_modifier = 0.5
+	war_exhaustion = -0.05
+}
+
+SaxonCheats2 = {
+	potential = {
+		ai = yes
+		has_reform = saxon_feudalism
+	}
+	trigger = {
+		is_at_war = no
+		ai = yes
+		has_reform = saxon_feudalism
+	}
+	
+	war_exhaustion = -0.50
+}
+
+NoFiefCheating = {
+	potential = {
+		is_subject_of_type = german_march
+	}
+	
+	trigger = {
+		is_at_war = yes
+		overlord = { is_at_war = yes }
+		overlord = { ai = no }
+	}
+	
+	province_warscore_cost = 100
+}
+
+MarchCompensation = {
+	potential = {
+		is_subject_of_type = german_march
+	}
+	
+	trigger = {
+		overlord = { is_at_war = yes }
+		NOT = { is_in_war = { attacker_leader = ROOT } }
+		NOT = { is_in_war = { defender_leader = ROOT } }
+	}
+	
+	war_exhaustion = -0.05
+	global_autonomy = -0.05
+}
+
+NoWarsDuringCrisis = {
+	potential = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+		overlord = {
+			has_disaster = war_of_the_roses
+		}
+	}
+	
+	trigger = {
+		overlord = {
+			has_disaster = war_of_the_roses
+		}
+	}
+	
+	can_not_declare_war = yes
+	stability_cost_to_declare_war = 3
+}
+
+saxon_war_effort_1 = {
+	potential = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+		overlord = {
+			has_reform = saxon_feudalism
+		}
+		mission_completed = thu_contribute_to_saxon_efforts
+		has_reform = thu_saxon_march_reform
+	}
+	
+	trigger = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+	}
+	
+	manpower_recovery_speed = -0.15
+	land_forcelimit = -10
+}
+
+saxon_war_effort_2 = {
+	potential = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+		overlord = {
+			has_reform = saxon_feudalism
+		}
+		mission_completed = thu_contribute_to_saxon_efforts
+		has_reform = thu_saxon_recruitment_reform
+	}
+	
+	trigger = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+	}
+	
+	manpower_recovery_speed = -0.30
+	global_manpower = -10
+	global_trade_goods_size_modifier = -0.1
+}
+
+saxon_war_effort_3 = {
+	potential = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+		overlord = {
+			has_reform = saxon_feudalism
+		}
+		mission_completed = thu_contribute_to_saxon_efforts
+		NOT = {
+			OR = {
+				has_reform = thu_saxon_recruitment_reform
+				has_reform = thu_saxon_march_reform
+			}
+		}
+	}
+	
+	trigger = {
+		OR = {
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+		}
+	}
+	
+	manpower_recovery_speed = -0.10
+	global_manpower_modifier = -0.10
+	land_forcelimit_modifier = -0.10
+	global_tax_income = -24
+}

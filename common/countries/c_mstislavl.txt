@@ -1,0 +1,14 @@
+ck2_converter_generated = yes
+graphical_culture = easterngfx
+color = { 232 247 188 }
+monarch_names = {
+	"Afanasiy #0" = 0
+	"Boleslava #0" = -1
+	"Demid #0" = 0
+	"Dobrynia #0" = 0
+	"Grigoriy #0" = 0
+	"Rogvolod #0" = 0
+	"Terentiy #0" = 0
+	"Yeremey #0" = 0
+	"Yevstafiy #0" = 0
+}

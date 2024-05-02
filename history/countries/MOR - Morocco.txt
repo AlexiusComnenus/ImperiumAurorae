@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = corrupt_almohad_sultanate
+government_rank = 2
+technology_group = muslim
+religion = yazidi
+primary_culture = moroccan
+capital = 343
+1444.11.11= {
+	monarch = {
+		name = "Stembanos"
+		dynasty = "Almohad"
+		adm = 4
+		dip = 4
+		mil = 5
+		birth_date = 1416.11.21
+		religion = yazidi
+		culture = moroccan
+	}
+	add_ruler_personality = pious_personality
+	add_ruler_personality = secretive_personality
+}
+1444.11.11= {
+	add_prestige = 6
+	add_treasury = 57
+	add_truce_with = ARA
+	add_truce_with = CAS
+	add_truce_with = VAL
+	add_truce_with = TUN
+	add_truce_with = POR
+	add_truce_with = LON
+	add_truce_with = TEU
+	add_truce_with = ALG
+}

@@ -1,0 +1,15 @@
+owner = CDL
+controller = CDL
+capital = "Kunming"
+is_city = yes
+culture = bai
+religion = buddhism
+trade_goods = copper
+fort_15th = yes
+base_tax = 6
+base_production = 5
+base_manpower = 3
+add_core = CDL
+discovered_by = chinese
+discovered_by = indian
+discovered_by = nomad_group

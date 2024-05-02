@@ -1,0 +1,435 @@
+country_decisions = {
+	remove_kleinstaaterei = {
+		major = yes
+		potential = {
+			OR = {
+				tag = GER
+				AND = {
+					tag = NED
+					is_subject = no
+				}
+			}
+			
+			OR = {
+				any_owned_province = {
+					has_province_modifier = Kleinstaaterei
+				}
+				any_subject_country = {
+					any_owned_province = {
+						has_province_modifier = Kleinstaaterei
+					}
+				}
+			}
+		}
+		
+		allow = {
+			OR = {
+				any_owned_province = {
+					has_province_modifier = Kleinstaaterei
+					NOT = { unrest = 0 }
+				}
+				any_subject_country = {
+					any_owned_province = {
+						has_province_modifier = Kleinstaaterei
+						NOT = { unrest = 0 }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = Kleinstaaterei
+					NOT = { unrest = 0 }
+				}
+				remove_province_modifier = Kleinstaaterei
+			}
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = Kleinstaaterei
+						NOT = { unrest = 0 }
+					}
+					remove_province_modifier = Kleinstaaterei
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	hessian_gov_decision = {
+		major = yes
+		potential = {
+			has_reform = hes_military_reform
+			
+		}
+		
+		allow = {
+			army_tradition = 75
+			army_professionalism = 0.60
+			has_global_modifier_value = {
+				which = discipline
+				value = 0.2
+			}
+			land_forcelimit = 80
+		}
+		
+		effect = {
+			add_mil_power = -500
+			add_government_reform = hes_military_reform_2
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	ivycurse_cure_project = {
+		major = yes
+		potential = {
+			has_global_flag = initialized_cure_flag
+			NOT = { has_global_flag = ivycurse_cured }
+			NOT = { has_country_flag = started_ivycurse_cure}
+		}
+		
+		allow = {
+			OR = {
+				AND = {
+					ai = no
+					REB = {
+						check_variable = {
+							which = IvyCureScore
+							value = 200
+						}
+					}
+				}
+				AND = {
+					ai = yes
+					REB = {
+						check_variable = {
+							which = IvyCureScore
+							value = 220
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			hidden_effect = {
+				set_variable = { which = IvyCureSpeed value = 0 }
+				set_country_flag = started_ivycurse_cure
+			}
+			country_event = {
+				id = ivycurse.7
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	
+	sax_enforce_religious_conformity_decision = {
+		major = yes
+		potential = {
+			has_country_flag = sax_enable_conformity_decision
+		}
+		
+		allow = {
+			any_subject_country = {
+				is_subject_of_type = saxon_daimyo
+				NOT = { religion = ROOT }
+			}
+		}
+		
+		effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = saxon_daimyo
+					NOT = { religion = ROOT }
+				}
+				change_religion = ROOT
+				add_liberty_desire = 40
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				any_subject_country = {
+					NOT = { religion = ROOT }
+					liberty_desire = 30
+				}
+			}
+		}
+	}
+	
+	sax_declare_PU_on_denmark = {
+		major = yes
+		potential = {
+			any_ally = {
+				OR = {
+					tag = SWE
+					tag = NOR
+				}
+				historical_friend_with = ROOT
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = DAN
+				}
+				NOT = { war_with = DAN }
+			}
+			DAN = {
+				NOT = { is_subject = yes }
+			}
+			has_country_flag = sax_befriended_sca
+		}
+		
+		allow = {
+			NOT = { truce_with = DAN }
+		}
+		
+		effect = {
+			random_ally = {
+				limit = {
+					OR = {
+						tag = SWE
+						tag = NOR
+					}
+					historical_friend_with = ROOT
+					has_casus_belli = {
+						type = cb_restore_personal_union
+						target = DAN
+					}
+				}
+				declare_war_with_cb = {
+					who = DAN
+					casus_belli = cb_restore_personal_union
+				}
+				ROOT = {
+					join_all_offensive_wars_of = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			
+		}
+	}
+	
+	sax_declare_PU_on_norway = {
+		major = yes
+		potential = {
+			any_ally = {
+				OR = {
+					tag = DAN
+					tag = SWE
+				}
+				historical_friend_with = ROOT
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = NOR
+				}
+				NOT = { war_with = NOR }
+			}
+			NOR = {
+				NOT = { is_subject = yes }
+			}
+			has_country_flag = sax_befriended_sca
+		}
+		
+		allow = {
+			NOT = { truce_with = NOR }
+		}
+		
+		effect = {
+			random_ally = {
+				limit = {
+					OR = {
+						tag = SWE
+						tag = DAN
+					}
+					historical_friend_with = ROOT
+					has_casus_belli = {
+						type = cb_restore_personal_union
+						target = NOR
+					}
+				}
+				declare_war_with_cb = {
+					who = NOR
+					casus_belli = cb_restore_personal_union
+				}
+				ROOT = {
+					join_all_offensive_wars_of = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			
+		}
+	}
+	
+	
+	sax_declare_PU_on_sweden = {
+		major = yes
+		potential = {
+			any_ally = {
+				OR = {
+					tag = DAN
+					tag = NOR
+				}
+				historical_friend_with = ROOT
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = SWE
+				}
+				NOT = { war_with = SWE }
+			}
+			SWE = {
+				NOT = { is_subject = yes }
+			}
+			has_country_flag = sax_befriended_sca
+		}
+		
+		allow = {
+			NOT = { truce_with = SWE }
+		}
+		
+		effect = {
+			random_ally = {
+				limit = {
+					OR = {
+						tag = NOR
+						tag = DAN
+					}
+					historical_friend_with = ROOT
+					has_casus_belli = {
+						type = cb_restore_personal_union
+						target = SWE
+					}
+				}
+				declare_war_with_cb = {
+					who = SWE
+					casus_belli = cb_restore_personal_union
+				}
+				ROOT = {
+					join_all_offensive_wars_of = PREV
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			
+		}
+	}
+	
+	usurp_saxon_throne = {
+		major = yes
+		potential = {
+			#government = monarchy
+			culture_group = germanic
+			any_war_enemy_country = {
+				has_reform = saxon_feudalism
+			}
+		}
+		
+		allow = {
+			52 = {
+				OR = {
+					owner = { NOT = { war_with = ROOT } }
+					controlled_by = ROOT
+				}
+			}
+			1758 = {
+				OR = {
+					owner = { NOT = { war_with = ROOT } }
+					controlled_by = ROOT
+				}
+			}
+			any_war_enemy_country = { 
+				has_reform = saxon_feudalism
+				ROOT = {
+					war_score_against = {
+						who = PREV
+						value = 90
+					}
+				}
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}	
+		}
+		
+		effect = {
+			if = {
+				limit = { NOT = { government = monarchy } }
+				change_government = monarchy
+			}
+			add_government_reform = saxon_feudalism
+			random_war_enemy_country = { 
+				limit = { has_reform = saxon_feudalism }
+				every_subject_country = {
+					limit = { 
+						OR = {
+							is_subject_of_type = saxon_daimyo 
+							is_subject_of_type = german_march
+						}
+					}
+					ROOT = {
+						create_subject = {
+							subject_type = saxon_daimyo
+							subject = PREV
+						}
+					}
+				}
+				remove_government_reform = saxon_feudalism
+			}
+			if = {
+				limit = {
+					52 = {
+						owner = { war_with = ROOT }
+					}
+				}
+				52 = {
+					cede_province = ROOT
+					add_core_construction = {
+						speed = 0.5
+						cost = 0.5
+					}
+				}
+			}
+			if = {
+				limit = {
+					1758 = {
+						owner = { war_with = ROOT }
+					}
+				}
+				1758 = {
+					cede_province = ROOT
+					add_core_construction = {
+						speed = 0.5
+						cost = 0.5
+					}
+				}
+			}
+			#swap_non_generic_missions = yes
+			hidden_effect = {
+				ROOT = {
+					save_global_event_target_as = saxon_king
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+				
+		}
+	}
+}

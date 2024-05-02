@@ -1,0 +1,79 @@
+﻿l_english:
+ PRYDAIN_NAME: "Prydain"
+ PRYDAIN_NAME_ADJ: "Prydain"
+ 
+ #Ideas
+ ia_legacy_hakapeliitta: "Hakkaa päälle!"
+ ia_legacy_hakapeliitta_desc: "Cut them down!"
+ ia_sisun_voima: "Sisun Voima"
+ ia_sisun_voima_desc: "In the face of adversity, we will always act with rationality and determination to carry us through every hardship the cold north can throw at us!"
+ ia_spirit_of_sisu: "Spirit of Sisu"
+ ia_spirit_of_sisu_desc: "Sisu not only applies to the harsh life of the arctic plains, it also applies on the battlefield. Never falter, never fall!"
+ ia_steadfast_sovereignty: "Steadfast Sovereignty"
+ ia_steadfast_sovereignty_desc: "Regardless the enemy, we have never lost sight of that unique spark that marks us. Be they Scandinavian, Bolghar, or Cuman, foreign tyrants meet their grave here!"
+ ia_drunken_diplomacy: "Drunken Diplomacy"
+ ia_drunken_diplomacy_desc: "Our diplomats are masters in extracting treaty signatures from foreign dignitaries whilst in the midst of drunken revelry. Maybe they just need to practice more with vodka?"
+ ia_trust_in_finnish_gov: "Transparent Governance"
+ ia_trust_in_finnish_gov_desc: "Our government officials are not allowed to keep secrets away from the eyes of the public. This fosters an unprecedented level of public trust."
+ ia_modern_hakapeliitta: "Modernize the Hakkapeliitta"
+ ia_modern_hakapeliitta_desc: "Originally a name given by foreigners at the receiving end of our battle cry, our formidable cavalry now bears the name with pride. Let us modernize their armaments to ensure continued victory forevermore!"
+
+ #Mechanics Tooltips
+ kyiv_nation_title: "Reform Kiev"
+ kyiv_nation_desc: "Now that we are in control of the city of Kiev, we can reclaim the legacy that the Cumanians tried to destroy."
+ reduce_inflation_money_decision_title: "Deflate the economy"
+ reduce_inflation_money_decision_desc: "We can remove money from our economy to reduce the inflation."
+ reduce_inflation_economy_decision_title: "Implement Austerity Policies"
+ reduce_inflation_economy_decision_desc: "By implementing austerity policies we can try to reduce our inflation."
+
+ #Government
+ 
+
+ #Modifiers
+ cumania_collapse_mod: "Cumania in Collapse"
+ cumania_revolter_mod: "Recent Uprising"
+ austerity_policies: "Austerity Policies"
+
+ #Missions
+ rig_ally_the_emperor_ia_title: "Seek Support of the German Crown"
+ rig_ally_the_emperor_ia_desc: "We are far away from our brethren in Germania. While the Livonian Order has proved some sort of protection for us during the internal troubles in Germania, they are slowly buckling under the pressure from all sides. Now that a new King sits on the German throne in relative stability, perhaps we can appeal for their support now?"
+ rig_opinion_with_konig: "The current holder of the §YCrown of Germania§! must have 75 opinion of us."
+ rig_establish_religious_dominance_bt_ia: "At least 4 countries have been force converted by us."
+ rig_vassalize_livonia_ia_title: "Subjugate the Livonians"
+ rig_vassalize_livonia_ia_desc: "The Livonian Order is the successor to the Livonian Brothers of the Sword, formed out of knightly reinforcements from Germania after the latter was crippled by a series of lost battles. Originally meant to be the military arm of our bishopric, they have since gained their own ambitions. It is time to bring them back under our control."
+ rig_livonian_confederacy_ia_title: "Restore the Livonian borders"
+ rig_livonian_confederacy_ia_desc: "We should reclaim the old Livonian borders to keep our great city safe from hostile encroachment."
+ rig_subjugate_the_lithuanians_title: "Subjugate the Lithuanians"
+ rig_subjugate_the_lithuanians_desc: "The Lithuanians would make excellent allies, if only they were not heathens. Let us remedy this situation by force."
+ rig_better_vassals_lol: "The §YLivonian Order§! and §YLithuania§!, if they are our subjects, will not cost a diplo slot and have 25% less Liberty Desire."
+ liv_handle_internal_struggle_ia_title: "Reclaim Livonian Borders"
+ liv_handle_internal_struggle_ia_desc: "Ever since support from the Germanic homeland dried up, we have struggled to protect the baltics. We must re-establish control over the Baltics to prove our worth."
+ Z47_stop_paying_tribute_title: "Stop Paying Tribute"
+ Z47_stop_paying_tribute_desc: "Now that the Cumans are weak, we shall stop paying this degrading tribute to the vile barbarians!"
+ Z47_vengeance_title: "Vengence for our forefathers!"
+ Z47_vengeance_desc: "When the Cumans rampaged over our lands a century ago, they destroyed our great cities and slew countless of us. The Grand Prince himself died in battle. Pereyaslavl narrowly survived in the aftermath of the sack of Kyiv so the Cuman Khagan could further humiliate the Grand Prince's heir. But now comes the time for vengeance!"
+ Z47_retake_kyiv_title: "Retake Kyiv"
+ Z47_retake_kyiv_desc: "It is time to restore the heart of the Rus!"
+ mercenaries_of_riga: "Foreign Legion of Riga"
+ not_more_than_10_provinces_outside_europe: "No more than 10 provinces in the Old World!"
+
+
+ # events
+ cumania_collapse.1.title: "Cossack Uprising!"
+ cumania_collapse.1.desc: "The Cossacks of Zaporozhie have risen up against us and declared an independent Sich!"
+ cumania_collapse.1.a: "Damn it all!"
+ cumania_collapse.1.b: "Kill them all!"
+ cumania_collapse.1.c: "It's a Cossack's life for me!"
+ cumania_collapse.2.title: "Crimean Uprising!"
+ cumania_collapse.2.desc: "The Crimeans have risen up against us and declared an independent Khanate!"
+ cumania_collapse.2.a: "Damn it all!"
+ cumania_collapse.2.b: "Kill them all!"
+ cumania_collapse.2.c: "Crimean has nice weather, no?"
+ cumania_collapse.3.title: "Mongol coup!"
+ cumania_collapse.3.desc: "A group of Mongol tribesmen has decided to launch a coup against us, citinng our incompetence as the cause!"
+ cumania_collapse.3.a: "Not good!"
+ cumania_collapse.3.c: "<Throat singing noises>"
+ flavor_rig.9.t.ia: "Protection from the Crown of Germania?"
+ flavor_rig.9.desc.ia: "The situation in the Baltics is dire. The neighboring Livonian Order is slowly declining in the face of our enemies all around. However, a new King in Germania has established their position in relative stability, and may be able to offer us protection now. On the other hand, while this protection may relieve us of our immediate problems, it may also come with a certain price in the future."
+ flavor_rig.9.a.ia: "Accept the protection."
+ flavor_rig.9.b.ia: "Forge our own future."

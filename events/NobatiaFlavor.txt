@@ -1,0 +1,191 @@
+########################################
+# Nobatia Events     		           #
+########################################
+
+namespace = ia_flavor_z42
+
+# Imperial Incident
+country_event = {
+	id = ia_flavor_z42.1
+	title = ia_flavor_z42.1.t
+	desc = ia_flavor_z42.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = Z42
+	}
+	
+	option = { # Reichskrieg!
+		name = ia_flavor_z42.1.a
+		ai_chance = { factor = 60 }
+		custom_tooltip = abyssinia_reichskrieg_tt
+		hidden_effect = {
+			emperor = {
+				declare_war_with_cb = {
+					who = ETH
+					casus_belli = cb_imperial_realm_war
+				}
+			}
+		}
+	}
+	option = { # thoughts and prayers
+		name = ia_flavor_z42.1.b
+		ai_chance = {
+			factor = 40
+		}
+		custom_tooltip = abyssinia_contributions_tt
+		hidden_effect = {
+			every_known_country = {
+				limit = { NOT = { tag = ROOT } is_part_of_hre = yes }
+				add_treasury = -10
+				add_manpower = -1
+				Z42 = {
+					add_treasury = 10
+					add_manpower = 1
+				}
+			}
+		}
+	}
+	option = { # not our problem
+		name = ia_flavor_z42.1.c
+		ai_chance = {
+			factor = 0
+		}
+		Z42 = { add_prestige = -10 }
+	}
+}
+
+country_event = {
+	id = ia_flavor_z42.2
+	title = ia_flavor_z42.2.t
+	desc = ia_flavor_z42.2.d
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # Small Donation
+		trigger = { treasury = 100 }
+		name = ia_flavor_z42.2.a
+		#ai_chance = { factor = 0 }
+		
+		add_treasury = -100
+		emperor = { add_treasury = 100 }
+		add_prestige = 5
+	}
+	
+	option = { # Medium Donation
+		trigger = { treasury = 250 }
+		name = ia_flavor_z42.2.b
+		#ai_chance = { factor = 0 }
+		
+		add_treasury = -250
+		add_prestige = 10
+		
+		emperor = { add_treasury = 250 }
+		add_country_modifier = {
+			name = z42_donation_medium_mod
+			duration = 3650
+		}
+	}
+	
+	option = { # Large Donation
+		trigger = { treasury = 1000 }
+		name = ia_flavor_z42.2.c
+		#ai_chance = { factor = 0 }
+		
+		add_treasury = -1000
+		add_prestige = 20
+		
+		emperor = {
+			add_country_modifier = {
+				name = z42_donation_large_mod_emperor
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = z42_donation_large_mod
+			duration = 3650
+		}
+	}
+	
+	option = { # Huge Donation
+		trigger = { treasury = 2500 }
+		name = ia_flavor_z42.2.e
+		#ai_chance = { factor = 0 }
+		
+		add_treasury = -2500
+		add_prestige = 40
+		
+		emperor = {
+			add_country_modifier = {
+				name = z42_donation_huge_mod_emperor
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = z42_donation_huge_mod
+			duration = 3650
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_z42.3
+	title = ia_flavor_z42.3.t
+	desc = ia_flavor_z42.3.d
+	picture = east_asian_REFORM_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # Ban Slavery
+		name = ia_flavor_z42.3.a
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = antioch_bans_slavery_tt
+		hidden_effect = {
+			every_known_country = {
+				limit = { is_part_of_hre = yes }
+				abolish_slavery_effect = yes
+			}
+			set_global_flag = che_banned_slavery_flag
+		}
+	}
+	
+	option = { # Don't Ban Slavery
+		name = ia_flavor_z42.3.b
+		ai_chance = { factor = 0 }
+		
+		add_prestige = -10
+	}
+}
+
+province_event = {
+	id = ia_flavor_z42.4
+	title = ia_flavor_z42.4.t
+	desc = ia_flavor_z42.4.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	goto = ROOT
+	
+	trigger = {
+		has_global_flag = che_banned_slavery_flag
+		trade_goods = slaves
+		owner = {
+			is_part_of_hre = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #  Slavery is Banned
+		name = ia_flavor_z42.4.a
+		ai_chance = { factor = 100 }
+		
+		change_trade_goods = unknown
+	}
+}

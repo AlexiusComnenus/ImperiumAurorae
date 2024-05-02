@@ -1,0 +1,1199 @@
+zyp_lot_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lot_unified_state = {
+		icon = negotiate_for_avignon
+		position = 1
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			
+		}
+		
+		trigger = {
+			stability = 2
+			OR = {
+				stability = 1
+				legitimacy = 75
+			}
+		}
+		
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+			add_prestige = 25
+		}
+	}
+
+	lot_wealth_of_state = {
+		icon = reform_the_monte
+		position = 2
+		required_missions = { lot_unified_state }
+		
+		
+		trigger = {
+			NOT = {
+				num_of_loans = 1
+			}
+			monthly_income = 20
+			treasury = 250
+		}
+		
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+			add_prestige = 10
+			add_country_modifier = {
+				name = lot_court_wealth
+				duration = 9125
+			}
+		}
+	}
+	
+	lot_carolingian_resurgence = {
+		icon = carolingian_empire
+		position = 4
+		required_missions = {  }
+		
+		
+		trigger = {
+			owns = 1878
+			1878 = {
+				has_great_project = {
+					type = aachener_dom
+					tier = 2
+				}
+			}
+			prestige = 30
+			total_development = 500
+		}
+		
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 20
+			}
+			LOT = { set_dynasty = "Karolinger" }
+			add_historical_rival = SAX
+			SAX = { add_historical_rival = ROOT }
+		}
+	}
+	
+	lot_carolingian_revenge = {
+		icon = join_the_empire
+		position = 5
+		required_missions = { lot_carolingian_resurgence }
+		
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = LOT_SIEZED_OR_DESTROYED_GERMANIC_CROWN
+				OR = {
+					NOT = { any_known_country = { has_reform = saxon_feudalism } }
+					has_reform = saxon_feudalism
+				}
+			}
+		}
+		
+		effect = {
+			add_power_projection = { 
+				type = 25_permanent_power_projection
+				amount = 25
+			}
+			custom_tooltip = permanent_pp_tt
+			add_prestige = 100
+			add_country_modifier = {
+				name = lot_carolingian_revenge_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+zyp_lot_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lot_integrate_dutch = {
+		icon = friends_in_high_places
+		position = 2
+		required_missions = { lot_unified_state }
+		
+		provinces_to_highlight = {
+			region = low_countries_region
+			owned_by = ROOT
+			OR = {
+				culture = flemish
+				culture = dutch
+				culture = frisian
+			}
+			has_owner_accepted_culture = no
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				region = low_countries_region
+				NOT = { local_autonomy = 25 }
+				NOT = { unrest = 1 }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_cult_3
+				duration = -1
+			}
+			add_country_modifier = {
+				name = lot_cult_2
+				duration = -1
+			}
+			add_country_modifier = {
+				name = lot_cult_1
+				duration = -1
+			}
+
+			if = {
+				limit = { 
+					NOT = {
+						accepted_culture = frisian
+					}
+				}
+				add_accepted_culture = frisian
+			}
+			else = {
+				add_dip_power = 100
+			}
+			if = {
+				limit = { 
+					NOT = {
+						accepted_culture = dutch
+					}
+				}
+				add_accepted_culture = dutch
+			}
+			else = {
+				add_dip_power = 100
+			}
+			if = {
+				limit = { 
+					NOT = {
+						accepted_culture = flemish
+					}
+				}
+				add_accepted_culture = flemish
+			}
+			else = {
+				add_dip_power = 100
+			}
+		}
+	}
+}
+
+zyp_lot_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	lot_feudal_institutions = {
+		icon = austria_prospers
+		position = 2
+		required_missions = { lot_unified_state }
+		
+		provinces_to_highlight = {
+			
+		}
+		
+		trigger = {
+			OR = {
+				AND = {
+					diplomatic_reputation = 3
+					stability = 1
+					prestige = 30
+				}
+				treasury = 750
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = LOT_events.3
+			}
+		}
+	}
+}
+
+zyp_lot_1_c = { #colonialist
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		#has_country_flag = lot_western_colonialism #commented out while tree being built
+		NOT = { has_country_flag = lot_tolerance }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	lot_resettle_wallonia = {
+		icon = imperial_ascendancy
+		position = 4
+		required_missions = { lot_subdue_foreign_nobility }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture = wallonian
+		}
+		
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 4
+					culture = wallonian
+				}
+				AND = {
+					NOT = {
+						any_owned_province = {
+							culture = wallonian
+						}
+					}
+					wallonia_area = {
+						type = all
+						owned_by = ROOT
+					}
+					1743 = { owned_by = ROOT }
+					181 = { owned_by = ROOT }
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { 
+					num_of_owned_provinces_with = {
+						value = 4
+						culture = wallonian
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = wallonian
+					}
+					change_culture = franzosisch
+				}
+			}
+			else = {
+				add_dip_power = 200
+			}
+		}
+	}
+
+	lot_conquest_france = {
+		icon = centralize_france
+		position = 5
+		required_missions = { lot_resettle_wallonia lot_westmarken }
+		
+		provinces_to_highlight = {
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			region = france_region
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				region = france_region
+			}
+		}
+		
+		effect = {
+			france_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+zyp_lot_2_c = { #colonialist
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		#has_country_flag = lot_western_colonialism #commented out while tree being built
+		NOT = { has_country_flag = lot_tolerance }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	lot_subdue_foreign_nobility = {
+		icon = hungarian_union
+		position = 3
+		required_missions = { lot_integrate_dutch lot_feudal_institutions lot_wealth_of_state }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture_group = french
+		}
+		
+		trigger = {
+			development_in_provinces = {
+				value = 125
+				culture_group = french
+			}
+		}
+		
+		effect = {
+			add_adm_power = 50
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+			if = {
+				limit = { 
+					calc_true_if = {
+						amount = 3
+						all_owned_province = {
+							culture_group = french
+							development = 15
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+						development = 15
+					}
+					spawn_rebels = {
+						size = 3
+						type = pretender_rebels
+						culture = cosmopolitan_french
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+						development = 15
+					}
+					noble_rebels = 3
+				}
+			}
+
+			if = {
+				limit = { 
+					any_owned_province = {
+						culture_group = french
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+						development = 15
+					}
+					noble_rebels = 1
+				}
+			}
+
+			if = {
+				limit = { 
+					calc_true_if = {
+						amount = 5
+						all_owned_province = {
+							culture_group = french
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+					}
+					noble_rebels = 1
+				}
+			}
+			if = {
+				limit = { 
+					calc_true_if = {
+						amount = 10
+						all_owned_province = {
+							culture_group = french
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+					}
+					noble_rebels = 2
+				}
+			}
+			if = {
+				limit = { 
+					calc_true_if = {
+						amount = 15
+						all_owned_province = {
+							culture_group = french
+						}
+					}
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = french
+					}
+					noble_rebels = 3
+				}
+			}
+
+		}
+	}
+	
+	lot_westmarken = {
+		icon = claim_the_borderlands
+		position = 4
+		required_missions = { lot_subdue_foreign_nobility }
+		
+		
+		trigger = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					fort_level = 2
+					region = france_region
+				}
+				num_of_subjects = 3
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_western_marches
+				duration = -1
+			}
+		}
+	}
+
+	lot_cultural_unity = {
+		icon = king_of_france
+		position = 6
+		required_missions = { lot_conquest_france lot_westmarken }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture_group = french
+		}
+		
+		trigger = {
+			france_region = {
+				type = all
+				owned_by = ROOT
+				NOT = { unrest = 1 }
+			}
+			prestige = 75
+			stability = 3
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = french
+				}
+				change_culture = franzosisch
+			}
+			add_country_modifier = {
+				name = lot_iron_fist
+				duration = -1
+			}
+		}
+	}
+}
+
+
+######TOLERANT
+
+zyp_lot_1_t = { #colonialist
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		#has_country_flag = lot_western_colonialism #commented out while tree being built
+		has_country_flag = lot_tolerance
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	lot_humanist_ideology = {
+		icon = imperial_ascendancy
+		position = 4
+		required_missions = { lot_set_example }
+		
+		provinces_to_highlight = {
+			
+		}
+		
+		trigger = {
+			OR = {
+				full_idea_group = humanist_ideas
+				AND = {
+					NOT = {
+						any_owned_province = {
+							unrest = 1
+						}
+					}
+					num_accepted_cultures = 5
+					all_owned_province = {
+						tolerance_to_this = 2
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_adm_power = 200
+			add_country_modifier = {
+				name = lot_humanist_rule
+				duration = -1
+			}
+		}
+	}
+
+	lot_progressive_power = {
+		icon = invest_in_the_rich_trades
+		position = 5
+		required_missions = { lot_humanist_ideology }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			is_great_power = yes
+		}
+		
+		effect = {
+			add_prestige = 33
+		}
+	}
+}
+
+zyp_lot_2_t = { #colonialist
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		#has_country_flag = lot_western_colonialism #commented out while tree being built
+		has_country_flag = lot_tolerance
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	lot_set_example = {
+		icon = hungarian_union
+		position = 3
+		required_missions = { lot_integrate_dutch lot_feudal_institutions lot_wealth_of_state }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture_group = french
+		}
+		
+		trigger = {
+			stability = 1
+			development_in_provinces = {
+				value = 125
+				culture_group = french
+			}
+		}
+		
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+	
+	lot_reevaluate_the_administration = {
+		icon = claim_the_borderlands
+		position = 4
+		required_missions = { lot_set_example }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			monthly_adm = 12
+			treasurer = 3
+			statesman = 3
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_new_admin
+				duration = -1
+			}
+		}
+	}
+
+	lot_hegemony = {
+		icon = powerhouse_of_the_north
+		position = 6
+		required_missions = { lot_progressive_power lot_reevaluate_the_administration }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			culture_group = french
+		}
+		
+		trigger = {
+			is_hegemon = yes
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_everlasting_prestige
+				duration = -1
+			}
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+}
+
+zyp_lot_4_aachen = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+		has_country_flag = aachen_capital
+	}
+	has_country_shield = yes
+	
+	zyp_lot_unity_of_faith = {
+		icon = show_piety
+		position = 2
+		required_missions = { zyp_lot_splendor_capital_aachen }
+		
+		provinces_to_highlight = {
+			
+		}
+		
+		trigger = {
+			religious_unity = 1
+			OR = {
+				ROOT = { tolerance_to_this = 6 }
+				has_global_modifier_value = {
+					which = global_missionary_strength
+					value = 0.04
+				}
+			}
+		}
+		
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	zyp_lot_the_maghreb = {
+		icon = unify_piedmont
+		position = 6
+		required_missions = { zyp_lot_toulouse_coast }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 20
+				all_owned_province = {
+					region = maghreb_region
+					religion = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = africa_claims
+			hidden_effect = {
+				every_province = {
+					limit = {
+						continent = africa
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+}
+
+zyp_lot_5_aachen = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		has_country_flag = aachen_capital
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zyp_lot_splendor_capital_aachen = {
+		icon = mission_early_game_buildings
+		position = 1
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			AND = {
+				province_id = 1878
+				NOT = { development = 25 }
+				is_prosperous = no
+			}
+		}
+		
+		trigger = {
+			1878 = {
+				development = 25
+				is_prosperous = yes
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			1878 = {
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = lot_aachen_prestige
+					duration = -1 #10950
+				}
+			}
+		}
+	}
+
+	zyp_lot_wine_production = {
+		icon = up_the_adige
+		position = 2
+		required_missions = { zyp_lot_splendor_capital_aachen }
+		
+		provinces_to_highlight = {
+			trade_goods = wine
+			OR = {
+				NOT = { owned_by = ROOT }
+				base_production = 8
+			}
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					trade_goods = wine
+					base_production = 8
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			1878 = {
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = lot_aachen_prestige
+					duration = -1 #10950
+				}
+			}
+		}
+	}
+
+	zyp_lot_emphasize_common_prayer = {
+		icon = spread_piety
+		position = 3
+		required_missions = { zyp_lot_unity_of_faith zyp_lot_wine_production }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			OR = {
+				tolerance_to_this = 5
+				full_idea_group = religious_ideas
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_stability_or_adm_power = yes
+			add_dip_power = 50
+		}
+	}
+
+	zyp_lot_outward_projection = {
+		icon = the_hundred_years_war
+		position = 4
+		required_missions = { zyp_lot_emphasize_common_prayer }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			all_neighbor_country = {
+				OR = {
+					religion = ROOT
+					ROOT = {
+						has_won_war_against = {
+							who = PREV
+							max_years_since = 100
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_dip_power = 100
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 15
+			}
+		}
+	}
+
+	zyp_lot_toulouse_coast = {
+		icon = pontifical_universities
+		position = 5
+		required_missions = { zyp_lot_outward_projection }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			any_owned_province = {
+				OR = {
+					area = languedoc_area
+					area = provence_area
+				}
+				has_port = yes
+			}
+		}
+		
+		effect = {
+			add_dip_power = 100
+			custom_tooltip = maghreb_claims
+			hidden_effect = {
+				maghreb_region = {
+					every_province = {
+						limit = {
+							NOT = {
+								religion = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+			palestine_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	zyp_lot_the_holy_land = {
+		icon = jerusalem
+		position = 6
+		required_missions = { zyp_lot_toulouse_coast }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			palestine_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					owned_by_subject_of = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 50
+			add_stability_or_adm_power = yes
+			palestine_area = {
+				change_religion = ROOT
+			}
+		}
+	}
+}
+
+##########NANZIG##########
+
+zyp_lot_4_nanzig = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+		NOT = { has_country_flag = aachen_capital }
+	}
+	has_country_shield = yes
+	
+	zyp_lot_capital_periphery = {
+		icon = mission_early_modern_university
+		position = 2
+		required_missions = { zyp_lot_splendor_capital_nanzig }
+		
+		provinces_to_highlight = {
+			any_neighbor_province = {
+				is_capital = yes
+				is_capital_of = ROOT
+			}
+			OR = {
+				NOT = { base_tax = 5 }
+				NOT = { base_production = 5 }
+				NOT = { base_manpower = 5 }
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				any_owned_province = {
+					any_neighbor_province = {
+						is_capital = yes
+						is_capital_of = ROOT
+					}
+					OR = {
+						NOT = { base_tax = 5 }
+						NOT = { base_production = 5 }
+						NOT = { base_manpower = 5 }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_stability_or_adm_power = yes
+		}
+	}
+
+	zyp_lot_hollandic_trade = {
+		icon = control_coromandel
+		position = 5
+		required_missions = { zyp_lot_cloth_factories }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			1269 = {
+				is_strongest_trade_power = ROOT
+				trade_node_value = 150
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_hollandic_trade
+				duration = -1
+			}
+		}
+	}
+}
+
+zyp_lot_5_nanzig = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { has_country_flag = aachen_capital }
+		tag = LOT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	zyp_lot_splendor_capital_nanzig = {
+		icon = mission_early_game_buildings
+		position = 1
+		required_missions = { }
+		
+		provinces_to_highlight = {
+			is_capital = yes
+			NOT = { development = 25 }
+			is_prosperous = no
+			is_capital_of = ROOT
+		}
+		
+		trigger = {
+			capital_scope = {
+				development = 25
+				is_prosperous = yes
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			capital_scope = {
+				add_province_modifier = {
+					name = lot_nanziger_prestige
+					duration = -1 #10950
+				}
+			}
+		}
+	}
+
+	zyp_lot_wine_production = {
+		icon = up_the_adige
+		position = 2
+		required_missions = { zyp_lot_splendor_capital_nanzig }
+		
+		provinces_to_highlight = {
+			trade_goods = wine
+			OR = {
+				NOT = { owned_by = ROOT }
+				base_production = 8
+			}
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 5
+				all_owned_province = {
+					trade_goods = wine
+					base_production = 8
+				}
+			}
+			owns = 4766
+		}
+		
+		effect = {
+			add_prestige = 15
+			4766 = {
+				change_trade_goods = glass
+				add_province_modifier = {
+					name = lot_aachen_prestige
+					duration = -1 #10950
+				}
+			}
+		}
+	}
+
+	zyp_lot_courtly_lifestyle = {
+		icon = develop_the_po_valley
+		position = 3
+		required_missions = { zyp_lot_capital_periphery zyp_lot_wine_production }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			OR = {
+				tolerance_to_this = 5
+				full_idea_group = religious_ideas
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_stability_or_adm_power = yes
+			add_dip_power = 50
+		}
+	}
+
+	zyp_lot_cloth_factories = {
+		icon = despot_stefans_legacy
+		position = 4
+		required_missions = { zyp_lot_courtly_lifestyle }
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			calc_true_if = {
+				amount = 8
+				all_owned_province = {
+					region = low_countries_region
+					trade_goods = cloth
+					OR = {
+						base_production = 8
+						AND = {
+							OR = {
+								has_building = workshop
+								has_building = counting_house
+							}
+							has_building = textile
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_years_of_income = 1
+			add_country_modifier = {
+				name = lot_cloth_production
+				duration = 18250
+			}
+		}
+	}
+
+	zyp_lot_coal_exploitation = {
+		icon = end_genoese_competition
+		position = 5
+		required_missions = { zyp_lot_cloth_factories }
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_latent_trade_goods = coal
+		}
+		
+		trigger = {
+			coal = 5
+		}
+		
+		effect = {
+			add_dip_power = 200
+		}
+	}
+}

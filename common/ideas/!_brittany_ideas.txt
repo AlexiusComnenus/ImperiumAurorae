@@ -1,0 +1,86 @@
+SOI_ideas = {
+	start = {
+		diplomatic_reputation = 2
+		mercenary_discipline = 0.05
+	}
+
+	bonus = {
+		land_morale = 0.10
+	}
+
+	trigger = {
+		tag = SOI
+	}
+	free = yes
+
+	provincial_security = {
+		global_unrest = -2
+		defensiveness = 0.10
+	}
+	repelling_the_barbarians = {
+		army_tradition = 1
+	}
+	restitutor_galliarum = {
+		legitimacy = 1
+		prestige = 1
+	}
+	gallic_feudalism = {
+		global_tax_modifier = 0.25
+	}
+	rhine_legions = {
+		discipline = 0.05
+	}
+	barbarian_mercenaries = {
+		mercenary_manpower = 0.25
+		num_accepted_cultures = 2
+	}
+	galliarum_imperium = {
+		max_absolutism = 10
+		yearly_absolutism = 0.1
+	}
+}
+
+GLL_ideas = {
+	start = {
+		land_morale = 0.15
+		global_missionary_strength = 0.03
+	}
+
+	bonus = {
+		manpower_in_culture_group_provinces = 0.1
+		manpower_in_own_culture_provinces = 0.2
+	}
+
+	trigger = {
+		tag = GLL
+	}
+	free = yes
+
+	gll_legendary_raiders = {
+		loot_amount = 0.50
+		available_province_loot = 0.50
+	}
+	gll_oppida = {
+		fort_maintenance_modifier = -0.20
+		development_cost_in_primary_culture = -0.1
+	}
+	gll_courage_of_lions = {
+		infantry_power = 0.10
+		infantry_shock = 0.5
+	}
+	gll_protect_new_groves = {
+		defensiveness = 0.15
+	}
+	gll_river_trade = {
+		caravan_power = 0.25
+		merchants = 1
+	}
+	gll_reclaiming_religious_traditions = {
+		devotion = 1
+		tolerance_own = 1
+	}
+	gll_vercingetorix_legacy = {
+		leader_cost = -0.10
+		army_tradition_decay = -0.01
+	}
+}

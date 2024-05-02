@@ -1,0 +1,42 @@
+SAX_ideas = {
+	start = {
+	   	advisor_cost = -0.1
+		diplomats = 1
+	}
+	
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		tag = SAX
+	}
+	free = yes		#will be added at load.
+	
+	sax_bane_of_charlemagne = {
+		ae_impact = -0.15
+	}
+	sax_staunch_feudal_system = {
+		accept_vassalization_reasons = 10
+		vassal_forcelimit_bonus = 0.25
+		vassal_income = 0.10
+	}
+	sax_reformed_levy_system = {
+		global_manpower_modifier = 0.15
+	}
+	sax_prussian_auxiliaries = {
+		discipline = 0.05
+	}
+	sax_land_of_many_faiths = {
+		tolerance_heretic = 4
+		tolerance_of_heretics_capacity = 1
+	}
+	sax_germanic_industry = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	sax_all_roads_lead_to_magdeburg = {
+		trade_efficiency = 0.10
+	}
+}
+
+

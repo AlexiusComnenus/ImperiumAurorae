@@ -1,0 +1,103 @@
+ck2_converter_generated = yes
+graphical_culture = westerngfx
+color = { 214 90 79 }
+historical_idea_groups = {
+	religious_ideas
+	trade_ideas
+	defensive_ideas
+	economic_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	spy_ideas
+	offensive_ideas
+}
+historical_units = {
+	austrian_grenzer
+	austrian_hussar
+	austrian_jaeger
+	austrian_tercio
+	austrian_white_coat
+	dutch_maurician
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	swiss_landsknechten
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Adam #0" = 0
+	"Albrecht #0" = 0
+	"Baldewin #0" = 0
+	"Chaim #0" = 0
+	"Dietrich #0" = 0
+	"Eberhard #0" = 0
+	"Gebhard #0" = 0
+	"Gerhard #0" = 0
+	"Hermann #0" = 0
+	"Jakob #0" = 0
+	"Karl #0" = 0
+	"Kunigunde #0" = -1
+	"Liutpold #0" = 0
+	"Marared #0" = -1
+	"Margaret #0" = -1
+	"Mechthild #0" = -1
+	"Philipp #1" = 10
+	"Richwara #0" = -1
+	"Waldemar #0" = 0
+	"Wilhelm #2" = 10
+}
+leader_names = {
+	"Baten"
+	"Bombeck"
+	"Boymann"
+	"Bremer"
+	"Breucker"
+	"Buschmann"
+	"Bühmer"
+	"Diekmann"
+	"Eckrath"
+	"Fischedick"
+	"Fortkamp"
+	"Glaser"
+	"Grüter"
+	"Hegemann"
+	"Kappenberg"
+	"Knümann"
+	"Leggewe"
+	"Liesenfeld"
+	"Limberg"
+	"Lochtkemper"
+	"Lohe"
+	"Lohmann"
+	"Nathrath"
+	"Ortmann"
+	"Perdekamp"
+	"Pickenbrock"
+	"Sankühler"
+	"Springmann"
+	"Stenkhoff"
+	"Stratmann"
+	"Wessels"
+	"von Wedich"
+	"von Westerburg"
+}
+ship_names = {
+	"Agger"
+	"Bischof Hildebold"
+	"Engelbert II"
+	"Erbischof Anno"
+	"Erft"
+	"Erzbischof Brun"
+	"Erzbischof Gero"
+	"Erzbischof Gunthar"
+	"Konrad Hochstaden"
+	"Rainald von Dassel"
+	"Rhein"
+}
+army_names = {
+	"Armee von $PROVINCE$"
+	"Erzbischofliche Garde"
+}

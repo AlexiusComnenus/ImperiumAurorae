@@ -1,0 +1,117 @@
+graphical_culture = westerngfx
+color = { 255 192 56 }
+revolutionary_colors = { 8 5 8 }
+historical_idea_groups = {
+	administrative_ideas
+	defensive_ideas
+	trade_ideas
+	economic_ideas
+	offensive_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	expansion_ideas
+}
+historical_units = {
+	anglofrench_line
+	dutch_maurician
+	french_bluecoat
+	french_caracolle
+	french_cuirassier
+	french_dragoon
+	french_impulse
+	halberd_infantry
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	swiss_landsknechten
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Friedrich #3" = 5
+	"Karl #3" = 20
+	"Joseph #3" = 20
+	"Wilhelm #3" = 10
+	"Adolf #3" = 20
+	"Philipp #3" = 20
+	"Ludwig #3" = 5
+	"Heinrich #3" = 10
+	"Hermann #3" = 10
+	"Maria #0" = -1
+	"Adelheid #1" = -1
+	"Agathe #0" = -1
+	"Eufemia #0" = -1
+	"Serhilda #0" = -1
+	"Klara #0" = -1
+}
+leader_names = {
+	"Adenau"
+	"Ansembourg"
+	"Bensenraede"
+	"Blittersdorf"
+	"Cölln"
+	"Dammerscheidt"
+	"Elmpt"
+	"Falkenberg"
+	"Gruithausen"
+	"Hillensberg"
+	"Hohenfeld"
+	"Naxleden"
+	"Schaluyn"
+	"Zebnitsch"
+	"Dampierre"
+	"Deconinck"
+	"Goethals"
+	"Nevers"
+	"Penen"
+}
+ship_names = {
+	"Antwerpen"
+	"Boudewijn I"
+	"Brugge"
+	"De Vlaamse leeuw"
+	"Gent"
+	"Guldensporenslag"
+	"Hasselt"
+	"Karel de Goede"
+	"Leuven"
+	"Manneken Pis"
+	"Mechelen"
+	"Pieter de Coninck"
+	"Schelde"
+	"Tijl Uilenspiegel"
+	"Vlaanderen"
+	"Deidesheim"
+	"Elmstein"
+	"Hochspeyer"
+	"Kaiserslautern"
+	"Landstuhl"
+	"Neunkirchen"
+	"Neustadt"
+	"Rhodt"
+	"Winnweiler"
+	"Wolfstein"
+	"Brüssel"
+	"Dender"
+	"Doornik"
+	"Edingen"
+	"Godfried I"
+	"Hendrik I"
+	"Hertog Jan"
+	"Hertogin Johanna"
+	"Jan I"
+	"Mechelen"
+	"Namen"
+	"Zenne"
+}
+army_names = {
+	"Armee von $PROVINCE$"
+	"Kurfürstliche Garde"
+	"Leger van $PROVINCE$"
+}
+
+fleet_names = {
+	"Kurfürstliche Flotte"
+	"Vloot van $PROVINCE$"
+}

@@ -1,0 +1,207 @@
+
+namespace = cumania_collapse
+
+country_event = {
+	id = cumania_collapse.1
+	title = cumania_collapse.1.title
+	desc = cumania_collapse.1.desc
+	picture = BYZ_REVOLUTION_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		tag = Z00
+		NOT = { exists = ZAZ }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			release = ZAZ
+			ZAZ = {
+				add_country_modifier = {
+					name = cumania_revolter_mod
+					duration = 1825
+				}
+				random_owned_province = {
+					build_to_forcelimit = {
+						infantry = 1
+						cavalry = 1
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.1.a
+		trigger = { ai = no }
+		
+		add_prestige = -20
+		add_truce_with = ZAZ
+	}
+	
+	option = {
+		name = cumania_collapse.1.b
+		
+		declare_war_with_cb = {
+			who = ZAZ
+			casus_belli = cb_annex
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.1.c
+		trigger = { ai = no }
+		highlight = yes
+		
+		declare_war_with_cb = {
+			who = ZAZ
+			casus_belli = cb_annex
+		}
+		
+		switch_tag = ZAZ
+	}
+}
+
+country_event = {
+	id = cumania_collapse.2
+	title = cumania_collapse.2.title
+	desc = cumania_collapse.2.desc
+	picture = BYZ_REVOLUTION_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		tag = Z00
+		NOT = { exists = CRI }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			release = CRI
+			CRI = {
+				add_country_modifier = {
+					name = cumania_revolter_mod
+					duration = 1825
+				}
+				random_owned_province = {
+					build_to_forcelimit = {
+						infantry = 1
+						cavalry = 1
+					}
+				}
+				change_government = tribal
+				add_government_reform = steppe_horde
+			}
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.2.a
+		trigger = { ai = no }
+		
+		add_prestige = -20
+		add_truce_with = CRI
+	}
+	
+	option = {
+		name = cumania_collapse.2.b
+		
+		declare_war_with_cb = {
+			who = CRI
+			casus_belli = cb_annex
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.2.c
+		trigger = { ai = no }
+		highlight = yes
+		
+		declare_war_with_cb = {
+			who = CRI
+			casus_belli = cb_annex
+		}
+		
+		switch_tag = CRI
+	}
+}
+
+country_event = {
+	id = cumania_collapse.3
+	title = cumania_collapse.3.title
+	desc = cumania_collapse.3.desc
+	picture = BYZ_REVOLUTION_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		tag = Z00
+		NOT = { exists = GLH }
+	}
+	
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	
+	immediate = {
+		hidden_effect = {
+			syr_darya_area = {
+				cede_province = GLH
+			}
+			GLH = {
+				change_government = tribal
+				add_government_reform = steppe_horde
+				add_country_modifier = {
+					name = cumania_revolter_mod
+					duration = 1825
+				}
+				random_owned_province = {
+					build_to_forcelimit = {
+						infantry = 1
+						cavalry = 1
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.3.a
+		GLH = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+	}
+	
+	option = {
+		name = cumania_collapse.3.c
+		trigger = { ai = no }
+		highlight = yes
+		
+		GLH = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_annex
+			}
+		}
+		
+		switch_tag = GLH
+	}
+}

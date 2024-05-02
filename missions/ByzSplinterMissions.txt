@@ -1,0 +1,194 @@
+Byz_Splinter_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = byzantine
+		NOT = { tag = BYZ }
+		NOT = { map_setup = map_setup_random }
+		NOT = { culture = seleucian }
+	}
+	has_country_shield = yes
+	
+	byzsplinter_assert_legitimacy = {
+		icon = become_king
+		required_missions = {
+		}
+		position = 1
+		
+		trigger = {
+			NOT = { is_subject = yes }
+			prestige = 25
+			legitimacy_equivalent = 90
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = reunification_enthusiasm
+				duration = 7200 #20 years
+			}
+			create_general = { tradition = 75 add_siege = 2 }
+		}
+	}
+	byzsplinter_appeal_antioch = {
+		icon = subiaco_press
+		required_missions = {
+			byzsplinter_assert_legitimacy
+		}
+		position = 2
+		
+		trigger = {
+			NOT = { is_rival = Z17 }
+			NOT = { is_enemy = Z17 }
+			treasury = 100
+		}
+		
+		effect = {
+			country_event = { id = antioch.2 }
+		}
+	}
+}
+
+Byz_Splinter_2 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = byzantine
+		NOT = { tag = BYZ }
+		NOT = { map_setup = map_setup_random }
+		NOT = { culture = seleucian }
+	}
+	has_country_shield = yes
+	
+	byzsplinter_build_army = {
+		icon = swiss_mercenaries
+		required_missions = {
+		}
+		position = 3
+		
+		trigger = {
+			army_size_percentage = 0.9
+			num_of_generals = 1
+		}
+		
+		effect = {
+			thrace_area = {
+				add_core = ROOT
+			}
+			macedonia_area = {
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				add_permanent_claim = ROOT
+			}
+			aydin_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	byzsplinter_grow_demesne = {
+		icon = take_the_bishoprics
+		required_missions = {
+			byzsplinter_build_army
+		}
+		position = 4
+		
+		trigger = {
+			grown_by_development = 30
+		}
+		
+		effect = {
+			add_yearly_manpower = 1
+			add_years_of_income = 1
+			capital_scope = {
+				center_of_trade = 1
+			}
+		}
+	}
+}
+
+Byz_Splinter_3 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		culture_group = byzantine
+		NOT = { tag = BYZ }
+		NOT = { map_setup = map_setup_random }
+		NOT = { tag = KRM }
+		NOT = { tag = BHS }
+		NOT = { culture = seleucian }
+	}
+	has_country_shield = yes
+	
+	byzsplinter_defeat_byz = {
+		icon = the_latin_empire
+		required_missions = {
+		}
+		position = 5
+		
+		trigger = {
+			OR = {
+				has_won_war_against = {
+					who = BYZ
+					max_years_since = 100
+				}
+				NOT = { exists = BYZ }
+			}
+		}
+		
+		effect = {
+			add_prestige = 50
+			add_legitimacy = 25
+			add_army_tradition = 20
+			add_navy_tradition = 20
+		}
+	}
+	byzsplinter_become_byz = {
+		icon = protectors_of_christendom
+		required_missions = {
+			byzsplinter_defeat_byz
+		}
+		position = 6
+		
+		trigger = {
+			owns = 151
+		}
+		
+		effect = {
+			IF = {
+				limit = { has_country_flag = antioch_help }
+				set_global_flag = antioch_puppet_victory
+				
+				country_event = {
+					id = antioch.3
+					days = 30
+			
+				}
+			}
+			GRE = {
+				inherit = BYZ
+			}
+			change_tag = BYZ
+			restore_country_name_effect = yes
+			swap_non_generic_missions = yes
+			set_government_rank = 3
+			set_capital = 151
+			IF = {
+				limit = { has_reform = byzantine_warlord }
+				add_government_reform = byzantine_monarchy_reform
+			}
+			IF = {
+				limit = { 
+					NOT = { was_tag = TRE }
+					NOT = { was_tag = Z44 }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+	}
+}

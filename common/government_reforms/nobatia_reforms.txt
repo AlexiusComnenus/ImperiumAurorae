@@ -1,0 +1,56 @@
+nobatia_hellenic_crusade_reform = {
+	icon = "religious_permanent_revolution_reform"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	force_conversion_gives_global_holy_war_released_modifier = yes
+	potential = {
+		OR = {
+			has_reform = nobatia_hellenic_crusade_reform
+			have_had_reform = nobatia_hellenic_crusade_reform
+		}
+		religion = hellenic_pagan_reformed
+	}
+	effect = {
+		custom_tooltip = unlocks_celestial_crusade_tt
+	}
+	modifiers = {
+		enforce_religion_cost = -0.75
+		prestige_per_development_from_conversion = 0.33
+		relation_with_heretics = -25
+		relation_with_heathens = -25
+	}
+	maintain_dynasty = yes
+	
+	custom_attributes = {
+		gain_monarch_power_from_force_converting = yes
+		same_religion_subject_bonus = yes
+		enables_divine_idea_group = yes
+	}
+	ai = {
+		factor = 1000
+	}
+}
+
+order_of_dawn_reform = {
+	icon = "gendarmes_reform"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = order_of_dawn_reform
+			have_had_reform = order_of_dawn_reform
+		}
+	}
+	trigger = {
+		religion = hellenic_pagan_reformed
+	}
+	
+	modifiers = {
+		global_regiment_recruit_speed = -0.5
+		war_taxes_cost_modifier = -1
+		manpower_in_true_faith_provinces= 0.25
+		global_attacker_dice_roll_bonus = 1
+	}
+	ai = {
+		factor = 1000
+	}
+}

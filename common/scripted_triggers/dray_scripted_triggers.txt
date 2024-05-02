@@ -1,0 +1,1063 @@
+# Below Limit Trigger | LAND | TERCIOS
+dray_below_limit_tercio = {
+	has_global_modifier_value = {
+		which = has_tercio
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcTercioFraction1
+			value = modifier:allowed_tercio_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcTercioFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcTercioFraction2
+			value = modifier:allowed_tercio_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcTercioFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcTercioFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcTercioFraction1
+			which = drayTriggerCalcTercioFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcTercioFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedTercio
+			value = modifier:amount_of_tercio
+		}
+		change_variable = {
+			which = drayTriggerCalcTercioFraction1
+			which = drayTriggerCalcAddedTercio
+		}			
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfTercio
+			value = trigger_value:num_of_tercio
+		}
+		check_variable = {
+			which = drayTriggerCalcTercioFraction1
+			which = drayTriggerCalcNumberOfTercio
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | COSSACKS
+dray_below_limit_cossack = {
+	OR = {
+		has_reform = cossacks_reform
+		has_estate_privilege = estate_cossacks_establish_the_cossack_regiments 
+		has_global_modifier_value = {
+			which = can_recruit_cossacks
+			value = 1
+		}
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcCossackFraction1
+			value = modifier:allowed_cossack_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcCossackFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcCossackFraction2
+			value = modifier:allowed_cossack_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcCossackFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcCossackFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcCossackFraction1
+			which = drayTriggerCalcCossackFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcCossackFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfCossack
+			value = trigger_value:num_of_cossacks
+		}
+		check_variable = {
+			which = drayTriggerCalcCossackFraction1
+			which = drayTriggerCalcNumberOfCossack
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | RAJPUTS
+dray_below_limit_rajput = {
+	OR = {
+		has_estate_privilege = estate_rajput_rajput_regiments
+		has_reform = rajput_military_leadership_reform
+		has_global_modifier_value = {
+			which = can_recruit_rajputs
+			value = 1
+		}
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcRajputFraction1
+			value = modifier:allowed_rajput_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcRajputFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcRajputFraction2
+			value = modifier:allowed_rajput_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcRajputFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcRajputFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcRajputFraction1
+			which = drayTriggerCalcRajputFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcRajputFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfRajput
+			value = trigger_value:num_of_rajput
+		}
+		check_variable = {
+			which = drayTriggerCalcRajputFraction1
+			which = drayTriggerCalcNumberOfRajput
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | REVOLUTIONARY GUARDS
+dray_below_limit_revguard = {
+	is_revolutionary = yes
+	has_global_modifier_value = {
+		which = allowed_rev_guard_fraction
+		value = 0.1
+	}
+#	has_global_modifier_value = {
+#		which = can_recruit_revolutionary_guards
+#		value = 1
+#	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcRevGuardFraction1
+			value = modifier:allowed_rev_guard_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcRevGuardFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcRevGuardFraction2
+			value = modifier:allowed_rev_guard_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcRevGuardFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcRevGuardFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcRevGuardFraction1
+			which = drayTriggerCalcRevGuardFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcRevGuardFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfRevGuard
+			value = trigger_value:num_of_revolutionary_guard
+		}
+		check_variable = {
+			which = drayTriggerCalcRevGuardFraction1
+			which = drayTriggerCalcNumberOfRevGuard
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | STRELTSY
+dray_below_limit_streltsy = {
+	has_global_modifier_value = {
+		which = has_streltsy
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcStreltsyFraction1
+			value = modifier:allowed_streltsy_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcStreltsyFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcStreltsyFraction2
+			value = modifier:allowed_streltsy_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcStreltsyFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcStreltsyFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcStreltsyFraction1
+			which = drayTriggerCalcStreltsyFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcStreltsyFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedStreltsy
+			value = modifier:amount_of_streltsy
+		}
+		change_variable = {
+			which = drayTriggerCalcStreltsyFraction1
+			which = drayTriggerCalcAddedStreltsy
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfStreltsy
+			value = trigger_value:num_of_streltsy
+		}
+		check_variable = {
+			which = drayTriggerCalcStreltsyFraction1
+			which = drayTriggerCalcNumberOfStreltsy
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | WINGED HUSSARS
+dray_below_limit_hussar = {
+    has_global_modifier_value = {
+        which = can_recruit_hussars
+        value = 1
+    }
+#	calc_true_if = { ####
+#    variable_arithmetic_trigger = {
+#        export_to_variable = { which = drayTriggerHussarsAmount value = modifier:amount_of_hussars }        
+#		export_to_variable = { which = drayTriggerHussarsDev value = 0 } # ???
+#        all_owned_province = {
+#            if = {
+#				limit = {
+#					is_state_core = ROOT # Temporary fix
+#                   OR = { # Broken in 1.36.2
+#                       has_owner_culture = yes
+#                       has_owner_accepted_culture = yes
+#                   }
+#                }
+#				variable_arithmetic_trigger = {
+#					export_to_variable = { which = drayTriggerHussarsDev value = development }
+#                    ROOT = {
+#                       variable_arithmetic_trigger = { change_variable = { which = drayTriggerHussarsDev which = PREV } }
+#                    }
+#				}
+#            }
+#        }
+#        multiply_variable = { which = drayTriggerHussarsDev value = 0.01 }
+#        change_variable = { which = drayTriggerHussarsAmount which = drayTriggerHussarsDev } 
+#        export_to_variable = { which = drayTriggerCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
+#		
+#		change_variable = { which = drayTriggerCalcSpecialForceLimit value = 1 }
+#		
+#        multiply_variable = { which = drayTriggerHussarsAmount which = drayTriggerCalcSpecialForceLimit }
+#		subtract_variable = { which = drayTriggerHussarsAmount value = 1 }
+#        export_to_variable = { which = drayTriggerCalcNumberOfHussar value = trigger_value:num_of_hussars } 
+#        check_variable = { # 1 IS EQUAL OR GREATER THAN 2
+#            which = drayTriggerHussarsAmount # FL (0)
+#            which = drayTriggerCalcNumberOfHussar # CURRENT (0)
+#        }
+#    }
+#	amount = 1 ####
+#	} ####
+}
+
+# Below Limit Trigger | LAND | CAROLEANS
+dray_below_limit_carolean = {
+	OR = {
+		has_reform = allotment_system
+		has_global_modifier_value = {
+			which = has_carolean
+			value = 1
+		}
+	}
+}
+
+# Below Limit Trigger | LAND | SAMURAI
+dray_below_limit_samurai = {
+	has_global_modifier_value = {
+		which = has_samurai
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcSamuraiFraction1
+			value = modifier:allowed_samurai_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcSamuraiFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcSamuraiFraction2
+			value = modifier:allowed_samurai_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcSamuraiFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcSamuraiFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcSamuraiFraction1
+			which = drayTriggerCalcSamuraiFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcSamuraiFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedSamurai
+			value = modifier:amount_of_samurai
+		}
+		change_variable = {
+			which = drayTriggerCalcSamuraiFraction1
+			which = drayTriggerCalcAddedSamurai
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfSamurai
+			value = trigger_value:num_of_samurai
+		}
+		check_variable = {
+			which = drayTriggerCalcSamuraiFraction1
+			which = drayTriggerCalcNumberOfSamurai
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | MUSKETEERS
+dray_below_limit_musketeer = {
+	has_global_modifier_value = {
+		which = has_musketeer
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcMusketeerFraction1
+			value = modifier:allowed_musketeer_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcMusketeerFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcMusketeerFraction2
+			value = modifier:allowed_musketeer_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcMusketeerFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcMusketeerFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcMusketeerFraction1
+			which = drayTriggerCalcMusketeerFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcMusketeerFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedMusketeer
+			value = modifier:amount_of_musketeers
+		}
+		change_variable = {
+			which = drayTriggerCalcMusketeerFraction1
+			which = drayTriggerCalcAddedMusketeer
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfMusketeer
+			value = trigger_value:num_of_musketeers
+		}
+		check_variable = {
+			which = drayTriggerCalcMusketeerFraction1
+			which = drayTriggerCalcNumberOfMusketeer
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | MAMLUKS
+dray_below_limit_mamluk = {
+	has_global_modifier_value = {
+		which = has_mamluks
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcMamlukFraction1
+			value = modifier:allowed_mamluks_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcMamlukFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcMamlukFraction2
+			value = modifier:allowed_mamluks_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcMamlukFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcMamlukFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcMamlukFraction1
+			which = drayTriggerCalcMamlukFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcMamlukFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedMamluk
+			value = modifier:amount_of_mamluks
+		}
+		change_variable = {
+			which = drayTriggerCalcMamlukFraction1
+			which = drayTriggerCalcAddedMamluk
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfMamluk
+			value = trigger_value:num_of_mamluks
+		}
+		check_variable = {
+			which = drayTriggerCalcMamlukFraction1
+			which = drayTriggerCalcNumberOfMamluk
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | QIZILBASH
+dray_below_limit_qizilbash = {
+	has_global_modifier_value = {
+		which = has_qizilbash
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcQizilbashFraction1
+			value = modifier:allowed_qizilbash_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcQizilbashFraction1
+			which = drayTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcQizilbashFraction2
+			value = modifier:allowed_qizilbash_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcQizilbashFraction2
+			which = drayTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcQizilbashFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcQizilbashFraction1
+			which = drayTriggerCalcQizilbashFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcQizilbashFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedQizilbash
+			value = modifier:amount_of_qizilbash
+		}
+		change_variable = {
+			which = drayTriggerCalcQizilbashFraction1
+			which = drayTriggerCalcAddedQizilbash
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfQizilbash
+			value = trigger_value:num_of_qizilbash
+		}
+		check_variable = {
+			which = drayTriggerCalcQizilbashFraction1
+			which = drayTriggerCalcNumberOfQizilbash
+		}		
+	}
+}
+
+# Below Limit Trigger | LAND | JANISSARIES
+dray_below_limit_janissary = {
+	OR = {
+		has_global_modifier_value = {
+			which = can_recruit_janissaries
+			value = 1
+		}
+		has_estate = estate_janissaries
+		has_reform = sultanate_of_rum_reform
+		has_reform = turkoman_ottoman_institutions
+	}
+}
+
+# Below Limit Trigger | LAND | CAWA
+dray_below_limit_cawa = {
+	OR = {
+		has_reform = negusa_nagast_legacy
+		has_reform = solomonic_empire_legacy
+		has_reform = negusa_nagast
+		has_reform = solomonic_empire
+		has_reform = cawa_auxiliary_forces
+		has_reform = the_cawa_regiments_reform
+		has_global_modifier_value = {
+			which = can_recruit_cawa
+			value = 1
+		}
+	}
+}
+
+# Below Limit Trigger | NAVAL | MAN OF WARS
+dray_below_limit_manofwar = {
+	has_global_modifier_value = {
+		which = has_man_of_war
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcManOfWarFraction1
+			value = modifier:allowed_man_of_war_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcManOfWarFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcManOfWarFraction2
+			value = modifier:allowed_man_of_war_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcManOfWarFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcManOfWarFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcManOfWarFraction1
+			which = drayTriggerCalcManOfWarFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcManOfWarFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedManOfWar
+			value = modifier:amount_of_man_of_war
+		}
+		change_variable = {
+			which = drayTriggerCalcManOfWarFraction1
+			which = drayTriggerCalcAddedManOfWar
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfManOfWar
+			value = trigger_value:num_of_man_of_war
+		}
+		check_variable = {
+			which = drayTriggerCalcManOfWarFraction1
+			which = drayTriggerCalcNumberOfManOfWar
+		}		
+	}
+}
+
+# Below Limit Trigger | NAVAL | GALLEONS
+dray_below_limit_galleon = {
+	has_global_modifier_value = {
+		which = has_galleon
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcGalleonFraction1
+			value = modifier:allowed_galleon_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGalleonFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcGalleonFraction2
+			value = modifier:allowed_galleon_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGalleonFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcGalleonFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcGalleonFraction1
+			which = drayTriggerCalcGalleonFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcGalleonFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedGalleon
+			value = modifier:amount_of_galleon
+		}
+		change_variable = {
+			which = drayTriggerCalcGalleonFraction1
+			which = drayTriggerCalcAddedGalleon
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfGalleon
+			value = trigger_value:num_of_galleon
+		}
+		check_variable = {
+			which = drayTriggerCalcGalleonFraction1
+			which = drayTriggerCalcNumberOfGalleon
+		}		
+	}
+}
+
+# Below Limit Trigger | NAVAL | VOC INDIAMEN
+dray_below_limit_vocindiamen = {
+	has_global_modifier_value = {
+		which = has_voc_indiamen
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction1
+			value = modifier:allowed_voc_indiamen_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction2
+			value = modifier:allowed_voc_indiamen_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction1
+			which = drayTriggerCalcVOCIndiamenFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcVOCIndiamenFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedVOCIndiamen
+			value = modifier:amount_of_voc_indiamen
+		}
+		change_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction1
+			which = drayTriggerCalcAddedVOCIndiamen
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfVOCIndiamen
+			value = trigger_value:num_of_voc_indiamen
+		}
+		check_variable = {
+			which = drayTriggerCalcVOCIndiamenFraction1
+			which = drayTriggerCalcNumberOfVOCIndiamen
+		}		
+	}
+}
+
+# Below Limit Trigger | NAVAL | CARAVELS
+dray_below_limit_caravel = {
+	has_global_modifier_value = {
+		which = has_caravel
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcCaravelFraction1
+			value = modifier:allowed_caravel_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcCaravelFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcCaravelFraction2
+			value = modifier:allowed_caravel_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcCaravelFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcCaravelFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcCaravelFraction1
+			which = drayTriggerCalcCaravelFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcCaravelFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedCaravel
+			value = modifier:amount_of_caravel
+		}
+		change_variable = {
+			which = drayTriggerCalcCaravelFraction1
+			which = drayTriggerCalcAddedCaravel
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfCaravel
+			value = trigger_value:num_of_caravel
+		}
+		check_variable = {
+			which = drayTriggerCalcCaravelFraction1
+			which = drayTriggerCalcNumberOfCaravel
+		}		
+	}
+}
+
+# Below Limit Trigger | NAVAL | GEOBUKSEON
+dray_below_limit_geobukseon = {
+	has_global_modifier_value = {
+		which = has_geobukseon
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcGeobukseonFraction1
+			value = modifier:allowed_geobukseon_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGeobukseonFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcGeobukseonFraction2
+			value = modifier:allowed_geobukseon_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGeobukseonFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcGeobukseonFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcGeobukseonFraction1
+			which = drayTriggerCalcGeobukseonFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcGeobukseonFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedGeobukseon
+			value = modifier:amount_of_geobukseon
+		}
+		change_variable = {
+			which = drayTriggerCalcGeobukseonFraction1
+			which = drayTriggerCalcAddedGeobukseon
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfGeobukseon
+			value = trigger_value:num_of_geobukseon
+		}
+		check_variable = {
+			which = drayTriggerCalcGeobukseonFraction1
+			which = drayTriggerCalcNumberOfGeobukseon
+		}		
+	}
+}
+
+# Below Limit Trigger | NAVAL | GALLEASSES
+dray_below_limit_galleass = {
+	has_global_modifier_value = {
+		which = has_galleass
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = drayTriggerCalcGalleassFraction1
+			value = modifier:allowed_galleass_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit1
+			value = naval_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGalleassFraction1
+			which = drayTriggerCalcNavalForceLimit1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcGalleassFraction2
+			value = modifier:allowed_galleass_fraction
+		}
+		export_to_variable = {
+			which = drayTriggerCalcNavalForceLimit2
+			value = naval_forcelimit
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = drayTriggerCalcGalleassFraction2
+			which = drayTriggerCalcNavalForceLimit2
+		}		
+		multiply_variable = {
+			which = drayTriggerCalcGalleassFraction2
+			which = drayTriggerCalcSpecialForceLimit2
+			}
+		change_variable = {
+			which = drayTriggerCalcGalleassFraction1
+			which = drayTriggerCalcGalleassFraction2
+		}		
+		subtract_variable = {            
+			which = drayTriggerCalcGalleassFraction1
+			value = 1
+		}
+		export_to_variable = {
+			which = drayTriggerCalcAddedGalleass
+			value = modifier:amount_of_galleass
+		}
+		change_variable = {
+			which = drayTriggerCalcGalleassFraction1
+			which = drayTriggerCalcAddedGalleass
+		}	
+		export_to_variable = {
+			which = drayTriggerCalcNumberOfGalleass
+			value = trigger_value:num_of_galleass
+		}
+		check_variable = {
+			which = drayTriggerCalcGalleassFraction1
+			which = drayTriggerCalcNumberOfGalleass
+		}		
+	}
+}

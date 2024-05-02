@@ -1,0 +1,42 @@
+nobatia_ideas = {
+	start = {
+		imperial_mercenary_cost = -0.2
+		warscore_cost_vs_other_religion = -0.15
+	}
+	bonus = {
+		manpower_in_true_faith_provinces = 0.20
+		manpower_against_imperial_enemies = 20000
+	}
+	trigger = {
+		tag = Z42
+	}
+	free = yes
+
+	z42_crossroads_of_africa = {
+		caravan_power = 0.5
+		trade_range_modifier = 0.25
+	}
+	z42_favored_sons = {
+		diplomatic_reputation = 1
+		prestige_decay = -0.01
+	}
+	z42_talents_of_aurora = {
+		same_religion_advisor_cost = -0.2
+	}
+	z42_great_imperial_march = {
+		army_tradition_from_battle = 0.50
+		prestige_from_land = 0.50
+	}
+	z42_public_education = {
+		development_cost_in_primary_culture = -0.10
+	}
+	z42_starlight_academy = {
+		technology_cost = -0.1
+		possible_policy = 1
+	}
+	z42_champions_of_the_prince = {
+		power_projection_from_insults = 1
+		monarch_lifespan = 1
+		monarch_military_power = 2
+	}
+}

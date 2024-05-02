@@ -1,0 +1,55 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+technology_group = western
+religion = catholic
+primary_culture = scottish
+capital = 248
+1444.11.11= {
+	monarch = {
+		name = "Edward"
+		dynasty = "Dunkeld"
+		adm = 3
+		dip = 4
+		mil = 4
+		birth_date = 1404.6.28
+		religion = catholic
+		culture = scottish
+	}
+	add_ruler_personality = pious_personality
+	add_ruler_personality = zealot_personality
+	queen = {
+		name = "Hunydd"
+		dynasty = "Glastenning"
+		adm = 4
+		dip = 3
+		mil = 4
+		country_of_origin = SCO
+		birth_date = 1407.9.9
+		death_date = 1467.9.9
+		female = yes
+		religion = catholic
+		culture = welsh
+	}
+	add_queen_personality = intricate_web_weaver_personality
+	add_queen_personality = well_connected_personality
+	heir = {
+		name = "Gregor"
+		monarch_name = "Gregor"
+		dynasty = "Dunkeld"
+		adm = 5
+		dip = 2
+		mil = 6
+		birth_date = 1437.2.6
+		death_date = 1502.2.6
+		claim = 89
+		religion = catholic
+		culture = scottish
+	}
+	add_heir_personality = well_connected_personality
+	add_heir_personality = zealot_personality
+}
+1444.11.11= {
+	add_prestige = 57
+	add_treasury = 0
+}

@@ -1,0 +1,192 @@
+ck2_converter_generated = yes
+graphical_culture = muslimgfx
+color = { 30 31 162 }
+revolutionary_colors = { 13 10 6 }
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	offensive_ideas
+	spy_ideas
+	diplomatic_ideas
+	economic_ideas
+	religious_ideas
+	innovativeness_ideas
+}
+historical_units = {
+	african_dragoon
+	african_hill_warfare
+	african_hussar
+	african_mandelaku
+	african_mossi_horsemen
+	african_spearmen
+	african_tuareg_cavalry
+	african_western_franchise_warfare
+	mali_tribal_warfare
+	niger_kongolese_gunpowder_warfare
+	westernized_niger_kongolese
+}
+monarch_names = {
+	"Aamina #0" = -1
+	"Aamira #0" = -1
+	"Aazzi #0" = -1
+	"Abd-al-Rahman #0" = 0
+	"Abdul-Haleem #1" = 10
+	"Abu Bakr #1" = 10
+	"Admer #0" = 0
+	"Aeesha #0" = -1
+	"Agdun #1" = 10
+	"Agwillul #0" = 0
+	"Ahamatu #0" = 0
+	"Aisha #0" = -1
+	"Aissa #0" = -1
+	"Ali #0" = 0
+	"Antalas #0" = 0
+	"Aras #0" = 0
+	"Awdia #2" = 10
+	"Badia #0" = -1
+	"Badra #0" = -1
+	"Bajila #0" = -1
+	"Baraah #0" = -1
+	"Bashira #0" = -1
+	"Basima #0" = -1
+	"Capussa #0" = 0
+	"Fahriya #0" = -1
+	"Fer'r'udja #0" = -1
+	"Frawsen #0" = 0
+	"Gedduda #0" = -1
+	"Hassan #1" = 10
+	"Hemu #0" = -1
+	"Ifser #0" = 0
+	"Ighlaf #0" = 0
+	"Iiju #0" = -1
+	"Ilyas #0" = 0
+	"Immel #0" = 0
+	"Isa #1" = 10
+	"Isli #1" = 10
+	"Ittû #0" = -1
+	"Izri #0" = 0
+	"Jabir #1" = 10
+	"Jibril #1" = 10
+	"Kanimana #0" = -1
+	"Kella #0" = -1
+	"Khenchela #0" = 0
+	"Lalla #0" = -1
+	"Malika #0" = -1
+	"Masnsen #0" = 0
+	"Mernissa #0" = -1
+	"Mirza #1" = 10
+	"Mu'izz #0" = 0
+	"Muhammad #1" = 10
+	"Myassa #0" = -1
+	"Nazar #0" = 0
+	"Ptolemee #0" = 0
+	"Ra'isa #0" = -1
+	"Randja #0" = -1
+	"Sadiqa #0" = -1
+	"Sifal #0" = 0
+	"Tacfin #1" = 10
+	"Tadla #0" = -1
+	"Tagwillult #0" = -1
+	"Tamrust #0" = -1
+	"Taninna #0" = -1
+	"Tasa'fut #0" = -1
+	"Tazirit #0" = -1
+	"Tella #0" = -1
+	"Tisent #0" = -1
+	"Urz'ig #0" = 0
+	"Watt'as #0" = 0
+	"Wnissa #0" = -1
+	"Ya #0" = -1
+	"Zigza #0" = 0
+	"Zilgum #0" = -1
+	"Ziri #0" = 0
+	"Zwira #0" = -1
+	"al-'Urwah #0" = 0
+}
+leader_names = {
+	"Ait Loaien"
+	"Dag Rali"
+	"Ibatanaten"
+	"Idnan"
+	"Ifergoumessen"
+	"Igdalen"
+	"Ighatafan"
+	"Ikazkazan"
+	"Ikhekheren"
+	"Iregenaten"
+	"Iriyaken"
+	"Irreulen"
+	"Kel Afella"
+	"Kel Essouk"
+	"Kel Fadey"
+	"Kel Ferwan"
+	"Kel Gharous"
+	"Kel Nan"
+	"Kel Ouzzeyn"
+	"Kel Rela"
+	"Kel Silet"
+	"Kel Tadele"
+	"Kel Taghlit"
+	"Kel Tamat"
+	"Lisawan"
+	"Taghat Mellet"
+	"Tahabanaten"
+	"Taituq"
+	"Tellemidez"
+	"Tgéhé Millet"
+	"Tiggirmat"
+}
+ship_names = {
+	"Abaikor"
+	"Abuk Eneden"
+	"Adhou"
+	"Adrar"
+	"Agzir"
+	"Aheluf"
+	"Ahlahal"
+	"Ahulil"
+	"Akhoudi"
+	"Amanar"
+	"Amayas"
+	"Amenis"
+	"Amor"
+	"Amschisch"
+	"Aouak'k'as"
+	"Aqjun"
+	"Araleg"
+	"Arer"
+	"Aura"
+	"Averckan"
+	"Awragh"
+	"Azegaw"
+	"Azeggagh"
+	"Edi n Amanar"
+	"Egagg"
+	"Ekahi"
+	"Elkessan"
+	"Elmusi"
+	"Etran"
+	"Eys"
+	"Harmattan"
+	"Illascchevhan"
+	"Mehellau"
+	"Mula-Mula"
+	"Nchar-n-icheren"
+	"Schet-ehad"
+	"Tafuk"
+	"Taganzé"
+	"Taggait"
+	"Tahenkat"
+	"Takhourhit"
+	"Takouba"
+	"Talamt"
+	"Tallit"
+	"Tasilé"
+	"Tatrit n tufat"
+	"Telek"
+	"Teschek-ulli"
+	"Tezelader"
+	"addhar"
+	"Élou"
+	"Ésou"
+}

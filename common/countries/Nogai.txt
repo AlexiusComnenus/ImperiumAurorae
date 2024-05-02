@@ -1,0 +1,102 @@
+ck2_converter_generated = yes
+graphical_culture = muslimgfx
+color = { 0 120 145 }
+revolutionary_colors = { 10 0 8 }
+historical_idea_groups = {
+	religious_ideas
+	trade_ideas
+	quantity_ideas
+	expansion_ideas
+	offensive_ideas
+	economic_ideas
+	defensive_ideas
+	administrative_ideas
+}
+historical_units = {
+	reformed_steppe_rifles
+	steppe_cavalry
+	steppe_footmen
+	steppe_infantry
+	steppe_lancers
+	steppe_mounted_raiders
+	steppe_musketeers
+	steppe_raiders
+	steppe_riders
+	steppe_rifles
+	steppe_uhlans
+}
+monarch_names = {
+	"Abu'l-Fawaris #1" = 10
+	"Aepak #0" = 0
+	"Akgul #0" = -1
+	"Ayasun #0" = -1
+	"Aydogdu #0" = 0
+	"Bozan #0" = 0
+	"Böru #0" = 0
+	"Dukak #0" = 0
+	"Dundar #0" = 0
+	"Golbahar #0" = -1
+	"Gunduz #0" = -1
+	"Gunes #0" = -1
+	"Hasan #0" = 0
+	"Ibrahim #1" = 10
+	"Ilkay #0" = -1
+	"Ipekel #0" = -1
+	"Iskender #1" = 10
+	"Ismail #2" = 10
+	"Kaikhusraw #0" = 0
+	"Kasim #0" = 0
+	"Kutlug #0" = 0
+	"Mahmud Soltan #1" = 10
+	"Malik Dinar #1" = 10
+	"Mansure #0" = -1
+	"Murad #0" = 0
+	"Parand #0" = -1
+	"Sarica #0" = -1
+	"Sarä #0" = -1
+	"Savkëlti #0" = -1
+	"Savtekin #0" = 0
+	"Sevindik #0" = -1
+	"Sheeva #0" = -1
+	"Songul #0" = -1
+	"Toruntay #0" = 0
+	"Tura #0" = -1
+	"Tähtani #0" = -1
+	"Yaman #0" = 0
+	"Yartilek #0" = -1
+	"Çagri #0" = 0
+	"Çaka #0" = 0
+	"Ïnal-Tegin #1" = 10
+	"Özgul #0" = -1
+}
+leader_names = {
+	"Batu-tu"
+	"Berkegene"
+	"Bora Chinua"
+	"Burilgidai"
+	"Chaganchar"
+	"Delger Cheren"
+	"Qadantai"
+	"Qara Erdene"
+	"Qorchigene"
+	"Suren Unegen"
+	"Tegus-chi"
+	"Temurcher"
+	"Ulagan Temur"
+	"Yekechar"
+}
+ship_names = {
+	"Batu Khan"
+	"Buri"
+	"Chaka"
+	"Chinggis Khan"
+	"Edigü"
+	"Kara Nojaj"
+	"Mangyt"
+	"Möngke Timur"
+	"Qara Quchuq"
+	"Saraycik"
+	"Tartar Khan"
+	"Waqqas Bej"
+	"Yayik"
+}

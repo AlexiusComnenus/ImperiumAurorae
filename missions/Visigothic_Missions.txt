@@ -1,0 +1,1711 @@
+visigoth_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = VAL
+	}
+	has_country_shield = yes
+	
+	val_templar_alliance = {
+		icon = expand_the_confederacy
+		required_missions = {
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			owned_by = TEM
+		}
+		
+		trigger = {
+			ROOT = {
+				alliance_with = TEM
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			add_dip_power = 50
+			add_country_modifier = {
+				name = templar_alliance_renewed
+				duration = 7300
+			}
+		}
+	}
+	
+	val_naval_foundries = {
+		icon = expand_the_arsenal
+		required_missions = {
+			val_templar_alliance
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 1750
+		}
+		
+		trigger = {
+			1750 = {
+				trade_goods = naval_supplies
+				base_production = 8
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+			years_of_income = 1
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_years_of_income = -1
+			1750 = {
+				add_permanent_province_modifier = { 
+					name = valencia_arsenal
+					duration = -1
+				}
+			}
+			1750 = {
+				add_permanent_province_modifier = { 
+					name = province_builds_galleass
+					duration = -1
+				}
+			}
+			4560 = {
+				add_permanent_province_modifier = { 
+					name = province_builds_galleass
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = valencian_galleass
+				duration = -1
+			}
+			TEM = {
+				add_country_modifier = {
+					name = valencian_galleass
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	val_financial_center = {
+		icon = chater_the_voc
+		required_missions = {
+			val_naval_foundries
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			province_id = 4549
+		}
+		
+		trigger = {
+			4549 = {
+				trade_goods = paper
+				base_production = 12
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+				owned_by = ROOT
+			}
+			333 = {
+				trade_goods = gold
+				OR = {
+					owned_by = ROOT
+					owned_by = TEM
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 30
+			add_years_of_income = 1
+			4549 = {
+				add_permanent_province_modifier = { 
+					name = valencia_finance
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	val_revive_culture = {
+		icon = carolingian_empire
+		required_missions = {
+			val_legacy_of_pelagius
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			has_province_modifier = insular_visigoth_community
+			OR = {
+				NOT = { development = 12 }
+				NOT = { num_of_buildings_in_province = 3 }
+				local_autonomy = 10
+			}
+		}
+		
+		trigger = {
+			all_owned_province = {
+				OR = {
+					NOT = {
+						has_province_modifier = insular_visigoth_community
+					}
+					AND {
+						development = 12
+						NOT = { local_autonomy = 10 }
+						num_of_buildings_in_province = 3
+					}
+				}
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = insular_visigoth_community
+				}
+				change_culture = visigothic
+				add_base_production = 1
+				add_base_manpower = 1
+				add_base_tax = 1
+				remove_province_modifier = insular_visigoth_community
+			}
+		}
+	}
+	
+	val_landing_new_world = {
+		icon = mission_exploration
+		required_missions = {
+			val_colonial_ventures
+		}
+		position = 11
+		
+		trigger = {
+			OR = {
+				any_owned_province = {
+					region = carribeans_region
+				}
+				any_subject_country = {
+					any_owned_province = {
+						region = carribeans_region
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_colonial_enthusiasm
+				duration = 7300
+			}
+			carribeans_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	val_carribeans_conquered = {
+		icon = dutch_formosa
+		required_missions = {
+			val_landing_new_world
+		}
+		position = 12
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = carribeans_region
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_tariff_boosts
+				duration = -1
+			}
+			colombia_region = {
+				add_permanent_claim = ROOT
+			}
+			central_america_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	val_mainland_colonies = {
+		icon = mission_colonize_panama
+		required_missions = {
+			val_carribeans_conquered
+		}
+		position = 13
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40
+				OR = {
+					region = colombia_region
+					region = central_america_region
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_treasure_fleets
+				duration = -1
+			}
+		}
+	}
+}
+
+visigoth_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = VAL
+	}
+	has_country_shield = yes
+	
+	val_ready_army = {
+		icon = army_reforms
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			IF = {
+				limit = { ai = no }
+				army_size_percentage = 0.8
+				num_of_allies = 2
+				treasury = 50
+			} ELSE {
+				is_at_war = yes
+			}
+		}
+		
+		effect = {
+			create_general = { tradition = 70 add_siege = 2 }
+			add_country_modifier = {
+				name = val_reclamation_enthusiasm
+				duration = 3650
+			}
+			lower_andalucia_area = {
+				add_claim = ROOT
+			}
+			upper_andalucia_area = {
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	val_reclaim_cores = {
+		icon = avoid_fragmentation
+		required_missions = {
+			val_ready_army
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			is_core = ROOT
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			all_core_province = {
+				OR = {
+					owned_by = ROOT
+					NOT = { culture = visigothic }
+				}
+			}
+		}
+		
+		effect = {
+			add_manpower = 7
+			#add_treasury = 200
+			add_stability = 1
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_prestige = 15
+			
+			extremadura_area = {
+				add_claim = ROOT
+			}
+			catalonia_area = {
+				add_claim = ROOT
+			}
+			castille_area = {
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	val_avenge_roderic = {
+		icon = defenestrate_the_heretics
+		required_missions = {
+			val_regnum_gothorum
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			AND = {
+				region = iberia_region 
+				NOT = { owner = { religion_group = christian } }
+			}
+		}
+		
+		trigger = {
+			iberia_region = {
+				type = all
+				owner = { religion_group = christian }
+			}
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_val.2
+			}
+		}
+	}
+	
+	val_legacy_of_pelagius = {
+		icon = establish_a_standing_army
+		required_missions = {
+			val_avenge_roderic
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				area = castille_area
+				area = asturias_area
+				area = leon_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			castille_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			asturias_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			leon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			CAS = {
+				add_liberty_desire = -20
+			}
+			LON = {
+				add_liberty_desire = -20
+			}
+			castille_area = {
+				limit = {
+					owned_by = VAL
+				}
+				add_nationalism = -10
+			}
+			asturias_area = {
+				limit = {
+					owned_by = VAL
+				}
+				add_nationalism = -10
+			}
+			leon_area = {
+				limit = {
+					owned_by = VAL
+				}
+				add_nationalism = -10
+			}
+			add_dip_power = 100
+			add_country_modifier = {
+				name = legacy_of_pelagius
+				duration = -1
+			}
+		}
+	}
+	
+	val_revenge_vs_moors = {
+		icon = crusader_fleet
+		required_missions = {
+			val_imperium_gothorum
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					region = maghreb_region
+					value = 25
+				}
+				TEM = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						region = maghreb_region
+						value = 20
+					}
+					any_ally = {
+						tag = ROOT
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = moors_chastened
+				duration = 7300
+			}
+			add_casus_belli = {
+				target = TUN
+				type = cb_vassalize_mission
+				months = 1200
+			}
+		}
+	}
+	
+	val_regnum_vandalorum = {
+		icon = protect_against_austria
+		required_missions = {
+			val_revenge_vs_moors
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			culture = vandal
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			OR = {
+				tunisia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				AND = {
+					TEM = {
+						tunisia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = TEM
+						}
+						any_ally = {
+							tag = ROOT
+						}
+					}
+					northern_morocco_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+			OR = {
+				NOT = { exists = TUN }
+				TUN = {
+					is_subject_of = ROOT
+				}
+				TUN = {
+					is_subject_of = TEM
+				}
+			}
+		}
+		
+		effect = {
+			IF = {
+				limit = {
+					OR = {
+						NOT = { exists = TUN }
+						TUN = { is_subject_of = ROOT }
+					}
+					NOT = { 
+						TEM = {
+							tunisia_area = {
+								type = all
+								country_or_non_sovereign_subject_holds = TEM
+							}
+						} 
+					}
+				}
+				tunisia_area = {
+					cede_province = TUN
+				}
+				create_union = TUN
+				add_historical_friend = TUN
+				TUN = {
+					change_government = monarchy
+					add_historical_friend = ROOT
+					override_country_name = regnum_vandalorum_name
+				}
+			} else_if {
+				limit = {
+					OR = {
+						NOT = { exists = TUN }
+						TUN = { is_subject_of = ROOT }
+					}
+					TEM = {
+						tunisia_area = {
+							type = all
+							country_or_non_sovereign_subject_holds = TEM
+						}
+					} 
+				}
+				northern_morocco_area = {
+					cede_province = TUN
+					change_culture = vandal
+				}
+				create_union = TUN
+				add_historical_friend = TUN
+				TUN = {
+					change_government = monarchy
+					add_historical_friend = ROOT
+					override_country_name = regnum_vandalorum_name
+				}
+			} ELSE {
+				northern_morocco_area = {
+					add_core = TUN
+					change_culture = vandal
+				}
+			}
+		}
+	}
+	
+	val_institutions_of_learning = {
+		icon = mission_the_sudebnik
+		required_missions = {
+			
+		}
+		position = 14
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 219
+				province_id = 223
+			}
+		}
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				219 = {
+					num_of_buildings_in_province = 3
+					is_prosperous = yes
+				}
+				219 = { 
+					num_of_times_improved_by_owner = 5
+				}
+				223 = {
+					num_of_buildings_in_province = 3
+					is_prosperous = yes
+				}
+				223 = {
+					num_of_times_improved_by_owner = 5
+				}
+			} ELSE = {
+				is_year = 1470
+			}
+			owns = 219
+			owns = 223
+		}
+		
+		effect = {
+			219 = {
+				add_building = university
+				add_permanent_province_modifier = {
+					name = gothic_institutions_of_learning
+					duration = -1
+				}
+			}
+			223 = {
+				add_building = university
+				add_permanent_province_modifier = {
+					name = gothic_institutions_of_learning
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	val_standardized_taxes = {
+		icon = reform_the_state
+		required_missions = {
+			val_institutions_of_learning
+		}
+		position = 15
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				NOT = {
+					OR = {
+						estate_influence = {
+							estate = estate_church
+							influence = 30
+						}
+						estate_influence = {
+							estate = estate_nobles
+							influence = 30
+						}
+						estate_influence = {
+							estate = estate_burghers
+							influence = 30
+						}
+					}
+				}
+				crown_land_share = 45
+			} ELSE = {
+				is_year = 1480
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = gothic_tax_code
+				duration = -1
+			}
+		}
+	}
+	
+	val_public_education = {
+		icon = mission_swedish_nobility
+		required_missions = {
+			val_standardized_taxes
+		}
+		position = 16
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				innovativeness = 50
+			}
+			reform_level = 6
+		}
+		
+		effect = {
+			add_government_reform = valencia_parliament
+		}
+	}
+}
+
+visigoth_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = VAL
+	}
+	has_country_shield = yes
+	
+	val_regnum_gothorum = {
+		icon = become_king
+		required_missions = {
+			val_reclaim_cores
+			val_mint_new_coins
+		}
+		position = 3
+		
+		trigger = {
+			is_at_war = no
+			has_regency = no
+			IF = {
+				limit = { ai = no }
+				stability = 2
+				army_size = 20
+				monthly_income = 30
+				NOT = { average_home_autonomy = 20 }
+				NOT = { average_unrest = 0 }
+			}
+		}
+		
+		effect = {
+			override_country_name = name_regnum_gothorum
+			add_ruler_modifier = {
+				name = revived_regnum_gothorum
+				duration = -1
+			}
+			add_government_reform = regnum_gothorum_reform
+			change_mil = 1
+			add_casus_belli = {
+				target = CAS
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			add_casus_belli = {
+				target = ARA
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			add_casus_belli = {
+				target = LON
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			add_casus_belli = {
+				target = TOU
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			add_casus_belli = {
+				target = NAV
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			add_casus_belli = {
+				target = GAL
+				type = cb_restore_personal_union
+				months = 1200
+			}
+			iberia_region = {
+				limit = {
+					NOT = { owned_by = TEM }
+				}
+				add_permanent_claim = VAL
+			}
+			custom_tooltip = crusader_queen_tooltip
+			if = {
+				limit = {
+					has_ruler_flag = crusader_queen_jacoba_flag
+				}
+				country_event = { id = ia_flavor_val.9 }
+			}
+		}
+	}
+	
+	val_imperium_gothorum = {
+		icon = centralized_empire
+		required_missions = {
+			val_reclaim_toulouse
+			val_legacy_of_pelagius
+		}
+		position = 6
+		
+		trigger = {
+			is_at_war = no
+			has_regency = no
+			IF = {
+				limit = { ai = no }
+				stability = 2
+				army_size = 50
+				monthly_income = 100
+				NOT = { average_home_autonomy = 20 }
+				NOT = { average_unrest = 0 }
+			}
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_val.1 }
+			change_mil = 1
+			change_adm = 1
+			change_dip = 1
+			maghreb_region = {
+				add_permanent_claim = VAL
+			}
+			france_region = {
+				add_permanent_claim = VAL
+			}
+			italy_region = {
+				add_permanent_claim = VAL
+			}
+			if = {
+				limit = { exists = POR }
+				add_casus_belli = {
+					target = POR
+					type = cb_restore_personal_union
+					months = 1200
+				}
+			}
+			custom_tooltip = imperium_gothorum_warning_tt
+		}
+	}
+	
+	val_legacy_of_rome = {
+		icon = a_roman_empire
+		required_missions = {
+			val_regnum_langobardorum
+			val_regnum_vandalorum
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			OR = {
+				region = france_region
+				region = iberia_region
+				region = italy_region
+			}
+			NOT = { 
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+		}
+		
+		trigger = {
+			france_region = {
+				type = all
+				OR = { 
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+			iberia_region = {
+				type = all
+				OR = { 
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+			italy_region = {
+				type = all
+				OR = { 
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = visigoth_legacy_of_rome
+				duration = -1
+			}
+			override_country_name = visigoth_wre_name
+			if = {
+				limit = {
+					exists = MLO
+					MLO = { is_subject_of = ROOT }
+				}
+				country_event = { id = ia_flavor_val.5 }
+			}
+			if = {
+				limit = {
+					exists = TUN
+					TUN = { is_subject_of = ROOT }
+				}
+				country_event = { id = ia_flavor_val.6 }
+			}
+		}
+	}
+	
+	val_colonial_ventures = {
+		icon = mission_establish_high_seas_navy
+		required_missions = {
+			
+		}
+		position = 10
+		
+		trigger = {
+			OR = {
+				exploration_ideas = 2
+				any_subject_country = {
+					full_idea_group = exploration_ideas
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = templar_colonial_ventures
+				duration = 7300
+			}
+			create_explorer = { tradition = 50 }
+			create_conquistador = { tradition = 50 }
+		}
+	}
+	
+	val_foothold_in_guinea = {
+		icon = mission_viborg
+		required_missions = {
+			val_colonial_ventures
+		}
+		position = 11
+		
+		trigger = {
+			OR = {
+				any_owned_province = {
+					region = guinea_region
+				}
+				any_subject_country = {
+					any_owned_province = {
+						region = guinea_region
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_malaria
+				duration = 14600
+			}
+			guinea_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	val_guinea_conquered = {
+		icon = mission_thirty_years_war
+		required_missions = {
+			val_foothold_in_guinea
+		}
+		position = 12
+		
+		trigger = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					region = guinea_region
+				}
+				TEM = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 20
+						region = guinea_region
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_malaria_resistance
+				duration = -1
+			}
+			kongo_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	val_kongo_conquered = {
+		icon = mission_sword_of_the_reformation
+		required_missions = {
+			val_guinea_conquered
+		}
+		position = 13
+		
+		trigger = {
+			OR = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					region = kongo_region
+				}
+				TEM = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 20
+						region = kongo_region
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_african_trade
+				duration = -1
+			}
+		}
+	}
+	
+	val_global_empire = {
+		icon = a_place_among_the_great_powers
+		required_missions = {
+			val_kongo_conquered
+			val_conquer_niger
+			val_mainland_colonies
+		}
+		position = 14
+		
+		trigger = {
+			is_hegemon = yes
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = valencia_the_hegemon
+				duration = -1
+			}
+		}
+	}
+	
+	val_bureaucracy = {
+		icon = reform_the_nomocanon
+		required_missions = {
+			val_institutions_of_learning
+			val_curtail_feudalism
+		}
+		position = 15
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				monthly_adm = 11
+			} ELSE = {
+				is_year = 1480
+			}
+			reform_level = 3
+		}
+		
+		effect = {
+			add_government_reform = valencia_bureaucracy
+		}
+	}
+	
+	val_military_future = {
+		icon = mission_war_for_the_crown
+		required_missions = {
+			val_public_education
+			val_officer_academy
+			val_bureaucracy
+		}
+		position = 17
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				absolutism = 100
+			} ELSE = {
+				absolutism = 10
+			}
+			
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_flavor_val.11
+			}
+		}
+	}
+}
+
+visigoth_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = VAL
+	}
+	has_country_shield = yes
+	
+	val_restore_economy = {
+		icon = dalmatian_conquest
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			IF = {
+				limit = { ai = no }
+				current_income_balance = 0
+				treasury = 100
+				land_maintenance = 1
+				naval_maintenance = 1
+				employed_advisor = { category = ADM }
+				employed_advisor = { category = DIP }
+				employed_advisor = { category = MIL }
+			}
+			else = {
+				current_income_balance = 2
+			}
+		}
+		
+		effect = {
+			add_ruler_modifier = {
+				name = val_recovered_economy
+				duration = -1
+			}
+			add_legitimacy = 10
+			change_adm = 1
+			change_heir_adm = 1
+		}
+	}
+	
+	val_mint_new_coins = {
+		icon = dominant_economy
+		required_missions = {
+			val_restore_economy
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 2754
+		}
+		
+		trigger = {
+			2754 = {
+				owned_by = ROOT
+				IF = {
+					limit = { ai = no }
+					base_production = 6
+					NOT = { local_autonomy = 10 }
+					NOT = { unrest = 0 }
+				}
+			}
+		}
+		
+		effect = {
+			add_treasury = 300
+			2754 = {
+				add_permanent_province_modifier = { 
+					name = valencia_royal_mint
+					duration = -1
+				}
+				add_base_production = 2
+			}
+		}
+	}
+	
+	val_reclaim_coastline = {
+		icon = king_of_aragon
+		required_missions = {
+			val_regnum_gothorum
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = aragon_area
+				area = catalonia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			aragon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			catalonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			ARA = {
+				add_liberty_desire = -20
+			}
+			aragon_area = {
+				limit = {
+					owned_by = VAL
+				}
+				add_nationalism = -10
+			}
+			catalonia_area = {
+				limit = {
+					owned_by = VAL
+				}
+				add_nationalism = -10
+			}
+			languedoc_area = {
+				add_permanent_claim = VAL
+			}
+			pyrenees_area = {
+				add_permanent_claim = VAL
+			}
+			add_adm_power = 100
+			add_country_modifier = {
+				name = catalan_marines
+				duration = -1
+			}
+		}
+	}
+	
+	val_reclaim_toulouse = {
+		icon = a_real_roman_empire
+		required_missions = {
+			val_reclaim_coastline
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				area = languedoc_area
+				area = pyrenees_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			languedoc_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+			pyrenees_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					country_or_non_sovereign_subject_holds = TEM
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { ai = yes }
+				196 = {
+					cede_province = ROOT
+				}
+			}
+			languedoc_area = {
+				add_nationalism = -10
+			}
+			pyrenees_area = {
+				add_nationalism = -10
+			}
+			add_adm_power = 100
+			
+		}
+	}
+	
+	val_revenge_vs_franks = {
+		icon = weaken_france
+		required_missions = {
+			val_imperium_gothorum
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				region = france_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = TEM }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = france_region
+				value = 25
+			}
+			183 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = franks_chastened
+				duration = 7300
+			}
+			add_casus_belli = {
+				target = MLO
+				type = cb_vassalize_mission
+				months = 1200
+			}
+			country_event = { id = ia_flavor_val.4 }
+		}
+	}
+	
+	val_regnum_langobardorum = {
+		icon = milan_victorious
+		required_missions = {
+			val_revenge_vs_franks
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			region = italy_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = italy_region
+				value = 15
+			}
+			OR = {
+				NOT = { exists = MLO }
+				MLO = {
+					is_subject_of = ROOT
+				}
+			}
+			104 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			italy_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				cede_province = MLO
+				add_core = MLO
+			}
+			create_union = MLO
+			add_historical_friend = MLO
+			MLO = {
+				change_government = monarchy
+				add_historical_friend = ROOT
+				override_country_name = regnum_langobardorum_name
+				set_capital = 104
+				change_primary_culture = old_lombard
+			}
+			every_province = {
+				limit = { culture = lombard }
+				change_culture = old_lombard
+			}
+		}
+	}
+	
+	val_curtail_feudalism = {
+		icon = french_revolution
+		required_missions = {
+			
+		}
+		position = 14
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				manpower = 15
+			}
+			reform_level = 2
+			is_at_war = no
+		}
+		
+		effect = {
+			change_estate_land_share = {
+				estate = estate_nobles
+				share = -15
+			}
+			add_government_reform = valencia_curtail_feudalism
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -50
+			}
+			IF = {
+				limit = { ai = no }
+				capital_scope = {
+					spawn_rebels = {
+						type = noble_rebels
+						size = 3
+					}
+				}
+			}
+		}
+	}
+	
+	val_standing_army = {
+		icon = swiss_mercenaries
+		required_missions = {
+			val_curtail_feudalism
+		}
+		position = 15
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				land_forcelimit = 50
+				crown_land_share = 50
+				army_professionalism = 0.15
+			}
+			reform_level = 5
+			is_at_war = no
+			
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = gothic_standing_army
+				duration = -1
+			}
+		}
+	}
+	val_officer_academy = {
+		icon = support_the_orders
+		required_missions = {
+			val_standing_army
+		}
+		position = 16
+		
+		trigger = {
+			IF = {
+				limit = {
+					ai = no
+				}
+				army_tradition = 75
+				army_professionalism = 0.40
+			} ELSE = {
+				is_year = 1500
+			}
+			is_at_war = no
+			
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = gothic_officer_academy
+				duration = -1
+			}
+		}
+	}
+}
+
+visigoth_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = VAL
+	}
+	has_country_shield = yes
+	
+	val_the_reformation = {
+		icon = chivalry_is_not_dead
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			is_religion_enabled = protestant
+			OR = {
+				TEM = {
+					religion = protestant
+				}
+				NOT = { exists = TEM }
+			}
+		}
+		
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = ROOT
+							culture_group = ROOT
+							has_owner_accepted_culture = yes
+						}
+						has_owner_religion = yes
+					}
+					change_religion = protestant
+				}
+			}
+			custom_tooltip = religion_flip_templarite_tt
+			change_religion = protestant
+			capital_scope = {
+				if = {
+					limit = { NOT = { religion = protestant } }
+					change_religion = protestant
+					add_permanent_province_modifier = {
+						name = "religious_zeal_at_conv"
+						duration = 9000
+					}
+				}
+			}
+			add_country_modifier = {
+				name = conversion_zeal
+				duration = 3650
+			}
+			add_prestige = 100
+			if = {
+				limit = {
+					NOT = { exists = TEM }
+				}
+				random_owned_province = {
+					limit = {
+						can_have_center_of_reformation_trigger_aurora = {
+							RELIGION = protestant
+						}
+					}
+					change_religion = protestant
+					add_reform_center = protestant
+					add_permanent_province_modifier = {
+						name = "religious_zeal_at_conv"
+						duration = 9000
+					}
+				
+				}
+			}
+		}
+	}
+	
+	val_dof = {
+		icon = defender_of_the_faith
+		required_missions = {
+			val_the_reformation
+		}
+		position = 2
+		
+		trigger = {
+			religion = protestant
+			OR = {
+				is_defender_of_faith_of_tier = 3
+				any_ally = {
+					tag = TEM
+					is_defender_of_faith_of_tier = 3
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = val_dof_reward
+				duration = 7300
+			}
+			add_prestige = 10
+		}
+	}
+	
+	val_inquisition = {
+		icon = mission_abolish_mestnichestvo
+		required_missions = {
+			val_dof
+		}
+		position = 3
+		
+		trigger = {
+			religion = protestant
+			OR = {
+				any_ally = {
+					tag = TEM
+				}
+				any_subject_country = {
+					tag = TEM
+				}
+				owns = 333
+			}
+		}
+		
+		effect = {
+			add_government_reform = visigothic_inquisition
+		}
+	}
+	
+	val_prosperous_toulouse = {
+		icon = expand_the_doges_palace
+		required_missions = {
+			val_reclaim_toulouse
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			province_id = 196 #Toulouse
+		}
+		
+		trigger = {
+			196 = {
+				development = 18
+				is_prosperous = yes
+				num_of_buildings_in_province = 4
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			196 = {
+				change_culture = visigothic
+				add_base_production = 1
+				add_base_manpower = 1
+				add_base_tax = 1
+			}
+		}
+	}
+	
+	val_into_the_sahel = {
+		icon = mission_bedouins
+		required_missions = {
+			val_colonial_ventures
+		}
+		position = 11
+		
+		trigger = {
+			owns_or_non_sovereign_subject_of = 2466
+			owns_or_non_sovereign_subject_of = 2460
+		}
+		
+		effect = {
+			sahel_region = {
+				add_permanent_claim = ROOT
+			}
+			1127 = {
+				create_colony = 1000
+			}
+		}
+	}
+	
+	val_conquer_the_sahel = {
+		icon = control_the_means_of_transaction
+		required_missions = {
+			val_into_the_sahel
+		}
+		position = 12
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = sahel_region
+			}
+		}
+		
+		effect = {
+			niger_region = {
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = valencia_desert_caravans
+				duration = -1
+			}
+		}
+	}
+	
+	val_conquer_niger = {
+		icon = mission_finest_carpets
+		required_missions = {
+			val_conquer_the_sahel
+		}
+		position = 13
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = niger_region
+			}
+		}
+		
+		effect = {
+			add_treasury = 3000
+			add_country_modifier = {
+				name = valencia_too_much_gold
+				duration = 7300
+			}
+		}
+	}
+}

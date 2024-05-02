@@ -1,0 +1,246 @@
+country_decisions = {
+
+	capital_in_belgrade_EXTRA = { #New Religions
+		potential = {
+			tag = SER
+			NOT = { capital = 4239 }
+			NOT = { has_country_flag = moved_capital_to_belgrade }
+		}
+		allow = {
+			owns_core_province = 4239
+			stability = 1
+			adm_power = 50
+			4239 = {
+				OR = {
+					religion = iconoclast
+					religion = bogomilist
+					religion = monothelite
+					religion = paulician
+				}
+				culture = serbian
+			}
+		}
+		effect = {
+			4239 = {
+				move_capital_effect = yes
+			}
+			add_adm_power = -50
+			set_country_flag = moved_capital_to_belgrade
+			4239 = {
+				add_base_tax = 1
+				add_base_production = 1
+				rename_capital = "Beograd"
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	steppe_horde_reform_EXTRA = { #New Secondary Religions
+		major = yes
+		potential = {
+			has_reform = steppe_horde
+			NOT = { has_dlc = "Dharma" }
+			OR = {
+				ai = no
+				full_idea_group = economic_ideas
+				full_idea_group = innovativeness_ideas
+				full_idea_group = administrative_ideas
+			}
+			OR = {
+				secondary_religion = zikri
+				secondary_religion = yazidi
+				secondary_religion = kharijite
+				secondary_religion = druze
+				secondary_religion = hurufi
+				secondary_religion = qarmatian
+			}
+		}
+		allow = {
+			adm_power = 200
+			legitimacy_or_horde_unity = 60
+			stability = 3
+			has_institution = feudalism
+			OR = {
+				full_idea_group = economic_ideas
+				full_idea_group = innovativeness_ideas
+				full_idea_group = administrative_ideas
+			}
+			NOT = {
+				has_ruler_modifier = tribal_succession_crisis
+			}
+		}
+		effect = {
+			add_adm_power = -200
+			add_stability = -5
+			change_government = monarchy
+			set_legacy_government = despotic_monarchy
+			if = {
+				limit = {
+					technology_group = nomad_group
+					OR = {
+						secondary_religion = zikri
+						secondary_religion = yazidi
+						secondary_religion = kharijite
+						secondary_religion = druze
+						secondary_religion = hurufi
+						secondary_religion = qarmatian
+					}
+				}
+				change_technology_group = muslim
+				change_unit_type = muslim
+			}
+			if = {
+				limit = {
+					technology_group = nomad_group
+					religion_group = christian
+				}
+				change_technology_group = eastern
+				change_unit_type = eastern
+			}
+			if = {
+				limit = {
+					technology_group = nomad_group
+					NOT = {	secondary_religion = zikri }
+					NOT = {	secondary_religion = yazidi }
+					NOT = {	secondary_religion = kharijite }
+					NOT = {	secondary_religion = druze }
+					NOT = {	secondary_religion = hurufi }
+					NOT = {	secondary_religion = qarmatian }
+				}
+				change_technology_group = chinese
+				change_unit_type = chinese
+			}
+			set_country_flag = recently_changed_government_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reduce_inflation_money_decision = { #Reduce inflation
+		potential = {
+			always = no
+			inflation = 2
+			ai = no
+		}
+		allow = {
+			always = no
+			years_of_income = 1
+			NOT = { num_of_loans = 1 }
+		}
+		effect = {
+			add_inflation = -1
+			add_years_of_income = -1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	reduce_inflation_economy_decision = { #Reduce inflation
+		potential = {
+			inflation = 2
+			NOT = { has_country_modifier = austerity_policies }
+		}
+		allow = {
+			NOT = { has_country_modifier = austerity_policies }
+		}
+		effect = {
+			add_country_modifier = {
+				name = austerity_policies
+				duration = 1825
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	startup_decision_ivycurse_settings = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			ai = no
+			NOT = { has_global_flag = ivycurse_disabled }
+			NOT = { has_global_flag = ivycurse_enabled }
+		}
+		allow = {
+			ai = no
+		}
+	 	effect = {
+			country_event = { id = ivycurse.102 }
+		}
+	}
+	
+	adopt_sanitary_standards_decision = {
+		major = yes
+		color = { 255 152 45 }
+		
+		potential = {
+			ai = no
+			NOT = { has_country_modifier = sanitary_standards }
+			has_institution = new_world_i
+		}
+		allow = {
+			ai = no
+			adm_power = 250
+			dip_power = 100
+			years_of_income = 2.5
+			prestige = 50
+			government_reform_progress = 100
+		}
+		effect = {
+			add_years_of_income = -2.5
+			add_adm_power = -250
+			add_dip_power = -100
+			add_prestige = -50
+			change_government_reform_progress = -100
+			
+			add_country_modifier = {
+				name = sanitary_standards
+				duration = -1
+			}
+			
+			add_country_modifier = {
+				name = ivycurse_angered_guilds
+				duration = 7300
+			}
+		}
+	}
+	
+	ai_spawn_tercios_decision = {
+		potential = {
+			always = no
+			ai = yes
+			#is_at_war = no
+			has_global_modifier_value = {
+				which = has_tercio
+				value = 1
+			}
+		}
+		allow = {
+			always = no
+			has_global_modifier_value = {
+				which = has_tercio
+				value = 1
+			}
+			is_at_war = no
+			ai = yes
+			OR = {
+				NOT = { has_country_flag = refreshed_tercios }
+				had_country_flag = {
+					flag = refreshed_tercios
+					days = 1825
+				}
+			}
+		}
+		effect = {
+			dray_build_to_limit_tercio = yes
+			clr_country_flag = refreshed_tercios
+			set_country_flag = refreshed_tercios
+		}
+	}
+}

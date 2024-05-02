@@ -1,0 +1,56 @@
+government = tribal
+add_government_reform = tribal_confederacy
+government_rank = 1
+technology_group = eastern
+religion = finnish_pagan
+primary_culture = komi
+capital = 1964
+fixed_capital = 1964
+1444.11.11= {
+	monarch = {
+		name = "Azeg"
+		dynasty = "Kichayid"
+		adm = 4
+		dip = 2
+		mil = 4
+		birth_date = 1411.1.9
+		religion = finnish_pagan
+		culture = komi
+	}
+	add_ruler_personality = benevolent_personality
+	add_ruler_personality = kind_hearted_personality
+	queen = {
+		name = "Valdava"
+		dynasty = "Nylogid"
+		adm = 4
+		dip = 4
+		mil = 3
+		country_of_origin = Z88
+		birth_date = 1407.5.9
+		death_date = 1467.5.9
+		female = yes
+		religion = finnish_pagan
+		culture = komi
+	}
+	add_queen_personality = fierce_negotiator_personality
+	add_queen_personality = well_connected_personality
+	heir = {
+		name = "Malyy"
+		monarch_name = "Malyy"
+		dynasty = "Kichayid"
+		adm = 3
+		dip = 6
+		mil = 5
+		birth_date = 1431.4.20
+		death_date = 1496.4.20
+		claim = 89
+		religion = finnish_pagan
+		culture = komi
+	}
+	add_heir_personality = charismatic_negotiator_personality
+	add_heir_personality = just_personality
+}
+1444.11.11= {
+	add_prestige = 0
+	add_treasury = 49
+}

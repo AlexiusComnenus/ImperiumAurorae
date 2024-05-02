@@ -1,0 +1,507 @@
+religious_center = {
+	potential = {
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		if = {
+			limit = {
+				province_id = 118 # Roma
+			}
+			OR = { religion = catholic religion = fraticelli }
+		}
+		else_if = {
+			limit = {
+				province_id = 385 # Mecca
+			}
+			religion_group = muslim
+		}
+		else_if = {
+			limit = {
+				province_id = 409 # Hillah
+			}
+			religion = shiite
+		}
+		else_if = {
+			limit = {
+				province_id = 2313 # Hillah
+			}
+			religion = hellenic_pagan_reformed
+		}
+		else_if = {
+			limit = {
+				province_id = 677
+			}
+			religion = vajrayana
+		}
+		else_if = {
+			limit = {
+				province_id = 2075
+			}
+			religion = sikhism
+		}
+		else_if = {
+			limit = {
+				province_id = 2095
+			}
+			religion = hinduism
+		}
+		else_if = {
+			limit = {
+				province_id = 2099
+			}
+			religion = buddhism
+		}
+		else_if = {
+			limit = {
+				province_id = 2311
+			}
+			religion = shiite
+		}
+		else_if = {
+			limit = {
+				province_id = 2221
+			}
+			religion = shiite
+		}
+		else_if = {
+			limit = {
+				province_id = 4359
+			}
+			religion = shinto
+		}
+		else_if = {
+			limit = {
+				province_id = 4720
+			}
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		else_if = {
+			limit = {
+				province_id = 134
+			}
+			religion = hussite
+		}
+		else_if = {
+			limit = {
+				province_id = 2140 # Yanzhou
+			}
+			religion = confucianism
+		}
+		else_if = {
+			limit = {
+				province_id = 1 # Stockholm - or rather Uppsala
+			}
+			religion = norse_pagan_reformed
+		}
+		else_if = {
+			limit = {
+				OR = {
+					province_id = 2212
+					province_id = 4430
+					province_id = 4336
+					province_id = 2221
+					province_id = 2207
+					province_id = 2235
+					province_id = 2236
+					province_id = 2218
+					province_id = 441
+					province_id = 2223
+				}
+			}
+			religion = zoroastrian
+		}
+	}
+
+	local_missionary_strength = -0.05
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+}
+
+ZZZ_enhanced_mighty_temple = {
+	potential = {
+	}
+	trigger = {
+		owner = {
+			OR = {
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+				religion = pagan_religion
+				has_adopted_cult = hellenic_cult
+			}
+		}
+	}
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+
+	on_activation = {
+	}
+
+	on_deactivation = {
+	}
+}
+
+ZZZ_enhanced_zoro_mecca = {
+	potential = {
+		NOT = { has_global_flag = ZZZ_enhanced_random_world }
+	}
+
+	trigger = {
+		owner = {
+			religion_group = zoroastrian_group
+		}
+	}
+
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+
+	#Province scope
+	on_activation = {
+
+	}
+
+	on_deactivation = {
+
+	}
+
+}
+
+ZZZ_enhanced_hellenic_rome = {
+	potential = {
+		NOT = { has_global_flag = ZZZ_enhanced_random_world }
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+		}
+	}
+
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+
+	#Province scope
+	on_activation = {
+
+	}
+
+	on_deactivation = {
+
+	}
+
+}
+
+#Fraticelli Pope
+adm_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	adm_tech_cost_modifier = -0.05
+	global_unrest = -2
+}
+
+dip_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	dip_tech_cost_modifier = -0.05
+	diplomatic_reputation = 1
+}
+
+mil_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+
+	mil_tech_cost_modifier = -0.05
+	army_tradition_from_battle = 0.5
+}
+
+pap_sistine_chapel = {
+	potential = {
+		normal_or_historical_nations = yes
+		NOT = { has_global_flag = sistine_chapel_decorated }
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+
+	devotion = 0.1
+}
+
+pap_sistinechapel_botticelli = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	global_unrest = -1
+}
+
+pap_sistinechapel_ghirlandaio = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	prestige = 0.5
+}
+
+pap_sistinechapel_perugino = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	improve_relation_modifier = 0.1
+}
+
+pap_sistinechapel_michelangelo = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	idea_cost = -0.05
+}
+
+pap_sistinechapel_decorated = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	global_missionary_strength = 0.01
+}
+
+seat_of_the_rigan_archbishopric = {
+	potential = {
+		owner = { has_country_flag = rig_has_completed_authority_mission }
+	}
+	trigger = {
+		is_capital = yes
+		has_tax_building_trigger = yes
+		owner = {
+			government = theocracy
+		}
+		custom_trigger_tooltip = {
+			tooltip = not_more_than_10_provinces_outside_europe
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						continent = europe
+						value = 11
+					}
+				}
+			}
+		}
+	}
+	devotion = 1
+	local_tax_modifier = 0.25
+	local_production_efficiency = 0.25
+	local_manpower_modifier = 0.25
+	local_sailors_modifier = 0.25
+	local_development_cost_modifier = -0.525
+	development_cost_modifier = -0.25
+	development_cost_in_primary_culture = -0.20
+	global_trade_goods_size_modifier = 0.5
+}
+
+cathedral_of_riga = {
+	potential = {
+		owner = { has_country_flag = tall_riga_mission_flag }
+	}
+	trigger = {
+		is_capital = yes
+		has_tax_building_trigger = yes
+		custom_trigger_tooltip = {
+			tooltip = not_more_than_10_provinces_outside_europe
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						continent = europe
+						value = 11
+					}
+				}
+			}
+		}
+	}
+	local_development_cost = -2
+	tax_income = 60
+	local_tax_modifier = 0.5
+	local_governing_cost = -1
+	church_loyalty_modifier = 0.1
+}
+
+market_of_riga = {
+	potential = {
+		owner = { has_country_flag = tall_riga_mission_flag }
+	}
+	trigger = {
+		is_capital = yes
+		has_trade_building_trigger = yes
+		custom_trigger_tooltip = {
+			tooltip = not_more_than_10_provinces_outside_europe
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						continent = europe
+						value = 11
+					}
+				}
+			}
+		}
+	}
+	trade_goods_size = 3
+	trade_goods_size_modifier = 2
+	province_trade_power_value = 5
+	naval_forcelimit = 20
+	local_sailors = 10000
+	burghers_loyalty_modifier = 0.1
+}
+
+fortification_of_riga = {
+	potential = {
+		owner = { has_country_flag = tall_riga_mission_flag }
+	}
+	trigger = {
+		is_capital = yes
+		has_manpower_building_trigger = yes
+		custom_trigger_tooltip = {
+			tooltip = not_more_than_10_provinces_outside_europe
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						continent = europe
+						value = 11
+					}
+				}
+			}
+		}
+	}
+	local_manpower = 10
+	local_manpower_modifier = 0.5
+	land_forcelimit = 20
+	local_fort_maintenance_modifier = -0.9
+	local_defensiveness = 1
+	nobles_loyalty_modifier = 0.1
+}
+
+mercenaries_of_riga = {
+	potential = {
+		owner = { has_country_flag = tall_riga_mission_flag }
+	}
+	trigger = {
+		is_capital = yes
+		custom_trigger_tooltip = {
+			tooltip = not_more_than_10_provinces_outside_europe
+			owner = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						continent = europe
+						value = 11
+					}
+				}
+			}
+		}
+	}
+	mercenary_discipline = 0.05
+	mercenary_manpower = 0.25
+	merc_leader_army_tradition = 0.25
+	allow_mercenary_drill = yes
+	merc_independent_from_trade_range = yes
+	special_unit_forcelimit = 0.50
+	has_carolean = yes
+	amount_of_carolean = 0.25
+	#can_recruit_cossacks = yes
+	#allowed_cossack_fraction = 0.25
+	has_streltsy = yes
+	allowed_streltsy_fraction = 0.25
+	#shock_damage_received = -0.25
+	#fire_damage_received = -0.25
+	local_has_streltsy = yes
+	local_has_carolean = yes
+	manpower_recovery_speed = 0.50	
+}

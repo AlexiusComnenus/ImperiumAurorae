@@ -1,0 +1,52 @@
+government = monarchy
+add_government_reform = ottoman_government
+government_rank = 2
+technology_group = muslim
+religion = zikri
+primary_culture = andalucian
+capital = 1748
+1444.11.11= {
+	monarch = {
+		name = "Isma'il II"
+		dynasty = "Ismailid"
+		adm = 5
+		dip = 2
+		mil = 4
+		birth_date = 1419.6.6
+		religion = zikri
+		culture = andalucian
+	}
+	add_ruler_personality = martial_educator_personality
+	add_ruler_personality = tactical_genius_personality
+	queen = {
+		name = "Raisa"
+		dynasty = "Huelmid"
+		adm = 3
+		dip = 3
+		mil = 2
+		country_of_origin = ADU
+		birth_date = 1406.2.1
+		death_date = 1466.2.1
+		female = yes
+		religion = zikri
+		culture = tuareg
+	}
+	add_queen_personality = careful_personality
+	add_queen_personality = drunkard_personality
+	heir = {
+		name = "Raisa"
+		monarch_name = "Raisa"
+		dynasty = "Ismailid"
+		adm = 2
+		dip = 0
+		mil = 2
+		birth_date = 1442.9.4
+		death_date = 1507.9.4
+		female = yes
+		claim = 89
+		religion = zikri
+		culture = tuareg
+	}
+	add_heir_personality = well_connected_personality
+	add_heir_personality = zealot_personality
+}

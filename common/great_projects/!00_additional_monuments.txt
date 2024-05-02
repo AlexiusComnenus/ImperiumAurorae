@@ -1,0 +1,669 @@
+
+#----------- Khiva University -----------
+wonder_university_9 = {
+	start = 441
+
+	date = 1218.2.9
+
+	time = {
+		 months = 0
+	}
+
+	build_cost = 0
+
+	can_be_moved = no
+
+	move_days_per_unit_distance = 2
+
+	starting_tier = 0
+
+	type = monument
+
+	build_trigger = {
+		NOT = { OWNER = { has_reform = steppe_horde } }
+		OR = {
+			owner = { culture_group = altaic }
+			owner = { culture_group = oghuz }
+		}
+	}
+
+	on_built = {
+		
+	}
+
+	on_destroyed = {
+		
+	}
+
+	can_use_modifiers_trigger = {
+		NOT = { OWNER = { has_reform = steppe_horde } }
+		OR = {
+			owner = { culture_group = altaic }
+			owner = { culture_group = oghuz }
+		}
+	}
+
+	can_upgrade_trigger = {
+		NOT = { OWNER = { has_reform = steppe_horde } }
+		OR = {
+			owner = { culture_group = altaic }
+			owner = { culture_group = oghuz }
+		}
+	}
+
+	keep_trigger = {
+		
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		province_modifiers = {
+			
+		}
+
+		area_modifier = {
+			
+		}
+
+		country_modifiers = {
+			idea_cost = 0
+			innovativeness_gain = 0
+			technology_cost = 0
+			
+		}
+
+		on_upgraded = {
+			
+			
+			
+			
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+			
+		}
+
+		area_modifier = {
+			
+		}
+
+		country_modifiers = {
+			idea_cost = -0.05
+			innovativeness_gain = 0.15
+			technology_cost = -0.01
+			
+		}
+
+		on_upgraded = {
+			
+			
+			
+			
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+
+		cost_to_upgrade = {
+			factor = 3500
+		}
+
+		province_modifiers = {
+			
+		}
+
+		area_modifier = {
+			
+		}
+
+		country_modifiers = {
+			idea_cost = -0.10
+			innovativeness_gain = 0.25
+			technology_cost = -0.025
+			
+		}
+
+		on_upgraded = {
+			
+			
+			
+			
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+
+		cost_to_upgrade = {
+			factor = 7000
+		}
+
+		province_modifiers = {
+			
+		}
+
+		area_modifier = {
+			
+		}
+
+		country_modifiers = {
+			idea_cost = -0.10
+			innovativeness_gain = 0.5
+			technology_cost = -0.05
+			
+		}
+
+		on_upgraded = {
+			
+			
+			
+			
+		}
+	}
+}
+
+#-----------------------------
+
+colossus = {
+	start = 320
+	
+	date = 280.01.01
+	
+	time = {
+		months = 120
+	}
+	
+	build_cost = 250
+	
+	can_be_moved = yes
+	
+	move_days_per_unit_distance = 2
+	
+	starting_tier = 0
+	
+	type = monument
+
+	build_trigger = {
+		has_institution = renaissance 
+	}
+	
+	can_use_modifiers_trigger = {
+		
+	}
+
+	can_upgrade_trigger = {
+		
+	}
+
+	keep_trigger = {
+	
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 500
+		}
+
+		province_modifiers = {
+			trade_value = 1
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			sailor_maintenance_modifer = -0.05
+			global_ship_trade_power = 0.1
+		}
+		
+		on_upgraded = {
+			center_of_trade = 1
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+			trade_value = 5
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			sailor_maintenance_modifer = -0.1
+			global_ship_trade_power = 0.15
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+
+		province_modifiers = {
+			trade_value = 5 
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			sailor_maintenance_modifer = -0.15
+			global_ship_trade_power = 0.2
+		}
+		
+		on_upgraded = {
+			#custom_tooltip = fu_colossus_trait_if_possible_tt
+			#hidden_effect = {
+			#	owner = {
+			#		country_event = { id = FU_Monument_Events.2 }
+			#	}
+			#}
+		}	
+	}
+}
+
+theodosian_walls = {
+	start = 151
+	
+	date = 375.01.01
+	
+	time = {
+		months = 120
+	}
+	
+	build_cost = 500
+	
+	can_be_moved = no
+	
+	move_days_per_unit_distance = 1
+	
+	starting_tier = 1
+	
+	type = monument
+
+	build_trigger = {
+		owner = { tag = BYZ }
+	}
+	
+	can_use_modifiers_trigger = {
+		owner = { tag = BYZ }
+	}
+
+	can_upgrade_trigger = {
+		owner = { tag = BYZ }
+	}
+
+	keep_trigger = {
+	
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 750
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.2
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+		
+		on_upgraded = {
+			#custom_tooltip = fu_if_fort_upgrade_tt
+			#hidden_effect = {
+				151 = {
+					if = {
+						limit = { has_building = fort_17th }
+						remove_building = fort_17th
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = { has_building = fort_16th }
+						remove_building = fort_16th
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = { has_building = fort_15th }
+						remove_building = fort_15th
+						add_building = fort_16th
+					}
+					else = { add_base_manpower = 1 } 
+				}
+			#}
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1500
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.25
+			local_defender_dice_roll_bonus = 1	
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			garrison_size = 0.15
+		}
+		
+		on_upgraded = {
+			#custom_tooltip = fu_if_fort_upgrade_tt
+			#hidden_effect = {
+				151 = {
+					if = {
+						limit = { has_building = fort_17th }
+						remove_building = fort_17th
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = { has_building = fort_16th }
+						remove_building = fort_16th
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = { has_building = fort_15th }
+						remove_building = fort_15th
+						add_building = fort_16th
+					}
+					else = { add_base_manpower = 2 } 
+				}
+			#}
+		}
+		
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 2000
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.5
+			local_defender_dice_roll_bonus = 2
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+			garrison_size = 0.2
+		}
+		
+		on_upgraded = {
+			#custom_tooltip = fu_if_fort_upgrade_tt
+			#hidden_effect = {
+				151 = {
+					if = {
+						limit = { has_building = fort_17th }
+						remove_building = fort_17th
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = { has_building = fort_16th }
+						remove_building = fort_16th
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = { has_building = fort_15th }
+						remove_building = fort_15th
+						add_building = fort_16th
+					}
+					else = { add_base_manpower = 3 } 
+				}
+			#}
+		}
+	}
+}
+
+schloss_berlepsch = {
+	start = 1762
+	
+	date = 1400.1.1
+	
+	build_cost = 500
+	
+	can_be_moved = no
+	
+	move_days_per_unit_distance = 1
+	
+	starting_tier = 0
+	
+	type = monument
+
+	build_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
+	}
+	
+	can_use_modifiers_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
+	}
+
+	can_upgrade_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
+	}
+
+	keep_trigger = {
+	
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+		cost_to_upgrade = {
+			factor = 0
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 750
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.2
+			local_manpower_modifier = 0.25
+		}
+
+		area_modifier = {
+		}
+
+		country_modifiers = {
+		}
+		
+		on_upgraded = {
+			
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1500
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.3
+			local_manpower_modifier = 0.5
+		}
+
+		area_modifier = {
+			local_manpower_modifier = 0.25
+		}
+
+		country_modifiers = {
+		}
+		
+		on_upgraded = {
+			
+		}
+		
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 3000
+		}
+
+		province_modifiers = {
+			local_defensiveness = 0.5
+			local_manpower_modifier = 0.5
+		}
+
+		area_modifier = {
+			local_manpower_modifier = 0.3
+		}
+
+		country_modifiers = {
+			infantry_power = 0.1
+		}
+		
+		on_upgraded = {
+			#custom_tooltip = fu_if_fort_upgrade_tt
+			#hidden_effect = {
+				1762 = {
+					if = {
+						limit = { has_building = fort_17th }
+						remove_building = fort_17th
+						add_building = fort_18th
+					}
+					else_if = {
+						limit = { has_building = fort_16th }
+						remove_building = fort_16th
+						add_building = fort_17th
+					}
+					else_if = {
+						limit = { has_building = fort_15th }
+						remove_building = fort_15th
+						add_building = fort_16th
+					}
+					else = { add_base_manpower = 3 } 
+				}
+			#}
+		}
+	}
+}

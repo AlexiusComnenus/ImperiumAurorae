@@ -1,0 +1,79 @@
+ck2_converter_generated = yes
+graphical_culture = easterngfx
+color = { 43 136 207 }
+revolutionary_colors = { 5 0 5 }
+historical_idea_groups = {
+	defensive_ideas
+	offensive_ideas
+	trade_ideas
+	spy_ideas
+	economic_ideas
+	quantity_ideas
+	diplomatic_ideas
+	quality_ideas
+}
+historical_units = {
+	bardiche_infantry
+	druzhina_cavalry
+	eastern_carabinier
+	eastern_militia
+	eastern_skirmisher
+	eastern_uhlan
+	muscovite_caracolle
+	muscovite_cossack
+	muscovite_musketeer
+	muscovite_soldaty
+	russian_cuirassier
+	russian_green_coat
+	russian_lancer
+	russian_mass
+	russian_petrine
+	slavic_stradioti
+}
+monarch_names = {
+	"Eina #0" = 0
+	"Feodor #0" = 0
+	"Kubasar #0" = 0
+	"Maria #0" = -1
+	"Mikhail #0" = 0
+	"Olga #0" = -1
+	"Roman #0" = 0
+	"Stepan #0" = 0
+	"Yuriy #0" = 0
+}
+leader_names = {
+	"Belyovsky"
+	"Boryatinsky"
+	"Dolgorukov"
+	"Gorchakov"
+	"Khotetovsky"
+	"Lykov"
+	"Mezetsky"
+	"Mosalsky"
+	"Nozdrevaty"
+	"Obolensky"
+	"Odoyevsky"
+	"Shcherbatov"
+	"Vorotynsky"
+	"Zvenigorodsky"
+}
+ship_names = {
+	"Kadorn"
+	"Kasimov"
+	"Lolotcha"
+	"Mikhailov"
+	"Moksha"
+	"Murom"
+	"Novornichurinsk"
+	"Oka"
+	"Pereslavl"
+	"Pronsk"
+	"Pronya"
+	"Ryazansky"
+	"Sasovo"
+	"Shatsk"
+	"Skopin"
+	"Staraya Ryazan"
+	"Tsna"
+	"Y. Sviatoslavich"
+}

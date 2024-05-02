@@ -1,0 +1,258 @@
+country_decisions = {
+	templars_return_land_to_valencia = {
+		major = yes
+		potential = {
+			ai = yes
+			tag = TEM
+			any_owned_province = {
+				region = iberia_region
+				NOT = { area = baleares_area }
+			}
+		}
+		
+		allow = {
+			is_at_war = no
+			any_ally = { tag = VAL }
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					region = iberia_region
+					NOT = { area = baleares_area }
+				}
+				cede_province = VAL
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+					add_core = VAL
+				}
+			}
+		}
+	}
+	establish_latin_empire_decision = {
+		major = yes
+		potential = {
+			religion = protestant
+			is_in_war = {
+				casus_belli = cb_final_crusade
+				attackers = ROOT
+			}
+			151 = {
+				owner = {
+					is_in_war = {
+						casus_belli = cb_final_crusade
+						defenders = THIS
+					}
+				}
+			}
+			NOT = { exists = LAE }
+		}
+		
+		allow = {
+			151 = { controlled_by = ROOT }
+		}
+		
+		effect = {
+			balkan_region = {
+				add_core = LAE
+			}
+			151 = { 
+				cede_province = LAE 
+				set_in_empire = no
+			}
+			LAE = {
+				change_religion = protestant
+				define_ruler = {
+					dynasty = ROOT
+				}
+				join_all_offensive_wars_of = ROOT
+				join_all_defensive_wars_of = ROOT
+			}
+			create_march = LAE
+			
+			hidden_effect = {
+				LAE = {
+					country_event = {
+						id = ia_flavor_tem.26
+						days = 5
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	
+	establish_italy_decision = {
+		major = yes
+		potential = {
+			religion = protestant
+			is_in_war = {
+				casus_belli = cb_final_crusade
+				attackers = ROOT
+			}
+			118 = {
+				owner = {
+					is_in_war = {
+						casus_belli = cb_final_crusade
+						defenders = THIS
+					}
+				}
+			}
+			NOT = { exists = ITA }
+		}
+		
+		allow = {
+			118 = { controlled_by = ROOT }
+		}
+		
+		effect = {
+			italy_region = {
+				add_core = ITA
+			}
+			118 = { 
+				cede_province = ITA  
+				set_in_empire = no
+			}
+			ITA = {
+				change_religion = protestant
+				change_primary_culture = outremer
+				define_ruler = {
+					dynasty = ROOT
+				}
+				join_all_offensive_wars_of = ROOT
+				join_all_defensive_wars_of = ROOT
+			}
+			create_march = ITA
+			
+			hidden_effect = {
+				ITA = {
+					country_event = {
+						id = ia_flavor_tem.26
+						days = 5
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	establish_vandalia_decision = {
+		major = yes
+		potential = {
+			religion = protestant
+			is_in_war = {
+				casus_belli = cb_final_crusade
+				attackers = ROOT
+			}
+			341 = {
+				owner = {
+					is_in_war = {
+						casus_belli = cb_final_crusade
+						defenders = THIS
+					}
+				}
+			}
+			NOT = { exists = TUN }
+		}
+		
+		allow = {
+			341 = { controlled_by = ROOT }
+		}
+		
+		effect = {
+			341 = { 
+				cede_province = TUN  
+				set_in_empire = no
+			}
+			TUN = {
+				change_government = monarchy
+				change_religion = protestant
+				define_ruler = {
+					dynasty = ROOT
+				}
+				join_all_offensive_wars_of = ROOT
+				join_all_defensive_wars_of = ROOT
+			}
+			create_march = TUN
+			
+			hidden_effect = {
+				TUN = {
+					country_event = {
+						id = ia_flavor_tem.26
+						days = 5
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	establish_milan_decision = {
+		major = yes
+		potential = {
+			religion = protestant
+			is_in_war = {
+				casus_belli = cb_final_crusade
+				attackers = ROOT
+			}
+			104 = {
+				owner = {
+					is_in_war = {
+						casus_belli = cb_final_crusade
+						defenders = THIS
+					}
+				}
+			}
+			NOT = { exists = MLO }
+		}
+		
+		allow = {
+			104 = { controlled_by = ROOT }
+		}
+		
+		effect = {
+			104 = { 
+				cede_province = MLO  
+				set_in_empire = no
+			}
+			MLO = {
+				change_government = monarchy
+				change_religion = protestant
+				define_ruler = {
+					dynasty = ROOT
+				}
+				join_all_offensive_wars_of = ROOT
+				join_all_defensive_wars_of = ROOT
+			}
+			po_valley_area = {
+				add_core = MLO
+			}
+			lombardy_area = {
+				add_core = MLO
+			}
+			
+			create_march = MLO
+			
+			hidden_effect = {
+				MLO = {
+					country_event = {
+						id = ia_flavor_tem.26
+						days = 5
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+}

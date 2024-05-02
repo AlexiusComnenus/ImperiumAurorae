@@ -1,0 +1,113 @@
+country_decisions = {
+
+	french_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_france_flag }
+			NOT = { tag = HLR }
+			NOT = { tag = FRA }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
+			NOT = { tag = AVE }		# Anglois is also valid
+			NOT = { primary_culture = outremer }
+			NOT = { tag = TEM }
+			OR = {
+				culture_group = french
+				primary_culture = basque
+				#primary_culture = breton
+				primary_culture = falanke
+			}
+			is_colonial_nation = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					region = france_region
+					root = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 15
+								region = france_region
+								is_core = root
+							}
+						}
+						owns_core_province = 183
+						owns_core_province = 184
+						owns_core_province = 186
+					}
+				}
+				province_id = 183	# �le-de-France
+				province_id = 184	# Orl�annais
+				province_id = 186	# Champagne
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			is_nomad = no			
+			NOT = { exists = FRA }
+			owns_core_province = 184	# Orl�annais
+			owns_core_province = 186	# Champagne
+			owns_core_province = 183	# �le-de-France
+			183 = { 					# �le-de-France / Paris
+				is_state = yes
+			}
+			num_of_owned_provinces_with = {
+				value = 15
+				region = france_region
+				is_core = root
+			}
+			ai = yes
+		}
+		effect = {
+			183 = { #Paris
+				move_capital_effect = yes
+			}
+			change_tag = FRA
+			on_change_tag_effect = yes
+			restore_country_name = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			france_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = FRA
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { dynasty = "Meroveching" }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					dynasty = "Meroveching"
+				}
+				override_country_name = regnum_francorum_name
+				change_country_color = { country = NRM }
+			}
+			set_country_flag = formed_france_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+}

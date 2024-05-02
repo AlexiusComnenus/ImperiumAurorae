@@ -1,0 +1,626 @@
+########################################
+# Thuringia Events     		           #
+########################################
+
+namespace = ia_flavor_thu
+
+# Replace the heir
+country_event = {
+	id = ia_flavor_thu.1
+	title = ia_flavor_thu.1.t
+	desc = ia_flavor_thu.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = eternal_regency
+		heir_age = 10
+	}
+	
+	option = {
+		name = ia_flavor_thu.1.a
+		define_heir = {
+			dynasty = ROOT
+			age = 2
+			adm = 0
+			dip = 0
+			mil = 0
+			claim = 0
+			name = "Placeholder"
+			dynasty = ""
+			no_consort_with_heir = yes
+		}
+		add_heir_personality = immortal_personality
+	}
+}
+
+
+country_event = {
+	id = ia_flavor_thu.2
+	title = ia_flavor_thu.2.t
+	desc = ia_flavor_thu.2.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = eternal_regency
+	}
+	
+	option = {
+		name = ia_flavor_thu.2.a
+		change_mil = -6
+		change_adm = -6
+		change_dip = -6
+		
+		clr_country_flag = eternal_regency
+		kill_heir = { allow_new_heir = no }
+		add_stability = -3
+		
+		add_ruler_modifier = { 
+			name = thu_leaderless
+			duration = -1
+		}
+		every_neighbor_country = {
+			define_advisor = {
+				type = recruitmaster
+				skill = 3
+				culture = ROOT
+				religion = ROOT
+				discount = yes
+				cost_multiplier = 0.25
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_thu.3
+	title = ia_flavor_thu.3.t
+	desc = ia_flavor_thu.3.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		trigger = {
+			has_spy_network_in = {
+				who = SAX
+				value = 45
+			}
+		}
+		name = ia_flavor_thu.3.a
+		
+		set_country_flag = thu_rebellious_flag
+		swap_non_generic_missions = yes	
+	}
+	
+	option = {
+		name = ia_flavor_thu.3.b
+		trigger = {
+			reverse_has_opinion = {
+				who = SAX
+				value = 15
+			}
+		}
+		
+		set_country_flag = thu_conciliatory_flag
+		swap_non_generic_missions = yes	
+	}
+}
+
+country_event = {	#Startup flavor event to explain the situation.
+	id = ia_flavor_thu.4
+	title = ia_flavor_thu.4.t
+	desc = ia_flavor_thu.4.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	immediate = {
+		hidden_effect = { kill_ruler = yes }
+	}
+	
+	option = {
+		name = ia_flavor_thu.4.a
+		
+		add_country_modifier = {
+			name = thu_horrible_council
+			duration = -1
+		}
+		
+		define_general = {
+			shock = 5
+			fire = 3
+			manuever = 5
+			siege = 2
+			name = "Hrodgaud von Erfurt"
+		}
+	}
+}
+
+country_event = {	# Return of Alberich
+	id = ia_flavor_thu.5
+	title = ia_flavor_thu.5.t
+	desc = ia_flavor_thu.5.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		name = ia_flavor_thu.5.a
+		
+		HES = {
+			exile_heir_as = thu_new_heir
+			exile_consort_as = thu_new_consort	
+			exile_ruler_as = { name = thu_new_ruler }
+			add_stability = 2
+		}
+		
+		set_ruler = thu_new_ruler
+		set_consort = thu_new_consort
+		set_heir = thu_new_heir
+		
+		white_peace = HES
+		create_subject = {
+			subject_type = vassal
+			subject = HES
+		}
+		
+		HES = { add_liberty_desire = -150 }
+	}
+}
+
+country_event = {	# Reunion with Meissen
+	id = ia_flavor_thu.6
+	title = ia_flavor_thu.6.t
+	desc = ia_flavor_thu.6.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		name = ia_flavor_thu.6.a
+		
+		# Nothing special happens here this is just flavor
+		
+		white_peace = MEI
+		create_march = MEI
+		
+		MEI = { add_liberty_desire = -100 }
+	}
+}
+
+country_event = {	#The Thuringian Uprising
+	id = ia_flavor_thu.7
+	title = ia_flavor_thu.7.t
+	desc = ia_flavor_thu.7.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	trigger = {
+		tag = SAX
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_core = MEI
+				}
+				cede_province = MEI
+				remove_province_modifier = thuringians_oppressed
+			}
+			every_owned_province = {
+				limit = {
+					is_core = THU
+				}
+				cede_province = THU
+				remove_province_modifier = thuringians_oppressed
+			}
+		}
+		add_stability = -2
+		add_prestige = -30
+		add_trust = {
+			who = THU
+			value = -30
+			mutual = yes
+		}
+		add_trust = {
+			who = MEI
+			value = -30
+			mutual = yes
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.7.a
+		ai_chance = {
+			factor = 30
+		}
+	}
+	
+	option = {	# Demand Compensation and Examples
+		name = ia_flavor_thu.7.b
+		ai_chance = {
+			factor = 30
+		}
+		
+		THU = {
+			add_treasury = -200
+			add_manpower = -5
+			add_stability = -1
+			add_country_modifier = {
+				name = thu_public_executions
+				duration = 3650
+			}
+		}
+		
+		add_treasury = 200
+		add_manpower = 5
+	}
+	
+	option = {	# Kill them all
+		name = ia_flavor_thu.7.c
+		ai_chance = {
+			factor = 40
+		}
+		
+		south_saxony_area = {
+			limit = { NOT = { province_id = 61 } }
+			add_devastation = 100
+			add_base_tax = -30
+			add_base_production = -30
+			add_base_manpower = -30
+		}
+		
+		add_treasury = 100
+		
+		THU = { country_event = { id = ia_flavor_thu.9 } }
+	}
+}
+
+country_event = {	# Burying the Hatchet
+	id = ia_flavor_thu.8
+	title = ia_flavor_thu.8.t
+	desc = ia_flavor_thu.8.d
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = {
+		hidden_effect = {
+			SAX = {
+				every_owned_province = {
+					limit = {
+						is_core = MEI
+					}
+					cede_province = MEI
+					remove_province_modifier = thuringians_oppressed
+					remove_core = SAX
+				}
+				every_owned_province = {
+					limit = {
+						is_core = THU
+					}
+					cede_province = THU
+					remove_province_modifier = thuringians_oppressed
+					remove_core = SAX
+				}
+			}
+		}
+		add_country_modifier = {
+			name = thu_return_of_homeland
+			duration = 36500
+		}
+	}
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {	# Become March
+		name = ia_flavor_thu.8.a
+		
+		SAX = {
+			create_subject = {
+				subject_type = german_march
+				subject = THU
+			}
+		}
+		
+		add_government_reform = thu_saxon_march_reform
+		thuringia_area = {
+			add_province_modifier = {
+				name = thu_saxon_exports
+				duration = 36500
+			}
+		}
+		
+		add_liberty_desire = -100
+	}
+	
+	option = {	# Become recruitment center
+		name = ia_flavor_thu.8.b
+		
+		add_government_reform = thu_saxon_recruitment_reform
+		
+		add_liberty_desire = -100
+	}
+	
+	option = {	# Stay in current situation
+		name = ia_flavor_thu.8.c
+		
+		add_liberty_desire = -100
+	}
+}
+
+country_event = {	#Refugees from the North
+	id = ia_flavor_thu.9
+	title = ia_flavor_thu.9.t
+	desc = ia_flavor_thu.9.d
+	picture = IMPALED_SOLDIERS_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		name = ia_flavor_thu.9.a
+		
+		capital_scope = {
+			add_base_tax = 3
+			add_base_production = 2
+			add_base_manpower = 5
+		}
+		
+		add_country_modifier = {
+			name = thu_witnessed_the_horror
+			duration = -1
+		}
+		
+		add_historical_rival = SAX
+		SAX = { add_historical_rival = ROOT }
+	}
+}
+
+country_event = {	# Sell more grain or use it ourselves
+	id = ia_flavor_thu.10
+	title = ia_flavor_thu.10.t
+	desc = ia_flavor_thu.10.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		name = ia_flavor_thu.10.a
+		
+		custom_tooltip = thu_sell_3_grain_tt
+		set_country_flag = increase_exports_to_2_flag
+		set_country_flag = increase_exports_to_3_flag
+	}
+	
+	option = {
+		name = ia_flavor_thu.10.b
+		
+		custom_tooltip = thu_sell_2_grain_tt
+		set_country_flag = increase_exports_to_2_flag
+		
+		add_country_modifier = {
+			name = thu_double_rations
+			duration = -1
+		}
+	}
+}
+
+country_event = {	# Search and Rescue Events Initializer
+	id = ia_flavor_thu.11
+	title = ia_flavor_thu.11.t
+	desc = ia_flavor_thu.11.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = thu_search_and_rescue_flag
+		NOT = {
+			had_country_flag = {
+				flag = thu_search_and_rescue_flag
+				days = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.11.a
+		
+		random_list = {
+			33 = {
+				country_event = { id = ia_flavor_thu.12 }
+			}
+			33 = {
+				country_event = { id = ia_flavor_thu.13 }
+			}
+			33 = {
+				country_event = { id = ia_flavor_thu.14 }
+			}
+		}
+	}
+}
+
+country_event = {	# Search and Rescue Events: Stable Foundations
+	id = ia_flavor_thu.12
+	title = ia_flavor_thu.12.t
+	desc = ia_flavor_thu.12.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = thu_search_and_rescue_flag
+		NOT = {
+			had_country_flag = {
+				flag = thu_search_and_rescue_flag
+				days = 3650
+			}
+		}
+		any_owned_province = {
+			NOT = { has_tax_building_trigger = yes }
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.12.a
+		
+		add_treasury = -50
+		random_owned_province = {
+			limit = { NOT = { has_tax_building_trigger = yes } }
+			add_building = temple
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.12.b
+		
+		add_prestige = -5
+	}
+}
+
+country_event = {	# Search and Rescue Events: Resilient Survivors
+	id = ia_flavor_thu.13
+	title = ia_flavor_thu.13.t
+	desc = ia_flavor_thu.13.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = thu_search_and_rescue_flag
+		NOT = {
+			had_country_flag = {
+				flag = thu_search_and_rescue_flag
+				days = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.13.a
+		
+		random_owned_province = {
+			random_list = {
+				33 = {
+					add_base_tax = 1
+				}
+				33 = {
+					add_base_production = 1
+				}
+				33 = {
+					add_base_tax = 1
+					add_base_production = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.13.b
+		
+		add_manpower = 1
+	}
+}
+
+country_event = {	# Search and Rescue Events: Scene of Desolation
+	id = ia_flavor_thu.14
+	title = ia_flavor_thu.14.t
+	desc = ia_flavor_thu.14.d
+	picture = IMPALED_SOLDIERS_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+		has_country_flag = thu_search_and_rescue_flag
+		NOT = {
+			had_country_flag = {
+				flag = thu_search_and_rescue_flag
+				days = 3650
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_thu.14.a
+		
+		random_owned_province = {
+			random_list = {
+				33 = {
+					add_base_tax = -1
+				}
+				33 = {
+					add_base_production = -1
+				}
+				33 = {
+					add_base_manpower = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = {	# Search and Rescue Events: Scene of Desolation
+	id = ia_flavor_thu.15
+	title = ia_flavor_thu.15.t
+	desc = ia_flavor_thu.15.d
+	picture = EP_ISLAND_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = THU
+	}
+	
+	option = {
+		name = ia_flavor_thu.15.a
+		
+		add_country_modifier = {
+			name = thu_spirit_of_konrad
+			duration = -1
+		}
+	}
+}

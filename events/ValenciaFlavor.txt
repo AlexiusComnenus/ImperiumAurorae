@@ -1,0 +1,695 @@
+##############################
+# Visigoth Flavor Events 
+#                            
+# Written by Alexios
+##############################
+namespace = ia_flavor_val
+
+country_event = {  # Imperium Gothorum
+	id = ia_flavor_val.1
+	title = ia_flavor_val.1.t
+	desc = ia_flavor_val.1.d
+	picture = BAD_WITH_MONARCH_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# And forevermore
+		name = ia_flavor_val.1.a
+		ai_chance = { factor = 33 }
+		
+		override_country_name = name_imperium_gothorum
+		add_government_reform = imperium_gothorum_reform
+		
+		hidden_effect = {
+			set_variable = { which = totalVassalDev value = 0 }
+			every_subject_country = {
+				limit = {
+					culture_group = iberian
+					capital_scope = { region = iberia_region }
+				}
+				ROOT = {
+					export_to_variable = { which = tempVassalDev value = total_development who = PREV }
+					change_variable = { which = totalVassalDev which = tempVassalDev }
+				}
+			}
+			while = { limit = { check_variable = { which = totalVassalDev value = 1 } }
+				add_dip_power = -2
+				change_variable = { which = totalVassalDev value = -1 }
+			}
+		}
+		custom_tooltip = integrating_vassals_cost_2_dip_tt
+		every_subject_country = {
+			limit = {
+				capital_scope = { region = iberia_region }
+				culture_group = iberian
+			}
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		
+		country_event = { id = ia_flavor_val.3 days = 5}
+		
+		TEM = { country_event = { id = ia_flavor_tem.7 days = 5} }
+	}
+}
+
+
+country_event = {  # Avenge King Roderic
+	id = ia_flavor_val.2
+	title = ia_flavor_val.2.t
+	desc = ia_flavor_val.2.d
+	picture = BATTLE_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Purge them all
+		name = ia_flavor_val.2.a
+		ai_chance = { factor = 33 }
+		
+		every_owned_province = {
+			limit = {
+				culture = andalucian
+			}
+			change_culture = ROOT
+			change_religion = ROOT
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 50
+			add_nationalism = -20
+		}
+		
+		add_ruler_personality = conqueror_personality
+		add_ruler_personality = cruel_personality
+		
+		add_ruler_modifier = {
+			name = genocidal_ruler
+			duration = -1
+		}
+		add_treasury = 1000
+	}
+	
+	option = {	# Demand their conversion
+		name = ia_flavor_val.2.b
+		ai_chance = { factor = 33 }
+		
+		every_owned_province = {
+			limit = {
+				religion_group = muslim
+				culture = andalucian
+			}
+			change_religion = ROOT
+			add_base_tax = -1
+			add_base_production = -1
+			add_base_manpower = -1
+			add_devastation = 20
+			add_nationalism = 10
+		}
+		add_ruler_personality = zealot_personality
+		add_treasury = 300
+	}
+	
+	option = {	# Integrate their elites
+		name = ia_flavor_val.2.c
+		ai_chance = { factor = 33 }
+		
+		every_owned_province = {
+			limit = {
+				religion_group = muslim
+			}
+			add_nationalism = -20
+		}
+		add_country_modifier = {
+			name = integrated_andalusians
+			duration = 7300
+		}
+		add_ruler_personality = tolerant_personality
+		add_accepted_culture = andalucian
+		add_treasury = 100
+	}
+}
+
+country_event = {  # Picking a capital
+	id = ia_flavor_val.3
+	title = ia_flavor_val.3.t
+	desc = ia_flavor_val.3.d
+	picture = CITY_VIEW_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Stay in Valencia
+		name = ia_flavor_val.3.a
+		ai_chance = { factor = 50 }
+		trigger = {
+			owns = 220
+			220 = {
+				is_capital_of = ROOT
+			}
+		}
+		
+		220 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_production = 2
+		}
+		add_stability = 1
+	}
+	
+	option = {	# Toledo
+		name = ia_flavor_val.3.b
+		ai_chance = { factor = 10 }
+		trigger = {
+			owns = 219
+		}
+		
+		219 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_production = 2
+			change_culture = ROOT
+		}
+		set_capital = 219
+	}
+	
+	option = {	# Barcelona
+		name = ia_flavor_val.3.c
+		ai_chance = { factor = 10 }
+		trigger = {
+			owns = 213
+		}
+		
+		213 = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_production = 2
+			change_culture = ROOT
+		}
+		
+		set_capital = 213
+	}
+	
+	option = {	# Toulouse
+		name = ia_flavor_val.3.e
+		ai_chance = { factor = 30 }
+		trigger = {
+			owns = 196
+		}
+		
+		196 = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_production = 3
+			change_culture = ROOT
+			add_prestige = 20
+		}
+		
+		set_capital = 196
+	}
+}
+
+
+country_event = {  # Chasten the Franks
+	id = ia_flavor_val.4
+	title = ia_flavor_val.4.t
+	desc = ia_flavor_val.4.d
+	picture = REVOLUTION_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Burn Paris
+		name = ia_flavor_val.4.a
+		ai_chance = { factor = 75 }
+		
+		183 = {
+			add_base_manpower = -5
+			add_base_production = -5
+			add_base_tax = -5
+			add_devastation = 100
+			
+		}
+		add_treasury = 1500
+	}
+	
+	option = {	# Spare Paris
+		name = ia_flavor_val.4.b
+		ai_chance = { factor = 25 }
+		
+		add_prestige = -10
+	}
+}
+
+country_event = {  # Annex Lombardy
+	id = ia_flavor_val.5
+	title = ia_flavor_val.5.t
+	desc = ia_flavor_val.5.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Annex
+		name = ia_flavor_val.5.a
+		ai_chance = { factor = 75 }
+		
+		hidden_effect = {
+			set_variable = { which = totalVassalDev value = 0 }
+			every_subject_country = {
+				limit = {
+					tag = MLO
+				}
+				ROOT = {
+					export_to_variable = { which = tempVassalDev value = total_development who = PREV }
+					change_variable = { which = totalVassalDev which = tempVassalDev }
+				}
+			}
+			while = { limit = { check_variable = { which = totalVassalDev value = 1 } }
+				add_dip_power = -2
+				change_variable = { which = totalVassalDev value = -1 }
+			}
+		}
+		custom_tooltip = integrating_vassals_cost_2_dip_tt
+		inherit = MLO
+	}
+	
+	option = {	# Don't
+		name = ia_flavor_val.5.b
+		ai_chance = { factor = 25 }
+		
+	}
+}
+
+country_event = {  # Annex Vandalia
+	id = ia_flavor_val.6
+	title = ia_flavor_val.6.t
+	desc = ia_flavor_val.6.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Annex
+		name = ia_flavor_val.6.a
+		ai_chance = { factor = 75 }
+		
+		hidden_effect = {
+			set_variable = { which = totalVassalDev value = 0 }
+			every_subject_country = {
+				limit = {
+					tag = TUN
+				}
+				ROOT = {
+					export_to_variable = { which = tempVassalDev value = total_development who = PREV }
+					change_variable = { which = totalVassalDev which = tempVassalDev }
+				}
+			}
+			while = { limit = { check_variable = { which = totalVassalDev value = 1 } }
+				add_dip_power = -2
+				change_variable = { which = totalVassalDev value = -1 }
+			}
+		}
+		custom_tooltip = integrating_vassals_cost_2_dip_tt
+		inherit = TUN
+	}
+	
+	option = {	# Don't
+		name = ia_flavor_val.6.b
+		ai_chance = { factor = 25 }
+		
+	}
+}
+
+country_event = {  # Create visigoth communities + startup stuff
+	id = ia_flavor_val.7
+	title = ia_flavor_val.7.t
+	desc = ia_flavor_val.7.d
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+    is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = VAL
+	}
+	
+	option = {
+		name = ia_flavor_val.7.a
+		ai_chance = { factor = 75 }
+		
+		aragon_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		catalonia_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		lower_andalucia_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		upper_andalucia_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		castille_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		extremadura_area = {
+			add_permanent_province_modifier = { 
+				name = insular_visigoth_community
+				duration = -1
+			}
+		}
+		caribbean_sea_area = { discover_country = MYM }
+		gulf_of_mexico_area = { discover_country = MYM }
+		panama_area = { discover_country = MYM }
+		cuba_area = { discover_country = MYM }
+		east_cuba_area = { discover_country = MYM }
+		costa_rica_area = { discover_country = MYM }
+		hispaniola_area = { discover_country = MYM }
+		dominica_area = { discover_country = MYM }
+		greater_antilles_area = { discover_country = MYM }
+		venezuela_area = { discover_country = MYM }
+		denmark_strait_area = { discover_country = JOM }
+		hudson_bay_sea_area = { discover_country = JOM }
+		sea_of_labrador_area = { discover_country = JOM }
+		lower_acadia_area = { discover_country = JOM }
+		upper_acadia_area = { discover_country = JOM }
+		labrador_area = { discover_country = JOM }
+		newfoundland_area = { discover_country = JOM }
+		cote_nord_area = { discover_country = JOM }
+		persian_gulf_area = { discover_country = KRM }
+		red_sea_area = { discover_country = KRM }
+		arabian_sea_area = { discover_country = KRM }
+		
+		every_core_province = {
+			add_permanent_province_modifier = {
+				name = templar_tercios
+				duration = -1
+				hidden = yes
+			}
+		}
+		
+		every_province = {
+			limit = { is_core = NED }
+			remove_core = NED
+		}
+		
+		SAX = { save_global_event_target_as = saxon_king }
+		north_german_region = {
+			add_permanent_province_modifier = {
+				name = Kleinstaaterei
+				duration = 36500
+			}
+		}
+		south_german_region = {
+			add_permanent_province_modifier = {
+				name = Kleinstaaterei
+				duration = 36500
+			}
+		}
+		Z17 = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+			set_ai_attitude = {
+				attitude = attitude_rivalry
+				who = TEM
+				locked = yes
+			}
+			set_ai_attitude = {
+				attitude = attitude_rivalry
+				who = VAL
+				locked = yes
+			}
+		}
+		TRE = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+		}
+		HES = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+		}
+		FLA = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+		}
+		Z44 = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+		} 
+		set_ai_personality = {
+			personality = ai_militarist
+			locked = yes
+		}
+		set_ai_attitude = {
+			attitude = attitude_friendly
+			who = TEM
+			locked = yes
+		}
+		set_ai_attitude = {
+			attitude = attitude_rivalry
+			who = Z17
+			locked = yes
+		}
+		set_ai_attitude = {
+			attitude = attitude_rivalry
+			who = FRA
+			locked = yes
+		}
+		TEM = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = VAL
+				locked = yes
+			}
+			set_ai_attitude = {
+				attitude = attitude_rivalry
+				who = ARA
+				locked = yes
+			}
+			set_ai_attitude = {
+				attitude = attitude_rivalry
+				who = Z17
+				locked = yes
+			}
+			add_opinion = {
+				who = ARA
+				modifier = renounced_as_heretics
+				multiplier = 5
+			}
+		}
+		HSC = { 
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+		}
+		if = {
+			limit = {
+				ai = yes
+				TEM = { ai = yes }
+			}
+			create_alliance = TEM
+		}
+		if = {
+			limit = {
+				FEO = { ai = yes }
+				TRE = { ai = yes }
+			}
+			TRE = { create_alliance = FEO }
+		}
+		POL = {
+			complete_mission = pol_varna_aftermath
+		}
+		set_allow_female_emperor = yes
+	}
+}
+
+province_event = {  # Remove visigoth communities
+	id = ia_flavor_val.8
+	title = ia_flavor_val.8.t
+	desc = ia_flavor_val.8.d
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	hidden = yes
+	
+	trigger = {
+		is_year = 1480
+		has_province_modifier = insular_visigoth_community
+		owner = {
+			NOT = { primary_culture = visigothic }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = ia_flavor_val.8.a
+		ai_chance = { factor = 75 }
+		
+		remove_province_modifier = insular_visigoth_community
+	}
+}
+
+country_event = {  # Crusader Queen Jacoba
+	id = ia_flavor_val.9
+	title = ia_flavor_val.9.t
+	desc = ia_flavor_val.9.d
+	picture = wihgfx_FEMALES_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_val.9.a
+		ai_chance = { factor = 75 }
+		
+		add_ruler_modifier = {
+			name = crusader_queen_jacoba
+			duration = -1
+		}
+	}
+}
+
+country_event = {  # Visigoth uprisings
+	id = ia_flavor_val.10
+	title = ia_flavor_val.10.t
+	desc = ia_flavor_val.10.d
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	hidden = yes
+	
+	trigger = {
+		tag = VAL
+		any_core_province = { NOT = { owned_by = ROOT } }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = ia_flavor_val.10.a
+		ai_chance = { factor = 75 }
+		
+		every_core_province = {
+			limit = { 
+				NOT = { owned_by = ROOT } 
+				culture = visigothic
+			}
+			
+			spawn_rebels = {
+				type = separatist_rebels
+				size = 3
+				separatists_target = ROOT
+			}
+		}
+	}
+}
+
+country_event = {  # Military Doctrine of the Future
+	id = ia_flavor_val.11
+	title = ia_flavor_val.11.t
+	desc = ia_flavor_val.11.d
+	picture = CAROLEANS_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_val.11.a
+		ai_chance = { factor = 75 }
+		
+		add_country_modifier = {
+			name = val_levee_en_masse
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = ia_flavor_val.11.b
+		ai_chance = { factor = 75 }
+		
+		add_country_modifier = {
+			name = val_professional_army
+			duration = -1
+		}
+	}
+}
+
+country_event = {  # get rid of bad alliances
+	id = ia_flavor_val.12
+	title = ia_flavor_val.12.t
+	desc = ia_flavor_val.12.d
+	picture = CAROLEANS_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		any_ally = {
+			ROOT = {
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = PREV
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_val.12.a
+		ai_chance = { factor = 75 }
+		
+		every_ally = {
+			limit = {
+				ROOT = {
+					has_casus_belli = {
+						type = cb_restore_personal_union
+						target = PREV
+					}
+				}
+			}
+			break_alliance = ROOT
+		}
+	}
+}
+
+country_event = {  # bankruptcy protection
+	id = ia_flavor_val.13
+	title = ia_flavor_val.13.t
+	desc = ia_flavor_val.13.d
+	picture = CAROLEANS_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		num_of_loans = 2
+		OR = {
+			tag = VAL
+			tag = TEM
+		}
+		ai = yes
+	}
+	
+	option = {
+		name = ia_flavor_val.12.a
+		ai_chance = { factor = 75 }
+		
+		add_treasury = 1000
+	}
+}

@@ -1,0 +1,119 @@
+diadochos_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "gendarmes_reform"
+	maintain_dynasty = yes
+	potential = {
+		OR = {
+			has_reform = diadochos_reform
+			have_had_reform = diadochos_reform
+		}
+	}
+	trigger = {
+		primary_culture = seleucian
+	}
+	modifiers = {
+		monarch_military_power = 1
+		prestige_from_land = 1
+		army_tradition_from_battle = 0.50
+		legitimacy = -1.5
+		no_stability_loss_on_monarch_death = yes
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		force_general_leader = yes
+		winning_battles_increases_legitimacy = yes
+	}
+	effect = {
+		hidden_effect = {
+			convert_ruler_to_general = 80
+		}
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+feudal_theocracy = {
+	icon = "feudal_theocracy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			religion_group = zoroastrian_group
+			religion_group = muslim
+		}
+		OR = {
+			has_reform = feudal_theocracy
+			have_had_reform = feudal_theocracy
+		}
+	}
+	nation_designer_trigger = {
+		religion_group = muslim
+	}
+	legacy_equivalent = feudal_theocracy_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 60
+	modifiers = {
+		missionaries = 1
+		global_missionary_strength = 0.01
+		tolerance_own = 2
+		governing_capacity = 50
+		brahmins_hindu_loyalty_modifier = 0.05
+		church_loyalty_modifier = 0.05
+	}
+	maintain_dynasty = yes
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		government_abilities = {
+			feudal_theocracy_mechanic
+		}
+	}
+	custom_attributes = {
+		enables_divine_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+}
+
+zoroastrian_focus_reform = {
+	icon = "articles_of_agreement"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		religion_group = zoroastrian_group
+	}
+	modifiers = {
+		no_religion_penalty = yes
+		church_influence_modifier = 0.1
+		church_loyalty_modifier = 0.1
+	}
+	conditional = {
+		allow = { has_dlc = "King of Kings" }
+		government_abilities = {
+			the_three_royal_fires_mechanic
+		}
+	}
+	#post_removed_effect = {
+	#	hidden_effect = {
+	#		if = {
+	#			limit = { NOT = { has_government_mechanic = the_three_royal_fires_mechanic } }
+	#			clr_country_flag = can_place_center_of_reformation
+	#			every_owned_province = {
+	#				limit = {
+	#					is_reformation_center = yes
+	#					religion = root
+	#				}
+	#				remove_reform_center = zoroastrian
+	#			}
+	#		}
+	#	}
+	#}
+	
+	ai = {
+		factor = 1
+	}
+}

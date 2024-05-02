@@ -1,0 +1,429 @@
+superiority_reichskrieg = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 0.5
+		peace_cost_factor = 0.4	
+		
+		allowed_provinces = {
+			is_core = ROOT
+		}
+		
+		peace_options = {
+			po_release_annexed
+			po_return_cores
+			po_release_vassals
+			po_change_religion
+			po_guaranteed_join_empire
+			po_dismantle_revolution
+			po_che_dismantle
+		}
+		
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+		
+		prov_desc = ALL_CORES
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 1.25
+		peace_cost_factor = 0.5	
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_release_vassals
+			po_release_annexed
+			po_return_cores
+		}
+		
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+		
+	}	
+	
+	war_name = REICHSKRIEG_WAR_NAME	
+}
+
+morroco_civil_war_wargoal = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_revolutionaries_annex
+			po_loyalists_annex
+			po_pretenders_annex
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_revolutionaries_annex
+			po_loyalists_annex
+			po_pretenders_annex
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes		
+	}
+	
+	war_name = MORROCO_CIVIL_WAR_NAME
+}
+
+superiority_commune = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 0.5		
+		
+		required_treaty_to_take_provinces = {
+			po_spread_commune
+		}
+
+		peace_options = {
+			po_spread_commune
+			po_release_vassals
+			po_release_annexed
+			po_revoke_cores
+			po_gold
+			po_annul_treaties
+			po_return_cores
+		}
+	}
+	
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 0.5		
+	
+		#required_treaty_to_take_provinces = {
+		#	po_dismantle_revolution
+		#}
+
+		peace_options = {
+			po_return_cores
+			po_release_vassals
+			po_release_annexed
+			po_become_vassal
+			po_demand_provinces
+			po_revoke_cores
+			po_gold
+			po_annul_treaties
+			po_dismantle_revolution
+		}
+	}
+	
+	war_name = SPREAD_REVOLUTION_NAME
+}
+
+saxon_vassalize = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 1
+		prestige_factor = 1
+		peace_cost_factor = 0.2
+
+		required_treaty_to_take_provinces = {
+			po_saxon_subjugate
+		}
+		
+		peace_options = {
+			po_saxon_subjugate
+			po_release_annexed
+			po_change_religion
+			po_release_vassals
+			po_return_cores
+		}
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+
+		peace_options = {
+			po_release_vassals
+			po_release_annexed
+		}
+	}
+
+	war_name = VASSAL_MISSION_WAR_NAME
+}
+
+saxon_tributary = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 2
+		peace_cost_factor = 0.2
+
+		required_treaty_to_take_provinces = {
+			po_subjugate_tributary_state
+		}
+		
+		peace_options = {
+			po_subjugate_tributary_state
+			po_change_religion
+			po_release_annexed
+			po_return_cores
+			po_release_vassals
+		}
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+
+		peace_options = {
+			po_demand_provinces
+			po_release_vassals
+			po_release_annexed
+			po_return_cores
+		}
+	}
+
+	war_name = TRIBUTARY_MISSION_WAR_NAME
+}
+
+saxon_dismantle = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 2
+		peace_cost_factor = 0.2
+
+		required_treaty_to_take_provinces = {
+			po_saxon_dismantle
+		}
+		
+		peace_options = {
+			po_saxon_dismantle
+			po_change_religion
+			po_release_vassals
+			po_release_annexed
+			po_return_cores
+		}
+		
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	defender = {
+		badboy_factor = 1
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+
+		peace_options = {
+			po_release_vassals
+			po_release_annexed
+			po_return_cores
+		}
+		
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+
+	war_name = SAXON_DISMANTLE_WAR_NAME
+}
+
+templar_last_crusade = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_dismantle_che
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_end_threats
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes		
+	}
+	
+	war_name = LAST_CRUSADE_WAR_NAME
+}
+
+antioch_harmonic_convergence = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_shatter_harmony
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 0.5
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_victory_of_harmony
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes		
+	}
+	
+	war_name = HARMONIC_CONVERGENCE_WAR_NAME
+}
+
+antioch_celestial_crusade = {
+	type = superiority
+	
+	attacker = {
+		badboy_factor = 0.75
+		prestige_factor = 1.5
+		peace_cost_factor = 0.75
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_change_religion
+			po_release_annexed
+			po_return_cores
+			po_release_vassals
+			po_demand_provinces
+		}
+		
+		country_desc = ALL_INFIDELS
+	}
+	
+	defender = {
+		badboy_factor = 0.75
+		prestige_factor = 2
+		peace_cost_factor = 0.75
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_release_vassals
+			po_return_cores
+			po_release_annexed
+		}
+		
+		country_desc = ALL_INFIDELS
+	}	
+	
+	war_name = WORLD_CRUSADE_WAR_NAME
+}
+
+take_province_nationalist_french = {
+	type = take_province
+	
+	attacker = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 0.5
+		
+		allowed_provinces = {
+			culture_group = ROOT
+		}
+		
+		peace_options = {
+			po_subjugate_vassal
+			po_demand_provinces
+			po_become_vassal
+		}
+		
+		country_desc = ALL_CGROUP_COUNTRIES
+		prov_desc = ALL_CGROUP_PROVS
+	}
+	
+	defender = {
+		badboy_factor = 0.5
+		prestige_factor = 1.5
+		peace_cost_factor = 0.5
+		
+		allowed_provinces = {
+			culture_group = FROM
+		}
+		
+		peace_options = {
+			po_subjugate_vassal
+			po_demand_provinces
+			po_become_vassal
+		}
+		
+		country_desc = ALL_CGROUP_COUNTRIES
+		prov_desc = ALL_CGROUP_PROVS
+	}
+	
+	war_name = NATION_WAR_NAME	
+}

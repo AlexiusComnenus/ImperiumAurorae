@@ -1,0 +1,25 @@
+government = theocracy
+add_government_reform = monastic_order_reform
+government_rank = 1
+technology_group = eastern
+religion = bogomilist
+primary_culture = karelian
+capital = 36
+fixed_capital = 36
+1444.11.11= {
+	monarch = {
+		name = "Arp"
+		adm = 1
+		dip = 3
+		mil = 2
+		birth_date = 1412.1.24
+		religion = bogomilist
+		culture = karelian
+	}
+	add_ruler_personality = greedy_personality
+	add_ruler_personality = inspiring_leader_personality
+}
+1444.11.11= {
+	add_prestige = 1
+	add_treasury = 52
+}

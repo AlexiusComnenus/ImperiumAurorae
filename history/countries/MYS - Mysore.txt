@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = nayankara_reform
+government_rank = 1
+technology_group = indian
+religion = zoroastrian 
+primary_culture = persian
+capital = 4468
+#fixed_capital = 533
+1400.1.1= {
+	monarch = {
+		name = "Mithra"
+		dynasty = "Sassanid"
+		ADM = 2
+		DIP = 1
+		MIL = 3
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = intricate_web_weaver_personality
+}

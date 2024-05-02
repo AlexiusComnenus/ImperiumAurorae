@@ -1,0 +1,168 @@
+ck2_converter_generated = yes
+graphical_culture = westerngfx
+color = { 150 0 0 }
+revolutionary_colors = { 5 8 5 }
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	religious_ideas
+	diplomatic_ideas
+	economic_ideas
+	innovativeness_ideas
+	maritime_ideas
+	spy_ideas
+}
+historical_units = {
+	anglofrench_line
+	chevauchee
+	dutch_maurician
+	french_bluecoat
+	french_caracolle
+	french_cuirassier
+	french_dragoon
+	french_impulse
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	swiss_landsknechten
+	western_medieval_infantry
+	western_men_at_arms
+}
+monarch_names = {
+	"Clovis #4" = 10
+	"Childeric #3" = 5
+	"Theuderic #4" = 10
+	"Dagobert #3" = 8
+	"Chilperic #2" = 5
+	"Genovefa #0" = -1
+	"Clothilde #0" = -1
+	"Monegund #0" = -1
+	"Radegund #0" = -1
+	"Brunhilda #1" = -5
+	"Fredegund #0" = -1
+	"Sadalberga #0" = -1
+	"Rictrude #0" = -1
+	"Begga #0" = -1
+	"Gertrude #0" = -1
+	"Childebert #1" = 5
+	"Chlodomer #1" = 5
+}
+ship_names = {
+	"Le Havre"
+	"l'Actif"
+	"l'Adroit"
+	"l'Aigrette"
+	"l'Alcyon"
+	"l'Alouette"
+	"l'Amarante"
+	"l'Angélique"
+	"l'Ardent"
+	"l'Arrogant"
+	"l'Aréthuse"
+	"l'Atalante"
+	"l'Aurore"
+	"l'Embuscade"
+	"l'Enjouée"
+	"l'Entendue"
+	"l'Harmonie"
+	"l'Heureux"
+	"l'Hébé"
+	"l'Inconstante"
+	"l'Infidèle"
+	"l'Orage"
+	"l'Oriflamme"
+	"l'Écluse"
+	"l'Écueil"
+	"l'Émeraude"
+	"l'Éole"
+	"l'Étoile"
+	"la Balance"
+	"la Blanche"
+	"la Blonde"
+	"la Bricolle"
+	"la Brune"
+	"la Brûlante"
+	"la Carpe"
+	"la Charente"
+	"la Chasse"
+	"la Corneille"
+	"la Coulisse"
+	"la Cruelle"
+	"la Curieuse"
+	"la Danuble"
+	"la Dauphine"
+	"la Digue"
+	"la Diligente"
+	"la Dryade"
+	"la Favorite"
+	"la Fidèle"
+	"la Fine"
+	"la Flatteuse"
+	"la Flore"
+	"la Fée"
+	"la Félicité"
+	"la Galatée"
+	"la Garonne"
+	"la Gazelle"
+	"la Gentille"
+	"la Gironde"
+	"la Gloire"
+	"la Gracieuse"
+	"la Grive"
+	"la Grâce"
+	"la Jolie"
+	"la Joyeuse"
+	"la Junon"
+	"la Levrette"
+	"la Marie-Françoise"
+	"la Martiale"
+	"la Menaçante"
+	"la Nayade"
+	"la Normande"
+	"la Palombe"
+	"la Pintade"
+	"la Pélerine"
+	"la Rocheloise"
+	"la Somme"
+	"la Subtile"
+	"la Trompeuse"
+	"la Turquoise"
+	"le Brave"
+	"le Chariot-Royal"
+	"le Danaé"
+	"le François"
+	"le Gaillard"
+	"le Grand-Ponton"
+	"le Jason"
+	"le Juste"
+	"le Lion"
+	"le Léger"
+	"le Marin"
+	"le Palmier"
+	"le Petit Saint-François"
+	"le Petit-Ponton"
+	"le Prompte"
+	"le Précieux"
+	"le Rubis"
+	"le Résolu"
+	"le Saint-Louis"
+	"le Saint-Michel"
+	"le Sans-Pareil"
+}
+army_names = {
+	"Armée d'Alençon"
+	"Armée d'Argentan"
+	"Armée de $PROVINCE$"
+	"Armée de Caen"
+	"Armée de Falaise"
+	"Armée de Neubourg"
+	"Armée de l'Avranchin"
+	"Armée du Bessin"
+	"Armée du Cotentin"
+	"Armée du Mortainais"
+	"Armée du Pays d'Auge"
+	"Armée du Pays de Caux"
+	"Armée du Perche"
+	"Armée du Virois"
+}

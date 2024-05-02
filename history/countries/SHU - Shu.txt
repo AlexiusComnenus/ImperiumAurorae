@@ -1,0 +1,38 @@
+government = monarchy
+add_government_reform = chinese_warlord
+government_rank = 1
+technology_group = chinese
+religion = confucianism
+primary_culture = sichuanese
+capital = 679
+1444.1.1= {
+	monarch = {
+		name = "Bei"
+		dynasty = "Liu"
+		adm = 3
+		dip = 6
+		mil = 4
+		birth_date = 1411.4.27
+	}
+	define_general = {
+		shock = 6
+		fire = 8
+		manuever = 8
+		siege = 8
+		name = "Zhuge Liang"
+	}
+	define_general = {
+		shock = 7
+		fire = 7
+		manuever = 4
+		siege = 1
+		name = "Guan Yu"
+	}
+	define_general = {
+		shock = 10
+		fire = 2
+		manuever = 0
+		siege = 0
+		name = "Zhang Fei"
+	}
+}

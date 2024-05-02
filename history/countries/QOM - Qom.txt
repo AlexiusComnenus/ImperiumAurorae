@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+government_rank = 1
+technology_group = muslim
+religion = shiite
+primary_culture = persian
+capital = 2213
+religious_school = ismaili_school

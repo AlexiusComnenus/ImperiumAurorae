@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = saxon_fief_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = hessian
+capital = 1876
+fixed_capital = 1876
+mercantilism = 25
+1434.6.11= {
+	monarch = {
+		name = "Theodelinda"
+		dynasty = "Ludowinger"
+		birth_date = 1416.1.1
+		adm = 4
+		dip = 6
+		mil = 2
+		female = yes
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = charismatic_negotiator_personality
+	add_ruler_personality = silver_tongue_personality
+}

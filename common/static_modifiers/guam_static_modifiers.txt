@@ -1,0 +1,430 @@
+non_accepted_culture = {
+	monthly_persian_influence = -0.01
+	local_tax_modifier = -0.33
+	local_missionary_strength = -0.02
+	local_manpower_modifier = -0.50
+	local_sailors_modifier = -0.50
+	local_development_cost = 0.2
+	local_governing_cost = 0.25
+	local_unrest = 8					
+}
+
+core = {
+	local_tax_modifier = 0.75				#90% more in a core??? 0.75 = 0.9??
+	local_manpower_modifier = 0.75			#75% more in a core
+	local_sailors_modifier = 0.75
+	local_development_cost = -0.1
+}
+
+colonial_core = {
+	local_tax_modifier = 0.5				#90% more in a core
+	local_manpower_modifier = 0.5			#75% more in a core
+	local_sailors_modifier = 0.5
+	local_missionary_strength = -0.01
+	min_local_autonomy = 50
+	local_governing_cost = -0.25
+}
+
+territory_core = {
+	local_tax_modifier = 0.75				#90% more in a core
+	local_manpower_modifier = 0.75			#75% more in a core
+	local_sailors_modifier = 0.75
+	local_missionary_strength = -0.02
+	min_local_autonomy = 90
+	local_governing_cost = -0.8
+}
+
+territory_non_core = {
+	local_missionary_strength = -0.02
+	min_local_autonomy = 90
+	local_governing_cost = -0.8
+	local_unrest = 4
+}
+
+in_trade_company = {
+    province_trade_power_modifier = 1
+    province_trade_power_value = 5
+    naval_forcelimit = 0.5
+    local_missionary_strength = -0.2
+    local_institution_spread = 0.10
+    local_governing_cost = 0.25
+    local_tax_modifier = -1.0
+    local_manpower_modifier = -0.45
+    local_sailors_modifier = -0.45
+}
+
+local_autonomy_trade_company_multiplicative = {
+    local_production_efficiency = -0.5
+    local_manpower_modifier = -0.5
+    local_sailors_modifier = -0.5
+    land_forcelimit_modifier = -1.5
+}
+
+num_accepted_cultures = {	
+	monthly_righteousness = 0.03
+}
+
+low_army_professionalism = {
+	mercenary_cost = -0.15
+	mercenary_manpower = 0.15
+	drill_gain_modifier = -1
+}
+
+ruler_adm = {
+	monthly_council_consensus = 0.1
+	monthly_egyptian_westernization = 0.05
+	
+	yearly_corruption = -0.015
+}
+
+ruler_dip = {
+	monthly_council_consensus = 0.1
+	monthly_egyptian_westernization = 0.05
+	
+	improve_relation_modifier = 0.075
+}
+
+ruler_mil = {
+	monthly_council_consensus = 0.1
+	monthly_egyptian_westernization = 0.05
+	
+	land_maintenance_modifier = -0.02
+}
+
+consort_adm = {
+	global_tax_modifier = 0.015
+}
+
+consort_dip = {
+	production_efficiency = 0.01
+}
+
+consort_mil = {
+	global_manpower_modifier = 0.01
+}
+
+heir_adm = {
+	adm_advisor_cost = -0.02
+}
+
+heir_dip = {
+	dip_advisor_cost = -0.02
+}
+
+heir_mil = {
+	mil_advisor_cost = -0.02
+}
+
+root_out_corruption = {
+}
+
+non_accepted_culture_republic = {
+	local_tax_modifier = 0.20
+	local_missionary_strength = 0.01
+	local_manpower_modifier = 0.25
+	local_sailors_modifier = 0.25
+	local_development_cost = -0.1
+	local_governing_cost = -0.10
+	local_unrest = -4	
+}
+
+same_culture_group = {
+	local_tax_modifier = -0.15				#10% penalty if same culture group but nothing else. Not applied if the controller is the Union Tag of the culture group, or has culture_group_union set.
+	local_manpower_modifier = -0.15
+	local_sailors_modifier = -0.1
+	local_unrest = 2
+}
+
+# Multiplied with negative religious tolerance
+intolerance = {
+	local_unrest = -1.25
+	local_tax_modifier = 0.1
+	trade_goods_size_modifier = 0.10
+	local_manpower_modifier = 0.10
+}
+
+over_governing_capacity_modifier = {
+	stability_cost_modifier = 1.0
+	ae_impact = 1.0
+	improve_relation_modifier = -1.0
+	#core_creation = 1.0
+	advisor_cost = 1.0
+	monthly_militarized_society = -1.0
+	monthly_righteousness = -1.0
+	all_power_cost = 1.0
+	global_unrest = 20
+}
+
+country_development = {
+	yearly_corruption = 0.6
+	horde_unity = -30
+	advisor_cost = 2
+	ae_impact = 1
+	war_exhaustion_cost = 12
+	war_exhaustion = -0.3
+}
+
+expanded_infrastructure = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    #local_development_cost = -0.15
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_autonomy = -0.005
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+    local_governing_cost_increase = 15
+    local_governing_cost = 0.1
+    local_great_project_upgrade_cost = -0.05
+}
+
+absolutism = {
+	administrative_efficiency = 0.40
+	governing_capacity_modifier = 0.20
+	global_tax_modifier = 0.40
+	#discipline = 0.05
+	core_decay_on_your_own = -0.5
+	advisor_cost = -0.20
+	possible_policy = 1
+	free_policy = 1
+	global_unrest = 10
+	culture_conversion_cost = -0.25
+	monthly_ottoman_decadence = -0.5
+	yearly_corruption = 0.25
+	liberty_desire_from_subject_development = 0.20
+	ae_impact = 0.5
+	war_taxes_cost_modifier = -1
+}
+
+difficulty_normal_ai = {
+	development_cost_modifier = -0.10
+	#development_cost = -0.10
+	fort_maintenance_modifier = -0.50
+	core_creation = -0.50
+	global_autonomy = -0.05
+}
+
+difficulty_hard_ai = {
+	manpower_recovery_speed = 0.50
+	global_unrest = -1
+	war_exhaustion = -0.05
+	interest = -1
+	ae_impact = -0.33
+	missionary_maintenance_cost = -0.15
+	development_cost_modifier = -0.25
+	development_cost = -0.15
+	fort_maintenance_modifier = -0.75
+	core_creation = -0.75
+	global_autonomy = -0.10
+}
+
+difficulty_very_hard_ai = {
+	manpower_recovery_speed = 0.50
+	global_manpower_modifier = 0.5
+	land_forcelimit_modifier = 0.5
+	naval_forcelimit_modifier = 0.5
+	global_regiment_cost = -0.33
+	global_ship_cost = -0.33
+	inflation_reduction = 0.05
+	global_unrest = -2
+	war_exhaustion = -0.05
+	core_creation = -0.25
+	idea_cost = -0.25
+	interest = -1
+	improve_relation_modifier = 0.5
+	build_cost = -0.25
+	ae_impact = -0.33
+	missionary_maintenance_cost = -0.3
+	development_cost_modifier = -0.30
+	development_cost = -0.30
+	fort_maintenance_modifier = -1
+	core_creation = -0.9
+	global_autonomy = -0.15
+}
+
+luck = {
+	#core
+	global_missionary_strength = 0.01
+	stability_cost_modifier = -0.10
+	global_institution_spread = 0.1
+	monthly_splendor = 1
+	culture_conversion_cost = -0.5
+	culture_conversion_cost = -0.5
+	development_cost = -0.10
+	development_cost_modifier = -0.10
+
+	#economy
+	mercenary_cost = -0.4
+	embracement_cost = -0.2
+	interest = -1
+	missionary_maintenance_cost = -0.1
+
+	#military
+	manpower_recovery_speed = 0.25
+	defensiveness = 0.1
+	siege_ability = 0.05
+	land_forcelimit = 5
+	land_forcelimit_modifier = 0.25
+	land_maintenance_modifier = -0.25
+	reinforce_cost_modifier = -0.50
+	global_regiment_cost = -0.25
+	fort_maintenance_modifier = -0.75
+
+	#diplomacy
+	spy_offence = 0.1
+	improve_relation_modifier = 0.25
+
+	#government
+	global_unrest = -1
+	republican_tradition = 0.5
+	legitimacy = 1
+	ae_impact = -0.25
+	governing_capacity_modifier = 0.25
+	monarch_admin_power = 1	
+	monarch_admin_power = 1
+	monarch_military_power = 1
+	monarch_lifespan = 0.5
+	country_admin_power = 1
+	country_military_power = 1
+	country_diplomatic_power = 1
+	possible_policy = 3
+	free_policy = 6
+}
+
+man_of_war_ship = {
+	#engagement_cost = -1
+	naval_maintenance_modifier = 0.25
+	naval_morale_damage = 0.15
+}
+
+voc_indiamen_ship = {
+	number_of_cannons_modifier = 1
+	hull_size_modifier = 1 
+	naval_attrition = -0.50
+	ship_trade_power_modifier = 0.2
+	can_transport_units = yes
+}
+
+innovativeness = {
+	all_power_cost	= -0.1
+	army_tradition_decay = -0.01
+	navy_tradition_decay = -0.01
+	trade_efficiency = 0.20
+	global_trade_goods_size_modifier = 0.1
+	global_unrest = 4
+	stability_cost_modifier = 0.4
+	nobility_loyalty_modifier = -0.2
+	nobility_influence_modifier = -0.2
+	church_loyalty_modifier = -0.2
+	church_influence_modifier = -0.2
+	burghers_loyalty_modifier = 0.1
+	burghers_influence_modifier = 0.2
+}
+
+provincial_tax_income = {
+	regiment_recruit_speed = -0.02
+	local_great_project_upgrade_time = -0.01
+	local_build_time = -0.01
+	local_institution_spread = 0.02
+	local_production_efficiency = 0.05
+	local_manpower_modifier = 0.05
+}
+
+corruption = {
+	global_spy_defence = -0.25
+	spy_offence = -0.50
+	all_power_cost = 1.0
+	min_autonomy = 100
+	global_unrest = +20
+	imperial_mandate = -1
+	brahmins_hindu_loyalty_modifier = 0.1
+	brahmins_muslim_loyalty_modifier = 0.1
+	brahmins_other_loyalty_modifier = 0.1
+	church_loyalty_modifier = 0.1
+	maratha_loyalty_modifier = 0.1
+	nobles_loyalty_modifier = 0.1
+	burghers_loyalty_modifier = 0.1
+	vaisyas_loyalty_modifier = 0.1
+	cossacks_loyalty_modifier = 0.1
+	nomadic_tribes_loyalty_modifier = 0.1
+	dhimmi_loyalty_modifier = 0.1
+	jains_loyalty_modifier = 0.1
+	rajput_loyalty_modifier = 0.1
+	eunuchs_loyalty_modifier = 0.1
+	janissaries_loyalty_modifier = 0.1
+	qizilbash_loyalty_modifier = 0.1
+	ghulams_loyalty_modifier = 0.1
+	monthly_heir_claim_increase = 0.025
+	monthly_russian_modernization = -1
+	monthly_ottoman_decadence = 10
+}
+
+defender_of_faith_refused_cta = {
+	diplomatic_reputation = -2
+	tolerance_own = -2
+	papal_influence_from_cardinals = -1
+	papal_influence = -10
+	monthly_fervor_increase = -10
+	monthly_church_power = -10
+	yearly_patriarch_authority = -1
+	yearly_harmony = -1
+	monthly_karma = -10
+	monthly_asha_vahishta = -2
+}
+
+free_cities_in_hre = {							#bonuses for each free city in the HRE.. as emperor
+	global_tax_income = 4
+	global_manpower = 2
+	land_forcelimit	= 0.5
+}
+
+free_city_in_hre = {
+	global_tax_income = 6
+	diplomatic_reputation = 1
+}
+
+num_of_marriages = {
+	legitimacy = 0.20
+	heir_chance = 0.10
+	improve_relation_modifier = 0.10
+}
+
+papal_influence = {
+	diplomatic_reputation = 0.01
+}
+
+positive_karma = {
+	development_cost = -0.001
+	global_unrest = -0.02
+}
+
+negative_karma = {
+	manpower_in_true_faith_provinces = -0.0025
+	global_tax_modifier = -0.005
+}
+
+karma_just_right = {
+	trade_efficiency = 0.10
+	land_morale = 0.10
+}
+
+karma_too_high = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.25
+	global_manpower_modifier = -0.25
+}
+
+karma_too_low = {
+	discipline = 0.025
+	manpower_recovery_speed = 0.15
+	tolerance_own = -2
+}

@@ -1,0 +1,35 @@
+﻿l_english:
+
+ #Mechanics Tooltips
+ arthurian_courage: "Courage"
+ arthurian_courage_desc: "Be true to what you believe in, and fight for what is right, regardless of the forces arrayed against you."
+ arthurian_justice: "Justice"
+ arthurian_justice_desc: "I do not love the bright sword for its sharpness, nor the arrow for its swiftness, nor the warrior for his glory. I love only that which they defend."
+ arthurian_mercy: "Mercy"
+ arthurian_mercy_desc: "Use your words carefully, for a careless word can maim as easily as a sword, and treat all fairly, for there was once a day when you were weak, and the weak now might become strong. Respect in all others the chance for change, even in those you hate. Be merciful to those who are earnestly trying, and have failed. Sometimes a hypocrite is just a person in the process of changing. Only those who will never stop hurting others deserve no mercy."
+ arthurian_generosity: "Charity"
+ arthurian_generosity_desc: "What wealth and possessions you hold greedily might deprive a starving mother of the coins she needs to feed her children. Be Generous, even to yourself. Everyone deserves a chance to have a bed, and a warm meal every night."
+ arthurian_honor: "Honour"
+ arthurian_honor_desc: "Keep true to your oath, and do your best to keep to your word, unless the needs of the many demands otherwise. Whether you value most faith in others, or faith in your god, the order cares not. What matters is being true to what you believe in."
+ arthurian_humility: "Humility"
+ arthurian_humility_desc: "A knight is foremost a servant of the people. This is so that the people may live a safe, prosperous, and happy life. Encourage joy in others, and remember to join them, especially the common folk. A Knight will face challenges and doubts on their journey, so reminders of what you're fighting for are necessary."
+ arthurian_selflessness: "Selflessness"
+ arthurian_selflessness_desc: "There is no greater service to this world than giving your life in the defence of the weak. You will be a beacon of hope to all, so that they will follow in your footsteps. Do not mourn your own inevitable death, for you will be judged fairly, and will rejoin those you have lost."
+ 
+ #Diplo Tooltips
+ 
+ 
+ #Government
+ 
+ #Modifiers
+ wielding_excalibur: "Wielding §J<<Caliburn>>§!"
+ wielding_excalibur_desc: "With a design of two chimeras on the golden hilt, when the sword was unsheathed what was seen from the mouths of the two chimeras was like two flames of fire, so dreadful that it was not easy for anyone to look. And 'twas the finest sword that there was, which sliced through iron as through wood..."
+ administrative_corruption_suppression: "Suppressing Corruption Administratively"
+ espionage_corruption_suppression: "Suppressing Corruption via Secret Police"
+ military_corruption_suppression: "Suppressing Corruption Militarily"
+ 
+ 
+ #Missions
+ 
+ # events
+ 

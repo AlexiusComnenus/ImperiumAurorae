@@ -1,0 +1,1569 @@
+ia_hsc_mission_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = HSC
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	hsc_prosperous_highlands = {
+		icon = mission_early_game_buildings
+		required_missions = {  }
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				area = highlands_area
+			}
+			NOT = { num_of_buildings_in_province = 1 }
+		}
+		
+		trigger = {
+			highlands_area = {
+				type = all
+				num_of_buildings_in_province = 1
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			highlands_area = {
+				add_base_tax = 1
+				add_base_manpower = 1
+			}
+		}
+	}
+	
+	hsc_agricultural_investments = {
+		icon = mission_peasantry
+		required_missions = { hsc_prosperous_highlands }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4110
+				province_id = 252
+				province_id = 250
+			}
+			NOT = { 
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			4110 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			252 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			250 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			4110 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+			252 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+			250 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_regulate_wool_grazing = {
+		icon = mission_develop_the_scandes
+		required_missions = { hsc_agricultural_investments }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 249
+				province_id = 4362
+			}
+			NOT = { 
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			249 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4362 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			249 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+			4362 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_answer_the_growing_needs = {
+		icon = mission_expand_into_the_forest
+		required_missions = { hsc_regulate_wool_grazing }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 246
+				province_id = 247
+				province_id = 244
+			}
+			NOT = { 
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			246 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			247 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			244 = {
+				development = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			246 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+			247 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+			244 = {
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = hsc_agricultural_investments
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_tools_industry = {
+		icon = mission_pol_develop_countryside
+		required_missions = { hsc_answer_the_growing_needs }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4363
+			}
+			NOT = { 
+				base_production = 15
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			4363 = {
+				base_production = 15
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			4363 = {
+				add_permanent_province_modifier = {
+					name = hsc_farming_tools_industry
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_welsh_iron = {
+		icon = claim_the_borderlands
+		required_missions = { hsc_tools_industry }
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4366
+				province_id = 241
+			}
+			NOT = { 
+				base_production = 15
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			4366 = {
+				base_production = 15
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			241 = {
+				base_production = 15
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			4366 = {
+				add_permanent_province_modifier = {
+					name = hsc_farming_tools_industry
+					duration = -1
+				}
+			}
+			241 = {
+				add_permanent_province_modifier = {
+					name = hsc_farming_tools_industry
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_beer = {
+		icon = mission_vodka_monopoly
+		required_missions = { hsc_welsh_iron hsc_expand_cloth }
+		position = 7
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			if = {
+				limit = { has_global_flag = tradegood_marcin }
+				development_in_provinces = {
+					value = 100
+					trade_goods = beer
+				}
+			}
+			else = {
+				development_in_provinces = {
+					value = 200
+					trade_goods = grain
+				}
+			}
+		}
+		
+		effect = {
+			add_years_of_income = 0.5
+				
+			change_price = {
+				trade_goods = beer
+				key = hsc_beer_production
+				value = 0.25
+				duration = -1
+			}
+		}
+	}
+}
+
+ia_hsc_mission_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = HSC
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	hsc_aberdeen_seafood = {
+		icon = mission_galleys_in_port
+		required_missions = { hsc_prosperous_highlands }
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 251
+			}
+			NOT = { 
+				development = 20
+				OR = { has_building = dock 	has_building = drydock }
+			}
+		}
+		
+		trigger = {
+			251 = {
+				development = 20
+				OR = { has_building = dock 	has_building = drydock }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			251 = {
+				remove_building = dock
+				add_building = drydock
+				add_base_production = 2
+				change_trade_goods = seafood
+				add_permanent_province_modifier = {
+					name = hsc_great_seafood_port
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_scottish_clothing = {
+		icon = academy_of_the_bran
+		required_missions = { hsc_aberdeen_seafood }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 248
+			}
+			NOT = { 
+				base_production = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			248 = {
+				base_production = 12
+				OR = { has_building = workshop 	has_building = counting_house }
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			248 = {
+				remove_building = workshop
+				add_building = counting_house
+			}
+			country_event = { id = gaeldom.4 }
+		}
+	}
+	
+	hsc_export_cloth = {
+		icon = danubian_power
+		required_missions = { hsc_scottish_clothing }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 248
+			}
+			NOT = { 
+				#fort_level = 2
+				OR = { has_building = dock 	has_building = drydock }
+				OR = { has_building = marketplace 	has_building = trade_depot }
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		
+		trigger = {
+			248 = {
+				#fort_level = 2
+				OR = { has_building = dock 	has_building = drydock }
+				OR = { has_building = marketplace 	has_building = trade_depot }
+				province_has_center_of_trade_of_level = 3
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+			}
+		}
+		
+		effect = {
+			248 = {
+				remove_building = marketplace
+				add_building = trade_depot
+				add_permanent_province_modifier = {
+					name = looms_of_lothian
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	hsc_protect_cloth = {
+		icon = fight_bosnian_heresies
+		required_missions = { hsc_export_cloth }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 248
+			}
+			NOT = { 
+				fort_level = 2
+				#has_great_project = {
+				#	type = edinburgh_castle
+				#	tier = 1
+				#}
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		
+		trigger = {
+			248 = {
+				fort_level = 2
+				province_has_center_of_trade_of_level = 3
+			}
+			248 = {
+				has_great_project = {
+					type = edinburgh_castle
+					tier = 1
+				}
+			}
+		}
+		
+		effect = {
+			248 = {
+				add_great_project_tier = {
+					type = edinburgh_castle
+					tier = 1
+				}
+				add_permanent_province_modifier = {
+					name = lothian_reinforced
+					duration = -1
+				}
+			}
+			
+		}
+	}
+	
+	hsc_expand_cloth = {
+		icon = found_batavia
+		required_missions = { hsc_protect_cloth }
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 245
+				province_id = 236
+			}
+			NOT = { 
+				development = 25
+				OR = { has_building = workshop	has_building = counting_house }
+			}
+		}
+		
+		trigger = {
+			245 = {
+				development = 25
+				OR = { has_building = workshop	has_building = counting_house }
+			}
+			236 = {
+				development = 25
+				OR = { has_building = workshop	has_building = counting_house }
+			}
+		}
+		
+		effect = {
+			add_years_of_income = 0.5
+			add_country_modifier = {
+				name = hsc_jewel_north_sea
+				duration = -1
+			}
+		}
+	}
+	
+	hsc_irish_industry = {
+		icon = mission_pol_polish_renaissance
+		required_missions = { hsc_restoring_the_preserves }
+		position = 9
+		
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = leinster_area
+			}
+			NOT = { OR = { has_building = workshop 		has_building = counting_house } }
+			NOT = { base_production = 8 }
+		}
+		
+		trigger = {
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				OR = { has_building = workshop 		has_building = counting_house }
+				base_production = 8
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				OR = { has_building = workshop 		has_building = counting_house }
+				base_production = 8
+			}
+		}
+		
+		effect = {
+			munster_area = {
+				add_province_modifier = {
+					name = mth_flourishing_local_industry
+					duration = -1
+				}
+			}
+			leinster_area = {
+				add_province_modifier = {
+					name = mth_flourishing_local_industry
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = mth_irish_industry
+				duration = -1
+			}
+			MTH = {
+				add_country_modifier = {
+					name = mth_irish_industry
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}
+
+ia_hsc_mission_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = HSC
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	hsc_free_our_brothers = {
+		icon = feast_of_pheasants
+		required_missions = { hsc_push_into_lowlands }
+		position = 3
+		
+		provinces_to_highlight = {
+			area = ulster_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = MTH }
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = { 
+					OR = {
+						area = munster_area
+						area = connacht_area
+						area = leinster_area
+						area = ulster_area
+					}
+				}
+				add_core = MTH
+				remove_core = ROOT
+			}
+			release = MTH
+			if = {
+				limit = { NOT = { exists = MTH }}
+				ulster_area = {
+					cede_province = MTH
+					remove_core = ROOT
+				}
+			}
+			every_subject_country = {
+				every_owned_province = {
+					limit = { 
+						OR = {
+							area = munster_area
+							area = connacht_area
+							area = leinster_area
+							area = ulster_area
+						}
+					}
+					add_core = MTH
+					cede_province = MTH
+					remove_core = ROOT
+				}
+			}
+			MTH = {
+				change_government = theocracy
+				change_religion = ROOT
+				override_country_name = eirann_name
+				add_government_reform = gaelic_council_elders
+			}
+			ulster_area = {
+				change_religion = ROOT
+			}
+			create_subject = {
+				subject_type = druidic_brotherhood
+				subject = MTH
+			}
+		}
+	}
+	
+	hsc_face_the_cumans = {
+		icon = confront_the_lombards
+		required_missions = { hsc_free_our_brothers }
+		position = 4
+		
+		provinces_to_highlight = {
+			area = ulster_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+			}
+			MTH = {
+				army_strength = {
+					who = IRE
+					value = 1
+				}
+			}
+		}
+		
+		effect = {
+			every_province = {
+				limit = { 
+					OR = {
+						area = munster_area
+						area = connacht_area
+						area = leinster_area
+						area = ulster_area
+					}
+				}
+				add_core = MTH
+			}
+			MTH = { 
+				declare_war_with_cb = {
+					who = IRE
+					casus_belli = cb_core
+					war_goal_province = 374
+				}
+			}
+			join_all_offensive_wars_of = MTH
+		}
+	}
+	
+	hsc_expel_cumans = {
+		icon = defenestrate_the_heretics
+		required_missions = { hsc_face_the_cumans }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = connacht_area
+				area = leinster_area
+				area = ulster_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = MTH }
+		}
+		
+		trigger = {
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+			}
+			if = {
+				limit = { ai = no }
+				374 = {
+					transports_in_province = 10
+					transports_in_province = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = gaeldom.1 }
+		}
+	}
+	
+	hsc_common_works = {
+		icon = develop_our_capital
+		required_missions = { hsc_dream_of_unity }
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = connacht_area
+				area = leinster_area
+				area = ulster_area
+			}
+			NOT = { num_of_buildings_in_province = 1 }
+			NOT = { development = 10 }
+		}
+		
+		trigger = {
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 1
+				development = 10
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 1
+				development = 10
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 1
+				development = 10
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 1
+				development = 10
+			}
+		}
+		
+		effect = {
+			connacht_area = {
+				add_province_modifier = {
+					name = mth_common_works
+					duration = -1
+				}
+			}
+			munster_area = {
+				add_province_modifier = {
+					name = mth_common_works
+					duration = -1
+				}
+			}
+			leinster_area = {
+				add_province_modifier = {
+					name = mth_common_works
+					duration = -1
+				}
+			}
+			ulster_area = {
+				add_province_modifier = {
+					name = mth_common_works
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = mth_mutual_prosperity
+				duration = 7300
+			}
+		}
+	}
+	
+	hsc_restoring_the_preserves = {
+		icon = mission_viborg
+		required_missions = { hsc_common_works }
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				area = munster_area
+				area = connacht_area
+				area = leinster_area
+				area = ulster_area
+			}
+			NOT = { num_of_buildings_in_province = 2 }
+			NOT = { has_building = temple }
+			NOT = { development = 15 }
+		}
+		
+		trigger = {
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 2
+				development = 15
+				has_building = temple
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 2
+				development = 15
+				has_building = temple
+			}
+			leinster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 2
+				development = 15
+				has_building = temple
+			}
+			munster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				num_of_buildings_in_province = 2
+				development = 15
+				has_building = temple
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = mth_mutual_prosperity
+				duration = 7300
+			}
+			MTH = {
+				add_country_modifier = {	
+					name = mth_irish_prosperity
+					duration = -1
+				}
+			}
+			add_country_modifier = {	
+				name = mth_irish_prosperity
+				duration = -1
+			}
+			373 = {
+				add_base_production = 2
+				add_base_tax = 2
+				add_base_manpower = 2
+				
+				remove_building = temple
+				add_building = cathedral
+			}
+			add_adm_power = 150
+		}
+	}
+	
+	hsc_kickstart_naval_industry = {
+		icon = imperial_navy
+		required_missions = { hsc_restoring_the_preserves }
+		position = 9
+		
+		provinces_to_highlight = {
+			OR = {
+				area = connacht_area
+				area = ulster_area
+			}
+			OR = { has_building = dock 	has_building = drydock }
+			OR = { has_building = shipyard 	has_building = grand_shipyard }
+		}
+		
+		trigger = {
+			connacht_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				OR = { has_building = dock 	has_building = drydock }
+				OR = { has_building = shipyard 	has_building = grand_shipyard }
+			}
+			ulster_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = MTH
+				OR = { has_building = dock 	has_building = drydock }
+				OR = { has_building = shipyard 	has_building = grand_shipyard }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = irish_ports
+				duration = -1
+			}
+			MTH = {
+				add_country_modifier = {
+					name = irish_ports
+					duration = -1
+				}
+			}
+			372 = {
+				add_base_production = 1
+				add_base_tax = 1
+				add_base_manpower = 1
+				
+				add_permanent_province_modifier = {
+					name = mth_ports_ire
+					duration = -1
+				}
+				change_trade_goods = lumber
+			}
+			376 = {
+				add_base_production = 1
+				add_base_tax = 1
+				add_base_manpower = 1
+				
+				add_permanent_province_modifier = {
+					name = mth_ports_ire
+					duration = -1
+				}
+				change_trade_goods = naval_supplies
+			}
+			add_dip_power = 100
+		}
+	}
+}
+
+ia_hsc_mission_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = HSC
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	hsc_prepare_the_army = {
+		icon = mission_crusade_for_varna
+		required_missions = {  }
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				army_size_percentage = 1
+				is_at_war = yes
+			}
+		}
+		
+		effect = {
+			lowlands_area = { add_permanent_claim = ROOT}
+			add_country_modifier = {
+				name = hsc_gathered_clans
+				duration = 3650
+			}
+		}
+	}
+	
+	hsc_push_into_lowlands = {
+		icon = gory_to_the_black_army
+		required_missions = { hsc_prepare_the_army }
+		position = 2
+		
+		provinces_to_highlight = {
+			area = lowlands_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			lowlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			ulster_area = { add_permanent_claim = ROOT}
+			yorkshire_area = { add_permanent_claim = ROOT}
+			scottish_marches_area = { add_permanent_claim = ROOT}
+			add_adm_power = 100
+		}
+	}
+	
+	hsc_liberate_the_isles = {
+		icon = invest_in_the_rich_trades
+		required_missions = { hsc_push_into_lowlands }
+		position = 3
+		
+		provinces_to_highlight = {
+			area = kingdom_of_the_isles_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = KOI }
+		}
+		
+		trigger = {
+			has_spy_network_in = {
+				who = NOR
+				value = 60
+			}
+			treasury = 200
+			OR = {
+				NOT = { exists = LOI }
+				LOI = { 
+					is_subject = yes
+					NOT = { is_subject_of = ROOT }
+				}
+			}
+		}
+		
+		effect = {
+			add_treasury = -200
+			if = {
+				limit = { NOT = { exists = LOI } }
+				NOR = {
+					release = LOI
+				}
+			}
+			else = {
+				LOI = { grant_independence = yes }
+			}
+			
+			LOI = {
+				declare_war_with_cb = {
+					who = NOR
+					casus_belli = cb_independence_war
+				}
+			}
+			join_all_offensive_wars_of = LOI
+			create_march = LOI
+		}
+	}
+	
+	hsc_unite_shattered_lands = {
+		icon = colonize_australia
+		required_missions = { hsc_take_northumbyre }
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = { 
+				area = east_midlands_area
+				area = west_midlands_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			east_anglia_area = {	
+				add_permanent_claim = ROOT
+			}
+			home_counties_area = {	
+				add_permanent_claim = ROOT
+			}
+			add_adm_power = 100
+		}
+	}
+	
+	hsc_saxons_no_more = {
+		icon = mission_impaled_soldies
+		required_missions = { hsc_unite_shattered_lands }
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = { 
+				area = home_counties_area
+				area = east_anglia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = Z21 }
+		}
+		
+		effect = {
+			add_mil_power = 100
+			country_event = { id = gaeldom.2 }
+		}
+	}
+	
+	hsc_dream_of_unity = {
+		icon = all_bases_covered
+		required_missions = { hsc_saxons_no_more hsc_end_cornish_piracy hsc_expel_cumans }
+		position = 6
+		
+		provinces_to_highlight = {
+			region = british_isles_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			unrest = 0
+		}
+		
+		trigger = {
+
+			british_isles_region = {
+				type = all
+				OR = {
+					NOT = { unrest = 0 }
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			country_event = { id = gaeldom.3 }
+		}
+	}
+	
+	hsc_approach_the_cats = {
+		icon = hispaniae
+		required_missions = { hsc_dream_of_unity }
+		position = 7
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = KOI
+				value = 80
+			}
+			KOI = {
+				OR = {
+					alliance_with = ROOT
+					guaranteed_by = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			create_alliance = KOI
+			add_historical_friend = KOI
+			KOI = { add_historical_friend = ROOT }
+		}
+	}
+	
+	hsc_brothers_of_a_different_species = {
+		icon = catholic_confraternity
+		required_missions = { hsc_approach_the_cats }
+		position = 7
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = KOI
+				value = 180
+			}
+			OR = {
+				alliance_with = KOI
+				KOI = {
+					is_subject_of = ROOT
+				}
+			}
+			KOI = {
+				trust = { who = ROOT value = 90 }
+			}
+			army_strength = {
+				who = KOI
+				value = 4
+			}
+		}
+		
+		effect = {
+			create_subject = {
+				subject_type = druidic_brotherhood
+				subject = KOI
+			}
+			KOI = {
+				every_owned_province = {
+					limit = { has_owner_religion = yes }
+					change_religion = ROOT
+				}
+				change_religion = ROOT
+				add_government_reform = gaelic_council_elders
+			}
+		}
+	}
+	
+	hsc_closing_ties = {
+		icon = mission_pol_breadbasket_europe
+		required_missions = { hsc_brothers_of_a_different_species }
+		position = 8
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			reverse_has_opinion = {
+				who = KOI
+				value = 200
+			}
+			KOI = {
+				is_subject_of = ROOT
+				trust = { who = ROOT value = 100 }
+			}
+			
+			4365 = {
+				development = 40
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = feline_partnership
+				duration = -1
+			}
+		}
+	}
+	
+	hsc_a_new_empire = {
+		icon = mission_rule_britannia
+		required_missions = { hsc_closing_ties hsc_irish_industry hsc_kickstart_naval_industry hsc_grand_archives }
+		position = 9
+		
+		#provinces_to_highlight = {
+		#	
+		#}
+		
+		trigger = {
+			
+		}
+		
+		effect = {
+			every_subject_country = {
+				limit = { is_subject_of_type = druidic_brotherhood }
+				
+				ROOT = { inherit = PREV }
+			}
+			change_tag = GBR
+			on_change_tag_effect = yes
+			restore_country_name = yes
+			swap_non_generic_missions = yes
+			override_country_name = dominion_of_nature_name
+			change_country_color = { country = HSC }
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			british_isles_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = GBR
+			}
+			add_prestige = 25
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_great_britain_flag
+			hidden_effect = {
+				complete_mission = eng_rb_war_of_roses
+				complete_mission = eng_war_of_the_roses
+				complete_mission = gbr_ave_hundred_years_war
+			}
+		}
+	}
+}
+
+ia_hsc_mission_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = HSC
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	hsc_take_northumbyre = {
+		icon = mission_have_two_subjects
+		required_missions = { hsc_push_into_lowlands }
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = { 
+				area = scottish_marches_area
+				area = yorkshire_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			scottish_marches_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			wales_area = {	
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {	
+				add_permanent_claim = ROOT
+			}
+			west_midlands_area = {	
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	hsc_take_wales = {
+		icon = mission_landsknecht_soldier
+		required_missions = { hsc_take_northumbyre }
+		position = 4
+		
+		provinces_to_highlight = {
+			
+			area = wales_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			wessex_area = {	
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 10
+			add_adm_power = 100
+			add_accepted_culture = welsh
+		}
+	}
+	
+	hsc_end_cornish_piracy = {
+		icon = mission_sailor_boat
+		required_missions = { hsc_take_wales }
+		position = 5
+		
+		provinces_to_highlight = {
+			
+			area = wessex_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = ended_cornish_piracy
+				duration = 7300
+			}
+		}
+	}
+	
+	hsc_expand_sacred_groves = {
+		icon = mission_norse_faith
+		required_missions = { hsc_dream_of_unity }
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = { 
+				area = east_midlands_area
+				area = west_midlands_area
+				area = yorkshire_area
+				area = home_counties_area
+				area = east_anglia_area
+				area = wales_area
+				area = wessex_area
+			}
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { AND = { has_building = courthouse 	has_building = temple } }
+			}
+		}
+		
+		trigger = {
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = courthouse
+				has_building = temple
+			}
+		}
+		
+		effect = {
+			change_government_reform_progress = 100
+			add_country_modifier = {
+				name = hsc_reestablish_sacred_groves
+				duration = 7300
+			}
+		}
+	}
+	
+	hsc_new_capital = {
+		icon = mission_plc_golden_liberty
+		required_missions = { hsc_expand_sacred_groves }
+		position = 8
+		
+		provinces_to_highlight = {
+			
+			province_id = 242
+		}
+		
+		trigger = {
+			242 = {
+				owned_by = ROOT
+				development = 20
+				num_of_buildings_in_province = 4
+				religion = ROOT
+			}
+		}
+		
+		effect = {
+			set_capital = 242
+			242 = {
+				add_base_manpower = 2
+				add_base_tax = 2
+				add_base_production = 2
+				center_of_trade = 1
+			}
+		}
+	}
+	
+	hsc_grand_archives = {
+		icon = mission_plc_governance_act
+		required_missions = { hsc_new_capital }
+		position = 9
+		
+		provinces_to_highlight = {
+			province_id = 242
+		}
+		
+		trigger = {
+			242 = {
+				owned_by = ROOT
+				development = 40
+				num_of_buildings_in_province = 8
+				religion = ROOT
+			}
+			innovativeness = 50
+		}
+		
+		effect = {
+			242 = {
+				add_province_modifier = {
+					name = hsc_grand_archives
+					duration = -1
+				}
+				change_trade_goods = paper
+			}
+		}
+	}
+}

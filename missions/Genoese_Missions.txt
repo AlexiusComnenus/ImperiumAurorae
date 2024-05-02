@@ -1,0 +1,356 @@
+genoa_missions_africa = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = GEN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	genoa_trade_node_power = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					NOT = { is_strongest_trade_power = ROOT }
+					province_id = 1298
+				}
+				AND = {
+					NOT = { province_trade_power = 60 }
+					province_id = 101
+				}
+			}
+		}
+		trigger = {
+			1298 = {
+				is_strongest_trade_power = ROOT
+			}
+			101 = {
+				province_trade_power = 60
+			}
+		}
+		effect = {
+			tunisia_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			115 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			102 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2980 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	conquer_tunis_gen = {
+		icon = mission_sea_battles
+		required_missions = { genoa_trade_node_power }
+		position = 3
+		provinces_to_highlight = {
+			province_id = 341
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			341 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+		}
+	}
+	
+	tradenode_tunis = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { conquer_tunis_gen }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 341
+		}
+		trigger = {
+			341 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		effect = {
+			northern_morocco_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			delta_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tradenode_tangiers = {
+		icon = mission_galleys_in_port
+		required_missions = { tradenode_tunis }
+		provinces_to_highlight = {
+			province_id = 334
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			334 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			upper_andalucia_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	tradenode_gibraltar = {
+		icon = mission_invade_island
+		required_missions = { tradenode_tangiers }
+		provinces_to_highlight = {
+			province_id = 226
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			226 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			lower_andalucia_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+
+genoa_europe_slot = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = GEN
+	}
+	has_country_shield = yes
+
+	gen_leave_the_empire = {
+		icon = mission_empire
+		required_missions = { }
+		trigger = {
+			OR = {
+				has_global_flag = italians_leave_hre
+				has_global_flag = emperor_trying_to_avert_shadow_kingdom
+			}
+			OR = {
+				NOT = { is_part_of_hre = yes }
+				AND = {
+					is_part_of_hre = yes
+					emperor = {
+						has_opinion = {
+							who = root
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			113 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			if = {
+				limit = { is_part_of_hre = yes }
+				country_event = { id = antioch.9 }
+				add_country_modifier = {
+					name = imperial_charter
+					duration = -1
+				}
+			}
+			else = {
+				set_government_rank = 2
+				add_country_modifier = {
+					name = genoa_stands_alone
+					duration = -1
+				}
+			}
+		}
+	}
+	tradenode_ferrara = {
+		icon = mission_italian_condottiere
+		required_missions = { gen_leave_the_empire }
+		provinces_to_highlight = {
+			province_id = 113
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			113 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mercantilism = 2
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	challenge_elector = {
+		icon = mission_eastern_european_city
+		required_missions = { tradenode_ferrara }
+		trigger = {
+			any_known_country = {
+				is_elector = yes
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = has_been_insulted_by_root
+						OR = {
+							has_opinion_modifier = {
+								who = PREV
+								modifier = insulted
+							}
+							has_opinion_modifier = {
+								who = PREV
+								modifier = scornfully_insulted
+							}
+						}
+					}
+					is_rival = PREV
+					is_enemy = PREV
+				}
+			}
+			is_part_of_hre = yes
+		}
+		effect = {
+			add_mercantilism = 2
+			random_country = {
+				limit = {
+					is_elector = yes
+					OR = {
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = PREV
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = PREV
+									modifier = scornfully_insulted
+								}
+							}
+						}
+						is_rival = PREVIOUS
+						is_enemy = PREVIOUS
+					}
+				}
+				reverse_add_casus_belli = {
+					target = GEN
+					type = cb_vassalize_mission
+				}
+			}
+		}
+	}
+	become_elector = {
+		icon = mission_non-western_soldiers
+		required_missions = { challenge_elector }
+		
+		trigger = {
+			any_known_country = {
+				is_elector = yes
+				vassal_of = PREV
+			}
+			is_part_of_hre = yes
+		}
+		effect = {
+			add_mercantilism = 2
+			random_country = {
+				limit = {
+					is_elector = yes
+					vassal_of = PREV
+				}
+				elector = no
+			}
+			elector = yes
+			add_prestige = 50
+			set_government_rank = 2
+		}
+	}
+}

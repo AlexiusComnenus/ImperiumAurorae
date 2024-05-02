@@ -1,0 +1,35 @@
+government = tribal
+add_government_reform = tribal_confederacy
+government_rank = 2
+technology_group = sub_saharan
+religion = shamanism
+primary_culture = mali
+capital = 2250
+1444.11.11= {
+	monarch = {
+		name = "(Regency Council)"
+		adm = 0
+		dip = 0
+		mil = 0
+		birth_date = 1.1.1
+		regent = yes
+		religion = shamanism
+		culture = bambara
+	}
+	heir = {
+		name = "Morobani"
+		dynasty = "Kishid"
+		adm = 2
+		dip = 2
+		mil = 2
+		birth_date = 1442.5.25
+		death_date = 1507.5.25
+		claim = 89
+		religion = shamanism
+		culture = bambara
+	}
+}
+1444.11.11= {
+	add_prestige = -50
+	add_treasury = 0
+}

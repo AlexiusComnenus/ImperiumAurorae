@@ -1,0 +1,1596 @@
+# Contribution from Zyphon
+
+french_minor_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	secure_power = {
+		position = 1
+		icon = the_great_school
+		required_missions = {  }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			stability = 1
+			if = {
+				limit = { ai = no }
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 60
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 60
+					}
+				}
+				years_of_income = 1
+			}
+			army_size_percentage = 0.75
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+french_minor_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	decide_stratagems = {
+		position = 2
+		icon = the_law_colleges
+		required_missions = { secure_power align_church }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			stability = 1
+			if = {
+				limit = { ai = no }
+				estate_loyalty = {
+					estate = all
+					loyalty = 50
+				}
+				years_of_income = 1
+			}
+			army_size_percentage = 0.75
+		}
+		effect = {
+			country_event = {
+				id = BGM_FRA_minor_missions.1
+			}
+			add_liberty_desire = 20
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+french_minor_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	align_church = {
+		position = 1
+		icon = show_piety
+		required_missions = { }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				papal_influence = 25
+				church_power = 100
+				fervor = 100
+			}
+			if = {
+				limit = { ai = no }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 50
+				}
+				religious_unity = 0.9
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+}
+
+french_minor_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	feudal_economy = {
+		position = 2
+		icon = reform_the_monte
+		required_missions = { align_church }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_capital_of = ROOT
+			NOT = { base_tax = 7 }
+		}
+		trigger = {
+			OR = {
+				capital_scope = {
+					base_tax = 7
+				}
+				total_base_tax = 30
+				has_global_modifier_value = {
+					which = global_tax_modifier
+					value = 0.3
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = fra_min_feudal_development
+				duration = 18250
+			}
+		}
+	}
+	realm_manpower = {
+		position = 3
+		icon = a_show_of_strength
+		required_missions = { feudal_economy }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				AND = {
+					is_capital_of = ROOT
+					NOT = { base_manpower = 6 }
+				}
+				AND = {
+					NOT = { is_capital_of = ROOT }
+					NOT = { base_manpower = 4 }
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				capital_scope = {
+					base_manpower = 6
+				}
+				calc_true_if = {
+					amount = 5
+					all_owned_province = {
+						base_manpower = 4
+					}
+				}
+			}
+		}
+		effect = {
+			add_army_professionalism = 0.05
+			add_army_tradition = 15
+		}
+	}
+
+	employ_advisors = {
+		position = 5
+		icon = continue_the_renaissance
+		required_missions = { embrace_the_renaissance }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			all_owned_province = {
+				is_prosperous = yes
+			}
+			has_adm_advisor = yes
+			has_dip_advisor = yes
+			has_mil_advisor = yes
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+		}
+	}
+}
+
+french_minor_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	church_influence = {
+		position = 2
+		icon = spread_piety
+		required_missions = { align_church }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			religious_unity = 1
+			OR = {
+				is_papal_controller = yes
+				AND = {
+					OR = {
+						religion = hussite
+						religion = protestant
+					}
+					church_power = 150
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					full_idea_group = religious_ideas
+				}
+				add_country_modifier = {
+					name = fra_min_feudal_development
+					duration = 5475
+				}
+			}
+			add_stability = 1
+			add_prestige = 30
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+		}
+	}
+	high_taxes = {
+		position = 3
+		icon = dominant_economy
+		required_missions = { feudal_economy }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { base_tax = 5 }
+		}
+		trigger = {
+			OR = {
+				all_owned_province = {
+					base_tax = 5
+				}
+				has_global_modifier_value = {
+					which = global_tax_modifier
+					value = 0.35
+				}
+				full_idea_group = economic_ideas
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = fra_min_feudal_taxes
+				duration = 14600
+			}
+		}
+	}
+	embrace_the_renaissance = {
+		position = 4
+		icon = develop_our_capital
+		required_missions = { high_taxes }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			has_institution = renaissance
+			prestige = 0
+		}
+		effect = {
+			add_prestige = 15
+			add_country_modifier = {
+				name = fra_min_renaissance
+				duration = 18250
+			}
+		}
+	}
+	fund_a_royal_residence = {
+		position = 6
+		icon = les_invalides
+		required_missions = { embrace_the_renaissance }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			religious_unity = 1
+			stability = 0
+			is_at_war = no
+			capital_scope = {
+				is_prosperous = yes
+			}
+		}
+		effect = {
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 20
+			}
+			add_prestige = 30
+			add_stability = 1
+			if = {
+				limit = {
+					capital_scope = {
+						has_great_project = {
+							type = chateau_chenonceau
+							tier = 0
+						}
+						NOT = {
+							has_great_project = {
+								type = chateau_chenonceau
+								tier = 3
+							}
+						}
+					}
+				}
+				capital_scope = {
+					add_great_project = {
+						type = chateau_chenonceau
+						instant = no 
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					capital_scope = {
+						has_great_project = {
+							type = chateau_valencay
+							tier = 0
+						}
+						NOT = {
+							has_great_project = {
+								type = chateau_valencay
+								tier = 3
+							}
+						}
+					}
+				}
+				capital_scope = {
+					add_great_project = {
+						type = chateau_valencay
+						instant = no 
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					capital_scope = {
+						has_great_project = {
+							type = chateau_sedan
+							tier = 0
+						}
+						NOT = {
+							has_great_project = {
+								type = chateau_sedan
+								tier = 3
+							}
+						}
+					}
+				}
+				capital_scope = {
+					add_great_project = {
+						type = chateau_sedan
+						instant = no 
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					capital_scope = {
+						has_great_project = {
+							type = chateau_bretagne
+							tier = 0
+						}
+						NOT = {
+							has_great_project = {
+								type = chateau_bretagne
+								tier = 3
+							}
+						}
+					}
+				}
+				capital_scope = {
+					add_great_project = {
+						type = chateau_bretagne
+						instant = no 
+					}
+				}
+			}
+			else_if = {
+				limit = { 
+					capital_scope = {
+						has_great_project = {
+							type = chateau_foix
+							tier = 0
+						}
+						NOT = {
+							has_great_project = {
+								type = chateau_foix
+								tier = 3
+							}
+						}
+					}
+				}
+				capital_scope = {
+					add_great_project = {
+						type = chateau_foix
+						instant = no 
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					add_province_modifier = {
+						name = fra_min_chateau
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	glorious_splendor = {
+		position = 7
+		icon = austria_prospers
+		required_missions = { fund_a_royal_residence }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			prestige = 50
+			stability = 2
+			capital_scope = {
+				is_prosperous = yes
+				development = 25
+			}
+		}
+		effect = {
+			add_splendor = 250
+			capital_scope = {
+				add_base_tax = 2
+				add_base_manpower = 1
+			}
+			if = {
+				limit = { 
+					prestige = 75
+				}
+				capital_scope = {
+					center_of_trade = 1
+				}
+			}
+
+			if = {
+				limit = { 
+					capital_scope = {
+						development = 25
+					}
+				}
+				capital_scope = {
+					change_trade_goods = cloth
+				}
+			}
+
+			add_prestige = 25
+		}
+	}
+}
+
+bgm_fra_min_hidden_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		NOT = {
+			OR = {
+				has_country_flag = dip_strat
+				has_country_flag = mil_strat
+			}
+		}
+	}
+
+	fra_min_branch_mission_2 = { #begin diplomacy or gain army tradition
+		icon = mission_unknown_mission
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_4_l = { #begin diplomacy or gain army tradition
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_3_l }
+		
+		position = 5
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_5 = { #begin diplomacy or gain army tradition
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_3_3_l }
+		
+		position = 7
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+	fra_min_branch_mission_6 = { #begin diplomacy or gain army tradition
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_5 }
+		
+		position = 8
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+}
+
+bgm_fra_min_dip_slo1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = dip_strat
+	}
+
+	fra_min_branch_mission_2_d = { #begin foreign diplomacy
+		icon = standardize_relazioni
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			diplomatic_reputation = 3
+		}
+		effect = {
+			add_dip_power = 50
+			add_country_modifier = {
+				name = fra_min_dip
+				duration = 5475
+			}
+		}
+	}
+
+	fra_min_branch_mission_5_d = { #la guerre folle
+		icon = the_hundred_years_war
+		required_missions = { fra_min_branch_mission_3_confidence }
+		
+		position = 5
+		trigger = {
+			OR = {
+				any_ally = {
+					is_great_power = yes
+				}
+				army_strength = {
+					who = FRA
+					value = 0.33
+				}
+			}
+		}
+		effect = {
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							capital_scope = {
+								region = france_region
+							}
+							is_subject_of_type = vassal
+							is_subject_of_type = appanage
+							is_subject_of_type = personal_union
+						}
+					}
+					add_liberty_desire = 33
+				}
+			}
+			add_dip_power = 100
+		}
+	}
+
+	french_minors_paris_d = {
+		icon = mission_early_modern_university
+		required_missions = { french_minors_independence_d }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 183
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		trigger = {
+			owns_core_province = 183
+		}
+		effect = {
+			add_mil_power = 200
+			france_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = { 
+					tag = OCC
+					exists = FRA
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					target = FRA
+					months = 600
+				}
+			}
+		}
+	}
+
+	french_minors_become_france_d = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { french_minors_paris_d }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = FRA
+		}
+		trigger = {
+			NOT = { tag = HLR }
+			OR = {
+				NOT = { exists = FRA }
+				FRA = {
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+			}
+			NOT = { exists = FRA }
+			NOT = { tag = FAN }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }
+
+			is_subject = no
+			owns_core_province = 183
+			is_at_war = no
+		}
+		effect = {
+			# can form france without meeting normal requirements
+			if = {
+				limit = { 
+					FRA = {
+						is_subject_of_type = personal_union
+						is_subject_of = ROOT
+					}
+				}
+				ROOT = {
+					inherit = FRA
+				}
+			}
+			if = {
+				limit = {
+					primary_culture = occitain
+					owns_core_province = 203
+				}
+				201 = {
+					move_capital_effect = yes
+				}
+			}
+			else_if = {
+				limit = {
+					primary_culture = occitain
+					owns_core_province = 196
+				}
+				196 = {
+					move_capital_effect = yes
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						primary_culture = aquitaine
+						primary_culture = gascon
+					}
+					owns_core_province = 174
+				}
+				174 = {
+					move_capital_effect = yes
+				}
+			}
+			else = {
+				183 = {
+					move_capital_effect = yes
+				}
+			}
+			
+			change_tag = FRA
+
+			france_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = FRA
+			}
+			
+			every_province = {
+				limit = {
+					is_core = FRA
+				}
+				add_core = ROOT
+			}
+			
+			#namechange = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { dynasty = "Meroveching" }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					dynasty = "Meroveching"
+				}
+				override_country_name = regnum_francorum_name
+				change_country_color = { country = NRM }
+			}
+			add_government_reform = feudal_france_reform
+			set_country_flag = formed_france_flag
+		}
+	}
+}
+
+bgm_fra_min_mil_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = mil_strat
+	}
+
+	fra_min_branch_mission_2_m = { #army tradition
+		icon = the_hundred_years_war
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			army_tradition = 40
+			army_size_percentage = 0.75
+		}
+		effect = { 
+			add_mil_power = 50
+			add_country_modifier = {
+				name = fra_min_mil
+				duration = 5475
+			}
+		}
+	}
+
+	fra_min_branch_mission_5_m = { #la guerre folle
+		icon = the_hundred_years_war
+		required_missions = { fra_min_branch_mission_3_confidence_m }
+		
+		position = 5
+		trigger = { 
+			army_tradition = 40
+			army_size_percentage = 0.75
+		}
+		effect = {
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							capital_scope = {
+								region = france_region
+							}
+							is_subject_of_type = vassal
+							is_subject_of_type = appanage
+							is_subject_of_type = personal_union
+						}
+					}
+					add_liberty_desire = 50
+				}
+			}
+			add_dip_power = 50
+			add_prestige = 25
+		}
+	}
+
+	french_minors_paris = {
+		icon = mission_early_modern_university
+		required_missions = { french_minors_independence }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 183
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		trigger = {
+			owns_core_province = 183
+		}
+		effect = {
+			add_mil_power = 200
+			france_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	french_minors_become_france = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { french_minors_paris }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = FRA
+		}
+		trigger = {
+			NOT = { tag = HLR }
+			NOT = { exists = FRA }
+			NOT = { tag = FAN }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }
+
+			is_subject = no
+			owns_core_province = 183
+			is_at_war = no
+		}
+		effect = {
+			# can form france without meeting normal requirements
+			if = {
+				limit = {
+					primary_culture = occitain
+					owns_core_province = 203
+				}
+				201 = {
+					move_capital_effect = yes
+				}
+			}
+			else_if = {
+				limit = {
+					primary_culture = occitain
+					owns_core_province = 196
+				}
+				196 = {
+					move_capital_effect = yes
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						primary_culture = aquitaine
+						primary_culture = gascon
+					}
+					owns_core_province = 174
+				}
+				174 = {
+					move_capital_effect = yes
+				}
+			}
+			else = {
+				183 = {
+					move_capital_effect = yes
+				}
+			}
+			
+			change_tag = FRA
+
+			france_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = FRA
+			}
+		
+			every_province = {
+				limit = {
+					is_core = FRA
+				}
+				add_core = ROOT
+			}
+			
+			#namechange = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { dynasty = "Meroveching" }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			if = {
+				limit = {
+					dynasty = "Meroveching"
+				}
+				override_country_name = regnum_francorum_name
+				change_country_color = { country = NRM }
+			}
+			add_government_reform = feudal_france_reform
+			set_country_flag = formed_france_flag
+		}
+	}
+}
+
+bgm_fra_min_hidden_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		NOT = {
+			OR = {
+				has_country_flag = dip_strat
+				has_country_flag = mil_strat
+			}
+		}
+	}
+
+	fra_min_branch_mission_4 = { #large appanage or capital fortress
+		icon = mission_unknown_mission
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+}
+
+bgm_fra_min_dip_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = dip_strat
+	}
+
+	fra_min_branch_mission_4_d = { #grow
+		icon = appease_the_estates
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			num_of_cities = 8
+			total_development = 66
+		}
+		effect = {
+			add_prestige = 30
+		}
+	}
+}
+
+bgm_fra_min_mil_slot3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = mil_strat
+	}
+
+	fra_min_branch_mission_4_m = { #capital castle
+		icon = alpine_defenses
+		required_missions = { decide_stratagems }
+		
+		position = 3
+		trigger = { 
+			capital_scope = {
+				fort_level = 3
+			}
+		}
+		effect = { 
+			add_country_modifier = {
+				name = fra_min_cap_fort
+				duration = 7300
+			}
+		}
+	}
+}
+
+bgm_fra_min_hidden_slot2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		NOT = {
+			OR = {
+				has_country_flag = dip_strat
+				has_country_flag = mil_strat
+			}
+		}
+	}
+
+	fra_min_branch_mission_3_l = { #gain the confidence we need
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_2 fra_min_branch_mission_4 }
+		
+		position = 4
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_3_2_l = { #gain the confidence we need
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_3_l }
+		
+		position = 5
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_3_3_l = { #gain the confidence we need
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_3_2_l }
+		
+		position = 6
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_3_4_l = { #gain the confidence we need
+		icon = mission_unknown_mission
+		required_missions = { fra_min_branch_mission_3_3_l }
+		
+		position = 7
+		trigger = { 
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { 
+			
+		}
+	}
+}
+
+bgm_fra_min_slot3_cont1_dip = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = dip_strat
+	}
+
+	fra_min_branch_mission_3_confidence = { #gain the confidence we need
+		icon = mission_empire
+		required_missions = { fra_min_branch_mission_2_d fra_min_branch_mission_4_d }
+		
+		position = 4
+		trigger = { 
+			
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_declare_war_d = { #fight for independence
+		icon = the_latin_empire
+		required_missions = { fra_min_branch_mission_3_confidence }
+		
+		position = 5
+		trigger = { 
+			OR = {
+				NOT = { exists = FRA }
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = FRA
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			create_general = { tradition = 75 }
+		}
+	}
+
+	french_minors_independence_d = {
+		icon = new_st_peters_basilica
+		required_missions = { fra_min_branch_mission_declare_war_d }
+		provinces_to_highlight = {
+		}
+		position = 6
+		trigger = {
+			stability = 0
+			legitimacy = 50
+			prestige = 0
+			is_subject = no
+			is_at_war = no
+			NOT = { num_of_loans = 1 }
+			NOT = { war_exhaustion = 1 }
+		}
+		effect = {
+			add_prestige = 25
+			add_legitimacy = 25
+			#capital_scope = {
+			#	area = {
+			#		limit = {
+			#			NOT = { is_core = ROOT }
+			#			NOT = { is_permanent_claim = ROOT }
+			#		}
+			#		add_permanent_claim = ROOT
+			#	}
+			#}
+		}
+	}
+
+	ally_great_power_d = {
+		icon = english_alliance
+		required_missions = { french_minors_independence_d }
+		provinces_to_highlight = {
+		}
+		position = 7
+		trigger = {
+			OR = {
+				NOT = { great_power_rank = 6 }
+				any_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 200
+		}
+	}
+
+	#########ADD FROM MILITARY BRANCH
+}
+
+bgm_fra_min_slot3_cont1_mil = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential_on_load = {
+		
+	}
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+		has_country_flag = mil_strat
+	}
+
+	fra_min_branch_mission_3_confidence_m = { #gain the confidence we need
+		icon = mission_empire
+		required_missions = { fra_min_branch_mission_2_m fra_min_branch_mission_4_m }
+		
+		position = 4
+		trigger = { 
+			
+		}
+		effect = { 
+			
+		}
+	}
+
+	fra_min_branch_mission_declare_war = { #fight for independence
+		icon = the_latin_empire
+		required_missions = { fra_min_branch_mission_3_confidence_m }
+		
+		position = 5
+		trigger = { 
+			OR = {
+				NOT = { exists = FRA }
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = FRA
+				}
+			}
+		}
+		effect = {
+			add_prestige = 15
+			create_general = { tradition = 75 }
+		}
+	}
+
+	french_minors_independence = {
+		icon = new_st_peters_basilica
+		required_missions = { fra_min_branch_mission_declare_war }
+		provinces_to_highlight = {
+		}
+		position = 6
+		trigger = {
+			stability = 0
+			legitimacy = 50
+			prestige = 0
+			is_subject = no
+			is_at_war = no
+			NOT = { num_of_loans = 1 }
+			NOT = { war_exhaustion = 1 }
+		}
+		effect = {
+			add_prestige = 25
+			add_legitimacy = 25
+			#capital_scope = {
+			#	area = {
+			#		limit = {
+			#			NOT = { is_core = ROOT }
+			#			NOT = { is_permanent_claim = ROOT }
+			#		}
+			#		add_permanent_claim = ROOT
+			#	}
+			#}
+		}
+	}
+
+	ally_great_power = {
+		icon = english_alliance
+		required_missions = { french_minors_independence }
+		provinces_to_highlight = {
+		}
+		position = 7
+		trigger = {
+			OR = {
+				NOT = { great_power_rank = 6 }
+				any_ally = {
+					is_great_power = yes
+				}
+			}
+		}
+		effect = {
+			add_dip_power = 200
+		}
+	}
+}
+
+
+
+
+
+french_minor_missions_3_navy = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	build_navy = {
+		position = 4
+		icon = imperial_navy
+		required_missions = { }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			any_owned_province = {
+				has_port = yes
+			}
+			navy_size_percentage = 0.9
+			heavy_ship_fraction = 0.15
+			transport_fraction = 0.3
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = fra_min_navy
+				duration = 10950
+			}
+		}
+	}
+	fra_min_explore_america = {
+		position = 5
+		icon = state_of_the_presidi #settle_north_america
+		required_missions = { build_navy }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			num_of_explorers = 1
+			OR = {
+				full_idea_group = exploration_ideas
+				full_idea_group = expansion_ideas
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = fra_min_explore
+				duration = 10950
+			}
+		}
+	}
+	fra_min_colonize_america = {
+		position = 6
+		icon = settle_north_america
+		required_missions = { fra_min_explore_america }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				any_subject_country = {
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+					}
+				}
+				any_owned_province = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
+			}
+		}
+		effect = {
+			add_navy_tradition = 15
+			add_country_modifier = {
+				name = fra_min_colonize
+				duration = 10950
+			}
+		}
+	}
+}
+
+french_minor_missions_4_navy = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			has_reform = independent_appanage_reform
+			has_reform = appanage_reform
+			AND = {
+				culture_group = french
+				NOT = { tag = FRA }
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	fra_min_colonize_ivory_coast = {
+		position = 6
+		icon = construct_the_kiel_canal
+		required_missions = { fra_min_explore_america }
+		provinces_to_highlight = {
+			province_id = 1466
+		}
+		trigger = {
+			1466 = { has_most_province_trade_power = ROOT }
+		}
+		effect = {
+			add_mercantilism = 5
+			add_country_modifier = {
+				name = fra_min_trade
+				duration = 18250
+			}
+		}
+	}
+}

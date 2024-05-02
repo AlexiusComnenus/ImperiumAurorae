@@ -1,0 +1,840 @@
+# Secure pilgrimage
+secure_pilgrimage = {
+	category = influence
+
+	alert_index = 17
+	alert_tooltip = secure_pilgrimage_alert_tt
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_government_attribute = pilgrim_protector
+		religion_group = christian
+	}
+	is_allowed = {
+		if = {
+			limit = { FROM = { OR = { NOT = { religion_group = christian } religion = hellenic_pagan_reformed } } }
+			custom_trigger_tooltip = {
+				tooltip = pilgrim_protector_christian
+				FROM = { AND = { religion_group = christian NOT = { religion = hellenic_pagan_reformed } } }
+			}
+		}
+		if = {
+			limit = { 
+				OR = { 
+					AND = { religion = catholic FROM = { tag = PAP } }
+					AND = { religion = fraticelli FROM = { tag = FAP } }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = pilgrim_protector_pope
+				FROM = { NOT = { OR = { tag = PAP tag = FAP } } }
+			}
+		}
+		#if = {
+		#	limit = { FROM = { is_subject_other_than_tributary_trigger = yes } }
+		#	custom_trigger_tooltip = {
+		#		tooltip = pilgrim_protector_subject
+		#		FROM = { is_free_or_tributary_trigger = yes }
+		#	}
+		#}
+		if = {
+			limit = { NOT = { AND = { sailors = 1000 dip_power = 50 } } }
+			custom_trigger_tooltip = {
+				tooltip = pilgrim_protector_sailors
+				sailors = 1000
+				dip_power = 50
+			}
+		}
+		if = {
+			limit = { war_with = FROM }
+			custom_trigger_tooltip = {
+				tooltip = pilgrim_protector_war
+				NOT = { war_with = FROM }
+			}
+		}
+		if = {
+			limit = { FROM = { capital_scope = { 	OR = { 
+														region = egypt_region 
+														region = arabia_region 
+														region = mashriq_region 
+													} } } }
+			custom_trigger_tooltip = {
+				tooltip = pilgrim_protector_holyland
+				NOT = { FROM = { capital_scope = { 	OR = { 
+														region = egypt_region 
+														region = arabia_region 
+														region = mashriq_region 
+													} } } }
+			}
+		}
+	}
+	on_accept = {
+		add_sailors = -1000
+		add_dip_power = -50
+		FROM = {
+			add_stability = 1
+			add_country_modifier = { 
+				name = pilgrims_protected
+				duration = 3650
+			}
+			capital_scope = { 
+				add_trade_modifier = {
+					who = ROOT
+					duration = 3650
+					power = 20
+					key = pilgrim_influence
+				}
+			}
+			country_event = { 
+				id = ia_flavor_tem.1
+			}
+		}
+		change_variable = {
+			which = protected_pilgrims
+			value = 1
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.2
+			}
+		}
+		add_entry = {
+			name = DIPLO_IS_RIVAL
+			limit = {
+				FROM = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_rivalry
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = 1
+			}
+			
+			multiply_variable = {
+				which = ai_value
+				value = -1000
+			}
+		}
+		add_entry = {
+			name = diplomatic_reputation
+			limit = { }
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 2
+			multiply_variable = {
+				which = ai_value
+				value = 2
+			}
+		}
+		add_entry = {
+			name = STABILITY_AI_MODIFIER
+			export_to_variable = {
+				variable_name = ai_value
+				value = stability
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = -25
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		has_opinion = {
+			who = FROM
+			value = 75
+		}
+		FROM = {
+			NOT = { stability = 2 }
+		}
+		NOT = { is_rival = FROM }
+		NOT = { is_enemy = FROM }
+		#trust = {
+		#	who = FROM
+		#	value = 65
+		#}
+	}
+}
+
+create_german_march_action = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		has_reform = saxon_feudalism
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = saxon_daimyo
+		}
+	}
+
+	is_allowed = {
+		NOT = { german_march = 3 }
+		NOT = { has_any_disaster = yes }
+		has_reform = saxon_feudalism
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = saxon_daimyo
+		}
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = german_march
+			subject = FROM
+		}
+	}
+
+	ai_will_do = {
+	
+	}
+}
+
+revoke_german_march_action = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		has_reform = saxon_feudalism
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = german_march
+		}
+	}
+
+	is_allowed = {
+		#NOT = { german_march = 3 }
+		has_reform = saxon_feudalism
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = german_march
+			NOT = { liberty_desire = 50 }
+		}
+		NOT = { has_any_disaster = yes }
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = saxon_daimyo
+			subject = FROM
+		}
+		add_stability = -1
+		FROM = {
+			add_liberty_desire = 25
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}
+
+create_holy_order_action = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			is_subject_of = ROOT
+			has_government_attribute = monastic_order
+			NOT = { is_subject_of_type = crusader_state_subject }
+		}
+	}
+
+	is_allowed = {
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = { has_matching_religion = ROOT }
+		FROM = {
+			is_subject_of = ROOT
+			has_government_attribute = monastic_order
+		}
+		FROM = { NOT = { liberty_desire = 25 } }
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = crusader_state_subject
+			subject = FROM
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}
+
+revoke_holy_order_action = {
+	category = influence
+
+	require_acceptance = no
+
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crusader_state_subject
+		}
+	}
+
+	is_allowed = {
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = { has_matching_religion = ROOT }
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = crusader_state_subject
+		}
+		FROM = { NOT = { liberty_desire = 5 } }
+		adm_power = 200
+		dip_power = 200
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = march
+			subject = FROM
+		}
+		add_adm_power = -200
+		add_dip_power = -200
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}
+
+revoke_aurora_beneficiary_action = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		is_emperor = yes
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = aurora_beneficiary
+		}
+	}
+
+	is_allowed = {
+		#NOT = { german_march = 3 }
+		is_emperor = yes
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = aurora_beneficiary
+			NOT = { liberty_desire = 50 }
+		}
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = vassal
+			subject = FROM
+		}
+		add_stability = -3
+		FROM = {
+			add_liberty_desire = 100
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}
+
+create_aurora_beneficiary_action = {
+	category = emperor
+
+	require_acceptance = no
+
+	is_visible = {
+		is_emperor = yes
+		FROM = {
+			is_subject_of = ROOT
+			NOT = { is_subject_of_type = aurora_beneficiary }
+		}
+	}
+
+	is_allowed = {
+		is_emperor = yes
+		has_country_modifier = antioch_unified_house
+		FROM = {
+			is_subject_of = ROOT
+			NOT = { is_subject_of_type = aurora_beneficiary }
+			NOT = { liberty_desire = 50 }
+			NOT = { is_colonial_nation = yes }
+		}
+		NOT = {
+			any_subject_country = {
+				is_subject_of_type = aurora_beneficiary
+				capital_scope = {
+					region_for_scope_province = {
+						is_capital_of = FROM
+					}
+				}
+			}
+		}
+		FROM = {
+			OR = {
+				NOT = { capital_scope = { region = anatolia_region } }
+				tag = Z44
+			}
+		}
+		FROM = {
+			OR = {
+				NOT = { capital_scope = { region = balkan_region } }
+				tag = BYZ
+			}
+		}
+		FROM = {
+			OR = {
+				NOT = { capital_scope = { region = italy_region } }
+				tag = GEN
+				tag = ITA
+			}
+		}
+	}
+
+	on_accept = {
+		create_subject = {
+			subject_type = aurora_beneficiary
+			subject = FROM
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}
+
+thu_export_grain = {
+	category = economy
+
+	require_acceptance = yes
+
+	alert_index = 63
+	alert_tooltip = export_grain_alert_tooltip
+
+	is_visible = {
+		has_country_flag = thu_export_grain_flag
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				NOT = {
+					OR = {
+						alliance_with = FROM 
+						FROM = { is_subject_of = ROOT }
+						is_subject_of = FROM
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = REQUIRES_ALLIANCE_OR_SUBJECT_TT
+				OR = {
+					alliance_with = FROM 
+					FROM = { is_subject_of = ROOT }
+					is_subject_of = FROM
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_country_modifier = thu_buying_grain }
+			}
+			custom_trigger_tooltip = {
+				tooltip = is_already_trading_grain_tt
+				FROM = { 
+					NOT = { has_country_modifier = thu_buying_grain }
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						province_distance = {
+							who = FROM
+							distance = 150
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = must_be_within_distance_tt
+				any_owned_province = {
+					province_distance = {
+						who = FROM
+						distance = 150
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_country = {
+						has_country_modifier = thu_buying_grain
+					}
+					amount = 1
+				}
+				NOT = { has_country_flag = increase_exports_to_2_flag }
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_more_than_1_export_tt
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							has_country_modifier = thu_buying_grain
+						}
+						amount = 1
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_country = {
+						has_country_modifier = thu_buying_grain
+					}
+					amount = 2
+				}
+				NOT = { has_country_flag = increase_exports_to_3_flag }
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_more_than_2_export_tt
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							has_country_modifier = thu_buying_grain
+						}
+						amount = 2
+					}
+				}
+			}
+		}
+		else = {
+			custom_trigger_tooltip = {
+				tooltip = no_more_than_3_export_tt
+				NOT = {
+					calc_true_if = {
+						all_country = {
+							has_country_modifier = thu_buying_grain
+						}
+						amount = 3
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { adm_power = 50 }
+			}
+			custom_trigger_tooltip = {
+				tooltip = NOT_ENOUGH_RESOURCES
+				adm_power = 50
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			#set_ruler_flag = trading_grain_exports_flag
+			add_country_modifier = {
+				name = thu_buying_grain
+				duration = 1875
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = engaged_in_grain_trade_modifier
+			}
+		}
+		add_country_modifier = {
+			name = thu_selling_grain
+			duration = 1875
+		}
+		add_years_of_owned_provinces_production_income = {
+			years = 2
+			trigger = {
+				OR = {
+					trade_goods = grain
+					trade_goods = potato
+				}
+			}
+			custom_tooltip = thu_export_grain_income_tt
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_europe }
+				FROM = {
+					capital_scope = {
+						continent = europe 
+					}
+				}
+			}
+			set_country_flag = exported_grain_in_europe
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_oceania }
+				FROM = {
+					capital_scope = {
+						continent = oceania 
+					}
+				}
+			}
+			set_country_flag = exported_grain_in_oceania
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_north_america }
+				FROM = {
+					capital_scope = {
+						continent = north_america 
+					}
+				}
+				
+			}
+			set_country_flag = exported_grain_in_north_america
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_south_america }
+				FROM = {
+					capital_scope = {
+						continent = south_america 
+					}
+				}
+				
+			}
+			set_country_flag = exported_grain_in_south_america
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_africa }
+				FROM = {
+					capital_scope = {
+						continent = africa 
+					}
+				}
+			}
+			set_country_flag = exported_grain_in_africa
+		}
+		if = {
+			limit = {
+				NOT = { has_country_flag = exported_grain_in_asia }
+				FROM = {
+					capital_scope = {
+						continent = asia 
+					}
+				}
+			}
+			set_country_flag = exported_grain_in_asia
+		}
+		add_adm_power = -50
+		add_mercantilism = 2
+	}
+	on_decline = {
+		add_prestige_or_monarch_power = { amount = -10 }
+		FROM = {
+			add_country_modifier = {
+				name = just_asked_to_convert_timer
+				duration = 18250
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		NOT = {
+			FROM = {
+				has_country_modifier = just_asked_to_convert_timer
+			}
+		}
+		OR = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_friendly
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_loyal
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_allied
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_protective
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_domineering
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+		}
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_outraged
+			}
+		}
+		has_opinion = {
+			who = FROM
+			value = 50
+		}
+	}
+
+	ai_acceptance = {
+        add_entry = {
+            name = DIPLO_OPPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 0.125
+			}
+        }
+		add_entry = {
+			name = AI_TRUST_TOWARDS_ROOT
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 0.4
+			}
+		}
+		add_entry = {
+			name = AI_DIPLOMATIC_REPUTATION
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 3
+			multiply_variable = {
+				which = ai_value
+				value = 3
+			}
+		}
+		add_entry = {
+			name = attitude_neutral_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -10 }
+		}
+		add_entry = {
+			name = attitude_rivalry_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_hostile_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_friendly_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 20 }
+		}
+		add_entry = {
+			name = attitude_threatened_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = 20 }
+		}
+		add_entry = {
+			name = attitude_outraged_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_outraged } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = attitude_domineering_DIPLO_ATTITUDE_TT
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_domineering } } }
+			export_to_variable = { variable_name = ai_value value = 1 }
+			multiply_variable = { which = ai_value value = -1000 }
+		}
+		add_entry = {
+			name = DIPLO_BORDER_DISTANCE_TT
+			export_to_variable = {
+				variable_name = ai_value
+				value = border_distance
+				who = FROM
+				with = ROOT
+			}
+			#5 units = -1
+			multiply_variable = {
+				which = ai_value
+				value = -0.2
+			}
+		}
+	}
+}

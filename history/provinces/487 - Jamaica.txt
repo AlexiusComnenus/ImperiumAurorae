@@ -1,0 +1,14 @@
+owner = MYM
+controller = MYM
+capital = "Jamaica"
+culture = xizho
+religion = hellenic_pagan_reformed
+trade_goods = silk
+base_tax = 4
+base_production = 5
+base_manpower = 3
+center_of_trade = 2
+discovered_by = ARW
+discovered_by = CAB
+add_core = MYM
+#hre = yes

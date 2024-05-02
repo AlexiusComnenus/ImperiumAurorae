@@ -1,0 +1,117 @@
+ck2_converter_generated = yes
+graphical_culture = westerngfx
+color = { 61 152 180 }
+revolutionary_colors = { 13 8 5 }
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	economic_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	spy_ideas
+	offensive_ideas
+	religious_ideas
+}
+historical_units = {
+	austrian_grenzer
+	austrian_hussar
+	austrian_jaeger
+	austrian_tercio
+	austrian_white_coat
+	italian_condotta
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Adelaida #0" = -1
+	"Basso #0" = 0
+	"Ercole #0" = 0
+	"Gabinu #0" = 0
+	"Guidone #0" = 0
+	"Ugu #0" = 0
+	"Urule #0" = 0
+	"Yeshayah #0" = 0
+}
+leader_names = {
+	"Albani"
+	"Aldobrandini"
+	"Altieri"
+	"Barberini"
+	"Barbo"
+	"Boncompagni"
+	"Borghese"
+	"Borgia"
+	"Braschi"
+	"Carafa"
+	"Castagna"
+	"Cervini"
+	"Chiaramonti"
+	"Chigi"
+	"Colonna"
+	"Condulmeri"
+	"Conti"
+	"Corsini"
+	"Cybo"
+	"Doria-Landi"
+	"Doria-Pamphili"
+	"Gaetani dell'Aquila"
+	"Gangagnelli"
+	"Ghislieri"
+	"Gonzaga"
+	"Lambertini"
+	"Lante"
+	"Ludovisi"
+	"Melzi"
+	"Melzi de Rimini"
+	"Odescalchi"
+	"Orsini"
+	"Ottoboni"
+	"Pallavicino"
+	"Pamphili"
+	"Parentucelli"
+	"Peretti"
+	"Piccolomini"
+	"Pignatelli"
+	"Prignano"
+	"Rezzonico"
+	"Rospigliosi"
+	"Sfondrati"
+	"da Varano"
+	"de' Medici"
+	"del Monte"
+	"della Rovere"
+	"di Campofregoso"
+	"di Farnese"
+	"di Montefeltro"
+}
+ship_names = {
+	"Acqualagna"
+	"Auditore"
+	"Colbordolo"
+	"Colonna"
+	"Federico"
+	"Fermignano"
+	"Fossombrone"
+	"Giordano Orsini"
+	"Giovanni Santi"
+	"Isola del Piano"
+	"Lunano"
+	"Mondaino"
+	"Montefeltro"
+	"Oddantonio"
+	"Orsini"
+	"Peglio"
+	"Piero della Francesca"
+	"San Crescentino"
+	"Sant'Angelo in Vado"
+	"Tavoleto"
+	"ghibellini"
+}
+army_names = {
+	"Armata di $PROVINCE$"
+}

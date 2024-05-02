@@ -1,0 +1,349 @@
+namespace = ia_flavor_gotland
+
+country_event = {	#Hunt them down
+	id = ia_flavor_gotland.1
+	title = "ia_flavor_gotland.1.t"
+	desc = "ia_flavor_gotland.1.d"
+	picture = VILLAGE_RAIDED_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+	
+	}
+	
+	option = {
+		name = ia_flavor_gotland.1.a 
+		set_country_flag = got_killed_dan
+		
+		add_country_modifier = {
+			name = got_hunter_of_kings
+			duration = 10950
+		}
+		denmark_area = {
+			limit = {
+				owned_by = DAN
+			}
+			cede_province = GOT
+		}
+		skaneland_area = {
+			limit = {
+				owned_by = DAN
+			}
+			cede_province = GOT
+		}
+		jutland_area = {
+			limit = {
+				owned_by = DAN
+			}
+			cede_province = GOT
+		}
+		holstein_area = {
+			limit = {
+				owned_by = DAN
+			}
+			cede_province = GOT
+		}
+		SWE = {
+			inherit = DAN
+		}
+	}
+}
+
+country_event = {	#Burn Kopenhagen
+	id = ia_flavor_gotland.2
+	title = "ia_flavor_gotland.2.t"
+	desc = "ia_flavor_gotland.2.d"
+	picture = VILLAGE_BURNING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GOT
+		war_with = DAN
+		war_score_against = {
+			who = DAN
+			value = 90
+		}
+		DAN = {
+			capital_scope = {
+				controlled_by = GOT
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_gotland.2.a 
+		
+		DAN = {
+			capital_scope = {
+				add_devastation = 100
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+		}
+		
+		country_event = {
+			id = ia_flavor_gotland.1
+			#days = 10
+		}
+	}
+}
+
+country_event = {	# Immigrations, SAX edition
+	id = ia_flavor_gotland.3
+	title = "ia_flavor_gotland.3.t"
+	desc = "ia_flavor_gotland.3.d"
+	picture = PEASANTS_BARTERING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SAX	# For saxonia?
+	}
+	
+	option = {
+		name = ia_flavor_gotland.3.a 
+		add_country_modifier = {
+			name = emigration_got_sax
+			duration = 7300
+		}
+		add_treasury = 1000
+		add_trust = {
+			who = GOT
+			value = 10
+			mutual = yes
+		}
+		GOT = {
+			country_event = { id = ia_flavor_gotland.7 }
+		}
+	}
+}
+
+country_event = {	# Immigrations, POL edition
+	id = ia_flavor_gotland.4
+	title = "ia_flavor_gotland.4.t"
+	desc = "ia_flavor_gotland.4.d"
+	picture = PEASANTS_BARTERING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+		}
+	}
+	
+	option = {
+		name = ia_flavor_gotland.4.a 
+		capital_scope = {
+			add_base_manpower = 3
+			add_base_production = 1
+			add_base_tax = 2
+		}
+		random_owned_province = {
+			add_base_manpower = 5
+			add_base_production = 3
+			add_base_tax = 7
+			
+			add_permanent_province_modifier = {
+				name = danish_exiles
+				duration = -1
+			}
+			
+			change_culture = danish
+		}
+		add_accepted_culture = danish
+	}
+	
+	option = {
+		name = ia_flavor_gotland.4.b 
+		trigger = { ai = no }	
+	}
+}
+
+country_event = {	# Gutnish Purge?
+	id = ia_flavor_gotland.5
+	title = "ia_flavor_gotland.5.t"
+	desc = "ia_flavor_gotland.5.d"
+	picture = PLAGUE_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GOT
+	}
+	
+	option = {
+		name = ia_flavor_gotland.5.a 
+		
+		denmark_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 50
+			add_base_manpower = -10
+			add_base_production = -10
+			add_base_tax = -10
+			set_local_autonomy = 10
+			add_nationalism = -30
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+		skaneland_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 50
+			add_base_manpower = -10
+			add_base_production = -10
+			add_base_tax = -10
+			set_local_autonomy = 25
+			add_nationalism = -30
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+		jutland_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 50
+			add_base_manpower = -10
+			add_base_production = -10
+			add_base_tax = -10
+			change_culture = saxo_gutnish
+			set_local_autonomy = 40
+			add_nationalism = -30
+			change_religion = fraticelli
+		}
+		holstein_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 50
+			add_base_manpower = -10
+			add_base_production = -10
+			add_base_tax = -10
+			change_culture = saxo_gutnish
+			set_local_autonomy = 40
+			add_nationalism = -30
+			change_religion = fraticelli
+		}
+		
+		add_accepted_culture = saxo_gutnish
+		SAX = { country_event = { id = ia_flavor_gotland.3 } }
+		hidden_effect = {
+			country_event = { id = ia_flavor_gotland.6 }
+			if = {
+				limit = { exists = PLC }
+				PLC = { country_event = { id = ia_flavor_gotland.4 } }
+			}
+			else = {
+				POL = { country_event = { id = ia_flavor_gotland.4 } }
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_gotland.5.b 
+		add_accepted_culture = danish
+		remove_country_modifier = got_hunter_of_kings
+	}
+}
+
+country_event = {	# Capital to sjaelland
+	id = ia_flavor_gotland.6
+	title = "ia_flavor_gotland.6.t"
+	desc = "ia_flavor_gotland.6.d"
+	picture = PEASANTS_BARTERING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GOT	# For Gotland
+	}
+	
+	option = {
+		name = ia_flavor_gotland.6.a 
+		capital_scope = {
+			add_base_manpower = -1
+			add_base_production = -1
+			add_base_tax = -1
+		}
+		12 = {
+			add_base_manpower = 2
+			add_base_production = 4
+			add_base_tax = 1
+			add_province_modifier = {
+				name = new_pirate_capital
+				duration = 7300
+			}
+		}
+		set_capital = 12
+	}
+}
+
+country_event = {	# Saxon Migration
+	id = ia_flavor_gotland.7
+	title = "ia_flavor_gotland.7.t"
+	desc = "ia_flavor_gotland.7.d"
+	picture = PEASANTS_BARTERING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GOT	# For gotland
+	}
+	
+	option = {
+		name = ia_flavor_gotland.7.a 
+		jutland_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_base_manpower = 1
+			add_base_production = 1
+			add_base_tax = 2
+			add_province_modifier = {
+				name = autonomous_saxon_communities
+				duration = -1
+			}
+		}
+		holstein_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_base_manpower = 1
+			add_base_production = 1
+			add_base_tax = 2
+			add_province_modifier = {
+				name = autonomous_saxon_communities
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {	# Square deal
+	id = ia_flavor_gotland.8
+	title = "ia_flavor_gotland.8.t"
+	desc = "ia_flavor_gotland.8.d"
+	picture = WESTERNISATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = SAX	# For Saxonia
+	}
+	
+	option = {
+		name = ia_flavor_gotland.8.a 
+		add_treasury = -200
+		GOT = { add_treasury = 200 }
+		add_country_modifier = {
+			name = sax_got_looting_tactics
+			duration = -1
+		}
+	}
+}

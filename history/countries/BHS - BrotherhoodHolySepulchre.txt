@@ -1,0 +1,9 @@
+government = theocracy
+add_government_reform = brotherhood_government
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = greek
+add_accepted_culture = serbian
+add_accepted_culture = bulgarian
+capital = 1765

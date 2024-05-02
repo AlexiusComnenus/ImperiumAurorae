@@ -1,0 +1,292 @@
+pilgrims_protected = {
+	tolerance_own = 1
+}
+
+valencian_naval_supplies = {
+	global_ship_cost = -0.20
+	global_ship_recruit_speed = -0.25
+	ship_durability = 0.1
+	regiment_disembark_speed = 0.10
+}
+
+templaric_auxiliaries = {
+	cavalry_power = 0.15
+	morale_damage_received = -0.05
+	shock_damage = 0.05
+}
+
+templaric_building_project = {
+	local_development_cost = -0.50
+	local_build_cost = -0.50
+	local_build_time = -0.50
+}
+
+templaric_recruitment = {
+	global_regiment_recruit_speed = -0.15
+	manpower_in_true_faith_provinces= 0.10
+}
+
+templar_expansion_drive = {
+	core_creation = -0.15
+	extra_manpower_at_religious_war = yes
+	siege_ability = 0.1
+	regiment_disembark_speed = 0.5
+}
+
+templar_disembarking = {
+	regiment_disembark_speed = 0.5
+}
+
+templar_marines = {
+	allowed_marine_fraction = 0.25
+	sailors_recovery_speed = 0.25
+}
+
+templar_bank = {
+	monthly_gold_inflation_modifier = -0.5
+	interest = -2
+	local_gold_depletion_chance_modifier = -1
+}
+
+protecting_pilgrims = {
+	global_foreign_trade_power = 0.1
+	diplomatic_reputation = 1
+	global_sailors_modifier = 0.20
+	papal_influence = 2
+	reverse_relation_with_same_religion = 15
+	morale_damage_received = -0.05
+}
+
+templar_barbary = {
+	galley_power = 0.15
+	capture_ship_chance = 0.25
+	regiment_disembark_speed = 0.10
+}
+
+templar_vandal_crusade = {
+	diplomatic_reputation = 1
+	papal_influence = 2
+	monthly_church_power = 0.5
+	monthly_fervor_increase = 1
+	tolerance_own = 2
+	reverse_relation_with_same_religion = 15
+}
+
+moroccan_crusade = {
+	naval_morale = 0.1
+	land_morale = 0.1
+	siege_ability = 0.10
+}
+
+templar_reconquista = {
+	devotion = 2
+	prestige = 2
+	trade_steering = 0.25
+	papal_influence = 5
+	monthly_church_power = 1
+	monthly_fervor_increase = 2.5
+	reverse_relation_with_same_religion = 10
+}
+
+templar_spies = {
+	spy_offence = 0.5
+	rebel_support_efficiency = 2
+	diplomats = 1
+}
+
+nail_of_the_true_cross = {
+	prestige = 0.5
+	devotion = 0.5
+	improve_relation_modifier = 0.1
+	morale_damage_received = -0.05
+}
+
+seamless_robe_of_jesus = {
+	monarch_admin_power = 1
+	global_tax_modifier = 0.20
+}
+
+crown_of_thorns_tem = {
+	monarch_diplomatic_power = 1
+	tolerance_own = 2
+	morale_damage_received = -0.05
+}
+
+bones_of_st_peter = {
+	build_cost = -0.1
+	build_time = -0.1
+}
+
+holy_grail = {
+	monarch_lifespan = 2
+	development_cost = -0.05
+	morale_damage_received = -0.05
+}
+
+lance_of_longinus = {
+	morale_damage = 0.3
+	land_morale = 0.05
+	monarch_military_power = 1
+}
+
+immortal_slayer = {
+	morale_damage = 0.5
+}
+
+crusaders_rallied = {
+	morale_damage_received = -0.15
+	extra_manpower_at_religious_war = yes
+	diplomatic_reputation = 1
+	reverse_relation_with_same_religion = 30
+}
+
+leading_the_reformation = {
+	tolerance_own = 1
+	tolerance_heretic = -2
+	tolerance_heathen = -2
+	relation_with_heretics = -20
+	relation_with_same_religion = 20
+	reverse_relation_with_same_religion = 20
+	morale_damage_received = -0.05
+}
+
+templar_interest_reduction = {
+	interest = -3
+	inflation_reduction = 0.2
+}
+
+templar_tercios = {
+	local_has_tercio = yes
+}
+
+templar_colonial_ventures = {
+	colonists = 1
+	may_explore = yes
+	free_maintenance_on_expl_conq = yes
+	range = 1
+}
+
+templar_colonial_conquests = {
+	idea_claim_colonies = yes
+	cb_on_primitives = yes
+	cb_on_overseas = yes
+	may_explore = yes
+}
+
+templar_colonial_funding = {
+	global_colonial_growth = 25
+	colony_cost_modifier = -0.75
+	colonists = 1
+	colonist_placement_chance = 0.1
+}
+
+templar_colonial_success = {
+	global_tariffs = 0.25
+	treasure_fleet_income = 0.25
+	global_trade_power = 0.25
+	max_flagships = 1
+	transport_attrition = -0.5
+	naval_attrition = -0.5
+}
+
+templar_colonial_military = {
+	morale_damage_received = -0.25
+	shock_damage_received = -0.25
+}
+
+templar_aegean_forts = {
+	local_defensiveness = 0.25
+	local_hostile_movement_speed = -0.25
+	blockade_force_required = 0.5
+	ship_recruit_speed = -0.25	
+	local_ship_repair = 0.2
+	block_slave_raid = yes
+}
+
+templar_malta_forts = {
+	local_defensiveness = 0.25
+	blockade_force_required = 0.5
+	ship_recruit_speed = -0.25	
+	local_ship_repair = 0.2
+	block_slave_raid = yes
+	local_great_project_upgrade_cost = -0.5
+	local_great_project_upgrade_time = -0.5
+}
+
+templar_reforming_army = {
+	manpower_recovery_speed = -0.25
+	army_tradition = -4
+	reinforce_speed = -0.25
+}
+
+templar_resistant_tercios = {
+	is_tercio_modifier = yes
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+	morale_damage_received = -0.05
+	land_attrition = -0.10
+	recover_army_morale_speed = 0.15
+}
+
+templar_damaging_tercios = {
+	is_tercio_modifier = yes
+	fire_damage = 0.20
+	reinforce_speed = 0.15
+}
+
+templar_disciplined_marines = {
+	is_marine_modifier = yes
+	discipline = 0.05
+	land_attrition = -0.20
+	reinforce_speed = 0.10
+	regiment_manpower_usage = -0.33
+}
+
+templar_zealous_marines = {
+	is_marine_modifier = yes
+	land_morale = 0.05
+	morale_damage = 0.10
+	morale_damage_received = -0.05
+	recover_army_morale_speed = 0.15
+	regiment_manpower_usage = -0.33
+}
+
+templar_modernized_knights = {
+	cavalry_fire = 0.5
+	cavalry_flanking = 0.5
+	cav_to_inf_ratio = 0.125
+}
+
+templar_heavier_cavalry = {
+	cavalry_power = 0.10
+	cavalry_shock = 0.5
+	cav_to_inf_ratio = 0.125
+}
+
+templar_maneuver_boost_1 = {
+	max_general_maneuver = 1
+	land_forcelimit_modifier = -0.05
+}
+
+templar_maneuver_boost_2 = {
+	max_general_maneuver = 1
+	land_forcelimit_modifier = -0.05
+}
+
+templar_maneuver_boost_3 = {
+	max_general_maneuver = 1
+	land_forcelimit_modifier = -0.05
+}
+
+templarite_last_crusade_starter_bonus = {
+	siege_ability = 0.25
+	artillery_barrage_cost = -0.50
+	war_exhaustion = -0.10
+	leader_cost = -0.50
+	global_attacker_dice_roll_bonus = 1
+	land_attrition = -0.25
+	extra_manpower_at_religious_war = yes
+}
+
+recently_recruited_templar = {
+}

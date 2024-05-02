@@ -1,0 +1,49 @@
+BYZ_ideas = {
+	start = {
+		monarch_military_power = 1
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
+		stability_cost_modifier = 0.25
+		monthly_heir_claim_increase = -0.1
+		yearly_corruption = 0.1
+	}
+	
+	bonus = {
+		accept_vassalization_reasons = 10
+		ae_impact = -0.2
+	}
+	
+	trigger = {
+		tag = BYZ
+	}
+	free = yes
+	
+	regulations_for_mercenaries = {
+		merc_maintenance_modifier = -0.15
+		mercenary_discipline = 0.025
+	}
+	repopulation_of_countryside = {
+		global_trade_goods_size_modifier = 0.10
+		global_manpower_modifier = 0.10
+	}
+	byz_state_admin_reform = {
+		global_tax_modifier = 0.15
+		advisor_cost = -0.10
+	}
+	byz_admin_power = {
+		administrative_efficiency = 0.05
+	}
+	merchant_class = {
+		global_trade_power = 0.1
+		development_cost = -0.1
+	}
+	new_imperial_army = {
+		discipline = 0.05
+		drill_gain_modifier = 0.10
+		drill_decay_modifier = -0.10
+	}
+	ecumenical_patriarch = {
+		global_missionary_strength = 0.02
+		tolerance_own = 2
+	}
+}

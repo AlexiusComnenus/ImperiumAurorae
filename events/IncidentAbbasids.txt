@@ -1,0 +1,156 @@
+### The Purge of Rum ###
+### By Alexios ###
+
+namespace = incident_abbasids
+
+country_event = {
+	id = incident_abbasids.1
+	title = incident_abbasids.1.t
+	desc = incident_abbasids.1.d
+	picture = HRE_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+		exists = IRQ
+		OR = { 
+			AND = {
+				emperor = { has_country_modifier = antioch_unified_house }
+				has_global_flag = rum_incident_flag
+			}
+			IRQ = {
+				any_owned_province = {
+					is_part_of_hre = yes
+				}
+			}
+			IRQ = {
+				any_subject_country = {
+					is_part_of_hre = yes
+				}
+			}
+			IRQ = {
+				any_subject_country = {
+					any_owned_province = {
+						is_part_of_hre = yes
+					}
+				}
+			}
+		}
+		is_emperor = yes
+		emperor = {
+			is_at_war = no
+		}
+		NOT = { active_imperial_incident = any }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_global_flag = abbasids_incident_flag
+		hidden_effect = {
+			add_country_modifier = {
+				name = suddenpacifism
+				duration = 730
+			}
+		}
+	}
+	
+	option = { # Convene the Confluence!
+		name = incident_abbasids.1.a
+		ai_chance = { factor = 100 }
+		set_imperial_incident = incident_abbasids
+	}
+}
+
+# dummy incident for the emperor
+country_event = {
+	id = incident_abbasids.2
+	title = incident_abbasids.2.t
+	desc = incident_abbasids.2.d
+	picture = SHIP_SAILING_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # Reichskrieg!
+		name = incident_abbasids.2.a
+		ai_chance = { factor = 100 }
+		custom_tooltip = abbasids_reichskrieg_tt
+		hidden_effect = {
+			emperor = {
+				country_event = {
+					id = incident_abbasids.3
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # Do it yourself
+		name = incident_abbasids.2.b
+		ai_chance = {
+			factor = 20
+		}
+		custom_tooltip = abbasids_crusade_tt
+		hidden_effect = {
+			emperor = {
+				country_event = {
+					id = incident_abbasids.4
+					days = 5
+				}
+			}
+		}
+	}
+	option = { # not our problem
+		name = incident_abbasids.2.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = incident_abbasids.3
+	title = incident_abbasids.3.t
+	desc = incident_abbasids.3.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #War!
+		name = incident_abbasids.3.a
+		ai_chance = {
+			factor = 80
+		}
+		declare_war_with_cb = {
+			who = IRQ
+			casus_belli = cb_imperial_realm_war
+		}
+	}
+}
+
+country_event = {
+	id = incident_abbasids.4
+	title = incident_abbasids.4.t
+	desc = incident_abbasids.4.d
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { #War!
+		name = incident_abbasids.4.a
+		ai_chance = {
+			factor = 80
+		}
+		declare_war_with_cb = {
+			who = IRQ
+			casus_belli = cb_antioch_crusade
+		}
+	}
+}

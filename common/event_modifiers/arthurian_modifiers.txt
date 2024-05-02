@@ -1,0 +1,20 @@
+wielding_excalibur = {
+	morale_damage = 0.10
+	fire_damage_received = -0.10
+	shock_damage = 0.10	
+}
+
+administrative_corruption_suppression = {
+	yearly_corruption = -0.1
+	country_admin_power = -1
+}
+
+espionage_corruption_suppression = {
+	yearly_corruption = -0.1
+	country_diplomatic_power = -1
+}
+
+military_corruption_suppression = {
+	yearly_corruption = -0.1
+	country_military_power = -1
+}

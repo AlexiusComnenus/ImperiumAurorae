@@ -1,0 +1,129 @@
+insult_antioch1 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			OR = { tag = Z17	tag = Z42 }
+		}
+	}
+}
+
+insult_antioch2 = {
+	trigger = {
+		religion = hellenic_pagan_reformed
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_antioch3 = {
+	trigger = {
+		religion = hellenic_pagan_reformed
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_antioch4 = {
+	trigger = {
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_antioch5 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			religion = hellenic_pagan_reformed
+		}
+	}
+}
+
+insult_antioch6 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_antioch7 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			religion = hellenic_pagan_reformed
+		}
+	}
+}
+
+insult_antioch8 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		FROM = {
+			religion = hellenic_pagan_reformed
+		}
+	}
+}
+
+insult_antioch9 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		ai = no
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_antioch10 = {
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		ai = no
+		FROM = {
+			tag = Z17
+		}
+	}
+}
+
+insult_jansenist1 = {
+	trigger = {
+		NOT = { religion = anglican }
+		FROM = {
+			religion = anglican
+		}
+	}
+}
+
+insult_jansenist2 = {
+	trigger = {
+		NOT = { religion = anglican }
+		religion_group = christian
+		FROM = {
+			religion = anglican
+		}
+	}
+}
+
+insult_templarite1 = {
+	trigger = {
+		NOT = { religion = protestant }
+		FROM = {
+			religion = protestant
+		}
+	}
+}
+
+insult_templarite2 = {
+	trigger = {
+		NOT = { religion = protestant }
+		FROM = {
+			religion = protestant
+		}
+	}
+}

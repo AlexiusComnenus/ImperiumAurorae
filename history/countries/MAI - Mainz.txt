@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = saxon_fief_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = hessian
+capital = 78
+fixed_capital = 78
+1434.6.11= {
+	monarch = {
+		name = "Magneric"
+		dynasty = "Ludowinger"
+		birth_date = 1413.1.1
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = ballistics_expert_personality
+	add_ruler_personality = malevolent_personality
+}

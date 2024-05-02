@@ -1,0 +1,15 @@
+owner = TUA
+controller = TUA
+capital = "Sao Tome"
+is_city = yes
+culture = ge
+religion = hellenic_pagan
+trade_goods = unknown
+base_tax = 2
+base_production = 3
+base_manpower = 1
+add_core = TUA
+discovered_by = south_american
+native_size = 10
+native_ferocity = 1
+native_hostileness = 3

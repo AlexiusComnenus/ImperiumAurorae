@@ -1,0 +1,283 @@
+roman_diocese = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "roman_empire"
+	potential = {
+		culture_group = roman_group
+		tag = SOI
+	}
+	trigger = {
+		OR = {
+			has_reform = roman_diocese
+			have_had_reform = roman_diocese
+		}
+	}
+	fixed_rank = 2
+	modifiers = {
+		war_exhaustion = -0.05
+		monarch_military_power = 1
+		num_accepted_cultures = 1
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+reign_of_majorian_reform = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "roman_empire"
+	potential = {
+		culture_group = roman_group
+		tag = SOI
+	}
+	trigger = {
+		OR = {
+			has_reform = reign_of_majorian_reform
+			have_had_reform = reign_of_majorian_reform
+		}
+	}
+	fixed_rank = 3
+	modifiers = {
+		war_exhaustion = -0.05
+		monarch_military_power = 1
+		global_autonomy = -0.05
+		years_of_nationalism = -10
+		num_accepted_cultures = 2
+		max_absolutism_effect = 0.1
+		monthly_militarized_society = 0.25
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+roman_regional_commanders = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "reform_the_pronoiars_reform"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = roman_regional_commanders
+			have_had_reform = roman_regional_commanders
+		}
+	}
+	modifiers = {
+		nobles_influence_modifier = -0.1
+		num_of_pronoiars = 2
+		vassal_forcelimit_bonus = 0.25
+		vassal_income = 0.25
+		vassal_manpower_bonus = 0.25
+		num_accepted_cultures = 1
+		max_absolutism = 10
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+		enables_pronoias = yes 
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+roman_bureaucracy = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "parliament_hall"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = roman_bureaucracy
+			have_had_reform = roman_bureaucracy
+		}
+	}
+	modifiers = {
+		build_cost = -0.1
+		build_time = -0.25
+		advisor_pool = 1
+		num_accepted_cultures = 1
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+roman_caesaropapism = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "byzantine_rule"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = roman_caesaropapism
+			have_had_reform = roman_caesaropapism
+		}
+	}
+	modifiers = {
+		church_influence_modifier = -0.2
+		church_loyalty_modifier = 0.1
+		church_privilege_slots = 2
+		monthly_fervor_increase = 5
+		yearly_patriarch_authority = 0.0025
+		max_absolutism = 10
+		global_religious_conversion_resistance = 0.75
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+strengthen_the_comitatenses = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "gendarmes_reform"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = strengthen_the_comitatenses
+			have_had_reform = strengthen_the_comitatenses
+		}
+	}
+	modifiers = {
+		land_attrition = -0.10	
+		reinforce_speed = 0.15
+		movement_speed = 0.15
+		defensiveness = 0.15
+		cav_to_inf_ratio = 0.15
+		allowed_musketeer_fraction = 0.20
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+expand_the_foederati = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "mercenaries"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = expand_the_foederati
+			have_had_reform = expand_the_foederati
+		}
+	}
+	modifiers = {
+		num_of_pronoiars = 2
+		merc_leader_army_tradition = 0.5
+		mercenary_discipline = 0.05
+		mercenary_manpower = 0.20
+		merc_independent_from_trade_range = yes
+		allow_mercenary_drill = yes
+		reduced_liberty_desire_on_same_continent = 10
+	}
+	#conditional = {
+	#	allow = { has_dlc = "Domination" }
+	#	government_abilities = {
+	#		hessian_militarization_mechanic
+	#	}
+	#}
+	custom_attributes = {
+		mercs_do_not_cost_army_professionalism = yes
+	}
+	ai = {
+		factor = 10
+	}
+}
+
+roman_military_committee = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "war_map"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = roman_military_committee
+			have_had_reform = roman_military_committee
+		}
+	}
+	modifiers = {
+		army_tradition_decay = -0.01
+		leader_cost = 1
+		production_efficiency = -0.25
+		trade_efficiency = -0.25
+		leader_land_fire = 1
+		leader_land_manuever = 1
+		leader_land_shock = 1
+		leader_siege = 1
+		max_general_fire = 1
+		max_general_maneuver = 1
+		max_general_shock = 1
+		max_general_siege = 1
+		has_musketeer = yes
+		allowed_musketeer_fraction = 0.10
+		max_absolutism_effect = 0.1
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		government_abilities = {
+			militarization_mechanic
+		}
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+ia_legacy_of_rome = {
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	icon = "roman_empire"
+	potential = {
+		culture_group = roman_group
+	}
+	trigger = {
+		OR = {
+			has_reform = ia_legacy_of_rome
+			have_had_reform = ia_legacy_of_rome
+		}
+	}
+	modifiers = {
+		administrative_efficiency = 0.05
+		max_absolutism = 20
+		max_absolutism_effect = 0.1
+		prestige_decay = -0.02
+	}
+	custom_attributes = {
+		#locked_government_type = yes
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}

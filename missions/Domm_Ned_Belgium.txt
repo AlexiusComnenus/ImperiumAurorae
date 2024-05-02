@@ -1,0 +1,378 @@
+dom_bel_slot3a = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			walloon_tags = yes
+			tag = BEL
+		}
+		#has_country_flag = dom_ned_modded_missions
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	dom_walloon_belgian_revolution = {
+		icon = strengthen_the_vroedschappen
+		required_missions = { }
+		position = 7
+		
+		trigger = {
+			tag = BEL
+		}
+		
+		effect = {
+			custom_tooltip = tooltip_wip
+			change_government = monarchy
+			custom_tooltip = add_gov_reform_parliamentary_monarchy
+			add_government_reform = autocracy_reform #autocracy_reform
+			
+		
+			#country event
+			#add_prestige_or_monarch_power = { amount = 5 }
+			#if = {
+			#	limit = {
+			#		tag = BEL
+			#	}
+			#	country_event = {
+			#		id = flavor_hol.3502
+			#	}
+			#}
+		}	
+	}
+}
+dom_bel_slot1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = BEL
+		#has_country_flag = dom_ned_modded_missions
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	dom_bel_congo_river = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { dom_walloon_belgian_revolution }
+		position = 8
+		completed_by = 1660.1.1
+		
+		provinces_to_highlight = {			
+			area = coastal_kongo
+		}
+		
+		trigger = {
+			coastal_kongo = {
+				type = all
+				has_discovered = ROOT
+			}
+		}
+		
+		effect = {
+			country_event_with_insight = {
+				id = dutch_domination.31
+				insight_tooltip = dom_bel_congo_river_tt
+			}
+			tooltip = {
+				CON = { override_country_name = FREE_STATE_CONGO }
+				create_union = CON 
+			}
+			custom_tooltip = alternatively_tt
+			tooltip = {
+				CON = { override_country_name = BELGIAN_CONGO }
+				create_subject = {
+					subject_type = colony
+					subject = CON	
+				}
+			}
+		}
+	}
+	
+	dom_bel_scramble_for_africa = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { dom_bel_congo_river }
+		#position = 7
+		completed_by = 1660.1.1
+		
+		provinces_to_highlight = {			
+			area = coastal_kongo
+			has_discovered = ROOT
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		trigger = {
+			coastal_kongo = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			every_owned_province = {
+				limit = {
+					region = kongo_region
+				}
+				cede_province = CON
+			}
+			CON = {
+				add_government_reform = autocracy_reform
+			}
+			if = {
+				limit = { has_country_flag = mission_branch_free_congo }
+				custom_tooltip = BONUS_REWARD_YES
+			}
+			else = {
+				custom_tooltip = BONUS_REWARD_NO
+			}
+			tooltip = {
+				CON = { override_country_name = FREE_STATE_CONGO }
+				create_union = CON
+			}
+			if = {
+				limit = { has_country_flag = mission_branch_belgian_congo }
+				custom_tooltip = BONUS_REWARD_YES
+			}
+			else = {
+				custom_tooltip = BONUS_REWARD_NO
+			}
+			tooltip = {
+				CON = { override_country_name = BELGIAN_CONGO }
+				create_subject = {
+					subject_type = colony
+					subject = CON	
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = { has_country_flag = mission_branch_free_congo }
+					CON = { override_country_name = FREE_STATE_CONGO }
+					create_union = CON
+				}
+				if = {
+					limit = { has_country_flag = mission_branch_belgian_congo }
+					CON = { override_country_name = BELGIAN_CONGO }
+					create_subject = {
+						subject_type = colony
+						subject = CON	
+					}
+				}
+			}
+		}
+	}
+}
+
+dom_bel_slot5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = BEL
+		#has_country_flag = dom_ned_modded_missions
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	dom_bel_friends_in_london = {
+		icon = english_alliance
+		required_missions = { dom_walloon_belgian_revolution }
+		position = 8
+		required_missions = { }
+		provinces_to_highlight = {
+			is_capital = yes
+			OR = {
+				AND = {
+					owned_by = GBR
+					ROOT = { NOT = { alliance_with = GBR } }
+					NOT = {
+						GBR = {
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					owned_by = ENG
+					NOT = { exists = GBR }
+					ROOT = { NOT = { alliance_with = ENG } }
+					NOT = {
+						ENG = {
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					owned_by = SCO
+					NOT = { exists = GBR }
+					NOT = { exists = ENG }
+					ROOT = { NOT = { alliance_with = SCO } }
+					NOT = {
+						SCO = {
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					owned_by = FRA
+					NOT = {
+						FRA = {
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+					NOT = { FRA = { is_subject_of = ROOT } }
+				}
+			}
+		}
+		trigger = {
+			if = {
+				limit = { exists = GBR }
+				OR = {
+					guaranteed_by = GBR
+					alliance_with = GBR
+					GBR = {
+						custom_trigger_tooltip = {
+							tooltip = rivalled_or_rival_of
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = ENG }
+				OR = {
+					guaranteed_by = ENG
+					alliance_with = ENG
+					ENG = {
+						custom_trigger_tooltip = {
+							tooltip = rivalled_or_rival_of
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = SCO 236 = { country_or_non_sovereign_subject_holds = ROOT } }
+				OR = {
+					guaranteed_by = SCO
+					alliance_with = SCO
+					SCO = {
+						custom_trigger_tooltip = {
+							tooltip = rivalled_or_rival_of
+							OR = {
+								is_rival = root
+								root = { is_rival = prev }
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = has_been_insulted_by_root
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = bur_english_diplomacy
+				duration = 7300
+			}
+		}
+		ai_weight = {
+			factor = 500	#Natural diplomacy
+		}
+	}
+}

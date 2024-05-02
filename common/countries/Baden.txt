@@ -1,0 +1,102 @@
+ck2_converter_generated = yes
+graphical_culture = westerngfx
+color = { 117 161 67 }
+revolutionary_colors = { 8 5 8 }
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	religious_ideas
+	economic_ideas
+	diplomatic_ideas
+	innovativeness_ideas
+	offensive_ideas
+	spy_ideas
+}
+historical_units = {
+	austrian_grenzer
+	austrian_hussar
+	austrian_jaeger
+	austrian_tercio
+	austrian_white_coat
+	dutch_maurician
+	halberd_infantry
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	prussian_uhlan
+	swiss_landsknechten
+	western_medieval_knights
+	western_men_at_arms
+}
+monarch_names = {
+	"Alberade #0" = -1
+	"Baruch #0" = 0
+	"Berthold #1" = 10
+	"Dietrich #0" = 0
+	"Eginolf #0" = 0
+	"Friedrica #0" = -1
+	"Jakob #3" = 10
+	"Jutta #0" = -1
+	"Jürgen #0" = 0
+	"Klementia #0" = -1
+	"Kuno #0" = 0
+	"Philipp #1" = 10
+	"Salome #0" = -1
+	"Trude #0" = -1
+	"Ulrich #0" = 0
+	"Wilhelm #0" = 0
+	"Winfrida #0" = -1
+}
+leader_names = {
+	"Albers"
+	"Baehr"
+	"Beer"
+	"Benthens"
+	"Breh"
+	"Bächtold"
+	"Eisenkolb"
+	"Erb"
+	"Ferstenfeld"
+	"Fischer"
+	"Grether"
+	"Göhringer"
+	"Heitzmann"
+	"Helff"
+	"Kempf"
+	"Klee"
+	"Mackensen"
+	"Römermann"
+	"Schüßler"
+	"Steinmann"
+	"Tientjen"
+	"Tuve"
+	"Wachsmuth"
+}
+ship_names = {
+	"Bretten"
+	"Bruchsal"
+	"Constance"
+	"Eberbach"
+	"Feldberg"
+	"Freiburg"
+	"Heidelberg"
+	"Karlsruhe"
+	"Kinzig"
+	"Lahr"
+	"Linzgau"
+	"Lörrach"
+	"Mannheim"
+	"Markgraf Bernard I"
+	"Markgraf Hermann"
+	"Markgraf Karl I"
+	"Offenburg"
+	"Rastatt"
+	"Rhein"
+	"Tauber"
+	"Villingen"
+}
+army_names = {
+	"Armee von $PROVINCE$"
+	"Markgräfische Garde"
+}

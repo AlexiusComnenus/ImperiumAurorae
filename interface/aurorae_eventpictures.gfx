@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "DragonPrincess_eventPicture"
+		texturefile = "gfx/event_pictures/DragonPrincess_eventPicture.dds"
+	}
+	spriteType = {
+		name = "PrincessSearch_eventPicture"
+		texturefile = "gfx/event_pictures/PrincessSearch_eventPicture.dds"
+	}
+}

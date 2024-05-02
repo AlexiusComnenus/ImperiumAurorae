@@ -1,0 +1,491 @@
+ByzantineNavalSupport = {
+	potential = {
+		tag = Z17
+	}
+	trigger = {
+		any_subject_country = {
+			OR ={
+				tag = BYZ
+				was_tag = BYZ
+			}
+		}
+		mission_completed = antioch_question_greeks
+	}
+		diplomatic_upkeep = 1
+		trade_steering = 0.1
+		trade_power_in_fleet_modifier = 0.1
+		#galley_power = 0.1
+		navy_tradition = 1
+}
+
+PaphlagonianCannonSupport = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		any_subject_country = {
+			OR = {
+				tag = Z44
+				was_tag = Z44
+			}
+		}
+		mission_completed = antioch_question_paphlagonia
+	}
+		artillery_shock = 1
+		diplomatic_upkeep = 1
+		
+}
+
+righteousness_loss_oe_1 = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		overextension_percentage = 0.33
+		NOT = { overextension_percentage = 0.67 }
+	}
+	monthly_righteousness = -0.25
+}
+
+righteousness_loss_oe_2 = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		overextension_percentage = 0.67
+		NOT = { overextension_percentage = 1.01 }
+	}
+	monthly_righteousness = -0.5
+}
+
+righteousness_loss_oe_3 = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		overextension_percentage = 1
+		#NOT = { overextension_percentage = 1.01 }
+	}
+	monthly_righteousness = -1
+}
+
+righteousness_loss_offensive_war = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		is_in_war = {
+			attacker_leader = ROOT
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_take_mandate
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_restore_personal_union
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_disloyal_vassal
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_hre_attacked
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_insult
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_dishonored_call
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_religious_conformance
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_change_government
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_change_government_great_peasants_war
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_core
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_hegemon
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_defender_of_the_faith
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_imperial_ban
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_imperial_ban_incident
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_liberate_elector
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_super_badboy
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_support_rebels
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_chinese_unification
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_forced_break_alliance
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_reintegrate_into_hre
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+				casus_belli = cb_imperial_realm_war
+			}
+		}
+	}
+	monthly_righteousness = -1
+}
+
+righteousness_gain_defensive_war = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		is_in_war = {
+			defender_leader = ROOT
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = ROOT
+			}
+		}
+	}
+	monthly_righteousness = 2
+}
+
+righteousness_gain_peace = {
+	potential = { 
+		tag = Z17
+	}
+	trigger = {
+		is_at_war = no
+	}
+	monthly_righteousness = 0.5
+}
+
+righteousness_loss_unaccepted_1 = {
+	potential = { 
+		tag = Z17
+		ai = no
+	}
+	trigger = {
+		num_of_provinces_owned_or_owned_by_subjects_with = {
+			value = 5
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+			is_overseas = no
+		}
+	}
+	monthly_righteousness = -0.2
+}
+
+righteousness_loss_unaccepted_2 = {
+	potential = { 
+		tag = Z17
+		ai = no
+	}
+	trigger = {
+		num_of_provinces_owned_or_owned_by_subjects_with = {
+			value = 10
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+			is_overseas = no
+		}
+	}
+	monthly_righteousness = -0.2
+}
+
+righteousness_loss_unaccepted_3 = {
+	potential = { 
+		tag = Z17
+		ai = no
+	}
+	trigger = {
+		num_of_provinces_owned_or_owned_by_subjects_with = {
+			value = 20
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+			is_overseas = no
+		}
+	}
+	monthly_righteousness = -0.4
+}
+
+righteousness_loss_unaccepted_4 = {
+	potential = { 
+		tag = Z17
+		ai = no
+	}
+	trigger = {
+		num_of_provinces_owned_or_owned_by_subjects_with = {
+			value = 40
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+			is_overseas = no
+		}
+	}
+	monthly_righteousness = -0.8
+}
+
+#righteousness_gain_accepted_1 = {
+#	potential = { 
+#		tag = Z17
+#	}
+#	trigger = {
+#		num_accepted_cultures = 3
+#	}
+#	monthly_righteousness = 0.1
+#}
+#
+#righteousness_gain_accepted_2 = {
+#	potential = { 
+#		tag = Z17
+#	}
+#	trigger = {
+#		num_accepted_cultures = 5
+#	}
+#	monthly_righteousness = 0.1
+#}
+#
+#righteousness_gain_accepted_3 = {
+#	potential = { 
+#		tag = Z17
+#	}
+#	trigger = {
+#		num_accepted_cultures = 10
+#	}
+#	monthly_righteousness = 0.1
+#}
+
+righteousness_gain_ai = {
+	potential = { 
+		tag = Z17
+		ai = yes
+	}
+	trigger = {
+		ai = yes
+	}
+	monthly_righteousness = 0.2
+	state_governing_cost = -0.5
+	#manpower_recovery_speed = 0.5
+	#army_tradition_decay = -0.03
+	yearly_army_professionalism = 0.01
+}
+
+breach_of_harmony_triggered_modifier = {
+	potential = {
+		is_part_of_hre = yes
+		is_at_war = yes
+		hre_reform_passed = emperor_harmony_edict
+	}
+	
+	trigger = {
+		any_war_enemy_country = {
+			is_part_of_hre = yes
+			is_subject = no
+		}
+	}
+	
+	diplomatic_reputation = -2
+	ae_impact = 0.25	
+}
+
+chen_dynasty_modifier = {
+	
+	potential = {
+		is_part_of_hre = yes
+		religion = hellenic_pagan_reformed
+	}
+	
+	trigger = {
+		dynasty = emperor
+		NOT = { tag = Z17 }
+	}
+	imperial_mercenary_cost = -0.1
+	manpower_against_imperial_enemies = 10000
+	reverse_relation_with_same_religion = 15	
+}
+
+antiplayerbonusantioch = {
+	potential = {
+		ai = yes
+		tag = Z17
+		#OR = {
+		#	NOT = { is_year = 1480 }
+		#	is_year = 1600
+		#}
+	}
+	
+	trigger = {
+		any_war_enemy_country = {
+			ai = no
+		}
+	}
+	
+	#shock_damage = 0.25
+	#siege_ability = 0.25
+	manpower_recovery_speed = 0.5
+	cavalry_flanking = 0.25
+}
+
+major_threat_1 = {
+	potential = {
+		OR = { 
+			tag = Z17
+			overlord = { tag = Z17 }
+		}
+	}
+	
+	trigger = {
+		Z17 = {
+			OR = {
+				total_development = 500
+				NOT = { great_power_rank = 4 }
+			}
+		}
+	}
+	
+	ae_impact = 0.25
+}
+
+major_threat_2 = {
+	potential = {
+		OR = { 
+			tag = Z17
+			overlord = { tag = Z17 }
+		}
+	}
+	
+	trigger = {
+		Z17 = {
+			OR = {
+				total_development = 1000
+				NOT = { great_power_rank = 2 }
+			}
+		}
+	}
+	
+	ae_impact = 0.25
+}
+
+major_threat_3 = {
+	potential = {
+		OR = { 
+			tag = Z17
+			overlord = { tag = Z17 }
+		}
+	}
+	
+	trigger = {
+		Z17 = {
+			OR = {
+				total_development = 2000
+				is_hegemon = yes
+			}
+		}
+	}
+	
+	ae_impact = 0.25
+}
+
+nilepartnership = {
+	potential = {
+		has_country_flag = z42_nile_partnership
+	}
+	
+	trigger = {
+		any_ally = {
+			has_country_flag = z42_nile_partnership
+		}
+	}
+	
+	global_trade_goods_size_modifier = 0.05
+	caravan_power = 0.25
+}
+
+goldsharing = {
+	potential = {
+		Z42 = { mission_completed = z42_supply_gold }
+		is_part_of_hre = yes
+		NOT = { tag = Z42 }
+	}
+	
+	trigger = {
+		is_part_of_hre = yes
+		exists = Z42
+		Z42 = { is_part_of_hre = yes }
+	}
+	
+	global_tax_income = 36
+}

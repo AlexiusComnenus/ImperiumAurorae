@@ -1,0 +1,8 @@
+government = republic
+add_government_reform = noble_elite_reform
+government_rank = 1
+technology_group = western
+religion = arianism
+primary_culture = vandal
+capital = 341
+fixed_capital = 341

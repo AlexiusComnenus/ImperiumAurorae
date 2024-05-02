@@ -1,0 +1,15 @@
+﻿l_english:
+
+ #Government
+
+ hellenic_order_government:0 "Hellenic Order"
+ hellenic_order_government_desc:0 "The Knits of Malta seek to spread their new faith through the Mediterranean Sea, using the protection from the Empire for their goal."
+ 
+ #Estate privilege
+ 
+ estate_nobles_strong_marines:0 "Strong Marines"
+ estate_nobles_strong_marines_desc:0 "With the help of our noble officers, we will improve the marine recruitment system and ensure better quality."
+ 
+ #Mechanic tooltip
+ 
+ mechanic_strong_marines_yes:0 "Gains access to a §YNobility§! privilege that strengthens marines"

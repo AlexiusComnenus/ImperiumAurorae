@@ -1,0 +1,406 @@
+#feudalization
+#court stuff
+
+byzantine_succession_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 10
+	available = { }
+	
+	interactions = {
+		byz_succession_bureaucracy = {
+			icon = GFX_succession_bureaucracy_button
+			trigger = {
+				ruler_age = 40
+				OR = {
+					monthly_adm = 10 
+					adm = 5 
+					national_focus = ADM
+				}
+				adm_power_cost = 50
+			}
+			effect = {
+				adm_power_cost = 50
+				custom_tooltip = byz_succession_bureaucracy.tt
+				if = {
+					limit = {
+						has_estate = estate_nobles
+						has_estate = estate_eunuchs
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = -10
+					}
+					add_estate_loyalty = {
+						estate = estate_eunuchs
+						loyalty = 10
+					}
+					add_estate_influence_modifier = {
+						estate = estate_eunuchs
+						influence = 15
+						duration = 3650
+					}
+				}
+				hidden_effect = {
+					random_list = {
+			            3 = { trigger = { NOT = { dynasty = Angelos } }			set_country_flag = Angelos }
+			            3 = { trigger = { NOT = { dynasty = Doukas } }			set_country_flag = Doukas }
+						3 = { trigger = { NOT = { dynasty = Palaiologos } }		set_country_flag = Palaiologos }
+			            3 = { trigger = { NOT = { dynasty = Philanthropenos } }	set_country_flag = Philanthropenos }
+			            3 = { trigger = { NOT = { dynasty = Laskaris } }		set_country_flag = Laskaris }
+			            1 = { trigger = { NOT = { dynasty = Melissenos } }		set_country_flag = Melissenos }
+			            1 = { trigger = { NOT = { dynasty = Diogenes } }		set_country_flag = Diogenes }
+			            1 = { trigger = { NOT = { dynasty = Batatzes } }		set_country_flag = Batatzes }
+			            1 = { trigger = { NOT = { dynasty = Kantakouzenos } }	set_country_flag = Kantakouzenos }
+			            1 = { trigger = { NOT = { dynasty = Phokas } }			set_country_flag = Phokas }
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						Angelos = {
+							define_heir = {
+								dynasty = Angelos
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Angelos
+						}
+						Doukas = {
+							define_heir = {
+								dynasty = Doukas
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Doukas
+						}
+						Palaiologos = {
+							define_heir = {
+								dynasty = Palaiologos
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Palaiologos
+						}
+						Philanthropenos = {
+							define_heir = {
+								dynasty = Philanthropenos
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Philanthropenos
+						}
+						Laskaris = {
+							define_heir = {
+								dynasty = Laskaris
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Laskaris
+						}
+						Melissenos = {
+							define_heir = {
+								dynasty = Melissenos
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Melissenos
+						}
+						Diogenes = {
+							define_heir = {
+								dynasty = Diogenes
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Diogenes
+						}
+						Batatzes = {
+							define_heir = {
+								dynasty = Batatzes
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Batatzes
+						}
+						Kantakouzenos = {
+							define_heir = {
+								dynasty = Kantakouzenos
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Kantakouzenos
+						}
+						Phokas = {
+							define_heir = {
+								dynasty = Phokas
+								age = 30
+								change_adm = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Phokas
+						}
+					}
+				}
+				add_ruler_modifier = {
+					name = byz_succession_bureaucracy_mod
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = byzantine_succession_mechanic
+			cooldown_desc = BYZANTINE_SUCCESSION_HAPPENED
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 0
+					has_heir = yes
+				}
+			}
+		}
+		byz_succession_dynasty = {
+			icon = GFX_succession_dynasty_button
+			trigger = { 
+				ruler_age = 40
+				OR = {
+					monthly_dip = 10 
+					dip = 5 
+					national_focus = DIP
+				}
+				dip_power_cost = 50
+			}
+			effect = { 
+				dip_power_cost = 50
+				custom_tooltip = byz_succession_dynasty.tt
+				if = {
+					limit = {
+						has_estate = estate_nobles
+						has_estate = estate_eunuchs
+					}
+					add_estate_loyalty = {
+						estate = estate_eunuchs
+						loyalty = -5
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = -5
+					}
+					add_estate_influence_modifier = {
+						estate = estate_eunuchs
+						influence = -10
+						duration = 3650
+					}
+					add_estate_influence_modifier = {
+						estate = estate_nobles
+						influence = -10
+						duration = 3650
+					}
+				}
+				hidden_effect = {
+					define_heir = {
+						dynasty = ROOT
+						age = 30
+						change_dip = 2
+						claim = 50
+						no_consort_with_heir = yes
+					}
+				}
+				add_ruler_modifier = {
+					name = byz_succession_dynasty_mod
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = byzantine_succession_mechanic
+			cooldown_desc = BYZANTINE_SUCCESSION_HAPPENED
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 0
+					has_heir = yes
+				}
+			}
+		}
+		byz_succession_army = {
+			icon = GFX_succession_army_button
+			trigger = {
+				ruler_age = 40
+				OR = {
+					monthly_mil = 10 
+					mil = 5 
+					national_focus = MIL
+				}
+				mil_power_cost = 50
+			}
+			effect = { 
+				mil_power_cost = 50
+				custom_tooltip = byz_succession_army.tt
+				if = {
+					limit = {
+						has_estate = estate_nobles
+						has_estate = estate_eunuchs
+					}
+					add_estate_loyalty = {
+						estate = estate_eunuchs
+						loyalty = -10
+					}
+					add_estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 10
+					}
+					add_estate_influence_modifier = {
+						estate = estate_nobles
+						influence = 15
+						duration = 3650
+					}
+				}
+				hidden_effect = {
+					random_list = {
+			            3 = { trigger = { NOT = { dynasty = Angelos } }			set_country_flag = Angelos }
+			            3 = { trigger = { NOT = { dynasty = Doukas } }			set_country_flag = Doukas }
+						3 = { trigger = { NOT = { dynasty = Palaiologos } }		set_country_flag = Palaiologos }
+			            3 = { trigger = { NOT = { dynasty = Philanthropenos } }	set_country_flag = Philanthropenos }
+			            3 = { trigger = { NOT = { dynasty = Laskaris } }		set_country_flag = Laskaris }
+			            1 = { trigger = { NOT = { dynasty = Melissenos } }		set_country_flag = Melissenos }
+			            1 = { trigger = { NOT = { dynasty = Diogenes } }		set_country_flag = Diogenes }
+			            1 = { trigger = { NOT = { dynasty = Batatzes } }		set_country_flag = Batatzes }
+			            1 = { trigger = { NOT = { dynasty = Kantakouzenos } }	set_country_flag = Kantakouzenos }
+			            1 = { trigger = { NOT = { dynasty = Phokas } }			set_country_flag = Phokas }
+					}
+					trigger_switch = {
+						on_trigger = has_country_flag
+						Angelos = {
+							define_heir = {
+								dynasty = Angelos
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Angelos
+						}
+						Doukas = {
+							define_heir = {
+								dynasty = Doukas
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Doukas
+						}
+						Palaiologos = {
+							define_heir = {
+								dynasty = Palaiologos
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Palaiologos
+						}
+						Philanthropenos = {
+							define_heir = {
+								dynasty = Philanthropenos
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Philanthropenos
+						}
+						Laskaris = {
+							define_heir = {
+								dynasty = Laskaris
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Laskaris
+						}
+						Melissenos = {
+							define_heir = {
+								dynasty = Melissenos
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Melissenos
+						}
+						Diogenes = {
+							define_heir = {
+								dynasty = Diogenes
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Diogenes
+						}
+						Batatzes = {
+							define_heir = {
+								dynasty = Batatzes
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Batatzes
+						}
+						Kantakouzenos = {
+							define_heir = {
+								dynasty = Kantakouzenos
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Kantakouzenos
+						}
+						Phokas = {
+							define_heir = {
+								dynasty = Phokas
+								age = 30
+								change_mil = 2
+								claim = 50
+								no_consort_with_heir = yes
+							}
+							clr_country_flag = Phokas
+						}
+					}
+				}
+				add_ruler_modifier = {
+					name = byz_succession_army_mod
+					duration = 3650
+				}
+			}
+			cooldown_years = 10
+			cooldown_token = byzantine_succession_mechanic
+			cooldown_desc = BYZANTINE_SUCCESSION_HAPPENED
+			ai_chance = {
+				factor = 20
+				modifier = {
+					factor = 0
+					has_heir = yes
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+﻿l_english:
+
+ #Mechanics Tooltips
+ diadochi_ideas: "Diadochi Ideas"
+ diadochi_ideas_start: "Diadochi Traditions"
+ diadochi_ideas_bonus: "Diadochi Ambitions"
+ krm_phalanx: "Phalanx Tactics"
+ krm_phalanx_desc: "Long before the Roman successors discovered that dense spear formations were actually very effective, we already fought in such formations."
+ krm_indian_ocean_traders: "Indian Ocean Merchants"
+ krm_indian_ocean_traders_desc: "Our control over Hormuz and the long reach of our merchants has made our presence ubiquitous in markets around the Indian Ocean."
+ krm_bam_citadel: "Alexandreia Citadel"
+ krm_bam_citadel_desc: "Our very survival as a state in Karmania can be attributed to the great Citadel in our capital."
+ bam_citadel: "Alexandreia Citadel"
+ krm_companion_cavalry: "The Companions"
+ krm_companion_cavalry_desc: "The Companion Cavalry helped Alexander conquer the known world. Let us revive the Companions again!"
+ krm_alexanders_acceptance: "Integration of Local Cultures"
+ krm_alexanders_acceptance_desc: "Throughout his many conquests, Alexander never sought to suppress or destroy local cultures. Instead, he integrated the various cultures of his vast empire into his court."
+ krm_alexandrias_everywhere_desc: "Not only was he a conqueror, Alexander was also a great builder of cities. Cities bearing the name of Alexandreia are everywhere."
+ krm_alexandrias_everywhere: "The Many Alexandreias"
+ krm_monument_constructors: "Monument Constructors"
+ krm_monument_constructors_desc: "Let us construct many great monuments to immortalize our legacy!"
+ manichean_center_of_reformation: "Manichaen Fire of Revival"
+ manichean_deity_jesus: "Jesus"
+ manichean_deity_jesus_desc: "Jesus is the primary and last prophet according to the Christian religious tradition. He embodies the values of self-sacrifice and kindness."
+ manichean_deity_mani: "Mani"
+ manichean_deity_mani_desc: "Mani is the founder of our religion, the true last prophet. He wished to bring an end to the religious squabbles by showing everyone that they were all right and wrong in their own ways, and actually all worshipped the same God in different ways."
+ manichean_deity_buddha: "Buddha"
+ manichean_deity_buddha_desc: "Buddha is the founder of the Buddhist philosophy. He embodies the values of balance and introspection."
+ manichean_deity_adam: "Adam"
+ manichean_deity_adam_desc: "The first human created, Adam is the ancestor of us all."
+ manichean_deity_zarathustra: "Zarathustra"
+ manichean_deity_zarathustra_desc: "Zarathustra is the founder of the Zoroastrian religious tradition. He embodies the values of order and commerce."
+ manichean_deity_moses: "Moses"
+ manichean_deity_moses_desc: "In the Judaic and Christian traditions, Moses is a prophet would led the people out of slavery."
+ manichean_deity_cyrus: "Cyrus"
+ manichean_deity_cyrus_desc: "Venerated both in the Zoroastrian tradition for being a great ruler and the Judaic tradition for freeing the Jews of Babylon, Cyrus embodies the values of leadership and justice."
+ manichean_deity_noah: "Noah"
+ manichean_deity_noah_desc: "Venerated in the Abrahamic religions as a prophet who preserved humanity with divine instruction during a Great Flood, Noah represents the survivability of humanity and divine protection."
+ 
+ #Diplo Tooltips
+ province_is_or_accepts_manichean_tt: "The religion of the province is Manichean and is either the State or Syncretic religion of the owner."
+ 
+ #Government
+ diadochos_reform: "Diadochos"
+ diadochos_reform_desc: "The Diadochi were the generals who claimed to be the proper successors to Alexander after his unfortunate death without an heir."
+ diadochi_name_duchy: "Diadochos Administration"
+ diadochi_name_kingdom: "Diadochos Satrapy"
+ diadochi_name_empire: "Diadochos Empire"
+ diadochia_chiliarch: "Chiliarch"
+ diadochia_satrap: "Satrap"
+
+ #Modifiers
+ 
+ #Missions
+ ia_arl_establish_the_safaviyya_title: "Militarize the Capital"
+ ia_arl_establish_the_safaviyya_desc: "If we are to survive and emerge victorious in this chaotic world, we must have a loyal base of manpower to draw upon!"
+ ia_arl_rise_safavids_title: "Rise of Persia"
+ ia_arl_rise_safavids_desc: "We shall conquer Persia!"
+ 
+ # events
+ 

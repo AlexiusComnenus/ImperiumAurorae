@@ -1,0 +1,144 @@
+gra_local_militia = {
+    potential = {
+        normal_or_historical_nations = yes
+    }
+
+    trigger = {
+        owned_by = GRA
+		controlled_by = GRA
+    }
+
+    local_defender_dice_roll_bonus = 1
+}
+
+beleares_flourishing = {
+	potential = {
+        always = yes
+    }
+
+    trigger = {
+        OR = {
+			owned_by = TEM
+			owned_by = VAL
+		}
+		owner = { full_idea_group = religious_ideas }
+    }
+	
+	local_development_cost_modifier = -0.5
+	allowed_num_of_buildings = 3
+	allowed_num_of_manufactories = 1
+	local_institution_spread = 1
+	local_tax_modifier = 1
+	province_trade_power_modifier = 0.50
+	trade_goods_size_modifier = 0.50
+	trade_goods_size = 2
+}
+
+beleares_protected = {
+	potential = {
+        always = yes
+    }
+
+    trigger = {
+        OR = {
+			owned_by = TEM
+			owned_by = VAL
+		}
+    }
+	
+	local_defensiveness = 1
+	local_hostile_movement_speed = -0.5
+	blockade_force_required = 5
+	local_warscore_cost_modifier = 10
+	hostile_disembark_speed = 0.5
+	local_core_creation = 100
+}
+
+shining_city_antioch = {
+	potential = {
+        always = yes
+    }
+
+    trigger = {
+        owned_by = Z17
+		controlled_by = Z17
+    }
+
+	local_development_cost_modifier = -0.5
+	local_warscore_cost_modifier = 10
+	allowed_num_of_buildings = 5
+	allowed_num_of_manufactories = 2
+	max_attrition = 5
+	local_hostile_attrition = 5
+	local_defender_dice_roll_bonus = 3
+	local_defensiveness = 1
+	fort_level = 3
+	local_garrison_damage = 1
+	local_fort_maintenance_modifier = -1
+	local_hostile_movement_speed = -0.5
+	blockade_force_required = 5
+	
+}
+
+soi_limes_province_modifier = {
+	potential = { always = yes }
+	
+	trigger = {
+		owner = {
+			OR = {
+				tag = SOI
+				was_tag = SOI
+			}
+		}
+		owned_by = controller
+	}
+	
+	max_attrition = 1
+	local_hostile_attrition = 1
+	local_fort_maintenance_modifier = -0.25
+	local_hostile_movement_speed = -0.25
+	local_defender_dice_roll_bonus = 1
+}
+
+thu_major_wheat_fields = {
+	potential = { always = yes }
+	
+	trigger = {
+		OR = {
+			trade_goods = grain
+			trade_goods = potato
+		}
+	}
+	
+	trade_goods_size = 1
+	local_production_efficiency = 0.25
+}
+
+thu_breadbasket_of_germany = {
+	potential = { always = yes }
+	
+	trigger = {
+		OR = {
+			trade_goods = grain
+			trade_goods = potato
+		}
+	}
+	
+	trade_goods_size = 2
+	local_production_efficiency = 0.5
+}
+
+fkn_brand_protection_province_mod = {
+	potential = { always = yes }
+	
+	trigger = {
+		trade_goods = wine
+		owner = {
+			tag = FKN
+			was_tag = FKN
+		}
+	}
+	
+	trade_goods_size = 1
+	local_production_efficiency = 0.5
+}

@@ -1,0 +1,14 @@
+# Default sprite pack apply order is 0 so anything higher will take priority
+
+#  0: graphical culture
+# 10: several culture groups 
+# 20: specific culture group 
+# 30: several primary cultures
+# 40: specific primary_culture
+# 50: several TAGs
+# 60: specific TAG
+# 70: even more specific
+
+z42_sprite_pack = 60
+xizho_sprites = 20
+antioch_sprite_pack = 70

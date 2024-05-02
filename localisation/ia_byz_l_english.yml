@@ -1,0 +1,34 @@
+﻿l_english:
+ 
+
+ #Mechanics Tooltips
+ 
+ #Government
+ 
+ #Byzantine Succession
+ ability_byzantine_succession_mechanic: "Byzantine Court Adoptions"
+ BYZANTINE_SUCCESSION_HAPPENED: "A Byzantine Court Adoption"
+ byz_succession_bureaucracy: "Adopt a Bureaucrat"
+ byz_succession_bureaucracy_desc: ""
+ byz_succession_bureaucracy.tt: "Get a new Heir with an §YAverage§! claim and §G+2§! £adm£ Skill."
+ byz_succession_bureaucracy_mod: "Adopted a Bureaucrat"
+ desc_byz_succession_bureaucracy_mod: "Our ruler has appointed a bureaucrat as heir."
+ byz_succession_dynasty: "Adopt a Dynastic Scion"
+ byz_succession_dynasty_desc: ""
+ byz_succession_dynasty.tt: "Get a new Heir of the §Y[Root.Monarch.Dynasty.GetName]§! Dynasty with an §YAverage§! claim and §G+2§! £dip£ Skill."
+ byz_succession_dynasty_mod: "Adopted a Dynastic Scion"
+ desc_byz_succession_dynasty_mod: "Our ruler has appointed a dynastic scion as heir."
+ byz_succession_army: "Adopt a General"
+ byz_succession_army_desc: ""
+ byz_succession_army.tt: "Get a new Heir with an §YAverage§! claim and §G+2§! £mil£ Skill."
+ byz_succession_army_mod: "Adopted a General"
+ desc_byz_succession_army_mod: "Our ruler has appointed a general as heir."
+ #Modifiers
+ 
+ 
+ #Missions
+
+ 
+ # events
+
+ 

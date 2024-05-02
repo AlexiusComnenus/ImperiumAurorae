@@ -1,0 +1,89 @@
+bonfire_of_the_vanities_disaster = {
+	potential = {
+		is_institution_enabled = global_trade
+		NOT = { has_country_flag = survived_curse_of_ivy }
+		NOT = { has_country_flag = ivycurse_started }
+		NOT = { has_global_flag = ivycurse_cured }
+		NOT = { has_global_flag = ivycurse_disabled }
+	}
+	
+	can_start = {
+		OR = {
+			has_institution = global_trade
+			any_owned_province = {
+				is_institution_origin = global_trade
+			}
+			any_neighbor_country = {
+				has_disaster = bonfire_of_the_vanities_disaster
+			}
+		}
+	}
+	
+	can_stop = {
+		tag = SYN
+	}
+	
+	progress = {
+		modifier = {
+			factor = 10
+			any_owned_province = {
+				is_institution_origin = global_trade
+			}
+		}
+		modifier = {
+			factor = 5
+			has_institution = global_trade
+		}
+		modifier = {
+			factor = 5
+			any_neighbor_country = {
+				has_disaster = bonfire_of_the_vanities_disaster
+			}
+		}
+	}
+	
+	can_end = {
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = ivycurse_20years_tt
+				has_country_flag = ivycurse_cured_selfish
+			}
+			custom_trigger_tooltip = {
+				tooltip = ivycurse_cure_found_tt
+				has_global_flag = ivycurse_cured
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = -5
+		global_monthly_devastation = 3
+		development_cost = 5
+		global_trade_power = -5
+		manpower_recovery_speed = -5
+		land_attrition = 2
+		hostile_attrition = 10
+		max_hostile_attrition = 10
+		global_supply_limit_modifier = -0.75
+		mercenary_cost = 5
+		merc_maintenance_modifier = 5
+		mercenary_manpower = -5
+		stability_cost_to_declare_war = 3
+	}
+	
+	on_start = ivycurse.0
+	on_end = ivycurse.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+			1100 = 0
+			10 = ivycurse.2  # Cure Project contribution?
+			20 = ivycurse.3  # Ruler dies
+			20 = ivycurse.4  # Consort dies
+			20 = ivycurse.5  # Heir dies
+			40 = ivycurse.6  # Advisor dies
+		}
+	}
+}

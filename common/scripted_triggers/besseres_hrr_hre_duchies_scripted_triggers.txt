@@ -1,0 +1,1456 @@
+hre_duchy_is_decision_valid = {
+	is_emperor = yes
+	OR = {
+		hre_reform_passed = emperor_privilegia_de_non_appelando
+		hre_reform_passed = privilegia_de_non_appelando
+	}
+	has_global_flag = hre_duchy_emperor_decided_about_ceding_provinces
+}
+
+hre_can_cede_province_to_hre_duchy = {
+	custom_trigger_tooltip = {
+		tooltip = HRE_CAN_CEDE_PROVINCE_TO_HRE_DUCHY_TT
+		NOT = { owned_by = $tag$ }
+		OR = {
+			has_global_flag = hre_duchy_emperor_cede_owned_provinces
+			NOT = { owned_by = ROOT }
+			AND = {
+				is_capital = no
+				is_in_capital_area = no
+			}
+		}
+		country_or_non_sovereign_subject_holds = ROOT
+		owner = {
+			is_part_of_hre = yes
+		}
+	}
+}
+
+hre_is_released_hre_duchy = {
+	OR = {
+		hre_reform_passed = emperor_privilegia_de_non_appelando
+		hre_reform_passed = privilegia_de_non_appelando
+	}
+	OR = {
+		# Germany
+		AND = {
+			tag = BAV
+			has_global_flag = hre_german_duchy_decision_bavaria
+		}
+		AND = {
+			tag = SWA
+			has_global_flag = hre_german_duchy_decision_swabia
+		}
+		AND = {
+			tag = FKN
+			has_global_flag = hre_german_duchy_decision_franconia
+		}
+		AND = {
+			tag = HAN
+			has_global_flag = hre_german_duchy_decision_hanover
+		}
+		AND = {
+			tag = PRU
+			has_global_flag = hre_german_duchy_decision_prussia
+		}
+		AND = {
+			tag = WES
+			has_global_flag = hre_german_duchy_decision_westphalia
+		}
+		AND = {
+			tag = KOL
+			has_global_flag = hre_german_duchy_decision_cologne
+		}
+		AND = {
+			tag = POM
+			has_global_flag = hre_german_duchy_decision_pomerania
+		}
+		AND = {
+			tag = SIL
+			has_global_flag = hre_german_duchy_decision_silesia
+		}
+		AND = {
+			tag = SAX
+			has_global_flag = hre_german_duchy_decision_saxony
+		}
+		AND = {
+			tag = BOH
+			has_global_flag = hre_german_duchy_decision_bohemia
+		}
+		AND = {
+			tag = SWI
+			has_global_flag = hre_german_duchy_decision_switzerland
+		}
+		AND = {
+			tag = NED
+			has_global_flag = hre_german_duchy_decision_netherlands
+		}
+		AND = {
+			tag = HAB
+			has_global_flag = hre_german_duchy_decision_austria
+		}
+		# France
+		AND = {
+			tag = NRM
+			has_global_flag = hre_french_duchy_decision_normandy
+		}
+		AND = {
+			tag = AUV
+			has_global_flag = hre_french_duchy_decision_auvergne
+		}
+		AND = {
+			tag = BUR
+			has_global_flag = hre_french_duchy_decision_burgundy
+		}
+		AND = {
+			tag = LOR
+			has_global_flag = hre_french_duchy_decision_lorraine
+		}
+		AND = {
+			tag = GUY
+			has_global_flag = hre_french_duchy_decision_gascony
+		}
+		AND = {
+			tag = PRO
+			has_global_flag = hre_french_duchy_decision_provence
+		}
+		# Italy
+		AND = {
+			tag = SPI
+			has_global_flag = hre_italian_duchy_decision_sardinia_piedmont
+		}
+		AND = {
+			tag = MLO
+			has_global_flag = hre_italian_duchy_decision_milan
+		}
+		AND = {
+			tag = TUS
+			has_global_flag = hre_italian_duchy_decision_tuscany
+		}
+		AND = {
+			tag = SIC
+			has_global_flag = hre_italian_duchy_decision_sicily
+		}
+		# Iberia
+		AND = {
+			tag = ARA
+			has_global_flag = hre_iberian_duchy_decision_catalonia
+		}
+		AND = {
+			tag = ASU
+			has_global_flag = hre_iberian_duchy_decision_asturias
+		}
+		AND = {
+			tag = CAS
+			has_global_flag = hre_iberian_duchy_decision_castile
+		}
+		# Eastern
+		AND = {
+			tag = HUN
+			has_global_flag = hre_eastern_duchy_decision_hungary
+		}
+		AND = {
+			tag = MAZ
+			has_global_flag = hre_eastern_duchy_decision_mazovia
+		}
+		AND = {
+			tag = MOL
+			has_global_flag = hre_eastern_duchy_decision_moldavia
+		}
+		# Balkans
+		AND = {
+			tag = CLI
+			has_global_flag = hre_balkans_duchy_decision_cilli
+		}
+		AND = {
+			tag = BUL
+			has_global_flag = hre_balkans_duchy_decision_bulgaria
+		}
+		AND = {
+			tag = GRE
+			has_global_flag = hre_balkans_duchy_decision_greece
+		}
+		# Nordic
+		AND = {
+			tag = DAN
+			has_global_flag = hre_nordic_duchy_decision_denmark
+		}
+		AND = {
+			tag = NOR
+			has_global_flag = hre_nordic_duchy_decision_norway
+		}
+		AND = {
+			tag = SWE
+			has_global_flag = hre_nordic_duchy_decision_sweden
+		}
+		AND = {
+			tag = FIN
+			has_global_flag = hre_nordic_duchy_decision_finland
+		}
+		# England
+		AND = {
+			tag = ENG
+			has_global_flag = hre_england_duchy_decision_england
+		}
+		AND = {
+			tag = NOL
+			has_global_flag = hre_england_duchy_decision_northumberland
+		}
+		AND = {
+			tag = SCO
+			has_global_flag = hre_england_duchy_decision_scotland
+		}
+		AND = {
+			tag = IRE
+			has_global_flag = hre_england_duchy_decision_ireland
+		}
+		# Far Eastern
+		AND = {
+			tag = LIT
+			has_global_flag = hre_far_eastern_duchy_decision_lithuania
+		}
+		AND = {
+			tag = KIE
+			has_global_flag = hre_far_eastern_duchy_decision_kiev
+		}
+		AND = {
+			tag = KUR
+			has_global_flag = hre_far_eastern_duchy_decision_curonia
+		}
+		AND = {
+			tag = NOV
+			has_global_flag = hre_far_eastern_duchy_decision_novgorod
+		}
+		AND = {
+			tag = MOS
+			has_global_flag = hre_far_eastern_duchy_decision_muscovy
+		}
+		AND = {
+			tag = PRM
+			has_global_flag = hre_far_eastern_duchy_decision_perm
+		}
+		AND = {
+			tag = CIR
+			has_global_flag = hre_far_eastern_duchy_decision_circassia
+		}
+		# Asia Minor
+		AND = {
+			tag = TRE
+			has_global_flag = hre_asia_minor_duchy_decision_trebizond
+		}
+		AND = {
+			tag = GEO
+			has_global_flag = hre_asia_minor_duchy_decision_georgia
+		}
+	}
+}
+
+hre_check_if_can_give_land_to_hre_duchy_with_diplo_action = {
+	# make sure to keep these areas and provinces the same as in the decisions
+	## Germany
+	if = {
+		limit = {
+			FROM = { tag = BAV }
+		}
+		OR = {
+			east_bavaria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BAV }
+			}
+			lower_bavaria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BAV }
+			}
+			upper_bavaria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BAV }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWA }
+		}
+		OR = {
+			upper_swabia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWA }
+			}
+			lower_swabia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWA }
+			}
+			upper_rhineland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWA }
+			}
+			alsace_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWA }
+			}
+			4710 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWA }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = FKN }
+		}
+		OR = {
+			franconia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = FKN }
+			}
+			upper_franconia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = FKN }
+			}
+			4774 = {
+				hre_can_cede_province_to_hre_duchy = { tag = FKN }
+			}
+			77 = {
+				hre_can_cede_province_to_hre_duchy = { tag = FKN }
+			}
+			1876 = {
+				hre_can_cede_province_to_hre_duchy = { tag = FKN }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = HAN }
+		}
+		OR = {
+			weser_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAN }
+			}
+			lower_saxony_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAN }
+			}
+			holstein_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAN }
+			}
+			45 = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAN }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRU }
+		}
+		OR = {
+			west_prussia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRU }
+			}
+			east_prussia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRU }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = WES }
+		}
+		OR = {
+			north_westphalia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = WES }
+			}
+			westphalia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = WES }
+			}
+			braunschweig_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = WES }
+			}
+			1762 = {
+				hre_can_cede_province_to_hre_duchy = { tag = WES }
+			}
+			81 = {
+				hre_can_cede_province_to_hre_duchy = { tag = WES }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KOL }
+		}
+		OR = {
+			north_rhine_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KOL }
+			}
+			lower_rhineland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KOL }
+			}
+			78 = {
+				hre_can_cede_province_to_hre_duchy = { tag = KOL }
+			}
+			1761 = {
+				hre_can_cede_province_to_hre_duchy = { tag = KOL }
+			}
+			4767 = {
+				hre_can_cede_province_to_hre_duchy = { tag = KOL }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = POM }
+		}
+		OR = {
+			vorpommern_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			hinter_pommern_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			4747 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			2996 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			4749 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			46 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			2993 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+			49 = {
+				hre_can_cede_province_to_hre_duchy = { tag = POM }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SIL }
+		}
+		OR = {
+			silesia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIL }
+			}
+			lusatia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIL }
+			}
+			2969 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIL }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SAX }
+		}
+		OR = {
+			south_saxony_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			northern_saxony_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			thuringia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			4786 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			51 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			4748 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			1759 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+			50 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SAX }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BOH }
+		}
+		OR = {
+			erzgebirge_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BOH }
+			}
+			bohemia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BOH }
+			}
+			moravia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BOH }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWI }
+		}
+		OR = {
+			switzerland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWI }
+			}
+			romandie_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWI }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NED }
+		}
+		OR = {
+			frisia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+			holland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+			north_brabant_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+			brabant_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+			flanders_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+			91 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NED }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = HAB }
+		}
+		OR = {
+			austria_proper_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+			inner_austria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+			1768 = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+			4758 = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+			110 = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+			73 = {
+				hre_can_cede_province_to_hre_duchy = { tag = HAB }
+			}
+		}
+	}
+	## France
+	else_if = {
+		limit = {
+			FROM = { tag = NRM }
+		}
+		OR = {
+			brittany_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			normandy_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			picardy_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			4388 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			182 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			177 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+			183 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NRM }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = AUV }
+		}
+		OR = {
+			poitou_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = AUV }
+			}
+			massif_central_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = AUV }
+			}
+			orleans_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = AUV }
+			}
+			4389 = {
+				hre_can_cede_province_to_hre_duchy = { tag = AUV }
+			}
+			178 = {
+				hre_can_cede_province_to_hre_duchy = { tag = AUV }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BUR }
+		}
+		OR = {
+			bourgogne_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUR }
+			}
+			west_burgundy_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUR }
+			}
+			4390 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUR }
+			}
+			186 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUR }
+			}
+			185 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUR }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = LOR }
+		}
+		OR = {
+			lorraine_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LOR }
+			}
+			181 = {
+				hre_can_cede_province_to_hre_duchy = { tag = LOR }
+			}
+			94 = {
+				hre_can_cede_province_to_hre_duchy = { tag = LOR }
+			}
+			93 = {
+				hre_can_cede_province_to_hre_duchy = { tag = LOR }
+			}
+			1866 = {
+				hre_can_cede_province_to_hre_duchy = { tag = LOR }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				3004 = {
+					hre_can_cede_province_to_hre_duchy = { tag = LOR }
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GUY }
+		}
+		OR = {
+			pyrenees_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GUY }
+			}
+			guyenne_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GUY }
+			}
+			languedoc_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GUY }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRO }
+		}
+		OR = {
+			provence_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRO }
+			}
+			savoy_dauphine_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRO }
+			}
+		}
+	}
+	## Italy
+	else_if = {
+		limit = {
+			FROM = { tag = SPI }
+		}
+		OR = {
+			piedmont_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SPI }
+			}
+			corsica_sardinia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SPI }
+			}
+			102 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SPI }
+			}
+			2992 = {
+				hre_can_cede_province_to_hre_duchy = { tag = SPI }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MLO }
+		}
+		OR = {
+			lombardy_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MLO }
+			}
+			po_valley_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MLO }
+			}
+			emilia_romagna_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MLO }
+			}
+			venetia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MLO }
+			}
+			101 = {
+				hre_can_cede_province_to_hre_duchy = { tag = MLO }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = TUS }
+		}
+		OR = {
+			tuscany_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TUS }
+			}
+			lazio_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TUS }
+			}
+			central_italy_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TUS }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SIC }
+		}
+		OR = {
+			apulia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIC }
+			}
+			naples_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIC }
+			}
+			calabria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIC }
+			}
+			sicily_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIC }
+			}
+			western_sicily_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SIC }
+			}
+		}
+	}
+	# Iberia
+	else_if = {
+		limit = {
+			FROM = { tag = ARA }
+		}
+		OR = {
+			catalonia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+			aragon_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+			valencia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+			baleares_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+			basque_country = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+			2755 = {
+				hre_can_cede_province_to_hre_duchy = { tag = ARA }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = ASU }
+		}
+		OR = {
+			galicia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+			beieras_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+			alentejo_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+			asturias_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+			4553 = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+			208 = {
+				hre_can_cede_province_to_hre_duchy = { tag = ASU }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = CAS }
+		}
+		OR = {
+			extremadura_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			toledo_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			lower_andalucia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			upper_andalucia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			macaronesia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			4551 = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			217 = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			4789 = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			215 = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+			216 = {
+				hre_can_cede_province_to_hre_duchy = { tag = CAS }
+			}
+		}
+	}
+	# Eastern
+	else_if = {
+		limit = {
+			FROM = { tag = HUN }
+		}
+		OR = {
+			slovakia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HUN }
+			}
+			transdanubia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HUN }
+			}
+			alfold_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HUN }
+			}
+			southern_transylvania_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HUN }
+			}
+			transylvania_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = HUN }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				OR = {
+					1954 = {
+						hre_can_cede_province_to_hre_duchy = { tag = HUN }
+					}
+					4126 = {
+						hre_can_cede_province_to_hre_duchy = { tag = HUN }
+					}
+					4173 = {
+						hre_can_cede_province_to_hre_duchy = { tag = HUN }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MAZ }
+		}
+		OR = {
+			mazovia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+			sandomierz_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+			malopolska_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+			central_poland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+			kuyavia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+			wielkopolska_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MAZ }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MOL }
+		}
+		OR = {
+			moldavia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOL }
+			}
+			red_ruthenia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOL }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				OR = {
+					3249 = {
+						hre_can_cede_province_to_hre_duchy = { tag = MOL }
+					}
+					2405 = {
+						hre_can_cede_province_to_hre_duchy = { tag = MOL }
+					}
+					1756 = {
+						hre_can_cede_province_to_hre_duchy = { tag = MOL }
+					}
+				}
+			}
+		}
+	}
+	# Balkans
+	else_if = {
+		limit = {
+			FROM = { tag = CLI }
+		}
+		OR = {
+			croatia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CLI }
+			}
+			carinthia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CLI }
+			}
+			east_adriatic_coast_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CLI }
+			}
+			bosnia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CLI }
+			}
+			slavonia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CLI }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BUL }
+		}
+		OR = {
+			wallachia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			silistria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			serbia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			rascia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			2746 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			1765 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+			150 = {
+				hre_can_cede_province_to_hre_duchy = { tag = BUL }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GRE }
+		}
+		OR = {
+			thrace_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			macedonia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			albania_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			northern_greece_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			morea_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			aegean_archipelago_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			2750 = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			4703 = {
+				hre_can_cede_province_to_hre_duchy = { tag = GRE }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				OR = {
+					146 = {
+						hre_can_cede_province_to_hre_duchy = { tag = GRE }
+					}
+					147 = {
+						hre_can_cede_province_to_hre_duchy = { tag = GRE }
+					}
+					3003 = {
+						hre_can_cede_province_to_hre_duchy = { tag = GRE }
+					}
+				}
+			}
+		}
+	}
+	# Nordic
+	else_if = {
+		limit = {
+			FROM = { tag = DAN }
+		}
+		OR = {
+			jutland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = DAN }
+			}
+			denmark_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = DAN }
+			}
+			skaneland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = DAN }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOR }
+		}
+		OR = {
+			western_norway = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOR }
+			}
+			eastern_norway = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOR }
+			}
+			northern_norway = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOR }
+			}
+			subarctic_islands_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOR }
+			}
+			315 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOR }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				OR = {
+					3046 = {
+						hre_can_cede_province_to_hre_duchy = { tag = NOR }
+					}
+					370 = {
+						hre_can_cede_province_to_hre_duchy = { tag = NOR }
+					}
+					371 = {
+						hre_can_cede_province_to_hre_duchy = { tag = NOR }
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWE }
+		}
+		OR = {
+			norrland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWE }
+			}
+			svealand_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWE }
+			}
+			ostra_svealand_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWE }
+			}
+			gotaland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWE }
+			}
+			vastra_gotaland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SWE }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = FIN }
+		}
+		OR = {
+			finland_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = FIN }
+			}
+			bothnia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = FIN }
+			}
+			4151 = {
+				hre_can_cede_province_to_hre_duchy = { tag = FIN }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				4152 = {
+					hre_can_cede_province_to_hre_duchy = { tag = FIN }
+				}
+			}
+		}
+	}
+	# England
+	else_if = {
+		limit = {
+			FROM = { tag = ENG }
+		}
+		OR = {
+			home_counties_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+			wessex_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+			east_anglia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+			west_midlands_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+			east_midlands_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+			wales_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = ENG }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOL }
+		}
+		OR = {
+			yorkshire_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOL }
+			}
+			scottish_marches_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOL }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SCO }
+		}
+		OR = {
+			lowlands_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SCO }
+			}
+			highlands_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SCO }
+			}
+			kingdom_of_the_isles_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = SCO }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = IRE }
+		}
+		OR = {
+			ulster_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = IRE }
+			}
+			leinster_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = IRE }
+			}
+			munster_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = IRE }
+			}
+			connacht_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = IRE }
+			}
+		}
+	}
+	# Far Eastern
+	else_if = {
+		limit = {
+			FROM = { tag = LIT }
+		}
+		OR = {
+			samogitia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+			lithuania_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+			podlasie_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+			pripyat_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+			volhynia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+			minsk_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = LIT }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KIE }
+		}
+		OR = {
+			podolia_volhynia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+			west_dniepr_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+			east_dniepr_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+			yedisan_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+			zaporizhia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+			crimea_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KIE }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KUR }
+		}
+		OR = {
+			estonia_ingria_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KUR }
+			}
+			livonia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KUR }
+			}
+			curonia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = KUR }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOV }
+		}
+		OR = {
+			pskov_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			novgorod_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			karelia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			north_karelia = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			pomor_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			beloozero_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+			1777 = {
+				hre_can_cede_province_to_hre_duchy = { tag = NOV }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MOS }
+		}
+		OR = {
+			white_ruthenia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			tver_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			smolensk_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			moscow_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			oka_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			chernigov_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			sloboda_ukraine_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			tambov_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			ryazan_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+			vladimir_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = MOS }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRM }
+		}
+		OR = {
+			ural_region = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRM }
+			}
+			suzdal_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRM }
+			}
+			yaroslavl_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRM }
+			}
+			vologda_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRM }
+			}
+			arkhangelsk_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = PRM }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = CIR }
+		}
+		OR = {
+			lower_don_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CIR }
+			}
+			azov_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CIR }
+			}
+			astrakhan_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CIR }
+			}
+			dagestan_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CIR }
+			}
+			circassia_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = CIR }
+			}
+			AND = {
+				hidden_trigger = { has_global_flag = extended_timeline_mod }
+				OR = {
+					469 = {
+						hre_can_cede_province_to_hre_duchy = { tag = CIR }
+					}
+					2365 = {
+						hre_can_cede_province_to_hre_duchy = { tag = CIR }
+					}
+					2367 = {
+						hre_can_cede_province_to_hre_duchy = { tag = CIR }
+					}
+					474 = {
+						hre_can_cede_province_to_hre_duchy = { tag = CIR }
+					}
+				}
+			}
+		}
+	}
+	# Asia Minor
+	else_if = {
+		limit = {
+			FROM = { tag = TRE }
+		}
+		OR = {
+			hudavendigar_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			aydin_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			germiyan_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			karaman_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			ankara_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			kastamonu_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			rum_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			erzurum_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			cukurova_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			332 = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			2303 = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+			4310 = {
+				hre_can_cede_province_to_hre_duchy = { tag = TRE }
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GEO }
+		}
+		OR = {
+			imereti_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GEO }
+			}
+			kartli_kakheti_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GEO }
+			}
+			samtskhe_area = {
+				hre_can_cede_province_to_hre_duchy = { tag = GEO }
+			}
+		}
+	}
+
+	### Just in Case
+	else = {
+		always = no
+	}
+}

@@ -1,0 +1,704 @@
+52 = "Magdebourg"
+89 = "Amiens"
+92 = "Bruxelles"
+233 = { "Cornouailles" "Cornwaile" }
+235 = { "Cantorbéry" "Canterburi" }
+236 = "Londres"
+246 = "Northumbrie"
+247 = "Cumbrie"
+248 = { "Lothian" "Édimbourg" }
+369 = "Orcades"
+484 = "La Havane"
+489 = "Ile de la Tortue"
+492 = "Porto Rico"
+888 = "Arkokisa"
+893 = "Nouvelle Orléans"
+894 = "Ecore Fabre"
+895 = "Arcansea"
+897 = "Petite Pierre"
+898 = "Cavagnal"
+899 = "Monts aux Arcs"
+900 = "Saint Louis"
+902 = "Fort Orléans"
+904 = "Fort Marin"
+908 = "Minnesota"
+910 = "Fond du Lac"
+911 = "Saint Ignace"
+913 = "Prairie du Chien"
+914 = "La Baye"
+915 = "Pimitéoui"
+918 = "Prudhomme"
+919 = "Cicacha"
+921 = "Baton Rouge"
+924 = "Alibamous"
+927 = "La Caroline"
+940 = "Louisville"
+942 = "Ouiaténon"
+944 = "Détroit"
+945 = "Michilimackinac"
+946 = "Sandoské"
+947 = "Chiningué"
+948 = "Belle Riviére"
+954 = "Presqu'Isle"
+956 = "Philadelphie"
+958 = "Sonnontouanie"
+959 = "Cherontons"
+960 = "Onnontagué"
+961 = "Onneyout"
+963 = "Nouvelle Saintonge"
+964 = "Agniers"
+965 = "Nouv. Angouléme"
+967 = "Baye Notre-Dame"
+968 = "Baye Blanche"
+970 = "Pointe Verte"
+980 = "Baye Sainte-Claire"
+981 = "Belle Isle"
+982 = "Ile Royale"
+983 = "Ile Saint-Jean"
+984 = "Acadie"
+985 = "Miramichi"
+986 = "Gaspé"
+988 = "Huronie"
+989 = "Cataraqui"
+990 = "Trois-Riviéres"
+991 = "Mataouane"
+992 = "Gatineau"
+993 = "Montréal"
+994 = "Québec"
+996 = "Mécatina"
+997 = "Baie Rouge"
+998 = "Grande-Baleine"
+999 = "La Grande"
+1000 = "Fort Saint-Jacques"
+1001 = "Saults Sainte-Marie"
+1003 = "Fort Saint-Louis"
+1004 = "Fort Sainte-Anne"
+1005 = "Fort Bourbon"
+1006 = "Riviére Danoise"
+1007 = "Kaministiquia"
+1008 = "Riviére Rouge"
+1010 = "Dauphin"
+1011 = "Pasquia"
+1101 = "Chagos"
+1813 = "La Corne"
+1860 = "Est-Anglie"
+2007 = "Les Cedres"
+2010 = "Coneticout"
+2012 = "Memphrémagog"
+2013 = "Horsaines"
+2015 = "Népigon"
+2016 = "Grandes Fourches"
+2023 = "Carantouanie"
+2512 = "Beauharnois"
+2513 = "La Harpe"
+2514 = "Sainte Geneviéve"
+2515 = "Fayetteville"
+2517 = "Milles Lacs"
+2518 = "La Pointe"
+2528 = "Yazou"
+2520 = "Massac"
+2521 = "Saguinaw"
+2522 = "Saint Joseph"
+2523 = "Vincennes"
+2525 = "Riviére à la Roche"
+2530 = "Bilocci"
+2532 = "Tombecbé"
+2542 = "Beaufort"
+2555 = "Fort Duquesne"
+2561 = "Cap Blanc"
+2559 = "Carillon"
+2563 = "Vermont"
+2566 = "Pentagouet"
+2568 = "Cap de Sable"
+2569 = "Chedabouctou"
+2570 = "Saint Jean"
+2572 = "Miscou"
+2573 = "Plaisance"
+2575 = "Rigolet"
+2577 = "Sept Iles"
+2579 = "Métabéchouane"
+2580 = "Saint-Maurice"
+2581 = "Témiscamingue"
+2582 = "Bas St-Laurent"
+2583 = "Lévis"
+2584 = "Richelieu"
+2585 = "L'Orignal"
+2586 = "Nottawasaga"
+2587 = "Manitoulin"
+2588 = "La Cloche"
+2592 = "Nieusauane"
+2593 = "Lac des Bois"
+2595 = "Ile é la Crosse"
+2599 = "Lac la Biche"
+2669 = "Le Dout"
+2670 = "Douville"
+2671 = "Ronde"
+2957 = "Ratisbonne"
+4364 = "Hébrides"
+4365 = "Île de Man"
+
+5081 = "Beaulne"
+
+5114 = "Gévaudan"
+
+5094 = "Bitbourg"
+
+5092 = { "Aoste" "Vallée d'Aoste" }
+
+2983 = "Salerne"
+
+4770 = "Bois-le-Duc"
+5386 = "Alost"
+
+5154 = "Creusenac"
+5152 = "Offenbourg"
+
+884 = "Baye Saint-Louis"
+887 = "Toaux"
+901 = "Panis"
+903 = "Mahas"
+920 = "Tchattas"
+928 = "Apalache"
+929 = "Nouvelle-Seine"
+930 = "Chattaux"
+932 = "Charlefort"
+935 = "Cheraquie"
+938 = "Transfalgard"
+939 = "Casquinambaux"
+951 = "Sonhioto"
+952 = "Pouhatang"
+955 = "Andastes"
+957 = "Delorbée"
+962 = "Cap de Mai"
+2011 = "Acconachena"
+2498 = "Choumans"
+2499 = "Caouachés"
+2516 = "Adaéé"
+2526 = "Cachiqueto"
+2533 = "Sainte Rose"
+2535 = "Caloucha"
+2538 = "Yamésez"
+2539 = "Saint Mathieu"
+2540 = "Caouitas"
+2547 = "La Magdelaine"
+2548 = "Nouvelle-Riviére"
+2551 = "Malanghelé"
+2553 = "Patoumek"
+2558 = "Ésope"
+2564 = "Socoquis"
+2639 = "Ambois"
+2665 = "Bidaye"
+2669 = "Assinaés"
+
+178 = { "Angou" "Anjou" }
+174 = { "Bordeaulx" "Bordeaux" }
+151 = "Constantinoble"
+320 = "Roddes"
+
+101 = "Ligurie"
+102 = "Nice"
+103 = "Piémont"
+104 = "Lombardie"
+105 = "Parme"
+106 = "Modéne"
+108 = "Vérone"
+109 = "Mantoue"
+111 = "Frioul"
+112 = { "Venisse" "Venise" }
+113 = "Ferrare"
+114 = "Romagne"
+115 = "Pise"
+116 = "Florence"
+117 = "Sienne"
+118 = "Rome"
+119 = "Ancône"
+121 = { "Napples" "Naples" }
+123 = "Calabre"
+124 = "Messine"
+125 = "Palerme"
+1247 = "Corse"
+1774 = "Trévise"
+1862 = "Crémone"
+1875 = "Coni"
+
+197 = "Roussillon"
+207 = { "Asturies" "Oviede" }
+208 = "Leon"
+211 = "Pyrénées"
+212 = "Gironne"
+213 = "Barcelone"
+214 = "Aragon"
+216 = "Salamanque"
+219 = "Toléde"
+214 = "Saragosse"
+221 = "Murcie"
+222 = "Almérie"
+223 = "Grenade"
+224 = "Séville"
+225 = "Cordoue"
+226 = "Gibraltar"
+333 = "Baléares"
+366 = "Canaries"
+1745 = "Cantabrie"
+1747 = "Cacéres"
+1748 = "Jaén"
+1749 = "Cadix"
+1750 = "Alicante"
+4789 = "Ségovie"
+209 = "Biscaye"
+2754 = "La Manche"
+
+2988 = "Tarragone"
+210 = { "Navarre" "Pamplune" }
+206 = "La Corogne"
+212 = "Gérone"
+
+333 = "Majorque"
+4559 = "Minorque"
+
+227 = "Lisbonne"
+232 = "Bragance"
+367 = "Açores"
+368 = "Madére"
+1096 = "Cap-Vert"
+
+126 = "Malte"
+
+41 = "Koenigsberg"
+4711 = "Donawert"
+42 = "Varmie"
+43 = { "Dantzick" "Dantzig" }
+44 = "Hambourg"
+46 = "Mecklembourg"
+2975 = "Cléves"
+47 = "Poméranie antérieure"
+48 = "Poméranie ultérieure"
+50 = "Berlin"
+53 = "Lunebourg"
+55 = "Oldenbourg"
+56 = "Osnabruck"
+68 = "Trémoigne"
+57 = "Brunswick"
+59 = "Wittemberg"
+61 = "Dresde"
+#63 = "Thuringe"
+#64 = "Basse-Baviére"
+65 = "Munich"
+67 = "Nuremberg"
+68 = "Memmingue"
+69 = "Trémoigne"
+4718 = "Aschaffenbourg"
+1761 = "Worms"
+84 = "Dusseldorf"
+4712 = "Constance"
+70 = "Wurtemberg"
+72 = "Brisgau"
+73 = "Tyrol"
+74 = "Bade"
+75 = "Strasbourg"
+76 = "Salzbourg"
+78 = "Mayence"
+79 = "Wurtzbourg"
+80 = "Tréves"
+81 = "Hesse"
+82 = "Westphalie"
+85 = "Cologne"
+86 = "Munster"
+90 = "Bruges"
+94 = "Luxembourg"
+95 = "Bréda"
+96 = "Zélande"
+97 = { "Amsterdam" "Hollande" }
+4765 = { "Mulhouse" "Milhouse" }
+
+4383 = "La Haye"
+4768 = "Juliers"
+4773 = "Goettingue"
+4716 = "Cobourg"
+99 = "Gueldre"
+100 = { "Leuvarde" "Leuvarden" }
+110 = "Trentin"
+121 = "Naples"
+128 = "Clagenfurth"
+#129 = "Carniole"
+#132 = "Styrie"
+134 = "Vienne"
+1863 = "Gratz"
+1768 = "Lintz"
+4710 = { "Brégence" "Brigance" }
+165 = "Berne"
+166 = "Waldstétten"
+181 = "Rethélois"
+188 = "Metz" #"Trois Evechés"
+189 = "Nancy"
+1743 = "Cambrésis"
+1744 = "Anvers"
+1757 = "Haut-Palatinat"
+1758 = "Hannovre"
+1760 = "Coblence"
+1761 = "Palatinat"
+1762 = "Cassel"
+1763 = "Basse-Lusace"
+1769 = "Gorice"
+1841 = "Marienbourg"
+1865 = "Gand"
+1868 = "Augsbourg"
+1872 = "Ulm"
+1873 = "Coire"
+1874 = "Bréme"
+1869 = "Zurich"
+1870 = "Saint-Gall"
+1876 = { "Francfort" "Francfort-sur-le-Main" }
+4717 = "Baireut"
+60 = { "Budisse" "Haute-Lusace" }
+
+1878 = "Aix-la-Chapelle"
+201 = { "Marseille" "Aix-en-Provence" }
+1931 = "Frise orientale"
+2753 = "Narbonnais"
+3003 = "Negroponte"
+4720 = "Genéve"
+
+193 = "Besançon"
+
+
+
+
+4752 = "Fiume"
+4753 = "Jadres"
+136 = "Spalatro"
+137 = "Raguse"
+
+4751 = "Cilley"
+129 = "Kraimbourg"
+
+101 = "Génes"
+102 = "Nice"
+103 = "Turin"
+104 = "Milan"
+105 = "Parme"
+106 = "Modéne"
+108 = "Vérone"
+109 = "Mantoue"
+111 = "Frioul"
+112 = "Venise"
+113 = "Ferrare"
+114 = "Ravenne"
+115 = "Pise"
+116 = "Florence"
+117 = "Sienne"
+118 = "Rome"
+119 = "Ancône"
+122 = "Tarente"
+123 = "Calabre"
+124 = "Messine"
+125 = "Palerme"
+130 = "Istrie"
+205 = { "Chambéry" "Chamberi" }
+1247 = "Corse"
+1774 = "Trévise"
+1862 = "Crémone"
+1875 = "Coni"
+1934 = "Lucanie"
+2976 = "Pérouse"
+2979 = "Novare"
+2980 = "Lucques"
+2981 = "Montferrat"
+2984 = "Cosence"
+2985 = "Capitanate"
+2986 = "Caglier"
+2992 = "Albengue"
+4727 = "Saluces"
+4728 = "Pavie"
+4729 = "Padoue"
+4730 = "Bologne"
+4731 = "Spoléte"
+4732 = "Terracine"
+4736 = "Drépane"
+4738 = "Trieste"
+4739 = "Bergame"
+4740 = "Côme"
+5122 = "Caserte"
+5123 = "Catane"
+
+4382 = "Groningue"
+
+257 = "Varsovie"
+262 = "Cracovie"
+
+4531 = "Bucarest"
+4529 = "Iassy"
+
+295 = "Moscou"
+33 = "Saint-Petersbourg"
+4124 = "Carelie"
+
+
+4239 = "Belgrad"
+
+1772 = "Presbourg"
+
+1177 = "Le Cap"
+
+2313 = "Antioche"
+326 = "Angora"
+317 = "Brousse"
+149 = "Adrinople"
+327 = "Anitoche de Cilice"
+
+280 = "Kiovie"
+2961 = "Leopol"
+2410 = "Sebastopol"
+
+1165 = "Libreville"
+4079 = "Pointe-Noire"
+
+338 = "Alger"
+1882 = "Bone"
+340 = "Constantine"
+
+266 = "Prague"
+265 = "Brin"
+4237 = "Olomutie"
+267 = "Pilsen"
+
+4767 = "Deux-Ponts"
+
+12 = "Copenhague"
+14 = "Fionie"
+
+361 = "Le Caire"
+364 = "Gizeh"
+358 = "Alexandrie"
+
+1138 = "Coumassie"
+
+145 = "Achaie"
+146 = "Athenes"
+142 = "Corfou"
+144 = "Epire"
+3001 = "Macedoine"
+320 = "Rhodes"
+148 = "Thessalonique"
+
+428 = "Teheran"
+
+408 = "Bassora"
+
+4121 = "Ultonie"
+376 = "Connacie"
+374 = "Lagénie"
+
+1020 = "Iedo"
+1028 = "Meaco"
+
+1203 = "Melinde"
+1202 = "Mombaze"
+
+378 = "Tripoli"
+
+1132 = "Tomboctou"
+
+1085 = "La Tasmanie"
+1086 = "Adelaide"
+
+1090 = "Sydney"
+2734 = "Canberre"
+1087 = "Melbourne"
+1094 = "Brisbane"
+1084 = "Perth"
+2728 = "Darwin"
+1092 = "Newcastle"
+2732 = "Townsville"
+2731 = "Cairns"
+2736 = "Port Auguste"
+2735 = "Mount Gambier"
+1088 = "Mildura"
+1089 = "Albury"
+1091 = "Dubbo"
+1093 = "Emerald"
+2733 = "Mackay"
+2727 = "Esperance"
+2726 = "Carnarvon"
+
+1236 = "Nouvelle Bretagne"
+1237 = "Port Moresby"
+
+
+107 = "Bresce"
+
+5131 = "Nimègue"
+
+5128 = "Ypres"
+4948 = "Courtrai"
+5086 = "Malines" #Louvain
+5088 = "Grammont"
+#4974 = "Vieux-Turnhout"
+
+#4976 = "Ajaccio"
+#4977 = "Bastia"
+1247 = "La Corse"
+
+1866 = { "Namur" "Charleroi" }
+
+186 = "Rémois"
+
+4951 = "Dunkerque"
+
+167 = "Rouen"
+
+#4988 = "Maestricht"
+5129 = "Roterdam"
+5132 = "Ostende"
+1742 = { "Haute-Gueldre" "Ruremonde" }
+
+
+
+#5020 = "Pignerol"
+4960 = "Saint-Marin"
+2977 = "Urbin"
+
+1871 = "Valais"
+
+180 = { "Hault-Poitou" "Poictiers" }
+
+5068 = "Néau"
+
+
+4957 = "Andorre la-Vieille"
+
+91 = {"Tournai" "Mons" }
+
+5240 = "Bitbourg"
+
+4980 = "Béle"
+
+5387 = "Grammont"
+
+182 = "Valois" #Compiégne
+184 = "Orléanais" #Orléans
+4389 = "Touraine" #Tours
+179 = "Berry" #Bourges
+180 = { "Hault-Poitou" "Poictiers" }
+4386 = "Bas-Poitou" #Luéon
+4111 = { "Xaintonge" "Xaintonge" } #Saintes
+4387 = "Angoumois" #Angouléme
+204 = "Dauphiné" #Grenoble
+203 = "Lyonnais" #Lyon
+4777 = "Forez" #Montbrisons
+4391 = "Vivarais" #Viviers
+2753 = "Narbonnais" #Narbonne
+194 = "Périgord" #Bergerac
+4697 = "La Marche" #Guéret
+187 = "Barrois" #Bar-le-Duc
+4392 = "Auxerrois" #Auxerre
+191 = "Nivernais" #Nevers
+1877 = "Charolais" #Charolles
+192 = "Dijonnais" #Dijon
+4384 = "Rennais" #Rennes
+4388 = "Chartrain"
+4949 = "Aunis"
+171 = "Vannetais" #Vannes
+88 = "Artois" #Arras
+181 = "Rethélois" #Rethel
+1743 = "Cambrésis" #Cambrai
+172 = "Nantais" #Nantes
+4112 = "Quercy" #Cahors
+198 = "Rouergue" #Rodez
+190 = "Bourbonnais" #Moulins
+178 = { "Angou" "Anjou" }
+112 = { "Venisse" "Venise" }
+174 = { "Bordeaulx" "Bordeaux" }
+151 = "Constantinoble"
+223 = "Grenade"
+320 = "Roddes"
+121 = { "Napples" "Naples" }
+1860 = "Nordvich"
+177 = "Maine"
+202 = "Comtat Venaissin"
+
+186 = "Rémois"
+4948 = "Courtrai"
+
+5105 = {"Ivrée" "Yvrée" }
+5109 = "Vicence"
+5110 = "Bellune"
+5112 = "Nîmes"
+
+5116 = "Bénévent"
+5118 = "Livourne"
+5119 = "Plaisance"
+
+#middle english for england
+
+237 = { "Oxneford" "Oxenford" }
+239 = "Gloucestreschire"
+4370 = { "Bedefordschire" "Cantebrigge" }
+1860 = "Northfolk"
+246 = { "Northumberlond" "Northhumberlond" }
+244 = "Lancastreshire"
+4376 = "Ledecestre"
+4375 = "Chestre"
+234 = { "Hampshire" "Sarisberie" }
+
+
+#norman government in Naples
+
+5115 = "Cathacem"
+
+
+#speculative, iberia
+
+4554 = "Lugou"
+2989 = { "Rioue" "Logrogne" }
+1746 = "Bourgoux"
+4557 = "Calataié"
+2990 = "Teroul"
+4550 = "Castellon"
+220 = "Valencie"
+4549 = "Jative"
+1750 = "Alicanté"
+2755 = "Sorie"
+2751 = "Couenque"
+4546 = "Malegue"
+226 = "Gibralter"
+4548 = "Ouelve"
+4551 = "Avile"
+217 = "Megrite"
+218 = "Badegoçe"
+215 = "Valledolite"
+4788 = "Plasencie"
+4552 = "Palencie"
+5077 = "Saldegne"
+5078 = "Barbatre"
+4553 = "Xamore"
+5080 = "Astorgue"
+229 = "Beje"
+4150 = "Évore"
+228 = "Beire"
+231 = "Porte"
+4787 = "Rivateje"
+1851 = "Coimbre"
+4556 = "Aveire"
+4560 = "Ivice"
+4555 = "Pontevetre"
+#5079 = "Saint-Jacques"
+
+#Speculative, mediterranean
+
+2986 = "Calleres"
+4735 = "Arborée"
+4737 = "Girgêntes"
+127 = "Sassares"
+
+4956 = "Cioutévieulx"
+4946 = "La Spessie"
+2978 = "Aresse"
+5107 = "Pesare"
+5108 = "Yessy"
+5099 = { "Prate" "Pistoie" }
+120 = { "Pescare" "Abruzzes"}
+1934 = "Potence"
+5117 = "Masse"
+
+5120 = "Soussare"

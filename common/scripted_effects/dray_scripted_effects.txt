@@ -1,0 +1,1693 @@
+# Build To Limit | LAND | TERCIOS
+dray_build_to_limit_tercio = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcTercioFraction1
+		value = modifier:allowed_tercio_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcTercioFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcTercioFraction2
+		value = modifier:allowed_tercio_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcTercioFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcTercioFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcTercioFraction1
+		which = drayCalcTercioFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcTercioFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedTercio
+		value = modifier:amount_of_tercio
+	}
+	change_variable = {
+		which = drayCalcTercioFraction1
+		which = drayCalcAddedTercio
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfTercio
+		value = trigger_value:num_of_tercio
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_tercio = 999
+			}
+			check_variable = {
+				which = drayCalcTercioFraction1
+				which = drayCalcNumberOfTercio
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfTercio
+			value = 1
+		}
+		add_treasury = -10
+		add_manpower = -1
+		capital_scope = {
+			tercio_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | COSSACKS
+dray_build_to_limit_cossack = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcCossackFraction1
+		value = modifier:allowed_cossack_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcCossackFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcCossackFraction2
+		value = modifier:allowed_cossack_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcCossackFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcCossackFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcCossackFraction1
+		which = drayCalcCossackFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcCossackFraction1
+		value = 1
+	}
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfCossack
+		value = trigger_value:num_of_cossacks
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 15
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_cossacks = 999
+			}
+			check_variable = {
+				which = drayCalcCossackFraction1
+				which = drayCalcNumberOfCossack
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfCossack
+			value = 1
+		}
+		add_treasury = -15
+		add_manpower = -1
+		capital_scope = {
+			cossack_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | RAJPUTS
+dray_build_to_limit_rajput = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcRajputFraction1
+		value = modifier:allowed_rajput_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcRajputFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcRajputFraction2
+		value = modifier:allowed_rajput_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcRajputFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcRajputFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcRajputFraction1
+		which = drayCalcRajputFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcRajputFraction1
+		value = 1
+	}
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfRajput
+		value = trigger_value:num_of_rajput
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 15
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_rajput = 999
+			}
+			check_variable = {
+				which = drayCalcRajputFraction1
+				which = drayCalcNumberOfRajput
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfRajput
+			value = 1
+		}
+		add_treasury = -15
+		add_manpower = -1
+		capital_scope = {
+			rajput_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | REVOLUTIONARY GUARDS
+dray_build_to_limit_revguard = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcRevGuardFraction1
+		value = modifier:allowed_rev_guard_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcRevGuardFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcRevGuardFraction2
+		value = modifier:allowed_rev_guard_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcRevGuardFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcRevGuardFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcRevGuardFraction1
+		which = drayCalcRevGuardFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcRevGuardFraction1
+		value = 1
+	}
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfRevGuard
+		value = trigger_value:num_of_revolutionary_guard
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 20
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_revolutionary_guard = 999
+			}
+			check_variable = {
+				which = drayCalcRevGuardFraction1
+				which = drayCalcNumberOfRevGuard
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfRevGuard
+			value = 1
+		}
+		add_treasury = -20
+		add_manpower = -1
+		capital_scope = {
+			revolutionary_guard_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | STRELTSY
+dray_build_to_limit_streltsy = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcStreltsyFraction1
+		value = modifier:allowed_streltsy_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcStreltsyFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcStreltsyFraction2
+		value = modifier:allowed_streltsy_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcStreltsyFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcStreltsyFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcStreltsyFraction1
+		which = drayCalcStreltsyFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcStreltsyFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedStreltsy
+		value = modifier:amount_of_streltsy
+	}
+	change_variable = {
+		which = drayCalcStreltsyFraction1
+		which = drayCalcAddedStreltsy
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfStreltsy
+		value = trigger_value:num_of_streltsy
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+#			manpower_percentage = 0.1
+#			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_streltsy = 999
+			}
+			check_variable = {
+				which = drayCalcStreltsyFraction1
+				which = drayCalcNumberOfStreltsy
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfStreltsy
+			value = 1
+		}
+		add_treasury = -10
+#		add_manpower = -1
+		capital_scope = {
+			streltsy_infantry = ROOT
+		}
+	}
+}
+
+
+
+# Build To Limit | LAND | WINGED HUSSARS
+dray_build_to_limit_hussar = {
+	export_to_variable = { which = drayHussarsAmount value = modifier:amount_of_hussars }
+	set_variable = { which = drayHussarsDev value = 0 }
+	every_owned_province = {
+		limit = {
+			is_state_core = ROOT # Temporary fix
+#			OR = { # Broken in 1.36.2
+#				has_owner_culture = yes
+#				has_owner_accepted_culture = yes
+#			}
+		}
+		export_to_variable = { which = drayHussarsDev value = development }
+		PREV = {
+			change_variable = { which = drayHussarsDev which = PREV }
+		}
+	}
+	multiply_variable = { which = drayHussarsDev value = 0.01 }
+	change_variable = { which = drayHussarsAmount which = drayHussarsDev }	
+	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
+	change_variable = { which = drayCalcSpecialForceLimit value = 1 }
+	multiply_variable = { which = drayHussarsAmount which = drayCalcSpecialForceLimit }
+	subtract_variable = { which = drayHussarsAmount value = 1 } # ???
+	export_to_variable = { which = drayCalcNumberOfHussar value = trigger_value:num_of_hussars }
+
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_hussars = 999
+			}
+			check_variable = {
+				which = drayHussarsAmount
+				which = drayCalcNumberOfHussar
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfHussar
+			value = 1
+		}
+		capital_scope = {
+			hussars_cavalry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | CAROLEANS
+dray_build_to_limit_carolean = {
+	if = { # Cannot multiply by 0...
+		limit = {
+			NOT = {
+				has_global_modifier_value = {
+					which = amount_of_carolean
+					value = 0
+				}
+			}
+		}
+		export_to_variable = { which = drayCaroleanExtra value = modifier:amount_of_carolean }
+	}
+	set_variable = { which = drayCaroleanAmount value = 0 }
+	every_owned_province = {
+		limit = {
+			OR = {
+				culture = swedish
+				culture = finnish
+				culture = norse
+			}
+		}
+		export_to_variable = { which = drayCaroleanAmount value = development }
+		PREV = {
+			change_variable = { which = drayCaroleanAmount which = PREV }
+		}
+	}
+	multiply_variable = { which = drayCaroleanAmount value = 0.1 }
+	if = { # Cannot multiply by 0...
+		limit = {
+			NOT = {
+				has_global_modifier_value = {
+					which = amount_of_carolean
+					value = 0
+				}
+			}
+		}
+		multiply_variable = { which = drayCaroleanAmount which = drayCaroleanExtra }	
+	}
+	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
+	change_variable = { which = drayCalcSpecialForceLimit value = 1 }
+	multiply_variable = { which = drayCaroleanAmount which = drayCalcSpecialForceLimit }
+	subtract_variable = { which = drayCaroleanAmount value = 1 } # ???
+	export_to_variable = { which = drayCalcNumberOfCarolean value = trigger_value:num_of_carolean }
+
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_carolean = 999
+			}
+			check_variable = {
+				which = drayCaroleanAmount
+				which = drayCalcNumberOfCarolean
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfCarolean
+			value = 1
+		}
+		add_treasury = -10
+		add_manpower = -1
+		capital_scope = {
+			carolean_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | SAMURAI
+dray_build_to_limit_samurai = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcSamuraiFraction1
+		value = modifier:allowed_samurai_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcSamuraiFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcSamuraiFraction2
+		value = modifier:allowed_samurai_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcSamuraiFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcSamuraiFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcSamuraiFraction1
+		which = drayCalcSamuraiFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcSamuraiFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedSamurai
+		value = modifier:amount_of_samurai
+	}
+	change_variable = {
+		which = drayCalcSamuraiFraction1
+		which = drayCalcAddedSamurai
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfSamurai
+		value = trigger_value:num_of_samurai
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_samurai = 999
+			}
+			check_variable = {
+				which = drayCalcSamuraiFraction1
+				which = drayCalcNumberOfSamurai
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfSamurai
+			value = 1
+		}
+		add_treasury = -10
+		add_manpower = -1
+		capital_scope = {
+			samurai_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | MUSKETEERS
+dray_build_to_limit_musketeer = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcMusketeerFraction1
+		value = modifier:allowed_musketeer_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcMusketeerFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcMusketeerFraction2
+		value = modifier:allowed_musketeer_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcMusketeerFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcMusketeerFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcMusketeerFraction1
+		which = drayCalcMusketeerFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcMusketeerFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedMusketeer
+		value = modifier:amount_of_musketeers
+	}
+	change_variable = {
+		which = drayCalcMusketeerFraction1
+		which = drayCalcAddedMusketeer
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfMusketeer
+		value = trigger_value:num_of_musketeers
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_musketeers = 999
+			}
+			check_variable = {
+				which = drayCalcMusketeerFraction1
+				which = drayCalcNumberOfMusketeer
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfMusketeer
+			value = 1
+		}
+		add_treasury = -10
+		add_manpower = -1
+		capital_scope = {
+			musketeer_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | MAMLUKS
+dray_build_to_limit_mamluk = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcMamlukFraction1
+		value = modifier:allowed_mamluks_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcMamlukFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcMamlukFraction2
+		value = modifier:allowed_mamluks_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcMamlukFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcMamlukFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcMamlukFraction1
+		which = drayCalcMamlukFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcMamlukFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedMamluk
+		value = modifier:amount_of_mamluks
+	}
+	change_variable = {
+		which = drayCalcMamlukFraction1
+		which = drayCalcAddedMamluk
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfMamluk
+		value = trigger_value:num_of_mamluks
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_mamluks = 999
+			}
+			check_variable = {
+				which = drayCalcMamlukFraction1
+				which = drayCalcNumberOfMamluk
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfMamluk
+			value = 1
+		}
+		add_treasury = -10
+		add_manpower = -1
+		capital_scope = {
+			mamluks_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | QIZILBASH
+dray_build_to_limit_qizilbash = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcQizilbashFraction1
+		value = modifier:allowed_qizilbash_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcQizilbashFraction1
+		which = drayCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcQizilbashFraction2
+		value = modifier:allowed_qizilbash_fraction
+	}
+	export_to_variable = {
+		which = drayCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcQizilbashFraction2
+		which = drayCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcQizilbashFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcQizilbashFraction1
+		which = drayCalcQizilbashFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcQizilbashFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedQizilbash
+		value = modifier:amount_of_qizilbash
+	}
+	change_variable = {
+		which = drayCalcQizilbashFraction1
+		which = drayCalcAddedQizilbash
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfQizilbash
+		value = trigger_value:num_of_qizilbash
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 7
+			manpower_percentage = 0.1
+			manpower = 1
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_qizilbash = 999
+			}
+			check_variable = {
+				which = drayCalcQizilbashFraction1
+				which = drayCalcNumberOfQizilbash
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfQizilbash
+			value = 1
+		}
+		add_treasury = -7
+		add_manpower = -1
+		capital_scope = {
+			qizilbash_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | JANISSARIES
+dray_build_to_limit_janissary = {
+	set_variable = { which = drayJanissaryAmount value = 0 }
+	export_to_variable = {
+		which = drayCalcLandForceLimitJanissary
+		value = land_forcelimit
+	}
+	every_owned_province = {
+		limit = {
+			NOT = { religion_group = ROOT }
+		}
+		export_to_variable = { which = drayHeathenDevelopment value = development }
+		PREV = {
+			change_variable = { which = drayHeathenDevelopment which = PREV }
+		}
+	}	
+	export_to_variable = { which = drayTotalDevelopment value = total_development }
+	divide_variable = { which = drayHeathenDevelopment which = drayTotalDevelopment }
+	change_variable = { which = drayJanissaryAmount which = drayHeathenDevelopment }
+	multiply_variable = { which = drayJanissaryAmount which = drayCalcLandForceLimitJanissary }
+	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
+	change_variable = { which = drayCalcSpecialForceLimit value = 1 }
+	multiply_variable = { which = drayJanissaryAmount which = drayCalcSpecialForceLimit }
+	subtract_variable = { which = drayJanissaryAmount value = 1 }
+	export_to_variable = { which = drayCalcNumberOfJanissary value = trigger_value:num_of_janissaries }
+
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			mil_power = 300
+#			years_of_income = 0.1
+#			treasury = 5
+			manpower_percentage = 0.1
+			manpower = 5
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_janissaries = 999
+			}
+			check_variable = {
+				which = drayJanissaryAmount
+				which = drayCalcNumberOfJanissary
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfJanissary
+			value = 1
+		}
+		add_mil_power = -3
+#		add_treasury = -5
+#		add_manpower = -0.5
+		capital_scope = {
+			janissary_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | LAND | CAWA
+dray_build_to_limit_cawa = {
+	if = { # Cannot multiply by 0...
+		limit = {
+			NOT = {
+				has_global_modifier_value = {
+					which = amount_of_cawa
+					value = 0
+				}
+			}
+		}
+		export_to_variable = { which = drayCawaExtra value = modifier:amount_of_cawa }
+	}
+	set_variable = { which = drayCawaAmount value = 0 }
+	every_owned_province = {
+		limit = {
+			is_state_core = ROOT
+		}
+		export_to_variable = { which = drayCawaAmount value = development }
+		PREV = {
+			change_variable = { which = drayCawaAmount which = PREV }
+		}
+	}
+	divide_variable = { which = drayCawaAmount value = 8 }
+	if = { # Cannot multiply by 0...
+		limit = {
+			NOT = {
+				has_global_modifier_value = {
+					which = amount_of_cawa
+					value = 0
+				}
+			}
+		}
+		multiply_variable = { which = drayCawaAmount which = drayCawaExtra }	
+	}
+	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
+	change_variable = { which = drayCalcSpecialForceLimit value = 1 }
+	multiply_variable = { which = drayCawaAmount which = drayCalcSpecialForceLimit }
+	subtract_variable = { which = drayCawaAmount value = 1 } # ???
+	export_to_variable = { which = drayCalcNumberOfCawa value = trigger_value:num_of_cawa }
+
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			mil_power = 200
+#			years_of_income = 0.1
+#			treasury = 5
+			manpower_percentage = 0.05
+			manpower = 2.5
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_cawa = 999
+			}
+			check_variable = {
+				which = drayCawaAmount
+				which = drayCalcNumberOfCawa
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfCawa
+			value = 1
+		}
+		add_mil_power = -2
+#		add_treasury = -5
+#		add_manpower = -0.5
+		capital_scope = {
+			cawa_infantry = ROOT
+		}
+	}
+}
+
+# Build To Limit | NAVAL | MAN OF WARS
+dray_build_to_limit_manofwar = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcManOfWarFraction1
+		value = modifier:allowed_man_of_war_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcManOfWarFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcManOfWarFraction2
+		value = modifier:allowed_man_of_war_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcManOfWarFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcManOfWarFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcManOfWarFraction1
+		which = drayCalcManOfWarFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcManOfWarFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedManOfWar
+		value = modifier:amount_of_man_of_war
+	}
+	change_variable = {
+		which = drayCalcManOfWarFraction1
+		which = drayCalcAddedManOfWar
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfManOfWar
+		value = trigger_value:num_of_man_of_war
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+			years_of_income = 0.2
+			treasury = 45
+			sailors_percentage = 0.2
+			sailors = 350
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_man_of_war = 999
+			}
+			check_variable = {
+				which = drayCalcManOfWarFraction1
+				which = drayCalcNumberOfManOfWar
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfManOfWar
+			value = 1
+		}
+		add_treasury = -45
+		add_sailors = -350
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}					
+			}
+			man_of_war_heavy = ROOT
+		}	
+	}
+}
+
+# Build To Limit | NAVAL | GALLEONS
+dray_build_to_limit_galleon = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcGalleonFraction1
+		value = modifier:allowed_galleon_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGalleonFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcGalleonFraction2
+		value = modifier:allowed_galleon_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGalleonFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcGalleonFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcGalleonFraction1
+		which = drayCalcGalleonFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcGalleonFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedGalleon
+		value = modifier:amount_of_galleon
+	}
+	change_variable = {
+		which = drayCalcGalleonFraction1
+		which = drayCalcAddedGalleon
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfGalleon
+		value = trigger_value:num_of_galleon
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}
+			}
+			years_of_income = 0.2
+			treasury = 45
+			sailors_percentage = 0.2
+			sailors = 350
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_galleon = 999
+			}
+			check_variable = {
+				which = drayCalcGalleonFraction1
+				which = drayCalcNumberOfGalleon
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfGalleon
+			value = 1
+		}
+		add_treasury = -45
+		add_sailors = -350
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}			
+			}
+			galleon_heavy = ROOT
+		}	
+	}
+}
+
+# Build To Limit | NAVAL | VOC INDIAMEN
+dray_build_to_limit_vocindiamen = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcVOCIndiamenFraction1
+		value = modifier:allowed_voc_indiamen_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcVOCIndiamenFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcVOCIndiamenFraction2
+		value = modifier:allowed_voc_indiamen_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcVOCIndiamenFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcVOCIndiamenFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcVOCIndiamenFraction1
+		which = drayCalcVOCIndiamenFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcVOCIndiamenFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedVOCIndiamen
+		value = modifier:amount_of_voc_indiamen
+	}
+	change_variable = {
+		which = drayCalcVOCIndiamenFraction1
+		which = drayCalcAddedVOCIndiamen
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfVOCIndiamen
+		value = trigger_value:num_of_voc_indiamen
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 20
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_voc_indiamen = 999
+			}
+			check_variable = {
+				which = drayCalcVOCIndiamenFraction1
+				which = drayCalcNumberOfVOCIndiamen
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfVOCIndiamen
+			value = 1
+		}
+		add_treasury = -20
+		add_sailors = -75
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no				
+			}
+			voc_indiamen_light = ROOT
+		}	
+	}
+}
+
+# Build To Limit | NAVAL | CARAVELS
+dray_build_to_limit_caravel = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcCaravelFraction1
+		value = modifier:allowed_caravel_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcCaravelFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcCaravelFraction2
+		value = modifier:allowed_caravel_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcCaravelFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcCaravelFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcCaravelFraction1
+		which = drayCalcCaravelFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcCaravelFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedCaravel
+		value = modifier:amount_of_caravel
+	}
+	change_variable = {
+		which = drayCalcCaravelFraction1
+		which = drayCalcAddedCaravel
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfCaravel
+		value = trigger_value:num_of_caravel
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}
+			}
+			years_of_income = 0.2
+			treasury = 20
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_caravel = 999
+			}
+			check_variable = {
+				which = drayCalcCaravelFraction1
+				which = drayCalcNumberOfCaravel
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfCaravel
+			value = 1
+		}
+		add_treasury = -20
+		add_sailors = -75
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					culture_group = iberian
+					culture = roman
+				}
+			}
+			caravel_light = ROOT
+		}	
+	}
+}
+
+# Build To Limit | NAVAL | GEOBUKSEON
+dray_build_to_limit_geobukseon = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcGeobukseonFraction1
+		value = modifier:allowed_geobukseon_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGeobukseonFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcGeobukseonFraction2
+		value = modifier:allowed_geobukseon_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGeobukseonFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcGeobukseonFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcGeobukseonFraction1
+		which = drayCalcGeobukseonFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcGeobukseonFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedGeobukseon
+		value = modifier:amount_of_geobukseon
+	}
+	change_variable = {
+		which = drayCalcGeobukseonFraction1
+		which = drayCalcAddedGeobukseon
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfGeobukseon
+		value = trigger_value:num_of_geobukseon
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+			}
+			years_of_income = 0.2
+			treasury = 10
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_geobukseon = 999
+			}
+			check_variable = {
+				which = drayCalcGeobukseonFraction1
+				which = drayCalcNumberOfGeobukseon
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfGeobukseon
+			value = 1
+		}
+		add_treasury = -10
+		add_sailors = -75
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+			}
+			geobukseon_galley = ROOT
+		}	
+	}
+}
+
+# Build To Limit | NAVAL | GALLEASSES
+dray_build_to_limit_galleass = {
+	# 1 #
+	export_to_variable = {
+		which = drayCalcGalleassFraction1
+		value = modifier:allowed_galleass_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit1
+		value = naval_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGalleassFraction1
+		which = drayCalcNavalForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = drayCalcGalleassFraction2
+		value = modifier:allowed_galleass_fraction
+	}
+	export_to_variable = {
+		which = drayCalcNavalForceLimit2
+		value = naval_forcelimit
+	}	
+	export_to_variable = {
+		which = drayCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = drayCalcGalleassFraction2
+		which = drayCalcNavalForceLimit2
+	}		
+	multiply_variable = {
+		which = drayCalcGalleassFraction2
+		which = drayCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = drayCalcGalleassFraction1
+		which = drayCalcGalleassFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = drayCalcGalleassFraction1
+		value = 1
+	}
+	export_to_variable = {
+		which = drayCalcAddedGalleass
+		value = modifier:amount_of_galleass
+	}
+	change_variable = {
+		which = drayCalcGalleassFraction1
+		which = drayCalcAddedGalleass
+	}	
+	# 5 #
+	export_to_variable = {
+		which = drayCalcNumberOfGalleass
+		value = trigger_value:num_of_galleass
+	}
+	# 6 #
+	while = {
+		limit = {
+			any_owned_province = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+			years_of_income = 0.2
+			treasury = 10
+			sailors_percentage = 0.2
+			sailors = 75
+			NOT = { navy_size_percentage = 1 }
+			NOT = {
+				num_of_galleass = 999
+			}
+			check_variable = {
+				which = drayCalcGalleassFraction1
+				which = drayCalcNumberOfGalleass
+			}
+		}
+		change_variable = {
+			which = drayCalcNumberOfGalleass
+			value = 1
+		}
+		add_treasury = -10
+		add_sailors = -75
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_in_capital_area = yes
+				is_state = yes
+				controlled_by = ROOT
+				has_siege = no
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+			galleass_galley = ROOT
+		}	
+	}
+}

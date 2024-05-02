@@ -1,0 +1,232 @@
+########################################
+# Franconia Events     		           #
+########################################
+
+namespace = ia_flavor_fkn
+
+# News from Alsace
+country_event = {
+	id = ia_flavor_fkn.1
+	title = ia_flavor_fkn.1.t
+	desc = ia_flavor_fkn.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.1.a
+		
+		
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.2
+	title = ia_flavor_fkn.2.t
+	desc = ia_flavor_fkn.2.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.2.a
+		
+		
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.3
+	title = ia_flavor_fkn.3.t
+	desc = ia_flavor_fkn.3.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.3.a
+		
+		if = { 
+			limit = { ai = no }
+			79 = {
+				add_base_production = -4
+			}
+		}
+		
+		add_prestige = -20
+
+		79 = {
+			add_province_modifier = {
+				name = fkn_grape_untamed
+				duration = -1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.4
+	title = ia_flavor_fkn.4.t
+	desc = ia_flavor_fkn.4.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.4.a
+		trigger = { is_subject = yes }
+		overlord = {
+			create_subject = {
+				subject_type = german_march
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.4.b
+		trigger = { is_subject = no }
+		
+		add_manpower = 10
+		add_ruler_personality = conqueror_personality
+		add_ruler_modifier = { 
+			name = fkn_united_reward
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.5
+	title = ia_flavor_fkn.5.t
+	desc = ia_flavor_fkn.5.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = ia_flavor_fkn.5.a
+		random_owned_province = {
+			limit = {
+				has_state_edict = fkn_enable_wine_creation
+				NOT = { trade_goods = wine }
+			}
+			change_trade_goods = wine
+			hidden_effect = {
+				change_variable = {
+					which = fkn_enable_wine_creation
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.5.b
+		random_owned_province = {
+			limit = {
+				has_state_edict = fkn_enable_wine_creation
+				NOT = { trade_goods = wine }
+			}
+			change_trade_goods = wine
+			hidden_effect = {
+				change_variable = {
+					which = fkn_enable_wine_creation
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.5.c
+		random_owned_province = {
+			limit = {
+				has_state_edict = fkn_enable_wine_creation
+				NOT = { trade_goods = wine }
+			}
+			change_trade_goods = wine
+			hidden_effect = {
+				change_variable = {
+					which = fkn_enable_wine_creation
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.5.e
+		
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.6
+	title = ia_flavor_fkn.6.t
+	desc = ia_flavor_fkn.6.d
+	picture = GERMAN_UNIFICATION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.6.a
+		upper_bavaria_area = {
+			add_nationalism = -30
+			add_local_autonomy = -100
+			add_base_production = -1
+			add_base_tax = -1
+			add_base_manpower = -1
+			every_core_country = {
+				limit = { NOT = { tag = ROOT } }
+				PREV = { remove_core = PREV }
+			}
+		}
+		lower_bavaria_area = {
+			add_nationalism = -30
+			add_local_autonomy = -100
+			add_base_production = -1
+			add_base_tax = -1
+			add_base_manpower = -1
+			every_core_country = {
+				limit = { NOT = { tag = ROOT } }
+				PREV = { remove_core = PREV }
+			}
+		}
+		east_bavaria_area = {
+			add_nationalism = -30
+			add_local_autonomy = -100
+			add_base_production = -1
+			add_base_tax = -1
+			add_base_manpower = -1
+			every_core_country = {
+				limit = { NOT = { tag = ROOT } }
+				PREV = { remove_core = PREV }
+			}
+		}
+	}
+}

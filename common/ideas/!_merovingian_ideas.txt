@@ -1,0 +1,48 @@
+merovingian_ideas = {
+	start = {
+		legitimacy = 2
+		diplomatic_reputation = 2
+	}
+	bonus = {
+		prestige = 2
+	}
+	trigger = {
+		OR = { 
+			dynasty = "Meroveching"
+			tag = NRM
+		}
+		OR = {
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+		}
+		government = monarchy
+	}
+	free = yes
+
+	blessed_bloodline = {
+		monarch_diplomatic_power = 2
+		monarch_lifespan = 1
+	}
+	legacy_of_saints = {
+		papal_influence_from_cardinals = 1.0
+		tolerance_own = 2
+	}
+	military_leadership_merovingian = {
+		global_manpower_modifier = 0.30
+	}
+	retinue_regnum_francorum_merovingian = {
+		land_morale = 0.20
+	}
+	kings_of_europe_merovingian = {
+		global_unrest = -1
+		advisor_cost = -0.15
+	}
+	tradition_of_war_merovingian = {
+		army_tradition = 1
+	}
+	living_legends = {
+		monthly_splendor = 2
+		power_projection_from_insults = 1
+		all_estate_loyalty_equilibrium = 0.10
+	}
+}

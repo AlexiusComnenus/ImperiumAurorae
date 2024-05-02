@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = independent_appanage_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = normand
+capital = 89
+fixed_capital = 89

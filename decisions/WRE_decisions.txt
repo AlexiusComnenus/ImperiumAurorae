@@ -1,0 +1,76 @@
+country_decisions = {
+	
+	soissons_enthrone_majorian_decision = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			tag = SOI
+			NOT = { has_country_flag = enthroned_majorian }
+		}
+		allow = {
+			has_reform = roman_diocese
+			is_great_power = yes
+			total_development = 1000
+			stability = 2
+			legitimacy = 100
+			prestige = 90
+		}
+	 	effect = {
+			add_government_reform = reign_of_majorian_reform
+			override_country_name = western_roman_empire_soi
+			
+			set_country_flag = enthroned_majorian
+			custom_tooltip = aegidius_majorian_tt
+			
+			hidden_effect = {
+				if = {
+					limit = {
+						has_ruler_flag = aegidius_flag
+					}
+					change_adm = 1
+					add_ruler_personality = integrator_personality
+				}
+				else_if = {
+					limit = {
+						has_heir_flag = aegidius_flag
+					}
+					change_heir_adm	= 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+			
+		}
+		ai_importance = 400
+	}
+	
+	delete_natives_startup = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			ai = no
+			NOT = { is_year = 1445 }
+			NOT = { has_global_flag = deleted_natives }
+		}
+		allow = {
+			always = yes
+		}
+	 	effect = {
+			hidden_effect = {
+				every_country = {
+					limit = { government = native }
+					every_owned_province = {
+						decolonize = THIS
+					}
+				}
+				set_global_flag = deleted_natives
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			
+		}
+		ai_importance = 0
+	}
+}

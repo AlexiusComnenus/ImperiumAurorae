@@ -1,0 +1,99 @@
+ck2_converter_generated = yes
+graphical_culture = muslimgfx
+color = { 191 110 62 }
+revolutionary_colors = { 8 0 5 }
+historical_idea_groups = {
+	maritime_ideas
+	defensive_ideas
+	religious_ideas
+	expansion_ideas
+	administrative_ideas
+	offensive_ideas
+	trade_ideas
+	economic_ideas
+}
+historical_units = {
+	ali_bey_reformed_infantry
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_dragoon
+	muslim_mass_infantry
+}
+monarch_names = {
+	"Abd-al-Mu'min #1" = 10
+	"Abdallah #0" = 0
+	"Abu Ya'qub #1" = 10
+	"Abu-Bakr #1" = 10
+	"Agdada #0" = 0
+	"Akateiaji #0" = 0
+	"Al-Qasim Kannun #1" = 10
+	"Ali #2" = 10
+	"Amin #0" = 0
+	"Atissi #0" = 0
+	"Badda #0" = 0
+	"Barakah #0" = -1
+	"Durra #0" = -1
+	"Fatta #0" = 0
+	"Ibrahim #1" = 10
+	"Idris #2" = 10
+	"Irgen #0" = 0
+	"Ishaq #1" = 10
+	"Laweye #0" = 0
+	"Masmud #0" = 0
+	"Muhammad #1" = 10
+	"Nabil #0" = 0
+	"Nizamaddin #0" = 0
+	"Ottone #0" = 0
+	"Ptolemee #0" = 0
+	"Rasa #0" = -1
+	"Rashid #0" = 0
+	"Rula #0" = -1
+	"Sajida #0" = -1
+	"Salah #0" = 0
+	"Sayyid #0" = 0
+	"Stembanos #1" = 10
+	"Tadla #0" = -1
+	"Tashfin #1" = 10
+	"Tekhaye #0" = -1
+	"Tuh'r'ict #0" = -1
+	"Yahya #5" = 10
+	"Yusuf #2" = 10
+	"an-Nassir #1" = 10
+}
+leader_names = {
+	"Alami"
+	"Arazi"
+	"Barek"
+	"Behar"
+	"Berui"
+	"Haida"
+	"Lahsini"
+	"Sahiri"
+	"Sellami"
+	"Skah"
+}
+ship_names = {
+	"Afuww"
+	"Badi"
+	"Baqi"
+	"Darr"
+	"Fa'uf"
+	"Fazl Azim"
+	"Ghani"
+	"Hadi"
+	"Jalal Ikram"
+	"Jami"
+	"Malik Mulk"
+	"Mani"
+	"Mughni"
+	"Muntaqim"
+	"Muqsit"
+	"Nafi"
+	"Nur"
+	"Rashid"
+	"Sabur"
+	"Tawwab"
+	"Warith"
+}

@@ -1,0 +1,87 @@
+ck2_converter_generated = yes
+graphical_culture = indiangfx
+color = { 181 36 203 }
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	offensive_ideas
+	religious_ideas
+	spy_ideas
+	economic_ideas
+	quantity_ideas
+	aristocracy_ideas
+}
+historical_units = {
+	bhonsle_cavalry
+	indian_arquebusier
+	indian_footsoldier
+	indian_rifle
+	mughal_mansabdar
+	mughal_musketeer
+	rajput_hill_fighters
+	reformed_mughal_mansabdar
+	sikh_hit_and_run
+	tipu_sultan_rocket
+}
+monarch_names = {
+	"Anangpala #0" = 0
+	"Birpal #0" = 0
+	"Draupada #0" = 0
+	"Dronasinha #0" = 0
+	"Govindapala #0" = 0
+	"Kalbhoj #0" = 0
+	"Kirtipala #0" = 0
+	"Naradeva #0" = 0
+	"Prasadhanadevi #0" = -1
+	"Sinha #0" = 0
+	"Suhava #0" = -1
+	"Trilochanpala #0" = 0
+	"Vagbhata #0" = 0
+	"Vijayapala #0" = 0
+}
+leader_names = {
+	"Bhati"
+	"Chavda"
+	"Chudasama"
+	"Jadeja"
+	"Jethwa"
+	"Mulraj"
+	"Paramara"
+	"Pargir"
+	"Pratap"
+	"Raizada"
+	"Rathore"
+	"Sarvaiya"
+	"Savji"
+	"Shah"
+	"Singh"
+	"Sisodiya"
+	"Solanki"
+	"Soomrah"
+	"Vaghela"
+	"Valas"
+}
+ship_names = {
+	"Chambal"
+	"Devi"
+	"Durga"
+	"Gayatri"
+	"Ghaggar"
+	"Godwar"
+	"Jalsena"
+	"Kala Jahazi"
+	"Lakshmi"
+	"Lal Jahazi"
+	"Luni"
+	"Nausena"
+	"Nav ka Yudh"
+	"Nila Jahazi"
+	"Parvati"
+	"Radha"
+	"Rani"
+	"Ratri"
+	"Sagar"
+	"Sarasvati"
+	"Sekhawati"
+	"Sita"
+}

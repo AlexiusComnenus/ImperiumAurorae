@@ -1,0 +1,37 @@
+spriteTypes = {
+	##Predefined Monuments
+	#Pyramids, Stonehenge and Mausoleum are in base game
+	spriteType = {
+		name = "GFX_great_project_lighthouse_of_alexandria"
+		texturefile = "gfx//interface//great_projects//great_project_alexandria.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_colossus"
+		texturefile = "gfx//interface//great_projects//colossus.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_theodosian_walls"
+		texturefile = "gfx//interface//great_projects//great_project_theodosian_walls.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_hindu_konark"
+		texturefile = "gfx//interface//great_projects//great_project_prambanan_temple.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_apostolic_palace"
+		texturefile = "gfx//interface//great_projects//great_project_saint_peters_cathedral.dds"
+	}
+	spriteType = {
+		name = "GFX_great_project_house_of_wisdom"
+		texturefile = "gfx//interface//great_projects//great_project_ait_benhaddou.dds"
+	}
+	#Petra, Hagia and Notre are in the base game
+
+	##Dynamic Monuments
+spriteType = {
+		name = "GFX_great_project_wonder_university_9"
+		texturefile = "gfx//interface//great_projects//great_project_sankore_madrasah.dds"
+	}
+
+	
+}

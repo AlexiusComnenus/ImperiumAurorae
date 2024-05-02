@@ -1,0 +1,90 @@
+gaelic_council_elders = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	icon = "parliament_hall"
+	potential = {
+		OR = {
+			has_reform = gaelic_council_elders
+			have_had_reform = gaelic_council_elders
+		}
+	}
+	trigger = {
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+		}
+	}
+	modifiers = {
+		parliament_backing_chance = 0.25
+		nobles_influence_modifier = -0.15
+		church_loyalty_modifier = 0.1
+		church_influence_modifier = 0.20
+		monarch_lifespan = 0.50
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+	}
+	custom_attributes = {
+		lottery_election = yes
+		election_on_death = yes
+		heir = no
+		locked_government_type = yes
+	}
+	has_term_election = no
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+holy_groves_reform = {
+	icon = "church"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+		}
+	}
+	modifiers = {
+		global_monthly_devastation = -0.1
+		global_prosperity_growth = 0.2
+		global_unrest = -2
+		tolerance_heretic = 2
+		tolerance_heathen = 2
+		tolerance_of_heretics_capacity = 1
+		tolerance_of_heathens_capacity = 1
+	}
+	
+	ai = {
+		factor = 1000
+	}
+}
+
+protectors_of_nature_reform = {
+	icon = "gendarmes_reform"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+		}
+	}
+	
+	modifiers = {
+		fire_damage_received = -0.10
+		land_attrition = -0.20
+		max_hostile_attrition = 3
+		hostile_attrition = 2
+	}
+	ai = {
+		factor = 1000
+	}
+}

@@ -1,0 +1,545 @@
+# Baguette writing, Alexios coding (poor Alexios)
+
+cleves_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = KLE
+		has_country_flag = kle_hes_flag
+	}
+	has_country_shield = yes
+	
+	kle_foundations_of_industry = {
+		icon = generality_lands
+		required_missions = {
+			kle_ruhr_guilds
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { has_manufactory_trigger = yes }
+			69 = { has_manufactory_trigger = yes }
+			2975 = { has_manufactory_trigger = yes }			
+		}
+		
+		effect = {
+			84 = { 
+				add_permanent_province_modifier = {
+					name = kle_pillars_of_industry
+					duration = -1
+				}
+			}
+			69 = { 
+				add_permanent_province_modifier = {
+					name = kle_pillars_of_industry
+					duration = -1
+				}
+			}
+			2975 = { 
+				add_permanent_province_modifier = {
+					name = kle_pillars_of_industry
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+cleves_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = KLE
+		has_country_flag = kle_hes_flag
+	}
+	has_country_shield = yes
+	
+	kle_arteries_of_the_state = {
+		icon = generality_lands
+		required_missions = {
+			kle_time_of_recovery
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { base_tax = 4		num_of_buildings_in_province = 2 }
+			69 = { base_tax = 4		num_of_buildings_in_province = 2 }
+			2975 = { base_tax = 4		num_of_buildings_in_province = 2 } 
+		}
+		
+		effect = {
+			84 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_junctions
+					duration = -1
+				}
+			}
+			69 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_junctions
+					duration = -1
+				}
+			}
+			2975 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_junctions
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	kle_ruhr_guilds = {
+		icon = generality_lands
+		required_missions = {
+			kle_arteries_of_the_state
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { base_production = 10		has_production_building_trigger = yes }
+			69 = { base_production = 10		has_production_building_trigger = yes }
+			2975 = { base_production = 10	has_production_building_trigger = yes } 
+		}
+		
+		effect = {
+			84 = { 
+				remove_building = workshop
+				add_building = counting_house
+			}
+			69 = { 
+				remove_building = workshop
+				add_building = counting_house
+			}
+			2975 = { 
+				remove_building = workshop
+				add_building = counting_house
+			}
+		}
+	}
+	
+	kle_expand_the_transportation_infrastructure = {
+		icon = generality_lands
+		required_missions = {
+			kle_ruhr_guilds
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			if = {
+				limit = { has_global_flag = tradegood_marcin }
+				84 = { has_building = canal_system 	has_building = road_network }
+				69 = { has_building = canal_system 	has_building = road_network }
+				2975 = { has_building = canal_system 	has_building = road_network }
+			}
+			else = {
+				84 = { base_tax = 10	num_of_buildings_in_province = 4 }
+				69 = { base_tax = 10	num_of_buildings_in_province = 4 }
+				2975 = { base_tax = 10	num_of_buildings_in_province = 4 }
+			}			
+		}
+		
+		effect = {
+			84 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_development_project
+					duration = -1
+				}
+			}
+			69 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_development_project
+					duration = -1
+				}
+			}
+			2975 = { 
+				add_permanent_province_modifier = {
+					name = kle_ruhr_development_project
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+cleves_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = KLE
+		has_country_flag = kle_hes_flag
+	}
+	has_country_shield = yes
+	
+	kle_pact_of_kleves = {
+		icon = generality_lands
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			if = {
+				limit = { is_subject_of = HES }
+				NOT = { liberty_desire = 5 }
+				has_opinion = {
+					who = HES
+					value = 100
+				}
+			}
+			else = {
+				OR = {
+					alliance_with = HES
+					land_forcelimit = 8
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			overlord = { add_prestige = 10 }
+			add_historical_friend = overlord
+			overlord = { add_historical_friend = ROOT }
+		}
+	}
+	
+	kle_time_of_recovery = {
+		icon = generality_lands
+		required_missions = {
+			kle_pact_of_kleves
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { NOT = { devastation = 0.1 } }
+			69 = { NOT = { devastation = 0.1 } }
+			2975 = { NOT = { devastation = 0.1 } }
+			treasury = 200
+		}
+		
+		effect = {
+			add_treasury = -200
+			84 = { 
+				add_province_modifier = {
+					name = kle_reconstruction_effort
+					duration = 7300
+				}
+			}
+			69 = { 
+				add_province_modifier = {
+					name = kle_reconstruction_effort
+					duration = 7300
+				}
+			}
+			2975 = { 
+				add_province_modifier = {
+					name = kle_reconstruction_effort
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	kle_freedom_of_worship = {
+		icon = generality_lands
+		required_missions = {
+			kle_time_of_recovery
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { has_tax_building_trigger = yes }
+			69 = { has_tax_building_trigger = yes }
+			2975 = { has_tax_building_trigger = yes } 
+		}
+		
+		effect = {
+			add_treasury = -200
+			84 = { 
+				add_permanent_province_modifier = {
+					name = kle_religious_tolerance
+					duration = -1
+				}
+			}
+			69 = { 
+				add_permanent_province_modifier = {
+					name = kle_religious_tolerance
+					duration = -1
+				}
+			}
+			2975 = { 
+				add_permanent_province_modifier = {
+					name = kle_religious_tolerance
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	kle_great_monument = {
+		icon = generality_lands
+		required_missions = {
+			kle_freedom_of_worship
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			85 = { has_tax_building_trigger = yes }
+			owns = 85
+			85 = {
+				has_great_project = {
+					type = cologne_cathedral
+					tier = 1
+				}
+			}
+		}
+		
+		effect = {
+			85 = { 
+				add_permanent_province_modifier = {
+					name = kle_religious_tolerance
+					duration = -1
+				}
+			}
+			remove_building = temple
+			add_building = cathedral
+			
+			add_great_project_tier = {
+				type = cologne_cathedral
+				tier = 1
+			}
+		}
+	}
+	
+	kle_culture_of_tolerance = {
+		icon = generality_lands
+		required_missions = {
+			kle_great_monument
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			85 = { has_tax_building_trigger = yes }
+			owns = 85
+			85 = {
+				has_great_project = {
+					type = cologne_cathedral
+					tier = 3
+				}
+			}
+			85 = { base_tax = 10 }
+		}
+		
+		effect = {
+			85 = { 
+				add_permanent_province_modifier = {
+					name = kle_tolerant_community
+					duration = -1
+				}
+			}
+			
+		}
+	}
+	
+	kle_a_new_era = {
+		icon = generality_lands
+		required_missions = {
+			kle_culture_of_tolerance
+			kle_expand_the_transportation_infrastructure
+			kle_foundations_of_industry
+			kle_expand_the_ranks
+			kle_koln_campaign
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			always = yes
+		}
+		
+		effect = {
+			change_government = republic
+			add_government_reform = kle_union_of_cities
+		}
+	}
+}
+
+cleves_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = KLE
+		has_country_flag = kle_hes_flag
+	}
+	has_country_shield = yes
+	
+	kle_safeguard_the_cities = {
+		icon = generality_lands
+		required_missions = {
+			kle_time_of_recovery
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { base_manpower = 5 }
+			69 = { base_manpower = 5}
+			2975 = { base_manpower = 5 	fort_level = 2 } 
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kle_guarding_frontier
+				duration = -1
+			}
+		}
+	}
+	
+	kle_defensive_force = {
+		icon = generality_lands
+		required_missions = {
+			kle_safeguard_the_cities
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { base_manpower = 8 	has_manpower_building_trigger = yes }
+			69 = { base_manpower = 8 	has_manpower_building_trigger = yes }
+			2975 = { base_manpower = 8 	has_manpower_building_trigger = yes } 
+		}
+		
+		effect = {
+			84 = {
+				add_base_manpower = 2
+			}
+			69 = {
+				add_base_manpower = 2
+			}
+			2975 = {
+				add_base_manpower = 2
+			}
+			overlord = {
+				add_manpower = 7
+				create_general = { tradition = 70 }
+			}
+		}
+	}
+	
+	kle_expand_the_ranks = {
+		icon = generality_lands
+		required_missions = {
+			kle_defensive_force
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			84 = { base_manpower = 15 	has_forcelimit_building_trigger = yes }
+			69 = { base_manpower = 15 	has_forcelimit_building_trigger = yes }
+			2975 = { base_manpower = 15 	has_forcelimit_building_trigger = yes } 
+		}
+		
+		effect = {
+			84 = {
+				remove_building = regimental_camp
+				add_building = conscription_center
+			}
+			69 = {
+				remove_building = regimental_camp
+				add_building = conscription_center
+			}
+			2975 = {
+				remove_building = regimental_camp
+				add_building = conscription_center
+			}
+		}
+	}
+}
+
+cleves_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = KLE
+		has_country_flag = kle_hes_flag
+	}
+	has_country_shield = yes
+	
+	kle_koln_campaign = {
+		icon = generality_lands
+		required_missions = {
+			kle_defensive_force
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+			
+		#}
+		
+		trigger = {
+			owns = 85
+		}
+		
+		effect = {
+			85 = { 
+				add_core = ROOT
+				add_local_autonomy = -100
+			}
+			overlord = { add_prestige = 225 }
+		}
+	}
+}

@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudal_monarchy
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = romagnan
+capital = 106
+add_accepted_culture = franconian
+add_accepted_culture = swedish
+1444.11.11= {
+	monarch = {
+		name = "Sverker"
+		dynasty = "Sverker"
+		adm = 3
+		dip = 2
+		mil = 2
+		birth_date = 1403.11.5
+		religion = catholic
+		culture = swedish
+	}
+	add_ruler_personality = just_personality
+	add_ruler_personality = strict_personality
+	queen = {
+		name = "Emma"
+		dynasty = "de Lusignan"
+		adm = 4
+		dip = 2
+		mil = 3
+		country_of_origin = KOJ
+		birth_date = 1395.11.6
+		death_date = 1455.11.6
+		female = yes
+		religion = catholic
+		culture = burgundian
+	}
+	add_queen_personality = just_personality
+	add_queen_personality = righteous_personality
+}
+1444.11.11= {
+	add_prestige = 37
+	add_treasury = 54
+}

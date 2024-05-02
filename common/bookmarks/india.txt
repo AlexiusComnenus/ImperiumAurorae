@@ -1,0 +1,14 @@
+bookmark =
+{
+	name = india_bookmark
+	desc = india_bookmark_desc
+	date = "1444.11.11"
+	center = 522
+	country = MAM
+	country = YOR
+	country = DLH
+	country = JNP
+	country = MYS
+	country = VIJ
+	country = HIN
+}

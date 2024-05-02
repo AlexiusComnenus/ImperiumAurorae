@@ -1,0 +1,10 @@
+government = republic
+add_government_reform = pirate_republic_reform
+government_rank = 1
+technology_group = western
+religion = norse_pagan
+primary_culture = icelandic
+capital = 370
+historical_friend = JOM
+historical_friend = RUG
+historical_friend = GOT

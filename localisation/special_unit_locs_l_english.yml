@@ -1,0 +1,81 @@
+﻿l_english: 
+ dray_spawn_special_units_title:0 "Spawn Special Units"
+ dray_spawn_special_units_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §Y[Root.GetAdjective]§! special units in §Y[Root.Capital.GetName]§!."
+ dray_spawn_special_units_tt:0 "Spawn the maximum possible amount of §Y[Root.GetAdjective]§! special units in §Y[Root.Capital.GetName]§!."
+ dray_three_day_timer_tt:0 "No other country has taken this decision within §Y3§! days."
+ 
+ dray_spawn_revolutionary_guards_title:0 "Recruit Revolutionary Guard Regiments"
+ dray_spawn_revolutionary_guards_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YRevolutionary Guard§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_revolutionary_guards_tt:0 "Spawn the maximum possible amount of §YRevolutionary Guard§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_hussars_title:0 "Recruit Winged Hussar Regiments"
+ dray_spawn_hussars_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YWinged Hussar§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_hussars_tt:0 "Spawn the maximum possible amount of §YWinged Hussar§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_caroleans_title:0 "Recruit Carolean Regiments"
+ dray_spawn_caroleans_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YCarolean§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_caroleans_tt:0 "Spawn the maximum possible amount of §YCarolean§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_samurai_title:0 "Recruit Samurai Regiments"
+ dray_spawn_samurai_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YSamurai§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_samurai_tt:0 "Spawn the maximum possible amount of §YSamurai§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_tercios_title:0 "Recruit Tercio Regiments"
+ dray_spawn_tercios_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YTercio§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_tercios_tt:0 "Spawn the maximum possible amount of §YTercio§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_musketeers_title:0 "Recruit Musketeer Regiments"
+ dray_spawn_musketeers_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YMusketeer§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_musketeers_tt:0 "Spawn the maximum possible amount of §YMusketeer§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_streltsy_title:0 "Recruit Streltsy Regiments"
+ dray_spawn_streltsy_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YStreltsy§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_streltsy_tt:0 "Spawn the maximum possible amount of §YStreltsy§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_cossacks_title:0 "Recruit Cossack Regiments"
+ dray_spawn_cossacks_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YCossack§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_cossacks_tt:0 "Spawn the maximum possible amount of §YCossack§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_mamluks_title:0 "Recruit Mamluk Regiments"
+ dray_spawn_mamluks_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YMamluk§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_mamluks_tt:0 "Spawn the maximum possible amount of §YMamluk§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_rajputs_title:0 "Recruit Rajput Regiments"
+ dray_spawn_rajputs_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YRajput§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_rajputs_tt:0 "Spawn the maximum possible amount of §YRajput§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_qizilbash_title:0 "Recruit Qizilbash Regiments"
+ dray_spawn_qizilbash_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YQizilbash§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_qizilbash_tt:0 "Spawn the maximum possible amount of §YQizilbash§! regiments in §Y[Root.Capital.GetName]§!."
+ 
+ dray_spawn_cawa_title:0 "Recruit Cawa Regiments"
+ dray_spawn_cawa_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YCawa§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_cawa_tt:0 "Spawn the maximum possible amount of §YCawa§! regiments in §Y[Root.Capital.GetName]§!." 
+ 
+ dray_spawn_janissaries_title:0 "Recruit Janissary Regiments"
+ dray_spawn_janissaries_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YJanissary§! regiments in §Y[Root.Capital.GetName]§!."
+ dray_spawn_janissaries_tt:0 "Spawn the maximum possible amount of §YJanissary§! regiments in §Y[Root.Capital.GetName]§!."  
+ 
+ dray_spawn_man_of_wars_title:0 "Construct Man Of War Ships"
+ dray_spawn_man_of_wars_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YMan Of War§! ships."
+ dray_spawn_man_of_wars_tt:0 "Spawn the maximum possible amount of §YMan Of War§! ships."
+ 
+ dray_spawn_galleons_title:0 "Construct Galleon Ships"
+ dray_spawn_galleons_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YGalleon§! ships."
+ dray_spawn_galleons_tt:0 "Spawn the maximum possible amount of §YGalleon§! ships."
+ 
+ dray_spawn_voc_indiamen_title:0 "Construct VOC Indiamen Ships"
+ dray_spawn_voc_indiamen_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YVOC Indiamen§! ships."
+ dray_spawn_voc_indiamen_tt:0 "Spawn the maximum possible amount of §YVOC Indiamen§! ships."
+
+ dray_spawn_caravels_title:0 "Construct Caravel Ships"
+ dray_spawn_caravels_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YCaravel§! ships."
+ dray_spawn_caravels_tt:0 "Spawn the maximum possible amount of §YCaravel§! ships."
+ 
+ dray_spawn_geobukseon_title:0 "Construct Geobukseon Ships"
+ dray_spawn_geobukseon_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YGeobukseon§! ships."
+ dray_spawn_geobukseon_tt:0 "Spawn the maximum possible amount of §YGeobukseon§! ships."
+ 
+ dray_spawn_galleass_title:0 "Construct Galleass Ships"
+ dray_spawn_galleass_desc:0 "§Y(AI-Only)§! Spawns the maximum possible amount of §YGalleass§! ships."
+ dray_spawn_galleass_tt:0 "Spawn the maximum possible amount of §YGalleass§! ships."

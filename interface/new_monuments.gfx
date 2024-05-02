@@ -1,0 +1,26 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_nova_roma_wonder"	
+		texturefile = "gfx//interface//great_projects//great_project_nova_roma_wonder.dds"
+	}
+
+}
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_tree_of_life"	
+		texturefile = "gfx//interface//great_projects//great_project_tree_of_life.dds"
+	}
+
+}
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_great_project_schloss_berlepsch"	
+		texturefile = "gfx//interface//great_projects//great_project_schloss_berlepsch.dds"
+	}
+
+}

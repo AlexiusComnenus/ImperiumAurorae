@@ -1,0 +1,12 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = bogomilist
+primary_culture = novgorodian
+capital = 310
+mercantilism = 25
+1444.11.11= {
+	add_prestige = 7
+	add_treasury = 53
+}

@@ -1,0 +1,1582 @@
+hre_cede_area_to_hre_duchy = {
+	[[area]
+		$area$ = {
+			limit = {
+				hre_can_cede_province_to_hre_duchy = { tag = $tag$ }
+			}
+			owner = {
+				add_liberty_desire = 3
+				if = {
+					limit = {
+						is_elector = yes
+					}
+					set_global_flag = make_hre_duchy_an_elector_$tag$
+				}
+			}
+			if = {
+				limit = {
+					is_core = owner
+				}
+				remove_core = owner
+				add_core = $tag$
+			}
+			cede_province = $tag$
+			if = {
+				limit = {
+					NOT = { is_core = $tag$ }
+					$tag$ = {
+						NOT = { num_of_cities = 2 }
+					}
+				}
+				add_core = $tag$
+			}
+		}
+	]
+	[[province]
+		$province$ = {
+			if = {
+				limit = {
+					hre_can_cede_province_to_hre_duchy = { tag = $tag$ }
+				}
+				owner = {
+					add_liberty_desire = 3
+					if = {
+						limit = {
+							is_elector = yes
+						}
+						set_global_flag = make_hre_duchy_an_elector_$tag$
+					}
+				}
+				if = {
+					limit = {
+						is_core = owner
+					}
+					remove_core = owner
+					add_core = $tag$
+				}
+				cede_province = $tag$
+				if = {
+					limit = {
+						NOT = { is_core = $tag$ }
+						$tag$ = {
+							NOT = { num_of_cities = 2 }
+						}
+					}
+					add_core = $tag$
+				}
+			}
+		}
+	]
+}
+
+hre_set_up_hre_duchy = {
+	if = {
+		limit = {
+			NOT = { is_subject_of = ROOT }
+		}
+		ROOT = { vassalize = PREV }
+		change_government = $government$
+		if = {
+			limit = {
+				government = monarchy
+			}
+			if = {
+				limit = {
+					tag = PRU
+				}
+				add_government_reform = prussian_monarchy
+			}
+			else_if = {
+				limit = {
+					tag = HAB
+				}
+				add_government_reform = austrian_archduchy_reform
+			}
+			else = {
+				add_government_reform = feudalism_reform
+			}
+		}
+		else_if = {
+			limit = {
+				government = theocracy
+			}
+			add_government_reform = leading_clergy_reform
+		}
+		else = {
+			change_government = republic
+			add_government_reform = oligarchy_reform
+		}
+		change_religion = ROOT
+		change_primary_culture = $culture$
+		if = {
+			limit = {
+				NOT = { dominant_culture = $culture$ }
+			}
+			add_accepted_culture = new_variable:dominant_culture
+		}
+		define_ruler = {
+			dynasty = ROOT
+			claim = 100
+		}
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		add_liberty_desire = -25
+		add_treasury = 3000
+		add_manpower = 30
+		add_adm_power = 200
+		add_dip_power = 200
+		add_mil_power = 200
+		if = {
+			limit = {
+				NOT = { prestige = 50 }
+			}
+			add_prestige = 100
+		}
+		else_if = {
+			limit = {
+				NOT = { prestige = 25 }
+			}
+			add_prestige = 50
+		}
+		else_if = {
+			limit = {
+				NOT = { prestige = 0 }
+			}
+			add_prestige = 25
+		}
+		add_legitimacy = 100
+		add_devotion = 100
+		add_republican_tradition = 100
+	}
+	if = {
+		limit = {
+			OR = {
+				has_global_flag = make_hre_duchy_an_elector_@THIS
+				NOT = { num_of_electors = 7 }
+			}
+		}
+		clr_global_flag = make_hre_duchy_an_elector_@THIS
+		if = {
+			limit = {
+				is_elector = no
+				NOT = { num_of_electors = 7 }
+			}
+			elector = yes
+		}
+	}
+	add_country_modifier = {
+		name = besseres_hrr_hre_duchy_modifier
+		duration = -1
+	}
+	every_province = {
+		limit = {
+			has_discovered = ROOT
+			NOT = { has_discovered = PREV }
+		}
+		discover_country = PREV
+	}
+	if = {
+		limit = {
+			is_part_of_hre = no
+		}
+		capital_scope = {
+			set_in_empire = yes
+		}
+	}
+	every_owned_province = {
+		limit = {
+			continent = europe
+			religion_group = christian
+			is_part_of_hre = no
+		}
+		set_in_empire = yes
+	}
+	[[kingdom]
+		if = {
+			limit = {
+				always = $kingdom$
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank_force = 2
+		}
+	]
+}
+
+hre_give_land_to_hre_duchy_with_diplo_action = {
+	# make sure to keep these areas and provinces the same as in the decisions
+	## Germany
+	if = {
+		limit = {
+			FROM = { tag = BAV }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_bavaria_area
+			tag = BAV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_bavaria_area
+			tag = BAV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = upper_bavaria_area
+			tag = BAV
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWA }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = upper_swabia_area
+			tag = SWA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_swabia_area
+			tag = SWA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = upper_rhineland_area
+			tag = SWA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = alsace_area
+			tag = SWA
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4710
+			tag = SWA
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = FKN }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = franconia_area
+			tag = FKN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = upper_franconia_area
+			tag = FKN
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4774
+			tag = FKN
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 77
+			tag = FKN
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1876
+			tag = FKN
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = HAN }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = weser_area
+			tag = HAN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_saxony_area
+			tag = HAN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = holstein_area
+			tag = HAN
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 45
+			tag = HAN
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRU }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = west_prussia_area
+			tag = PRU
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_prussia_area
+			tag = PRU
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = WES }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = north_westphalia_area
+			tag = WES
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = westphalia_area
+			tag = WES
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = braunschweig_area
+			tag = WES
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1762
+			tag = WES
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 81
+			tag = WES
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KOL }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = north_rhine_area
+			tag = KOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_rhineland_area
+			tag = KOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 78
+			tag = KOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1761
+			tag = KOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4767
+			tag = KOL
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = POM }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = vorpommern_area
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = hinter_pommern_area
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4747
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2996
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4749
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 46
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2993
+			tag = POM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 49
+			tag = POM
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SIL }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = silesia_area
+			tag = SIL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lusatia_area
+			tag = SIL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2969
+			tag = SIL
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SAX }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = south_saxony_area
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = northern_saxony_area
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = thuringia_area
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4786
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 51
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4748
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1759
+			tag = SAX
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 50
+			tag = SAX
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BOH }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = erzgebirge_area
+			tag = BOH
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = bohemia_area
+			tag = BOH
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = moravia_area
+			tag = BOH
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWI }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = switzerland_area
+			tag = SWI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = romandie_area
+			tag = SWI
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NED }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = frisia_area
+			tag = NED
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = holland_area
+			tag = NED
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = north_brabant_area
+			tag = NED
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = brabant_area
+			tag = NED
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = flanders_area
+			tag = NED
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 91
+			tag = NED
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = HAB }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = austria_proper_area
+			tag = HAB
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = inner_austria_area
+			tag = HAB
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1768
+			tag = HAB
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4758
+			tag = HAB
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 110
+			tag = HAB
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 73
+			tag = HAB
+		}
+	}
+	## France
+	else_if = {
+		limit = {
+			FROM = { tag = NRM }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = brittany_area
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = normandy_area
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = picardy_area
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4388
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 182
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 177
+			tag = NRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 183
+			tag = NRM
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = AUV }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = poitou_area
+			tag = AUV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = massif_central_area
+			tag = AUV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = orleans_area
+			tag = AUV
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4389
+			tag = AUV
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 178
+			tag = AUV
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BUR }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = bourgogne_area
+			tag = BUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = west_burgundy_area
+			tag = BUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4390
+			tag = BUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 186
+			tag = BUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 185
+			tag = BUR
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = LOR }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lorraine_area
+			tag = LOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 181
+			tag = LOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 94
+			tag = LOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 93
+			tag = LOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1866
+			tag = LOR
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 3004
+				tag = LOR
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GUY }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = pyrenees_area
+			tag = GUY
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = guyenne_area
+			tag = GUY
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = languedoc_area
+			tag = GUY
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRO }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = provence_area
+			tag = PRO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = savoy_dauphine_area
+			tag = PRO
+		}
+	}
+	## Italy
+	else_if = {
+		limit = {
+			FROM = { tag = SPI }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = piedmont_area
+			tag = SPI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = corsica_sardinia_area
+			tag = SPI
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 102
+			tag = SPI
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2992
+			tag = SPI
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MLO }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lombardy_area
+			tag = MLO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = po_valley_area
+			tag = MLO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = emilia_romagna_area
+			tag = MLO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = venetia_area
+			tag = MLO
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 101
+			tag = MLO
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = TUS }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = tuscany_area
+			tag = TUS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lazio_area
+			tag = TUS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = central_italy_area
+			tag = TUS
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SIC }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = apulia_area
+			tag = SIC
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = naples_area
+			tag = SIC
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = calabria_area
+			tag = SIC
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = sicily_area
+			tag = SIC
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = western_sicily_area
+			tag = SIC
+		}
+	}
+	# Iberia
+	else_if = {
+		limit = {
+			FROM = { tag = ARA }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = catalonia_area
+			tag = ARA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = aragon_area
+			tag = ARA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = valencia_area
+			tag = ARA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = baleares_area
+			tag = ARA
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = basque_country
+			tag = ARA
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2755
+			tag = ARA
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = ASU }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = galicia_area
+			tag = ASU
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = beieras_area
+			tag = ASU
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = alentejo_area
+			tag = ASU
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = asturias_area
+			tag = ASU
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4553
+			tag = ASU
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 208
+			tag = ASU
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = CAS }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = extremadura_area
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = toledo_area
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_andalucia_area
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = upper_andalucia_area
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = macaronesia_area
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4551
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 217
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4789
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 215
+			tag = CAS
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 216
+			tag = CAS
+		}
+	}
+	# Eastern
+	else_if = {
+		limit = {
+			FROM = { tag = HUN }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = slovakia_area
+			tag = HUN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = transdanubia_area
+			tag = HUN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = alfold_area
+			tag = HUN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = southern_transylvania_area
+			tag = HUN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = transylvania_area
+			tag = HUN
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 1954
+				tag = HUN
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 4126
+				tag = HUN
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 4173
+				tag = HUN
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MAZ }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = mazovia_area
+			tag = MAZ
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = sandomierz_area
+			tag = MAZ
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = malopolska_area
+			tag = MAZ
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = central_poland_area
+			tag = MAZ
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = kuyavia_area
+			tag = MAZ
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = wielkopolska_area
+			tag = MAZ
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MOL }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = moldavia_area
+			tag = MOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = red_ruthenia_area
+			tag = MOL
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 3249
+				tag = MOL
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 2405
+				tag = MOL
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 1756
+				tag = MOL
+			}
+		}
+	}
+	# Balkans
+	else_if = {
+		limit = {
+			FROM = { tag = CLI }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = croatia_area
+			tag = CLI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = carinthia_area
+			tag = CLI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_adriatic_coast_area
+			tag = CLI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = bosnia_area
+			tag = CLI
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = slavonia_area
+			tag = CLI
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = BUL }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = wallachia_area
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = silistria_area
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = serbia_area
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = rascia_area
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2746
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1765
+			tag = BUL
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 150
+			tag = BUL
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GRE }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = thrace_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = macedonia_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = albania_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = northern_greece_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = morea_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = aegean_archipelago_area
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2750
+			tag = GRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4703
+			tag = GRE
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 146
+				tag = GRE
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 147
+				tag = GRE
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 3003
+				tag = GRE
+			}
+		}
+	}
+	# Nordic
+	else_if = {
+		limit = {
+			FROM = { tag = DAN }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = jutland_area
+			tag = DAN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = denmark_area
+			tag = DAN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = skaneland_area
+			tag = DAN
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOR }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = western_norway
+			tag = NOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = eastern_norway
+			tag = NOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = northern_norway
+			tag = NOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = subarctic_islands_area
+			tag = NOR
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 315
+			tag = NOR
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 3046
+				tag = NOR
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 370
+				tag = NOR
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 371
+				tag = NOR
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SWE }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = norrland_area
+			tag = SWE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = svealand_area
+			tag = SWE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = ostra_svealand_area
+			tag = SWE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = gotaland_area
+			tag = SWE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = vastra_gotaland_area
+			tag = SWE
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = FIN }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = finland_area
+			tag = FIN
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = bothnia_area
+			tag = FIN
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4151
+			tag = FIN
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 4152
+				tag = FIN
+			}
+		}
+	}
+	# England
+	else_if = {
+		limit = {
+			FROM = { tag = ENG }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = home_counties_area
+			tag = ENG
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = wessex_area
+			tag = ENG
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_anglia_area
+			tag = ENG
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = west_midlands_area
+			tag = ENG
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_midlands_area
+			tag = ENG
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = wales_area
+			tag = ENG
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOL }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = yorkshire_area
+			tag = NOL
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = scottish_marches_area
+			tag = NOL
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = SCO }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lowlands_area
+			tag = SCO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = highlands_area
+			tag = SCO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = kingdom_of_the_isles_area
+			tag = SCO
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = IRE }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = ulster_area
+			tag = IRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = leinster_area
+			tag = IRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = munster_area
+			tag = IRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = connacht_area
+			tag = IRE
+		}
+	}
+	# Far Eastern
+	else_if = {
+		limit = {
+			FROM = { tag = LIT }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = samogitia_area
+			tag = LIT
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lithuania_area
+			tag = LIT
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = podlasie_area
+			tag = LIT
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = pripyat_area
+			tag = LIT
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = volhynia_area
+			tag = LIT
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = minsk_area
+			tag = LIT
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KIE }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = podolia_volhynia_area
+			tag = KIE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = west_dniepr_area
+			tag = KIE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = east_dniepr_area
+			tag = KIE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = yedisan_area
+			tag = KIE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = zaporizhia_area
+			tag = KIE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = crimea_area
+			tag = KIE
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = KUR }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = estonia_ingria_area
+			tag = KUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = livonia_area
+			tag = KUR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = curonia_area
+			tag = KUR
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = NOV }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = pskov_area
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = novgorod_area
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = karelia_area
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = north_karelia
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = pomor_area
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = beloozero_area
+			tag = NOV
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 1777
+			tag = NOV
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = MOS }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = white_ruthenia_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = tver_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = smolensk_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = moscow_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = oka_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = chernigov_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = sloboda_ukraine_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = tambov_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = ryazan_area
+			tag = MOS
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = vladimir_area
+			tag = MOS
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = PRM }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = ural_region
+			tag = PRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = suzdal_area
+			tag = PRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = yaroslavl_area
+			tag = PRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = vologda_area
+			tag = PRM
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = arkhangelsk_area
+			tag = PRM
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = CIR }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = lower_don_area
+			tag = CIR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = azov_area
+			tag = CIR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = astrakhan_area
+			tag = CIR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = dagestan_area
+			tag = CIR
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = circassia_area
+			tag = CIR
+		}
+		if = {
+			limit = {
+				has_global_flag = extended_timeline_mod
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 469
+				tag = CIR
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 2365
+				tag = CIR
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 2367
+				tag = CIR
+			}
+			hre_cede_area_to_hre_duchy = {
+				province = 474
+				tag = CIR
+			}
+		}
+	}
+	# Asia Minor
+	else_if = {
+		limit = {
+			FROM = { tag = TRE }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = hudavendigar_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = aydin_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = germiyan_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = karaman_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = ankara_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = kastamonu_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = rum_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = erzurum_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = cukurova_area
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 332
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 2303
+			tag = TRE
+		}
+		hre_cede_area_to_hre_duchy = {
+			province = 4310
+			tag = TRE
+		}
+	}
+	else_if = {
+		limit = {
+			FROM = { tag = GEO }
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = imereti_area
+			tag = GEO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = kartli_kakheti_area
+			tag = GEO
+		}
+		hre_cede_area_to_hre_duchy = {
+			area = samtskhe_area
+			tag = GEO
+		}
+	}
+}

@@ -1,0 +1,271 @@
+country_decisions = {
+	
+	make_yanshing_general = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			tag = Z17
+			is_heir_leader = no
+		}
+		
+		allow = {
+			NOT = { has_country_modifier = yanshing_injured }
+			has_government_power = {
+				mechanic_type = righteousness_mechanic
+				power_type = righteousness
+				value = 25
+			}
+		}
+		
+		effect = {
+			define_heir_to_general = {
+				fire = 3
+				shock = 8
+				manuever = 3
+				siege = 5
+				trait = eternal_emperor
+			}
+			#add_treasury = 1
+		}
+	}
+	
+	recruit_aurora_general = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			OR = {
+				culture = xizho
+				religion = hellenic_pagan_reformed
+				Z17 = {
+					has_opinion = {
+						who = PREV
+						value = 140
+					}
+				}
+			}
+		}
+		
+		allow = {
+			mil_power = 50
+			if = {
+				limit = { NOT = { tag = Z17 } }
+				treasury = 100
+			}
+			OR = {
+				tag = Z17
+				Z17 = {
+					has_opinion = {
+						who = PREV
+						value = 100
+					}
+				}
+			}
+			NOT = { has_country_modifier = recently_recruited_aurora }
+		}
+		
+		effect = {
+			country_event = { id = antioch.10 }
+		}
+	}
+	
+	recruit_templar_general = {
+		major = yes
+		color = { 51 255 240 }
+		potential = {
+			tag = TEM
+		}
+		
+		allow = {
+			mil_power = 50
+			treasury = 100
+			NOT = { has_country_modifier = recently_recruited_templar }
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_tem.11 }
+			add_country_modifier = {
+				name = recently_recruited_templar
+				duration = 7300
+			}
+			add_mil_power = -50
+			add_treasury = -100
+		}
+	}
+	
+	recruit_druid_general = {
+		major = yes
+		color = { 51 255 240 }
+		potential = {
+			OR = {
+				any_known_country = {
+					OR = { 
+						religion = druidic_pagan	
+						religion = druidic_pagan_reformed 
+					}
+				}
+				tag = HSC
+			}
+			OR = {
+				religion = druidic_pagan
+				religion = druidic_pagan_reformed
+				any_ally = { religion = druidic_pagan }
+				any_ally = { religion = druidic_pagan_reformed }
+			}
+		}
+		
+		allow = {
+			OR = {
+				religion = druidic_pagan
+				religion = druidic_pagan_reformed
+				any_ally = { religion = druidic_pagan }
+				any_ally = { religion = druidic_pagan_reformed }
+			}
+			mil_power = 50
+			treasury = 100
+			NOT = { has_country_modifier = recently_recruited_druid }
+		}
+		
+		effect = {
+			country_event = { id = gaeldom.5 }
+			add_country_modifier = {
+				name = recently_recruited_druid
+				duration = 7300
+			}
+			add_mil_power = -50
+			add_treasury = -100
+		}
+	}
+	
+	recruit_logistics_general = {
+		major = yes
+		color = { 51 255 240 }
+		potential = {
+			OR = {
+				has_country_modifier = logistics_school_mod
+				any_ally = { has_country_modifier = logistics_school_mod }
+			}
+		}
+		
+		allow = {
+			OR = {
+				has_country_modifier = logistics_school_mod
+				any_ally = { has_country_modifier = logistics_school_mod }
+			}
+			mil_power = 50
+			treasury = 100
+			NOT = { has_country_modifier = recently_recruited_logistics }
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_bri.14 }
+			add_country_modifier = {
+				name = recently_recruited_logistics
+				duration = 7300
+			}
+			add_mil_power = -50
+			add_treasury = -100
+		}
+	}
+	
+	steal_aurora_general = {
+		major = yes
+		color = { 51 255 240 }
+		potential = {
+			OR = {
+				war_with = Z17
+				is_rival = Z17
+				is_enemy = Z17
+			}
+		}
+		
+		allow = {
+			mil_power = 50
+			treasury = 300
+			NOT = { has_country_modifier = recently_recruited_aurora }
+			has_spy_network_in = {
+				who = Z17
+				value = 60
+			}
+		}
+		
+		effect = {
+			country_event = { id = antioch.11 }
+		}
+	}
+	
+	subject_add_provinces = {
+		potential = {
+			OR = { is_subject = yes 	tag = AOL }
+			is_part_of_hre = yes
+			OR = { overlord = { is_part_of_hre = yes } tag = AOL }
+		}
+		
+		allow = {
+			any_core_province = {
+				is_part_of_hre = no
+				owned_by = ROOT
+				has_owner_religion = yes
+				any_neighbor_province = { is_part_of_hre = yes }
+			}
+		}
+		
+		effect = {
+			every_core_province = {
+				limit = {
+					owned_by = ROOT
+					has_owner_religion = yes
+					any_neighbor_province = { is_part_of_hre = yes }
+				}
+				set_in_empire = yes
+			}
+		}
+	}
+	
+	z42_donate_money_decision = {
+		potential = {
+			has_country_flag = z42_donate_money_flag
+			is_part_of_hre = yes
+		}
+		
+		allow = {
+			treasury = 100
+			NOT = { has_country_modifier = z42_recently_donated_money }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z42_recently_donated_money
+				duration = 3650
+			}
+			
+			country_event = { id = ia_flavor_z42.2 }
+		}
+	}
+	
+	leave_empire_decision = {
+		potential = {
+			is_part_of_hre = yes
+			is_subject = no
+			is_emperor = no
+		}
+		
+		allow = {
+			is_at_war = no
+			hre_leagues_enabled = no
+			NOT = { truce_with = emperor }
+			NOT = { alliance_with = emperor }
+		}
+		
+		effect = {
+			hidden_effect = {
+				save_global_event_target_as = imperial_deserter_country
+			}
+			emperor = { country_event = { id = antioch.27 } }
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+		ai_importance = 0
+	}
+}

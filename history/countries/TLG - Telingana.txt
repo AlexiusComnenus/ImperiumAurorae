@@ -1,0 +1,55 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+government_rank = 2
+technology_group = indian
+religion = hinduism
+primary_culture = marathi
+capital = 4436
+mercantilism = 15
+1444.11.11= {
+	monarch = {
+		name = "Singhana II"
+		dynasty = "Seuna Yadava"
+		adm = 3
+		dip = 3
+		mil = 2
+		birth_date = 1411.4.20
+		religion = hinduism
+		culture = marathi
+	}
+	add_ruler_personality = intricate_web_weaver_personality
+	add_ruler_personality = tolerant_personality
+	queen = {
+		name = "Kalicci"
+		adm = 3
+		dip = 3
+		mil = 5
+		country_of_origin = TLG
+		birth_date = 1406.1.25
+		death_date = 1466.1.25
+		female = yes
+		religion = hinduism
+		culture = malayalam
+	}
+	add_queen_personality = intricate_web_weaver_personality
+	add_queen_personality = righteous_personality
+	heir = {
+		name = "Kannara"
+		monarch_name = "Kannara II"
+		dynasty = "Seuna Yadava"
+		adm = 3
+		dip = 4
+		mil = 4
+		birth_date = 1429.1.5
+		death_date = 1494.1.5
+		claim = 89
+		religion = hinduism
+		culture = marathi
+	}
+	add_heir_personality = cruel_personality
+	add_heir_personality = pious_personality
+}
+1444.11.11= {
+	add_prestige = 76
+	add_treasury = 54
+}

@@ -1,0 +1,23 @@
+ck2_converter_generated = yes
+graphical_culture = asiangfx
+color = { 220 62 12 }
+monarch_names = {
+	"Anil #0" = 0
+	"Cogrobza #0" = -1
+	"Detrin #0" = 0
+	"Devavati #0" = -1
+	"Dorje #0" = 0
+	"Esho #0" = 0
+	"Goba #0" = 0
+	"Gyal #0" = 0
+	"Jin'er #0" = -1
+	"Lodrö #0" = 0
+	"Pal #0" = 0
+	"Pelgyimo #0" = -1
+	"Pelmo #0" = -1
+	"Rinchen #0" = -1
+	"Sonam Bum #0" = 0
+	"Tongtsen #0" = 0
+	"Tsuktsen #0" = 0
+	"Xianke #0" = 0
+}

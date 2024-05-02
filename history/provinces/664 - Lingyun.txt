@@ -1,0 +1,14 @@
+owner = CGS
+controller = CGS
+capital = "Lingyun"
+is_city = yes
+culture = zhuang
+religion = confucianism
+trade_goods = tea
+base_tax = 1
+base_production = 1
+base_manpower = 1
+add_core = CGS
+discovered_by = chinese
+discovered_by = indian
+discovered_by = nomad_group

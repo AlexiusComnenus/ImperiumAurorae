@@ -1,0 +1,22 @@
+cumania_collapse_mod = {
+	global_regiment_cost = 0.50
+	land_morale = -0.20
+	discipline = -0.10
+	diplomatic_reputation = -5
+	diplomatic_upkeep = -4
+	global_manpower_modifier = -0.50
+	defensiveness = -0.75
+	land_forcelimit_modifier = -0.75
+}
+
+cumania_revolter_mod = {
+	land_forcelimit_modifier = 1
+	global_regiment_cost = -0.75
+}
+
+austerity_policies = {
+	inflation_reduction = 0.2
+	production_efficiency = -0.10
+	trade_efficiency = -0.10
+	global_unrest = 2
+}

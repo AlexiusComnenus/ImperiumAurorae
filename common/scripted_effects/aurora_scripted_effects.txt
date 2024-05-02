@@ -1,0 +1,56 @@
+dismantle_nation_effect = {
+	release_all_subjects = yes
+	
+	every_owned_province = {
+		limit = {
+			any_core_country = {
+				primary_culture = PREV
+				PREV = {
+					NOT = { owned_by = PREV }
+				}
+			}
+		}
+		#remove_core = ROOT
+		random_core_country = {
+			limit = {
+				PREV = {
+					culture = PREV
+					NOT = { PREV = { tag = ROOT } }
+				}
+			}
+			if = {
+				limit = { NOT = { exists = PREV } }
+				ROOT = { release = PREV }
+			}
+			PREV = {
+				cede_province = PREV
+			}
+		}
+	}
+	every_owned_province = {
+		limit = {
+			any_core_country = {
+				culture_group = PREV
+				PREV = {
+					NOT = { owned_by = PREV }
+				}
+			}
+		}
+		#remove_core = ROOT
+		random_core_country = {
+			limit = {
+				PREV = {
+					culture_group = PREV
+					NOT = { PREV = { tag = ROOT } }
+				}
+			}
+			if = {
+				limit = { NOT = { exists = PREV } }
+				ROOT = { release = PREV }
+			}
+			PREV = {
+				cede_province = PREV
+			}
+		}
+	}
+}

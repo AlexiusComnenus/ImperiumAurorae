@@ -1,0 +1,43 @@
+pagan = {
+	#hellenic_pagan_reformed = {
+	#	
+	#	icon = 58
+	#	color = { 153 26 26 }
+	#	country = {
+	#		
+#
+#		global_missionary_strength = 0.03
+#		tolerance_heathen = -1
+#	
+#
+#		legitimacy = 1
+#		horde_unity = 1
+#		meritocracy = 0.5
+#		devotion = 0.5
+#		republican_tradition = 0.5
+#	
+#		}
+#		province = {
+#			
+#		}
+#				country_as_secondary = {
+#			
+#
+#		tolerance_heretic = 2
+#	
+#
+#		legitimacy = 1
+#		horde_unity = 1
+#		meritocracy = 0.5
+#		devotion = 0.5
+#		republican_tradition = 0.5
+#	
+#		}
+#		
+#		personal_deity = yes
+#	
+#		
+#		heretic = {  GOAT_SKULL  }
+#	}
+	
+}
