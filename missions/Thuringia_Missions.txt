@@ -1620,7 +1620,7 @@ thuringia_missions_column_4_tier2 = {
 					}
 				}
 				if = {
-					KLE = { NOT = { owns = 2975 } }
+					limit = { KLE = { NOT = { owns = 2975 } } }
 					2975 = {
 						cede_province = KLE
 						remove_core = ROOT
@@ -1628,7 +1628,7 @@ thuringia_missions_column_4_tier2 = {
 					}
 				}
 				if = {
-					KLE = { NOT = { owns = 69 } }
+					limit = { KLE = { NOT = { owns = 69 } } }
 					69 = {
 						cede_province = KLE
 						remove_core = ROOT
@@ -1636,7 +1636,7 @@ thuringia_missions_column_4_tier2 = {
 					}
 				}
 				if = {
-					KLE = { NOT = { owns = 84 } }
+					limit = { KLE = { NOT = { owns = 84 } } }
 					84 = {
 						cede_province = KLE
 						remove_core = ROOT
@@ -1644,7 +1644,7 @@ thuringia_missions_column_4_tier2 = {
 					}
 				}
 				if = {
-					KLE = { NOT = { owns = 85 } }
+					limit = { KLE = { NOT = { owns = 85 } } }
 					85 = {
 						cede_province = KLE
 						remove_core = ROOT

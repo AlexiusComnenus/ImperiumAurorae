@@ -1127,7 +1127,7 @@ franconian_missions_col3 = {
 		}
 		
 		effect = {
-			add_country_modifier = { id = ia_flavor_fkn.6 }
+			country_event = { id = ia_flavor_fkn.6 }
 		}
 	}
 }

@@ -160,7 +160,7 @@ country_decisions = {
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 			hidden_effect = {
-				complete_mission = eng_rb_war_of_roses
+				#complete_mission = eng_rb_war_of_roses
 				complete_mission = eng_war_of_the_roses
 			}
 		}

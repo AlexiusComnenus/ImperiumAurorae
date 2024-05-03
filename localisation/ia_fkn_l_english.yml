@@ -156,7 +156,7 @@
  fkn_explore_for_new_vineyards_desc: "We will turn the trade good of a certain province into Wine."
  
  #Diplo Tooltips
- 
+ no_ally_korea_tt: "Allying with Korea is not possible before 1500."
  
  #Government
  estate_fkn_artisan_guilds_privilege: "Artisan Guilds of Franconia"

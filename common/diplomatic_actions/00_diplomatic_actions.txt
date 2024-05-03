@@ -247,6 +247,24 @@ declarewar = {
 
 allianceaction = {
 	condition = {
+		tooltip = no_ally_korea_tt
+		potential = {
+			tag = KOR
+		}
+		allow = {
+			is_year = 1500
+		}
+	}
+	condition = {
+		tooltip = no_ally_korea_tt
+		potential = {
+			FROM = { tag = KOR }
+		}
+		allow = {
+			is_year = 1500
+		}
+	}
+	condition = {
 		tooltip = PIRATE_DENIED_ALLIANCE
 		potential = {
 			has_government_attribute = cannot_ally_non_pirates
