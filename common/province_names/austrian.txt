@@ -1,0 +1,116 @@
+
+#bavarian/franconian
+
+4717 = "Bareid"
+67 = { "Närmberch" "Niamberg" }
+65 = "Minga"
+64 = "Landshuad"
+1757 = "Owerpfolz"
+76 = { "Såizburg" "Soizbuag" }
+4760 = "Innviadl"
+79 = { "Wüazburg" "Woizbuag" } #Wörtzburch
+4709 = "Båssau"
+#5141 = "Däiz"
+#5148 = "Kaufbeiren"
+
+#austria
+134 = "Wean"
+73 = "Innschbruck"
+4761 = "Steia"
+4762 = "St. Pödn"
+5159 = "Kufschtåa"
+##5033 = "Riad"
+##5032 = "Bodn"
+#5249 = "Zwedl"
+#5250 = "Vreinstat"
+
+#italy
+111 = "Baidn"
+
+#some fictitious, rest of germany
+5147 = "Kemptn"
+#5085 = "Hoatkiachn"
+#5088 = "Biadingn"
+# = "Koasalautan"
+#1761 = "Pfolz"
+77 = "Heidelberch"
+1868 = "Augsbuag"
+66 = "Babenberch"
+4715 = "Rothenbuag"
+4716 = "Cobuag"
+83 = "Nåssa"
+56 = "Osnabrugg"
+4775 = "Ravensberch"
+2965 = "Vogtlånd"
+44 = "Hambuag"
+1857 = "Lauenburch"
+53 = "Lünebuag"
+52 = "Magdeburch"
+59 = "Wittenburch"
+4767 = "Zwàbruggn"
+4718 = "Aschaffenburch"
+55 = "Oidenburch"
+2969 = "Sternbeag"
+4747 = "Dramburch"
+1841 = { "Marienburch" "Marienbuag" }
+42 = "Ermlånd"
+41 = "Kineberch"
+767 = { "Ortelsburch" "Ortelsbuag" }
+4749 = { "Neibrandenbuag" "Neibrandenburch" }
+4748 = { "Brandenbuag" "Brandenburch" }
+#4978 = "Koimar"
+
+
+68 = "Memmingn"
+74 = "Badn"
+1878 = "Aachn"
+2973 = "Meppn"
+1931 = "Emdn"
+1874 = "Breem"
+4771 = "Verdn"
+82 = "Westfaln"
+4773 = "Chöttingn"
+81 = { "Owerhessn" "Obahessn" }
+1762 = "Niedahessn"
+4765 = "Müihausn"
+75 = "Stråssburg"
+1775 = "Holstõa"
+61 = "Dresdn"
+94 = { "Luxemburch" "Luxembuag" }
+48 = "Kolberch"
+4745 = "Rügn"
+4141 = "Dithmoosn"
+2955 = "Ingolståd"
+4707 = "Wåssabuag"
+2957 = "Rengschburg"
+1758 = "Hannova"
+##5023 = "Aumstettn"
+4762 = "St. Pöitn"
+1863 = "Gráz"
+
+49 = "Neimark"
+#5125 = "Frankfurt af da Oder"
+#5126 = "Bernau ba Berlin"
+1763 = "Niedalausitz"
+80 = "Tria"
+#5122 = "Offnburg"
+#5155 = "Idar-Owerstõa"
+86 = "Minschda"
+15 = "Middljutland"
+2967 = "Ega"
+4725 = "Neihaus"
+267 = "Pilsn"
+#4955 = "Kladn"
+2970 = "Kinegratz"
+#4962 = { "Hirschberg" "Hirschberg im Riesengebirge" }
+60 = "Bautzn"
+133 = "Ob da Enns"
+#4953 = "Kudnberch"
+132 = { "Steiameaz" "Judnbuag" }
+135 = "Odnbuag"
+1770 = "Manhartsbuag"
+128 = "Untakärntn"
+4759 = "Owerkärntn"
+2964 = "Oidmark"
+#5162 = "Uelzn"
+#5068 = "Eupn"

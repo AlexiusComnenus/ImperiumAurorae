@@ -1,0 +1,411 @@
+########################################
+# Dumnonia Events     		           #
+########################################
+
+namespace = ia_flavor_eng
+
+# Startup clarifications
+country_event = {
+	id = ia_flavor_eng.1
+	title = ia_flavor_eng.1.t
+	desc = ia_flavor_eng.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = WLS
+	}
+	
+	option = {
+		name = ia_flavor_eng.1.a
+		
+		CRN = { add_liberty_desire = 50 }
+		
+		hidden_effect = {
+			country_event = {
+				id = ia_flavor_eng.3
+				days = 1095
+				random = 730
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.2
+	title = ia_flavor_eng.2.t
+	desc = ia_flavor_eng.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+	}
+	
+	option = {
+		name = ia_flavor_eng.2.a
+		
+		add_spy_network_in = {
+			who = WLS
+			value = 100
+		}
+	}
+}
+
+
+country_event = {
+	id = ia_flavor_eng.3
+	title = ia_flavor_eng.3.t
+	desc = ia_flavor_eng.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = WLS
+	}
+	
+	option = {
+		name = ia_flavor_eng.3.a
+		
+		kill_ruler = yes
+		add_legitimacy = -50
+		add_ruler_modifier = {
+			name = sibyls_regency_mod
+			duration = 3650
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = ia_flavor_eng.4
+				days = 20
+				random = 20
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.4
+	title = ia_flavor_eng.4.t
+	desc = ia_flavor_eng.4.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = WLS
+	}
+	
+	option = {
+		name = ia_flavor_eng.4.a
+		
+		CRN = { country_event = { id = ia_flavor_eng.5 } }
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.5
+	title = ia_flavor_eng.5.t
+	desc = ia_flavor_eng.5.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+	}
+	
+	option = {
+		name = ia_flavor_eng.5.a
+		
+		add_ruler_modifier = {
+			name = disappearance_of_gerens
+			duration = -1
+		}
+		hidden_effect = { country_event = { id = ia_flavor_eng.6	days = 63 } }
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.6
+	title = ia_flavor_eng.6.t
+	desc = ia_flavor_eng.6.d
+	picture = BYZ_REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+	}
+	
+	option = {
+		name = ia_flavor_eng.6.a
+		
+		remove_country_modifier = disappearance_of_gerens
+		remove_country_modifier = cold_duke_of_the_south
+		define_consort = {
+			name = "Iorwen"
+			dynasty = "o'r Goedwig"
+			adm = 3
+			dip = 2
+			mil = 6
+			female = yes
+			religion = druidic_pagan
+			age = 31
+		}
+		hidden_effect = { add_queen_personality = powerful_druid_personality }
+		set_consort_flag = lady_iorwen_flag
+		WLS = { country_event = { id = ia_flavor_eng.7 } }
+		
+		hidden_effect = { country_event = { id = ia_flavor_eng.8 	days = 15	random = 30 } }
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.7
+	title = ia_flavor_eng.7.t
+	desc = ia_flavor_eng.7.d
+	picture = BYZ_REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = WLS
+	}
+	
+	option = {
+		name = ia_flavor_eng.7.a
+		
+		declare_war_with_cb = {
+			who = CRN
+			casus_belli = cb_disloyal_vassal
+		}
+		change_consort_regent_to_ruler = yes
+		#add_manpower = -3
+		#CRN = { add_manpower = 3 }
+		
+		FRA = { country_event = { id = ia_flavor_eng.11 } }
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.8
+	title = ia_flavor_eng.8.t
+	desc = ia_flavor_eng.8.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+	}
+	
+	option = {
+		name = ia_flavor_eng.8.a
+		
+		define_general = {
+			shock = 3
+			fire = 7
+			manuever = 3
+			siege = 3
+			name = "Lady Iorwen"
+			trait = war_druid
+			female = yes
+		}
+		
+		add_ruler_modifier = {
+			name = passionate_duke_of_the_south
+			duration = 3650
+		}
+		
+		hidden_effect = { country_event = { id = ia_flavor_eng.12 	days = 730 	random = 200 } }
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.9
+	title = ia_flavor_eng.9.t
+	desc = ia_flavor_eng.9.d
+	picture = BYZ_BATTLE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = WLS
+		is_in_war = {
+			attacker_leader = ROOT
+			defender_leader = CRN
+			casus_belli = cb_disloyal_vassal
+		}
+		OR = {
+			war_score_against = {
+				who = CRN
+				value = 80
+			}
+			CRN = { capital_scope = { controlled_by = ROOT } }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			CRN = {
+				exile_consort_as = exiled_lady_iorwen
+				exile_ruler_as = { name = exiled_duke_gerens }
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_eng.9.a
+		
+		white_peace = CRN
+		inherit = CRN
+		
+		kill_heir = { allow_new_heir = no }
+		add_stability = -3
+	}
+	
+	option = {
+		name = ia_flavor_eng.9.b
+		trigger = { ai = no }
+		highlight = yes
+		
+		white_peace = CRN
+		inherit = CRN
+		
+		add_stability = -2
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.10
+	title = ia_flavor_eng.10.t
+	desc = ia_flavor_eng.10.d
+	picture = BYZ_BATTLE_eventPicture
+
+	major = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+		is_in_war = {
+			attacker_leader = WLS
+			defender_leader = ROOT
+			casus_belli = cb_disloyal_vassal
+		}
+		OR = {
+			war_score_against = {
+				who = WLS
+				value = 80
+			}
+			WLS = { capital_scope = { controlled_by = ROOT } }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			WLS = {
+				
+				exile_ruler_as = { name = exiled_queen_sibyl }
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_eng.10.a
+		
+		white_peace = WLS
+		inherit = WLS
+		
+		set_government_rank = 2
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.11
+	title = ia_flavor_eng.11.t
+	desc = ia_flavor_eng.11.d
+	picture = BYZ_REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+	#major = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		tag = FRA
+	}
+	
+	option = {	# yes we will help
+		name = ia_flavor_eng.11.a
+		
+		join_all_offensive_wars_of = WLS
+		reverse_add_opinion = {
+			who = CRN
+			modifier = sided_with_sibyl	
+			multiplier = 2
+		}
+	}
+	
+	option = {	# nah
+		name = ia_flavor_eng.11.b
+		trigger = {
+			ai = no
+		}
+		
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = ia_flavor_eng.12
+	title = ia_flavor_eng.12.t
+	desc = ia_flavor_eng.12.d
+	picture = NEW_HEIR_eventPicture
+
+	is_triggered_only = yes
+	#major = yes
+	#fire_only_once = yes
+	
+	trigger = {
+		OR = { tag = CRN	tag = ENG }
+	}
+	
+	option = {	# good news
+		name = ia_flavor_eng.12.a
+		
+		define_heir = {
+			dynasty = ROOT
+			name = "Llewellyn"
+			age = 0
+			change_adm = 3
+			change_dip = 3
+			change_mil = 3
+			claim = 100
+			male = yes
+			no_consort_with_heir = yes
+			hide_skills = yes
+		}
+		add_heir_personality = legendary_conqueror_personality
+	}
+}

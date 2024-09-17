@@ -1,0 +1,44 @@
+vandal_ideas = {
+	start = {
+		movement_speed = 0.15
+		may_perform_slave_raid = yes
+	}
+
+	bonus = {
+		own_coast_naval_combat_bonus = 1.0
+	}
+
+	trigger = {
+		tag = TUN
+	}
+	free = yes
+
+	TUN_terror_of_the_mediterranean = {
+		coast_raid_range = 1
+		galley_power = 0.15
+	}
+	TUN_sackers_of_rome = {
+		land_attrition = -0.15
+		loot_amount = 1
+		available_province_loot = 2
+	}
+	TUN_last_arians = {
+		manpower_in_true_faith_provinces = 0.20
+		monthly_fervor_increase = 5
+	}
+	TUN_trade_extortion = {
+		privateer_efficiency = 0.25
+		reduced_trade_penalty_on_non_main_tradenode = 0.50
+	}
+	TUN_terra_sigillata = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	TUN_breadbasket_of_africa = {
+		development_cost = -0.1
+	}
+	TUN_legacy_of_gaiseric = {
+		hostile_attrition = 1
+		naval_morale_damage = 0.15
+		morale_damage = 0.10
+	}
+}

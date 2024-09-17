@@ -1,0 +1,143 @@
+aen_landfall_scandinavia = {
+	transport_attrition = -0.5
+	navy_tradition_decay = -0.01
+	land_morale = 0.10
+}
+
+aen_norsebane = {
+	naval_attrition = -0.2
+	naval_morale_damage = 0.15
+}
+
+aen_norsebane_marines = {
+	is_marine_modifier = yes
+	shock_damage = 0.10
+	morale_damage = 0.15
+}
+
+aen_regional_admin = {
+	local_governing_cost_increase = -20
+	statewide_governing_cost = -0.25
+	allowed_num_of_buildings = 1
+	local_production_efficiency = 0.25
+	local_development_cost = -0.25
+}
+
+aen_stable_growth = {
+	development_cost_in_primary_culture = -0.1
+	global_prosperity_growth = 0.2
+	global_monthly_devastation = -0.1
+}
+
+aen_destroyed_caliburn = {
+	prestige = 0.5
+	morale_damage_received = -0.05
+}
+
+aen_crushed_celtic_rite = {
+	global_heretic_missionary_strength = 0.05
+	papal_influence = 4
+	church_power_modifier = 0.5
+	monthly_fervor_increase = 10
+	tolerance_heretic = -5
+}
+
+aen_landfall_france = {
+	siege_ability = 0.16
+	merc_maintenance_modifier = -0.16
+}
+
+aen_channel_operations = {
+	yearly_army_professionalism = 0.005
+	merc_leader_army_tradition = 0.5
+	army_tradition_decay = -0.01
+}
+
+aen_suborned_fief_modifier = {
+	liberty_desire = 25
+}
+aen_pledged_support_modifier = {
+	liberty_desire = 25
+}
+
+aen_cost_of_the_crown = {
+	stability_cost_to_declare_war = 1
+	war_exhaustion_cost = 10
+	war_exhaustion = 0.10
+	vassal_manpower_bonus = -1
+	vassal_income = -0.5
+}
+
+aen_konig = {
+	vassal_income = 0.2
+	vassal_manpower_bonus = 0.25
+	all_power_cost = -0.025
+}
+
+aen_religious_enforcement = {
+	missionaries = 1
+	tolerance_heretic = -2
+	tolerance_heathen = -2
+	prestige_per_development_from_conversion = 0.1
+	global_missionary_strength = 0.01	
+}
+
+aen_religious_tolerance = {
+	tolerance_heretic = 2
+	tolerance_of_heretics_capacity = 1	
+	tolerance_heathen = 2
+	tolerance_of_heathens_capacity = 1
+	global_missionary_strength = -0.02
+	reverse_relation_with_heretic_religion = 20
+	relation_with_heretics = 20
+}
+
+aen_land_surveys = {
+	global_tax_modifier = 0.20
+	build_cost = -0.1
+}
+
+aen_expanded_burhs = {
+	local_development_cost = -0.15
+	local_garrison_size = 0.25
+	local_defensiveness = 0.25
+	province_trade_power_value = 10
+	trade_goods_size_modifier = 0.10
+}
+
+aen_the_domesday_book = {
+	statewide_governing_cost = -1
+	governing_capacity_modifier = 0.1
+	monthly_reform_progress_modifier = 0.25
+	administrative_efficiency = 0.05
+}
+
+aen_higher_education = {
+	innovativeness_gain = 0.5
+	technology_cost = -0.05
+	monarch_admin_power = 1
+	monarch_diplomatic_power = 1
+}
+
+aen_mercenary_system = {
+	merc_maintenance_modifier = -0.15
+	mercenary_discipline = 0.05
+}
+
+aen_menowar = {
+	has_man_of_war = yes
+	has_marines = yes
+	allowed_marine_fraction = 0.1
+	allowed_man_of_war_fraction = 0.2
+	global_ship_recruit_speed = -0.20
+}
+
+aen_life_on_the_sea = {
+	is_marine_modifier = yes
+	discipline = 0.05
+	shock_damage_received = -0.10
+}
+
+aen_western_france_steering = {
+	trade_steering = 0.25
+}

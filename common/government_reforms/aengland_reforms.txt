@@ -1,0 +1,229 @@
+westseaxe_monarchy_reform = {
+	icon = gothic_monarchy_reform
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		OR = {
+			has_reform = westseaxe_monarchy_reform
+			have_had_reform = westseaxe_monarchy_reform
+		}
+	} 
+	nation_designer_trigger = {
+		OR = {
+			primary_culture = anglo_saxon
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+
+	modifiers = {
+		manpower_in_own_culture_provinces = 0.15
+		development_cost = 0.1
+		development_cost_in_primary_culture = -0.15
+	}
+	
+	custom_attributes = {
+		enables_recruit_foreign_generals = yes
+		locked_government_type = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+aengland_tolerant_reform = {
+	icon = house_of_lords
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		OR = {
+			has_reform = aengland_tolerant_reform
+			have_had_reform = aengland_tolerant_reform
+		}
+	}
+	valid_for_nation_designer = no
+
+	modifiers = {
+		global_unrest = -2
+		num_accepted_cultures = 3
+		tolerance_heretic = 1
+		#global_heretic_missionary_strength = -0.02
+		#relation_with_heretics = 20
+		#reverse_relation_with_heretic_religion = 20
+		advisor_pool = 2
+		idea_cost = -0.05
+		reform_progress_growth = 0.1
+	}
+	
+	custom_attributes = {
+		enables_recruit_foreign_generals = yes
+		locked_government_type = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+aengland_intolerant_reform = {
+	icon = catalan_cortes
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		OR = {
+			has_reform = aengland_intolerant_reform
+			have_had_reform = aengland_intolerant_reform
+		}
+	}
+	valid_for_nation_designer = no
+
+	modifiers = {
+		manpower_in_own_culture_provinces = 0.30
+		development_cost = 0.4
+		development_cost_in_primary_culture = -0.60
+		tolerance_heretic = -1
+		#global_heretic_missionary_strength = 0.02
+		num_accepted_cultures = -5
+		same_culture_advisor_cost = -0.2
+		advisor_cost = 0.1
+		culture_conversion_time = -0.25
+	}
+	
+	custom_attributes = {
+		enables_recruit_foreign_generals = yes
+		locked_government_type = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+aenglish_witenagemot = {
+	icon = national_assembly
+	#allow_normal_conversion = no
+	#lock_level_when_selected = yes
+	#can_change_primary_culture = no
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		#OR = {
+		#	has_reform = aengland_tolerant_reform
+		#	has_reform = aengland_intolerant_reform
+		#	has_reform = westseaxe_monarchy_reform
+		#}
+	}
+	valid_for_nation_designer = no
+
+	modifiers = {
+		governing_capacity = 50
+		legitimacy = 0.5
+		global_unrest = -1
+		max_absolutism = -20
+	}
+	
+	custom_attributes = {
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+			NOT = { has_dlc = "Domination" }
+		}
+		has_parliament = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Domination"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			english_parliament = yes
+		}
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+aenglish_census = {
+	icon = laesio_enormis_reform
+	#allow_normal_conversion = no
+	lock_level_when_selected = yes
+	#can_change_primary_culture = no
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		OR = {
+			has_reform = aenglish_census
+			have_had_reform = aenglish_census
+		}
+	}
+	valid_for_nation_designer = no
+
+	modifiers = {
+		expand_infrastructure_cost_modifier = -0.5
+		build_cost = -0.1
+		build_time = -0.25
+		state_maintenance_modifier = -0.5
+	}
+	
+	custom_attributes = {
+		centralize_state_development = yes 
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+aenglish_mercenary_reform = {
+	icon = "infantry"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		primary_culture = anglo_saxon
+	}
+	trigger = {
+		OR = {
+			has_reform = aenglish_mercenary_reform
+			have_had_reform = aenglish_mercenary_reform
+		}
+	}
+	modifiers = {
+		possible_condottieri = 1
+		allow_mercenary_drill = yes
+		ship_durability = 0.05
+		global_manpower_modifier = -0.25
+		global_sailors_modifier = 1.25
+		allowed_marine_fraction = 0.25
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			hessian_militarization_mechanic
+		}
+	}
+	custom_attributes = {
+		mercs_do_not_cost_army_professionalism = yes
+	}
+	
+	ai = {
+		factor = 1000
+	}
+}

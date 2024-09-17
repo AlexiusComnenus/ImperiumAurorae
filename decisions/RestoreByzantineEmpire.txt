@@ -1,0 +1,155 @@
+country_decisions = {
+
+	restore_byzantine_empire = {
+		major = yes
+		potential = {
+			OR = {
+				was_never_end_game_tag_trigger = yes
+				AND = {
+					was_tag = BYZ
+					tag = MOE
+					has_country_flag = BYZ_accepted_ottoman_threat
+				}
+			}
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_byzantium_flag }
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = TUR }
+			OR = {
+				culture_group = byzantine
+				AND = {
+					has_idea = MFA_byzantine_claimants
+					dynasty = "Palaiologos"
+				}
+			}
+#			OR = {
+#				religion = orthodox
+#				has_idea = MFA_byzantine_claimants
+#			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151 # Constantinople
+				province_id = 149	# Edirne
+				province_id = 148	# Macedonia
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			owns = 149	# Edirne
+			owns = 148	# Macedonia
+			owns = 151  # Constantinople
+			151 = {		# Constantinople
+				is_state = yes
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			NOT = { exists = BYZ }
+		}
+		effect = {
+			151 = {
+				move_capital_effect = yes
+			}
+			change_tag = BYZ
+			on_change_tag_effect = yes
+			restore_country_name = yes
+			if = {
+				limit = {
+					NOT = { culture_group = byzantine }
+					NOT = { accepted_culture = greek }
+				}
+				add_accepted_culture = greek
+			}
+			give_area_claims = { group = anatolia_region tag = BYZ }
+			give_area_claims = { group = bulgaria_area tag = BYZ }
+			give_area_claims = { group = silistria_area tag = BYZ }
+			give_area_claims = { group = albania_area tag = BYZ }
+			give_area_claims = { group = thrace_area tag = BYZ }
+			give_area_claims = { group = macedonia_area tag = BYZ }
+			give_area_claims = { group = northern_greece_area tag = BYZ }
+			give_area_claims = { group = morea_area tag = BYZ }
+			give_province_claims = { id = 2410 tag = BYZ }
+			give_province_claims = { id = 285 tag = BYZ }
+			random_owned_province = {
+				limit = { culture = greek }
+				add_base_tax = 1
+			}
+			random_owned_province = {
+				limit = { culture = greek }
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			BYZ = {
+				add_core = 151 # Constantinople
+			}
+			if = {
+				limit = { has_global_flag = hagia_sophia_now_mosque }
+				clr_global_flag = hagia_sophia_now_mosque
+				show_ambient_object = hagia_sophia
+				hide_ambient_object = hagia_sophia_minarets
+			}
+			#if = {
+			#	limit = { NOT = { government = monarchy } }
+			#	change_government = monarchy
+			#}
+			IF = {
+				limit = { NOT = { has_reform = palaiologid_government } government = monarchy }
+				add_government_reform = byzantine_monarchy_reform
+			}
+			set_government_rank = 3
+			IF = {
+				limit = { 
+					NOT = { was_tag = TRE }
+					NOT = { was_tag = Z44 }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_byzantium_flag
+			if = {
+				limit = { has_country_flag = feo_byzantium_formation_stats_flag }
+				change_ruler_stat = {
+					type = adm
+					amount = 1
+				}
+				change_ruler_stat = {
+					type = dip
+					amount = 1
+				}
+				change_ruler_stat = {
+					type = mil
+					amount = 1
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = BYZ_accepted_ottoman_threat
+				}
+				clr_country_flag = BYZ_accepted_ottoman_threat 
+			}
+			if = {
+				limit = {
+					has_country_flag = tre_byzantium_forming_bonus_mana
+				}
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+			swap_non_generic_missions = yes
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_importance = 1000
+	}
+	
+}

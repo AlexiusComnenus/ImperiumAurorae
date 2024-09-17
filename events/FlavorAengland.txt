@@ -1,0 +1,309 @@
+########################################
+# Aenglish Events     		           #
+########################################
+
+namespace = ia_flavor_aen
+
+# Aengland path picker
+country_event = {
+	id = ia_flavor_aen.1
+	title = ia_flavor_aen.1.t
+	desc = ia_flavor_aen.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {	#cooperative
+		name = ia_flavor_aen.1.a
+		
+		set_country_flag = aengland_missions_cooperative_flag
+		clr_country_flag = aengland_missions_usurpation_flag
+		swap_non_generic_missions = yes
+		
+		if = {
+			limit = { NOT = { alliance_with = SAX } }
+			create_alliance = SAX
+		}
+	}
+	
+	option = {	#usurpation
+		name = ia_flavor_aen.1.b
+		trigger = { NOT = { ai = yes } }
+		highlight = yes
+		
+		set_country_flag = aengland_missions_usurpation_flag
+		clr_country_flag = aengland_missions_cooperative_flag
+		swap_non_generic_missions = yes
+		
+		if = {
+			limit = { alliance_with = SAX }
+			break_alliance = SAX
+		}
+		remove_historical_friend = SAX
+		SAX = { remove_historical_friend = ROOT }
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.2
+	title = ia_flavor_aen.2.t
+	desc = ia_flavor_aen.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	trigger = {
+		tag = AVE
+	}
+	
+	option = {
+		name = ia_flavor_aen.2.a
+		
+		add_government_reform = aengland_tolerant_reform
+	}
+	
+	option = {
+		name = ia_flavor_aen.2.b
+		
+		add_government_reform = aengland_intolerant_reform
+	}
+}
+
+country_event = {		#	Aengland wants to join Zollbund
+	id = ia_flavor_aen.3
+	title = ia_flavor_aen.3.t
+	desc = ia_flavor_aen.3.d
+	picture = FEAST_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		set_country_flag = aen_request_happened
+		random_ally = { 
+			limit = {
+				has_country_flag = aen_request_zollbund_flag
+			}
+			save_event_target_as = aengland_whois
+		}
+	}
+	trigger = {
+		any_ally = { has_country_flag = aen_request_zollbund_flag }
+		NOT = { has_country_flag = aen_request_zollbund_flag }
+		OR = {
+			has_country_modifier = sax_full_zollbund
+			has_country_modifier = sax_partial_zollbund
+		}
+	}
+	
+	option = {	# Accept
+		name = ia_flavor_aen.3.a
+		
+		if = {
+			limit = { has_country_modifier = sax_full_zollbund }
+			event_target:aengland_whois = {
+				add_country_modifier = {
+					name = sax_full_zollbund
+					duration = -1
+				}
+			}
+		}
+		else = {
+			event_target:aengland_whois = {
+				add_country_modifier = {
+					name = sax_partial_zollbund
+					duration = -1
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1000
+		}
+	}
+	
+	option = {	# Refuse
+		name = ia_flavor_aen.3.b
+		
+		event_target:aengland_whois = {
+			add_prestige = -10
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.4
+	title = ia_flavor_aen.4.t
+	desc = ia_flavor_aen.4.d
+	picture = GERMAN_UNIFICATION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	#Start the War
+		name = ia_flavor_aen.4.a
+		
+		hidden_effect = {
+			event_target:saxon_king = {
+				every_war_enemy_country = {
+					white_peace = PREV
+				}
+				every_subject_country = {
+					every_war_enemy_country = {
+						white_peace = PREV
+					}
+				}
+				every_subject_country = {
+					limit = { has_country_modifier = aen_pledged_support_modifier }
+					ROOT = {
+						create_subject = {
+							subject_type = saxon_daimyo
+							subject = PREV
+						}
+					}
+					add_liberty_desire = -75
+					remove_country_modifier = aen_pledged_support_modifier
+					remove_country_modifier = aen_suborned_fief_modifier
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = event_target:saxon_king
+			casus_belli = cb_german_civil_war
+		}
+		hidden_effect = {
+			every_subject_country = {
+				limit = { is_subject_of_type = saxon_daimyo }
+				join_all_offensive_wars_of = ROOT
+				add_liberty_desire = -100
+			}
+			event_target:saxon_king = {
+				every_subject_country = {
+					limit = { is_subject_of_type = saxon_daimyo }
+					join_all_defensive_wars_of = PREV
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.5
+	title = ia_flavor_aen.5.t
+	desc = ia_flavor_aen.5.d
+	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {	# Cost of the Crown
+		name = ia_flavor_aen.5.a
+		
+		add_country_modifier = {
+			name = aen_cost_of_the_crown
+			duration = 7300
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.6
+	title = ia_flavor_aen.6.t
+	desc = ia_flavor_aen.6.d
+	picture = COUNCIL_TRENT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {	# Religious Enforcement
+		name = ia_flavor_aen.6.a
+		trigger = {
+			NOT = { full_idea_group = humanist_ideas }
+		}
+		highlight = yes
+		
+		add_country_modifier = {
+			name = aen_religious_enforcement
+			duration = -1
+		}
+	}
+	
+	option = {	# Religious Tolerance
+		name = ia_flavor_aen.6.b
+		trigger = {
+			NOT = { full_idea_group = religious_ideas }
+		}
+		highlight = yes
+		
+		add_country_modifier = {
+			name = aen_religious_tolerance
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.7
+	title = ia_flavor_aen.7.t
+	desc = ia_flavor_aen.7.d
+	picture = SCOTTISH_MERCENARIES_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {	# Stalwart Iberians
+		name = ia_flavor_aen.7.a
+		custom_tooltip = aen_enables_tercio_guard_tt
+		set_country_flag = aen_enabled_tercio_guard_flag
+	}
+	
+	option = {	# Chivalrous French
+		name = ia_flavor_aen.7.b
+		custom_tooltip = aen_enables_chivalrous_guard_tt
+		set_country_flag = aen_enabled_chivalrous_guard_flag
+	}
+	
+	option = {	# Experienced Hessians
+		name = ia_flavor_aen.7.c
+		custom_tooltip = aen_enables_hessian_guard_tt
+		set_country_flag = aen_enabled_hessian_guard_flag
+	}
+}
+
+country_event = {
+	id = ia_flavor_aen.8
+	title = ia_flavor_aen.8.t
+	desc = ia_flavor_aen.8.d
+	picture = BYZ_COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {	# Form tag
+		name = ia_flavor_aen.8.a
+		change_tag = AVE
+		on_change_tag_effect = yes
+		restore_country_name = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		if = {
+			limit = { NOT = { government = monarchy } }
+			change_government = monarchy
+		}
+		if = {
+			limit = { 
+				has_custom_ideas = no
+				NOT = { has_idea_group = AVE_ideas }
+			}
+			swap_free_idea_group = yes #Swap Ideas
+		}
+		if = {
+			limit = { NOT = { has_reform = saxon_feudalism } }
+			country_event = { id = ia_flavor_aen.2 }
+		}
+	}
+}

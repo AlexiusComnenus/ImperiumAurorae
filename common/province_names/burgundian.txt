@@ -1,0 +1,105 @@
+183 = { "Pairi" "Pairis" }
+192 = { "Dijonnoi" "Divio" }
+191 = { "Niévreu" "Niévrou" }
+
+#CONJECTURE BEGINS
+4943 = "Arle"
+4392 = "Auxerroi"
+1877 = "Charoloi"
+186 = "Rémoi"
+185 = "Nemôr"
+179 = { "Berry" "Bôrge" }
+4389 = "Tôraine"
+178 = "Angô"
+180 = "Hau-Poitô"
+4386 = "Bâ-Poitô"
+203 = "Lyonnoi"
+4391 = "Vivarai"
+4696 = "Tôlon"
+2753 = "Narbonnâ"
+196 = "Tôlôse"
+195 = "Limôsin"
+4387 = "Angômoi"
+167 = "Rôen"
+1743 = "Cambrési"
+88 = "Artoi"
+187 = "Barroi"
+4384 = "Rennoi"
+171 = "Vannetoi"
+181 = "Rethéloi"
+172 = "Nantai"
+198 = "Rôergue" #Rodez
+5137 = "Ypre"
+
+
+# = "Nîme"
+4727 = "Saluce"
+101 = "Génôe"
+2980 = "Lucque"
+# = "Livôrne"
+109 = "Mantôe"
+# = "Sôssare"
+1871 = "Valloi"
+
+# = "Vervî"
+5338 = "Bôlonnai"
+4766 = "Verdunnoi"
+
+75 = "Strasbôrg"
+4765 = "Mulhôse"
+4621 = "Fribôrg"
+91 = "Tôrnai"
+92 = "Bruxelle"
+#5087 = { "Bôlogne" "Bôlogne-chu-Mar" }
+#5094 = "Bitbôrg"
+94 = "Luxembôrg"
+4948 = "Côrtrai"
+4718 = "Aschaffenbôrg"
+4767 = "Deuz-Pons"
+4770 = "Bô-lu-Duque"
+89 = "Amien"
+5296 = "Soisson"
+182 = "Valoi"
+184 = "Orléannoi"
+4776 = "Bloi"
+5501 = "Châlon"
+90 = "Bruge"
+1744 = "Anver"
+4383 = "Ilai-Haye"
+#1247 = "Ilai-Corse"
+484 = "Ilai-Havane"
+4948 = "Côrtrai"
+5493 = "Lôvain" #Lôvain
+173 = "Labôrd"
+
+#5081 = "Beaune"
+##5083 = "Vesôl"
+5496 = "Tôl"
+1742 = "Aute-Gueldre"
+##5085 = "Las Orres"
+
+4719 = "Braisse"
+
+4949 = { "Auni" "Là Rochile" }
+
+200 = "Monpelliar"
+
+# = "Andorre Là-Vieille"
+4961 = "Harflieur"
+
+174 = "Bordiau"
+
+5154 = "Thionvelle"
+87 = "Calai"
+
+#CONJECTURE ENDS
+
+5141 = "Beauvaisi" #Leingres
+190 = { "Barbonnais" "Borbounâ" }
+118 = "Rôme"
+
+
+
+183 = { "Pairi" "Pairis" }
+
+379 = { "Jérusalem" "Jéruzaulla" }

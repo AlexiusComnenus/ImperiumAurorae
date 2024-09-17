@@ -1,0 +1,82 @@
+Z21_ideas = {
+	start = {
+		mercenary_cost = -0.10
+		possible_condottieri = 0.5
+	}
+
+	bonus = {
+		technology_cost = -0.05
+	}
+
+	trigger = {
+		OR = { 
+			tag = Z21
+			primary_culture = anglo_saxon
+		}
+		NOT = { tag = AVE }
+	}
+	free = yes
+
+	Z21_weregild = {
+		stability_cost_modifier = -0.15
+	}
+	Z21_heptarchy = {
+		vassal_forcelimit_bonus = 0.5
+		vassal_manpower_bonus = 0.25
+	}
+	Z21_repelling_the_heathens = {
+		defensiveness = 0.15
+		shock_damage_received = -0.10
+	}
+	Z21_burghal_hidage = {
+		global_tax_modifier = 0.10
+		fort_maintenance_modifier = -0.25
+	}
+	Z21_commercial_burhs = {
+		inflation_reduction = 0.05
+		trade_efficiency = 0.1
+	}
+	Z21_the_chronicles = {
+		global_institution_spread = 0.1
+	}
+	Z21_homeland_connections = {
+		mercenary_manpower = 0.33
+		merc_leader_army_tradition = 0.5
+	}
+}
+
+AVE_ideas = {
+	start = {
+		mercenary_cost = -0.20
+		possible_condottieri = 1
+	}
+
+	bonus = {
+		technology_cost = -0.1
+	}
+
+	trigger = { tag = AVE }
+	
+	free = yes
+
+	Z21_weregild_advanced = {
+		stability_cost_modifier = -0.15
+		global_unrest = -2
+	}
+	Z21_heptarchy = {	# same as before
+	}
+	Z21_repelling_the_heathens = {	# same as before
+	}
+	Z21_burghal_hidage_advanced = {
+		global_tax_modifier = 0.25
+		fort_maintenance_modifier = -0.25
+	}
+	Z21_commercial_burhs = {	# same as before
+	}
+	Z21_the_chronicles_advanced = {
+		diplomatic_reputation = 2
+		global_institution_spread = 0.25
+	}
+	Z21_homeland_connections = {	# same as before
+	}
+}

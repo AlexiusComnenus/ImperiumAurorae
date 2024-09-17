@@ -1,0 +1,95 @@
+namespace = BGM_HAB_missions
+
+country_event = { #Imperial diplomacy or conquest
+	id = BGM_HAB_missions.1
+	title = "BGM_HAB_missions.1.t"
+	desc = "BGM_HAB_missions.1.d"
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_HAB_missions.1.a"
+		set_country_flag = hab_empire
+	}
+
+	option = {
+		name = "BGM_HAB_missions.1.b"
+		set_country_flag = hab_conquer
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}
+
+country_event = { #Imperial diplomacy or conquest
+	id = BGM_HAB_missions.2
+	title = "BGM_HAB_missions.2.t"
+	desc = "BGM_HAB_missions.2.d"
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_HAB_missions.2.a" #yes, no parliamentarism
+		change_tag = AHU
+		country_event = {
+			id = ideagroups.1
+		}
+		if = {
+			limit = { NOT = { government_rank = 3 } }
+			set_government_rank = 3
+		}
+		add_prestige = 25
+		add_country_modifier = {
+			name = centralization_modifier
+			duration = 7399
+		}
+		country_event = {
+			id = westeurope.4
+		}
+	}
+
+	option = {
+		name = "BGM_HAB_missions.2.b"
+		change_tag = AHU
+		country_event = {
+			id = ideagroups.1
+		}
+		if = {
+			limit = { NOT = { government_rank = 3 } }
+			set_government_rank = 3
+		}
+		add_prestige = 25
+		add_country_modifier = {
+			name = centralization_modifier
+			duration = 7399
+		}
+		country_event = {
+			id = westeurope.4
+		}
+		if = {
+			limit = {
+				NOT = { has_reform = authoritarian_mechanic }
+			}
+			add_government_reform = parliamentary_reform
+		}
+		else = {
+			change_government = democracy_govt
+			add_government_reform = parliamentary_monarchism
+		}
+	}
+
+	option = {
+		name = "BGM_HAB_missions.2.c" #no
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		set_country_flag = no_austria_hungary
+	}
+
+	after = {
+		swap_non_generic_missions = yes
+	}
+}

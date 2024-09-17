@@ -1,0 +1,112 @@
+civil_reforms = {
+	global_unrest = -2
+	tolerance_of_heretics_capacity = 1
+	tolerance_heretic = 1
+}
+
+austria_electors = {
+	diplomatic_upkeep = 1
+}
+
+austria_allies = {
+	diplomatic_upkeep = 1
+}
+
+austrian_dynastic_diplomacy = {
+	diplomatic_reputation = 1
+	monthly_favor_modifier = 0.5
+}
+
+hab_venetian_trade = {
+	global_own_trade_power = 0.25
+	mercantilism_cost = -0.15
+}
+
+hab_bank_of_austria = {
+	interest = -1
+	inflation_action_cost = -0.5
+}
+
+hab_industrialization = {
+	development_cost_modifier = -0.05
+	build_cost = -0.1
+}
+
+hab_expanded_domain = {
+	global_tax_modifier = 0.25
+	global_manpower_modifier = 0.25
+	global_regiment_cost = -0.1
+}
+
+hab_subordinated_power = {
+	accept_vassalization_reasons = 25
+	governing_capacity = 250
+}
+
+hab_alpine_defenses = {
+	defensiveness = 0.1
+	fort_maintenance_modifier = -0.1
+}
+
+hab_contested_bohemia = {
+	power_projection_from_insults = 0.5
+	prestige_from_land = 0.5
+}
+
+hab_crown_land = {
+	country_admin_power = 1
+}
+
+hab_absolutist_legacy = {
+	max_absolutism_effect = 0.1
+	max_absolutism = 10
+	max_revolutionary_zeal = 25
+	yearly_revolutionary_zeal = 0.5
+}
+
+hab_economic_growth = {
+	global_tax_modifier = 0.2
+	global_manpower_modifier = 0.2
+}
+
+hab_tax_reform = {
+	all_estate_influence_modifier = -0.05
+	global_tax_modifier = 0.1
+}
+
+hab_enlightened_government = {
+	global_unrest = -2
+	stability_cost_modifier = -0.1
+}
+
+hab_religious_conviction = {
+	manpower_in_true_faith_provinces = 0.25
+	warscore_cost_vs_other_religion = -0.25
+}
+
+hab_reaffirm_catholicism = {
+	tolerance_own = 1
+	papal_influence_from_cardinals = 0.25
+}
+
+hab_protestant_tradition = {
+	tolerance_own = 1
+	innovativeness_gain = 1
+}
+
+hab_vienna_university = {
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
+
+ita_hab_ally = {
+	improve_relation_modifier = 0.33
+	diplomatic_reputation = 2
+	monthly_favor_modifier = 0.25
+}
+
+ita_hab_kill = {
+	ae_impact = -0.33
+	land_morale = 0.10
+	prestige_from_land = 0.33
+}

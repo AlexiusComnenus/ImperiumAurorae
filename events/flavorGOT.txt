@@ -1,0 +1,219 @@
+##############################
+# Gotland Flavor Events
+#                            
+# Written by Ogulcan Yildirim
+##############################
+
+namespace = flavor_got
+normal_or_historical_nations = yes
+
+
+#Move capital to the new world? (integrate subject)
+country_event = {
+	id = flavor_got.39
+	title = flavor_got.39.t
+	desc = flavor_got.39.desc
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			random_subject_country = {
+				limit = {
+					capital_scope = {
+						colonial_region = colonial_the_carribean
+					}
+					OR = {
+						is_subject_of_type = colony
+						is_subject_of_type = crown_colony
+						is_subject_of_type = self_governing_colony
+						is_subject_of_type = private_enterprise
+					}
+				}
+				capital_scope = {
+					save_event_target_as = got_colony_capital
+				}
+			}
+		}
+	}
+	
+	option = {	#A place in the sun is more than welcome!
+		name = flavor_got.39.a
+		goto = got_colony_capital
+		every_subject_country = {
+			limit = {
+				capital_scope = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = self_governing_colony
+					is_subject_of_type = private_enterprise
+				}
+			}
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		event_target:got_colony_capital = {
+			ROOT = {
+				set_capital = PREV
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	option = {	#A colonial state is much more to our advantage though
+		name = flavor_got.39.b
+		add_stability_or_adm_power = yes
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Move capital to the new world?
+country_event = {
+	id = flavor_got.40
+	title = flavor_got.39.t
+	desc = flavor_got.40.desc
+	picture = CARIBBEAN_PIRATE_FORT_eventPicture
+	is_triggered_only = yes
+	
+	option = {	#A place in the sun is more than welcome!
+		name = flavor_got.39.a
+		goto = 481
+		set_capital = 481
+		every_subject_country = {
+			limit = {
+				capital_scope = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
+				OR = {
+					is_subject_of_type = colony
+					is_subject_of_type = crown_colony
+					is_subject_of_type = self_governing_colony
+					is_subject_of_type = private_enterprise
+				}
+			}
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	option = {	#A colonial state is much more to our advantage though
+		name = flavor_got.39.b
+		add_stability_or_adm_power = yes
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Steal the Tunisian Flag Ship
+country_event = {
+	id = flavor_got.41
+	title = flavor_got.41.t
+	desc = flavor_got.41.desc
+	picture = FLAGSHIP_CAPTURED_eventPicture
+	is_triggered_only = yes
+	goto = got_pirate_province
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				save_event_target_as = got_pirate_province
+			}
+		}
+	}
+	
+	option = {
+		name = flavor_got.41.a
+		make_ruler_to_legendary_pirate = yes
+		event_target:got_pirate_province = {
+			create_flagship = { 
+				name = "Hayrettin Barbarossa"
+				type = heavy_ship 
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Steal the Curia Coffers
+country_event = {
+	id = flavor_got.42
+	title = flavor_got.42.t
+	desc = flavor_got.42.desc
+	picture = SMUGGLERS_eventPicture
+	is_triggered_only = yes
+	goto = 118
+	major = yes
+	major_trigger = {
+		religion = catholic
+	}
+	
+	option = {
+		name = flavor_got.42.a
+		make_ruler_to_legendary_pirate = yes
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			add_curia_treasury = -5000
+		}
+		add_treasury = 5000
+		add_papal_influence = -200
+		118 = {
+			add_loot_from_rich_province_general_effect = {
+				LOOTER = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Sack Venice
+country_event = {
+	id = flavor_got.43
+	title = flavor_got.43.t
+	desc = flavor_got.43.desc
+	picture = BARBARY_PIRATES_eventPicture
+	is_triggered_only = yes
+	goto = 112
+	
+	option = {
+		name = flavor_got.43.a
+		make_ruler_to_legendary_pirate = yes
+		112 = {
+			add_loot_from_rich_province_general_effect = {
+				LOOTER = ROOT
+			}
+		}
+		add_country_modifier = {
+			name = got_stolen_weapons_of_the_venetian_arsenal
+			duration = -1
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}

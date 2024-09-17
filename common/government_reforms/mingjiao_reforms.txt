@@ -1,0 +1,39 @@
+mingjiao_reform = {
+	icon = "religious_permanent_revolution_reform"
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	force_conversion_gives_global_holy_war_released_modifier = yes
+	potential = {
+		OR = {
+			has_reform = mingjiao_reform
+			have_had_reform = mingjiao_reform
+		}
+		tag = YIN
+	}
+	effect = {
+		#custom_tooltip = unlocks_celestial_crusade_tt
+	}
+	modifiers = {
+		land_forcelimit_modifier = -0.50
+		global_manpower_modifier = -0.75
+		land_attrition = -0.75
+		mercenary_cost = 0.75
+		mercenary_manpower = -0.75
+		land_forcelimit = 10
+		governing_cost = 1
+		land_morale_constant = 0.5
+		infantry_shock = 1
+		relation_with_heathens = 30
+		reverse_relation_with_heathen_religion = 30
+	}
+	#maintain_dynasty = yes
+	
+	custom_attributes = {
+		gain_monarch_power_from_force_converting = yes
+		locked_government_type = yes
+		#same_religion_subject_bonus = yes
+	}
+	ai = {
+		factor = 1000
+	}
+}

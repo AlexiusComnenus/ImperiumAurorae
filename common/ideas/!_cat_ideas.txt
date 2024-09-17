@@ -1,0 +1,42 @@
+feline_ideas = {
+	start = {
+		diplomats = 1
+		improve_relation_modifier = 0.25
+	}
+	bonus = {
+		reduced_stab_impacts = yes
+	}
+	trigger = {
+		tag = KOI
+	}
+	free = yes
+
+	KOI_quiet_as_a_cat = {
+		spy_offence = 0.5
+		fabricate_claims_cost = -0.25
+	}
+	KOI_night_eyes = {
+		fire_damage = 0.10
+		global_spy_defence = 0.25
+	}
+	KOI_conniving_as_a_cat = {
+		diplomatic_reputation = 2
+		diplomatic_upkeep = 1
+	}
+	KOI_swift_feet = {
+		shock_damage_received = -0.10
+		envoy_travel_time = -0.25
+	}
+	KOI_tiny_target = {
+		fire_damage_received = -0.10
+		siege_ability = 0.15
+	}
+	KOI_catnaps = {
+		national_focus_years = -10
+		prestige_decay = -0.01
+	}
+	KOI_outsource_navies = {
+		vassal_sailors_bonus = 0.5
+		vassal_naval_forcelimit_bonus = 0.25
+	}
+}
