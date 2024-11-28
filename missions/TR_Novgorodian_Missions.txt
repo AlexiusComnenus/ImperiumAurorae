@@ -1,0 +1,1916 @@
+novgorod_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_torppari_rebellion = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 33
+				province_id = 34
+			}
+		}
+		
+		trigger = {
+			owns_core_province = 33
+			owns_core_province = 34
+		}
+		
+		effect = {
+			custom_tooltip = baguette_you_didnt_give_a_reward_tt
+		}
+	}
+	
+	nov_integrate_the_ugrics = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = laponia_area
+				area = finland_area
+				area = bothnia_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 11
+				OR = {
+					area = laponia_area
+					area = finland_area
+					area = bothnia_area
+				}
+			}
+		}
+		
+		effect = {
+			laponia_area = {
+				add_nationalism = -10
+			}
+			finland_area = {
+				add_nationalism = -10
+			}
+			bothnia_area = {
+				add_nationalism = -10
+			}
+			
+			if = {
+				limit = { religion = bogomilist }
+				add_country_modifier = {
+					name = nov_integrating_ugrics
+					duration = -1
+				}
+				add_accepted_culture = finnish
+				add_accepted_culture = sapmi
+				laponia_area = {
+					add_province_modifier = {
+						name = nov_respecting_the_ancestors
+						duration = -1
+					}
+				}
+				finland_area = {
+					add_province_modifier = {
+						name = nov_respecting_the_ancestors
+						duration = -1
+					}
+				}
+				bothnia_area = {
+					add_province_modifier = {
+						name = nov_respecting_the_ancestors
+						duration = -1
+					}
+				}
+			}
+			else = {
+				laponia_area = {
+					add_province_modifier = {
+						name = nov_embracing_new_ideals
+						duration = 7300
+					}
+				}
+				finland_area = {
+					add_province_modifier = {
+						name = nov_embracing_new_ideals
+						duration = 7300
+					}
+				}
+				bothnia_area = {
+					add_province_modifier = {
+						name = nov_embracing_new_ideals
+						duration = 7300
+					}
+				}
+			}
+			
+			add_casus_belli = {
+				target = SWE
+				type = cb_vassalize_mission
+				months = 240
+			}
+			add_casus_belli = {
+				target = NOR
+				type = cb_vassalize_mission
+				months = 240
+			}
+			add_casus_belli = {
+				target = GOT
+				type = cb_vassalize_mission
+				months = 240
+			}
+		}
+	}
+	
+	nov_reestablish_hanseatic_ties = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			RIG = {
+				is_subject = no
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			OR = {
+				RIG = {
+					is_in_trade_league_with = ROOT
+				}
+				RIG = {
+					alliance_with = ROOT
+					trust = { who = ROOT value = 60 }
+				}
+			}
+			if = {
+				limit = { ai = no }
+				diplomat = 2
+			}
+		}
+		
+		effect = {
+			RIG = { add_historical_friend = ROOT }
+			add_historical_friend = RIG
+			add_trust = {
+				who = RIG
+				value = 20
+				mutual = yes
+			}
+			add_country_modifier = {
+				name = nov_reopening_the_baltic_routes
+				duration = -1
+			}
+			RIG = {
+				add_country_modifier = {
+					name = nov_reopening_the_baltic_routes
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	nov_occupy_livonia = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				area = livonia_area
+				area = curonia_area
+				area = estonia_ingria_area
+			}
+			NOT = { province_id = 38 }
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 9
+				OR = {
+					area = livonia_area
+					area = curonia_area
+					area = estonia_ingria_area
+				}
+				NOT = { province_id = 38 }
+			}
+		}
+		
+		effect = {
+			1935 = {
+				change_culture = latvian
+			}
+			curonia_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			estonia_ingria_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			livonia_area = {
+				limit = { NOT = { province_id = 38 } }
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	nov_polish_border = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_occupy_livonia
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				area = samogitia_area
+				area = lithuania_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 8
+				OR = {
+					area = samogitia_area
+					area = lithuania_area
+				}
+			}
+		}
+		
+		effect = {
+			samogitia_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			lithuania_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			west_prussia_area = { add_permanent_claim = ROOT }
+			east_prussia_area = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	nov_consolidate_baltics = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_polish_border
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				area = west_prussia_area
+				area = east_prussia_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			west_prussia_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+			east_prussia_area = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			west_prussia_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			east_prussia_area = {
+				add_province_modifier = {
+					name = nov_baltic_settlers
+					duration = -1
+				}
+			}
+			
+			custom_tooltip = wipe_out_pope_for_extra_flavour_tt
+			if = { 
+				limit = { NOT = { exists = PAP } }
+				country_event = { id = ia_flavor_nov.5 }
+			}
+		}
+	}
+	
+	nov_monopolize_amber_trade = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_consolidate_baltics
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 43
+				province_id = 41
+				province_id = 39
+				province_id = 38
+				province_id = 40
+			}
+			OR = {
+				NOT = { is_core = ROOT }
+				NOT = { owned_by = ROOT }
+			}
+		}
+		
+		trigger = {
+			38 = { #Riga
+				trade_share = {
+					country = ROOT
+					share = 70
+				}
+			}
+			if = {
+				limit = { ai = no }
+				43 = {
+					owned_by = ROOT
+					is_core = ROOT
+					base_production = 15
+					has_production_building_trigger = yes
+					has_trade_building_trigger = yes
+					province_has_center_of_trade_of_level = 2
+				}
+				41 = {
+					owned_by = ROOT
+					is_core = ROOT
+					base_production = 15
+					has_production_building_trigger = yes
+					has_trade_building_trigger = yes
+					province_has_center_of_trade_of_level = 2
+				}
+				39 = {
+					owned_by = ROOT
+					is_core = ROOT
+					base_production = 15
+					has_production_building_trigger = yes
+				}
+				40 = {
+					owned_by = ROOT
+					is_core = ROOT
+					base_production = 15
+					has_production_building_trigger = yes
+				}
+				
+				38 = {
+					country_or_subject_holds = ROOT
+					development = 30
+					num_of_buildings_in_province = 6
+					province_has_center_of_trade_of_level = 3
+				}
+			}
+			else = {
+				43 = {
+					owned_by = ROOT
+					is_core = ROOT
+					has_production_building_trigger = yes
+				}
+				41 = {
+					owned_by = ROOT
+					is_core = ROOT
+					has_production_building_trigger = yes
+				}
+				39 = {
+					owned_by = ROOT
+					is_core = ROOT
+					has_production_building_trigger = yes
+				}
+				40 = {
+					owned_by = ROOT
+					is_core = ROOT
+					has_production_building_trigger = yes
+				}
+				
+				38 = {
+					country_or_subject_holds = ROOT
+					num_of_buildings_in_province = 6
+					province_has_center_of_trade_of_level = 3
+				}
+			}
+		}
+		
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 5
+				trigger = {
+					OR = {
+						trade_goods = amber
+						trade_goods = jewellery
+					}
+				}
+				custom_tooltip = nov_amber_reward_tt
+			}
+			change_price = {
+				trade_goods = amber
+				key = amber_monopoly_tt
+				value = 0.4
+				duration = -1
+			}
+			38 = {
+				change_trade_goods = jewellery
+				add_permanent_province_modifier = {
+					name = nov_amber_port
+					duration = -1
+				}
+			}
+			1927 = {
+				change_province_name = "The Amber Sea"
+			}
+			1984 = {
+				limit = { trade_goods = amber }
+				add_permanent_province_modifier = {
+					name = nov_amber_outcompeted
+					duration = -1
+				}
+			}
+			43 = {
+				if = {
+					limit = { NOT = { trade_goods = amber } }
+					change_trade_goods = amber
+				}
+				add_permanent_province_modifier = {
+					name = nov_baltic_gold
+					duration = -1
+				}
+			}
+			39 = {
+				if = {
+					limit = { NOT = { trade_goods = amber } }
+					change_trade_goods = amber
+				}
+				add_permanent_province_modifier = {
+					name = nov_baltic_gold
+					duration = -1
+				}
+			}
+			40 = {
+				if = {
+					limit = { NOT = { trade_goods = amber } }
+					change_trade_goods = amber
+				}
+				add_permanent_province_modifier = {
+					name = nov_baltic_gold
+					duration = -1
+				}
+			}
+			41 = {
+				if = {
+					limit = { NOT = { trade_goods = amber } }
+					change_trade_goods = amber
+				}
+				add_permanent_province_modifier = {
+					name = nov_baltic_gold
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+novgorod_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_invest_in_local_guilds = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			province_id = 310
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				310 = {
+					is_core = ROOT
+					base_production = 10
+					num_of_buildings_in_province = 2
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			else = {
+				310 = {
+					is_core = ROOT
+					num_of_buildings_in_province = 2
+				}
+			}
+		}
+		
+		effect = {
+			310 = {
+				add_permanent_province_modifier = {
+					name = nov_city_of_artisans
+					duration = -1
+				}
+				if = {
+					limit = { has_production_building_trigger = yes }
+					upgrade_building = { production = yes }
+				}
+				else = {
+					add_building = workshop
+				}
+			}
+		}
+	}
+	
+	nov_baltic_gateway = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_invest_in_local_guilds
+			nov_torppari_rebellion
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 33
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				33 = {
+					is_core = ROOT
+					has_owner_culture = yes
+					has_owner_religion = yes
+					development = 15
+					has_trade_building_trigger = yes
+					province_has_center_of_trade_of_level = 2
+				}
+			}
+			else = {
+				33 = {
+					is_core = ROOT
+					has_owner_religion = yes
+					has_trade_building_trigger = yes
+					province_has_center_of_trade_of_level = 2
+				}
+			}
+		}
+		
+		effect = {
+			33 = {
+				add_permanent_province_modifier = {
+					name = nov_baltic_entrepot
+					duration = -1
+				}
+				change_trade_goods = fur
+				upgrade_building = { trade = yes }
+				if = {
+					limit = { province_has_center_of_trade_of_level = 3 }
+					add_treasury = 500
+					add_dip_power = 100
+				}
+				else = {
+					add_center_of_trade_level = 1
+				}
+			}
+		}
+	}
+	
+	nov_settle_cherdyn = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_follow_the_vologda
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			province_id = 1963
+		}
+		
+		trigger = {
+			1963 = {
+				is_city = yes
+				is_core = ROOT
+				owned_by = ROOT
+			}
+			1963 = {
+				province_has_center_of_trade_of_level = 2
+				has_trade_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			1963 = {
+				add_base_manpower = 2
+				add_base_production = 2
+				add_base_tax = 2
+				
+				add_permanent_province_modifier = {
+					name = nov_fur_emporium
+					duration = -1
+				}
+			}
+			
+		}
+	}
+	
+	nov_revive_fur_trade = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			trade_goods = fur
+			owned_by = ROOT
+			NOT = { base_production = 4 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 6
+				trade_goods = fur
+				is_core = ROOT
+				base_production = 4
+			}
+		}
+		
+		effect = {
+			custom_tooltip = nov_fur_reward_small_tt
+			
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = fur
+						is_core = ROOT
+						base_production = 4
+					}
+					add_permanent_province_modifier = {
+						name = nov_weathered_hunters
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	nov_new_winter_lodges = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_revive_fur_trade
+			nov_great_taiga
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			trade_goods = fur
+			owned_by = ROOT
+			OR = { 
+				NOT = { base_production = 6 }
+				NOT = { has_production_building_trigger = yes }
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 12
+				trade_goods = fur
+				is_core = ROOT
+				base_production = 6
+				has_production_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			custom_tooltip = nov_fur_reward_tt
+			
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = fur
+						is_core = ROOT
+						base_production = 6
+						has_production_building_trigger = yes
+					}
+					add_permanent_province_modifier = {
+						name = nov_hunting_lodges
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	
+	nov_venturing_eastwards = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_new_winter_lodges
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			province_id = 1963
+		}
+		
+		trigger = {
+			1963 = {
+				owned_by = ROOT
+				is_core = ROOT
+				province_has_current_tech_fort_trigger = yes
+				has_production_building_trigger = yes
+				has_manpower_building_trigger = yes
+			}
+			trade_goods_produced_amount = {
+				trade_goods = fur
+				amount = 20
+			}
+		}
+		
+		effect = {
+			west_siberia_region = { add_permanent_claim = ROOT }
+			add_country_modifier = {
+				name = nov_in_search_for_prey
+				duration = 14600
+			}
+		}
+	}
+}
+
+novgorod_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_refurbish_sawmills = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4260
+				province_id = 1959
+				province_id = 4148
+			}
+			NOT = { base_production = 4 }
+			NOT = { num_of_buildings_in_province = 1 }
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				4260 = {
+					is_core = ROOT
+					base_production = 4
+					num_of_buildings_in_province = 1
+				}
+				1959 = {
+					is_core = ROOT
+					base_production = 4
+					num_of_buildings_in_province = 1
+				}
+				4148 = {
+					is_core = ROOT
+					base_production = 4
+					num_of_buildings_in_province = 1
+				}
+			}
+			else = {
+				4260 = {
+					is_core = ROOT
+					num_of_buildings_in_province = 1
+				}
+				1959 = {
+					is_core = ROOT
+					num_of_buildings_in_province = 1
+				}
+				4148 = {
+					is_core = ROOT
+					num_of_buildings_in_province = 1
+				}
+			}
+		}
+		
+		effect = {
+			4260 = {
+				add_base_production = 2
+				change_trade_goods = lumber
+				add_permanent_province_modifier = {
+					name = nov_new_sawmills
+					duration = 18250
+				}
+			}
+			1959 = {
+				add_base_production = 2
+				change_trade_goods = lumber
+				add_permanent_province_modifier = {
+					name = nov_new_sawmills
+					duration = 18250
+				}
+			}
+			4148 = {
+				add_base_production = 2
+				change_trade_goods = lumber
+				add_permanent_province_modifier = {
+					name = nov_new_sawmills
+					duration = 18250
+				}
+			}
+		}
+	}
+	
+	nov_rebuild_granaries = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_refurbish_sawmills
+			nov_invest_in_local_guilds
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			area = tver_area
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+				NOT = { base_production = 8 }
+				NOT = { has_production_building_trigger = yes }
+				NOT = { has_manufactory_trigger = yes }
+			}
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				tver_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+					base_production = 8
+					has_manufactory_trigger = yes
+					has_production_building_trigger = yes
+				}
+			}
+			else = {
+				tver_area = {
+					type = all
+					is_core = ROOT
+					owned_by = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			tver_area = {
+				add_base_manpower = 2
+				add_base_production = 2
+				add_province_modifier = {
+					name = nov_great_granaries
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	nov_arkhangelsk = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_march_to_frozen_sea
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			province_id = 1955
+		}
+		
+		trigger = {
+			1955 = {
+				is_core = ROOT
+				development = 10
+			}
+			1955 = {
+				has_dock_building_trigger = yes
+				has_trade_building_trigger = yes
+			}
+			if = {
+				limit = { ai = no }
+				1955 = {
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 4
+					}
+				}
+			}
+		}
+		
+		effect = {
+			
+			1955 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				remove_province_modifier = nov_arkhangelsk_settlers
+				add_permanent_province_modifier = {
+					name = nov_arkhangelsk_city
+					duration = -1
+				}
+				rename_capital = "Arkhangelsk"
+				change_province_name = "Arkhangelsk"
+			}
+		}
+	}
+	
+	nov_defeat_the_traitors = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_follow_the_vologda
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = yaroslavl_area
+				area = vladimir_area
+				area = suzdal_area
+				area = galich_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 13
+				OR = {
+					area = yaroslavl_area
+					area = vladimir_area
+					area = suzdal_area
+					area = galich_area
+				}
+			}
+			307 = { country_or_subject_holds = ROOT }
+			NOT = { exists = Z66 }
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_nov.2 }
+			
+			russia_region = {
+				limit = { NOT = { country_or_subject_holds = ROOT } }
+				add_permanent_claim = ROOT 
+			}
+		}
+	}
+	
+	nov_unite_upper_rus = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_defeat_the_traitors
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				region = russia_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			russia_region = {
+				type = all
+				country_or_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_prestige = 50
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			
+			add_country_modifier = {
+				name = nov_cuman_bane
+				duration = 18250
+			}
+		}
+	}
+	
+	nov_great_taiga = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			has_terrain = forest
+			owned_by = ROOT
+			OR = {
+				NOT = { base_production = 3 }
+				NOT = { num_of_buildings_in_province = 1 }
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 6
+				has_terrain = forest
+				is_core = ROOT
+				base_production = 3
+				num_of_buildings_in_province = 1
+			}
+		}
+		
+		effect = {
+			set_country_flag = nov_enable_lumber_creation
+			custom_tooltip = nov_enable_lumber_creation_tt
+			unlock_estate_privilege = {
+				estate_privilege = estate_burghers_forest_expansion
+			}
+			
+			if = {
+				limit = { has_global_flag = tradegood_marcin }
+				4260 = { change_trade_goods = lumber }
+				1959 = { change_trade_goods = lumber }
+			}
+		}
+	}
+}
+
+novgorod_missions_column_3_tge = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+		has_global_flag = tradegood_marcin
+	}
+	has_country_shield = yes
+	
+	nov_expand_logging_industry = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_great_taiga
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			trade_goods = lumber
+			owned_by = ROOT
+			OR = {
+				NOT = { base_production = 8 }
+				NOT = { has_production_building_trigger = yes }
+				NOT = { has_building = road_network }
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 15
+				trade_goods = lumber
+				is_core = ROOT
+				base_production = 8
+				has_production_building_trigger = yes
+				has_building = road_network
+			}
+		}
+		
+		effect = {
+			custom_tooltip = nov_random_5_provinces_gain_manufactury_tt
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						trade_goods = lumber
+						NOT = { has_building = mills }
+					}
+					add_building = mills
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						trade_goods = lumber
+						NOT = { has_building = mills }
+					}
+					add_building = mills
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						trade_goods = lumber
+						NOT = { has_building = mills }
+					}
+					add_building = mills
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						trade_goods = lumber
+						NOT = { has_building = mills }
+					}
+					add_building = mills
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						trade_goods = lumber
+						NOT = { has_building = mills }
+					}
+					add_building = mills
+					add_base_production = 2
+				}
+			}
+			add_country_modifier = {
+				name = nov_steady_lumber_supply
+				duration = 10950
+			}
+		}
+	}
+	
+	nov_seek_german_expertise = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_expand_logging_industry
+		}
+		position = 9
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			calc_true_if = {
+				all_country = {
+					culture_group = germanic
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				amount = 3
+			}
+			years_of_income = 1.0
+			adm_power = 150
+			innovativeness = 20
+		}
+		
+		effect = {
+			add_years_of_income = -1
+			add_adm_power = -150
+			change_innovativeness = 5
+			
+			add_country_modifier = {
+				name = nov_german_expertise
+				duration = 7300
+			}
+		}
+	}
+}
+
+novgorod_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_prepared_army = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {	
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				army_size_percentage = 1
+				is_monarch_leader = yes
+				employed_advisor = {
+					category = MIL
+				}
+			}
+			else = {
+				OR = {
+					army_size_percentage = 0.8
+					employed_advisor = {
+						category = MIL
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_to_the_banners
+				duration = 10482
+			}
+			arkhangelsk_area = { add_permanent_claim = ROOT }
+			pomor_area = { add_permanent_claim = ROOT }
+			estonia_ingria_area = { add_permanent_claim = ROOT }
+			livonia_area = { add_permanent_claim = ROOT }
+			curonia_area = { add_permanent_claim = ROOT }
+			38 = { remove_claim = ROOT } 
+		}
+	}
+	
+	nov_march_to_frozen_sea = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_prepared_army
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = arkhangelsk_area
+				area = pomor_area
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 8
+				OR = {
+					area = arkhangelsk_area
+					area = pomor_area
+				}
+			}
+		}
+		
+		effect = {
+			
+			vologda_area = { add_permanent_claim = ROOT } 
+			1755 = { add_permanent_claim = ROOT }
+			4129 = { add_permanent_claim = ROOT }
+			1964 = { add_permanent_claim = ROOT }
+			
+			1955 = {
+				change_culture = ROOT
+				change_religion = ROOT
+				add_base_tax = 2
+				add_base_production = 1
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = nov_arkhangelsk_settlers
+					duration = -1
+				}
+			}
+			
+			add_manpower = 5
+		}
+	}
+	
+	nov_follow_the_vologda = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_march_to_frozen_sea
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = vologda_area
+				province_id = 1755
+				province_id = 4129
+				province_id = 1964
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 6
+				OR = {
+					area = vologda_area
+					province_id = 1755
+					province_id = 4129
+					province_id = 1964
+				}
+			}
+		}
+		
+		effect = {
+			1963 = { add_siberian_construction = 10 }
+			
+			tver_area = { add_permanent_claim = ROOT } 
+			yaroslavl_area = { add_permanent_claim = ROOT }
+			vladimir_area = { add_permanent_claim = ROOT }
+			suzdal_area = { add_permanent_claim = ROOT }
+			galich_area = { add_permanent_claim = ROOT }
+			kazan_area = { add_permanent_claim = ROOT }
+			1077 = { add_permanent_claim = ROOT }
+			add_manpower = 5
+		}
+	}
+	
+	nov_retake_kazan = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_follow_the_vologda
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = kazan_area
+				area = kama_area
+				province_id = 1077
+			}
+			NOT = { country_or_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 8
+				OR = {
+					area = kazan_area
+					area = kama_area
+					province_id = 1077
+				}
+			}
+		}
+		
+		effect = {
+			1082 = {
+				add_province_modifier = {
+					name = nov_major_outpost_kazan
+					duration = -1
+				}
+			}
+		
+			add_country_modifier = {
+				name = nov_pushing_into_urals
+				duration = 7300
+			}
+			
+			ural_region = {
+				limit = { NOT = { country_or_subject_holds = ROOT } }
+				add_permanent_claim = ROOT 
+			}
+		}
+	}
+	
+	nov_expel_the_cumans = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_retake_kazan
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				region = ural_region
+			}
+			NOT = { country_or_subject_holds = ROOT }
+			is_city = yes
+		}
+		
+		trigger = {
+			ural_region = {
+				type = all
+				OR = {
+					country_or_subject_holds = ROOT
+					is_city = no
+				}
+			}
+		}
+		
+		effect = {
+			ural_region = {
+				add_province_modifier = {
+					name = nov_expelling_cumans
+					duration = 14600
+				}
+			}
+			if = {
+				limit = { has_country_modifier = nov_pushing_into_urals }
+				extend_country_modifier = { 
+					name = nov_pushing_into_urals
+					duration = 7300
+				}
+			}
+			nogai_area = { add_permanent_claim = ROOT }
+			lower_yik_area = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	nov_fortify_the_east = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_expel_the_cumans
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1078
+				province_id = 2444
+				province_id = 471
+			}
+		}
+		
+		trigger = {
+			1078 = {
+				has_building = ramparts
+				province_has_current_tech_fort_trigger = yes
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+			}
+			2444 = {
+				has_building = ramparts
+				province_has_current_tech_fort_trigger = yes
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+			}
+			471 = {
+				has_building = ramparts
+				province_has_current_tech_fort_trigger = yes
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			1078 = {
+				add_permanent_province_modifier = {
+					name = ural_fortifications
+					duration = -1
+				}
+				upgrade_building = { manpower = yes }
+				upgrade_building = { army_forcelimit = yes }
+				upgrade_building = { fort = yes }
+			}
+			2444 = {
+				add_permanent_province_modifier = {
+					name = ural_fortifications
+					duration = -1
+				}
+				upgrade_building = { manpower = yes }
+				upgrade_building = { army_forcelimit = yes }
+				upgrade_building = { fort = yes }
+			}
+			471 = {
+				add_permanent_province_modifier = {
+					name = nov_plains_citadel
+					duration = -1
+				}
+				upgrade_building = { manpower = yes }
+				upgrade_building = { army_forcelimit = yes }
+				upgrade_building = { fort = yes }
+			}
+		}
+	}
+	
+	nov_mineral_surveys = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 314
+				province_id = 2749
+				province_id = 275
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { base_production = 5 }
+				NOT = { has_production_building_trigger = yes }
+			}
+		}
+		
+		trigger = {
+			314 = {
+				owned_by = ROOT
+				base_production = 5
+				has_production_building_trigger = yes
+			}
+			2749 = {
+				owned_by = ROOT
+				base_production = 5
+				has_production_building_trigger = yes
+			}
+			275 = {
+				owned_by = ROOT
+				base_production = 5
+				has_production_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			314 = {
+				add_permanent_province_modifier = {
+					name = nov_rich_iron_deposits
+					duration = -1
+				}
+				add_province_modifier = {
+					name = nov_new_mining_towns
+					duration = 7300
+				}
+			}
+			2749 = {
+				add_permanent_province_modifier = {
+					name = nov_rich_iron_deposits
+					duration = -1
+				}
+				add_province_modifier = {
+					name = nov_new_mining_towns
+					duration = 7300
+				}
+			}
+			275 = {
+				add_permanent_province_modifier = {
+					name = nov_rich_iron_deposits
+					duration = -1
+				}
+				add_province_modifier = {
+					name = nov_new_mining_towns
+					duration = 7300
+				}
+			}
+		}
+	}
+	
+	nov_found_cherepovets = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_mineral_surveys
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 314
+			}
+		}
+		
+		trigger = {
+			314 = {
+				owned_by = ROOT
+				development = 20
+				num_of_buildings_in_province = 4
+			}
+		}
+		
+		effect = {
+			314 = {
+				rename_capital = "Cherepovets"
+				add_province_modifier = {
+					name = nov_new_provincial_capital
+					duration = -1
+				}
+				remove_province_modifier = nov_rich_iron_deposits
+				add_permanent_province_modifier = {
+					name = nov_major_mining_complex
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	nov_develop_new_mines = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_found_cherepovets
+		}
+		position = 9
+		
+		provinces_to_highlight = {
+			trade_goods = iron
+			owned_by = ROOT
+			OR = {
+				NOT = { base_production = 8 }
+				NOT = { has_production_building_trigger = yes }
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				is_core = yes
+				trade_goods = iron
+				base_production = 8
+				has_production_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			custom_tooltip = nov_random_5_provinces_gain_manufactury_tt
+			hidden_effect = {
+				random_owned_province = {
+					limit = {
+						is_core = yes
+						trade_goods = iron
+						base_production = 8
+						has_production_building_trigger = yes
+						NOT = { has_building = weapons }
+					}
+					add_building = weapons
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						is_core = yes
+						trade_goods = iron
+						base_production = 8
+						has_production_building_trigger = yes
+						NOT = { has_building = weapons }
+					}
+					add_building = weapons
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						is_core = yes
+						trade_goods = iron
+						base_production = 8
+						has_production_building_trigger = yes
+						NOT = { has_building = weapons }
+					}
+					add_building = weapons
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						is_core = yes
+						trade_goods = iron
+						base_production = 8
+						has_production_building_trigger = yes
+						NOT = { has_building = weapons }
+					}
+					add_building = weapons
+					add_base_production = 2
+				}
+				random_owned_province = {
+					limit = {
+						is_core = yes
+						trade_goods = iron
+						base_production = 8
+						has_production_building_trigger = yes
+						NOT = { has_building = weapons }
+					}
+					add_building = weapons
+					add_base_production = 2
+				}
+			}
+		}
+	}
+}
+
+novgorod_missions_column_5_upper = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_turmoil_in_the_streets = {
+		icon = mission_castle_construction
+		required_missions = {
+			
+		}
+		position = 1
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = nov_starting_event_tt
+				has_country_flag = had_novgorod_starting_event_flag
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { has_country_flag = nov_chose_bogomil_path_flag }
+				change_religion = bogomilist
+				add_country_modifier = {
+					name = nov_rise_of_bogomilism
+					duration = 10950
+				}
+				swap_non_generic_missions = yes
+			}
+			else = {
+				add_country_modifier = {
+					name = nov_orthodox_zealotry
+					duration = 10950
+				}
+				swap_non_generic_missions = yes
+			}
+		}
+	}
+}
+
+novgorod_missions_column_5_branching_bogomil = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+		has_country_flag = nov_chose_bogomil_path_flag
+	}
+	has_country_shield = yes
+	
+	nov_united_against_tyranny = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_turmoil_in_the_streets
+		}
+		position = 2
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			religious_unity = 0.99
+			NOT = {
+				any_owned_province = {
+					unrest = 0
+				}
+			}
+			capital_scope = {
+				NOT = { devastation = 0.01 }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_bogomil_fervor
+				duration = -1
+			}
+			set_country_flag = nov_allowed_to_holy_war
+			custom_tooltip = nov_allowed_to_holy_war_tt
+		}
+	}
+	
+	nov_liberate_the_peasantry = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_united_against_tyranny
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = nov_supremacy_1_tt
+				check_variable = { which = NovWins value = 10 }
+			}
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 50
+				religion = bogomilist
+			}
+			army_size = 100
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_beacon_of_liberty_tier_1
+				duration = -1
+			}
+		}
+	}
+	
+	nov_lead_the_revolution = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_liberate_the_peasantry
+		}
+		position = 4
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = nov_supremacy_2_tt
+				check_variable = { which = NovWins value = 25 }
+			}
+			num_of_provinces_owned_or_owned_by_subjects_with = {
+				value = 100
+				religion = bogomilist
+			}
+			army_size = 250
+			is_defender_of_faith = yes
+		}
+		
+		effect = {
+			remove_country_modifier = nov_beacon_of_liberty_tier_1
+			add_country_modifier = {
+				name = nov_beacon_of_liberty_tier_2
+				duration = -1
+			}
+			
+			add_government_reform = bogomilist_veche_republic
+		}
+	}
+}
+
+novgorod_missions_column_5_lower = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+	}
+	has_country_shield = yes
+	
+	nov_city_of_kazan = {
+		icon = mission_castle_construction
+		required_missions = {
+			nov_expel_the_cumans
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+			province_id = 1082
+		}
+		
+		trigger = {
+			1082 = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+			1082 = {
+				culture = ROOT
+				religion = ROOT
+			}
+			1082 = {
+				province_has_center_of_trade_of_level = 2
+				num_of_buildings_in_province = 4
+				development = 15
+			}
+		}
+		
+		effect = {
+			1082 = {
+				remove_province_modifier = nov_major_outpost_kazan
+				add_permanent_province_modifier = {
+					name = nov_city_of_kazan
+					duration = -1
+				}
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+}

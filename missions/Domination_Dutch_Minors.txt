@@ -2328,33 +2328,33 @@ dom_ned_brabant_2_group = {
 		effect = {
 			add_prestige_or_monarch_power = { amount = 10 }
 			add_mil_power = 100
-			custom_tooltip = has_subject_elector_tt
-			if = {
-				limit = {
-					any_subject_country = {
-						is_elector = yes
-					}
-				}
-				custom_tooltip = BONUS_REWARD_YES
-			}
-			else = { custom_tooltip = BONUS_REWARD_NO }
-			custom_tooltip = request_the_electorate_tt
-			hidden_effect = {
-				if = {
-					limit = {
-						any_subject_country = {
-							is_elector = yes
-						}
-					}
-					clr_country_flag = tried_to_get_elector_role
-					set_country_flag = tried_to_get_elector_role
-					emperor = {
-						country_event = {
-							id = hre_event.11
-						}
-					}
-				}
-			}
+			#custom_tooltip = has_subject_elector_tt
+			#if = {
+			#	limit = {
+			#		any_subject_country = {
+			#			is_elector = yes
+			#		}
+			#	}
+			#	custom_tooltip = BONUS_REWARD_YES
+			#}
+			#else = { custom_tooltip = BONUS_REWARD_NO }
+			#custom_tooltip = request_the_electorate_tt
+			#hidden_effect = {
+			#	if = {
+			#		limit = {
+			#			any_subject_country = {
+			#				is_elector = yes
+			#			}
+			#		}
+			#		clr_country_flag = tried_to_get_elector_role
+			#		set_country_flag = tried_to_get_elector_role
+			#		emperor = {
+			#			country_event = {
+			#				id = hre_event.11
+			#			}
+			#		}
+			#	}
+			#}
 		}
 		ai_weight = {
 			factor = 500	#Historical mission
@@ -2478,42 +2478,21 @@ dom_ned_brabant_2_group = {
 						BUR = { exists = yes is_subject_of = ROOT }
 					}
 				BUR = {
-				change_primary_culture = lotharingian
-				set_ruler_culture = lotharingian
-				if = {
-					limit = { has_heir = yes }
-					set_heir_culture = lotharingian
-				}
-				if = {
-					limit = { has_consort = yes }
-					set_consort_culture = lotharingian
-				}
-				every_subject_country = {
-					limit = {
-						primary_culture = burgundian
+					change_primary_culture = alsatian
+					set_ruler_culture = alsatian
+					if = {
+						limit = { has_heir = yes }
+						set_heir_culture = alsatian
 					}
-					change_primary_culture = lotharingian
-				}
-				every_province = {
-					limit = {
-						culture = burgundian
-						owner = {
-							OR = {
-								tag = ROOT
-								is_subject_of = ROOT
-							}
-						}
+					if = {
+						limit = { has_consort = yes }
+						set_consort_culture = alsatian
 					}
-					change_culture = lotharingian
-				}
-				}
-				}
-				else = {
 					every_subject_country = {
 						limit = {
 							primary_culture = burgundian
 						}
-						change_primary_culture = lotharingian
+						change_primary_culture = alsatian
 					}
 					every_province = {
 						limit = {
@@ -2525,7 +2504,28 @@ dom_ned_brabant_2_group = {
 								}
 							}
 						}
-						change_culture = lotharingian
+						change_culture = alsatian
+					}
+				}
+				}
+				else = {
+					every_subject_country = {
+						limit = {
+							primary_culture = burgundian
+						}
+						change_primary_culture = alsatian
+					}
+					every_province = {
+						limit = {
+							culture = burgundian
+							owner = {
+								OR = {
+									tag = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+						change_culture = alsatian
 					}
 				}
 			}

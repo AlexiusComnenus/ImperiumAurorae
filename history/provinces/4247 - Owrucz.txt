@@ -1,5 +1,5 @@
-owner = VOL
-controller = VOL
+owner = Z00
+controller = Z00
 capital = "Ovruch"
 is_city = yes
 culture = ruthenian
@@ -9,7 +9,8 @@ base_tax = 3
 base_production = 2
 base_manpower = 3
 add_core = Z63
-add_core = VOL
+add_core = KIE
+add_core = Z00
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

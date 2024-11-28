@@ -3,7 +3,7 @@ custom_button = {
     potential = {
         ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
     }
-    trigger = { NOT = { has_country_modifier = administrative_corruption_suppression } corruption = 1 NOT = { corruption = 10 } }
+    trigger = { NOT = { has_country_modifier = administrative_corruption_suppression } NOT = { corruption = 10 } }
     effect = { 
 		add_country_modifier = {
 			name = administrative_corruption_suppression
@@ -24,7 +24,7 @@ custom_button = {
     potential = {
         ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
     }
-    trigger = { NOT = { has_country_modifier = espionage_corruption_suppression } corruption = 2 NOT = { corruption = 20 } }
+    trigger = { NOT = { has_country_modifier = espionage_corruption_suppression } NOT = { corruption = 20 } }
     effect = { 
 		add_country_modifier = {
 			name = espionage_corruption_suppression
@@ -52,7 +52,7 @@ custom_button = {
     potential = {
         ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
     }
-    trigger = { corruption = 5 stability = 1 NOT = { has_country_modifier = military_corruption_suppression } }
+    trigger = { stability = 1 NOT = { has_country_modifier = military_corruption_suppression } }
     effect = { 
 		add_country_modifier = {
 			name = military_corruption_suppression
@@ -112,32 +112,32 @@ custom_button = {
 	tooltip = use_mil_corruption
 }
 
-custom_button = {
-    name = stability_dip_reduce_corruption
-    potential = {
-        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
-    }
-    trigger = { dip_power = 100 corruption = 0.5 }
-    effect = { 
-		add_dip_power = -100
-		add_corruption = -0.5
-		if = {
-			limit = { 
-				NOT = {
-					OR = {
-						uses_revolutionary_zeal = yes
-						current_age = age_of_feudalism
-						current_age = age_of_discovery
-						current_age = age_of_reformation
-					}
-				}
-			}
-			add_absolutism = 2
-		}
-	}
-    #tooltip = remove_1_corruption_50_adm
-	tooltip = use_dip_corruption
-}
+#custom_button = {
+#    name = stability_dip_reduce_corruption
+#    potential = {
+#        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+#    }
+#    trigger = { dip_power = 100 corruption = 0.5 }
+#    effect = { 
+#		add_dip_power = -100
+#		add_corruption = -0.5
+#		if = {
+#			limit = { 
+#				NOT = {
+#					OR = {
+#						uses_revolutionary_zeal = yes
+#						current_age = age_of_feudalism
+#						current_age = age_of_discovery
+#						current_age = age_of_reformation
+#					}
+#				}
+#			}
+#			add_absolutism = 2
+#		}
+#	}
+#    #tooltip = remove_1_corruption_50_adm
+#	tooltip = use_dip_corruption
+#}
 
 custom_button = {
     name = combat_inflation_money

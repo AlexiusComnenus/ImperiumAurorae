@@ -1,6 +1,6 @@
 country_decisions = {
 
-	lotharingia_nation = {
+	lotharingia_nation_ia = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes

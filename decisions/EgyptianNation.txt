@@ -118,10 +118,7 @@ country_decisions = {
 			NOT = { tag = TUR }
 			NOT = { tag = ARB }
 			NOT = { tag = EGY }
-			OR = {
-				ai = no
-				NOT = { exists = MAM }
-			}
+			NOT = { exists = MAM }
 			culture = turkish
 		}
 		allow = {

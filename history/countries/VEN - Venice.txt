@@ -5,6 +5,7 @@ technology_group = western
 religion = catholic
 primary_culture = venetian
 capital = 112
+fixed_capital = 112
 mercantilism = 25
 1444.11.11= {
 	monarch = {

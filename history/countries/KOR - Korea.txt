@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = confucian_bureaucracy
+add_government_reform = korean_monarchy
 government_rank = 1
 technology_group = chinese
 religion = confucianism

@@ -213,16 +213,16 @@ cleves_missions_column_3 = {
 			else = {
 				OR = {
 					alliance_with = HES
-					land_forcelimit = 8
+					is_subject_of = HES
 				}
 			}
 		}
 		
 		effect = {
 			add_prestige = 10
-			overlord = { add_prestige = 10 }
-			add_historical_friend = overlord
-			overlord = { add_historical_friend = ROOT }
+			HES = { add_prestige = 10 }
+			add_historical_friend = HES
+			HES = { add_historical_friend = ROOT }
 		}
 	}
 	

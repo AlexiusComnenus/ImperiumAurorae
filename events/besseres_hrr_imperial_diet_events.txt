@@ -94,7 +94,10 @@ country_event = {
 							NOT = { has_country_flag = hosted_imperial_diet }
 							had_country_flag = { flag = hosted_imperial_diet days = 730 }
 						}
-						has_country_flag = guaranteed_next_diet_host # PTE
+						OR = { 
+							has_country_flag = guaranteed_next_diet_host # PTE
+							ai = no
+						}
 					}
 					clr_country_flag = guaranteed_next_diet_host # PTE
 					country_event = { id = besseres_hrr_imperial_diet_events.1 }

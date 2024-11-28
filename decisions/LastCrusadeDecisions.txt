@@ -62,6 +62,7 @@ country_decisions = {
 				set_in_empire = no
 			}
 			LAE = {
+				change_government = monarchy
 				change_religion = protestant
 				define_ruler = {
 					dynasty = ROOT
@@ -118,8 +119,8 @@ country_decisions = {
 				set_in_empire = no
 			}
 			ITA = {
+				change_government = monarchy
 				change_religion = protestant
-				change_primary_culture = outremer
 				define_ruler = {
 					dynasty = ROOT
 				}

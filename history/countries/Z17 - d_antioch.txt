@@ -1,4 +1,4 @@
-government = monarchy
+government = theocracy
 add_government_reform = celestial_xizho_empire
 add_government_reform = antioch_hellenic_crusade_reform
 government_rank = 3
@@ -66,5 +66,9 @@ historical_rival = VAL
 		siege = 4
 		name = "Ouyang Liang"
 		trait = aurora_trained
+	}
+	set_religious_school = {
+		group = christian
+		school = righteous_illumination_school
 	}
 }

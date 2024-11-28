@@ -13,12 +13,14 @@ country_decisions = {
 			NOT = { tag = PAP }
 			NOT = { tag = HLR }
 			NOT = { tag = AVE }
+			NOT = { tag = ENG }
+			NOT = { was_tag = ENG }
 			NOT = { has_country_flag = eng_took_ave_branch }
 			OR = {
 				culture_group = british
 				culture_group = gaelic
 				primary_culture = highland_scottish
-				primary_culture = anglo_saxon
+				#primary_culture = anglo_saxon
 			}
 			OR = {
 				ai = no
@@ -158,10 +160,6 @@ country_decisions = {
 					NOT = { has_idea_group = GBR_ideas }
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
-			}
-			hidden_effect = {
-				#complete_mission = eng_rb_war_of_roses
-				complete_mission = eng_war_of_the_roses
 			}
 		}
 		ai_will_do = {

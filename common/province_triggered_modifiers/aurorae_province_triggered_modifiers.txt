@@ -54,6 +54,30 @@ beleares_protected = {
 	local_core_creation = 100
 }
 
+templar_bank = {
+	potential = {
+        always = yes
+    }
+
+    trigger = {
+        OR = {
+			owned_by = TEM
+			owned_by = VAL
+		}
+    }
+	
+	monthly_gold_inflation_modifier = -0.5
+	interest = -2
+	local_gold_depletion_chance_modifier = -1
+	
+	on_activation = {
+		333 = { change_trade_goods = gold }
+    }
+	on_deactivation = {
+		333 = { change_trade_goods = fish }
+    } 
+}
+
 shining_city_antioch = {
 	potential = {
         always = yes
@@ -64,20 +88,18 @@ shining_city_antioch = {
 		controlled_by = Z17
     }
 
-	local_development_cost_modifier = -0.5
-	local_warscore_cost_modifier = 10
-	allowed_num_of_buildings = 5
-	allowed_num_of_manufactories = 2
+	local_warscore_cost_modifier = 100
 	max_attrition = 5
 	local_hostile_attrition = 5
+	hostile_fleet_attrition = 5
+	block_slave_raid = yes
 	local_defender_dice_roll_bonus = 3
 	local_defensiveness = 1
 	fort_level = 3
-	local_garrison_damage = 1
+	local_garrison_damage = 5
 	local_fort_maintenance_modifier = -1
 	local_hostile_movement_speed = -0.5
 	blockade_force_required = 5
-	
 }
 
 soi_limes_province_modifier = {

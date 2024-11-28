@@ -321,8 +321,14 @@ thuringia_missions_column_2 = {
 		#}
 		
 		trigger = {
-			has_estate_privilege = estate_nobles_advisors
-			treasury = 40
+			if = {
+				limit = { ai = no }
+				has_estate_privilege = estate_nobles_advisors
+				treasury = 40
+			}
+			else {
+				is_year = 1445
+			}
 		}
 		
 		effect = {

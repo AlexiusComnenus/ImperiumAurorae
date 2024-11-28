@@ -1,8 +1,8 @@
 government = tribal
 add_government_reform = steppe_horde
-government_rank = 3
+government_rank = 2
 technology_group = nomad_group
-religion = sunni
+religion = tengri_pagan
 primary_culture = bolghar
 capital = 1755
 add_accepted_culture = samoyed
@@ -14,7 +14,7 @@ add_accepted_culture = samoyed
 		dip = 3
 		mil = 4
 		birth_date = 1396.12.25
-		religion = sunni
+		religion = tengri_pagan
 		culture = bolghar
 	}
 	add_ruler_personality = scholar_personality
@@ -29,7 +29,7 @@ add_accepted_culture = samoyed
 		birth_date = 1400.5.28
 		death_date = 1460.5.28
 		female = yes
-		religion = sunni
+		religion = tengri_pagan
 		culture = turkmeni
 	}
 	add_queen_personality = conqueror_personality
@@ -44,10 +44,9 @@ add_accepted_culture = samoyed
 		birth_date = 1419.9.20
 		death_date = 1484.9.20
 		claim = 89
-		religion = sunni
-		culture = bashkir
+		religion = tengri_pagan
+		culture = bolghar
 	}
-	add_heir_personality = infertile_personality
 	add_heir_personality = naive_personality
 }
 1444.11.11= {

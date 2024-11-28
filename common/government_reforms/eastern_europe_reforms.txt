@@ -1,0 +1,268 @@
+veche_republic = {
+	icon = "russian_principality"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		NOT = { has_reform = great_veche_republic }
+		NOT = { have_had_reform = great_veche_republic }
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = veche_republic
+			}
+		}
+	}
+	legacy_equivalent = veche_republic_legacy
+	nation_designer_trigger = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+	}
+	modifiers = {
+		merchants = 1
+		core_creation = 0.3
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.1
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	boost_income = yes
+	#fixed_rank = 1
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		lottery_election = yes
+		election_on_death = yes
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+		bonus_stats_for_elected_ruler = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+			NOT = { has_dlc = "Third Rome" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			NOT = { has_dlc = "Mare Nostrum" }
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = { 
+			OR = {
+				has_dlc = "Third Rome" 
+				has_dlc = "Domination"
+			}
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+		custom_attributes = {
+			weaker_russian_ability = yes
+		}
+	}
+	has_term_election = no
+}
+
+great_veche_republic = {
+	icon = "king"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+		#religion = orthodox
+		OR = {
+			has_reform = veche_republic
+			have_had_reform = veche_republic
+			has_reform = great_veche_republic
+			have_had_reform = great_veche_republic
+		}
+	}
+	fixed_rank = 3
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	boost_income = yes
+
+	nation_designer_trigger = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+		religion = orthodox
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.2
+		merchants = 1
+		max_absolutism = 10
+		governing_capacity = 100
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.2
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		lottery_election = yes
+		election_on_death = yes
+		is_merchant_republic = yes
+		elections_increase_factions_influence = yes
+		bonus_stats_for_elected_ruler = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = { 
+			has_dlc = "Third Rome" 
+			NOT = { has_dlc = "Domination" }
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			russian_mechanic
+			russian_modernization_mechanic
+		}
+	}
+	has_term_election = no
+}
+
+consolidate_power_in_cities_reform = {
+	icon = "consolidate_power_in_cities_reform"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = merchants_reform
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = merchants_reform
+		}
+	}
+	modifiers = {
+		diplomatic_upkeep = 2
+		global_foreign_trade_power = 0.25
+	}
+	has_term_election = yes
+	is_eligible_for_hre_emperor = no
+	duration = 4
+	ai = {
+		factor = 10
+		modifier = {
+			factor = 0
+			num_of_cities = 25
+		}
+	}
+}
+
+bogomilist_veche_republic = {
+	icon = "russian_principality"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
+		OR = {
+			has_reform = bogomilist_veche_republic
+			have_had_reform = bogomilist_veche_republic
+		}
+	}
+	legacy_equivalent = veche_republic_legacy
+	modifiers = {
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.25
+		#development_cost = -0.1
+	}
+	valid_for_nation_designer = no
+	fixed_rank = 3
+
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = no
+		enables_aristocratic_idea_group = no
+		can_establish_trade_protectorates = yes
+		can_spread_commune = yes
+		disables_estate_church = yes
+		disables_estate_nobles = yes
+		enables_estate_peasants = yes
+		#disables_estate_burghers = yes
+		#disables_estate_cossacks = yes
+	}
+
+	conditional = {
+		allow = { 
+			OR = {
+				has_dlc = "Third Rome" 
+				has_dlc = "Domination"
+			}
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+	}
+}

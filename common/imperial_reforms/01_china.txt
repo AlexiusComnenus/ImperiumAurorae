@@ -18,14 +18,26 @@ establish_gaituguiliu_decision = {
 	member = { advisor_pool = 1 }
 	emperor = {
 		meritocracy = 0.5
+		state_maintenance_modifier = -0.25
 	}
 }
 
-seaban_decision = {
-	empire = celestial_empire
-	emperor = {
-		diplomats = 1
-		trade_efficiency = 0.05
+new_keju_formats_decision = {
+	empire = celestial_empire 
+	trigger = {
+		OR = {
+			has_reform = examination_system_reform
+			full_idea_group = administrative_ideas  
+		}
+		OR = { 
+			adm = 4 
+			monthly_adm = 9 
+		}
+	}
+	member = { governing_capacity_modifier = 0.05 } 
+	emperor = { 
+		reform_progress_growth = 0.1
+		imperial_mandate = 0.03
 	}
 }
 
@@ -86,8 +98,14 @@ building_projects_decision = {
 centralizing_top_government_decision = {
 	empire = celestial_empire
 	trigger = { crown_land_share = 65 } 
-	member = { all_estate_influence_modifier = -0.05 }
-	emperor = { monarch_admin_power = 1 }
+	member = { 
+		all_estate_influence_modifier = -0.05
+		reform_progress_growth = 0.10
+	}
+	emperor = { 
+		monarch_admin_power = 1
+		governing_cost = -0.05
+	}
 	
 }
 
@@ -110,36 +128,7 @@ vassalize_tributaries_decision = {
 }
 
 #### 1.35 #### Content for EoC
- 
-codify_single_whip_law_decision = {
-	empire = celestial_empire
-	trigger = { 
-		empire_of_china_reform_passed = reform_land_tax_decision 
-		OR = { 
-			mission_completed = mng_single_whip_law
-			full_idea_group = economic_ideas 
-			reform_level = 7
-		}
-	}
-	member = { yearly_corruption = -0.05 } 
-	emperor = {
-		vassal_income = 0.25 
-		vassal_forcelimit_bonus = 0.25
-	}
-	
-}
 
-reign_in_estates_decision = {
-	empire = celestial_empire
-	trigger = {
-		OR = { 
-			crown_land_share = 90 
-			absolutism = 75 
-		}
-	}
-	member = { max_absolutism = 5 }
-	emperor = { administrative_efficiency = 0.025 all_estate_influence_modifier = -0.05 }
-}
 
 reform_civil_registration_decision = {
 	empire = celestial_empire
@@ -183,41 +172,21 @@ kanhe_certificate_decision = {
 	}
 }
 
-new_keju_formats_decision = {
+promote_military_faction_decision = {
 	empire = celestial_empire 
 	trigger = {
-		OR = {
-			has_reform = examination_system_reform
-			full_idea_group = administrative_ideas  
-		}
-		OR = { 
-			adm = 4 
-			monthly_adm = 9 
-		}
+		not = { empire_of_china_reform_passed = promote_bureaucratic_faction_decision }
 	}
-	member = { governing_capacity_modifier = 0.05 } 
+	member = {
+		nobles_loyalty_modifier = 0.05
+		manpower_recovery_speed = 0.10	
+	} 
 	emperor = { 
-		reform_progress_growth = 0.1
-		imperial_mandate = 0.03
+		nobles_loyalty_modifier = 0.1 
+		army_tradition = 0.5 
+		mil_tech_cost_modifier = -0.1
 	}
-}
-
-inclusive_monarchy_decision = {
-	empire = celestial_empire 
-	trigger = {
-		OR = { 
-			full_idea_group = humanist_ideas 
-			harmony = 80 
-			theologian = 2 
-		}
-		stability = 1 
-	}
-	member = { tolerance_heathen = 1 tolerance_heretic = 1 } 
-	emperor = { 
-		tolerance_of_heathens_capacity = 1 
-		tolerance_of_heretics_capacity = 1
-		tolerance_heathen = 1 
-	}
+	disabled_by = promote_bureaucratic_faction_decision
 }
 
 promote_bureaucratic_faction_decision = {
@@ -235,23 +204,6 @@ promote_bureaucratic_faction_decision = {
 		adm_tech_cost_modifier = -0.05
 	}
 	disabled_by = promote_military_faction_decision
-}
-
-promote_military_faction_decision = {
-	empire = celestial_empire 
-	trigger = {
-		not = { empire_of_china_reform_passed = promote_bureaucratic_faction_decision }
-	}
-	member = {
-		nobles_loyalty_modifier = 0.05
-		manpower_recovery_speed = 0.10	
-	} 
-	emperor = { 
-		nobles_loyalty_modifier = 0.1 
-		army_tradition = 0.5 
-		mil_tech_cost_modifier = -0.1
-	}
-	disabled_by = promote_bureaucratic_faction_decision
 }
 
 unifed_trade_market_decision = {
@@ -379,8 +331,9 @@ modernize_the_banners_decision = {
 	}
 	member = {
 		cavalry_cost = -0.1
+		has_banners = yes
 	} 
-	emperor = { cav_to_inf_ratio = 0.1 cavalry_power = 0.10 }
+	emperor = { cav_to_inf_ratio = 0.1 cavalry_power = 0.10 has_banners = yes }
 }
 
 study_foreign_ship_designs_decision = {
@@ -449,4 +402,60 @@ new_world_discovery_decision = {
 		colonists = 1 
 		may_explore = yes
 	}
+}
+
+seaban_decision = {
+	empire = celestial_empire
+	emperor = {
+		diplomats = 1
+		trade_efficiency = 0.05
+	}
+}
+
+reign_in_estates_decision = {
+	empire = celestial_empire
+	trigger = {
+		OR = { 
+			crown_land_share = 90 
+			absolutism = 75 
+		}
+	}
+	member = { max_absolutism = 5 }
+	emperor = { administrative_efficiency = 0.025 all_estate_influence_modifier = -0.05 }
+}
+
+inclusive_monarchy_decision = {
+	empire = celestial_empire 
+	trigger = {
+		OR = { 
+			full_idea_group = humanist_ideas 
+			harmony = 80 
+			theologian = 2 
+		}
+		stability = 1 
+	}
+	member = { tolerance_heathen = 1 tolerance_heretic = 1 } 
+	emperor = { 
+		tolerance_of_heathens_capacity = 1 
+		tolerance_of_heretics_capacity = 1
+		tolerance_heathen = 1 
+	}
+}
+ 
+codify_single_whip_law_decision = {
+	empire = celestial_empire
+	trigger = { 
+		empire_of_china_reform_passed = reform_land_tax_decision 
+		OR = { 
+			mission_completed = mng_single_whip_law
+			full_idea_group = economic_ideas 
+			reform_level = 7
+		}
+	}
+	member = { yearly_corruption = -0.05 } 
+	emperor = {
+		vassal_income = 0.25 
+		vassal_forcelimit_bonus = 0.25
+	}
+	
 }

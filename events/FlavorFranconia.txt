@@ -14,7 +14,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = FKN
+		#tag = FKN
 	}
 	
 	option = {
@@ -33,7 +33,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = FKN
+		#tag = FKN
 	}
 	
 	option = {
@@ -52,7 +52,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = FKN
+		#tag = FKN
 	}
 	
 	option = {
@@ -85,7 +85,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = FKN
+		#tag = FKN
 	}
 	
 	option = {
@@ -189,10 +189,6 @@ country_event = {
 
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = FKN
-	}
-	
 	option = {
 		name = ia_flavor_fkn.6.a
 		upper_bavaria_area = {
@@ -227,6 +223,42 @@ country_event = {
 				limit = { NOT = { tag = ROOT } }
 				PREV = { remove_core = PREV }
 			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.7
+	title = ia_flavor_fkn.7.t
+	desc = ia_flavor_fkn.7.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_fkn.7.a
+		
+		2955 = {
+			spawn_rebels = {
+				type = particularist_rebels
+				size = 2
+			}
+			add_base_manpower = -2
+			add_base_production = -2
+			add_base_tax = -2
+		}
+		65 = {
+			spawn_rebels = {
+				type = particularist_rebels
+				size = 2
+			}
+			add_base_manpower = -2
+			add_base_production = -2
+			add_base_tax = -2
+		}
+		add_country_modifier = {
+			name = fkn_siezed_breweries
+			duration = 1095
 		}
 	}
 }

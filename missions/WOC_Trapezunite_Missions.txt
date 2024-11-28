@@ -1699,6 +1699,9 @@ woc_trebizond_fifth = {
 					add_claim = ROOT
 				}
 			}
+			unlock_estate_privilege = {
+				estate_privilege = estate_burghers_mountain_expansion
+			}
 			if = {
 				limit = {
 					OR = {

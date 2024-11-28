@@ -1,12 +1,18 @@
 ﻿l_english:
-
+ lot_karolingerreich: "Karolingerreich"
+ lot_karolingerreich_ADJ: "Imperial Carolingian"
+ lotharingia_nation_ia_title: "Reunite Austrasia"
+ lotharingia_nation_ia_desc: "We will reunite the lands of Lorraine and re-forge the glory of Austrasia!"
+ lotharingia_nation_ia_tooltip: "We will reunite the lands of Lorraine and re-forge the glory of Austrasia!"
+ lot_form_hre_tt: "If we complete this mission by §Rdestroying the Germanic Crown§!, we will become the §YHoly Roman Empire§!!"
+ carolingian_dynasty: "Legendary Carolingian Bloodline"
  ###ideas
  lot_unity_of_peoples:0 "Unity of Peoples"
- lot_unity_of_peoples_desc:0 "Lotharingia is home to a number of different people with different cultures and languages. We are at liberty to prove in one form or another that, despite this, we are yet another cohesive statehood worthy of envy. The fate of all within and without are still in one form or another at the mercy of our leaders."
+ lot_unity_of_peoples_desc:0 "Austrasia is home to a number of different people with different cultures and languages. We are at liberty to prove in one form or another that, despite this, we are yet another cohesive statehood worthy of envy. The fate of all within and without are still in one form or another at the mercy of our leaders."
  lot_settlement_initiative:0 "Resettlement Initiative"
  lot_settlement_initiative_desc:0 "Perhaps in the minds of some at home the concept of dealing with so-called 'inferior people' is too much to bear. They believe in a state-led repopulation policy, moving some German nobility, landowners and peasants to the countryside to the west and south. Of course, the same people espousing this policy are not so interested in doing so themselves..."
  lot_naval_ambition:0 "Naval Ambition"
- lot_naval_ambition_desc:0 "The statehood of Lotharingia composes a great coastline in the Low Countries. With the other powers of Europe maintaining large navies it would not be out of place for us to facilitate the growth of a talented seafaring force of our own. Maybe ours will even best theirs..."
+ lot_naval_ambition_desc:0 "The statehood of Austrasia composes a great coastline in the Low Countries. With the other powers of Europe maintaining large navies it would not be out of place for us to facilitate the growth of a talented seafaring force of our own. Maybe ours will even best theirs..."
  lot_cohesive_military:0 "Cohesive Military"
  lot_cohesive_military_desc:0 "With the objective of securing a homogenous society, we must ensure upward mobility comes only to those willing to assimilate. The military may prove most useful as a shining example of national unity. A cohesive force, even."
  lot_industrial_ambition:0 "Industrial Ambition"
@@ -16,7 +22,7 @@
  GLR_ideas_start:0 "Republican Traditions"
  GLR_ideas_bonus:0 "Republican Ambition"
  glr_free_intelligentsia:0 "Free Intelligentsia"
- glr_free_intelligentsia_desc:0 "Following the fate of the Glorious Golden Revolution, the learned men in Lotharingia have seized control, but not without significant contributions from other classes within society. Now the old order is gone it's time for an alliance-government to reform the institutions of old into a new popular republic."
+ glr_free_intelligentsia_desc:0 "Following the fate of the Glorious Golden Revolution, the learned men in Austrasia have seized control, but not without significant contributions from other classes within society. Now the old order is gone it's time for an alliance-government to reform the institutions of old into a new popular republic."
  glr_liberated_burghers:0 "Liberated the Burghers"
  glr_liberated_burghers_desc:0 "The funding of the Burghers in the Revolution could not be valued enough. The laws of the land must be changed to facilitate free competition against the restrained merchants of other restrictive powers. Let us prove to them their way of thinking will someday be a retrograde philosophy."
  glr_free_movement:0 "Freedom of Movement"
@@ -32,22 +38,22 @@
  
  ###missions
  lot_unified_state_title:0 "Unified Societies"
- lot_unified_state_desc:0 "From what was once a disparate state of The Two Lorraines a new force was forged. Once again the force of Lothair emerges as a phoenix from ashes. Someday, Europe will fear and revere us and our influence spreads to the four corners of the globe."
- lot_feudal_institutions_title:0 "Lotharingian Feudalism"
+ lot_unified_state_desc:0 "From what was once a disparate state of The Two Lorraines a new force was forged. Once again the force of Austrasia emerges as a phoenix from ashes. Someday, Europe will fear and revere us and our influence spreads to the four corners of the globe."
+ lot_feudal_institutions_title:0 "Austrasian Feudalism"
  lot_feudal_institutions_desc:0 "We have a young, burgeoning potential powerhouse. Already, the government is at a crossroads. Should we integrate the western people into our administration or take the hardline approach and rid them of their nobility? Both have their benefits and shortcomings, as well as long-form implications, so it's of vital importance to weigh our options carefully."
  lot_integrate_dutch_title:0 "Dutch Unity"
- lot_integrate_dutch_desc:0 "The Dutch are a brother culture to us. A similar language and way of life is not outside of the reach of the Lotharingian statehood to syncretize with. In addition to this their rich territories will most certainly be vital for the continued geopolitical stability of western and central mainland Europe. Let us oversee a program of goodwill and unity between our cultures."
+ lot_integrate_dutch_desc:0 "The Dutch are a brother culture to us. A similar language and way of life is not outside of the reach of the Austrasian statehood to syncretize with. In addition to this their rich territories will most certainly be vital for the continued geopolitical stability of western and central mainland Europe. Let us oversee a program of goodwill and unity between our cultures."
  lot_wealth_of_state_title:0 "Wealth of the State"
  lot_wealth_of_state_desc:0 "The proto-industrial economies of the cities in the Low Countries is too much to dismiss. Under one crown these must be brought together and unified. Only through these towns can we guarantee a realm devoid of debt, and a royal court contained within a glorious palace complex."
  lot_subdue_foreign_nobility_title:0 "Subdue French Nobility"
- lot_subdue_foreign_nobility_desc:0 "The nobility of the regions west have proven their loyalty to a crown hostile to the interests of Lotharingia. It is time for us to antagonize them, cause them to revolt and begin a program of Germanization for the ruling classes of the area. In the name of Lotharingia, long live."
+ lot_subdue_foreign_nobility_desc:0 "The nobility of the regions west have proven their loyalty to a crown hostile to the interests of Austrasia. It is time for us to antagonize them, cause them to revolt and begin a program of Germanization for the ruling classes of the area. In the name of Austrasia, long live."
  lot_resettle_wallonia_title:0 "Resettle Wallonia"
- lot_resettle_wallonia_desc:0 "To begin the experiment of Germanization there is an already integral piece of Lotharingia that is not of a Germanic persuasion. It's time to promote Germanic culture as a prestigious one in the region of Wallonia to encourage assimilation."
+ lot_resettle_wallonia_desc:0 "To begin the experiment of Germanization there is an already integral piece of Austrasia that is not of a Germanic persuasion. It's time to promote Germanic culture as a prestigious one in the region of Wallonia to encourage assimilation."
  lot_westmarken_title:0 "Die Westmarken"
  lot_westmarken_desc:0 "There have been historical marches to facilitate the defense of the German state and identity from eastern settlements. We need either a powerful state to create western stability or a new diplomatic program of forging new western Marches."
  
  zyp_lot_splendor_capital_aachen_title:0 "Splendor of the Capital"
- zyp_lot_splendor_capital_aachen_desc:0 "Aachen was once the capital of the kingdom of Lothar himself. Here we are, the custodian of a tradition once sullied by outside intervention. It's time to begin the cleansing of the impurities."
+ zyp_lot_splendor_capital_aachen_desc:0 "Aachen was once the capital of the Kingdom of Austrasia. Here we are, the custodian of a tradition once sullied by outside intervention. It's time to begin the cleansing of the impurities."
  zyp_lot_splendor_capital_nanzig_title:0 "Splendor of the Capital"
  zyp_lot_splendor_capital_nanzig_desc:0 "Nancy remains emblematic of a legacy yet to be written. $COUNTRY$ stands on the precipice of a dawning golden era. Let's set ourselves apart from the failures in the past and bring about an association with prosperity for all."
  
@@ -71,7 +77,7 @@
  zyp_lot_capital_periphery_title:0 "Capital Periphery"
  zyp_lot_capital_periphery_desc:0 "The splendor of $CAPITAL$ must be known particularly to its neighboring towns. Let's create a network of large cities and facilitate a metropolitan area surrounding $COUNTRY$'s capital."
  zyp_lot_cloth_factories_title:0 "Cloth Factories"
- zyp_lot_cloth_factories_desc:0 "With cloth production in the Netherlands a seemingly unique phenomenon in Europe, Lotharingia is in a position to exploit what may full well be a monopoly under appropriate conditions. A fruitful endeavor and directive for us would be to invest in the region's productive capacities."
+ zyp_lot_cloth_factories_desc:0 "With cloth production in the Netherlands a seemingly unique phenomenon in Europe, Austrasia is in a position to exploit what may full well be a monopoly under appropriate conditions. A fruitful endeavor and directive for us would be to invest in the region's productive capacities."
  zyp_lot_coal_exploitation_title:0 "Coal Exploitation"
  zyp_lot_coal_exploitation_desc:0 "$COUNTRY$ has been introduced by way of the new phenomenon of Industrialization to a new valuable resource: coal. We must rush to maximize production of this highly energetic material so we can rapidly increase economic efficiency at home before anyone else can."
  zyp_lot_hollandic_trade_title:0 "Hollandic Trade"
@@ -80,7 +86,7 @@
  lot_conquest_france_title:0 "Conquest of France"
  lot_conquest_france_desc:0 "The Western boundary of $COUNTRY$ is marked with loyal fiefs which no longer bear loyalties to the French crowns. Now, however, we must bring them all into the fold under the united banner of $CAPITAL$."
  lot_cultural_unity_title:0 "Cultural Unity"
- lot_cultural_unity_desc:0 "The Lotharingian language dominates high society in the lowly French region. Its prestige sees the Franks attempting to use it in common life, not only in a professional capacity."
+ lot_cultural_unity_desc:0 "The Austrasian language dominates high society in the lowly French region. Its prestige sees the Franks attempting to use it in common life, not only in a professional capacity."
  
  lot_set_example_title:0 "Set the Example"
  lot_set_example_desc:0 "$COUNTRY$ is in a unique position to prove it to be a progressive authority, unlike many in Europe given the times. With this philosophy comes peace and a sort of unorthodox unity."
@@ -93,14 +99,19 @@
  lot_reevaluate_the_administration_title:0 "Reevaluate Administration"
  lot_reevaluate_the_administration_desc:0 "Our administration thus far is not expansive enough to seamlessly handle the different peoples and regions in our empire. It's time to change this; let's reform the administration from the ground up and realize a fundamental overhaul of large proportions and $COUNTRY$ will be admired for it."
 
- lot_carolingian_resurgence_title: "Carolingian Resurgence"
- lot_carolingian_resurgence_desc: "After Karl the Great fell to the treachery of Widukind, only the Realm of Lotharingia sought to avenge him. While the kingdom was ultimately destroyed by the Saxons, the fire in our hearts has never faded, as opposed to the other cowards in West Francia who were content to let the Saxons rule our ancient homelands."
- lot_carolingian_revenge_title: "Carolingian Vengeance"
+ lot_carolingian_resurgence_title: "§GCarolingian Resurgence§!"
+ lot_carolingian_resurgence_desc: "After Karl the Great fell to the treachery of Widukind, only the Realm of Austrasia sought to avenge him. While the kingdom was ultimately destroyed by the Saxons, the fire in our hearts has never faded, as opposed to the other cowards in West Francia who were content to let the Saxons rule our ancient homelands."
+ lot_carolingian_revenge_title: "§PCarolingian Vengeance§!"
  lot_carolingian_revenge_desc: "Hark! Let all behold, the heirs to Charlemagne have dethroned the moribund Kings of Germany set up by the Saxons so many years ago after Widukind's victory! In the end, we have the last laugh..."
+ unlock_dutch_reforms_tt: "We will §Gunlock§! the §Cunique Dutch government reforms§!."
+ lot_strengthen_the_vroedschappen_title: "Strengthen the Vroedschappen"
+ lot_strengthen_the_vroedschappen_desc: "The 'vroedschap', the humble city council, is the foundation upon which our great system of government rests. To curry favor with it is to curry favor with the nation itself."
+ lot_dutch_polder_title: "Create Dutch Polders"
+ lot_dutch_polder_desc: "If we are to finish the Polders in Holland it will improve our knowledge of land reclamation. With plenty of lakes in our nation, we can drain them with sophisticated windmills, the land that is left can then be turned into new farmland. These so called Polders will greatly improve our production."
  
  ###events
- LOT_events.1.t:0 "Fate of the Lothringisch Capital?"
- LOT_events.1.d:0 "The state of Lotharingia has been proclaimed. A new glorious, triumphant power of Europe. As such it is time to consider if we wish to develop the home of our court or move the seat of government to Aachen, the historical capital of Lothar's once great realm."
+ LOT_events.1.t:0 "Fate of the Austrasian Capital?"
+ LOT_events.1.d:0 "The state of Austrasia has been proclaimed. A new glorious, triumphant power of Europe. As such it is time to consider if we wish to develop the home of our court or move the seat of government to Aachen, the historical capital of Austrasia's once great realm."
  LOT_events.1.a:0 "Let's revive his grand legacy."
  LOT_events.1.b:0 "We should hold to our unique traditions.."
 
@@ -124,11 +135,11 @@
  lot_cloth_production:0 "Cloth Production"
  lot_hollandic_trade:0 "Hollandic Trade"
  lot_new_admin:0 "Revolutionized Administration"
- lot_everlasting_prestige:0 "Everlasting Prestige"
+ lot_everlasting_prestige:0 "§GEverlasting Prestige§!"
  local_sabotage:0 "Local Sabotage"
  lot_humanist_rule: "Humanist Rule"
- lot_iron_fist: "Iron Fist of Lotharingia"
- lot_carolingian_revenge_modifier: "Revenge of the Carolingians"
+ lot_iron_fist: "§RIron Fist of Austrasia§!"
+ lot_carolingian_revenge_modifier: "§PRevenge of the Carolingians§!"
  
  lot_defeated_republicans:0 "Defeated the Republicans"
  
@@ -150,14 +161,14 @@
  LOT_SIEZED_OR_DESTROYED_GERMANIC_CROWN: "We have §Gbecome King of Germany§! or §Rdestroyed the German Crown§!!"
  permanent_pp_tt: "This §YPower Projection§! is §Gpermanent§!!"
  
- glr_lost_lot:0 "§RIf our government is changed from a republic, we will become Lotharingia again.§!"
+ glr_lost_lot:0 "§RIf our government is changed from a republic, we will become Austrasia again.§!"
  
  string_zyp_lot_less_than_50_leg:0 "Flee from the palace."
  string_zyp_lot_more_than_50_leg:0 "Send the envoy back."
  
  ###reforms
  golden_republic_reform:0 "Golden Republic"
- golden_republic_reform_desc:0 "Founded by the Lotharingian intelligentsia and aided by the funding of the Burghers and manpower of the Peasantry, the Golden Republic was formed as a reaction to governmental and institutional overreach by the old order. The Golden Republic prizes freedom for its universities and learned men above all, but concessions were made for the latter classes. There are many an enemy seeking the downfall of the Golden Republic and its divine liberty."
+ golden_republic_reform_desc:0 "Founded by the Austrasian intelligentsia and aided by the funding of the Burghers and manpower of the Peasantry, the Golden Republic was formed as a reaction to governmental and institutional overreach by the old order. The Golden Republic prizes freedom for its universities and learned men above all, but concessions were made for the latter classes. There are many an enemy seeking the downfall of the Golden Republic and its divine liberty."
  
  
  ###tags

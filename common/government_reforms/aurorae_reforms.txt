@@ -36,91 +36,100 @@ free_city = {
 	duration = 4
 }
 
-merchant_theocracy_reform = {
-	icon = "pope"
+margraviate_reform = {
+	icon = "soldiers_2"
 	allow_normal_conversion = yes
-	modifiers = {
-		governing_capacity_modifier = -0.25
-		merchants = 1
-		papal_influence = 2
-		curia_treasury_contribution = 0.25
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 40
 	potential = {
 		OR = {
-			has_reform = merchant_theocracy_reform
-			have_had_reform = merchant_theocracy_reform
-			has_unlocked_government_reform = {
-				government_reform = merchant_theocracy_reform
-			}
+			culture_group = germanic
+			overlord = { culture_group = germanic }
 		}
 	}
 	trigger = {
 		OR = {
-			religion = catholic
-			is_playing_custom_nation = yes
+			is_subject_of_type = german_march
+			is_subject_of_type = march
+		}
+		overlord = { culture_group = germanic }
+	}
+	valid_for_nation_designer = no
+	modifiers = {
+		fort_maintenance_modifier = -0.25
+		defensiveness = 0.2
+	}
+	ai = {
+		factor = 20
+	}
+}
+
+ayyubid_dynasty = {
+	icon = ayyubid_dynasty
+	allow_convert = no
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	legacy_equivalent = iqta_legacy
+	potential = {
+		religion_group = muslim
+		OR = {
+			tag = HSN
+			was_tag = HSN
+		}
+	}
+	valid_for_nation_designer = no
+	nation_designer_cost = 0
+	modifiers = {
+		advisor_pool = 1
+		state_governing_cost = -0.1
+	}
+	custom_attributes = {
+		negate_unaccepted_levantine_culture = yes
+	}
+	effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = turko_semitic
+					NOT = { has_owner_accepted_culture = yes }
+					NOT = { has_province_modifier = hsn_ayyubid_tolerance }
+				}
+				add_province_modifier = {
+					name = hsn_ayyubid_tolerance
+					duration = -1
+				}
+			}
 		}
 	}
 	removed_effect = {
-		if = {
-			limit = {
-				is_playing_custom_nation = no
-				NOT = { religion = catholic }
-				NOT = {
-					has_unlocked_government_reform = {
-						government_reform = reformer_state_reform
-					}
-				}
-			}
-			hidden_effect = {
-				country_event = {
-					id = flavor_rig.11
-				}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = hsn_ayyubid_tolerance }
+				remove_province_modifier = hsn_ayyubid_tolerance
 			}
 		}
 	}
-	boost_income = yes
-	factions = {
-		mr_aristocrats
-		mr_traders
-		mr_guilds
+	post_removed_effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = hsn_ayyubid_tolerance }
+				remove_province_modifier = hsn_ayyubid_tolerance
+			}
+		}
 	}
 	conditional = {
 		allow = {
-			has_dlc = "Res Publica"
-			NOT = { has_dlc = "Mare Nostrum" }
+			OR = {
+				has_dlc = "Cradle of Civilization"
+				has_dlc = "Winds of Change"
+			}
 		}
-		can_use_trade_post = yes
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Mare Nostrum"
-			NOT = { has_dlc = "Res Publica" }
+		government_abilities = {
+			iqta_mechanic
 		}
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
 	}
-	conditional = {
-		allow = {
-			has_dlc = "Res Publica"
-			has_dlc = "Mare Nostrum"
-		}
-		can_use_trade_post = yes
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
-	}
-	custom_attributes = {
-		is_merchant_republic = yes
-		can_sell_indulgences = yes
-		enables_divine_idea_group = no
-		enables_plutocratic_idea_group = yes
-		elections_increase_factions_influence = yes
-	}
-	ai = {
-		factor = 10 #unique
-	}
-}merchant_theocracy_reform = {
+
+}
+
+merchant_theocracy_reform = {
 	icon = "pope"
 	allow_normal_conversion = yes
 	modifiers = {
@@ -206,6 +215,30 @@ merchant_theocracy_reform = {
 	}
 }
 
+partial_secularisation_reform = {
+	icon = "partial_secularisation_reform"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { tag = Z17 }
+	}
+	modifiers = {
+		tolerance_of_heathens_capacity = 1
+		tolerance_of_heretics_capacity = 1
+	}
+}
+
+maintain_religious_head_reform = {
+	icon = "politician"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { tag = Z17 }
+	}
+	modifiers = {
+		yearly_absolutism = 1
+		max_absolutism = 10
+	}
+}
+
 dyanstic_administration_reform = {
 	icon = "royal_favoritism"
 	allow_normal_conversion = yes
@@ -216,7 +249,7 @@ dyanstic_administration_reform = {
 		}
 	}
 	modifiers = {
-		yearly_corruption = 0.075
+		yearly_corruption = 0.04
 		all_estate_influence_modifier = -0.1
 		monarch_admin_power = 1
 		advisor_pool = 1
@@ -275,14 +308,22 @@ separate_clergy_from_state_affairs_reform = {
 			full_idea_group = innovativeness_ideas
 			full_idea_group = humanist_ideas
 			has_country_flag = allow_church_separation
+			religion = bogomilist
 		}
-		NOT = { has_idea_group = religious_ideas }
-		NOT = { has_idea_group = theocracy_ideas }
+		OR = {
+			AND = {
+				NOT = { has_idea_group = religious_ideas }
+				NOT = { has_idea_group = theocracy_ideas }
+			}
+			religion = bogomilist
+		}
 		is_not_blocked_by_estate_privilege = { estate = estate_church }
 		is_not_blocked_by_estate_privilege = { estate = estate_brahmins }
 	}
 	modifiers = {
+		tolerance_heathen = 2
 		tolerance_of_heathens_capacity = 1
+		tolerance_heretic = 2
 		tolerance_of_heretics_capacity = 1
 		innovativeness_gain = 0.25
 	}
@@ -302,7 +343,7 @@ plutocratic_reform = {
 	legacy_equivalent = despotic_monarchy
 	potential = {
 		OR = {
-			#technology_group = indian
+			technology_group = indian
 			#technology_group = muslim
 			technology_group = chinese
 			#technology_group = east_african
@@ -311,7 +352,7 @@ plutocratic_reform = {
 	}
 	nation_designer_trigger = {
 		OR = {
-			#technology_group = indian
+			technology_group = indian
 			#technology_group = muslim
 			technology_group = chinese
 			#technology_group = east_african
@@ -517,7 +558,7 @@ i_am_the_church_reform = {
 	modifiers = {
 		devotion = 0.5
 		max_absolutism = 10
-		appoint_cardinal_cost = -0.1
+		appoint_cardinal_cost = -0.25
 	}
 	effect = {
 		hidden_effect = {
@@ -585,7 +626,6 @@ lands_for_the_monasteries_reform = {
 			religion = orthodox
 			religion = paulician
 			religion = iconoclast
-			religion = bogomilist
 			religion = tengri_pagan_reformed
 		}
 	}
@@ -659,7 +699,7 @@ head_of_the_reformed_church_reform = {
 }
 
 crusading_zeal_reform = {
-	icon = "regionally_elected_commanders"
+	icon = "holy_horde"
 	allow_normal_conversion = yes
 	force_conversion_gives_global_holy_war_released_modifier = yes
 	potential = {
@@ -742,6 +782,121 @@ font_of_enlightenment_reform = {
 	}
 }
 
+curtail_clergy_power_reform = {
+	icon = "monks"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		NOT = { religion = bogomilist }
+	}
+	modifiers = {
+		adm_tech_cost_modifier = -0.1
+		religious_unity = 0.1
+		church_influence_modifier = -0.1
+	}
+	custom_attributes = {
+		seizing_land_no_rebels_from_estate_church = yes
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+bog_sponsor_public_schools_reform = {
+	icon = "warrior_monks_reform"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		religion = bogomilist
+	}
+	modifiers = {
+		embracement_cost = -0.25
+		institution_spread_from_true_faith = 0.25
+	}
+	custom_attributes = {
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+secure_clergy_power_reform = {
+	icon = "warrior_monks_reform"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		NOT = { religion = bogomilist }
+	}
+	modifiers = {
+		church_influence_modifier = 0.05
+	}
+	effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_tax_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = gov_expanded_temple_rights_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	post_removed_effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = gov_expanded_temple_rights_mod
+				}
+				remove_province_modifier = gov_expanded_temple_rights_mod
+			}
+		}
+	}
+	custom_attributes = {
+		temples_modifier = yes
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
+maintain_clergy_balance_of_power_reform = {
+	icon = "consolidate_power_in_cities_reform"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_government_attribute = is_pirate_republic_reform }
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+		NOT = { religion = bogomilist }
+	}
+	modifiers = {
+		all_estate_loyalty_equilibrium = 0.05
+		diplomats = 1
+	}
+	
+	ai = {
+		factor = 1
+	}
+}
+
 examination_system_reform = {
 	icon = "asian_scripture"
 	allow_normal_conversion = yes
@@ -751,6 +906,7 @@ examination_system_reform = {
 			primary_culture = vietnamese
 			primary_culture = vietnamese_new
 			culture_group = xizho_group
+			culture_group = east_asian
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -802,8 +958,6 @@ tsardom = {
 			culture_group = east_slavic
 			culture_group = slavic
 		}
-		NOT = { primary_culture = ruthenian }
-		NOT = { primary_culture = byelorussian }
 	}
 
 	modifiers = {
@@ -976,10 +1130,6 @@ ottoman_government = {
 		governing_capacity = 150
 	}
 
-	custom_attributes = {
-		locked_government_type = yes
-	}
-
 	conditional = {
 		allow = { has_dlc = "Domination" }
 		has_pashas = yes
@@ -1012,11 +1162,15 @@ ottoman_government = {
 			has_harem_events = yes
 		}
 	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
 }
 
 mamluk_government = {
 	icon = "mamluk_government"
 	allow_normal_conversion = yes
+	can_change_primary_culture = no
 	potential = {
 		religion_group = muslim
 		OR = {
@@ -1096,9 +1250,8 @@ prussian_monarchy = {
 			tag = PRU
 			tag = GER
 			dynasty = "von Hohenzollern"
-			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_monarchy
-			}
+			has_reform = prussian_monarchy
+			have_had_reform = prussian_monarchy
 		}
 	}
 	legacy_equivalent = prussian_monarchy_legacy
@@ -1199,14 +1352,13 @@ prussian_republic_reform = {
 					have_had_reform = prussian_theocratic_reform
 				}
 			}
-			has_unlocked_government_reform_tooltip = {
+			has_unlocked_government_reform = {
 				government_reform = prussian_republic_reform
 			}
 		}
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 100
-	legacy_equivalent = prussian_republic
 	
 	modifiers = {
 		war_exhaustion = -0.02
@@ -1271,7 +1423,6 @@ principality = {
 		}
 	}
 	fixed_rank = 1
-	legacy_equivalent = principality_legacy
 	valid_for_nation_designer = yes
 	nation_designer_cost = 5
 	nation_designer_trigger = {
@@ -1355,11 +1506,6 @@ veche_republic = {
 	boost_income = yes
 	fixed_rank = 1
 
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
-		elections_increase_factions_influence = yes
-	}
 	conditional = {
 		allow = {
 			has_dlc = "Res Publica"
@@ -1413,7 +1559,15 @@ veche_republic = {
 		}
 		custom_attributes = {
 			weaker_russian_ability = yes
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+			elections_increase_factions_influence = yes
 		}
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		elections_increase_factions_influence = yes
 	}
 	duration = 6
 }
@@ -1443,11 +1597,6 @@ federal_republic = {
 		max_absolutism = 10
 	}
 
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
-		disables_estate_nobles = yes
-	}
 	conditional = {
 		allow = {
 			OR = {
@@ -1458,13 +1607,23 @@ federal_republic = {
 		has_parliament = yes
 		custom_attributes = {
 			blocked_call_diet = yes
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+			disables_estate_nobles = yes
 		}
+	}
+	
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		disables_estate_nobles = yes
 	}
 	duration = 4
 }
 mughal_government = {
 	icon = "peacock_throne"
 	allow_normal_conversion = yes
+	can_change_primary_culture = no
 	potential = {
 		AND = {
 			tag = MUG
@@ -1696,7 +1855,11 @@ monastic_order_reform = {
 	}
 	modifiers = {
 		fort_maintenance_modifier = -0.25
-		army_tradition = 0.25
+		army_tradition = 0.5
+		relation_with_heathens = -10
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -25
+		reverse_relation_with_heretic_religion = -25
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -1720,8 +1883,13 @@ papacy_reform = {
 
 	modifiers = {
 		prestige_per_development_from_conversion = 0.33
-		tolerance_own = 1
+		tolerance_own = 2
 		church_influence_modifier = 0.2
+		church_loyalty_modifier = 0.2
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -15
+		relation_with_heretics = -50
+		reverse_relation_with_heretic_religion = -50
 	}
 	valid_for_nation_designer = no
 	icon = "papacy"
@@ -1758,6 +1926,7 @@ antioch_hellenic_crusade_reform = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	force_conversion_gives_global_holy_war_released_modifier = yes
+	can_change_primary_culture = no
 	potential = {
 		OR = {
 			tag = Z17
@@ -1771,23 +1940,25 @@ antioch_hellenic_crusade_reform = {
 		custom_tooltip = unlocks_celestial_crusade_tt
 	}
 	modifiers = {
-		enforce_religion_cost = -0.75
+		enforce_religion_cost = -0.45
 		prestige_per_development_from_conversion = 0.33
 		tolerance_own = 1
 		num_accepted_cultures = 2
 		relation_with_same_religion = 10
 		reverse_relation_with_same_religion = 10
 		relation_with_heretics = -70
+		reverse_relation_with_heretic_religion = -50
 		relation_with_heathens = -35
+		reverse_relation_with_heathen_religion = -15
 		accept_vassalization_reasons = -75
 	}
-	maintain_dynasty = yes
 	rulers_can_be_generals = no
-	#heirs_can_be_generals = no
+	heirs_can_be_generals = yes
 	
 	custom_attributes = {
 		gain_monarch_power_from_force_converting = yes
 		same_religion_subject_bonus = yes
+		enables_aristocratic_idea_group = yes
 	}
 	
 	government_abilities = {
@@ -1810,18 +1981,18 @@ byzantine_monarchy_reform = {
 	}
 
 	modifiers = {
-		unjustified_demands = -0.25
-		legitimacy = 0.5
-		max_absolutism = 5
+		max_absolutism = 10
 		governing_capacity = 150
+		monthly_splendor = 2
+		prestige = 0.5
+		advisor_pool = 1
 		relation_with_same_culture = -200
 		relation_with_same_culture_group = -200
-		monthly_heir_claim_increase = -0.15
+		monthly_heir_claim_increase = -0.3
+		block_introduce_heir = yes	
 	}
 	
-	custom_attributes = {
-		#civil_war_on_every_new_ruler = yes
-	}
+	
 	valid_for_nation_designer = yes
 	icon = holy_roman_emperor
 	allow_normal_conversion = yes
@@ -1842,6 +2013,10 @@ byzantine_monarchy_reform = {
 		custom_attributes = {
 			enables_pronoias = yes 
 		}
+	}
+	custom_attributes = {
+		#civil_war_on_every_new_ruler = yes
+		locked_government_type = yes
 	}
 }
 
@@ -1867,20 +2042,16 @@ palaiologid_government = {
 	legacy_equivalent = ottoman_government_legacy
 	maintain_dynasty = yes
 	modifiers = {
-		unjustified_demands = -0.1
-		legitimacy = 1
 		max_absolutism = 10
 		governing_capacity = 150
 		tolerance_heathen = 2
 		monarch_military_power = 3
+		land_forcelimit = 5
 		nobles_loyalty_modifier = 0.1
 		relation_with_same_culture = -200
 		relation_with_same_culture_group = -200
 	}
 
-	custom_attributes = {
-		locked_government_type = yes
-	}
 	conditional = {
 		allow = { has_dlc = "Domination" }
 		has_pashas = yes
@@ -1913,6 +2084,119 @@ palaiologid_government = {
 			has_harem_events = yes
 		}
 	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	ai = {
+		factor = 1000
+	}
+}
+
+empire_of_trebizond = {
+	icon = "pronoiar_monarchy_reform"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		government = monarchy
+		religion_group = christian
+		tag = TRE
+	}
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = no
+	fixed_rank = 3
+
+	modifiers = {
+		defensiveness = 0.25
+		tolerance_heathen = 1
+		tolerance_heretic = 1
+		reverse_relation_with_heathen_religion = 20
+		relation_with_heathens = 20
+		reverse_relation_with_heretic_religion = 40
+		relation_with_heretics = 40
+		technology_cost = -0.05
+	}
+
+	conditional = {
+		allow = {
+			AND { 
+				has_dlc = "Winds of Change"
+				has_dlc = "King of Kings"
+			}
+		}
+		custom_attributes = {
+			can_royal_marry_heathens = yes
+			enables_pronoias = yes 
+		}
+	}
+	conditional = {
+		allow = { 
+			has_dlc = "King of Kings" 
+			NOT = { has_dlc = "Winds of Change" }
+		}
+		custom_attributes = {
+			enables_pronoias = yes 
+		}
+	}
+	conditional = {
+		allow = { 
+			NOT = { has_dlc = "King of Kings"  }
+			has_dlc = "Winds of Change"
+		}
+		custom_attributes = {
+			can_royal_marry_heathens = yes
+		}
+	}
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+
+gothic_monarchy_reform = {
+	icon = gothic_monarchy_reform
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	potential = {
+		OR = {
+			has_reform = gothic_monarchy_reform
+			have_had_reform = gothic_monarchy_reform
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = gothic_monarchy_reform
+			have_had_reform = gothic_monarchy_reform
+		}
+	} 
+	nation_designer_trigger = {
+		OR = {
+			primary_culture = goths
+			primary_culture = gothic_ger 
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+
+	modifiers = {
+		merc_maintenance_modifier = -0.15
+		mercenary_manpower = 0.25
+		manpower_in_own_culture_provinces = 0.15
+		development_cost_in_primary_culture = -0.1
+	}
+	
+	conditional = {
+		allow = { 
+			has_dlc = "King of Kings"
+		}
+		custom_attributes = {
+			enables_pronoias = yes
+		}
+	}
+	custom_attributes = {
+		enables_recruit_foreign_generals = yes
+		locked_government_type = yes
+	}
+
 	ai = {
 		factor = 1000
 	}
@@ -1937,7 +2221,8 @@ byzantine_warlord = {
 	
 	modifiers = {
 		manpower_recovery_speed = 0.25
-		nobles_loyalty_modifier = 0.1
+		land_forcelimit = 5
+		defensiveness = 0.15
 		relation_with_same_culture = -200
 		relation_with_same_culture_group = -200
 	}
@@ -1953,7 +2238,7 @@ byzantine_warlord = {
 		locked_government_type = yes
 	}
 	ai = {
-		factor = 3
+		factor = 50
 	}
 }
 
@@ -1982,6 +2267,8 @@ harmonic_confluence = {
 		burghers_loyalty_modifier = 0.1
 		cavalry_cost = -0.2
 		cavalry_power = 0.15
+		relation_with_heretics = -10
+		reverse_relation_with_heretic_religion = -10
 	}
 	ai = {
 		factor = 75 #unique
@@ -1990,16 +2277,20 @@ harmonic_confluence = {
 
 celestial_xizho_empire = {
 	icon = "celestial_empire"
-	allow_normal_conversion = no
+	allow_convert = no
 	potential = {
 		tag = Z17
 	}
 	legacy_equivalent = celestial_empire_legacy
+	is_eligible_for_hre_emperor = yes
 	maintain_dynasty = yes
+	queen = yes
+	royal_marriage = no
 	allow_force_tributary = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 100
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	nation_designer_trigger = {
 		culture = xizho
 		religion = hellenic_pagan_reformed
@@ -2185,6 +2476,7 @@ auroral_horde = {
 		tag = AOL
 	}
 	nomad = yes
+	monastic = yes
 	raze_province = yes
 	modifiers = {
 		cavalry_cost = -0.1
@@ -2199,10 +2491,17 @@ auroral_horde = {
 		global_manpower_modifier = 0.2
 		land_forcelimit_modifier = 0.2
 		loot_amount = 1
+		relation_with_heathens = -100
+		reverse_relation_with_heathen_religion = -100
+		relation_with_heretics = -20
+		reverse_relation_with_heretic_religion = -20
 	}
 	custom_attributes = {
 		enables_horde_idea_group = yes
 		enables_aristocratic_idea_group = no
+		pp_on_heathen_wars = yes
+		monastic_order = yes
+		locked_government_type = yes
 	}
 	ai = {
 		factor = 1000
@@ -2212,6 +2511,7 @@ auroral_horde = {
 peasants_republic = {
 	allow_normal_conversion = yes
 	icon = "peasant_republic"
+	lock_level_when_selected = yes
 	potential = {
 		OR = {
 			has_country_flag = ikko_ikki_peasants_flag
@@ -2229,7 +2529,9 @@ peasants_republic = {
 		land_morale = 0.10
 		trade_efficiency = -0.25
 		diplomatic_reputation = -2
-		max_absolutism = -10
+		max_absolutism = -50
+		peasants_influence_modifier = 0.15
+		peasants_loyalty_modifier = 0.2
 	}
 	effect = {
 		hidden_effect = {
@@ -2250,6 +2552,9 @@ peasants_republic = {
 	custom_attributes = {
 		enables_plutocratic_idea_group = no
 		enables_aristocratic_idea_group = no
+		disables_estate_nobles = yes
+		enables_estate_peasants = yes
+		locked_government_type = yes
 	}
 	duration = 4
 }

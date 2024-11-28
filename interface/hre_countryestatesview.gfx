@@ -1,0 +1,6 @@
+spriteTypes = {						
+	spriteType = {
+		name = "privilege_hlr_advocating"
+		texturefile = "gfx/interface/privileges/privilege_hlr_advocating.dds"
+	}
+}

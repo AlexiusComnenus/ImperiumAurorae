@@ -1,5 +1,5 @@
-owner = RUM
-controller = RUM
+owner = ERE
+controller = ERE
 capital = "Samsun"
 is_city = yes
 culture = pontic_greek
@@ -9,6 +9,7 @@ base_tax = 4
 base_production = 6
 base_manpower = 1
 add_core = RUM
+add_core = ERE
 add_core = TRE
 add_permanent_claim = BYZ
 discovered_by = MGE

@@ -1,0 +1,57 @@
+complacency_loss_losing_war = {
+	potential = { 
+		has_government_mechanic = ia_complacency_mechanic
+	}
+	trigger = {
+		OR = {
+			is_in_war = {
+				defender_leader = ROOT
+			}
+			is_in_war = {
+				attacker_leader = ROOT
+			}
+		}
+		NOT = { war_score = -25 }
+	}
+	monthly_ia_complacency = -2
+}
+
+complacency_loss_foreigners_in_south_china = {
+	potential = { 
+		has_government_mechanic = ia_complacency_mechanic
+	}
+	trigger = {
+		south_china_region = {
+			owner = {
+				NOT = { technology_group = ROOT }
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+	}
+	monthly_ia_complacency = -0.5
+}
+
+complacency_loss_foreigners_in_north_china = {
+	potential = { 
+		has_government_mechanic = ia_complacency_mechanic
+	}
+	trigger = {
+		north_china_region = {
+			owner = {
+				NOT = { technology_group = ROOT }
+				NOT = { is_subject_of = ROOT }
+			}
+		}
+	}
+	monthly_ia_complacency = -0.5
+}
+
+complacency_loss_good_general = {
+	potential = { 
+		has_government_mechanic = ia_complacency_mechanic
+	}
+	trigger = {
+		has_commanding_three_star = yes
+	}
+	monthly_ia_complacency = -0.1
+}

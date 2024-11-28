@@ -4,10 +4,11 @@ war_of_the_roses = {
 			NOT = { current_age = age_of_discovery }
 			mission_completed = sax_control_germany
 		}
-		normal_or_historical_nations = yes
+		#normal_or_historical_nations = yes
 		government = monarchy
 		has_reform = saxon_feudalism
 		NOT = { has_country_flag = had_saxon_crisis  }
+		#NOT = { has_country_modifier = aen_cost_of_the_crown }
 		#num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 		#	value = 50
 		#	culture_group = germanic
@@ -18,17 +19,21 @@ war_of_the_roses = {
 
 	can_start = {
 		OR = {
-			current_age = age_of_reformation
+			NOT = { current_age = age_of_discovery }
 			mission_completed = sax_control_germany
 		}
-		has_any_disaster = no
+		#has_any_disaster = no
 		has_reform = saxon_feudalism
+		NOT = { has_country_modifier = aen_cost_of_the_crown }
+		NOT = { has_country_modifier = aen_konig }
 	}
 	
 	can_stop = { 
 		OR = {
-			has_any_disaster = yes
+			#has_any_disaster = yes
 			NOT = { has_reform = saxon_feudalism }
+			has_country_modifier = aen_cost_of_the_crown
+			has_country_modifier = aen_konig
 		}
 	}
 	
@@ -113,6 +118,7 @@ war_of_the_roses = {
 			saxon_crisis.16
 			saxon_crisis.17
 			saxon_crisis.19
+			ia_flavor_aen.3
 		}
 		random_events = { 
 			900 = 0

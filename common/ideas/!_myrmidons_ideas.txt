@@ -25,7 +25,7 @@ myrmidons_ideas = {
 		idea_cost = -0.2
 	}
 	ZZZ_mare_nostrum = {
-		galley_power = 0.2
+		heavy_ship_power = 0.2
 	}
 	ZZZ_myrmidon_taxes = {
 		global_tax_modifier = 0.15

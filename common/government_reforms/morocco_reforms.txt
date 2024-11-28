@@ -41,6 +41,7 @@ almohad_commune_reform = {
 		enables_plutocratic_idea_group = no
 		enables_aristocratic_idea_group = no
 		locked_government_type = yes
+		enables_estate_peasants = yes
 		disables_estate_dhimmi = yes
 		disables_estate_church = yes
 		disables_estate_brahmins = yes

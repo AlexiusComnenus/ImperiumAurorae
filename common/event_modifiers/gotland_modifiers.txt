@@ -32,9 +32,68 @@ autonomous_saxon_communities = {
 	local_autonomy = 0.10
 	local_development_cost = -0.1
 	local_production_efficiency = 0.25
+	local_manpower_modifier = 0.25
 }
 
 sax_got_looting_tactics = {
 	loot_amount = 0.50
 	available_province_loot = 0.25
+}
+
+got_saxon_mercs = {
+	merc_leader_army_tradition = 0.5
+	mercenary_manpower = 0.25
+}
+
+got_elite_marines = {
+	is_marine_modifier = yes
+	shock_damage_received = -0.10
+	fire_damage = 0.15
+}
+
+got_pirate_king_followers = {
+	is_marine_modifier = yes
+	land_morale = 0.10
+	infantry_shock = 0.5
+}
+
+got_longship_fleet = {
+	has_galleass = yes
+	allowed_galleass_fraction = 0.25
+	amount_of_galleass = 10
+}
+
+got_longship_transports = {
+	can_transport_units = yes
+	is_galleass_modifier = yes
+}
+
+got_irish_cooperation = {
+	local_production_efficiency = 0.2
+	local_sailors_modifier = 0.5
+	local_development_cost_modifier = -0.10
+	local_governing_cost = -0.25
+	local_culture_conversion_cost = 1
+	local_autonomy = 0.05
+	min_local_autonomy = 10
+}
+
+got_aland_defences = {
+	local_defensiveness = 0.15
+	local_defender_dice_roll_bonus = 1
+	local_friendly_movement_speed = 0.25
+	local_hostile_movement_speed = -0.25
+	hostile_fleet_attrition = 1
+	hostile_disembark_speed = 0.5
+	blockade_force_required = 0.5
+}
+
+got_swedish_landfall = {
+	land_morale = 0.10
+	siege_ability = 0.25
+}
+
+got_looking_beyond = {
+	may_explore = yes
+	range = 1
 }

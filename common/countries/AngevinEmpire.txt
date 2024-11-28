@@ -39,84 +39,36 @@ historical_units = {
 }
 
 monarch_names = {
-	"George #0" = 60
-	"Anne #0" = -15
-	"Frederick #0" = 15
-	"Edward #5" = 10
-	"William #3" = 10
-	"William #3 Henry" = 10
+	"Æthelred #2" = 20
+	"Æthelflæd #1" = -20
+	"Bertha #0" = -1
+	"Æthelstan #1" = 20
+	"Æthelwulf #2" = 20
+	"Æthelbert #1" = 20
+	"Enric #1" = 10
+	"Gwydr #1" = 10
+	"Harold #1" = 10
+	"Hildeburg #0" = -1
+	"Karlmann #0" = 0
 	"Alfred #1" = 10
-	"Adolphus #0" = 10
-	"Augustus #0" = 10
-	"Ernest #0 Augustus" = 10
-	"Frederick #0 Augustus" = 10
-	"Frederick #0 William" = 10
-	"George #0 William" = 10
-	"Maximilian #0" = 10
-	"Octavius #0" = 10
-	"Henry #8" = 5
-	"Richard #3" = 5
-	"Charles #2" = 5
-	"James #2" = 5
-	"Adam #0" = 0
-	"Alexander #0" = 0
-	"Ambrose #0" = 0
-	"Andrew #0" = 0
-	"Anthony #0" = 0
-	"Archibald #0" = 0
-	"Arthur #0" = 0
-	"Benjamin #0" = 0
-	"Christian #0" = 0
-	"Christopher #0" = 0
-	"Daniel #0" = 0
-	"David #0" = 0
-	"Edgar #0" = 0
-	"Francis #0" = 0
-	"Geoffrey #0" = 0
-	"Guy #0" = 0
-	"Horatio #0" = 0
-	"Hugh #0" = 0
-	"Isaac #0" = 0
-	"Jacob #0" = 0
-	"Jeremy #0" = 0
-	"Jonathan #0" = 0
-	"John #0" = 0
-	"Joseph #0" = 0
-	"Lawrence #0" = 0
-	"Matthew #0" = 0
-	"Nehemiah #0" = 0
-	"Oliver #0" = 0
-	"Samuel #0" = 0
-	"Sydney #0" = 0
-	"Thomas #0" = 0
-	"Winston #0" = 0
-	"Jane #0" = -1
-	"Margaret #0" = -5
-	"Victoria #0" = -1
-	"Mary #0" = -5
-	"Elisabeth #0" = -5
+	"Mary #0" = -1
+	"Matilda #1" = -1
+	"Romilda #0" = -1
+	"Sebbi #1" = 10
+	"Sigeberht #2" = 10
+	"Sigered #1" = 10
+	"Sigeric #1" = 10
+	"Sledda #1" = 10
+	"Swithhelm #1" = 10
+	"Swithred #1" = 10
+	"Swæfred #1" = 10
+	"Sybille #0" = -1
+	"Sæberht #1" = 10
+	"Sælred #1" = 10
+	"Sæward #1" = 10
+	"Æscwine #1" = 10
 }
 
-leader_names = {
-	Albemarle Amherst Anson
-	Buckingham Braddock Byron Burgoyne Beresford Brock Benbow Blake Bedford Boscawen Baffin Button
-	Clarence "de Clifford" Cromwell Cumberland Clinton Cornwallis Clive Cabot Carleton Cavendish Cook Churchill
-	Dampier Davis Drake
-	Essex
-	Fairfax Frobisher
-	Gloucester Gilbert
-	Howe Howard Herbert Hawke Hood Hastings Hudson
-	Leicester
-	Middleton Moore
-	Northumberland Norfolk
-	Procter
-	Rooke Rodney Raleigh
-	Salisbury Somerset Suffolk Saunders Smith
-	Talbot Tarleton
-	Uxbridge
-	Warwick Wolfe
-	York
-}
 
 ship_names = {
 	Abyssinia Achilles Adamant Advantage Adventure Advice Africa Agamemnon Agase Agincourt Aid Ajax Albemarle Albion Alcide Aldborough Alexander

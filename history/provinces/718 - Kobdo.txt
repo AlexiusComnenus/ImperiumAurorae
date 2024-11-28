@@ -1,5 +1,5 @@
-owner = Z03
-controller = Z03
+owner = Z04
+controller = Z04
 capital = "Kobdo"
 is_city = yes
 culture = oirats
@@ -8,7 +8,7 @@ trade_goods = cloth
 base_tax = 1
 base_production = 1
 base_manpower = 1
-add_core = Z03
+add_core = Z04
 add_core = ZUN
 discovered_by = MGE
 discovered_by = eastern

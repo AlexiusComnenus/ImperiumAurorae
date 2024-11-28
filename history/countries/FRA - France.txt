@@ -55,4 +55,5 @@ capital = 183
 	add_historical_friend = WLS
 	add_historical_rival = SAX
 	add_historical_rival = Z21
+	add_historical_rival = VAL
 }

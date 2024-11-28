@@ -966,6 +966,7 @@ country_event = {  # Counterfeit Silk
 		ai_chance = { factor = 80 }
 		
 		203 = {
+			change_trade_goods = auroral_silk
 			add_permanent_province_modifier = {
 				name = soi_counterfeiting_silk
 				duration = -1
@@ -979,7 +980,7 @@ country_event = {  # Counterfeit Silk
 		
 		add_years_of_income = 2
 		change_price = {
-			trade_goods = silk
+			trade_goods = auroral_silk
 			key = soi_flooded_market
 			value = -0.5
 			duration = 7300
@@ -1014,6 +1015,303 @@ country_event = {  # New heir
 			change_dip = 1
 			change_mil = 3
 			claim = 100
+		}
+	}
+}
+
+country_event = {  # Aegidius/Majorian retires
+	id = ia_flavor_bri.27
+	title = ia_flavor_bri.27.t
+	desc = ia_flavor_bri.27.d
+	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
+	major = yes
+    
+	trigger = {
+		has_ruler_flag = aegidius_flag
+	}
+	
+	is_triggered_only = yes
+	
+	option = {	# He had a long life
+		name = ia_flavor_bri.27.a
+		ai_chance = { factor = 80 }
+		
+		hidden_effect = {
+			exile_ruler_as = { name = aegidius_the_great }
+			add_stability = 1
+			country_event = {
+				id = ia_flavor_bri.28
+				days = 1
+			}
+		}
+		custom_tooltip = aegidius_successor_tt
+	}
+}
+
+country_event = {
+	id = ia_flavor_bri.28
+	title = ia_flavor_bri.28.t
+	desc = ia_flavor_bri.28.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+	}
+	after = {
+		clr_country_flag = had_election_event
+	}
+
+	#Keep the current ruler
+	option = {
+		name = ia_flavor_bri.28.a
+		trigger = {
+			has_regency = no
+		}
+		add_legitimacy = 5
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { adm = 3 }
+				NOT = { dip = 3 }
+				NOT = { mil = 3 }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						NOT = { adm = 4 }
+						NOT = { dip = 2 }
+						NOT = { mil = 2 }
+					}
+					AND = {
+						NOT = { adm = 2 }
+						NOT = { dip = 4 }
+						NOT = { mil = 2 }
+					}
+					AND = {
+						NOT = { adm = 2 }
+						NOT = { dip = 2 }
+						NOT = { mil = 4 }
+					}
+				}
+			}
+		}
+	}
+
+	#The heir shall rule us!
+	option = {
+		name = ia_flavor_bri.28.aa
+		trigger = {
+			has_regency = yes
+			has_heir = yes
+		}
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+			add_heir_claim = 10
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { heir_adm = 3 }
+				NOT = { heir_dip = 3 }
+				NOT = { heir_mil = 3 }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					AND = {
+						NOT = { heir_adm = 4 }
+						NOT = { heir_dip = 2 }
+						NOT = { heir_mil = 2 }
+					}
+					AND = {
+						NOT = { heir_adm = 2 }
+						NOT = { heir_dip = 4 }
+						NOT = { heir_mil = 2 }
+					}
+					AND = {
+						NOT = { heir_adm = 2 }
+						NOT = { heir_dip = 2 }
+						NOT = { heir_mil = 4 }
+					}
+				}
+			}
+		}
+	}
+
+	# Influential Statesman
+	option = {
+		name = ia_flavor_bri.28.c
+		trigger = {
+			OR = {
+				has_estate = estate_nobles
+				has_estate = estate_maratha
+				has_estate = estate_rajput
+				AND = {
+					has_regency = yes
+					has_heir = no
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+			define_ruler = {
+				claim = 75
+			}
+			if = {
+				limit = { has_estate = estate_nobles }
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 20
+				}
+			}
+			else_if = {
+				limit = { has_estate = estate_maratha }
+				add_estate_loyalty = {
+					estate = estate_maratha
+					loyalty = 20
+				}
+			}
+			else_if = {
+				limit = { has_estate = estate_rajput }
+				add_estate_loyalty = {
+					estate = estate_rajput
+					loyalty = 20
+				}
+			}
+			kill_heir = { allow_new_heir = no }
+			set_ruler_flag = has_elected_ruler
+		}
+
+		
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	# Talented General
+	option = {
+		name = ia_flavor_bri.28.d
+		trigger = {
+			num_of_generals = 1
+		}
+
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+			define_leader_to_ruler = {
+				type = general
+				adm = 4
+				dip = 2
+				mil = 6
+				fixed = yes
+				claim = 80
+			}
+			add_army_tradition = 10
+			kill_heir = { allow_new_heir = no }
+		}	
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	#Somebody from the Navy
+	option = {
+		name = ia_flavor_bri.28.e
+		trigger = {
+			num_of_admirals_with_traits = 1
+		}
+
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+
+			define_leader_to_ruler = {
+				type = admiral
+				adm = 3
+				dip = 6
+				mil = 4
+				fixed = yes
+				claim = 80
+			}
+			add_navy_tradition = 10
+			kill_heir = { allow_new_heir = no }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	#An influential Burgher
+	option = {
+		name = ia_flavor_bri.28.f
+		trigger = {
+			OR = {
+				has_estate = estate_burghers
+				has_estate = estate_vaisyas
+			}
+			OR = {
+				estate_influence = {
+					influence = 80
+					estate = estate_burghers
+				}
+				estate_influence = {
+					influence = 80
+					estate = estate_vaisyas
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+			define_ruler = {
+				change_adm = 2
+				claim = 75
+			}
+			add_years_of_income = 0.1
+			kill_heir = { allow_new_heir = no }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+
+	#A distant relation
+	option = {
+		name = ia_flavor_bri.28.g
+		if = {
+			limit = {
+				NOT = { is_subject_of_type = personal_union }
+				NOT = { is_subject_of_type = integrated_personal_union }
+			}
+			define_ruler = {
+				dynasty = ROOT
+				change_adm = 1
+				change_dip = 1
+				change_mil = 1
+				claim = 100
+			}
+			add_prestige = 10
+			kill_heir = { allow_new_heir = no }
+		}
+		ai_chance = {
+			factor = 2
 		}
 	}
 }

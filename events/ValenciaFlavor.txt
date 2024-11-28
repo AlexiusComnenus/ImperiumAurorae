@@ -222,7 +222,15 @@ country_event = {  # Chasten the Franks
 			add_base_production = -5
 			add_base_tax = -5
 			add_devastation = 100
-			
+			destroy_great_project = {
+				type = tuileries_garden
+			}
+			destroy_great_project = {
+				type = versailles
+			}
+			destroy_great_project = {
+				type = tuileries_garden
+			}
 		}
 		add_treasury = 1500
 	}
@@ -385,6 +393,12 @@ country_event = {  # Create visigoth communities + startup stuff
 		persian_gulf_area = { discover_country = KRM }
 		red_sea_area = { discover_country = KRM }
 		arabian_sea_area = { discover_country = KRM }
+		every_country = {
+			limit = { NOT = { tag = JOM } }
+			greenland_area = {
+				undiscover_country = PREV
+			}
+		}
 		
 		every_core_province = {
 			add_permanent_province_modifier = {
@@ -427,6 +441,11 @@ country_event = {  # Create visigoth communities + startup stuff
 				who = VAL
 				locked = yes
 			}
+			set_country_flag = can_always_invite_righteous_illumination_school
+		}
+		GEN = {
+			set_country_flag = can_always_invite_golden_path_school
+			set_country_flag = daohellenic_doctrines_picking_blocked
 		}
 		TRE = { 
 			set_ai_personality = {
@@ -452,6 +471,30 @@ country_event = {  # Create visigoth communities + startup stuff
 				locked = yes
 			}
 		} 
+		random_country = {
+			limit = {
+				has_reform = chinese_warlord
+				NOT = { has_country_flag = lucky_chinese_warlord }
+				NOT = { is_subject = yes }
+			}
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+			set_country_flag = lucky_chinese_warlord
+		}
+		random_country = {
+			limit = {
+				has_reform = chinese_warlord
+				NOT = { has_country_flag = lucky_chinese_warlord }
+				NOT = { is_subject = yes }
+			}
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = yes
+			}
+			set_country_flag = lucky_chinese_warlord
+		}
 		set_ai_personality = {
 			personality = ai_militarist
 			locked = yes
@@ -517,6 +560,14 @@ country_event = {  # Create visigoth communities + startup stuff
 			}
 			TRE = { create_alliance = FEO }
 		}
+		Y00 = { create_alliance = FIN }
+		NOV = {
+			declare_war_with_cb = {
+				who = Y00
+				casus_belli = cb_core
+				war_goal_province = 33
+			}
+		}
 		POL = {
 			complete_mission = pol_varna_aftermath
 		}
@@ -579,6 +630,7 @@ country_event = {  # Visigoth uprisings
 	trigger = {
 		tag = VAL
 		any_core_province = { NOT = { owned_by = ROOT } }
+		NOT = { is_year = 1490 }
 	}
 	
 	mean_time_to_happen = {

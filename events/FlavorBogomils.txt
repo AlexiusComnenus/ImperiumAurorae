@@ -128,6 +128,8 @@ country_event = {
 		inherit = HRZ
 		grant_independence = yes
 		
+		change_government = republic
+		add_government_reform = peasants_republic
 		hidden_effect = { every_owned_province = { change_religion = bogomilist } }
 		
 		PAP = {

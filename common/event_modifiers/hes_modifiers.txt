@@ -515,3 +515,12 @@ fkn_swabian_bonus = {
 	development_cost_modifier = -0.10
 	global_prosperity_growth = 0.1
 }
+
+fkn_adept_diplomacy = {
+	improve_relation_modifier = 0.33
+	diplomatic_reputation = 1
+}
+
+fkn_siezed_breweries = {
+	global_unrest = 1
+}

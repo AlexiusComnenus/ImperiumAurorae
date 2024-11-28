@@ -2,6 +2,8 @@ REB = "countries/Rebels.txt"
 LAE	= "countries/Latin Empire.txt"
 AVE = "countries/AngevinEmpire.txt"
 EIC	= "countries/EastIndiaCompany.txt"
+GMA = "countries/Greatmoravia.txt"
+AUH = "countries/Austriahungary.txt"
 
 AAC = "countries/Aachen.txt"
 ABB = "countries/Dongola.txt"

@@ -24,4 +24,8 @@ add_accepted_culture = kyrenaikan
 1444.11.11= {
 	add_prestige = 30
 	add_treasury = 69
+	set_religious_school = {
+		group = christian
+		school = harmonic_cultivation_school
+	}
 }

@@ -81,14 +81,6 @@ union=
 
 union=
 {
-	first="PLT"
-	second="SMO"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
-
-union=
-{
 	first="HAB"
 	second="STY"
 	start_date="1444.11.11"
@@ -107,22 +99,6 @@ union=
 {
 	first="BAD"
 	second="Z61"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
-
-union=
-{
-	first="Z94"
-	second="NOV"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
-
-union=
-{
-	first="Z94"
-	second="Y23"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }

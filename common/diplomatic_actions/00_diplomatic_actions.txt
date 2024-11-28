@@ -159,6 +159,7 @@ declarewar = {
 		tooltip = CANNOT_DECLARE_WARS_EMPEROR_TRUCE
 		potential = {
 			emperor = { truce_with = ROOT }
+			is_part_of_hre = no
 		}
 		allow = { 
 			FROM = { is_part_of_hre = no }
@@ -173,6 +174,20 @@ declarewar = {
 		}
 		allow = { 
 			FROM = { NOT = { culture_group = latin } }
+		}
+	}
+	condition = {
+		tooltip = antioch_must_unify_the_empire_first_tt
+		potential = {
+			is_emperor = yes
+			NOT = { has_global_flag = antioch_ai_hacks_1 }
+			NOT = { has_country_modifier = antioch_unified_house }
+		}
+		allow = { 
+			OR = { 
+				FROM = { is_part_of_hre = yes }
+				is_year = 1494
+			}
 		}
 	}
 	condition = {
@@ -262,6 +277,54 @@ allianceaction = {
 		}
 		allow = {
 			is_year = 1500
+		}
+	}
+	condition = {
+		tooltip = no_ally_saxony_tt
+		potential = {
+			tag = SAX
+			has_reform = saxon_feudalism
+		}
+		allow = {
+			FROM = { 
+				OR = {
+					culture_group = germanic
+					tag = SCA
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = no_ally_saxony_tt
+		potential = {
+			FROM = { 
+				tag = SAX 
+				has_reform = saxon_feudalism
+			}
+		}
+		allow = {
+			OR = {
+				culture_group = germanic
+				tag = SCA
+			}
+		}
+	}
+	condition = {
+		tooltip = no_ally_chinese_warlords_tt
+		potential = {
+			has_reform = chinese_warlord
+		}
+		allow = {
+			NOT = { has_reform = chinese_warlord }
+		}
+	}
+	condition = {
+		tooltip = no_ally_chinese_warlords_tt
+		potential = {
+			FROM = { has_reform = chinese_warlord }
+		}
+		allow = {
+			FROM = { NOT = { has_reform = chinese_warlord } }
 		}
 	}
 	condition = {
@@ -424,6 +487,19 @@ royal_marriage = {
 	}
 	effect = {
 		change_asha_vahishta = { value = 0.5 }
+	}
+}
+
+callaction = {
+	condition = {
+		tooltip = not_subject_of_enemy_tt
+		potential = {
+			FROM = { is_subject = yes OR = { is_subject_of_type = ia_advanced_tributary_state  is_subject_of_type = tributary_state 	is_subject_of_type = trade_protectorate } }
+			NOT = { FROM = { overlord = { any_subject_country = { tag = ROOT } } } }
+		}
+		allow = {
+			NOT = { FROM = { overlord = { war_with = ROOT } } }
+		}
 	}
 }
 

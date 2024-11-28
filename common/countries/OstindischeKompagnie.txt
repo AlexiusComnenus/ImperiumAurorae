@@ -1,0 +1,109 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 39 54 79 }
+
+revolutionary_colors = { 1  0  8 }
+
+preferred_religion = catholic
+
+historical_idea_groups = {
+	administrative_ideas
+	exploration_ideas
+	quality_ideas
+	maritime_ideas
+	economic_ideas
+	expansion_ideas
+	trade_ideas
+	naval_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	swedish_gallop
+	swedish_gustavian
+	swedish_caroline
+	swedish_arme_blanche
+	prussian_frederickian
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Wilhelm #0" = 20
+	"Ludwig #0" = 20
+	"Friedrich #0" = 20
+	"Hermann #0" = 20
+	"Karl #0" = 20
+	"Moritz #0" = 20
+	"Philipp #0" = 20
+	"Heinrich #0" = 20
+	"Otto #0" = 20
+	"Christian #0" = 20
+	"Georg #0" = 20
+	"Leopold #0" = 20
+	Philipp #0" = 20
+	"Adelmar #0" = 20
+	"Albrecht #0" = 20
+	"Egon #0" = 20
+	"Erich #0" = 20
+	"Gerhard #0" = 20
+	"Gottlieb #0" = 20
+	"Gregor #0" = 20
+	"Hagan #0" = 20
+	"Helmut #0" = 20
+	"Isaak #0" = 20
+	"Joachim #0" = 20
+	"Joseph #0" = 20
+	"Kreszens #0" = 20
+	"Lothar #0" = 20
+	"Oskar #0" = 20
+	"Siegfried #0" = 20
+	"Stefan #0" = 20
+	"Thomas #0" = 20
+	"Wenzel #0" = 20
+	"Werner #0" = 20
+	"Wolfram #0" = 20
+}
+
+leader_names = {
+	"von Habsburg" "von Waldstein" "von Ihering" Seyssel
+	Haemrich "von Esterhazy" "von Oberg" "von Schönburg"
+	"von Quadt" Ketterer "von Stubenrauch" "von Hatzfeldt"
+	"von Neippberg" Lobkowitz Mittelbach "von Laudon"
+	Alvintzky "von Hohenberg" Erlmayr "von Stark" Meinl
+	Bethmann Kolin Heinrich "von Riedesel" Freystadt
+	"von Guttenberg" Frantsits "von Stauffenberg"
+	"von Kapfenberg" Zakrzewsky Schrüder Sauerzapff
+	Minucci Sulerzycki Stichsenstein Hagedorn Arenberg
+	Boroewitsch Steiger Tegethoff Buseck Byszynski Zwerger
+	Casper "von Schönbrunn" Poll "von Schwarzenberg" Schrüder 
+	Sauerzapff Stichsenstein Hagedorn Arensberg Liebstein Tecklenburg 
+	Bratsberg Brauer Ganter Wiesenberg "von Hugenberg" "von Tiengen" 
+	"von Seeburg" "Freiherr von Mechterdingen" "von Ersing" Wallstadt 
+	Vorberg Hügen "von Sexau" "von Zähringen" 
+}
+
+ship_names = {
+	"ROK Reichsadler" "ROK Bremen" "ROK Kalen" "ROK Hamburg" "ROK Java" "ROK Borneo" "ROK Frankfurt" "ROK Verden" "ROK München" "ROK Doppeladler" 
+	"ROK Lechfeld" "ROK Lothringen" "ROK Sachsen" "ROK Brandenburg" "ROK Hessen" "ROK Nürnberg" "ROK Rothenburg" "ROK Regensburg" "ROK Kassel" 
+	"ROK Erfurt" "ROK Mainz" "ROK Köln" "ROK Malakka" "ROK Wildschwein" "ROK Fuchs" "ROK Dortmund" "ROK Amsel" "ROK Sperling" "ROK Reiher" 
+}
+
+army_names = {
+	"Erste Kompagniewache" "Zweite Kompagniewache" "Dritte Kompagniewache" "Vierte Kompagniewache" "Fünfte Kompagniewache" "Sechste Kompagniewache" "Siebte Kompagniewache" "Achte Kompagniewache" "Neunte Kompagniewache" "Zehnte Kompagniewache" "Elfte Kompagniewache" "Zwölfte Kompagniewache" "Dreizehnte Kompagniewache"
+}
+
+fleet_names = {
+	"Kompagnieflotte Sachsen" "Kompagnieflotte Brandenburg" "Kompagnieflotte Holstein" "Kompagnieflotte Flandern" "Kompagnieflotte Böhmen"
+	"Kompagnieflotte Schlesien" "Kompagnieflotte Österreich" "Kompagnieflotte Hessen" "Kompagnieflotte Rheinland" "Kompagnieflotte Lothringen" 
+	"Kompagnieflotte Baiern" "Kompagnieflotte Franken" "Kompagnieflotte Schwaben" "Kompagnieflotte Anhalt" "Kompagnieflotte Württemberg" 
+	"Kompagnieflotte Baden" "Kompagnieflotte Pommern" 
+}

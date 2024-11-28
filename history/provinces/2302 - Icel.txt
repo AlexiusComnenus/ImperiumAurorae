@@ -1,5 +1,5 @@
-owner = RUM
-controller = RUM
+owner = Z72
+controller = Z72
 capital = "Ermenek"
 is_city = yes
 culture = cilician
@@ -9,7 +9,6 @@ base_tax = 5
 base_production = 3
 base_manpower = 4
 add_core = Z72
-add_core = RUM
 add_permanent_claim = BYZ
 discovered_by = MGE
 discovered_by = eastern

@@ -1,0 +1,484 @@
+estate_alchemists_land_rights = {
+	icon = privilege_grant_autonomy
+	land_share = 5
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+		not = { has_estate_privilege = estate_ghulams_land_rights }
+		not = { has_estate_privilege = estate_qizilbash_land_rights }
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = mng_increased_land_rights_flag }
+		modifier = {
+			stability_cost_modifier = -0.05
+		}
+	}
+
+	benefits = {
+		governing_capacity = 50
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.05 }
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_alchemists_land_rights }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_alchemists_land_rights }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_alchemists_land_rights
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_alchemists_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_alchemists_land_rights }
+		}
+		modifier = {
+			factor = 0.8
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
+		modifier = {
+			factor = 1.25
+			tag = MOS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = RUS
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = TUR
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = MNG
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = FRA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = SPA
+			NOT = { adm_tech = 17 }
+		}
+		modifier = {
+			factor = 1.25
+			tag = PLC
+			NOT = { adm_tech = 17 }
+		}
+		#Has already a similar privilege active
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_brahmins_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nobles_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_church_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_maratha_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_burghers_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_vaisyas_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_cossacks_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_nomadic_tribes_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_dhimmi_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_jains_land_rights
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_rajput_land_rights
+		}
+	}
+}
+
+estate_alchemists_right_of_counsel = {
+	icon = privilege_royal_authority
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	penalties = {
+		global_tax_modifier = -0.10
+	}
+	benefits = {
+		global_prosperity_growth = 0.25
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.025 }
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
+		}
+	}
+}
+
+estate_alchemists_court_alchemist = {
+	icon = privilege_recruit_minister
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	influence = 0.05
+	loyalty = 0.05
+	penalties = {
+		administrative_efficiency = -0.05
+		all_estate_loyalty_equilibrium = -0.05
+	}
+	can_select = { 
+		NOT = { ruler_has_personality = immortal_personality }
+	}
+	benefits = {
+		monarch_lifespan = 0.25
+		heir_chance = 0.5
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.05 }
+	}
+	conditional_modifier = {
+		trigger = { is_emperor_of_china = yes }
+		modifier = { imperial_mandate = 0.05 }
+	}
+	on_granted  = {
+		custom_tooltip = can_start_immortality_project_tt
+		custom_tooltip = enables_decision_to_recruit_alchemist_tt
+	}
+	can_revoke = {
+		custom_trigger_tooltip = {
+			tooltip = not_in_immortality_project_tt
+			NOT = { has_ruler_flag = chinese_immortality_project_flag }
+		}
+	}
+	ai_will_do = {
+		factor = 9
+		modifier = {
+			factor = 0
+			NOT = { is_emperor_of_china = yes }
+		}
+		modifier = {
+			factor = 30
+			is_emperor_of_china = yes
+		}
+	}
+}
+
+estate_alchemists_elixirs_for_the_troops = {
+	icon = privilege_military_power
+	land_share = 5
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = -0.05
+	can_select = {
+	}
+	on_granted = {
+		custom_tooltip = alchemists_research_accidents_tt
+	}
+	penalties = {
+		#global_regiment_cost = 0.15
+	}
+	benefits = {
+		global_regiment_cost = 0.10
+	}
+	influence_scaled_conditional_modifier = {
+		trigger = { always = yes }
+		modifier = { 
+			discipline = -0.08
+			morale_damage = 0.12
+			reinforce_speed = 0.36
+			recover_army_morale_speed = 0.36
+			shock_damage = 0.12
+			shock_damage_received = -0.12
+		}
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_alchemists_elixirs_for_the_troops }
+		}
+	}
+}
+
+estate_alchemists_cutting_edge_research = {
+	icon = privilege_investigate_corruption
+	land_share = 0
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+	}
+	on_granted = {
+		custom_tooltip = alchemists_research_accidents_tt
+	}
+	penalties = {
+		global_unrest = 2
+		diplomatic_reputation = -2
+	}
+	benefits = {
+	}
+	modifier_by_land_ownership = {
+		global_trade_goods_size_modifier = 0.2
+		governing_cost = 0.2
+	}
+	ai_will_do = {
+		factor = 0
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 60
+				}
+			}
+		}
+	}
+}
+
+estate_alchemists_public_education = {
+	icon = privilege_technology
+	loyalty = 0.0
+	influence = 0.05
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	is_valid = {
+		has_dlc = "Domination"
+	}
+	can_select = {
+		if = {
+			limit = { has_estate = estate_brahmins }
+			NOT = { has_estate_privilege = estate_brahmins_clerical_education }
+		}
+		if = {
+			limit = { has_estate = estate_dhimmi }
+			NOT = { has_estate_privilege = estate_dhimmi_dhimmi_education }
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			NOT = { has_estate_privilege = estate_church_clerical_education }
+		}
+	}
+	benefits = {
+		core_creation = 0.1
+		state_maintenance_modifier = 0.25
+	}
+	on_granted = {
+		custom_tooltip = when_loyal_tt
+		custom_tooltip = scaling_with_estate_influence_tt
+		custom_tooltip = alchemists_public_education_loyal_tt
+		custom_tooltip = " "
+		custom_tooltip = when_neutral_tt
+		custom_tooltip = scaling_with_estate_influence_tt
+		custom_tooltip = alchemists_public_education_neutral_tt
+		custom_tooltip = " "
+		custom_tooltip = when_disloyal_tt
+		custom_tooltip = scaling_with_estate_influence_tt
+		custom_tooltip = alchemists_public_education_disloyal_tt
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			NOT = {
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = -0.25
+			stability_cost_modifier = 0.5
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_alchemists
+				loyalty = 30
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.1
+			idea_cost = -0.1
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_alchemists
+				loyalty = 60
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.25
+			culture_conversion_cost = -0.25
+			idea_cost = -0.15
+		}
+	}
+	mechanics = {
+		no_estate_crownland_loss_from_developing
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 50
+				}
+			}
+		}
+	}
+}

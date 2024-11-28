@@ -222,7 +222,19 @@ nobatia_missions_column_1 = {
 				monthly_mil = 14
 			}
 			else = {
-				is_year = 1600
+				OR = {
+					AND = {
+						OR = { 
+							full_idea_group = offensive_ideas
+							full_idea_group = aristocracy_ideas
+						}
+						OR = {
+							full_idea_group = religious_ideas
+							full_idea_group = theocracy_gov_ideas
+						}
+					}
+					is_year = 1570
+				}
 			}
 			at_war_with_religious_enemy = yes
 			reform_level = 5
@@ -1511,7 +1523,7 @@ nobatia_missions_column_5_tge = {
 		
 		provinces_to_highlight = {
 			trade_goods = ivory
-			OR { region = horn_of_africa_region	region = east_africa_region }
+			OR = { region = horn_of_africa_region	region = east_africa_region }
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		

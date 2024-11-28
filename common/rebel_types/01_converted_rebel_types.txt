@@ -183,12 +183,8 @@ pagan_religion_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = pagan_religion
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -377,12 +373,8 @@ pagan_religion_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = pagan_religion_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -572,12 +564,8 @@ baltic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = baltic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -766,12 +754,8 @@ baltic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = baltic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -960,12 +944,8 @@ norse_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = norse_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -1154,12 +1134,8 @@ tengri_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = tengri_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -1348,12 +1324,8 @@ zun_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = zun_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -1542,12 +1514,8 @@ zun_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = zun_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -1736,12 +1704,8 @@ slavic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = slavic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -1930,12 +1894,8 @@ slavic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = slavic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -2124,12 +2084,8 @@ bon_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = bon
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -2318,12 +2274,8 @@ bon_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = bon_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -2512,12 +2464,8 @@ hellenic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = hellenic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -2888,12 +2836,8 @@ cathar_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = cathar
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -3083,12 +3027,8 @@ fraticelli_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = fraticelli
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -3278,12 +3218,8 @@ waldensian_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = waldensian
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -3473,12 +3409,8 @@ lollard_religion_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = lollard
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -3668,12 +3600,8 @@ monophysite_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = monophysite
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -3863,12 +3791,8 @@ bogomilist_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = bogomilist
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -4058,12 +3982,8 @@ monothelite_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = monothelite
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -4253,12 +4173,8 @@ iconoclast_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = iconoclast
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -4448,12 +4364,8 @@ paulician_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = paulician
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -4643,12 +4555,8 @@ nestorian_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = nestorian
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -4838,12 +4746,8 @@ messalian_rebels = {
 				NOT = { religion_group = christian }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = messalian
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -5033,12 +4937,8 @@ zikri_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = zikri
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -5228,12 +5128,8 @@ yazidi_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = yazidi
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -5423,12 +5319,8 @@ kharijite_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = kharijite
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -5618,12 +5510,8 @@ druze_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = druze
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -5813,12 +5701,8 @@ hurufi_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = hurufi
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6010,12 +5894,8 @@ qarmatian_rebels = {
 				NOT = { religion_group = muslim }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = qarmatian
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6205,12 +6085,8 @@ mazdaki_rebels = {
 				NOT = { religion_group = zoroastrian_group }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = mazdaki
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6400,12 +6276,8 @@ khurmazta_rebels = {
 				NOT = { religion_group = zoroastrian_group }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = khurmazta
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6595,12 +6467,8 @@ manichean_rebels = {
 				NOT = { religion_group = zoroastrian_group }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = manichean
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6790,12 +6658,8 @@ samaritan_rebels = {
 				NOT = { religion_group = jewish_group }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = samaritan_faith
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -6985,12 +6849,8 @@ karaite_rebels = {
 				NOT = { religion_group = jewish_group }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = karaite_faith
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -7180,12 +7040,8 @@ jain_rebels = {
 				NOT = { religion_group = dharmic }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = jain
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -7377,12 +7233,8 @@ canaanite_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = canaanite_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -7571,12 +7423,8 @@ canaanite_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = canaanite_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -7765,12 +7613,8 @@ druidic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = druidic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -7959,12 +7803,8 @@ druidic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = druidic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -8154,12 +7994,8 @@ sumerian_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = sumerian_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -8348,12 +8184,8 @@ sumerian_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = sumerian_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -8543,12 +8375,8 @@ cybelene_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = cybelene_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -8737,12 +8565,8 @@ cybelene_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = cybelene_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -8932,12 +8756,8 @@ zalmoxian_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = zalmoxian_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -9126,12 +8946,8 @@ zalmoxian_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = zalmoxian_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -9321,12 +9137,8 @@ arabic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = arabic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -9515,12 +9327,8 @@ arabic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = arabic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -9710,12 +9518,8 @@ khaldic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = khaldic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -9904,12 +9708,8 @@ khaldic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = khaldic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -10099,12 +9899,8 @@ armazic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = armazic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -10293,12 +10089,8 @@ armazic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = armazic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -10488,12 +10280,8 @@ iberian_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = iberian_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -10682,12 +10470,8 @@ iberian_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = iberian_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -10877,12 +10661,8 @@ heptadic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = heptadic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -11071,12 +10851,8 @@ heptadic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = heptadic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -11266,12 +11042,8 @@ megalithic_pagan_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = megalithic_pagan
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -11460,12 +11232,8 @@ megalithic_pagan_reformed_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = megalithic_pagan_reformed
+			force_converted = yes
 		}
 		if = {
 			limit = {
@@ -12044,12 +11812,8 @@ kemetism_rebels = {
 				NOT = { religion_group = pagan }
 			}
 			add_prestige = -50
-			every_owned_province = {
-				limit = {
-					has_rebel_faction = REB
-				}
-				add_local_autonomy = 20
-			}
+			change_religion = kemetism
+			force_converted = yes
 		}
 		if = {
 			limit = {

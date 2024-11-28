@@ -10,6 +10,7 @@ base_production = 5
 base_manpower = 3
 add_core = SAX
 add_core = CLB
+center_of_trade = 1
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

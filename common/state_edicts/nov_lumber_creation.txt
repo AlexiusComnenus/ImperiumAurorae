@@ -1,0 +1,23 @@
+nov_lumber_state_edict = {
+	potential = {
+		has_country_flag = nov_enable_lumber_creation
+	}
+	
+	allow = {
+		NOT = {
+			any_owned_province = {
+				has_state_edict = nov_lumber_state_edict
+			}
+		}
+	}
+	
+	modifier = {
+		trade_value_modifier = 0.01
+	}
+	
+	color = { 255 255 128 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+}

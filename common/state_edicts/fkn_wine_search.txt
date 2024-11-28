@@ -1,6 +1,5 @@
 fkn_wine_state_edict = {
 	potential = {
-		tag = FKN
 		has_country_flag = fkn_enable_wine_creation
 	}
 	

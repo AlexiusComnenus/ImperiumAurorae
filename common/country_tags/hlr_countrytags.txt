@@ -1,0 +1,6 @@
+RIT = "countries/RegnumItalicum.txt"
+HJE = "countries/HLRJerusalem.txt"
+TMA = "countries/HLRLivland.txt"
+ILY = "countries/Illyrien.txt"
+OKM = "countries/OstindischeKompagnie.txt"
+

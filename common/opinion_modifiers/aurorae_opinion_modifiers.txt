@@ -29,7 +29,21 @@ tre_feo_friendship = {
 	opinion = 250
 }
 
+val_tem_friendship = {
+	opinion = 100
+}
+
 z42_desecrated_kaaba = {
 	opinion = -1000                
     years = 1000                
+}
+
+sided_with_sibyl = {
+	opinion = -100
+	yearly_decay = 1.5	
+    years = 50                
+}
+
+aen_sworn_allies = {
+	opinion = 200
 }

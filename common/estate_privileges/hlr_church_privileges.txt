@@ -1,0 +1,40 @@
+
+estate_church_advocating_for_conscription = {
+	icon = privilege_hlr_advocating
+	max_absolutism = -5
+	loyalty = 0.10
+	influence = 0.15
+	land_share = 0
+	cooldown_years = 20
+	is_valid = {
+		tag = HLR
+		has_country_flag = hlr_cooperation_with_church
+	}
+	can_select = {}
+	can_revoke = {
+		NOT = {
+			estate_influence = {
+    				estate = estate_church
+    				influence = 40
+			}
+		}
+	}
+	on_granted = {}
+	on_granted_province = {}
+	benefits = {
+		manpower_in_true_faith_provinces = 0.20
+		reinforce_speed = 0.10
+		land_maintenance_modifier = -0.10
+	}
+	on_revoked = {}
+	on_revoked_province = {}
+	penalties = {}
+	on_invalid = {}
+	on_invalid_province = {}
+	on_cooldown_expires = {}
+	modifier_by_land_ownership = {}
+	mechanics = {}
+	ai_will_do = {
+		factor = 1
+	}
+}

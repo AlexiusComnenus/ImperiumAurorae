@@ -167,6 +167,10 @@
  fkn_franken_council_desc: "Gone are the days when our entire state was essentially one city. Now we have many cities and many fortresses within our domains, all with their own interests! But we have experience in dealing with disparate interests. Let us extend our original city council structure into a Council of All Franconia!"
  hussite_wagenburgs: "The Wagenburg"
  hussite_wagenburgs_desc: "Surrounded by hostile loyalists to either Pope, the Hussites of Bavaria, Austria, and Bohemia have struggled to maintain their independence of worship. The Wagenburg has proven to be a strong defensive tactic, breaking wave upon wave of both Saxon and Polish attackers upon the wagon walls."
+ inti_sun_god_reform: "Codify the Sun Cult"
+ inti_sun_god_reform_desc: "By establishing a Qillaq Umu (High Priest) who directly reports to the Sapa Inca himself and codifying attendance at the many temples throughout our realm, we can ensure that the worship of Inti and His living descendant the Sapa Inca spreads throughout the realm. It will also aid in collecting taxes and recording a census."
+ inca_mountaintop_cities_reform: "Mountaintop Cities"
+ inca_mountaintop_cities_reform_desc: "Our people are resilient and can not merely survive but thrive in the highest of altitudes. Entire cities exist on mountaintops and are fed by equally inaccessible terrace farms. Should an invader enter our land, our ambushes will fall upon them from directions they could not in their wildest nightmares even imagine."
  
  #Modifiers
  fkn_new_talented_general: "New Inspiring Leader"
@@ -200,8 +204,20 @@
  fkn_united_reward: "Franconia United!"
  fkn_swabian_bonus: "Prosperous Swabia"
  fkn_brand_protection_province_mod: "Franconian Brand Protection"
+ fkn_adept_diplomacy: "Adept Diplomacy"
+ fkn_siezed_breweries: "Siezed Bavarian Breweries"
+ ai_colonial_nation_buff: "Is Colonial Nation"
  
  #Missions
+ fkn_appropriate_breweries_title: "Appropriate the Breweries"
+ fkn_appropriate_breweries_desc: "Beer is a huge business. It would be greatly beneficial to us to have better control over the industry."
+ fkn_question_of_alps_title: "Alpine Question"
+ fkn_question_of_alps_desc: "."
+ fkn_choose_path_tt: "Our choice of §Yadvisor type§! in completing this mission will determine whether we unlock the §Gdiplomatic§! or §Rmilitary§! path for handling the §YAlpine States§!."
+ fkn_assert_suzerainty_title: "Assert Suzerainty"
+ fkn_assert_suzerainty_desc: "."
+ fkn_city_no_more_title: "Free City No More"
+ fkn_city_no_more_desc: "."
  fkn_crush_bavarian_spirit_title: "Crush Bavarian Spirit"
  fkn_crush_bavarian_spirit_desc: "."
  fkn_building_new_cellars_title: "Building New Cellars"
@@ -295,3 +311,6 @@
  ia_flavor_fkn.6.t: "The Triumphal Procession"
  ia_flavor_fkn.6.d: "For a long time, the people of Bavaria have opposed our rule and thwarted our efforts to rule over them. Today, that is at an end. Whether by bribery, concessions, negotiations, threats, or brute force, the Bavarian spirit is no more and they shall henceforth be nought other than subjects of Franconia!"
  ia_flavor_fkn.6.a: "Long Live [Root.Monarch.GetName]!"
+ ia_flavor_fkn.7.t: "Siezing the Bavarian Breweries"
+ ia_flavor_fkn.7.d: "The pesky brewers of Bavaria conceal their beer formulae behind such concepts as 'trade secrets' and enrich themselves at the state's expense! This will not be tolerated any longer, now that we are in full control of the region. Send in the army to force them to hand over their secrets!"
+ ia_flavor_fkn.7.a: "Who would have thought they were willing to take their secrets to the grave?"

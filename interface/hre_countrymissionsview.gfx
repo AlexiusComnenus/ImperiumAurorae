@@ -1,0 +1,191 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "hlr_borders"
+		texturefile = "gfx//interface//missions//hlr_borders.dds"
+	}
+	spriteType = {
+		name = "hlr_silesian_settlement"
+		texturefile = "gfx//interface//missions//hlr_silesian_settlement.dds"
+	}
+	spriteType = {
+		name = "hlr_bohemia_in_hre"
+		texturefile = "gfx//interface//missions//hlr_bohemia_in_hre.dds"
+	}
+	spriteType = {
+		name = "hlr_crown"
+		texturefile = "gfx//interface//missions//hlr_crown.dds"
+	}
+	spriteType = {
+		name = "hlr_capital"
+		texturefile = "gfx//interface//missions//hlr_capital.dds"
+	}
+	spriteType = {
+		name = "hlr_eagle"
+		texturefile = "gfx//interface//missions//hlr_eagle.dds"
+	}
+	spriteType = {
+		name = "hlr_wall_burg"
+		texturefile = "gfx//interface//missions//hlr_wall_burg.dds"
+	}
+	spriteType = {
+		name = "hlr_dutch"
+		texturefile = "gfx//interface//missions//hlr_dutch.dds"
+	}
+	spriteType = {
+		name = "hlr_italians"
+		texturefile = "gfx//interface//missions//hlr_italians.dds"
+	}
+	spriteType = {
+		name = "hlr_regnum_italicum"
+		texturefile = "gfx//interface//missions//hlr_regnum_italicum.dds"
+	}
+	spriteType = {
+		name = "hlr_milreform"
+		texturefile = "gfx//interface//missions//hlr_milreform.dds"
+	}
+	spriteType = {
+		name = "hlr_mildistricts"
+		texturefile = "gfx//interface//missions//hlr_mildistricts.dds"
+	}
+	spriteType = {
+		name = "hlr_traincenters"
+		texturefile = "gfx//interface//missions//hlr_traincenters.dds"
+	}
+	spriteType = {
+		name = "hlr_warstudy"
+		texturefile = "gfx//interface//missions//hlr_warstudy.dds"
+	}
+	spriteType = {
+		name = "hlr_landsknecht"
+		texturefile = "gfx//interface//missions//hlr_landsknecht.dds"
+	}
+	spriteType = {
+		name = "hlr_finishmilreform"
+		texturefile = "gfx//interface//missions//hlr_finishmilreform.dds"
+	}
+	spriteType = {
+		name = "hlr_clericpact"
+		texturefile = "gfx//interface//missions//hlr_clericpact.dds"
+	}
+	spriteType = {
+		name = "hlr_crushheretics"
+		texturefile = "gfx//interface//missions//hlr_crushheretics.dds"
+	}
+	spriteType = {
+		name = "hlr_holyorders"
+		texturefile = "gfx//interface//missions//hlr_holyorders.dds"
+	}
+	spriteType = {
+		name = "hlr_fracture_ottos"
+		texturefile = "gfx//interface//missions//hlr_fracture_ottomans.dds"
+	}
+	spriteType = {
+		name = "hlr_holyland_jerusalem"
+		texturefile = "gfx//interface//missions//hlr_holy_land.dds"
+	}
+	spriteType = {
+		name = "hlr_new_greatpower"
+		texturefile = "gfx//interface//missions//hlr_new_greatpower.dds"
+	}
+	spriteType = {
+		name = "hlr_eastern_neighbour"
+		texturefile = "gfx//interface//missions//hlr_eastern_neighbour.dds"
+	}
+	spriteType = {
+		name = "hlr_baltic_terra_mariana"
+		texturefile = "gfx//interface//missions//hlr_baltic_terra_mariana.dds"
+	}
+	spriteType = {
+		name = "hlr_imperialdiplo"
+		texturefile = "gfx//interface//missions//hlr_imperialdiplo.dds"
+	}
+	spriteType = {
+		name = "hlr_western_neighbour"
+		texturefile = "gfx//interface//missions//hlr_western_neighbour.dds"
+	}
+	spriteType = {
+		name = "hlr_military_coop"
+		texturefile = "gfx//interface//missions//hlr_military_cooperation.dds"
+	}
+	spriteType = {
+		name = "hlr_imperial_hungary_icon"
+		texturefile = "gfx//interface//missions//hlr_imperial_hungary.dds"
+	}
+	spriteType = {
+		name = "hlr_transleithania"
+		texturefile = "gfx//interface//missions//hlr_transleithania.dds"
+	}
+	spriteType = {
+		name = "hlr_venetian_tradeflow"
+		texturefile = "gfx//interface//missions//hlr_venice.dds"
+	}
+	spriteType = {
+		name = "hlr_blossoming_economy_icon"
+		texturefile = "gfx//interface//missions//hlr_blossoming_economy_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_zuenfte_icon"
+		texturefile = "gfx//interface//missions//hlr_zuenfte_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_power_wealth_icon"
+		texturefile = "gfx//interface//missions//hlr_power_wealth_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_imperial_cities_icon"
+		texturefile = "gfx//interface//missions//hlr_imperial_cities_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_fugger_heritage_icon"
+		texturefile = "gfx//interface//missions//hlr_fugger_heritage_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_amerika_company_icon"
+		texturefile = "gfx//interface//missions//hlr_amerika_company_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_new_coasts_icon"
+		texturefile = "gfx//interface//missions//hlr_new_coasts_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_expand_colony_icon"
+		texturefile = "gfx//interface//missions//hlr_expand_colony_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_on_land_and_sea_icon"
+		texturefile = "gfx//interface//missions//hlr_on_land_and_sea_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_our_banner_flies_icon"
+		texturefile = "gfx//interface//missions//hlr_our_banner_flies_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_ostindische_kompagnie_icon"
+		texturefile = "gfx//interface//missions//hlr_ostindische_kompagnie_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_ports_to_java_icon"
+		texturefile = "gfx//interface//missions//hlr_ports_to_java_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_merchants_with_a_state_icon"
+		texturefile = "gfx//interface//missions//hlr_merchants_with_a_state_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_moluccas_property_icon"
+		texturefile = "gfx//interface//missions//hlr_moluccas_property_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_malaya_property_icon"
+		texturefile = "gfx//interface//missions//hlr_malaya_property_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_world_wide_resources_icon"
+		texturefile = "gfx//interface//missions//hlr_world_wide_resources_icon.dds"
+	}
+	spriteType = {
+		name = "hlr_borneo_property_icon"
+		texturefile = "gfx//interface//missions//hlr_borneo_property_icon.dds"
+	}
+}

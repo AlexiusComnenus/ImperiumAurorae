@@ -81,7 +81,7 @@ template_ideas = {
     }
     middle_kingdom = {
         liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 2
+		monarch_power_tribute = 1
     }
 }
 
@@ -105,8 +105,8 @@ tng_ideas = {
         advisor_cost = -0.1
     }
     tng_artistic_flourishing = {
-        idea_cost = -0.15
-        monthly_splendor = 4
+        idea_cost = -0.10
+        monthly_splendor = 2
     }
     tng_buddhist_principles = {
         monthly_karma_accelerator = 0.05
@@ -121,6 +121,7 @@ tng_ideas = {
     tng_nomadic_traditions = {
         cavalry_shock = 0.5
 		army_tradition_from_battle = 0.50
+		can_recruit_hussars = yes
     }
     son_of_heaven = {
         legitimacy = 1
@@ -132,7 +133,7 @@ tng_ideas = {
     }
     middle_kingdom = {
         liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 2
+		monarch_power_tribute = 1
     }
 }
 
@@ -179,7 +180,7 @@ GJN_ideas = {
     }
     middle_kingdom = {
         liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 2
+		monarch_power_tribute = 1
     }
 }
 
@@ -254,7 +255,7 @@ qin_ideas = {
 		max_absolutism = 20
     }
     qin_militarism = {
-        discipline = 0.05
+        army_tradition = 0.5
 		max_absolutism_effect = 0.1
     }
     firearm_training = {
@@ -270,7 +271,7 @@ qin_ideas = {
     }
     middle_kingdom = {
         liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 2
+		monarch_power_tribute = 1
     }
 }
 

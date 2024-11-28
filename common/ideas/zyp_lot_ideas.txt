@@ -5,7 +5,7 @@ LOT_ideas = { #resettlement lotharingia/colonial lotharingia
 	}
 	
 	bonus = {
-		development_cost_modifier = -0.15
+		development_cost_modifier = -0.10
 	}
 	
 	trigger = {
@@ -21,18 +21,24 @@ LOT_ideas = { #resettlement lotharingia/colonial lotharingia
 		manpower_in_accepted_culture_provinces = 0.25
 	}
 	lot_dutch_cities = {
-		trade_efficiency = 0.1
+		trade_efficiency = 0.15
 	}
-	lot_settlement_initiative = {
-		expel_minorities_cost = -0.5
-		global_colonial_growth = 20
-	}
+	#lot_settlement_initiative = {
+	#	expel_minorities_cost = -0.5
+	#	global_colonial_growth = 20
+	#}
 	lot_naval_ambition = {
 		naval_morale = 0.1
-		naval_forcelimit_modifier = 0.20
+		naval_forcelimit_modifier = 0.25
 	}
-	lot_cohesive_military = {
-		discipline = 0.05
+	#lot_cohesive_military = {
+	#	discipline = 0.05
+	#}
+	lot_glory_of_charlemagne = {
+		land_morale = 0.15
+	}
+	lot_european_empire = {
+		core_creation = -0.2
 	}
 	lot_industrial_ambition = {
 		global_trade_goods_size_modifier = 0.15
@@ -104,13 +110,13 @@ LOT_ideas_OG = {
 		prestige_decay = -0.01
 	}
 	lot_glory_of_charlemagne = {
-		land_morale = 0.15
+		#land_morale = 0.15
 	}
 	lot_dutch_cities = {
 		trade_efficiency = 0.1
 	}
 	lot_carolingian_renaissance_II = {
-		idea_cost = -0.1
+		#idea_cost = -0.1
 	}
 	lot_court_of_europe = {
 		prestige = 0.5

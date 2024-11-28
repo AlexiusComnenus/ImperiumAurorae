@@ -1,6 +1,6 @@
 antioch_ideas = {
 	start = {
-		monthly_reform_progress_modifier = 0.1
+		#monthly_reform_progress_modifier = 0.1
 		cavalry_cost = -0.2
 		may_recruit_female_generals = yes
 	}
@@ -15,7 +15,7 @@ antioch_ideas = {
 
 	knights_of_dawn = {
 		cavalry_power = 0.15
-		cav_to_inf_ratio = 0.25
+		cav_to_inf_ratio = 0.20
 	}
 	enlightened_subjects = {
 		vassal_forcelimit_bonus = 0.50
@@ -23,10 +23,10 @@ antioch_ideas = {
 	}
 	infinite_journey_home = {
 		envoy_travel_time = -0.2
-		warscore_cost_vs_other_religion = -0.15
+		land_attrition = -0.10
 	}
 	shining_banners = {
-		shock_damage = 0.15
+		shock_damage = 0.10
 		cavalry_flanking = 0.25
 	}
 	bringers_of_light = {
@@ -35,7 +35,7 @@ antioch_ideas = {
 	}
 	forward_to_glory = {
 		army_tradition_from_battle = 0.50
-		cavalry_shock = 0.5
+		cavalry_shock = 0.25
 	}
 	root_of_englightenment = {
 		innovativeness_gain = 0.25

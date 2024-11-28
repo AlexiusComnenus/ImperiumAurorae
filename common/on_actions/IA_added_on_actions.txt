@@ -8,7 +8,11 @@ on_startup = {
 		#ivycurse.102
 		ia_flavor_thu.4
 		ia_tutorial.1
+		ia_flavor_eng.1
+		ia_flavor_eng.2
+		ia_flavor_bog.1
 	}
+	initialize_schools_effect = yes
 }
 
 on_new_term_election = {
@@ -26,6 +30,14 @@ on_death_election = {
 on_war_won = {
 	events = {
 		ia_flavor_hes.4
+		ia_flavor_nov.4
+		ia_flavor_eng.13
+	}
+}
+
+on_main_war_won = {
+	events = {
+		antioch.28
 	}
 }
 
@@ -51,11 +63,15 @@ on_yearly_pulse_2 = {
 		incident_AOL.1
 		dotfset.27
 		ia_flavor_sax.29
+		celestial_empire_events.4
+		ia_flavor_tem.31
+		antioch.31
+		antioch.30
 	}
 	random_events = {
 		250 = ia_flavor_sax.22
 		250 = ia_flavor_sax.23
-		75 = ia_flavor_tem.11
+		#75 = ia_flavor_tem.11
 		
 		1000 = 0
 	}

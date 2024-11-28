@@ -7,6 +7,8 @@ primary_culture = visigothic
 capital = 220
 historical_friend = TEM
 historical_rival = Z17
+historical_rival = FRA
+historical_rival = NRM
 add_accepted_culture = flemish
 1444.11.11= {
 	monarch = {
@@ -59,4 +61,8 @@ add_accepted_culture = flemish
 	add_prestige = 20
 	add_treasury = 55
 	set_ruler_flag = crusader_queen_jacoba_flag
+	add_opinion = {
+		who = TEM
+		modifier = val_tem_friendship
+	}
 }

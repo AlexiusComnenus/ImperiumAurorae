@@ -1,13 +1,13 @@
 government = monarchy
 add_government_reform = autocracy_reform
-government_rank = 1
-technology_group = andean
-religion = inti
 primary_culture = inca
-capital = 808
-fixed_capital = 808
+religion = inti
+technology_group = andean
 unit_type = south_american
-1399.1.1= {
+capital = 808	# Cuzco
+fixed_capital = 808 # Cannot move capital away from this province & no power cost to move to it
+
+1399.1.1 = {
 	monarch = {
 		name = "Viracocha"
 		dynasty = "Hanan"
@@ -16,7 +16,8 @@ unit_type = south_american
 		mil = 2
 	}
 }
-1420.1.1= {
+
+1420.1.1 = {
 	heir = {
 		name = "Pachacuti"
 		monarch_name = "Pachacuti"
@@ -24,25 +25,27 @@ unit_type = south_american
 		birth_date = 1420.1.1
 		death_date = 1471.1.1
 		claim = 95
-		adm = 5
-		dip = 4
-		mil = 6
+		adm = 4
+		dip = 3
+		mil = 5
 	}
 }
-1438.1.1= {
+
+1438.1.1 = {
 	monarch = {
 		name = "Pachacuti"
 		dynasty = "Hanan"
 		birth_date = 1420.1.1
-		adm = 5
-		dip = 4
-		mil = 6
+		adm = 4
+		dip = 3
+		mil = 5
 		leader = { name = "Pachacuti"	type = general	fire = 3	shock = 5	manuever = 4	siege = 2 }
 	}
 	clear_scripted_personalities = yes
-	add_ruler_personality = conqueror_personality
+	add_ruler_personality = legendary_conqueror_personality
 }
-1444.1.1= {
+	
+1444.1.1 = {
 	heir = {
 		name = "Tupac-Yupanqui"
 		monarch_name = "Tupac Yupanqui"
@@ -55,10 +58,11 @@ unit_type = south_american
 		mil = 6
 	}
 	clear_scripted_personalities = yes
-	add_ruler_personality = conqueror_personality
+	add_ruler_personality = legendary_conqueror_personality
 	add_heir_personality = lawgiver_personality
 }
-1471.1.1= {
+
+1471.1.1 = {
 	monarch = {
 		name = "Tupac Yupanqui"
 		dynasty = "Hanan"
@@ -69,7 +73,8 @@ unit_type = south_american
 	clear_scripted_personalities = yes
 	add_ruler_personality = lawgiver_personality
 }
-1475.1.1= {
+
+1475.1.1 = {
 	heir = {
 		name = "Huayana Capac"
 		monarch_name = "Huayana Capac"
@@ -82,7 +87,8 @@ unit_type = south_american
 		mil = 3
 	}
 }
-1493.1.1= {
+
+1493.1.1 = {
 	monarch = {
 		name = "Huayna-Capac"
 		dynasty = "Hanan"
@@ -91,7 +97,8 @@ unit_type = south_american
 		mil = 3
 	}
 }
-1503.1.1= {
+
+1503.1.1 = {
 	heir = {
 		name = "Huáscar"
 		monarch_name = "Huáscar I"
@@ -105,8 +112,10 @@ unit_type = south_american
 		leader = { name = "Huáscar"	type = general	fire = 1	shock = 3	manuever = 2	siege = 0 }
 	}
 }
-1523.1.1= { leader = {	name = "Atoc"      	type = general	fire = 1	shock = 3	manuever = 2	siege = 0	death_date = 1532.1.1 } }
-1527.1.1= {
+
+1523.1.1 = { leader = {	name = "Atoc"      	type = general	fire = 1	shock = 3	manuever = 2	siege = 0	death_date = 1532.1.1 } }
+
+1527.1.1 = {
 	monarch = {
 		name = "Huáscar I"
 		dynasty = "Hanan"
@@ -116,7 +125,8 @@ unit_type = south_american
 		leader = { name = "Huáscar"	type = general	fire = 1	shock = 3	manuever = 2	siege = 0 }
 	}
 }
-1527.1.1= {
+
+1527.1.1 = {
 	heir = {
 		name = "Atahuallpa"
 		monarch_name = "Atahuallpa"
@@ -129,7 +139,8 @@ unit_type = south_american
 		mil = 3
 	}
 }
-1532.1.1= {
+
+1532.1.1 = {
 	monarch = {
 		name = "Atahuallpa"
 		dynasty = "Hanan"
@@ -138,7 +149,8 @@ unit_type = south_american
 		mil = 3
 	}
 }
-1533.1.1= {
+
+1533.1.1 = {
 	heir = {
 		name = "Tupac Huallpa"
 		monarch_name = "Tupac Huallpa"
@@ -151,7 +163,8 @@ unit_type = south_american
 		mil = 0
 	}
 }
-1533.7.28= {
+
+1533.7.28 = {
 	monarch = {
 		name = "Tupac Huallpa"
 		dynasty = "Hanan"
@@ -160,7 +173,8 @@ unit_type = south_american
 		mil = 0
 	}
 }
-1533.7.28= {
+
+1533.7.28 = {
 	heir = {
 		name = "Manco Yupanqui"
 		monarch_name = "Manco Inca Yupanqui"
@@ -173,7 +187,8 @@ unit_type = south_american
 		mil = 4
 	}
 }
-1534.1.1= {
+
+1534.1.1 = {
 	monarch = {
 		name = "Manco Inca Yupanqui"
 		dynasty = "Hanan"
@@ -182,7 +197,8 @@ unit_type = south_american
 		mil = 4
 	}
 }
-1535.1.1= {
+
+1535.1.1 = {
 	heir = {
 		name = "Sayri Tupac"
 		monarch_name = "Sayri Inca Tupac"
@@ -195,7 +211,8 @@ unit_type = south_american
 		mil = 1
 	}
 }
-1545.1.1= {
+
+1545.1.1 = {
 	monarch = {
 		name = "Sayri Tupac"
 		dynasty = "Hanan"
@@ -204,7 +221,8 @@ unit_type = south_american
 		mil = 1
 	}
 }
-1545.1.1= {
+
+1545.1.1 = {
 	heir = {
 		name = "Titu Cusi"
 		monarch_name = "Titu Cusi Inca"
@@ -217,7 +235,8 @@ unit_type = south_american
 		mil = 2
 	}
 }
-1557.1.1= {
+
+1557.1.1 = {
 	monarch = {
 		name = "Titu Cusi Inca"
 		dynasty = "Hanan"
@@ -226,7 +245,8 @@ unit_type = south_american
 		mil = 2
 	}
 }
-1557.1.1= {
+
+1557.1.1 = {
 	heir = {
 		name = "Tupac Amaru"
 		monarch_name = "Tupac Amaru Inca"
@@ -239,7 +259,8 @@ unit_type = south_american
 		mil = 1
 	}
 }
-1571.1.1= {
+
+1571.1.1 = {
 	monarch = {
 		name = "Tupac Amaru Inca"
 		dynasty = "Hanan"

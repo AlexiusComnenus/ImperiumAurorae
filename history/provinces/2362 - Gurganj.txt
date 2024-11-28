@@ -1,5 +1,5 @@
-owner = MGE
-controller = MGE
+owner = TRS
+controller = TRS
 capital = "Gurganj"
 is_city = yes
 culture = tajik
@@ -8,7 +8,6 @@ trade_goods = wool
 base_tax = 4
 base_production = 3
 base_manpower = 2
-add_core = MGE
 add_core = TRS
 discovered_by = MGE
 discovered_by = eastern

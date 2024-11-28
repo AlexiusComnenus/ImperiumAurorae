@@ -2,7 +2,7 @@ government = tribal
 add_government_reform = tribal_confederacy
 government_rank = 1
 technology_group = eastern
-religion = paulician
+religion = bogomilist
 primary_culture = samoyed
 capital = 1958
 1444.11.11= {
@@ -13,7 +13,7 @@ capital = 1958
 		dip = 2
 		mil = 4
 		birth_date = 1392.2.17
-		religion = paulician
+		religion = bogomilist
 		culture = samoyed
 	}
 	add_ruler_personality = scholar_personality
@@ -27,7 +27,7 @@ capital = 1958
 		birth_date = 1391.1.23
 		death_date = 1451.1.23
 		female = yes
-		religion = paulician
+		religion = bogomilist
 		culture = byelorussian
 	}
 	add_queen_personality = careful_personality
@@ -42,7 +42,7 @@ capital = 1958
 		birth_date = 1426.1.13
 		death_date = 1491.1.13
 		claim = 89
-		religion = paulician
+		religion = bogomilist
 		culture = samoyed
 	}
 	add_heir_personality = greedy_personality

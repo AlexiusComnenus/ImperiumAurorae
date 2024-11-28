@@ -38,4 +38,8 @@ add_accepted_culture = piedmontese
 1444.11.11= {
 	add_prestige = 72
 	add_treasury = 62
+	set_religious_school = {
+		group = christian
+		school = golden_path_school
+	}
 }

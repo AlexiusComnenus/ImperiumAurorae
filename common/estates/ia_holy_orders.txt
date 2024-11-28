@@ -1,0 +1,271 @@
+estate_holy_orders = {
+	icon = 16
+	
+	# Used for when declaring independence
+	independence_government = theocracy
+	starting_reform = monastic_order_reform
+	independence_tech_group = western
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			NOT = { religion = ROOT }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { development = 10 }
+		}
+		modifier = {
+			factor = 1.5
+			OR = { 
+				has_building = barracks
+				has_building = training_fields
+			}
+		}
+		modifier = {
+			factor = 0.75
+			development = 15
+		}
+		modifier = {
+			factor = 0.75
+			development = 20
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { is_state_core = owner }
+		}
+	}
+
+	# If true, country will get estate
+	
+	trigger = {	
+		NOT = { has_government_attribute = disables_estate_holy_orders }
+		NOT = { has_disabled_estate = { estate = estate_holy_orders } }
+		OR = {
+			has_government_attribute = enables_estate_holy_orders
+			has_enabled_estate = { estate = estate_holy_orders }
+			has_unlocked_estate = { estate = estate_holy_orders }
+			AND = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+					religion = protestant
+				}
+				primitives = no
+				is_nomad = no
+				NOT = { has_reform = cossacks_reform }
+				NOT = { has_government_attribute = is_pirate_republic_reform }
+				NOT = { has_reform = revolutionary_empire_reform }
+				NOT = { is_revolutionary = yes }
+			}
+		}
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		cav_to_inf_ratio = 0.1
+		manpower_in_true_faith_provinces = 0.15
+		interest = -1
+	}
+	country_modifier_neutral = {
+		cav_to_inf_ratio = 0.1
+	}	
+	country_modifier_angry = {
+		manpower_in_true_faith_provinces = -0.15
+		interest = 1
+		global_unrest = 2
+	}
+	land_ownership_modifier = {
+		holy_orders_loyalty_modifier = 0.2
+	}
+
+	# Influence modifiers
+	base_influence = 10
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_holy_orders }
+		}
+		influence = -40
+	}
+	influence_modifier = {
+		desc = EST_VAL_HO_GRANTED
+		trigger = {
+			any_owned_province = {
+				has_holy_order_trigger = yes
+			}
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_OUTREMER
+		trigger = {
+			culture_group = outremer_group
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_RELIGIOUS_WAR
+		trigger = {
+			at_war_with_religious_enemy = yes
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_TEMPLAR_FRIENDS
+		trigger = {
+			has_opinion = {
+				who = TEM
+				value = 100
+			}
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_TEMPLAR_NOT_FRIENDS
+		trigger = {
+			NOT = {
+				has_opinion = {
+					who = TEM
+					value = 0
+				}
+			}
+		}
+		influence = -10
+	}
+	influence_modifier = {
+		desc = EST_VAL_TEMPLAR_NOT_FRIENDS_EXTREME
+		trigger = {
+			NOT = {
+				has_opinion = {
+					who = TEM
+					value = -100
+				}
+			}
+		}
+		influence = -15
+	}
+
+	influence_from_dev_modifier = 1.0
+	
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_holy_orders }
+		}
+		loyalty = -20
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_HO_GRANTED
+		trigger = {
+			any_owned_province = {
+				has_holy_order_trigger = yes
+			}
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_OUTREMER
+		trigger = {
+			culture_group = outremer_group
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_RELIGIOUS_WAR
+		trigger = {
+			at_war_with_religious_enemy = yes
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_TEMPLAR_FRIENDS
+		trigger = {
+			TEM = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_TEMPLAR_NOT_FRIENDS
+		trigger = {
+			TEM = {
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = 0
+					}
+				}
+			}
+		}
+		loyalty = -5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_TEMPLAR_NOT_FRIENDS_EXTREME
+		trigger = {
+			TEM = {
+				NOT = {
+					has_opinion = {
+						who = ROOT
+						value = -100
+					}
+				}
+			}
+		}
+		loyalty = -10
+	}
+
+	#Names
+	custom_name = {
+		desc = estate_templars
+		trigger = {
+			religion = protestant
+			NOT = { tag = TEM }
+		}
+	}
+	custom_name = {
+		desc = estate_calatravos
+		trigger = {
+			primary_culture = castillian
+		}
+	}
+	custom_name = {
+		desc = estate_lazarus
+		trigger = {
+			tag = TEM
+		}
+	}
+
+	privileges = {
+		estate_holy_orders_liberties
+		estate_holy_orders_land_rights
+		estate_holy_orders_indebted_to_holy_orders
+		estate_holy_orders_banking_rights
+		estate_holy_orders_monopoly_on_banking
+		estate_holy_orders_court_representation
+		estate_holy_orders_special_privilege
+		estate_holy_orders_grant_military_leadership
+		estate_holy_orders_heir_knight
+		estate_holy_orders_noble_promotion
+	}
+
+	agendas = {
+		estate_holy_orders_develop_x
+		estate_holy_orders_build_temple_in_y
+		estate_holy_orders_build_university_in_y
+		estate_holy_orders_crusade
+		estate_holy_orders_convert_province_x
+		estate_holy_orders_three_privileges
+		estate_holy_orders_hire_advisor
+		estate_holy_orders_fire_advisor
+	}
+
+	color = { 0 100 100 }
+}

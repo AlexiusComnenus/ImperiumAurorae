@@ -14,4 +14,88 @@ estate_aurora = {
 			has_estate = estate_aurora
 		}
 	}
+	
+	modifier_definition = {
+		type = privileges
+		key = aurora_privilege_slots
+		trigger = {
+			has_estate = estate_aurora
+		}
+	}
+}
+
+estate_holy_orders = {
+	modifier_definition = {
+		type = loyalty
+		key = holy_orders_loyalty_modifier
+		trigger = {
+			has_estate = estate_holy_orders
+		}
+	}
+
+	modifier_definition = {
+		type = influence
+		key = holy_orders_influence_modifier
+		trigger = {
+			has_estate = estate_holy_orders
+		}
+	}
+	
+	modifier_definition = {
+		type = privileges
+		key = holy_orders_privilege_slots
+		trigger = {
+			has_estate = estate_holy_orders
+		}
+	}
+}
+
+estate_peasants = {
+	modifier_definition = {
+		type = loyalty
+		key = peasants_loyalty_modifier
+		trigger = {
+			has_estate = estate_peasants
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = peasants_influence_modifier
+		trigger = {
+			has_estate = estate_peasants
+		}
+	}
+	
+	modifier_definition = {
+		type = privileges
+		key = peasants_privilege_slots
+		trigger = {
+			has_estate = estate_peasants
+		}
+	}
+}
+
+estate_alchemists = {
+	modifier_definition = {
+		type = loyalty
+		key = alchemists_loyalty_modifier
+		trigger = {
+			has_estate = estate_alchemists
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = alchemists_influence_modifier
+		trigger = {
+			has_estate = estate_alchemists
+		}
+	}
+	
+	modifier_definition = {
+		type = privileges
+		key = alchemists_privilege_slots
+		trigger = {
+			has_estate = estate_alchemists
+		}
+	}
 }

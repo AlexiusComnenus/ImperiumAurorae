@@ -1,6 +1,7 @@
 ﻿l_english:
 
  #Mechanics Tooltips
+ mechanic_always_archdruid_personality_yes: "Rulers are practically guaranteed to be §YPowerful Druids§!"
  oath_of_service: "Oath of Service"
  oath_of_service_desc: "As part of their rite of passage, young Gaelic men swear to defend their homeland against all who would despoil it."
  the_great_voyage: "The Great Voyage"
@@ -31,6 +32,23 @@
  fu_den_haag_dike: "Den Haag Dikes"
  fu_amsterdam_dike: "Amsterdam Dikes"
  fu_admiralty_amsterdam: "Grand Admiralty of Amsterdam"
+ feline_ideas: "Feline Ideas"
+ feline_ideas_start: "Feline Traditions"
+ feline_ideas_bonus: "Feline Ambition"
+ KOI_quiet_as_a_cat: "Quiet as a Cat"
+ KOI_quiet_as_a_cat_desc: "Nothing beats walking on our paws! Silent as the night!"
+ KOI_night_eyes: "Eyes of the Night"
+ KOI_night_eyes_desc: "Our eyes are just fine in the darkness! Who needs the sun?"
+ KOI_conniving_as_a_cat: "Conniving as a Cat"
+ KOI_conniving_as_a_cat_desc: "Nobody is as clever, as sly, as genius as a cat!"
+ KOI_swift_feet: "Swift Paws"
+ KOI_swift_feet_desc: "Watch us dash and jump! We always land on our feet!"
+ KOI_tiny_target: "Tiny Target"
+ KOI_tiny_target_desc: "Hah! Just try to catch us!"
+ KOI_catnaps: "Legally Mandated Naps"
+ KOI_catnaps_desc: "Naps are good. Naps in the sun are better."
+ KOI_outsource_navies: "Outsource the Navies"
+ KOI_outsource_navies_desc: "Ships? Oceans? Ugh, let's leave those to our human servants."
  
  #Diplo Tooltips
  druidic_brotherhood_title: "Druidic Brotherhood"
@@ -81,16 +99,25 @@
  hsc_beer_production: "Gaelic Beer"
  recently_recruited_templar: "Recently Recruited Templar General"
  recently_recruited_druid: "Recently Recruited War Druid"
+ hsc_druidic_mint: "Mint of Gaeldom"
+ bri_menowar_mod: "Great Men'o'war"
+ ia_colonial_rush: "Colonial Rush"
+ ia_around_the_cape: "Round the Cape"
  
  #Missions
+ hsc_gold_mining_title: "Establish a Mint"
+ hsc_gold_mining_desc: "Though our people may seek harmony with nature, a modern economy requires currency to function. Thus, we should establish regulations over gold mining and coin minting."
+ wof_ven_challenge_antiochene_supremacy_title: "Challenge Antiochene Supremacy"
+ wof_ven_challenge_antiochene_supremacy_desc: "The Xizho fancy themselves supreme rulers and have staked their claim on the environs of Rome, former seat of Christendom. We shall show them that their pretensions are merely that, by taking Rome for ourselves!"
  hsc_prosperous_highlands_title: "Invest in the Ancient Groves"
  hsc_prosperous_highlands_desc: "We should begin to secure our economic prosperity starting from those groves that have kept us safe for so long."
  hsc_agricultural_investments_title: "Agricultural Investments"
  hsc_agricultural_investments_desc: "Feeding our people is critical."
  hsc_regulate_wool_grazing_title: "Regulate Sheep Grazing"
  hsc_regulate_wool_grazing_desc: "To preserve the balance of nature and protect our wool industry in the long-term, we should codify clear instructions on how, where, and when sheep should graze."
- hsc_answer_the_growing_needs_title: "Answer the Growing Needs"
- hsc_answer_the_growing_needs_desc: "As our population grows, so do their needs."
+ hsc_answer_the_growing_needs_title: "Develop the Highlands"
+ hsc_answer_the_growing_needs_desc: "We have lived for a long time amongst the highlands of the north. This experience shall prove invaluable in better understanding how to develop these lands for the future."
+ hsc_unlock_highlands_privilege_tt: "We will §Gunlock an estate privilege§! for the §YMerchants§! which grants bonuses in §YHighlands, Hills, and Mountains§! terrain."
  hsc_tools_industry_title: "The Tools Industry"
  hsc_tools_industry_desc: "More and better agricultural tools will help maximize the efficiency at which we can produce cloth and food."
  hsc_welsh_iron_title: "Welsh Iron"
@@ -153,7 +180,7 @@
  hsc_new_capital_desc: "As our realm expands, we should look to establish a new seat of governance within our new domains."
  hsc_grand_archives_title: "The Grand Archives"
  hsc_grand_archives_desc: "We need to establish new systems of records keeping for our burgeoning state."
- 
+ hsc_wool_provinces_tt: "All of our currently owned provinces producing §YWool§! meeting the mission requirements will §Ggain 2 Base Production§!. Additionally, aforementioned provinces will have their §Gproduction building upgraded§!."
  
  # events
  gaeldom.1.t: "Expulsion of the Cumans"

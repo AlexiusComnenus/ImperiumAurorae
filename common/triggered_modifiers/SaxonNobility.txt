@@ -136,9 +136,10 @@ SaxonCheats = {
 		has_reform = saxon_feudalism
 	}
 	
-	ae_impact = -0.25
-	improve_relation_modifier = 0.5
+	#ae_impact = -0.25
+	#improve_relation_modifier = 0.5
 	war_exhaustion = -0.05
+	reduced_liberty_desire_on_same_continent = 10
 }
 
 SaxonCheats2 = {

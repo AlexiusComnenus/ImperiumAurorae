@@ -9,7 +9,13 @@ country_decisions = {
 			NOT = { exists = SCA }
 			NOT = { tag = PAP }
 			NOT = { tag = HLR }
-			culture_group = scandinavian
+			OR = { 
+				culture_group = scandinavian
+				AND = {
+					culture_group = finno_ugric
+					tag = FIN
+				}
+			}
 			is_colonial_nation = no
 			OR = {
 				is_former_colonial_nation = no
@@ -304,7 +310,10 @@ country_decisions = {
 			}
 			if = {
 				limit = {
-					religion = norse_pagan_reformed
+					OR = { 
+						religion = norse_pagan_reformed
+						religion = norse_pagan
+					}
 				}
 				override_country_name = NORTH_SEA_EMPIRE
 				set_country_flag = has_overriden_color_flag
@@ -319,6 +328,27 @@ country_decisions = {
 					set_country_flag = has_overriden_color_flag
 					change_country_color = { color = { 255 212 42 } }
 				}
+			}
+			if = {
+				limit = { 
+					has_country_flag = sax_befriended_sca
+					exists = SAX
+				}
+				add_historical_friend = SAX
+				SAX = { add_historical_friend = ROOT }
+				create_alliance = SAX
+			}
+			if = {
+				limit = { 
+					has_country_flag = sax_befriended_sca
+					GER = {
+						exists = yes
+						was_tag = SAX
+					}
+				}
+				add_historical_friend = GER
+				GER = { add_historical_friend = ROOT }
+				create_alliance = GER
 			}
 		}
 		ai_will_do = {

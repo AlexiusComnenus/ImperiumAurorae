@@ -88,6 +88,9 @@ visigoth_missions_column_1 = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_financial_center = {
@@ -129,6 +132,9 @@ visigoth_missions_column_1 = {
 					duration = -1
 				}
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	
@@ -174,6 +180,9 @@ visigoth_missions_column_1 = {
 				add_base_tax = 1
 				remove_province_modifier = insular_visigoth_community
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	
@@ -344,6 +353,9 @@ visigoth_missions_column_2 = {
 				add_claim = ROOT
 			}
 		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
 	}
 	
 	val_avenge_roderic = {
@@ -371,6 +383,9 @@ visigoth_missions_column_2 = {
 			country_event = {
 				id = ia_flavor_val.2
 			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
 		}
 	}
 	
@@ -436,6 +451,9 @@ visigoth_missions_column_2 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
 	}
 	
 	val_revenge_vs_moors = {
@@ -480,6 +498,9 @@ visigoth_missions_column_2 = {
 				type = cb_vassalize_mission
 				months = 1200
 			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
 		}
 	}
 	
@@ -643,6 +664,9 @@ visigoth_missions_column_2 = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_standardized_taxes = {
@@ -685,6 +709,9 @@ visigoth_missions_column_2 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_public_education = {
@@ -706,6 +733,9 @@ visigoth_missions_column_2 = {
 		
 		effect = {
 			add_government_reform = valencia_parliament
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 }
@@ -792,6 +822,9 @@ visigoth_missions_column_3 = {
 				country_event = { id = ia_flavor_val.9 }
 			}
 		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
 	}
 	
 	val_imperium_gothorum = {
@@ -838,6 +871,9 @@ visigoth_missions_column_3 = {
 				}
 			}
 			custom_tooltip = imperium_gothorum_warning_tt
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
 		}
 	}
 	
@@ -1074,6 +1110,9 @@ visigoth_missions_column_3 = {
 		effect = {
 			add_government_reform = valencia_bureaucracy
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_military_future = {
@@ -1101,6 +1140,9 @@ visigoth_missions_column_3 = {
 			country_event = {
 				id = ia_flavor_val.11
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 }
@@ -1146,6 +1188,9 @@ visigoth_missions_column_4 = {
 			change_adm = 1
 			change_heir_adm = 1
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_mint_new_coins = {
@@ -1180,6 +1225,9 @@ visigoth_missions_column_4 = {
 				}
 				add_base_production = 2
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	
@@ -1237,6 +1285,9 @@ visigoth_missions_column_4 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
 	}
 	
 	val_reclaim_toulouse = {
@@ -1287,6 +1338,9 @@ visigoth_missions_column_4 = {
 			add_adm_power = 100
 			
 		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
 	}
 	
 	val_revenge_vs_franks = {
@@ -1325,6 +1379,9 @@ visigoth_missions_column_4 = {
 				months = 1200
 			}
 			country_event = { id = ia_flavor_val.4 }
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
 		}
 	}
 	
@@ -1378,6 +1435,9 @@ visigoth_missions_column_4 = {
 				change_culture = old_lombard
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_curtail_feudalism = {
@@ -1418,6 +1478,9 @@ visigoth_missions_column_4 = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_standing_army = {
@@ -1447,6 +1510,9 @@ visigoth_missions_column_4 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	val_officer_academy = {
 		icon = support_the_orders
@@ -1474,6 +1540,9 @@ visigoth_missions_column_4 = {
 				name = gothic_officer_academy
 				duration = -1
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 }
@@ -1555,6 +1624,9 @@ visigoth_missions_column_5 = {
 				}
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_dof = {
@@ -1582,6 +1654,9 @@ visigoth_missions_column_5 = {
 			}
 			add_prestige = 10
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	
 	val_inquisition = {
@@ -1606,6 +1681,9 @@ visigoth_missions_column_5 = {
 		
 		effect = {
 			add_government_reform = visigothic_inquisition
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	
@@ -1636,6 +1714,9 @@ visigoth_missions_column_5 = {
 				add_base_manpower = 1
 				add_base_tax = 1
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	

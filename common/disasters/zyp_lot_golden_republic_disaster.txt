@@ -1,5 +1,6 @@
 golden_republic_disaster = {
 	potential = {
+		always = no
 		NOT = { has_country_flag = lot_golden_republic_disaster_concluded }
 		tag = LOT
 		government = monarchy
@@ -7,6 +8,7 @@ golden_republic_disaster = {
 	}
 	
 	can_start = {
+		always = no
 		has_any_disaster = no
 		NOT = { adm_tech = 15 }
 		NOT = {
@@ -22,6 +24,7 @@ golden_republic_disaster = {
 	}
 	
 	can_stop = {
+		always = yes
 		adm_tech = 15
 	}
 	

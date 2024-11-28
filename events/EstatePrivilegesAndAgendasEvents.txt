@@ -239,7 +239,9 @@ country_event = {
 		clr_country_flag = estate_rajput_present_agenda
 		clr_country_flag = estate_janissaries_present_agenda
 		clr_country_flag = estate_eunuchs_present_agenda
+		clr_country_flag = estate_holy_orders_present_agenda
 		clr_country_flag = estate_peasants_present_agenda
+		clr_country_flag = estate_alchemists_present_agenda
 		clr_country_flag = estate_trade_company_present_agenda
 		clr_country_flag = estate_qizilbash_present_agenda
 		clr_country_flag = estate_ghulams_present_agenda
@@ -952,6 +954,99 @@ country_event = {
 	}
 	
 	option = {
+		name = estate_privileges_and_agendas_events.3.ho
+		trigger = { has_country_flag = estate_holy_orders_present_agenda }
+		start_estate_agenda = estate_holy_orders
+		goto = estate_holy_orders
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				NOT = {
+					estate_loyalty = {
+						loyalty = 30
+						estate = estate_holy_orders
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					estate_loyalty = {
+						loyalty = 20
+						estate = estate_holy_orders
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				estate_influence = {
+					influence = 70
+					estate = estate_holy_orders
+				}
+			}
+			modifier = {
+				factor = 2
+				is_absolutism_active = yes
+				num_of_estate_privileges = {
+					estate = estate_holy_orders
+					value = 1
+				}
+				estate_loyalty = {
+					estate = estate_holy_orders
+					higher_than_influence = no
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = estate_privileges_and_agendas_events.3.al
+		trigger = { has_country_flag = estate_alchemists_present_agenda }
+		start_estate_agenda = estate_alchemists
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				NOT = {
+					estate_loyalty = {
+						loyalty = 30
+						estate = estate_alchemists
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					estate_loyalty = {
+						loyalty = 20
+						estate = estate_alchemists
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				estate_influence = {
+					influence = 70
+					estate = estate_alchemists
+				}
+			}
+			modifier = {
+				factor = 2
+				is_absolutism_active = yes
+				num_of_estate_privileges = {
+					estate = estate_alchemists
+					value = 1
+				}
+				estate_loyalty = {
+					estate = estate_alchemists
+					higher_than_influence = no
+				}
+			}
+		}
+	}
+	
+	option = {
 		name = estate_privileges_and_agendas_events.3.cho.a
 		trigger = { has_country_flag = estate_peasants_present_agenda }
 		start_estate_agenda = estate_peasants
@@ -1356,6 +1451,36 @@ country_event = {
 		}
 	}
 	
+	#Grant holy orders land
+	option = {
+		name = estate_privileges_and_agendas_events.6.holyorders
+		trigger = { has_estate = estate_holy_orders }
+		give_estate_land_share_gigantic = { estate = estate_holy_orders }
+		add_estate_loyalty = {
+			estate = estate_holy_orders
+			loyalty = 10
+			short = yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	#Grant Alchemists land
+	option = {
+		name = estate_privileges_and_agendas_events.6.alchemists
+		trigger = { has_estate = estate_alchemists }
+		give_estate_land_share_gigantic = { estate = estate_alchemists }
+		add_estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = 10
+			short = yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
 	#Grant peasants land
 	option = {
 		name = estate_privileges_and_agendas_events.6.new.a
@@ -1402,6 +1527,16 @@ country_event = {
 		custom_tooltip = SEPERATOR_TOOLTIP
 
 		if = {
+			limit = {
+				has_country_flag = ned_lands_generality_flag
+			}
+			add_estate_loyalty = {
+				estate = all
+				loyalty = -10
+				short = yes
+			}
+		}
+		else_if = {
 			limit = {
 				has_government_attribute = seizing_land_loyalty
 			}
@@ -1464,6 +1599,10 @@ country_event = {
 		trigger = {
 			has_estate = estate_church
 			NOT = { estate_has_exempt_from_seize_land_privilege = { estate = estate_church } }
+			estate_territory = {
+				estate = estate_church
+				territory = 5
+			}
 		}
 		seize_land_estate_effect = { estate = estate_church }
 		ai_chance = {

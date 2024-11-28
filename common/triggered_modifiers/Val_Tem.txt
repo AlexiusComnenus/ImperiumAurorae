@@ -75,10 +75,11 @@ val_lucky_nation = {
 			tag = VAL
 			was_tag = VAL
 		}
-		ai = yes
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		any_country = { luck = yes }
 	}
 	trigger = {
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		ai = yes
 	}
 	#core
@@ -101,16 +102,16 @@ val_lucky_nation = {
 	manpower_recovery_speed = 0.5
 	defensiveness = 0.1
 	siege_ability = 0.05
-	morale_damage_received = -0.10
-	recover_army_morale_speed = 0.5
-	reinforce_speed = 0.5
-	leader_land_manuever = 3
-	leader_land_shock = 3
-	leader_siege = 3
+	#morale_damage_received = -0.10
+	#recover_army_morale_speed = 0.5
+	reinforce_speed = 0.25
+	leader_land_manuever = 2
+	leader_land_shock = 2
+	leader_siege = 2
 	land_forcelimit = 5
-	land_forcelimit_modifier = 0.25
+	land_forcelimit_modifier = 0.10
 	land_maintenance_modifier = -0.25
-	reinforce_cost_modifier = -0.50
+	reinforce_cost_modifier = -0.25
 	global_regiment_cost = -0.25
 	fort_maintenance_modifier = -0.75
 
@@ -154,12 +155,12 @@ antiplayerbonusvaltem = {
 	}
 	
 	#siege_ability = 0.25
-	manpower_recovery_speed = 1
-	shock_damage_received = -0.35
+	manpower_recovery_speed = 0.25
+	#shock_damage_received = -0.35
 	#morale_damage_received = -0.25
 	reserves_organisation = 0.25
-	recover_army_morale_speed = 0.25
-	fire_damage = 0.25
+	recover_army_morale_speed = 0.10
+	fire_damage = 0.20
 	galley_power = 0.10
 	ship_durability = 0.10
 	heavy_ship_power = 0.10
@@ -182,15 +183,55 @@ TruePurpose = {
 	}
 	
 	#siege_ability = 0.25
-	manpower_recovery_speed = 1
+	manpower_recovery_speed = 0.25
 	shock_damage_received = -0.15
-	morale_damage_received = -0.10
+	#morale_damage_received = -0.10
 	reserves_organisation = 0.10
-	recover_army_morale_speed = 0.25
+	recover_army_morale_speed = 0.15
 	fire_damage = 0.10
-	galley_power = 0.15
-	ship_durability = 0.15
-	heavy_ship_power = 0.15
+	galley_power = 0.10
+	ship_durability = 0.10
+	heavy_ship_power = 0.10
+	reinforce_speed = 0.5
+	no_cost_for_reinforcing = yes
+	land_forcelimit_modifier = 0.25
+	global_regiment_recruit_speed = -0.5
+	global_regiment_cost = -0.5
+	mercenary_cost = -0.5
+	merc_maintenance_modifier = -0.5
+}
+
+ai_chinese_emperor_boost = {
+	potential = {
+		is_emperor_of_china = yes
+		ai = yes
+		NOT = { tag = GJN }
+		OR = {
+			primary_culture = bai
+			primary_culture = miao
+			primary_culture = yi
+			culture_group = east_asian
+		}
+		technology_group = chinese
+		capital_scope = {
+			OR = {
+				region = north_china_region
+				region = xinan_region
+				region = south_china_region
+			}
+		}
+		is_year = 1480
+	}
+	
+	trigger = {
+		is_emperor_of_china = yes
+		ai = yes
+		is_at_war = no
+	}
+	
+	global_monthly_devastation = -0.2
+	global_prosperity_growth = 0.5
+	imperial_mandate = 0.15
 }
 
 other_lucky_nation = {
@@ -203,7 +244,7 @@ other_lucky_nation = {
 			tag = NED
 			tag = HSA
 			tag = SWE
-			tag = POL
+			#tag = POL
 			tag = PLC
 			tag = WLS
 			tag = CRN
@@ -230,18 +271,39 @@ other_lucky_nation = {
 			tag = PER
 			tag = ERS
 			tag = GLH
+			tag = AZT
+			tag = ITZ
+			tag = CSU
+			tag = MAY
+			tag = INC
+			tag = MJZ
+			tag = MCH
+			tag = JAP
+			tag = YOR
 			AND = {
 				tag = FRA
 				NOT = { exists = NRM }
 			}
+			AND = {
+				is_emperor_of_china = yes
+				is_year = 1480
+			}
+			has_country_flag = lucky_chinese_warlord
 		}
 		ai = yes
-		any_country = { luck = yes }
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		luck = no
 	}
 	trigger = {
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		ai = yes
-		NOT = { AND = { is_subject = yes overlord = { ai = no } } }
+		NOT = { 
+			AND = { 
+				is_free_or_tributary_trigger = no
+				overlord = { ai = no } 
+				NOT = { liberty_desire = 50 } 
+			} 
+		}
 	}
 	#core
 	global_missionary_strength = 0.01
@@ -265,7 +327,7 @@ other_lucky_nation = {
 	defensiveness = 0.1
 	siege_ability = 0.05
 	land_forcelimit = 5
-	land_forcelimit_modifier = 0.25
+	land_forcelimit_modifier = 0.10
 	land_maintenance_modifier = -0.25
 	reinforce_cost_modifier = -0.50
 	global_regiment_cost = -0.25
@@ -301,10 +363,11 @@ other_lucky_nation_2 = {
 			tag = BAV
 		}
 		ai = yes
-		any_country = { luck = yes }
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		luck = no
 	}
 	trigger = {
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		ai = yes
 	}
 	#core
@@ -352,10 +415,11 @@ other_lucky_nation_2 = {
 
 early_game_protection = {
 	potential = {
+		NOT = { has_global_flag = ia_no_early_game_protection }
 		OR = {
-			tag = VAL
+			#tag = VAL
 			tag = TEM
-			tag = Z17
+			#tag = Z17
 			tag = HSC
 			tag = FEO
 			tag = TRE
@@ -369,8 +433,9 @@ early_game_protection = {
 		ai = yes
 	}
 	trigger = {
+		NOT = { has_global_flag = ia_no_early_game_protection }
 		ai = yes
-		NOT = { is_year = 1464 }
+		NOT = { is_year = 1465 }
 	}
 	#core
 	global_missionary_strength = 0.05
@@ -378,7 +443,7 @@ early_game_protection = {
 	development_cost_modifier = -0.10
 
 	#economy
-	mercenary_cost = -0.2
+	mercenary_cost = -0.5
 	merc_maintenance_modifier = -0.50
 	interest = -5
 	missionary_maintenance_cost = -1
@@ -388,15 +453,51 @@ early_game_protection = {
 	manpower_recovery_speed = 3
 	land_maintenance_modifier = -0.5
 	reinforce_cost_modifier = -0.50
-	global_regiment_cost = -0.25
+	global_regiment_cost = -0.5
 
 	#diplomacy
-	spy_offence = 0.5
+	spy_offence = 1
+
+}
+
+ai_colonial_nation_buff = {
+	potential = {
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
+		is_colonial_nation = yes
+		ai = yes
+	}
+	trigger = {
+		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
+		is_colonial_nation = yes
+		ai = yes
+	}
+	#core
+	development_cost = -0.10
+	development_cost_modifier = -0.10
+
+	#economy
+	mercenary_cost = -0.5
+	merc_maintenance_modifier = -0.50
+	interest = -5
+	missionary_maintenance_cost = -1
+	global_tax_modifier = 0.25
+	global_tax_income = 36
+
+	#military
+	manpower_recovery_speed = 0.25
+	land_maintenance_modifier = -0.25
+	reinforce_cost_modifier = -0.50
+	global_regiment_cost = -0.5
+	land_forcelimit = 10
+	land_forcelimit_modifier = 0.10
+
+	#diplomacy
 
 }
 
 lost_to_player_recovery = {
 	potential = {
+		NOT = { has_global_flag = ia_no_advanced_revanchism }
 		is_great_power = yes
 		OR = {
 			any_rival_country = {
@@ -454,6 +555,7 @@ lost_to_player_recovery = {
 		ai = yes
 	}
 	trigger = {
+		NOT = { has_global_flag = ia_no_advanced_revanchism }
 		NOT = { any_war_enemy_country = { ai = no } }
 		NOT = { army_size_percentage = 0.8 }
 	}
@@ -464,11 +566,14 @@ lost_to_player_recovery = {
 
 lost_to_player_recovery_2 = {
 	potential = {
-		is_great_power = yes
+		NOT = { has_global_flag = ia_no_advanced_revanchism }
+		#is_great_power = yes
 		OR = {
 			any_rival_country = {
-				is_great_power = yes
-				ai = no
+				OR = {
+					is_great_power = yes
+					ai = no
+				}
 				OR = {
 					AND = {
 						army_strength = {
@@ -484,8 +589,10 @@ lost_to_player_recovery_2 = {
 				}
 			}
 			any_enemy_country = {
-				is_great_power = yes
-				ai = no
+				OR = {
+					is_great_power = yes
+					ai = no
+				}
 				OR = {
 					AND = {
 						army_strength = {
@@ -501,8 +608,10 @@ lost_to_player_recovery_2 = {
 				}
 			}
 			any_neighbor_country = {
-				is_great_power = yes
-				ai = no
+				OR = {
+					is_great_power = yes
+					ai = no
+				}
 				OR = {
 					AND = {
 						army_strength = {
@@ -521,8 +630,10 @@ lost_to_player_recovery_2 = {
 		ai = yes
 	}
 	trigger = {
-		NOT = { any_war_enemy_country = { ai = no } }
-		NOT = { manpower_percentage = 0.60 }
+		ai = yes
+		NOT = { has_global_flag = ia_no_advanced_revanchism }
+		NOT = { is_at_war = yes }
+		NOT = { manpower_percentage = 0.40 }
 	}
 	
 	manpower_recovery_speed = 2.5

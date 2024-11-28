@@ -1,11 +1,10 @@
-owner = RUM
-controller = RUM
+owner = RAM
+controller = RAM
 capital = "Diyar Bekir"
 is_city = yes
 culture = turkish
 religion = sunni
 trade_goods = livestock
-fort_15th = yes
 base_tax = 3
 base_production = 3
 base_manpower = 1

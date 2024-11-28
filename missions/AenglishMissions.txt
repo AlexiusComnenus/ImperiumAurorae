@@ -4,7 +4,7 @@ Aengland_Missions_1 = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		
 	}
 	has_country_shield = yes
@@ -43,11 +43,11 @@ Aengland_Missions_1 = {
 				area = western_norway
 				area = jutland_area
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_subject_holds = ROOT }
 		}
 		
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
 				value = 6
 				OR = {
 					area = western_norway
@@ -77,11 +77,11 @@ Aengland_Missions_1 = {
 		
 		provinces_to_highlight = {
 			region = scandinavia_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { country_or_subject_holds = ROOT }
 		}
 		
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+			num_of_provinces_owned_or_owned_by_subjects_with = {
 				value = 19
 				region = scandinavia_region
 			}
@@ -252,7 +252,7 @@ Aengland_Missions_2 = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		
 	}
 	has_country_shield = yes
@@ -562,7 +562,7 @@ Aengland_Missions_3 = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		
 	}
 	has_country_shield = yes
@@ -599,6 +599,8 @@ Aengland_Missions_3 = {
 				is_year = 1455
 				tag = Z21
 			}
+			is_at_war = no
+			all_subject_country = { is_at_war = no }
 		}
 		
 		effect = {
@@ -753,8 +755,12 @@ Aengland_Missions_3 = {
 		effect = {
 			custom_tooltip = aen_french_provinces_tt
 			hidden_effect = {
-				every_neighboring_province = {
-					limit = { region = france_region }
+				france_region = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = ROOT
+						}
+					}
 					add_permanent_claim = ROOT
 				}
 			}
@@ -850,7 +856,7 @@ Aengland_Missions_4 = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		
 	}
 	has_country_shield = yes
@@ -865,7 +871,10 @@ Aengland_Missions_4 = {
 		trigger = {
 			stability = 1
 			all_owned_province = {
-				NOT = { unrest = 0 }
+				OR = {
+					NOT = { unrest = 0 }
+					NOT = { region = british_isles_region }
+				}
 			}
 			NOT = {
 				any_subject_country = {
@@ -929,8 +938,12 @@ Aengland_Missions_4 = {
 		effect = {
 			custom_tooltip = aen_french_provinces_tt
 			hidden_effect = {
-				every_neighboring_province = {
-					limit = { region = france_region }
+				france_region = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = ROOT
+						}
+					}
 					add_permanent_claim = ROOT
 				}
 			}
@@ -1038,7 +1051,7 @@ Aengland_Missions_5_branching_cooperative = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		has_country_flag = aengland_missions_cooperative_flag
 	}
 	has_country_shield = yes
@@ -1184,7 +1197,7 @@ Aengland_Missions_5_branching_usurpation = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 		has_country_flag = aengland_missions_usurpation_flag
 	}
 	has_country_shield = yes
@@ -1333,7 +1346,7 @@ Aengland_Missions_5_navy_branch = {
 	ai = yes
 	potential = {
 		primary_culture = anglo_saxon
-		#NOT = { tag = AVE }
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
 	

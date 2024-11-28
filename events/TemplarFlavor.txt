@@ -168,7 +168,7 @@ country_event = {  # Final Crusade
 		#form_coalition_against = emperor
 		every_country = {
 			limit = {
-				OR = {	
+				AND = {	
 					has_matching_religion = emperor
 					is_part_of_hre = yes
 				}
@@ -227,18 +227,36 @@ country_event = {  # Yangshing Falls
 		name = ia_flavor_tem.5.a
 		ai_chance = { factor = 33 }
 		
+		change_government = monarchy
 		set_allow_female_emperor = yes
+		hidden_effect = {
+			random_country = {
+				limit = {
+					religion = hellenic_pagan_reformed
+					government = monarchy
+					has_regency = no
+					is_emperor = no
+				}
+				set_emperor = yes
+			}
+		}
 		define_heir = {
 			age = 2
 		}
 		kill_ruler = yes
 		change_consort_regent_to_ruler = yes
 		
+		change_government = theocracy
+		hidden_effect = {
+			add_government_reform = celestial_xizho_empire
+			add_government_reform = antioch_hellenic_crusade_reform
+			
+			add_ruler_personality = mad_dragon_personality
+			add_ruler_personality = dragons_lament_personality
+		}
+		
 		set_emperor = yes
 		hre_inheritable = yes
-		
-		add_ruler_personality = mad_dragon_personality
-		add_ruler_personality = dragons_lament_personality
 		
 		remove_country_modifier = antioch_dragon_princess
 	}
@@ -705,7 +723,7 @@ country_event = {  # Templar knight turns up
 					define_general = {
 						shock = 5
 						fire = 1
-						manuever = 7
+						manuever = 6
 						siege = 1
 						trait = templar_knight
 						name = root_name_male
@@ -715,7 +733,7 @@ country_event = {  # Templar knight turns up
 					define_general = {
 						shock = 5
 						fire = 1
-						manuever = 7
+						manuever = 6
 						siege = 1
 						trait = templar_knight
 						female = yes
@@ -1200,6 +1218,11 @@ province_event = { # province flipping
 		}
 		NOT = { owned_by = controller }
 		is_core = controller
+		controller = {
+			is_in_war = {
+				casus_belli = cb_final_crusade
+			}
+		}
 	}
 	
 	is_triggered_only = yes
@@ -1392,5 +1415,235 @@ country_event = {  # Legion of Dusk
 		
 		set_global_flag = legion_of_dusk_established
 		custom_tooltip = legion_of_dusk_established_tt
+	}
+}
+
+country_event = {  # Legion of Dusk interaction menu
+	id = ia_flavor_tem.29
+	title = ia_flavor_tem.29.t
+	desc = ia_flavor_tem.29.d
+	picture = RELIGIOUS_WARS_eventPicture
+    is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	option = {
+		name = ia_flavor_tem.29.a
+		ai_chance = { factor = 0 }
+		
+		trigger = {
+			years_of_income = 0.5
+			mil_power = 100
+			NOT = { has_country_modifier = dusk_sponsored_merc_connections }
+		}
+		highlight = yes
+		
+		add_years_of_income = -0.5
+		add_mil_power = -100
+		
+		add_country_modifier = {
+			name = dusk_sponsored_merc_connections
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.29.b
+		ai_chance = { factor = 0 }
+		
+		trigger = {
+			years_of_income = 0.5
+			mil_power = 100
+			NOT = { has_country_modifier = dusk_funded_dusksworn }
+		}
+		highlight = yes
+		
+		add_years_of_income = -0.5
+		add_mil_power = -100
+		
+		add_country_modifier = {
+			name = dusk_funded_dusksworn
+			duration = 3650
+		}
+		
+		capital_scope = {
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+			tercio_infantry = ROOT
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.29.c
+		ai_chance = { factor = 100 }
+		
+		trigger = {
+			treasury = 100
+			mil_power = 50
+			NOT = { has_country_modifier = recently_recruited_dawnwsbane }
+		}
+		highlight = yes
+		
+		add_treasury = -100
+		add_mil_power = -50
+		
+		country_event = { id = ia_flavor_tem.30 }
+		add_country_modifier = {
+			name = recently_recruited_dawnwsbane
+			duration = 3650
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.29.e
+		ai_chance = { factor = 2 }
+		
+	}
+}
+
+country_event = {  # Recruit Dawnsbane General
+	id = ia_flavor_tem.30
+	title = ia_flavor_tem.30.t
+	desc = ia_flavor_tem.30.d
+	picture = TOURNAMENT_eventPicture
+	
+	trigger = {
+	}
+	
+	immediate = {
+		set_saved_name = {
+			key = root_name_male
+			type = advisor
+			scope = ROOT
+		}
+		set_saved_name = {
+			key = root_name_female
+			type = advisor
+			female = yes
+			scope = ROOT
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_tem.30.a
+		
+		if = {
+			limit = { army_tradition = 75 }
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 5
+						fire = 6
+						manuever = 5
+						siege = 2
+						trait = dawnsbane_leader
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 5
+						fire = 6
+						manuever = 5
+						siege = 2
+						trait = dawnsbane_leader
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { army_tradition = 50 }
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 4
+						fire = 5
+						manuever = 5
+						siege = 1
+						trait = dawnsbane_leader
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 4
+						fire = 5
+						manuever = 5
+						siege = 1
+						trait = dawnsbane_leader
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 2
+						fire = 4
+						manuever = 3
+						siege = 0
+						trait = dawnsbane_leader
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 2
+						fire = 4
+						manuever = 3
+						siege = 0
+						trait = dawnsbane_leader
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {  # Disband the Legion of Dusk
+	id = ia_flavor_tem.31
+	title = ia_flavor_tem.31.t
+	desc = ia_flavor_tem.31.d
+	picture = TOURNAMENT_eventPicture
+	
+	trigger = {
+		any_hired_mercenary_company = {
+			template = merc_legion_of_dusk
+		}
+		NOT = { at_war_with_religious_enemy = yes }
+		NOT = { war_with = Z17 }
+	}
+	
+	immediate = {
+		random_hired_mercenary_company = {
+			limit = { template = merc_legion_of_dusk }
+			disband_mercenary_company = THIS
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_tem.31.a
+		
+		
 	}
 }

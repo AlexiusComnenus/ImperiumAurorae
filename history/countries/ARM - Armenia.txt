@@ -5,6 +5,7 @@ technology_group = eastern
 religion = coptic
 primary_culture = armenian
 capital = 419
+fixed_capital = 419
 1745.1.1= {
 	monarch = {
 		name = "Mehdi"

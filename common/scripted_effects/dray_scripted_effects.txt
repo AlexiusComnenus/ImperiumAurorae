@@ -64,11 +64,11 @@ dray_build_to_limit_tercio = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_tercio = 999
 			}
@@ -81,7 +81,7 @@ dray_build_to_limit_tercio = {
 			which = drayCalcNumberOfTercio
 			value = 1
 		}
-		add_treasury = -10
+		#add_treasury = -10
 		add_manpower = -1
 		capital_scope = {
 			tercio_infantry = ROOT
@@ -147,11 +147,11 @@ dray_build_to_limit_cossack = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 15
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 15
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_cossacks = 999
 			}
@@ -164,7 +164,7 @@ dray_build_to_limit_cossack = {
 			which = drayCalcNumberOfCossack
 			value = 1
 		}
-		add_treasury = -15
+		#add_treasury = -15
 		add_manpower = -1
 		capital_scope = {
 			cossack_infantry = ROOT
@@ -230,11 +230,11 @@ dray_build_to_limit_rajput = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 15
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 15
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_rajput = 999
 			}
@@ -247,7 +247,7 @@ dray_build_to_limit_rajput = {
 			which = drayCalcNumberOfRajput
 			value = 1
 		}
-		add_treasury = -15
+		#add_treasury = -15
 		add_manpower = -1
 		capital_scope = {
 			rajput_infantry = ROOT
@@ -313,9 +313,9 @@ dray_build_to_limit_revguard = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 20
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 20
+			#manpower_percentage = 0.1
 			manpower = 1
 			NOT = { army_size_percentage = 1 }
 			NOT = {
@@ -330,7 +330,7 @@ dray_build_to_limit_revguard = {
 			which = drayCalcNumberOfRevGuard
 			value = 1
 		}
-		add_treasury = -20
+		#add_treasury = -20
 		add_manpower = -1
 		capital_scope = {
 			revolutionary_guard_infantry = ROOT
@@ -404,11 +404,11 @@ dray_build_to_limit_streltsy = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
+			#years_of_income = 0.2
+			#treasury = 10
 #			manpower_percentage = 0.1
-#			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_streltsy = 999
 			}
@@ -421,8 +421,8 @@ dray_build_to_limit_streltsy = {
 			which = drayCalcNumberOfStreltsy
 			value = 1
 		}
-		add_treasury = -10
-#		add_manpower = -1
+		#add_treasury = -10
+		add_manpower = -1
 		capital_scope = {
 			streltsy_infantry = ROOT
 		}
@@ -462,7 +462,7 @@ dray_build_to_limit_hussar = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_hussars = 999
 			}
@@ -532,11 +532,11 @@ dray_build_to_limit_carolean = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_carolean = 999
 			}
@@ -549,7 +549,7 @@ dray_build_to_limit_carolean = {
 			which = drayCalcNumberOfCarolean
 			value = 1
 		}
-		add_treasury = -10
+		#add_treasury = -10
 		add_manpower = -1
 		capital_scope = {
 			carolean_infantry = ROOT
@@ -623,11 +623,11 @@ dray_build_to_limit_samurai = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_samurai = 999
 			}
@@ -640,7 +640,7 @@ dray_build_to_limit_samurai = {
 			which = drayCalcNumberOfSamurai
 			value = 1
 		}
-		add_treasury = -10
+		#add_treasury = -10
 		add_manpower = -1
 		capital_scope = {
 			samurai_infantry = ROOT
@@ -714,11 +714,11 @@ dray_build_to_limit_musketeer = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_musketeers = 999
 			}
@@ -731,7 +731,7 @@ dray_build_to_limit_musketeer = {
 			which = drayCalcNumberOfMusketeer
 			value = 1
 		}
-		add_treasury = -10
+		#add_treasury = -10
 		add_manpower = -1
 		capital_scope = {
 			musketeer_infantry = ROOT
@@ -805,11 +805,11 @@ dray_build_to_limit_mamluk = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_mamluks = 999
 			}
@@ -822,7 +822,7 @@ dray_build_to_limit_mamluk = {
 			which = drayCalcNumberOfMamluk
 			value = 1
 		}
-		add_treasury = -10
+		#add_treasury = -10
 		add_manpower = -1
 		capital_scope = {
 			mamluks_infantry = ROOT
@@ -896,11 +896,11 @@ dray_build_to_limit_qizilbash = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			years_of_income = 0.2
-			treasury = 7
-			manpower_percentage = 0.1
+			#years_of_income = 0.2
+			#treasury = 7
+			#manpower_percentage = 0.1
 			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_qizilbash = 999
 			}
@@ -913,7 +913,7 @@ dray_build_to_limit_qizilbash = {
 			which = drayCalcNumberOfQizilbash
 			value = 1
 		}
-		add_treasury = -7
+		#add_treasury = -7
 		add_manpower = -1
 		capital_scope = {
 			qizilbash_infantry = ROOT
@@ -953,12 +953,12 @@ dray_build_to_limit_janissary = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			mil_power = 300
+			#mil_power = 300
 #			years_of_income = 0.1
 #			treasury = 5
-			manpower_percentage = 0.1
-			manpower = 5
-			NOT = { army_size_percentage = 1 }
+			#manpower_percentage = 0.1
+			manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_janissaries = 999
 			}
@@ -971,9 +971,9 @@ dray_build_to_limit_janissary = {
 			which = drayCalcNumberOfJanissary
 			value = 1
 		}
-		add_mil_power = -3
+		#add_mil_power = -3
 #		add_treasury = -5
-#		add_manpower = -0.5
+		add_manpower = -0.5
 		capital_scope = {
 			janissary_infantry = ROOT
 		}
@@ -1027,11 +1027,11 @@ dray_build_to_limit_cawa = {
 				controlled_by = ROOT
 				has_siege = no
 			}
-			mil_power = 200
+			#mil_power = 200
 #			years_of_income = 0.1
 #			treasury = 5
-			manpower_percentage = 0.05
-			manpower = 2.5
+			#manpower_percentage = 0.05
+			manpower = 1
 			NOT = { army_size_percentage = 1 }
 			NOT = {
 				num_of_cawa = 999
@@ -1045,9 +1045,9 @@ dray_build_to_limit_cawa = {
 			which = drayCalcNumberOfCawa
 			value = 1
 		}
-		add_mil_power = -2
+		#add_mil_power = -2
 #		add_treasury = -5
-#		add_manpower = -0.5
+		add_manpower = -0.5
 		capital_scope = {
 			cawa_infantry = ROOT
 		}

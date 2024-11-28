@@ -56,20 +56,25 @@ country_event = {	#Burn Kopenhagen
 	desc = "ia_flavor_gotland.2.d"
 	picture = VILLAGE_BURNING_eventPicture
 
-	is_triggered_only = yes
+	#is_triggered_only = yes
+	fire_only_once = yes
 	
 	trigger = {
 		tag = GOT
 		war_with = DAN
-		war_score_against = {
-			who = DAN
-			value = 90
-		}
+		#war_score_against = {
+		#	who = DAN
+		#	value = 50
+		#}
 		DAN = {
 			capital_scope = {
 				controlled_by = GOT
 			}
 		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
 	}
 	
 	option = {
@@ -83,9 +88,11 @@ country_event = {	#Burn Kopenhagen
 			}
 		}
 		
-		country_event = {
-			id = ia_flavor_gotland.1
-			#days = 10
+		hidden_effect = {
+			country_event = {
+				id = ia_flavor_gotland.1
+				days = 15
+			}
 		}
 	}
 }
@@ -118,6 +125,11 @@ country_event = {	# Immigrations, SAX edition
 			country_event = { id = ia_flavor_gotland.7 }
 		}
 	}
+	
+	option = {
+		name = ia_flavor_gotland.3.b 
+		trigger = { ai = no }	
+	}
 }
 
 country_event = {	# Immigrations, POL edition
@@ -143,6 +155,7 @@ country_event = {	# Immigrations, POL edition
 			add_base_tax = 2
 		}
 		random_owned_province = {
+			limit = { NOT = { is_capital = yes } } 
 			add_base_manpower = 5
 			add_base_production = 3
 			add_base_tax = 7
@@ -234,7 +247,7 @@ country_event = {	# Gutnish Purge?
 		add_accepted_culture = saxo_gutnish
 		SAX = { country_event = { id = ia_flavor_gotland.3 } }
 		hidden_effect = {
-			country_event = { id = ia_flavor_gotland.6 }
+			country_event = { id = ia_flavor_gotland.6 	days = 30}
 			if = {
 				limit = { exists = PLC }
 				PLC = { country_event = { id = ia_flavor_gotland.4 } }
@@ -247,6 +260,7 @@ country_event = {	# Gutnish Purge?
 	
 	option = {
 		name = ia_flavor_gotland.5.b 
+		trigger = { ai = no }
 		add_accepted_culture = danish
 		remove_country_modifier = got_hunter_of_kings
 	}
@@ -345,5 +359,146 @@ country_event = {	# Square deal
 			name = sax_got_looting_tactics
 			duration = -1
 		}
+	}
+}
+
+province_event = {
+	id = ia_flavor_gotland.9
+	title = ia_flavor_gotland.9.t
+	desc = ia_flavor_gotland.9.d
+	picture = CITY_VIEW_eventPicture
+	goto = ROOT
+	hidden = yes
+	
+	trigger = {
+		#has_owner_religion = yes
+		
+		OR = {
+			area = munster_area
+			area = connacht_area
+			area = leinster_area
+			area = ulster_area
+		}
+		
+		owner = {
+			#tag = GOT
+			has_country_flag = gotland_converting_ireland_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = ia_flavor_gotland.9.a
+		
+		change_culture = gutnish
+		change_religion = owner
+	}
+}
+
+country_event = {	# Fate of Ireland
+	id = ia_flavor_gotland.10
+	title = "ia_flavor_gotland.10.t"
+	desc = "ia_flavor_gotland.10.d"
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	option = {	# impose gutnish culture
+		name = ia_flavor_gotland.10.a 
+		custom_tooltip = impose_gutnish_culture_tt
+		set_country_flag = gotland_converting_ireland_flag
+	}
+	
+	option = {	# self-rule
+		name = ia_flavor_gotland.10.b
+		
+		munster_area = {
+			add_province_modifier = {
+				name = got_irish_cooperation
+				duration = -1
+			}
+			add_nationalism = -10
+		}
+		connacht_area = {
+			add_province_modifier = {
+				name = got_irish_cooperation
+				duration = -1
+			}
+			add_nationalism = -10
+		}
+		leinster_area = {
+			add_province_modifier = {
+				name = got_irish_cooperation
+				duration = -1
+			}
+			add_nationalism = -10
+		}
+		ulster_area = {
+			add_province_modifier = {
+				name = got_irish_cooperation
+				duration = -1
+			}
+			add_nationalism = -10
+		}
+	}
+}
+
+country_event = {	# Fate of the Danelaw
+	id = ia_flavor_gotland.11
+	title = "ia_flavor_gotland.11.t"
+	desc = "ia_flavor_gotland.11.d"
+	picture = GENERALS_DISCUSSING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		
+	}
+	
+	option = {	# establish danelaw
+		name = ia_flavor_gotland.11.a 
+		
+		hidden_effect = {
+			east_anglia_area = {
+				remove_core = ROOT
+				add_core = Z33
+			}
+			east_midlands_area = {
+				remove_core = ROOT
+				add_core = Z33
+			}
+			yorkshire_area = {
+				remove_core = ROOT
+				add_core = Z33
+			}
+			236 = {
+				remove_core = ROOT
+				add_core = Z33
+				change_culture = gutnish
+				change_religion = ROOT
+			}
+		}
+		release = Z33
+		Z33 = {
+			change_religion = ROOT
+			change_government = republic
+			add_government_reform = danelaw_gov
+		}
+		create_subject = {
+			subject_type = danelaw_subject
+			subject = Z33
+		}
+	}
+	
+	option = {	# keep it ourselves
+		name = ia_flavor_gotland.11.b
+		add_prestige = 10
 	}
 }

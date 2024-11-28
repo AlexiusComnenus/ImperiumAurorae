@@ -1,0 +1,50 @@
+spriteTypes = {
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_aachen"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_aachen.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_nuernberg"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_nuernberg.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_frankfurt"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_frankfurt.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_hamburg"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_hamburg.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_bremen"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_bremen.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_dortmund"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_dortmund.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_goslar"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_goslar.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_regensburg"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_regensburg.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_rothenburg"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_rothenburg.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_memmingen"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_memmingen.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_konstanz"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_konstanz.dds"
+    	}
+	spriteType = {
+        	name = "GFX_great_project_imperialcity_ulm"	
+        	texturefile = "gfx//interface//great_projects//great_project_imperialcity_ulm.dds"
+    	}
+}

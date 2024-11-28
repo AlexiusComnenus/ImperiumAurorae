@@ -1,0 +1,113 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+gov_reichskoenigtum = {
+	rank = {
+		2 = REICHSKOENIGTUM
+	}
+	ruler_male = {
+		2 = PLENIPOTENTIARY_MALE
+	}
+	ruler_female = {
+		2 = PLENIPOTENTIARY_FEMALE
+	}
+	consort_male = {
+		2 = REICHSKOENIGTUM_GEMAHL
+	}
+	consort_female = {
+		2 = REICHSKOENIGTUM_GEMAHLIN
+	}
+	heir_male = {
+		2 = REICHSKOENIGTUM_HEIR_MALE
+	}
+	heir_female = {
+		2 = REICHSKOENIGTUM_HEIR_FEMALE
+	}
+	trigger = {
+		has_reform = reichskoenigtum
+	}
+}
+
+gov_holyland = {
+	rank = {
+		2 = HOLYKINGDOM
+	}
+	ruler_male = {
+		2 = GRAVEKEEPER_MALE
+	}
+	ruler_female = {
+		2 = GRAVEKEEPER_FEMALE
+	}
+	consort_male = {
+		2 = HOLYLAND_GEMAHL
+	}
+	consort_female = {
+		2 = HOLYLAND_GEMAHLIN
+	}
+	heir_male = {
+		2 = HOLYLAND_HEIR_MALE
+	}
+	heir_female = {
+		2 = HOLYLAND_HEIR_FEMALE
+	}
+	trigger = {
+		tag = HJE
+	}
+}
+
+gov_impduchy = {
+	rank = {
+		1 = REICHSHERZOGTUM
+	}
+	ruler_male = {
+		1 = IMPDUC_MALE
+	}
+	ruler_female = {
+		1 = IMPDUC_FEMALE
+	}
+	consort_male = {
+		1 = IMPDUC_GEMAHL_MALE
+	}
+	consort_female = {
+		1 = IMPDUC_GEMAHL_FEMALE
+	}
+	heir_male = {
+		1 = IMPDUC_HEIR_MALE
+	}
+	heir_female = {
+		1 = IMPDUC_HEIR_FEMALE
+	}
+	trigger = {
+		is_subject_of_type = imperialduchy
+	}
+}
+
+gov_ostind_monarchy = {
+	rank = {
+		3 = HEILIGES_KAISERREICH
+	}
+	ruler_male = {
+		3 = KAISER_JAVA
+	}
+	ruler_female = {
+		3 = KAISERIN_JAVA
+	}
+	consort_male = {
+		3 = JAVA_GEMAHL
+	}
+	consort_female = {
+		3 = JAVA_GEMAHLIN
+	}
+	heir_male = {
+		3 = JAVA_HEIR
+	}
+	heir_female = {
+		3 = JAVA_HEIRESS
+	}
+	trigger = {
+		tag = OKM
+		government = monarchy
+	}
+}

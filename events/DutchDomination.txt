@@ -766,14 +766,14 @@ country_event = {
 			}
 			country_event = { id = dutch_domination.901 days = 2 }
 		}
-		moluccas_region = {
+		trade_company_moluccas = {
 			limit = {
 				NOT = { is_core = VOC }
 				NOT = { is_permanent_claim = VOC }
 			}
 			add_permanent_claim = VOC
 		}
-		indonesia_region = {
+		trade_company_indonesia = {
 			limit = {
 				NOT = { is_core = VOC }
 				NOT = { is_permanent_claim = VOC }
@@ -819,8 +819,8 @@ country_event = {
 			every_owned_province = {
 				limit = {
 					OR = {
-					region = moluccas_region
-					region = indonesia_region
+						trade_company_region = trade_company_indonesia
+						trade_company_region = trade_company_moluccas
 					}
 				}
 				add_core = VOC
@@ -855,14 +855,14 @@ country_event = {
 			}
 			country_event = { id = dutch_domination.901 days = 2 }
 		}
-		moluccas_region = {
+		trade_company_indonesia = {
 			limit = {
 				NOT = { is_core = VOC }
 				NOT = { is_permanent_claim = VOC }
 			}
 			add_permanent_claim = VOC
 		}
-		indonesia_region = {
+		trade_company_moluccas = {
 			limit = {
 				NOT = { is_core = VOC }
 				NOT = { is_permanent_claim = VOC }
@@ -2378,7 +2378,7 @@ country_event = { #Auto cede provinces to VOC
 		}
 		any_owned_province = {
 			OR = {
-				trade_company_region = trade_company_east_india
+				trade_company_region = trade_company_indonesia
 				trade_company_region = trade_company_moluccas
 				is_permanent_claim = VOC
 			}
@@ -2394,8 +2394,9 @@ country_event = { #Auto cede provinces to VOC
 		every_owned_province = {
 			limit = {
 				OR = {
-					trade_company_region = trade_company_east_india
+					trade_company_region = trade_company_indonesia
 					trade_company_region = trade_company_moluccas
+					is_permanent_claim = VOC
 				}
 				is_city = yes
 			}
@@ -2435,6 +2436,7 @@ country_event = {
 	
 	trigger = {
 		all_low_countries_tags = yes
+		always = no
 	}
 		
 	option = { #accept

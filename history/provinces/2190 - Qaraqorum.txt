@@ -1,5 +1,5 @@
-owner = Z03
-controller = Z03
+owner = MGE
+controller = MGE
 capital = "Sain Noyon"
 is_city = yes
 culture = khalkha
@@ -9,7 +9,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 1
 add_core = KLK
-add_core = Z03
+add_core = MGE
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

@@ -20,14 +20,25 @@ Z47_missions_column_1 = {
 		#}
 		
 		trigger = {
-			NOT = { is_subject = yes }
+			OR = {
+				NOT = { exists = Z00 }
+				war_with = Z00
+			}
 		}
 		
 		effect = {
 			add_prestige = 10
 			add_legitimacy = 10
 			
-			create_general = { tradition = 50 add_siege = 3}
+			define_general = {
+				shock = 5
+				fire = 5
+				manuever = 5
+				siege = 4
+				name = "Yevpraxia 'Bane of Cumans'"
+				female = yes
+				trait = hardy_warrior_personality
+			}
 			
 			if = {
 				limit = { ai = yes }

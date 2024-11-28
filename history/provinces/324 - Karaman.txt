@@ -1,5 +1,5 @@
-owner = RUM
-controller = RUM
+owner = KAR
+controller = KAR
 capital = "Karaman"
 is_city = yes
 culture = turkish

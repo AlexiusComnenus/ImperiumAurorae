@@ -1,0 +1,248 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "HLR_BOHEMIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_BOHEMIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_BOHEMIA_ERZG_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_BOHEMIA_ERZG_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_BOHEMIA_CITIES_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_BOHEMIA_CITIES_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_REICHSTAG_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_REICHSTAG_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_CAPITAL_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_CAPITAL_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_REGNUMT_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_REGNUMT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_WESTERNSCHOOLS_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_WESTERNSCHOOLS_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_WESTERNSCHOOLS_WAL_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_WESTERNSCHOOLS_WAL_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_WESTERNSCHOOLS_LOT_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_WESTERNSCHOOLS_LOT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_DUTCHINDEP_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_DUTCHINDEP_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_ITALIANALLIANCE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_ITALIANALLIANCE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_REGNUMITALICUM_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_REGNUMITALICUM_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_MILREFORM_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_MILREFORM_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_LANDSKNECHT_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_LANDSKNECHT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_CATHKNIGHTS_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_CATHKNIGHTS_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_CHURCHPACT_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_CHURCHPACT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_MILREFORM_END_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_MILREFORM_END_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_FRACTURE_OTTOS_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_FRACTURE_OTTOS_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_HOLYLAND_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_HOLYLAND_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_NEWGP_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_NEWGP_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_POLAND_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_POLAND_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_RUSSIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_RUSSIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_LIVONIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_LIVONIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_FRANCE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_FRANCE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_BRITAIN_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_BRITAIN_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_PRUSKI_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_PRUSKI_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_COALITION_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_COALITION_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_NORMANDY_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_NORMANDY_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_HUNGARY_RELEASE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_HUNGARY_RELEASE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_HUNGARIAN_SUPERVISION_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_HUNGARIAN_SUPERVISION_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_HUNGARY_REBELLION_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_HUNGARY_REBELLION_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_TRANSLEITHANIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_TRANSLEITHANIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_ILLYRIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_ILLYRIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_WALLACHIA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_WALLACHIA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_BAECKER_MUELLER_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_BAECKER_MUELLER_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_FISCHER_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_FISCHER_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_WEBER_TUCHMACHER_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_WEBER_TUCHMACHER_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_SCHMIEDE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_SCHMIEDE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_OKMREVOLTSTART_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_OKMREVOLTSTART_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_OKMREVOLTEND_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_OKMREVOLTEND_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_JAVAWARNING_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_JAVAWARNING_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_EMPERORJAVA_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_EMPERORJAVA_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_PLUNDERINGBANDITS_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_PLUNDERINGBANDITS_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_NATIVEMASSACRE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_NATIVEMASSACRE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_FIRECAPITAL_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_FIRECAPITAL_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_EXPORTCOLLAPSE_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_EXPORTCOLLAPSE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_OKMREVOLTEND_INDEPENDENT_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_OKMREVOLTEND_INDEPENDENT_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_DUTCHRIOTS_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_DUTCHRIOTS_eventPicture.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "HLR_SEPARATISM_eventPicture"
+		texturefile = "gfx/event_pictures/HLR_SEPARATISM_eventPicture.dds"
+		alwaystransparent = yes
+	}
+}

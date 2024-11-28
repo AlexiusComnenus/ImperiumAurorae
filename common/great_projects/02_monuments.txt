@@ -965,46 +965,52 @@ wilanow_palace = {
 	
 	build_trigger = {
 		owner = {
-			adm_tech = 22
+			OR = {
+				culture_group = west_slavic
+				culture_group = east_slavic
+				culture_group = south_slavic
+			}
 		}
 		OR = {
-			owner = {
-				OR = {
-					culture_group = west_slavic
-					culture_group = east_slavic
-					culture_group = south_slavic
-				}
-			}
-			has_owner_culture = yes
+			culture_group = west_slavic
+			culture_group = east_slavic
+			culture_group = south_slavic
 		}
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = west_slavic
-					culture_group = east_slavic
-					culture_group = south_slavic
-				}
+		owner = {
+			OR = {
+				culture_group = west_slavic
+				culture_group = east_slavic
+				culture_group = south_slavic
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture_group = west_slavic
+			culture_group = east_slavic
+			culture_group = south_slavic
+		}
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = west_slavic
-					culture_group = east_slavic
-					culture_group = south_slavic
-				}
+		owner = {
+			OR = {
+				culture_group = west_slavic
+				culture_group = east_slavic
+				culture_group = south_slavic
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture_group = west_slavic
+			culture_group = east_slavic
+			culture_group = south_slavic
+		}
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -1226,7 +1232,7 @@ westminster_palace = {
 	# province it starts in
 	start = 236
 	
-	date = 1868.01.01
+	date = 1368.01.01
 	time = {
 		months = 0
 	}
@@ -1244,11 +1250,12 @@ westminster_palace = {
 		owner = {
 			OR = {
 				culture_group = gaelic
-				culture_group = british
-				primary_culture = anglo_norman
-				primary_culture = normand
+				primary_culture = anglo_saxon
+				#primary_culture = normand
 			}
+			#has_parliament = yes
 		}
+		has_seat_in_parliament = yes
 	}
 	on_built = {
 	}
@@ -1258,21 +1265,23 @@ westminster_palace = {
 		owner = {
 			OR = {
 				culture_group = gaelic
-				culture_group = british
-				primary_culture = anglo_norman
-				primary_culture = normand
+				primary_culture = anglo_saxon
+				#primary_culture = normand
 			}
+			#has_parliament = yes
 		}
+		has_seat_in_parliament = yes
 	}
 	can_upgrade_trigger = {
 		owner = {
 			OR = {
 				culture_group = gaelic
-				culture_group = british
-				primary_culture = anglo_norman
-				primary_culture = normand
+				primary_culture = anglo_saxon
+				#primary_culture = normand
 			}
+			#has_parliament = yes
 		}
+		has_seat_in_parliament = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -1370,7 +1379,7 @@ westminster_palace = {
 			local_sailors_modifier = 0.25
 		}
 		country_modifiers = {
-			development_cost_modifier = -0.1
+			development_cost_modifier = -0.05
 			advisor_cost = -0.05
 
 			reform_progress_growth = 0.2
@@ -1389,7 +1398,7 @@ dome_rock = {
 	# province it starts in
 	start = 379
 	
-	date = 1868.01.01
+	date = 1368.01.01
 	time = {
 		months = 0
 	}
@@ -1482,7 +1491,7 @@ dome_rock = {
 		country_modifiers = {
 			stability_cost_modifier = -0.15
 			legitimacy = 1
-			republican_tradition = 0.5
+			republican_tradition = 0.25
 			tolerance_own = 1
 		}
 		on_upgraded = {
@@ -1505,7 +1514,7 @@ dome_rock = {
 		country_modifiers = {
 			stability_cost_modifier = -0.25
 			legitimacy = 1.5
-			republican_tradition = 1
+			republican_tradition = 0.5
 			tolerance_own = 1
 		}
 		on_upgraded = {
@@ -1515,7 +1524,7 @@ dome_rock = {
 
 reichstag = {
 	# province it starts in
-	start = 50
+	start = 1758
 	
 	date = 1368.01.01
 	time = {
@@ -2037,10 +2046,18 @@ puerta_sol = {
 	
 	build_trigger = {
 		OR = {
-			owner = {
+			AND = {
+				owner = {
+					culture_group = iberian
+				}
 				culture_group = iberian
 			}
-			has_owner_culture = yes
+			AND = {
+				owner = {
+					primary_culture = visigothic
+				}
+				culture = visigothic
+			}
 		}
 	}
 	on_built = {
@@ -2049,18 +2066,34 @@ puerta_sol = {
 	}
 	can_use_modifiers_trigger = {
 		OR = {
-			owner = {
+			AND = {
+				owner = {
+					culture_group = iberian
+				}
 				culture_group = iberian
 			}
-			has_owner_culture = yes
+			AND = {
+				owner = {
+					primary_culture = visigothic
+				}
+				culture = visigothic
+			}
 		}
 	}
 	can_upgrade_trigger = {
 		OR = {
-			owner = {
+			AND = {
+				owner = {
+					culture_group = iberian
+				}
 				culture_group = iberian
 			}
-			has_owner_culture = yes
+			AND = {
+				owner = {
+					primary_culture = visigothic
+				}
+				culture = visigothic
+			}
 		}
 	}
 
@@ -2309,15 +2342,24 @@ rijksmuseum = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
+		owner = {
+			OR = {
+				primary_culture = dutch
+				primary_culture = frisian
+				primary_culture = flemish
+				primary_culture = wallonian
+				primary_culture = alsatian
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture = dutch
+			culture = frisian
+			culture = flemish
+			culture = wallonian
+			culture = alsatian
+		}
+		province_is_or_accepts_culture = yes
+		
 		owner = {
 			OR = {
 				adm_tech = 28
@@ -2327,22 +2369,30 @@ rijksmuseum = {
 				}
 			}
 		}
-		always = no
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
+		owner = {
+			OR = {
+				primary_culture = dutch
+				primary_culture = frisian
+				primary_culture = flemish
+				primary_culture = wallonian
+				primary_culture = alsatian
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture = dutch
+			culture = frisian
+			culture = flemish
+			culture = wallonian
+			culture = alsatian
+		}
+		province_is_or_accepts_culture = yes
+		
 		owner = {
 			OR = {
 				adm_tech = 28
@@ -2354,15 +2404,24 @@ rijksmuseum = {
 		}
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
+		owner = {
+			OR = {
+				primary_culture = dutch
+				primary_culture = frisian
+				primary_culture = flemish
+				primary_culture = wallonian
+				primary_culture = alsatian
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture = dutch
+			culture = frisian
+			culture = flemish
+			culture = wallonian
+			culture = alsatian
+		}
+		province_is_or_accepts_culture = yes
+		
 		owner = {
 			OR = {
 				adm_tech = 28
@@ -2428,10 +2487,10 @@ rijksmuseum = {
 			local_development_cost = -0.5
 		}
 		area_modifier = {
-			development_cost = -0.1
+			local_development_cost = -0.1
 		}
 		country_modifiers = {
-			prestige = 0.15
+			prestige = 0.2
 			idea_cost = -0.01
 		}
 		on_upgraded = {
@@ -2450,10 +2509,10 @@ rijksmuseum = {
 			local_development_cost = -1
 		}
 		area_modifier = {
-			development_cost = -0.25
+			local_development_cost = -0.25
 		}
 		country_modifiers = {
-			prestige = 0.25
+			prestige = 0.4
 			idea_cost = -0.025
 			technology_cost = -0.01
 		}
@@ -2660,7 +2719,7 @@ theater_aachen = {
 		owner = {
 			culture_group = germanic
 		}
-		has_owner_culture = yes
+		culture_group = germanic
 		owner = {
 			OR = {
 				adm_tech = 28
@@ -2679,7 +2738,7 @@ theater_aachen = {
 		owner = {
 			culture_group = germanic
 		}
-		has_owner_culture = yes
+		culture_group = germanic
 
 		owner = {
 			OR = {
@@ -2695,7 +2754,7 @@ theater_aachen = {
 		owner = {
 			culture_group = germanic
 		}
-		has_owner_culture = yes
+		culture_group = germanic
 		owner = {
 			OR = {
 				adm_tech = 28
@@ -2815,44 +2874,53 @@ palazzo_pitti = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					culture_group = xizho_group
-					culture_group = roman_group
-				}
+		owner = {
+			OR = {
+				culture_group = latin
+				culture_group = xizho_group
+				culture_group = roman_group
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture_group = latin
+			culture_group = xizho_group
+			culture_group = roman_group
+		}
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					culture_group = xizho_group
-					culture_group = roman_group
-				}
+		owner = {
+			OR = {
+				culture_group = latin
+				culture_group = xizho_group
+				culture_group = roman_group
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture_group = latin
+			culture_group = xizho_group
+			culture_group = roman_group
+		}
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = latin
-					culture_group = xizho_group
-					culture_group = roman_group
-				}
+		owner = {
+			OR = {
+				culture_group = latin
+				culture_group = xizho_group
+				culture_group = roman_group
 			}
-			has_owner_culture = yes
 		}
+		OR = {
+			culture_group = latin
+			culture_group = xizho_group
+			culture_group = roman_group
+		}
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -3282,12 +3350,10 @@ university_moscow = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 26
 		}
@@ -3297,23 +3363,19 @@ university_moscow = {
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 26
 		}
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 26
 		}
@@ -3554,12 +3616,10 @@ bolshoi_theatre = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 32
 		}
@@ -3569,23 +3629,19 @@ bolshoi_theatre = {
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 32
 		}
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				culture_group = east_slavic
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = east_slavic
 		}
+		culture_group = east_slavic
 		owner = {
 			adm_tech = 32
 		}
@@ -3703,6 +3759,7 @@ st_basil = {
 		owner = {
 			religion_group = christian
 		}
+		always = no
 	}
 	on_built = {
 	}
@@ -4078,41 +4135,47 @@ prague_castle = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
+		owner = {
+			OR = {
 				primary_culture = czech
-			}
-			owner = {
 				primary_culture = sudeten
 			}
 		}
-		has_owner_culture = yes
+		OR = {
+			culture = czech
+			culture = sudeten
+		}
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
+		owner = {
+			OR = {
 				primary_culture = czech
-			}
-			owner = {
 				primary_culture = sudeten
 			}
 		}
-		has_owner_culture = yes
+		OR = {
+			culture = czech
+			culture = sudeten
+		}
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
+		owner = {
+			OR = {
 				primary_culture = czech
-			}
-			owner = {
 				primary_culture = sudeten
 			}
 		}
-		has_owner_culture = yes
+		OR = {
+			culture = czech
+			culture = sudeten
+		}
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -4639,41 +4702,29 @@ nymphenburg = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -4781,41 +4832,29 @@ glyptothek = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -4924,42 +4963,29 @@ residenz = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -5556,41 +5582,29 @@ humboldt_university = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -5703,41 +5717,29 @@ hamburg_port = {
 	type = monument
 	
 	build_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		OR = {
-			owner = {
-				OR = {
-					culture_group = germanic
-					culture_group = benelux
-				}
-			}
-			has_owner_culture = yes
+		owner = {
+			culture_group = germanic
 		}
+		culture_group = germanic
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -5850,17 +5852,35 @@ balliol = {
 	type = monument
 	
 	build_trigger = {
-		
+		owner = {
+			OR = {
+				primary_culture = anglo_saxon
+				culture_group = gaelic
+			}
+		}
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
-		
+		owner = {
+			OR = {
+				primary_culture = anglo_saxon
+				culture_group = gaelic
+			}
+		}
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		
+		owner = {
+			OR = {
+				primary_culture = anglo_saxon
+				culture_group = gaelic
+			}
+		}
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -5989,6 +6009,12 @@ canterbury = {
 			religion_group = christian
 			NOT = { religion = hellenic_pagan_reformed }
 		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				primary_culture = anglo_saxon
+			}
+		}
 	}
 	on_built = {
 	}
@@ -5999,11 +6025,23 @@ canterbury = {
 			religion_group = christian
 			NOT = { religion = hellenic_pagan_reformed }
 		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				primary_culture = anglo_saxon
+			}
+		}
 	}
 	can_upgrade_trigger = {
 		owner = {
 			religion_group = christian
 			NOT = { religion = hellenic_pagan_reformed }
+		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				primary_culture = anglo_saxon
+			}
 		}
 	}
 
@@ -6130,6 +6168,10 @@ yorkmin = {
 				primary_culture = anglo_saxon
 			}
 		}
+		owner = {
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+		}
 	}
 	on_built = {
 	}
@@ -6142,6 +6184,10 @@ yorkmin = {
 				primary_culture = anglo_saxon
 			}
 		}
+		owner = {
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+		}
 	}
 	can_upgrade_trigger = {
 		owner = {
@@ -6149,6 +6195,10 @@ yorkmin = {
 				culture_group = gaelic
 				primary_culture = anglo_saxon
 			}
+		}
+		owner = {
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
 		}
 	}
 
@@ -6407,6 +6457,12 @@ university_copenhagen = {
 			owner = {
 				primary_culture = danish
 			}
+			owner = {
+				primary_culture = gutnish
+			}
+		}
+		OR = {
+			has_owner_accepted_culture = yes
 			has_owner_culture = yes
 		}
 	}
@@ -6419,6 +6475,12 @@ university_copenhagen = {
 			owner = {
 				primary_culture = danish
 			}
+			owner = {
+				primary_culture = gutnish
+			}
+		}
+		OR = {
+			has_owner_accepted_culture = yes
 			has_owner_culture = yes
 		}
 	}
@@ -6427,6 +6489,12 @@ university_copenhagen = {
 			owner = {
 				primary_culture = danish
 			}
+			owner = {
+				primary_culture = gutnish
+			}
+		}
+		OR = {
+			has_owner_accepted_culture = yes
 			has_owner_culture = yes
 		}
 	}
@@ -7261,17 +7329,17 @@ old_town_marketplace = {
 	type = monument
 	
 	build_trigger = {
-		has_owner_culture = yes
+		province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {	
-		has_owner_culture = yes
+		province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
-		has_owner_culture = yes
+		province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -7385,17 +7453,20 @@ poznan_cityhall = {
 	type = monument
 	
 	build_trigger = {
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {	
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 	can_upgrade_trigger = {
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -7507,17 +7578,20 @@ wawel_castle = {
 	type = monument
 	
 	build_trigger = {
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {	
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 	can_upgrade_trigger = {
-		has_owner_culture = yes
+		culture_group = west_slavic
+		owner = { culture_group = west_slavic }
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?

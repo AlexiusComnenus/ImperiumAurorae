@@ -1,5 +1,6 @@
 cb_antioch_crusade = {
 	valid_for_subject = yes
+	holy_war = yes
 
 	prerequisites_self = {
 		OR = {
@@ -60,6 +61,7 @@ cb_take_mandate = {
 
 cb_templar_crusade = {
 	valid_for_subject = no
+	holy_war = yes
 
 	prerequisites = {
 		OR = {
@@ -97,6 +99,15 @@ cb_morroco_civil_war = {
 	war_goal = morroco_civil_war_wargoal
 }
 
+cb_german_civil_war = {
+	valid_for_subject = no
+	ai_peace_desire = -1000
+	
+	is_triggered_only = yes
+
+	war_goal = german_civil_war_wargoal
+}
+
 #cb_spread_the_revolution = {
 #	valid_for_subject = no
 #
@@ -127,13 +138,24 @@ cb_spread_the_commune = {
 			NOT = { is_subject_of = ROOT }
 			is_revolutionary = no
 			NOT = { has_reform = peasants_republic }
+			NOT = { has_reform = saxon_feudalism }
+			OR = {
+				NOT = { is_emperor_of_china = yes }
+				AND = {
+					ai = no
+					NOT = { imperial_mandate = 20 }
+				}
+			}
 			is_emperor = no
 			NOT = { tag = Z17 }
 			NOT = { tag = TEM }
 			NOT = { tag = PAP }
 			NOT = { tag = FAP }
 		}
-		has_reform = almohad_commune_reform
+		OR = {
+			has_reform = almohad_commune_reform
+			has_government_attribute = can_spread_commune
+		}
 	}
 
 	war_goal = superiority_commune
@@ -323,4 +345,54 @@ cb_humiliate_fiefs = {
 	}
 
 	war_goal = superiority_insult
+}
+
+#cb_preemptive_defensive_war = {
+#	valid_for_subject = no
+#
+#	prerequisites_self = {
+#		culture_group = roman_group
+#	}
+#
+#	prerequisites = {
+#		from = { any_neighbor_country = { tag = ROOT } }
+#	}
+#
+#	war_goal = take_capital_imperial
+#}
+
+cb_bogomilist_crusade = {
+	valid_for_subject = no
+	holy_war = yes
+
+	prerequisites_self = {
+		is_revolutionary = no
+		has_country_flag = nov_allowed_to_holy_war
+		religion = bogomilist
+	}
+
+	prerequisites = {
+		FROM = {
+			OR = {
+				any_neighbor_country = { 
+					OR = {
+						tag = ROOT
+						overlord = { tag = ROOT }
+					}
+				}
+			}
+		}
+		NOT = {	has_matching_religion = FROM }
+	}
+
+	war_goal = superiority_crusade
+}
+
+cb_ia_grand_dismantlement = {
+	valid_for_subject = no
+	ai_peace_desire = -100
+	
+	is_triggered_only = yes
+	
+	war_goal = ia_grand_dismantle
 }

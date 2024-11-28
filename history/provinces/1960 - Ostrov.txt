@@ -1,5 +1,5 @@
-owner = Z94
-controller = Z94
+owner = PLT
+controller = PLT
 capital = "Ostrov"
 is_city = yes
 culture = novgorodian
@@ -9,7 +9,7 @@ fort_15th = yes
 base_tax = 1
 base_production = 1
 base_manpower = 3
-add_core = Z94
+add_core = PLT
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

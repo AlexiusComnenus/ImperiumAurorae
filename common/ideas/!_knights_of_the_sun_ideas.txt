@@ -5,7 +5,7 @@ knights_of_the_sun_ideas = {
 		horde_unity = 1
 		meritocracy = 0.5
 		republican_tradition = 0.5
-		leader_land_fire = 1
+		leader_land_fire = 2
 	}
 	bonus = {
 		free_adm_policy = 1
@@ -17,7 +17,7 @@ knights_of_the_sun_ideas = {
 			religion = zun_pagan
 			religion = zun_pagan_reformed
 		}
-		government = theocracy
+		#government = theocracy
 	}
 	free = yes
 

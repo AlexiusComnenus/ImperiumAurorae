@@ -1,5 +1,5 @@
-owner = Y20
-controller = Y20
+owner = FIN
+controller = FIN
 capital = "Tavastehus"
 is_city = yes
 culture = finnish
@@ -9,7 +9,6 @@ base_tax = 1
 base_production = 2
 base_manpower = 3
 add_core = FIN
-add_core = Y20
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

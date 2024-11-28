@@ -32,7 +32,7 @@ antioch_development_project = {
 }
 
 apostolic_finisher = {
-	liberty_desire_from_subject_development = -0.25
+	liberty_desire_from_subject_development = -0.10
 	can_fabricate_for_vassals = yes
 	can_transfer_vassal_wargoal = yes
 	relation_with_same_religion = 40
@@ -50,17 +50,17 @@ balkan_resilience = {
 
 prague_finisher = {
 	reform_progress_growth = 0.15
-	governing_capacity_modifier = 0.1
+	governing_capacity_modifier = 0.05
 }
 
 armenian_forts = {
 	num_accepted_cultures = 1
-	defensiveness = 0.15
+	defensiveness = 0.10
 }
 
 imperial_border_prince = {
-	defensiveness = 0.5
-	land_maintenance_modifier = -0.25
+	defensiveness = 0.25
+	land_maintenance_modifier = -0.20
 }
 
 romanian_supply = {
@@ -76,7 +76,7 @@ lighthouse_finisher = {
 kurdish_nomadism = {
 	num_accepted_cultures = 1
 	movement_speed = 0.10
-	caravan_power = 0.1
+	caravan_power = 0.2
 }
 
 persian_administrators = {
@@ -174,11 +174,11 @@ suddenpacifism = {
 	can_not_declare_war = yes
 }
 
-auroral_silk = {
-	trade_goods_size = 1
-	trade_goods_size_modifier = 0.25
-	province_trade_power_value = 0.5
-	trade_value = 1
+auroral_silk_source = {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.20
+	province_trade_power_modifier = 0.25
+	trade_value_modifier = 0.25
 }
 
 draconic_jade = {
@@ -292,4 +292,12 @@ greek_katafraktoi_mod = {
 	morale_damage = 0.10
 	land_maintenance_modifier = 0.25	
 	is_hussars_modifier = yes
+}
+
+righteous_illumination_scholar_modifier = {
+	reform_progress_growth = 0.20
+	tolerance_own = 1
+}
+
+recently_recruited_alchemist = {
 }

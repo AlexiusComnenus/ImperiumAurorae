@@ -1,3 +1,64 @@
+has_dip_advisor_of_level = {
+	OR = {
+		statesman = $level$
+		diplomat = $level$
+		naval_reformer = $level$
+		trader = $level$
+		colonial_governor = $level$
+		navigator = $level$
+		spymaster = $level$
+		alchemist_advisor = $level$
+	}
+}
+
+has_dip_advisor = {
+	custom_trigger_tooltip = {
+		tooltip = has_dip_advisor_tooltip
+		OR = {
+			advisor = statesman
+			advisor = diplomat
+			advisor = naval_reformer
+			advisor = trader
+			advisor = colonial_governor
+			advisor = navigator
+			advisor = spymaster
+			advisor = alchemist_advisor
+		}
+	}
+}
+
+has_dip_advisor_2 = {
+	custom_trigger_tooltip = {
+		tooltip = has_dip_advisor_2_tooltip
+		OR = {
+			statesman = 2
+			diplomat = 2
+			naval_reformer = 2
+			trader = 2
+			colonial_governor = 2
+			navigator = 2
+			spymaster = 2
+			alchemist_advisor = 2
+		}
+	}
+}
+
+has_dip_advisor_3 = {
+	custom_trigger_tooltip = {
+		tooltip = has_dip_advisor_3_tooltip
+		OR = {
+			statesman = 3
+			diplomat = 3
+			naval_reformer = 3
+			trader = 3
+			colonial_governor = 3
+			navigator = 3
+			spymaster = 3
+			alchemist_advisor = 3
+		}
+	}
+}
+
 
 is_not_free_merc_company = {
 	ROOT = {
@@ -23,6 +84,10 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_aurora_knights }
 		NOT = { mercenary_company = merc_templar_knights }
 		NOT = { mercenary_company = merc_legion_of_dusk }
+		NOT = { mercenary_company = merc_meissen_guard }
+		NOT = { mercenary_company = merc_aen_bastion_guard }
+		NOT = { mercenary_company = merc_aen_order_of_the_lionhearted }
+		NOT = { mercenary_company = merc_aen_hessian_foreign_legion }
 	}
 }
 
@@ -77,6 +142,9 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = SOM }
 				NOT = { was_tag = RZI }
 				NOT = { was_tag = MAL }
+				NOT = { was_tag = ENG }
+				NOT = { was_tag = UKR }
+				NOT = { was_tag = AVE }
 				NOT = { tag = MUG }
 				NOT = { tag = TUR }
 				NOT = { tag = BYZ }
@@ -122,6 +190,9 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = SOM }
 				NOT = { tag = RZI }
 				NOT = { tag = MAL }
+				NOT = { tag = ENG }
+				NOT = { tag = UKR }
+				NOT = { tag = AVE }
 				NOT = { was_tag = FRA }
 				NOT = { was_tag = MUG }
 				NOT = { was_tag = TUR }
@@ -205,6 +276,33 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = GLL }
 				NOT = { tag = SOI }
 			}
+		}
+	}
+}
+
+has_any_estates = {
+	custom_trigger_tooltip = {
+		tooltip = has_any_estates_tt
+		OR = {
+			has_estate = estate_brahmins
+			has_estate = estate_burghers
+			has_estate = estate_church
+			has_estate = estate_cossacks
+			has_estate = estate_dhimmi
+			has_estate = estate_jains
+			has_estate = estate_maratha
+			has_estate = estate_nobles
+			has_estate = estate_nomadic_tribes
+			has_estate = estate_rajput
+			has_estate = estate_vaisyas
+			has_estate = estate_janissaries
+			has_estate = estate_eunuchs
+			has_estate = estate_qizilbash
+			has_estate = estate_ghulams
+			has_estate = estate_peasants
+			has_estate = estate_alchemists
+			has_estate = estate_holy_orders
+			has_estate = estate_aurora
 		}
 	}
 }

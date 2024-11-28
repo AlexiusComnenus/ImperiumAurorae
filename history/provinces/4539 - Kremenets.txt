@@ -1,5 +1,5 @@
-owner = Z00
-controller = Z00
+owner = VOL
+controller = VOL
 capital = "Kremenets"
 is_city = yes
 culture = cumano_rus
@@ -9,7 +9,6 @@ base_tax = 2
 base_production = 1
 base_manpower = 1
 add_core = VOL
-add_core = Z00
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

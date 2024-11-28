@@ -1,6 +1,7 @@
 roman_diocese = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	icon = "roman_empire"
 	potential = {
 		culture_group = roman_group
@@ -29,6 +30,7 @@ roman_diocese = {
 reign_of_majorian_reform = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	icon = "roman_empire"
 	potential = {
 		culture_group = roman_group
@@ -238,7 +240,7 @@ roman_military_committee = {
 		max_general_shock = 1
 		max_general_siege = 1
 		has_musketeer = yes
-		allowed_musketeer_fraction = 0.10
+		allowed_musketeer_fraction = 0.20
 		max_absolutism_effect = 0.1
 	}
 	custom_attributes = {

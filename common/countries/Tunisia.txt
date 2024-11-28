@@ -1,5 +1,5 @@
 ck2_converter_generated = yes
-graphical_culture = muslimgfx
+graphical_culture = easterngfx
 color = { 146 134 57 }
 revolutionary_colors = { 8 5 9 }
 historical_idea_groups = {
@@ -13,11 +13,17 @@ historical_idea_groups = {
 	expansion_ideas
 }
 historical_units = {
-	ali_bey_reformed_infantry
-	mamluk_archer
-	mamluk_cavalry_charge
-	mamluk_duel
-	mamluk_musket_charge
-	muslim_dragoon
-	muslim_mass_infantry
+	austrian_grenzer
+	austrian_hussar
+	austrian_jaeger
+	austrian_tercio
+	austrian_white_coat
+	mixed_order_infantry
+	napoleonic_lancers
+	napoleonic_square
+	open_order_cavalry
+	spanish_tercio
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
 }

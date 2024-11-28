@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "government_reform_reichskoenigtum_reform_icon"
+		texturefile = "gfx//interface//government_reform_icons//reichskoenigtum.dds"
+	}
+	spriteType = {
+		name = "government_reform_hlr_catholic_orders_reform_icon"
+		texturefile = "gfx//interface//government_reform_icons//hlr_catholic_orders_reform_icon.dds"
+	}
+	spriteType = {
+		name = "government_reform_hlr_reichsbund_gov_icon"
+		texturefile = "gfx//interface//government_reform_icons//hlr_reichsbund_gov_icon.dds"
+	}
+}

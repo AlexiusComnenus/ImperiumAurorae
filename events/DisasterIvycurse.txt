@@ -913,7 +913,7 @@ province_event = {	# normal plague time
 	}
 	
 	mean_time_to_happen = {
-		months = 600
+		months = 1200
 		modifier = {
 			factor = 0.75
 			owner = { trade_income_percentage = 0.40 }
@@ -1230,6 +1230,10 @@ province_event = {	# normal plague time
 				}
 			}
 		}
+		if = {
+			limit = { owner = { is_emperor_of_china = yes } }
+			add_mandate = -2
+		}
 	}
 	
 	option = {	# Quarantine and Let them DIE
@@ -1316,6 +1320,10 @@ province_event = {	# normal plague time
 				}
 			}
 		}
+		if = {
+			limit = { owner = { is_emperor_of_china = yes } }
+			add_mandate = -5
+		}
 	}
 	
 	option = {
@@ -1360,6 +1368,10 @@ province_event = {	# normal plague time
 					80 = {}
 				}
 			}
+		}
+		if = {
+			limit = { owner = { is_emperor_of_china = yes } }
+			add_mandate = 1
 		}
 	}
 }

@@ -1,0 +1,79 @@
+#HLR holy orders
+
+hlr_teutonic_order = {
+	icon = GFX_holy_order_hlr_teutons
+	trigger = {
+		religion = catholic
+		has_government_attribute = unlock_hlr_holy_orders
+	}
+	color = { 230 230 230 }
+	cost = 100
+	cost_type = mil_power
+	per_province_effect = {
+		add_base_manpower = 1
+	}
+	modifier = {
+		local_unrest = -1
+		local_defensiveness = 0.2
+	}
+	ai_priority = {
+        factor = 2
+        	modifier = {
+           		factor = 2.0
+            		NOT = { religion = ROOT }
+        	}
+   	}
+	localization = holy_order
+}
+
+hlr_johanniter_order = {
+	icon = GFX_holy_order_hlr_johanniter
+	trigger = {
+		religion = catholic
+		has_government_attribute = unlock_hlr_holy_orders
+	}
+	color = { 213 59 59 }
+	cost = 100
+	cost_type = adm_power
+	per_province_effect = {
+		add_base_tax = 1
+	}
+	modifier = {
+		local_unrest = -1
+		local_development_cost = -0.10
+	}
+	ai_priority = {
+        	factor = 2
+       		modifier = {
+            		factor = 2.0
+           		NOT = { religion = ROOT }
+        	}
+   	}
+	localization = holy_order
+}
+
+hlr_lazarus_order = {
+	icon = GFX_holy_order_hlr_lazarus
+	trigger = {
+		religion = catholic
+		has_government_attribute = unlock_hlr_holy_orders
+	}
+	color = { 97 162 93 }
+	cost = 100
+	cost_type = adm_power
+	per_province_effect = {
+		add_base_production = 1
+	}
+	modifier = {
+		local_unrest = -1
+		local_production_efficiency = 0.10
+	}
+	ai_priority = {
+        	factor = 2
+       		modifier = {
+            		factor = 2.0
+            		NOT = { religion = ROOT }
+       		 }
+    	}
+	localization = holy_order
+}

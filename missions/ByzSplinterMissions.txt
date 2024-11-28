@@ -5,8 +5,16 @@ Byz_Splinter_1 = {
 	potential = {
 		culture_group = byzantine
 		NOT = { tag = BYZ }
+		NOT = { tag = UKR }
 		NOT = { map_setup = map_setup_random }
 		NOT = { culture = seleucian }
+		#OR = {
+		#	NOT = { has_dlc = "Winds of Change" }
+		#	AND = {
+		#		NOT = { tag = FEO }
+		#		NOT = { tag = TRE }
+		#	}
+		#}
 	}
 	has_country_shield = yes
 	
@@ -56,8 +64,16 @@ Byz_Splinter_2 = {
 	potential = {
 		culture_group = byzantine
 		NOT = { tag = BYZ }
+		NOT = { tag = UKR }
 		NOT = { map_setup = map_setup_random }
 		NOT = { culture = seleucian }
+		OR = {
+			NOT = { has_dlc = "Winds of Change" }
+			AND = {
+				NOT = { tag = FEO }
+				NOT = { tag = TRE }
+			}
+		}
 	}
 	has_country_shield = yes
 	
@@ -121,7 +137,15 @@ Byz_Splinter_3 = {
 		NOT = { map_setup = map_setup_random }
 		NOT = { tag = KRM }
 		NOT = { tag = BHS }
+		NOT = { tag = UKR }
 		NOT = { culture = seleucian }
+		OR = {
+			NOT = { has_dlc = "Winds of Change" }
+			AND = {
+				NOT = { tag = FEO }
+				NOT = { tag = TRE }
+			}
+		}
 	}
 	has_country_shield = yes
 	

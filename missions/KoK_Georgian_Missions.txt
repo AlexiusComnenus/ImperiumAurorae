@@ -1724,6 +1724,9 @@ geo_fourth_branch = {
 					duration = 18250
 				}
 			}
+			unlock_estate_privilege = {
+				estate_privilege = estate_burghers_mountain_expansion
+			}
 			if = {
 				limit = {
 					NOT = {

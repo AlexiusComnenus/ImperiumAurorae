@@ -1,9 +1,8 @@
 ﻿l_english:
- ######################
- #      ESTATES       #
- ######################
  
  #PEASANTRY
+ estate_privileges_and_agendas_events.3.cho.a: "The Proposal of the [Root.GetPeasantsName]"
+ estate_privileges_and_agendas_events.6.cho.a: "The [Root.GetPeasantsName]"
  estate_peasants: "Peasantry"
  estate_peasants_desc: "The Peasantry represents a part of the third estate that was generally not wealthy. In many nations they held no privileges and were subject to serfdom."
  peasants_loyalty_modifier: "Peasantry Loyalty Equilibrium"
@@ -14,6 +13,7 @@
  #ALT NAMES
  estate_serfdom: "Serfdom"
  estate_serfdom_desc: "In Feudal Societies most of the peasantry fell under Serfdom. A system where they were bound to land and worked there for their overlords."
+ estate_minor_nobility: "Minor Nobility"
 
  #TRADE COMPANIES
  estate_trade_company: "Trade Companies"
@@ -22,6 +22,12 @@
  trade_company_influence_modifier: "Trade Company Influence"`
  trade_companies_privilege_slots: "Trade Companies Max Privileges"
  estate_trade_companies_ownership: "Trade Companies Land Ownership"
+ 
+ #Other privileges
+ estate_burghers_hoekse_kabeljauwse_twisten: "Hoekse & Kabeljauwse Twists"
+ estate_burghers_hoekse_kabeljauwse_twisten_desc: "After the last independant Count of Holland (William the IV) died, the county's succession was uncertain. Thanks to a costly spending habit of the count, the cities were owed a lot. Meanwhile the inheritance was a geopolitical struggle between powers, ultimately, his sister would inherit the county, after which she would marry the duke of bavaria."
+ estate_nobles_multi_succession_claims: "Weak Legitimacy"
+ estate_nobles_multi_succession_claims_desc: "While we rightfully purchased the Duchy of Luxemburg from the bad creditors of the House of Luxembourg. There are still claimants to the Ducal Title. We must resolve this issue at once. Else the Nobility will not respect us."
  
  
  #Peasantry Privileges
@@ -34,28 +40,46 @@
  estate_peasants_armed_citizenry: "Armed Citizenry"
  estate_peasants_armed_citizenry_desc: "Local Inhabitants have been defending the country and have gotten experienced with running the armed defences."
  estate_peasants_levies: "Local Levies"
- #estate_peasants_levies_desc:
+ estate_peasants_levies_desc: "By requesting that the [Root.GetPeasantsName] join in local levies, they will have to train and won't be able to generate as much revenue."
  estate_peasants_advisors: "Rural Advisory Board"
+ estate_peasants_advisors_desc: "There can be no better source of advice than the [Root.GetPeasantsName], who are able more than anyone else to inform us of matters involving the rural communities."
  #estate_peasants_advisors_desc: "Rural Advisory Board"
  estate_peasants_monopoly_of_metals: "Monopoly of Metals"
  estate_peasants_monopoly_of_metals_effect_tooltip: "§RNo income from §YIron§! or §YCopper§!§!"
  estate_peasants_monopoly_of_metals_mod: "Monopoly on Mining and Smelting"
+ estate_peasants_monopoly_of_metals_desc: "Without iron, our militias would be toothless. Only the [Root.GetPeasantsName] can be trusted with administering its revenues, for it is their own freedom that would be at stake were supply to be disrupted."
  #estate_peasants_monopoly_of_metals_desc: "Monopoly of Metals"
  estate_peasants_monopoly_of_livestock: "Monopoly of Livestock"
  estate_peasants_monopoly_of_livestock_effect_tooltip: "§RNo income from §YLivestock§!§!"
  estate_peasants_monopoly_of_livestock_mod: "Monopoly on Livestock"
- #estate_peasants_monopoly_of_metals_desc: "Monopoly of Metals"
- estate_peasants_diet_right: "Gather Upstalbeam"
+ estate_peasants_monopoly_of_livestock_desc: "Our livestock farmers do valuable work feeding our great nation. Who better to administer their incomes than the [Root.GetPeasantsName], it is their expertise!"
+  #estate_peasants_monopoly_of_metals_desc: "Monopoly of Metals"
+ estate_peasants_upstalbeam: "Gather Upstalbeam"
+ estate_peasants_upstalbeam_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantsName] to call the upstalbeam on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantsName]."
+ estate_peasants_local_assembly: "Local Assembly"
+ estate_peasants_local_assembly_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantsName] to call a local assembly on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantsName]."
  upstalbeam_unlocked_tt: "Requires the completion of the mission: §YReunite the Upstalbeam§! "
  #estate_peasants_diet_right_desc: "Gather Opstalboom"
  estate_peasants_force_conscription: "Forced Conscription"
  #estate_peasants_force_conscription_desc: "Forced Conscription"
+ estate_trade_company_monopoly_of_wic_effect_tooltip: "§RNo income from §YSlaves§!, §YSugar§!, §YTobacco§! §YCoffee§! or §YTropical Wood§!§!"
+ MONOPOLY_INCOME_WIC_DESC: "from slaves, sugar, tobacco, coffee or tropical wood production."
  #UNIQUES
  estate_peasants_frisian_freedom: "Frisian Freedom"
- estate_peasants_frisian_freedom_desc: "The Frisian Freedom or in Frisian, Fryske Frijheid, was a system of heavy autonomy in the region of Friesland in the middle ages, in which peasants were not constrained by feudalism and had the their own economic interest in mind. There were local elections in which Chieftains would be elected who represented them in the Upstalbeam"
- 
- #AGENDA EVENT STUFF:
- estate_privileges_and_agendas_events.3.cho.a: "The Proposal of the [Root.GetPeasantsName]"
+ estate_peasants_frisian_freedom_desc: "The Frisian Freedom or in Frisian, Fryske Frijheid, was a system of heavy autonomy in the region of Friesland in the middle ages, in which peasants were not constrained by feudalism and had the their own economic interest in mind. There were local elections in which Chieftains would be elected who represented them in the Upstalbeam."
+ estate_peasants_cashless_society: "Cashless Society"
+ estate_peasants_cashless_society_desc: "Our community is better served with abolishing the monetary system altogether. Our people will work and be fed by the state."
+ estate_peasants_collective_landownership: "Collective Landownership"
+ estate_peasants_collective_landownership_desc: "Collective Landownership would benefit us immensely. By taking control over our land, our poorest citizens cannot be exploited by the rich. Meanwhile it would free our men to join the military knowing that their family is provided for."
+ estate_peasants_grain_dole: "Grain Dole"
+ estate_peasants_grain_dole_desc: "By subsidizing grain and bread to our poorest citizens, we will lower the unrest in our large settlements."
+ estate_peasants_minor_nobility: "Minor Nobility"
+ estate_peasants_minor_nobility_desc: "Local landowners are slowly exercizing their power and building large castle like structures on their estates. They have effectively become a minor nobility."
+ minor_nobility_enforced: "Minor Nobility Privilege will be enacted, doing the following: \n[Root.GetPeasantsName] loses -5.00% of Land.\nMinor Nobility will gain 5.00% of Land."
+ estate_nobles_minor_nobility: "Minor Nobility"
+ estate_nobles_minor_nobility_desc: "Within our Peasant Republic, Local landowners are slowly exercizing their power and building large castle like structures on their estates. They have effectively become a minor nobility. While they still lack enough power to fully represent themselves, they are however collectivizing."
+ estate_peasants_pious_peasants: "Pious Peasants"
+ estate_peasants_pious_peasants_desc: "Our Peasants are highly religious and believe that hard work and going to sunday will reward them."
  
  #Trade Company Privileges
  estate_trade_company_free_reign: "Free Reign"
@@ -67,46 +91,104 @@
  estate_trade_company_establish_the_voc_vessels: "Charter the VOC Vessels"
  #estate_trade_company_establish_the_voc_vessels_desc: "Establish the VOC Vessels"
  estate_trade_company_charter_voc: "Vereenigde Oostindische Compagnie"
+ estate_trade_company_charter_voc_desc: "The VOC was founded to monopolize the trade to the East Indies. They were granted wide privileges to exploit the resources of this region."
+ estate_trade_company_charter_wic: "Westindische Compagnie"
+ estate_trade_company_charter_wic_desc: "The WIC or Western Indian Company was founded after the success of the VOC. It was an attempt to replicate the success of them, but would later become mostly about slavery and the lucrative plantations in South America."
  
  #Agendas
- estate_peasants_hire_advisor:0 "Hire a Military Advisor"
- estate_peasants_hire_advisor_desc:0 "The [Root.GetPeasantsName] desire the [Root.Monarch.GetTitle] to hire a new military advisor."
- estate_peasants_fire_advisor:0 "Fire our Military Advisor"
- estate_peasants_fire_advisor_desc:0 "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetPeasantsName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!" #RETEXTUALIZE LATER
- estate_peasants_support_independence:0 "Support [agenda_country.GetAdjective] Independence"
- estate_peasants_support_independence_desc:0 "The [Root.GetPeasantsName] draw attention to the plight of [agenda_country.GetUsableName], a nation cruelly subjugated by our rivals, [agenda_rival_country.GetUsableName]. They enjoin us to take up the cause of justice and support [agenda_country.GetAdjective] independence."
- estate_peasants_retake_core:0 "Retake [agenda_province.GetName]"
- estate_peasants_retake_core_desc:0 "The [Root.GetPeasantsName] bemoan the fact that [agenda_province.GetName], an integral part of our nation, is not under our control. They demand that we reclaim the land that is rightfully ours!" #RETEXTUALIZE LATER
- estate_nobles_regain_liberty:0 "Regain our Liberty"
- estate_nobles_regain_liberty_desc:0 "The [Root.GetPeasantsName] chafe under the rule of our [agenda_country.GetAdjective] overlords. They demand action to restore [Root.GetAdjective] liberty!" #RETEXTUALIZE LATER
- estate_nobles_protect_our_culture:0 "Protect the [Root.GetAdjective] Population in [agenda_province.GetName]"
- estate_nobles_protect_our_culture_desc:0 "The [Root.GetPeasantsName] claim that our [Root.Culture.GetName] brothers in [agenda_province.GetName] face considerable oppression at the hands of their [agenda_country.GetAdjective] masters. They demand that we seize the province and bring them into our nation!" #RETEXTUALIZE LATER
- estate_nobles_build_up_manpower_reserves:0 "Build up our Manpower Reserves"
- estate_nobles_build_up_manpower_reserves_desc:0 "The depletion of our manpower reserves is worrying to the [Root.GetPeasantsName], who warn that [Root.GetUsableName] would be left defenseless should our enemies seek to take advantage of the situation. They advocate that we consolidate for a time and allow our reserves to recover." #RETEXTUALIZE LATER
+ estate_peasants_hire_advisor: "Hire a Military Advisor"
+ estate_peasants_hire_advisor_desc: "The [Root.GetPeasantsName] desire the [Root.Monarch.GetTitle] to hire a new military advisor."
+ estate_peasants_fire_advisor: "Fire our Military Advisor"
+ estate_peasants_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetPeasantsName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!" #RETEXTUALIZE LATER
+ estate_peasants_support_independence: "Support [agenda_country.GetAdjective] Independence"
+ estate_peasants_support_independence_desc: "The [Root.GetPeasantsName] draw attention to the plight of [agenda_country.GetUsableName], a nation cruelly subjugated by our rivals, [agenda_rival_country.GetUsableName]. They enjoin us to take up the cause of justice and support [agenda_country.GetAdjective] independence."
+ estate_peasants_retake_core: "Retake [agenda_province.GetName]"
+ estate_peasants_retake_core_desc: "The [Root.GetPeasantsName] bemoan the fact that [agenda_province.GetName], an integral part of our nation, is not under our control. They demand that we reclaim the land that is rightfully ours!" #RETEXTUALIZE LATER
+ estate_peasants_regain_liberty: "Regain our Liberty"
+ estate_peasants_regain_liberty_desc: "The [Root.GetPeasantsName] chafe under the rule of our [agenda_country.GetAdjective] overlords. They demand action to restore [Root.GetAdjective] liberty!" #RETEXTUALIZE LATER
+ estate_peasants_protect_our_culture: "Protect the [Root.GetAdjective] Population in [agenda_province.GetName]"
+ estate_peasants_protect_our_culture_desc: "The [Root.GetPeasantsName] claim that our [Root.Culture.GetName] brothers in [agenda_province.GetName] face considerable oppression at the hands of their [agenda_country.GetAdjective] masters. They demand that we seize the province and bring them into our nation!" #RETEXTUALIZE LATER
+ estate_peasants_build_up_manpower_reserves: "Build up our Manpower Reserves"
+ estate_peasants_build_up_manpower_reserves_desc: "The depletion of our manpower reserves is worrying to the [Root.GetPeasantsName], who warn that [Root.GetUsableName] would be left defenseless should our enemies seek to take advantage of the situation. They advocate that we consolidate for a time and allow our reserves to recover." #RETEXTUALIZE LATER
  #
  estate_peasants_build_fort_building_in_y: "Fortify [agenda_province.GetName]"
  estate_peasants_build_trade_building_in_y: "Expand Trade Infrastructure in [agenda_province.GetName]"
  estate_peasants_build_manufactory_in_y: "Build a Manufactory in [agenda_province.GetName]"
- estate_peasants_build_fort_building_in_y_desc:0 "The [Root.GetPeasantsName] call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
- estate_peasants_build_trade_building_in_y_desc:0 "The [Root.GetPeasantsName] claim that the marketplace in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger market, which they say will greatly increase the prosperity of the province and the country as a whole."
- estate_peasants_build_manufactory_in_y_desc:0 "The [Root.GetPeasantsName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
+ estate_peasants_build_fort_building_in_y_desc: "The [Root.GetPeasantsName] call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
+ estate_peasants_build_trade_building_in_y_desc: "The [Root.GetPeasantsName] claim that the marketplace in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger market, which they say will greatly increase the prosperity of the province and the country as a whole."
+ estate_peasants_build_manufactory_in_y_desc: "The [Root.GetPeasantsName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
+ estate_peasants_relations_with_X: "Improve Relations with [agenda_country.GetUsableName]" 
+ estate_peasants_relations_with_X_desc: "The [Root.GetPeasantsName] see [agenda_country.GetUsableName] as a valuable potential ally. They recommend that we seek closer ties with them."
+ estate_peasants_befriend_rival_of_rival: "Befriend [rival_country.GetUsableName]'s Rivals"
+ estate_peasants_befriend_rival_of_rival_desc: "The [Root.GetPeasantsName] are concerned at the threat posed by our rivals in [rival_country.GetUsableName]. They recommend that we befriend their rivals, [agenda_country.GetUsableName], so that together way may stand strong against them."
+ estate_peasants_get_allies: "Build Alliances"
+ estate_peasants_get_allies_desc: "The [Root.GetPeasantsName] are worried at [Root.GetUsableName]'s diplomatic isolation. They advocate that we find more allies for our nation."
+ estate_peasants_build_an_army: "Build an Army for our Nation"
+ estate_peasants_build_an_army_desc: "The [Root.GetPeasantsName] consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
+ estate_peasants_bigger_army_than_rival: "Protect against [agenda_country.GetUsableName]"
+ estate_peasants_bigger_army_than_rival_desc: "The [Root.GetPeasantsName] are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
+ estate_peasants_develop_x: "Increase Manpower in [agenda_province.GetName]"
+ estate_peasants_develop_x_desc: "The [Root.GetPeasantsName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
  
+ #estate_burghers_build_a_fleet
+ estate_trade_company_build_a_fleet: "Build a Navy for our Nation"
+ estate_trade_company_build_a_fleet_desc: "The [Root.GetTradeCompanyName] bemoan the pitiful state of our fleet. They call for us to expand it significantly with an ambitious shipbuilding program so as to ensure that their trade interests may be protected."
+ estate_trade_company_bigger_fleet_than_rival: "Protect against the [agenda_country.GetAdjective] Fleet"
+ estate_trade_company_bigger_fleet_than_rival_desc: "The strength of the [agenda_country.GetAdjective] fleet is a matter of great concern to the [Root.GetTradeCompanyName], who worry that they would easily achieve naval supremacy in a war, thus wrecking the security of our trade routes. They call for us to expand our fleet to match that of our rivals."
+ estate_trade_company_discover_X_in_america: "Discover [agenda_province.GetAreaName]"
+ estate_trade_company_discover_X_in_america_desc: "The [Root.GetTradeCompanyName] have heard tales of a bountiful land called [agenda_province.GetAreaName] that apparently lies just beyond the distant horizon in [agenda_province.GetColonialRegionName]. They request that we send an expedition to discover it."
+ estate_trade_company_colonise_X: "Settle [agenda_province.GetAreaName]"
+ estate_trade_company_colonise_X_desc: "The [Root.GetTradeCompanyName]' prospectors have identified [agenda_province.GetAreaName] as a fertile area well-suited for colonization. They request an expedition to claim it for [Root.GetUsableName]."
+ estate_trade_company_colonise_more_X: "Colonize [agenda_province.GetAreaName] Area"
+ estate_trade_company_colonise_more_X_desc: "Our settlers in [agenda_owned_province.GetName] report a thriving colony and a land that is ripe for further settlement. The [Root.GetTradeCompanyName] request that we send colonists to claim the rest of [agenda_province.GetAreaName] for [Root.GetUsableName]."
+ estate_trade_company_colonial_nation: "Expand our Colony in [agenda_province.GetColonialRegionName]"
+ estate_trade_company_colonial_nation_desc: "Our settlements in [agenda_province.GetColonialRegionName] are growing fast. The [Root.GetTradeCompanyName] advocate that we support this growth and aid them to establish their own administration, so that they may develop into a regional outpost of [Root.GetAdjective] power able to stand on their own two legs."
+ estate_trade_company_expand_trade_company: "Expand the [agenda_province.TradeCompany.GetName]"
+ estate_trade_company_expand_trade_company_desc: "The [Root.GetTradeCompanyName] highlight the benefits that foreign trade provides for our nation. They urge us to use our resources - including our military strength - to expand the [agenda_province.TradeCompany.GetName]."
+ estate_trade_company_trade_post_in_india: "Establish a Trade Post in India"
+ estate_trade_company_trade_post_in_india_desc: "The [Root.GetTradeCompanyName] are enraptured by stories of the riches of India. They clamor for us to establish a trade post on the subcontinent so that they may open its trade up to us."
+ estate_trade_company_trade_post_in_malacca: "Establish a Trade Post in the East Indies"
+ estate_trade_company_trade_post_in_malacca_desc: "The Spice Islands of the East are irresistible to the [Root.GetTradeCompanyName]. They clamor for us to establish a trade post in the region so that they may begin to control the trade flowing out from them."
+ estate_trade_company_trade_post_in_china: "Establish a Trade Post in China"
+ estate_trade_company_trade_post_in_china_desc: "The [Root.GetTradeCompanyName] are enraptured by stories of the riches of China. They clamor for us to establish a trade post on its shorelines so that they may open its trade up to us."
+ estate_trade_company_spice_trade: "Control the Spice Trade"
+ estate_trade_company_spice_trade_desc: "Among the opportunities that our outposts in the East offer are the chance to establish control over the lands where spices are grown. The [Root.GetTradeCompanyName] urge us to make their acquisition our priority."
+ estate_trade_company_tea_trade: "Control the Tea Trade"
+ estate_trade_company_tea_trade_desc: "Tea is essential to civilization - or at least, so say the [Root.GetTradeCompanyName]. They insist that we must gain control over its production so that its supply to [Root.GetUsableName] may never again be in doubt."
+ estate_trade_company_protect_against_piracy: "Protect against Piracy"estate_burghers_expand_trade_company_desc: "The [Root.GetTradeCompanyName] highlight the benefits that foreign trade provides for our nation. They urge us to use our resources - including our military strength - to expand the [agenda_province.TradeCompany.GetName]."
+ estate_trade_company_protect_against_piracy_desc: "The [Root.GetTradeCompanyName] bemoan their losses from piracy in the [agenda_trade_node_sea.GetName]. They beseech us to take action to drive out the pirates and privateers that are plundering their trade ships."
+
+
+ #estate_burghers_colonise_X_requirements:1 "Colonize or have a colonial subject fully colonize any province in the §Y[agenda_province.GetAreaName]§! area."
+ #estate_burghers_colonise_more_X_requirements:0 "Colonize or have a subject fully colonize all provinces in the §Y[agenda_province.GetAreaName]§! area."
+ #estate_burghers_colonial_nation_requirements_tooltip:1 "§Y[Root.GetName]§! is the overlord of a colonial nation with at least §Y5§! cities in §Y[agenda_province.GetColonialRegionName]§!."
+ #estate_burghers_trade_post_in_india_reward_tooltip:1 "A province owned by §Y[Root.GetUsableName]§! in §YIndia§! with the trade good §YSilk§! or §YSpices§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+ #estate_burghers_trade_post_in_malacca_reward_tooltip:1 "A province owned by §Y[Root.GetUsableName]§! in the §YIndonesia Trade Company§! region with the trade good §YSpices§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+ #estate_burghers_trade_post_in_china_reward_tooltip:2 "A province owned by §Y[Root.GetUsableName]§! in §YChina§! with the trade good §YChinaware§! will gain the modifier "§YMajor Trading Post§!", granting §G+1§! local goods produced."
+
  #Influence
  DOM_NED_free_peasantry_influence: "Peasantry are not bound by Feudalism: §Y$VAL$%§!"
+ Powerful_Peasant_Republic: "There is at least one Prestigious Peasant Republic: §Y$VAL$%§!"
+ Multiple_Peasant_Republic: "There are more than 3 Peasant Republics: §Y$VAL$%§!"
  DOM_NED_Peasants_Lowered_Burghers: "Lowered Influence from the Burgher Class: §Y$VAL$%§!"
  
  #Custom Localisation
  string_peasants: "Peasants"
  string_serfdom: "Serfs"
+ string_trade_company: "Trade Companies"
  
  #
- estate_peasants_call_diet_title: "[Root.GetPeasantsName]: Call Diet"
- estate_peasants_demand_more_troops_title: "[Root.GetPeasantsName]: Raise Additional Levies"
+ estate_peasants_call_diet_title: "[Root.GetPeasantsName]: Call Local Assembly"
  estate_peasants_call_diet_desc: "[Root.EstateDecisionDescription]"
+ estate_peasants_gather_upstalbeam_title: "[Root.GetPeasantsName]: Gather Upstalbeam"
+ estate_peasants_gather_upstalbeam_desc: "[Root.EstateDecisionDescription]"
+ estate_peasants_demand_more_troops_title: "[Root.GetPeasantsName]: Raise Additional Levies"
  estate_peasants_demand_more_troops_desc: "[Root.EstateDecisionDescription]"
- enable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
+ enable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Call Local Assembly§!"
+ enable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
  enable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Forced Conscription§!"
- disable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
+ disable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Call Local Assembly§!"
+ disable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
  disable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Forced Conscription§!"
  auto_complete_estate_agenda_estate_peasants_tt: "[Root.GetEstateAgendaAutoCompletionFirstString] §Y[Root.GetPeasantsName]§! [Root.GetEstateAgendaAutoCompletionSecondString]"
  
@@ -132,7 +214,21 @@
  EST_VAL_Com_enterprise: "Commercial Enterprise: §Y$VAL$%§!"
  EST_VAL_Com_enterprise3: "Three Commercial Enterprises: §Y$VAL$%§!"
  EST_VAL_owned_CT: "Any owned Trade Companies: §Y$VAL$%§!"
+ EST_VAL_PEASANT_STATE: "Has active Peasant Estate: §Y$VAL$%§!"
+ EST_VAL_PEASANT_STATE_LOYALTY: "Has active Peasant Estate:" #§Y$VAL$%§!
  
  #
  expand_voc_regiments: "§YVOC Indiamen Ships§!"
  exempt_from_hello: "§YVOC Indiamen Ships§!"
+ 
+ 
+ 
+ estate_trade_companies_exploration_expedition_effect_tooltip: "§G-15%§! local development cost in all trade company provinces"
+ estate_trade_companies_exploration_expedition_mod_revoke_tooltip: "Removes §YCossack Exploration§! from all owned trade company provinces."
+ 
+ estate_burghers_dutch_polders: "Dutch Polders"
+ estate_burghers_dutch_polders_desc: "With our great knowledge of the dutch waterworks, our penalty in marshland is removed."
+ estate_burghers_dutch_polders_gt: "Reduce the Development Cost of every owned §YMarsh§! in the §YLow Countries§G ("let me know if you want this to be expanded") by §G25.0%§!."
+ estate_burghers_dutch_polders_rt: "Remove the Development Cost Reduction of every owned §YMarsh§! province."
+ estate_nobles_burgundian_strong_duchies: "[BUR.GetAdjective] Strong Duchies"
+ estate_nobles_burgundian_strong_duchies_desc: "The French Feudal Lands are a decentralized region in which local dukes and counts have considerable independence from [183.GetName]. This system has its benefits but makes maintaining the primacy of royal power a significant challenge."

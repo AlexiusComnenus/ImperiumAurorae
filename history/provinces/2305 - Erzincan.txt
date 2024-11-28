@@ -1,10 +1,11 @@
-owner = RUM
-controller = RUM
+owner = RAM
+controller = RAM
 capital = "Erzindjan"
 is_city = yes
 culture = turkish
 religion = sunni
 trade_goods = copper
+fort_15th = yes
 base_tax = 3
 base_production = 2
 base_manpower = 2

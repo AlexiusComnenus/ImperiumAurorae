@@ -1,11 +1,16 @@
 bog_abolish_church_hierarchies = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_abolish_church_hierarchies_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_abolish_church_hierarchies_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
-		church_influence_modifier = -2
-		church_privilege_slots = -100
 		yearly_corruption = -0.15
 	}
 }
@@ -13,71 +18,102 @@ bog_abolish_church_hierarchies = {
 bog_appeal_to_the_peasantry = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_appeal_to_the_peasantry_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_appeal_to_the_peasantry_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
 		global_missionary_strength = 0.03
-		tolerance_own = 1
-		legitimacy = -1
 	}
 }
 
 bog_mountain_guerillas = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_mountain_guerillas_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_mountain_guerillas_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
-		hostile_attrition = 1
 		land_morale = 0.10
-		global_trade_goods_size_modifier = -0.15
 	}
 }
 
 bog_full_liberty_to_elect = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_full_liberty_to_elect_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_full_liberty_to_elect_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
 		idea_cost = -0.05
-		global_trade_goods_size_modifier = 0.10
-		global_autonomy = 0.1
 	}
 }
 
 bog_lift_taxation = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_lift_taxation_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_lift_taxation_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
-		global_unrest = -2
-		development_cost = -0.05
-		global_tax_modifier = -0.75
+		development_cost = -0.10
 	}
 }
 
 bog_reject_material_temptations = {
 	cost = 100
 	effect = {
-		
+		custom_tooltip = bog_reject_material_temptations_tt
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_country_modifier = {
+				name = bog_reject_material_temptations_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
-		reform_progress_growth = 0.25
-		state_governing_cost = -0.1
-		trade_efficiency = -0.25
+		country_admin_power = 1
 	}
 }
 
 bog_eternal_struggle = {
-	cost = 100
+	cost = 200
 	effect = {
-		add_war_exhaustion = 2
-		add_yearly_manpower = 0.25
+		add_yearly_manpower = 0.5
+		hidden_effect = {
+			bogomilism_clear_old_aspects_effect = yes
+			add_war_exhaustion = 2
+			add_country_modifier = {
+				name = bog_eternal_struggle_modifier
+				duration = -1
+			}
+		}
 	}
 	modifier = {
-		extra_manpower_at_religious_war = yes
-		development_cost = 0.1
+		manpower_recovery_speed = 2.5
 	}
 }

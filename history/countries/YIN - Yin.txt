@@ -1,8 +1,8 @@
-government = monarchy
-add_government_reform = chinese_warlord
+government = theocracy
+add_government_reform = mingjiao_reform
 government_rank = 1
 technology_group = chinese
-religion = confucianism
+religion = manichean
 primary_culture = cantonese
 capital = 667
 1444.1.1= {

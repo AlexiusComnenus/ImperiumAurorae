@@ -1,0 +1,7 @@
+government = monarchy
+
+primary_culture = pilgrim_german
+religion = catholic
+technology_group = western
+capital = 379	# Jerusalem
+historical_friend = HLR

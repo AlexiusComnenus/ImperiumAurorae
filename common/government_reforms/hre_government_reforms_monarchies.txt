@@ -1,0 +1,79 @@
+
+
+reichskoenigtum = {
+	icon = "reichskoenigtum_reform_icon"
+	potential = {
+		OR = {
+			tag = RIT
+			tag = ILY
+			tag = HUN
+			tag = LOT
+			tag = BOH
+		}
+		is_subject_of_type = imperialkingdom
+	}
+	trigger = {
+		has_reform = reichskoenigtum
+	}
+	lock_level_when_selected = yes
+	valid_for_new_country = yes
+	valid_for_nation_designer = no
+	
+	modifiers = {
+		governing_capacity = 100
+		war_exhaustion = -0.02
+		global_unrest = -2
+		global_autonomy = -0.075
+	}
+}
+
+hlr_catholic_orders_reform = {
+	icon = "hlr_catholic_orders_reform_icon"
+	valid_for_new_country = yes
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			tag = HLR
+			tag = HJE
+		}
+	}
+	trigger = {
+		has_reform = hlr_catholic_orders_reform
+	}
+	modifiers = {
+		church_loyalty_modifier = 0.1
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Golden Century" }
+		custom_attributes = {
+			unlock_hlr_holy_orders = yes
+		}
+	}
+}
+
+hlr_reichsbund = {
+	icon = "hlr_reichsbund_gov_icon"
+	valid_for_new_country = yes
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			tag = HLR
+		}
+	}
+	trigger = {
+		has_reform = hlr_reichsbund
+	}
+	modifiers = {
+		global_autonomy = -0.05
+		autonomy_change_time = -0.25
+		culture_conversion_cost = -0.1
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Leviathan" }
+		government_abilities = { hlr_reichsbund_mechanic }
+	}
+}

@@ -32,7 +32,7 @@ zyp_lot_3 = {
 				type = mission_rewards_power_projection
 				amount = 15
 			}
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 		}
 	}
 
@@ -55,7 +55,7 @@ zyp_lot_3 = {
 				type = mission_rewards_power_projection
 				amount = 10
 			}
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 10 }
 			add_country_modifier = {
 				name = lot_court_wealth
 				duration = 9125
@@ -87,8 +87,32 @@ zyp_lot_3 = {
 				amount = 20
 			}
 			LOT = { set_dynasty = "Karolinger" }
-			add_historical_rival = SAX
-			SAX = { add_historical_rival = ROOT }
+			override_country_name = lot_karolingerreich
+			if = {
+				limit = { any_known_country = { has_reform = saxon_feudalism } }
+				random_known_country = {
+					limit = { has_reform = saxon_feudalism }
+					add_historical_rival = ROOT
+					ROOT = { add_historical_rival = PREV }
+					reverse_add_casus_belli = {
+						target = ROOT
+						type = cb_saxon_dismantle
+						months = 1200
+					}
+				}
+			}
+			else_if = {
+				limit = { exists = GER }
+				GER = {
+					add_historical_rival = ROOT
+					ROOT = { add_historical_rival = PREV }
+					reverse_add_casus_belli = {
+						target = ROOT
+						type = cb_saxon_dismantle
+						months = 1200
+					}
+				}
+			}
 		}
 	}
 	
@@ -105,6 +129,7 @@ zyp_lot_3 = {
 					NOT = { any_known_country = { has_reform = saxon_feudalism } }
 					has_reform = saxon_feudalism
 				}
+				NOT = { exists = GER }
 			}
 		}
 		
@@ -114,10 +139,34 @@ zyp_lot_3 = {
 				amount = 25
 			}
 			custom_tooltip = permanent_pp_tt
-			add_prestige = 100
+			add_prestige_or_monarch_power = { amount = 100 }
 			add_country_modifier = {
 				name = lot_carolingian_revenge_modifier
 				duration = -1
+			}
+			custom_tooltip = lot_form_hre_tt
+			if = {
+				limit = { 
+					NOT = { any_known_country = { has_reform = saxon_feudalism } }
+					NOT = { has_reform = saxon_feudalism }
+				}
+				change_tag = HLR
+				on_change_tag_effect = yes
+				set_government_rank = 3
+				set_country_flag = formed_hlr_flag
+				swap_non_generic_missions = yes
+			}
+			north_german_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_german_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -206,6 +255,113 @@ zyp_lot_1 = {
 			}
 			else = {
 				add_dip_power = 100
+			}
+			
+			custom_tooltip = unlock_dutch_reforms_tt
+		}
+	}
+	lot_strengthen_the_vroedschappen = {
+		icon = strengthen_the_vroedschappen
+		required_missions = { lot_integrate_dutch }
+		position = 3
+		#completed_by
+		
+		provinces_to_highlight = {
+			region = low_countries_region
+			country_or_non_sovereign_subject_holds = ROOT
+			NOT = {
+				development = 25
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+				OR = {
+					has_building = dock
+					has_building = drydock
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+		
+		trigger = {
+			if = {
+				limit = {
+					has_estate = estate_burghers
+				}
+			
+				estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 50
+				}
+			}
+			crown_land_share = 60
+			num_of_owned_provinces_with = {
+				value = 10
+				region = low_countries_region
+				development = 25
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
+				}
+				OR = {
+					has_building = courthouse
+					has_building = town_hall
+				}
+				OR = {
+					has_building = dock
+					has_building = drydock
+					has_building = shipyard
+					has_building = grand_shipyard
+				}
+			}
+		}
+		
+		effect = {
+			add_dip_power = 100
+			add_mercantilism = 10
+			#custom_tooltip
+			#hidden_effect
+			custom_tooltip = every_province_with_25_dev_in_low_countries
+			every_owned_province = {
+				limit = {
+					region = low_countries_region
+					development = 25
+				}
+				add_province_modifier = {
+					name = ned_city_investments
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_reform = dutch_republic
+						has_reform = states_general_reform
+					}
+				}
+				change_statists_vs_orangists = -0.1
+			}
+			else_if = {
+				limit = {
+					government = republic
+					NOT = { has_reform = dutch_republic }
+				}
+				add_republican_tradition = 25
+			}
+			add_country_modifier = {
+				name = ned_statist_influences
+				duration = -1
 			}
 		}
 	}
@@ -602,7 +758,7 @@ zyp_lot_1_t = { #colonialist
 		}
 		
 		effect = {
-			add_prestige = 33
+			add_prestige_or_monarch_power = { amount = 30 }
 		}
 	}
 }
@@ -797,7 +953,7 @@ zyp_lot_5_aachen = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			1878 = {
 				change_trade_goods = glass
 				add_province_modifier = {
@@ -832,7 +988,7 @@ zyp_lot_5_aachen = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			1878 = {
 				change_trade_goods = glass
 				add_province_modifier = {
@@ -859,7 +1015,7 @@ zyp_lot_5_aachen = {
 		}
 		
 		effect = {
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_stability_or_adm_power = yes
 			add_dip_power = 50
 		}
@@ -954,7 +1110,7 @@ zyp_lot_5_aachen = {
 		}
 		
 		effect = {
-			add_prestige = 50
+			add_prestige_or_monarch_power = { amount = 50 }
 			add_stability_or_adm_power = yes
 			palestine_area = {
 				change_religion = ROOT
@@ -1015,6 +1171,51 @@ zyp_lot_4_nanzig = {
 			add_stability_or_adm_power = yes
 		}
 	}
+	
+	lot_dutch_polder = {
+		icon = mission_advance_to_the_dnieper
+		required_missions = { zyp_lot_capital_periphery }
+		position = 3
+		#completed_by
+		
+		provinces_to_highlight = {
+			province_id = 97
+		}
+		
+		trigger = {
+			if = { 
+				limit = { has_dlc = "Leviathan" }
+				97 = { 
+					owned_by = ROOT 
+					has_great_project = {
+						type = dutch_polders
+						tier = 3 
+					}
+				}
+			}
+			else = { 
+				97 = { 
+					owned_by = ROOT 
+					development = 50 
+				} 
+			}
+		}
+		effect = {
+			#custom_tooltip = dutch_polders_development_tt
+			#hidden_effect =
+			every_owned_province = {
+				limit = {
+					has_port = yes
+					region = low_countries_region
+				}
+				add_base_production = 2
+				add_permanent_province_modifier = {
+					name = ned_full_polders
+					duration = -1
+				}				
+			}
+		}
+	}
 
 	zyp_lot_hollandic_trade = {
 		icon = control_coromandel
@@ -1073,7 +1274,7 @@ zyp_lot_5_nanzig = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			capital_scope = {
 				add_province_modifier = {
 					name = lot_nanziger_prestige
@@ -1108,7 +1309,7 @@ zyp_lot_5_nanzig = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			4766 = {
 				change_trade_goods = glass
 				add_province_modifier = {
@@ -1135,7 +1336,7 @@ zyp_lot_5_nanzig = {
 		}
 		
 		effect = {
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_stability_or_adm_power = yes
 			add_dip_power = 50
 		}

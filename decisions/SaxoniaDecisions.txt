@@ -173,7 +173,7 @@ country_decisions = {
 	sax_declare_PU_on_denmark = {
 		major = yes
 		potential = {
-			any_ally = {
+			any_known_country = {
 				OR = {
 					tag = SWE
 					tag = NOR
@@ -196,7 +196,7 @@ country_decisions = {
 		}
 		
 		effect = {
-			random_ally = {
+			random_known_country = {
 				limit = {
 					OR = {
 						tag = SWE
@@ -226,7 +226,7 @@ country_decisions = {
 	sax_declare_PU_on_norway = {
 		major = yes
 		potential = {
-			any_ally = {
+			any_known_country = {
 				OR = {
 					tag = DAN
 					tag = SWE
@@ -249,7 +249,7 @@ country_decisions = {
 		}
 		
 		effect = {
-			random_ally = {
+			random_known_country = {
 				limit = {
 					OR = {
 						tag = SWE
@@ -280,7 +280,7 @@ country_decisions = {
 	sax_declare_PU_on_sweden = {
 		major = yes
 		potential = {
-			any_ally = {
+			any_known_country = {
 				OR = {
 					tag = DAN
 					tag = NOR
@@ -303,7 +303,7 @@ country_decisions = {
 		}
 		
 		effect = {
-			random_ally = {
+			random_known_country = {
 				limit = {
 					OR = {
 						tag = NOR

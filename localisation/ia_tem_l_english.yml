@@ -18,6 +18,8 @@
  voice_of_god_generaltrait: "Voice of God"
  templar_knight: "Knight Templar"
  templar_knight_die_desc: "Their chivalrous behavior and dedication to God will inspire soldiers for decades to come."
+ dawnsbane_leader: "Dawnsbane Warrior"
+ dawnsbane_leader_die_desc: "May they surely rejoin their lost family in Heaven."
  cb_final_crusade: "The Last Crusade"
  cb_final_crusade_desc: "The Last Crusade"
  LAST_CRUSADE_WAR_NAME: "The Last Crusade"
@@ -39,6 +41,7 @@
  afrique_outremer: "Afrique Outremer"
  
  #Diplo Tooltips
+ val_tem_friendship: "Templar-Visigothic Friendship"
  
  secure_pilgrimage_title:0 "Secure Pilgrimage"
  secure_pilgrimage_tooltip:0 "At the cost of §R50§! Diplomatic Power and §R1000§! sailors we may offer to secure a safe route for their pilgrims to safely reach the Holy land"
@@ -52,7 +55,7 @@
  pilgrim_protector_holyland:0 "They do not need protection to reach the Holy Land"
  pilgrim_protector_war:0 "We may not offer protection to our war enemies!"
  create_holy_order_action_title: "Create Holy Order Subject"
- create_holy_order_action_desc: "We may designate our monastic order subject into a §GHoly Order Subject§!. §YThey will be able to declare their own wars.§!"
+ create_holy_order_action_desc: "We may designate our monastic order subject into a §GHoly Order Subject§!. §YThey will not be annexable, but they will receive March Bonuses.§!"
  create_holy_order_action_tooltip: "Designate our monastic order subject as a §GHoly Order§!."
  revoke_holy_order_action_title: "Demote to March"
  revoke_holy_order_action_desc: "We can revoke our §YHoly Order§!'s autonomy at the cost of the requisite mana and turn them back into a §YMarch§!."
@@ -117,6 +120,10 @@
  templar_tercios: "Can train Tercios"
  templarite_last_crusade_starter_bonus: "Zeal of the Final Crusade"
  beleares_protected: "Protected Isles"
+ dusk_chapterhouse_mod: "Legion of Dusk Chapterhouse"
+ dusk_sponsored_merc_connections: "Sponsored Legion of Dusk foreign connections"
+ dusk_funded_dusksworn: "Funding for Dusksworn"
+ recently_recruited_dawnwsbane: "Recently recruited Dawnsbane General"
 
  #Missions
 
@@ -288,3 +295,15 @@
  ia_flavor_tem.28.t: "The Legion of the Grim Dusk"
  ia_flavor_tem.28.d: "Ever since the rise of the so-called Celestial Hellenic Empire with the Antichrist at its helm, Christendom has been under threat. The repressions of the 'Draconic Inquisition' against innocent Christian communities in Anatolia and the Levant continue unceasingly even as the elixir-downing hordes of satan-spawn burn Italy in the fires of hell. Countless people have lost their loved ones to a Dao-Hellenic's blade or wily tongue.\n We, the victims of the Antichrist, do today swear to quench their 'light' wherever they should try to spread it. We swear to be the Dusk to their Dawn, the Shadow to their Flame! We, the Lightquenchers of the Legion of the Grim Dusk, will devote our lives to protect Christendom from the evil descending upon us, and to fight for any Christian regardless of their sect or creed. So help us God!"
  ia_flavor_tem.28.a: "Down with the Antichrist!"
+ ia_flavor_tem.29.t: "Legion of Dusk Interaction Menu"
+ ia_flavor_tem.29.d: "The Legion of Dusk is a military order sworn to generational vengeance against Antioch and its ilk. With chapterhouses and recruitment centres throughout Europe, they have many connections to other mercenary companies. With the right funding offers, it could be possible to recruit Dusksworn regiments, Dawnsbane commanders, or the finest foreign mercenaries on the market."
+ ia_flavor_tem.29.a: "Sweeten mercenary contracts!"
+ ia_flavor_tem.29.b: "Recruit some of the finest Dusksworn infantry!"
+ ia_flavor_tem.29.c: "Hire one of their Dawnsbane commanders!"
+ ia_flavor_tem.29.e: "Close Menu"
+ ia_flavor_tem.30.t: "Dawnsbane Recruited"
+ ia_flavor_tem.30.d: "The Dawnsbane are the elite commanders of the Legion of Dusk, their positions earned through a lifetime of warfare. Specializing in anti-cavalry infantry tactics, the Dawnsbane are in their element holding a solid position of pike-and-shot formation against any who dare approach."
+ ia_flavor_tem.30.a: "Excellent!"
+ ia_flavor_tem.31.t: "Legion of Dusk Departs"
+ ia_flavor_tem.31.d: "Now that we no longer have need of their services, the Legion of the Grim Dusk is departing to pursue their eternal vengeance elsewhere."
+ ia_flavor_tem.31.a: "Farewell!"

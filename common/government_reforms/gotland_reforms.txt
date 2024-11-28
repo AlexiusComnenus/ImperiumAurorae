@@ -5,7 +5,7 @@ gotland_pirate_island = {
 	lock_level_when_selected = yes
 	modifiers = {
 		naval_forcelimit_modifier = 0.5
-		#capture_ship_chance = 0.33
+		capture_ship_chance = 0.33
 		state_governing_cost = 0.75
 		may_perform_slave_raid_on_same_religion = yes
 		allowed_marine_fraction = 0.5
@@ -60,13 +60,13 @@ gotland_pirate_realm = {
 	legacy_equivalent = pirate_republic
 	lock_level_when_selected = yes
 	modifiers = {
-		naval_forcelimit_modifier = 0.5
-		#capture_ship_chance = 0.33
+		naval_forcelimit_modifier = 0.75
+		capture_ship_chance = 0.33
 		state_governing_cost = 0.50
 		may_perform_slave_raid_on_same_religion = yes
 		allowed_marine_fraction = 1
-		global_manpower_modifier = -0.9
-		global_sailors_modifier = 6
+		global_manpower_modifier = -0.65
+		global_sailors_modifier = 3.5
 		
 	}
 	trigger = {
@@ -108,4 +108,37 @@ gotland_pirate_realm = {
 		cannot_become_dictatorship = yes
 	}
 	
+}
+
+danelaw_gov = {
+	icon = "feudal_theocracy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		OR = {
+			has_reform = danelaw_gov
+			have_had_reform = danelaw_gov
+		}
+	}
+	nation_designer_trigger = {
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+	}
+	legacy_equivalent = feudal_theocracy_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 60
+	modifiers = {
+		missionaries = 1
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+		infantry_power = 0.10
+		allowed_marine_fraction = 0.25
+		has_marines = yes
+		overlord_naval_forcelimit_modifier = 0.1
+	}
 }

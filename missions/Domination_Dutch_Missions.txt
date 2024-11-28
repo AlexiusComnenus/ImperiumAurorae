@@ -2582,6 +2582,7 @@ fla_economy_4_branch = {
 					NOT = {
 						exists = GBR
 					}
+					exists = WLS
 				}
 				OR = {
 					AND = {
@@ -2597,6 +2598,7 @@ fla_economy_4_branch = {
 			else_if = {
 				limit = { 
 					exists = GBR
+					NOT = { exists = ENG }
 				}
 				OR = {
 					AND = {
@@ -2609,13 +2611,28 @@ fla_economy_4_branch = {
 					is_rival = GBR
 				}
 			}
+			else_if = {
+				limit = { 
+					exists = ENG
+				}
+				OR = {
+					AND = {
+						alliance_with = ENG
+						reverse_has_opinion = {
+							who = ENG
+							value = 100
+						}
+					}
+					is_rival = ENG
+				}
+			}
 			else = {
 				wool = 4
 			}
 			1269 = { # English Channel
 				trade_share = {
 					country = ROOT
-					share = 10
+					share = 75
 				}
 			}
 			trading_part = {
@@ -2645,14 +2662,14 @@ fla_economy_4_branch = {
 				add_treasury = 350
 			}
 			hidden_effect = {
-			if = {
-				limit = {
-					NOT = { 
-					num_of_centers_of_trade = 1
+				if = {
+					limit = {
+						NOT = { 
+							num_of_centers_of_trade = 1
+						}
 					}
+					add_treasury = 350
 				}
-				add_treasury = 350
-			}
 			}
 		}
 	}

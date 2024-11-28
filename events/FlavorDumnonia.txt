@@ -409,3 +409,33 @@ country_event = {
 		add_heir_personality = legendary_conqueror_personality
 	}
 }
+
+country_event = { # Count le wins
+	id = ia_flavor_eng.13
+	title = ia_flavor_eng.13.t
+	desc = ia_flavor_eng.13.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = { tag = ENG	was_tag = ENG }
+	}
+	
+	option = {
+		name = ia_flavor_eng.13.a
+		
+		if = {
+			limit = { NOT = { has_country_flag = dum_counting_wins } }
+			set_variable = { which = DumWins value = 1 }
+			set_country_flag = dum_counting_wins
+		}
+		else = {
+			change_variable = {
+				which = DumWins
+				value = 1
+			}
+		}
+	}
+}

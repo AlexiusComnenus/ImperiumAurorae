@@ -83,4 +83,8 @@ leader = { name = "Jacques de Molay" type = general fire = 2 shock = 2 manuever 
 	add_ruler_personality = scholar_personality
 	add_ruler_personality = free_thinker_personality
 	add_ruler_personality = navigator_personality
+	add_opinion = {
+		who = VAL
+		modifier = val_tem_friendship
+	}
 }

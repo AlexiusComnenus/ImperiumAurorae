@@ -689,6 +689,7 @@ franconian_minor_missions_col5 = {
 			capital_scope = {
 				add_permanent_province_modifier = {
 					name = fkn_manufacturing_hub
+					duration = -1
 				}
 			}
 		}
@@ -958,6 +959,7 @@ franconian_missions_col2 = {
 		#}
 		
 		trigger = {
+			reform_level = 3
 			all_subject_country = {
 				NOT = { liberty_desire = 40 }
 				has_opinion = {
@@ -1000,6 +1002,42 @@ franconian_missions_col2 = {
 			else = {
 				add_prestige = 50
 			}
+		}
+	}
+	
+	fkn_question_of_alps = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_city_no_more
+		}
+		position = 11
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			OR = {
+				spymaster = 2
+				diplomat = 2
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { spymaster = 2 }
+				define_advisor = {
+					type = commandant
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = fkn_adept_diplomacy
+					duration = 12045
+				}
+			}
+			custom_tooltip = fkn_choose_path_tt
 		}
 	}
 }
@@ -1128,6 +1166,41 @@ franconian_missions_col3 = {
 		
 		effect = {
 			country_event = { id = ia_flavor_fkn.6 }
+		}
+	}
+	
+	fkn_appropriate_breweries = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_city_no_more
+		}
+		position = 11
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			owns_core_province = 2955
+			owns_core_province = 65
+			if = {
+				limit = { ai = no }
+				2955 = {
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 10
+					}
+				}
+				65 = {
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 10
+					}
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_fkn.7 }
 		}
 	}
 }

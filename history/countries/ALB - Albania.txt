@@ -1,8 +1,8 @@
 government = monarchy
-add_government_reform = autocracy_reform
+add_government_reform = league_of_lezhe_reform
 government_rank = 1
 technology_group = eastern
-religion = catholic
+religion = orthodox
 primary_culture = albanian
 capital = 4175
 1443.3.4= {

@@ -663,6 +663,7 @@ country_event = {
 		has_dlc = "Common Sense"
 		uses_devotion = yes
 		NOT = { has_reform = papacy_reform }
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -690,6 +691,7 @@ country_event = {
 		NOT = {
 			religion_group = muslim
 		}
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -825,6 +827,7 @@ country_event = {
 	trigger = {
 		has_dlc = "Common Sense"
 		uses_devotion = yes
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -973,6 +976,7 @@ country_event = {
 		}
 		NOT = { has_ruler_flag = denied_secularists }
 		NOT = { has_reform = papacy_reform }
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	
@@ -1024,6 +1028,7 @@ country_event = {
 		NOT = {
 			devotion = 50
 		}
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -1053,6 +1058,7 @@ country_event = {
 		NOT = {
 			devotion = 50
 		}
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -1141,6 +1147,7 @@ country_event = {
 			is_state = yes
 		}
 		NOT = { has_reform = papacy_reform }
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -1342,6 +1349,7 @@ country_event = {
 		NOT = {
 			has_country_modifier = dev_bonfire_vanities_timer
 		}
+		NOT = { has_reform = celestial_xizho_empire }
 	}
 	
 	is_triggered_only = yes
@@ -1390,6 +1398,7 @@ province_event = {
 			government = theocracy
 			religion_group = christian
 			NOT = { has_reform = papacy_reform }
+			NOT = { has_reform = celestial_xizho_empire }
 		}
 	}
 	

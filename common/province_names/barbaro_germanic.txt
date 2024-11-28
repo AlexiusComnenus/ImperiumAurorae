@@ -273,7 +273,7 @@
 338 = "Algeria"
 339 = "Saldae"
 340 = "Cirta"
-341 = "Tunes"
+341 = { "Tunes" "Carthago" }
 342 = "Rabatum"
 343 = "Fezza"
 351 = "Vescera"

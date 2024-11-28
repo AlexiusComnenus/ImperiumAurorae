@@ -861,9 +861,10 @@ country_decisions = {
 		}
 		effect = {
 			add_prestige = -20
-			country_event = {
-				id = change_deity.69420
-			}
+			#country_event = {
+			#	id = change_deity.69420
+			#}
+			change_personal_deity = nonexistent_deity
 		}
 		ai_will_do = {
 			factor = 0.5

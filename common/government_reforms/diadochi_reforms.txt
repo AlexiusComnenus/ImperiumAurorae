@@ -1,6 +1,7 @@
 diadochos_reform = {
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	icon = "gendarmes_reform"
 	maintain_dynasty = yes
 	potential = {

@@ -18,5 +18,5 @@ capital = 251
 	}
 	add_ruler_personality = bold_fighter_personality
 	add_ruler_personality = conqueror_personality
-	#add_ruler_personality = immortal_personality
+	add_ruler_personality = powerful_druid_personality
 }

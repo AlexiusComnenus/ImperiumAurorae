@@ -5,6 +5,7 @@ is_city = yes
 culture = pictish
 religion = druidic_pagan
 trade_goods = wool
+fort_15th = yes
 base_tax = 4
 base_production = 3
 base_manpower = 2

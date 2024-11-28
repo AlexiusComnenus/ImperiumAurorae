@@ -148,9 +148,9 @@ country_event = {  # Dec the goddamn war for AI
 	option = {	# Back off
 		name = ia_flavor_sax.1.e
 		ai_chance = { 
-			factor = 33
+			factor = 1
 			modifier = {
-				factor = 10
+				factor = 1000
 				NOT = { 
 					army_strength = {
 						who = event_target:saxony_war_target
@@ -159,7 +159,7 @@ country_event = {  # Dec the goddamn war for AI
 				}
 			}
 			modifier = {
-				factor = 10
+				factor = 1000
 				event_target:saxony_war_target = {
 					any_ally = {
 						army_strength = {
@@ -620,10 +620,19 @@ country_event = {  # Too big nono
 				AND = {
 					total_development = 200
 					tag = BOH
+					NOT = { is_year = 1480 }
 				}
 				AND = {
 					total_development = 100
 					NOT = { tag = BOH }
+					NOT = { is_year = 1480 }
+				}
+				AND = {
+					total_development = 250
+					NOT = { is_year = 1510 }
+				}
+				AND = {
+					total_development = 500
 				}
 			}
 		}
@@ -1195,9 +1204,22 @@ country_event = {  # Outsider took germanic land
 			NOT = { is_subject_of = ROOT }
 			NOT = { war_with = ROOT }
 			NOT = { culture_group = germanic }
+			NOT = { historical_friend_with = ROOT }
+			NOT = { ROOT = { historical_friend_with = PREV } }
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 1
 				culture_group = germanic
+				OR = {
+					region = north_german_region
+					region = south_german_region
+					region = low_countries_region
+					region = scandinavia_region
+					region = france_region
+					region = italy_region
+					region = baltic_region
+					region = poland_region
+					region = carpathia_region
+				}
 				NOT = { culture = teuton }
 				NOT = { culture = anglo_saxon }
 			}
@@ -1222,9 +1244,22 @@ country_event = {  # Outsider took germanic land
 					NOT = { is_subject_of = ROOT }
 					NOT = { war_with = ROOT }
 					NOT = { culture_group = germanic }
+					NOT = { historical_friend_with = ROOT }
+					NOT = { ROOT = { historical_friend_with = PREV } }
 					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 						value = 1
 						culture_group = germanic
+						OR = {
+							region = north_german_region
+							region = south_german_region
+							region = low_countries_region
+							region = scandinavia_region
+							region = france_region
+							region = italy_region
+							region = baltic_region
+							region = poland_region
+							region = carpathia_region
+						}
 						NOT = { culture = teuton }
 						NOT = { culture = anglo_saxon }
 					}
@@ -1650,6 +1685,7 @@ country_event = {  # Nobles sabotage alliance
 			NOT = { culture_group = germanic }
 		}
 		NOT = { has_country_modifier = block_event_24 }
+		tag = SAX
 	}
 	
 	immediate = {
@@ -1711,7 +1747,8 @@ country_event = {  # No player alliances with Antioch for no reason
 	major = yes
 	
 	trigger = {
-		ai = no
+		#ai = no
+		is_great_power = yes
 		NOT = { culture_group = xizho_group }
 		NOT = { religion = hellenic_pagan_reformed }
 		NOT = { culture_group = byzantine }
@@ -1737,6 +1774,7 @@ country_event = {  # No player alliances with Antioch for no reason
 	
 	option = {
 		name = ia_flavor_sax.25.a
+		trigger = { ai = no }
 		
 		add_stability = -6
 		add_prestige = -200
@@ -1874,6 +1912,7 @@ country_event = {
 		every_subject_country = {
 			limit = {
 				is_subject_of_type = saxon_daimyo
+				NOT = { tag = THU }
 			}
 			if = {
 				limit = {
@@ -1971,6 +2010,13 @@ country_event = {  # Can't hold non-german land
 			NOT = { culture_group = germanic }
 			NOT = { has_province_modifier = non_germanic_land_penalty_sax }
 		}
+		NOT = { tag = AVE }
+		NOT = { tag = BOH }
+		NOT = { tag = GMA }
+		NOT = { primary_culture = anglo_saxon }
+		NOT = { primary_culture = sudeten }
+		NOT = { primary_culture = teuton }
+		NOT = { primary_culture = baltic_german }
 	}
 	is_triggered_only = yes
 	
@@ -2051,5 +2097,202 @@ country_event = {  # Can't hold non-german land
 				duration = 3650
 			}
 		}
+	}
+}
+
+country_event = {  # The Great Game
+	id = ia_flavor_sax.30
+	title = ia_flavor_sax.30.title
+	desc = ia_flavor_sax.30.desc
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+	}
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = {	# Jousting Tournament
+		name = ia_flavor_sax.30.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		hidden_effect = { country_event = { id = ia_flavor_sax.31 	days = 30 } }
+	}
+	
+	option = {	# Hunting Festival
+		name = ia_flavor_sax.30.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		hidden_effect = { country_event = { id = ia_flavor_sax.31 	days = 30 } }
+	}
+	
+	option = {	# Grand Ball
+		name = ia_flavor_sax.30.c
+		ai_chance = { 
+			factor = 1
+		}
+		
+		hidden_effect = { country_event = { id = ia_flavor_sax.31 	days = 30 } }
+	}
+	
+	option = {	# Beer lmao
+		name = ia_flavor_sax.30.d
+		ai_chance = { 
+			factor = 1
+		}
+		
+		hidden_effect = { country_event = { id = ia_flavor_sax.31 	days = 30 } }
+	}
+}
+
+country_event = {  # It's beer lmao
+	id = ia_flavor_sax.31
+	title = ia_flavor_sax.31.title
+	desc = ia_flavor_sax.31.desc
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+	}
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = { 
+		hidden_effect = {
+			add_country_modifier = { name = sax_beer_truce	duration = 365 }
+			every_subject_country = {
+				add_country_modifier = { name = sax_beer_truce	duration = 365 }
+			}
+		}
+	}
+	
+	option = {	# Issue summons
+		name = ia_flavor_sax.31.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		hidden_effect = {
+			every_subject_country = {
+				country_event = { id = ia_flavor_sax.32		days = 5 }
+			}
+			country_event = { id = ia_flavor_sax.33		days = 70 }
+		}
+	}
+}
+
+country_event = {  # Invitation arrives
+	id = ia_flavor_sax.32
+	title = ia_flavor_sax.32.title
+	desc = ia_flavor_sax.32.desc
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	trigger = {
+		overlord = { has_reform = saxon_feudalism }
+	}
+	is_triggered_only = yes
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Send in the drinkers
+		name = ia_flavor_sax.32.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_years_of_income = -0.25
+	}
+}
+
+country_event = {  # Outcome of Drinking Competition
+	id = ia_flavor_sax.33
+	title = ia_flavor_sax.33.title
+	desc = ia_flavor_sax.33.desc
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		has_reform = saxon_feudalism
+	}
+	is_triggered_only = yes
+	major = yes
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# The Bohemians Won
+		name = ia_flavor_sax.33.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		BOH = { country_event = { id = ia_flavor_sax.34 } }
+		hidden_effect = {
+			every_subject_country = { 
+				limit = { NOT = { tag = BOH } }
+				country_event = { id = ia_flavor_sax.35 } 
+			}
+		}
+	}
+}
+
+country_event = {  # Outcome of Drinking Competition -- Bohemia Edition
+	id = ia_flavor_sax.34
+	title = ia_flavor_sax.34.title
+	desc = ia_flavor_sax.34.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Hoorah us
+		name = ia_flavor_sax.34.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige_or_monarch_power = { amount = 25 }
+		if = {
+			limit = { has_global_flag = tradegood_marcin }
+			change_price = {
+				trade_goods = beer
+				key = beer_shortage
+				value = 10
+				duration = 365
+			}
+		}
+	}
+}
+
+country_event = {  # Outcome of Drinking Competition -- Vassal Edition
+	id = ia_flavor_sax.35
+	title = ia_flavor_sax.35.title
+	desc = ia_flavor_sax.35.desc
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Headache time
+		name = ia_flavor_sax.35.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige = -10
 	}
 }

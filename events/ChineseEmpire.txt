@@ -285,7 +285,7 @@ country_event = {
 	trigger = {
 		is_emperor_of_china = yes
 		ai = yes
-		has_any_disaster = no
+		NOT = { has_disaster = bonfire_of_the_vanities_disaster }
 		OR = { NOT = { imperial_mandate = 1 } is_subject = yes }
 		any_known_country = {
 			government = monarchy

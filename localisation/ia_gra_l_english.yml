@@ -73,8 +73,8 @@
  
  #Events
  
- ia_flavor_gra.1.t:0 "The Nasrid Rebellion"
- ia_flavor_gra.1.desc:0 "Wartorn fields, dried out rivers and empty cities. Such is the sad state of the once-mighty Al-Andalus. Yet the Andalusian people are still divided - more so than ever before. The Nasrid rebelled against the tyrant heretic Sultan, and are now in a position to claim the sultanate for themselves.\n\nHowever, the question of the future of our nation is in active debate. No one argues agains unity in faith, but an increasingly powerful faction advocates for a decentralised approach to our ruling: one without a Sultan, but with a council of Emirs."
+ ia_flavor_gra.1.t:0 "The Andalusian Rebellion"
+ ia_flavor_gra.1.desc:0 "Wartorn fields, dried out rivers and empty cities. Such is the sad state of the once-mighty Al-Andalus. Yet the Andalusian people are still divided - more so than ever before. The Qurtubans rebelled against the tyrant heretic Sultan, and are now in a position to claim the sultanate for themselves.\n\nHowever, the question of the future of our nation is in active debate. No one argues agains unity in faith, but an increasingly powerful faction advocates for a decentralised approach to our ruling: one without a Sultan, but with a council of Emirs."
  ia_flavor_gra.1.a:0 "We need a Sultan! The Qurtuban elites can be ignored."
  ia_flavor_gra.1.b:0 "Accept their request, we will not follow another tyrant."
  ia_flavor_gra.2.t:0 "The Rif Rebellion"

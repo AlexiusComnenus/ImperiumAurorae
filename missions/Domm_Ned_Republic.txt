@@ -343,32 +343,6 @@ dom_ned_united_republic_slot_2_branch = {
 					duration = -1
 				}				
 			}
-			#if = {
-			#	limit = { has_dlc = "Leviathan" } 
-			#	custom_tooltip = ned_polder_bonus_tt
-			#	custom_tooltip = ned_25_25_tt
-			#	hidden_effect = {
-			#		every_ally = {
-			#			limit = {
-			#				has_opinion = {
-			#					who = ROOT 
-			#					value = 50
-			#				}
-			#			}
-			#			ROOT = {
-			#				add_trust = {
-			#					who = PREV
-			#					value = 25
-			#					mutual = yes
-			#				}
-			#				add_favors = {
-			#					who = PREV
-			#					amount = 25
-			#				}
-			#			}
-			#		}
-			#	}
-			#}
 		}
 	}
 }
@@ -1047,7 +1021,17 @@ dom_ned_united_republic_slot_4_branch = {
 					amount = 1
 				}
 			}
-			num_of_captured_ships_with_boarding_doctrine = 5
+			NOT = {
+				any_known_country = {
+					capital_scope = {
+						region = british_isles_region
+					}
+					naval_strength = {
+						who = ROOT
+						value = 0.5
+					}
+				}
+			}
 			#any_war_enemy_country = {
 			#	any_owned_province = {
 			#		has_port = yes
@@ -1060,21 +1044,14 @@ dom_ned_united_republic_slot_4_branch = {
 				limit = {
 					exists = ENG
 					NOT = { exists = GBR }
-					OR = {
-						ENG = { 
-							valid_for_personal_unions_trigger = yes
-						}
-						has_reform = dutch_republic
+					ENG = { 
+						valid_for_personal_unions_trigger = yes
 					}
-					religion_group = christian
-					OR = {
-						AND = {
-							has_dlc = "Res Publica"
-							has_states_general_mechanic = yes
-							is_orangists_in_power = yes
-						}
+					OR = {	
+						has_reform = dutch_republic
 						government = monarchy
 					}
+					religion_group = christian
 				}
 				add_casus_belli = {
 					type = cb_restore_personal_union
@@ -1085,21 +1062,14 @@ dom_ned_united_republic_slot_4_branch = {
 			else_if = {
 				limit = {
 					exists = GBR
+					GBR = {
+						valid_for_personal_unions_trigger = yes
+					}
 					OR = {
-						GBR = {
-							valid_for_personal_unions_trigger = yes
-						}
+						government = monarchy
 						has_reform = dutch_republic
 					}
 					religion_group = christian
-					OR = {
-						AND = {
-							has_dlc = "Res Publica"
-							has_states_general_mechanic = yes
-							is_orangists_in_power = yes
-						}
-						government = monarchy
-					}
 				}
 				add_casus_belli = {
 					type = cb_restore_personal_union

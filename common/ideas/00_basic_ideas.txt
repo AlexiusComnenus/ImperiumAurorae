@@ -7,6 +7,8 @@
 # ROOT = country picking the idea
 # groups set to colonial=yes will be higher prioritized by the AI when spending power
 
+#ideas in the group can have effect = {} and removed_effect = {}
+
 aristocracy_ideas = {
 	category = MIL
 
@@ -159,7 +161,7 @@ plutocracy_ideas = {
 		global_regiment_cost = -0.10
 	}
 	abolished_serfdom = {
-		land_morale = 0.15
+		land_morale = 0.10
 		global_unrest = -1
 	}
 	bill_of_rights = {
@@ -320,7 +322,7 @@ theocracy_gov_ideas = {
 	}
 	friends_in_high_places = {
 		leader_cost = -0.1
-		war_exhaustion_cost = -0.33
+		war_exhaustion = -0.025
 	}
 	flesh_is_weak = {
 		morale_damage_received = -0.1
@@ -896,6 +898,35 @@ defensive_ideas = {
 	}
 	improved_foraging = {
 		garrison_size = 0.33
+		effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = ned_buffed_forts_flag
+					}
+					every_owned_province = {
+						limit = {
+							region = low_countries_region
+							has_fort_building_trigger = yes
+						}
+						remove_province_modifier = ned_low_countries_fort_buff
+						add_province_modifier = {
+							name = ned_low_countries_fort_buff_buffed
+							duration = -1
+							hidden = yes
+						}
+					}
+				}
+			}
+		}
+		removed_effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = { has_province_modifier = ned_low_countries_fort_buff_buffed }
+					remove_province_modifier = ned_low_countries_fort_buff_buffed
+				}
+			}
+		}
 	}
 
 	#until_the_last_man = {
@@ -1301,8 +1332,8 @@ exploration_ideas = {
 			NOT = { tag = TEM }
 		}
 		modifier = {
-			factor = 0.5
-			tag = ARA
+			factor = 0
+			technology_group = high_american
 		}
 		modifier = {
 			factor = 0.1
@@ -1765,13 +1796,14 @@ administrative_ideas = {
 	}
 	local_rule = {
 		advisor_pool = 1
+		state_maintenance_modifier = -0.25
 		num_of_pronoiars = 1
 	}
 	adaptability = {
 		core_creation = -0.25
 	}
 	cultural_regulations = {
-		promote_culture_cost = -0.3
+		num_accepted_cultures = 2
 	}
 	stable_government = {
 		stability_cost_modifier = -0.25 
@@ -1854,9 +1886,12 @@ humanist_ideas = {
 	}
 	ecumenism = {
 		tolerance_heretic = 2
+		same_religion_advisor_cost = 0.2
+		advisor_cost = -0.2
 	}
 	cultural_ties = {
 		num_accepted_cultures = 2
+		manpower_in_accepted_culture_provinces = 0.15
 	}
 	humanist_tolerance = {
 		tolerance_heathen = 2

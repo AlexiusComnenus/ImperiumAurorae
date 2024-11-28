@@ -436,7 +436,6 @@ templar_missions_column_2 = {
 		trigger = {
 			333 = {
 				has_building = temple
-				
 			}
 			if = {
 				limit = { ai = no }
@@ -449,10 +448,7 @@ templar_missions_column_2 = {
 		
 		effect = {
 			333 = {
-				add_permanent_province_modifier = {
-					name = templar_bank
-					duration = -1
-				}
+				add_province_triggered_modifier = templar_bank
 				change_trade_goods = gold
 			}
 		}

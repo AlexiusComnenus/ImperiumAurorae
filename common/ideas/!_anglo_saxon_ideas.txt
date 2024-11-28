@@ -14,6 +14,7 @@ Z21_ideas = {
 			primary_culture = anglo_saxon
 		}
 		NOT = { tag = AVE }
+		NOT = { tag = GER }
 	}
 	free = yes
 

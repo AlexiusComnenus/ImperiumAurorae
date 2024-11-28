@@ -20,3 +20,264 @@ austerity_policies = {
 	trade_efficiency = -0.10
 	global_unrest = 2
 }
+
+nov_to_the_banners = {
+	siege_ability = 0.20
+	land_maintenance_modifier = -0.10
+}
+
+nov_arkhangelsk_settlers = {
+	local_development_cost = -0.15
+	local_build_cost = -0.20
+}
+
+nov_arkhangelsk_city = {
+	local_development_cost = -0.50
+	province_trade_power_modifier = 0.1
+	trade_value_modifier = 0.25
+	local_center_of_trade_upgrade_cost = -0.5
+	local_production_efficiency = 0.3
+	trade_goods_size = 0.5
+}
+
+nov_fur_emporium = {
+	trade_value_modifier = 0.5
+	province_trade_power_modifier = 0.25
+	trade_goods_size = 0.5
+}
+
+nov_burned_vladimir = {
+	local_development_cost_modifier = 1
+	local_development_cost = 1
+	local_monthly_devastation = 3
+}
+
+nov_flames_of_revenge = {
+	land_morale = 0.10
+}
+
+nov_pushing_into_urals = {
+	siege_ability = 0.20
+	movement_speed = 0.10	
+}
+
+nov_major_outpost_kazan = {
+	local_development_cost = -0.15
+	local_build_cost = -0.20
+	supply_limit = 30
+}
+
+nov_city_of_kazan = {
+	local_development_cost = -0.25
+	trade_goods_size = 2
+	province_trade_power_value = 50
+}
+
+nov_expelling_cumans = {
+	local_culture_conversion_cost = -0.33
+	local_culture_conversion_time = -0.33
+}
+
+nov_orthodox_zealotry = {
+	tolerance_heretic = -4
+	tolerance_heathen = -4
+	global_missionary_strength = 0.01
+	manpower_in_true_faith_provinces = 0.20
+	religion = yes
+}
+
+nov_rise_of_bogomilism = {
+	global_unrest = -2
+	global_tax_modifier = -0.20
+	missionaries = 1
+	religion = yes
+}
+
+nov_cuman_bane = {
+	prestige_decay = -0.01
+	core_creation = -0.1
+	warscore_cost_vs_other_religion = -0.10
+}
+
+nov_reopening_the_baltic_routes = {
+	global_trade_power = 0.1
+}
+
+nov_baltic_settlers = {
+	local_build_cost = -0.10
+	local_development_cost = -0.05
+	local_culture_conversion_cost = -0.2
+}
+
+nov_weathered_hunters = {
+	trade_goods_size = 0.2
+}
+
+nov_hunting_lodges = {
+	supply_limit_modifier = 0.25
+	trade_goods_size_modifier = 0.20
+}
+
+nov_in_search_for_prey = {
+	may_establish_frontier = yes
+	global_colonial_growth = 30
+}
+
+nov_steady_lumber_supply = {
+	development_cost = -0.05
+	build_cost = -0.10
+}
+
+trade_protectorate_overlord_modifier_ia = {
+	land_forcelimit = 2
+	global_manpower = 2
+}
+
+nov_german_expertise = {
+	technology_cost = -0.05
+	innovativeness_gain = 0.5
+}
+
+nov_rich_iron_deposits = {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.15
+}
+
+nov_new_mining_towns = {
+	local_build_cost = -0.15
+	local_development_cost = -0.15
+}
+
+nov_new_provincial_capital = {
+	local_development_cost = -0.20
+	allowed_num_of_buildings = 1
+	allowed_num_of_manufactories = 1
+}
+
+nov_major_mining_complex = {
+	trade_goods_size = 1
+	trade_goods_size_modifier = 0.3
+}
+
+deposition_of_pope_province_modifier = {
+	local_missionary_strength = 0.03
+}
+
+deposition_of_pope_country_modifier = {
+	tolerance_own = -2
+	religious_unity = -0.25
+	religion = yes
+}
+
+ural_fortifications = {
+	local_defensiveness = 0.3
+	local_garrison_size = 0.5
+	local_hostile_attrition = 1
+	allowed_num_of_buildings = 1
+	allowed_num_of_manufactories = 1
+}
+
+nov_plains_citadel = {
+	local_defender_dice_roll_bonus = 1
+	local_hostile_attrition = 2
+	local_assault_fort_ability = -0.5
+	allowed_num_of_buildings = 1
+	allowed_num_of_manufactories = 1
+}
+
+nov_bogomil_fervor = {
+	land_morale = 0.05
+	tolerance_own = 1
+	tolerance_heretic = -5
+	relation_with_heretics = -20
+	reverse_relation_with_heretic_religion = -20
+	relation_with_heathens = -20
+	reverse_relation_with_heathen_religion = -20
+	religion = yes
+}
+
+nov_embracing_new_ideals = {
+	local_missionary_strength = 0.03
+}
+
+nov_integrating_ugrics = {
+	num_accepted_cultures = 2
+}
+
+nov_respecting_the_ancestors = {
+	local_missionary_strength = -0.10
+	local_tolerance_of_heathens = 5
+	local_religious_unity_contribution = -1
+	local_tax_modifier = 0.15
+}
+
+nov_beacon_of_liberty_tier_1 = {
+	diplomatic_upkeep = 1
+	reduced_liberty_desire = 15
+}
+
+nov_beacon_of_liberty_tier_2 = {
+	diplomatic_upkeep = 3
+	reduced_liberty_desire = 20
+	global_unrest = -2
+	prestige_decay = -0.01
+}
+
+nov_new_sawmills = {
+	local_build_cost = -0.1
+	local_development_cost = -0.1
+	trade_goods_size = 0.5
+}
+
+nov_city_of_artisans = {
+	trade_goods_size = 0.5
+	trade_goods_size_modifier = 0.3
+	local_governing_cost_increase = -30
+}
+
+nov_baltic_entrepot = {
+	province_trade_power_value = 20
+	trade_goods_size = 1
+}
+
+nov_great_granaries = {
+	trade_goods_size = 0.5
+	local_production_efficiency = 0.4
+	local_manpower_modifier = 0.5
+	allowed_num_of_manufactories = 1
+	land_forcelimit = 1
+}
+
+nov_amber_port = {
+	trade_goods_size = 1.5
+	province_trade_power_modifier = 0.5
+	local_production_efficiency = 1
+	prestige = 1
+}
+
+nov_baltic_gold = {
+	trade_goods_size = 1
+	local_production_efficiency = 0.5
+	trade_value_modifier = 0.5
+}
+
+nov_amber_outcompeted = {
+	trade_value_modifier = -0.75
+}
+
+nov_temp_buff = {
+	allowed_streltsy_fraction = 0.15
+}
+
+nov_temp_streltsy_buff = {
+	shock_damage_received = -0.10
+	discipline = 0.025
+	is_streltsy_modifier = yes
+}
+
+grand_dismantlement_victory_debuff = {
+	ae_impact = 2.5
+	diplomatic_reputation = -5
+	administrative_efficiency = -0.25
+	accept_vassalization_reasons = -100
+}

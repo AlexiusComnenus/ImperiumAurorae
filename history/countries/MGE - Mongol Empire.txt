@@ -4,7 +4,7 @@ government_rank = 3
 technology_group = nomad_group
 religion = tengri_pagan
 primary_culture = mongol
-capital = 719
+capital = 4678
 1444.11.11= {
 	monarch = {
 		name = "Möetüken"
@@ -44,7 +44,7 @@ capital = 719
 		death_date = 1467.2.26
 		claim = 89
 		religion = tengri_pagan
-		culture = pahari
+		culture = khalkha
 	}
 	add_heir_personality = strict_personality
 	add_heir_personality = tolerant_personality

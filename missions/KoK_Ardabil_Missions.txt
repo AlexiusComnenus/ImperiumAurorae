@@ -48,7 +48,7 @@ ardabil_missions_1 = {
 				limit = { 
 					has_dlc = "Rights of Man" 
 				} 
-				add_ruler_personality = conqueror_personality
+				add_ruler_personality = legendary_conqueror_personality
 			}
 			else = { add_mil_power = 50 }
 		}

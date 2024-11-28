@@ -1,0 +1,59 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+is_imperial_protectorate_mod = {
+	opinion = 25
+}
+
+is_imperial_kingdom = {
+	opinion = 50
+}
+
+is_imperial_duchy = {
+	opinion = 50
+}
+
+took_transilvania = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+took_illyria = {
+	opinion = -80
+	yearly_decay = 1
+}
+
+took_illyria_plus_croatia = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+took_romania = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+hlr_okm_revolting = {
+	opinion = -100
+}
+
+hlr_okm_rulerchange_forced = {
+	opinion = -25
+	yearly_decay = 3
+}
+
+hlr_okm_angry_rich_guys = {
+	opinion = -25
+	yearly_decay = 3
+}
+
+hlr_okm_blockade = {
+	opinion = -50
+	yearly_decay = 3
+}
+
+hlr_okm_let_our_trade_collapse = {
+	opinion = -50
+	yearly_decay = 1
+}

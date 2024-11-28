@@ -2031,7 +2031,15 @@ aristocratic_rule_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.8 }
+		}
+		modifier = {
+			factor = 1.5
+			governing_capacity_percentage = 0.9
+		}	
 	}
 }
 
@@ -2053,7 +2061,7 @@ plutocratic_rule_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5			
 	}
 }
 
@@ -2076,7 +2084,7 @@ theocratic_rule_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5			
 	}
 }
 
@@ -2100,7 +2108,7 @@ head_of_state_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5			
 	}
 }
 
@@ -2123,7 +2131,11 @@ zealous_court_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5
+		modifier = {
+			factor = 20
+			is_at_war = yes
+		}
 	}
 }
 
@@ -2146,7 +2158,7 @@ financial_miracle_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 2			
 	}
 }
 
@@ -2169,7 +2181,7 @@ subject_obligations_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5		
 	}
 }
 
@@ -2192,7 +2204,11 @@ big_government_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 1
+		modifier = {
+			factor = 2
+			is_at_war = yes
+		}
 	}
 }
 
@@ -2214,7 +2230,7 @@ humanitarian_administration_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 1		
 	}
 }
 
@@ -2239,7 +2255,11 @@ blessed_construction_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 1
+		modifier = {
+			factor = 2
+			is_at_war = no
+		}
 	}
 }
 
@@ -2262,7 +2282,7 @@ military_innovation_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 30		
 	}
 }
 
@@ -2285,7 +2305,7 @@ efficient_war_taxes_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0			
+		factor = 0.5			
 	}
 }
 
@@ -2329,7 +2349,7 @@ indigenous_development_act = {
 	global_institution_spread = 0.33
 
 	ai_will_do = {
-		factor = 0			
+		factor = 1			
 	}
 }
 
@@ -2350,6 +2370,6 @@ mercenary_registration_act = {
 	may_build_supply_depot = yes
 
 	ai_will_do = {
-		factor = 0			
+		factor = 3		
 	}
 }

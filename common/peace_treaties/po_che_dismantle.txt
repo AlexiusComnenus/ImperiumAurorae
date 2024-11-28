@@ -41,7 +41,7 @@ po_che_dismantle = {
 		is_in_war = { casus_belli = cb_imperial_realm_war }
 		FROM = { is_in_war = { casus_belli = cb_imperial_realm_war } }
 		is_emperor = yes
-		FROM = { ai = yes }
+		#FROM = { ai = yes }
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		always = yes

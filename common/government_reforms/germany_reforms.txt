@@ -14,9 +14,10 @@ saxon_feudalism = {
 		max_absolutism = -50
 		diplomatic_annexation_cost = 3
 		accept_vassalization_reasons = 10
-		liberty_desire_from_subject_development = 0.25
+		#liberty_desire_from_subject_development = 0.25
+		reduced_liberty_desire_on_same_continent = -20	
 		province_warscore_cost = 100
-		enforce_religion_cost = -0.5
+		enforce_religion_cost = -0.75
 		all_estate_influence_modifier = 0.1
 		global_tax_modifier = 0.40
 		production_efficiency = -0.15
@@ -88,11 +89,19 @@ sax_feudalism_reform = {
 	lock_level_when_selected = yes
 	potential = {
 		culture_group = germanic
+		OR = {
+			has_reform = sax_feudalism_reform
+			have_had_reform = sax_feudalism_reform
+			overlord = { has_reform = sax_feudalism_reform }
+			overlord = { has_reform = saxon_fief_reform }
+		}
 	}
 	trigger = {
 		OR = {
 			has_reform = sax_feudalism_reform
 			have_had_reform = sax_feudalism_reform
+			overlord = { has_reform = sax_feudalism_reform }
+			overlord = { has_reform = saxon_fief_reform }
 		}
 	}
 	modifiers = {
@@ -437,9 +446,9 @@ fkn_franken_council = {
 }
 
 hussite_wagenburgs = {
-	icon = "prussian_monarchy"
+	icon = "feudal_levies"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	#lock_level_when_selected = yes
 	potential = {
 		religion = hussite
 	}

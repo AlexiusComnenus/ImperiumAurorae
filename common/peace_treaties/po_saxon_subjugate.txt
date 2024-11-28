@@ -46,6 +46,9 @@ po_saxon_subjugate = {
 		always = yes
 	}
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
+		FROM = {
+			every_war_enemy_country = { limit = { is_subject = no } white_peace = PREV }
+		}
 		#THIS = { 
 			create_subject = {
 				subject_type = saxon_daimyo

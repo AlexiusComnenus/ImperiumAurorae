@@ -103,6 +103,18 @@ harmonic_confluence_monarchy = {
 		2 = harmonic_confluence_ruler_king_female
 		3 = EMPRESS
 	}
+	
+	heir_male = {
+		1 = harmonic_confluence_heir
+		2 = harmonic_confluence_heir
+		3 = harmonic_confluence_heir
+	}
+
+	heir_female = {
+		1 = harmonic_confluence_heir_female
+		2 = harmonic_confluence_heir_female
+		3 = harmonic_confluence_heir_female
+	}
 
 	trigger = {
 		has_reform = harmonic_confluence
@@ -131,6 +143,18 @@ byzantine_warlord_monarchy = {
 		2 = byzantine_warlord_ruler_king_female
 		3 = BASILISSA
 	}
+	
+	heir_male = {
+		1 = PRINCE
+		2 = DESPOT
+		3 = SYMBASILEUS
+	}
+
+	heir_female = {
+		1 = PRINCESS
+		2 = DESPOTISSA
+		3 = SYMBASILISSA
+	}
 
 	trigger = {
 		has_reform = byzantine_warlord
@@ -157,6 +181,18 @@ celestial_xizho_monarchy = {
 		1 = celestial_xizho_empire_ruler_female
 		2 = celestial_xizho_empire_ruler_female
 		3 = celestial_xizho_empire_ruler_female
+	}
+	
+	consort_male = {
+		1 = celestial_xizho_empire_consort_male
+		2 = celestial_xizho_empire_consort_male
+		3 = celestial_xizho_empire_consort_male
+	}
+
+	consort_female = {
+		1 = celestial_xizho_empire_consort
+		2 = celestial_xizho_empire_consort
+		3 = celestial_xizho_empire_consort
 	}
 
 	trigger = {
@@ -185,6 +221,33 @@ saxon_fief_reform_monarchy = {
 
 	trigger = {
 		has_reform = saxon_fief_reform
+		is_subject_of_type = saxon_daimyo
+		government = monarchy
+	}
+}
+
+saxon_march_reform_monarchy = {
+	rank = {
+		1 = saxon_march_reform_duchy
+		2 = saxon_march_reform_kingdom
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = saxon_march_reform_ruler_duke
+		2 = saxon_march_reform_ruler_king
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = saxon_march_reform_ruler_duke_female
+		2 = saxon_march_reform_ruler_king_female
+		3 = EMPRESS
+	}
+
+	trigger = {
+		has_reform = saxon_fief_reform
+		is_subject_of_type = german_march
 		government = monarchy
 	}
 }
@@ -206,6 +269,19 @@ saxon_feudalism_monarchy = {
 		1 = saxon_feudalism_ruler_duke_female
 		2 = saxon_feudalism_ruler_king_female
 		3 = saxon_feudalism_ruler_emperor_female
+	}
+	
+	
+	heir_male = {
+		1 = HEIR
+		2 = saxon_feudalism_heir_king
+		3 = saxon_feudalism_heir_emperor
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = saxon_feudalism_heir_king_female
+		3 = saxon_feudalism_heir_emperor_female
 	}
 
 	trigger = {
@@ -616,5 +692,125 @@ gov_diadochi = {
 
 	trigger = { 
 		has_reform = diadochos_reform
+	}
+}
+
+catalan_and_visigoth_titles = {
+	rank = {
+		1 = visigoth_duchy
+		2 = visigoth_kingdom
+		3 = visigoth_empire
+	}
+
+	ruler_male = {
+		1 = visigoth_ruler_duke
+		2 = visigoth_ruler_king
+		3 = visigoth_ruler_emperor
+	}
+
+	ruler_female = {
+		1 = visigoth_ruler_duke_female
+		2 = visigoth_ruler_king_female
+		3 = visigoth_ruler_emperor_female
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = visigoth_heir_king
+		3 = visigoth_heir_emperor
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = visigoth_heir_king_female
+		3 = visigoth_heir_emperor_female
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			primary_culture = catalan
+			primary_culture = visigothic
+		}
+	}
+}
+
+westseaxe_titles = {
+	rank = {
+		1 = anglosaxon_duchy
+		2 = anglosaxon_kingdom
+		3 = anglosaxon_empire
+	}
+
+	ruler_male = {
+		1 = anglosaxon_ruler_duke
+		2 = anglosaxon_ruler_king
+		3 = anglosaxon_ruler_emperor
+	}
+
+	ruler_female = {
+		1 = anglosaxon_ruler_duke_female
+		2 = anglosaxon_ruler_king_female
+		3 = anglosaxon_ruler_emperor_female
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = anglosaxon_heir
+		3 = anglosaxon_heir
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = anglosaxon_heir
+		3 = anglosaxon_heir
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			has_reform = westseaxe_monarchy_reform
+			primary_culture = anglo_saxon
+		}
+	}
+}
+
+welsh_titles = {
+	rank = {
+		1 = welsh_duchy
+		2 = welsh_kingdom
+		3 = welsh_empire
+	}
+
+	ruler_male = {
+		1 = welsh_ruler_duke
+		2 = welsh_ruler_king
+		3 = welsh_ruler_emperor
+	}
+
+	ruler_female = {
+		1 = welsh_ruler_duke_female
+		2 = welsh_ruler_king_female
+		3 = welsh_ruler_emperor_female
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = welsh_heir
+		3 = welsh_heir
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = welsh_heir_female
+		3 = welsh_heir_female
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			primary_culture = welsh
+			primary_culture = cornish
+		}
 	}
 }

@@ -48,6 +48,7 @@ estate_nobles = {
 	country_modifier_neutral = {
 		manpower_recovery_speed = 0.2 
 		rr_royalists_influence = 0.1
+		monthly_ia_complacency = 0.08
 	}	
 	country_modifier_angry = {
 		manpower_recovery_speed = -0.1
@@ -55,6 +56,7 @@ estate_nobles = {
 		monthly_support_heir_gain = -0.2
 		global_unrest = 2
 		rr_royalists_influence = -0.1
+		monthly_ia_complacency = 0.12
 	}
 	land_ownership_modifier = {
 		nobles_loyalty_modifier = 0.2
@@ -319,6 +321,18 @@ estate_nobles = {
 		}
 	}
 	custom_name = {
+		desc = estate_pakoyoq
+		trigger = {
+			primary_culture = inca
+		}
+	}
+	custom_name = {
+		desc = estate_almahen
+		trigger = {
+			is_mayan_society_trigger = yes
+		}
+	}
+	custom_name = {
 		desc = estate_tetecuhtin
 		trigger = {
 			religion = nahuatl
@@ -363,7 +377,10 @@ estate_nobles = {
 				has_reform = prussian_republic_reform
 				has_reform = prussian_monarchy_base
 				has_reform = prussian_monarchy
-				tag = GER
+				AND = {
+					primary_culture = prussian 
+					tag = GER
+				}
 			}
 		}
 	}
@@ -495,6 +512,28 @@ estate_nobles = {
 		estate_nobles_qurchi_service
 		estate_nobles_mamlukian_administration
 		estate_nobles_enlist_the_mamluks
+		estate_nobles_vegvar_system
+		estate_nobles_ITA_military_governors
+		estate_nobles_GER_diploma_andreanum
+		estate_nobles_orangist_privileges
+		estate_nobles_MAY_arm_nobles_with_obsidian_blades
+		estate_nobles_MAY_spread_dynastic_influence
+		estate_nobles_AZT_triple_alliance
+		estate_nobles_AZT_warrior_culture
+		estate_nobles_reformatio_sigismundi
+		estate_nobles_basqaq_autonomy
+		estate_nobles_habsburg_disunity
+		estate_nobles_hab_habsburg_connections
+		estate_nobles_imperial_war_leader
+		estate_nobles_melting_pot_of_cultures
+		estate_nobles_hab_von_raab_restructions
+		estate_nobles_TIM_soyurghal_grants
+		estate_nobles_TIM_chagatai_warriors
+		estate_nobles_TIM_appease_the_elites
+		estate_nobles_MUG_development_of_the_subah
+		estate_nobles_four_class_system
+		estate_nobles_hungarian_nobility_privileges
+		estate_nobles_austrian_nobility_privileges
 	}
 
 	agendas = {

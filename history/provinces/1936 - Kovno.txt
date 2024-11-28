@@ -1,5 +1,5 @@
-owner = VOL
-controller = VOL
+owner = LIT
+controller = LIT
 capital = "Kovno"
 is_city = yes
 culture = lithuanian
@@ -8,7 +8,6 @@ trade_goods = livestock
 base_tax = 1
 base_production = 2
 base_manpower = 2
-add_core = VOL
 add_core = LIT
 discovered_by = MGE
 discovered_by = eastern

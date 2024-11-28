@@ -1,3 +1,115 @@
+vassal=
+{
+	first="MGE"
+	second="SHY"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="MGE"
+	second="TRS"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="NOV"
+	second="PLT"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="NOV"
+	second="BLO"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="Z66"
+	second="RSO"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="Z73"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="Y08"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="Y04"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="UTS"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="GUG"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="Z41"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="Z58"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="tributary_state"
+	first="MGE"
+	second="KAM"
+	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
 dependency=
 {
 	subject_type="tributary_state"
@@ -56,25 +168,7 @@ dependency=
 {
 	subject_type="tributary_state"
 	first="Z00"
-	second="RSO"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="Z00"
 	second="MOS"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="Z00"
-	second="PLT"
 	start_date="769.1.1"
 	end_date="1836.1.1"
 }
@@ -102,15 +196,6 @@ dependency=
 	subject_type="tributary_state"
 	first="Z00"
 	second="Z01"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="Z00"
-	second="Z47"
 	start_date="769.1.1"
 	end_date="1836.1.1"
 }
@@ -175,6 +260,30 @@ dependency=
 	first="GJN"
 	second="EJZ"
 	start_date="769.1.1"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="GJN"
+	second="JIN"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="GJN"
+	second="ZAO"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="GJN"
+	second="DAX"
+	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
 
@@ -254,18 +363,56 @@ vassal=
 	end_date="1836.1.1"
 }
 
-vassal=
+dependency=
 {
+	subject_type="appanage"
 	first="RUM"
-	second="Z39"
+	second="HSN"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
 
-vassal=
+dependency=
 {
+	subject_type="appanage"
 	first="RUM"
 	second="SRV"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="appanage"
+	first="RUM"
+	second="RAM"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="appanage"
+	first="RUM"
+	second="KAR"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="appanage"
+	first="RUM"
+	second="CND"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="appanage"
+	first="RUM"
+	second="ERE"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
@@ -336,7 +483,7 @@ vassal=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="Y10"
 	start_date="1444.11.11"
@@ -345,7 +492,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="URB"
 	start_date="1444.11.11"
@@ -354,7 +501,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="CRO"
 	start_date="1444.11.11"
@@ -363,7 +510,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="BOS"
 	start_date="1444.11.11"
@@ -372,7 +519,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="VRN"
 	start_date="1444.11.11"
@@ -381,7 +528,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="FER"
 	start_date="1444.11.11"
@@ -390,7 +537,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="AQU"
 	start_date="1444.11.11"
@@ -399,7 +546,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="Z31"
 	start_date="1444.11.11"
@@ -408,7 +555,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="VEN"
 	second="Y17"
 	start_date="1444.11.11"
@@ -417,7 +564,7 @@ dependency=
 
 dependency=
 {
-	subject_type="tributary_state"
+	subject_type="ia_advanced_tributary_state"
 	first="LIT"
 	second="Z51"
 	start_date="1444.11.11"

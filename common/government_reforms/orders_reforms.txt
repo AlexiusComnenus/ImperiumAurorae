@@ -6,12 +6,18 @@ templar_order_government = {
 		}
 	}
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	modifiers = {
 		global_foreign_trade_power = 0.2
-		sailors_recovery_speed = 0.2
 		governing_capacity_modifier = -0.25
 		global_naval_barrage_cost = -0.5
 		may_recruit_female_generals = yes
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -30
+		reverse_relation_with_heretic_religion = -15
+		holy_orders_loyalty_modifier = 0.5
+		holy_orders_influence_modifier = 0.25
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -46,6 +52,12 @@ santiago_order_government = {
 		colonists = 1
 		treasure_fleet_income = 0.2
 		may_recruit_female_generals = yes
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -30
+		reverse_relation_with_heretic_religion = -15
+		holy_orders_loyalty_modifier = 0.10
+		holy_orders_influence_modifier = 0.05
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -84,6 +96,12 @@ calatrava_order_government = {
 		tolerance_heathen = -1
 		may_recruit_female_generals = yes
 		
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -30
+		reverse_relation_with_heretic_religion = -15
+		holy_orders_loyalty_modifier = 0.10
+		holy_orders_influence_modifier = 0.05
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -112,6 +130,7 @@ hellenic_order_government = {
 			tag = KNI
 			have_had_reform = hellenic_order_government
 		}
+		religion = hellenic_pagan_reformed
 	}
 	lock_level_when_selected = yes
 	modifiers = {
@@ -172,13 +191,17 @@ perkunas_government = {
 			tag = COP
 			have_had_reform = perkunas_government
 		}
+		OR = { 
+			religion = baltic_pagan
+			religion = baltic_pagan_reformed
+		}
 	}
 	lock_level_when_selected = yes
 	modifiers = {
 		extra_manpower_at_religious_war = yes
 		tolerance_own = 2
 		defensiveness = 0.30
-		governing_capacity_modifier = -0.5
+		governing_capacity_modifier = -0.25
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -200,12 +223,14 @@ myrmidons_government = {
 			tag = MYM
 			have_had_reform = myrmidons_government
 		}
+		religion = hellenic_pagan_reformed
 	}
 	lock_level_when_selected = yes
 	modifiers = {
 		missionary_maintenance_cost = -0.2
 		reduced_liberty_desire_on_same_continent = 20
 		auto_explore_adjacent_to_colony = yes
+		colony_development_boost = 1
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -228,6 +253,47 @@ myrmidons_government = {
 	}
 }
 
+jomsviking_government = {
+	potential = {
+		OR = { 
+			tag = JOM
+			have_had_reform = jomsviking_government
+		}
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+	}
+	lock_level_when_selected = yes
+	modifiers = {
+		warscore_cost_vs_other_religion = -0.10
+		manpower_in_true_faith_provinces = 0.20	
+		auto_explore_adjacent_to_colony = yes
+		colony_development_boost = 1
+		may_perform_slave_raid = yes
+		coast_raid_range = 2
+		sea_repair = yes
+	}
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	icon = "monks"
+	allow_normal_conversion = no
+	monastic = yes
+	custom_attributes = {
+		monastic_order = yes
+		locked_government_type = yes
+		strong_marines = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
+	}
+}
+
 religious_permanent_revolution_reform = {
 	icon = "religious_permanent_revolution_reform"
 	allow_normal_conversion = yes
@@ -242,11 +308,11 @@ religious_permanent_revolution_reform = {
 		NOT = {
 			has_reform = templar_crusade_reform
 		}
+		NOT = {
+			has_reform = celestial_xizho_empire
+		}
 	}
 	trigger = {
-		NOT = {
-			has_reform = templar_crusade_reform
-		}
 		NOT = {
 			religion = confucianism
 			religion_group = pagan
@@ -257,6 +323,10 @@ religious_permanent_revolution_reform = {
 	}
 	modifiers = {
 		enforce_religion_cost = -0.5
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -30
+		reverse_relation_with_heretic_religion = -15
 	}
 	ai = {
 		factor = 3
@@ -264,7 +334,7 @@ religious_permanent_revolution_reform = {
 }
 
 templar_crusade_reform = {
-	icon = "religious_permanent_revolution_reform"
+	icon = "holy_horde"
 	allow_normal_conversion = no
 	force_conversion_gives_global_holy_war_released_modifier = yes
 	lock_level_when_selected = yes
@@ -299,8 +369,11 @@ templar_crusade_reform = {
 	}
 	modifiers = {
 		enforce_religion_cost = -0.35
-		church_power_modifier = 0.1
-		monthly_fervor_increase = 0.25
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -10
+		relation_with_heretics = -30
+		reverse_relation_with_heretic_religion = -15
+		manpower_in_true_faith_provinces = 0.25
 	}
 	ai = {
 		factor = 1000

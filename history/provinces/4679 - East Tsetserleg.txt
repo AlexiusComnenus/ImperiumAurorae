@@ -1,5 +1,5 @@
-owner = MGE
-controller = MGE
+owner = Z03
+controller = Z03
 capital = "Khovsgol"
 is_city = yes
 culture = oirats
@@ -8,7 +8,7 @@ trade_goods = fur
 base_tax = 1
 base_production = 1
 base_manpower = 4
-add_core = MGE
+add_core = Z03
 add_core = ZUN
 discovered_by = MGE
 discovered_by = eastern

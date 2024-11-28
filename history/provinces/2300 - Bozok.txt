@@ -1,5 +1,5 @@
-owner = RUM
-controller = RUM
+owner = ERE
+controller = ERE
 capital = "Yozgat"
 is_city = yes
 culture = turkish

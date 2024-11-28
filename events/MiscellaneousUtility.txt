@@ -140,6 +140,12 @@ country_event = {	# In Honor of (Gn)Olle
 		set_country_flag = read_the_tutorial
 	}
 	
+	option = {	# catholic mechanics
+		name = ia_tutorial.1.catholic
+		custom_tooltip = ia_tutorial_tt_catholic
+		set_country_flag = read_the_tutorial
+	}
+	
 	option = {	# last crusade mechanics
 		name = ia_tutorial.1.c
 		custom_tooltip = ia_tutorial_tt_lastcrusade
@@ -159,6 +165,98 @@ country_event = {	# In Honor of (Gn)Olle
 	}
 }
 
+country_event = {	# In Honor of RetrogMG
+	id = ia_tutorial.2
+	title = ia_tutorial.2.title
+	desc = ia_tutorial.2.desc
+	picture = ARTWORK_eventPicture
+	
+	trigger = {
+		ai = no
+		NOT = { has_global_flag = locked_difficulty }
+	}
+	
+	is_triggered_only = yes
+	
+	option = {	# powerful lucky nations / on -> off
+		name = ia_tutorial.2.lucky.1
+		trigger = { NOT = { has_global_flag = ia_no_powerful_lucky_nations } }
+		custom_tooltip = ia_difficulty_tt_lucky_nations
+		set_global_flag = ia_no_powerful_lucky_nations
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# powerful lucky nations / off -> on
+		name = ia_tutorial.2.lucky.2
+		trigger = { has_global_flag = ia_no_powerful_lucky_nations }
+		custom_tooltip = ia_difficulty_tt_lucky_nations
+		clr_global_flag = ia_no_powerful_lucky_nations
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# advanced revanchism / on -> off
+		name = ia_tutorial.2.revanchism.1
+		trigger = { NOT = { has_global_flag = ia_no_advanced_revanchism } }
+		custom_tooltip = ia_difficulty_tt_revanchism
+		set_global_flag = ia_no_advanced_revanchism
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# advanced revanchism / off -> on
+		name = ia_tutorial.2.revanchism.2
+		trigger = { has_global_flag = ia_no_advanced_revanchism }
+		custom_tooltip = ia_difficulty_tt_revanchism
+		clr_global_flag = ia_no_advanced_revanchism
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# early game protection / on -> off
+		name = ia_tutorial.2.protection.1
+		trigger = { NOT = { has_global_flag = ia_no_early_game_protection } }
+		custom_tooltip = ia_difficulty_tt_protection
+		set_global_flag = ia_no_early_game_protection
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# early game protection / on -> off
+		name = ia_tutorial.2.protection.2
+		trigger = { has_global_flag = ia_no_early_game_protection }
+		custom_tooltip = ia_difficulty_tt_protection
+		clr_global_flag = ia_no_early_game_protection
+		hidden_effect = { country_event = { id = ia_tutorial.3 } }
+	}
+	
+	option = {	# close window
+		name = ia_tutorial.2.e
+		
+	}
+	
+	option = {  # lock difficulty
+		name = ia_tutorial.2.f
+		
+		set_global_flag = locked_difficulty
+	}
+}
+
+country_event = {
+	id = ia_tutorial.3
+	title = ia_tutorial.3.title
+	desc = ia_tutorial.3.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	option = {
+		name = "ia_tutorial.3.1"
+		country_event = { id = ia_tutorial.2 }
+	}
+}
+
 namespace = papal_control
 
 country_event = {
@@ -174,7 +272,8 @@ country_event = {
 			tag = FAP
 			tag = PAP
 		}
-		is_subject_of_type = vassal
+		NOT = { is_free_or_tributary_trigger = yes }
+		NOT = { is_subject_of_type = papal_puppet }
 	}
 
 	mean_time_to_happen = {
@@ -247,6 +346,7 @@ country_event = {
 			overlord = { has_reform = feudal_france_reform }
 			overlord = { has_reform = independent_appanage_reform }
 		}
+		government = monarchy
 	}
 
 	mean_time_to_happen = {
@@ -363,6 +463,52 @@ country_event = {
 	}
 }
 
+namespace = ia_grand_dismantlement
+
+country_event = {
+	id = ia_grand_dismantlement.1
+	title = ia_grand_dismantlement.1.title
+	desc = ia_grand_dismantlement.1.desc
+	picture = CONSPIRACY_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_grand_dismantlement.1.a
+	}
+}
+
+country_event = {
+	id = ia_grand_dismantlement.2
+	title = ia_grand_dismantlement.2.title
+	desc = ia_grand_dismantlement.2.desc
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_grand_dismantlement.2.a
+		
+		add_country_modifier = {
+			name = grand_dismantlement_victory_debuff
+			duration = 5475
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = { NOT = { is_subject_of = ROOT } }
+				add_aggressive_expansion = {
+					who = ROOT
+					value = 50
+					apply_calc = no
+				}
+			}
+		}
+		custom_tooltip = every_country_gains_50_ae_tt
+	}
+}
+
 namespace = dotfset
 
 country_event = {  #  dotf
@@ -388,7 +534,7 @@ country_event = {  #  dotf
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		months = 10
 	}
 	
 	
@@ -412,8 +558,10 @@ province_event = {  #  place forts
 	trigger = {
 		owner = {
 			ai = yes
+			is_at_war = no
 		}
 		is_year = 1480
+		is_city = yes
 		OR = {
 			province_id = 176
 			province_id = 212
@@ -465,6 +613,36 @@ province_event = {  #  place forts
 			province_id = 4299
 			province_id = 2201
 			province_id = 2205
+			AND = {
+				OR = {
+					has_terrain = marsh
+					has_terrain = glacier
+					has_terrain = highlands
+					has_terrain = jungle
+					has_terrain = mountain
+					has_terrain = woods
+					has_terrain = hills
+					has_terrain = forest
+				}
+				NOT = {
+					any_neighbor_province = {
+						has_fort_building_trigger = yes
+					}
+				}
+			}
+			AND = {
+				has_terrain = mountain
+				NOT = {
+					any_neighbor_province = {
+						has_terrain = mountain
+						has_fort_building_trigger = yes
+					}
+				}
+			}
+			AND = {
+				has_fort_building_trigger = yes
+				NOT = { province_has_current_tech_fort_trigger = yes }
+			}
 		}
 		NOT = { province_has_current_tech_fort_trigger = yes }
 	}

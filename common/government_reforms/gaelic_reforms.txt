@@ -32,6 +32,7 @@ gaelic_council_elders = {
 		election_on_death = yes
 		heir = no
 		locked_government_type = yes
+		always_archdruid_personality = yes
 	}
 	has_term_election = no
 	ai = {
@@ -61,6 +62,10 @@ holy_groves_reform = {
 		tolerance_heathen = 2
 		tolerance_of_heretics_capacity = 1
 		tolerance_of_heathens_capacity = 1
+		relation_with_heathens = 15
+		reverse_relation_with_heathen_religion = 15
+		relation_with_heretics = 10
+		reverse_relation_with_heretic_religion = 10
 	}
 	
 	ai = {
@@ -80,9 +85,9 @@ protectors_of_nature_reform = {
 	
 	modifiers = {
 		fire_damage_received = -0.10
-		land_attrition = -0.20
-		max_hostile_attrition = 3
-		hostile_attrition = 2
+		land_attrition = -0.10
+		max_hostile_attrition = 1
+		hostile_attrition = 1
 	}
 	ai = {
 		factor = 1000

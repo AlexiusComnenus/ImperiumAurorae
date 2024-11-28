@@ -1,0 +1,89 @@
+graphical_culture = westerngfx
+
+color = { 101 101 101 }
+
+revolutionary_colors = { 1  8  1 }
+
+historical_idea_groups = {
+	administrative_ideas
+	defensive_ideas
+	trade_ideas
+	innovativeness_ideas
+	offensive_ideas
+	economic_ideas
+	quality_ideas
+	maritime_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	italian_condotta
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Marcus" = 20
+	"Justinus" = 20
+	"Julius" = 20
+	"Valerian" = 20
+	"Marius" = 20
+	"Konstantinus" = 20
+	"Claudius" = 20
+	"Aurelius" = 20
+	"Antonio" = 20
+	"Amadeo" = 20
+	"Francesco" = 20
+	"Matteo" = 20
+	"Dante" = 20
+	"Enzo" = 20
+	"Carlo" = 20
+	"Lorenzo" = 20
+	"Niccolo" = 20
+	"Alessandro" = 20
+	"Edoardo" = 20
+	"Andrea" = 20
+	"Agostino" = 20
+	"Riccardo" = 20
+	
+
+	"Viola" = -1
+	"Zaira" = -1
+	"Angelica" = -1
+	"Carla" = -1
+}
+
+leader_names = {
+	"Appiani d'Aragona" "Arborio Mella" 
+	Barberini Barzagli Boncompagni Borghese Borromeo Buonarroti "di Busca"
+	"di Campofregoso" Carafa "di Cardé" "del Carreto" Casanova Castagna
+	Castagnaro "di Cavour" Chigi Colonna Contarini Conti Corsini Cybo 
+	"Doria di Cirié" Doria-Landi Doria-Pamphili
+	d'Este 	"di Farnese" "di Ferrari"
+	"Gaetani dell'Aquila" Galilei Gambacorta Gentileschi Giustiniani Gonzaga Grimaldi
+	Ludovisi Malaspina "de' Medici" Melzi Montefeltro Orsini
+	"di Paesana" "Paleologi Montferrato" Pallavicini Paradisi Petrucci Pico Pignatelli
+	"dalla Rosa" "della Rovere"
+	"di Saluzzo" "di Savoia" Sfondrati Sforza Spinola
+	"della Torre" "della Ubaldini" Vico Visconti
+}
+
+ship_names = {
+	Aequitas Abundantia Aesculap Aeternitas Amor Annona Apollo Aurora Bacchus Carna Ceres Clementia Diana Fides Felicitas Flora Furrina Genius Hercules Honor Hilaritas Indulgentia Janus Juno Jupiter Justitia Juventas Laetitia Levana Libertas Luna Mars Mercurius Minerva Neptunus Nobilitas Ops Pax Plutos Proserpina Roma Pudicita Saturnus Securitas Sol Tellus Vesta Venus Victoria Virtus Vulcanus
+}
+
+army_names = {
+	"Exercitus Primus" "Exercitus Secundus" "Exercitus Tertius" "Exercitus Quartus" "Exercitus Quintus" "Exercitus Sextus" "Exercitus Septimus" "Exercitus Octavus" "Exercitus Nonus" "Exercitus Decimus"
+}
+
+fleet_names = { "Classis Prima" "Classis Secunda" "Classis Tertia" "Classis Quarta" "Classis Quinta" "Classis Sexta" "Classis Septima" "Classis Octava" "Classis Nona" "Classis Decima" 
+}

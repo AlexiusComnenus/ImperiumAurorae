@@ -40,7 +40,7 @@ po_saxon_dismantle = {
 	is_visible = { # Defaults to equivalent of "always = yes"
 		is_in_war = { casus_belli = cb_saxon_dismantle }
 		FROM = { is_in_war = { casus_belli = cb_saxon_dismantle } }
-		has_reform = saxon_feudalism
+		#has_reform = saxon_feudalism
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		always = yes

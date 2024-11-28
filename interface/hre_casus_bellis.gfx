@@ -1,0 +1,17 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_cb_hlr_heresy"
+		texturefile = "gfx/interface/casus_bellis/cb_hlr_heresy.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_cb_hlr_newgp"
+		texturefile = "gfx/interface/casus_bellis/cb_hlr_newgp.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

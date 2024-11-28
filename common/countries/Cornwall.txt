@@ -29,6 +29,7 @@ historical_units = {
 	western_medieval_knights
 }
 monarch_names = {
+	"Llywelyn #3" = 10
 	"Cynan Meiriadog #1" = 10
 	"Adelaide #1" = -1
 	"Baldwin #1" = 10
@@ -159,3 +160,5 @@ ship_names = {
 	"Truro"
 	"Whitsand"
 }
+
+preferred_religion = protestant

@@ -1,0 +1,151 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 58 121 166 }
+
+revolutionary_colors = { 15  8  15 }
+
+historical_idea_groups = {
+	trade_ideas
+	plutocracy_ideas
+	humanist_ideas
+	exploration_ideas	
+	defensive_ideas
+	economic_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	italian_condotta
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Kreshimir #0" = 10
+	"Stjepan #0" = 10
+	"Almosh #0" = 10
+	"Zvonimir #0" = 10
+	"Trpimir #0" = 10
+	"Goislav #0" = 10
+	"Slavic #0" = 10
+	"Svetoslav #0" = 10
+	"Mutimir #0" = 10
+	"Tomislav #0" = 10
+	"Gashpar #0" = 10
+	"Ladislav #0" = 10
+	"Karlo #0" = 10
+	"Andrija #0" = 10
+	"Ludovik #0" = 10
+	"Petar #0" = 10
+	"Vladislav #0" = 10
+	"Vjenceslav #0" = 10
+	"Antonio #0" = 10
+	"Michele #0" = 10
+	"Tomasso #0" = 10
+	"Mosé #0" = 10
+	"Niccolò #0" = 10
+	"Domenico #0" = 10
+	"Francesco #0" = 10
+	"Giovanni #0" = 10
+	"Marco #0" = 10
+	"Vittore #0" = 10
+	"Agostino #0" = 10
+	"Alfredo #0" = 10
+	"Alvise #0" = 10
+	"Andrea #0" = 10
+	"Bertucci #0" = 10
+	"Carlo #0" = 10
+	"Constanzo #0" = 10
+	"Cristoforo #0" = 10
+	"Enzo #0" = 10
+	"Fabrizio #0" = 10
+	"Gianpiero #0" = 10
+	"Girolamo #0" = 10
+	"Jacopo #0" = 10
+	"Leonardo #0" = 10
+	"Lorenzo #0" = 10
+	"Ludovico #0" = 10
+	"Marco Antonio #0" = 10
+	"Ottavio #0" = 10
+	"Sebastiano #0" = 10
+	"Teodoro #0" = 10
+	"Urbano #0" = 10
+	"Vitale #0" = 10
+	
+	"Jelena #1" = -1
+	"Marija #0" = -1
+	"Petra #0" = -1
+	"Pierina #0" = -1
+	"Santuzza #0" = -1
+	"Eulalia #0" = -1
+}
+
+leader_names = {
+	Alapic
+	Babonic Blagaj
+	Cesnegic Crnkovic
+	Drashkovic
+	Frankapan
+	Gorjanski
+	Horvat Hrvatinic
+	Ilocki
+	Jelacic
+	Kacic Kaniski Keglevic Knezevic Krbavski Kruzic Kurjakovic
+	Lackovic
+	Mihalovic
+	Nelipcic
+	Ozegovic
+	Pejacevic
+	Radic Rukavina
+	Subic
+	Talovac
+	Vrancic
+	Zrinski
+	"d'Alviano" Alvise
+	Barbarigo Bembo Barilla Bassano Bardolino
+	Cornaro Contarini Cassandro Casanova Commachio Chiogga
+	Donato Dolfin "de Blazio"
+	Emo Erizzo Ermelli
+	Foscolo Flangini Foscarini
+	Grimani Giustinani Gritti Garda
+	Loredan Labia Lomellini Lando
+	Moceningo Marcello Morosini Molin Moro Memmo Magno Mestre Modigliano
+	Quirini
+	Polani Priuli Pisani Pesaro Pezzini Pordenone
+	Riva Ruzzini Rovigo Rovereto
+	"San Paulo" Schio Sugaina
+	Trevisano Toscani
+	Veniero Valieri Vittorio
+	Zeno Zustiniani
+}
+
+ship_names = {
+	Cres
+	"Dugi Otok"
+	Goli
+	Krl
+	Pag Plavnik
+	Susak "Sveti Grgur"
+	Tijat
+	Unije
+	"Vele Srankane"
+	Zlarin Zmajan
+	"Libro Sacro" "Adriatico" "Dalmazia" "Paradiso" "Sacra Spada"
+}
+
+army_names = {
+	"Primo Esercito Illirico" "Secondo Esercito Illirico" "Terzo Esercito Illirico" "Quinto Esercito Illirico" "Sesto Esercito Illirico" "Settimo Esercito Illirico" "Ottavo Esercito Illirico" "Nono Esercito Illirico" "Decimo Esercito Illirico" 
+}

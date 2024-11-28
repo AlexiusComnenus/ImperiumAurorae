@@ -1,0 +1,93 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 211  230  211 }
+revolutionary_colors = { 8  0  8 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	offensive_ideas
+	spy_ideas
+	trade_ideas
+	innovativeness_ideas
+	economic_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Gottfried #1" = 10
+	"Balduin #6" = 10
+	"Heinrich #3" = 10
+	"Amalrich #2" = 10
+	"Johannes #2" = 10
+	"Friedrich #1" = 10
+	"Sigismund #1" = 10
+	"Georg #1" = 10
+	"Otto #1" = 10
+	"Konrad #3" = 10
+	"Jakob #1" = 10
+	"Erich #1" = 10
+	"Karl #1" = 10
+
+	"Sibilla #1" = -10
+	"Isabell #2" = -10
+	"Maria #1" = -10
+	"Amalia #1" = -10
+}
+
+ship_names = {
+	"Heiliges Kreuz"
+	"Der Gral"
+	"Schwert des Gläubigen"
+	"Hammer Gottes"
+	"Heiliges Land"
+	"Heiliges Wort"
+	"Herz Jesu"
+	"Gott erkennt die Seinen"
+	Kreuzritter
+	Templer
+	Ordensritter
+	"Deutscher Orden"
+	Lazarus
+	Johanniter
+	Schwertbrüder
+	Ausgleicher
+	Jerusalem
+	"Heiliges Grab"
+	"Heilige Lanze"
+	"Leib und Blut"
+	Gleichmacher
+	Friedensbringer
+	Erlöser
+	Rechenschaft
+	Marienburg
+}
+
+leader_names = { 
+	Schrüder Sauerzapff Stichsenstein Hagedorn Arensberg Liebstein Tecklenburg Bratsberg Brauer Ganter Wiesenberg "von Hugenberg" "von Tiengen" "von Seeburg" "Freiherr von Mechterdingen" "von Ersing" Wallstadt Vorberg Hügen "von Sexau" "von Zähringen" 
+}
+
+army_names = {
+	"Erstes Heiliges Banner" "Zweites Heiliges Banner" "Drittes Heiliges Banner" "Viertes Heiliges Banner" "Fünftes Heiliges Banner" "Sechstes Heiliges Banner" "Siebtes Heiliges Banner" "Achtes Heiliges Banner" "Neuntes Heiliges Banner" "Zehntes Heiliges Banner"
+}
+
+fleet_names = { "Erste Heilige Flotte" "Zweite Heilige Flotte" "Dritte Heilige Flotte" "Vierte Heilige Flotte" "Fünfte Heilige Flotte" "Sechste Heilige Flotte" "Siebte Heilige Flotte" "Achte Heilige Flotte" "Neunte Heilige Flotte" "Zehnte Heilige Flotte"
+}

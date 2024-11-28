@@ -63,6 +63,35 @@ rurikovich_dynasty = {
 	diplomatic_annexation_cost = -0.05
 }
 
+carolingian_dynasty = {
+	potential = { dynasty = "Karolinger" }
+	trigger = { OR = { culture_group = germanic culture_group = french } }
+	
+	ae_impact = -0.10
+	warscore_cost_vs_other_religion = -0.05
+}
+
+aen_ger_eternal_friendship = {
+	potential = { 
+		AVE = { has_country_flag = aen_ger_eternal_friendship_flag } 
+		OR = {
+			tag = AVE
+			tag = GER
+		}
+	}
+	trigger = { 
+		OR = { 
+			AVE = { alliance_with = GER }
+			AVE = { is_subject_of = GER }
+			GER = { is_subject_of = AVE }
+		}
+	}
+	
+	diplomatic_upkeep = 1
+	global_tax_modifier = 0.20
+	mercenary_manpower = 0.20
+}
+
 ######################################
 # Fraticelli control of Rome.
 ######################################

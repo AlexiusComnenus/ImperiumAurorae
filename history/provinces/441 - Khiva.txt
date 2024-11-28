@@ -1,5 +1,5 @@
-owner = MGE
-controller = MGE
+owner = TRS
+controller = TRS
 capital = "Khiva"
 is_city = yes
 culture = tajik
@@ -10,7 +10,6 @@ base_production = 5
 base_manpower = 4
 extra_cost = 8
 center_of_trade = 1
-add_core = MGE
 add_core = TRS
 discovered_by = MGE
 discovered_by = eastern

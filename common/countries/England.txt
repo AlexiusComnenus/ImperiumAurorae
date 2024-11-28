@@ -31,6 +31,7 @@ historical_units = {
 	western_medieval_infantry
 }
 monarch_names = {
+	"Llywelyn #3" = 10
 	"Adela #0" = -1
 	"Alice #0" = -1
 	"Archambaud #0" = 0
@@ -57,7 +58,6 @@ monarch_names = {
 	"Joan #0" = -1
 	"John #2" = 10
 	"Knud #2" = 10
-	"Llywelyn #1" = 10
 	"Matilda #1" = -1
 	"Maud #0" = -1
 	"Philip #1" = 10
@@ -762,4 +762,4 @@ fleet_names = {
 	"Royal Navy"
 	"White Squadron"
 }
-preferred_religion = anglican
+preferred_religion = protestant

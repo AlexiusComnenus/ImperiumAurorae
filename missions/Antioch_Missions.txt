@@ -135,6 +135,7 @@ antioch_missions_column_1 = {
 		}
 		
 		effect = {
+			custom_tooltip = antioch_can_declare_wars_tt
 			add_imperial_influence = 30
 			add_country_modifier = {
 				name = antioch_unified_house
@@ -144,6 +145,9 @@ antioch_missions_column_1 = {
 				set_hre_religion = hellenic_pagan_reformed
 				set_hre_religion_locked = yes
 			}
+		}
+		ai_weight = {
+			factor = 500	#Historical mission
 		}
 	}
 	antioch_question_aleppo = {
@@ -307,6 +311,9 @@ antioch_missions_column_1 = {
 				duration = -1
 			}
 		}
+		ai_weight = {
+			factor = 500	#Historical mission
+		}
 	}
 	antioch_subjugate_france = {
 		icon = king_of_france
@@ -411,9 +418,12 @@ antioch_missions_column_2 = {
 		trigger = {
 			army_tradition = 50
 			army_professionalism = 0.10
-			treasury = 200
-			adm_power = 100
-			mil_power = 100
+			if = {
+				limit = { ai = no }
+				treasury = 200
+				adm_power = 100
+				mil_power = 100
+			}
 		}
 		effect = {
 			add_army_professionalism = -0.10
@@ -999,13 +1009,13 @@ antioch_missions_column_3 = {
 				legitimacy = 100
 				treasury = 5000
 				num_of_cavalry = 300
+				manpower = 300
+				manpower_percentage = 0.75
 			}
 			OR = {
 				hre_reform_passed = emperor_reichskrieg
 				hre_reform_passed = emperor_renovatio
 			}
-			manpower = 300
-			manpower_percentage = 0.75
 			NOT = { num_of_loans = 1}
 			NOT = { is_at_war = yes }
 			NOT = { great_power_rank = 2 }
@@ -1019,7 +1029,7 @@ antioch_missions_column_3 = {
 				OR = {
 					has_country_flag = ivycurse_cured_selfish
 					has_global_flag = ivycurse_cured
-					has_country_flag = ivycurse_disabled
+					has_global_flag = ivycurse_disabled
 				}
 			}
 		}
@@ -1468,6 +1478,7 @@ antioch_missions_column_5_top = {
 				trade_goods = wool
 				trade_goods = cloth
 				trade_goods = cotton
+				trade_goods = silk
 			}
 			NOT = { base_production = 8 }
 		}
@@ -1476,11 +1487,12 @@ antioch_missions_column_5_top = {
 			if = {
 				limit = { ai = no }
 				num_of_owned_provinces_with = {
-					value = 10
+					value = 11
 					OR = {
 						trade_goods = wool
 						trade_goods = cloth
 						trade_goods = cotton
+						trade_goods = silk
 					}
 					base_production = 8
 				}
@@ -1489,40 +1501,34 @@ antioch_missions_column_5_top = {
 			}
 			else = {
 				num_of_owned_provinces_with = {
-					value = 10
+					value = 11
 					OR = {
 						trade_goods = wool
 						trade_goods = cloth
 						trade_goods = cotton
+						trade_goods = silk
 					}
 				}
 			}
 		}
 		
 		effect = {
+			country_event = { id = antioch.29 }
 			if = {
 				limit = { ai = no }
-				every_owned_province = {
-					limit = {
-						trade_goods = silk
-					}
-					add_province_modifier = {
-						name = auroral_silk
-						duration = -1
-					}
-				}
 				every_owned_province = {
 					limit = {
 						OR = {
 							trade_goods = wool
 							trade_goods = cloth
 							trade_goods = cotton
+							trade_goods = silk
 						}
 						base_production = 8
 					}
-					change_trade_goods = silk
+					change_trade_goods = auroral_silk
 					add_province_modifier = {
-						name = auroral_silk
+						name = auroral_silk_source
 						duration = -1
 					}
 				}
@@ -1532,25 +1538,16 @@ antioch_missions_column_5_top = {
 			else = {
 				every_owned_province = {
 					limit = {
-						trade_goods = silk
-					}
-					add_province_modifier = {
-						name = auroral_silk
-						duration = -1
-					}
-					add_base_production = 5
-				}
-				every_owned_province = {
-					limit = {
 						OR = {
 							trade_goods = wool
 							trade_goods = cloth
 							trade_goods = cotton
+							trade_goods = silk
 						}
 					}
-					change_trade_goods = silk
+					change_trade_goods = auroral_silk
 					add_province_modifier = {
-						name = auroral_silk
+						name = auroral_silk_source
 						duration = -1
 					}
 					add_base_production = 5

@@ -29,6 +29,7 @@ historical_units = {
 	western_medieval_knights
 }
 monarch_names = {
+	"Llywelyn #3" = 10
 	"Aeddan ap Blegywryd #1" = 10
 	"Aeronwen #0" = -1
 	"Anarawd #1" = 10
@@ -169,3 +170,5 @@ ship_names = {
 	"Tywi"
 	"Ynys Môn"
 }
+
+preferred_religion = protestant

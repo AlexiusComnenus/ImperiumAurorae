@@ -106,3 +106,23 @@ hsc_jewel_north_sea = {
 recently_recruited_druid = {
 
 }
+
+hsc_druidic_mint = {
+	local_gold_depletion_chance_modifier = -1
+	local_development_cost_modifier = -0.1
+	trade_goods_size_modifier = 0.2
+}
+
+bri_menowar_mod = {
+	has_man_of_war = yes
+}
+
+ia_colonial_rush = {
+	colonists = 1
+	range = 0.5
+}
+
+ia_around_the_cape = {
+	global_colonial_growth = 15
+	colonist_placement_chance = 0.20
+}

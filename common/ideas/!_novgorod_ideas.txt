@@ -1,0 +1,44 @@
+NOV_ideas = {
+	start = {
+		shock_damage_received = -0.15
+		legitimacy = 1
+		devotion = 1
+		republican_tradition = 0.3
+		meritocracy = 1
+		horde_unity = 1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = NOV
+	}
+	free = yes		#will be added at load.
+	
+	nov_druzhina_companions = {
+		infantry_power = 0.1
+	}
+	grand_dukes_army = {
+		global_manpower_modifier = 0.20
+	}
+	nov_integration_of_the_boyars = {
+		diplomatic_annexation_cost = -0.2
+		diplomatic_reputation = 1
+	}
+	nov_renowned_merchants = {
+		merchants = 1
+		trade_steering = 0.20
+	}
+	nov_great_taiga_idea = {
+		development_cost = -0.10
+	}
+	nov_western_demands = {
+		production_efficiency = 0.10
+	}
+	nov_meritocracy = {
+		advisor_cost = -0.10
+		all_estate_influence_modifier = -0.1
+	}
+}

@@ -8,6 +8,7 @@ trade_goods = grain
 base_tax = 1
 base_production = 1
 base_manpower = 1
+fort_15th = yes
 add_core = AFG
 discovered_by = MGE
 discovered_by = eastern

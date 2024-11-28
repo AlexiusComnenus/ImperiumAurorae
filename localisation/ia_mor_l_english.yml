@@ -20,7 +20,20 @@
  PEACE_po_pretenders_annex: "§JClaim Victory§!"
  PEACE_po_spread_commune: "§RLiberate the Peasants!§!"
  CB_ALLOWED_po_spread_commune: "Liberate the Peasants"
- 
+ perfect_communication: "Perfect Communication"
+ perfect_communication_desc: "We ARE the people, and the people are us. The communication of our values and ways are perfect, can only be perfect! Those who say otherwise are hidden agents of the monarchists and reactionaries."
+ nation_for_the_people: "Nation for the People"
+ nation_for_the_people_desc: "In our great nation, oppression and suffering have been outlawed. Thus, they do not exist!"
+ righteous_power: "Righteous Conquest"
+ righteous_power_desc: "The will of the people has decreed that we must liberate the entire world. Only dirty reactionaries would defy us!"
+ dedication_of_the_people: "Dedication of the People"
+ dedication_of_the_people_desc: "Now that they are working for a prosperous future and not toiling for the nobility, our People are more enthusiastic than ever to meet quotas!"
+ grand_army_of_the_republic: "Grand Army of the Republic"
+ grand_army_of_the_republic_desc: "The Republic must be defended from the Reactionaries!"
+ land_of_equality: "Land of Equality"
+ land_of_equality_desc: "Some are more equal than others, perhaps, but only in the great Commune are we truly all equal!"
+ with_pure_will: "With Pure Will"
+ with_pure_will_desc: "There is nothing that cannot be achieved with sufficient willpower, no battle that cannot be won by simply charging until the day is ours."
 
  #Events
 

@@ -809,6 +809,7 @@ rig_livonia_and_trade_mission_slot = {
 			if = {
 				limit = {
 					has_estate = estate_burghers
+					ai = no
 				}
 				NOT = {
 					estate_influence = {
@@ -816,11 +817,8 @@ rig_livonia_and_trade_mission_slot = {
 						influence = 50
 					}
 				}
+				crown_land_share = 30
 			}
-			else = {
-				NOT = { has_estate = estate_burghers }
-			}
-			crown_land_share = 30
 			stability = 1
 		}
 		effect = {
@@ -1399,16 +1397,36 @@ rig_develop_and_teuton_mission_slot = {
 			}
 		}
 		trigger = {
-			38 = {
-				is_capital_of = ROOT
-				is_core = ROOT
-				province_has_current_tech_fort_trigger = yes
-				has_tax_building_trigger = yes
-				has_trade_building_trigger = yes
-				has_production_building_trigger = yes
-				has_manpower_building_trigger = yes
+			if = {
+				limit = { ai = no }
+				38 = {
+					is_capital_of = ROOT
+					is_core = ROOT
+					province_has_current_tech_fort_trigger = yes
+					has_tax_building_trigger = yes
+					has_trade_building_trigger = yes
+					has_production_building_trigger = yes
+					has_manpower_building_trigger = yes
+				}
+				stability = 3
 			}
-			stability = 3
+			else = {
+				38 = {
+					is_capital_of = ROOT
+					is_core = ROOT
+				}
+				OR = {
+					38 = {
+						province_has_current_tech_fort_trigger = yes
+						has_tax_building_trigger = yes
+						has_trade_building_trigger = yes
+						has_production_building_trigger = yes
+						has_manpower_building_trigger = yes
+					}
+					is_year = 1475
+				}
+			}
+			
 		}
 		effect = {
 			38 = {

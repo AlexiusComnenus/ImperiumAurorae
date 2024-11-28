@@ -500,10 +500,6 @@ country_event = {
 			limit = { NOT = { tag = Z17 } }
 			add_treasury = -100
 		}
-		add_country_modifier = {
-			name = recently_recruited_aurora
-			duration = 3650
-		}
 	}
 }
 
@@ -716,6 +712,28 @@ country_event = {
 		add_ruler_personality = immortal_wisdom_personality
 		change_dip = 1
 		change_mil = 1
+		set_ai_personality = {
+			personality = ai_balanced
+			locked = yes
+		}
+		set_global_flag = dragon_princess_arrived_flag
+		hidden_effect = {
+			Z62 = {
+				set_religious_school = {
+					group = christian
+					school = draconic_inquisition_school
+				}
+				set_country_flag = daohellenic_doctrines_picking_blocked
+				#set_school_opinion = {
+				#	who = GEN
+				#	opinion = -1
+				#}
+			}
+			#set_school_opinion = {
+			#	who = Z62
+			#	opinion = 1
+			#}
+		}
 	}
 }
 
@@ -991,6 +1009,9 @@ country_event = {  # TGE missions show
 			swap_non_generic_missions = yes
 		}
 		Z42 = {
+			swap_non_generic_missions = yes
+		}
+		NOV = {
 			swap_non_generic_missions = yes
 		}
 		hidden_effect = {
@@ -1316,6 +1337,16 @@ country_event = {  # Radiant City
 		add_adm_power = -200
 		add_dip_power = -200
 		add_mil_power = -200
+		
+		if = {
+			limit = { ai = yes }
+			2313 = {
+				add_great_project_tier = {
+					type = prague
+					tier = 3
+				}
+			}
+		}
 	}
 }
 
@@ -1365,7 +1396,10 @@ country_event = {  # Antioch fix wrong religion
 	
 	trigger = {
 		tag = Z17
-		NOT = { religion = hellenic_pagan_reformed }
+		OR = { 
+			NOT = { religion = hellenic_pagan_reformed }
+			NOT = { has_reform = celestial_xizho_empire }
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -1375,9 +1409,17 @@ country_event = {  # Antioch fix wrong religion
 	
 	option = {
 		name = antioch.25.a
-		change_religion = hellenic_pagan_reformed
 		if = {
-			limit = { hre_religion_treaty = no }
+			limit = { NOT = { has_reform = celestial_xizho_empire } }
+			add_government_reform = celestial_xizho_empire
+		}
+		if = {
+			limit = { NOT = { religion = hellenic_pagan_reformed } }
+			change_religion = hellenic_pagan_reformed
+		}
+		
+		if = {
+			limit = { hre_religion_treaty = no 	is_emperor = no }
 			set_emperor = yes
 		}
 	}
@@ -1425,7 +1467,7 @@ country_event = {
 	}
 }
 
-country_event = {  # Dragon Princess Reforms
+country_event = {  # Attempt to leave empire
 	id = antioch.27
 	title = antioch.27.t
 	desc = antioch.27.d
@@ -1470,6 +1512,252 @@ country_event = {  # Dragon Princess Reforms
 		ai_chance = { factor = 0 }
 		
 		add_prestige = -20
+	}
+}
+
+country_event = {  # Grant land to the Auroral Guard
+	id = antioch.28
+	title = antioch.28.t
+	desc = antioch.28.d
+	picture = REFORM_eventPicture
+	
+	#major = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_aurora
+		any_owned_province = {
+			NOT = { is_core = ROOT }
+			any_core_country = {
+                exists = no
+				NOT = {
+					any_core_province = {
+						is_core = ROOT
+					}
+				}
+            }
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					any_core_country = {
+						exists = no
+						NOT = {
+							any_core_province = {
+								is_core = ROOT
+							}
+						}
+					}
+				}
+				random_core_country = {
+					limit = {
+						exists = no
+						NOT = {
+							any_core_province = {
+								is_core = ROOT
+							}
+						}
+					}
+					save_event_target_as = new_aurora_releasable
+				}
+			}
+		}	
+	}
+	
+	option = {
+		name = antioch.28.a
+		ai_chance = { factor = 100 }
+		
+		release = event_target:new_aurora_releasable
+		vassalize = event_target:new_aurora_releasable
+		event_target:new_aurora_releasable = {
+			change_religion = hellenic_pagan_reformed
+			hidden_effect = {
+				set_saved_name = {
+					key = root_name_male
+					type = advisor
+					scope = ROOT
+				}
+				set_saved_name = {
+					key = root_name_female
+					type = advisor
+					female = yes
+					scope = ROOT
+				}
+				random_list = {
+					50 = {
+						define_general = {
+							fire = 3
+							shock = 8
+							manuever = 5
+							siege = 3
+							trait = aurora_trained
+							name = root_name_male
+						}
+					}
+					50 = {
+						define_general = {
+							fire = 3
+							shock = 8
+							manuever = 5
+							siege = 3
+							trait = aurora_trained
+							female = yes
+							name = root_name_female
+						}
+					}
+				}
+				define_leader_to_ruler = {
+					type = general
+					change_mil = 3
+					claim = 50
+				}
+				set_ruler_culture = xizho
+				set_ruler_flag = donotmergethistag_flag
+				random_list = {
+					50 = {
+						set_dynasty = ROOT
+					}
+					50 = {
+					}
+				}
+				change_government = monarchy
+				add_government_reform = harmonic_confluence
+				while = {
+					limit = {
+						any_owned_province = {
+							any_neighbor_province = {
+								owned_by = ROOT
+								NOT = { is_core = ROOT }
+							}
+						}
+					}
+					random_owned_province = {
+						limit = {
+							any_neighbor_province = {
+								owned_by = ROOT
+								NOT = { is_core = ROOT }
+							}
+						}
+						every_neighbor_province = {
+							limit = {
+								owned_by = ROOT
+								NOT = { is_core = ROOT }
+							}
+							cede_province = event_target:new_aurora_releasable
+						}
+					}
+				}
+				capital_scope = {
+					set_in_empire = yes
+				}
+			}
+		}
+		if = {
+			limit = { ai = no }
+			change_estate_land_share = {
+				estate = estate_aurora
+				share = 5
+			}
+		}
+		custom_tooltip = talented_auroral_general_ruler_tt
+	}
+	
+	option = {
+		name = antioch.28.b
+		ai_chance = { factor = 0 }
+		
+		add_estate_loyalty = {
+			estate = estate_aurora
+			loyalty = -25
+		}
+	}
+}
+
+country_event = {	# Proliferation of Auroral Silk
+	id = antioch.29
+	title = antioch.29.t
+	desc = antioch.29.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { # yes
+		name = antioch.29.a
+		ai_chance = { factor = 100 }
+		change_price = {
+			trade_goods = cloth
+			key = auroral_silk_spread_tt
+			value = -0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = silk
+			key = auroral_silk_spread_tt
+			value = -0.25
+			duration = -1
+		}
+		set_global_flag = auroral_silk_created_flag
+	}
+}
+
+country_event = {	# Aurorize Silk
+	id = antioch.30
+	title = antioch.30.t
+	desc = antioch.30.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		religion = hellenic_pagan_reformed
+		is_part_of_hre = yes
+		any_owned_province = {
+			trade_goods = silk
+		}
+		has_global_flag = auroral_silk_created_flag
+	}
+	
+	option = { # yes
+		name = antioch.30.a
+		ai_chance = { factor = 100 }
+		every_owned_province = {
+			limit = { trade_goods = silk }
+			change_trade_goods = auroral_silk
+		}
+	}
+}
+
+country_event = {	# De-Aurorize Silk
+	id = antioch.31
+	title = antioch.31.t
+	desc = antioch.31.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { religion = hellenic_pagan_reformed }
+		any_owned_province = {
+			trade_goods = auroral_silk
+			NOT = { has_province_modifier = soi_counterfeiting_silk }
+		}
+	}
+	
+	option = { # no
+		name = antioch.31.a
+		ai_chance = { factor = 100 }
+		every_owned_province = {
+			limit = { trade_goods = auroral_silk 	NOT = { has_province_modifier = soi_counterfeiting_silk } }
+			change_trade_goods = silk
+		}
 	}
 }
 
@@ -1533,7 +1821,7 @@ country_event = {  # Response to the Proclamation of the Aurora
 		trigger = {
 			OR = {
 				religion = hellenic_pagan_reformed
-				religion = confucianism
+				#religion = confucianism
 				is_part_of_hre = yes
 				any_ally = {
 					is_emperor = yes
@@ -1545,10 +1833,10 @@ country_event = {  # Response to the Proclamation of the Aurora
 			limit = {
 				NOT = { religion = hellenic_pagan_reformed }
 			}
-			change_religion = hellenic_pagan_reformed
-			capital_scope = {
-				change_religion = hellenic_pagan_reformed
-			}
+			#change_religion = hellenic_pagan_reformed
+			#capital_scope = {
+			#	change_religion = hellenic_pagan_reformed
+			#}
 		}
 		if = {
 			limit = {
@@ -1564,7 +1852,7 @@ country_event = {  # Response to the Proclamation of the Aurora
 			NOT = {
 				OR = {
 					religion = hellenic_pagan_reformed
-					religion = confucianism
+					#religion = confucianism
 					is_part_of_hre = yes
 					any_ally = {
 						is_emperor = yes
@@ -1611,10 +1899,10 @@ country_event = {  # Response to the Proclamation of the Aurora
 			limit = {
 				NOT = { religion = hellenic_pagan_reformed }
 			}
-			change_religion = hellenic_pagan_reformed
-			capital_scope = {
-				change_religion = hellenic_pagan_reformed
-			}
+			#change_religion = hellenic_pagan_reformed
+			#capital_scope = {
+			#	change_religion = hellenic_pagan_reformed
+			#}
 		}
 		if = {
 			limit = {

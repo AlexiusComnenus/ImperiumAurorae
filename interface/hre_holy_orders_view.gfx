@@ -1,0 +1,18 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_holy_order_hlr_teutons"
+		texturefile = "gfx/interface/holy_orders/teutons.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_hlr_johanniter"
+		texturefile = "gfx/interface/holy_orders/johanniter.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_holy_order_hlr_lazarus"
+		texturefile = "gfx/interface/holy_orders/lazarus.dds"
+		noOfFrames = 4
+	}
+}

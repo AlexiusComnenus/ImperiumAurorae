@@ -1,0 +1,15 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_icon_impking"
+		texturefile = "gfx//interface//impking.dds"
+	}
+	spriteType = {
+		name = "GFX_subject_imperial_protectorate"
+		texturefile = "gfx//interface//impprot.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_impduc"
+		texturefile = "gfx//interface//impduc.dds"
+	}
+}

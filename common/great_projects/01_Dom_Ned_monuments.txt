@@ -220,7 +220,7 @@ palace_of_coudenberg = {
 				culture = frisian
 				culture = flemish
 				culture = wallonian
-				culture = burgundian
+				culture = alsatian
 			}
 			province_is_or_accepts_culture = yes
 		}
@@ -230,7 +230,7 @@ palace_of_coudenberg = {
 				primary_culture = frisian
 				primary_culture = flemish
 				primary_culture = wallonian
-				primary_culture = burgundian
+				primary_culture = alsatian
 				tag = NED
 			}
 		}
@@ -249,7 +249,7 @@ palace_of_coudenberg = {
 				culture = frisian
 				culture = flemish
 				culture = wallonian
-				culture = burgundian
+				culture = alsatian
 			}
 			province_is_or_accepts_culture = yes
 		}
@@ -259,7 +259,7 @@ palace_of_coudenberg = {
 				primary_culture = frisian
 				primary_culture = flemish
 				primary_culture = wallonian
-				primary_culture = burgundian
+				primary_culture = alsatian
 				tag = NED
 			}
 		}
@@ -272,7 +272,7 @@ palace_of_coudenberg = {
 				culture = frisian
 				culture = flemish
 				culture = wallonian
-				culture = burgundian
+				culture = alsatian
 			}
 			province_is_or_accepts_culture = yes
 		}
@@ -282,7 +282,7 @@ palace_of_coudenberg = {
 				primary_culture = frisian
 				primary_culture = flemish
 				primary_culture = wallonian
-				primary_culture = burgundian
+				primary_culture = alsatian
 				tag = NED
 			}
 		}
@@ -326,7 +326,7 @@ palace_of_coudenberg = {
 		}
 
 		area_modifier = {
-			state_governing_cost = -0.1
+			local_governing_cost = -0.1
 			local_tax_modifier = 0.10
 		}
 
@@ -358,7 +358,7 @@ palace_of_coudenberg = {
 		}
 
 		area_modifier = {
-			state_governing_cost = -0.1
+			local_governing_cost = -0.1
 			local_governing_cost_increase = -10 
 			local_tax_modifier = 0.25
 		}
@@ -391,7 +391,7 @@ palace_of_coudenberg = {
 		}
 
 		area_modifier = {
-			state_governing_cost = -0.25
+			local_governing_cost = -0.25
 			local_governing_cost_increase = -10 
 			local_tax_modifier = 0.5
 		}
@@ -1219,32 +1219,38 @@ fu_admiralty_amsterdam = {
 	type = monument
 
 	build_trigger = {
-		OR = {
-			primary_culture = dutch
-			primary_culture = flemish
-			primary_culture = frisian
-			owner = { full_idea_group = naval_ideas }
-			owner = { full_idea_group = maritime_ideas } 
+		owner = { 
+			OR = {
+				primary_culture = dutch
+				primary_culture = flemish
+				primary_culture = frisian
+				full_idea_group = naval_ideas
+				full_idea_group = maritime_ideas
+			}
 		}
 	}
 	
 	can_use_modifiers_trigger = {
-		OR = {
-			primary_culture = dutch
-			primary_culture = flemish
-			primary_culture = frisian
-			owner = { full_idea_group = naval_ideas }
-			owner = { full_idea_group = maritime_ideas } 
+		owner = { 
+			OR = {
+				primary_culture = dutch
+				primary_culture = flemish
+				primary_culture = frisian
+				full_idea_group = naval_ideas
+				full_idea_group = maritime_ideas
+			}
 		}
 	}
 
 	can_upgrade_trigger = {
-		OR = {
-			primary_culture = dutch
-			primary_culture = flemish
-			primary_culture = frisian
-			owner = { full_idea_group = naval_ideas }
-			owner = { full_idea_group = maritime_ideas } 
+		owner = { 
+			OR = {
+				primary_culture = dutch
+				primary_culture = flemish
+				primary_culture = frisian
+				full_idea_group = naval_ideas
+				full_idea_group = maritime_ideas
+			}
 		}
 	}
 

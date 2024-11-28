@@ -175,6 +175,22 @@ country_decisions = {
 		}
 	}
 	
+	startup_decision_difficulty_settings = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			ai = no
+			NOT = { has_global_flag = locked_difficulty }
+		}
+		allow = {
+			ai = no
+			NOT = { has_global_flag = locked_difficulty }
+		}
+	 	effect = {
+			country_event = { id = ia_tutorial.2 }
+		}
+	}
+	
 	adopt_sanitary_standards_decision = {
 		major = yes
 		color = { 255 152 45 }
@@ -241,6 +257,307 @@ country_decisions = {
 			dray_build_to_limit_tercio = yes
 			clr_country_flag = refreshed_tercios
 			set_country_flag = refreshed_tercios
+		}
+	}
+	
+	ai_reduce_corruption_decision_adm = {
+		potential = { ai = yes }
+		allow = {
+			ai = yes
+			NOT = { has_country_modifier = administrative_corruption_suppression } 
+			corruption = 0.5 
+			NOT = { corruption = 10 }
+		}
+		effect = { 
+			add_country_modifier = {
+				name = administrative_corruption_suppression
+				duration = 1825
+			}
+			if = {
+				limit = { 
+					uses_republican_tradition = yes
+				}
+				add_republican_tradition = 1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	ai_reduce_corruption_decision_dip = {
+		potential = { ai = yes }
+		allow = {
+			ai = yes
+			NOT = { has_country_modifier = espionage_corruption_suppression } 
+			corruption = 1 
+			NOT = { corruption = 20 }
+		}
+		effect = { 
+			add_country_modifier = {
+				name = espionage_corruption_suppression
+				duration = 1825
+			}
+			if = {
+				limit = { 
+					NOT = {
+						OR = {
+							uses_revolutionary_zeal = yes
+							current_age = age_of_feudalism
+							current_age = age_of_discovery
+							current_age = age_of_reformation
+						}
+					}
+				}
+				add_absolutism = 2
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	ai_reduce_corruption_decision_mil = {
+		potential = { ai = yes }
+		allow = {
+			ai = yes
+			corruption = 5 
+			stability = 1 
+			NOT = { has_country_modifier = military_corruption_suppression }
+		}
+		effect = { 
+			add_country_modifier = {
+				name = military_corruption_suppression
+				duration = 1825
+			}
+			#add_stability = -1 
+			random_list = {
+				50 = {
+
+				}
+				25 = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								likely_rebels = nationalist_rebels
+							}
+						}
+						create_revolt = 1
+					}
+				}
+				15 = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								likely_rebels = nationalist_rebels
+							}
+						}
+						create_revolt = 2
+					}
+				}
+				10 = {
+					random_owned_province = {
+						limit = {
+							NOT = {
+								likely_rebels = nationalist_rebels
+							}
+						}
+						create_revolt = 3
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = {
+						OR = {
+							uses_revolutionary_zeal = yes
+							current_age = age_of_feudalism
+							current_age = age_of_discovery
+							current_age = age_of_reformation
+						}
+					}
+				}
+				add_absolutism = 2
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	establish_dusk_chapterhouse_decision = {
+		major = yes
+		color = { 255 152 45 }
+		
+		potential = {
+			NOT = {
+				any_owned_province = { has_province_modifier = dusk_chapterhouse_mod }
+			}
+			any_hired_mercenary_company = {
+				template = merc_legion_of_dusk
+			}
+		}
+		allow = {
+			adm_power = 100
+			mil_power = 200
+			years_of_income = 1
+			prestige = 50
+		}
+		effect = {
+			add_years_of_income = -1
+			add_adm_power = -100
+			add_mil_power = -200
+			
+			capital_scope = {
+				add_province_modifier = {
+					name = dusk_chapterhouse_mod
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	open_dusk_menu_decision = {
+		major = yes
+		color = { 255 152 45 }
+		
+		potential = {
+			any_owned_province = { has_province_modifier = dusk_chapterhouse_mod }
+		}
+		allow = {
+			if = {
+				limit = { ai = yes }
+				NOT = { has_country_modifier = recently_recruited_dawnwsbane }
+			}
+			else = {
+				OR = {
+					NOT = { has_country_modifier = recently_recruited_dawnwsbane }
+					NOT = { has_country_modifier = dusk_funded_dusksworn }
+					NOT = { has_country_modifier = dusk_sponsored_merc_connections }
+				}
+			}
+		}
+		effect = {
+			country_event = { id = ia_flavor_tem.29 }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	enact_weisuo_draft_decision = {
+		major = yes
+		color = { 255 152 45 }
+		
+		potential = {
+			has_reform = wei_suo_system_reform
+		}
+		allow = {
+			if = {
+				limit = { ai = yes }
+				NOT = { manpower_percentage = 0.05 }
+			}
+			NOT = { has_country_modifier = wei_suo_draft_modifier }
+		}
+		
+		effect = {
+			if = {
+				limit = { is_emperor_of_china = yes }
+				add_mandate = -20
+			}
+			add_country_modifier = {
+				name = wei_suo_draft_modifier
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { is_at_war = yes }
+			}
+			modifier = {
+				factor = 0
+				war_score = -10
+			}
+			modifier = {
+				factor = 0
+				NOT = { imperial_mandate = 65 }
+			}
+		}
+	}
+	
+	ai_switch_to_harmonic_confluence_decision = {
+		potential = {
+			ai = yes
+			religion = hellenic_pagan_reformed
+			NOT = { has_reform = harmonic_confluence }
+			government = monarchy
+			OR = {
+				has_reform = feudalism_reform
+				has_reform = autocracy_reform
+			}
+		}
+		allow = {
+			ai = yes
+			religion = hellenic_pagan_reformed
+			OR = {
+				has_reform = feudalism_reform
+				has_reform = autocracy_reform
+			}
+		}
+		effect = {
+			add_government_reform = harmonic_confluence
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	ai_switch_to_monarchy_decision = {
+		potential = {
+			ai = yes
+			religion = hellenic_pagan_reformed
+			#NOT = { has_government_attribute = monastic_order }
+			NOT = { has_reform = celestial_xizho_empire }
+			government = theocracy
+		}
+		allow = {
+			ai = yes
+			religion = hellenic_pagan_reformed
+			NOT = { has_government_attribute = monastic_order }
+			NOT = { has_reform = celestial_xizho_empire }
+			government = theocracy
+		}
+		effect = {
+			change_government = monarchy
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	lumber_creation_decision = {
+		potential = {
+			ai = no
+			have_country_flag = nov_enable_lumber_creation
+			has_global_flag = tradegood_marcin
+			any_owned_province = { has_state_edict = nov_lumber_state_edict }
+		}
+		allow = {
+			ai = no
+			treasury = 50
+			adm_power = 15
+			dip_power = 15
+		}
+		effect = {
+			country_event = { id = ia_flavor_nov.3 }
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

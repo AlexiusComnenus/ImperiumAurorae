@@ -1,6 +1,10 @@
 ﻿l_english:
 
  #Mechanics Tooltips
+ english_nation_arthurian_title: "Restore the Kingdom of Dumnonea"
+ english_nation_arthurian_desc: "We shall reclaim the mantle of the legendary Arthur Pendraig and restore his kingdom!"
+ english_nation_arthurian_tooltip: "Form Dumnonea"
+ 
  arthurian_courage: "Courage"
  arthurian_courage_desc: "Be true to what you believe in, and fight for what is right, regardless of the forces arrayed against you."
  arthurian_justice: "Justice"
@@ -17,9 +21,21 @@
  arthurian_selflessness_desc: "There is no greater service to this world than giving your life in the defence of the weak. You will be a beacon of hope to all, so that they will follow in your footsteps. Do not mourn your own inevitable death, for you will be judged fairly, and will rejoin those you have lost."
  
  #Diplo Tooltips
- 
+ powerful_druid_personality: "Powerful Druid"
+ powerful_druid_personality_desc: "Powerful Druids possess strong influence over the forces of nature. The mere presence of such a druid can cause nearby farms to become fertile, rivers to run clean, and injuries to heal swiftly."
  
  #Government
+ welsh_duchy: "Dugiaeth"
+ welsh_kingdom: "Teyrnas"
+ welsh_empire: "Ymerodraeth"
+ welsh_ruler_duke: "Dugiaid"
+ welsh_ruler_duke_female: "Dugesau"
+ welsh_ruler_king: "Brenin"
+ welsh_ruler_king_female: "Brenhines"
+ welsh_ruler_emperor: "Ymerawdwr"
+ welsh_ruler_emperor_female: "Ymerodres"
+ welsh_heir: "Aer Tywysog"
+ welsh_heir_female: "Aeres Tywysoges"
  
  #Modifiers
  wielding_excalibur: "Wielding §J<<Caliburn>>§!"
@@ -27,9 +43,56 @@
  administrative_corruption_suppression: "Suppressing Corruption Administratively"
  espionage_corruption_suppression: "Suppressing Corruption via Secret Police"
  military_corruption_suppression: "Suppressing Corruption Militarily"
- 
+ cold_duke_of_the_south: "The Cold Duke of the South"
+ passionate_duke_of_the_south: "The Passionate Duke of the South"
+ cold_duke_of_the_south_desc: "Despite being the most eligible bachelor in Cymru, Duke Gerens of Cernyw is still unwed and thus heirless. Many noble families have tried to have their daughters approach him, but they all return dejected. Rumours have spread of the Duke being impotent or perhaps into men...."
+ lifespan_protection: "Lifespan Protection"
+ sibyls_regency_mod: "Queen Sibyl's Regency"
+ disappearance_of_gerens: "The Duke is Missing!"
+ sided_with_sibyl: "Sided With Sibyl"
  
  #Missions
+ swe_declare_independence_ia_title: "Rise of Sweden"
+ swe_declare_independence_ia_desc: "Now that we have external allies and internal cooperation, it is time for the Lion of the North to truly roar!"
+ swe_swedish_allies_ia_title: "Swedish Allies"
+ swe_swedish_allies_ia_desc: "With the Church split between rival Polish and Saxon antipopes, we need to find our own allies in this chaotic world."
  
  # events
- 
+ ia_flavor_eng.1.t: "Cynfyn's Reign"
+ ia_flavor_eng.1.d: "Cynfyn VI Pendraig, blessed be his name, is a kind and soft-hearted man. As the eldest son of the previous King of Cernyw, he was raised from birth to be the heir, but always preferred the company of his books more than the burdens of rulership. After his acession to the throne, he handed most of the responsibility off to his queen, the French Princess Sibyl Capet, who eagerly rose to the task. Unfortunately, this eagerness stemmed from a deep-seated ambition and a dose of resentment towards her neglectful husband, and she quickly started to bring the nobles under her influence, sometimes resorting to bribery from the royal treasury. Cynfyn's younger brother, Gerens, who inherited the Duchy of Cernyw, is the leader of the main political faction opposing the Queen's takeover of the kingdom. Now, the situation in Cymru is tense and violence might erupt at any moment..."
+ ia_flavor_eng.1.a: "Everything is fine!"
+ ia_flavor_eng.2.t: "Cynfyn's Reign"
+ ia_flavor_eng.2.d: "Cynfyn VI Pendraig, blessed be his name, is a kind and soft-hearted man. As the eldest son of the previous King of Cernyw, he was raised from birth to be the heir, but always preferred the company of his books more than the burdens of rulership. After his acession to the throne, he handed most of the responsibility off to his queen, the French Princess Sibyl Capet, who eagerly rose to the task. Unfortunately, this eagerness stemmed from a deep-seated ambition and a dose of resentment towards her neglectful husband, and she quickly started to bring the nobles under her influence, sometimes resorting to bribery from the royal treasury. Cynfyn's younger brother, Gerens, who inherited the Duchy of Cernyw, is the leader of the main political faction opposing the Queen's takeover of the kingdom. Now, the situation in Cymru is tense and violence might erupt at any moment..."
+ ia_flavor_eng.2.a: "The corrupt Queen shall not prevail!"
+ ia_flavor_eng.3.t: "Hunting Accident!"
+ ia_flavor_eng.3.d: "Tragedy has struck! During the hunting festival, King Cynfyn suffered a fatal accident and has passed away. Queen Sibyl has in her grief refused to let anyone near her husband's body as she weeps over it day and night. In order to maintain the stability of the kingdom, a regency council has been convened, and Duke Gerens has been summoned in order to lead it together with the Queen Dowager as the young King Edern is not of age yet."
+ ia_flavor_eng.3.a: "How could this have happened!"
+ ia_flavor_eng.4.t: "Bandits!"
+ ia_flavor_eng.4.d: "On his way to the capital, Duke Gerens was beset by bandits! Many bodies of both his guards and the bandits were found around the broken down carriage that he was travelling in, but due to the lack of the Duke's body, search parties from both the Duchy of Cernyw and the capital are combing the area to find him, be he dead or alive. At the news of this incident, the Queen Dowager fainted and has been inconsolable since."
+ ia_flavor_eng.4.a: "Is the House Pendraig truly cursed?"
+ ia_flavor_eng.5.t: "Bandits!"
+ ia_flavor_eng.5.d: "On his way to the capital, Duke Gerens was beset by bandits! Many bodies of both his guards and the bandits were found around the broken down carriage that he was travelling in, but due to the lack of the Duke's body, search parties from both the Duchy of Cernyw and the capital are combing the area to find him, be he dead or alive. At the news of this incident, the Queen Dowager fainted and has been inconsolable since. \n Oddly enough, the supposed bandits who beset the Duke were using remarkably high quality weapons and armor. Additionally, the search parties from the capital have been very uncooperative with the Duchy's search efforts."
+ ia_flavor_eng.5.a: "Is the House Pendraig truly cursed?"
+ ia_flavor_eng.6.t: "Return of the Duke"
+ ia_flavor_eng.6.d: "Duke Gerens has returned! And what's more, he has returned with a new Duchess? After the ambush on the road, she found him horrifically injured and brought him home to a remote location in the forests to recuperate as well as hide from the numerous search parties that were in fact trying to kill the Duke! Duke Gerens has announced that the Queen Dowager was in fact the mastermind behind the so-called bandit attack, and has proclaimed a rebellion pushing his own claim as the brother of King Cynfyn and the rightful heir!"
+ ia_flavor_eng.6.a: "To arms!"
+ ia_flavor_eng.7.t: "Duke Gerens rebels!"
+ ia_flavor_eng.7.d: "Duke Gerens has returned to Cernyw! For some incomprehensible reason, however, he claims that his ambushers were actually in the employ of Queen Sibyl, and thus he is using this ridiculous pretext to claim the throne and declare a rebellion. In the interests of maintaining stability, the regency council has decided to directly crown Queen-Regent Sibyl as Queen Regnant of Cymru."
+ ia_flavor_eng.7.a: "That new wife of Gerens must have brainwashed him!"
+ ia_flavor_eng.8.t: "Leadership of Lady Iorwen"
+ ia_flavor_eng.8.d: "The sudden appearance of a complete nobody as the new Duchess of Cernyw was originally met with much opposition in the Duchy. However, any questions as to her position as Duchess have been put to rest as she has taken command of the army personally and proven her talent as a military commander in victory after victory against the Queen's forces. Additionally, rumours from the ducal attendants suggest the Duke and Duchess are quite passionate about each other..."
+ ia_flavor_eng.8.a: "Lady Iorwen will lead us to victory!"
+ ia_flavor_eng.9.t: "Queen Sibyl Victorious!"
+ ia_flavor_eng.9.d: "After a long civil war, the Queen's loyalists have emerged victory! Duke Gerens and Lady Iorwen have vanished after losing the decisive battle, presumed dead. Unfortunately, Prince Edern developed a fever and fell into a coma during the stress of the conflict. Is this the end for House Pendraig?"
+ ia_flavor_eng.9.a: "We cannot have a comatose heir..."
+ ia_flavor_eng.9.b: "By a miracle, the last heir of Pendragon has awoken from his coma!"
+ ia_flavor_eng.10.t: "Duke Gerens Victorious"
+ ia_flavor_eng.10.d: "After a long civil war, Duke Gerens and Lady Iorwen have emerged victorious over the forces of the traitorous Queen! Unfortunately, Prince Edern was found dead in the capital, and Queen Sibyl vanished before the city could be taken."
+ ia_flavor_eng.10.a: "Long Live King Gerens! Long Live Queen Iorwen!"
+ ia_flavor_eng.11.t: "Aid Request from Cymru"
+ ia_flavor_eng.11.d: "Princess Sibyl, who married the King of Cymru some years ago, has now become the Queen of Cymru! However, the brother of the previous king, Gerens Pendraig, is apparently engaging in a rebellion to contest her rule! Sibyl is calling for our aid; how shall we answer?"
+ ia_flavor_eng.11.a: "Of course we shall aid her!"
+ ia_flavor_eng.11.b: "This is their own business to solve."
+ ia_flavor_eng.12.t: "Birth of a New Heir!"
+ ia_flavor_eng.12.d: "It is a joyous occasion today! Queen Iorwen has given birth to a healthy baby boy and the succession is now secure. What's more, all signs point to the child having a bright future!"
+ ia_flavor_eng.12.a: "His name shall be Llewellyn!"

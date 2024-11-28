@@ -1,0 +1,103 @@
+xorme_has_production_buildings_trigger = {
+	xorme_has_any_manufactory_trigger = yes
+	OR = {
+		has_building = workshop
+		has_building = counting_house
+	}
+}
+
+xorme_has_any_manufactory_trigger = {
+	OR = {
+		has_building = wharf
+		has_building = weapons
+		has_building = textile
+		has_building = plantations
+		has_building = tradecompany
+		has_building = farm_estate
+		has_building = mills
+		has_building = furnace
+		has_building = ramparts
+		has_building = soldier_households
+		has_building = impressment_offices
+		has_building = state_house
+	}
+}
+
+#TRADE GOODS QUALITY
+xorme_lowest_quality_trade_goods_trigger = {
+	OR = {
+		trade_goods = grain
+		trade_goods = fish
+		trade_goods = naval_supplies
+		trade_goods = slaves
+		trade_goods = wine
+		trade_goods = wool
+		trade_goods = livestock
+		trade_goods = tropical_wood
+	}
+}
+
+xorme_low_quality_trade_goods_trigger = {
+	OR = {
+		trade_goods = iron
+		trade_goods = copper
+		trade_goods = chinaware
+		trade_goods = salt
+		trade_goods = sugar
+		trade_goods = coffee
+		trade_goods = tobacco
+	}
+}
+
+xorme_medium_quality_trade_goods_trigger = {
+	OR = {
+		trade_goods = fur
+		trade_goods = ivory
+		trade_goods = cloth
+		trade_goods = incense
+		trade_goods = tea
+		trade_goods = cotton
+	}
+}
+
+xorme_high_quality_trade_goods_trigger = {
+	OR = {
+		trade_goods = glass
+		trade_goods = paper
+		trade_goods = gems 
+		trade_goods = silk
+		trade_goods = dyes
+		trade_goods = cocoa
+		trade_goods = spices
+		trade_goods = cloves
+	}
+}
+#PROVINCE MODIFIERS
+xorme_province_with_special_goods_produced_trigger = {
+	OR = {
+		has_province_modifier = stora_kopparberget_modifier
+		has_province_modifier = granary_of_the_mediterranean
+		has_province_modifier = ven_murano_glass_industry
+		has_province_modifier = diamond_mines_of_golconda_modifier
+		has_province_modifier = coffea_arabica_modifier
+		has_province_modifier = skanemarket
+		has_province_modifier = spice_islands_modifier
+		has_province_modifier = comet_ore_modifier
+		has_province_modifier = paradise_modifier
+		has_province_modifier = ned_house_of_elzevir
+		has_province_modifier = bookmarket_of_x
+		has_province_modifier = grand_bank_fisheries
+		has_province_modifier = diamond_district
+		has_province_modifier = jingdezhen_kilns
+		has_province_modifier = perfume_capital
+	}
+}
+#TRADE GOODS PURPOSE
+xorme_additional_manpower_goods_trigger = {
+	OR = {
+		trade_goods = grain
+		trade_goods = fish
+		trade_goods = livestock
+		trade_goods = wine
+	}
+}

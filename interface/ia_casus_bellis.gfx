@@ -1,0 +1,27 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_cb_antioch_crusade"
+		texturefile = "gfx/interface/casus_bellis/cb_antioch_crusade.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_cb_saxon_subjugation"
+		texturefile = "gfx/interface/casus_bellis/cb_saxon_subjugation.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	spriteType = {
+		name = "GFX_cb_templar_crusade"
+		texturefile = "gfx/interface/casus_bellis/cb_templar_crusade.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+}

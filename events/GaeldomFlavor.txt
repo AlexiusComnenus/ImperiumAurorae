@@ -148,7 +148,7 @@ country_event = {
 						shock = 2
 						fire = 8
 						manuever = 6
-						siege = 6
+						siege = 4
 						trait = war_druid
 						name = root_name_male
 					}
@@ -158,7 +158,7 @@ country_event = {
 						shock = 2
 						fire = 8
 						manuever = 6
-						siege = 6
+						siege = 4
 						trait = war_druid
 						female = yes
 						name = root_name_female
@@ -174,7 +174,7 @@ country_event = {
 						shock = 2
 						fire = 7
 						manuever = 5
-						siege = 5
+						siege = 3
 						trait = war_druid
 						name = root_name_male
 					}
@@ -184,7 +184,7 @@ country_event = {
 						shock = 2
 						fire = 7
 						manuever = 5
-						siege = 5
+						siege = 3
 						trait = war_druid
 						female = yes
 						name = root_name_female
@@ -198,8 +198,8 @@ country_event = {
 					define_general = {
 						shock = 1
 						fire = 6
-						manuever = 4
-						siege = 4
+						manuever = 3
+						siege = 2
 						trait = war_druid
 						name = root_name_male
 					}
@@ -208,8 +208,8 @@ country_event = {
 					define_general = {
 						shock = 1
 						fire = 6
-						manuever = 4
-						siege = 4
+						manuever = 3
+						siege = 2
 						trait = war_druid
 						female = yes
 						name = root_name_female
@@ -220,7 +220,7 @@ country_event = {
 	}	
 }
 
-country_event = {
+country_event = {	# Fall of the Cuman Irish Kingdom
 	id = gaeldom.6
 	title = gaeldom.6.t
 	desc = gaeldom.6.d
@@ -228,6 +228,7 @@ country_event = {
 	
 	trigger = {
 		tag = IRE
+		NOT = { primary_culture = irish }
 		all_owned_province = {
 			OR = {	
 				NOT = {
@@ -241,6 +242,7 @@ country_event = {
 				NOT = { controlled_by = ROOT }
 			}
 		}
+		NOT = { is_year = 1500 }
 	}
 	
 	fire_only_once = yes
@@ -253,6 +255,7 @@ country_event = {
 	option = {
 		name = gaeldom.6.a
 		
+		2601 = { cede_province = ROOT }
 		every_owned_province = {
 			limit = {
 				OR = {
@@ -268,5 +271,8 @@ country_event = {
 			white_peace = ROOT
 		}
 		override_country_name = azov_name
+		2601 = {
+			decolonize = THIS
+		}
 	}
 }

@@ -1,11 +1,12 @@
 government = monarchy
-add_government_reform = feudalism_reform
+add_government_reform = apostolic_kingdom
 government_rank = 2
-technology_group = western
+technology_group = eastern
 religion = catholic
 primary_culture = hungarian
 capital = 153
 add_accepted_culture = polish
+1437.1.1 = { leader = {	name = "János Hunyadi"         	type = general	fire = 4	shock = 4	manuever = 4	siege = 1	death_date = 1445.1.1 } }
 1444.11.11= {
 	add_prestige = 71
 	add_treasury = 62

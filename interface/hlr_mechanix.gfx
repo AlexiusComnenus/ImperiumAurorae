@@ -1,0 +1,48 @@
+spriteTypes = {
+	spriteType = {
+			name = "GFX_alerticons_hlr_government_mechanic"
+			texturefile = "gfx//interface//GFX_alerticons_hlr_government_mechanic.dds"
+			noOfFrames = 17
+			loadType = "INGAME"
+			alwaystransparent = yes
+	}
+	progressbartype = {
+		name = "GFX_hlr_imperial_power_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/government_mechanics/imperial_power/GFX_hlr_imperial_power_bar.dds"
+		textureFile2 = "gfx/interface/government_mechanics/imperial_power/GFX_hlr_imperial_power_bar_empty.dds"
+		size = { x = 260 y = 20 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	spriteType = {
+		name = "GFX_hlr_imperial_power_frame"
+		texturefile = "gfx/interface/government_mechanics/imperial_power/GFX_hlr_imperial_power_frame.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_imperial_ability_ADM"
+		texturefile = "gfx/interface/government_mechanics/imperial_power/GFX_imperial_ability_ADM.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_imperial_ability_DIP"
+		texturefile = "gfx/interface/government_mechanics/imperial_power/GFX_imperial_ability_DIP.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_imperial_ability_MIL"
+		texturefile = "gfx/interface/government_mechanics/imperial_power/GFX_imperial_ability_MIL.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "placeholder_button"
+		texturefile = "gfx//interface//government_mechanics/imperial_power/placeholder_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+}

@@ -4,7 +4,6 @@ BYZ_ideas = {
 		monarch_admin_power = 1
 		monarch_diplomatic_power = 1
 		stability_cost_modifier = 0.25
-		monthly_heir_claim_increase = -0.1
 		yearly_corruption = 0.1
 	}
 	

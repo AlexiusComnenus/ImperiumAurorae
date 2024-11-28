@@ -42,11 +42,11 @@ templar_marines = {
 	sailors_recovery_speed = 0.25
 }
 
-templar_bank = {
-	monthly_gold_inflation_modifier = -0.5
-	interest = -2
-	local_gold_depletion_chance_modifier = -1
-}
+#templar_bank = {		# Turned into a province triggered modifier
+#	monthly_gold_inflation_modifier = -0.5
+#	interest = -2
+#	local_gold_depletion_chance_modifier = -1
+#}
 
 protecting_pilgrims = {
 	global_foreign_trade_power = 0.1
@@ -289,4 +289,28 @@ templarite_last_crusade_starter_bonus = {
 }
 
 recently_recruited_templar = {
+}
+
+dusk_chapterhouse_mod = {
+	fort_level = 1
+	local_defensiveness = 0.15
+	local_defender_dice_roll_bonus = 1
+	local_garrison_damage = 0.5
+}
+
+dusk_sponsored_merc_connections = {
+	is_mercenary_modifier = yes
+	
+	land_morale = 0.10
+	infantry_power = 0.10
+}
+
+dusk_funded_dusksworn = {
+	is_tercio_modifier = yes
+	
+	infantry_power = 0.10
+	morale_damage = 0.15
+}
+
+recently_recruited_dawnwsbane = {
 }

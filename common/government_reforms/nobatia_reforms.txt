@@ -14,10 +14,12 @@ nobatia_hellenic_crusade_reform = {
 		custom_tooltip = unlocks_celestial_crusade_tt
 	}
 	modifiers = {
-		enforce_religion_cost = -0.75
+		enforce_religion_cost = -0.33
 		prestige_per_development_from_conversion = 0.33
 		relation_with_heretics = -25
+		reverse_relation_with_heretic_religion = -20
 		relation_with_heathens = -25
+		reverse_relation_with_heathen_religion = -20
 	}
 	maintain_dynasty = yes
 	
@@ -47,8 +49,9 @@ order_of_dawn_reform = {
 	modifiers = {
 		global_regiment_recruit_speed = -0.5
 		war_taxes_cost_modifier = -1
-		manpower_in_true_faith_provinces= 0.25
-		global_attacker_dice_roll_bonus = 1
+		reinforce_speed = 0.25
+		manpower_in_true_faith_provinces = 0.15
+		morale_damage = 0.10
 	}
 	ai = {
 		factor = 1000

@@ -7239,8 +7239,6 @@
  become_king_of_gonder_desc:0 "It is Aragon's Destiny to become King of Gonder. Now that we have finally figured out where it is we should do something about this. Make Gonder Aragon's as we cannot escape our destiny."
  BER:0 "Berry"
  BER_ADJ:0 "Berrian"
- HLR:0 "Celestial Hellenic Empire"
- HLR_ADJ:0 "Imperial"
  CARDINAL_CHANCE_INSTANT:0 "There's a §Y$CHANCE$%§W chance that you will get the next cardinal."
  CARDINAL_CHANCE_DELAYED:0 "You have §G$PROVINCES$§W Catholic provinces and a Papal influence of §G$INFLUENCE$%§W. The chance is also modified by the tax in each province."
  HRE_MEMBERS:0 "CHE Members"

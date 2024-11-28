@@ -40,6 +40,7 @@
  delete_natives_startup_title: "Delete Natives"
  delete_natives_statup_desc: "Removes all native tribes. Aztecs, Incas, and exodus tags will remain."
  thu_export_grain: "Export Grain"
+ thu_export_grain_dialog: "They will gain 2 years of production income of Grain and Potatoes, and 10% production efficiency for 5 years. We will gain 10% manpower recovery and -10% land maintenance for 5 years."
  thu_export_grain_title: "Export Grain"
  thu_export_grain_desc: "We will gain 2 years of production income of Grain and Potatoes, and 10% production efficiency for 5 years. They will gain 10% manpower recovery and -10% land maintenance for 5 years."
  thu_export_grain_tooltip: "Export Grain to an Ally, Overlord, or Subject."
@@ -64,6 +65,7 @@
  thu_saxon_recruitment_reform_desc: "In exchange for hefty infrastructure subsidies, we send our young men to fight and die in the Crown's service."
  
  #Modifiers
+ kle_pillars_of_industry: "Pillars of Industry"
  MarchCompensation: "March Support"
  hes_fill_ranks_mod: "Filling the Ranks"
  hes_rhine_campaign: "The Rhine Campaign"

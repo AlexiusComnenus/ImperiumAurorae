@@ -1,5 +1,5 @@
-owner = VOL
-controller = VOL
+owner = Z63
+controller = Z63
 capital = "Brest-Litovsk"
 is_city = yes
 culture = ruthenian

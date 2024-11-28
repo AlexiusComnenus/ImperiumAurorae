@@ -94,7 +94,7 @@ country_event = {		#	Aengland wants to join Zollbund
 	}
 	trigger = {
 		any_ally = { has_country_flag = aen_request_zollbund_flag }
-		NOT = { has_country_flag = aen_request_zollbund_flag }
+		NOT = { has_country_flag = aen_request_happened }
 		OR = {
 			has_country_modifier = sax_full_zollbund
 			has_country_modifier = sax_partial_zollbund

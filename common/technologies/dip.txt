@@ -5,6 +5,7 @@ ahead_of_time = {
 	trade_efficiency = 0.2
 	monthly_russian_modernization = 0.05
 	yearly_corruption = -0.05
+	ahead_of_time_benefit_dip = 1
 }
 
 # Pre-era techs
@@ -42,10 +43,16 @@ technology = { #Early Ships
 	sculpture_workshop = yes
 	steam_engine_manu = yes
 	enable = war_canoe
+	munition_factory = yes
 
+	mine_two = yes
+    armory = yes
+    
 	steam_factory = yes	
-	#mine = yes
+	mine = yes
 	
+
+
 }
 
 technology = { #Merchants & Trade

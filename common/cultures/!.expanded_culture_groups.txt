@@ -3,14 +3,77 @@
 # Update this file for every EU4 vanilla update.
 
 germanic = {
+	anglo_saxon = {
+		primary = Z21
+		dynasty_names = {
+			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
+			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
+			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
+		}
+		male_names = {
+			Arncytel Balthere Beorhtfrith Beorhthelm Beorhtmær Beorhtnoth Beorhtric Beorhtsige Beorhtwine_Beorhtwine Beorn_Beorn Beornræd Beornwulf
+			Burgheard Byrhtnoth Cearl Cenfus Cenræd Cenwulf Ceolwulf Cerdic Copsige
+			Cuthberht Cuthræd Cynehelm Cynewulf Cytelbearn Eadberht Eadfrith Eadgar Eadmund Eadmær Eadric
+			Eadræd Eadsige Eadulf Eadweald Eadweard Eadwig Eadwine Eadwulf Ealdhun Ealdmund Ealdræd Ealdwine
+			Ealdwulf Eanberht Eanfrith Eanhere Eardwulf Eastmund Ecgberht Ecgfrith Gamall Godwine Gospatric Guthfrith Guthmund
+			Gyrth Hacon Harold Heahberht Hereberht Hereweald Hereweard Hlothere Hrodberht Inwær Leofheah Leofhelm
+			Leofric Leofweald Leofwine Maccus Morcar Mærleswegn Offa Onlaf Ordgar
+			Oscytel Oshere Osmund Osric Osræd Osulf Osweald Oswine Oswulf Peter Rædwulf_Ralph Rægenweald Scule
+			Sigeberht Sigehelm Sigeric Sigeræd Sighere Siweard Stigand Swegn Swithelm Swithræd Swæfræd Sæbert Sælræd Sæweald
+			Sæxbald Sæxræd Thoræd Thurcytel Thurfrith Tostig Uhtræd Ulfcytel Waltheof Werestan Wiglaf Wihtræd
+			Wistan Wulf Wulfgar Wulfgeat Wulfhelm Wulfhere Wulfmær Wulfnoth Wulfstan Ælfgar Ælfmær Ælfnoth Ælfric Ælfræd_Alfred Ælfsige
+			Ælfstan Ælfwald Ælfweard Ælfwig Ælfwine Ælle Æthelbald Æthelberht Æthelfrith Æthelhere Æthelmær
+			Æthelric Æthelræd_Ailred Æthelsige Æthelstan Æthelweald Æthelweard Æthelwine Æthelwold Æthelwulf
+			Eormenred Eorcenberht Eormenric Eadbald Rædwald
+		}
+		female_names = {
+			Agatha Balthild Beorhtflæd Beorhtgifu Beorhtgyth Beorhtwaru Beorhtwynn Beornflæd Beorngyth Blæja Burgflæd Ceolflæd Cristina
+			Cuthburg Cwenburg Cyneburg Cynegyth Cynehild Cyneswith Cynethryth Eadburg Eadflæd Eadgifu Eadgyth Eadhburh Eadhild Ealdgyth
+			Ealhflæd Ealhswith Eanswith Ecgfrida Ecgwyn Godgifu Gunhilda Gytha Helga Heregyth Hereswith Hextilda Hungifu Judith
+			Leofflæd Leofgifu Leofrun Leofwaru Leofwynn Margaret_Margaret Maud Matilda Mildrith Octreda Sifflæd Sigrid Sæthryth Wulfflæd Wulfgifu
+			Wulfgyth Wulfhild Wulfrun Wulfthryth Wulfwaru Wulfwynn Wynnflæd Wærburg Æbba Ælfflæd Ælfgifu Ælfgyth Ælflæda_Ælflæda Ælfrida
+			Ælfswith Ælfthryth Ælfwynn Æthelburg Æthelflæd Æthelgifu Æthelhild Æthelræda_Æthelreda Æthelswith Æthelthryth
+			Æthelburh Seaxburh Wihtburh
+		}
+	}
+	thuringian = {
+		primary = THU
+	}
 	german = {
 		primary = GER
 	}
 	alsatian = {
-		primary = ALS
-	}
-	thuringian = {
-		primary = THU
+		primary = LOT
+		male_names = {
+			Abrahil Abram Adalbald Adalbert Adalgari Adalgrim Aegidius Ageric Agilbert Agiulf Ailbert Albric Aldedramn
+			Andica Ansovald Arcambald Aregisel Arnegisel Arnulf Ascaric Audovald Austregisel Autbert Autgari Autgeri
+			Avremar Badegisel Balduin Barnard Berald Bernard Berneri Bero Berold Berthefried Bertlin Bertram
+			Bertrand Burchard Karloman Ceslin Chararic Charibert Childebert Childeric Chilperic
+			Chlodomer Chlothar Chramnesind Clodio Clodion Clovis Creat Dagaric Dagobert Drogo Eberulf Ebregisel Engilbert
+			Euric Everard Faroard Faroin Feremund Feroard Foroen Frobert Frotari Frothard Frothari Frotlaic Fulcari Fulcrad
+			Galteri Gararic Garivald Gaucelm Gaudulf Gaujoin Gausbert Gausbold Gautmar Gauzbert Gedalbert Gedalca Genobaud Gerbert
+			Gerhard Gerold Gislari Gislevert Gocelm Godalbert Godomar Gozhelm Grimald Guadulf Gualtari Gualter Guillabert Guitard Gundobad
+			Gunthar Guntram Haldemar Hartmut Hildebald Hildebold Hildegaud Hildevold Hildoin Hucbert Hugbert Imnachar Ingalbert
+			Ingomer Karl Lambert Lantbert Leudast Lothar Magnachar Magneric Mainard Mallobaudes Marachar Marcomer
+			Marell Martin Maurifi Meginhard Merogais Merovech Munderic Niebelung Odelric Odolric Otbert Otgeri Otker Pepin Pharamond
+			Pippin Radulf Ragambald Ragena Ragenard Raginari Ragnachar Ragnald Ragno Raimbold Rainald Ramnulf Rathar
+			Raynold Reginari Ricchar Rignomer Roland Robert Rotbert Segoin Seguin Sicbald Sichar Sicland Sicleard Siclevold
+			Sigebald Sigebert Sigeric Sigismund Sigobert Sinop Sunnegisil Sunno Tancrad Tancred Tassilo Teotbert Tetbert Teutbald Teutbert
+			Theoderic Theoric Theudebald Theudemeres Theuderic Theudoald Theutbald Trutgaud Vuitard Vulfari Vulframn Vulvari
+			Waltgaud Werinbert Wilbert Willichar Wolfari
+		}
+		female_names = {
+			Adalgardis Adallinda Adaltrude Adaluildis Adelaidis Airsenda Albofleda Albrada Alda Aldegonde Aliberta Alitrudis Ansegudis Ansegundis
+			Anstrude Arsindis Audofleda Audovera Austreberta Austrechild Balthild Begga Beretrude Bernegildis Bertenildis Berthefled Berthefried
+			Berthegund Berthildis Bertilla Bertrada Bladovildis Brunhild Burgundofara Celsa Celsovildis Cesaria Chlodosind Chlothsinda Clotild Creada
+			Dagena Eldesendis Ermengardis Ermengildis Ermensindis Eustadiola Faileuba Faregildis Fastrada Framberta Fredegunde Frolaica Frotberga
+			Frotlildis Frotlina Galswinth Gaudildis Gautlindis Genovefa Gersvinda Gertrude Gisela Glodesind Goiswinth Gotberga Gundrada Halderudis
+			Harildis Hildegarde Hildegardis Hildesendis Hiltrude Illegardis Ingitrude Ingohildis Ingunde Itta Landina Lanthechilde Lantsida Leubast Leubovera
+			Leutberga Leutgardis Liutgarde Madelgarde Magnatrude Marcatrude Marcovefa Martinga Monegund Morberga Radegund Rictrude Rigunth
+			Rosamund Rothaide Rotrude Ruothilde Rusticula Sadalberga Siclehildis Sigalsis Theodelinda Theoderada Ultrogotha Vuldretrada Waltrude
+		}
+		dynasty_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
+	
 	}
 	sudeten = {
 		primary = BOH
@@ -29,12 +92,114 @@ germanic = {
 			Branislava Dagmar Danuta Dobravy
 		}
 	}
-	anglo_saxon = {
-		primary = Z21
-		dynasty_names = { Aelfwig Alfstan Athelred Auchenceter Auchterworthy Bloccsham Brownlowe Burgwine Cerdic Coldren Cuthberht Cwmcott Ecgred Estmund Gardyner Glover Godwinsson Gorbold Hrothsige Hwitmann Lea Leofwine Purcell Unred Wolfsige Wulfstan Wyndham Wynstan Wyther }
-	}
 	teuton = {
 		primary = TEU
+	}
+	ger_wallonian = {
+		dynasty_names = {
+			"van Namen" "van Rijsel" 
+		}
+		male_names = {
+			Filip Josephus
+		}
+		female_names = {
+			Annelies Benedicta
+		}
+	}
+	ger_schlesian = {
+		dynasty_names = {
+			"von Oppeln" "von Breslau" "von Ratibor"
+		}
+		male_names = {
+			Franz Georg Michael
+		}
+		female_names = {
+			Frieda Anna Elisabeth
+		}
+	}
+	pilgrim_german = {
+		dynasty_names = {
+			"von Andechs" "von Sulzbach" "von Kleve" "von Versfleth" "von Wickerode" 
+			"von Winzenburg" "von Thüringen" "von Bogen" "von Meissen" "von Genf" 
+			"von Arstein" "von Veldenz" "von Landsberg" "von Franken" "von Babenberg" 
+			"van Oranje" Nassau "van Wassenberg" "van Henegouwen" "de Friesland" "van Haspinga" 
+			"van Limburg" "van Lotharingen"  "von der Mark" "Gabelkofen" 
+			"von und zu Goldegg und Lindenburg" "von Haunsperger" "von Pranckh" 
+			"von Rohr" "von Aichen" "Enenkel" "Geymann" "von Eggendorf" "von Albrechtsburg" 
+			"von Arnim" "von Baudissin" "zu Eulenburg" "von Etzdorff" "von Keller" "von Hohenzollern" 
+			"von Wittelsbach" "von Württemberg" "von Aham"  "von Arco" "von Armansperg" "von Bibra" 
+			"von Chlingensperg" "von Closen" "von Degenberg" "von Durkheim" "Echter" "von Fraunberg"
+		}
+		male_names = {
+			Albrecht Wilhelm Johann Ernst Maximilian Emanuel Siegmund Ludwig Anton Christoph Ferdinand  
+			Leopold Philipp Theodor Adalbert Alois Johann Clemens August Friedrich Johann Theodor Joseph  
+			Luitpold Otto Philipp Moritz Wolfgang Engelbert Gottfried Hieronymus Ignatz Markus Meinhard 
+			Raphael Karl Kajetan Clemens Filips Jan Boudewijn Arnolf Lodewijk Robrecht Jacob Jaspar Caspar 
+			Jochim Joakim Johann Kersten Christian Laurentz Lambert Liawizo Liemar Liudger Otto Ludolf Ludwig
+			Louis Mathias Matthew Meinwerk Merten Martin Michael Norbert Ordulf 
+			Peter Philip Renard Reinmar Roger Rudolf Ralph Sigbert Sigisbert
+			Sigfrid Siegfried Sigward Sigurd Simon Steffen Thomas Waldemar
+			Werner Victor Werneke Weybrecht Wichbert Wichmann Wigebert Wolter Walter Wulff Ulf
+		}
+		female_names = {
+			Amalia Bianka Eleonora
+			Agatha Balthild
+			Christina Cuthburg 
+			Cynehild Cyneswith Cynethryth Eadburg Edith 
+			Gunhilda Gunhild Helga Judith
+			Maud Matilda Sigri 
+			Wulfhild
+			Addila Adela Adelheid Alof Agnes Anna Athela Beatrix Beatrice Bertha Bertha 
+			Bertrada Bia Beatrice Bisina Bithild Brigida Brigid Elisabeth 
+			Elisabeth Enda Gertrud Gisela
+			Hedwig Heilwig Helene Hildegard Ida Emma Irmgard 
+			Judith Katharina
+			Margarete Mathilde Matilda Mechthild Reginlint 
+			Richardis Ricarda Rodelinda Sophia Sophia Suanhilde Swanahild Wienke 
+			Wiltrud Wulfhild Ulfhild
+		}
+	}
+	karolian = {
+		dynasty_names = {
+			"von Andechs" "von Sulzbach" "von Kleve" "von Versfleth" "von Wickerode" 
+			"von Winzenburg" "von Thüringen" "von Bogen" "von Meissen" "von Genf" 
+			"von Arstein" "von Veldenz" "von Landsberg" "von Franken" "von Babenberg" 
+			"van Oranje" Nassau "van Wassenberg" "van Henegouwen" "de Friesland" "van Haspinga" 
+			"van Limburg" "van Lotharingen"  "von der Mark" "Gabelkofen" 
+			"von und zu Goldegg und Lindenburg" "von Haunsperger" "von Pranckh" 
+			"von Rohr" "von Aichen" "Enenkel" "Geymann" "von Eggendorf" "von Albrechtsburg" 
+			"von Arnim" "von Baudissin" "zu Eulenburg" "von Etzdorff" "von Keller" "von Hohenzollern" 
+			"von Wittelsbach" "von Württemberg" "von Aham"  "von Arco" "von Armansperg" "von Bibra" 
+			"von Chlingensperg" "von Closen" "von Degenberg" "von Durkheim" "Echter" "von Fraunberg"
+		}
+		male_names = {
+			Albrecht Wilhelm Johann Ernst Maximilian Emanuel Siegmund Ludwig Anton Christoph Ferdinand  
+			Leopold Philipp Theodor Adalbert Alois Johann Clemens August Friedrich Johann Theodor Joseph  
+			Luitpold Otto Philipp Moritz Wolfgang Engelbert Gottfried Hieronymus Ignatz Markus Meinhard 
+			Raphael Karl Kajetan Clemens Filips Jan Boudewijn Arnolf Lodewijk Robrecht Jacob Jaspar Caspar 
+			Jochim Joakim Johann Kersten Christian Laurentz Lambert Liawizo Liemar Liudger Otto Ludolf Ludwig
+			Louis Mathias Matthew Meinwerk Merten Martin Michael Norbert Ordulf 
+			Peter Philip Renard Reinmar Roger Rudolf Ralph Sigbert Sigisbert
+			Sigfrid Siegfried Sigward Sigurd Simon Steffen Thomas Waldemar
+			Werner Victor Werneke Weybrecht Wichbert Wichmann Wigebert Wolter Walter Wulff Ulf
+		}
+		female_names = {
+			Amalia Bianka Eleonora
+			Agatha Balthild
+			Christina Cuthburg 
+			Cynehild Cyneswith Cynethryth Eadburg Edith 
+			Gunhilda Gunhild Helga Judith
+			Maud Matilda Sigri 
+			Wulfhild
+			Addila Adela Adelheid Alof Agnes Anna Athela Beatrix Beatrice Bertha Bertha 
+			Bertrada Bia Beatrice Bisina Bithild Brigida Brigid Elisabeth 
+			Elisabeth Enda Gertrud Gisela
+			Hedwig Heilwig Helene Hildegard Ida Emma Irmgard 
+			Judith Katharina
+			Margarete Mathilde Matilda Mechthild Reginlint 
+			Richardis Ricarda Rodelinda Sophia Sophia Suanhilde Swanahild Wienke 
+			Wiltrud Wulfhild Ulfhild
+		}
 	}
 }
 scandinavian = {
@@ -208,6 +373,57 @@ west_slavic = {
 		dynasty_names = {
 			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
 			Zapolský Palfi Cáki Balaša Báthory
+		}
+	}
+	
+	pruski = {
+		graphical_culture = easterngfx
+		dynasty_names = {
+			"z Królewca" "z Malborka" "z Olsztyna"
+		}
+		male_names = {
+			August Wladyslaw Stanislaw Kazimierz Aleksander Henryk Albert Kazimierz Michal Stefan 
+			August Aleksander Karol Kazimierz Krzysztof Fryderyk Olbracht Jan Karol Patryk
+			Ferdynand Olbracht Albert Aleksy Andrzej Bartlomiej Bogumil Bronislaw Dawid Dominik Emil Eugeniusz 
+			Ferdynand Gustaw Igor Iwan Krystian Lech Lucjusz Ludwik Lukasz Maksym Mariusz Mieszko Miroslaw 
+			Rafal Sylwester Szymon Zygfryd Oskar
+		}
+		female_names = {
+			Angela Marlena Hanna Anaztasya Chriztyna Adelina Adriana Afina Aleksandra Aleksia Ana Anna Arina Sabina 
+			Karla Katarina Johanna Uta Feya Janna
+		}
+	}
+	
+	schlesian = {
+		primary = SIL
+		male_names = {
+			Fryderyk Jan Henryk Ludwik Jan Krystian Jerzy Jerzy Rudolf Jerzy Wilhelm Joachim Fryderyk Krystian 
+			Jan Jerzy Jerzy Ernest August Ernest Krystian Ludwik Rudolf Wladislaw Albert Aleksander Andel 
+			Cezar Dietrich Eugeniusz Filip Hermann Joachim Krzysztof Lech Libor Markus Maurycy Radomir 
+			Václav Wilhelm Ruprecht Branko Bruno Siegfried Tomás 
+		}
+		female_names = {
+			Heinrike Ilona Andrea Helgi Heli Helina Helju Helle Helmi Helve Hiie Hilda Hilja Hille Iiris Ille Ilme Ilona Imbi 
+			Ines Inga Inge 
+		}
+	}
+	
+	sorbian = {
+		primary = SOR
+		male_names = {
+			Awgust Alojs Abraham Albin Bogumil Bjedrich Bjarnat Cyril Derwan Fryco Frido Filip
+			Handrij Jan Jurij Jakub Jozef Joachim Korla Kito Kristalub Krescan Michal Mikolaj Mato Mercin
+			Matej Marko Miliduch Miklaws Nathanael Petr Pawol Pomgajbog Stanislaw Salomon
+			Wjaclaw Wylem
+		}
+		female_names = {
+			Bogna Benedikta Hanka Inga Irmgard Jewa Lubina Ludmila Marja Marta Marjana Pawlina Róza Sofija
+		}
+		dynasty_names = {
+			Brosk "z Barenstamma" Buk Bronisz Czornak Cyzh Dejka "z Friedenfelsa"
+			Glowan Jakobica Klosopolski Kucank Leska Langa Mosak Muslik Mercink Miczka
+			Parczewski Prätorius Pjekar Rhenisz Rizo Rychtar Swora Stempel Smoler
+			Woski Wirt Zejler
 		}
 	}
 }
@@ -676,6 +892,7 @@ altaic = {
 }
 
 xizho_group = {
+	graphical_culture = asiangfx
 	xizho = {
 		primary = Z17
 	}

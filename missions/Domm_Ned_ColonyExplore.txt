@@ -4,8 +4,7 @@ dom_ned_exploration_start_1_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		#has_country_flag = dom_ned_modded_missions
 		NOT = { map_setup = map_setup_random }
@@ -57,6 +56,7 @@ dom_ned_exploration_start_1_group = {
 					trade_company_region = trade_company_south_africa
 					is_city = yes
 				}
+				1177 = { owned_by = ROOT is_city = yes }
 			}
 		}
 		
@@ -161,9 +161,11 @@ dom_ned_exploration_start_1_group = {
 				#AND = {
 				if = {
 					limit = { JAP = { exists = yes } }
-					has_opinion = {
-						who = ROOT
-						value = 100
+					JAP = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
 					}
 				}
 				else = {
@@ -439,6 +441,7 @@ dom_ned_exploration_start_1_group = {
 			#}
 			OR = {
 				any_owned_province = { colonial_region = colonial_eastern_america trade_goods = fur }
+				any_subject_country = { any_owned_province = { colonial_region = colonial_eastern_america trade_goods = fur } }
 				any_ally = { 
 					culture_group = iroquoian
 					any_owned_province = { trade_goods = fur }
@@ -469,8 +472,7 @@ dom_ned_exploration_start_1_branch_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		NOT = {
 			has_country_flag = mission_branch_america_usa
@@ -524,8 +526,7 @@ dom_ned_exploration_start_1_usa_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		has_country_flag = mission_branch_america_usa
 		#has_country_flag = dom_ned_modded_missions
@@ -591,8 +592,10 @@ dom_ned_exploration_start_1_usa_group = {
 			#}
 		}
 		effect = {
-			add_country_modifier = {
-				name = ned_sugar_enterprise
+			change_price = {
+				trade_goods = tobacco
+				key = dutch_tobacco_tt
+				value = 0.25
 				duration = -1
 			}
 		}
@@ -605,8 +608,7 @@ dom_ned_exploration_start_1_surinam_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		has_country_flag = mission_branch_america_surinam
 		#has_country_flag = dom_ned_modded_missions
@@ -731,8 +733,7 @@ dom_ned_exploration_start_1_usa_surinam_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		has_country_flag = mission_branch_america_both
 		#has_country_flag = dom_ned_modded_missions
@@ -815,8 +816,10 @@ dom_ned_exploration_start_1_usa_surinam_group = {
 			#}
 		}
 		effect = {
-			add_country_modifier = {
-				name = ned_sugar_enterprise
+			change_price = {
+				trade_goods = tobacco
+				key = dutch_tobacco_tt
+				value = 0.25
 				duration = -1
 			}
 		}
@@ -829,8 +832,7 @@ dom_ned_exploration_start_2_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		#has_country_flag = dom_ned_modded_missions
 		NOT = { map_setup = map_setup_random }
@@ -850,7 +852,7 @@ dom_ned_exploration_start_2_group = {
 		}
 		trigger = {
 			OR = {
-				1177 = { colonysize = 1 }
+				1177 = { colonysize = 1  country_or_non_sovereign_subject_holds = ROOT }
 				AND = {
 					has_discovered = 648
 					has_discovered = 649
@@ -1480,7 +1482,10 @@ dom_ned_exploration_start_2_group = {
 			}
 			else = { custom_tooltip = BONUS_REWARD_NO }
 			tooltip = {
-				custom_tooltip = add_country_modifier_peru_trade
+				add_country_modifier = {
+					name = peru_trade
+					duration = -1
+				}
 			}
 		}
 	}
@@ -1492,8 +1497,7 @@ dom_ned_exploration_start_3_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		#has_country_flag = dom_ned_modded_missions
 		NOT = { map_setup = map_setup_random }
@@ -1869,8 +1873,7 @@ dom_ned_exploration_start_4_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		#has_country_flag = dom_ned_modded_missions
 		NOT = { map_setup = map_setup_random }
@@ -1931,7 +1934,7 @@ dom_ned_exploration_start_4_group = {
 		trigger = {
 			malacca_area = {
 				type = all
-				owned_by = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -2105,8 +2108,7 @@ dom_ned_exploration_start_5_group = {
 	ai = yes
 	potential = {
 		OR = {
-			dutch_minor_tags = yes
-			tag = LOT tag = BUR tag = NED
+			dutch_minor_tags = yes tag = NED
 		}
 		#has_country_flag = dom_ned_modded_missions
 		NOT = { map_setup = map_setup_random }

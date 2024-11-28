@@ -1,0 +1,5165 @@
+########################################
+# Mod Events for the HRE
+#
+# written by Nathan Conrad
+########################################
+
+namespace = hlrmod_flavor_event
+
+# BOHEMIA_3
+country_event = {
+	id = hlrmod_flavor_event.1
+	title = hlrmod_flavor_event.1.title
+	desc = hlrmod_flavor_event.1.desc
+	picture = HLR_BOHEMIA_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.1.a
+		set_country_flag = german_bohemians
+		every_owned_province = {
+			limit = {
+				culture = czech
+			}
+			change_culture = bohemian
+		}
+		custom_tooltip = removing_separatism.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					culture = bohemian
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+			every_owned_province = {
+				limit = { 
+					OR = {
+						area = moravia_area
+						area = erzgebirge_area
+						area = bohemia_area
+					}
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+		}
+		266 = {
+			add_permanent_province_modifier = {
+			name = hlr_jewel_on_the_moldau
+			duration = -1
+ 			}
+ 		}
+		hidden_effect = {
+			267 = {
+				change_province_name = "Pilsen"
+				rename_capital = "Pilsen"
+ 			}
+			2968 = {
+				change_province_name = "Budweis"
+				rename_capital = "Budweis"
+ 			}
+			2970 = {
+				change_province_name = "Königgrätz"
+				rename_capital = "Königgrätz"
+ 			}
+			4724 = {
+				change_province_name = "Pardubitz"
+				rename_capital = "Pardubitz"
+ 			}
+			4725 = {
+				change_province_name = "Neuhaus"
+				rename_capital = "Neuhaus"
+ 			}
+			4726 = {
+				change_province_name = "Ostrau"
+				rename_capital = "Ostrau"
+ 			}
+		}
+	}
+}
+
+#BOHEMIA_1
+country_event = {
+	id = hlrmod_flavor_event.9
+	title = hlrmod_flavor_event.9.title
+	desc = hlrmod_flavor_event.9.desc
+	picture = HLR_BOHEMIA_ERZG_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.9.a
+		1771 = {
+			change_culture = bohemian
+ 		}
+		2967 = {
+			change_culture = bohemian
+ 		}
+		hidden_effect = {
+			1771 = {
+				change_province_name = "Erzgebirge"
+				rename_capital = "Leitmeritz"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+			2967 = {
+				change_province_name = "Eger"
+				rename_capital = "Eger"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+		}
+	}
+}
+
+#BOHEMIA_2
+country_event = {
+	id = hlrmod_flavor_event.10
+	title = hlrmod_flavor_event.10.title
+	desc = hlrmod_flavor_event.10.desc
+	picture = HLR_BOHEMIA_CITIES_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.10.a
+		265 = {
+			change_culture = bohemian
+ 			}
+		266 = {
+			change_culture = bohemian
+ 		}
+		4237 = {
+			change_culture = bohemian
+ 		}
+		hidden_effect = { 	
+			265 = {
+				change_province_name = "Brünn"
+				rename_capital = "Brünn"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 				}
+			266 = {
+				change_province_name = "Prag"
+				rename_capital = "Prag"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+			4237 = {
+				change_province_name = "Olmütz"
+				rename_capital = "Olmütz"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_slavic_circles
+ 			}
+		
+		}
+	}
+}
+
+# Reichstag
+country_event = {
+	id = hlrmod_flavor_event.2
+	title = hlrmod_flavor_event.2.title
+	desc = hlrmod_flavor_event.2.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Frankfurt
+	option = {
+		name = hlrmod_flavor_event.2.a
+		1876 = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+	#Wien
+	option = {
+		name = hlrmod_flavor_event.2.b
+		134 = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+	#Aachen
+	option = {
+		name = hlrmod_flavor_event.2.c
+		1878 = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+	#Nürnberg
+	option = {
+		name = hlrmod_flavor_event.2.d
+		67 = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+	#Dresden
+	option = {
+		name = hlrmod_flavor_event.2.e
+		61 = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+	#Alte Hauptstadt
+	option = {
+		name = hlrmod_flavor_event.2.f
+		capital_scope = {
+			add_permanent_province_modifier = {
+				name = hlr_reichstag
+				duration = -1
+ 			}
+		}
+	}
+}
+
+# Capital
+country_event = {
+	id = hlrmod_flavor_event.3
+	title = hlrmod_flavor_event.3.title
+	desc = hlrmod_flavor_event.3.desc
+	picture = HLR_CAPITAL_eventPicture
+	is_triggered_only = yes
+
+	#Frankfurt
+	option = {
+		name = hlrmod_flavor_event.3.a
+		set_capital = 1876
+	}
+	#Wien
+	option = {
+		name = hlrmod_flavor_event.3.b
+		set_capital = 134
+	}
+	#Aachen
+	option = {
+		name = hlrmod_flavor_event.3.c
+		set_capital = 1878
+	}
+	#Nürnberg
+	option = {
+		name = hlrmod_flavor_event.3.d
+		set_capital = 67
+	}
+	#Dresden
+	option = {
+		name = hlrmod_flavor_event.3.e
+		set_capital = 61
+	}
+	#alte Haupstadt
+	option = {
+		name = hlrmod_flavor_event.3.f
+	}
+}
+
+# Regnum Teutonicum
+country_event = {
+	id = hlrmod_flavor_event.4
+	title = hlrmod_flavor_event.4.title
+	desc = hlrmod_flavor_event.4.desc
+	picture = HLR_REGNUMT_eventPicture
+	is_triggered_only = yes
+	
+	#Change Name
+	option = {
+		name = hlrmod_flavor_event.4.a
+		override_country_name = REGNUM_TEUTONICUM
+	}
+	
+	#Keep Name
+	option = {
+		name = hlrmod_flavor_event.4.b
+		add_prestige = 50
+	}
+}
+
+# Wallonian and Burgundian Flip 3
+country_event = {
+	id = hlrmod_flavor_event.5
+	title = hlrmod_flavor_event.5.title
+	desc = hlrmod_flavor_event.5.desc
+	picture = HLR_WESTERNSCHOOLS_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.5.a
+		set_country_flag = german_wallonians
+		every_owned_province = {
+			limit = {
+				culture = wallonian
+			}
+			change_culture = ger_wallonian
+		}
+		every_owned_province = {
+			limit = {
+				culture = burgundian
+			}
+			change_culture = lothringian
+		}
+		custom_tooltip = removing_separatism.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					culture = ger_wallonian
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+			every_owned_province = {
+				limit = { 
+					culture = lothringian
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+ 			}
+			every_owned_province = {
+				limit = { 
+					OR = { 
+						region = france_region
+						region = low_countries_region
+					}					
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+		}
+		1866 = {
+			add_permanent_province_modifier = {
+				name = hlr_a_proud_city
+				duration = -1
+ 			}
+		}
+		hidden_effect = {
+			87 = {
+				change_province_name = "Kalen"
+				rename_capital = "Kalen"
+			}
+			88 = {
+				change_province_name = "Artesien"
+				rename_capital = "Atrecht"
+			}
+			93 = {
+				change_province_name = "Lüttich"
+				rename_capital = "Lüttich"
+			}
+			181 = {
+				change_province_name = "Rethel"
+				rename_capital = "Rethel"
+			}
+			1743 = {
+				change_province_name = "Kamerich"
+				rename_capital = "Kamerijk"
+			}
+			4769 = {
+				change_province_name = "Reissel"
+				rename_capital = "Rijsel"
+			}
+			187 = {
+				change_province_name = "Herzogenbar"
+				rename_capital = "Herzogenbar"
+			}
+			4766 = {
+				change_province_name = "Wirten"
+				rename_capital = "Wirten"
+			}
+			193 = {
+				change_province_name = "Freigrafschaft"
+				rename_capital = "Bisanz"
+			}
+			4764 = {
+				change_province_name = "Salzbad"
+				rename_capital = "Salzbad"
+			}
+		}
+	}
+}
+
+#Wallonian and Burgundian Flip 1
+country_event = {
+	id = hlrmod_flavor_event.11
+	title = hlrmod_flavor_event.11.title
+	desc = hlrmod_flavor_event.11.desc
+	picture = HLR_WESTERNSCHOOLS_WAL_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.11.a
+		1866 = {
+			change_culture = ger_wallonian
+		}
+		91 = {
+			change_culture = ger_wallonian
+		}
+ 		94 = {
+			change_culture = ger_wallonian
+		}
+		hidden_effect = {			
+			1866 = {
+				change_province_name = "Namen"
+				rename_capital = "Namen"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+			91 = {
+				change_province_name = "Hennegau"
+				rename_capital = "Bergen"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+ 			94 = {
+				change_province_name = "Lützelburg"
+				rename_capital = "Lützelburg"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+		}
+	}
+}
+
+#wallonian and burgundian Flip 2
+country_event = {
+	id = hlrmod_flavor_event.12
+	title = hlrmod_flavor_event.12.title
+	desc = hlrmod_flavor_event.12.desc
+	picture = HLR_WESTERNSCHOOLS_LOT_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.12.a
+		188 = {
+				change_culture = lothringian
+		}
+		189 = {
+				change_culture = lothringian
+		}
+		hidden_effect = {
+			188 = {
+				change_province_name = "Metz"
+				rename_capital = "Metz"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+			189 = {
+				change_province_name = "Lothringen"
+				rename_capital = "Nanzig"
+				remove_province_modifier = hlr_separatist_sentiment
+				remove_province_modifier = hlr_french_circles
+			}
+
+		}
+	}
+}
+
+
+# Dutch Independence
+country_event = {
+	id = hlrmod_flavor_event.6
+	title = hlrmod_flavor_event.6.title
+	desc = hlrmod_flavor_event.6.desc
+	picture = HLR_DUTCHINDEP_eventPicture
+	is_triggered_only = yes
+
+	#release
+	option = {
+		name = hlrmod_flavor_event.6.a
+		if { limit = { exists = HOL }
+			ROOT = {
+				96 = { 
+					cede_province = HOL
+					remove_core = HLR
+				}
+				97 = { 
+					cede_province = HOL
+					remove_core = HLR
+				}
+				4383 = { 
+					cede_province = HOL
+					remove_core = HLR
+				}
+			}
+		}
+		else {
+			custom_tooltip = releasing_holland.tooltip
+			hidden_effect = {
+				every_province = {
+					remove_core = HOL
+				}
+				96 = { 
+					add_core = HOL 
+					remove_core = HLR
+				}
+				97 = { 
+					add_core = HOL 
+					remove_core = HLR
+				}
+				4383 = { 
+					add_core = HOL 
+					remove_core = HLR
+				}
+				ROOT = { release = HOL }
+			}
+		}
+		create_guarantee = HOL
+		add_historical_friend = HOL
+		custom_tooltip = dutch_wealth.tootip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = low_countries_region
+				}
+				remove_province_modifier = hlr_dutch_riots
+				add_province_modifier = {
+					name = hlr_dutch_wealth
+					duration = 7300
+				}
+			}
+		}
+		hidden_effect = {
+			clr_country_flag = lowland_focus
+			set_country_flag = released_the_dutch
+		}
+	}
+
+	#Reichsherzogtum
+	option = {
+		name = hlrmod_flavor_event.6.b
+		custom_tooltip = hlr_reichsherzogtum_holland.tooltip
+		hidden_effect = {
+			every_province = {
+				remove_core = HOL
+			}
+			96 = { 
+				remove_core = HLR
+				add_core = HOL 
+			}
+			97 = { 
+				remove_core = HLR
+				add_core = HOL 
+			}
+			4383 = { 
+				remove_core = HLR
+				add_core = HOL 
+			}
+			ROOT = { release = HOL }
+			HOL = { set_government_rank = 1 }
+			create_subject = {
+				subject = HOL
+				subject_type = imperialduchy
+			}
+			clr_country_flag = lowland_focus
+			set_country_flag = released_the_dutch
+			
+		}	
+	}
+
+	#keep them
+	option = {
+		name = hlrmod_flavor_event.6.c
+		clr_country_flag = lowland_focus
+		custom_tooltip = dutch_anger.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					region = low_countries_region
+				}
+				add_province_modifier = {
+					name = hlr_dutch_anger
+					duration = -1
+				}
+			}
+		}
+		mil_power_cost = 500		
+	}
+}
+
+# Italian Alliance
+country_event = {
+	id = hlrmod_flavor_event.7
+	title = hlrmod_flavor_event.7.title
+	desc = hlrmod_flavor_event.7.desc
+	picture = HLR_ITALIANALLIANCE_eventPicture
+	is_triggered_only = yes
+
+	#Italians Rebel
+	option = {
+		name = hlrmod_flavor_event.7.a
+		custom_tooltip = italian_rebellion.tooltip
+		hidden_effect = {
+			every_province = {
+				limit = {
+					culture_group = latin
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				add_province_modifier = {
+					name = hlr_italian_anger
+					duration = -1
+				}
+			}
+			set_country_flag = hlr_had_italian_revolt_ok
+		}
+		101 = { 
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+		104 = { 
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+		116 = { 
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+			
+	}
+}
+
+# Reichsitalien
+country_event = {
+	id = hlrmod_flavor_event.8
+	title = hlrmod_flavor_event.8.title
+	desc = hlrmod_flavor_event.8.desc
+	picture = HLR_REGNUMITALICUM_eventPicture
+	is_triggered_only = yes
+
+	#Create Regnum Italicum
+	option = {
+		name = hlrmod_flavor_event.8.a
+		custom_tooltip = regnumitalicum.tooltip
+		hidden_effect = {
+			every_province = {
+				limit = { 
+					culture_group = latin
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+			}
+			every_province = {
+				limit = { 
+					culture_group = latin
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				remove_province_modifier = hlr_italian_anger
+			}
+			every_province = {
+				limit = {
+					region = italy_region
+					owner = { tag = ROOT }
+				}
+				remove_core = HLR
+				add_core = RIT
+			}
+			ROOT = { release = RIT }
+			create_subject = {
+				subject = RIT
+				subject_type = imperialkingdom
+			}
+			add_historical_friend = RIT
+			RIT = { 
+				add_country_modifier = {
+					name = rit_deep_ties
+					duration = -1
+				}
+				set_government_rank = 2
+				add_government_reform = reichskoenigtum
+				add_manpower = 30
+			}
+		}
+	}
+	
+	#Grant Autonomy
+	option = {
+		name = hlrmod_flavor_event.8.b
+		custom_tooltip = italian_autonomy.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					culture_group = latin
+				}
+				remove_province_modifier = hlr_separatist_sentiment
+			}
+			every_owned_province = {
+				limit = { 
+					culture_group = latin
+				}
+				remove_province_modifier = hlr_italian_anger
+			}
+			every_owned_province = {
+				limit = {
+					region = italy_region
+				}
+				add_permanent_province_modifier = {
+					name = hlr_italian_autonomy
+					duration = -1
+				}
+			}
+		}
+			
+	}
+	
+	#Crush Them
+	option = {
+		name = hlrmod_flavor_event.8.c
+		mil_power_cost = 1000
+		custom_tooltip = crushing_italians.tooltip
+		hidden_effect = {
+			101 = { 
+				create_revolt = 5
+			}
+			104 = { 
+				create_revolt = 5
+			}
+			116 = { 
+				create_revolt = 5
+			}
+		}
+			
+	}
+}
+
+#Elect for RIT
+country_event = {
+	id = hlrmod_flavor_event.13
+	title = hlrmod_flavor_event.13.title
+	desc = hlrmod_flavor_event.13.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Elect Italian
+	option = {
+		name = hlrmod_flavor_event.13.a
+		RIT = {
+			define_ruler = {
+				culture = lombard
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 6
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.13.b
+		RIT = {
+			define_ruler = {
+				culture = lombard
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 6
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.13.c
+		RIT = {
+			define_ruler = {
+				culture = lombard
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 3
+				mil = 6
+			}
+		}
+	}
+	#Elect von Habsburg
+	option = {
+		name = hlrmod_flavor_event.13.d
+		RIT = {
+			define_ruler = {
+				dynasty = "von Habsburg"
+				culture = austrian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.13.e
+		RIT = {
+			define_ruler = {
+				dynasty = "von Hohenzollern"
+				culture = saxon
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.13.f
+		RIT = {
+			define_ruler = {
+				dynasty = "von Wittelsbach"
+				culture = bavarian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+}
+#MIL reform Start
+country_event = {
+	id = hlrmod_flavor_event.14
+	title = hlrmod_flavor_event.14.title
+	desc = hlrmod_flavor_event.14.desc
+	picture = HLR_MILREFORM_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.14.a
+		add_country_modifier = {
+			name = hlr_process_imperial_milreform
+			duration = 14600
+		}
+	}
+}
+
+#Landsknecht heritage
+country_event = {
+	id = hlrmod_flavor_event.15
+	title = hlrmod_flavor_event.15.title
+	desc = hlrmod_flavor_event.15.desc
+	picture = HLR_LANDSKNECHT_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.15.a
+		define_general = {
+			shock = 6
+			fire = 6
+			manuever = 3
+			siege = 3
+			name = "Erich von Frundsberg"
+			trait = glory_seeker_personality
+		}
+		define_general = {
+			shock = 5
+			fire = 6
+			manuever = 4
+			siege = 4
+			name = "Friedrich von Berlichingen"
+			trait = ruthless_personality
+		}
+		define_general = {
+			shock = 4
+			fire = 5
+			manuever = 6
+			siege = 4
+			name = "Franz Georg von Ems"
+			trait = cruel_tactician_personality
+		}
+		define_general = {
+			shock = 4
+			fire = 4
+			manuever = 6
+			siege = 6
+			name = "Erich Fronsperger"
+			trait = siege_specialist_personality
+		}
+		add_country_modifier = {
+			name = hlr_landsknecht_generalcap
+			duration = -1
+		}
+	}
+}
+
+#MIL reform end
+country_event = {
+	id = hlrmod_flavor_event.16
+	title = hlrmod_flavor_event.16.title
+	desc = hlrmod_flavor_event.16.desc
+	picture = HLR_MILREFORM_END_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.16.a
+		add_country_modifier = {
+			name = hlr_milreform_disc_morale
+			duration = -1
+		}
+		remove_country_modifier = hlr_process_imperial_milreform
+	}
+	option = {
+		name = hlrmod_flavor_event.16.b
+		add_country_modifier = {
+			name = hlr_milreform_manpower
+			duration = -1
+		}
+		remove_country_modifier = hlr_process_imperial_milreform
+	}
+	option = {
+		name = hlrmod_flavor_event.16.c
+		add_country_modifier = {
+			name = hlr_milreform_troopdamage
+			duration = -1
+		}
+		remove_country_modifier = hlr_process_imperial_milreform
+	}
+}
+#catholicknights
+country_event = {
+	id = hlrmod_flavor_event.17
+	title = hlrmod_flavor_event.17.title
+	desc = hlrmod_flavor_event.17.desc
+	picture = HLR_CATHKNIGHTS_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.17.a
+		add_government_reform = hlr_catholic_orders_reform
+	}
+}
+#churchpact
+country_event = {
+	id = hlrmod_flavor_event.18
+	title = hlrmod_flavor_event.18.title
+	desc = hlrmod_flavor_event.18.desc
+	picture = HLR_CHURCHPACT_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.18.a
+		set_estate_privilege = estate_church_advocating_for_conscription
+		define_advisor = {
+			type = recruitmaster
+			name = "Johannes von Oldenburg"
+			skill = 3
+			religion = ROOT
+			cost_multiplier = 0.2
+		}
+	}
+}
+#fracture ottomans
+
+country_event = {
+	id = hlrmod_flavor_event.19
+	title = hlrmod_flavor_event.19.title
+	desc = hlrmod_flavor_event.19.desc
+	picture = HLR_FRACTURE_OTTOS_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.19.a
+		custom_tooltip = fracture_of_ottomans.tooltip
+		hidden_effect = {
+		white_peace = TUR
+		TUR = {
+			release_all_subjects = yes
+			if = {
+				limit = { exists = BYZ }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = albania_area
+							area = bulgaria_area
+							area = macedonia_area
+							area = morea_area
+							area = northern_greece_area
+							area = aegean_archipelago_area
+							province_id = 149
+							province_id = 1764
+							province_id = 4705
+							province_id = 4779
+							province_id = 159
+							province_id = 4704
+						}
+					}
+					add_core = BYZ
+					remove_core = TUR
+					cede_province = BYZ
+				}
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = albania_area
+							area = bulgaria_area
+							area = macedonia_area
+							area = morea_area
+							area = northern_greece_area
+							area = aegean_archipelago_area
+							province_id = 149
+							province_id = 1764
+							province_id = 4705
+							province_id = 4779
+							province_id = 159
+							province_id = 4704
+						}
+					}
+					add_core = BYZ
+					remove_core = TUR
+				}
+				release = BYZ
+				BYZ = { change_religion = orthodox }
+			}
+			if = {
+				limit = { exists = EGY }
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = egypt_region
+							province_id = 2324
+						}
+					}
+					add_core = EGY
+					remove_core = TUR
+					cede_province = EGY
+				}
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = egypt_region
+							province_id = 2324
+						}
+					}
+					add_core = EGY
+					remove_core = TUR
+
+				}
+				release = EGY
+				EGY = { change_religion = sunni }
+			}
+			if = {
+				limit = { exists = PER }
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = persia_region
+							region = khorasan_region
+							province_id = 421
+							province_id = 4340
+							province_id = 424
+						}
+					}
+					add_core = PER
+					remove_core = TUR
+					cede_province = PER
+				}
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = persia_region
+							region = khorasan_region
+							province_id = 421
+							province_id = 4340
+							province_id = 424
+						}
+					}
+					add_core = PER
+					remove_core = TUR
+				}
+				release = PER
+				PER = { change_religion = shiite }
+			}
+			if = {
+				limit = { exists = GEO }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = imereti_area
+							area = kartli_kakheti_area
+							area = samtskhe_area
+						}
+					}
+					add_core = GEO
+					remove_core = TUR
+					cede_province = GEO
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = imereti_area
+							area = kartli_kakheti_area
+							area = samtskhe_area
+						}
+					}
+					add_core = GEO
+					remove_core = TUR
+				}
+				release = GEO
+				GEO = { change_religion = orthodox }
+			}
+			if = {
+				limit = { exists = ARM }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = armenia_area
+							province_id = 4305
+							province_id = 4299
+						}
+					}
+					add_core = ARM
+					remove_core = TUR
+					cede_province = ARM
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = armenia_area
+							province_id = 4305
+							province_id = 4299
+						}
+					}
+					add_core = ARM
+					remove_core = TUR
+				}
+				release = ARM
+				ARM = { change_religion = coptic }
+			}
+			if = {
+				limit = { exists = ETH }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = central_ethiopia_area
+							area = tigray_area
+							area = upper_nubia_area
+							area = southern_ethiopia_area
+							area = shewa_area
+							area = red_sea_coast_area
+							area = damot_area
+							area = sennar_area
+							area = hadiya_area
+							area = dongola_area
+						}
+					}
+					add_core = ETH
+					remove_core = TUR
+					cede_province = ETH
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = central_ethiopia_area
+							area = tigray_area
+							area = upper_nubia_area
+							area = southern_ethiopia_area
+							area = shewa_area
+							area = red_sea_coast_area
+							area = damot_area
+							area = sennar_area
+							area = hadiya_area
+							area = dongola_area
+						}
+					}
+					add_core = ETH
+					remove_core = TUR
+				}
+				release = ETH
+				ETH = { change_religion = coptic }
+			}
+			if = {
+				limit = { exists = ADA }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = aussa_area 
+							area = somaliland_area
+							area = ogaden_area
+							area = ifat_area
+						}
+					}
+					add_core = ADA
+					remove_core = TUR
+					cede_province = ADA
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = aussa_area 
+							area = somaliland_area
+							area = ogaden_area
+							area = ifat_area
+						}
+					}
+					add_core = ADA
+					remove_core = TUR
+				}
+				release = ADA
+				ADA = { change_religion = sunni }
+			}
+			if = {
+				limit = { exists = AJU }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = ajuuran_area
+							area = mogadishu_area
+							area = majarteen_area
+						}
+					}
+					add_core = AJU
+					remove_core = TUR
+					cede_province = AJU
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = ajuuran_area
+							area = mogadishu_area
+							area = majarteen_area
+						}
+					}
+					add_core = AJU
+					remove_core = TUR
+				}
+				release = AJU
+				AJU = { change_religion = sunni }
+			}
+			if = {
+				limit = { exists = CRI }
+				every_owned_province = {
+					limit = {
+						region = crimea_region
+					}
+					add_core = CRI
+					remove_core = TUR
+					cede_province = CRI
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = crimea_region
+					}
+					add_core = CRI
+					remove_core = TUR
+				}
+				release = CRI
+				CRI = { change_religion = sunni }
+			}
+			if = {
+				limit = { exists = CIR }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = circassia_area
+							area = dagestan_area
+						}
+					}
+					add_core = CIR
+					remove_core = TUR
+					cede_province = CIR
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = circassia_area
+							area = dagestan_area
+						}
+					}
+					add_core = CIR
+					remove_core = TUR
+				}
+				release = CIR
+				CIR = { change_religion = orthodox }
+			}
+			if = {
+				limit = { exists = KZH }
+				every_owned_province = {
+					limit = {
+						region = central_asia_region
+					}
+					add_core = KZH
+					remove_core = TUR
+					cede_province = KZH
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = central_asia_region
+					}
+					add_core = KZH
+					remove_core = TUR
+				}
+				release = KZH
+				KZH = { change_religion = sunni }
+			}			
+			if = {
+				limit = { exists = WAL }
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 4706
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+					add_core = WAL
+					remove_core = TUR
+					cede_province = WAL
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							province_id = 4706
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+					add_core = WAL
+					remove_core = TUR
+				}
+				release = WAL
+				WAL = { change_religion = ROOT }
+			}
+			if = {
+				limit = { exists = SER }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = serbia_area
+							area = bosnia_area
+							area = rascia_area
+						}
+					}
+					add_core = SER
+					remove_core = TUR
+					cede_province = SER
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = serbia_area
+							area = bosnia_area
+							area = rascia_area
+						}
+					}
+					add_core = SER
+					remove_core = TUR
+				}
+				release = SER
+				SER = { change_religion = orthodox }
+			}
+			if = {
+				limit = { exists = HUN }
+				every_owned_province = {
+					limit = {
+						region = carpathia_region
+					}
+					add_core = HUN
+					remove_core = TUR
+					cede_province = HUN
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = carpathia_region
+					}
+					add_core = HUN
+					remove_core = TUR
+				}
+				release = HUN
+				HUN = { change_religion = ROOT }
+			}			
+			if = {
+				limit = { exists = CRO }
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = slavonia_area
+							area = croatia_area
+							area = east_adriatic_coast_area
+						}
+					}
+					add_core = CRO
+					remove_core = TUR
+					cede_province = CRO
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = slavonia_area
+							area = croatia_area
+							area = east_adriatic_coast_area
+						}
+					}
+					add_core = CRO
+					remove_core = TUR
+				}
+				release = CRO
+				CRO = { change_religion = ROOT }
+			}			
+			if = {
+				limit = { exists = UKR }
+				every_owned_province = {
+					limit = {
+						region = ruthenia_region
+					}
+					add_core = UKR
+					remove_core = TUR
+					cede_province = UKR
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = ruthenia_region
+					}
+					add_core = UKR
+					remove_core = TUR
+				}
+				release = UKR
+				UKR = { change_religion = orthodox }
+			}			
+			if = {
+				limit = { exists = PLC }
+				every_owned_province = {
+					limit = {
+						region = poland_region
+					}
+					add_core = PLC
+					remove_core = TUR
+					cede_province = PLC
+				}	
+			}
+			if = {
+				limit = { exists = POL }
+				every_owned_province = {
+					limit = {
+						region = poland_region
+					}
+					add_core = POL
+					remove_core = TUR
+					cede_province = POL
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = poland_region
+					}
+					add_core = POL
+					remove_core = TUR
+				}
+				release = POL
+				POL = { change_religion = ROOT }
+			}
+			if = {
+				limit = { exists = RUS }
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = russia_region
+							region = ural_region
+							region = west_siberia_region
+						}
+					}
+					add_core = RUS
+					remove_core = TUR
+					cede_province = RUS
+				}	
+			}
+			if = {
+				limit = { exists = MOS }
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = russia_region
+							region = ural_region
+							region = west_siberia_region
+						}
+					}
+					add_core = MOS
+					remove_core = TUR
+					cede_province = MOS
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = russia_region
+							region = ural_region
+							region = west_siberia_region
+						}
+					}
+					add_core = MOS
+					remove_core = TUR
+				}
+				release = MOS
+				MOS = { change_religion = orthodox }
+			}
+			if = {
+				limit = { exists = TUN }
+				every_owned_province = {
+					limit = {
+						region = maghreb_region
+					}
+					add_core = TUN
+					remove_core = TUR
+					cede_province = TUN
+				}	
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						region = maghreb_region
+					}
+					add_core = TUN
+					remove_core = TUR
+				}
+				release = TUN
+				TUN = { change_religion = sunni }
+			}
+		}
+		}
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.19.b
+		add_manpower = -30
+	}
+
+}
+
+#Holy Land Release
+country_event = {
+	id = hlrmod_flavor_event.20
+	title = hlrmod_flavor_event.20.title
+	desc = hlrmod_flavor_event.20.desc
+	picture = HLR_HOLYLAND_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.20.a
+		custom_tooltip = release_holyland.tooltip
+		hidden_effect = {
+		palestine_area = {
+			add_core = HJE
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		syria_area = {
+			add_core = HJE
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		2313 = { 
+			add_core = HJE
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		380 = { 	
+			add_core = HJE
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		381 = {
+			add_core = HJE
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		release = HJE
+		HJE = { set_government_rank = 2 }
+		364 = {
+				change_province_name = "Gadres"
+				rename_capital = "Gadres"
+			}
+		379 = {
+				change_province_name = "Jerusalem"
+				rename_capital = "Jerusalem"
+			}
+		1854 = {
+				change_province_name = "Joppe"
+				rename_capital = "Joppe"
+			}
+		381 = {
+				change_province_name = "Adlun"
+				rename_capital = "Adlun"
+			}
+		380 = {
+				change_province_name = "Krak"
+				rename_capital = "Krak"
+			}
+		382 = {
+				change_province_name = "Damaskus"
+				rename_capital = "Damaskus"
+			}
+		1855 = {
+				change_province_name = "Sidon"
+				rename_capital = "Sidon"
+			}
+		378 = {
+				change_province_name = "Mons Peregrinus"
+				rename_capital = "Mons Peregrinus"
+			}
+		4297 = {
+				change_province_name = "Emesa"
+				rename_capital = "Emesa"
+			}
+		2313 = {
+				change_province_name = "Antiochia"
+				rename_capital = "Antiochia"
+			}
+		HJE = { add_government_reform = hlr_catholic_orders_reform }
+		HJE = { add_accepted_culture = al_suryah_arabic }
+		create_alliance = HJE
+		add_country_modifier = {
+			name = hlr_created_holyland_influence
+			duration = -1
+		}
+		}
+	}
+
+	option = {
+		name = hlrmod_flavor_event.20.b
+		379 = { catholic_rebels = 5 }
+	}
+}
+#diplomatic holy land
+country_event = {
+	id = hlrmod_flavor_event.21
+	title = hlrmod_flavor_event.21.title
+	desc = hlrmod_flavor_event.21.desc
+	picture = HLR_HOLYLAND_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.21.a
+		add_country_modifier = {
+			name = hlr_safe_passage_jerusalem
+			duration = -1
+		}
+	}
+}
+
+#New Great Power
+country_event = {
+	id = hlrmod_flavor_event.22
+	title = hlrmod_flavor_event.22.title
+	desc = hlrmod_flavor_event.22.desc
+	picture = HLR_NEWGP_eventPicture
+	is_triggered_only = yes
+	
+	#Poland
+	option = {
+		name = hlrmod_flavor_event.22.a
+		trigger = {
+			exists = POL
+		}
+		if = {
+			limit = {
+				is_rival = POL
+			}
+			remove_rival = POL
+		}
+		if = {
+			limit = {
+				POL = {
+					is_rival = HLR
+				}
+			}
+			POL = { remove_rival = HLR }
+		}
+		add_historical_friend = POL
+		add_trust = {
+    			who = POL
+    			value = 25
+   			mutual = yes
+		}
+	}
+	
+	#PLC
+	option = {
+		name = hlrmod_flavor_event.22.b
+		trigger = {
+			exists = PLC
+		}
+		if = {
+			limit = {
+				is_rival = PLC
+			}
+			remove_rival = PLC
+		}
+		if = {
+			limit = {
+				PLC = {
+					is_rival = HLR
+				}
+			}
+			PLC = { remove_rival = HLR }
+		}
+		add_historical_friend = PLC
+		add_trust = {
+    			who = PLC
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#ENG
+	option = {
+		name = hlrmod_flavor_event.22.c
+		trigger = {
+			exists = ENG
+		}
+		if = {
+			limit = {
+				is_rival = ENG
+			}
+			remove_rival = ENG
+		}
+		if = {
+			limit = {
+				ENG = {
+					is_rival = HLR
+				}
+			}
+			ENG = { remove_rival = HLR }
+		}
+		add_historical_friend = ENG
+		add_trust = {
+    			who = ENG
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#GBR
+	option = {
+		name = hlrmod_flavor_event.22.d
+		trigger = {
+			exists = GBR
+		}
+		if = {
+			limit = {
+				is_rival = GBR
+			}
+			remove_rival = GBR
+		}
+		if = {
+			limit = {
+				GBR = {
+					is_rival = HLR
+				}
+			}
+			GBR = { remove_rival = HLR }
+		}
+		add_historical_friend = GBR
+		add_trust = {
+    			who = GBR
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Frankreich
+	option = {
+		name = hlrmod_flavor_event.22.e
+		trigger = {
+			exists = FRA
+		}
+		if = {
+			limit = {
+				is_rival = FRA
+			}
+			remove_rival = FRA
+		}
+		if = {
+			limit = {
+				FRA = {
+					is_rival = HLR
+				}
+			}
+			FRA = { remove_rival = HLR }
+		}
+		add_historical_friend = FRA
+		add_trust = {
+    			who = FRA
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Kastilien
+	option = {
+		name = hlrmod_flavor_event.22.f
+		trigger = {
+			exists = CAS
+		}
+		if = {
+			limit = {
+				is_rival = CAS
+			}
+			remove_rival = CAS
+		}
+		if = {
+			limit = {
+				CAS = {
+					is_rival = HLR
+				}
+			}
+			CAS = { remove_rival = HLR }
+		}
+		add_historical_friend = CAS
+		add_trust = {
+    			who = CAS
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Spanien
+	option = {
+		name = hlrmod_flavor_event.22.g
+		trigger = {
+			exists = SPA
+		}
+		if = {
+			limit = {
+				is_rival = SPA
+			}
+			remove_rival = SPA
+		}
+		if = {
+			limit = {
+				SPA = {
+					is_rival = HLR
+				}
+			}
+			SPA = { remove_rival = HLR }
+		}
+		add_historical_friend = SPA
+		add_trust = {
+    			who = SPA
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Moskau
+	option = {
+		name = hlrmod_flavor_event.22.h
+		trigger = {
+			exists = MOS
+		}
+		if = {
+			limit = {
+				is_rival = MOS
+			}
+			remove_rival = MOS
+		}
+		if = {
+			limit = {
+				MOS = {
+					is_rival = HLR
+				}
+			}
+			MOS = { remove_rival = HLR }
+		}
+		add_historical_friend = MOS
+		add_trust = {
+    			who = MOS
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Russland
+	option = {
+		name = hlrmod_flavor_event.22.i
+		trigger = {
+			exists = RUS
+		}
+		if = {
+			limit = {
+				is_rival = RUS
+			}
+			remove_rival = RUS
+		}
+		if = {
+			limit = {
+				RUS = {
+					is_rival = HLR
+				}
+			}
+			RUS = { remove_rival = HLR }
+		}
+		add_historical_friend = RUS
+		add_trust = {
+    			who = RUS
+    			value = 25
+   			mutual = yes
+		}
+	}
+
+	#Don't need anybody
+	option = {
+		name = hlrmod_flavor_event.22.j
+		add_prestige = 50
+	}
+}
+
+#Poland Deal
+country_event = {
+	id = hlrmod_flavor_event.23
+	title = hlrmod_flavor_event.23.title
+	desc = hlrmod_flavor_event.23.desc
+	picture = HLR_POLAND_eventPicture
+	is_triggered_only = yes
+	
+	#Make a deal
+	option = {
+		name = hlrmod_flavor_event.23.a
+		trigger = {
+			OR = {
+				POL = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				PLC = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+		set_country_flag = hlr_gave_up_prussia
+		custom_tooltip = hlr_poland_deal.tooltip
+		hidden_effect = {
+		if = {
+			limit = {
+				exists = RUS
+			}
+			break_alliance = RUS
+			remove_historical_friend = RUS
+			add_historical_rival = RUS
+			add_trust = {
+    				who = RUS
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else_if = {
+			limit = {
+				exists = MOS
+			}
+			break_alliance = MOS
+			remove_historical_friend = MOS
+			add_historical_rival = MOS
+			add_trust = {
+    				who = MOS
+    				value = -25
+   				mutual = yes
+			}
+		}
+		if = {
+			limit = {
+				exists = PLC
+			}
+			if = { 
+				limit = {
+					NOT = { alliance_with = PLC }
+				}
+				create_alliance = PLC
+			}
+			ROOT = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = east_prussia_area
+							area = west_prussia_area
+							area = central_poland_area
+							area = mazovia_area
+							area = wielkopolska_area
+							area = malopolska_area
+							area = red_ruthenia_area
+							area = kuyavia_area
+							area = sandomierz_area
+						}
+					}
+					remove_core = ROOT
+					remove_claim = ROOT
+					add_core = PLC
+					cede_province = PLC
+				}
+				
+			}
+			every_province = {
+				limit = {
+					OR = {
+						area = east_prussia_area
+						area = west_prussia_area
+					}
+				}
+				remove_claim = ROOT
+				remove_core = ROOT
+				remove_core = PRU
+				remove_core = TEU
+			}
+			PLC = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = livonia_area
+							area = curonia_area
+							area = estonia_ingria_area
+						}
+					}
+					remove_core = PLC
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						area = livonia_area
+						area = curonia_area
+						area = estonia_ingria_area
+					}
+				}
+				remove_claim = PLC
+				remove_core = PLC
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = { alliance_with = POL }
+				}
+				create_alliance = POL
+			}
+			ROOT = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = east_prussia_area
+							area = west_prussia_area
+							area = central_poland_area
+							area = mazovia_area
+							area = wielkopolska_area
+							area = malopolska_area
+							area = red_ruthenia_area
+							area = kuyavia_area
+							area = sandomierz_area
+						}
+					}
+					remove_core = ROOT
+					remove_claim = ROOT
+					add_core = POL
+					cede_province = POL
+				}
+				
+			}
+			every_province = {
+				limit = {
+					OR = {
+						area = east_prussia_area
+						area = west_prussia_area
+					}
+				}
+				remove_claim = ROOT
+				remove_core = ROOT
+				remove_core = PRU
+				remove_core = TEU
+			}
+			POL = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = livonia_area
+							area = curonia_area
+							area = estonia_ingria_area
+						}
+					}
+					remove_core = POL
+					remove_claim = POL
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					OR = {
+						area = livonia_area
+						area = curonia_area
+						area = estonia_ingria_area
+					}
+				}
+				remove_claim = POL
+				remove_core = POL
+			}
+		}
+		}
+	}
+	
+	#Anspruch
+	option = {
+		name = hlrmod_flavor_event.23.b
+		257 = { add_permanent_claim = HLR }
+		if = {
+			limit = {
+				exists = PLC
+			}
+			break_alliance = PLC
+			remove_historical_friend = PLC
+			add_historical_rival = PLC
+			add_trust = {
+    				who = PLC
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else = {
+			break_alliance = POL
+			remove_historical_friend = POL
+			add_historical_rival = POL
+			add_trust = {
+    				who = POL
+    				value = -25
+   				mutual = yes
+			}
+		}
+	}
+
+	#Neutralität
+	option = {
+		name = hlrmod_flavor_event.23.c
+		add_stability = 1
+	}
+}
+
+#Russia
+country_event = {
+	id = hlrmod_flavor_event.24
+	title = hlrmod_flavor_event.24.title
+	desc = hlrmod_flavor_event.24.desc
+	picture = HLR_RUSSIA_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.24.a
+		trigger = {
+			OR = {
+				RUS = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				MOS = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+		custom_tooltip = hlr_russian_deal.tooltip
+		hidden_effect = {
+		if = {
+			limit = {
+				exists = RUS
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = RUS }
+				}
+				create_alliance = RUS
+			}
+			RUS = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = livonia_area
+							area = curonia_area
+							area = estonia_ingria_area
+						}
+					}
+					remove_core = RUS
+					add_core = HLR
+					cede_province = HLR
+				}
+			}
+			add_favors = {
+   				who = RUS
+   				amount = 20
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					NOT = { alliance_with = MOS }
+				}
+				create_alliance = MOS
+			}
+			MOS = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = livonia_area
+							area = curonia_area
+							area = estonia_ingria_area
+						}
+					}
+					add_core = HLR
+					remove_core = MOS
+					cede_province = HLR
+				}
+			}
+			add_favors = {
+   				who = MOS
+   				amount = 20
+			}
+		}
+		}
+	}
+
+	#Anspruch
+	option = {
+		name = hlrmod_flavor_event.24.b
+		295 = { add_permanent_claim = HLR }
+		if = {
+			limit = {
+				exists = RUS
+			}
+			break_alliance = RUS
+			remove_historical_friend = RUS
+			add_historical_rival = RUS
+			add_trust = {
+    				who = RUS
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else = {
+			break_alliance = MOS
+			remove_historical_friend = MOS
+			add_historical_rival = MOS
+			add_trust = {
+    				who = MOS
+    				value = -25
+   				mutual = yes
+			}
+		}
+	}
+
+	#Neutralität
+	option = {
+		name = hlrmod_flavor_event.24.c
+		add_stability = 1
+	}
+}
+
+#Terra Mariana
+country_event = {
+	id = hlrmod_flavor_event.25
+	title = hlrmod_flavor_event.25.title
+	desc = hlrmod_flavor_event.25.desc
+	picture = HLR_LIVONIA_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.25.a
+		custom_tooltip = hlr_release_tma.tooltip
+		hidden_effect = {
+		livonia_area = {
+			add_core = TMA
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		curonia_area = {
+			add_core = TMA
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		estonia_ingria_area = {
+			add_core = TMA
+			remove_core = HLR
+			remove_claim = HLR
+		}
+		release = TMA
+		TMA = { set_government_rank = 1 }
+		create_subject = {
+			subject = TMA
+			subject_type = imperialduchy
+		}
+		36 = {
+			change_province_name = "Reval"
+			rename_capital = "Reval"
+		}
+		35 = {
+			change_province_name = "Ösel"
+			rename_capital = "Arensburg"
+		}
+		37 = {
+			change_province_name = "Livland"
+			rename_capital = "Wolmar"
+		}
+		38 = {
+			change_province_name = "Riga"
+			rename_capital = "Riga"
+		}
+		273 = {
+			change_province_name = "Lettgallen"
+			rename_capital = "Dünaburg"
+		}
+		4241 = {
+			change_province_name = "Sesswegen"
+			rename_capital = "Sesswegen"
+		}
+		39 = {
+			change_province_name = "Goldingen"
+			rename_capital = "Goldingen"
+		}
+		1935 = {
+			change_province_name = "Mitau"
+			rename_capital = "Mitau"
+		}
+		1834 = {
+			change_province_name = "Dörpt"
+			rename_capital = "Dörpt"
+		}
+		1842 = {
+			change_province_name = "Narwa"
+			rename_capital = "Narwa"
+		}
+		}
+	}
+
+	option = {
+		name = hlrmod_flavor_event.25.b
+		38 = {
+			noble_rebels = 5
+		}
+	}
+}
+
+country_event = {
+	id = hlrmod_flavor_event.26
+	title = hlrmod_flavor_event.26.title
+	desc = hlrmod_flavor_event.26.desc
+	picture = HLR_FRANCE_eventPicture
+	is_triggered_only = yes
+	
+	#befriend France
+	option = {
+		name = hlrmod_flavor_event.26.a
+		trigger = {
+			FRA = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+		custom_tooltip = hlr_france_deal.tooltip
+		hidden_effect = {
+		if = {
+			limit = {
+				NOT = { alliance_with = FRA }
+			}
+			create_alliance = FRA
+		}
+		add_favors = {
+   			who = FRA
+   			amount = 20
+		}
+		if = {
+			limit = {
+				exists = LOT
+				LOT ={
+					is_subject_of = ROOT
+				}
+			}
+			LOT = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = france_region
+							region = low_countries_region
+							region = north_german_region
+							region = south_german_region 
+						}
+					}
+					remove_core = LOT
+					add_core = FRA
+					cede_province = FRA
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				region = france_region
+				NOT = { area = lorraine_area }
+				NOT = { province_id = 181 }
+				NOT = { province_id = 87 }
+				NOT = { province_id = 1743 }
+				NOT = { province_id = 88 }
+				NOT = { province_id = 193 }
+				NOT = { province_id = 4764 }
+			}
+			remove_core = ROOT
+			add_core = FRA
+			cede_province = FRA
+		}
+		FRA = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = low_countries_region
+						region = north_german_region
+						region = south_german_region 
+						area = lorraine_area
+						province_id = 181
+						province_id = 87
+						province_id = 1743
+						province_id = 88
+						province_id = 193
+						province_id = 4764
+					}
+				}
+				remove_core = FRA
+				add_core = ROOT
+				cede_province = ROOT
+			}
+		}
+		if = {
+			limit = {
+				exists = GBR
+			}
+			break_alliance = GBR
+			remove_historical_friend = GBR
+			add_historical_rival = GBR
+			add_trust = {
+    				who = GBR
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else_if = {
+			limit = {
+				exists = ENG
+			}
+			break_alliance = ENG
+			remove_historical_friend = ENG
+			add_historical_rival = ENG
+			add_trust = {
+    				who = ENG
+    				value = -25
+   				mutual = yes
+			}
+		}
+		}
+	}
+
+	#befriend GBR/ENG
+	option = {
+		name = hlrmod_flavor_event.26.b
+		trigger = {
+			OR = {
+				exists = GBR
+				exists = ENG
+			}
+		}
+		custom_tooltip = hlr_anti_french_alliance.tooltip
+		hidden_effect = {
+		if = {
+			limit = {
+				exists = GBR
+			}
+			create_alliance = GBR
+			set_country_flag = hlr_anti_french_alliance_britain
+			add_favors = {
+   				who = GBR
+   				amount = 20
+			}
+		}
+		else = {
+			create_alliance = ENG
+			set_country_flag = hlr_anti_french_alliance_britain
+			add_favors = {
+   				who = ENG
+   				amount = 20
+			}
+		}
+		break_alliance = FRA
+		remove_historical_friend = FRA
+		add_historical_rival = FRA
+		add_trust = {
+    			who = FRA
+    			value = -25
+   			mutual = yes
+		}
+		}
+		
+	}
+	
+	#Anspruch
+	option = {
+		name = hlrmod_flavor_event.26.c
+		183 = { add_permanent_claim = HLR }
+		break_alliance = FRA
+		remove_historical_friend = FRA
+		add_historical_rival = FRA
+		add_trust = {
+    			who = FRA
+    			value = -25
+   			mutual = yes
+		}
+	}
+	
+	#neutral
+	option = {
+		name = hlrmod_flavor_event.26.d
+		add_stability = 1
+	}
+}
+
+country_event = {
+	id = hlrmod_flavor_event.27
+	title = hlrmod_flavor_event.27.title
+	desc = hlrmod_flavor_event.27.desc
+	picture = HLR_BRITAIN_eventPicture
+	is_triggered_only = yes
+	
+	#Alliance with Britain
+	option = {
+		name = hlrmod_flavor_event.27.a
+		trigger = {
+			OR = {
+				GBR = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+				ENG = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = GBR
+			}
+			create_alliance = GBR
+			add_favors = {
+   				who = GBR
+   				amount = 20
+			}
+		}
+		else = {
+			create_alliance = ENG
+			add_favors = {
+   				who = ENG
+   				amount = 20
+			}
+		}
+	}
+
+	#Anspruch
+	option = {
+		name = hlrmod_flavor_event.27.b
+		236 = { add_permanent_claim = HLR }
+		if = {
+			limit = {
+				exists = GBR
+			}
+			break_alliance = GBR
+			remove_historical_friend = GBR
+			add_historical_rival = GBR
+			add_trust = {
+    				who = GBR
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else = {
+			break_alliance = ENG
+			remove_historical_friend = ENG
+			add_historical_rival = ENG
+			add_trust = {
+    				who = ENG
+    				value = -25
+   				mutual = yes
+			}
+		}
+	}
+	
+	#Neutral
+	option = {
+		name = hlrmod_flavor_event.27.c
+		add_stability = 1
+	}
+}
+
+#Pruski change
+country_event = {
+	id = hlrmod_flavor_event.28
+	title = hlrmod_flavor_event.28.title
+	desc = hlrmod_flavor_event.28.desc
+	picture = HLR_PRUSKI_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = HLR
+		has_country_flag = hlr_gave_up_prussia
+		if = {
+			limit = {
+				exists = PLC
+			}
+			PLC = {
+				num_of_owned_provinces_with = {
+					area = east_prussia_area
+					culture = prussian
+					value = 3
+				}
+				num_of_owned_provinces_with = {
+					area = west_prussia_area
+					culture = prussian
+					value = 2
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				exists = POL
+			}
+			POL = {
+				num_of_owned_provinces_with = {
+					area = east_prussia_area
+					culture = prussian
+					value = 3
+				}
+				num_of_owned_provinces_with = {
+					area = west_prussia_area
+					culture = prussian
+					value = 2
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.28.a
+		4241 = {
+			change_culture = baltic_german
+		}
+		1935 = {
+			change_culture = baltic_german
+		}
+		37 = {
+			change_culture = baltic_german
+		}
+		if = {
+			limit = {
+				exists = PLC
+			}
+			every_province = {
+				limit = { 
+					culture = prussian
+					owner = {
+						tag = PLC
+					}
+				}
+				change_culture = pruski
+			}
+		}
+		else_if = {
+			limit = {
+				exists = POL
+			}
+			every_province = {
+				limit = { 
+					culture = prussian
+					owner = {
+						tag = POL
+					}
+				}
+				change_culture = pruski
+			}
+		}
+	}
+}
+
+#Coalition STart
+country_event = {
+	id = hlrmod_flavor_event.29
+	title = hlrmod_flavor_event.29.title
+	desc = hlrmod_flavor_event.29.desc
+	picture = HLR_NEWGP_eventPicture
+	fire_only_once = yes
+	trigger = {
+		exists = HLR
+		tag = HLR
+		any_other_great_power = {
+			capital_scope = {
+				continent = europe
+			}
+			NOT = { alliance_with = ROOT }
+		}
+		NOT = { has_country_flag = hlr_had_greatpower_coalition }
+	}
+	
+	mean_time_to_happen = {
+		months = 48
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.29.a
+		every_country = {
+			limit = {
+				capital_scope = {
+					continent = europe
+				}
+				is_great_power = yes
+				NOT = { tag = ROOT }
+				NOT = { alliance_with = ROOT }
+			}
+			add_casus_belli = {
+    				target = ROOT
+    				type = cb_hlr_newgp
+   				months = 24
+			}
+			hidden_effect = {
+				add_trust = {
+    					who = ROOT
+    					value = -100
+				}
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.31
+			days = 80
+		}
+	}
+}
+
+#Normandy British
+country_event = {
+	id = hlrmod_flavor_event.30
+	title = hlrmod_flavor_event.30.title
+	desc = hlrmod_flavor_event.30.desc
+	picture = HLR_NORMANDY_eventPicture
+	fire_only_once = yes
+	trigger = {
+		tag = HLR
+		has_country_flag = hlr_anti_french_alliance_britain
+		OR = {
+			alliance_with = GBR
+			alliance_with = ENG
+		}
+		OR = {
+			is_in_war = {
+    				attacker_leader = ROOT
+    				defender_leader = FRA
+				participants = GBR
+				war_score = 70
+			}
+			is_in_war = {
+    				attacker_leader = ROOT
+    				defender_leader = FRA
+				participants = ENG
+				war_score = 70
+			}
+		}
+		FRA = {
+			num_of_owned_provinces_with = {
+				area = normandy_area
+				value = 4
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.30.a
+		white_peace = FRA
+		if = {
+			limit = {
+				alliance_with = GBR
+			}
+			FRA = {
+				every_owned_province = {
+					limit = {
+						area = normandy_area
+					}
+					remove_core = FRA
+					add_core = GBR
+					cede_province = GBR
+				}
+			}
+			add_trust = {
+   				who = GBR
+    				value = 25
+   				mutual = yes
+			}
+			add_trust = {
+   				who = FRA
+    				value = -25
+   				mutual = yes
+			}
+		}
+		else_if = {
+			limit = {
+				alliance_with = ENG
+			}
+			FRA = {
+				every_owned_province = {
+					limit = {
+						area = normandy_area
+					}
+					remove_core = FRA
+					add_core = ENG
+					cede_province = ENG
+				}
+			}
+			add_trust = {
+   				who = ENG
+    				value = 25
+   				mutual = yes
+			}
+			add_trust = {
+   				who = FRA
+    				value = -25
+   				mutual = yes
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.30.b
+		if = {
+			limit = {
+				alliance_with = GBR
+			}
+			add_trust = {
+    				who = GBR
+   				value = -25
+    				mutual = yes
+			}
+		}
+		else_if = {
+			limit = {
+				alliance_with = ENG
+			}
+			add_trust = {
+    				who = ENG
+   				value = -25
+    				mutual = yes
+			}
+		}
+	}
+}
+
+#Coalition End
+country_event = {
+	id = hlrmod_flavor_event.31
+	title = hlrmod_flavor_event.31.title
+	desc = hlrmod_flavor_event.31.desc
+	picture = HLR_COALITION_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.31.a
+		every_country = {
+			limit = {
+				capital_scope = {
+					continent = europe
+				}
+				is_great_power = yes
+				NOT = { tag = HLR }
+				NOT = { alliance_with = HLR }
+			}
+			declare_war_with_cb = {
+				who = HLR
+				casus_belli = cb_hlr_newgp
+			}
+			hidden_effect = {
+				add_trust = {
+    					who = ROOT
+    					value = 50
+				}
+			}
+		}
+		set_country_flag = hlr_had_greatpower_coalition
+	}
+}
+
+#Release Hungary?
+country_event = {
+	id = hlrmod_flavor_event.32
+	title = hlrmod_flavor_event.32.title
+	desc = hlrmod_flavor_event.32.desc
+	picture = HLR_HUNGARY_RELEASE_eventPicture
+	is_triggered_only = yes
+	
+	#keep them owned
+	option = {
+		name = hlrmod_flavor_event.32.a
+		custom_tooltip = hlr_hungarians_angry.tooltip
+		hidden_effect = {
+		country_event = {
+			id = hlrmod_flavor_event.34
+			days = 360
+		}
+		}
+	}
+	
+	#keep them owned, but station army
+	option = {
+		name = hlrmod_flavor_event.32.b
+		add_treasury = -500
+		mil_power_cost = 200
+		add_manpower = -30
+		country_event = {
+			id = hlrmod_flavor_event.33
+			days = 30
+		}
+	}
+
+	#release them as junior partner
+	option = {
+		name = hlrmod_flavor_event.32.c
+		hidden_effect = {
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = alfold_area
+					area = transdanubia_area
+					area = slovakia_area
+					area = southern_transylvania_area
+					area = transylvania_area
+					area = croatia_area
+					area = slavonia_area
+				}
+			}
+			remove_core = ROOT
+			add_core = HUN
+		}
+		}
+		release = HUN
+		create_union = HUN
+		country_event = {
+			id = hlrmod_flavor_event.33
+			days = 30
+		}
+	}
+}
+
+#Ressourcen für Ungarn
+country_event = {
+	id = hlrmod_flavor_event.33
+	title = hlrmod_flavor_event.33.title
+	desc = hlrmod_flavor_event.33.desc
+	picture = HLR_HUNGARIAN_SUPERVISION_eventPicture
+	is_triggered_only = yes
+	
+	#Keine (weiteren) Ressourcen
+	option = {
+		name = hlrmod_flavor_event.33.a
+		custom_tooltip = hlr_no_resources.tooltip
+		hidden_effect = {
+		country_event = {
+			id = hlrmod_flavor_event.34
+			days = 360
+		}
+		}
+	}
+	
+	#wenige Ressourcen
+	option = {
+		name = hlrmod_flavor_event.33.b
+		add_treasury = -400
+		mil_power_cost = 200
+		add_manpower = -30
+		custom_tooltip = hlr_low_resources.tooltip
+		hidden_effect = {
+		country_event = {
+			id = hlrmod_flavor_event.35
+			days = 360
+		}
+		}
+	}
+
+	#Viele Ressourcen
+	option = {
+		name = hlrmod_flavor_event.33.c
+		add_treasury = -2000
+		mil_power_cost = 400
+		add_manpower = -80
+		custom_tooltip = hlr_high_resources.tooltip
+		hidden_effect = {
+		country_event = {
+			id = hlrmod_flavor_event.36
+			days = 360
+		}
+		}
+	}
+	
+	#Lasst sie frei
+	option = {
+		name = hlrmod_flavor_event.33.d
+		if = {
+			limit = {
+				HUN = { is_lesser_in_union = yes }
+			}
+			break_union = HUN
+		}
+		else_if = {
+			limit = {
+				HUN = { is_subject_of = ROOT }
+			}
+			HUN = {
+				grant_independence = yes
+			}
+		}
+		else = {
+			hidden_effect = {
+				every_province = {
+					limit = {
+						OR = {
+							area = alfold_area
+							area = transdanubia_area
+							area = slovakia_area
+							area = southern_transylvania_area
+							area = transylvania_area
+							area = croatia_area
+							area = slavonia_area
+						}
+					}
+					remove_core = ROOT
+					add_core = HUN
+				}
+			}
+			release = HUN
+		}
+		create_alliance = HUN
+		set_country_flag = hlr_dealt_with_hungarian_revolt
+	}
+}
+
+#Ungarische Unabhängigkeit right away
+country_event = {
+	id = hlrmod_flavor_event.34
+	title = hlrmod_flavor_event.34.title
+	desc = hlrmod_flavor_event.34.desc
+	picture = HLR_HUNGARY_REBELLION_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.34.a
+		hidden_effect = {
+		every_province = {
+			limit = {
+				OR = {
+					area = alfold_area
+					area = transdanubia_area
+					area = slovakia_area
+					area = southern_transylvania_area
+					area = transylvania_area
+					area = croatia_area
+					area = slavonia_area
+				}
+			}
+			add_core = HUN
+		}
+		}
+		if = {
+			limit = {
+				NOT = { exists = HUN }
+			}
+			release = HUN
+		}
+		else = {
+			HUN = {
+				grant_independence = yes
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = alfold_area
+					area = transdanubia_area
+					area = slovakia_area
+					area = southern_transylvania_area
+					area = transylvania_area
+					area = croatia_area
+					area = slavonia_area
+				}
+			}
+			cede_province = HUN
+		}
+		HUN = {
+			define_ruler = {
+				name = "Janos"
+				dynasty = "Zapolya"
+				adm = 5
+				dip = 5
+				mil = 6
+				age = 35
+				claim = 80
+				male = yes
+				culture = hungarian
+			}
+		}
+		add_casus_belli = {
+    			target = HUN
+    			type = cb_restore_personal_union
+    			months = 24
+		}
+		set_country_flag = hlr_dealt_with_hungarian_revolt
+	}
+}
+
+#Grosse Rebellion
+country_event = {
+	id = hlrmod_flavor_event.35
+	title = hlrmod_flavor_event.35.title
+	desc = hlrmod_flavor_event.35.desc
+	picture = HLR_HUNGARY_REBELLION_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.35.a
+		if = {
+			limit = {
+				exists = HUN
+				4125 = {
+					owner = {
+						tag = HUN
+					}
+				}
+			}
+			4125 = {
+				spawn_rebels = {
+    					type = pretender_rebels
+					culture = hungarian
+    					size = 4
+					leader = "Janos Zapolya"
+					win = yes
+				}
+			}
+		}
+		else = {
+			4125 = {
+				spawn_rebels = {
+    					type = independence_rebels
+					culture = hungarian
+    					size = 4
+					leader = "Janos Zapolya"
+					win = yes
+				}
+			}
+		}
+		1951 = {
+			spawn_rebels = {
+    				type = anti_tax_rebels
+				culture = hungarian
+    				size = 4
+				win = yes
+			}
+		}
+		158 = {
+			spawn_rebels = {
+    				type = anti_tax_rebels
+				culture = hungarian
+    				size = 4
+				win = yes
+			}
+		}
+		154 = {
+			spawn_rebels = {
+    				type = anti_tax_rebels
+				culture = hungarian
+    				size = 4
+				win = yes
+			}
+		}
+		set_country_flag = hlr_dealt_with_hungarian_revolt
+	}
+}
+
+#Kleine Rebellion
+country_event = {
+	id = hlrmod_flavor_event.36
+	title = hlrmod_flavor_event.36.title
+	desc = hlrmod_flavor_event.36.desc
+	picture = HLR_HUNGARY_REBELLION_eventPicture
+	is_triggered_only = yes
+	
+	option = {
+		name = hlrmod_flavor_event.36.a
+		if = {
+			limit = {
+				exists = HUN
+				4125 = {
+					owner = {
+						tag = HUN
+					}
+				}
+			}
+			4125 = {
+				spawn_rebels = {
+    					type = pretender_rebels
+					culture = hungarian
+    					size = 3
+					leader = "Janos Zapolya"
+					win = yes
+				}
+			}
+		}
+		else = {
+			4125 = {
+				spawn_rebels = {
+    					type = independence_rebels
+					culture = hungarian
+    					size = 3
+					leader = "Janos Zapolya"
+					win = yes
+				}
+			}
+		}
+		154 = {
+			spawn_rebels = {
+    				type = anti_tax_rebels
+				culture = hungarian
+    				size = 3
+				win = yes
+			}
+		}
+		set_country_flag = hlr_dealt_with_hungarian_revolt
+	}
+}
+
+#Transleithanien
+country_event = {
+	id = hlrmod_flavor_event.37
+	title = hlrmod_flavor_event.37.title
+	desc = hlrmod_flavor_event.37.desc
+	picture = HLR_TRANSLEITHANIA_eventPicture
+	is_triggered_only = yes
+	
+	#Alles so wie es ist
+	option = {
+		name = hlrmod_flavor_event.37.a
+		custom_tooltip = hlr_hungarian_crown_hungary.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					culture = hungarian
+				}
+				add_province_modifier = {
+					name = hlr_imperial_hungary_prov_mod
+					duration = 10800
+				}
+			}
+		}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.38
+			days = 30
+		}
+	}
+
+	#Alles als Reichskönigtum
+	option = {
+		name = hlrmod_flavor_event.37.b
+		custom_tooltip = hlr_hungary_kingdom.tooltip
+		hidden_effect = {
+		create_subject = {
+			subject = HUN
+			subject_type = imperialkingdom
+		}
+		HUN = { 
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.38
+			days = 30
+		}
+	}
+
+	#Alles wie es ist ausser Transsilvanien abspalten
+	option = {
+		name = hlrmod_flavor_event.37.c
+		custom_tooltip = hlr_only_transsilv.tooltip
+		hidden_effect = {
+		every_province = {
+			limit = {
+				OR = {
+					area = southern_transylvania_area
+					area = transylvania_area
+				}
+			}
+			add_core = TRA
+		}
+		HUN = {
+			release = TRA
+		}
+		create_subject = {
+			subject = TRA
+			subject_type = imperialduchy
+		}
+		TRA = {
+			set_government_rank = 1
+		}
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_transilvania
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.38
+			days = 30
+		}
+	}
+
+	#Reichskönigtum und Transsilvanien abspalten
+	option = {
+		name = hlrmod_flavor_event.37.d
+		custom_tooltip = hlr_hungary_plus_transsilv.tooltip
+		hidden_effect = {
+		every_province = {
+			limit = {
+				OR = {
+					area = southern_transylvania_area
+					area = transylvania_area
+				}
+			}
+			add_core = TRA
+		}
+		HUN = {
+			release = TRA
+		}
+		create_subject = {
+			subject = HUN
+			subject_type = imperialkingdom
+		}
+		TRA = {
+			set_government_rank = 1
+		}
+		create_subject = {
+			subject = TRA
+			subject_type = imperialduchy
+		}
+		HUN = { 
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_transilvania
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.38
+			days = 30
+		}
+	}
+}
+
+#Illyrien
+country_event = {
+	id = hlrmod_flavor_event.38
+	title = hlrmod_flavor_event.38.title
+	desc = hlrmod_flavor_event.38.desc
+	picture = HLR_ILLYRIA_eventPicture
+	is_triggered_only = yes
+	
+	#Alles so wie es ist
+	option = {
+		name = hlrmod_flavor_event.38.a
+		custom_tooltip = hlr_hungarian_crown_balkan.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = croatian
+						culture = bosnian
+						culture = serbian
+						culture = dalmatian
+					}
+				}
+				add_province_modifier = {
+					name = hlr_imperial_hungary_prov_mod
+					duration = 10800
+				}
+			}
+		}
+		}
+		if = {
+			limit = {
+				HUN = {
+					num_of_owned_provinces_with = {
+						value = 1
+						OR = {
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.39
+				days = 30
+			}
+		}
+	}
+
+	#Illyrisches Königreich ohne Kroatien
+	option = {
+		name = hlrmod_flavor_event.38.b
+		custom_tooltip = hlr_release_illyria_no_croatia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 1828
+						area = bosnia_area
+						area = east_adriatic_coast_area
+						area = rascia_area
+						area = serbia_area
+					}
+				}
+				add_core = ILY
+			}
+			release = ILY
+		}
+		create_subject = {
+			subject = ILY
+			subject_type = imperialkingdom
+		}
+		ILY = {
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_illyria
+			}
+		}
+		if = {
+			limit = {
+				HUN = {
+					num_of_owned_provinces_with = {
+						value = 1
+						OR = {
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.39
+				days = 30
+			}
+		}
+	}
+
+	#Illyrisches Königreich mit Kroatien
+	option = {
+		name = hlrmod_flavor_event.38.c
+		custom_tooltip = hlr_release_illyria_plus_croatia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = croatia_area
+						area = slavonia_area
+						area = bosnia_area
+						area = east_adriatic_coast_area
+						area = rascia_area
+						area = serbia_area
+					}
+				}
+				add_core = ILY
+			}
+			release = ILY
+		}
+		create_subject = {
+			subject = ILY
+			subject_type = imperialkingdom
+		}
+		ILY = {
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_illyria_plus_croatia
+			}
+		}
+		if = {
+			limit = {
+				HUN = {
+					num_of_owned_provinces_with = {
+						value = 1
+						OR = {
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.39
+				days = 30
+			}
+		}
+	}
+	
+	#Illyrien release ohne Kroatien
+	option = {
+		name = hlrmod_flavor_event.38.d
+		custom_tooltip = hlr_free_illyria_no_croatia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 1828
+						area = bosnia_area
+						area = east_adriatic_coast_area
+						area = rascia_area
+						area = serbia_area
+					}
+				}
+				add_core = ILY
+			}
+			release = ILY
+		}
+		ILY = {
+			set_government_rank = 2
+		}
+		create_alliance = ILY
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_illyria
+			}
+		}
+		if = {
+			limit = {
+				HUN = {
+					num_of_owned_provinces_with = {
+						value = 1
+						OR = {
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.39
+				days = 30
+			}
+		}
+	}
+	
+	#Illyrien release mit Kroatien
+	option = {
+		name = hlrmod_flavor_event.38.e
+		custom_tooltip = hlr_free_illyria_plus_croatia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = croatia_area
+						area = slavonia_area
+						area = bosnia_area
+						area = east_adriatic_coast_area
+						area = rascia_area
+						area = serbia_area
+					}
+				}
+				add_core = ILY
+			}
+			release = ILY
+		}
+		ILY = {
+			set_government_rank = 2
+		}
+		create_alliance = ILY
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_illyria_plus_croatia
+			}
+		}
+		if = {
+			limit = {
+				HUN = {
+					num_of_owned_provinces_with = {
+						value = 1
+						OR = {
+							area = wallachia_area
+							area = moldavia_area
+						}
+					}
+				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.39
+				days = 30
+			}
+		}
+	}
+}
+
+#Walachei und Moldawien
+country_event = {
+	id = hlrmod_flavor_event.39
+	title = hlrmod_flavor_event.39.title
+	desc = hlrmod_flavor_event.39.desc
+	picture = HLR_WALLACHIA_eventPicture
+	is_triggered_only = yes
+	
+	#Alles so wie es ist
+	option = {
+		name = hlrmod_flavor_event.39.a
+		custom_tooltip = hlr_hungarian_crown_romania.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					culture = romanian
+				}
+				add_province_modifier = {
+					name = hlr_imperial_hungary_prov_mod
+					duration = 10800
+				}
+			}
+		}
+		}
+	}
+	
+	#Release
+	option = {
+		name = hlrmod_flavor_event.39.b
+		custom_tooltip = hlr_release_wallachia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = wallachia_area
+						area = moldavia_area
+					}
+				}
+				add_core = WAL
+			}
+			release = WAL
+		}
+		create_subject = {
+			subject = WAL
+			subject_type = imperialduchy
+		}
+		WAL = {
+			set_government_rank = 1
+		}
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_romania
+			}
+		}
+	}
+
+	#Unabhängig
+	option = {
+		name = hlrmod_flavor_event.39.c
+		custom_tooltip = hlr_release_free_wallachia.tooltip
+		hidden_effect = {
+		HUN = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = wallachia_area
+						area = moldavia_area
+					}
+				}
+				add_core = WAL
+			}
+			release = WAL
+		}
+		WAL = {
+			set_government_rank = 1
+		}
+		create_alliance = WAL
+		}
+		HUN = { 
+			add_opinion = {
+				who = ROOT
+				modifier = took_romania
+			}
+		}
+	}
+}
+
+#Elect for HUN
+country_event = {
+	id = hlrmod_flavor_event.40
+	title = hlrmod_flavor_event.40.title
+	desc = hlrmod_flavor_event.40.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Elect Italian
+	option = {
+		name = hlrmod_flavor_event.40.a
+		HUN = {
+			define_ruler = {
+				culture = hungarian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 6
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.40.b
+		HUN = {
+			define_ruler = {
+				culture = hungarian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 6
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.40.c
+		HUN = {
+			define_ruler = {
+				culture = hungarian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 3
+				mil = 6
+			}
+		}
+	}
+	#Elect von Habsburg
+	option = {
+		name = hlrmod_flavor_event.40.d
+		HUN = {
+			define_ruler = {
+				dynasty = "von Habsburg"
+				culture = austrian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.40.e
+		HUN = {
+			define_ruler = {
+				dynasty = "von Hohenzollern"
+				culture = saxon
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.40.f
+		HUN = {
+			define_ruler = {
+				dynasty = "von Wittelsbach"
+				culture = bavarian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+}
+
+#Elect for ILY
+country_event = {
+	id = hlrmod_flavor_event.41
+	title = hlrmod_flavor_event.41.title
+	desc = hlrmod_flavor_event.41.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Elect Italian
+	option = {
+		name = hlrmod_flavor_event.41.a
+		ILY = {
+			define_ruler = {
+				culture = dalmatian
+				dynasty = "Visconti"
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.41.b
+		ILY = {
+			define_ruler = {
+				culture = bosnian
+				dynasty = "Santic"
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.41.c
+		ILY = {
+			define_ruler = {
+				culture = serbian
+				dynasty = "Brankovic"
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Habsburg
+	option = {
+		name = hlrmod_flavor_event.41.d
+		ILY = {
+			define_ruler = {
+				dynasty = "von Habsburg"
+				culture = austrian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.41.e
+		ILY = {
+			define_ruler = {
+				dynasty = "von Hohenzollern"
+				culture = saxon
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.41.f
+		ILY = {
+			define_ruler = {
+				dynasty = "von Wittelsbach"
+				culture = bavarian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+}
+
+#Bäcker und Müllerzunft
+country_event = {
+	id = hlrmod_flavor_event.42
+	title = hlrmod_flavor_event.42.title
+	desc = hlrmod_flavor_event.42.desc
+	picture = HLR_BAECKER_MUELLER_eventPicture
+	is_triggered_only = yes
+
+	#Aachen
+	option = {
+		name = hlrmod_flavor_event.42.a
+		1878 = {
+			add_province_modifier = {
+				name = hlr_baecker_mueller_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.43
+		}
+	}
+
+	#Köln
+	option = {
+		name = hlrmod_flavor_event.42.b
+		85 = {
+			add_province_modifier = {
+				name = hlr_baecker_mueller_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.43
+		}
+	}
+	
+	#München
+	option = {
+		name = hlrmod_flavor_event.42.c
+		65 = {
+			add_province_modifier = {
+				name = hlr_baecker_mueller_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.43
+		}
+	}
+}
+
+#Fischerzunft
+country_event = {
+	id = hlrmod_flavor_event.43
+	title = hlrmod_flavor_event.43.title
+	desc = hlrmod_flavor_event.43.desc
+	picture = HLR_FISCHER_eventPicture
+	is_triggered_only = yes
+
+	#Hamburg
+	option = {
+		name = hlrmod_flavor_event.43.a
+		44 = {
+			add_province_modifier = {
+				name = hlr_fischer_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.44
+		}
+	}
+
+	#Bremen
+	option = {
+		name = hlrmod_flavor_event.43.b
+		1874 = {
+			add_province_modifier = {
+				name = hlr_fischer_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.44
+		}
+	}
+	
+	#Stralsund
+	option = {
+		name = hlrmod_flavor_event.43.c
+		47 = {
+			add_province_modifier = {
+				name = hlr_fischer_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.44
+		}
+	}
+}
+
+#Weber und Tuchmacherzunft
+country_event = {
+	id = hlrmod_flavor_event.44
+	title = hlrmod_flavor_event.44.title
+	desc = hlrmod_flavor_event.44.desc
+	picture = HLR_WEBER_TUCHMACHER_eventPicture
+	is_triggered_only = yes
+
+	#Augsburg
+	option = {
+		name = hlrmod_flavor_event.44.a
+		1868 = {
+			add_province_modifier = {
+				name = hlr_weber_tuchmacher_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.45
+		}
+	}
+
+	#Dortmund
+	option = {
+		name = hlrmod_flavor_event.44.b
+		69 = {
+			add_province_modifier = {
+				name = hlr_weber_tuchmacher_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.45
+		}
+	}
+	
+	#Magdeburg
+	option = {
+		name = hlrmod_flavor_event.44.c
+		52 = {
+			add_province_modifier = {
+				name = hlr_weber_tuchmacher_mod
+				duration = -1
+			}
+		}
+		country_event = {
+			id = hlrmod_flavor_event.45
+		}
+	}
+}
+
+#Schmiedezunft
+country_event = {
+	id = hlrmod_flavor_event.45
+	title = hlrmod_flavor_event.45.title
+	desc = hlrmod_flavor_event.45.desc
+	picture = HLR_SCHMIEDE_eventPicture
+	is_triggered_only = yes
+
+	#Goslar
+	option = {
+		name = hlrmod_flavor_event.45.a
+		4742 = {
+			add_province_modifier = {
+				name = hlr_schmiede_mod
+				duration = -1
+			}
+		}
+	}
+
+	#Dresden
+	option = {
+		name = hlrmod_flavor_event.45.b
+		61 = {
+			add_province_modifier = {
+				name = hlr_schmiede_mod
+				duration = -1
+			}
+		}
+	}
+	
+	#Bern
+	option = {
+		name = hlrmod_flavor_event.45.c
+		165 = {
+			add_province_modifier = {
+				name = hlr_schmiede_mod
+				duration = -1
+			}
+		}
+	}
+}
+
+#OKM Revolt Start
+country_event = {
+	id = hlrmod_flavor_event.46
+	title = hlrmod_flavor_event.46.title
+	desc = hlrmod_flavor_event.46.desc
+	picture = HLR_OKMREVOLTSTART_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.46.a
+		OKM = { 
+			add_opinion = {
+				who = ROOT
+				modifier = hlr_okm_revolting
+			}
+		}
+	}
+}
+
+#OKM Revolt End
+country_event = {
+	id = hlrmod_flavor_event.47
+	title = hlrmod_flavor_event.47.title
+	desc = { trigger = {
+			OKM = { is_subject_of = ROOT }
+		}
+		desc = hlrmod_flavor_event.47.desc.subject
+	}
+	desc = { trigger = {
+			NOT = { OKM = { is_subject_of = ROOT }}
+		}
+		desc = hlrmod_flavor_event.47.desc.independent
+	}
+	picture = {
+		trigger = {
+			OKM = { is_subject_of = ROOT }
+		}
+		picture = HLR_OKMREVOLTEND_eventPicture
+	}
+	picture = {
+		trigger = {
+			NOT = { OKM = { is_subject_of = ROOT }}
+		}
+		picture = HLR_OKMREVOLTEND_INDEPENDENT_eventPicture
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.47.a
+		trigger = {
+			OKM = { is_subject_of = ROOT }
+		}
+		OKM = { 
+			remove_opinion = {
+				who = ROOT
+				modifier = hlr_okm_revolting
+			}
+			add_country_modifier = {
+				name = hlr_okm_unsuccessful_revolt
+				duration = -1
+			}
+		}
+		set_country_flag = already_had_okm_revolt
+	}
+
+	option = {
+		name = hlrmod_flavor_event.47.b
+		trigger = {
+			NOT = { OKM = { is_subject_of = ROOT }}
+		}
+		OKM = { 
+			remove_opinion = {
+				who = ROOT
+				modifier = hlr_okm_revolting
+			}
+			add_country_modifier = {
+				name = hlr_okm_successful_revolt
+				duration = -1
+			}
+		}
+		set_country_flag = already_had_okm_revolt
+	}
+}
+
+#Emperor of Java WARNING
+country_event = {
+	id = hlrmod_flavor_event.48
+	title = hlrmod_flavor_event.48.title
+	desc = hlrmod_flavor_event.48.desc
+	picture = HLR_JAVAWARNING_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_country_modifier = hlr_okm_tradeflow_cut }
+		NOT = { has_country_modifier = hlr_okm_property_redistributed }
+		NOT = { has_country_modifier = hlr_okm_emperor_diplo }
+		NOT = { has_country_modifier = hlr_okm_stationed_troops }
+		NOT = { has_country_modifier = hlr_okm_exchanged_rulers }
+	}
+
+	option = {
+		name = hlrmod_flavor_event.48.a
+		add_treasury = 500
+		add_mil_power = 50
+		add_dip_power = 50
+		add_adm_power = 50
+		set_country_flag = hlr_had_okm_warning
+	}
+}
+
+#Emperor of Java
+country_event = {
+	id = hlrmod_flavor_event.49
+	title = hlrmod_flavor_event.49.title
+	desc = hlrmod_flavor_event.49.desc
+	picture = HLR_EMPERORJAVA_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		NOT = { has_country_modifier = hlr_okm_tradeflow_cut }
+		NOT = { has_country_modifier = hlr_okm_property_redistributed }
+		NOT = { has_country_modifier = hlr_okm_emperor_diplo }
+		NOT = { has_country_modifier = hlr_okm_stationed_troops }
+		NOT = { has_country_modifier = hlr_okm_exchanged_rulers }
+		has_country_flag = hlr_had_okm_warning
+	}
+
+	option = {
+		name = hlrmod_flavor_event.49.a
+		OKM = {
+			grant_independence = yes
+			change_government = monarchy
+			set_government_rank = 3
+			override_country_name = KAISERREICH_JAVA
+		}
+		hidden_effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.54
+				days = 30
+			}
+		}
+	}
+}
+
+#OKM Plundering Bandits
+country_event = {
+	id = hlrmod_flavor_event.50
+	title = hlrmod_flavor_event.50.title
+	desc = hlrmod_flavor_event.50.desc
+	picture = HLR_PLUNDERINGBANDITS_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.50.a
+		OKM = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 4
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.50.b
+		add_manpower = -10
+		OKM = {
+			random_owned_province = {
+				spawn_rebels = {
+					type = anti_tax_rebels
+					size = 2
+				}
+			}
+		}
+	}
+}
+
+#OKM Native Massacre
+country_event = {
+	id = hlrmod_flavor_event.51
+	title = hlrmod_flavor_event.51.title
+	desc = hlrmod_flavor_event.51.desc
+	picture = HLR_NATIVEMASSACRE_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = hlrmod_flavor_event.51.a
+		OKM = {
+			random_owned_province = {
+				add_province_modifier = {
+					name = great_indigenous_anger
+					duration = 730
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.51.b
+		add_manpower = -10
+		OKM = {
+			random_owned_province = {
+				add_province_modifier = {
+					name = lesser_indigenous_anger
+					duration = 365
+				}
+			}
+		}
+	}
+}
+
+#OKM Fire in the Capital
+country_event = {
+	id = hlrmod_flavor_event.52
+	title = hlrmod_flavor_event.52.title
+	desc = hlrmod_flavor_event.52.desc
+	picture = HLR_FIRECAPITAL_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hlrmod_flavor_event.52.a
+		OKM = {
+			capital_scope = {
+				add_base_tax = -2
+				add_base_production = -2
+				add_base_manpower = -2
+				add_devastation = 80
+			}
+		}
+		
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.52.b
+		add_manpower = -1
+		add_treasury = -500
+		adm_power_cost = 50
+		OKM = {
+			capital_scope = {
+				add_base_tax = -1
+				add_base_production = -1
+				add_base_manpower = -1
+				add_devastation = 40
+			}
+		}
+	}
+}
+
+#OKM Export Collapse
+country_event = {
+	id = hlrmod_flavor_event.53
+	title = hlrmod_flavor_event.53.title
+	desc = hlrmod_flavor_event.53.desc
+	picture = HLR_EXPORTCOLLAPSE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = hlrmod_flavor_event.53.a
+		OKM = {
+			add_country_modifier = {
+				name = hlr_okm_heavy_trade_collapse
+				duration = 730
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = hlr_okm_let_our_trade_collapse
+			}
+		}
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.53.b
+		dip_power_cost = 100
+		add_treasury = -2000
+		OKM = {
+			add_country_modifier = {
+				name = hlr_okm_light_trade_collapse
+				duration = 730
+			}
+		}
+	}
+}
+
+#Von Lothringen wird Herrscher (HIDDEN)
+country_event = {
+	id = hlrmod_flavor_event.54
+	title = hlrmod_flavor_event.54.title
+	desc = hlrmod_flavor_event.54.desc
+	picture = HLR_EMPERORJAVA_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+
+	option = {
+		name = hlrmod_flavor_event.54.a
+		ai_chance = { factor = 100 }
+		OKM = {
+			define_ruler = {
+				name = "Gerhard"
+				dynasty = "von Lothringen"
+				adm = 5
+				dip = 4
+				mil = 6
+				age = 33
+				claim = 70
+				male = yes
+				culture = alsatian
+			}
+		}
+	}
+}
+
+#WESTERN Conversion Choice
+country_event = {
+	id = hlrmod_flavor_event.55
+	title = hlrmod_flavor_event.55.title
+	desc = hlrmod_flavor_event.55.desc
+	picture = HLR_BOHEMIA_eventPicture
+	is_triggered_only = yes
+	
+	#Conversion
+	option = {
+		name = hlrmod_flavor_event.55.a
+		custom_tooltip = french_circles_and_western_conversion.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					OR = { 
+						culture = wallonian
+						culture = burgundian
+					}					
+				}
+				add_province_modifier = {
+					name = hlr_french_circles
+					duration = 10950
+ 				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.12
+				days = 5475
+			}
+			country_event = {
+				id = hlrmod_flavor_event.11
+				days = 7300
+			}
+			country_event = {
+				id = hlrmod_flavor_event.5
+				days = 10950
+			}
+		}
+		add_treasury = -1000
+		adm_power_cost = 500
+	}
+	
+	#Reichskönigtum Lotharingien
+	option = {
+		name = hlrmod_flavor_event.55.b
+		custom_tooltip = hlr_lotharingia_release.tooltip
+		hidden_effect = {
+		every_owned_province = {
+			limit = {
+				OR = {
+					region = france_region
+					area = wallonia_area
+				}
+			}
+			remove_core = ROOT
+			add_core = LOT
+		}
+		release = LOT
+		create_subject = {
+			subject = LOT
+			subject_type = imperialkingdom
+		}
+		add_historical_friend = LOT
+		LOT = { 
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		add_treasury = -500
+		adm_power_cost = 250
+		set_country_flag = german_wallonians
+	}
+	
+	#Unruhe in Kauf nehmen
+	option = {
+		name = hlrmod_flavor_event.55.c
+		1866 = { 
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+		set_country_flag = german_wallonians
+	}
+}
+
+#BOHEMIA Conversion Choice
+country_event = {
+	id = hlrmod_flavor_event.56
+	title = hlrmod_flavor_event.56.title
+	desc = hlrmod_flavor_event.56.desc
+	picture = HLR_BOHEMIA_eventPicture
+	is_triggered_only = yes
+	
+	#Conversion
+	option = {
+		name = hlrmod_flavor_event.56.a
+		custom_tooltip = slavic_circles_and_bohemian_conversion.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					culture = czech
+				}
+				add_province_modifier = {
+					name = hlr_slavic_circles
+					duration = 10950
+ 				}
+			}
+			country_event = {
+				id = hlrmod_flavor_event.9
+				days = 5475
+			}
+			country_event = {
+				id = hlrmod_flavor_event.10
+				days = 7300
+			}
+			country_event = {
+				id = hlrmod_flavor_event.1
+				days = 10950
+			}
+		}
+		add_treasury = -1000
+		adm_power_cost = 500
+	}
+	
+	#Reichskönigtum Böhmen
+	option = {
+		name = hlrmod_flavor_event.56.b
+		custom_tooltip = hlr_bohemia_release.tooltip
+		hidden_effect = {
+		every_province = {
+			remove_core = BOH
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = moravia_area
+					area = erzgebirge_area
+					area = bohemia_area
+				}
+			}
+			remove_core = ROOT
+			add_core = BOH
+		}
+		release = BOH
+		create_subject = {
+			subject = BOH
+			subject_type = imperialkingdom
+		}
+		add_historical_friend = BOH
+		BOH = { 
+			add_country_modifier = {
+				name = rit_deep_ties
+				duration = -1
+			}
+			set_government_rank = 2
+			add_government_reform = reichskoenigtum
+			add_manpower = 30
+		}
+		}
+		add_treasury = -500
+		adm_power_cost = 250
+		set_country_flag = german_bohemians
+	}
+	
+	#Unruhe in Kauf nehmen
+	option = {
+		name = hlrmod_flavor_event.56.c
+		266 = { 
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+		set_country_flag = german_bohemians
+	}
+}
+
+#Separatism start event
+country_event = {
+	id = hlrmod_flavor_event.57
+	title = hlrmod_flavor_event.57.title
+	desc = hlrmod_flavor_event.57.desc
+	picture = HLR_SEPARATISM_eventPicture
+	fire_only_once = yes
+	trigger = {
+		exists = HLR
+		tag = HLR
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.57.a
+		custom_tooltip = adding_separatism.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = { 
+					NOT = { culture_group = germanic }
+					continent = europe
+					NOT = { area = lusatia_area }
+				}
+				add_province_modifier = {
+					name = hlr_separatist_sentiment
+					duration = -1
+ 				}
+			}
+			set_country_flag = hlr_separatism_is_present
+		}
+	}
+}
+
+#Italien keine offene Revolte
+country_event = {
+	id = hlrmod_flavor_event.58
+	title = hlrmod_flavor_event.58.title
+	desc = hlrmod_flavor_event.58.desc
+	picture = HLR_OKMREVOLTEND_INDEPENDENT_eventPicture
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = hlrmod_flavor_event.58.a
+		custom_tooltip = italian_rebellion.tooltip
+		hidden_effect = {
+			every_province = {
+				limit = {
+					culture_group = latin
+					owner = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				add_province_modifier = {
+					name = hlr_italian_anger
+					duration = -1
+				}
+			}
+			set_country_flag = hlr_had_italian_revolt_ok
+		}
+	}
+}
+
+#Holländische Unruhen
+country_event = {
+	id = hlrmod_flavor_event.59
+	title = hlrmod_flavor_event.59.title
+	desc = hlrmod_flavor_event.59.desc
+	picture = HLR_DUTCHRIOTS_eventPicture
+	fire_only_once = yes
+	trigger = {
+		exists = HLR
+		tag = HLR
+		num_of_owned_provinces_with = {
+			value = 3
+			culture = dutch
+			region = low_countries_region
+		}
+		has_country_flag = hlr_separatism_is_present
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.59.a
+		custom_tooltip = hlr_dutchriots_provincemodifier.tooltip
+		hidden_effect = {
+		set_country_flag = lowland_focus
+		every_owned_province = {
+			limit = {
+				culture = dutch
+				region = low_countries_region
+			}
+			add_province_modifier = {
+				name = hlr_dutch_riots
+				duration = 7300
+			}
+		}
+		}
+		random_owned_province = {
+			limit = {
+				culture = dutch
+				region = low_countries_region
+			}
+			spawn_rebels = {
+    				type = nationalist_rebels
+    				size = 3
+				win = yes
+			}
+		}
+	}
+}
+
+#Elect for LOT
+country_event = {
+	id = hlrmod_flavor_event.60
+	title = hlrmod_flavor_event.60.title
+	desc = hlrmod_flavor_event.60.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Elect French
+	option = {
+		name = hlrmod_flavor_event.60.a
+		LOT = {
+			define_ruler = {
+				culture = burgundian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 6
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.60.b
+		LOT = {
+			define_ruler = {
+				culture = burgundian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 6
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.60.c
+		LOT = {
+			define_ruler = {
+				culture = burgundian
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 3
+				mil = 6
+			}
+		}
+	}
+	#Elect von Habsburg
+	option = {
+		name = hlrmod_flavor_event.60.d
+		LOT = {
+			define_ruler = {
+				dynasty = "von Habsburg"
+				culture = austrian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.60.e
+		LOT = {
+			define_ruler = {
+				dynasty = "von Hohenzollern"
+				culture = saxon
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.60.f
+		LOT = {
+			define_ruler = {
+				dynasty = "von Wittelsbach"
+				culture = bavarian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+}
+
+#Elect for BOH
+country_event = {
+	id = hlrmod_flavor_event.61
+	title = hlrmod_flavor_event.61.title
+	desc = hlrmod_flavor_event.61.desc
+	picture = HLR_REICHSTAG_eventPicture
+	is_triggered_only = yes
+
+	#Elect Czech
+	option = {
+		name = hlrmod_flavor_event.61.a
+		BOH = {
+			define_ruler = {
+				culture = czech
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 6
+				dip = 3
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.61.b
+		BOH = {
+			define_ruler = {
+				culture = czech
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 6
+				mil = 3
+			}
+		}
+	}
+	option = {
+		name = hlrmod_flavor_event.61.c
+		BOH = {
+			define_ruler = {
+				culture = czech
+				claim = 95
+				male = yes
+				min_age = 30
+				adm = 3
+				dip = 3
+				mil = 6
+			}
+		}
+	}
+	#Elect von Habsburg
+	option = {
+		name = hlrmod_flavor_event.61.d
+		BOH = {
+			define_ruler = {
+				dynasty = "von Habsburg"
+				culture = austrian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.61.e
+		BOH = {
+			define_ruler = {
+				dynasty = "von Hohenzollern"
+				culture = saxon
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+	#Elect von Hohenzollern
+	option = {
+		name = hlrmod_flavor_event.61.f
+		BOH = {
+			define_ruler = {
+				dynasty = "von Wittelsbach"
+				culture = bavarian
+				claim = 95
+				male = yes
+				min_age = 30
+			}
+		}
+	}
+}
+
+#Coalition Doesn't Fire
+country_event = {
+	id = hlrmod_flavor_event.62
+	title = hlrmod_flavor_event.62.title
+	desc = hlrmod_flavor_event.62.desc
+	picture = HLR_NEWGP_eventPicture
+	fire_only_once = yes
+	trigger = {
+		exists = HLR
+		tag = HLR
+		NOT = {
+			any_other_great_power = {
+				capital_scope = {
+					continent = europe
+				}
+				NOT = { alliance_with = ROOT }
+			}
+		}
+		NOT = { has_country_flag = hlr_had_greatpower_coalition }
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = hlrmod_flavor_event.62.a
+		set_country_flag = hlr_had_greatpower_coalition
+		add_prestige = 50
+	}
+}
+
+#START TWEAKS
+country_event = {
+	id = hlrmod_flavor_event.63
+	title = hlrmod_flavor_event.63.title
+	desc = hlrmod_flavor_event.63.desc
+	picture = HLR_BOHEMIA_eventPicture
+	fire_only_once = yes
+	trigger = {
+		is_emperor = yes
+		NOT = {
+			is_year = 1460
+		}
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	#regular experience
+	option = {
+		name = hlrmod_flavor_event.63.a
+		ai_chance = { factor = 100 }
+	}
+
+	#only disable gp coalition
+	option = {
+		name = hlrmod_flavor_event.63.b
+		ai_chance = { factor = 0 }
+		custom_tooltip = hlr_deactivate_coalition.tooltip
+		hidden_effect = {
+			set_country_flag = hlr_had_greatpower_coalition
+		}
+	}
+	
+	#unite hre
+	option = {
+		name = hlrmod_flavor_event.63.c
+		ai_chance = { factor = 0 }
+		change_tag = HLR
+		on_change_tag_effect = yes
+		restore_country_name_effect = yes
+		add_country_modifier = {
+			name = "rome_reborn"
+			duration = -1
+		}
+		custom_tooltip = hre_core_tt
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						owned_by = ROOT
+						owner = { is_neighbor_of = ROOT }
+					}
+					NOT = { is_core = ROOT }
+				}
+				add_core = emperor
+			}
+		}
+		custom_tooltip = hre_inheritance_tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					is_emperor = no
+					num_of_cities = 1
+				}
+				country_event = { id = 9076 }
+			}
+		}
+		dismantle_hre = yes
+		set_government_rank = 3
+		if = {
+			limit = { has_dlc = "Domination" }
+			add_government_reform = holy_imperial_monarchy_reform
+		}
+		add_adm_power = 250
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		swap_non_generic_missions = yes
+	}
+	
+	#unite hre and disable coalition
+	option = {
+		name = hlrmod_flavor_event.63.d
+		ai_chance = { factor = 0 }
+		custom_tooltip = hlr_deactivate_coalition.tooltip
+		hidden_effect = {
+			set_country_flag = hlr_had_greatpower_coalition
+		}
+		change_tag = HLR
+		on_change_tag_effect = yes
+		restore_country_name_effect = yes
+		add_country_modifier = {
+			name = "rome_reborn"
+			duration = -1
+		}
+		custom_tooltip = hre_core_tt
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_part_of_hre = yes
+					OR = {
+						owned_by = ROOT
+						owner = { is_neighbor_of = ROOT }
+					}
+					NOT = { is_core = ROOT }
+				}
+				add_core = emperor
+			}
+		}
+		custom_tooltip = hre_inheritance_tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					is_emperor = no
+					num_of_cities = 1
+				}
+				country_event = { id = 9076 }
+			}
+		}
+		dismantle_hre = yes
+		set_government_rank = 3
+		if = {
+			limit = { has_dlc = "Domination" }
+			add_government_reform = holy_imperial_monarchy_reform
+		}
+		add_adm_power = 250
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		swap_non_generic_missions = yes
+	}
+}

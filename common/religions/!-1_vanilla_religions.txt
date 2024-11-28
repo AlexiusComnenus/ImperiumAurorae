@@ -12,6 +12,294 @@ christian = {
 	# Can be overridden per religion.
 	flags_with_emblem_percentage = 33 # default == 0
 	flag_emblem_index_range = { 1 57 }
+	ai_will_propagate_through_trade = yes
+	
+	religious_schools = {
+		righteous_illumination_school = {
+			potential_invite_scholar = {
+				OR = {
+					religion = hellenic_pagan_reformed
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				religion = hellenic_pagan_reformed
+				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
+				if = {
+					limit = {
+						NOT = { has_country_flag = can_always_invite_righteous_illumination_school }
+						NOT = { has_country_flag = privilege_can_always_invite_righteous_illumination_school }
+					}
+					reverse_has_opinion = { who = FROM value = 150 }
+					#OR = {
+					#	alliance_with = FROM
+					#	is_subject_of = FROM
+					#	overlord_of = FROM
+					#}
+					#hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = { has_country_modifier = has_invited_scholar_recently }
+					NOT = { has_reform = free_city }
+				}
+				#NOT = { has_country_modifier = righteous_illumination_scholar_modifier }
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				hidden_effect = {
+					clear_religious_scholar_modifiers_effect = yes
+					#custom_tooltip = INVITE_SCHOLAR_COUNTRY_TEXT
+					#add_country_modifier = { name = righteous_illumination_scholar_modifier duration = 7300 }
+					if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+						limit = {
+							ai = yes
+						}
+						add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+					}
+					set_religious_school = {
+						group = christian
+						school = righteous_illumination_school
+					}
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			#invite_scholar_modifier_display = righteous_illumination_scholar_modifier
+
+			picture = "GFX_icon_righteous_illumination"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			reform_progress_growth = 0.20
+			tolerance_own = 1
+		}
+		
+		draconic_inquisition_school = {
+			potential_invite_scholar = {
+				OR = {
+					religion = hellenic_pagan_reformed
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				religion = hellenic_pagan_reformed
+				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
+				if = {
+					limit = {
+						NOT = { has_country_flag = can_always_invite_draconic_inquisition_school }
+						NOT = { has_country_flag = privilege_can_always_invite_draconic_inquisition_school }
+					}
+					reverse_has_opinion = { who = FROM value = 150 }
+					#OR = {
+					#	alliance_with = FROM
+					#	is_subject_of = FROM
+					#	overlord_of = FROM
+					#}
+					#hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = { has_country_modifier = has_invited_scholar_recently }
+					NOT = { has_reform = free_city }
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				hidden_effect = {
+					clear_religious_scholar_modifiers_effect = yes
+					if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+						limit = {
+							ai = yes
+						}
+						add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+					}
+					set_religious_school = {
+						group = christian
+						school = draconic_inquisition_school
+					}
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			#invite_scholar_modifier_display = righteous_illumination_scholar_modifier
+
+			picture = "GFX_icon_draconic_inquisition"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			spy_offence = 0.5
+			global_spy_defence = 0.15
+			max_absolutism = 20
+			allow_free_estate_privilege_revocation = yes	
+		}
+		
+		golden_path_school = {
+			potential_invite_scholar = {
+				OR = {
+					religion = hellenic_pagan_reformed
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				religion = hellenic_pagan_reformed
+				NOT = { tag = Z17 }
+				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
+				if = {
+					limit = {
+						NOT = { has_country_flag = can_always_invite_golden_path_school }
+						NOT = { has_country_flag = privilege_can_always_invite_golden_path_school }
+						NOT = { has_idea_group = plutocracy_ideas }
+					}
+					reverse_has_opinion = { who = FROM value = 150 }
+					#OR = {
+					#	alliance_with = FROM
+					#	is_subject_of = FROM
+					#	overlord_of = FROM
+					#}
+					#hidden_progressive_opinion_for_scholar_trigger = yes
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = { has_country_modifier = has_invited_scholar_recently }
+					NOT = { has_reform = free_city }
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				hidden_effect = {
+					clear_religious_scholar_modifiers_effect = yes
+					if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+						limit = {
+							ai = yes
+						}
+						add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+					}
+					set_religious_school = {
+						group = christian
+						school = golden_path_school
+					}
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			#invite_scholar_modifier_display = righteous_illumination_scholar_modifier
+
+			picture = "GFX_icon_golden_path"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			trade_steering = 0.25
+			global_trade_power = 0.20
+		}
+		
+		harmonic_cultivation_school = {
+			potential_invite_scholar = {
+				OR = {
+					religion = hellenic_pagan_reformed
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FROM = Nation that follows that school
+			can_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				religion = hellenic_pagan_reformed
+				NOT = { tag = Z17 }
+				has_reform = free_city
+				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = { has_country_modifier = has_invited_scholar_recently }
+				}
+			}
+
+			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
+			on_invite_scholar = {
+				if = {
+					limit = {
+						NOT = { has_country_flag = no_scholar_adm_cost }
+					}
+					adm_power_cost = 50
+				}
+				hidden_effect = {
+					clear_religious_scholar_modifiers_effect = yes
+					if = {	#Ensures that the AI doesn't waste all of their ADM power on inviting scholars should they be able to invite them baseline
+						limit = {
+							ai = yes
+						}
+						add_country_modifier = { name = has_invited_scholar_recently duration = 7300 hidden = yes }
+					}
+					set_religious_school = {
+						group = christian
+						school = harmonic_cultivation_school
+					}
+				}
+			}
+
+			# If you don't set this it will expand on_invite_scholar effect which might be super big
+			#invite_scholar_modifier_display = righteous_illumination_scholar_modifier
+
+			picture = "GFX_icon_harmonic_cultivation"
+
+			# religion_sub_modifier = no is possible, will hide icon in religious screen
+			development_cost = -0.15
+			global_trade_goods_size_modifier = 0.15
+			global_prov_trade_power_modifier = -0.9
+			global_trade_power = -2
+		}
+	}
 
 	hellenic_pagan_reformed = {
 		
@@ -20,14 +308,12 @@ christian = {
 		
 		ai_will_propagate_through_trade = yes
 		country = {
-			
-			reform_progress_growth = 0.1
 		
-			legitimacy = 1
-			horde_unity = 1
-			meritocracy = 0.5
-			devotion = 0.33
-			republican_tradition = 0.33
+			#legitimacy = 1
+			#horde_unity = 1
+			#meritocracy = 0.5
+			#devotion = 0.33
+			#republican_tradition = 0.33
 		
 			global_missionary_strength = 0.03
 	
@@ -70,7 +356,6 @@ christian = {
 		allowed_conversion = {
 			reformed
 			protestant
-			anglican
 		}
 		country = {
 			tolerance_own = 1
@@ -488,6 +773,7 @@ christian = {
 		allowed_conversion = {
 			reformed
 			catholic
+			fraticelli
 		}
 		allowed_center_conversion = {
 			catholic
@@ -502,13 +788,15 @@ christian = {
 			relation_with_same_religion = 50
 			relation_with_heretics = -50
 			relation_with_heathens = -25
+			reverse_relation_with_heathen_religion = -10
+			reverse_relation_with_heretic_religion = -25
 			global_heretic_missionary_strength = 0.03
 			morale_damage_received = -0.1
 			naval_morale_damage_received = -0.1
 			may_recruit_female_generals = yes
 		}
 		province = {
-			local_core_creation = -0.25
+			local_core_creation = 0.15
 			local_missionary_strength = -0.02
 		}
 
@@ -642,6 +930,7 @@ christian = {
 		allowed_conversion = {
 			protestant
 			catholic
+			fraticelli
 		}
 		allowed_center_conversion = {
 			catholic
@@ -1689,6 +1978,7 @@ eastern = {
 		heretic = { ZEN }
 
 		harmonized_modifier = harmonized_buddhism
+		allow_female_defenders_of_the_faith = yes
 
 		uses_karma = yes
 	}
@@ -1722,6 +2012,7 @@ eastern = {
 		uses_karma = yes
 
 		harmonized_modifier = harmonized_vajrayana
+		allow_female_defenders_of_the_faith = yes
 	}
 
 	mahayana = {
@@ -1749,6 +2040,7 @@ eastern = {
 		}
 
 		harmonized_modifier = harmonized_mahayana
+		allow_female_defenders_of_the_faith = yes
 
 		heretic = { ZEN }
 

@@ -40,6 +40,10 @@ stadthalter_monarchy_reform = {
 				}
 				NOT = { map_setup = map_setup_random }
 			}
+			AND = {
+				primary_culture = alsatian
+				mission_completed = lot_integrate_dutch
+			}
 		}
 	}
 	trigger = {
@@ -47,6 +51,7 @@ stadthalter_monarchy_reform = {
 		OR = {
 			government_rank = 2
 			tag = NED
+			tag = LOT
 		}
 	}
 	valid_for_nation_designer = yes
@@ -99,8 +104,8 @@ dutch_republic = {
 				NOT = { map_setup = map_setup_random }
 			}
 			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = dutch_republic
+				primary_culture = alsatian
+				mission_completed = lot_integrate_dutch
 			}
 		}
 	}
@@ -108,6 +113,7 @@ dutch_republic = {
 		OR = {
 			government_rank = 2
 			tag = NED
+			tag = LOT
 		}
 	}
 	legacy_equivalent = dutch_republic_legacy
@@ -185,8 +191,8 @@ dutch_theocracy_reform = {
 				NOT = { map_setup = map_setup_random }
 			}
 			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = dutch_theocracy_reform
+				primary_culture = alsatian
+				mission_completed = lot_integrate_dutch
 			}
 		}
 		NOT = { tag = PAP }
@@ -261,6 +267,10 @@ watergeuzen_reform = {
 		OR = {
 			primary_culture = dutch
 			primary_culture = flemish
+			AND = {
+				primary_culture = alsatian
+				mission_completed = lot_integrate_dutch
+			}
 		}
 	}
 	trigger = {
@@ -293,6 +303,10 @@ staatse_leger_reform = {
 		OR = {
 			primary_culture = dutch
 			primary_culture = flemish
+			AND = {
+				primary_culture = alsatian
+				mission_completed = lot_integrate_dutch
+			}
 		}
 	}
 	trigger = {

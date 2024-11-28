@@ -89,7 +89,7 @@
  z42_cattle_of_the_empire_title: "Cattle of the Empire"
  z42_cattle_of_the_empire_desc: "The relatively arid land in Nubia might not be the best for growing crops, but nomadic herders have raised livestock for centuries. With the support of the Imperial Alchemists again to stabilize the soil quality and proper regulations to avoid over-grazing, we can supply the Empire with meat!"
  z42_livestock_reward_tt: "Gain 5 years of production income of Livestock"
- z42_grain_reward_tt: "Gain 5 years of production income of Grain."
+ z42_grain_reward_tt: "Gain 5 years of production income of §YGrain§! and §YPotatoes§!."
  z42_protect_elephants_title: "Regulate the Ivory Trade"
  z42_protect_elephants_desc: "The current state of the ivory trade is a travesty: hunters slay entire elephants and leave the carcasses to waste away after harvesting the tusks. Not only does this disrupt the harmony of the natural order through massive wastefulness, it's short-sighted and inefficient. We shall set up preserves where the elephants are not to be harmed at all, that they can maintain their population numbers, while issuing licenses only to alchemically certified beast-tamers to harvest ivory carefully without harming the animal itself as much as possible. While this will reduce the supply of ivory somewhat, in the long-term it will both preserve the viability of the trade and protect the elephant population."
  protected_ivory_tooltip: "All of our currently owned provinces producing §YIvory§! will now produce §YElephants§! instead. Additionally, aforementioned provinces will gain a §Gpowerful local modifier§!."

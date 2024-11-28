@@ -154,9 +154,10 @@ merc_legion_of_dusk = {
 				defender_leader = Z17
 			}
 		}
+		war_with = Z17
 		has_global_flag = legion_of_dusk_established
-		is_year = 1500
-		religion_group = christian
+		#is_year = 1500
+		#religion_group = christian
 		NOT = { religion = hellenic_pagan_reformed }
 	}
 	cost_modifier = 1.25
@@ -182,7 +183,7 @@ merc_meissen_guard = {
     regiments_per_development = 0.04
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
 	cavalry_weight = 0
-	artillery_weight = 0.33
+	artillery_weight = 0.25
 	home_province = 61
 	counts_towards_force_limit = no
 	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
@@ -198,9 +199,86 @@ merc_meissen_guard = {
 		leader_land_fire = 3
 		discipline = 0.10
 		shock_damage = 0.20
-		reinforce_speed = 0.50
+		reinforce_speed = 0.25
 		drill_decay_modifier = -0.5
 		allow_mercenary_drill = yes
+	}
+}
+
+merc_aen_bastion_guard = {
+    regiments_per_development = 0.04
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0.15
+	home_province = 235
+	counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		has_country_flag = aen_enabled_tercio_guard_flag
+	}
+	cost_modifier = 0.5
+	modifier = {
+		force_march_free = yes
+		manpower_recovery_speed = 0.5
+		leader_land_shock = 3
+		leader_land_fire = 3
+		reinforce_speed = 0.25
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		shock_damage_received = -0.30
+		morale_damage_received = -0.30
+	}
+}
+
+merc_aen_order_of_the_lionhearted = {
+    regiments_per_development = 0.04
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0.3
+	artillery_weight = 0.15
+	home_province = 235
+	counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		has_country_flag = aen_enabled_chivalrous_guard_flag
+	}
+	cost_modifier = 0.5
+	modifier = {
+		force_march_free = yes
+		manpower_recovery_speed = 0.5
+		leader_land_shock = 6
+		leader_land_fire = 1
+		reinforce_speed = 0.25
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		morale_damage = 0.25
+		shock_damage = 0.25
+		cavalry_power = 0.25
+	}
+}
+
+merc_aen_hessian_foreign_legion = {
+    regiments_per_development = 0.04
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0.15
+	home_province = 235
+	counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		has_country_flag = aen_enabled_hessian_guard_flag
+	}
+	cost_modifier = 0.5
+	modifier = {
+		force_march_free = yes
+		manpower_recovery_speed = 0.5
+		leader_land_shock = 4
+		leader_land_fire = 4
+		reinforce_speed = 0.25
+		drill_decay_modifier = -0.5
+		allow_mercenary_drill = yes
+		land_attrition = -0.25
+		drill_gain_modifier = 0.50
+		discipline = 0.10
 	}
 }
 

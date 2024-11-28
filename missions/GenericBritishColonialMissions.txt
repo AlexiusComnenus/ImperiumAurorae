@@ -8,6 +8,7 @@ Generic_British_Colonial_Missions_2 = {
 			culture_group = gaelic
 		}
 		capital_scope = { region = british_isles_region }
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
 	
@@ -52,6 +53,10 @@ Generic_British_Colonial_Missions_2 = {
 			add_country_modifier = {
 				name = "the_unknown_frontier"
 				duration = 5475
+			}
+			add_country_modifier = {
+				name = ia_colonial_rush
+				duration = 9125
 			}
 			add_dip_power = 50
 			unlock_issue = {
@@ -182,6 +187,7 @@ Generic_British_Colonial_Missions_3 = {
 			culture_group = gaelic
 		}
 		capital_scope = { region = british_isles_region }
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
 	
@@ -195,7 +201,7 @@ Generic_British_Colonial_Missions_3 = {
 			not_in_mission_preview_mode = { key = GBR }
 			if = {
 				limit = { ai = no }
-				navy_size = 50
+				navy_size = 25
 				navy_size_percentage = 1
 				num_of_admirals = 1
 			}
@@ -214,6 +220,13 @@ Generic_British_Colonial_Missions_3 = {
 			}
 			unlock_issue = {
 				issue = act_of_exploration
+			}
+			if = {
+				limit = { NOT = { primary_culture = anglo_saxon } }
+				add_country_modifier = {
+					name = bri_menowar_mod
+					duration = -1
+				}
 			}
 		
 			126 = { add_permanent_claim = ROOT }
@@ -506,6 +519,7 @@ Generic_British_Colonial_Missions_4 = {
 			culture_group = gaelic
 		}
 		capital_scope = { region = british_isles_region }
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
 	gbr_the_mediterranean_isles = {
@@ -944,6 +958,7 @@ Generic_British_Colonial_Missions_5 = {
 			culture_group = gaelic
 		}
 		capital_scope = { region = british_isles_region }
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
 	gbr_sail_around_africa = {
@@ -1057,6 +1072,10 @@ Generic_British_Colonial_Missions_5 = {
 						}
 					}
 				}
+			}
+			add_country_modifier = {
+				name = ia_around_the_cape
+				duration = 9125
 			}
 		}
 		ai_weight = {

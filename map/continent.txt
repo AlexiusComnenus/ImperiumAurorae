@@ -273,8 +273,6 @@ europe = {
 	4167 4168 4169#Atlas Mountains
 	#Transvaal
 	4781 4782 4783 4784
-	#Greenland
-	1104 1105 1804
 }
 
 asia = {
@@ -285,7 +283,9 @@ africa = {
 	
 }
 
-north_america = {
+north_america = 
+	#Greenland
+	1104 1105 1804
 	#The Carribean
 	481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501
 	1881

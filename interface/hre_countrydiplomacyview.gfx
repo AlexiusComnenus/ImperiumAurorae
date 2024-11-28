@@ -1,0 +1,27 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_diplomacy_lead_imp"
+		texturefile = "gfx//interface//imperialkingdom_for_overlord.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weak_imp"
+		texturefile = "gfx//interface//imperialkingdom_for_subject.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_lead_impprot"
+		texturefile = "gfx//interface//imperialprotectorate_for_overlord.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weak_impprot"
+		texturefile = "gfx//interface//imperialprotectorate_for_subject.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_lead_impduc"
+		texturefile = "gfx//interface//imperialduchy_for_overlord.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_weak_impduc"
+		texturefile = "gfx//interface//imperialduchy_for_subject.dds"
+	}
+}

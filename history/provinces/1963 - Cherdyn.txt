@@ -5,6 +5,7 @@ trade_goods = salt
 base_tax = 3
 base_production = 3
 base_manpower = 2
+add_core = Z88
 extra_cost = 8
 center_of_trade = 1
 discovered_by = eastern

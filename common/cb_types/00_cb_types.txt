@@ -821,6 +821,7 @@ cb_defender_of_the_faith = {
 # Purging of Heresy
 cb_heretic = {
 	valid_for_subject = no
+	holy_war = yes
 
 	prerequisites = {
 		is_neighbor_of = FROM
@@ -1355,6 +1356,7 @@ cb_take_mandate = {
 		OR = {
 			religion_group = pagan
 			religion_group = eastern
+			religion_group = zoroastrian_group
 		}
 		NOT = { truce_with = FROM }
 		is_revolutionary = no
@@ -1390,7 +1392,11 @@ cb_force_tributary = {
 		has_dlc = "Mandate of Heaven"
 		is_emperor_of_china = yes
 		FROM = { is_subject = no }
-		is_neighbor_of = FROM
+		OR = { 
+			is_neighbor_of = FROM
+			any_subject_country = { is_neighbor_of = FROM }
+		}
+		
 		OR = {
 			ai = no
 			AND = {
@@ -1495,6 +1501,7 @@ cb_imperial_realm_war = {
 # Force religion on Heathens
 cb_world_crusade = {
 	valid_for_subject = no
+	holy_war = yes
 
 	prerequisites_self = {
 		has_government_attribute = has_upgraded_holy_wars
@@ -1525,6 +1532,7 @@ cb_world_crusade = {
 # Force religion on Heathens
 cb_war_against_heresy = {
 	valid_for_subject = no
+	holy_war = yes
 
 	prerequisites = {
 		has_country_flag = war_against_heresy_flag

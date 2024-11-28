@@ -732,7 +732,7 @@ country_decisions = {
 				province_id = 451  #Kabul
 				province_id = 506  #Multan
 				province_id = 4326 #Nishapur
-				province_id = 361  #Qahirah/Cairo
+				#province_id = 361  #Qahirah/Cairo
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -743,11 +743,12 @@ country_decisions = {
 		allow = {
 			government_rank = 2
 			stability = 2
+			prestige = 50
 			owns_core_province = 2229 #Bust
 			owns_core_province = 451  #Kabul
 			owns_core_province = 506  #Multan
 			owns_core_province = 4326 #Nishapur
-			owns_core_province = 361  #Qahirah/Cairo
+			#owns_core_province = 361  #Qahirah/Cairo
 		}
 
 		effect = {
@@ -775,16 +776,18 @@ country_decisions = {
 					add_base_manpower = 1
 				}
 			}
-			every_owned_province = {
-				limit = { religion = zun_pagan }
-				random_list = {
-					75 = {
-						change_religion = zun_pagan_reformed
-					}
-					25 = {
-						add_province_modifier = {
-							name = "heresy"
-							duration = 3650
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = zun_pagan }
+					random_list = {
+						75 = {
+							change_religion = zun_pagan_reformed
+						}
+						25 = {
+							add_province_modifier = {
+								name = "heresy"
+								duration = 3650
+							}
 						}
 					}
 				}

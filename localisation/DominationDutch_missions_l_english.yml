@@ -1,4 +1,6 @@
 ﻿l_english:
+ bataafs_republick: "Bataafs Republick"
+ bataafs_republick_desc: "A type of ministerial government was introduced for the first time in Dutch history and many of the current government departments date their history back to this period."
  convert_to_jansenism_title: "Convert to Jansenism"
  convert_to_jansenism_desc: "The majority of our nation is Jansenist, it would only be fitting to convert."
  
@@ -151,6 +153,8 @@
  south_america_tt: "§YColonial Subject§! within §YColonial Brazil§!, §YColonial La Plata§!, §YColonial Colombia§! or §YColonial Peru§!.\nOwns at least §Y10§! cities."
  dutch_south_america_tt: "For every Colonial Region that we have a Colonial Subject in with more than 10 Provinces, we will gain:"
  ned_found_a_path_spice_tt: "Find a path §YNorth§!, §YEast§! or §YWest§! to the Spice Islands"
+ dom_ned_tobacco_plantations2_title: "Tobacco Plantations"
+ dom_ned_tobacco_plantations2_desc: "We shall dominate the global market for tobacco!"
  
  #dom_ned_find_spice_islands_title: "Find the Spice Islands"
  #dom_ned_find_spice_islands_desc: "We must send our explorers across all the ends of the Earth to make sure we can find the lucrative Spice Islands and exploit them for our personal gain."

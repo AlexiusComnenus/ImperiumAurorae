@@ -1,5 +1,5 @@
-owner = Z39
-controller = Z39
+owner = RAM
+controller = RAM
 capital = "Oltu"
 is_city = yes
 culture = georgian
@@ -10,7 +10,7 @@ base_production = 3
 base_manpower = 3
 add_core = GEO
 add_core = SME
-add_core = Z39
+add_core = RAM
 add_permanent_claim = BYZ
 discovered_by = MGE
 discovered_by = eastern

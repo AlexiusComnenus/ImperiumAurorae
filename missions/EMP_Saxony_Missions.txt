@@ -233,6 +233,7 @@ ia_sax_mission_1 = {
 			owner = {
 				culture_group = germanic
 				NOT = { primary_culture = teuton }
+				NOT = { primary_culture = baltic_german }
 				NOT = { primary_culture = anglo_saxon }
 				any_owned_province = {
 					culture_group = germanic
@@ -254,16 +255,19 @@ ia_sax_mission_1 = {
 						NOT = { culture_group = germanic }
 						primary_culture = teuton
 						primary_culture = anglo_saxon
+						primary_culture = baltic_german
 						NOT = {
 							any_owned_province = {
 								culture_group = germanic
 								NOT = { culture = teuton }
 								NOT = { culture = anglo_saxon }
+								NOT = { culture = baltic_german }
 							}
 						}
 						OR = {
 							is_subject_of = ROOT
 							overlord = { is_subject_of = ROOT }
+							overlord = { overlord = { is_subject_of = ROOT } }
 						}
 					}
 				}
@@ -271,6 +275,8 @@ ia_sax_mission_1 = {
 		}
 		
 		effect = {
+			country_event = { id = ia_flavor_sax.30 }
+			
 			add_country_modifier = {
 				name = sax_unified_germany
 				duration = 18250
@@ -920,17 +926,35 @@ ia_sax_mission_5 = {
 		
 		trigger = {
 			OR = {
-				alliance_with = DAN
+				DAN = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
 				AND = {
-					NOT = { alliance_with = DAN }
-					any_ally = { 
-						OR = {
-							is_rival = DAN
-							is_enemy = DAN
-						}
+					NOT = { 
+						DAN = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						} 
+					}
+					any_known_country = { 
+						#OR = {
+						#	is_rival = DAN
+						#	is_enemy = DAN
+						#	historical_friend_with = ROOT
+						#}
 						OR = {
 							tag = NOR
 							tag = SWE
+							tag = GOT
+						}
+						has_opinion = {
+							who = ROOT
+							value = 60
 						}
 					}
 				}
@@ -941,42 +965,48 @@ ia_sax_mission_5 = {
 			add_prestige = 20
 			custom_tooltip = sax_branch_tt
 			if = {
-				limit = { alliance_with = DAN }
+				limit = { DAN = { has_opinion = { who = ROOT	value = 100 } } }
 				add_historical_friend = DAN
 				DAN = { add_historical_friend = ROOT }
+				create_guarantee = DAN
 				hidden_effect = { 
-					set_country_flag = sax_befriend_dan 
+					set_country_flag = sax_befriend_dan
+					DAN = { set_country_flag = sax_befriend_dan }
 					swap_non_generic_missions = yes
 				}
 			}
 			if = {
 				limit = { 
-					NOT = { alliance_with = DAN }
-					any_ally = { 
-						OR = {
-							is_rival = DAN
-							is_enemy = DAN
+					NOT = { DAN = { has_opinion = { who = ROOT	value = 100 } } }
+					any_known_country = { 
+						has_opinion = {
+							who = ROOT
+							value = 60
 						}
 						OR = {
 							tag = NOR
 							tag = SWE
+							tag = GOT
 						}
 					}
 				}
-				random_ally = {
+				random_known_country = {
 					limit = {
-						OR = {
-							is_rival = DAN
-							is_enemy = DAN
+						has_opinion = {
+							who = ROOT
+							value = 60
 						}
 						OR = {
 							tag = NOR
 							tag = SWE
+							tag = GOT
 						}
 					}
 					add_historical_friend = ROOT
+					set_country_flag = sax_hate_dan
 					ROOT = {
 						add_historical_friend = PREV
+						create_guarantee = PREV
 					}
 				}
 				hidden_effect = { 
@@ -1052,17 +1082,20 @@ saxon_missions_5_branching_1 = {
 		required_missions = { sax_danish_relations }
 		position = 2
 		trigger = { 
-			alliance_with = DAN
-			DAN = {
-				has_opinion = {
-					who = ROOT
-					value = 150
-				}
-				trust = {
-					who = ROOT
-					value = 80
+			if = {
+				limit = { ai = no }
+				DAN = {
+					has_opinion = {
+						who = ROOT
+						value = 125
+					}
+					trust = {
+						who = ROOT
+						value = 60
+					}
 				}
 			}
+			else = { is_year = 1480 }
 		}
 		effect = { 
 			DAN = {
@@ -1076,6 +1109,7 @@ saxon_missions_5_branching_1 = {
 					type = cb_restore_personal_union
 					months = 1200
 				}
+				hidden_effect = { set_country_flag = sax_befriended_sca }
 			}
 			hidden_effect = { set_country_flag = sax_befriended_sca }
 		}
@@ -1106,11 +1140,13 @@ saxon_missions_5_branching_1 = {
 					name = sax_sca_partnership
 					duration = -1
 				}
+				add_historical_friend = ROOT
 			}
 			add_country_modifier = {
 				name = sax_sca_partnership
 				duration = -1
 			}
+			add_historical_friend = SCA
 			hidden_effect = { set_country_flag = sax_sca_success }
 		}
 	}
@@ -1135,37 +1171,37 @@ saxon_missions_5_branching_2 = {
 		required_missions = { sax_danish_relations }
 		position = 2
 		trigger = { 
-			any_ally = {
-				OR = {
-					tag = NOR
-					tag = SWE
+			if = {
+				limit = { ai = no }
+				any_known_country = {
+					OR = {
+						tag = NOR
+						tag = SWE
+						tag = GOT
+					}
+					has_opinion = {
+						who = ROOT
+						value = 125
+					}
+					trust = {
+						who = ROOT
+						value = 60
+					}
+					historical_friend_with = ROOT
 				}
-				has_opinion = {
-					who = ROOT
-					value = 150
-				}
-				trust = {
-					who = ROOT
-					value = 80
-				}
-				historical_friend_with = ROOT
+			}
+			else = {
+				is_year = 1480
 			}
 		}
 		effect = { 
 			custom_tooltip = sax_our_chosen_ally_tt
-			random_ally = {
+			random_known_country = {
 				limit = {
 					OR = {
 						tag = NOR
 						tag = SWE
-					}
-					has_opinion = {
-						who = ROOT
-						value = 150
-					}
-					trust = {
-						who = ROOT
-						value = 80
+						tag = GOT
 					}
 					historical_friend_with = ROOT
 				}
@@ -1184,6 +1220,7 @@ saxon_missions_5_branching_2 = {
 					type = cb_restore_personal_union
 					months = 1200
 				}
+				hidden_effect = { set_country_flag = sax_befriended_sca }
 			}
 			hidden_effect = { set_country_flag = sax_befriended_sca }
 		}
@@ -1215,11 +1252,13 @@ saxon_missions_5_branching_2 = {
 					name = sax_sca_partnership
 					duration = -1
 				}
+				hidden_effect = { set_country_flag = sax_sca_success }
 			}
 			add_country_modifier = {
 				name = sax_sca_partnership
 				duration = -1
 			}
+			add_historical_friend = SCA
 			hidden_effect = { set_country_flag = sax_sca_success }
 		}
 	}

@@ -1,0 +1,193 @@
+estate_alchemists = {
+	icon = 18 #insert graphic slot here
+
+	# If true, country will get estate
+	trigger = {
+		#always = no
+		OR = { 
+			religion = hellenic_pagan_reformed
+			AND = {
+				religion = mahayana
+				culture_group = east_asian
+			}
+			religion = confucianism
+		}
+	}
+
+	country_modifier_happy = {
+		technology_cost = -0.1
+		production_efficiency = 0.25
+		build_cost = 0.1
+	}
+	country_modifier_neutral = {
+		#technology_cost = -0.1
+		production_efficiency = 0.2
+		build_cost = 0.05
+	}	
+	country_modifier_angry = {
+		all_power_cost = 0.1
+	}
+	land_ownership_modifier = {
+		alchemists_loyalty_modifier = 0.2
+	}
+
+	province_independence_weight = {
+		factor = 0
+	}
+
+	# Influence modifiers
+	base_influence = 5
+	
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_MANUFACTORY
+		trigger = {
+			any_owned_province = {
+				OR = {
+					has_building = wharf
+					has_building = weapons
+					has_building = textile
+					has_building = tradecompany
+					has_building = farm_estate
+					has_building = mills
+					has_building = furnace
+					has_building = plantations
+				}
+			}
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_UNIVERSITY
+		trigger = {
+			any_owned_province = {
+				has_building = university
+			}
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_MERCURY
+		trigger = {
+			any_owned_province = {
+				trade_goods = mercury
+			}
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_SILK
+		trigger = {
+			any_owned_province = {
+				trade_goods = auroral_silk
+			}
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_SULFUR
+		trigger = {
+			any_owned_province = {
+				trade_goods = sulfur
+			}
+		}
+		influence = 2.5
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_LEAD
+		trigger = {
+			any_owned_province = {
+				trade_goods = lead
+			}
+		}
+		influence = 2.5
+	}
+
+	
+	#LOYALTY MODIFIERS
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_MANUFACTORY
+		trigger = {
+			any_owned_province = {
+				OR = {
+					has_building = wharf
+					has_building = weapons
+					has_building = textile
+					has_building = tradecompany
+					has_building = farm_estate
+					has_building = mills
+					has_building = furnace
+					has_building = plantations
+				}
+			}
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_UNIVERSITY
+		trigger = {
+			any_owned_province = {
+				has_building = university
+			}
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_MERCURY
+		trigger = {
+			any_owned_province = {
+				trade_goods = mercury
+			}
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_SILK
+		trigger = {
+			any_owned_province = {
+				trade_goods = auroral_silk
+			}
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_SULFUR
+		trigger = {
+			any_owned_province = {
+				trade_goods = sulfur
+			}
+		}
+		loyalty = 2.5
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_LEAD
+		trigger = {
+			any_owned_province = {
+				trade_goods = lead
+			}
+		}
+		loyalty = 2.5
+	}
+	color = { 25 100 25 }
+	
+	privileges = {
+		estate_alchemists_land_rights
+		estate_alchemists_right_of_counsel
+		estate_alchemists_court_alchemist
+		estate_alchemists_public_education
+		estate_alchemists_cutting_edge_research
+		estate_alchemists_elixirs_for_the_troops
+	}
+
+	agendas = {
+		estate_alchemists_develop_x
+		estate_alchemists_conquer_silk_mercury
+		estate_alchemists_befriend_rival_of_rival
+		estate_alchemists_recover_abysmal_prestige
+		estate_alchemists_improve_prestige
+		estate_alchemists_build_university_in_y
+		estate_alchemists_build_production_building_in_y
+		estate_alchemists_build_manufactory_in_y
+	}
+	
+	influence_from_dev_modifier = 1.0
+}

@@ -1,0 +1,498 @@
+country_decisions = {
+	hlr_rit_ruler = {	
+		color = { 187 191 86 }
+		potential = {
+			tag = HLR
+			exists = RIT
+			RIT = {
+				is_subject_of = HLR
+				is_subject_of_type = imperialkingdom
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = hlr_recent_rit_rulerchange
+			}
+
+		}
+		effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.13
+			}
+			adm_power_cost = 50
+			hidden_effect = {
+				add_country_modifier = {
+					name = hlr_recent_rit_rulerchange
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_hun_ruler = {	
+		color = { 187 191 86 }
+		potential = {
+			tag = HLR
+			exists = HUN
+			HUN = {
+				is_subject_of = HLR
+				is_subject_of_type = imperialkingdom
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = hlr_recent_hun_rulerchange
+			}
+
+		}
+		effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.40
+			}
+			adm_power_cost = 50
+			hidden_effect = {
+				add_country_modifier = {
+					name = hlr_recent_hun_rulerchange
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_ily_ruler = {	
+		color = { 187 191 86 }
+		potential = {
+			tag = HLR
+			exists = ILY
+			ILY = {
+				is_subject_of = HLR
+				is_subject_of_type = imperialkingdom
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = hlr_recent_ily_rulerchange
+			}
+
+		}
+		effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.41
+			}
+			adm_power_cost = 50
+			hidden_effect = {
+				add_country_modifier = {
+					name = hlr_recent_ily_rulerchange
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_lot_ruler = {	
+		color = { 187 191 86 }
+		potential = {
+			tag = HLR
+			exists = LOT
+			LOT = {
+				is_subject_of = HLR
+				is_subject_of_type = imperialkingdom
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = hlr_recent_lot_rulerchange
+			}
+
+		}
+		effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.60
+			}
+			adm_power_cost = 50
+			hidden_effect = {
+				add_country_modifier = {
+					name = hlr_recent_lot_rulerchange
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_boh_ruler = {	
+		color = { 187 191 86 }
+		potential = {
+			tag = HLR
+			exists = BOH
+			BOH = {
+				is_subject_of = HLR
+				is_subject_of_type = imperialkingdom
+			}
+		}
+		allow = {
+			is_at_war = no
+			NOT = {
+				has_country_modifier = hlr_recent_boh_rulerchange
+			}
+
+		}
+		effect = {
+			country_event = { 
+				id = hlrmod_flavor_event.61
+			}
+			adm_power_cost = 50
+			hidden_effect = {
+				add_country_modifier = {
+					name = hlr_recent_boh_rulerchange
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_rulerchange = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			is_at_war = no
+			adm_power = 150
+			NOT = {
+				has_country_modifier = hlr_okm_exchanged_rulers
+			}
+
+		}
+		effect = {
+			OKM = {
+				kill_ruler = yes
+			}
+			OKM = { 
+				add_opinion = {
+					who = ROOT
+					modifier = hlr_okm_rulerchange_forced
+				}
+			}
+			adm_power_cost = 150
+			add_country_modifier = {
+				name = hlr_okm_exchanged_rulers
+				duration = 1095
+			}
+			random = { 
+				chance = 50 
+				OKM = {
+					capital_scope = {
+						spawn_rebels = {
+							type = noble_rebels
+							size = 3
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_station_troops = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			manpower = 35
+			mil_power = 150
+			NOT = {
+				has_country_modifier = hlr_okm_stationed_troops
+			}
+
+		}
+		effect = {
+			mil_power_cost = 150
+			add_manpower = -35
+			add_country_modifier = {
+				name = hlr_okm_stationed_troops
+				duration = 365
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_emperors_admonition = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			is_at_war = no
+			if = {
+				limit = {
+					dip = 6
+				}
+				dip_power = 100
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				dip_power = 150
+			}
+			else_if = {
+				limit = {
+					dip = 4
+				}
+				dip_power = 200
+			}
+			else = {
+				dip_power = 300
+			}
+			NOT = {
+				has_country_modifier = hlr_okm_emperor_diplo
+			}
+
+		}
+		effect = {
+			if = {
+				limit = {
+					dip = 6
+				}
+				dip_power_cost = 100
+			}
+			else_if = {
+				limit = {
+					dip = 5
+				}
+				dip_power_cost = 150
+			}
+			else_if = {
+				limit = {
+					dip = 4
+				}
+				dip_power_cost = 200
+			}
+			else = {
+				dip_power_cost = 300
+			}
+			add_country_modifier = {
+				name = hlr_okm_emperor_diplo
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_property_redistribution = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			treasury = 2000
+			NOT = {
+				has_country_modifier = hlr_okm_property_redistributed
+			}
+
+		}
+		effect = {
+			add_treasury = -2000
+			add_country_modifier = {
+				name = hlr_okm_property_redistributed
+				duration = 1095
+			}
+			OKM = { 
+				add_opinion = {
+					who = ROOT
+					modifier = hlr_okm_angry_rich_guys
+				}
+			}
+			random = { 
+				chance = 50 
+				OKM = {
+					random_owned_province = {
+						spawn_rebels = {
+							type = noble_rebels
+							size = 3
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_cut_tradeflow = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			mercantilism = 8
+			treasury = 3000
+			NOT = {
+				has_country_modifier = hlr_okm_tradeflow_cut
+			}
+
+		}
+		effect = {
+			add_mercantilism = -8
+			add_treasury = -3000
+			add_country_modifier = {
+				name = hlr_okm_tradeflow_cut
+				duration = 365
+			}
+			OKM = { 
+				add_opinion = {
+					who = ROOT
+					modifier = hlr_okm_blockade
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_okm_restore_control = {	
+		color = { 191 105 86 }
+		potential = {
+			tag = HLR
+			exists = OKM
+			OKM = {
+				is_subject_of = HLR
+				is_subject_of_type = commercial_enterprise
+			}
+			has_country_flag = unlock_company_control
+			NOT = {
+				has_country_flag = hlr_okm_restored_control
+			}
+		}
+		allow = {
+			has_disaster = okm_revolt_disaster
+			AND = {
+				has_country_modifier = hlr_okm_tradeflow_cut
+				has_country_modifier = hlr_okm_property_redistributed
+				has_country_modifier = hlr_okm_emperor_diplo
+				has_country_modifier = hlr_okm_stationed_troops
+				has_country_modifier = hlr_okm_exchanged_rulers
+			}
+			OKM = {
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { num_of_rebel_controlled_provinces = 1 }
+			}
+		}
+		effect = {
+			custom_tooltip = hlr_endokmrev.tooltip
+			set_country_flag = hlr_okm_restored_control
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	hlr_tma_terramariana_rename = {	
+		potential = {
+			tag = HLR
+			exists = TMA
+			TMA = {
+				is_subject_of = ROOT
+				is_subject_of_type = imperialduchy
+			}
+			NOT = {
+				has_country_flag = hlr_renamed_livonia
+			}
+		}
+		allow = {
+		}
+		effect = {
+			TMA = {
+				override_country_name = HLR_TERRA_MARIANA
+			}
+			set_country_flag = hlr_renamed_livonia
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	hlr_tma_terramariana_restore_orig = {	
+		potential = {
+			tag = HLR
+			exists = TMA
+			TMA = {
+				is_subject_of = ROOT
+				is_subject_of_type = imperialduchy
+			}
+			has_country_flag = hlr_renamed_livonia
+		}
+		allow = {
+		}
+		effect = {
+			TMA = {
+				restore_country_name = yes
+			}
+			clr_country_flag = hlr_renamed_livonia
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

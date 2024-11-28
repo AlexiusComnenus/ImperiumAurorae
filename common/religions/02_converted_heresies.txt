@@ -57,7 +57,7 @@ christian = {
 		allowed_conversion = {
 			reformed
 			protestant
-			anglican
+			#anglican
 		}
 		country = {
 			legitimacy = 1
@@ -472,36 +472,33 @@ christian = {
 		color = { 0.7 0 0.2 }
 		icon = 39
 		country = {
-			stability_cost_modifier = -0.1
-			land_morale = 0.1
+			development_cost_modifier = -0.05
+			global_unrest = -2
+			nobles_influence_modifier = -0.1
+			nobles_loyalty_modifier = -0.1
 		}
-		 province = {
+		province = {
             local_missionary_strength = -0.02
-            local_unrest = -1
+			local_defensiveness = 0.1
         }
 		country_as_secondary = {
 			stability_cost_modifier = -0.10
-			tolerance_own = 1
+			land_morale = 0.1
 		}
 		heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }
 
 		uses_church_power = yes				# Uses church power/aspect mechanics
 		aspects = {
-			organised_through_bishops_aspect
-			priests_may_marry_aspect
-			adult_baptism_aspect
-			holy_sacraments_aspect
-			saints_accept_prayers_aspect
-			icons_images_aspect
-			legalised_divorces_aspect
-			heretics_deported_aspect
-			parish_registers_aspect
-			individual_creeds_aspect
-			allow_usury_aspect
-			translated_bibles_aspect
+			#bog_abolish_church_hierarchies
+			bog_appeal_to_the_peasantry
+			bog_mountain_guerillas
+			bog_full_liberty_to_elect
+			bog_lift_taxation
+			bog_reject_material_temptations
+			bog_eternal_struggle
 		}
+		aspects_name = PROTESTANT_ASPECTS
 
-		misguided_heretic = yes		# Other christians hate them less
 	}
 	monothelite = {
 		color = { 0.5 0 0.3 }

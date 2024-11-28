@@ -1743,20 +1743,58 @@ ruthenian_ideas = {
 		}
 	}
 	free = yes
-	#For the modifiers see UKR_ideas
-	mother_of_russian_cities = { #Mother of Russian States
+	#For the modifiers see KIE_ideas
+	mother_of_all_cities = {
 	}
-	international_influences = {
+	heritage_of_rus = {		
 	}
-	zaporizhian_cossacs = {
+	fending_off_the_invaders = {	
 	}
-	east_and_west = {
+	chernozem_land = {
 	}
-	legacy_of_ancient_rus = {
+	center_of_orthodox_church = {
 	}
-	reuniting_rus = {
+	support_local_traders = {
 	}
-	birth_of_russian_orthodoxy = {
+	centralized_rule = {
+	}
+}
+
+northrussian_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		shock_damage = 0.10
+	}
+
+	bonus = {
+		land_forcelimit_modifier = 0.25
+	}
+ 
+	trigger = {
+		OR = {
+			primary_culture = russian
+			primary_culture = novgorodian
+			primary_culture = ryazanian
+			primary_culture = russian_new
+			primary_culture = novgorodian_new
+			primary_culture = ryazanian_new
+		}
+	}
+	free = yes
+	#For the modifiers see MOS_ideas
+	gatherers_of_tribute = {
+	}
+	legacy_of_dmitriy_donskoi = {
+	}
+	seat_of_metropolitan_bishop  = {
+	}
+	pomestnoe_voisko = {
+	}
+	strength_of_the_boyars = {
+ 	}
+	zasechnaya_cherta = {
+	}
+	descendants_of_byzantine_emperors = {
 	}
 }
 
@@ -1888,7 +1926,7 @@ chinese_ideas = {
     }
     middle_kingdom = {
         liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 2
+		monarch_power_tribute = 1
     }
 }
 

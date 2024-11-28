@@ -1,6 +1,7 @@
 regnum_gothorum_reform = {
 	icon = "legislative_sejm_reform"
 	allow_normal_conversion = no
+	can_change_primary_culture = no
 	potential = {
 		OR = {
 			have_had_reform = regnum_gothorum_reform
@@ -88,17 +89,19 @@ visigothic_inquisition = {
 	}
 	modifiers = {
 		enforce_religion_cost = -0.3
-		church_power_modifier = 0.2
 		global_missionary_strength = 0.03
 		tolerance_own = 2
 		tolerance_heretic = -3
 		tolerance_heathen = -3
-		relation_with_heretics = -50
-		relation_with_heathens = -30
-		relation_with_same_religion = 20
-		reverse_relation_with_same_religion = 20
+		relation_with_heretics = -40
+		reverse_relation_with_heretic_religion = -20
+		relation_with_heathens = -20
+		reverse_relation_with_heathen_religion = -10
+		holy_orders_loyalty_modifier = 0.15
+		holy_orders_influence_modifier = 0.15
 		church_loyalty_modifier = 0.10
 		all_estate_influence_modifier = -0.10
+		manpower_in_true_faith_provinces = 0.25
 		max_absolutism_effect = 0.1
 	}
 	ai = {
@@ -109,6 +112,7 @@ visigothic_inquisition = {
 imperium_gothorum_reform = {
 	icon = "legislative_sejm_reform"
 	allow_normal_conversion = no
+	can_change_primary_culture = no
 	potential = {
 		OR = {
 			have_had_reform = imperium_gothorum_reform
@@ -188,6 +192,7 @@ valencia_curtail_feudalism = {
 
 	modifiers = {
 		all_estate_influence_modifier = -0.1
+		holy_orders_influence_modifier = 0.1
 		nobles_loyalty_modifier = -0.25
 		church_loyalty_modifier = -0.05
 		max_absolutism = 10
@@ -244,14 +249,13 @@ valencia_parliament = {
 	allow_normal_conversion = no
 	potential = {
 		OR = {
-			has_reform = valencia_parliament
-			have_had_reform = valencia_parliament
+			tag = VAL
+			was_tag = VAL
 		}
-		tag = VAL
 	}
 	
 	trigger = {
-		tag = VAL 
+		tag = VAL
 		OR = {
 			has_reform = valencia_parliament
 			have_had_reform = valencia_parliament

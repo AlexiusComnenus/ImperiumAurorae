@@ -1,13 +1,13 @@
 government = monarchy
-add_government_reform = english_monarchy
-government_rank = 1
+add_government_reform = westseaxe_monarchy_reform
+government_rank = 2
 technology_group = western
 religion = fraticelli
 primary_culture = anglo_saxon
 capital = 236
 1444.11.11= {
 	monarch = {
-		name = "Kuno"
+		name = "Æthelbert"
 		dynasty = "Wettin"
 		adm = 5
 		dip = 3
@@ -19,8 +19,8 @@ capital = 236
 	add_ruler_personality = zealot_personality
 	add_ruler_personality = conqueror_personality
 	heir = {
-		name = "Dietrich"
-		monarch_name = "Dietrich"
+		name = "Æthelwulf"
+		monarch_name = "Æthelwulf"
 		dynasty = "Wettin"
 		adm = 3
 		dip = 4
@@ -31,7 +31,6 @@ capital = 236
 		religion = fraticelli
 		culture = anglo_saxon
 	}
-	add_heir_personality = infertile_personality
 	add_heir_personality = tolerant_personality
 }
 1444.11.11= {

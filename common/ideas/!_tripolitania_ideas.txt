@@ -4,7 +4,7 @@ tripolitania_ideas = {
 		num_accepted_cultures = 2
 	}
 	bonus = {
-		discipline = 0.05
+		spy_offence = 1
 	}
 	trigger = {
 		tag = Z62

@@ -10,3 +10,5 @@ base_production = 4
 base_manpower = 1
 add_core = TLX
 discovered_by = mesoamerican
+
+add_province_triggered_modifier = MAY_obsidian_source

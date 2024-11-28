@@ -1,14 +1,13 @@
-owner = Z66
-controller = Z66
+owner = NOV
+controller = NOV
 capital = "Torzhok"
 is_city = yes
 culture = novgorodian
-religion = orthodox
+religion = bogomilist
 trade_goods = naval_supplies
 base_tax = 1
 base_production = 1
 base_manpower = 1
-add_core = Z66
 add_core = NOV
 discovered_by = MGE
 discovered_by = eastern

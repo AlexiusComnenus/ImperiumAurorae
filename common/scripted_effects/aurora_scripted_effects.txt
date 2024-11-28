@@ -54,3 +54,56 @@ dismantle_nation_effect = {
 		}
 	}
 }
+
+
+bogomilism_clear_old_aspects_effect = {
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_abolish_church_hierarchies }
+			has_country_modifier = bog_abolish_church_hierarchies_modifier
+		}
+		remove_country_modifier = bog_abolish_church_hierarchies_modifier
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_appeal_to_the_peasantry }
+			has_country_modifier = bog_appeal_to_the_peasantry_modifier
+		}
+		remove_country_modifier = bog_appeal_to_the_peasantry_modifier
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_mountain_guerillas }
+			has_country_modifier = bog_mountain_guerillas_modifier
+		}
+		remove_country_modifier = bog_mountain_guerillas_modifier
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_full_liberty_to_elect }
+			has_country_modifier = bog_full_liberty_to_elect_modifier
+		}
+		remove_country_modifier = bog_full_liberty_to_elect_modifier
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_lift_taxation }
+			has_country_modifier = bog_lift_taxation_modifier
+		}
+		remove_country_modifier = bog_lift_taxation_modifier
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_reject_material }
+			has_country_modifier = bog_reject_material_temptations
+		}
+		remove_country_modifier = bog_reject_material_temptations
+	}
+	if = {
+		limit = {
+			NOT = { has_church_aspect = bog_eternal_struggle }
+			has_country_modifier = bog_eternal_struggle_modifier
+		}
+		remove_country_modifier = bog_eternal_struggle_modifier
+	}
+}

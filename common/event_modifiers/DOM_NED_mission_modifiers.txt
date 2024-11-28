@@ -228,7 +228,11 @@ maori_subject = {
 }
 
 argentine_silver_mines = {
-	treasure_fleet_income = 0.1 
+	treasure_fleet_income = 0.15
+}
+
+peru_trade = {
+	trade_steering = 0.15
 }
 
 brazil_tropical_wood = {
@@ -236,7 +240,8 @@ brazil_tropical_wood = {
 }
 
 columbian_coffee = {
-	global_institution_spread = 0.1 
+	global_institution_spread = 0.1
+	innovativeness_gain = 0.15
 }
 
 dom_twente_pride = {

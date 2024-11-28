@@ -7,11 +7,11 @@ efr_cirksena = {
 }
 
 fluyt_tradeship = {
-	#light_ship_power = -0.5
+	light_ship_power = -0.5
 	light_ship_cost = 0.25
-	naval_forcelimit_modifier = 0.25
 	global_ship_trade_power = 0.75
 	ship_power_propagation = 2
+	is_voc_indiamen_modifier = yes
 }
 
 burgundian_successor = {

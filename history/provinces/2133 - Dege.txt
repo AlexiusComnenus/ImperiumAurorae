@@ -1,5 +1,5 @@
-owner = MGE
-controller = MGE
+owner = KAM
+controller = KAM
 capital = "Dege"
 is_city = yes
 culture = tibetan
@@ -11,7 +11,7 @@ base_production = 1
 base_manpower = 2
 extra_cost = 8
 center_of_trade = 1
-add_core = MGE
+add_core = KAM
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

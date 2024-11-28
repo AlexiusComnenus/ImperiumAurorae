@@ -150,6 +150,9 @@ arm_first_branch = {
 				name = "arm_national_awakening"
 				duration = 7300
 			}
+			unlock_estate_privilege = {
+				estate_privilege = estate_burghers_mountain_expansion
+			}
 			if = {
 				limit = {
 					capital_scope = {

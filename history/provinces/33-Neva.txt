@@ -11,6 +11,7 @@ base_manpower = 2
 extra_cost = 18
 center_of_trade = 1
 add_core = Y00
+add_core = NOV
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

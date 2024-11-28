@@ -22,11 +22,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 20
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 20
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_revguard = yes
 		}
 		effect = {
@@ -109,11 +109,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_carolean = yes
 		}
 		effect = {
@@ -156,11 +156,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_samurai = yes
 		}
 		effect = {
@@ -203,11 +203,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_tercio = yes
 		}
 		effect = {
@@ -250,11 +250,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_musketeer = yes
 		}
 		effect = {
@@ -297,11 +297,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
+			#years_of_income = 0.2
+			#treasury = 10
 #			manpower_percentage = 0.1
 #			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_streltsy = yes
 		}
 		effect = {
@@ -344,11 +344,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_cossack = yes
 		}
 		effect = {
@@ -391,11 +391,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_mamluk = yes
 		}
 		effect = {
@@ -438,11 +438,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 10
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_rajput = yes
 		}
 		effect = {
@@ -485,11 +485,11 @@ country_decisions = {
 		}
 		allow = {
 			is_in_deficit = no
-			years_of_income = 0.2
-			treasury = 7
-			manpower_percentage = 0.1
-			manpower = 1
-			NOT = { army_size_percentage = 1 }
+			#years_of_income = 0.2
+			#treasury = 7
+			#manpower_percentage = 0.1
+			#manpower = 1
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_qizilbash = yes
 		}
 		effect = {
@@ -522,7 +522,7 @@ country_decisions = {
 		major = yes
 		potential = {
 			ai = yes
-			mil_tech = 4
+			#mil_tech = 4
 			capital_scope = { 
 				controlled_by = ROOT
 				has_siege = no
@@ -548,13 +548,13 @@ country_decisions = {
 			}
 		}
 		allow = {
-			mil_power = 300
+			#mil_power = 300
 			is_in_deficit = no
 #			years_of_income = 0.1
 #			treasury = 5
-			manpower_percentage = 0.1
-			manpower = 5
-			NOT = { army_size_percentage = 1 }
+			#manpower_percentage = 0.1
+			#manpower = 5
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_janissary = yes
 		}
 		effect = {
@@ -587,7 +587,7 @@ country_decisions = {
 		major = yes
 		potential = {
 			ai = yes
-			mil_tech = 4
+			#mil_tech = 4
 			capital_scope = { 
 				controlled_by = ROOT
 				has_siege = no
@@ -600,9 +600,9 @@ country_decisions = {
 			is_in_deficit = no
 #			years_of_income = 0.1
 #			treasury = 5
-			manpower_percentage = 0.05
-			manpower = 2.5
-			NOT = { army_size_percentage = 1 }
+			#manpower_percentage = 0.05
+			#manpower = 2.5
+			#NOT = { army_size_percentage = 1 }
 			dray_below_limit_cawa = yes
 		}
 		effect = {

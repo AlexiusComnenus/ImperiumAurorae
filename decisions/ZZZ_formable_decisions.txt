@@ -3,6 +3,7 @@ country_decisions = {
 	restore_byzantine_empire_EXTRA = { # New Religions/Cultures
 		major = yes
 		potential = {
+			always = no
 			was_never_end_game_tag_trigger = yes
 			normal_or_historical_nations = yes
 			NOT = { has_country_flag = formed_byzantium_flag }
@@ -65,6 +66,7 @@ country_decisions = {
 			NOT = { owned_by = ROOT }
 		}
 		allow = {
+			always = no
 			owns = 151 # Constantinople
 			owns = 149	# Edirne
 			owns = 144  # Epiros

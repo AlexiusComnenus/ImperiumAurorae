@@ -5,7 +5,7 @@ knights_templar_ideas = {
 	}
 
 	bonus = {
-		global_manpower_modifier = 0.25
+		ship_durability = 0.1
 	}
 
 	trigger = {
@@ -22,6 +22,7 @@ knights_templar_ideas = {
 	}
 	assault_troops_of_the_crusades = {
 		cavalry_power = 0.25
+		sunk_ship_morale_hit_recieved = -0.1
 	}
 	bank_of_europe = {
 		inflation_reduction = 0.1

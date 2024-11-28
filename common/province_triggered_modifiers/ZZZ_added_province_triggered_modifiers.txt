@@ -383,9 +383,9 @@ seat_of_the_rigan_archbishopric = {
 	local_production_efficiency = 0.25
 	local_manpower_modifier = 0.25
 	local_sailors_modifier = 0.25
-	local_development_cost_modifier = -0.525
+	local_development_cost_modifier = -0.4
 	development_cost_modifier = -0.25
-	development_cost_in_primary_culture = -0.20
+	development_cost_in_primary_culture = -0.40
 	global_trade_goods_size_modifier = 0.5
 }
 

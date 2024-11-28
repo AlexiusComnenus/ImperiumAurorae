@@ -14,7 +14,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = HES
+		OR = { tag = HES	was_tag = HES }
 	}
 	
 	option = {
@@ -71,7 +71,7 @@ country_event = { # Cleves release?
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = HES
+		OR = { tag = HES	was_tag = HES }
 	}
 	
 	option = {
@@ -148,7 +148,7 @@ country_event = { # Count le wins
 	hidden = yes
 	
 	trigger = {
-		tag = HES
+		OR = { tag = HES	was_tag = HES }
 	}
 	
 	option = {
@@ -178,7 +178,7 @@ country_event = { # Fratricide
 	major = yes
 	
 	trigger = {
-		tag = HES
+		OR = { tag = HES	was_tag = HES }
 	}
 	
 	option = {

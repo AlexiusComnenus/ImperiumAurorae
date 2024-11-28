@@ -3,6 +3,7 @@ estate_church = {
 
 	# If true, country will get estate
 	trigger = {
+		NOT = { religion = bogomilist }
 		NOT = { has_government_attribute = disables_estate_church }
 		NOT = { has_disabled_estate = { estate = estate_church } }
 		if = {
@@ -43,7 +44,7 @@ estate_church = {
 
 	# These scale with loyalty & power
 	country_modifier_happy = {
-		global_tax_modifier = 0.2
+		global_tax_modifier = 0.3
 		papal_influence = 1
 		devotion = 0.5
 		church_power_modifier = 0.1
@@ -52,15 +53,17 @@ estate_church = {
 	}
 	country_modifier_neutral = {
 		global_tax_modifier = 0.2
+		monthly_ia_complacency = 0.08
 	}	
 	country_modifier_angry = {
-		global_tax_modifier = -0.1
+		global_tax_modifier = -0.2
 		papal_influence = -1
 		devotion = -0.5
 		church_power_modifier = -0.25
 		monthly_fervor_increase = -1
 		stability_cost_modifier = 0.1
 		global_unrest = 2
+		monthly_ia_complacency = 0.12
 	}
 
 	land_ownership_modifier = {
@@ -277,6 +280,13 @@ estate_church = {
 		}
 	}
 	custom_name = {
+		desc = HORDE_SHAMANS
+		trigger = {
+			has_country_flag = hordes_devout_tengri_completion_flag
+			religion = tengri_pagan_reformed
+		}
+	}
+	custom_name = {
 		desc = estate_gurus
 		trigger = {
 			religion = sikhism
@@ -442,6 +452,15 @@ estate_church = {
 		estate_church_fund_madrasas
 		estate_church_sponsor_waqf_payments
 		estate_church_muslim_integration
+		#1.37
+		estate_church_INC_idol_making
+		estate_church_MAY_cocoa_monopoly
+		estate_church_religious_tolerance
+		estate_church_TIM_yasa_supremacy
+		estate_church_TIM_promote_ijazah
+		estate_church_MUG_promote_divine_religion
+		#Imperial Eagle
+		estate_church_advocating_for_conscription
 	}
 
 	agendas = {

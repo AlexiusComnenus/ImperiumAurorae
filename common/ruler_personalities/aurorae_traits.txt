@@ -361,6 +361,88 @@ possessed_by_majorian_personality = {
 	other_ai_peace_term_bonus = 25
 }
 
+powerful_druid_personality = {
+	ruler_allow = {
+		allow = {
+			religion = druidic_pagan
+		}
+		
+		chance = {
+			modifier = {
+				factor = 1
+				ADM = 5
+			}
+			modifier = {
+				factor = 1
+				DIP = 5
+			}
+			modifier = {
+				factor = 1
+				MIL = 6
+			}
+			modifier = {
+				factor = 1000
+				has_reform = gaelic_council_elders
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			religion = druidic_pagan
+		}
+		
+		chance = {
+			modifier = {
+				factor = 1
+				heir_ADM = 5
+			}
+			modifier = {
+				factor = 1
+				heir_DIP = 5
+			}
+			modifier = {
+				factor = 1
+				heir_MIL = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			religion = druidic_pagan
+		}
+		
+		chance = {
+			modifier = {
+				factor = 1
+				consort_ADM = 5
+			}
+			modifier = {
+				factor = 1
+				consort_DIP = 5
+			}
+			modifier = {
+				factor = 1
+				consort_MIL = 6
+			}
+		}
+	}
+	
+	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
+	}
+	
+	monarch_lifespan = 1
+	global_trade_goods_size_modifier = 0.10
+	global_monthly_devastation = -0.1
+	global_prosperity_growth = 0.1
+	
+	wants_avoid_ugly_borders = yes
+}
 
 fortification_engineer_personality = {
 	ruler_allow = {
@@ -414,6 +496,10 @@ fortification_engineer_personality = {
 	}
 	
 	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
 	}
 	
 	defensiveness = 0.10
@@ -473,6 +559,10 @@ ballistics_expert_personality = {
 	}
 	
 	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
 	}
 	
 	infantry_power = 0.05
@@ -524,6 +614,10 @@ integrator_personality = {
 	}
 	
 	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
 	}
 	
 	core_creation = -0.075
@@ -577,6 +671,10 @@ artisan_personality = {
 	}
 	
 	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
 	}
 	
 	production_efficiency = 0.10
@@ -812,3 +910,404 @@ fierce_negotiator_personality = {
 	merc_maintenance_modifier = -0.25
 	nation_designer_cost = 2
 } #1 easier event
+
+ia_arbitrary_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { ruler_has_personality = righteous_personality }
+			NOT = { ruler_has_personality = well_advised_personality }
+			NOT = { adm = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					ruler_has_personality = babbling_buffoon_personality
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = obsessive_perfectionist_personality
+					ruler_has_personality = loose_lips_personality
+					ruler_has_personality = craven_personality
+					ruler_has_personality = naive_personality
+					ruler_has_personality = cruel_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = drunkard_personality
+					ruler_has_personality = infertile_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_has_personality = righteous_personality }
+			NOT = { heir_has_personality = well_advised_personality }
+			NOT = { heir_adm = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					heir_has_personality = babbling_buffoon_personality
+					heir_has_personality = malevolent_personality
+					heir_has_personality = obsessive_perfectionist_personality
+					heir_has_personality = loose_lips_personality
+					heir_has_personality = craven_personality
+					heir_has_personality = naive_personality
+					heir_has_personality = cruel_personality
+					heir_has_personality = greedy_personality
+					heir_has_personality = sinner_personality
+					heir_has_personality = drunkard_personality
+					heir_has_personality = infertile_personality
+					heir_has_personality = embezzler_personality
+					heir_has_personality = petty_personality
+				}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_has_personality = righteous_personality }
+			NOT = { consort_has_personality = well_advised_personality }
+			NOT = { consort_adm = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					consort_has_personality = babbling_buffoon_personality
+					consort_has_personality = malevolent_personality
+					consort_has_personality = obsessive_perfectionist_personality
+					consort_has_personality = loose_lips_personality
+					consort_has_personality = craven_personality
+					consort_has_personality = naive_personality
+					consort_has_personality = cruel_personality
+					consort_has_personality = greedy_personality
+					consort_has_personality = sinner_personality
+					consort_has_personality = drunkard_personality
+					consort_has_personality = infertile_personality
+					consort_has_personality = embezzler_personality
+					consort_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	allow = {
+		
+	}
+	chance = {
+		
+	}
+	
+	legitimacy = -1
+	republican_tradition = -0.5
+	devotion = -1
+	horde_unity = -0.25
+	meritocracy = -0.5
+	
+	nation_designer_cost = -2
+	
+	random_insults = yes
+	wants_disclose_attack = yes
+	
+}
+
+ia_close_minded_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { ruler_has_personality = free_thinker_personality }
+			NOT = { ruler_has_personality = scholar_personality }
+			NOT = { ruler_has_personality = patron_of_arts_personality }
+			patron_of_arts_personality
+			NOT = { dip = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					ruler_has_personality = babbling_buffoon_personality
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = obsessive_perfectionist_personality
+					ruler_has_personality = loose_lips_personality
+					ruler_has_personality = craven_personality
+					ruler_has_personality = naive_personality
+					ruler_has_personality = cruel_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = drunkard_personality
+					ruler_has_personality = infertile_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_has_personality = free_thinker_personality }
+			NOT = { heir_has_personality = scholar_personality }
+			NOT = { heir_has_personality = patron_of_arts_personality }
+			NOT = { heir_dip = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					heir_has_personality = babbling_buffoon_personality
+					heir_has_personality = malevolent_personality
+					heir_has_personality = obsessive_perfectionist_personality
+					heir_has_personality = loose_lips_personality
+					heir_has_personality = craven_personality
+					heir_has_personality = naive_personality
+					heir_has_personality = cruel_personality
+					heir_has_personality = greedy_personality
+					heir_has_personality = sinner_personality
+					heir_has_personality = drunkard_personality
+					heir_has_personality = infertile_personality
+					heir_has_personality = embezzler_personality
+					heir_has_personality = petty_personality
+				}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_has_personality = free_thinker_personality }
+			NOT = { consort_has_personality = scholar_personality }
+			NOT = { consort_has_personality = patron_of_arts_personality }
+			NOT = { consort_dip = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					consort_has_personality = babbling_buffoon_personality
+					consort_has_personality = malevolent_personality
+					consort_has_personality = obsessive_perfectionist_personality
+					consort_has_personality = loose_lips_personality
+					consort_has_personality = craven_personality
+					consort_has_personality = naive_personality
+					consort_has_personality = cruel_personality
+					consort_has_personality = greedy_personality
+					consort_has_personality = sinner_personality
+					consort_has_personality = drunkard_personality
+					consort_has_personality = infertile_personality
+					consort_has_personality = embezzler_personality
+					consort_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	allow = {
+		
+	}
+	chance = {
+		
+	}
+	
+	knowledge_sharing = no
+	
+	idea_cost = 0.05
+	innovativeness_gain = -0.25
+	
+	nation_designer_cost = -2
+	
+}
+
+ia_antiintellectual_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = { ruler_has_personality = free_thinker_personality }
+			NOT = { ruler_has_personality = scholar_personality }
+			NOT = { ruler_has_personality = patron_of_arts_personality }
+			NOT = { adm = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					ruler_has_personality = babbling_buffoon_personality
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = obsessive_perfectionist_personality
+					ruler_has_personality = loose_lips_personality
+					ruler_has_personality = craven_personality
+					ruler_has_personality = naive_personality
+					ruler_has_personality = cruel_personality
+					ruler_has_personality = greedy_personality
+					ruler_has_personality = sinner_personality
+					ruler_has_personality = drunkard_personality
+					ruler_has_personality = infertile_personality
+					ruler_has_personality = embezzler_personality
+					ruler_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = { heir_has_personality = free_thinker_personality }
+			NOT = { heir_has_personality = scholar_personality }
+			NOT = { heir_has_personality = patron_of_arts_personality }
+			NOT = { heir_adm = 4 }
+		}
+	
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					heir_has_personality = babbling_buffoon_personality
+					heir_has_personality = malevolent_personality
+					heir_has_personality = obsessive_perfectionist_personality
+					heir_has_personality = loose_lips_personality
+					heir_has_personality = craven_personality
+					heir_has_personality = naive_personality
+					heir_has_personality = cruel_personality
+					heir_has_personality = greedy_personality
+					heir_has_personality = sinner_personality
+					heir_has_personality = drunkard_personality
+					heir_has_personality = infertile_personality
+					heir_has_personality = embezzler_personality
+					heir_has_personality = petty_personality
+				}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = { consort_has_personality = free_thinker_personality }
+			NOT = { consort_has_personality = scholar_personality }
+			NOT = { consort_adm = 4 }
+		}
+
+		chance = {
+			modifier = {
+				factor = -0.5
+				OR = {
+					consort_has_personality = babbling_buffoon_personality
+					consort_has_personality = malevolent_personality
+					consort_has_personality = obsessive_perfectionist_personality
+					consort_has_personality = loose_lips_personality
+					consort_has_personality = craven_personality
+					consort_has_personality = naive_personality
+					consort_has_personality = cruel_personality
+					consort_has_personality = greedy_personality
+					consort_has_personality = sinner_personality
+					consort_has_personality = drunkard_personality
+					consort_has_personality = infertile_personality
+					consort_has_personality = embezzler_personality
+					consort_has_personality = petty_personality
+				}
+			}
+		}
+	}
+
+	allow = {
+		
+	}
+	chance = {
+		
+	}
+	
+	knowledge_sharing = no
+	
+	idea_cost = 0.05
+	tech_cost = 0.05
+	innovativeness_gain = -0.5
+	
+	nation_designer_cost = -5
+	
+}
+
+ia_incompetent_personality = {
+	ruler_allow = {
+		allow = {
+			NOT = {
+				ruler_total_stats = {
+					amount = 8
+				}
+			}
+		}
+	
+		chance = {
+			modifier = {
+				factor = 10
+				NOT = {
+					ruler_total_stats = {
+						amount = 4
+					}
+				}
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			NOT = {
+				heir_total_stats = {
+					amount = 8
+				}
+			}
+		}
+	
+		chance = {
+			modifier = {
+				factor = 10
+				NOT = {
+					heir_total_stats = {
+						amount = 4
+					}
+				}
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			NOT = {
+				consort_total_stats = {
+					amount = 8
+				}
+			}
+		}
+	
+		chance = {
+			modifier = {
+				factor = 10
+				NOT = {
+					consort_total_stats = {
+						amount = 4
+					}
+				}
+			}
+		}
+	}
+
+	allow = {
+		
+	}
+	chance = {
+		
+	}
+	
+	all_power_cost = 0.1
+	prestige = -2
+	
+	nation_designer_cost = -10
+	
+}

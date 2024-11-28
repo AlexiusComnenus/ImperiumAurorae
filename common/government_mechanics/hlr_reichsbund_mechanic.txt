@@ -1,0 +1,284 @@
+hlr_reichsbund_mechanic = {
+	alert_icon_gfx = GFX_alerticons_hlr_government_mechanic
+	alert_icon_index = 10
+	available = {
+		has_dlc = "Leviathan"
+	}
+	
+	powers = {
+		hlr_imperial_power = {
+			gui = hlr_imperial_mechanic_power
+			show_before_interactions = yes
+			max = 100
+			base_monthly_growth = 0.05
+			scaled_modifier = {
+				modifier = {
+					reduced_liberty_desire = 50
+					liberty_desire_from_subject_development = -0.5
+					stability_cost_modifier = -0.2
+					discipline = 0.05
+					monthly_hlr_imperial_power = -0.3
+				}
+			}
+		}
+	}
+	
+	interactions = {
+		IMPABIL_ADM = {
+			gui = hlr_imperial_mechanic_interaction
+			icon = GFX_imperial_ability_ADM
+			trigger = {
+				has_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = 30
+				}
+			}
+			effect = {
+				add_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = -30
+				}
+				add_country_modifier = {
+					name = imperialmechanic_adm_mod
+					duration = 1800
+				}
+				custom_tooltip = impabil_adm.tooltip
+				hidden_effect = {
+					if = {
+						limit = {
+							exists = RIT
+							RIT = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_adm_power = 50
+						add_treasury = 300
+					}
+					if = {
+						limit = {
+							exists = ILY
+							ILY = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_adm_power = 20
+						add_treasury = 100
+					}
+					if = {
+						limit = {
+							exists = HUN
+							HUN = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_adm_power = 50
+						add_treasury = 300
+					}
+					if = {
+						limit = {
+							exists = HJE
+						}
+						add_adm_power = 50
+						add_treasury = 300
+					}
+					if = {
+						limit = {
+							exists = TMA
+							TMA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_adm_power = 20
+						add_treasury = 100
+					}
+					if = {
+						limit = {
+							exists = TRA
+							TRA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_adm_power = 20
+						add_treasury = 50
+					}
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 1
+			}
+		}
+		IMPABIL_DIP = {
+			gui = hlr_imperial_mechanic_interaction
+			icon = GFX_imperial_ability_DIP
+			trigger = { 
+				has_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = 30
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = -30
+				}
+				add_country_modifier = {
+					name = imperialmechanic_dip_mod
+					duration = 1800
+				}
+				custom_tooltip = impabil_dip.tooltip
+				hidden_effect = {
+					if = {
+						limit = {
+							exists = RIT
+							RIT = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_dip_power = 50
+						add_mercantilism = 1
+					}
+					if = {
+						limit = {
+							exists = ILY
+							ILY = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_dip_power = 20
+					}
+					if = {
+						limit = {
+							exists = HUN
+							HUN = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_dip_power = 50
+						add_mercantilism = 1
+					}
+					if = {
+						limit = {
+							exists = HJE
+						}
+						add_dip_power = 50
+						add_mercantilism = 1
+					}
+					if = {
+						limit = {
+							exists = TMA
+							TMA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_dip_power = 20
+						add_mercantilism = 1
+					}
+					if = {
+						limit = {
+							exists = TRA
+							TRA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_dip_power = 20
+					}
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 1
+			}
+		}
+		IMPABIL_MIL = {
+			gui = hlr_imperial_mechanic_interaction
+			icon = GFX_imperial_ability_MIL
+			trigger = {
+				has_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = 30
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = hlr_reichsbund_mechanic
+					power_type = hlr_imperial_power
+					value = -30
+				}
+				add_country_modifier = {
+					name = imperialmechanic_mil_mod
+					duration = 1800
+				}
+				custom_tooltip = impabil_mil.tooltip
+				hidden_effect = {
+					if = {
+						limit = {
+							exists = RIT
+							RIT = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_mil_power = 50
+						add_manpower = 10
+					}
+					if = {
+						limit = {
+							exists = ILY
+							ILY = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_mil_power = 20
+						add_manpower = 3
+					}
+					if = {
+						limit = {
+							exists = HUN
+							HUN = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_mil_power = 50
+						add_manpower = 10
+					}
+					if = {
+						limit = {
+							exists = HJE
+						}
+						add_mil_power = 50
+						add_manpower = 10
+					}
+					if = {
+						limit = {
+							exists = TMA
+							TMA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_mil_power = 20
+						add_manpower = 5
+					}
+					if = {
+						limit = {
+							exists = TRA
+							TRA = { 
+								is_subject_of = ROOT 
+							}
+						}
+						add_mil_power = 20
+						add_manpower = 2
+					}
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 1
+			}
+		}
+	}
+}

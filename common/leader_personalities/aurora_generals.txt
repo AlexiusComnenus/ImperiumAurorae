@@ -104,3 +104,12 @@ soi_logistics_genius = {
 	movement_speed = 0.15
 	siege_ability = 0.25
 }
+
+dawnsbane_leader = {
+	allow = {
+		always = no
+	}
+	
+	shock_damage_received = -0.15
+	infantry_power = 0.10
+}

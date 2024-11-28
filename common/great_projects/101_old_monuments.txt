@@ -2074,13 +2074,12 @@ prague = {
 	build_cost = 0
 	can_be_moved = no
 	move_days_per_unit_distance = 10
-	starting_tier = 2
+	starting_tier = 0
 	type = monument
 
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
-		}
+		culture_group = xizho_group
+		owner = { culture_group = xizho_group }
 	}
 
 	on_built = {
@@ -2090,15 +2089,14 @@ prague = {
 	}
 
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
-		}
+		culture_group = xizho_group
+		owner = { culture_group = xizho_group }
 	}
 
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
-		}
+		culture_group = xizho_group
+		owner = { culture_group = xizho_group }
+		has_global_flag = dragon_princess_arrived_flag
 	}
 
 	keep_trigger = {
@@ -2129,13 +2127,16 @@ prague = {
 			factor = 1000
 		}
 		province_modifiers = {
+			#allowed_num_of_manufactories = 0
+			allowed_num_of_buildings = 1
+			local_development_cost_modifier = -0.1
+			local_monthly_devastation = -0.5
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
 			imperial_authority_value = 0.06
 			tolerance_own = 0.25
-			tolerance_heretic = 0.25
 		}
 		on_upgraded = {
 		}
@@ -2149,16 +2150,16 @@ prague = {
 			factor = 2500
 		}
 		province_modifiers = {
+			allowed_num_of_manufactories = 1
+			allowed_num_of_buildings = 2
+			local_development_cost_modifier = -0.25
 		}
 		area_modifier = {
+			local_monthly_devastation = -0.75
 		}
 		country_modifiers = {
 			imperial_authority_value = 0.12
 			tolerance_own = 0.5
-			tolerance_heretic = 0.25
-			papal_influence = 0.5
-			monthly_fervor_increase = 0.25
-			church_power_modifier = 0.05
 		}
 		on_upgraded = {
 		}
@@ -2172,16 +2173,17 @@ prague = {
 			factor = 5000
 		}
 		province_modifiers = {
+			allowed_num_of_manufactories = 2
+			allowed_num_of_buildings = 4
+			local_development_cost_modifier = -0.25
 		}
 		area_modifier = {
+			local_development_cost = -0.5
+			local_monthly_devastation = -1.5
 		}
 		country_modifiers = {
 			imperial_authority_value = 0.20
 			tolerance_own = 1
-			tolerance_heretic = 0.5
-			papal_influence = 1
-			monthly_fervor_increase = 0.5
-			church_power_modifier = 0.1
 		}
 		on_upgraded = {
 		}
@@ -2251,6 +2253,8 @@ holy_city_kairouan = {
 			factor = 1000
 		}
 		province_modifiers = {
+			local_development_cost = -0.10
+			local_defensiveness = 0.10
 		}
 		area_modifier = {
 		}
@@ -2271,6 +2275,9 @@ holy_city_kairouan = {
 		province_modifiers = {
 		}
 		area_modifier = {
+			local_development_cost = -0.10
+			local_defensiveness = 0.10
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
 			tolerance_own = 0.5
@@ -2288,8 +2295,12 @@ holy_city_kairouan = {
 			factor = 3500
 		}
 		province_modifiers = {
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
+			local_development_cost = -0.15
+			local_defensiveness = 0.25
+			local_tax_modifier = 0.50
 		}
 		country_modifiers = {
 			tolerance_own = 1
