@@ -94,10 +94,10 @@ bogomilism_clear_old_aspects_effect = {
 	}
 	if = {
 		limit = {
-			NOT = { has_church_aspect = bog_reject_material }
-			has_country_modifier = bog_reject_material_temptations
+			NOT = { has_church_aspect = bog_reject_material_temptations }
+			has_country_modifier = bog_reject_material_temptations_modifier
 		}
-		remove_country_modifier = bog_reject_material_temptations
+		remove_country_modifier = bog_reject_material_temptations_modifier
 	}
 	if = {
 		limit = {

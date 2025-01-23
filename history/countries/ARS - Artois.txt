@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = saxon_fief_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = cosmopolitan_french
+capital = 1878
+1399.1.1= {
+	monarch = {
+		name = "Stadtrat"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

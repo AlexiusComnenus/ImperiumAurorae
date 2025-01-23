@@ -280,10 +280,7 @@ other_lucky_nation = {
 			tag = MCH
 			tag = JAP
 			tag = YOR
-			AND = {
-				tag = FRA
-				NOT = { exists = NRM }
-			}
+			tag = FRW
 			AND = {
 				is_emperor_of_china = yes
 				is_year = 1480

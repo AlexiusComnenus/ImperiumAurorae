@@ -384,9 +384,9 @@ country_event = {  # Prophetess arrives
 		add_ruler_personality = voice_of_god_personality
 		
 		define_ruler_to_general = {
-			fire = 3
+			fire = 6
 			shock = 8
-			manuever = 3
+			manuever = 8
 			siege = 3
 			trait = voice_of_god_generaltrait
 		}
@@ -504,6 +504,17 @@ country_event = {  # News of Prophetess
 			modifier = {
 				factor = 5
 				overlord = { 
+					any_ally = {
+						OR = {
+							tag = PAP
+							tag = FAP
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 5
+				any_ally = { 
 					any_subject_country = {
 						OR = {
 							tag = PAP
@@ -511,6 +522,10 @@ country_event = {  # News of Prophetess
 						}
 					}
 				}
+			}
+			modifier = {
+				factor = 500
+				dynasty = "Meroveching"
 			}
 		}
 		
@@ -579,9 +594,9 @@ country_event = {  # Jeanne resurrects
 		add_ruler_personality = voice_of_god_personality
 		
 		define_ruler_to_general = {
-			fire = 3
+			fire = 6
 			shock = 8
-			manuever = 3
+			manuever = 8
 			siege = 3
 			trait = voice_of_god_generaltrait
 		}

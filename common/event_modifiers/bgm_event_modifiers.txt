@@ -314,13 +314,13 @@ architect_of_peace = {
 
 ideological_primacy = {
 	rr_jacobins_influence = 0.1
-	dm_social_democrat_influence = 0.1
-	dm_social_liberal_influence = 0.075
-	dm_social_conservative_influence = 0.05
-	dm_communist_influence = 0.05
-	dm_nationalist_influence = 0.025
-	dm_monarchist_influence = -0.1
-	dm_fascist_influence = -0.1
+	#dm_social_democrat_influence = 0.1
+	#dm_social_liberal_influence = 0.075
+	#dm_social_conservative_influence = 0.05
+	#dm_communist_influence = 0.05
+	#dm_nationalist_influence = 0.025
+	#dm_monarchist_influence = -0.1
+	#dm_fascist_influence = -0.1
 }
 
 not_observing = {
@@ -517,8 +517,8 @@ social_welfare_program = {
 	global_tax_modifier = -0.075
 	trade_efficiency = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_democrat_influence = 0.05
-	dm_communist_influence = -0.1
+	#dm_social_democrat_influence = 0.05
+	#dm_communist_influence = -0.1
 	global_trade_power = -0.075
 	trade_goods_size_modifier = -0.075
 }
@@ -528,8 +528,8 @@ demand_welfare = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 employment_health_regulation = {
@@ -537,9 +537,9 @@ employment_health_regulation = {
 	production_efficiency = -0.075
 	trade_efficiency = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_liberal_influence = 0.05
-	dm_social_democrat_influence = -0.025
-	dm_communist_influence = -0.05
+	#dm_social_liberal_influence = 0.05
+	#dm_social_democrat_influence = -0.025
+	#dm_communist_influence = -0.05
 	global_trade_power = -0.075
 	global_trade_goods_size_modifier = -0.075
 	trade_goods_size_modifier = -0.075
@@ -550,8 +550,8 @@ demand_health_regulation = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 establish_health_care_program = {
@@ -560,9 +560,9 @@ establish_health_care_program = {
 	stability_cost_modifier = -0.05
 	production_efficiency = -0.075
 	trade_efficiency = -0.075
-	dm_social_liberal_influence = -0.025
-	dm_social_democrat_influence = -0.0125
-	dm_communist_influence = -0.05
+	#dm_social_liberal_influence = -0.025
+	#dm_social_democrat_influence = -0.0125
+	#dm_communist_influence = -0.05
 	trade_goods_size_modifier = -0.075
 }
 
@@ -571,9 +571,9 @@ demand_health_program = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_liberal_influence = 0.075
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_liberal_influence = 0.075
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 equipment_safety_requirement = {
@@ -582,9 +582,9 @@ equipment_safety_requirement = {
 	trade_efficiency = -0.075
 	global_trade_goods_size_modifier = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_liberal_influence = -0.025
-	dm_social_democrat_influence = -0.0125
-	dm_communist_influence = -0.05
+	#dm_social_liberal_influence = -0.025
+	#dm_social_democrat_influence = -0.0125
+	#dm_communist_influence = -0.05
 	trade_goods_size_modifier = -0.075
 }
 
@@ -593,18 +593,18 @@ demand_safety_requirement = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_liberal_influence = 0.075
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_liberal_influence = 0.075
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 establish_work_week = {
 	production_efficiency = -0.075
 	trade_efficiency = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_liberal_influence = -0.05
-	dm_social_democrat_influence = -0.0125
-	dm_communist_influence = -0.05
+	#dm_social_liberal_influence = -0.05
+	#dm_social_democrat_influence = -0.0125
+	#dm_communist_influence = -0.05
 	trade_goods_size_modifier = -0.075
 }
 
@@ -613,17 +613,17 @@ demand_work_week = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_liberal_influence = 0.075
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_liberal_influence = 0.075
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 establish_labor_union_rights = {
 	global_trade_power = -0.075
 	trade_efficiency = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_democrat_influence = -0.05
-	dm_communist_influence = -0.15
+	#dm_social_democrat_influence = -0.05
+	#dm_communist_influence = -0.15
 	trade_goods_size_modifier = -0.075
 }
 
@@ -632,8 +632,8 @@ demand_union_rights = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.175
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.175
 }
 
 establish_product_regulations = {
@@ -642,7 +642,7 @@ establish_product_regulations = {
 	production_efficiency = -0.075
 	trade_efficiency = -0.075
 	stability_cost_modifier = -0.05
-	dm_social_liberal_influence = -0.05
+	#dm_social_liberal_influence = -0.05
 	trade_goods_size_modifier = -0.075
 }
 
@@ -651,9 +651,9 @@ demand_product_regulations = {
 	stability_cost_modifier = 0.3
 	production_efficiency = -0.05
 	global_tax_modifier = -0.05
-	dm_social_liberal_influence = 0.075
-	dm_social_democrat_influence = 0.1
-	dm_communist_influence = 0.05
+	#dm_social_liberal_influence = 0.075
+	#dm_social_democrat_influence = 0.1
+	#dm_communist_influence = 0.05
 }
 
 #############societal liberalization#############
@@ -731,17 +731,17 @@ artistic_state = {
 #############Sabotage#############
 
 socialist_sabotage = {
-	dm_communist_influence = 0.15
+	#dm_communist_influence = 0.15
 	yearly_corruption = -0.12
 }
 
 fascist_sabotage = {
-	dm_fascist_influence = 0.15
+	#dm_fascist_influence = 0.15
 	yearly_corruption = -0.12
 }
 
 futurist_sabotage = {
-	dm_nationalist_influence = 0.15
+	#dm_nationalist_influence = 0.15
 	yearly_corruption = -0.12
 }
 
@@ -1174,15 +1174,15 @@ state_win = {
 #############influence#############
 
 communist_influence = {
-	dm_communist_influence = 0.25
+	#dm_communist_influence = 0.25
 }
 
 futurist_influence = {
-	dm_nationalist_influence = 0.25
+	#dm_nationalist_influence = 0.25
 }
 
 fascist_influence = {
-	dm_fascist_influence = 0.25
+	#dm_fascist_influence = 0.25
 }
 
 coalition_continent_hegemon = {
@@ -2029,19 +2029,19 @@ bgm_ita_rallied = {
 #fight revolution
 
 bgm_ita_conservatism = {
-	pl_social_conservative_influence = 0.05
-	dm_fascist_influence = 0.05
-	dm_monarchist_influence = 0.075
-	dm_social_conservative_influence = 0.05
+	#pl_social_conservative_influence = 0.05
+	#dm_fascist_influence = 0.05
+	#dm_monarchist_influence = 0.075
+	#dm_social_conservative_influence = 0.05
 	stability_cost_modifier = -0.05
 	army_tradition_from_battle = 0.25
 }
 
 bgm_ita_conservatism_triumphant = {
-	pl_social_conservative_influence = 0.1
-	dm_fascist_influence = 0.1
-	dm_monarchist_influence = 0.15
-	dm_social_conservative_influence = 0.1
+	#pl_social_conservative_influence = 0.1
+	#dm_fascist_influence = 0.1
+	#dm_monarchist_influence = 0.15
+	#dm_social_conservative_influence = 0.1
 	stability_cost_modifier = -0.05
 	army_tradition_from_battle = 0.25
 }
@@ -2084,11 +2084,11 @@ bgm_ita_rev_legacy = {
 	global_sailors_modifier = 0.1
 	land_forcelimit_modifier = 0.1
 	naval_forcelimit_modifier = 0.1
-	pl_social_liberal_influence = 0.05
-	dm_social_liberal_influence = 0.05
-	dm_social_democrat_influence = 0.1
-	dm_nationalist_influence = 0.025
-	dm_communist_influence = 0.025
+	#pl_social_liberal_influence = 0.05
+	#dm_social_liberal_influence = 0.05
+	#dm_social_democrat_influence = 0.1
+	#dm_nationalist_influence = 0.025
+	#dm_communist_influence = 0.025
 }
 
 bgm_ita_rev_triumph = {
@@ -2096,11 +2096,11 @@ bgm_ita_rev_triumph = {
 	innovativeness_gain = 0.25
 	global_tax_modifier = 0.1
 	trade_goods_size_modifier = 0.1
-	pl_social_liberal_influence = 0.05
-	dm_social_liberal_influence = 0.05
-	dm_social_democrat_influence = 0.1
-	dm_nationalist_influence = 0.025
-	dm_communist_influence = 0.025
+	#pl_social_liberal_influence = 0.05
+	#dm_social_liberal_influence = 0.05
+	#dm_social_democrat_influence = 0.1
+	#dm_nationalist_influence = 0.025
+	#dm_communist_influence = 0.025
 }
 
 #revolution, tall
@@ -2227,8 +2227,8 @@ usa_corruption = {
 	yearly_corruption = 0.25
 	parliament_backing_chance = -0.33
 	parliament_debate_duration = 5 
-	dm_social_liberal_influence = 0.05
-	dm_social_democrat_influence = 0.1
+	#dm_social_liberal_influence = 0.05
+	#dm_social_democrat_influence = 0.1
 }
 
 usa_hegemon = {
@@ -2300,9 +2300,9 @@ aev_secular = {
 	tolerance_of_heretics_capacity = 1
 	tolerance_heretic = 1
 	stability_cost_modifier = -0.05
-	pl_social_liberal_influence = 0.05
-	dm_social_liberal_influence = 0.05
-	dm_social_democrat_influence = 0.025
+	#pl_social_liberal_influence = 0.05
+	#dm_social_liberal_influence = 0.05
+	#dm_social_democrat_influence = 0.025
 }
 
 aev_con = {
@@ -2312,10 +2312,10 @@ aev_con = {
 	stability_cost_modifier = -0.1
 	yearly_absolutism = 0.5
 	church_loyalty_modifier = 0.05
-	dm_monarchist_influence = 0.1
-	pl_social_conservative_influence = 0.05
-	dm_social_conservative_influence = 0.05
-	dm_fascist_influence = 0.025
+	#dm_monarchist_influence = 0.1
+	#pl_social_conservative_influence = 0.05
+	#dm_social_conservative_influence = 0.05
+	#dm_fascist_influence = 0.025
 }
 
 aev_seneschals = {
@@ -2635,12 +2635,12 @@ ger_rev_culture = {
 	idea_cost = -0.2
 	innovativeness_gain = 1
 	yearly_revolutionary_zeal = 1
-	dm_communist_influence = 0.1
-	dm_social_democrat_influence = 0.15
-	dm_social_liberal_influence = 0.1
-	dm_fascist_influence = -0.1
-	dm_monarchist_influence = -0.1
-	dm_social_conservative_influence = -0.05
+	#dm_communist_influence = 0.1
+	#dm_social_democrat_influence = 0.15
+	#dm_social_liberal_influence = 0.1
+	#dm_fascist_influence = -0.1
+	#dm_monarchist_influence = -0.1
+	#dm_social_conservative_influence = -0.05
 }
 
 ger_tribunals = {

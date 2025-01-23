@@ -323,8 +323,10 @@ roman_group = {
 	theodisc = { primary = ROM }
 	pannonian = { primary = ROM }
 	wenedyk = { primary = ROM }
+	dacothracian = { primary = RMN }
 	britannian = { primary = ROM }
 	hyperborean = { primary = ROM }
+	novaroman = { primary = Y11 }
 	# IR-CK2 Old Italic cultures
 	sabellian = {
 		dynasty_names = {

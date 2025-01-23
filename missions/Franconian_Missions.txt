@@ -57,7 +57,7 @@ franconian_minor_missions_col1 = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			add_adm_power = 30
 			add_dip_power = 30
 			add_mil_power = 30
@@ -182,7 +182,7 @@ franconian_minor_missions_col2 = {
 		}
 		
 		effect = {
-			add_prestige = 15
+			add_prestige_or_monarch_power = { amount = 15 }
 			add_adm_power = 30
 			add_dip_power = 30
 			add_mil_power = 30
@@ -747,12 +747,12 @@ franconian_missions_col2 = {
 			}
 			upper_franconia_area = {
 				type = all
-				is_core = yes
+				is_core = ROOT
 				owned_by = ROOT
 			}
 			franconia_area = {
 				type = all
-				is_core = yes
+				is_core = ROOT
 				owned_by = ROOT
 			}
 		}
@@ -975,7 +975,7 @@ franconian_missions_col2 = {
 				add_government_reform = fkn_marcher_lords_reform
 			}
 			else = {
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 			}
 		}
 	}
@@ -1000,7 +1000,7 @@ franconian_missions_col2 = {
 				add_government_reform = fkn_franken_council
 			}
 			else = {
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 			}
 		}
 	}
@@ -1030,14 +1030,272 @@ franconian_missions_col2 = {
 					skill = 2
 					cost_multiplier = 0.5
 				}
+				set_country_flag = fkn_conquest_flag
 			}
 			else = {
 				add_country_modifier = {
 					name = fkn_adept_diplomacy
 					duration = 12045
 				}
+				set_country_flag = fkn_diplomatic_flag
 			}
 			custom_tooltip = fkn_choose_path_tt
+			
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+franconian_missions_col2_branching_1 = {
+	slot = 2
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = FKN
+		has_country_flag = fkn_diplomatic_flag
+	}
+	has_country_shield = yes
+}
+
+franconian_missions_col2_branching_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = FKN
+		has_country_flag = fkn_conquest_flag
+	}
+	has_country_shield = yes
+	
+	fkn_eyes_on_the_mountains = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_question_of_alps
+		}
+		position = 12
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { 
+					ai = no 
+					any_known_country = {
+						capital_scope = {
+							OR = {
+								area = romandie_area
+								area = switzerland_area
+							}
+						}
+					}
+				}
+				any_known_country = {
+					capital_scope = {
+						OR = {
+							area = romandie_area
+							area = switzerland_area
+						}
+					}
+					has_spy_network_from = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = {
+					any_known_country = {
+						capital_scope = {
+							OR = {
+								area = romandie_area
+								area = switzerland_area
+							}
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+					}
+				}
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								area = romandie_area
+								area = switzerland_area
+							}
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 50
+						}
+					}
+					add_country_modifier = { 
+						name = fkn_defences_compromised
+						duration = 3650
+					}
+				}
+			}
+			romandie_area = { add_permanent_claim = ROOT }
+			switzerland_area = { add_permanent_claim = ROOT }
+		}
+	}
+	
+	fkn_alpine_campaign = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_eyes_on_the_mountains
+		}
+		position = 13
+		
+		provinces_to_highlight = {
+			OR = {
+				area = romandie_area
+				area = switzerland_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			romandie_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			switzerland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_mil_power = 50
+			add_prestige_or_monarch_power = { amount = 20 }
+			tirol_area = {
+				limit = { NOT = { province_id = 110 } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	fkn_scattered_guerillas = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_alpine_campaign
+		}
+		position = 14
+		
+		provinces_to_highlight = {
+			OR = {
+				area = romandie_area
+				area = switzerland_area
+				area = tirol_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { province_id = 110 }
+		}
+		
+		trigger = {
+			romandie_area = {
+				type = all
+				owned_by = ROOT
+			}
+			switzerland_area = {
+				type = all
+				owned_by = ROOT
+			}
+			tirol_area = {
+				type = all
+				OR = {
+					owned_by = ROOT
+					province_id = 110
+				}
+			}
+		}
+		
+		effect = {
+			romandie_area = {
+				set_local_autonomy = 0
+				add_devastation = 50
+				add_nationalism = -30
+				nationalist_rebels = 3
+			}
+			switzerland_area = {
+				set_local_autonomy = 0
+				add_devastation = 50
+				add_nationalism = -30
+				nationalist_rebels = 3
+			}
+			tirol_area = {
+				limit = { NOT = { province_id = 110 } }
+				set_local_autonomy = 0
+				add_devastation = 50
+				add_nationalism = -30
+				nationalist_rebels = 3
+			}
+		}
+	}
+	
+	fkn_secure_italian_border = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_scattered_guerillas
+		}
+		position = 15
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4722
+				province_id = 1871
+				province_id = 73
+				province_id = 1768
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { province_has_current_tech_fort_trigger = yes }
+				NOT = { has_building = ramparts }
+			}
+		}
+		
+		trigger = {
+			4722 = {
+				owned_by = ROOT
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+			}
+			1871 = {
+				owned_by = ROOT
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+			}
+			73 = {
+				owned_by = ROOT
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+			}
+			1768 = {
+				owned_by = ROOT
+				province_has_current_tech_fort_trigger = yes
+				has_building = ramparts
+			}
+		}
+		
+		effect = {
+			4722 = { 
+				upgrade_building = { fort = yes }
+				add_permanent_province_modifier = {
+					name = fkn_expanded_fortifications
+					duration = -1
+				}
+			}
 		}
 	}
 }
@@ -1111,7 +1369,7 @@ franconian_missions_col3 = {
 		
 		effect = {
 			add_mil_power = 100
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 20 }
 			
 			add_power_projection = { 
 				type = mission_rewards_power_projection
@@ -1176,8 +1434,12 @@ franconian_missions_col3 = {
 		}
 		position = 11
 		
-		#provinces_to_highlight = {
-		#}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2955
+				province_id = 65
+			}
+		}
 		
 		trigger = {
 			owns_core_province = 2955
@@ -1201,6 +1463,233 @@ franconian_missions_col3 = {
 		
 		effect = {
 			country_event = { id = ia_flavor_fkn.7 }
+		}
+	}
+	
+	fkn_recovering_secret_formula = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_appropriate_breweries
+		}
+		position = 12
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2955
+				province_id = 65
+				province_id = 76
+			}
+			NOT = {
+				AND = {
+					has_production_building_trigger = yes
+					base_production = 8
+					base_tax = 4
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		trigger = {
+			NOT = { has_country_modifier = fkn_siezed_breweries }
+			owns_core_province = 2955
+			owns_core_province = 65
+			owns_core_province = 76
+			if = {
+				limit = { ai = no }
+				2955 = {
+					has_production_building_trigger = yes
+					base_production = 8
+					base_tax = 4
+					is_prosperous = yes
+				}
+				65 = {
+					has_production_building_trigger = yes
+					base_production = 8
+					base_tax = 4
+					is_prosperous = yes
+				}
+				76 = {
+					has_production_building_trigger = yes
+					base_production = 8
+					base_tax = 4
+					is_prosperous = yes
+				}
+				treasury = 500
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { ai = no }
+				add_treasury = -500
+			}
+			country_event = { id = ia_flavor_fkn.8 }
+		}
+	}
+	
+	fkn_rejuvenate_the_fields = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_recovering_secret_formula
+		}
+		position = 13
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4708
+				province_id = 64
+			}
+			NOT = {
+				AND = {
+					has_production_building_trigger = yes
+					base_production = 10
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		trigger = {
+			owns_core_province = 4708
+			owns_core_province = 64
+			if = {
+				limit = { ai = no }
+				4708 = {
+					has_production_building_trigger = yes
+					base_production = 10
+					is_prosperous = yes
+				}
+				64 = {
+					has_production_building_trigger = yes
+					base_production = 10
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		effect = {
+			4708 = {
+				add_province_triggered_modifier = thu_major_wheat_fields
+			}
+			64 = {
+				change_trade_goods = grain
+				add_province_triggered_modifier = thu_major_wheat_fields
+			}
+		}
+	}
+	
+	fkn_new_paulaner = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_rejuvenate_the_fields
+		}
+		position = 14
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2955
+				province_id = 65
+				province_id = 76
+			}
+			NOT = {
+				AND = {
+					development = 25
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = beer
+				amount = 10
+			}
+			owns_core_province = 2955
+			owns_core_province = 65
+			owns_core_province = 76
+			if = {
+				limit = { ai = no }
+				2955 = {
+					trade_goods = beer
+					development = 25
+					is_prosperous = yes
+				}
+				65 = {
+					trade_goods = beer
+					development = 25
+					is_prosperous = yes
+				}
+				76 = {
+					trade_goods = beer
+					development = 25
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_years_of_owned_provinces_production_income = {
+				years = 2
+				trigger = {
+					OR = {
+						trade_goods = beer
+					}
+				}
+				custom_tooltip = fkn_2_years_beer_income_reward_tt
+			}
+			2955 = {
+				add_building = tradecompany
+			}
+			65 = {
+				add_building = tradecompany
+			}
+			76 = {
+				add_building = tradecompany
+			}
+		}
+	}
+	
+	fkn_back_to_business = {
+		icon = ansbach_succession
+		required_missions = {
+			fkn_new_paulaner
+		}
+		position = 15
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 65
+			}
+			NOT = {
+				AND = {
+					development = 40
+					has_trade_building_trigger = yes
+					is_prosperous = yes
+				}
+			}
+		}
+		
+		trigger = {
+			owns_core_province = 65
+			if = {
+				limit = { ai = no }
+				65 = {
+					trade_goods = beer
+					development = 40
+					is_prosperous = yes
+					has_trade_building_trigger = yes
+				}
+			}
+		}
+		
+		effect = {
+			65 = {
+				center_of_trade = 2
+				add_permanent_province_modifier = {
+					name = fkn_beer_market_center
+					duration = -1
+				}
+			}
 		}
 	}
 }

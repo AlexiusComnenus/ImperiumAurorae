@@ -23,7 +23,8 @@ veche_republic = {
 	}
 	modifiers = {
 		merchants = 1
-		core_creation = 0.3
+		#core_creation = 0.3
+		diplomatic_annexation_cost = -0.15
 		has_streltsy = yes
 		allowed_streltsy_fraction = 0.1
 	}

@@ -2026,6 +2026,15 @@ country_event = {		#	Scandinavia wants to join Zollbund
 	picture = FEAST_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			culture_group = germanic
+		}
+	}
+	
 	is_triggered_only = yes
 	mean_time_to_happen = {
 		days = 1
@@ -2086,6 +2095,14 @@ country_event = {		#	Guarantee autonomy
 	picture = DIET_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			culture_group = germanic
+		}
+	}
 	is_triggered_only = yes
 	mean_time_to_happen = {
 		days = 1

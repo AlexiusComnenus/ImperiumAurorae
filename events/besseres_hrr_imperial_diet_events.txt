@@ -245,7 +245,6 @@ country_event = {
 				}
 				OR = {
 					is_subject_of_type = march
-					has_reform = imperial_march_reform # Extended Timeline
 					has_reform = margrave_reform # Governments Expanded
 					any_neighbor_country = {
 						is_subject = no
@@ -1179,7 +1178,6 @@ country_event = {
 				}
 				OR = {
 					is_subject_of_type = march
-					has_reform = imperial_march_reform # Extended Timeline
 					has_reform = margrave_reform # Governments Expanded
 					any_neighbor_country = {
 						is_subject = no

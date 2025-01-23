@@ -155,6 +155,11 @@ zyp_lot_3 = {
 				set_government_rank = 3
 				set_country_flag = formed_hlr_flag
 				swap_non_generic_missions = yes
+				if = {
+					limit = { NOT = { government = monarchy } }
+					change_government = monarchy
+				}
+				add_government_reform = holy_imperial_monarchy_reform
 			}
 			north_german_region = {
 				limit = {

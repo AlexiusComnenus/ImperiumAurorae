@@ -126,6 +126,19 @@ can_increase_autonomy = {
 			}
 		}
 	}
+	condition = {
+		tooltip = "AI_CANNOT_INCREASE_AUTONOMY"
+		potential = {
+			owner = {
+				ai = yes
+			}
+		}
+		allow = {
+			owner = {
+				ai = no
+			}
+		}
+	}
 }
 
 can_decrease_autonomy = {

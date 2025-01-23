@@ -333,6 +333,7 @@ country_decisions = {
 	usurp_saxon_throne = {
 		major = yes
 		potential = {
+			always = no
 			#government = monarchy
 			culture_group = germanic
 			any_war_enemy_country = {
@@ -341,6 +342,7 @@ country_decisions = {
 		}
 		
 		allow = {
+			always = no
 			52 = {
 				OR = {
 					owner = { NOT = { war_with = ROOT } }

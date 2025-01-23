@@ -5,13 +5,12 @@ french_minor_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -26,14 +25,16 @@ french_minor_missions_1 = {
 			stability = 1
 			if = {
 				limit = { ai = no }
-				estate_loyalty = {
-					estate = estate_nobles
-					loyalty = 60
-				}
-				NOT = {
-					estate_influence = {
+				OR = {
+					estate_loyalty = {
 						estate = estate_nobles
-						influence = 60
+						loyalty = 60
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_nobles
+							influence = 50
+						}
 					}
 				}
 				years_of_income = 1
@@ -53,13 +54,12 @@ french_minor_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -99,13 +99,12 @@ french_minor_missions_3 = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -124,11 +123,13 @@ french_minor_missions_3 = {
 			}
 			if = {
 				limit = { ai = no }
-				estate_loyalty = {
-					estate = estate_church
-					loyalty = 50
+				OR = { 
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 50
+					}
+					religious_unity = 0.9
 				}
-				religious_unity = 0.9
 			}
 		}
 		effect = {
@@ -144,13 +145,12 @@ french_minor_missions_4 = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -247,13 +247,12 @@ french_minor_missions_5 = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -538,13 +537,12 @@ bgm_fra_min_hidden_slot1 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		NOT = {
 			OR = {
@@ -627,13 +625,12 @@ bgm_fra_min_dip_slo1 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = dip_strat
 	}
@@ -744,10 +741,15 @@ bgm_fra_min_dip_slo1 = {
 					is_subject_of_type = personal_union
 				}
 			}
+			OR = {
+				NOT = { exists = FRW }
+				FRW = {
+					is_subject_of = ROOT
+					is_subject_of_type = personal_union
+				}
+			}
 			NOT = { exists = FRA }
-			NOT = { tag = FAN }
-			NOT = { tag = PAP }
-			NOT = { tag = SPA }
+			NOT = { exists = FRW }
 
 			is_subject = no
 			owns_core_province = 183
@@ -764,6 +766,17 @@ bgm_fra_min_dip_slo1 = {
 				}
 				ROOT = {
 					inherit = FRA
+				}
+			}
+			if = {
+				limit = { 
+					FRW = {
+						is_subject_of_type = personal_union
+						is_subject_of = ROOT
+					}
+				}
+				ROOT = {
+					inherit = FRW
 				}
 			}
 			if = {
@@ -797,18 +810,29 @@ bgm_fra_min_dip_slo1 = {
 				}
 			}
 			else = {
-				183 = {
-					move_capital_effect = yes
+				if = {
+					limit = { NOT = { dynasty = "Meroveching" } }
+					183 = {
+						move_capital_effect = yes
+					}
 				}
 			}
 			
-			change_tag = FRA
+			if = {
+				limit = { NOT = { dynasty = "Meroveching" } }
+				change_tag = FRA
+				on_change_tag_effect = yes		
+			}
+			else = {
+				change_tag = FRW
+				on_change_tag_effect = yes
+			}
 
 			france_region = {
 				limit = {
 					NOT = { owned_by = ROOT }
 				}
-				add_permanent_claim = FRA
+				add_permanent_claim = ROOT
 			}
 			
 			every_province = {
@@ -841,10 +865,13 @@ bgm_fra_min_dip_slo1 = {
 				limit = {
 					dynasty = "Meroveching"
 				}
-				override_country_name = regnum_francorum_name
+				#override_country_name = regnum_francorum_name
 				change_country_color = { country = NRM }
 			}
-			add_government_reform = feudal_france_reform
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = feudal_france_reform
+			}
 			set_country_flag = formed_france_flag
 		}
 	}
@@ -859,13 +886,12 @@ bgm_fra_min_mil_slot1 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = mil_strat
 	}
@@ -954,9 +980,7 @@ bgm_fra_min_mil_slot1 = {
 		trigger = {
 			NOT = { tag = HLR }
 			NOT = { exists = FRA }
-			NOT = { tag = FAN }
-			NOT = { tag = PAP }
-			NOT = { tag = SPA }
+			NOT = { exists = FRW }
 
 			is_subject = no
 			owns_core_province = 183
@@ -964,6 +988,28 @@ bgm_fra_min_mil_slot1 = {
 		}
 		effect = {
 			# can form france without meeting normal requirements
+			if = {
+				limit = { 
+					FRA = {
+						is_subject_of_type = personal_union
+						is_subject_of = ROOT
+					}
+				}
+				ROOT = {
+					inherit = FRA
+				}
+			}
+			if = {
+				limit = { 
+					FRW = {
+						is_subject_of_type = personal_union
+						is_subject_of = ROOT
+					}
+				}
+				ROOT = {
+					inherit = FRW
+				}
+			}
 			if = {
 				limit = {
 					primary_culture = occitain
@@ -995,20 +1041,31 @@ bgm_fra_min_mil_slot1 = {
 				}
 			}
 			else = {
-				183 = {
-					move_capital_effect = yes
+				if = {
+					limit = { NOT = { dynasty = "Meroveching" } }
+					183 = {
+						move_capital_effect = yes
+					}
 				}
 			}
 			
-			change_tag = FRA
+			if = {
+				limit = { NOT = { dynasty = "Meroveching" } }
+				change_tag = FRA
+				on_change_tag_effect = yes		
+			}
+			else = {
+				change_tag = FRW
+				on_change_tag_effect = yes
+			}
 
 			france_region = {
 				limit = {
 					NOT = { owned_by = ROOT }
 				}
-				add_permanent_claim = FRA
+				add_permanent_claim = ROOT
 			}
-		
+			
 			every_province = {
 				limit = {
 					is_core = FRA
@@ -1039,10 +1096,13 @@ bgm_fra_min_mil_slot1 = {
 				limit = {
 					dynasty = "Meroveching"
 				}
-				override_country_name = regnum_francorum_name
+				#override_country_name = regnum_francorum_name
 				change_country_color = { country = NRM }
 			}
-			add_government_reform = feudal_france_reform
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = feudal_france_reform
+			}
 			set_country_flag = formed_france_flag
 		}
 	}
@@ -1057,13 +1117,12 @@ bgm_fra_min_hidden_slot3 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		NOT = {
 			OR = {
@@ -1099,13 +1158,12 @@ bgm_fra_min_dip_slot3 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = dip_strat
 	}
@@ -1134,13 +1192,12 @@ bgm_fra_min_mil_slot3 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = mil_strat
 	}
@@ -1150,15 +1207,20 @@ bgm_fra_min_mil_slot3 = {
 		required_missions = { decide_stratagems }
 		
 		position = 3
-		trigger = { 
-			capital_scope = {
-				fort_level = 3
+		trigger = {
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					fort_level = 3
+				}
 			}
 		}
 		effect = { 
-			add_country_modifier = {
-				name = fra_min_cap_fort
-				duration = 7300
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = fra_min_cap_fort
+					duration = -1
+				}
 			}
 		}
 	}
@@ -1173,13 +1235,12 @@ bgm_fra_min_hidden_slot2 = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		NOT = {
 			OR = {
@@ -1263,13 +1324,12 @@ bgm_fra_min_slot3_cont1_dip = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = dip_strat
 	}
@@ -1368,13 +1428,12 @@ bgm_fra_min_slot3_cont1_mil = {
 		
 	}
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 		has_country_flag = mil_strat
 	}
@@ -1471,13 +1530,12 @@ french_minor_missions_3_navy = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes
@@ -1564,13 +1622,12 @@ french_minor_missions_4_navy = {
 	generic = no
 	ai = yes
 	potential = {
+		NOT = { tag = FRA }
+		NOT = { tag = FRW }
 		OR = {
 			has_reform = independent_appanage_reform
 			has_reform = appanage_reform
-			AND = {
-				culture_group = french
-				NOT = { tag = FRA }
-			}
+			culture_group = french
 		}
 	}
 	has_country_shield = yes

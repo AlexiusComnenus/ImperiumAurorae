@@ -1,3 +1,41 @@
+base_values = {
+	max_absolutism = 65
+	merchants = 2							#Start with 2 merchants
+	diplomats = 2							#Start with 2 diplomats..
+	diplomatic_reputation = -1
+	missionaries = 1						#1 missionary
+	army_tradition_decay = 0.05				#lose 5% yearly
+	navy_tradition_decay = 0.05				#lose 5% yearly
+	prestige_decay = 0.05					#lose 5% prestige each year
+	tolerance_own = 3
+	diplomatic_upkeep = 4
+	tolerance_heathen = -3
+	tolerance_heretic = -2
+	global_missionary_strength = 0.02
+	global_manpower = 10.0
+	advisor_pool = 3
+	colonist_placement_chance = 0.1
+	free_leader_pool = 1
+	republican_tradition = 1
+	monthly_fervor_increase = 1
+	vassal_income = 0.10
+	horde_unity = -2
+	devotion = -0.5
+	meritocracy = -2
+	governing_capacity = 200
+	num_accepted_cultures = 2
+	monthly_splendor = 1
+	artillery_levels_available_vs_fort = 5
+	cav_to_inf_ratio = 0.5
+	merc_maintenance_modifier = 0.1
+	monthly_heir_claim_increase = 0.208
+	tolerance_of_heretics_capacity = 3
+	tolerance_of_heathens_capacity = 3
+	max_flagships = 1
+	num_of_parliament_issues = 10
+	has_marines = yes
+}
+
 non_accepted_culture = {
 	monthly_persian_influence = -0.01
 	local_tax_modifier = -0.33
@@ -22,7 +60,6 @@ colonial_core = {
 	local_sailors_modifier = 0.5
 	local_missionary_strength = -0.01
 	min_local_autonomy = 50
-	local_governing_cost = -0.25
 }
 
 territory_core = {
@@ -212,6 +249,7 @@ difficulty_normal_ai = {
 	fort_maintenance_modifier = -0.50
 	core_creation = -0.25
 	global_autonomy = -0.05
+	harsh_treatment_cost = 1000
 }
 
 difficulty_hard_ai = {
@@ -225,6 +263,7 @@ difficulty_hard_ai = {
 	fort_maintenance_modifier = -0.75
 	core_creation = -0.50
 	global_autonomy = -0.10
+	harsh_treatment_cost = 1000
 }
 
 difficulty_very_hard_ai = {
@@ -248,6 +287,7 @@ difficulty_very_hard_ai = {
 	fort_maintenance_modifier = -1
 	core_creation = -0.5
 	global_autonomy = -0.15
+	harsh_treatment_cost = 1000
 }
 
 luck = {
@@ -312,6 +352,40 @@ voc_indiamen_ship = {
 	naval_attrition = -0.50
 	ship_trade_power_modifier = 0.2
 	can_transport_units = yes
+	naval_maintenance_modifier = 0.5
+}
+
+hussars_regiment = {
+	cavalry_shock = 1
+	morale_damage = 0.5
+	reinforce_speed = -0.5
+	land_attrition = -0.5
+}
+
+banner_regiment = {
+	discipline = 0.05
+	land_maintenance_modifier = -0.5
+	regiment_manpower_usage = -0.75
+	reinforce_speed = -0.5
+	land_attrition = -0.5
+}
+
+musketeer_regiment = {
+	fire_damage = 0.15
+	land_morale = 0.10
+	land_maintenance_modifier = 0.25
+}
+
+cossacks_regiment = {
+    shock_damage = 0.15
+	land_attrition = -0.25
+	reinforce_speed = 0.25
+	land_maintenance_modifier = 0.25
+}
+
+carolean_regiment = {
+	morale_damage = 0.15
+	drill_decay_modifier = -0.25
 }
 
 innovativeness = {
@@ -322,8 +396,8 @@ innovativeness = {
 	global_trade_goods_size_modifier = 0.1
 	global_unrest = 4
 	stability_cost_modifier = 0.4
-	nobility_loyalty_modifier = -0.1
-	nobility_influence_modifier = -0.1
+	nobles_loyalty_modifier = -0.1
+	nobles_influence_modifier = -0.1
 	church_loyalty_modifier = -0.1
 	church_influence_modifier = -0.1
 	burghers_loyalty_modifier = 0.1

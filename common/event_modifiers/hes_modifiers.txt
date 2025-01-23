@@ -47,7 +47,7 @@ hes_ancestral_lands = {
 }
 
 hes_mended_crown = {
-	yearly_legitimacy = 1
+	legitimacy = 1
 	ae_impact = -0.15
 }
 
@@ -524,3 +524,77 @@ fkn_adept_diplomacy = {
 fkn_siezed_breweries = {
 	global_unrest = 1
 }
+
+fkn_beer_market_center = {
+	merchants = 1
+	global_own_trade_power = 0.25
+}
+
+fkn_defences_compromised = {
+	defensiveness = -0.50
+}
+
+fkn_expanded_fortifications = {
+	allowed_num_of_buildings = 2
+	allowed_num_of_manufactories = 1
+	local_defensiveness = 0.25
+	local_development_cost = -0.30
+}
+
+capitalautonomymod_2700 = {
+	min_local_autonomy = 50
+	local_autonomy = 0.20
+	local_unrest = 5
+}
+
+capitalautonomymod_2400 = {
+	min_local_autonomy = 40
+	local_autonomy = 0.18
+	local_unrest = 4.5
+}
+
+capitalautonomymod_2100 = {
+	min_local_autonomy = 30
+	local_autonomy = 0.16
+	local_unrest = 4
+}
+
+capitalautonomymod_1800 = {
+	min_local_autonomy = 15
+	local_autonomy = 0.14
+	local_unrest = 3.5
+}
+
+capitalautonomymod_1500 = {
+	min_local_autonomy = 12
+	local_autonomy = 0.12
+	local_unrest = 3
+}
+
+capitalautonomymod_1200 = {
+	min_local_autonomy = 10
+	local_autonomy = 0.10
+	local_unrest = 2.5
+}
+
+capitalautonomymod_900 = {
+	min_local_autonomy = 8
+	local_autonomy = 0.08
+	local_unrest = 2
+}
+
+capitalautonomymod_600 = {
+	min_local_autonomy = 4
+	local_autonomy = 0.04
+	local_unrest = 1.5
+}
+
+capitalautonomymod_300 = {
+	min_local_autonomy = 2
+	local_autonomy = 0.02
+	local_unrest = 1
+}
+
+austerity_policies_cooldown = {
+}
+

@@ -1036,6 +1036,52 @@ thu_export_grain = {
 	}
 }
 
+claim_merovingian_union_action = {
+	category = dynasty
+
+	require_acceptance = no
+
+	is_visible = {
+		has_country_flag = frw_can_fabricate_union_flag
+		FROM = {
+			government = monarchy
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+		}
+		NOT = { is_subject = yes }
+		NOT = { FROM = { is_subject = yes } }
+	}
+
+	is_allowed = {
+		dip_power = 100
+		government_rank = 3
+		dynasty = "Meroveching"
+		FROM = { dynasty = "Meroveching" }
+		custom_trigger_tooltip = {
+			tooltip = frw_has_not_restoration_union_already_tt
+			NOT = {
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = FROM
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		add_dip_power = -100
+		add_casus_belli = {
+			target = FROM
+			type = cb_restore_personal_union
+			months = 600
+		}
+	}
+
+	ai_will_do = {
+		always = yes
+	}
+}
+
 suborn_germanic_fief_action = {
 	category = influence
 

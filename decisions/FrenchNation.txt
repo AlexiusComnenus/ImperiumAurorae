@@ -8,6 +8,7 @@ country_decisions = {
 			NOT = { has_country_flag = formed_france_flag }
 			NOT = { tag = HLR }
 			NOT = { tag = FRA }
+			NOT = { tag = FRW }
 			NOT = { tag = PAP }
 			NOT = { tag = SPA }		# Basque is a valid culture for both FRA and SPA
 			NOT = { tag = AVE }		# Anglois is also valid
@@ -51,6 +52,7 @@ country_decisions = {
 			is_at_war = no
 			is_nomad = no			
 			NOT = { exists = FRA }
+			NOT = { exists = FRW }
 			owns_core_province = 184	# Orl�annais
 			owns_core_province = 186	# Champagne
 			owns_core_province = 183	# �le-de-France
@@ -65,13 +67,25 @@ country_decisions = {
 			ai = yes
 		}
 		effect = {
-			183 = { #Paris
-				move_capital_effect = yes
+			if = {
+				limit = {
+					NOT = { dynasty = "Meroveching" }
+				}
+				183 = { #Paris
+					move_capital_effect = yes
+				}
+				change_tag = FRA
+				on_change_tag_effect = yes
+				restore_country_name = yes
+				swap_non_generic_missions = yes
 			}
-			change_tag = FRA
-			on_change_tag_effect = yes
-			restore_country_name = yes
-			swap_non_generic_missions = yes
+			else = {
+				change_tag = FRW
+				on_change_tag_effect = yes
+				restore_country_name = yes
+				swap_non_generic_missions = yes
+			}
+			
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }
@@ -82,7 +96,7 @@ country_decisions = {
 				limit = {
 					NOT = { owned_by = ROOT }
 				}
-				add_permanent_claim = FRA
+				add_permanent_claim = ROOT
 			}
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -99,8 +113,12 @@ country_decisions = {
 				limit = {
 					dynasty = "Meroveching"
 				}
-				override_country_name = regnum_francorum_name
+				#override_country_name = regnum_francorum_name
 				change_country_color = { country = NRM }
+			}
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = feudal_france_reform
 			}
 			set_country_flag = formed_france_flag
 		}
@@ -108,6 +126,43 @@ country_decisions = {
 			factor = 1
 		}
 		ai_importance = 400
+	}
+	
+	frw_create_warrior_king_decision = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			NOT = { is_monarch_leader = yes }
+			has_country_modifier = frw_warrior_kings
+		}
+		allow = {
+			has_regency = no
+		}
+		effect = {
+			hidden_effect = {
+				add_country_modifier = {
+					name = frw_general_stat_boost
+					duration = -1
+				}
+			}
+			if = {
+				limit = { is_female = yes }
+				convert_female_ruler_to_general = yes
+			}
+			else = {
+				convert_ruler_to_general = 100
+			}
+			hidden_effect = {
+				remove_country_modifier = frw_general_stat_boost
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+		}
 	}
 	
 }

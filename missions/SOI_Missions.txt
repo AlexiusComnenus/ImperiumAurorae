@@ -1279,7 +1279,7 @@ soi_missions_column_3 = {
 		}
 		
 		effect = {
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 25 }
 			
 			if = {
 				limit = { exists = Y11 }
@@ -1417,7 +1417,7 @@ soi_missions_column_4 = {
 		}
 		
 		effect = {
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 10 }
 			add_mil_power = 100
 			
 			custom_tooltip = extra_rewards_for_aegidius_tt
@@ -1454,7 +1454,7 @@ soi_missions_column_4 = {
 		}
 		
 		effect = {
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 25 }
 			
 			add_country_modifier = {
 				name = soi_gallia_secured
@@ -1556,7 +1556,7 @@ soi_missions_column_4 = {
 		}
 		
 		effect = {
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_adm_power = 100
 			
 			custom_tooltip = every_lowlands_province_soi_tt
@@ -1804,7 +1804,7 @@ soi_missions_column_5 = {
 		}
 		
 		effect = {
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 10 }
 			add_mil_power = 100
 			
 			custom_tooltip = extra_rewards_for_aegidius_tt

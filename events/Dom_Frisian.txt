@@ -566,14 +566,6 @@ country_event = { #A Frisian King? - Magna Frisia
 				claim = 95
 			}
 		}
-		if = {
-			limit = {
-				is_part_of_hre = yes
-				is_emperor = no
-				has_dlc = "Emperor"
-			}
-			set_imperial_incident = incident_king_in_frisia
-		}
 		else = {
 			set_government_rank = 2
 			add_prestige = 20
@@ -595,19 +587,9 @@ country_event = { #A Frisian King? - Magna Frisia
 			change_mil = 2
 			claim = 95
 		}
-		if = {
-			limit = {
-				is_part_of_hre = yes
-				is_emperor = no
-				has_dlc = "Emperor"
-			}
-			set_imperial_incident = incident_king_in_frisia
-		}
-		else = {
-			set_government_rank = 2
-			add_prestige = 20
-			add_legitimacy = 20
-		}
+		set_government_rank = 2
+		add_prestige = 20
+		add_legitimacy = 20
 		#set_legacy_government = administrative_monarchy
 	}
 	option = {
@@ -623,20 +605,9 @@ country_event = { #A Frisian King? - Magna Frisia
 		define_leader_to_ruler = {
 			name = "Grutte Pier"
 		}
-		if = {
-			limit = {
-				is_part_of_hre = yes
-				is_emperor = no
-				has_dlc = "Emperor"
-			}
-			set_imperial_incident = incident_king_in_frisia
-		}
-		else = {
-			elector = yes
-			set_government_rank = 2
-			add_prestige = 20
-			add_legitimacy = 20
-		}
+		set_government_rank = 2
+		add_prestige = 20
+		add_legitimacy = 20
 		#set_legacy_government = administrative_monarchy
 	}
 	#option = {
@@ -666,23 +637,7 @@ country_event = { #A Frisian King? - Magna Frisia
 	option = {
 		name = "flavor_hol.EVTOPTD3502" #Keep current government
 		ai_chance = { factor = 0 }
-		if = {
-			limit = { government = monarchy }
-			if = {
-			limit = {
-				is_part_of_hre = yes
-				is_emperor = no
-				has_dlc = "Emperor"
-			}
-			set_imperial_incident = incident_king_in_frisia
-			}
-			else = {
-				elector = yes
-				set_government_rank = 2
-				add_prestige = 20
-				add_legitimacy = 20
-			}
-		}
+		
 	}
 }
 
@@ -713,19 +668,9 @@ country_event = {
 	
 	option = {
 		name = king_in_prussia.1.a
-		if = {
-			limit = {
-				is_part_of_hre = yes
-				is_emperor = no
-				has_dlc = "Emperor"
-			}
-			set_imperial_incident = incident_king_in_frisia
-		}
-		else = {
-			set_government_rank = 2
-			add_prestige = 20
-			add_legitimacy = 20
-		}
+		set_government_rank = 2
+		add_prestige = 20
+		add_legitimacy = 20
 	}
 }
 

@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = independent_appanage_reform
+government_rank = 2
+primary_culture = normand
+religion = catholic
+technology_group = western
+capital = 182 # Soissons
+historical_rival = VAL

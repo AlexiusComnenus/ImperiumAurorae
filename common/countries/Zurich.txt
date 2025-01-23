@@ -5,14 +5,14 @@ graphical_culture = westerngfx # was swissgfx # UPE compatibility
 color = { 41  113  220 }
 
 historical_idea_groups = {
-	religious_ideas
+	mercenary_ideas
+	innovativeness_ideas
 	defensive_ideas
+	religious_ideas
 	trade_ideas
 	economic_ideas
-	quantity_ideas
 	expansion_ideas
 	quality_ideas
-	innovativeness_ideas
 }
 
 historical_units = {

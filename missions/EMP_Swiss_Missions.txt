@@ -64,21 +64,7 @@ swiss_missions_1 = {
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					TTL = { 
-						is_subject_of = ROOT 
-						NOT = { is_subject_of_type = canton } 
-					}
-				}
-				create_subject = {
-					subject_type = canton
-					subject = TTL 
-				}
-			}
-			else = {
-				switzerland_area = { add_base_tax = 1 }
-			}
+			switzerland_area = { add_base_tax = 1 }
 			change_government_reform_progress = 50 
 		}
 	}
@@ -184,13 +170,9 @@ swiss_missions_1 = {
 				has_building = ramparts
 			}
 			if = {
-				limit = { has_global_flag = advisors_expanded_mod_active }
-				OR = {
-					defensive_planner = 1 
-					fortification_expert = 1 
-				}
+				limit = { ai = no }
+				fortification_expert = 1
 			}
-			else = { fortification_expert = 1 }
 		}
 		effect = {
 			custom_tooltip = swi_every_province_with_fort_1_manpower_tt
@@ -299,24 +281,9 @@ swiss_missions_2 = {
 			4720 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
-			if = {
-				limit = {
-					GNV = { 
-						is_subject_of = ROOT 
-						NOT = { is_subject_of_type = canton } 
-					}
-				}
-				create_subject = {
-					subject_type = canton
-					subject = GNV 
-				}
-				add_adm_power = 50 
-			}
-			else = {
-				add_republican_tradition = 5 
-				add_legitimacy = 10 
-				add_adm_power = 50 
-			}
+			add_republican_tradition = 5 
+			add_legitimacy = 10 
+			add_adm_power = 50
 			4720 = { change_culture = ROOT }
 		}
 	}
@@ -709,7 +676,6 @@ swiss_missions_4 = {
 		required_missions = { swi_imperial_immediacy }
 		position = 2 
 		trigger = {
-			canton = 3 
 			OR = {
 				has_parliament = yes 
 				full_idea_group = diplomatic_ideas 
@@ -1085,20 +1051,10 @@ swiss_missions_5 = {
 			}
 		}
 		trigger = {
-			has_adm_advisor = yes 
-			if = {
-				limit = { has_global_flag = advisors_expanded_mod_active }
-				OR = {
-					subject_mediator = 1 
-					statesman = 1 
-					diplomat = 1 
-				}
-			}
-			else = {
-				OR = {
-					diplomat = 1 
-					statesman = 1 
-				}
+			has_adm_advisor = yes
+			OR = {
+				diplomat = 1 
+				statesman = 1 
 			}
 			capital_scope = {
 				has_building = courthouse
@@ -1110,9 +1066,6 @@ swiss_missions_5 = {
 				duration = -1 
 			}
 			every_subject_country = {
-				limit = {
-					is_subject_of_type = canton 
-				}
 				add_country_modifier = {
 					name = swi_signed_the_treaty_of_stans_subject_modifier
 					duration = -1 

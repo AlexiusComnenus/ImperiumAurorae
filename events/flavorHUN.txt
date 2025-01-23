@@ -16,6 +16,16 @@ country_event = {
 
 	fire_only_once = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_neighbor_of = ROOT
+			is_subject_of = ROOT
+			religion_group = christian
+		}
+	}
 
 	trigger = {
 		OR = {

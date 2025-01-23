@@ -262,3 +262,26 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = ia_flavor_fkn.8
+	title = ia_flavor_fkn.8.t
+	desc = ia_flavor_fkn.8.d
+	picture = REFORM_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_fkn.8.a
+		
+		2955 = {
+			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
+		}
+		65 = {
+			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
+		}
+		76 = {
+			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
+		}
+	}
+}

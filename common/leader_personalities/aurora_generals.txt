@@ -7,11 +7,9 @@ eternal_emperor = {
 	
 	shock_damage = 0.15
 	siege_ability = 0.25
-	army_tradition_from_battle = 1
 	cavalry_flanking = 0.5
 	force_march_free = yes
-	land_morale = 0.2
-	fire_damage_received = -0.10
+	land_morale = 0.1
 	movement_speed = 0.15
 }
 
@@ -62,7 +60,7 @@ voice_of_god_generaltrait = {
 	morale_damage_received = -0.25
 	morale_damage = 0.10	
 	land_attrition = -0.50
-	shock_damage_received = -0.2
+	shock_damage_received = -0.25
 	force_march_free = yes
 	army_tradition_from_battle = 1
 }

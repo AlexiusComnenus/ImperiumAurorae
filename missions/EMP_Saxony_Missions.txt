@@ -161,7 +161,10 @@ ia_sax_mission_1 = {
 								subject = PREV
 							}
 						}
-						add_government_reform = saxon_fief_reform
+						if = {
+							limit = { NOT = { tag = DTT } }
+							add_government_reform = saxon_fief_reform
+						}
 					}
 				}
 				else = {
@@ -176,9 +179,35 @@ ia_sax_mission_1 = {
 								tag = VER
 								tag = LUN
 							}
+							ai = yes
 						}
 						ROOT = {
 							inherit = PREV
+						}
+					}
+					every_subject_country = {
+						limit = { 
+							is_subject_of_type = tributary_state
+							ai = no
+							OR = {
+								tag = HAM
+								tag = OLD
+								tag = LAU
+								tag = BRE
+								tag = DTT
+								tag = VER
+								tag = LUN
+							}
+						}
+						ROOT = {
+							create_subject = {
+								subject_type = saxon_daimyo
+								subject = PREV
+							}
+						}
+						if = {
+							limit = { NOT = { tag = DTT } }
+							add_government_reform = saxon_fief_reform
 						}
 					}
 				}

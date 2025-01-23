@@ -179,6 +179,7 @@ country_event = {
 			}
 			emperor = { release = AOL } 
 			AOL = {
+				change_religion = hellenic_pagan_reformed
 				add_country_modifier = {
 					name = aol_starter_bonus
 					hidden = yes

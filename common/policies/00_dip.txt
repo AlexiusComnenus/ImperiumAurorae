@@ -537,7 +537,7 @@ cloth_quality_edict = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 1.2
+		factor = 4
 		modifier = {
 			factor = 0
 			NOT = { trade_income_percentage = 0.1 }

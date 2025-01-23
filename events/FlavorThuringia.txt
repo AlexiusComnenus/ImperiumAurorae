@@ -221,9 +221,19 @@ country_event = {	#The Thuringian Uprising
 
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	trigger = {
-		tag = SAX
+		always = yes
 	}
 	
 	immediate = {
@@ -312,6 +322,16 @@ country_event = {	# Burying the Hatchet
 
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	immediate = {
 		hidden_effect = {

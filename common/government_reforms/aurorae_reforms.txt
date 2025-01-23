@@ -36,6 +36,28 @@ free_city = {
 	duration = 4
 }
 
+true_immortal_reform = {
+	icon = "free_city"
+	allow_normal_conversion = no
+	potential = {
+		has_reform = true_immortal_reform
+	}
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+
+	modifiers = {
+		
+	}
+	fixed_rank = 3
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+	duration = 1200
+	has_term_election = yes
+	heir = no
+}
+
 margraviate_reform = {
 	icon = "soldiers_2"
 	allow_normal_conversion = yes
@@ -259,40 +281,6 @@ dyanstic_administration_reform = {
 	}
 }
 
-gendarmes_reform = {
-	icon = "gendarmes_reform"
-	allow_normal_conversion = yes
-	potential = {
-		has_dlc = "Domination" 
-		culture_group = french 
-	}
-	trigger = {
-		OR = {
-			has_reform = gendarmes_reform 
-			custom_trigger_tooltip = {
-				tooltip = has_unlocked_this_reform_tt
-				has_country_flag = fra_unlock_gendarmes
-			}
-		}
-		if = {
-			limit = { has_modifier_locking_military_tier = yes }
-			OR = {
-				has_reform = gendarmes_reform
-				has_not_modifier_locking_military_tier = yes
-			}
-		}
-	}
-	modifiers = {
-		cavalry_power = 0.15
-		cav_to_inf_ratio = 0.15
-		nobles_loyalty_modifier = 0.05
-		morale_damage = 0.05
-	}
-	ai = {
-		factor = 1
-	}
-}
-
 separate_clergy_from_state_affairs_reform = {
 	icon = "partial_secularisation_reform"
 	allow_normal_conversion = yes
@@ -302,6 +290,7 @@ separate_clergy_from_state_affairs_reform = {
 			is_revolutionary = no
 			NOT = { has_dlc = "Emperor" }
 		}
+		NOT = { religion = protestant }
 	}
 	trigger = {
 		OR = {
@@ -719,7 +708,7 @@ crusading_zeal_reform = {
 		monthly_fervor_increase = 0.25
 	}
 	effect = {
-		custom_tooltip = world_crusade_tt
+		custom_tooltip = templarite_crusade_tt
 		hidden_effect = {
 			if = {
 				limit = { is_defender_of_faith = yes }
@@ -792,6 +781,7 @@ curtail_clergy_power_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { religion = bogomilist }
+		NOT = { religion = protestant }
 	}
 	modifiers = {
 		adm_tech_cost_modifier = -0.1
@@ -840,6 +830,10 @@ secure_clergy_power_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { religion = bogomilist }
+		OR = {
+			ai = no
+			NOT = { religion = protestant }
+		}
 	}
 	modifiers = {
 		church_influence_modifier = 0.05
@@ -886,6 +880,10 @@ maintain_clergy_balance_of_power_reform = {
 			NOT = { has_dlc = "Emperor" }
 		}
 		NOT = { religion = bogomilist }
+		OR = {
+			ai = no
+			NOT = { religion = protestant }
+		}
 	}
 	modifiers = {
 		all_estate_loyalty_equilibrium = 0.05
@@ -1079,7 +1077,7 @@ english_monarchy = {
 		has_reform = english_monarchy
 		have_had_reform = english_monarchy
 	}
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 15
 	nation_designer_trigger = {
@@ -1989,6 +1987,8 @@ byzantine_monarchy_reform = {
 		relation_with_same_culture = -200
 		relation_with_same_culture_group = -200
 		monthly_heir_claim_increase = -0.3
+		stability_cost_modifier = 0.25
+		yearly_corruption = 0.1
 		block_introduce_heir = yes	
 	}
 	
@@ -2097,9 +2097,8 @@ empire_of_trebizond = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	potential = {
-		government = monarchy
-		religion_group = christian
 		tag = TRE
+		culture_group = byzantine
 	}
 	legacy_equivalent = feudal_monarchy
 	valid_for_nation_designer = no
@@ -2398,7 +2397,7 @@ privateer_republic = {
 enlightened_sovereign_reform = {
 	icon = "shogunate"
 	allow_normal_conversion = no
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	potential = {
 		OR = {
 			have_had_reform = enlightened_sovereign_reform

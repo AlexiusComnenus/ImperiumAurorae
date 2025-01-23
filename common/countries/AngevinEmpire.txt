@@ -9,7 +9,7 @@ revolutionary_colors = { 2  0  10 }
 historical_score = 6550
 
 historical_idea_groups = {
-	administrative_ideas
+	mercenary_ideas
 	exploration_ideas
 	quality_ideas
 	maritime_ideas

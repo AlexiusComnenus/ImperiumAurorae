@@ -163,7 +163,7 @@ aenglish_witenagemot = {
 aenglish_census = {
 	icon = laesio_enormis_reform
 	#allow_normal_conversion = no
-	lock_level_when_selected = yes
+	#lock_level_when_selected = yes
 	#can_change_primary_culture = no
 	potential = {
 		primary_culture = anglo_saxon
@@ -195,7 +195,7 @@ aenglish_census = {
 aenglish_mercenary_reform = {
 	icon = "infantry"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	#lock_level_when_selected = yes
 	potential = {
 		primary_culture = anglo_saxon
 	}

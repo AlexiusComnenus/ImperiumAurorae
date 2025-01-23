@@ -62,6 +62,7 @@
  lost_to_player_recovery: "Great Power Resilience"
  lost_to_player_recovery_2: "Recovery From the Ravages of War"
  aegidius_majorian_tt: "If §YAegidius§! is still alive, he will §Ggain 1 ADM§!!"
+ take_province_nationalist_french_desc: "Take French Provinces"
  
  #Diplo Tooltips
  western_roman_empire_soi: "Imperium Romanum Occidentale"

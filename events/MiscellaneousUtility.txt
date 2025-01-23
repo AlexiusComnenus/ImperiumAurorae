@@ -292,6 +292,7 @@ country_event = {
 	}
 }
 
+
 namespace = saxon_fief
 
 country_event = {

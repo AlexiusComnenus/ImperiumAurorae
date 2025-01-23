@@ -145,6 +145,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = ENG }
 				NOT = { was_tag = UKR }
 				NOT = { was_tag = AVE }
+				NOT = { was_tag = FRW }
 				NOT = { tag = MUG }
 				NOT = { tag = TUR }
 				NOT = { tag = BYZ }
@@ -193,6 +194,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = ENG }
 				NOT = { tag = UKR }
 				NOT = { tag = AVE }
+				NOT = { tag = FRW }
 				NOT = { was_tag = FRA }
 				NOT = { was_tag = MUG }
 				NOT = { was_tag = TUR }

@@ -19,9 +19,9 @@ country_decisions = {
 		
 		effect = {
 			define_heir_to_general = {
-				fire = 3
-				shock = 8
-				manuever = 3
+				fire = 4
+				shock = 10
+				manuever = 5
 				siege = 5
 				trait = eternal_emperor
 			}

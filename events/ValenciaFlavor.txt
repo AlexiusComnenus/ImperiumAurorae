@@ -648,7 +648,7 @@ country_event = {  # Visigoth uprisings
 			}
 			
 			spawn_rebels = {
-				type = separatist_rebels
+				type = nationalist_rebels
 				size = 3
 				separatists_target = ROOT
 			}

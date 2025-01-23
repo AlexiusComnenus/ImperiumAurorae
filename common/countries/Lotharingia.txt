@@ -30,6 +30,7 @@ historical_units = {
 	western_men_at_arms
 }
 monarch_names = {
+	"Lothair #2" = 100
 	"Adélaïde #0" = -1
 	"Agnès #0" = -1
 	"Anne #0" = -1
@@ -83,7 +84,6 @@ monarch_names = {
 	"Isidore #0" = 0
 	"Jeanne #0" = -1
 	"Jules #0" = 0
-	"Lothair #2" = 100
 	"Louise #0" = -1
 	"Marguerite #0" = -1
 	"Marie #0" = -10

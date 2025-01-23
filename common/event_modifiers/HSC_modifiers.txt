@@ -115,6 +115,9 @@ hsc_druidic_mint = {
 
 bri_menowar_mod = {
 	has_man_of_war = yes
+	has_marines = yes
+	allowed_marine_fraction = 0.1
+	allowed_man_of_war_fraction = 0.15
 }
 
 ia_colonial_rush = {

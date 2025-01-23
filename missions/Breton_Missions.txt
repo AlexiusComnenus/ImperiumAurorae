@@ -29,7 +29,7 @@ brittany_missions_column_1 = {
 		}
 		
 		effect = {
-			add_liberty_desire = 20
+			add_liberty_desire = 40
 		}
 	}
 	
@@ -246,7 +246,7 @@ brittany_missions_column_2 = {
 		}
 		
 		effect = {
-			add_liberty_desire = 20
+			add_liberty_desire = 40
 		}
 	}
 	

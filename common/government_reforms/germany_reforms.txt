@@ -5,6 +5,7 @@ saxon_feudalism = {
 		has_reform = saxon_feudalism
 	}
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 20
 	
@@ -42,6 +43,7 @@ saxon_feudalism = {
 saxon_fief_reform = {
 	icon = "nobleman"
 	allow_normal_conversion = no
+	can_change_primary_culture = no
 	potential = {
 		OR = {
 			is_subject_of_type = saxon_daimyo
@@ -58,7 +60,7 @@ saxon_fief_reform = {
 			overlord = { has_reform = saxon_fief_reform }
 		}
 	}
-	fixed_rank = 1
+	#fixed_rank = 1
 	maintain_dynasty = yes
 	valid_for_nation_designer = no
 	lock_level_when_selected = yes
@@ -76,6 +78,10 @@ saxon_fief_reform = {
 		development_cost_modifier = 0.15
 	}
 	custom_attributes = {
+		locked_government_type = yes
+		need_crownland_to_annex = yes
+		nobility_loyalty_hit_on_integration = yes
+		gain_monarch_power_from_force_converting = yes
 	}
 	
 	ai = {
@@ -86,7 +92,7 @@ saxon_fief_reform = {
 sax_feudalism_reform = {
 	icon = "parliament_hall"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	potential = {
 		culture_group = germanic
 		OR = {
@@ -159,6 +165,7 @@ sax_feudalism_reform = {
 deutches_reich_reform = {
 	icon = "constitution"
 	allow_normal_conversion = no
+	can_change_primary_culture = no
 	potential = {
 		has_reform = deutches_reich_reform
 		tag = GER
@@ -196,6 +203,7 @@ deutches_reich_reform = {
 hes_thuringian_realm_reform = {
 	icon = "nobleman"
 	allow_normal_conversion = no
+	can_change_primary_culture = no
 	potential = {
 		OR = {
 			has_reform = hes_thuringian_realm_reform
@@ -391,7 +399,7 @@ thu_saxon_recruitment_reform = {
 fkn_marcher_lords_reform = {
 	icon = "black_army_reform"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	potential = {
 		primary_culture = franconian
 	}
@@ -418,7 +426,7 @@ fkn_marcher_lords_reform = {
 fkn_franken_council = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	potential = {
 		primary_culture = franconian
 	}

@@ -5,10 +5,7 @@ feudal_france_reform = {
 	potential = { 
 		OR = {
 			tag = FRA
-			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = feudal_france_reform
-			}
+			tag = FRW
 		}
 	}
 	fixed_rank = 2
@@ -31,6 +28,32 @@ feudal_france_reform = {
 	custom_attributes = {
 		locked_government_type = yes
 		has_appanages = yes
+	}
+}
+
+divine_merovingian_reform = {
+	icon = "holy_roman_emperor"
+	allow_normal_conversion = no
+	potential = { 
+		OR = {
+			dynasty = "Meroveching"
+			tag = FRW
+		}
+	}
+	#fixed_rank = 2
+	lock_level_when_selected = yes
+
+	modifiers = {
+		global_manpower_modifier = 0.1
+		nobles_influence_modifier = -0.2
+		vassal_income = 0.25
+		vassal_forcelimit_bonus = 0.5
+		reduced_liberty_desire = 15
+		diplomatic_annexation_cost = -0.20
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
 	}
 }
 
@@ -65,7 +88,7 @@ independent_appanage_reform = {
 	}
 	maintain_dynasty = yes
 	valid_for_nation_designer = no
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	modifiers = {
 		global_manpower_modifier = 0.15
 		nobles_loyalty_modifier = 0.05
@@ -80,5 +103,115 @@ independent_appanage_reform = {
 	custom_attributes = {
 		locked_government_type = yes
 		has_appanages = yes
+	}
+}
+
+
+
+gendarmes_reform = {
+	icon = "gendarmes_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_dlc = "Domination" 
+		OR = { culture_group = french 	primary_culture = frankish }
+	}
+	trigger = {
+		OR = {
+			has_reform = gendarmes_reform 
+			custom_trigger_tooltip = {
+				tooltip = has_unlocked_this_reform_tt
+				has_country_flag = fra_unlock_gendarmes
+			}
+		}
+		if = {
+			limit = { has_modifier_locking_military_tier = yes }
+			OR = {
+				has_reform = gendarmes_reform
+				has_not_modifier_locking_military_tier = yes
+			}
+		}
+	}
+	modifiers = {
+		can_recruit_hussars = yes
+		cavalry_power = 0.15
+		cav_to_inf_ratio = 0.15
+		nobles_loyalty_modifier = 0.05
+		morale_damage = 0.05
+	}
+	ai = {
+		factor = 50
+		modifier = {
+			factor = 1000
+			tag = FRW
+		}
+	}
+}
+
+compagnie_dordonnance_reform = {
+	icon = "soldiers_2"
+	allow_normal_conversion = yes
+	potential = {
+		has_dlc = "Domination"
+		OR = { culture_group = french 	primary_culture = frankish }
+	}
+	trigger = {
+		if = {
+			limit = { has_modifier_locking_military_tier = yes }
+			OR = {
+				has_reform = compagnie_dordonnance_reform
+				has_not_modifier_locking_military_tier = yes
+			}
+		}
+	}
+	modifiers = {
+		drill_decay_modifier = -0.33
+		army_tradition_decay = -0.005
+		cav_to_inf_ratio = 0.1
+		global_regiment_cost = -0.05
+	}
+	
+	ai = {
+		factor = 500
+		modifier = {
+			factor = -1000
+			mission_completed = fra_musketeers
+		}
+	}
+}
+
+musketeers_reform = {
+	icon = "musketeers_reform"
+	allow_normal_conversion = yes
+	potential = {
+		has_dlc = "Domination"
+		OR = { culture_group = french 	primary_culture = frankish }
+	}
+	trigger = {
+		NOT = { current_age = age_of_discovery }
+		#NOT = { current_age = age_of_reformation }
+		OR = { 
+			mission_completed = fra_musketeers
+			custom_trigger_tooltip = {
+				tooltip = has_unlocked_this_reform_tt
+				has_country_flag = frw_unlock_musketeers
+			}
+		}
+		if = {
+			limit = { has_modifier_locking_military_tier = yes }
+			OR = {
+				has_reform = musketeers_reform
+				has_not_modifier_locking_military_tier = yes
+			}
+		}
+	}
+	modifiers = {
+		infantry_fire = 0.2
+		has_musketeer = yes
+		allowed_musketeer_fraction = 0.2
+		nobles_influence_modifier = -0.1
+	}
+	
+	ai = {
+		factor = 500
 	}
 }

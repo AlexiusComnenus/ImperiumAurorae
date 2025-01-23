@@ -1,11 +1,11 @@
 gaelic_council_elders = {
 	allow_normal_conversion = no
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "parliament_hall"
 	potential = {
 		OR = {
-			has_reform = gaelic_council_elders
-			have_had_reform = gaelic_council_elders
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
 		}
 	}
 	trigger = {

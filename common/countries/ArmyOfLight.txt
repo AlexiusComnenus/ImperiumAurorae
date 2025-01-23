@@ -1,6 +1,16 @@
 ck2_converter_generated = yes
 graphical_culture = asiangfx
 color = { 181 204 20 }
+historical_idea_groups = {
+	horde_gov_ideas
+	innovativeness_ideas
+	trade_ideas
+	quality_ideas
+	economic_ideas
+	diplomatic_ideas
+	administrative_ideas
+	offensive_ideas
+}
 historical_units = {
 	reformed_steppe_rifles
 	steppe_cavalry

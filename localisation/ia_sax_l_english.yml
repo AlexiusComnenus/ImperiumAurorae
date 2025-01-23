@@ -1,8 +1,8 @@
 ﻿l_english:
  form_ngc_title: "§JUnite North Germany!§!"
- form_ngc_desc: "Unite the disparate states of Northern Germany"
+ form_ngc_desc: "Unite the disparate states of Northern Germany.\n §RNote: it is recommended to complete your existing mission tree first, because branching sections can break after forming another tag!§!"
  form_sgc_title: "§JUnite South Germany!§!"
- form_sgc_desc: "Unite the disparate states of Southern Germany"
+ form_sgc_desc: "Unite the disparate states of Southern Germany.\n §RNote: it is recommended to complete your existing mission tree first, because branching sections can break after forming another tag!§!"
  NGC: "Norddeutscher Bund"
  SGC: "Süddeutscher Bund"
  NGC_ADJ: "North German"
@@ -67,6 +67,9 @@
  po_che_dismantle_desc: "§JWe will dismantle this threat to imperial security!§!"
  PEACE_po_che_dismantle: "§JDismantle the Imperial enemies!§!"
  CB_ALLOWED_po_che_dismantle: "Dismantlement"
+ po_usurp_german_crown_desc: "We will become the new §VKing of Germany§!"
+ CB_ALLOWED_po_usurp_german_crown: "Usurp German Crown"
+ PEACE_po_usurp_german_crown: "Usurp the §VCrown of Germany§!"
  saxon_vassalize_desc: "Take Capital"
  war_of_the_roses: "Germanic Kinstrife"
  paradox_lies_tt: "Note: Paradox lies in this tooltip. Owning it via subjects is also acceptable."
@@ -349,6 +352,11 @@
  ia_flavor_sax.35.title: "Defeat in the Great Beer Competition"
  ia_flavor_sax.35.desc: "Agh! This must be the ultimate hangover!"
  ia_flavor_sax.35.a: "..."
+ ia_flavor_sax.36.title: "Recent History of the German Crown"
+ ia_flavor_sax.36.desc: "After the decline and ultimate extinction of the House of Odon that had ruled over Saxony and held the Kingdom of Germany for centuries, the Hannoverian line of House Welf who had been close associates of House Odon siezed the throne in the chaotic aftermath. Their rule over Germany was tenuous at best, however, and they faced constant challenges to their rule from both the Hanseatic merchants and the South German nobility. Eventually, when a civil war erupted as the Magdeburgian line of House Welf pushed their claim on the crown, the Ludowingers of Thuringia-Hesse declared themselves King of Germany as well and joined the fray. Now, as of 1444, the Magdeburg Welfs have consolidated their rule, crushed the Ludowingers, and established their own Papacy at Gelre, but most of Germany has ceased to pay homage to the de jure King."
+ ia_flavor_sax.36.a: "We must reunify the Kingdom!"
+ saxony_warning_tooltip_1_tt: "Thanks to our legal position as King of Germany, we have a §YSubjugation Casus Belli§! against all §YGermanic§! nations."
+ saxony_warning_tooltip_2_tt: "Due to our tenuous hold over the §VCrown of Germany§!, however, should we ever find ourselves in a §Rlosing war§! against another Germanic monarchy, they may demand to §Rusurp the German Crown§! and become the new §VKing of Germany§! in the peace deal!"
 
 
  saxon_crisis.5.t: "The Grand Reorganization"

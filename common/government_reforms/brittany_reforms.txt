@@ -62,7 +62,7 @@ reign_of_majorian_reform = {
 
 roman_regional_commanders = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "reform_the_pronoiars_reform"
 	potential = {
 		culture_group = roman_group
@@ -93,7 +93,7 @@ roman_regional_commanders = {
 
 roman_bureaucracy = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "parliament_hall"
 	potential = {
 		culture_group = roman_group
@@ -120,7 +120,7 @@ roman_bureaucracy = {
 
 roman_caesaropapism = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "byzantine_rule"
 	potential = {
 		culture_group = roman_group
@@ -150,7 +150,7 @@ roman_caesaropapism = {
 
 strengthen_the_comitatenses = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "gendarmes_reform"
 	potential = {
 		culture_group = roman_group
@@ -179,7 +179,7 @@ strengthen_the_comitatenses = {
 
 expand_the_foederati = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "mercenaries"
 	potential = {
 		culture_group = roman_group
@@ -215,7 +215,7 @@ expand_the_foederati = {
 
 roman_military_committee = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "war_map"
 	potential = {
 		culture_group = roman_group
@@ -259,7 +259,7 @@ roman_military_committee = {
 
 ia_legacy_of_rome = {
 	allow_normal_conversion = yes
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	icon = "roman_empire"
 	potential = {
 		culture_group = roman_group

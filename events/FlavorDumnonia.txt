@@ -178,6 +178,15 @@ country_event = {
 
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_neighbor_of = ROOT
+			is_subject_of = ROOT
+		}
+	}
 	#fire_only_once = yes
 	
 	trigger = {
@@ -241,6 +250,15 @@ country_event = {
 	picture = BYZ_BATTLE_eventPicture
 
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_neighbor_of = ROOT
+			is_subject_of = ROOT
+		}
+	}
 	fire_only_once = yes
 	
 	trigger = {
@@ -301,6 +319,15 @@ country_event = {
 	picture = BYZ_BATTLE_eventPicture
 
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_neighbor_of = ROOT
+			is_subject_of = ROOT
+		}
+	}
 	fire_only_once = yes
 	
 	trigger = {

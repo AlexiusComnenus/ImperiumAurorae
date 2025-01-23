@@ -4074,7 +4074,7 @@ SON_ideas = {
 BRI_ideas = {
 	start = {
 		navy_tradition = 1
-		trade_steering = 0.10
+		land_morale = 0.1
 	}
 	
 	bonus = {
@@ -4087,6 +4087,7 @@ BRI_ideas = {
 	free = yes
 	
 	legacy_of_breton_independence = {
+		global_manpower_modifier = 0.2
 		legitimacy = 1
 		devotion = 1
 		republican_tradition = 0.3
@@ -4094,20 +4095,20 @@ BRI_ideas = {
 		horde_unity = 1
 	}
 	estates_of_brittany = {
-		global_unrest = -1		
+		global_unrest = -2		
 	}
 	breton_march = {
 		defensiveness = 0.2
 	}
 	breton_catholicism = {
 		papal_influence = 2
-		global_missionary_strength = 0.01
+		global_missionary_strength = 0.02
 	}
 	protect_the_coastline = {
-		global_ship_cost = -0.1
+		own_coast_naval_combat_bonus = 1.0
 	}
 	league_of_the_public_weal = {
-		diplomatic_reputation = 1
+		diplomatic_reputation = 2
 	}
 	catholicon = {
 		prestige = 1
@@ -14157,12 +14158,12 @@ KOI_ideas = {
 
 MTH_ideas = {
 	start = {
-		fort_maintenance_modifier = -0.2
-		global_garrison_growth = 0.25
+		defensiveness = 0.15
+		development_cost_in_primary_culture = -0.15
 	}
 	
 	bonus = {
-		leader_siege = 1
+		naval_forcelimit_modifier = 0.25
 	}
 	
 	trigger = {
@@ -14170,26 +14171,30 @@ MTH_ideas = {
 	}
 	free = yes
 	
-	innefectual_overlords = {
-		production_efficiency = 0.1
+	mth_druidic_overlords = {
+		religious_unity = 0.25
 	}
-	foreign_nationals = {
-		diplomatic_reputation = 1
+	mth_brave_explorers = {
+		global_colonial_growth = 20
+		range = 0.5
 	}
-	mth_parliament_of_ireland = {
+	mth_unity_of_ireland = {
 		stability_cost_modifier = -0.10
+		parliament_backing_chance = 0.25
 	}
-	mth_englishtown = {
-		culture_conversion_cost = -0.15
+	mth_druidic_marines = {
+		has_marines = yes
+		allowed_marine_fraction = 0.5
 	}
-	mth_the_cess = {
-		global_tax_modifier = 0.1
+	mth_colonial_profits = {
+		global_tariffs = 0.25
+		trade_steering = 0.25
 	}
 	mth_trinity_college = {
-		adm_tech_cost_modifier = -0.1
+		technology_cost = -0.1
 	}
-	mth_siege_mentality = {
-		defensiveness = 0.20
+	mth_rule_the_seas = {
+		naval_morale = 0.15
 	}
 }
 

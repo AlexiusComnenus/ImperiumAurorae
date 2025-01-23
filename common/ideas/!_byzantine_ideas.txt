@@ -3,8 +3,6 @@ BYZ_ideas = {
 		monarch_military_power = 1
 		monarch_admin_power = 1
 		monarch_diplomatic_power = 1
-		stability_cost_modifier = 0.25
-		yearly_corruption = 0.1
 	}
 	
 	bonus = {

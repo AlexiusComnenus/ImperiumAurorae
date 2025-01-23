@@ -68,7 +68,7 @@ visigothic_inquisition = {
 		primary_culture = visigothic
 	}
 	effect = {
-		custom_tooltip = world_crusade_tt
+		custom_tooltip = templarite_crusade_tt
 		hidden_effect = {
 			if = {
 				limit = { is_defender_of_faith = yes }
@@ -188,7 +188,7 @@ valencia_curtail_feudalism = {
 		culture = visigothic
 		technology_group = western
 	}
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 
 	modifiers = {
 		all_estate_influence_modifier = -0.1
@@ -229,7 +229,7 @@ valencia_bureaucracy = {
 		culture = visigothic
 		technology_group = western
 	}
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 
 	government_abilities = {
 		system_of_councils_mechanic
@@ -262,7 +262,7 @@ valencia_parliament = {
 		}
 		primary_culture = visigothic
 	}
-	lock_level_when_selected = yes
+	lock_level_when_selected = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 15
 	modifiers = {

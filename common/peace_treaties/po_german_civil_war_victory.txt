@@ -57,6 +57,11 @@ po_german_civil_war_victory = {
 		always = yes
 	}
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
+		if = {
+			limit = { NOT = { has_reform = saxon_feudalism } }
+			add_government_reform = saxon_feudalism
+			save_global_event_target_as = saxon_king
+		}
 		every_war_enemy_country = {
 			limit = { 
 				is_in_war = {
@@ -73,7 +78,29 @@ po_german_civil_war_victory = {
 					subject = PREV
 				}
 			}
-			add_government_reform = saxon_fief_reform
+			#add_government_reform = saxon_fief_reform
+		}
+		if = {
+			limit = {
+				FAP = { is_subject_of = FROM }
+			}
+			ROOT = {
+				create_subject = {
+					subject_type = papal_puppet
+					subject = FAP
+				}
+			}
+		}
+		if = {
+			limit = {
+				PAP = { is_subject_of = FROM }
+			}
+			ROOT = {
+				create_subject = {
+					subject_type = papal_puppet
+					subject = PAP
+				}
+			}
 		}
 		FROM = {
 			ROOT = {
@@ -92,16 +119,11 @@ po_german_civil_war_victory = {
 			}
 			white_peace = ROOT
 		}
-		if = {
-			limit = { NOT = { has_reform = saxon_feudalism } }
-			add_government_reform = saxon_feudalism
-			save_global_event_target_as = saxon_king
-		}
 	}
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
-			value = 2000
+			value = 1000000
 		}
 		limit = { # if limit evaluates false, ai_weight will evaluate to 0 regardless
 			always = yes

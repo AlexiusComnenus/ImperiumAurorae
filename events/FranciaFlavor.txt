@@ -1,0 +1,133 @@
+##############################
+# Francian Flavor Events 
+#                            
+# Written by Alexios
+##############################
+namespace = ia_flavor_frw
+
+country_event = {  # Fate of Aachen
+	id = ia_flavor_frw.1
+	title = ia_flavor_frw.1.t
+	desc = ia_flavor_frw.1.d
+	picture = SIEGE_eventPicture
+    is_triggered_only = yes
+	
+	option = {	# Burn it down!
+		name = ia_flavor_frw.1.a
+		ai_chance = { factor = 100 }
+		
+		add_treasury = 500
+		add_power_projection = { 
+			type = 25_permanent_power_projection
+			amount = 20
+		}
+		custom_tooltip = permanent_pp_tt
+		
+		1878 = {
+			add_devastation = 100
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+			
+			destroy_great_project = {
+				type = aachener_dom
+			}
+		}
+	}
+	
+	option = {	# Spare it
+		name = ia_flavor_frw.1.b
+		ai_chance = { factor = 0 }
+		
+		add_adm_power = 50
+	}
+}
+
+province_event = {
+	id = ia_flavor_frw.2
+	title = ia_flavor_frw.2.t
+	desc = ia_flavor_frw.2.d
+	picture = CITY_VIEW_eventPicture
+	goto = ROOT
+	hidden = yes
+	
+	trigger = {
+		has_owner_religion = yes
+		
+		OR = {
+			culture_group = french
+			culture_group = germanic
+			AND = {
+				owner = { has_country_flag = frw_assimilate_iberia_flag }
+				OR = {
+					culture_group = iberian
+					culture = visigothic
+				}
+			}
+		}
+		has_owner_accepted_culture = yes
+		NOT = { nationalism = 1 }
+		
+		owner = {
+			tag = FRW
+			has_country_flag = frw_assimilation_enabled_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = ia_flavor_frw.2.a
+		
+		if = {
+			limit = { culture_group = french }
+			change_culture = frankish
+		}
+		else_if = {
+			limit = { culture_group = germanic }
+			change_culture = frankish
+		}
+		else_if = {
+			limit = { culture_group = iberian }
+			change_culture = frankish
+		}
+		else_if = {
+			limit = { culture = visigothic }
+			change_culture = frankish
+		}
+	}
+}
+
+# Francia path picker
+country_event = {
+	id = ia_flavor_frw.3
+	title = ia_flavor_frw.3.t
+	desc = ia_flavor_frw.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	
+	
+	option = {	# conquest
+		name = ia_flavor_frw.3.a
+		
+		set_country_flag = frw_iberian_conquest_flag
+		clr_country_flag = frw_iberian_alliance_flag
+		swap_non_generic_missions = yes
+		catalonia_area = { add_permanent_claim = ROOT }
+	}
+	
+	option = {	# alliance
+		name = ia_flavor_frw.3.b
+		trigger = { NOT = { ai = yes } }
+		highlight = yes
+		
+		set_country_flag = frw_iberian_alliance_flag
+		clr_country_flag = frw_iberian_conquest_flag
+		swap_non_generic_missions = yes
+		
+	}
+}

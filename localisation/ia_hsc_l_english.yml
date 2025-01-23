@@ -2,6 +2,18 @@
 
  #Mechanics Tooltips
  mechanic_always_archdruid_personality_yes: "Rulers are practically guaranteed to be §YPowerful Druids§!"
+ mth_druidic_overlords: "Druidic Overlords"
+ mth_druidic_overlords_desc: "Our state is greatly influenced by the Druids."
+ mth_brave_explorers: "Brave Explorers"
+ mth_brave_explorers_desc: "The youth of Eire have the explorer's spirit, brave and tenacious."
+ mth_unity_of_ireland: "Irish Unity"
+ mth_unity_of_ireland_desc: "At long last, Ireland is united under one banner, and not that of foreign invaders."
+ mth_druidic_marines: "Marine Druidry"
+ mth_druidic_marines_desc: "Druidic skill is just as applicable on the water as it is on land."
+ mth_colonial_profits: "Colonial Profits"
+ mth_colonial_profits_desc: "Let us see what the New World has to offer us."
+ mth_rule_the_seas: "Rule the Seas"
+ mth_rule_the_seas_desc: "As an island nation, naval power is the most critical to our defence."
  oath_of_service: "Oath of Service"
  oath_of_service_desc: "As part of their rite of passage, young Gaelic men swear to defend their homeland against all who would despoil it."
  the_great_voyage: "The Great Voyage"

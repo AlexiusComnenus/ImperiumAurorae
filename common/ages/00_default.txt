@@ -213,21 +213,16 @@ age_of_discovery = {
 			}
 		}
 		
-		ab_ottoman_siege_ability = {
+		ab_daohellenic_rise = {
 			effect = { 
 				on_age_ability_taken = { age = age_of_discovery }
 			}
 			allow = {
-				OR = {
-					tag = Z44
-					AND = {
-						tag = BYZ
-						religion_group = muslim
-					}
-				}
+				religion = hellenic_pagan_reformed
 			}
 			modifier = {
-				leader_siege = 1 
+				unjustified_demands = -1
+				core_creation = -0.1
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -254,18 +249,16 @@ age_of_discovery = {
 				factor = 100
 			}
 		}
-		ab_denmark_reduced_lib_desire = {
+		ab_saxon_reduced_lib_desire = {
 			effect = { 
 				on_age_ability_taken = { age = age_of_discovery }
 			}
 			allow = {
-				OR = {
-					tag = DAN
-					personal_union = 2
-				}
+				has_reform = saxon_feudalism
 			}
 			modifier = {
-				reduced_liberty_desire = 30
+				reduced_liberty_desire_on_same_continent = 10
+				ae_impact = -0.1
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -505,32 +498,25 @@ age_of_reformation = {
 			}
 		}
 
-		ab_spain_shock_tactics = {
+		ab_templarite_zealotry = {
 			allow = {
-				OR = {
-					tag = SPA
-					tag = VAL
-					AND = {
-						government_rank = 2
-						culture_group = iberian
-						num_of_colonies = 2
-					}
-				}
+				religion = protestant
+			}
+			effect = { 
+				on_age_ability_taken = { age = age_of_reformation }
 			}
 			modifier = {
-				leader_land_fire = 2
-				max_general_fire = 1
+				establish_order_cost = -0.5
+				leader_cost = -0.10
+				num_of_age_rewards = 1
 			}
 			ai_will_do = {
 				factor = 100
 			}
 		}
-		ab_mughal_artillery = {
+		ab_celestial_artillery = {
 			allow = {
-				OR = {
-					tag = MUG
-					tag = MAM
-				}
+				is_emperor_of_china = yes
 			}
 			effect = { 
 				on_age_ability_taken = { age = age_of_reformation }
@@ -1064,6 +1050,8 @@ age_of_revolutions = {
 				OR = {
 					tag = AVE
 					tag = GBR
+					tag = HSC
+					tag = ENG
 				}
 			}
 			modifier = {
@@ -1081,6 +1069,7 @@ age_of_revolutions = {
 			allow = {
 				OR = {
 					tag = RUS
+					tag = UKR
 					has_reform = tsardom
 				}
 			}
@@ -1092,16 +1081,12 @@ age_of_revolutions = {
 				factor = 100
 			}
 		}
-		ab_austrian_morale = {
+		ab_revolutionary_morale = {
 			effect = { 
 				on_age_ability_taken = { age = age_of_revolutions }
 			}
 			allow = {
-				OR = {
-					tag = HAB
-					tag = AUH
-					primary_culture = austrian
-				}
+				is_revolution_target = yes
 			}
 			modifier = {
 				morale_damage_received = -0.2

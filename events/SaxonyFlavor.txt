@@ -860,6 +860,17 @@ country_event = {  # France: Ultimatum from Saxonia
 	}
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	option = {	# Accept
 		name = ia_flavor_sax.14.a
@@ -975,6 +986,17 @@ country_event = {  # Flanders: Ultimatum from Saxonia
     is_triggered_only = yes
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	option = {	# Accept
 		name = ia_flavor_sax.16.a
@@ -1276,7 +1298,7 @@ country_event = {  # Outsider took germanic land
 	option = {	# Issue the Ultimatum
 		name = ia_flavor_sax.18.a
 		ai_chance = { 
-			factor = 100
+			factor = 50
 		}
 		
 		event_target:saxony_war_target_foreign_incursion = {
@@ -1307,6 +1329,26 @@ country_event = {  # Outsider took germanic land
 					}
 				}
 			}
+			modifier = {
+				factor = 50
+				NOT = { 
+					army_strength = {
+						who = event_target:saxony_war_target_foreign_incursion
+						value = 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 50
+				event_target:saxony_war_target_foreign_incursion = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 0.8
+						}
+					}
+				}
+			}
 		}
 		
 		add_prestige = -10
@@ -1334,6 +1376,17 @@ country_event = {  # Intruder: Ultimatum from Saxonia
 	}
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	option = {	# Accept
 		name = ia_flavor_sax.19.a
@@ -1443,6 +1496,17 @@ country_event = {  # Religious Question
     is_triggered_only = yes
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	option = {	# enforce frati
 		name = ia_flavor_sax.20.a
@@ -1520,6 +1584,17 @@ country_event = {  # The Kingdom is Defunct
 	picture = REVOLT_HUNGARIAN_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	trigger = {
 		has_reform = saxon_feudalism
@@ -1677,6 +1752,17 @@ country_event = {  # Nobles sabotage alliance
 	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			culture_group = germanic
+		}
+	}
 	
 	trigger = {
 		has_reform = saxon_feudalism
@@ -1745,6 +1831,17 @@ country_event = {  # No player alliances with Antioch for no reason
 	picture = NOBLE_ESTATE_TAKE_OVER_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			#culture_group = germanic
+		}
+	}
 	
 	trigger = {
 		#ai = no
@@ -2294,5 +2391,39 @@ country_event = {  # Outcome of Drinking Competition -- Vassal Edition
 		}
 		
 		add_prestige = -10
+	}
+}
+
+country_event = {  # Flavor guide for Saxony players
+	id = ia_flavor_sax.36
+	title = ia_flavor_sax.36.title
+	desc = ia_flavor_sax.36.desc
+	picture = BIG_BOOK_eventPicture
+	
+	#is_triggered_only = yes
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	trigger = {
+		tag = SAX
+		ai = no
+		NOT = { is_year = 1460 }
+	}
+	
+	immediate = { 
+		
+	}
+	
+	option = {	# Ok
+		name = ia_flavor_sax.36.a
+		ai_chance = { 
+			factor = 1
+		}
+		
+		custom_tooltip = saxony_warning_tooltip_1_tt
+		custom_tooltip = saxony_warning_tooltip_2_tt
 	}
 }

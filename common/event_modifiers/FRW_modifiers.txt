@@ -1,0 +1,148 @@
+frw_consolidated_northern_francia = {
+	diplomatic_annexation_cost = -0.2
+	ae_impact = -0.1
+}
+
+frw_peace_and_serenity = {
+	global_monthly_devastation = -0.1
+	global_prosperity_growth = 0.25
+	manpower_recovery_speed = 0.25
+}
+
+frw_economy_revitalized = {
+	inflation_reduction = 0.1
+	global_tax_modifier = 0.25
+	build_cost = -0.1
+}
+
+frw_embraced_renaissance = {
+	advisor_cost = -0.20	
+	innovativeness_gain = 0.5
+}
+
+frw_in_the_name_of_the_king = {
+	global_regiment_cost = -0.15
+	land_morale = 0.05
+}
+
+frw_rise_of_francia = {
+	all_power_cost = -0.05
+	land_forcelimit_modifier = 0.20
+	prestige_decay = -0.01
+}
+
+frw_controlling_dutch_trade = {
+	trade_steering = 0.2
+	mercantilism_cost = -0.2
+}
+
+frw_cat_bonus = {
+	defensiveness = 0.1
+	land_forcelimit_modifier = 0.20
+	core_creation = -0.1
+}
+
+frw_nav_bonus = {
+	land_morale = 0.10
+	land_forcelimit_modifier = 0.10
+	core_creation = -0.1
+}
+
+frw_visigoths_vanquished = {
+	morale_damage_received = -0.05
+	morale_damage = 0.05
+	prestige = 0.5
+}
+
+frw_join_efforts = {
+	land_morale = 0.05
+	siege_ability = 0.10
+}
+
+frankish_iberian_cooperation = {
+	army_tradition_decay = -0.01
+	technology_cost = -0.1
+	diplomatic_upkeep = 1
+}
+
+frw_warrior_kings = {
+	leader_cost = -0.10
+	war_exhaustion = -0.02
+}
+
+frw_general_stat_boost = {
+	leader_land_fire = 3
+	leader_land_manuever = 3
+	leader_land_shock = 3
+	leader_siege = 3
+	max_general_fire = 4
+	max_general_maneuver = 4
+	max_general_shock = 4
+	max_general_siege = 4
+}
+
+frw_merovingian_divine_right = {
+	diplomatic_upkeep = 2
+	prestige_decay = -0.005
+	max_absolutism = 10
+}
+
+frw_christendoms_chosen_modifier = {
+	stability_cost_modifier = -0.5
+	global_missionary_strength = 0.03
+	tolerance_own = 2
+	enforce_religion_cost = -0.75
+}
+
+frw_developed_farmlands = {
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 2
+	trade_goods_size = 0.6
+}
+
+frw_capital_of_soissons = {
+	local_development_cost_modifier = -0.20
+	trade_goods_size_modifier = 0.25
+	local_defensiveness = 0.25
+	local_governing_cost = -0.25
+	local_governing_cost_increase = -45
+	local_defender_dice_roll_bonus = 1
+}
+
+frw_urbanization_cities = {
+	local_development_cost_modifier = -0.20
+	trade_goods_size_modifier = 0.25
+	local_governing_cost_increase = -15
+	local_defensiveness = 0.20
+}
+
+frw_urbanization_modifier = {
+	development_cost_in_primary_culture = -0.1
+	build_cost = -0.15
+}
+
+frw_holding_alpine_passes = {
+	defensiveness = 0.10
+	siege_ability = 0.10
+}
+
+frw_kingdom_of_lombardy = {
+	governing_capacity = 250
+	monarch_admin_power = 1
+}
+
+frw_kingdom_of_bavaria = {
+	governing_capacity = 150
+	free_dip_policy = 1
+}
+
+frw_imperium_francorum_modifier = {
+	diplomatic_upkeep = 2
+	administrative_efficiency = 0.1
+}
+
+frw_mustering_the_army = {
+	global_regiment_cost = -0.15
+	global_regiment_recruit_speed = -0.5
+	reinforce_speed = 0.25
+}

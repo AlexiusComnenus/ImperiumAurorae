@@ -14,6 +14,8 @@ monarchy = {
 				negusa_nagast
 				solomonic_empire
 				#Specific:
+				divine_merovingian_reform
+				true_immortal_reform
 				reichskoenigtum
 				westseaxe_monarchy_reform
 				aengland_tolerant_reform
@@ -26,6 +28,7 @@ monarchy = {
 				regnum_gothorum_reform
 				imperium_gothorum_reform
 				saxon_feudalism
+				saxon_fief_reform
 				byzantine_monarchy_reform
 				byzantine_warlord
 				chinese_warlord
@@ -93,7 +96,6 @@ monarchy = {
 				absolutist_france_reform
 				appanage_reform
 				independent_appanage_reform
-				saxon_fief_reform
 				ruthenian_tsardom
 				russian_empire_reform
 				korean_monarchy
@@ -677,12 +679,21 @@ republic = {
 	reform_levels = {
 		oligarchy_merchant_class_noble_elite = {
 			reforms = {
+				true_immortal_reform
 				baetic_league_government
 				roman_republic
 				privateer_republic
 				almohad_commune_reform
 				kle_union_of_cities
 				golden_republic_reform
+				saxon_fief_reform
+				gotland_pirate_island
+				gotland_pirate_realm
+				hansa_free_city_reform
+				peasants_chiefdom
+				bataafs_republiek
+				danelaw_gov
+				bogomilist_veche_republic
 				oligarchy_reform
 				signoria_reform
 				merchants_reform
@@ -727,14 +738,6 @@ republic = {
 				egyptian_government_reform
 				city_alliance_reform
 				land_christian_sun_reform
-				saxon_fief_reform
-				gotland_pirate_island
-				gotland_pirate_realm
-				hansa_free_city_reform
-				peasants_chiefdom
-				bataafs_republiek
-				danelaw_gov
-				bogomilist_veche_republic
 			}
 		}
 		republican_virtues = {
@@ -1320,6 +1323,7 @@ theocracy = {
 	reform_levels = {
 		theocratic_leadership = {
 			reforms = {
+				true_immortal_reform
 				celestial_xizho_empire
 				mingjiao_reform
 				auroral_horde

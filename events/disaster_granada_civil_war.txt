@@ -35,6 +35,13 @@ country_event = {
 	picture = CIVIL_WAR_eventPicture
 
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+		}
+	}
 	# this = country seeing popup, from = original event scope
 	#major_trigger = {
 	#	capital_scope = {

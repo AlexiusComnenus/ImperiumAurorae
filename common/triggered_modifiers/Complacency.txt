@@ -55,3 +55,18 @@ complacency_loss_good_general = {
 	}
 	monthly_ia_complacency = -0.1
 }
+
+complacency_loss_more_powerful_chinese_country = {
+	potential = { 
+		is_emperor_of_china = yes
+	}
+	trigger = {
+		any_known_country = {
+			culture_group = east_asian
+			total_development = ROOT
+			government = monarchy
+		}
+	}
+	monthly_ia_complacency = -2
+	imperial_mandate = -0.5
+}

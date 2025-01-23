@@ -27,6 +27,8 @@ country_decisions = {
 					dynasty = "Palaiologos"
 				}
 			}
+			NOT = { primary_culture = turkish }
+			NOT = { primary_culture = seleucian }
 #			OR = {
 #				religion = orthodox
 #				has_idea = MFA_byzantine_claimants

@@ -119,6 +119,14 @@ country_event = {
 	picture = HRE_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = { 
+			tag = Z17
+			culture_group = byzantine
+			is_rival = ROOT
+			is_enemy = ROOT
+		}
+	}
 	
 	is_triggered_only = yes
 	
@@ -167,6 +175,14 @@ country_event = {
 	picture = COURT_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = { 
+			tag = Z17
+			culture_group = byzantine
+			is_rival = ROOT
+			is_enemy = ROOT
+		}
+	}
 	
 	is_triggered_only = yes
 	
@@ -354,6 +370,14 @@ country_event = {
 	picture = REFORM_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = { 
+			is_part_of_hre = yes
+			culture_group = byzantine
+			is_rival = ROOT
+			is_enemy = ROOT
+		}
+	}
 	
 	is_triggered_only = yes
 	
@@ -838,6 +862,13 @@ country_event = {
 	}
 	
 	major = yes
+	major_trigger = {
+		OR = { 
+			is_part_of_hre = yes
+			is_rival = ROOT
+			is_enemy = ROOT
+		}
+	}
 	
 	option = { # embrace the change
 		name = antioch.17.a
@@ -1080,7 +1111,7 @@ country_event = {  # Unlawful territory
 	option = {	# Ultimatum
 		name = antioch.20.a
 		ai_chance = { 
-			factor = 100
+			factor = 50
 		}
 		
 		event_target:antioch_war_target = {
@@ -1108,6 +1139,27 @@ country_event = {  # Unlawful territory
 					army_strength = {
 						who = ROOT
 						value = 2
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 100
+				NOT = { 
+					army_strength = {
+						who = event_target:antioch_war_target
+						value = 1.5
+					}
+				}
+			}
+			modifier = {
+				factor = 50
+				event_target:antioch_war_target = {
+					any_ally = {
+						army_strength = {
+							who = ROOT
+							value = 0.8
+						}
 					}
 				}
 			}
@@ -1270,6 +1322,14 @@ country_event = {  # Dragon Princess Reforms
 	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
 	
 	major = yes
+	major_trigger = {
+		OR = { 
+			is_part_of_hre = yes
+			religion = hellenic_pagan_reformed
+			is_rival = ROOT
+			is_enemy = ROOT
+		}
+	}
 	
 	trigger = {
 		is_emperor = yes
@@ -1613,7 +1673,8 @@ country_event = {  # Grant land to the Auroral Guard
 				}
 				define_leader_to_ruler = {
 					type = general
-					change_mil = 3
+					mil = 3
+					fixed = no
 					claim = 50
 				}
 				set_ruler_culture = xizho

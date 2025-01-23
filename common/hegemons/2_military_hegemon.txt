@@ -7,13 +7,20 @@ military_hegemon = {
 				NOT = { has_country_flag = fra_enable_mil_hegemony_flag }
 			}
 			army_size = 500
+			land_forcelimit = 400
 		}
 		else_if = { 
 			limit = { 
-				is_or_was_tag = { tag = FRA } 
+				OR = {
+					is_or_was_tag = { tag = FRA }
+					is_or_was_tag = { tag = FRW }
+				}
 			}
 			OR = { 
-				army_size = 500 
+				AND = {
+					army_size = 500
+					land_forcelimit = 400
+				}
 				custom_trigger_tooltip = {
 					tooltip = fra_complete_mission_tt
 					OR = {
@@ -23,7 +30,10 @@ military_hegemon = {
 				}
 			}
 		}
-		else = { army_size = 250 }
+		else = { 
+			army_size = 250
+			land_forcelimit = 200
+		}
 		is_great_power = yes
 		NOT = { any_other_great_power = { army_size = root } }
 		NOT = { has_country_modifier = lost_hegemony }

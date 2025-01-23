@@ -350,6 +350,8 @@ country_decisions = {
 			religion_group = christian
 			NOT = { religion = hellenic_pagan_reformed }
 			NOT = { religion = anglican }
+			NOT = { tag = PAP }
+			NOT = { tag = FAP }
 		}
 		allow = {
 			dominant_religion = anglican

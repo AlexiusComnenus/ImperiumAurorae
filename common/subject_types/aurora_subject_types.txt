@@ -18,6 +18,7 @@ german_march = {
 	can_be_integrated = no
 	overlord_enforce_peace_attacking = yes
 	divert_trade = no
+	max_government_rank = 2
 	
 	pays_overlord = 0.0
 	military_focus = 3
@@ -132,7 +133,7 @@ aurora_beneficiary = {
 	
 	max_government_rank = 2
 	trust_on_start = 40
-	liberty_desire_development_ratio = 0.1
+	liberty_desire_development_ratio = 0.15
 	liberty_desire_same_dynasty = -10.0				
 	relative_power_class = 1						
 	liberty_desire_revolution = 10.0
@@ -259,6 +260,7 @@ saxon_daimyo = {
 	manpower_to_overlord = 0.25
 	joins_overlords_wars = no
 	restoration_cb = cb_disloyal_vassal
+	max_government_rank = 2
 
 	trust_on_start = 0
 	
@@ -353,7 +355,7 @@ druidic_brotherhood = {
 	
 	max_government_rank = 2
 	trust_on_start = 40
-	liberty_desire_development_ratio = 0.1
+	liberty_desire_development_ratio = 0.15
 	liberty_desire_same_dynasty = -10.0				
 	relative_power_class = 1						
 	liberty_desire_revolution = 10.0
@@ -456,7 +458,7 @@ crusader_state_subject = {
 	
 	max_government_rank = 2
 	trust_on_start = 40
-	liberty_desire_development_ratio = 0.1
+	liberty_desire_development_ratio = 0.15
 	liberty_desire_same_dynasty = -10.0				
 	relative_power_class = 1						
 	liberty_desire_revolution = 10.0
@@ -604,7 +606,7 @@ ia_advanced_tributary_state = {
 	sailors_to_overlord = 0.05							# Percent of subject FL to use as base for modifiers
 
 	
-	liberty_desire_development_ratio = 0.25
+	liberty_desire_development_ratio = 0.175
 	trust_on_start = 0
 	
 	overlord_opinion_modifier = is_tributary
@@ -890,9 +892,9 @@ colony = {
 	can_concentrate_development = no
 	extend_trading_range = yes
 
-	liberty_desire_development_ratio = 0.1
+	liberty_desire_development_ratio = 0.15
 	opinion_on_subject_integration = 0
-	max_government_rank = 1
+	max_government_rank = 2
 	cities_required_for_bonuses = 10
 
 	relative_power_class = 0
@@ -925,6 +927,7 @@ colony = {
 	increase_tariffs = yes
 	decrease_tariffs = yes
 	enforce_culture = yes
+	scutage = yes
 
 	# Modifiers:
 	modifier_overlord = {

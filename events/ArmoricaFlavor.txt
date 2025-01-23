@@ -124,6 +124,14 @@ country_event = {  # Sell Finistere
 	picture = CORRUPTION_eventPicture
     is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			tag = BRI
+		}
+	}
 	
 	option = {	# Accept
 		name = ia_flavor_bri.2.a
@@ -449,11 +457,17 @@ province_event = {
 			culture_group = latin
 			culture_group = germanic
 			culture_group = maghrebi
+			culture = hungarian
+			culture = transylvanian
+			culture = romanian
 		}
 		has_owner_accepted_culture = yes
 		
 		owner = {
-			tag = SOI
+			OR = {
+				tag = SOI
+				was_tag = SOI
+			}
 			has_country_flag = soi_assimilation_on
 		}
 	}
@@ -489,6 +503,15 @@ province_event = {
 			limit = { culture_group = maghrebi }
 			change_culture = carthaginian
 		}
+		else_if = {
+			limit = { culture = hungarian }
+			change_culture = pannonian
+		}
+		else_if = {
+			limit = { OR = { culture = transylvanian 	culture = romanian } }
+			change_culture = dacothracian
+		}
+		
 	}
 }
 
@@ -546,6 +569,15 @@ country_event = {  # Romans Together Strong
 	picture = FEAST_eventPicture
     is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			religion_group = christian
+			tag = BYZ
+		}
+	}
 	
 	option = {	# Convert to Orthodox
 		name = ia_flavor_bri.12.a
@@ -581,6 +613,15 @@ country_event = {  # There can only be one
 	picture = CIVIL_WAR_eventPicture
     is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			religion_group = christian
+			tag = BYZ
+		}
+	}
 	
 	option = {	# There can only be one
 		name = ia_flavor_bri.13.a

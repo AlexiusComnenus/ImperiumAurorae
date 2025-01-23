@@ -281,13 +281,7 @@ bgm_hab_missions_2 = {
 				slovakia_area = {
 					add_permanent_claim = ROOT
 				}
-				east_slovakia_area = {
-					add_permanent_claim = ROOT
-				}
 				transdanubia_area = {
-					add_permanent_claim = ROOT
-				}
-				pest_area = {
 					add_permanent_claim = ROOT
 				}
 				alfold_area = {
@@ -648,9 +642,6 @@ bgm_hab_missions_5 = {
 			switzerland_area = {
 				add_permanent_claim = ROOT
 			}
-			grisons_area = {
-				add_permanent_claim = ROOT
-			}
 			romandie_area = {
 				add_permanent_claim = ROOT
 			}
@@ -694,9 +685,6 @@ bgm_hab_missions_5 = {
 		}
 		effect = {
 			venetia_area = {
-				add_permanent_claim = ROOT
-			}
-			west_venetia_area = {
 				add_permanent_claim = ROOT
 			}
 		}

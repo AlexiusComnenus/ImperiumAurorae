@@ -9,8 +9,9 @@ historical_friend = TEM
 historical_rival = Z17
 historical_rival = FRA
 historical_rival = NRM
+historical_rival = FRW
 add_accepted_culture = flemish
-1444.11.11= {
+1441.03.23 = {
 	monarch = {
 		name = "Jacoba"
 		dynasty = "van Vlaanderen"
@@ -42,6 +43,8 @@ add_accepted_culture = flemish
 		culture = visigothic
 	}
 	add_queen_personality = tolerant_personality
+}
+1443.9.21 = {
 	heir = {
 		name = "Sicco"
 		monarch_name = "Sicco"

@@ -611,7 +611,7 @@ Aengland_Missions_3 = {
 				}
 				ROOT = { vassalize = PREV }
 			}
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 25 }
 			wessex_area = { add_permanent_claim = ROOT }
 			wales_area = { add_permanent_claim = ROOT }
 			west_midlands_area = { add_permanent_claim = ROOT }
@@ -984,7 +984,7 @@ Aengland_Missions_4 = {
 		effect = {
 			custom_tooltip = aen_french_provinces_tt
 			hidden_effect = {
-				every_neighboring_province = {
+				every_neighbor_province = {
 					limit = { region = france_region }
 					add_permanent_claim = ROOT
 				}

@@ -1,0 +1,2727 @@
+namespace = capital_autonomy
+
+country_event = {
+	id = capital_autonomy.1
+	title = capital_autonomy.1.title
+	desc = capital_autonomy.1.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		#NOT = { has_global_flag = initiated_capital_distance_mechanic_flag }
+		NOT = { great_power_rank = 2 }
+	}
+	
+	option = {
+		name = "capital_autonomy.1.a"
+		set_global_flag = initiated_capital_distance_mechanic_flag
+		
+		every_province = {
+			province_event = { id = capital_autonomy.2 }
+		}
+	}
+}
+
+province_event = {
+	id = capital_autonomy.2
+	title = capital_autonomy.2.title
+	desc = capital_autonomy.2.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "capital_autonomy.2.a"
+		owner = { capital_scope = {
+			if = { limit = { province_distance = { who = ROOT distance = 1500 } }
+				if = { limit = { province_distance = { who = ROOT distance = 2250 } }
+					if = { limit = { province_distance = { who = ROOT distance = 2625 } }
+						if = { limit = { province_distance = { who = ROOT distance = 2813 } }
+							if = { limit = { province_distance = { who = ROOT distance = 2907 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2954 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2977 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2989 } }
+											if = { limit = { province_distance = { who = ROOT distance = 3000 } }
+												set_variable = { which = dist value = 3000 }
+											}
+											else = {
+												set_variable = { which = dist value = 2994 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2988 } }
+												set_variable = { which = dist value = 2988 }
+											}
+											else = {
+												set_variable = { which = dist value = 2982 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2965 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2976 } }
+												set_variable = { which = dist value = 2976 }
+											}
+											else = {
+												set_variable = { which = dist value = 2970 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2964 } }
+												set_variable = { which = dist value = 2964 }
+											}
+											else = {
+												set_variable = { which = dist value = 2959 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2930 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2942 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2953 } }
+												set_variable = { which = dist value = 2953 }
+											}
+											else = {
+												set_variable = { which = dist value = 2947 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2941 } }
+												set_variable = { which = dist value = 2941 }
+											}
+											else = {
+												set_variable = { which = dist value = 2935 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2918 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2929 } }
+												set_variable = { which = dist value = 2929 }
+											}
+											else = {
+												set_variable = { which = dist value = 2923 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2917 } }
+												set_variable = { which = dist value = 2917 }
+											}
+											else = {
+												set_variable = { which = dist value = 2912 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 2860 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2883 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2895 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2906 } }
+												set_variable = { which = dist value = 2906 }
+											}
+											else = {
+												set_variable = { which = dist value = 2900 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2894 } }
+												set_variable = { which = dist value = 2894 }
+											}
+											else = {
+												set_variable = { which = dist value = 2888 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2871 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2882 } }
+												set_variable = { which = dist value = 2882 }
+											}
+											else = {
+												set_variable = { which = dist value = 2876 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2870 } }
+												set_variable = { which = dist value = 2870 }
+											}
+											else = {
+												set_variable = { which = dist value = 2865 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2836 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2848 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2859 } }
+												set_variable = { which = dist value = 2859 }
+											}
+											else = {
+												set_variable = { which = dist value = 2853 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2847 } }
+												set_variable = { which = dist value = 2847 }
+											}
+											else = {
+												set_variable = { which = dist value = 2841 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2824 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2835 } }
+												set_variable = { which = dist value = 2835 }
+											}
+											else = {
+												set_variable = { which = dist value = 2829 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2823 } }
+												set_variable = { which = dist value = 2823 }
+											}
+											else = {
+												set_variable = { which = dist value = 2818 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 2719 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2766 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2789 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2801 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2812 } }
+												set_variable = { which = dist value = 2812 }
+											}
+											else = {
+												set_variable = { which = dist value = 2806 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2800 } }
+												set_variable = { which = dist value = 2800 }
+											}
+											else = {
+												set_variable = { which = dist value = 2794 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2777 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2788 } }
+												set_variable = { which = dist value = 2788 }
+											}
+											else = {
+												set_variable = { which = dist value = 2782 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2776 } }
+												set_variable = { which = dist value = 2776 }
+											}
+											else = {
+												set_variable = { which = dist value = 2771 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2742 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2754 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2765 } }
+												set_variable = { which = dist value = 2765 }
+											}
+											else = {
+												set_variable = { which = dist value = 2759 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2753 } }
+												set_variable = { which = dist value = 2753 }
+											}
+											else = {
+												set_variable = { which = dist value = 2747 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2730 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2741 } }
+												set_variable = { which = dist value = 2741 }
+											}
+											else = {
+												set_variable = { which = dist value = 2735 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2729 } }
+												set_variable = { which = dist value = 2729 }
+											}
+											else = {
+												set_variable = { which = dist value = 2724 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 2672 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2695 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2707 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2718 } }
+												set_variable = { which = dist value = 2718 }
+											}
+											else = {
+												set_variable = { which = dist value = 2712 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2706 } }
+												set_variable = { which = dist value = 2706 }
+											}
+											else = {
+												set_variable = { which = dist value = 2700 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2683 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2694 } }
+												set_variable = { which = dist value = 2694 }
+											}
+											else = {
+												set_variable = { which = dist value = 2688 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2682 } }
+												set_variable = { which = dist value = 2682 }
+											}
+											else = {
+												set_variable = { which = dist value = 2677 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2648 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2660 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2671 } }
+												set_variable = { which = dist value = 2671 }
+											}
+											else = {
+												set_variable = { which = dist value = 2665 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2659 } }
+												set_variable = { which = dist value = 2659 }
+											}
+											else = {
+												set_variable = { which = dist value = 2653 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2636 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2647 } }
+												set_variable = { which = dist value = 2647 }
+											}
+											else = {
+												set_variable = { which = dist value = 2641 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2635 } }
+												set_variable = { which = dist value = 2635 }
+											}
+											else = {
+												set_variable = { which = dist value = 2630 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = { limit = { province_distance = { who = ROOT distance = 2437 } }
+							if = { limit = { province_distance = { who = ROOT distance = 2531 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2578 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2601 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2613 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2624 } }
+												set_variable = { which = dist value = 2624 }
+											}
+											else = {
+												set_variable = { which = dist value = 2618 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2612 } }
+												set_variable = { which = dist value = 2612 }
+											}
+											else = {
+												set_variable = { which = dist value = 2606 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2589 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2600 } }
+												set_variable = { which = dist value = 2600 }
+											}
+											else = {
+												set_variable = { which = dist value = 2594 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2588 } }
+												set_variable = { which = dist value = 2588 }
+											}
+											else = {
+												set_variable = { which = dist value = 2583 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2554 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2566 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2577 } }
+												set_variable = { which = dist value = 2577 }
+											}
+											else = {
+												set_variable = { which = dist value = 2571 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2565 } }
+												set_variable = { which = dist value = 2565 }
+											}
+											else = {
+												set_variable = { which = dist value = 2559 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2542 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2553 } }
+												set_variable = { which = dist value = 2553 }
+											}
+											else = {
+												set_variable = { which = dist value = 2547 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2541 } }
+												set_variable = { which = dist value = 2541 }
+											}
+											else = {
+												set_variable = { which = dist value = 2536 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 2484 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2507 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2519 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2530 } }
+												set_variable = { which = dist value = 2530 }
+											}
+											else = {
+												set_variable = { which = dist value = 2524 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2518 } }
+												set_variable = { which = dist value = 2518 }
+											}
+											else = {
+												set_variable = { which = dist value = 2512 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2495 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2506 } }
+												set_variable = { which = dist value = 2506 }
+											}
+											else = {
+												set_variable = { which = dist value = 2500 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2494 } }
+												set_variable = { which = dist value = 2494 }
+											}
+											else = {
+												set_variable = { which = dist value = 2489 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2460 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2472 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2483 } }
+												set_variable = { which = dist value = 2483 }
+											}
+											else = {
+												set_variable = { which = dist value = 2477 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2471 } }
+												set_variable = { which = dist value = 2471 }
+											}
+											else = {
+												set_variable = { which = dist value = 2465 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2448 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2459 } }
+												set_variable = { which = dist value = 2459 }
+											}
+											else = {
+												set_variable = { which = dist value = 2453 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2447 } }
+												set_variable = { which = dist value = 2447 }
+											}
+											else = {
+												set_variable = { which = dist value = 2442 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 2343 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2390 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2413 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2425 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2436 } }
+												set_variable = { which = dist value = 2436 }
+											}
+											else = {
+												set_variable = { which = dist value = 2430 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2424 } }
+												set_variable = { which = dist value = 2424 }
+											}
+											else = {
+												set_variable = { which = dist value = 2418 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2401 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2412 } }
+												set_variable = { which = dist value = 2412 }
+											}
+											else = {
+												set_variable = { which = dist value = 2406 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2400 } }
+												set_variable = { which = dist value = 2400 }
+											}
+											else = {
+												set_variable = { which = dist value = 2395 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2366 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2378 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2389 } }
+												set_variable = { which = dist value = 2389 }
+											}
+											else = {
+												set_variable = { which = dist value = 2383 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2377 } }
+												set_variable = { which = dist value = 2377 }
+											}
+											else = {
+												set_variable = { which = dist value = 2371 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2354 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2365 } }
+												set_variable = { which = dist value = 2365 }
+											}
+											else = {
+												set_variable = { which = dist value = 2359 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2353 } }
+												set_variable = { which = dist value = 2353 }
+											}
+											else = {
+												set_variable = { which = dist value = 2348 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 2296 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2319 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2331 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2342 } }
+												set_variable = { which = dist value = 2342 }
+											}
+											else = {
+												set_variable = { which = dist value = 2336 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2330 } }
+												set_variable = { which = dist value = 2330 }
+											}
+											else = {
+												set_variable = { which = dist value = 2324 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2307 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2318 } }
+												set_variable = { which = dist value = 2318 }
+											}
+											else = {
+												set_variable = { which = dist value = 2312 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2306 } }
+												set_variable = { which = dist value = 2306 }
+											}
+											else = {
+												set_variable = { which = dist value = 2301 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2273 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2284 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2295 } }
+												set_variable = { which = dist value = 2295 }
+											}
+											else = {
+												set_variable = { which = dist value = 2289 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2283 } }
+												set_variable = { which = dist value = 2283 }
+											}
+											else = {
+												set_variable = { which = dist value = 2278 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2261 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2272 } }
+												set_variable = { which = dist value = 2272 }
+											}
+											else = {
+												set_variable = { which = dist value = 2266 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2260 } }
+												set_variable = { which = dist value = 2260 }
+											}
+											else = {
+												set_variable = { which = dist value = 2255 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = { limit = { province_distance = { who = ROOT distance = 1875 } }
+						if = { limit = { province_distance = { who = ROOT distance = 2062 } }
+							if = { limit = { province_distance = { who = ROOT distance = 2156 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2203 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2226 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2238 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2249 } }
+												set_variable = { which = dist value = 2249 }
+											}
+											else = {
+												set_variable = { which = dist value = 2243 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2237 } }
+												set_variable = { which = dist value = 2237 }
+											}
+											else = {
+												set_variable = { which = dist value = 2231 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2214 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2225 } }
+												set_variable = { which = dist value = 2225 }
+											}
+											else = {
+												set_variable = { which = dist value = 2219 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2213 } }
+												set_variable = { which = dist value = 2213 }
+											}
+											else = {
+												set_variable = { which = dist value = 2208 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2179 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2191 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2202 } }
+												set_variable = { which = dist value = 2202 }
+											}
+											else = {
+												set_variable = { which = dist value = 2196 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2190 } }
+												set_variable = { which = dist value = 2190 }
+											}
+											else = {
+												set_variable = { which = dist value = 2184 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2167 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2178 } }
+												set_variable = { which = dist value = 2178 }
+											}
+											else = {
+												set_variable = { which = dist value = 2172 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2166 } }
+												set_variable = { which = dist value = 2166 }
+											}
+											else = {
+												set_variable = { which = dist value = 2161 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 2109 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2132 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2144 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2155 } }
+												set_variable = { which = dist value = 2155 }
+											}
+											else = {
+												set_variable = { which = dist value = 2149 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2143 } }
+												set_variable = { which = dist value = 2143 }
+											}
+											else = {
+												set_variable = { which = dist value = 2137 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2120 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2131 } }
+												set_variable = { which = dist value = 2131 }
+											}
+											else = {
+												set_variable = { which = dist value = 2125 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2119 } }
+												set_variable = { which = dist value = 2119 }
+											}
+											else = {
+												set_variable = { which = dist value = 2114 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 2085 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2097 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2108 } }
+												set_variable = { which = dist value = 2108 }
+											}
+											else = {
+												set_variable = { which = dist value = 2102 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2096 } }
+												set_variable = { which = dist value = 2096 }
+											}
+											else = {
+												set_variable = { which = dist value = 2090 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2073 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2084 } }
+												set_variable = { which = dist value = 2084 }
+											}
+											else = {
+												set_variable = { which = dist value = 2078 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2072 } }
+												set_variable = { which = dist value = 2072 }
+											}
+											else = {
+												set_variable = { which = dist value = 2067 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 1968 } }
+								if = { limit = { province_distance = { who = ROOT distance = 2015 } }
+									if = { limit = { province_distance = { who = ROOT distance = 2038 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2050 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2061 } }
+												set_variable = { which = dist value = 2061 }
+											}
+											else = {
+												set_variable = { which = dist value = 2055 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2049 } }
+												set_variable = { which = dist value = 2049 }
+											}
+											else = {
+												set_variable = { which = dist value = 2043 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 2026 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2037 } }
+												set_variable = { which = dist value = 2037 }
+											}
+											else = {
+												set_variable = { which = dist value = 2031 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2025 } }
+												set_variable = { which = dist value = 2025 }
+											}
+											else = {
+												set_variable = { which = dist value = 2020 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1991 } }
+										if = { limit = { province_distance = { who = ROOT distance = 2003 } }
+											if = { limit = { province_distance = { who = ROOT distance = 2014 } }
+												set_variable = { which = dist value = 2014 }
+											}
+											else = {
+												set_variable = { which = dist value = 2008 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 2002 } }
+												set_variable = { which = dist value = 2002 }
+											}
+											else = {
+												set_variable = { which = dist value = 1996 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1979 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1990 } }
+												set_variable = { which = dist value = 1990 }
+											}
+											else = {
+												set_variable = { which = dist value = 1984 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1978 } }
+												set_variable = { which = dist value = 1978 }
+											}
+											else = {
+												set_variable = { which = dist value = 1973 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 1921 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1944 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1956 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1967 } }
+												set_variable = { which = dist value = 1967 }
+											}
+											else = {
+												set_variable = { which = dist value = 1961 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1955 } }
+												set_variable = { which = dist value = 1955 }
+											}
+											else = {
+												set_variable = { which = dist value = 1949 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1932 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1943 } }
+												set_variable = { which = dist value = 1943 }
+											}
+											else = {
+												set_variable = { which = dist value = 1937 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1931 } }
+												set_variable = { which = dist value = 1931 }
+											}
+											else = {
+												set_variable = { which = dist value = 1926 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1898 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1909 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1920 } }
+												set_variable = { which = dist value = 1920 }
+											}
+											else = {
+												set_variable = { which = dist value = 1914 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1908 } }
+												set_variable = { which = dist value = 1908 }
+											}
+											else = {
+												set_variable = { which = dist value = 1903 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1886 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1897 } }
+												set_variable = { which = dist value = 1897 }
+											}
+											else = {
+												set_variable = { which = dist value = 1891 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1885 } }
+												set_variable = { which = dist value = 1885 }
+											}
+											else = {
+												set_variable = { which = dist value = 1880 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = { limit = { province_distance = { who = ROOT distance = 1687 } }
+							if = { limit = { province_distance = { who = ROOT distance = 1781 } }
+								if = { limit = { province_distance = { who = ROOT distance = 1828 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1851 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1863 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1874 } }
+												set_variable = { which = dist value = 1874 }
+											}
+											else = {
+												set_variable = { which = dist value = 1868 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1862 } }
+												set_variable = { which = dist value = 1862 }
+											}
+											else = {
+												set_variable = { which = dist value = 1856 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1839 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1850 } }
+												set_variable = { which = dist value = 1850 }
+											}
+											else = {
+												set_variable = { which = dist value = 1844 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1838 } }
+												set_variable = { which = dist value = 1838 }
+											}
+											else = {
+												set_variable = { which = dist value = 1833 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1804 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1816 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1827 } }
+												set_variable = { which = dist value = 1827 }
+											}
+											else = {
+												set_variable = { which = dist value = 1821 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1815 } }
+												set_variable = { which = dist value = 1815 }
+											}
+											else = {
+												set_variable = { which = dist value = 1809 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1792 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1803 } }
+												set_variable = { which = dist value = 1803 }
+											}
+											else = {
+												set_variable = { which = dist value = 1797 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1791 } }
+												set_variable = { which = dist value = 1791 }
+											}
+											else = {
+												set_variable = { which = dist value = 1786 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 1734 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1757 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1769 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1780 } }
+												set_variable = { which = dist value = 1780 }
+											}
+											else = {
+												set_variable = { which = dist value = 1774 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1768 } }
+												set_variable = { which = dist value = 1768 }
+											}
+											else = {
+												set_variable = { which = dist value = 1762 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1745 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1756 } }
+												set_variable = { which = dist value = 1756 }
+											}
+											else = {
+												set_variable = { which = dist value = 1750 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1744 } }
+												set_variable = { which = dist value = 1744 }
+											}
+											else = {
+												set_variable = { which = dist value = 1739 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1710 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1722 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1733 } }
+												set_variable = { which = dist value = 1733 }
+											}
+											else = {
+												set_variable = { which = dist value = 1727 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1721 } }
+												set_variable = { which = dist value = 1721 }
+											}
+											else = {
+												set_variable = { which = dist value = 1715 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1698 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1709 } }
+												set_variable = { which = dist value = 1709 }
+											}
+											else = {
+												set_variable = { which = dist value = 1703 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1697 } }
+												set_variable = { which = dist value = 1697 }
+											}
+											else = {
+												set_variable = { which = dist value = 1692 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 1593 } }
+								if = { limit = { province_distance = { who = ROOT distance = 1640 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1663 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1675 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1686 } }
+												set_variable = { which = dist value = 1686 }
+											}
+											else = {
+												set_variable = { which = dist value = 1680 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1674 } }
+												set_variable = { which = dist value = 1674 }
+											}
+											else = {
+												set_variable = { which = dist value = 1668 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1651 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1662 } }
+												set_variable = { which = dist value = 1662 }
+											}
+											else = {
+												set_variable = { which = dist value = 1656 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1650 } }
+												set_variable = { which = dist value = 1650 }
+											}
+											else = {
+												set_variable = { which = dist value = 1645 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1616 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1628 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1639 } }
+												set_variable = { which = dist value = 1639 }
+											}
+											else = {
+												set_variable = { which = dist value = 1633 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1627 } }
+												set_variable = { which = dist value = 1627 }
+											}
+											else = {
+												set_variable = { which = dist value = 1621 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1604 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1615 } }
+												set_variable = { which = dist value = 1615 }
+											}
+											else = {
+												set_variable = { which = dist value = 1609 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1603 } }
+												set_variable = { which = dist value = 1603 }
+											}
+											else = {
+												set_variable = { which = dist value = 1598 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 1546 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1569 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1581 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1592 } }
+												set_variable = { which = dist value = 1592 }
+											}
+											else = {
+												set_variable = { which = dist value = 1586 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1580 } }
+												set_variable = { which = dist value = 1580 }
+											}
+											else = {
+												set_variable = { which = dist value = 1574 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1557 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1568 } }
+												set_variable = { which = dist value = 1568 }
+											}
+											else = {
+												set_variable = { which = dist value = 1562 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1556 } }
+												set_variable = { which = dist value = 1556 }
+											}
+											else = {
+												set_variable = { which = dist value = 1551 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1523 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1534 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1545 } }
+												set_variable = { which = dist value = 1545 }
+											}
+											else = {
+												set_variable = { which = dist value = 1539 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1533 } }
+												set_variable = { which = dist value = 1533 }
+											}
+											else = {
+												set_variable = { which = dist value = 1528 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1511 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1522 } }
+												set_variable = { which = dist value = 1522 }
+											}
+											else = {
+												set_variable = { which = dist value = 1516 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1510 } }
+												set_variable = { which = dist value = 1510 }
+											}
+											else = {
+												set_variable = { which = dist value = 1505 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = { limit = { province_distance = { who = ROOT distance = 750 } }
+					if = { limit = { province_distance = { who = ROOT distance = 1125 } }
+						if = { limit = { province_distance = { who = ROOT distance = 1312 } }
+							if = { limit = { province_distance = { who = ROOT distance = 1406 } }
+								if = { limit = { province_distance = { who = ROOT distance = 1453 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1476 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1488 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1499 } }
+												set_variable = { which = dist value = 1499 }
+											}
+											else = {
+												set_variable = { which = dist value = 1493 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1487 } }
+												set_variable = { which = dist value = 1487 }
+											}
+											else = {
+												set_variable = { which = dist value = 1481 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1464 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1475 } }
+												set_variable = { which = dist value = 1475 }
+											}
+											else = {
+												set_variable = { which = dist value = 1469 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1463 } }
+												set_variable = { which = dist value = 1463 }
+											}
+											else = {
+												set_variable = { which = dist value = 1458 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1429 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1441 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1452 } }
+												set_variable = { which = dist value = 1452 }
+											}
+											else = {
+												set_variable = { which = dist value = 1446 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1440 } }
+												set_variable = { which = dist value = 1440 }
+											}
+											else = {
+												set_variable = { which = dist value = 1434 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1417 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1428 } }
+												set_variable = { which = dist value = 1428 }
+											}
+											else = {
+												set_variable = { which = dist value = 1422 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1416 } }
+												set_variable = { which = dist value = 1416 }
+											}
+											else = {
+												set_variable = { which = dist value = 1411 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 1359 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1382 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1394 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1405 } }
+												set_variable = { which = dist value = 1405 }
+											}
+											else = {
+												set_variable = { which = dist value = 1399 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1393 } }
+												set_variable = { which = dist value = 1393 }
+											}
+											else = {
+												set_variable = { which = dist value = 1387 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1370 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1381 } }
+												set_variable = { which = dist value = 1381 }
+											}
+											else = {
+												set_variable = { which = dist value = 1375 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1369 } }
+												set_variable = { which = dist value = 1369 }
+											}
+											else = {
+												set_variable = { which = dist value = 1364 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1335 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1347 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1358 } }
+												set_variable = { which = dist value = 1358 }
+											}
+											else = {
+												set_variable = { which = dist value = 1352 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1346 } }
+												set_variable = { which = dist value = 1346 }
+											}
+											else = {
+												set_variable = { which = dist value = 1340 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1323 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1334 } }
+												set_variable = { which = dist value = 1334 }
+											}
+											else = {
+												set_variable = { which = dist value = 1328 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1322 } }
+												set_variable = { which = dist value = 1322 }
+											}
+											else = {
+												set_variable = { which = dist value = 1317 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 1218 } }
+								if = { limit = { province_distance = { who = ROOT distance = 1265 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1288 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1300 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1311 } }
+												set_variable = { which = dist value = 1311 }
+											}
+											else = {
+												set_variable = { which = dist value = 1305 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1299 } }
+												set_variable = { which = dist value = 1299 }
+											}
+											else = {
+												set_variable = { which = dist value = 1293 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1276 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1287 } }
+												set_variable = { which = dist value = 1287 }
+											}
+											else = {
+												set_variable = { which = dist value = 1281 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1275 } }
+												set_variable = { which = dist value = 1275 }
+											}
+											else = {
+												set_variable = { which = dist value = 1270 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1241 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1253 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1264 } }
+												set_variable = { which = dist value = 1264 }
+											}
+											else = {
+												set_variable = { which = dist value = 1258 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1252 } }
+												set_variable = { which = dist value = 1252 }
+											}
+											else = {
+												set_variable = { which = dist value = 1246 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1229 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1240 } }
+												set_variable = { which = dist value = 1240 }
+											}
+											else = {
+												set_variable = { which = dist value = 1234 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1228 } }
+												set_variable = { which = dist value = 1228 }
+											}
+											else = {
+												set_variable = { which = dist value = 1223 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 1171 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1194 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1206 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1217 } }
+												set_variable = { which = dist value = 1217 }
+											}
+											else = {
+												set_variable = { which = dist value = 1211 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1205 } }
+												set_variable = { which = dist value = 1205 }
+											}
+											else = {
+												set_variable = { which = dist value = 1199 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1182 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1193 } }
+												set_variable = { which = dist value = 1193 }
+											}
+											else = {
+												set_variable = { which = dist value = 1187 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1181 } }
+												set_variable = { which = dist value = 1181 }
+											}
+											else = {
+												set_variable = { which = dist value = 1176 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1148 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1159 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1170 } }
+												set_variable = { which = dist value = 1170 }
+											}
+											else = {
+												set_variable = { which = dist value = 1164 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1158 } }
+												set_variable = { which = dist value = 1158 }
+											}
+											else = {
+												set_variable = { which = dist value = 1153 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1136 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1147 } }
+												set_variable = { which = dist value = 1147 }
+											}
+											else = {
+												set_variable = { which = dist value = 1141 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1135 } }
+												set_variable = { which = dist value = 1135 }
+											}
+											else = {
+												set_variable = { which = dist value = 1130 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = { limit = { province_distance = { who = ROOT distance = 937 } }
+							if = { limit = { province_distance = { who = ROOT distance = 1031 } }
+								if = { limit = { province_distance = { who = ROOT distance = 1078 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1101 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1113 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1124 } }
+												set_variable = { which = dist value = 1124 }
+											}
+											else = {
+												set_variable = { which = dist value = 1118 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1112 } }
+												set_variable = { which = dist value = 1112 }
+											}
+											else = {
+												set_variable = { which = dist value = 1106 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1089 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1100 } }
+												set_variable = { which = dist value = 1100 }
+											}
+											else = {
+												set_variable = { which = dist value = 1094 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1088 } }
+												set_variable = { which = dist value = 1088 }
+											}
+											else = {
+												set_variable = { which = dist value = 1083 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 1054 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1066 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1077 } }
+												set_variable = { which = dist value = 1077 }
+											}
+											else = {
+												set_variable = { which = dist value = 1071 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1065 } }
+												set_variable = { which = dist value = 1065 }
+											}
+											else = {
+												set_variable = { which = dist value = 1059 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 1042 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1053 } }
+												set_variable = { which = dist value = 1053 }
+											}
+											else = {
+												set_variable = { which = dist value = 1047 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1041 } }
+												set_variable = { which = dist value = 1041 }
+											}
+											else = {
+												set_variable = { which = dist value = 1036 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 984 } }
+									if = { limit = { province_distance = { who = ROOT distance = 1007 } }
+										if = { limit = { province_distance = { who = ROOT distance = 1019 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1030 } }
+												set_variable = { which = dist value = 1030 }
+											}
+											else = {
+												set_variable = { which = dist value = 1024 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 1018 } }
+												set_variable = { which = dist value = 1018 }
+											}
+											else = {
+												set_variable = { which = dist value = 1012 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 995 } }
+											if = { limit = { province_distance = { who = ROOT distance = 1006 } }
+												set_variable = { which = dist value = 1006 }
+											}
+											else = {
+												set_variable = { which = dist value = 1000 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 994 } }
+												set_variable = { which = dist value = 994 }
+											}
+											else = {
+												set_variable = { which = dist value = 989 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 960 } }
+										if = { limit = { province_distance = { who = ROOT distance = 972 } }
+											if = { limit = { province_distance = { who = ROOT distance = 983 } }
+												set_variable = { which = dist value = 983 }
+											}
+											else = {
+												set_variable = { which = dist value = 977 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 971 } }
+												set_variable = { which = dist value = 971 }
+											}
+											else = {
+												set_variable = { which = dist value = 965 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 948 } }
+											if = { limit = { province_distance = { who = ROOT distance = 959 } }
+												set_variable = { which = dist value = 959 }
+											}
+											else = {
+												set_variable = { which = dist value = 953 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 947 } }
+												set_variable = { which = dist value = 947 }
+											}
+											else = {
+												set_variable = { which = dist value = 942 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 843 } }
+								if = { limit = { province_distance = { who = ROOT distance = 890 } }
+									if = { limit = { province_distance = { who = ROOT distance = 913 } }
+										if = { limit = { province_distance = { who = ROOT distance = 925 } }
+											if = { limit = { province_distance = { who = ROOT distance = 936 } }
+												set_variable = { which = dist value = 936 }
+											}
+											else = {
+												set_variable = { which = dist value = 930 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 924 } }
+												set_variable = { which = dist value = 924 }
+											}
+											else = {
+												set_variable = { which = dist value = 918 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 901 } }
+											if = { limit = { province_distance = { who = ROOT distance = 912 } }
+												set_variable = { which = dist value = 912 }
+											}
+											else = {
+												set_variable = { which = dist value = 906 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 900 } }
+												set_variable = { which = dist value = 900 }
+											}
+											else = {
+												set_variable = { which = dist value = 895 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 866 } }
+										if = { limit = { province_distance = { who = ROOT distance = 878 } }
+											if = { limit = { province_distance = { who = ROOT distance = 889 } }
+												set_variable = { which = dist value = 889 }
+											}
+											else = {
+												set_variable = { which = dist value = 883 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 877 } }
+												set_variable = { which = dist value = 877 }
+											}
+											else = {
+												set_variable = { which = dist value = 871 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 854 } }
+											if = { limit = { province_distance = { who = ROOT distance = 865 } }
+												set_variable = { which = dist value = 865 }
+											}
+											else = {
+												set_variable = { which = dist value = 859 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 853 } }
+												set_variable = { which = dist value = 853 }
+											}
+											else = {
+												set_variable = { which = dist value = 848 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 796 } }
+									if = { limit = { province_distance = { who = ROOT distance = 819 } }
+										if = { limit = { province_distance = { who = ROOT distance = 831 } }
+											if = { limit = { province_distance = { who = ROOT distance = 842 } }
+												set_variable = { which = dist value = 842 }
+											}
+											else = {
+												set_variable = { which = dist value = 836 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 830 } }
+												set_variable = { which = dist value = 830 }
+											}
+											else = {
+												set_variable = { which = dist value = 824 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 807 } }
+											if = { limit = { province_distance = { who = ROOT distance = 818 } }
+												set_variable = { which = dist value = 818 }
+											}
+											else = {
+												set_variable = { which = dist value = 812 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 806 } }
+												set_variable = { which = dist value = 806 }
+											}
+											else = {
+												set_variable = { which = dist value = 801 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 773 } }
+										if = { limit = { province_distance = { who = ROOT distance = 784 } }
+											if = { limit = { province_distance = { who = ROOT distance = 795 } }
+												set_variable = { which = dist value = 795 }
+											}
+											else = {
+												set_variable = { which = dist value = 789 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 783 } }
+												set_variable = { which = dist value = 783 }
+											}
+											else = {
+												set_variable = { which = dist value = 778 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 761 } }
+											if = { limit = { province_distance = { who = ROOT distance = 772 } }
+												set_variable = { which = dist value = 772 }
+											}
+											else = {
+												set_variable = { which = dist value = 766 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 760 } }
+												set_variable = { which = dist value = 760 }
+											}
+											else = {
+												set_variable = { which = dist value = 755 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				else = {
+					if = { limit = { province_distance = { who = ROOT distance = 375 } }
+						if = { limit = { province_distance = { who = ROOT distance = 562 } }
+							if = { limit = { province_distance = { who = ROOT distance = 656 } }
+								if = { limit = { province_distance = { who = ROOT distance = 703 } }
+									if = { limit = { province_distance = { who = ROOT distance = 726 } }
+										if = { limit = { province_distance = { who = ROOT distance = 738 } }
+											if = { limit = { province_distance = { who = ROOT distance = 749 } }
+												set_variable = { which = dist value = 749 }
+											}
+											else = {
+												set_variable = { which = dist value = 743 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 737 } }
+												set_variable = { which = dist value = 737 }
+											}
+											else = {
+												set_variable = { which = dist value = 731 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 714 } }
+											if = { limit = { province_distance = { who = ROOT distance = 725 } }
+												set_variable = { which = dist value = 725 }
+											}
+											else = {
+												set_variable = { which = dist value = 719 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 713 } }
+												set_variable = { which = dist value = 713 }
+											}
+											else = {
+												set_variable = { which = dist value = 708 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 679 } }
+										if = { limit = { province_distance = { who = ROOT distance = 691 } }
+											if = { limit = { province_distance = { who = ROOT distance = 702 } }
+												set_variable = { which = dist value = 702 }
+											}
+											else = {
+												set_variable = { which = dist value = 696 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 690 } }
+												set_variable = { which = dist value = 690 }
+											}
+											else = {
+												set_variable = { which = dist value = 684 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 667 } }
+											if = { limit = { province_distance = { who = ROOT distance = 678 } }
+												set_variable = { which = dist value = 678 }
+											}
+											else = {
+												set_variable = { which = dist value = 672 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 666 } }
+												set_variable = { which = dist value = 666 }
+											}
+											else = {
+												set_variable = { which = dist value = 661 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 609 } }
+									if = { limit = { province_distance = { who = ROOT distance = 632 } }
+										if = { limit = { province_distance = { who = ROOT distance = 644 } }
+											if = { limit = { province_distance = { who = ROOT distance = 655 } }
+												set_variable = { which = dist value = 655 }
+											}
+											else = {
+												set_variable = { which = dist value = 649 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 643 } }
+												set_variable = { which = dist value = 643 }
+											}
+											else = {
+												set_variable = { which = dist value = 637 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 620 } }
+											if = { limit = { province_distance = { who = ROOT distance = 631 } }
+												set_variable = { which = dist value = 631 }
+											}
+											else = {
+												set_variable = { which = dist value = 625 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 619 } }
+												set_variable = { which = dist value = 619 }
+											}
+											else = {
+												set_variable = { which = dist value = 614 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 585 } }
+										if = { limit = { province_distance = { who = ROOT distance = 597 } }
+											if = { limit = { province_distance = { who = ROOT distance = 608 } }
+												set_variable = { which = dist value = 608 }
+											}
+											else = {
+												set_variable = { which = dist value = 602 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 596 } }
+												set_variable = { which = dist value = 596 }
+											}
+											else = {
+												set_variable = { which = dist value = 590 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 573 } }
+											if = { limit = { province_distance = { who = ROOT distance = 584 } }
+												set_variable = { which = dist value = 584 }
+											}
+											else = {
+												set_variable = { which = dist value = 578 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 572 } }
+												set_variable = { which = dist value = 572 }
+											}
+											else = {
+												set_variable = { which = dist value = 567 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 468 } }
+								if = { limit = { province_distance = { who = ROOT distance = 515 } }
+									if = { limit = { province_distance = { who = ROOT distance = 538 } }
+										if = { limit = { province_distance = { who = ROOT distance = 550 } }
+											if = { limit = { province_distance = { who = ROOT distance = 561 } }
+												set_variable = { which = dist value = 561 }
+											}
+											else = {
+												set_variable = { which = dist value = 555 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 549 } }
+												set_variable = { which = dist value = 549 }
+											}
+											else = {
+												set_variable = { which = dist value = 543 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 526 } }
+											if = { limit = { province_distance = { who = ROOT distance = 537 } }
+												set_variable = { which = dist value = 537 }
+											}
+											else = {
+												set_variable = { which = dist value = 531 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 525 } }
+												set_variable = { which = dist value = 525 }
+											}
+											else = {
+												set_variable = { which = dist value = 520 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 491 } }
+										if = { limit = { province_distance = { who = ROOT distance = 503 } }
+											if = { limit = { province_distance = { who = ROOT distance = 514 } }
+												set_variable = { which = dist value = 514 }
+											}
+											else = {
+												set_variable = { which = dist value = 508 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 502 } }
+												set_variable = { which = dist value = 502 }
+											}
+											else = {
+												set_variable = { which = dist value = 496 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 479 } }
+											if = { limit = { province_distance = { who = ROOT distance = 490 } }
+												set_variable = { which = dist value = 490 }
+											}
+											else = {
+												set_variable = { which = dist value = 484 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 478 } }
+												set_variable = { which = dist value = 478 }
+											}
+											else = {
+												set_variable = { which = dist value = 473 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 421 } }
+									if = { limit = { province_distance = { who = ROOT distance = 444 } }
+										if = { limit = { province_distance = { who = ROOT distance = 456 } }
+											if = { limit = { province_distance = { who = ROOT distance = 467 } }
+												set_variable = { which = dist value = 467 }
+											}
+											else = {
+												set_variable = { which = dist value = 461 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 455 } }
+												set_variable = { which = dist value = 455 }
+											}
+											else = {
+												set_variable = { which = dist value = 449 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 432 } }
+											if = { limit = { province_distance = { who = ROOT distance = 443 } }
+												set_variable = { which = dist value = 443 }
+											}
+											else = {
+												set_variable = { which = dist value = 437 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 431 } }
+												set_variable = { which = dist value = 431 }
+											}
+											else = {
+												set_variable = { which = dist value = 426 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 398 } }
+										if = { limit = { province_distance = { who = ROOT distance = 409 } }
+											if = { limit = { province_distance = { who = ROOT distance = 420 } }
+												set_variable = { which = dist value = 420 }
+											}
+											else = {
+												set_variable = { which = dist value = 414 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 408 } }
+												set_variable = { which = dist value = 408 }
+											}
+											else = {
+												set_variable = { which = dist value = 403 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 386 } }
+											if = { limit = { province_distance = { who = ROOT distance = 397 } }
+												set_variable = { which = dist value = 397 }
+											}
+											else = {
+												set_variable = { which = dist value = 391 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 385 } }
+												set_variable = { which = dist value = 385 }
+											}
+											else = {
+												set_variable = { which = dist value = 380 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					else = {
+						if = { limit = { province_distance = { who = ROOT distance = 187 } }
+							if = { limit = { province_distance = { who = ROOT distance = 281 } }
+								if = { limit = { province_distance = { who = ROOT distance = 328 } }
+									if = { limit = { province_distance = { who = ROOT distance = 351 } }
+										if = { limit = { province_distance = { who = ROOT distance = 363 } }
+											if = { limit = { province_distance = { who = ROOT distance = 374 } }
+												set_variable = { which = dist value = 374 }
+											}
+											else = {
+												set_variable = { which = dist value = 368 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 362 } }
+												set_variable = { which = dist value = 362 }
+											}
+											else = {
+												set_variable = { which = dist value = 356 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 339 } }
+											if = { limit = { province_distance = { who = ROOT distance = 350 } }
+												set_variable = { which = dist value = 350 }
+											}
+											else = {
+												set_variable = { which = dist value = 344 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 338 } }
+												set_variable = { which = dist value = 338 }
+											}
+											else = {
+												set_variable = { which = dist value = 333 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 304 } }
+										if = { limit = { province_distance = { who = ROOT distance = 316 } }
+											if = { limit = { province_distance = { who = ROOT distance = 327 } }
+												set_variable = { which = dist value = 327 }
+											}
+											else = {
+												set_variable = { which = dist value = 321 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 315 } }
+												set_variable = { which = dist value = 315 }
+											}
+											else = {
+												set_variable = { which = dist value = 309 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 292 } }
+											if = { limit = { province_distance = { who = ROOT distance = 303 } }
+												set_variable = { which = dist value = 303 }
+											}
+											else = {
+												set_variable = { which = dist value = 297 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 291 } }
+												set_variable = { which = dist value = 291 }
+											}
+											else = {
+												set_variable = { which = dist value = 286 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 234 } }
+									if = { limit = { province_distance = { who = ROOT distance = 257 } }
+										if = { limit = { province_distance = { who = ROOT distance = 269 } }
+											if = { limit = { province_distance = { who = ROOT distance = 280 } }
+												set_variable = { which = dist value = 280 }
+											}
+											else = {
+												set_variable = { which = dist value = 274 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 268 } }
+												set_variable = { which = dist value = 268 }
+											}
+											else = {
+												set_variable = { which = dist value = 262 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 245 } }
+											if = { limit = { province_distance = { who = ROOT distance = 256 } }
+												set_variable = { which = dist value = 256 }
+											}
+											else = {
+												set_variable = { which = dist value = 250 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 244 } }
+												set_variable = { which = dist value = 244 }
+											}
+											else = {
+												set_variable = { which = dist value = 239 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 210 } }
+										if = { limit = { province_distance = { who = ROOT distance = 222 } }
+											if = { limit = { province_distance = { who = ROOT distance = 233 } }
+												set_variable = { which = dist value = 233 }
+											}
+											else = {
+												set_variable = { which = dist value = 227 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 221 } }
+												set_variable = { which = dist value = 221 }
+											}
+											else = {
+												set_variable = { which = dist value = 215 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 198 } }
+											if = { limit = { province_distance = { who = ROOT distance = 209 } }
+												set_variable = { which = dist value = 209 }
+											}
+											else = {
+												set_variable = { which = dist value = 203 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 197 } }
+												set_variable = { which = dist value = 197 }
+											}
+											else = {
+												set_variable = { which = dist value = 192 }
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+							if = { limit = { province_distance = { who = ROOT distance = 93 } }
+								if = { limit = { province_distance = { who = ROOT distance = 140 } }
+									if = { limit = { province_distance = { who = ROOT distance = 163 } }
+										if = { limit = { province_distance = { who = ROOT distance = 175 } }
+											if = { limit = { province_distance = { who = ROOT distance = 186 } }
+												set_variable = { which = dist value = 186 }
+											}
+											else = {
+												set_variable = { which = dist value = 180 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 174 } }
+												set_variable = { which = dist value = 174 }
+											}
+											else = {
+												set_variable = { which = dist value = 168 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 151 } }
+											if = { limit = { province_distance = { who = ROOT distance = 162 } }
+												set_variable = { which = dist value = 162 }
+											}
+											else = {
+												set_variable = { which = dist value = 156 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 150 } }
+												set_variable = { which = dist value = 150 }
+											}
+											else = {
+												set_variable = { which = dist value = 145 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 116 } }
+										if = { limit = { province_distance = { who = ROOT distance = 128 } }
+											if = { limit = { province_distance = { who = ROOT distance = 139 } }
+												set_variable = { which = dist value = 139 }
+											}
+											else = {
+												set_variable = { which = dist value = 133 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 127 } }
+												set_variable = { which = dist value = 127 }
+											}
+											else = {
+												set_variable = { which = dist value = 121 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 104 } }
+											if = { limit = { province_distance = { who = ROOT distance = 115 } }
+												set_variable = { which = dist value = 115 }
+											}
+											else = {
+												set_variable = { which = dist value = 109 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 103 } }
+												set_variable = { which = dist value = 103 }
+											}
+											else = {
+												set_variable = { which = dist value = 98 }
+											}
+										}
+									}
+								}
+							}
+							else = {
+								if = { limit = { province_distance = { who = ROOT distance = 46 } }
+									if = { limit = { province_distance = { who = ROOT distance = 69 } }
+										if = { limit = { province_distance = { who = ROOT distance = 81 } }
+											if = { limit = { province_distance = { who = ROOT distance = 92 } }
+												set_variable = { which = dist value = 92 }
+											}
+											else = {
+												set_variable = { which = dist value = 86 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 80 } }
+												set_variable = { which = dist value = 80 }
+											}
+											else = {
+												set_variable = { which = dist value = 74 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 57 } }
+											if = { limit = { province_distance = { who = ROOT distance = 68 } }
+												set_variable = { which = dist value = 68 }
+											}
+											else = {
+												set_variable = { which = dist value = 62 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 56 } }
+												set_variable = { which = dist value = 56 }
+											}
+											else = {
+												set_variable = { which = dist value = 51 }
+											}
+										}
+									}
+								}
+								else = {
+									if = { limit = { province_distance = { who = ROOT distance = 23 } }
+										if = { limit = { province_distance = { who = ROOT distance = 34 } }
+											if = { limit = { province_distance = { who = ROOT distance = 45 } }
+												set_variable = { which = dist value = 45 }
+											}
+											else = {
+												set_variable = { which = dist value = 39 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 33 } }
+												set_variable = { which = dist value = 33 }
+											}
+											else = {
+												set_variable = { which = dist value = 28 }
+											}
+										}
+									}
+									else = {
+										if = { limit = { province_distance = { who = ROOT distance = 11 } }
+											if = { limit = { province_distance = { who = ROOT distance = 22 } }
+												set_variable = { which = dist value = 22 }
+											}
+											else = {
+												set_variable = { which = dist value = 16 }
+											}
+										}
+										else = {
+											if = { limit = { province_distance = { who = ROOT distance = 10 } }
+												set_variable = { which = dist value = 10 }
+											}
+											else = {
+												set_variable = { which = dist value = 5 }
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { check_variable = { which = dist	value = 1800 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_2700 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 1500 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_2400 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 1200 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_2100 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 900 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_1800 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 700 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_1500 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 500 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_1200 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 300 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_900 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 200 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_600 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_300
+				}
+			} else_if = {
+				limit = { check_variable = { which = dist	value = 100 } }
+				ROOT = { 
+					add_province_modifier = { name = capitalautonomymod_300 	duration = -1 } 
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_2700
+				}
+			} else = {
+				ROOT = { 
+					remove_province_modifier = capitalautonomymod_2700
+					remove_province_modifier = capitalautonomymod_2400
+					remove_province_modifier = capitalautonomymod_2100
+					remove_province_modifier = capitalautonomymod_1800
+					remove_province_modifier = capitalautonomymod_1500
+					remove_province_modifier = capitalautonomymod_1200
+					remove_province_modifier = capitalautonomymod_900
+					remove_province_modifier = capitalautonomymod_600
+					remove_province_modifier = capitalautonomymod_2700
+				}
+			}
+		}}
+	}
+}

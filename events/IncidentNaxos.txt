@@ -107,6 +107,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_part_of_hre = yes
+		}
+	}
 	
 	option = { #accept
 		name = incident_naxos.3.a
@@ -140,6 +151,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_part_of_hre = yes
+		}
+	}
 	
 	option = { #accept
 		name = incident_naxos.4.a
@@ -173,6 +195,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_part_of_hre = yes
+		}
+	}
 	
 	option = { #Outrageous!
 		name = incident_naxos.5.a

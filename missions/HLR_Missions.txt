@@ -93,7 +93,7 @@ emp_ger_slot_1_westernconversion = {
 					}
 					remove_province_modifier = hlr_separatist_sentiment
 				}
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 				set_country_flag = german_wallonians
 			}
 			else = {
@@ -220,7 +220,13 @@ emp_germany_hlr_slot_2_culturechange = {
 			OR = {
 				AND = {
 					area = lusatia_area
-					NOT = { culture = saxon }
+					NOT = {
+						OR = {
+							culture = saxon
+							culture = prussian
+							culture = sudeten
+						}
+					}
 				}
 				AND = {
 					area = silesia_area
@@ -232,7 +238,11 @@ emp_germany_hlr_slot_2_culturechange = {
 		trigger = {
 			num_of_owned_provinces_with = {
  					area = lusatia_area
-					culture = saxon
+					OR = { 
+						culture = saxon
+						culture = prussian
+						culture = sudeten
+					}
 					value = 3
  			}
 			owns_all_provinces  = {
@@ -331,7 +341,7 @@ emp_germany_hlr_slot_2_culturechange = {
 					}
 					remove_province_modifier = hlr_separatist_sentiment
 				}
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 				set_country_flag = german_bohemians
 			}
 			else = {
@@ -979,7 +989,7 @@ emp_ger_slot_5_clericpact = {
 			}
 		}
 		effect = {
-			add_prestige = 50 
+			add_prestige_or_monarch_power = { amount = 50 }
 			custom_tooltip = heiligerreichskrieg.tooltip
 			hidden_effect = {
 				every_known_country = {
@@ -1130,7 +1140,7 @@ emp_ger_slot_3_jerusalem = {
 				}
 			}
 			else = {
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 				151 = {
 					add_province_modifier = {
 						name = christian_constantinople_mod
@@ -1508,7 +1518,7 @@ emp_ger_slot_2_poland = {
 				}
 			}
 			else = {
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 			}
 		}
 	}
@@ -1754,7 +1764,7 @@ emp_ger_slot_1_france = {
 				}
 			}
 			else = {
-				add_prestige = 50
+				add_prestige_or_monarch_power = { amount = 50 }
 			}
 		}
 	}

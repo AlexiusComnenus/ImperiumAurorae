@@ -899,3 +899,41 @@ demand_unlawful_territory_action = {
 		}
 	}
 }
+
+knowledge_sharing = {
+	condition = {
+		tooltip = same_culture_or_religion_needed_tt
+		potential = {
+			always = yes
+		}
+		allow = {
+			FROM = {
+				OR = {
+					overlord_of = ROOT
+					is_subject_of = ROOT
+					culture_group = ROOT
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+ask_knowledge_sharing = {
+	condition = {
+		tooltip = same_culture_or_religion_needed_tt
+		potential = {
+			always = yes
+		}
+		allow = {
+			FROM = {
+				OR = {
+					overlord_of = ROOT
+					is_subject_of = ROOT
+					culture_group = ROOT
+					religion = ROOT
+				}
+			}
+		}
+	}
+}

@@ -267,7 +267,7 @@ horde_gov_ideas = {
 	}
 	
 	ai_will_do = {
-		factor = 10
+		factor = 500
 		modifier = {
 			factor = 1.5
 			personality = ai_militarist 
@@ -369,12 +369,20 @@ theocracy_gov_ideas = {
 			tag = TEM 
 		}
 		modifier = {
+			factor = 500
+			tag = Z42 
+		}
+		modifier = {
 			factor = 10
 			tag = PAP
 		}
 		modifier = {
 			factor = 10
 			tag = FAP
+		}
+		modifier = {
+			factor = 5
+			government = theocracy
 		}
 		modifier = { 
 			factor = 2
@@ -438,7 +446,7 @@ indigenous_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 10
+		factor = 500
 	}
 }
 
@@ -897,7 +905,8 @@ defensive_ideas = {
 		reinforce_speed = 0.3
 	}
 	improved_foraging = {
-		garrison_size = 0.33
+		garrison_size = 0.25
+		land_attrition = -0.10	
 		effect = {
 			hidden_effect = {
 				if = {
@@ -1305,6 +1314,7 @@ exploration_ideas = {
 			NOT = { tag = TEM }
 			NOT = { tag = Y11 }
 			NOT = { tag = JOM }
+			NOT = { tag = MTH }
 		}
 		modifier = {
 			factor = 0.1
@@ -1314,6 +1324,7 @@ exploration_ideas = {
 			NOT = { tag = KCL }
 			NOT = { tag = KOS }
 			NOT = { tag = TEM }
+			NOT = { tag = MTH }
 		}
 		modifier = {
 			factor = 0.1
@@ -1330,6 +1341,8 @@ exploration_ideas = {
 			NOT = { tag = KCL }
 			NOT = { tag = KOS }
 			NOT = { tag = TEM }
+			NOT = { tag = MTH }
+			NOT = { tag = MTH }
 		}
 		modifier = {
 			factor = 0
@@ -1502,12 +1515,8 @@ maritime_ideas = {
 			light_ship_fraction = 0.25
 		}
 		modifier = {
-			factor = 2.5
+			factor = 60
 			has_government_attribute = is_pirate_republic_reform
-		}
-		modifier = {
-			factor = 0
-			is_subject = yes
 		}
 	}
 }
@@ -1746,6 +1755,11 @@ expansion_ideas = {
 				tag = SPA
 				tag = KCL
 				tag = KOS
+			}
+		}
+		modifier = {
+			factor = 1000
+			OR = {
 				tag = JOM
 				tag = MYM
 				tag = Y11

@@ -121,6 +121,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_part_of_hre = yes
+		}
+	}
 	
 	option = { #War!
 		name = incident_abbasids.3.a
@@ -142,6 +153,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_part_of_hre = yes
+		}
+	}
 	
 	option = { #War!
 		name = incident_abbasids.4.a

@@ -89,7 +89,7 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				province_id = 45	# Lubeck
+				province_id = 49	# Neumark
 				province_id = 50	# Berlin
 				province_id = 1759	# Potsdam
 			}
@@ -112,7 +112,7 @@ country_decisions = {
 				religion = tengri_pagan_reformed
 				religion = norse_pagan_reformed
 			}
-			owns_core_province = 45			# Lubeck
+			owns_core_province = 49		# Neumark
 			owns_core_province = 50			# Berlin
 			owns_core_province = 1759		# Potsdam
 		}

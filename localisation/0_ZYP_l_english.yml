@@ -101,7 +101,7 @@
 
  lot_carolingian_resurgence_title: "§GCarolingian Resurgence§!"
  lot_carolingian_resurgence_desc: "After Karl the Great fell to the treachery of Widukind, only the Realm of Austrasia sought to avenge him. While the kingdom was ultimately destroyed by the Saxons, the fire in our hearts has never faded, as opposed to the other cowards in West Francia who were content to let the Saxons rule our ancient homelands."
- lot_carolingian_revenge_title: "§PCarolingian Vengeance§!"
+ lot_carolingian_revenge_title: "§VCarolingian Vengeance§!"
  lot_carolingian_revenge_desc: "Hark! Let all behold, the heirs to Charlemagne have dethroned the moribund Kings of Germany set up by the Saxons so many years ago after Widukind's victory! In the end, we have the last laugh..."
  unlock_dutch_reforms_tt: "We will §Gunlock§! the §Cunique Dutch government reforms§!."
  lot_strengthen_the_vroedschappen_title: "Strengthen the Vroedschappen"
@@ -139,7 +139,7 @@
  local_sabotage:0 "Local Sabotage"
  lot_humanist_rule: "Humanist Rule"
  lot_iron_fist: "§RIron Fist of Austrasia§!"
- lot_carolingian_revenge_modifier: "§PRevenge of the Carolingians§!"
+ lot_carolingian_revenge_modifier: "§VRevenge of the Carolingians§!"
  
  lot_defeated_republicans:0 "Defeated the Republicans"
  

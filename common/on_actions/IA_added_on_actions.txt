@@ -11,6 +11,7 @@ on_startup = {
 		ia_flavor_eng.1
 		ia_flavor_eng.2
 		ia_flavor_bog.1
+		capital_autonomy.1
 	}
 	initialize_schools_effect = yes
 }
@@ -42,9 +43,8 @@ on_main_war_won = {
 }
 
 on_heir_death = {
-	if = {
-		limit = { tag = Z17 }
-		country_event = { id = antioch.8 }
+	events = {
+		antioch.8
 	}
 }
 
@@ -89,6 +89,16 @@ on_monthly_pulse = {
 		}
 		country_event = { id = ia_flavor_tem.25 }
 	}
+}
+
+on_province_owner_change = {
+	events = {
+		capital_autonomy.2
+	}
+}
+
+on_capital_moved = {
+	ROOT = { owner = { every_owned_province = { province_event = { id = capital_autonomy.2 } } } }
 }
 
 on_conquistador_empty = {

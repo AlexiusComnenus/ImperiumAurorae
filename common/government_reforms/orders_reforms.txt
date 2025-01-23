@@ -349,7 +349,7 @@ templar_crusade_reform = {
 		}
 	}
 	effect = {
-		custom_tooltip = world_crusade_tt
+		custom_tooltip = templarite_crusade_tt
 		hidden_effect = {
 			if = {
 				limit = { is_defender_of_faith = yes }

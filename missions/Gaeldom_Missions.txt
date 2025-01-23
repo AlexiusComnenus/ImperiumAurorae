@@ -1186,7 +1186,7 @@ ia_hsc_mission_4 = {
 		}
 		
 		effect = {
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 			country_event = { id = gaeldom.3 }
 		}
 	}
@@ -1214,7 +1214,7 @@ ia_hsc_mission_4 = {
 		}
 		
 		effect = {
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 10 }
 			create_alliance = KOI
 			add_historical_friend = KOI
 			KOI = { add_historical_friend = ROOT }
@@ -1335,7 +1335,7 @@ ia_hsc_mission_4 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			add_prestige = 25
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -1419,7 +1419,7 @@ ia_hsc_mission_5 = {
 			wessex_area = {	
 				add_permanent_claim = ROOT
 			}
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 10 }
 			add_adm_power = 100
 			add_accepted_culture = welsh
 		}

@@ -119,7 +119,7 @@ country_decisions = {
 			NOT = { tag = ARB }
 			NOT = { tag = EGY }
 			NOT = { exists = MAM }
-			culture = turkish
+			culture = indo_turkish
 		}
 		allow = {
 			NOT = { exists = MAM } #To Show why it might disappear

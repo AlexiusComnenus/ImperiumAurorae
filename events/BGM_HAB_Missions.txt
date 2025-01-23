@@ -46,9 +46,9 @@ country_event = { #Imperial diplomacy or conquest
 			name = centralization_modifier
 			duration = 7399
 		}
-		country_event = {
-			id = westeurope.4
-		}
+		#country_event = {
+		#	id = westeurope.4
+		#}
 	}
 
 	option = {
@@ -66,9 +66,9 @@ country_event = { #Imperial diplomacy or conquest
 			name = centralization_modifier
 			duration = 7399
 		}
-		country_event = {
-			id = westeurope.4
-		}
+		#country_event = {
+		#	id = westeurope.4
+		#}
 		if = {
 			limit = {
 				NOT = { has_reform = authoritarian_mechanic }

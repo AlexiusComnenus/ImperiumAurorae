@@ -1025,7 +1025,6 @@ ia_close_minded_personality = {
 			NOT = { ruler_has_personality = free_thinker_personality }
 			NOT = { ruler_has_personality = scholar_personality }
 			NOT = { ruler_has_personality = patron_of_arts_personality }
-			patron_of_arts_personality
 			NOT = { dip = 4 }
 		}
 	
@@ -1227,7 +1226,7 @@ ia_antiintellectual_personality = {
 	knowledge_sharing = no
 	
 	idea_cost = 0.05
-	tech_cost = 0.05
+	technology_cost = 0.05
 	innovativeness_gain = -0.5
 	
 	nation_designer_cost = -5

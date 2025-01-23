@@ -459,10 +459,12 @@ novgorod_missions_column_1 = {
 				change_province_name = "The Amber Sea"
 			}
 			1984 = {
-				limit = { trade_goods = amber }
-				add_permanent_province_modifier = {
-					name = nov_amber_outcompeted
-					duration = -1
+				if = {
+					limit = { trade_goods = amber }
+					add_permanent_province_modifier = {
+						name = nov_amber_outcompeted
+						duration = -1
+					}
 				}
 			}
 			43 = {
@@ -1642,7 +1644,7 @@ novgorod_missions_column_4 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 10
-				is_core = yes
+				is_core = ROOT
 				trade_goods = iron
 				base_production = 8
 				has_production_building_trigger = yes
@@ -1654,7 +1656,7 @@ novgorod_missions_column_4 = {
 			hidden_effect = {
 				random_owned_province = {
 					limit = {
-						is_core = yes
+						is_core = ROOT
 						trade_goods = iron
 						base_production = 8
 						has_production_building_trigger = yes
@@ -1665,7 +1667,7 @@ novgorod_missions_column_4 = {
 				}
 				random_owned_province = {
 					limit = {
-						is_core = yes
+						is_core = ROOT
 						trade_goods = iron
 						base_production = 8
 						has_production_building_trigger = yes
@@ -1676,7 +1678,7 @@ novgorod_missions_column_4 = {
 				}
 				random_owned_province = {
 					limit = {
-						is_core = yes
+						is_core = ROOT
 						trade_goods = iron
 						base_production = 8
 						has_production_building_trigger = yes
@@ -1687,7 +1689,7 @@ novgorod_missions_column_4 = {
 				}
 				random_owned_province = {
 					limit = {
-						is_core = yes
+						is_core = ROOT
 						trade_goods = iron
 						base_production = 8
 						has_production_building_trigger = yes
@@ -1698,7 +1700,7 @@ novgorod_missions_column_4 = {
 				}
 				random_owned_province = {
 					limit = {
-						is_core = yes
+						is_core = ROOT
 						trade_goods = iron
 						base_production = 8
 						has_production_building_trigger = yes

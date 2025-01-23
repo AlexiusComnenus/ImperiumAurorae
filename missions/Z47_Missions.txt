@@ -27,7 +27,7 @@ Z47_missions_column_1 = {
 		}
 		
 		effect = {
-			add_prestige = 10
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_legitimacy = 10
 			
 			define_general = {
@@ -101,7 +101,7 @@ Z47_missions_column_1 = {
 				}
 			}
 			
-			add_prestige = 20
+			add_prestige_or_monarch_power = { amount = 25 }
 		}
 	}
 }
