@@ -398,12 +398,14 @@ francia_missions_1_continued = {
 				religious_unity = 1
 			}
 			dynasty = "Meroveching"
+			reform_level = 4
 		}
 		effect = {
-			add_country_modifier = {
-				name = frw_merovingian_divine_right
-				duration = -1
-			}
+			#add_country_modifier = {
+			#	name = frw_merovingian_divine_right
+			#	duration = -1
+			#}
+			add_government_reform = merovingian_divine_right_reform
 			set_country_flag = frw_can_enforce_dynasty_flag
 			custom_tooltip = frw_can_enforce_dynasty_tt
 		}
@@ -1283,7 +1285,10 @@ francia_missions_5 = {
 			if = {
 				limit = { ai = no }
 				army_size_percentage = 0.9
-				employed_advisor = { category = MIL		skill = 2 }
+				custom_trigger_tooltip = {
+					tooltip = frw_lvl_2_mil_advisor_tt
+					employed_advisor = { category = MIL		skill = 2 }
+				}
 				land_maintenance = 1
 				current_income_balance = 1
 			}

@@ -57,6 +57,69 @@ divine_merovingian_reform = {
 	}
 }
 
+merovingian_divine_right_reform = {
+	icon = "apostolic_kingdom"
+	allow_normal_conversion = no
+	potential = { 
+		OR = {
+			dynasty = "Meroveching"
+			tag = FRW
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = merovingian_divine_right_reform
+			have_had_reform = merovingian_divine_right_reform
+		}
+	}
+	#lock_level_when_selected = yes
+
+	modifiers = {
+		diplomatic_upkeep = 2
+		prestige_decay = -0.005
+		max_absolutism = 10
+		reverse_relation_with_heretic_religion = -25
+	}
+	
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { is_defender_of_faith = yes }
+				add_country_modifier = {
+					name = gov_improved_defender_of_faith_mod
+					duration = -1
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_tax_building_trigger = yes
+				}
+				add_province_modifier = {
+					name = gov_expanded_temple_rights_mod
+					duration = -1
+				}
+			}
+		}
+	}
+	post_removed_effect = {
+		remove_country_modifier = gov_improved_defender_of_faith_mod
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = gov_expanded_temple_rights_mod
+				}
+				remove_province_modifier = gov_expanded_temple_rights_mod
+			}
+		}
+	}
+	custom_attributes = {
+		temples_modifier = yes
+		improved_defender_of_faith = yes	#Being Defender of Faith increases Dip Rep, Tolerance and Morale
+	}
+}
+
 appanage_reform = {
 	icon = "nobleman"
 	allow_normal_conversion = no

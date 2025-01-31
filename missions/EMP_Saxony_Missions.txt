@@ -1140,6 +1140,7 @@ saxon_missions_5_branching_1 = {
 				}
 				hidden_effect = { set_country_flag = sax_befriended_sca }
 			}
+			custom_tooltip = sax_can_start_pu_war_decision_tt
 			hidden_effect = { set_country_flag = sax_befriended_sca }
 		}
 	}
@@ -1251,6 +1252,7 @@ saxon_missions_5_branching_2 = {
 				}
 				hidden_effect = { set_country_flag = sax_befriended_sca }
 			}
+			custom_tooltip = sax_can_start_pu_war_decision_tt
 			hidden_effect = { set_country_flag = sax_befriended_sca }
 		}
 	}

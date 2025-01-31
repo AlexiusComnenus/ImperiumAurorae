@@ -180,6 +180,15 @@ intolerance = {
 	local_manpower_modifier = 0.10
 }
 
+stability = {
+	global_unrest = -1
+	yearly_corruption = -0.01
+	global_trade_power = 0.05			#1% chance each step.
+	global_spy_defence = 0.05				#-15 to +15% modifier
+	monthly_cultural_unity = 0.1
+	monthly_divine_authority = 0.05
+}
+
 over_governing_capacity_modifier = {
 	stability_cost_modifier = 1.0
 	ae_impact = 1.0

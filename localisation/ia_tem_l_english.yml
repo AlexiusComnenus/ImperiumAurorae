@@ -11,7 +11,7 @@
  
 
  #Mechanics Tooltips
- 
+ ia_reduces_capital_distance_penalty_tt: "The §RTerrain Penalty§! from the §YCapital Distance Mechanic§! will not apply to qualifying provinces."
  mechanic_pilgrim_protector_yes:0 "Can protect §YPilgrims§!"
  cb_templar_crusade:0 "Templarite Crusade"
  cb_templar_crusade_desc:0 "Ours is the only path to Heaven. Their souls must be saved!"
@@ -40,6 +40,10 @@
  establish_milan_decision_title: "Re-establish the Duchy of Milan"
  establish_milan_decision_desc: "We shall establish a Crusader State out of occupied land!"
  afrique_outremer: "Afrique Outremer"
+ mend_the_schism_templarite_decision_title: "End the Corrupt Papacies"
+ mend_the_schism_templarite_decision_desc: "Christendom must be made whole. The corrupt papacies must end."
+ mend_catholicism_templarite_tt: "§GEvery follower of the false Catholic Papacies will convert to Templarite!§!"
+ 
  
  #Diplo Tooltips
  val_tem_friendship: "Templar-Visigothic Friendship"
@@ -125,6 +129,7 @@
  dusk_sponsored_merc_connections: "Sponsored Legion of Dusk foreign connections"
  dusk_funded_dusksworn: "Funding for Dusksworn"
  recently_recruited_dawnwsbane: "Recently recruited Dawnsbane General"
+ templarite_schism_mender: "§VSword-arm of God§!"
 
  #Missions
 
@@ -215,7 +220,12 @@
  
 
  # events
-
+ papal_control.85.title: "Catholic Schism Ended!"
+ papal_control.85.desc: "Ever since the fall of Rome to the Xizho split the Church in twain, the divided papacies have caused the moral authority of the Church to weaken. But no more! For from this day forth, there shall be no more corrupt Papacies, only the resplendent Voice of God and Her Eternal Crusade!"
+ papal_control.85.1: "DEUS VULT"
+ papal_control.84.title: "Catholic Schism Mended!"
+ papal_control.84.desc: "Ever since the fall of Rome to the Xizho split the Church in twain, the divided papacies have caused the moral authority of the Church to weaken. But no more! For from this day forth, there shall only be one Pope."
+ papal_control.84.1: "The Church is Whole!"
  ia_flavor_tem.2.t:0 "Question of Vandalia"
  ia_flavor_tem.2.d:0 "Now that we are in a position of strength, it is time to deal with the Vandal threat. But how shall we go about it?"
  ia_flavor_tem.2.a:0 "Convert them to our faith!"

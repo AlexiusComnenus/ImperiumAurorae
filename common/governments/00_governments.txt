@@ -261,6 +261,7 @@ monarchy = {
 		}
 		state_and_religion = {
 			reforms = {
+				merovingian_divine_right_reform
 				hlr_catholic_orders_reform
 				bog_sponsor_public_schools_reform
 				inti_sun_god_reform
@@ -801,6 +802,7 @@ republic = {
 		}
 		republic_and_religion = {
 			reforms = {
+				merovingian_divine_right_reform
 				bog_sponsor_public_schools_reform
 				inti_sun_god_reform
 				holy_groves_reform
@@ -1412,6 +1414,7 @@ theocracy = {
 		}
 		religoius_doctrine = {
 			reforms = {
+				merovingian_divine_right_reform
 				bog_sponsor_public_schools_reform
 				inti_sun_god_reform
 				holy_groves_reform

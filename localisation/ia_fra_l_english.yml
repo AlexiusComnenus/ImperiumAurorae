@@ -26,6 +26,8 @@
  independent_appanage_reform_desc: "De Jure a vassal of France, this Appanage has gained de facto independence due to the weakness of the French Crown."
  divine_merovingian_reform: "Divine Merovingian Monarchy"
  divine_merovingian_reform_desc: "Blessed by God to rule Francia and indeed all of Christendom, the Merovingian Dynasty has curtailed the influence of the nobles and ensured that never again shall there be a situation where the Mayors of the Palace can usurp their authority. Long Live Francia! Long Live the Rex Francorum!"
+ merovingian_divine_right_reform: "Cult of Merovech"
+ merovingian_divine_right_reform_desc: "The Divine House of Merovech are truly God's Chosen on Earth. Those who suggest otherwise are delusional or worse, treasonous."
  
  #Modifiers
  fra_welsh_cooperation_modifier: "Brythonic-French Bond of Cooperation"
@@ -137,6 +139,7 @@
  frw_reclaim_frontier_desc: "The Saxons have gradually encroached their hegemony onto rightful Francian territory. Though the treacherous Carolingians got what they deserved at the hands of the Saxons, we still must reclaim our frontier."
  frw_francia_resurgent_title: "§VFrancia Resurgent§!"
  frw_francia_resurgent_desc: "With the proper recovery of our military, embracement of the Renaissance, and economic revitalization we can now say Francia has resurged as a functional state once more! May our glory be everlasting!"
+ frw_lvl_2_mil_advisor_tt: "We are employing a §Ylevel 2§! or higher §YMilitary Advisor§!"
  frw_grande_armee_title: "Grande Armee"
  frw_grande_armee_desc: "Francia deserves not only a sufficient army, but the best army. Only so can we demonstrate our divine right and natural superiority over the petty nobles and pretend royalty."
  frw_recover_manpower_title: "Rebuild Manpower"

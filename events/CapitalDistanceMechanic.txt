@@ -2592,6 +2592,102 @@ province_event = {
 					}
 				}
 			}
+			#hidden_effect = {
+			#	ROOT = { owner = { save_event_target_as = dist_calc_province_owner } }
+			#}
+			if = {
+				limit = {
+					ROOT = { has_port = yes }
+				}
+				multiply_variable = {
+					which = dist
+					value = 0.75
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = {
+						NOT = { has_port = yes }
+						NOT = { any_neighbor_province = { has_port = yes } }
+					}
+				}
+				multiply_variable = {
+					which = dist
+					value = 2
+				}
+			}
+			if = {
+				limit = { ROOT = { has_terrain = forest } NOT = { owner = { has_estate_privilege = estate_burghers_forest_expansion } } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.1
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = hills } NOT = { owner = { has_estate_privilege = estate_burghers_mountain_expansion } } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.2
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = woods } NOT = { owner = { has_estate_privilege = estate_burghers_forest_expansion } } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.1
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = mountain } NOT = { owner = { has_estate_privilege = estate_burghers_mountain_expansion } } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.5
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = jungle } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.3
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = marsh } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.3
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = desert } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.4
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = coastal_desert } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.2
+				}
+			}
+			else_if = {
+				limit = { ROOT = { has_terrain = highlands } NOT = { owner = { has_estate_privilege = estate_burghers_mountain_expansion } } }
+				
+				multiply_variable = {
+					which = dist
+					value = 1.25
+				}
+			}
 			if = {
 				limit = { check_variable = { which = dist	value = 1800 } }
 				ROOT = { 

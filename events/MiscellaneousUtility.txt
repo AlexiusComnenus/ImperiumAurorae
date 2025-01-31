@@ -292,6 +292,50 @@ country_event = {
 	}
 }
 
+country_event = {	#Schism Mended
+	id = papal_control.84
+	title = papal_control.84.title
+	desc = papal_control.84.desc
+	picture = POPE_PREACHING_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "papal_control.84.1"
+		
+		add_prestige_or_monarch_power = { amount = 200 }
+		add_papal_influence = 200
+		
+		add_country_modifier = {
+			name = ended_the_antipapacies
+			duration = -1
+		}
+	}
+}
+
+country_event = {	# Schism Mended Templarite Edition
+	id = papal_control.85
+	title = papal_control.85.title
+	desc = papal_control.85.desc
+	picture = RELIGIOUS_WARS_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "papal_control.85.1"
+		
+		add_prestige_or_monarch_power = { amount = 200 }
+		add_church_power = 200
+		
+		add_country_modifier = {
+			name = templarite_schism_mender
+			duration = -1
+		}
+	}
+}
+
 
 namespace = saxon_fief
 

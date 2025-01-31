@@ -11,10 +11,8 @@ merovingian_ideas = {
 			dynasty = "Meroveching"
 			tag = NRM
 		}
-		OR = {
-			religion_group = christian
-			NOT = { religion = hellenic_pagan_reformed }
-		}
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
 		government = monarchy
 	}
 	free = yes
@@ -41,8 +39,7 @@ merovingian_ideas = {
 		army_tradition = 1
 	}
 	living_legends = {
-		monthly_splendor = 2
 		power_projection_from_insults = 1
-		all_estate_loyalty_equilibrium = 0.10
+		max_absolutism_effect = 0.2
 	}
 }

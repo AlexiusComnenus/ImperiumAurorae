@@ -35,7 +35,7 @@
 178 = "Andecavis"
 179 = "Avaricum Biturigum" #Bourges (Biturigum?)
 180 = "Pictavium"
-182 = "Compendium"
+182 = { "Noviodunum" "Noviodunum" }
 183 = "Lutetia"
 184 = "Aurelianium"
 186 = "Durocortorum"
@@ -52,7 +52,7 @@
 198 = "Segodunum"
 199 = "Arvernia"
 200 = "Monspesullanus"
-201 = "Aquae Sextiae" #Aix-en-Provence, though Massilia may be more recognizable.
+201 = { "Massilia" "Aquae Sextiae" } #Aix-en-Provence, though Massilia may be more recognizable.
 203 = "Lugdunum"
 204 = "Delphinatus" #Delphinatus Viennensis in full, equivalent to fr Dauphiné Viennois
 205 = "Sabaudia"
@@ -63,6 +63,20 @@
 2991 = "Varus" #Actually Var.
 4111 = "Mediolanum Santonum"  #Saintes (Santonum?)
 4112 = "Cadurcum"
+
+4389 = "Caesarodunum"
+4384 = "Condate Redonum"
+4388 = "Civitas Carnutum"
+4776 = "Blesum Castrum"
+185 = "Nemora"
+4390 = "Augustobona Tricassium"
+4392 = "Autissiodorum"
+4764 = "Salinae Sequanorum"
+4777 = "Segusiavorum Forum"
+4391 = "Vivariensis"
+4696 = "Telo Martius"
+202 = "Avenio"
+4695 = "Carcasum"
 
 #Iberia
 #No names found for: Cuenca

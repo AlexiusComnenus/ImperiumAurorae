@@ -1994,6 +1994,7 @@ estate_burghers_forest_expansion = {
 	}
 	on_granted = {
 		custom_tooltip = estate_burghers_forest_expansion_gt
+		custom_tooltip = ia_reduces_capital_distance_penalty_tt
 		hidden_effect = {
 			every_owned_province = {
 				limit = {
@@ -2076,6 +2077,7 @@ estate_burghers_mountain_expansion = {
 	}
 	on_granted = {
 		custom_tooltip = estate_burghers_mountain_expansion_gt
+		custom_tooltip = ia_reduces_capital_distance_penalty_tt
 		hidden_effect = {
 			every_owned_province = {
 				limit = {

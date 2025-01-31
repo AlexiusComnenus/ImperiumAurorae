@@ -32,6 +32,7 @@
  sax_will_upset_nobles_greatly_tt: "This action will §Rincrease Nobility Resentment§! greatly!"
  sax_will_advance_unification_greatly_tt: "This action will §Gincrease Realm Unity§! greatly!"
  sax_will_upset_nobles_massively_tt: "This action will §Rincrease Nobility Resentment§! massively!"
+ sax_can_start_pu_war_decision_tt: "We will be able to §Ycause our chosen ally to declare war§! via a §Ydecision§!."
 
  #Mechanics Tooltips
  merge_bavarian_circle_title: "Merge the Bavarian Circle"

@@ -2,6 +2,7 @@ country_decisions = {
 	
 	convert_to_polish_catholic = {
 		major = yes
+		color = { 204 204 0 }
 		potential = {
 			religion = fraticelli
 			NOT = { has_global_flag = catholic_antipopes_ended }
@@ -82,6 +83,7 @@ country_decisions = {
 	
 	convert_to_german_catholic = {
 		major = yes
+		color = { 204 204 0 }
 		potential = {
 			religion = catholic
 			NOT = { has_global_flag = catholic_antipopes_ended }
@@ -162,6 +164,7 @@ country_decisions = {
 	
 	end_the_antipapacy_polish = {
 		major = yes
+		color = { 204 204 0 }
 		potential = {
 			religion = catholic
 			NOT = { has_global_flag = catholic_antipopes_ended }
@@ -187,13 +190,7 @@ country_decisions = {
 		}
 		
 		effect = {
-			add_prestige = 200
-			add_papal_influence = 200
-			
-			add_country_modifier = {
-				name = ended_the_antipapacies
-				duration = -1
-			}
+			country_event = { id = papal_control.84 }
 			
 			add_reform_desire = -0.5
 			
@@ -230,6 +227,7 @@ country_decisions = {
 	
 	end_the_antipapacy_german = {
 		major = yes
+		color = { 204 204 0 }
 		potential = {
 			religion = fraticelli
 			NOT = { has_global_flag = catholic_antipopes_ended }
@@ -255,13 +253,7 @@ country_decisions = {
 		}
 		
 		effect = {
-			add_prestige = 200
-			add_papal_influence = 200
-			
-			add_country_modifier = {
-				name = ended_the_antipapacies
-				duration = -1
-			}
+			country_event = { id = papal_control.84 }
 			
 			add_reform_desire = -0.5
 			
@@ -292,6 +284,77 @@ country_decisions = {
 				}
 				set_global_flag = catholic_antipopes_ended
 				FAP = { inherit = PAP }
+			}
+		}
+	}
+	
+	mend_the_schism_templarite_decision = {
+		major = yes
+		color = { 204 204 0 }
+		potential = {
+			religion = protestant
+			NOT = { has_global_flag = complete_templarite_victory }
+		}
+		
+		allow = {
+			OR = {
+				NOT = { exists = FAP }
+				FAP = { is_subject_of = ROOT }
+			}
+			OR = {
+				NOT = { exists = PAP }
+				PAP = { is_subject_of = ROOT }
+			}
+			if = {
+				limit = {
+					NOT = { exists = FAP }
+					NOT = { exists = PAP }
+				}
+				is_defender_of_faith = yes
+			}
+		}
+		
+		effect = {
+			country_event = { id = papal_control.85 }
+			
+			custom_tooltip = mend_catholicism_templarite_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = catholic }
+					change_religion = fraticelli
+				}
+				every_known_country = {
+					limit = {
+						religion = catholic
+					}
+					change_religion = protestant
+					every_owned_province = {
+						limit = { religion = catholic }
+						change_religion = protestant
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = fraticelli
+					}
+					change_religion = protestant
+					every_owned_province = {
+						limit = { religion = fraticelli }
+						change_religion = protestant
+					}
+				}
+				every_known_country = {
+					limit = {
+						religion = protestant
+					}
+					every_owned_province = {
+						limit = { OR = { religion = catholic religion = fraticelli } }
+						change_religion = protestant
+					}
+				}
+				set_global_flag = complete_templarite_victory
+				FAP = { overlord = { inherit = PREV } }
+				PAP = { overlord = { inherit = PREV } }
 			}
 		}
 	}

@@ -104,6 +104,8 @@ country_decisions = {
 			NOT = { has_country_modifier = recently_recruited_templar }
 			exists = TEM
 			OR = {
+				alliance_with = TEM
+				tag = TEM
 				TEM = {
 					has_opinion = {
 						who = ROOT
@@ -111,8 +113,6 @@ country_decisions = {
 					}
 					has_matching_religion = ROOT
 				}
-				alliance_with = TEM
-				tag = TEM
 			}
 		}
 		

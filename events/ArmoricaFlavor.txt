@@ -909,7 +909,10 @@ country_event = {  # New heir
 	picture = NEW_HEIR_eventPicture
     
 	trigger = {
-		tag = SOI
+		OR = {
+			tag = SOI
+			was_tag = SOI
+		}
 		has_country_flag = majorians_boon
 		has_heir = no
 		dynasty = "Syagrii"

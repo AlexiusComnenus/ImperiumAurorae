@@ -2223,7 +2223,8 @@ university_poitiers = { #Université de Poitiers
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				tag = ENG
 			}
@@ -2237,7 +2238,8 @@ university_poitiers = { #Université de Poitiers
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				tag = ENG
 			}
@@ -2515,7 +2517,8 @@ chateau_dangers = { #Chateau d'Angers
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				tag = ENG
 			}
@@ -2530,7 +2533,8 @@ chateau_dangers = { #Chateau d'Angers
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				tag = ENG
 			}
@@ -2541,7 +2545,8 @@ chateau_dangers = { #Chateau d'Angers
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				tag = ENG
 			}
@@ -3520,7 +3525,8 @@ tuileries_garden = {
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				primary_culture = breton
 			}
@@ -3545,7 +3551,8 @@ tuileries_garden = {
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				primary_culture = breton
 			}
@@ -3566,7 +3573,8 @@ tuileries_garden = {
 		owner = {
 			OR = {
 				culture_group = french
-				tag = SOI
+				culture_group = roman_group
+				primary_culture = frankish
 				tag = GLL
 				primary_culture = breton
 			}

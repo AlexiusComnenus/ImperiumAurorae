@@ -35,6 +35,7 @@ aachener_dom = {
 			OR = {
 				culture_group = french
 				primary_culture = alsatian
+				primary_culture = frankish
 			}
 		}
 	}
@@ -55,6 +56,7 @@ aachener_dom = {
 			NOT = { religion = hellenic_pagan_reformed }
 			OR = {
 				culture_group = french
+				primary_culture = frankish
 				primary_culture = alsatian
 			}
 		}
@@ -67,6 +69,7 @@ aachener_dom = {
 			NOT = { religion = hellenic_pagan_reformed }
 			OR = {
 				culture_group = french
+				primary_culture = frankish
 				primary_culture = alsatian
 			}
 		}

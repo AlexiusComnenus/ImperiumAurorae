@@ -2293,6 +2293,7 @@ country_event = {		#	End of Disaster
 				which = SaxScore
 				value = 10
 			}
+			has_reform = saxon_feudalism
 		}
 		
 		custom_tooltip = inherit_every_fiefdom_tt
@@ -2341,6 +2342,7 @@ country_event = {		#	End of Disaster
 					value = 10
 				}
 			}
+			has_reform = saxon_feudalism
 		}
 		
 		custom_tooltip = inherit_every_fiefdom_tt
@@ -2391,6 +2393,7 @@ country_event = {		#	End of Disaster
 					value = 6
 				}
 			}
+			has_reform = saxon_feudalism
 		}
 		
 		change_tag = GER

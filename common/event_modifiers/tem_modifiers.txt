@@ -314,3 +314,12 @@ dusk_funded_dusksworn = {
 
 recently_recruited_dawnwsbane = {
 }
+
+templarite_schism_mender = {
+	religion = yes
+
+	monthly_church_power = 1
+	reverse_relation_with_same_religion = 25
+	manpower_in_true_faith_provinces = 0.10
+	holy_orders_loyalty_modifier = 0.2
+}

@@ -935,7 +935,7 @@ country_event = {  # Bully Flanders
 		manpower_percentage = 0.5
 		FLA = {
 			NOT = { truce_with = ROOT }
-			NOT = { is_subject_of = ROOT }
+			NOT = { is_subject = yes }
 			NOT = { war_with = ROOT }
 		}
 		has_global_flag = sax_bullied_france
