@@ -145,19 +145,13 @@ country_decisions = {
 					duration = -1
 				}
 			}
-			if = {
-				limit = { is_female = yes }
-				convert_female_ruler_to_general = yes
-			}
-			else = {
-				convert_ruler_to_general = 100
-			}
+			convert_ruler_to_general = 100
 			hidden_effect = {
 				remove_country_modifier = frw_general_stat_boost
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10
 			modifier = {
 				factor = 0
 				is_at_war = no

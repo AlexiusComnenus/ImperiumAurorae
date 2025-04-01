@@ -62,6 +62,7 @@ province_event = {
 	desc = ivycurse.1.d
 	picture = WAR_OF_THE_ROSES_eventPicture
 	goto = ROOT
+	hidden = yes
 	
 	trigger = {
 		owner = {
@@ -81,6 +82,10 @@ province_event = {
 				NOT = { has_country_flag = meta_devver }
 				has_country_modifier = sanitary_standards
 			}
+		}
+		if = {
+			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
+			province_event = { id = ivycurse.1.display }
 		}
 		add_devastation = 10
 		if = {
@@ -155,6 +160,10 @@ province_event = {
 			}
 		}
 		
+		if = {
+			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
+			province_event = { id = ivycurse.1.display }
+		}
 		add_devastation = 20
 		if = {
 			limit = { NOT = { development = 10 } }
@@ -194,8 +203,64 @@ province_event = {
 			}
 		}
 		
+		if = {
+			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
+			province_event = { id = ivycurse.1.display }
+		}
 		add_base_production = -20
 		add_base_manpower = -20
+		
+		custom_tooltip = meta_devver_tt
+	}
+}
+
+province_event = {
+	id = ivycurse.1.display
+	title = ivycurse.1.t
+	desc = ivycurse.1.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	goto = ROOT
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ivycurse.1.a
+		
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = meta_devver }
+				has_country_modifier = sanitary_standards
+			}
+		}
+		
+		custom_tooltip = province_has_lost_dev_tt_sanitary
+	}
+	
+	option = {
+		name = ivycurse.1.b
+		
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = meta_devver }
+				NOT = { has_country_modifier = sanitary_standards }
+			}
+		}
+		
+		
+		custom_tooltip = province_has_lost_dev_tt
+	}
+	
+	option = {
+		name = ivycurse.1.c
+		
+		trigger = {
+			owner = {
+				has_country_flag = meta_devver
+			}
+		}
 		
 		custom_tooltip = meta_devver_tt
 	}

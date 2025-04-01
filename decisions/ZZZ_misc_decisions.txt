@@ -296,10 +296,37 @@ country_decisions = {
 		}
 	}
 	
+	hide_show_corruption_decisions = {
+		potential = { ai = no }
+		allow = { ai = no }
+		effect = {
+			if = {
+				limit = { has_country_flag = show_corruption_decisions_flag }
+				clr_country_flag = show_corruption_decisions_flag
+			}
+			else = {
+				set_country_flag = show_corruption_decisions_flag
+			}
+		}
+	}	
+	
+	hide_show_ivycurse_events = {
+		potential = { ai = no 	has_disaster = bonfire_of_the_vanities_disaster }
+		allow = { ai = no 	has_disaster = bonfire_of_the_vanities_disaster }
+		effect = {
+			if = {
+				limit = { has_country_flag = show_ivycurse_events_flag }
+				clr_country_flag = show_ivycurse_events_flag
+			}
+			else = {
+				set_country_flag = show_ivycurse_events_flag
+			}
+		}
+	}
+	
 	ai_reduce_corruption_decision_adm = {
-		potential = { ai = yes }
+		potential = { OR = { ai = yes 	has_country_flag = show_corruption_decisions_flag } }
 		allow = {
-			ai = yes
 			NOT = { has_country_modifier = administrative_corruption_suppression } 
 			corruption = 0.5 
 			NOT = { corruption = 10 }
@@ -322,9 +349,8 @@ country_decisions = {
 	}
 	
 	ai_reduce_corruption_decision_dip = {
-		potential = { ai = yes }
+		potential = { OR = { ai = yes 	has_country_flag = show_corruption_decisions_flag } }
 		allow = {
-			ai = yes
 			NOT = { has_country_modifier = espionage_corruption_suppression } 
 			corruption = 1 
 			NOT = { corruption = 20 }
@@ -354,9 +380,8 @@ country_decisions = {
 	}
 	
 	ai_reduce_corruption_decision_mil = {
-		potential = { ai = yes }
+		potential = { OR = { ai = yes 	has_country_flag = show_corruption_decisions_flag } }
 		allow = {
-			ai = yes
 			corruption = 5 
 			stability = 1 
 			NOT = { has_country_modifier = military_corruption_suppression }
@@ -366,7 +391,7 @@ country_decisions = {
 				name = military_corruption_suppression
 				duration = 1825
 			}
-			#add_stability = -1 
+			add_stability = -1 
 			random_list = {
 				50 = {
 

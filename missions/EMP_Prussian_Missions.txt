@@ -1,0 +1,376 @@
+emp_bra_pru_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+	}
+	potential = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = BRA
+			AND = {
+				OR = {
+					NOT = { has_dlc = "Lions of the North" }
+					AND = {
+						NOT = { was_tag = TEU }
+						NOT = { was_tag = DNZ }
+					}
+				}
+				tag = PRU
+			}
+		}
+	}
+	has_country_shield = yes
+	
+	emp_brapru_renovate_berlin = {
+		icon = renovate_berlin
+		required_missions = { }
+		position = 5
+		provinces_to_highlight = {
+			province_id = 50
+			OR = {
+				has_tax_building_trigger = no
+				has_production_building_trigger = no
+				NOT = { development = 25 }
+				NOT = { owned_by = ROOT }
+			}
+		}
+		trigger = {
+			50 = {
+				owned_by = ROOT
+				development = 25
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+			}
+		}
+		effect = {
+			set_country_flag = renovate_berlin_flag
+			country_event = { id = flavor_brapru.20 }
+			
+			if = { 
+				limit = { has_dlc = "Domination" }
+				50 = { 
+					add_province_modifier = {
+						name = pru_palace_of_berlin_modifier
+						duration = -1 
+						desc = until_its_sieged_desc
+					}
+				}
+			}
+		}
+	}
+	
+	emp_brapru_army_reforms_1 = {
+		icon = professional_army
+		required_missions = { emp_brapru_renovate_berlin }
+		provinces_to_highlight = {
+		}
+		position = 6
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				army_professionalism = 0.50
+			}
+			else = {
+				army_tradition = 70
+			}
+		}
+		effect = {
+			set_country_flag = brapru_army_reforms_1
+			country_event = { id = flavor_brapru.2 }
+		}
+	}
+}
+
+emp_bra_pru_1_b = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+	}
+	potential = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+		NOT = { map_setup = map_setup_random }
+		AND = {
+			tag = PRU
+		}
+	}
+	has_country_shield = yes
+	emp_brapru_army_reforms_2 = {
+		icon = army_reforms
+		required_missions = { emp_brapru_army_reforms_1 }
+		provinces_to_highlight = {
+		}
+		position = 7
+		trigger = {
+			has_global_modifier_value = {
+				which = discipline
+				value = 0.15
+				extra_shortcut = yes
+			}
+			OR = {
+				full_idea_group = quality_ideas
+				full_idea_group = quantity_ideas
+				full_idea_group = offensive_ideas
+				full_idea_group = defensive_ideas
+				monthly_mil = 12
+			}
+			land_forcelimit = 100
+			OR = { 
+				army_tradition = 90
+				army_professionalism = 0.7
+			}
+		}
+		effect = {
+			set_country_flag = brapru_army_reforms_2
+			country_event = { id = flavor_brapru.6 }
+			
+			
+			if = {
+				limit = { 
+					has_dlc = "Domination" 
+					OR = {
+						tag = PRU
+						tag = GER 
+						has_country_flag = access_to_prussian_militarization_flag #For the modders
+					}
+					has_reform = prussian_monarchy
+				}
+				custom_tooltip = pru_access_normal_militarization_tt
+				set_country_flag = enable_second_mil_level_flag
+				regenerate_government_mechanics = yes
+			}
+		}
+	}
+	emp_brapru_army_reforms_3 = {
+		icon = an_army_with_a_state
+		required_missions = { emp_brapru_army_reforms_2 }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			land_forcelimit = 200
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				army_professionalism = 1
+			}
+			else = {
+				army_tradition = 95
+			}					
+		}
+		effect = {
+			set_country_flag = brapru_army_reforms_3
+			country_event = { id = flavor_brapru.29 }
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				add_country_modifier = {
+					name = "pru_space_marines"
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "pru_space_marines_2"
+					duration = -1
+				}
+			}
+			
+			
+			if = {
+				limit = { 
+					has_dlc = "Domination" 
+					OR = {
+						tag = PRU
+						tag = GER 
+						has_country_flag = access_to_prussian_militarization_flag #For the modders
+					}
+					has_reform = prussian_monarchy
+				}
+				custom_tooltip = pru_access_advanced_militarization_tt
+				clr_country_flag = enable_second_mil_level_flag
+				set_country_flag = enable_third_mil_level_flag
+				regenerate_government_mechanics = yes
+			}
+		}
+	}
+}
+
+emp_bra_pru_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+	}
+	potential = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+	}
+	has_country_shield = yes
+	
+	emp_brapru_empower_the_junkers = {
+		icon = empower_the_junkers
+		required_missions = { emp_brapru_renovate_berlin }
+		position = 6
+		provinces_to_highlight = {
+		}
+		trigger = {
+			if = {
+				limit = {
+					has_estate = estate_nobles
+				}
+				estate_influence = {
+					estate = estate_nobles
+					influence = 60
+				}
+			}
+			else = {
+				crown_land_share = 70
+			}
+			if = {
+				limit = {
+					has_estate = estate_nobles
+					OR = {
+						has_reform = prussian_monarchy
+						has_reform = prussian_monarchy_base
+						has_reform = prussian_republic_reform
+					}
+				}
+				has_estate_privilege = estate_nobles_junker_primacy
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "empowered_junkers"
+				duration = -1
+			}
+		}
+	}
+	emp_brapru_reform_the_state = {
+		icon = reform_the_state
+		required_missions = { emp_brapru_army_reforms_1 }
+		position = 7
+		provinces_to_highlight = {
+		}
+		trigger = {
+			reform_level = 7
+		}
+		effect = {
+			set_country_flag = pru_legal_reforms_flag
+			country_event = { id = flavor_brapru.27 }
+		}
+	}
+	emp_brapru_enlightened_absolutism = {
+		icon = enlightened_absolutism
+		required_missions = { emp_brapru_reform_the_state }
+		provinces_to_highlight = {
+		}
+		trigger = {
+			if = {
+				limit = {
+					is_revolutionary = no
+				}
+				absolutism = 80
+			}
+			else = {
+				revolutionary_zeal = 80
+			}
+			has_institution = enlightenment
+		}
+		effect = {
+			change_adm = 1
+			set_country_flag = pru_absolutism_flag
+			country_event = { id = flavor_brapru.5 }			
+		}
+	}
+}
+
+emp_bra_pru_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+	}
+	potential = {
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Emperor"
+		}
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+	}
+	has_country_shield = yes
+	
+	emp_brapru_edict_of_potsdam = {
+		icon = edict_of_potsdam
+		required_missions = { emp_brapru_army_reforms_1 }
+		position = 7
+		provinces_to_highlight = {
+		}
+		trigger = {
+			is_religion_enabled = reformed
+			religious_unity = 1
+		}
+		effect = {
+			set_country_flag = pru_potsdam_flag
+			country_event = { id = flavor_brapru.28 }
+			add_country_modifier = {
+				name = "edict_of_potsdam_modifier"
+				duration = 7300
+			}
+		}
+	}
+}
+
+emp_bra_pru_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = BRA
+			tag = PRU
+		}
+	}
+	has_country_shield = yes
+}

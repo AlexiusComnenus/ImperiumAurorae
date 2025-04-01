@@ -150,12 +150,12 @@ monarchy = {
 				nahuatl_monarchy_reform
 				empire_of_trebizond
 				austrian_absolute_monarchy
-				merchant_aristocracy_reform
 				gothic_monarchy_reform
 			}
 		}
 		hereditary_vs_nobility = {
 			reforms = {
+				merchant_aristocracy_reform
 				margraviate_reform
 				nobatia_hellenic_crusade_reform
 				thu_saxon_march_reform
@@ -319,6 +319,7 @@ monarchy = {
 				strengthen_the_comitatenses
 				expand_the_foederati
 				hes_military_reform
+				hes_military_reform_2
 				organized_military_staff_reform
 				military_engineering_reform
 				defensive_stance_reform

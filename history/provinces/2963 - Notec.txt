@@ -1,5 +1,5 @@
-owner = POL
-controller = POL
+owner = Z74
+controller = Z74
 capital = "Naklo"
 is_city = yes
 culture = polish
@@ -9,7 +9,6 @@ fort_15th = yes
 base_tax = 1
 base_production = 1
 base_manpower = 1
-add_core = POL
 add_core = Z74
 discovered_by = MGE
 discovered_by = eastern

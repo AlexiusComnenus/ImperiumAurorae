@@ -628,6 +628,32 @@ annexationaction = {
 		}
 	}
 	condition = {
+		tooltip = CANNOT_ANNEX
+		potential = {
+			FROM = {
+				has_country_flag = recently_released_for_cores_flag
+				NOT = {
+					had_country_flag = {
+						flag = recently_released_for_cores_flag
+						days = 10950
+					}
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				calc_true_if = {
+					FROM = {
+						all_core_province = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					}
+					amount = 3
+				}
+			}
+		}
+	}
+	condition = {
 		tooltip = NEEDS_50_CROWNLAND_TT
 		potential = {
 			has_government_attribute = need_crownland_to_annex

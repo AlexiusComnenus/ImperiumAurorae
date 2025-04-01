@@ -1,6 +1,6 @@
 government = tribal
 add_government_reform = steppe_horde
-government_rank = 1
+government_rank = 2
 technology_group = nomad_group
 religion = khurmazta
 primary_culture = mongol

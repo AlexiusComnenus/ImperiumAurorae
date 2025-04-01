@@ -1,5 +1,5 @@
-owner = Z02
-controller = Z02
+owner = CHH
+controller = CHH
 capital = "Argyn"
 is_city = yes
 culture = kirgiz
@@ -8,8 +8,7 @@ trade_goods = wool
 base_tax = 1
 base_production = 1
 base_manpower = 1
-add_core = CHG
-add_core = Z02
+add_core = CHH
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

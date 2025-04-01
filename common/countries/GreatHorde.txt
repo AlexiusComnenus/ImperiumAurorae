@@ -26,100 +26,87 @@ historical_units = {
 	steppe_uhlans
 }
 monarch_names = {
-	"Abdul-Karim #0" = 40
-	"Abdul-Latif #0" = 20
-	"Abdul-Rahman #0" = 40
-	"Abdullah #0" = 20
-	"Agalak #0" = 20
-	"Ahmad #0" = 50
-	"Ak Köbek #0" = 40
-	"Ali Beg #0" = 20
-	"Arab Shah #1" = 20
-	"Arslan #0" = 20
-	"Baraq #1" = 30
-	"Bek Bulat #0" = 20
-	"Bolaq #1" = 20
-	"Cherkes #1" = 20
-	"Chokra #1" = 20
-	"Daniyal #0" = 20
-	"Darwish #1" = 20
-	"Darwish Ali #0" = 20
-	"Devlet Berdi #0" = 20
-	"Edigu #0" = 20
-	"Fatima #0" = -1
-	"Hajji Muhammad #1" = 20
-	"Husayn #0" = 30
-	"Ibak #0" = 20
-	"Ibrahim #0" = 50
-	"Ibtisam #0" = -1
-	"Ilham #0" = 20
-	"Ishim #0" = 20
-	"Jabbar Berdi #1" = 20
-	"Jalal al-Din #1" = 20
-	"Jalila #0" = -1
-	"Jan Ali #0" = 20
-	"Janan #0" = -1
-	"Janay #0" = 20
-	"Jani Beg #1" = 20
-	"Jumaduq #0" = 20
-	"Karim Berdi #1" = 20
-	"Kebek #1" = 20
-	"Khalil #0" = 30
-	"Khaqan Beg #1" = 20
-	"Kuchum #0" = 20
-	"Küchük Muhammad #0" = 40
-	"Layla #0" = -1
-	"Mahmud #0" = 80
-	"Mahmudak #0" = 50
-	"Mamai #0" = 20
-	"Mamuk #0" = 30
-	"Mansur #0" = 20
-	"Muhammad #0" = 50
-	"Murtaza #0" = 20
-	"Mustafa Ali #0" = 20
-	"Nogai #0" = 20
-	"Pulad #1" = 20
-	"Pulad Timur #0" = 20
-	"Qadir Berdi #1" = 20
-	"Qasim #0" = 60
-	"Sain Bulat #0" = 20
-	"Sakina #0" = -1
-	"Satilghan #0" = 20
-	"Sayid Ahmad #0" = 60
-	"Sayid Burhan #0" = 20
-	"Sayid Mahmud #0" = 20
-	"Shadi Beg #1" = 20
-	"Shah Ali #0" = 20
-	"Shaikh Ahmad #0" = 20
-	"Shaikh Awliar #0" = 20
-	"Shaikh Haidar #0" = 20
-	"Sharifa #0" = -1
-	"Shiban #0" = 20
-	"Taibugha #0" = 20
-	"Timur #1" = 20
-	"Timur Qutlugh #1" = 20
-	"Toqtamish #1" = 20
-	"Ulugh Muhammad #0" = 40
-	"Urus #1" = 20
-	"Urus Muhammad #0" = 20
-	"Yadigar Muhammad #0" = 20
-	"Yamghurchi #0" = 20
+	"Temujin #1" = 10
+	"Temülen #0" = -20
+	"Adai #0" = 20
+	"Agbarjin #0" = 20
+	"Altan #0" = 20
+	"Arigaba #1" = 10
+	"Ariq #0" = 0
+	"Arugtai #0" = 10
+	"Ayurparibhadra #1" = 10
+	"Bahamu #0" = 20
+	"Bars #0" = 20
+	"Batu #0" = 0
+	"Bek #0" = 20
+	"Biligtü #1" = 10
+	"Bodi #0" = 20
+	"Buyan #0" = 20
+	"Börte #0" = -1
+	"Darayisung #0" = 20
+	"Dayan #0" = 20
+	"Delbeg #0" = 20
+	"Ejei #1" = 10
+	"Elbeg #1" = 10
+	"Eljigidei #0" = 0
+	"Engke #1" = 10
+	"Gulichi #0" = 20
+	"Gün #0" = 20
+	"Güyük #1" = 10
+	"Irinchibal #1" = 10
+	"Joichi #0" = 0
+	"Jorightu #1" = 10
+	"Kublai #1" = 10
+	"Köke #0" = 10
+	"Ligdan #0" = 20
+	"Mandukhai #0" = -1
+	"Manduulun #0" = 20
+	"Markörgis #0" = 10
+	"Mulan #0" = 20
+	"Möngke #1" = 10
+	"Oyiradai #0" = 20
+	"Qayshan #1" = 10
+	"Qoshila #1" = 10
+	"Samar #0" = -1
+	"Sayn #0" = 20
+	"Suddhipala #1" = 10
+	"Tayisung #0" = 20
+	"Temür #1" = 10
+	"Toghun #1" = 10
+	"Tolui #1" = 10
+	"Toq #1" = 10
+	"Tümen #0" = 10
+	"Uskhal #1" = 10
+	"Yesün #1" = 10
+	"Zaufishan #0" = -1
+	"Ögödei #1" = 10
+	"Öljei #0" = 20
+	"Örüg #0" = 15
 }
 leader_names = {
-	"Bayangge"
-	"Boke Temur"
-	"Bora Chinua"
-	"Chinuagene"
-	"Delger Bayar"
-	"Koke Burilgi"
-	"Nasange"
-	"Qutlugh Vachir"
-	"Qutughqan"
-	"Shria Gan"
-	"Suren Chinua"
-	"Surenchar"
-	"Temur-chi"
-	"Toluilun"
+	"Abaga"
+	"Abaganar"
+	"Ast"
+	"Borjigin"
+	"Chagaan"
+	"Chakhar"
+	"Darqan"
+	"Hohhot"
+	"Jurim"
+	"Karakorum"
+	"Khalkha"
+	"Kharachin"
+	"Khorchin"
+	"Noyan"
+	"Onriut"
+	"Ordos"
+	"Tümed"
+	"Ulanqab"
+	"Uriankhai"
+	"Wang"
+	"Xilingol"
+	"Yingchang"
+	"Yungshiyebu"
 }
 ship_names = {
 	"Abdallah"

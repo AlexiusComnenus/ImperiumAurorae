@@ -57,7 +57,6 @@ monarch_names = {
 	"Llorenç #0" = 0
 	"Lluc #0" = 0
 	"Lluís #0" = 40
-	"MONARCH_NAME_AMBROS #0" = 0
 	"Manel #0" = 0
 	"Marta #0" = -1
 	"Martí #1" = 5

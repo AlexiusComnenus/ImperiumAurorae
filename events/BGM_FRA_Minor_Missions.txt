@@ -226,3 +226,16 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = BGM_FRA_minor_missions.3
+	title = "BGM_FRA_minor_missions.3.t"
+	desc = "BGM_FRA_minor_missions.3.d"
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "BGM_FRA_minor_missions.3.a" #Uh oh
+	}
+}

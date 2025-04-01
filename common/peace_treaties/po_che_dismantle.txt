@@ -48,6 +48,13 @@ po_che_dismantle = {
 	}
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
 		FROM = {
+			if = {
+				limit = { tag = IRQ }
+				every_core_province = {
+					#limit = { NOT = { owned_by = IRQ } }
+					remove_core = IRQ
+				}
+			}
 			country_event = {
 				id = ia_flavor_tem.12
 			}

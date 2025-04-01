@@ -25,6 +25,64 @@ historical_units = {
 	steppe_rifles
 	steppe_uhlans
 }
+monarch_names = {
+	"Temujin #1" = 10
+	"Temülen #0" = -20
+	"Adai #0" = 20
+	"Agbarjin #0" = 20
+	"Altan #0" = 20
+	"Arigaba #1" = 10
+	"Ariq #0" = 0
+	"Arugtai #0" = 10
+	"Ayurparibhadra #1" = 10
+	"Bahamu #0" = 20
+	"Bars #0" = 20
+	"Batu #0" = 0
+	"Bek #0" = 20
+	"Biligtü #1" = 10
+	"Bodi #0" = 20
+	"Buyan #0" = 20
+	"Börte #0" = -1
+	"Darayisung #0" = 20
+	"Dayan #0" = 20
+	"Delbeg #0" = 20
+	"Ejei #1" = 10
+	"Elbeg #1" = 10
+	"Eljigidei #0" = 0
+	"Engke #1" = 10
+	"Gulichi #0" = 20
+	"Gün #0" = 20
+	"Güyük #1" = 10
+	"Irinchibal #1" = 10
+	"Joichi #0" = 0
+	"Jorightu #1" = 10
+	"Kublai #1" = 10
+	"Köke #0" = 10
+	"Ligdan #0" = 20
+	"Mandukhai #0" = -1
+	"Manduulun #0" = 20
+	"Markörgis #0" = 10
+	"Mulan #0" = 20
+	"Möngke #1" = 10
+	"Oyiradai #0" = 20
+	"Qayshan #1" = 10
+	"Qoshila #1" = 10
+	"Samar #0" = -1
+	"Sayn #0" = 20
+	"Suddhipala #1" = 10
+	"Tayisung #0" = 20
+	"Temür #1" = 10
+	"Toghun #1" = 10
+	"Tolui #1" = 10
+	"Toq #1" = 10
+	"Tümen #0" = 10
+	"Uskhal #1" = 10
+	"Yesün #1" = 10
+	"Zaufishan #0" = -1
+	"Ögödei #1" = 10
+	"Öljei #0" = 20
+	"Örüg #0" = 15
+}
 leader_names = {
 	"Bayangge"
 	"Boke Temur"

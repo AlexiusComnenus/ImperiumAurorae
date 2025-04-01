@@ -22,5 +22,65 @@ spriteTypes = {
 		name = "GFX_great_project_schloss_berlepsch"	
 		texturefile = "gfx//interface//great_projects//great_project_schloss_berlepsch.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_ningha"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_ningha.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_lanzhou"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_lanzhou.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_liangzhou"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_liangzhou.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_zhangye"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_zhangye.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_hetao"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_hetao.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_hohhot"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_hohhot.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_datong"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_datong.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_baoding"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_baoding.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_zhending"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_zhending.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_xuanhua"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_xuanhua.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_chengde"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_chengde.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_great_project_the_great_wall_of_china_ningyuan"	
+		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_ningyuan.dds"
+	}
 
 }

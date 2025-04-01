@@ -316,13 +316,12 @@ visions_of_the_past_personality = {
 		}
 	}
 	
-	monarch_lifespan = 1
+	monarch_lifespan = 2
 	diplomatic_reputation = -1
 	
 	wants_land = yes
 	wants_avoid_ugly_borders = yes
-	war_chance_multiplier = 2
-	wants_land = yes
+	easy_war_chance_multiplier = 5
 	wants_avoid_debase = yes
 	wants_avoid_loans = yes
 	other_ai_peace_term_bonus = 25
@@ -354,8 +353,7 @@ possessed_by_majorian_personality = {
 	
 	wants_land = yes
 	wants_avoid_ugly_borders = yes
-	war_chance_multiplier = 2
-	wants_land = yes
+	easy_war_chance_multiplier = 5
 	wants_avoid_debase = yes
 	wants_avoid_loans = yes
 	other_ai_peace_term_bonus = 25
@@ -442,6 +440,7 @@ powerful_druid_personality = {
 	global_prosperity_growth = 0.1
 	
 	wants_avoid_ugly_borders = yes
+	easy_war_chance_multiplier = 5
 }
 
 fortification_engineer_personality = {

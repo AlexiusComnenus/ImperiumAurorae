@@ -301,3 +301,9 @@ righteous_illumination_scholar_modifier = {
 
 recently_recruited_alchemist = {
 }
+
+tre_chaldian_deposits_modifier = {
+	local_gold_depletion_chance_modifier = -1
+	trade_goods_size_modifier = 0.25
+	local_development_cost_modifier = -0.25
+}

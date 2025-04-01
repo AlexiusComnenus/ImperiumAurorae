@@ -40,6 +40,9 @@ divine_merovingian_reform = {
 			tag = FRW
 		}
 	}
+	trigger = {
+		government_rank = 2
+	}
 	#fixed_rank = 2
 	lock_level_when_selected = yes
 
@@ -49,10 +52,12 @@ divine_merovingian_reform = {
 		vassal_income = 0.25
 		vassal_forcelimit_bonus = 0.5
 		reduced_liberty_desire = 15
-		diplomatic_annexation_cost = -0.20
+		diplomatic_annexation_cost = -0.10
+		years_to_integrate_personal_union = -25
 	}
 
 	custom_attributes = {
+		personal_union_war_contribution = yes
 		locked_government_type = yes
 	}
 }

@@ -9,6 +9,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 2
 add_core = Z00
+add_core = GOL
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

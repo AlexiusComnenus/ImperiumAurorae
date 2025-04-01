@@ -3049,8 +3049,8 @@ guiTypes = {
 		windowType = {
 			name = "buildings_window"
 			backGround=""
-			position = { x=480 y=13 }
-			size = { x=475 y=480 }
+			position = { x=480 y=-116 }
+			size = { x=475 y=600 }
 			dontRender = ""
 			horizontalBorder= ""
 			verticalBorder= ""
@@ -3134,13 +3134,13 @@ guiTypes = {
 
 				guiButtonType = {
 					name = "center_of_trade_button"
-					position = { x=174 y=180 }
+					position = { x=174 y=310 }
 					spriteType = "GFX_center_of_trade_inland_1"
 				}
 
 				iconType = {
 					name = "center_of_trade_icon"
-					position = { x=174 y=180 }
+					position = { x=174 y=310 }
 					spriteType = "GFX_center_of_trade_inland_1"
 				}
 
@@ -3149,8 +3149,8 @@ guiTypes = {
 			windowType = {
 				name = "province_values_window"
 				backGround=""
-				position = { x=4 y=354 }
-				size = { x=475 y=480 }
+				position = { x=4 y=484 }
+				size = { x=475 y=600 }
 				dontRender = ""
 				horizontalBorder= ""
 				verticalBorder= ""

@@ -270,7 +270,9 @@ other_lucky_nation = {
 			tag = YZD
 			tag = PER
 			tag = ERS
+			tag = GOL
 			tag = GLH
+			#tag = MGE
 			tag = AZT
 			tag = ITZ
 			tag = CSU
@@ -425,7 +427,7 @@ early_game_protection = {
 			tag = BRI
 			tag = YZD
 			tag = Z47
-			tag = GLH
+			tag = GOL
 		}
 		ai = yes
 	}

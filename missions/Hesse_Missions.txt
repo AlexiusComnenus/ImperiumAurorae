@@ -413,7 +413,7 @@ hesse_missions_column_2 = {
 		effect = {
 			if = {
 				limit = { 1876 = { OR = { has_building = marketplace	has_building = trade_depot}}}
-				add_base_production = 2
+				1876 = { add_base_production = 2 }
 			}
 			else = {
 				1876 = { add_building = marketplace }

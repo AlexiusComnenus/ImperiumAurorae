@@ -2,6 +2,14 @@
  incident_fraticelli_pope:0 "The Pope and the Emperor"
  incident_fraticelli_pope_member_alert:0 "With Italy once again a bastion of Imperial authority, the Pope of Rome has petitioned to become an Imperial Prince of the Holy Roman Empire. For the Pope to accept the authority of the Emperor would have dire ramifications for the Fraticelli world. While Fraticelli faithful in the Empire might have their faith emboldened through the legitimacy conferred by Papal membership, those outside of the Empire are unlikely to take kindly to such a decision and may turn to heresy."
  incident_fraticelli_pope_emperor_alert:0 "With Italy once again a bastion of Imperial authority, the Pope of Rome has petitioned to become an Imperial Prince of the Holy Roman Empire. For the Pope to accept the authority of the Emperor would have dire ramifications for the Fraticelli world. While Fraticelli faithful in the Empire might have their faith emboldened through the legitimacy conferred by Papal membership, those outside of the Empire are unlikely to take kindly to such a decision and may turn to heresy."
+ GER_break_the_habsburgs_title: "Subjugate Ostmark"
+ GER_break_the_habsburgs_desc: "The Ostmark (Eastern March) stands at a crossroads between Italy, Germany, Poland, and Pannonia. Controlling this region is vital to both our defence and expansion."
+ overseas_merchants: "Flexible Merchants"
+ overseas_merchants_desc: "Our merchants are adaptive and flourish not only in markets familiar to us. This lets us collect profits in many regions just as efficiently as in our home node."
+ ships_penny: "Global Trade Companies"
+ ships_penny_desc: "Our trade companies hold sway over trading posts around the world. Nowhere is beyond our merchants!"
+ naval_fighting_instruction: "By Hook or By Crook"
+ naval_fighting_instruction_desc: "The sea lanes shall be ours, no matter what methods we must use!"
 
  #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
  incident_pope.1.t:0 "A Holy Empire?"

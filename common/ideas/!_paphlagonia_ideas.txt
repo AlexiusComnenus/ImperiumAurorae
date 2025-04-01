@@ -35,6 +35,5 @@ palaiologid_ideas = {
 	improved_cannons = {
 		artillery_power = 0.10
 		artillery_cost = -0.10
-		backrow_artillery_damage = 0.25
 	}
 }

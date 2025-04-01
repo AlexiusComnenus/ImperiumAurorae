@@ -47,7 +47,7 @@ cb_restore_personal_union = {
 				# has_reform = military_dictatorship_reform
 				has_country_flag = neapolitan_republic
 			}
-			is_subject = no
+			is_free_or_tributary_trigger = yes
 		}
 	}
 

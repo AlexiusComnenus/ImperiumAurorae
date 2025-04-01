@@ -71,6 +71,14 @@ carolingian_dynasty = {
 	warscore_cost_vs_other_religion = -0.05
 }
 
+borjigin_dynasty = {
+	potential = { dynasty = "Borjigin" }
+	trigger = { OR = { culture_group = altaic culture_group = tartar has_reform = steppe_horde tag = MGE tag = YUA tag = ILK tag = GLH } }
+	
+	horde_unity = 1
+	morale_damage = 0.05
+}
+
 aen_ger_eternal_friendship = {
 	potential = { 
 		AVE = { has_country_flag = aen_ger_eternal_friendship_flag } 

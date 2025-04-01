@@ -98,6 +98,10 @@
  BGM_FRA_minor_missions.2.d:0 "The Appanages of France have successfully declared independence against the Crown of $CAPITAL$. The $DYNASTY$ state has lost legitimacy and the former royal domains have also taken to declaring their own independence. What was once a unified, powerful state within European politics is now no more than a region of small feuding dukedoms..."
  BGM_FRA_minor_missions.2.a:0 "..."
  fra_breakup_tooltip:0 "§RAll existing subjects of $COUNTRY$ will gain independence. Territories in the French region will also become independent states.§!"
+
+ BGM_FRA_minor_missions.3.t: "La Guerre Folle"
+ BGM_FRA_minor_missions.3.d: "Disaster has struck! One of our appanages has, through intrigue and deceit, gained enough power to challenge our rule. Rallying other opportunistic vassals, they have formed a league to push a rival claimant's right to our throne!"
+ BGM_FRA_minor_missions.3.a: "This is not good..."
  
  feudal_economy_title:0 "Feudal Economy"
  feudal_economy_desc:0 "Feudal economics largely boils down to ensuring the common masses produce taxable foodstuffs in the countryside for not only their sustenance but for the realm at large. This trend should be followed to its logical conclusion for the moment."

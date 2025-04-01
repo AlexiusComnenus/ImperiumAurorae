@@ -463,7 +463,11 @@
  saxon_crisis.19.d: "The traitorous @[sax_league_defector.GetTag] [sax_league_defector.GetName] has declared their independence!"
  saxon_crisis.19.a: "Heads will roll!"
  saxon_crisis.19.b: "Damn!"
-
+ 
+ hide_show_ivycurse_events_title: "Hide/Show Ivycurse Provincial Events"
+ hide_show_ivycurse_events_desc: "Toggle to hide/show the provincial plague events during the Ivycurse"
+ province_has_lost_dev_tt_sanitary: "The province has been §Rdevastated§! by the §PIvycurse§!, but was §Ysomewhat mitigated§! by our §GSanitary Standards§!!"
+ province_has_lost_dev_tt: "The province has been §Rdevastated§! by the §PIvycurse§!!"
  ivycurse_20years_tt: "We have cured the Ivycurse!"
  ivycurse_cure_found_tt: "The Ivycurse has been cured!"
  ivycurse_over_tt: "Every owned province will gain 1 Base Tax"

@@ -84,6 +84,7 @@ chinese_warlord = {
 			primary_culture = miao
 			primary_culture = yi
 			culture_group = east_asian
+			has_reform = chinese_warlord
 		}
 		technology_group = chinese
 		capital_scope = {
@@ -101,6 +102,7 @@ chinese_warlord = {
 			primary_culture = miao
 			primary_culture = yi
 			culture_group = east_asian
+			has_reform = chinese_warlord
 		}
 		technology_group = chinese
 		capital_scope = {

@@ -1,5 +1,5 @@
-owner = MGE
-controller = MGE
+owner = CHH
+controller = CHH
 capital = "Almaty"
 is_city = yes
 culture = mongol
@@ -8,7 +8,7 @@ trade_goods = cloth
 base_tax = 1
 base_production = 1
 base_manpower = 1
-add_core = MGE
+add_core = CHH
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

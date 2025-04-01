@@ -51,7 +51,7 @@ the_court_of_wards_and_liveries = {
 		full_idea_group = economic_ideas
 	}
 		
-	global_tax_modifier = 0.10
+	global_tax_modifier = 0.20
 	cavalry_cost = -0.10
 
 	effect = {}
@@ -107,7 +107,7 @@ formalized_measures = {
 		full_idea_group = economic_ideas
 	}	
 
-	global_tax_modifier = 0.10
+	production_efficiency = 0.10
 	republican_tradition = 0.2
 
 	effect = {}
@@ -142,7 +142,7 @@ agricultural_cultivations = {
 		full_idea_group = quantity_ideas
 	}		
 	
-	land_maintenance_modifier = -0.05
+	land_maintenance_modifier = -0.1
 	land_forcelimit_modifier = 0.1
 
 	effect = {}
@@ -261,7 +261,7 @@ edict_of_resistance = {
 	}
 
 
-	global_unrest = -1
+	global_unrest = -2
 	hostile_attrition = 1
 
 	effect = {}
@@ -348,7 +348,7 @@ the_spy_discovery_act = {
 	}
 
 	advisor_pool = 2
-	harsh_treatment_cost = -0.25
+	global_spy_defence = 0.2
 
 	effect = {}
 	removed_effect = {}
@@ -371,6 +371,7 @@ enforce_religious_law = {
 	}
 
 	global_missionary_strength = 0.02
+	max_absolutism = 10
 	
 	effect = {}
 	removed_effect = {}
@@ -412,8 +413,8 @@ the_tolerance_act = {
 		full_idea_group = plutocracy_ideas
 	}
 
-	tolerance_heretic = 2
-	rival_border_fort_maintenance = -0.5
+	tolerance_heretic = 3
+	tolerance_heathen = 3
 
 	effect = {}
 	removed_effect = {}
@@ -499,7 +500,7 @@ the_pioneer_policy = {
 	}
 
 	auto_explore_adjacent_to_colony = yes
-	colonist_placement_chance = 0.05
+	colonist_placement_chance = 0.10
 	
 	effect = {}
 	removed_effect = {}
@@ -522,7 +523,7 @@ land_inheritance_act = {
 		full_idea_group = plutocracy_ideas
 	}
 
-	global_tax_modifier = 0.1
+	global_tax_modifier = 0.2
 	global_manpower_modifier = 0.1
 	
 	effect = {}
@@ -564,7 +565,7 @@ the_witchcraft_act = {
 		full_idea_group = aristocracy_ideas
 	}
 	
-	global_unrest = -1
+	tolerance_own = 2
 	global_missionary_strength = 0.01
 
 	effect = {}
@@ -626,7 +627,7 @@ the_education_act = {
 	}
 
 	prestige = 0.5
-	advisor_cost = -0.1
+	advisor_cost = -0.15
 
 	effect = {}
 	removed_effect = {}
@@ -737,6 +738,7 @@ exchange_of_ideas = {
 	}	
 	
 	idea_cost = -0.1
+	technology_cost = -0.05
 	global_institution_spread = 0.2
 	
 	effect = {}
@@ -802,7 +804,7 @@ foreign_advisors = {
 		full_idea_group = innovativeness_ideas
 	}	
 	
-	advisor_cost = -0.1
+	advisor_cost = -0.15
 	ae_impact = -0.1
 	
 	effect = {}
@@ -869,6 +871,7 @@ overseas_dominions = {
 	}	
 	
 	reduced_liberty_desire = 15
+	global_tariffs = 0.15
 	
 	effect = {}
 	removed_effect = {}
@@ -911,7 +914,7 @@ enlightened_aristocracy = {
 	}	
 	
 	production_efficiency = 0.1
-	religious_unity = 0.25
+	innovativeness_gain = 0.5
 	
 	effect = {}
 	removed_effect = {}
@@ -1080,7 +1083,7 @@ harbour_administration = {
 		full_idea_group = administrative_ideas
 	}
 
-	embracement_cost = -0.2
+	global_ship_repair = 0.1
 	global_ship_recruit_speed = -0.1
 	
 	effect = {}
@@ -1166,8 +1169,8 @@ cultural_recognition_act = {
 		full_idea_group = plutocracy_ideas
 	}	
 	
-	num_accepted_cultures = 1
-	global_institution_spread = 0.1
+	num_accepted_cultures = 2
+	global_institution_spread = 0.25
 	
 	effect = {}
 	removed_effect = {}
@@ -1216,7 +1219,7 @@ the_dissolution_act = {
 		full_idea_group = economic_ideas
 	}
 	
-	global_tax_modifier = 0.15
+	global_tax_modifier = 0.30
 	global_autonomy = -0.05
 
 	effect = {}
@@ -1390,6 +1393,7 @@ cultural_understanding = {
 	
 	global_unrest = -1
 	rebel_support_efficiency = 1
+	improve_relation_modifier = 0.2
 	
 	effect = {}
 	removed_effect = {}
@@ -1431,7 +1435,7 @@ the_citrus_statute = {
 		full_idea_group = maritime_ideas
 	}	
 	
-	global_tax_modifier = 0.2
+	global_tax_modifier = 0.3
 	sunk_ship_morale_hit_recieved = -0.25
 	
 	effect = {}
@@ -1481,7 +1485,7 @@ the_banking_system = {
 		full_idea_group = trade_ideas
 	}
 
-	interest = -0.25
+	interest = -0.5
 	trade_efficiency = 0.1
 
 
@@ -1565,7 +1569,7 @@ anti_heresy_act = {
 		full_idea_group = offensive_ideas
 	}
 	
-	religious_unity = 0.2
+	manpower_in_true_faith_provinces= 0.10
 	global_heretic_missionary_strength = 0.03
 
 	effect = {}
@@ -1822,8 +1826,10 @@ omnism_policy = {
 		full_idea_group = theocracy_gov_ideas
 	}
 	
-	tolerance_heathen = 2
-	tolerance_heretic = 2
+	tolerance_heathen = 3
+	tolerance_heretic = 3
+	tolerance_of_heretics_capacity = 1
+	tolerance_of_heathens_capacity = 1
 	
 	effect = {}
 	removed_effect = {}
@@ -2057,6 +2063,7 @@ plutocratic_rule_act = {
 	}
 	
 	global_prov_trade_power_modifier = 0.25
+	mercantilism_cost = -0.2
 
 	effect = {}
 	removed_effect = {}
@@ -2079,7 +2086,7 @@ theocratic_rule_act = {
 	}
 	
 	missionaries = 1 
-	prestige_per_development_from_conversion = 0.5
+	manpower_in_true_faith_provinces= 0.10
 
 	effect = {}
 	removed_effect = {}
@@ -2104,6 +2111,7 @@ head_of_state_act = {
 	
 	no_stability_loss_on_monarch_death = yes  
 	monarch_lifespan = 0.25
+	development_cost = -0.05
 
 	effect = {}
 	removed_effect = {}
@@ -2126,7 +2134,7 @@ zealous_court_act = {
 	}
 	
 	warscore_cost_vs_other_religion = -0.05
-	tolerance_own = 1 
+	tolerance_own = 2
 
 	effect = {}
 	removed_effect = {}
@@ -2153,7 +2161,7 @@ financial_miracle_act = {
 	}
 	
 	production_efficiency = 0.1
-	same_culture_advisor_cost = -0.1
+	same_culture_advisor_cost = -0.2
 
 	effect = {}
 	removed_effect = {}
@@ -2199,7 +2207,7 @@ big_government_act = {
 	}
 	
 	core_creation = -0.05
-	global_tax_modifier = 0.15
+	global_tax_modifier = 0.3
 
 	effect = {}
 	removed_effect = {}
@@ -2226,6 +2234,7 @@ humanitarian_administration_act = {
 	}
 	
 	num_accepted_cultures = 2
+	global_unrest = -2
 
 	effect = {}
 	removed_effect = {}
@@ -2249,7 +2258,8 @@ blessed_construction_act = {
 		full_idea_group = theocracy_gov_ideas 
 	}
 	
-	build_cost = -0.1 
+	build_cost = -0.15
+	build_time = -0.25		
 	
 
 	effect = {}
@@ -2299,13 +2309,13 @@ efficient_war_taxes_act = {
 		full_idea_group = economic_ideas 
 	}
 	
-	global_tax_modifier = 0.15
-	possible_condottieri = 1 
+	global_tax_modifier = 0.3
+	war_taxes_cost_modifier = -0.5
 
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 0.5			
+		factor = 1			
 	}
 }
 
@@ -2324,6 +2334,7 @@ peace_keeping_force_act = {
 	
 	harsh_treatment_cost = -0.25
 	global_rebel_suppression_efficiency = 1
+	possible_condottieri = 1
 
 	effect = {}
 	removed_effect = {}

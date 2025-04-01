@@ -239,6 +239,10 @@ age_of_discovery = {
 					tag = POR
 					mission_completed = gbr_explore_new_world
 					tag = NED
+					tag = FLA
+					tag = HOL
+					tag = KCL
+					tag = KOS
 				}
 			}
 			modifier = {

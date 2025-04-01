@@ -1,0 +1,234 @@
+country_decisions = {
+
+	restore_mongol_empire = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			#OR = { # to prevent countries that can't form a prerequisite nation from seeing this
+			#	tag = GLH
+			#	tag = ILK
+			#	custom_trigger_tooltip = {
+			#		tooltip = IS_CHAGATAI
+			#		has_country_flag = chagatai_formed_flag
+			#	}
+			#}
+			OR = {
+				culture_group = altaic
+				primary_culture = altaic_new 
+				culture_group = tartar
+				dynasty = "Borjigin"
+			}
+			NOT = { has_country_flag = mongol_empire_flag }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = YUA }
+			NOT = { exists = MGE }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						AND = {
+							region = mongolia_region
+							is_empty = no
+						}
+						region = central_asia_region
+					}
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+		allow = {
+			OR = {
+				tag = GLH
+				tag = ILK
+				custom_trigger_tooltip = {
+					tooltip = IS_CHAGATAI
+					has_country_flag = chagatai_formed_flag
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = mongolia_decision_tooltip
+				mongolia_region = {
+					type = all
+					OR = {
+						is_empty = yes
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+			central_asia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+		}
+		effect = {
+			hidden_effect = {
+				set_global_flag = is_forming_the_mongol_empire
+				1 = {
+					province_event = {
+						id = passive_effects_events.13
+						days = 10
+					}
+				}
+			}
+			change_tag = MGE
+			on_change_tag_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 3
+					}
+				}
+				set_government_rank = 3
+			}
+			if = {
+				limit = { 
+					is_revolutionary = no
+					NOT = { is_emperor_of_china = yes }
+				}
+				change_government = tribal
+				add_government_reform = great_mongol_state_reform
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = mongol_empire_flag
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_importance = 1000
+	}
+	
+	restore_ilkhanate_decision_march = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			owns = 4338
+			OR = {
+				tag = YUA
+				tag = GLH
+				tag = MGE
+			}
+			NOT = { has_country_flag = restored_ilkhanate_decision_flag }
+			NOT = { has_mission = mission_conquer_persia_tatars }
+			NOT = { exists = ILK }
+			NOT = {
+				capital_scope = {
+					region = persia_region
+				}
+			}
+		}
+		provinces_to_highlight = {
+			region = persia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			persia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = restored_ilkhanate_decision_flag
+			persia_region = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_core = ILK
+			}
+			release = ILK
+			create_march = ILK
+			ILK = {
+				change_government = monarchy
+				#set_legacy_government = despotic_monarchy
+				change_primary_culture = ROOT
+				change_religion = ROOT
+				define_ruler = {
+					dynasty = ROOT
+					culture = ROOT
+					religion = ROOT
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_ilkhanate_decision = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_ilkhanate_flag }
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				culture_group = tartar
+				primary_culture = altaic_new 
+				culture_group = altaic
+			}
+			#capital_scope = {
+			#	region = persia_region
+			#}
+			NOT = { tag = TIM }
+			NOT = { tag = PER }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = MUG }
+			NOT = { tag = ARB }
+			NOT = { tag = YUA }
+			NOT = { tag = MGE }
+			NOT = { tag = GLH }
+			NOT = { dynasty = "Timurid" }
+		}
+		provinces_to_highlight = {
+			OR = { 
+				region = persia_region
+				region = khorasan_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			NOT = { exists = ILK }
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 50
+				OR = {
+					region = persia_region
+					region = khorasan_region
+				}
+			}
+		}
+		effect = {
+			change_tag = ILK
+			on_change_tag_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_ilkhanate_flag
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		ai_importance = 1000
+	}
+}

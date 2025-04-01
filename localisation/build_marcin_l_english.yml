@@ -106,8 +106,8 @@
  building_off: "No Resources"
  building_off_desc: "Because of lack of resources you cannot produce cannons\n\nTo Resume the production make sure you have enough of Resources and §RDestroy§! this building"
  building_canal_system: "Canal System"
- building_canal_system_desc: "§TCountry Requirements:§!\n-Administrative Technology (7)\n"
- building_road_network_desc: "§TCountry Requirements:§!\n-Administrative Technology (3)\n"
+ building_canal_system_desc: "§TCountry Requirements:§!\n-Administrative Technology (7)\n Reduces the §YGoverning Distance§! of the province!"
+ building_road_network_desc: "§TCountry Requirements:§!\n-Administrative Technology (3)\n Reduces the §YGoverning Distance§! of the province!"
  
  building_mine: "Mine"
  building_mine_desc: "§TProvince Requirements:§!\n-No Mining Modifier is active\n-No Mining Resource on the province\n\n§TCountry Requirements:§!\n-Diplomatic power §Y100£dip£§!\n\n§TEffects:§!\n-You will get a Mining Event in the Province. Which allows you to find some resources.§!\n"

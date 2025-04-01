@@ -1087,13 +1087,16 @@ country_event = { # end the war after 20 years
 				#duration = 10950
 				duration = 7300
 			}
-			is_in_war = {
-				attacker_leader = ROOT
-				defender_leader = emperor
-				casus_belli = cb_final_crusade
-				#duration = 10950
-				duration = 1460
-				war_score = 97
+			AND = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = emperor
+					casus_belli = cb_final_crusade
+					#duration = 10950
+					duration = 1460
+					war_score = 97
+				}
+				2313 = { NOT = { controlled_by = Z17 } }
 			}
 			AND = {
 				is_in_war = {
@@ -1134,6 +1137,7 @@ country_event = { # end the war after 20 years
 				who = emperor
 				value = 90
 			}
+			2313 = { NOT = { controlled_by = Z17 } }
 		}
 		
 		dismantle_hre = yes
@@ -1465,6 +1469,28 @@ country_event = {  # Legion of Dusk interaction menu
 	}
 	
 	option = {
+		name = ia_flavor_tem.29.a2
+		ai_chance = { factor = 0 }
+		
+		trigger = {
+			OR = {
+				NOT = { years_of_income = 0.5 }
+				NOT = { mil_power = 100 }
+				has_country_modifier = dusk_sponsored_merc_connections
+			}
+		}
+		highlight = yes
+		
+		#add_years_of_income = -0.5
+		#add_mil_power = -100
+		
+		#add_country_modifier = {
+		#	name = dusk_sponsored_merc_connections
+		#	duration = 3650
+		#}
+	}
+	
+	option = {
 		name = ia_flavor_tem.29.b
 		ai_chance = { factor = 0 }
 		
@@ -1498,6 +1524,20 @@ country_event = {  # Legion of Dusk interaction menu
 	}
 	
 	option = {
+		name = ia_flavor_tem.29.b2
+		ai_chance = { factor = 0 }
+		
+		trigger = {
+			OR = {
+				NOT = { years_of_income = 0.5 }
+				NOT = { mil_power = 100 }
+				has_country_modifier = dusk_funded_dusksworn
+			}
+		}
+		highlight = yes
+	}
+	
+	option = {
 		name = ia_flavor_tem.29.c
 		ai_chance = { factor = 100 }
 		
@@ -1516,6 +1556,20 @@ country_event = {  # Legion of Dusk interaction menu
 			name = recently_recruited_dawnwsbane
 			duration = 3650
 		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.29.c2
+		ai_chance = { factor = 100 }
+		
+		trigger = {
+			OR = {
+				NOT = { treasury = 100 }
+				NOT = { mil_power = 50 }
+				has_country_modifier = recently_recruited_dawnwsbane
+			}
+		}
+		highlight = yes
 	}
 	
 	option = {

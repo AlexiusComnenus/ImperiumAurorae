@@ -1065,7 +1065,10 @@ feo_5 = {
 			OR = {
 				any_ally = {
 					capital_scope = {
-						region = russia_region
+						OR = {
+							region = russia_region
+							region = ruthenia_region
+						}
 					}
 					total_development = 100
 				}
@@ -1079,9 +1082,11 @@ feo_5 = {
 				first_limit = "
 					any_ally = {
 						capital_scope = {
-							region = russia_region
+							OR = {
+								region = russia_region
+								region = ruthenia_region
+							}
 						}
-						total_development = 100
 					}
 				"
 				first_effect = "
@@ -1089,14 +1094,15 @@ feo_5 = {
 					random_known_country = {
 						limit = {
 							capital_scope = {
-								region = russia_region
+								OR = { 
+									region = russia_region
+									region = ruthenia_region
+								}
 							}
-							total_development = 100
 							alliance_with = ROOT
 						}
 						save_global_event_target_as = russian_ally
 						set_country_flag = feo_russian_ally
-						add_patriarch_authority = 0.05
 					}
 					add_patriarch_authority = 0.05
 					custom_tooltip = FEO_LOCK_TO_ALLIANCE_BRANCH
@@ -1126,7 +1132,7 @@ feo_5 = {
 							}
 						}
 					}
-					feo_russian_aristocracy_army_size_effect = yes
+					ia_feo_russian_aristocracy_army_size_effect = yes
 				}
 			}
 		} 
@@ -1201,7 +1207,7 @@ feo_5_branching = {
 						}
 					"
 					first_effect = "
-						feo_russian_claims_reward_effect = yes
+						ia_feo_russian_claims_reward_effect = yes
 					"
 				}
 			}
@@ -1368,11 +1374,14 @@ feo_5_russian_rivalry = {
 			OR = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 15
-					region = russia_region
+					OR = {
+						region = russia_region
+						region = ruthenia_region
+					}
 				}
 				any_subject_country = {
 					is_subject_of_type = personal_union
-					capital_scope = { region = russia_region }
+					capital_scope = { OR = { region = russia_region 	region = ruthenia_region } }
 					NOT = {
 						liberty_desire = 50
 					}
@@ -1391,7 +1400,7 @@ feo_5_russian_rivalry = {
 				first_custom_tooltip = FEO_IF_COMPLETED_WITH_15_PROVINCES
 				first_limit = "
 					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						region = russia_region
+						OR = { region = russia_region	region = ruthenia_region }
 						value = 15
 					}
 				"
@@ -1414,17 +1423,21 @@ feo_5_russian_rivalry = {
 			not_in_mission_preview_mode = { key = FEO }
 			OR = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 40
-					region = russia_region
+					value = 60
+					OR = { 
+						region = russia_region
+						region = ruthenia_region
+					}
 				}
 				any_subject_country = {
 					is_subject_of_type = personal_union
-					capital_scope = { region = russia_region }
+					capital_scope = { OR = { region = russia_region 	region = ruthenia_region } }
 					NOT = { liberty_desire = 5 }
-					total_development = 400
+					total_development = 600
 				}
 			}
-			295 = { country_or_non_sovereign_subject_holds = ROOT }
+			280 = { country_or_non_sovereign_subject_holds = ROOT }
+			293 = { country_or_non_sovereign_subject_holds = ROOT }
 		} 
 
 		effect = {

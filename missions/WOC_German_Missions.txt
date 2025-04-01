@@ -299,15 +299,6 @@ JHC_GER_2 = {
 					}
 				}
 				AND = {
-					is_part_of_hre = yes
-					NOT = {
-						OR = {
-							NOT = { hre_size = 1 }
-							ROOT = { is_emperor = yes }
-						}
-					}
-				}
-				AND = {
 					OR = {
 						area = austria_proper_area
 						area = inner_austria_area
@@ -345,15 +336,6 @@ JHC_GER_2 = {
 					area = tirol_area
 				}
 				value = 8
-			}
-			if = {
-				limit = {
-					tag = GER
-				}
-				OR = {
-					NOT = { hre_size = 1 }
-					is_emperor = yes
-				}
 			}
 		}
 		effect = {	

@@ -18,6 +18,21 @@
  joint_drills_decision_desc: "We shall conduct joint military drills with our benefactors and admirers, such that their forces can properly serve under our commanders if need be with a minimum of friction."
  joint_drills_decision_emperor: "Joint Military Drills"
  joint_drills_decision_member: "Celestial Reform: Joint Drills"
+ 
+ the_great_wall_of_china_ningha: "Great Wall of China"
+ the_great_wall_of_china_lanzhou: "Great Wall of China"
+ the_great_wall_of_china_liangzhou: "Great Wall of China"
+ the_great_wall_of_china_zhangye: "Great Wall of China"
+ the_great_wall_of_china_hetao: "Great Wall of China"
+ the_great_wall_of_china_hohhot: "Great Wall of China"
+ the_great_wall_of_china_datong: "Great Wall of China"
+ the_great_wall_of_china_baoding: "Great Wall of China"
+ the_great_wall_of_china_zhending: "Great Wall of China"
+ the_great_wall_of_china_xuanhua: "Great Wall of China"
+ the_great_wall_of_china_chengde: "Great Wall of China"
+ the_great_wall_of_china_ningyuan: "Great Wall of China"
+
+ reduces_governing_distance_tt: "Reduces the §YGoverning Distance§! of the province!"
 
  #Mechanics Tooltips
  complacency_loss_more_powerful_chinese_country: "Stronger Chinese Warlord Exists"

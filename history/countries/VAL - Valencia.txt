@@ -6,6 +6,7 @@ religion = fraticelli
 primary_culture = visigothic
 capital = 220
 historical_friend = TEM
+historical_friend = FEO
 historical_rival = Z17
 historical_rival = FRA
 historical_rival = NRM

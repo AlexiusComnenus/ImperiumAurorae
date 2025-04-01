@@ -94,6 +94,7 @@ the_mining_act = {
 	}
 	
 	leader_land_fire = 1
+	global_trade_goods_size_modifier = 0.1
 	
 	effect = {}
 	removed_effect = {}
@@ -251,7 +252,7 @@ modern_siege_weapons = {
 		full_idea_group = offensive_ideas
 	}
 	
-	siege_ability = 0.1
+	siege_ability = 0.15
 	leader_siege = 1
 
 	effect = {}
@@ -278,7 +279,7 @@ superior_fortification_act = {
 		full_idea_group = defensive_ideas
 	}
 	
-	defensiveness = 0.1
+	defensiveness = 0.15
 	fort_maintenance_modifier = -0.33
 
 
@@ -386,7 +387,7 @@ field_priests = {
 		full_idea_group = quantity_ideas
 	}
 
-	land_morale = 0.05
+	land_morale = 0.10
 	recover_army_morale_speed = 0.15
 	
 	effect = {}
@@ -819,7 +820,7 @@ foreign_conscription_centers = {
 		full_idea_group = offensive_ideas
 	}	
 	
-	reinforce_cost_modifier = -0.25
+	reinforce_speed = 0.15
 	diplomatic_upkeep = 1
 	
 	effect = {}
@@ -970,7 +971,7 @@ nobles_in_navy_act = {
 	}
 
 	max_admiral_maneuver = 1 
-	navy_tradition_decay = -0.005
+	navy_tradition_decay = -0.01
 	
 
 	effect = {}
@@ -1371,7 +1372,7 @@ psychological_warfare_policy = {
 		full_idea_group = spy_ideas
 	}
 
-	cavalry_flanking = 0.5
+	morale_damage = 0.2
 	cavalry_power = 0.1
 
 	effect = {}
@@ -1552,7 +1553,7 @@ mass_conscription_act = {
 	}
 	
 	reinforce_speed = 0.2
-	reinforce_cost_modifier = -0.2
+	global_manpower_modifier = 0.10
 
 	effect = {}
 	removed_effect = {}
@@ -1666,7 +1667,7 @@ sharp_wits_act = {
 	}
 	
 	power_projection_from_insults = 0.25
-	morale_damage = 0.1
+	morale_damage = 0.15
 
 	effect = {}
 	removed_effect = {}
@@ -1712,7 +1713,7 @@ special_forces_act = {
 		full_idea_group = quality_ideas 
 	}
 	
-	special_unit_forcelimit = 0.2
+	special_unit_forcelimit = 0.25
 	yearly_army_professionalism = 0.005
 
 	effect = {}

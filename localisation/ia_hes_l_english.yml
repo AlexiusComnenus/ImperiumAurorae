@@ -1,8 +1,8 @@
 ﻿l_english:
  MANAGE_CORRUPTION:0 "Corruption Management"
  use_adm_corruption:0 "We will take §YLegal Action§! to reduce §Rcorruption.§!"
- use_dip_corruption:0 "We will utilize a §YSpy Network§! to reduce §Rcorruption.§!"
- use_mil_corruption:0 "We will use §YAggressive Force§! to reduce §Rcorruption.§!"
+ use_dip_corruption:0 "We will utilize a §YSecret Police§! to reduce §Rcorruption.§!"
+ use_mil_corruption:0 "We will use §YMilitary Crackdown§! to reduce §Rcorruption.§!"
  deflate_economy_button: "§YDeflate the economy§!"
 
  #Mechanics Tooltips

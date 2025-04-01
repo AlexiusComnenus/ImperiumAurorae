@@ -178,7 +178,7 @@ brittany_missions_column_1 = {
 		
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 10
+				value = 8
 				OR = {
 					area = loire_area
 					area = orleans_area

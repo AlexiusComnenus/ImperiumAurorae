@@ -1,5 +1,5 @@
-owner = Z00
-controller = Z00
+owner = KZH
+controller = KZH
 capital = "Shymkent"
 is_city = yes
 culture = uzbehk
@@ -9,7 +9,7 @@ base_tax = 1
 base_production = 1
 base_manpower = 1
 add_core = SHY
-add_core = Z00
+add_core = KZH
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

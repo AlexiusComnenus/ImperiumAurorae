@@ -880,3 +880,216 @@ country_event = {  #  white peaces
 		}
 	}
 }
+
+# Release subjects
+country_event = {
+	id = dotfset.28
+	title = dotfset.28.t
+	desc = dotfset.28.d
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+	
+	trigger = {
+		num_of_cities = 10
+		ai = yes
+		is_at_war = no
+		is_free_or_tributary_trigger = yes
+		
+		
+		any_owned_province = {
+			NOT = { is_core = ROOT }
+			
+			any_core_country = {
+				NOT = { exists = yes }
+				PREV = {
+					culture_group = PREV
+				}
+				any_core_province = {
+					development = 10
+				}
+				NOT = {
+					calc_true_if = {
+						all_core_province = {
+							AND = {
+								is_core = ROOT
+								country_or_non_sovereign_subject_holds = ROOT
+							}
+						}
+						amount = 1
+					}
+				}
+				calc_true_if = {
+					all_core_province = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					amount = 4
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { is_core = ROOT }
+			
+				any_core_country = {
+					NOT = { exists = yes }
+					PREV = {
+						culture_group = PREV
+					}
+					any_core_province = {
+						development = 10
+					}
+					NOT = {
+						calc_true_if = {
+							all_core_province = {
+								AND = {
+									is_core = ROOT
+									country_or_non_sovereign_subject_holds = ROOT
+								}
+							}
+							amount = 1
+						}
+					}
+					calc_true_if = {
+						all_core_province = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						amount = 4
+					}
+				}
+			}
+			random_core_country = {
+				limit = {
+					NOT = { exists = yes }
+					PREV = {
+						culture_group = PREV
+					}
+					any_core_province = {
+						development = 10
+					}
+					NOT = {
+						calc_true_if = {
+							all_core_province = {
+								AND = {
+									is_core = ROOT
+									country_or_non_sovereign_subject_holds = ROOT
+								}
+							}
+							amount = 1
+						}
+					}
+					calc_true_if = {
+						all_core_province = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						amount = 4
+					}
+				}
+				save_event_target_as = tag_to_be_released
+			}
+		}
+		release = event_target:tag_to_be_released
+		vassalize = event_target:tag_to_be_released
+		
+		event_target:tag_to_be_released = {
+			clr_country_flag = recently_released_for_cores_flag
+			set_country_flag = recently_released_for_cores_flag
+			
+			change_religion = ROOT
+			if = {
+				limit = {
+					culture = noculture
+				}
+				change_culture = capital_scope
+			}
+		}
+		
+	}
+	
+	option = {
+		name = dotfset.28.a
+		
+		ai_chance = { factor = 1 }
+		
+	}
+}
+
+country_event = {
+	id = dotfset.29
+	title = dotfset.29.title
+	desc = dotfset.29.desc
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes
+		NOT = { num_of_generals = 10 }
+	}
+	
+	option = {
+		name = dotfset.29.a
+		if = {
+			limit = {
+				army_tradition = 90
+			}
+			create_general = { tradition = 95 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 80
+			}
+			create_general = { tradition = 85 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 70
+			}
+			create_general = { tradition = 75 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 60
+			}
+			create_general = { tradition = 65 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 50
+			}
+			create_general = { tradition = 55 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 40
+			}
+			create_general = { tradition = 45 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 30
+			}
+			create_general = { tradition = 35 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 20
+			}
+			create_general = { tradition = 25 }
+		}
+		else_if = {
+			limit = {
+				army_tradition = 10
+			}
+			create_general = { tradition = 15 }
+		}
+		else = {
+			create_general = { tradition = 5 }
+		}
+	}
+}

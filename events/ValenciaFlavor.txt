@@ -442,6 +442,7 @@ country_event = {  # Create visigoth communities + startup stuff
 				locked = yes
 			}
 			set_country_flag = can_always_invite_righteous_illumination_school
+			set_country_flag = daohellenic_doctrines_picking_blocked
 		}
 		GEN = {
 			set_country_flag = can_always_invite_golden_path_school

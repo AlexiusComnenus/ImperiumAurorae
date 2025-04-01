@@ -1,5 +1,5 @@
-owner = SHY
-controller = SHY
+owner = KAS
+controller = KAS
 capital = "Qarqan"
 is_city = yes
 culture = uyghur
@@ -9,7 +9,6 @@ base_tax = 1
 base_production = 1
 base_manpower = 2
 add_core = KAS
-add_core = SHY
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

@@ -79,6 +79,7 @@ frw_general_stat_boost = {
 	max_general_maneuver = 4
 	max_general_shock = 4
 	max_general_siege = 4
+	may_recruit_female_generals = yes
 }
 
 frw_merovingian_divine_right = {

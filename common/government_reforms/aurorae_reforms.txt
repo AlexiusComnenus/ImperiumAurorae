@@ -36,6 +36,30 @@ free_city = {
 	duration = 4
 }
 
+representation_of_the_crown_reform = {
+	icon = "parliament_hall"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			is_revolutionary = no
+			NOT = { has_dlc = "Emperor" }
+		}
+	}
+	trigger = {
+		NOT = { has_reform = saxon_feudalism }
+	}
+	modifiers = {
+		diplomatic_upkeep = 1
+		vassal_forcelimit_bonus = 0.5
+		diplomatic_annexation_cost = -0.1
+		liberty_desire_from_subject_development = -0.10
+		monarch_power_tribute = 1
+	}
+	custom_attributes = {
+		subject_tax_modifier_25 = yes
+	}
+}
+
 true_immortal_reform = {
 	icon = "free_city"
 	allow_normal_conversion = no
@@ -81,6 +105,26 @@ margraviate_reform = {
 	}
 	ai = {
 		factor = 20
+	}
+}
+
+elective_monarchy_reform = {
+	icon = "ballot_box"
+	potential = {
+		has_dlc = "Domination"
+	}
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		max_absolutism = -40
+		all_estate_influence_modifier = 0.1
+	}
+	custom_attributes = {
+		has_ruler_election = yes
+	}
+	ai = {
+		factor = 0
 	}
 }
 
@@ -1235,10 +1279,10 @@ prussian_monarchy = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			AND = {
-				tag = PRU
-				NOT = { map_setup = map_setup_random }
-			}
+			tag = PRU
+			tag = GER
+		}
+		OR = {
 			has_reform = prussian_monarchy
 			have_had_reform = prussian_monarchy
 		}
@@ -1247,7 +1291,8 @@ prussian_monarchy = {
 		OR = {
 			tag = PRU
 			tag = GER
-			dynasty = "von Hohenzollern"
+		}
+		OR = {
 			has_reform = prussian_monarchy
 			have_had_reform = prussian_monarchy
 		}
@@ -1265,30 +1310,30 @@ prussian_monarchy = {
 		monthly_militarized_society = 0.25
 	}
 	
-	conditional = {
-		allow = { 
-			NOT = { tag = PRU }
-			NOT = { tag = GER }
-		}
-		government_abilities = {
-			militarization_mechanic
-		}
-	}
+	#conditional = {
+	#	allow = { 
+	#		NOT = { tag = PRU }
+	#		NOT = { tag = GER }
+	#	}
+	#	government_abilities = {
+	#		militarization_mechanic
+	#	}
+	#}
 	
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER } }
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_1
 		}
 	}
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER } }
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_2
 		}
 	}
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER } }
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_3
 		}
@@ -1300,59 +1345,22 @@ prussian_republic_reform = {
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			AND = {
-				tag = PRU
-				NOT = { map_setup = map_setup_random }
-			}
-			AND = {
-				tag = GER
-				NOT = { map_setup = map_setup_random }
-				OR = {
-					has_reform = prussian_monarchy
-					have_had_reform = prussian_monarchy
-					have_had_reform = prussian_republic_reform
-					have_had_reform = prussian_theocratic_reform
-					is_hegemon_of_type = military_hegemon
-					development_in_provinces = {
-						value = 500
-						culture = prussian
-					}
-				}
-			}
-			AND = {
-				is_playing_custom_nation = yes
-				OR = {
-					has_reform = prussian_republic_reform
-					have_had_reform = prussian_monarchy
-					have_had_reform = prussian_monarchy_base
-					have_had_reform = prussian_republic_reform
-					have_had_reform = prussian_theocratic_reform
-				}
-			}
-			has_unlocked_government_reform = {
-				government_reform = prussian_republic_reform
-			}
+			tag = PRU
+			tag = GER
+		}
+		OR = {
+			has_reform = prussian_republic_reform
+			have_had_reform = prussian_republic_reform
 		}
 	}
 	trigger = {
 		OR = {
 			tag = PRU
 			tag = GER
-			AND = {
-				is_playing_custom_nation = yes
-				OR = {
-					hidden_trigger = {
-						has_reform = prussian_republic_reform
-					}
-					have_had_reform = prussian_monarchy
-					have_had_reform = prussian_monarchy_base
-					have_had_reform = prussian_republic_reform
-					have_had_reform = prussian_theocratic_reform
-				}
-			}
-			has_unlocked_government_reform = {
-				government_reform = prussian_republic_reform
-			}
+		}
+		OR = {
+			has_reform = prussian_republic_reform
+			have_had_reform = prussian_republic_reform
 		}
 	}
 	valid_for_nation_designer = yes
@@ -1368,30 +1376,30 @@ prussian_republic_reform = {
 		governing_capacity_modifier = -0.5
 	}
 	
-	conditional = {
-		allow = { 
-			NOT = { tag = PRU }
-			NOT = { tag = GER }
-		}
-		government_abilities = {
-			militarization_mechanic
-		}
-	}
+	#conditional = {
+	#	allow = { 
+	#		NOT = { tag = PRU }
+	#		NOT = { tag = GER }
+	#	}
+	#	government_abilities = {
+	#		militarization_mechanic
+	#	}
+	#}
 	
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER }	}
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_1
 		}
 	}
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER } }
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_2
 		}
 	}
 	conditional = {
-		allow = { OR = { tag = PRU tag = GER } }
+		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			prussian_militarization_mechanic_3
 		}

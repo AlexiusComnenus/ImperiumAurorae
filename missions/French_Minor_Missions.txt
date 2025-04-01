@@ -662,9 +662,16 @@ bgm_fra_min_dip_slo1 = {
 				any_ally = {
 					is_great_power = yes
 				}
-				army_strength = {
-					who = FRA
-					value = 0.33
+				any_great_power = {
+					is_supporting_independence_of = ROOT
+				}
+				overlord = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 3
+						}
+					}
 				}
 			}
 		}
@@ -683,6 +690,7 @@ bgm_fra_min_dip_slo1 = {
 					}
 					add_liberty_desire = 33
 				}
+				country_event = { id = BGM_FRA_minor_missions.3 }
 			}
 			add_dip_power = 100
 		}
@@ -922,6 +930,17 @@ bgm_fra_min_mil_slot1 = {
 		trigger = { 
 			army_tradition = 40
 			army_size_percentage = 0.75
+			if = {
+				limit = { is_subject = yes } 
+				overlord = {
+					NOT = {
+						army_strength = {
+							who = ROOT
+							value = 2
+						}
+					}
+				}
+			}
 		}
 		effect = {
 			overlord = {
@@ -938,6 +957,7 @@ bgm_fra_min_mil_slot1 = {
 					}
 					add_liberty_desire = 50
 				}
+				country_event = { id = BGM_FRA_minor_missions.3 }
 			}
 			add_dip_power = 50
 			add_prestige = 25

@@ -231,6 +231,7 @@ country_event = {
 		}
 		trigger = {
 			NOT = { is_subject_of = emperor }
+			NOT = { is_subject = yes }
 		}
 		
 		Z17 = { remove_historical_friend = ROOT }

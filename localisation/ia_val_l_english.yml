@@ -33,7 +33,7 @@
  Valencia_Templar_Support_desc: "The Templar Knights have contingents of knights supporting us in our war"
  Templar_Valencia_Support: "Visigoth naval support"
  Templar_Valencia_Support_desc: "The Visigoths have contingents of sailors and marines supporting us in our war"
- imperium_gothorum_warning_tt: "§RWarning:§! This event will automatically annex all subjects of §TIberian§! culture. Be wary of your governing capacity and if you had any other plans with these subjects/potential subjects. Additionally, it will send an offer to become a march to the Knights Templar, so make sure to finish any missions that require them to be an ally first."
+ imperium_gothorum_warning_tt: "§RWarning:§! This event will automatically annex all subjects of §TIberian§! culture. Be wary of your governing capacity and if you had any other plans with these subjects/potential subjects. Additionally, it will send an offer to become our march to the Knights Templar, so make sure to finish any missions that require them to be an ally first."
  
  #Government
  regnum_gothorum_reform: "Regnum Gothorum"
@@ -208,7 +208,7 @@
  ia_flavor_val.6.a: "Yes"
  ia_flavor_val.6.b: "No"
  ia_flavor_val.9.t: "Legend of the Crusader Queen"
- ia_flavor_val.9.d: "Jacoba van Vlaanderen joined the Knights Templar at a young age to escape an unwanted arranged marriage. At Majorca, she quickly distinguished herself with her sharp mind and ability to inspire others. Later, she accepted a mission to infiltrate the Andalusian province of Valencia to gather information, and overachieved by instead forming an entire undercover resistance among the Visigothic population. When the Andalusian Civil War broke out, she successfully lead a rebellion and was crowned as Princeps of Valencia. Due to her new position, the Templars regretfully were required to expel her from the Order, but it was mostly a formality and she continued to visit the Templar stronghold regularly and joined the Crusade for Morocco."
+ ia_flavor_val.9.d: "Jacoba van Vlaanderen joined the Knights Templar at a young age to escape an unwanted arranged marriage. At Majorca, she quickly distinguished herself with her sharp mind and ability to inspire others. Later, she accepted a mission to infiltrate the Andalusian province of Valencia to gather information, and overachieved by instead forming an entire undercover resistance among the Visigothic population. When the Andalusian Civil War broke out, she successfully lead a rebellion and was crowned as Princeps of Valencia. Due to her new position, she was regretfully unable to remain a member of the Templar Order, but it was mostly a formality and she continued to visit the Templar stronghold regularly and joined the Crusade for Morocco."
  ia_flavor_val.9.a: "All hail Rex Jacoba!"
  ia_flavor_val.11.t: "Future Doctrine"
  ia_flavor_val.11.d: "It is time to select a doctrine for the future of our military. We have a large and mostly educated population with the bureaucracy to keep track of most of them. Shall we recruite them en masse into the army, or focus only on the talented volunteers to keep a highly professional core?"

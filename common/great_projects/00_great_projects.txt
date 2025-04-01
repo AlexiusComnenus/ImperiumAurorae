@@ -30,6 +30,7 @@ kiel_canal = {
 			is_subject = no			
 			OR = { 
 				mission_completed = emp_brapru_kiel_canal
+				mission_completed = GER_german_industry
 				adm_tech = 22
 			}
 		}
@@ -207,18 +208,18 @@ suez_canal = {
 	#can we build it?
 	build_trigger = {
 		FROM = {
+			owns_or_vassal_of = 4316
+			owns_or_vassal_of = 2315
 			OR = {
+				adm_tech = 22
+				mission_completed = mam_highway_empire
+				mission_completed = hsn_suez_canal
+				mission_completed = ITA_explore_eastern_markets
+				mission_completed = ven_mamluk_suez
 				AND = {
-					owns_or_vassal_of = 4316
-					owns_or_vassal_of = 2315
-					is_subject = no
-					adm_tech = 22
-				}
-				AND = {
-					tag = Z17
-					4316 = { is_part_of_hre = yes }
-					2315 = { is_part_of_hre = yes }
+					is_part_of_hre = yes
 					adm_tech = 10
+					religion = hellenic_pagan_reformed
 				}
 			}
 		}
@@ -397,8 +398,14 @@ panama_canal = {
 	build_trigger = {
 		FROM = {
 			owns_or_vassal_of = 835
-			is_subject = no
-			adm_tech = 22
+			if = {
+				limit = {
+					NOT = { mission_completed = SUN_panama_canal }
+					NOT = { mission_completed = SUNm_panama_canal }
+					NOT = { tag = MYM 	religion = hellenic_pagan_reformed }
+				}
+				adm_tech = 22
+			}
 		}
 	}
 

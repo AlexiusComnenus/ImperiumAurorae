@@ -107,3 +107,103 @@ bogomilism_clear_old_aspects_effect = {
 		remove_country_modifier = bog_eternal_struggle_modifier
 	}
 }
+
+ia_feo_russian_aristocracy_army_size_effect = {
+	if = {
+		limit = {
+			any_country = {
+				NOT = { tag = ROOT }
+				capital_scope = {
+					OR = {
+						region = russia_region
+						region = ruthenia_region
+					}
+				}
+			}
+		}
+		pick_best_tags = {
+			global_trigger = "
+				NOT = { tag = ROOT }
+				capital_scope = {
+					OR = { 
+						region = russia_region
+						region = ruthenia_region
+					}
+				}
+				government = monarchy
+				is_free_or_tributary_trigger = yes
+			"
+			scale = total_development
+			1 = yes
+			event_target_name = russian_pu_tag
+		}
+		hidden_effect = {
+			event_target:russian_pu_tag_1 = {
+				save_global_event_target_as = feo_russian_pu
+				set_country_flag = feo_russian_pu
+			}
+			country_event = { id = flavor_feo.8 }
+		}
+	}
+	else = {
+		give_claims = { region = russia_region }
+	}
+}
+
+ia_feo_russian_claims_reward_effect = {
+	custom_tooltip = FEO_LOWER_RUSSIAN_PROVINCES_AUTONOMY_AND_ACCEPT_RUSSIAN_CULTURE
+	hidden_effect = {
+		every_owned_province = {
+			limit = {
+				OR = { 
+					region = russia_region
+					region = ruthenia_region
+				}
+			}
+			add_local_autonomy = -20
+			add_nationalism = -20
+		}
+		set_country_flag = feo_russian_accepted_cultures_flag
+		add_country_modifier = {
+			name = feo_russian_tolerance
+			duration = -1
+			hidden = yes
+		}
+		add_accepted_culture = russian
+		add_accepted_culture = novgorodian
+		add_accepted_culture = ryazanian
+		add_accepted_culture = byelorussian
+		add_accepted_culture = ruthenian
+		add_accepted_culture = cumano_rus
+	}
+}
+
+ia_BYZ_convert_to_greek_culture = { #It's here in case I want to add anatolian-themed cultures.
+	if = {
+		limit = {
+			culture = armenian
+			owner = {
+				has_country_flag = tre_wont_convert_armenians
+			}
+		}
+		change_culture = cilician
+	}
+	else_if = {
+		limit = {
+			OR = {
+				area = erzurum_area
+				area = kastamonu_area
+			}
+		}
+		change_culture = pontic_greek
+	}
+	else_if = {
+		limit = {
+			area = karaman_area
+		}
+		change_culture = cappadocian_greek
+	}
+	else = {
+		change_culture = anatolian
+	}
+}

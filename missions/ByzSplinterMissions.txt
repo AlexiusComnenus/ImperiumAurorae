@@ -8,6 +8,7 @@ Byz_Splinter_1 = {
 		NOT = { tag = UKR }
 		NOT = { map_setup = map_setup_random }
 		NOT = { culture = seleucian }
+		NOT = { culture = turkish }
 		#OR = {
 		#	NOT = { has_dlc = "Winds of Change" }
 		#	AND = {
@@ -67,6 +68,7 @@ Byz_Splinter_2 = {
 		NOT = { tag = UKR }
 		NOT = { map_setup = map_setup_random }
 		NOT = { culture = seleucian }
+		NOT = { culture = turkish }
 		OR = {
 			NOT = { has_dlc = "Winds of Change" }
 			AND = {
@@ -139,6 +141,7 @@ Byz_Splinter_3 = {
 		NOT = { tag = BHS }
 		NOT = { tag = UKR }
 		NOT = { culture = seleucian }
+		NOT = { culture = turkish }
 		OR = {
 			NOT = { has_dlc = "Winds of Change" }
 			AND = {

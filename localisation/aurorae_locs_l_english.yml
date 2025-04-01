@@ -2,6 +2,15 @@
  demi_culverin: "Demi-Culverin"
  chambered_cannon: "Chambered Cannon"
  
+ hide_show_corruption_decisions_title: "Show/Hide Corruption Management Decisions"
+ hide_show_corruption_decisions_desc: "Some people may not be able to see the corruption management buttons due to resolution or UI mod conflicts, or simply don't like the buttons. If you wish, you can replicate the effects of the corruption buttons via decisions by toggling this decision."
+ ai_reduce_corruption_decision_adm_title: "Administrative Corruption Suppression"
+ ai_reduce_corruption_decision_adm_desc: "We will take §YLegal Action§! to reduce §Rcorruption.§!"
+ ai_reduce_corruption_decision_dip_title: "Diplomatic Corruption Suppression"
+ ai_reduce_corruption_decision_dip_desc: "We will utilize a §YSecret Police§! to reduce §Rcorruption.§!"
+ ai_reduce_corruption_decision_mil_title: "Military Corruption Suppression"
+ ai_reduce_corruption_decision_mil_desc: "We will use §YMilitary Crackdown§! to reduce §Rcorruption.§!"
+ 
  change_hellenic_deity_title:0 "Change patron?"
  change_hellenic_deity_desc:0 "Change our patron deity"
  change_deity.1.title:0 "Change patron?"
@@ -46,6 +55,7 @@
  support_army_of_light_decision_title: "Sponsor the Army of Light"
  support_army_of_light_decision_desc: "We will send aid to the Army of Light in their Enlightenment of Central Africa."
  emperor_rechenschaft_member: "Constitution of the Aurora"
+ tre_cilicia_culture_conversion_ia: "Our provinces of §YArmenian§! culture in the §YAnatolia§! region will convert to §YCilician§! culture instead."
 
  xizho_group: "Xizho"
  idali: "Idali"
@@ -143,7 +153,14 @@
  ia_grand_dismantlement.2.desc: "After our total victory in the Grand Dismantlement War, our former rival has been scattered to the winds, hopefully never to recover. Though our country is exhausted from the bloody conflict, we have demonstrated our absolute strength in no uncertain terms."
  ia_grand_dismantlement.2.a: "Let the world cower before us!"
  every_country_gains_50_ae_tt: "§YEvery Known Country§! that is not our subject will §Rgain 50 Aggressive Expanstion§! against us!"
+ cb_ia_liberation: "Liberation"
+ cb_ia_liberation_desc: "The Oppressed shall be Liberated!"
+ ia_liberation: "Liberation"
+ ia_liberation_desc: "Liberate the Oppressed"
  
+ ia_create_liberation_action_title: "Justify Liberation"
+ ia_create_liberation_action_desc: "Justify a §GLiberation§! Casus Belli against this country."
+ ia_create_liberation_action_tooltip: "Justify a §GLiberation§! Casus Belli against this country."
  ia_grand_dismantlement_action_title: "Prepare Dismantlement"
  ia_grand_dismantlement_action_tooltip: "§RFabricate a Grand Dismantlement Casus Belli against our rival!§!"
  ia_grand_dismantlement_action_desc: "We will obtain a §RGrand Dismantlement§! Casus Belli against this country."
@@ -168,6 +185,8 @@
  pendragon_dynasty_desc: "Arthur Pendragon personally fought in countless battles against the Angles and Saxons who invaded Prydain. Though they still managed to cling onto the eastern coast, the courage exhibited by House Pendragon and their brave Knights will never be forgotten."
  rurikovich_dynasty: "Rurikid Legacy"
  rurikovich_dynasty_desc: "The legend goes that Rurik was invited to rule over various tribes, and proceeded to lead them to greatness. Though the Rus have been shattered, some still look up to the legacy of the Rurikids to bring them back to the glory days."
+ borjigin_dynasty: "Heirs of Genghis"
+ borjigin_dynasty_desc: "Genghis Khan united the Altaic peoples and conquered an empire ranging from (Pacific) ocean to (Caspian) sea. Though his empire crumbled after his death, his descendants are numerous and may all lay claim to his legacy."
 
  auroraloyalists:0 "Aurora Loyalists"
  auroraloyalists_influence:0 "Aurora Loyalists Influence"
@@ -683,6 +702,7 @@
  feo_azov_sea_ia_desc: "Many years ago, Yurukhan the Adventurer 'leased' Azov from us, then his heirs conveniently forgot to return it. It is time to rectify this."
  tre_scorn_the_ottomans_ia_title: "Scorn the Turks"
  tre_scorn_the_ottomans_ia_desc: "The Rumite Turks insult the very name of our Roman Empire with their twisted pronunciations. We must show them that we are not afraid!"
+ tre_chaldian_deposits_modifier: "Chaldian Deposits"
 
  challenge_elector_title:0 "Challenge an elector"
  challenge_elector_desc:0 "As the upholder of the Imperial borders and an economic powerhouse, we deserve to be an elector! The imperial electors are generally indolent and weak, drunk on the prestige of their positions. Let us teach them a lesson..."

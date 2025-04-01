@@ -8,7 +8,6 @@ trade_goods = livestock
 base_tax = 1
 base_production = 1
 base_manpower = 5
-add_core = CHG
 add_core = CHH
 discovered_by = MGE
 discovered_by = eastern

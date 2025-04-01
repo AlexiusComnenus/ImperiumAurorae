@@ -2597,6 +2597,24 @@ province_event = {
 			#}
 			if = {
 				limit = {
+					NOT = { ROOT = { has_building = road_network } }
+				}
+				multiply_variable = {
+					which = dist
+					value = 1.25
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { has_building = canal_system }
+				}
+				multiply_variable = {
+					which = dist
+					value = 0.8
+				}
+			}
+			if = {
+				limit = {
 					ROOT = { has_port = yes }
 				}
 				multiply_variable = {

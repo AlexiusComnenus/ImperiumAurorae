@@ -429,7 +429,7 @@ country_event = {
 	
 	trigger = {
 		tag = Z00
-		NOT = { exists = GLH }
+		NOT = { exists = GOL }
 	}
 	
 	fire_only_once = yes
@@ -440,10 +440,16 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			syr_darya_area = {
-				cede_province = GLH
+			yrtesh_area = {
+				cede_province = GOL
 			}
-			GLH = {
+			ob_area = {
+				cede_province = GOL
+			}
+			aqmola_area = {
+				cede_province = GOL
+			}
+			GOL = {
 				change_government = tribal
 				add_government_reform = steppe_horde
 				add_country_modifier = {
@@ -456,13 +462,23 @@ country_event = {
 						cavalry = 1
 					}
 				}
+				define_ruler = {
+					name = "Qobolta"
+					dynasty = "Borjigin"
+					adm = 4
+					dip = 3
+					mil = 6
+					age = 20
+					claim = 95
+				}
+				add_ruler_personality = legendary_conqueror_personality
 			}
 		}
 	}
 	
 	option = {
 		name = cumania_collapse.3.a
-		GLH = {
+		GOL = {
 			declare_war_with_cb = {
 				who = ROOT
 				casus_belli = cb_annex
@@ -475,13 +491,13 @@ country_event = {
 		trigger = { ai = no }
 		highlight = yes
 		
-		GLH = {
+		GOL = {
 			declare_war_with_cb = {
 				who = ROOT
 				casus_belli = cb_annex
 			}
 		}
 		
-		switch_tag = GLH
+		switch_tag = GOL
 	}
 }

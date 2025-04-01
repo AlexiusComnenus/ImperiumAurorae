@@ -117,8 +117,8 @@ country_event = {
 	picture = NOBLE_ESTATE_DEMANDS_eventPicture
 
 	trigger = {
-		
-		NOT = { crown_land_share = 11 }
+		always = no
+		NOT = { crown_land_share = 1 }
 		OR = {
 			AND = {
 				government = monarchy

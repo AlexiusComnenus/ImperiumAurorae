@@ -543,7 +543,7 @@ province_event = {
 			culture_group = byzantine
 			has_country_flag = BYZ_conversions
 		}
-		culture_group = turko_semitic 
+		culture = turkish 
 		BYZ_eligible_province_for_culture_conversion = yes
 	}
 	
@@ -575,7 +575,7 @@ province_event = {
 			factor = 1
 		}
 		
-		BYZ_convert_to_greek_culture = yes
+		ia_BYZ_convert_to_greek_culture = yes
 	}
 }
 

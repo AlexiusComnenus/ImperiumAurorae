@@ -1,15 +1,26 @@
-vassal=
+dependency=
 {
-	first="MGE"
-	second="SHY"
+	subject_type="appanage"
+	first="POL"
+	second="MAZ"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
 
-vassal=
+dependency=
 {
-	first="MGE"
-	second="TRS"
+	subject_type="appanage"
+	first="POL"
+	second="Z74"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="appanage"
+	first="POL"
+	second="GLG"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
@@ -35,78 +46,6 @@ vassal=
 	first="Z66"
 	second="RSO"
 	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="Z73"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="Y08"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="Y04"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="UTS"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="GUG"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="Z41"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="Z58"
-	start_date="769.1.1"
-	end_date="1836.1.1"
-}
-
-dependency=
-{
-	subject_type="tributary_state"
-	first="MGE"
-	second="KAM"
-	start_date="769.1.1"
 	end_date="1836.1.1"
 }
 

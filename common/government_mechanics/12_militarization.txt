@@ -45,18 +45,19 @@ militarization_mechanic = {
 			}
 			cooldown_years = 0
 			ai_chance = {
-				factor = 0
+				factor = 15
 				modifier = {
-					factor = 10
-					not = {
+					factor = 0
+					OR = {
 						has_government_power = {
 							mechanic_type = militarization_mechanic
 							power_type = militarized_society
 							value = 90
 						}
+						
+						NOT = { mil_power_cost = 800 }
+						NOT = { is_at_war = yes }
 					}
-					mil_power_cost = 500
-					is_at_war = yes
 				}
 			}
 		}

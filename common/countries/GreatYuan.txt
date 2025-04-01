@@ -29,6 +29,8 @@ historical_units = {
 	reformed_manchu_rifle
 }
 monarch_names = {
+	"Temujin #1" = 10
+	"Temülen #0" = -20
 	"Adai #0" = 20
 	"Agbarjin #0" = 20
 	"Altan #0" = 20
@@ -72,8 +74,6 @@ monarch_names = {
 	"Sayn #0" = 20
 	"Suddhipala #1" = 10
 	"Tayisung #0" = 20
-	"Temujin #1" = 10
-	"Temülen #0" = -1
 	"Temür #1" = 10
 	"Toghun #1" = 10
 	"Tolui #1" = 10

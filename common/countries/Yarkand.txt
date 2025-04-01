@@ -29,78 +29,87 @@ historical_units = {
 	reformed_manchu_rifle
 }
 monarch_names = {
-	"Abdul-Karim #0" = 20
-	"Abdul-Latif #0" = 20
-	"Abdul-Rashîd #0" = 20
-	"Abdullah #0" = 20
-	"Ahmad #0" = 20
-	"Alghu #0" = 20
-	"Ali #0" = 20
-	"Baraq #0" = 20
-	"Bayan Quli #0" = 20
-	"Buqa Temür #0" = 20
-	"Buzan #0" = 20
-	"Chagatay #0" = 10
-	"Changshi #0" = 20
-	"Danishmendji #0" = 20
-	"Dost Muhammad #0" = 20
-	"Dughlat #0" = 20
-	"Duwa #0" = 20
-	"Duwa Temür #0" = 20
-	"Eljigidey #0" = 20
-	"Esen Buqa #0" = 20
-	"Ilbars #0" = 20
-	"Ilyas #0" = 20
-	"Ismail #0" = 20
-	"Kebek #0" = 20
-	"Khabul #0" = 20
-	"Khizr #0" = 20
-	"Könchek #0" = 20
-	"Mahmud #0" = 20
-	"Mansur #0" = 20
-	"Mubarak #0" = 20
-	"Muhammad #0" = 20
-	"Muhammad Amin #0" = 20
-	"Muhammad Mumin #0" = 20
-	"Naqsh-i-Jahan #0" = 20
-	"Negübei #0" = 20
-	"Orqina #0" = -1
-	"Qara Hulagu #0" = 10
-	"Qazaghan #0" = 20
-	"Qazan #0" = 20
-	"Quraysh #0" = 10
-	"Ruqia #0" = -1
-	"Sa'id #0" = 20
-	"Sakina #0" = -1
-	"Satuq #0" = 20
-	"Shams-i-Jahan #1" = 20
-	"Sher Muhammad #0" = 20
-	"Soyurghatmish #0" = 20
-	"Taliqu #0" = 20
-	"Tarmashirin #0" = 20
-	"Temür #0" = 20
-	"Tughlugh Temür #1" = 20
-	"Turakina #0" = -1
-	"Uwais #0" = 20
-	"Yasa'ur #0" = 20
-	"Yesu Mongke #0" = 10
-	"Yesun Temür #0" = 20
-	"Yunus #0" = 20
+	"Temujin #1" = 10
+	"Temülen #0" = -20
+	"Adai #0" = 20
+	"Agbarjin #0" = 20
+	"Altan #0" = 20
+	"Arigaba #1" = 10
+	"Ariq #0" = 0
+	"Arugtai #0" = 10
+	"Ayurparibhadra #1" = 10
+	"Bahamu #0" = 20
+	"Bars #0" = 20
+	"Batu #0" = 0
+	"Bek #0" = 20
+	"Biligtü #1" = 10
+	"Bodi #0" = 20
+	"Buyan #0" = 20
+	"Börte #0" = -1
+	"Darayisung #0" = 20
+	"Dayan #0" = 20
+	"Delbeg #0" = 20
+	"Ejei #1" = 10
+	"Elbeg #1" = 10
+	"Eljigidei #0" = 0
+	"Engke #1" = 10
+	"Gulichi #0" = 20
+	"Gün #0" = 20
+	"Güyük #1" = 10
+	"Irinchibal #1" = 10
+	"Joichi #0" = 0
+	"Jorightu #1" = 10
+	"Kublai #1" = 10
+	"Köke #0" = 10
+	"Ligdan #0" = 20
+	"Mandukhai #0" = -1
+	"Manduulun #0" = 20
+	"Markörgis #0" = 10
+	"Mulan #0" = 20
+	"Möngke #1" = 10
+	"Oyiradai #0" = 20
+	"Qayshan #1" = 10
+	"Qoshila #1" = 10
+	"Samar #0" = -1
+	"Sayn #0" = 20
+	"Suddhipala #1" = 10
+	"Tayisung #0" = 20
+	"Temür #1" = 10
+	"Toghun #1" = 10
+	"Tolui #1" = 10
+	"Toq #1" = 10
+	"Tümen #0" = 10
+	"Uskhal #1" = 10
+	"Yesün #1" = 10
+	"Zaufishan #0" = -1
+	"Ögödei #1" = 10
+	"Öljei #0" = 20
+	"Örüg #0" = 15
 }
 leader_names = {
-	"Altan Unegen"
-	"Altanqai"
-	"Arigh Erdene"
-	"Bayan Vachir"
-	"Bayardai"
-	"Boke Qorchi"
-	"Boketei"
-	"Delger Dash"
-	"Qadancher"
-	"Suren Chinua"
-	"Tegusteni"
-	"Tolui-gene"
-	"Yekedai"
+	"Abaga"
+	"Abaganar"
+	"Ast"
+	"Borjigin"
+	"Chagaan"
+	"Chakhar"
+	"Darqan"
+	"Hohhot"
+	"Jurim"
+	"Karakorum"
+	"Khalkha"
+	"Kharachin"
+	"Khorchin"
+	"Noyan"
+	"Onriut"
+	"Ordos"
+	"Tümed"
+	"Ulanqab"
+	"Uriankhai"
+	"Wang"
+	"Xilingol"
+	"Yingchang"
+	"Yungshiyebu"
 }
 ship_names = {
 	"Alghu Khan"

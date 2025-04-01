@@ -123,7 +123,7 @@ canal_system = {
 	
 	build_trigger = {
 		FROM = {
-			adm_tech = 7
+			adm_tech = 10
 		}
 	}
 	
@@ -133,6 +133,8 @@ canal_system = {
 			type = production
 			value = 1
 		}
+		province_event = { id = capital_autonomy.2 }
+		custom_tooltip = reduces_governing_distance_tt
 	}
 	on_destroyed = {
 		remove_development_from_building = {
@@ -145,6 +147,7 @@ canal_system = {
 	modifier = {
 		trade_value_modifier = 0.1
 		local_development_cost = -0.05
+		allowed_num_of_buildings = 1
 	}
 	
 	#xorme_ai 
@@ -197,6 +200,8 @@ road_network = {
 			type = production
 			value = 1
 		}
+		province_event = { id = capital_autonomy.2 }
+		custom_tooltip = reduces_governing_distance_tt
 	}
 	on_destroyed = {
 		remove_development_from_building = {
@@ -1299,10 +1304,10 @@ dock = {
 }
 
 regimental_camp = {
-	cost = 200
+	cost = 100
 	time = 12
 	modifier = {
-		land_forcelimit = 1
+		land_forcelimit = 0.25
 	}
 
 #	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -2435,7 +2440,7 @@ drydock = {
 }
 
 conscription_center = {
-	cost = 400
+	cost = 200
 	time = 12
 
 
@@ -2465,7 +2470,7 @@ conscription_center = {
 #	}
 
 	modifier = {
-		land_forcelimit = 2
+		land_forcelimit = 0.5
 	}
 	on_built = {
 		add_development_from_upgrading_or_building = {
