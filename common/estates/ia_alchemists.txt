@@ -6,11 +6,9 @@ estate_alchemists = {
 		#always = no
 		OR = { 
 			religion = hellenic_pagan_reformed
-			AND = {
-				religion = mahayana
-				culture_group = east_asian
-			}
-			religion = confucianism
+			culture_group = east_asian
+			religion = taoism
+			has_harmonized_with = taoism
 		}
 	}
 

@@ -15816,7 +15816,7 @@ OIR_ideas = {
 KHA_ideas = {
 	start = {
 		global_manpower_modifier = 0.25
-		years_of_nationalism = 10
+		cavalry_cost = -0.15
 	}
 	
 	bonus = {
@@ -15835,8 +15835,7 @@ KHA_ideas = {
 		cavalry_power = 0.25
 	}
 	ikh_mongol_uls = {
-		core_creation = -0.25
-		ae_impact = 0.15
+		core_creation = -0.20
 	}
 	life_of_steppe_warrior = {
 		#land_attrition = -0.20 (effect taken in OIR_ideas)
@@ -15850,12 +15849,12 @@ KHA_ideas = {
 	}
 	mongolian_mobility = {
 		leader_land_manuever = 1
-		max_general_maneuver = 2
+		max_general_maneuver = 1
 		movement_speed = 0.1
 	}
 	MNG_kheshig = {
 		leader_land_shock = 1
-		max_general_shock = 2
+		max_general_shock = 1
 	}
 }
 

@@ -2738,32 +2738,6 @@ create_pronoia = {
 	}
 	on_accept = {
 		from = { grant_independence = { keep_liberty_desire = yes } }
-		hidden_effect = {
-			# country_event = { id = MEE_Byzantine_Events.56 }
-			FROM = {
-				set_saved_name = {
-					key = byzantine_general
-					type = advisor
-					scope = ROOT
-				}
-				define_ruler = {
-					name = byzantine_general
-					change_mil = 4
-					change_adm = 1
-					change_dip = 0
-					min_age = 30
-					male = yes
-					religion = ROOT
-					culture = ROOT
-				}
-				if = {
-					limit = {
-						has_heir = yes
-					}
-					kill_heir = { allow_new_heir = no }
-				}
-			}
-		}
 		if = {
 			limit = {
 				has_country_flag = BYZ_hereditary_pronoiars
@@ -2895,23 +2869,19 @@ make_pronoia_inheritable = {
 	ai_will_do = {
 		if = {
 			limit = {
-				NOT = {
-					OR = {
-						mission_completed = BYZ_decentralized_pronoia
-						mission_completed = BYZ_centralized_pronoia
+				FROM = {
+					calc_true_if = {
+						all_core_province = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						amount = 4
 					}
 				}
 			}
 			always = no
 		}
-		else_if = {
-			limit = {
-				FROM = { development_of_overlord_fraction = 0.25 }
-			}
-			always = yes
-		}
 		else = {
-			always = no 
+			always = yes 
 		}
 	}
 }

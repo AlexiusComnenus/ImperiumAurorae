@@ -3,6 +3,7 @@ add_government_reform = steppe_horde
 government_rank = 1
 technology_group = nomad_group
 religion = confucianism
+add_harmonized_religion = mahayana
 primary_culture = manchu_new
 capital = 2108
 1399.1.1= {

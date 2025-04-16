@@ -46,7 +46,8 @@ lot_new_admin = {
 }
 
 lot_everlasting_prestige = {
-	land_morale = 0.15
+	improve_relation_modifier = 0.5
+	years_of_nationalism = -5
 	prestige_decay = -0.01
 }
 

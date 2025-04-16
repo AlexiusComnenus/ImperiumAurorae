@@ -1,5 +1,5 @@
-owner = KRC
-controller = KRC
+owner = GJN
+controller = GJN
 capital = "Chengde"
 is_city = yes
 culture = chahar
@@ -9,5 +9,6 @@ base_tax = 3
 base_production = 3
 base_manpower = 1
 add_core = KRC
+add_core = GJN
 discovered_by = chinese
 discovered_by = nomad_group

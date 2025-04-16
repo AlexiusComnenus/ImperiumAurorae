@@ -1,8 +1,10 @@
 government = monarchy
-add_government_reform = chinese_warlord
+add_government_reform = plutocratic_reform
 government_rank = 1
 technology_group = chinese
 religion = confucianism
 primary_culture = chimin
 capital = 738
 add_accepted_culture = polynesian
+add_harmonized_religion = animism
+add_harmonized_religion = taoism

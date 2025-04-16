@@ -910,7 +910,7 @@ NCountry = {
 	LIBERTY_DESIRE_ANNEXATION = 0,					-- Liberty desire from being annexed
 	LIBERTY_DESIRE_DIPLOMATIC_REPUTATION = -2,		-- Liberty desire from diplomatic reputation
 
-	LIBERTY_DESIRE_GREAT_POWER_VASSAL = 10,			-- Liberty desire from vassal having more than 300 development
+	LIBERTY_DESIRE_GREAT_POWER_VASSAL = 1,			-- Liberty desire from vassal having more than 300 development
 	LIBERTY_DESIRE_HORDE = 10,						-- Liberty desire from vassal being a horde
 	LIBERTY_DESIRE_ROYAL_MARRIAGE = -5,				-- Liberty desire from having RM with overlord
 	LIBERTY_DESIRE_SCUTAGE_OFF = 25,				-- Liberty desire from turning off scutage

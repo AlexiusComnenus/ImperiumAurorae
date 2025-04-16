@@ -111,3 +111,13 @@ dawnsbane_leader = {
 	shock_damage_received = -0.15
 	infantry_power = 0.10
 }
+
+horde_breaker_leader = {
+	allow = {
+		is_admiral = no
+		any_war_enemy_country = { has_reform = steppe_horde }
+	}
+	
+	morale_damage_received = -0.10
+	shock_damage_received = -0.10
+}

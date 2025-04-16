@@ -695,6 +695,7 @@ cannon_foundry = {
 					trade_goods = tin
 					has_province_flag = has_latent_good
 				}
+				NOT = { has_latent_trade_goods = coal }
 			}
 		}
 		NOT = { has_global_flag = No_Cannon }
@@ -830,6 +831,7 @@ metalworking_workshop = {
 				trade_goods = iron
 				has_province_flag = has_latent_good
 			}
+			NOT = { has_latent_trade_goods = coal }
 		}
 		FROM = {
 			mil_tech = 16
@@ -959,6 +961,7 @@ munition_factory = {
 				trade_goods = lead
 				has_province_flag = has_latent_good
 			}
+			NOT = { has_latent_trade_goods = coal }
 		}
 		FROM = {
 			mil_tech = 15
@@ -1088,6 +1091,7 @@ wood_workshop = {
 			trade_goods = lumber
 			development = 10
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		FROM = {
@@ -1149,6 +1153,7 @@ leather_workshop = {
 			trade_goods = livestock
 			development = 10
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		FROM = {
@@ -1214,6 +1219,7 @@ fur_workshop = {
 			trade_goods = fur
 			development = 10
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		FROM = {
@@ -1271,6 +1277,7 @@ Instruments_workshop = {
 		ROOT = {
 			development = 25
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		FROM = {
@@ -1349,6 +1356,7 @@ sculpture_workshop = {
 			}
 			development = 15
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		
@@ -1360,6 +1368,7 @@ sculpture_workshop = {
 			}
 			
 		}
+		
 	}
 	
 	
@@ -1423,6 +1432,7 @@ jewellery_workshop = {
 			}
 			development = 20
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 		
 		FROM = {
@@ -1472,7 +1482,17 @@ jewellery_workshop = {
 			}
 			
 		}
-
+		modifier = {	
+			factor = 0
+			ROOT = {
+				OR = {
+					province_id = 333
+					province_id = 57
+					province_id = 330
+					province_id = 249
+				}
+			}
+		}
 	}
 }
 
@@ -1497,6 +1517,7 @@ uniforms_workshop = {
 			}
 			development = 15
 			NOT = { has_province_flag = has_latent_good }
+			NOT = { has_latent_trade_goods = coal }
 		}
 
 		NOT = { has_global_flag = No_Uniforms }
@@ -1600,6 +1621,7 @@ steam_engine_manu = {
 				trade_goods = copper
 				has_province_flag = has_latent_good
 			}
+			NOT = { has_latent_trade_goods = coal }
 			
 		}
 		NOT = { has_global_flag = No_Steam_engine }

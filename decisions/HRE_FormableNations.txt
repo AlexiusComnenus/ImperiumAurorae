@@ -8,7 +8,9 @@ country_decisions = {
 			NOT = { has_country_flag = formed_ngc_flag }
 			NOT = { has_country_flag = formed_sgc_flag }
 			NOT = { exists = NGC }
-			NOT = { exists = GER }
+			#NOT = { exists = GER }
+			NOT = { tag = GER }
+			NOT = { was_tag = GER }
 			NOT = { tag = LOT }
 			NOT = { was_tag = LOT }
 			NOT = { has_reform = saxon_feudalism }
@@ -75,7 +77,9 @@ country_decisions = {
 			NOT = { has_country_flag = formed_ngc_flag }
 			NOT = { has_country_flag = formed_sgc_flag }
 			NOT = { exists = SGC }
-			NOT = { exists = GER }
+			#NOT = { exists = GER }
+			NOT = { tag = GER }
+			NOT = { was_tag = GER }
 			NOT = { tag = LOT }
 			NOT = { was_tag = LOT }
 			NOT = { has_reform = saxon_feudalism }

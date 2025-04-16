@@ -1093,3 +1093,118 @@ country_event = {
 		}
 	}
 }
+
+country_event = {  #  Gold Mining
+	id = dotfset.30
+	title = dotfset.30.t
+	desc = dotfset.30.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = dotfset.30.a
+		every_owned_province = {
+			limit = {
+				is_core = ROOT
+				controlled_by = owner
+				has_owner_religion = yes
+				NOT = { base_production	= 11 }
+				OR = {
+					trade_goods = silver
+					trade_goods = gold
+				}
+			}
+			random = {
+				chance = 50
+				add_base_production = 1
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_core = ROOT
+				controlled_by = owner
+				has_owner_religion = yes
+				NOT = { base_production	= 25 }
+				OR = {
+					trade_goods = silver
+					trade_goods = gold
+				}
+				OR = {
+					province_id = 333
+					province_id = 57
+					province_id = 330
+					province_id = 249
+				}
+			}
+			random = {
+				chance = 50
+				add_base_production = 1
+			}
+		}
+	}
+}
+
+country_event = {  # Removing Explo Ideas
+	id = dotfset.31
+	title = dotfset.31.t
+	desc = dotfset.31.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		ai = yes
+		is_year = 1600
+		has_idea_group = exploration_ideas
+		NOT = {
+			calc_true_if = {
+				all_province = {
+					has_port = yes
+					is_empty = yes
+				}
+				amount = 25
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = dotfset.31.a
+		remove_idea_group = exploration_ideas
+		if = {
+			limit = {
+				OR = {
+					tag = ENG
+					tag = GBR
+					tag = NED
+					tag = Z21
+					tag = AVE
+					tag = HSC
+					tag = IRE
+					tag = MTH
+					tag = TEM
+					tag = KCL
+					tag = KOS
+					tag = SCA
+					tag = JAP
+				}
+			}
+			add_idea_group = maritime_ideas
+		}
+	}
+}

@@ -211,29 +211,6 @@ country_development = {
 	war_exhaustion = -0.3
 }
 
-expanded_infrastructure = {
-    allowed_num_of_buildings = 1
-    allowed_num_of_manufactories = 1
-    regiment_recruit_speed = -0.15
-    ship_recruit_speed = -0.15
-    local_defensiveness = 0.10
-    garrison_growth = 0.10
-    #local_development_cost = -0.15
-    local_production_efficiency = 0.20
-    local_tax_modifier = 0.40
-    local_manpower_modifier = 0.20
-    local_sailors_modifier = 0.20
-    local_ship_repair = 0.05
-    local_autonomy = -0.005
-    local_build_cost = -0.05
-    local_build_time = -0.05
-    province_trade_power_modifier = 0.20
-    trade_goods_size_modifier = 0.20
-    local_governing_cost_increase = 15
-    local_governing_cost = 0.1
-    local_great_project_upgrade_cost = -0.05
-}
-
 absolutism = {
 	administrative_efficiency = 0.40
 	governing_capacity_modifier = 0.20
@@ -309,52 +286,6 @@ difficulty_very_hard_ai = {
 }
 
 luck = {
-	#core
-	global_missionary_strength = 0.01
-	stability_cost_modifier = -0.10
-	global_institution_spread = 0.1
-	monthly_splendor = 1
-	culture_conversion_cost = -0.5
-	culture_conversion_cost = -0.5
-	development_cost = -0.10
-	development_cost_modifier = -0.10
-
-	#economy
-	mercenary_cost = -0.4
-	embracement_cost = -0.2
-	interest = -1
-	missionary_maintenance_cost = -0.1
-
-	#military
-	manpower_recovery_speed = 0.25
-	defensiveness = 0.1
-	siege_ability = 0.05
-	land_forcelimit = 5
-	land_forcelimit_modifier = 0.10
-	land_maintenance_modifier = -0.25
-	reinforce_cost_modifier = -0.50
-	global_regiment_cost = -0.25
-	fort_maintenance_modifier = -0.75
-
-	#diplomacy
-	spy_offence = 0.1
-	improve_relation_modifier = 0.25
-
-	#government
-	global_unrest = -1
-	republican_tradition = 0.5
-	legitimacy = 1
-	ae_impact = -0.25
-	governing_capacity_modifier = 0.25
-	monarch_admin_power = 1	
-	monarch_admin_power = 1
-	monarch_military_power = 1
-	monarch_lifespan = 0.5
-	country_admin_power = 1
-	country_military_power = 1
-	country_diplomatic_power = 1
-	possible_policy = 3
-	free_policy = 6
 }
 
 man_of_war_ship = {
@@ -437,7 +368,7 @@ corruption = {
 	all_power_cost = 1.0
 	min_autonomy = 100
 	global_unrest = +20
-	imperial_mandate = -1
+	imperial_mandate = -5
 	brahmins_hindu_loyalty_modifier = 0.1
 	brahmins_muslim_loyalty_modifier = 0.1
 	brahmins_other_loyalty_modifier = 0.1
@@ -526,6 +457,24 @@ karma_too_low = {
 	tolerance_own = -2
 }
 
+high_harmony = {
+	tolerance_own = 3
+	development_cost = -0.1
+	meritocracy = 1
+	legitimacy = 0.5
+	devotion = 1
+	harmonization_speed = 0.5
+	yearly_corruption = -0.2
+}
+
+low_harmony = {
+	yearly_corruption = 0.5
+	stability_cost_modifier = 0.2
+	legitimacy = -1
+	devotion = -2
+	meritocracy = -2
+}
+
 religious_unity = {
 	monthly_fervor_increase = 1
 	max_absolutism = 5
@@ -593,12 +542,48 @@ negative_mandate = { # By default, starts at 50 mandate, 100% strength at 0 mand
 	meritocracy = -2
 	reduced_liberty_desire = -30
 	global_trade_goods_size_modifier = -0.25
+	global_tax_modifier = -0.5
 	fire_damage_received = 0.25
 	shock_damage_received = 0.25
 	morale_damage_received = 0.25
 	global_unrest = 10
 	mercenary_manpower = -0.25
 	global_manpower_modifier = -0.25
+	mercenary_cost = 1
+	merc_maintenance_modifier = 1
 	overextension_impact_modifier = 1
 	monthly_ia_complacency = -0.5
+	administrative_efficiency = -0.2
+}
+
+expanded_infrastructure = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    local_governing_cost_increase = 5
+    local_great_project_upgrade_cost = -0.05
+}
+
+centralize_state = {
+	local_prosperity_growth = 0.5
+	local_state_maintenance_modifier = -0.1
+	picture = "centralize_state"
+}
+
+#Scales with used capacity, being at full capacity means 100% of the modifier
+under_governing_capacity_modifier = {
+}
+#Scales with unused capacity, being at full capacity means 0% of the modifier
+reverse_under_governing_capacity_modifier = {
+	reform_progress_growth = 0.5
 }

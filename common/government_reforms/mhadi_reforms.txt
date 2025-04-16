@@ -1,0 +1,35 @@
+diadochos_reform = {
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	icon = "rioting_burning_2"
+	maintain_dynasty = yes
+	potential = {
+		OR = {
+			has_reform = diadochos_reform
+			have_had_reform = diadochos_reform
+		}
+	}
+	trigger = {
+		tag = YOR
+	}
+	modifiers = {
+		monarch_military_power = 2
+		prestige_from_land = 1
+		army_tradition_from_battle = 0.50
+		legitimacy = -1.5
+		no_stability_loss_on_monarch_death = yes
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		force_general_leader = yes
+	}
+	effect = {
+		hidden_effect = {
+			convert_ruler_to_general = 80
+		}
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}

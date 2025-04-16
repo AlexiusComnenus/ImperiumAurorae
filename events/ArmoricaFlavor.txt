@@ -37,6 +37,18 @@ country_event = {  # Is it time for independence?
 		add_mil_power = 100
 		
 		set_country_flag = bri_independence_alone
+		
+		hidden_effect = {
+			if = {
+				limit = { HSC = { ai = yes } }
+				HSC = {
+					declare_war_with_cb = {
+						who = SCO
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
 	}
 	
 	option = {	# Get Help from Gwynedd!
@@ -79,6 +91,18 @@ country_event = {  # Is it time for independence?
 		}
 		
 		set_country_flag = bri_independence_arthurian
+		
+		hidden_effect = {
+			if = {
+				limit = { HSC = { ai = yes } }
+				HSC = {
+					declare_war_with_cb = {
+						who = SCO
+						casus_belli = cb_annex
+					}
+				}
+			}
+		}
 	}
 	
 	option = {	# Get Help from Gaeldom!

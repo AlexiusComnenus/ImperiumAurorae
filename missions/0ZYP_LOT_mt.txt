@@ -822,7 +822,7 @@ zyp_lot_2_t = { #colonialist
 		effect = {
 			add_country_modifier = {
 				name = lot_new_admin
-				duration = -1
+				duration = 18250
 			}
 		}
 	}
@@ -975,7 +975,10 @@ zyp_lot_5_aachen = {
 		required_missions = { zyp_lot_splendor_capital_aachen }
 		
 		provinces_to_highlight = {
-			trade_goods = wine
+			OR = {
+				trade_goods = wine
+				trade_goods = champagne
+			}
 			OR = {
 				NOT = { owned_by = ROOT }
 				base_production = 8
@@ -986,7 +989,10 @@ zyp_lot_5_aachen = {
 			calc_true_if = {
 				amount = 5
 				all_owned_province = {
-					trade_goods = wine
+					OR = { 
+						trade_goods = wine
+						trade_goods = champagne
+					}
 					base_production = 8
 				}
 			}

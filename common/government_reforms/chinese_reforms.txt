@@ -23,6 +23,7 @@ celestial_empire = {
 	}
 	legacy_equivalent = celestial_empire_legacy
 	maintain_dynasty = yes
+	can_change_primary_culture = no
 	allow_force_tributary = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
@@ -115,6 +116,7 @@ chinese_warlord = {
 	}
 	maintain_dynasty = yes
 	allow_force_tributary = no
+	can_change_primary_culture = no
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 	nation_designer_trigger = {

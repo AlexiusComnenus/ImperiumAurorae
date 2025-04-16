@@ -238,7 +238,7 @@ estate_alchemists_court_alchemist = {
 	influence = 0.05
 	loyalty = 0.05
 	penalties = {
-		administrative_efficiency = -0.05
+		administrative_efficiency = -0.025
 		all_estate_loyalty_equilibrium = -0.05
 	}
 	can_select = { 
@@ -299,7 +299,7 @@ estate_alchemists_elixirs_for_the_troops = {
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }
 		modifier = { 
-			discipline = -0.08
+			discipline = -0.06
 			morale_damage = 0.12
 			reinforce_speed = 0.36
 			recover_army_morale_speed = 0.36
@@ -345,14 +345,14 @@ estate_alchemists_cutting_edge_research = {
 		custom_tooltip = alchemists_research_accidents_tt
 	}
 	penalties = {
-		global_unrest = 2
-		diplomatic_reputation = -2
+		#global_unrest = 2
+		diplomatic_reputation = -1
 	}
 	benefits = {
 	}
 	modifier_by_land_ownership = {
 		global_trade_goods_size_modifier = 0.2
-		governing_cost = 0.2
+		governing_cost = 0.1
 	}
 	ai_will_do = {
 		factor = 0

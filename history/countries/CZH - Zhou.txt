@@ -3,6 +3,7 @@ add_government_reform = celestial_empire
 government_rank = 3
 technology_group = chinese
 religion = confucianism
+add_harmonized_religion = taoism
 primary_culture = chihan
 capital = 1821
 add_harmonized_religion = mahayana

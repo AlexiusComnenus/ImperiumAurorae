@@ -1,7 +1,11 @@
 ﻿l_english:
  kremlin: "Smolensk Kremlin"
  ab_portugal_colonial_growth: "Quest for the New World"
+ CENTRALIZE_STATE_DESC:6 "§YCentralize State§!\nSpend $COST|Y$ of government progress and $POWER_COST|Y$£adm£ to centralize the $STATE|Y$ in the most developed province, giving the following bonuses to the state:\nState Maintenance: §G-10.0%§!\nLocal Prosperity Growth: §G+0.5§!\nLocal Development Cost: §G-15%§!\nLocal Autonomy Growth: §G-0.025§!\nLocal Minimum Autonomy: §G-4%§!\nLocal Production Efficiency: §G+20%§!\nLocal Manpower and Sailors Modifier: §G+20%§!\nLocal Goods Produced and Trade Power: §G+20%§!\nLocal Tax Modifier: §G+40%§!\n\nIt will take $YEARS|0Y$ years."
+ CONFIRM_CENTRALIZE_STATE_TEXT:5 "Are you sure you want to spend $COST|0Y$ of government progress and $POWER_COST|Y$£adm£ to centralize the $STATE|Y$ in the province of $PROVINCE|Y$?\nThe $STATE|Y$ will gain the following bonuses:\nState Maintenance: §G-10.0%§!\nLocal Prosperity Growth: §G+0.5§!\nLocal Development Cost: §G-15%§!\nLocal Autonomy Growth: §G-0.025§!\nLocal Minimum Autonomy: §G-4%§!\nLocal Production Efficiency: §G+20%§!\nLocal Manpower and Sailors Modifier: §G+20%§!\nLocal Goods Produced and Trade Power: §G+20%§!\nLocal Tax Modifier: §G+40%§!\n\nIt will take $YEARS|0Y$ years."
  normandy_area: "Neustria"
+ FRM: "Taiwan"
+ FRM_ADJ: "Taiwanese"
  PIC: "Picardie"
  FRW: "Regnum Francorum"
  FRW_ADJ: "Frankish"

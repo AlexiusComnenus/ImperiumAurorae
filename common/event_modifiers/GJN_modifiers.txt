@@ -1,0 +1,15 @@
+gjn_collapse_of_authority = {
+	stability_cost_modifier = 0.5
+	global_autonomy = 0.15
+	promote_culture_cost = 2.5
+}
+
+harmonized_confucianism = {
+	adm_tech_cost_modifier = -0.1
+	religion = yes
+}
+
+harmonized_taoism = {
+	production_efficiency = 0.1
+	religion = yes
+}

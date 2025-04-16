@@ -11,6 +11,17 @@
  ai_reduce_corruption_decision_mil_title: "Military Corruption Suppression"
  ai_reduce_corruption_decision_mil_desc: "We will use §YMilitary Crackdown§! to reduce §Rcorruption.§!"
  
+ centralized_state_modifier_ia_1: "Centralized State 1st"
+ centralized_state_modifier_ia_2: "Centralized State 2nd"
+ centralized_state_modifier_ia_3: "Centralized State 3rd"
+ centralized_state_modifier_ia_4: "Centralized State 4th"
+ centralized_state_modifier_ia_5: "Centralized State 5th"
+ centralized_state_modifier_ia_6: "Centralized State 6th"
+ centralized_state_modifier_ia_7: "Centralized State 7th"
+ centralized_state_modifier_ia_8: "Centralized State 8th"
+ centralized_state_modifier_ia_9: "Centralized State 9th"
+ centralized_state_modifier_ia_10: "Centralized State 10th"
+ 
  change_hellenic_deity_title:0 "Change patron?"
  change_hellenic_deity_desc:0 "Change our patron deity"
  change_deity.1.title:0 "Change patron?"

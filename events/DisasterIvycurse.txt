@@ -864,12 +864,19 @@ country_event = {
 			every_owned_province = {
 				add_base_tax = 1
 				if = {
-					limit = { ai = yes }
+					limit = { owner = { ai = yes } }
 					add_devastation = -100
 				}
 				else = {
 					add_devastation = -50
 				}
+			}
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+					ai = yes
+				}
+				add_mandate = 75
 			}
 		}	
 	}

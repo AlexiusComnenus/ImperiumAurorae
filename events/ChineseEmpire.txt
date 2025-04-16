@@ -333,3 +333,48 @@ country_event = {
 		}
 	}
 }
+
+namespace = great_jin_events
+country_event = {
+	id = great_jin_events.1
+	title = great_jin_events.1.t
+	desc = great_jin_events.1.d
+	picture = east_asian_COURT_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	#major = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		tag = GJN
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = "great_jin_events.1.a"
+		ai_chance = {
+			factor = 1
+		}
+		define_ruler_to_general = {
+			fire = 7
+			shock = 4
+			manuever = 6
+			siege = 2
+			trait = horde_breaker_leader
+		}
+		
+		add_country_modifier = {
+			name = gjn_collapse_of_authority
+			duration = 7300
+		}
+		add_stability = -1
+		set_meritocracy = 40
+		
+		hidden_effect = {
+			
+		}
+	}
+}

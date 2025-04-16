@@ -42,7 +42,7 @@ country_decisions = {
 				Z17 = {
 					has_opinion = {
 						who = PREV
-						value = 140
+						value = 100
 					}
 				}
 			}

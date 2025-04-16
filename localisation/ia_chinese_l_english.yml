@@ -1,4 +1,7 @@
 ﻿l_english:
+ taoism: "Taoism"
+ taoism_religion_desc: "Originally started as the philosophical school of Daoism, Taoism evolved into a pantheistic syncretic religion adopting many of the local deities and spirits of the various regions of China. As opposed to Confucianism, which was institutionalized and integrated into the government functions during the Han Dynasty, Taoism remained unorganized and thus evolved much more from its original form. According to taoism, any living being may through enough dedication and practice (Xiuxing) ascend to a higher plane of existence, culminating in becoming a Xien or a Shen depending on their innate talent and willingness to withstand the heavenly tests (Tienjie)."
+ 
  horse_artillery_unit: "Horse Artillery"
  horse_artillery_unitDESCR: "Artillery pulled by a horse"
  not_subject_of_enemy_tt: "We cannot call the subject of our enemy to war against them!"
@@ -35,6 +38,8 @@
  reduces_governing_distance_tt: "Reduces the §YGoverning Distance§! of the province!"
 
  #Mechanics Tooltips
+ horde_breaker_leader: "Horde-Breaker"
+ horde_breaker_leader_die_desc: "Their staunch resistance against nomadic incursions saved many a village from being pillaged."
  complacency_loss_more_powerful_chinese_country: "Stronger Chinese Warlord Exists"
  ia_complacency_mechanic: "Imperial Arrogance"
  ia_complacency: "Complacency"
@@ -133,13 +138,17 @@ enact_weisuo_draft_decision_tooltip: "Immediately draft all able-bodied recruits
  mingjiao_reform_desc: "Long driven underground by persecution under both Song and Jin rule, the Mingjiao are originally the Chinese branch of Manichaeism. They became involved in the martial world and slowly became viewed as the most prominent of all the 'non-righteous' martial sects, due to their customs and secrecy being viewed as alien and suspicious by most other pugilists. After the acension of Zhang Wuji to the position of Jiaozhu, however, their reputation has greatly improved and they now lead the martial world."
  
  #Modifiers
- 
+ gjn_collapse_of_authority: "Collapse of Authority"
+ gjn_collapse_of_authority_desc: "The Jin Dynasty's claim on the Mandate is extraordinarily tenous. With warlords in open uprising across China and the Han people eager to overthrow their Jurchen overlords, the Celestial Emperor's authority barely extends out of the capital."
  
  #Missions
  chi_independence_ia_title: "Fall of the Great Jin"
  chi_independence_ia_desc: "The rule of the Great Jin over China is coming to an abrupt and bloody end! Weakened by the long struggle against the Mongols combined with dynastic infighting and corrupt bureaucracy, their control has already been reduced to a corner around their capital. It is a new era: OUR era!"
  
  # events
+ great_jin_events.1.t: "Jin Dynasty in Crisis"
+ great_jin_events.1.d: "While [Root.Monarch.GetName] successfully turned back the Mongol Hordes at the walls of Zhongdu using the newly developed Zhen Tian Lei, the rule of the Jin Dynasty over China is virtually nonexistent. With [Root.Monarch.GetName] having taken power in a palace coup, his legitimacy was questionable and numerous Han local leaders throughout China have claimed that it is time to overthrow the barbarian tyrants. Riling up the local peasants and Han garrisons, many self-proclaimed emperors claiming the name of past dynasties have risen in open opposition to our rule. Those commanders who have remained nominally loyal to us ignore orders from the capital at their discretion and plot their own moves. Even in our capital area, the majority-Han people stir in unrest..."
+ great_jin_events.1.a: "Will [Root.Monarch.GetName] be able to stem the tide?"
  celestial_empire_events.4.t: "Mandate of Heaven Lost!"
  celestial_empire_events.4.d: "After many years of corruption and mismanagement, our subjects have lost faith in us and our right to claim to be the Son of Heaven. Instead, @[new_chinese_emperor.GetTag] [new_chinese_emperor.GetName] are now being lauded as the rightful rulers of China."
  celestial_empire_events.4.a: "How dare they!"

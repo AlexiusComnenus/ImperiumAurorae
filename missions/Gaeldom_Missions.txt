@@ -1086,13 +1086,17 @@ ia_hsc_mission_4 = {
 				LOI = { grant_independence = yes }
 			}
 			
-			LOI = {
-				declare_war_with_cb = {
-					who = NOR
-					casus_belli = cb_independence_war
+			if = {
+				limit = { NOR = { ai = yes } }
+				NOR = {
+					declare_war_with_cb = {
+						who = LOI
+						casus_belli = cb_core
+						war_goal_province = 253
+					}
 				}
 			}
-			join_all_offensive_wars_of = LOI
+			#join_all_offensive_wars_of = LOI
 			create_march = LOI
 		}
 	}

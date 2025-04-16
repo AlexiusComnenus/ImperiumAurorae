@@ -1471,7 +1471,7 @@ maritime_ideas = {
 	}
 
 	ai_will_do = {
-		factor = 0.55
+		factor = 1
 		modifier = {
 			factor = 0
 			is_tribal = yes
@@ -1509,7 +1509,7 @@ maritime_ideas = {
 			NOT = { num_of_ports = 15 }
 		}
 		modifier = {
-			factor = 1.5 
+			factor = 5 
 			capital_scope = {
 				is_island = yes 
 			}
@@ -1528,6 +1528,21 @@ maritime_ideas = {
 		modifier = {
 			factor = 60
 			has_government_attribute = is_pirate_republic_reform
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				tag = ENG
+				tag = GBR
+				tag = NED
+				tag = Z21
+				tag = AVE
+				tag = HSC
+				tag = IRE
+				tag = MTH
+			}
+			is_year = 1590
+			NOT = { has_idea_group = exploration_ideas }
 		}
 	}
 }

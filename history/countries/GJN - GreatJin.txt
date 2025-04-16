@@ -3,8 +3,9 @@ add_government_reform = celestial_empire
 government_rank = 3
 technology_group = chinese
 religion = confucianism
+add_harmonized_religion = taoism
 primary_culture = manchu
-capital = 726
+capital = 1816
 add_harmonized_religion = mahayana
 1444.11.11= {
 	monarch = {
@@ -18,4 +19,6 @@ add_harmonized_religion = mahayana
 		culture = manchu
 	}
 	set_mandate = 10
+	add_ruler_personality = ballistics_expert_personality
+	add_ruler_personality = bold_fighter_personality
 }

@@ -8,11 +8,22 @@ edict_centralization_effort = {
 	}
 	
 	modifier = {
-		local_autonomy = -0.03
+		local_autonomy = -0.05
+		min_local_autonomy = -5
 	}
 	
 	color = {  220 178 155 }
 	
+	
+	notify_trigger = {
+		FROM = {
+			all_province_in_state = {
+				NOT = {
+					local_autonomy_above_min = 1
+				}
+			}
+		}
+	}
 	
 	ai_will_do = {
 		factor = 10

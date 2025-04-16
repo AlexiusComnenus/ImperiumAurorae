@@ -307,3 +307,144 @@ tre_chaldian_deposits_modifier = {
 	trade_goods_size_modifier = 0.25
 	local_development_cost_modifier = -0.25
 }
+
+alchemists_made_kaboom = {
+	global_unrest = 2
+	alchemists_influence_modifier = -0.10
+}
+
+alchemists_made_drugs = {
+	diplomatic_reputation = -1
+	manpower_recovery_speed = -0.25
+	improve_relation_modifier = -0.25
+}
+
+centralized_state_modifier_ia_1 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_2 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_3 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_4 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_5 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_6 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_7 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_8 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_9 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}
+
+centralized_state_modifier_ia_10 = {
+	local_development_cost = -0.15
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.20
+}

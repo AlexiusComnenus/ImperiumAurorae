@@ -1,3 +1,6 @@
+owner = FRM
+controller = FRM
+add_core = FRM
 capital = "Kelang"
 culture = polynesian
 religion = animism

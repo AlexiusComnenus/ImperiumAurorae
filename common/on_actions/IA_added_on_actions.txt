@@ -12,6 +12,7 @@ on_startup = {
 		ia_flavor_eng.2
 		ia_flavor_bog.1
 		capital_autonomy.1
+		great_jin_events.1
 	}
 	initialize_schools_effect = yes
 }
@@ -48,6 +49,16 @@ on_heir_death = {
 	}
 }
 
+on_five_year_pulse_2 = {
+	random_events = {
+		# Alchemists
+		50 = alchemistevents.1
+		100 = alchemistevents.2
+		100 = alchemistevents.3
+		50 = alchemistevents.4
+	}
+}
+
 on_yearly_pulse_2 = {
 	events = {
 		saxon_province.1
@@ -68,6 +79,8 @@ on_yearly_pulse_2 = {
 		antioch.31
 		antioch.30
 		dotfset.29
+		dotfset.30
+		dotfset.31
 	}
 	random_events = {
 		250 = ia_flavor_sax.22
@@ -95,6 +108,91 @@ on_monthly_pulse = {
 on_province_owner_change = {
 	events = {
 		capital_autonomy.2
+	}
+}
+
+on_centralized_state = {
+	every_province_in_state = {
+		if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_1 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_1
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_2 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_2
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_3 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_3
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_4 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_4
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_5 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_5
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_6 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_6
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_7 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_7
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_8 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_8
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_9 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_9
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = { NOT = { has_province_modifier = centralized_state_modifier_ia_10 } }
+			add_province_modifier = {
+				name = centralized_state_modifier_ia_10
+				duration = -1
+				hidden = yes
+			}
+		}
 	}
 }
 

@@ -1,0 +1,306 @@
+##############################
+# Alchemist Flavor Events
+#                            
+# Written by Alexios
+##############################
+
+namespace = alchemistevents
+
+
+# Kaboomie
+country_event = { 
+	id = alchemistevents.1
+	title = alchemistevents.1.title
+	desc = alchemistevents.1.desc
+	picture = VILLAGE_BURNING_eventPicture
+	
+	trigger = {
+		has_estate = estate_alchemists
+		num_of_cities = 15
+		any_owned_province = {
+			is_overseas = no
+			is_colony = no
+			is_territory = no
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_colony = no
+					is_territory = no
+				}
+				save_event_target_as = alchemists_kaboom_province
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_alchemists
+				influence = 50
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 10.0
+			has_estate_privilege = estate_alchemists_cutting_edge_research
+		}
+	}
+	
+	option = {	# Do Nothing
+		name = alchemistevents.1.a
+		event_target:alchemists_kaboom_province = {
+			add_devastation = 30
+		}
+		add_country_modifier = {
+			name = alchemists_made_kaboom
+			duration = 1825
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {	# Pay to fix damages
+		name = alchemistevents.1.b
+		event_target:alchemists_kaboom_province = {
+			add_devastation = 15
+		}
+		if = {
+			limit = { ai = no }
+			add_years_of_income = -0.3
+		}
+		add_estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {	# Force the Alchemists to fix it
+		name = alchemistevents.1.c
+		event_target:alchemists_kaboom_province = {
+			add_devastation = 15
+		}
+		add_estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = -20
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#Advancement of the Alchemists
+country_event = {
+	id = alchemistevents.2
+	title = alchemistevents.2.t
+	desc = alchemistevents.2.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_alchemists
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_ADVANCES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_ADVANCES_20
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+
+	option = {
+		name = alchemistevents.2.a #Ok
+		add_estate_influence_modifier = {
+			estate = estate_alchemists
+			desc = EST_VAL_ALCHEMISTS_ADVANCES
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+#Decline of the Alchemists
+country_event = {
+	id = alchemistevents.3
+	title = alchemistevents.3.t
+	desc = alchemistevents.3.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_nobles
+		estate_influence = {
+			estate = estate_nobles
+			influence = 15
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_ADVANCES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_alchemists
+				modifier = EST_VAL_ALCHEMISTS_ADVANCES_20
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = alchemistevents.3.a #Ok
+		add_estate_influence_modifier = {
+			estate = estate_alchemists
+			desc = EST_VAL_ALCHEMISTS_DECLINES
+			influence = -10
+			duration = 5475
+		}
+	}
+}
+
+country_event = { 
+	id = alchemistevents.4
+	title = alchemistevents.4.title
+	desc = alchemistevents.4.desc
+	picture = VILLAGE_BURNING_eventPicture
+	
+	trigger = {
+		has_estate = estate_alchemists
+		num_of_cities = 15
+		any_owned_province = {
+			is_overseas = no
+			is_colony = no
+			is_territory = no
+		}
+		has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_colony = no
+					is_territory = no
+				}
+				save_event_target_as = alchemists_drugged_province
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_alchemists
+				influence = 50
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 10.0
+			has_estate_privilege = estate_alchemists_cutting_edge_research
+		}
+	}
+	
+	option = {	# Do Nothing
+		name = alchemistevents.4.a
+		event_target:alchemists_drugged_province = {
+			add_devastation = 30
+		}
+		add_country_modifier = {
+			name = alchemists_made_drugs
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {	# Cover it up
+		name = alchemistevents.4.b
+		event_target:alchemists_drugged_province = {
+			add_devastation = 15
+		}
+		if = {
+			limit = { ai = no }
+			add_years_of_income = -0.2
+			adm_power_cost = 100
+		}
+		add_estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = 10
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {	# Disavow and promise restrictions on the alchemists
+		name = alchemistevents.4.c
+		event_target:alchemists_drugged_province = {
+			add_devastation = 15
+		}
+		add_estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = -25
+		}
+		add_estate_influence_modifier = {
+			estate = estate_alchemists
+			desc = EST_VAL_ALCHEMISTS_SUPRESSED
+			influence = -15
+			duration = 3650
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
