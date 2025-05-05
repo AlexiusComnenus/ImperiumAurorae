@@ -164,6 +164,9 @@ emperor_harmony_edict = {
 		local_warscore_cost_modifier = 0.25
 		local_core_creation = 0.25
 	}
+	on_effect = {
+		custom_tooltip = breach_of_harmony_explanation_tt
+	}
 	required_reform = emperor_landsknechtswesen
 	gui_container = mainline
 }

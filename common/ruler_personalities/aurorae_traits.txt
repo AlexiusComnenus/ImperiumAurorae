@@ -619,8 +619,8 @@ integrator_personality = {
 		}
 	}
 	
-	core_creation = -0.075
-	diplomatic_annexation_cost = -0.075
+	core_creation = -0.05
+	diplomatic_annexation_cost = -0.1
 	nation_designer_cost = 5
 	
 	wants_avoid_ugly_borders = yes
@@ -906,7 +906,8 @@ fierce_negotiator_personality = {
 	
 	other_ai_peace_term_bonus = 15
 	
-	merc_maintenance_modifier = -0.25
+	merc_maintenance_modifier = -0.1
+	province_warscore_cost = -0.1
 	nation_designer_cost = 2
 } #1 easier event
 
@@ -1308,4 +1309,105 @@ ia_incompetent_personality = {
 	
 	nation_designer_cost = -10
 	
+}
+
+conqueror_personality = {
+	ruler_allow = {
+		allow = {
+			MIL = 3
+			NOT = { ruler_has_personality = legendary_conqueror_personality }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_monarch_leader = yes
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = BYZ_double_conqueror_chance_flag
+			}
+			modifier = {
+				factor = 1
+				MIL = 6
+			}
+		}
+	}
+
+	heir_allow = {
+		allow = {
+			heir_MIL = 3
+			NOT = { heir_has_personality = legendary_conqueror_personality }
+		}
+	
+		chance = {
+			modifier = {
+				factor = 1
+				is_heir_leader = yes
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = BYZ_double_conqueror_chance_flag
+			}
+			modifier = {
+				factor = 1
+				heir_MIL = 6
+			}
+		}
+	}
+	
+	consort_allow = {
+		allow = {
+			consort_MIL = 3
+			NOT = { consort_has_personality = legendary_conqueror_personality }
+		}
+
+		chance = {
+			modifier = {
+				factor = 1
+				consort_MIL = 6
+			}
+			modifier = {
+				factor = 1
+				has_country_flag = BYZ_double_conqueror_chance_flag
+			}
+		}
+	}
+
+	allow = {
+	}
+	core_creation = -0.1
+	province_warscore_cost = -0.05
+	nation_designer_cost = 2
+	
+	easy_war_chance_multiplier = 2
+	war_chance_multiplier = 1.75
+	building_budget_multiplier = 0.2
+	gift_chance = -50
+	wants_land = yes
+	
+	chance = {
+		modifier = {
+			factor = 2 
+			has_country_flag = egypt_better_traits_flag
+		}
+	}
+	
+}
+
+legendary_conqueror_personality = { 
+	
+	allow = { has_country_flag = TIM_legendary_conqueror_flag }
+	
+	core_creation = -0.15
+	province_warscore_cost = -0.15
+	shock_damage = 0.1
+	
+	nation_designer_cost = 10
+	
+	easy_war_chance_multiplier = 2
+	war_chance_multiplier = 1.75
+	building_budget_multiplier = 0.2
+	gift_chance = -50
+	wants_land = yes
 }

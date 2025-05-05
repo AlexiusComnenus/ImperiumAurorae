@@ -6,6 +6,7 @@ country_decisions = {
 		potential = {
 			religion = fraticelli
 			NOT = { has_global_flag = catholic_antipopes_ended }
+			NOT = { has_reform = papacy_reform }
 		}
 		
 		allow = {
@@ -87,6 +88,7 @@ country_decisions = {
 		potential = {
 			religion = catholic
 			NOT = { has_global_flag = catholic_antipopes_ended }
+			NOT = { has_reform = papacy_reform }
 		}
 		
 		allow = {
@@ -221,6 +223,7 @@ country_decisions = {
 				}
 				set_global_flag = catholic_antipopes_ended
 				PAP = { inherit = FAP }
+				FAP = { every_core_province = { remove_core = FAP } }
 			}
 		}
 	}
@@ -284,6 +287,7 @@ country_decisions = {
 				}
 				set_global_flag = catholic_antipopes_ended
 				FAP = { inherit = PAP }
+				PAP = { every_core_province = { remove_core = PAP } }
 			}
 		}
 	}
@@ -354,7 +358,9 @@ country_decisions = {
 				}
 				set_global_flag = complete_templarite_victory
 				FAP = { overlord = { inherit = PREV } }
+				FAP = { every_core_province = { remove_core = FAP } }
 				PAP = { overlord = { inherit = PREV } }
+				PAP = { every_core_province = { remove_core = PAP } }
 			}
 		}
 	}

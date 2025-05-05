@@ -2215,7 +2215,12 @@ DOM_Qing_Missions_2_b = {
 			owned_by = MNG
 		}
 		trigger ={
-			NOT = { exists = MNG }
+			NOT = { 
+				any_known_country = {
+					is_subject = no
+					culture_group = east_asian
+				}
+			}
 		}
 		effect = {
 			if = {
@@ -2250,6 +2255,7 @@ DOM_Qing_Missions_2_b = {
 				type = mil
 				amount = 1
 			}
+			override_country_name = great_qing_name
 		}
 	}
 	

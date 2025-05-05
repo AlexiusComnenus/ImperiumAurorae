@@ -288,6 +288,11 @@ other_lucky_nation = {
 			tag = JAP
 			tag = YOR
 			tag = FRW
+			tag = HAB
+			tag = AUH
+			tag = GER
+			tag = LOT
+			tag = HLR
 			AND = {
 				is_emperor_of_china = yes
 				is_year = 1480
@@ -436,6 +441,7 @@ early_game_protection = {
 			tag = YZD
 			tag = Z47
 			tag = GOL
+			tag = HAB
 		}
 		ai = yes
 	}

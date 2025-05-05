@@ -4,6 +4,9 @@
  z42_donate_money_decision_title: "Donate to the Imperial War Fund"
  z42_donate_money_decision_desc: "We can make a contribution to the Auroral Prince's war chest."
  estate_wind_chasers: "Wind Chasers"
+ estate_cossacks_nobatian_frontiersmen: "Fund the Frontiersmen"
+ estate_cossacks_nobatian_frontiersmen_desc: "With the full support of our state, the Wind Chasers can properly settle the interior of Africa in our name."
+ z42_enable_frontiers_tt: "Enables an §YEstate Privilege§! for the §YWind Chasers§! that unlocks §YFrontiers§! to allow us to colonize the African Interior."
  
  #Diplo Tooltips
  

@@ -21,8 +21,8 @@ feudal_france_reform = {
 		relation_with_same_culture = -100
 		#core_creation = 0.2
 		ae_impact = 0.25
-		reduced_liberty_desire = 30
-		diplomatic_annexation_cost = -0.20
+		reduced_liberty_desire = 20
+		diplomatic_annexation_cost = -0.15
 	}
 
 	custom_attributes = {

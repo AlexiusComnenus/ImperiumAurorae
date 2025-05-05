@@ -85,7 +85,7 @@ province_event = {
 		}
 		if = {
 			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
-			province_event = { id = ivycurse.1.display }
+			province_event = { id = ivycurse.1001 }
 		}
 		add_devastation = 10
 		if = {
@@ -162,7 +162,7 @@ province_event = {
 		
 		if = {
 			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
-			province_event = { id = ivycurse.1.display }
+			province_event = { id = ivycurse.1001 }
 		}
 		add_devastation = 20
 		if = {
@@ -205,7 +205,7 @@ province_event = {
 		
 		if = {
 			limit = { owner = { has_country_flag = show_ivycurse_events_flag } }
-			province_event = { id = ivycurse.1.display }
+			province_event = { id = ivycurse.1001 }
 		}
 		add_base_production = -20
 		add_base_manpower = -20
@@ -215,7 +215,7 @@ province_event = {
 }
 
 province_event = {
-	id = ivycurse.1.display
+	id = ivycurse.1001
 	title = ivycurse.1.t
 	desc = ivycurse.1.d
 	picture = WAR_OF_THE_ROSES_eventPicture

@@ -1924,13 +1924,12 @@ PLC_LIT_ideas = {
 
 HAB_ideas = {
 	start = {
-		cavalry_power = 0.10
+		defensiveness = 0.15
 		improve_relation_modifier = 0.3
 	}
 	
 	bonus = {
 		yearly_corruption = -0.1
-		cav_to_inf_ratio = 0.20
 	}
 	
 	trigger = {
@@ -2920,95 +2919,6 @@ KOR_ideas = {
 }
 
 
-BOH_ideas = {
-	start = {
-		state_governing_cost = -0.1
-		advisor_cost = -0.1
-	}
-	
-	bonus = {
-		leader_land_fire = 1
-	}
-	
-	trigger = {
-		tag = BOH
-	}
-	free = yes
-	
-	compacta_of_prague = {
-		tolerance_heretic = 3
-	}
-	boh_elective_monarchy = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		meritocracy = 1	#For completion's sake
-		horde_unity = 1
-	}
-	wagenburg = {
-		infantry_power = 0.10
-		shock_damage_received = -0.10
-	}
-	letter_of_majesty = {
-		global_unrest = -2
-	}
-	hussite_legacy = {
-		technology_cost = -0.1
-	}
-	kutnohorian_deal = {
-		stability_cost_modifier = -0.10
-	}
-	czech_nationalism = {
-		same_culture_advisor_cost = -0.25
-	}
-}
-
-BOH2_ideas = {
-	start = {
-		state_governing_cost = -0.1
-		advisor_cost = -0.1
-	}
-	
-	bonus = {
-		leader_land_fire = 1
-	}
-	
-	trigger = {
-		tag = BOH
-		has_country_flag = boh_empowered_ni
-	}
-	free = yes
-	
-	compacta_of_prague = {
-		tolerance_heretic = 3
-	}
-	boh_elective_monarchy = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		meritocracy = 1	#For completion's sake
-		horde_unity = 1
-	}
-	wagenburg = {
-		infantry_power = 0.10
-		shock_damage_received = -0.10
-	}
-	letter_of_majesty = {
-		global_unrest = -2
-	}
-	hussite_legacy = {
-		technology_cost = -0.1
-	}
-	kutnohorian_deal = {
-		stability_cost_modifier = -0.10
-	}
-	czech_nationalism2 = {
-		same_culture_advisor_cost = -0.25
-		development_cost_in_primary_culture = -0.05
-	}
-}
-
-
 ITA_ideas = {
 	start = {
 		global_trade_power = 0.20
@@ -3166,7 +3076,7 @@ QNG_ideas = {
 		global_manpower_modifier = 0.15
 	}
 	pigtail_or_death = {
-		global_unrest = -2
+		culture_conversion_cost = -0.20
 	}
 	qng_bogda_khan = {
 		years_of_nationalism = -5
@@ -11725,42 +11635,6 @@ RSO_ideas = {
 	}
 }
 
-MVA_ideas = {
-	start = {
-		global_trade_goods_size_modifier = 0.1
-		global_manpower_modifier = 0.1
-	}
-	bonus = {
-		state_maintenance_modifier = -0.15
-	}
-	trigger = {
-		tag = MVA
-	}
-	free = yes
-	
-	mva_margraviate = {
-		diplomatic_reputation = 1
-	}
-	mva_religious_refuge = {
-		tolerance_own = 2
-	}
-	mva_cities_of_moravia = {
-		development_cost = -0.1
-	}
-	mva_land_of_vinyards = {
-		production_efficiency = 0.1
-	}
-	mva_german_quarters = {
-		num_accepted_cultures = 1
-	}
-	mva_jesuit_university = {
-		papal_influence = 1
-		adm_tech_cost_modifier = -0.1
-	}
-	mva_legacy_of_great_moravia = {
-		unjustified_demands = -0.25
-	}
-}
 
 EST_ideas = {
 	start = {
@@ -18109,68 +17983,25 @@ AUH_ideas = {
 	auh_first = {
 		discipline = 0.05
 	}
-	auh_second = {
+	auh_second_ia = {
 		manpower_in_accepted_culture_provinces = 0.3
 	}
 	auh_third = {
-		global_trade_goods_size_modifier = 0.1
+		global_trade_goods_size_modifier = 0.15
 	}
-	auh_fourth = {
-		global_unrest = -1
+	auh_fourth_ia = {
+		development_cost = -0.1
+		num_accepted_cultures = 1
 	}
-	auh_fifth = {
+	auh_fifth_ia = {
 		state_governing_cost = -0.2
 	}
 	auh_sixth = {
 		global_prov_trade_power_modifier = 0.25
 	}
 	auh_seventh = {
-		artillery_power = 0.1
+		artillery_power = 0.15
 		artillery_cost = -0.1
-	}
-}
-
-GMA_ideas = {
-	start = {
-		global_manpower_modifier = 0.25
-		global_trade_goods_size_modifier = 0.1
-	}
-	
-	bonus = {
-		max_absolutism_effect = 0.15
-	}	
-
-	trigger = {
-		tag = GMA
-	}
-	free = yes
-	
-	gma_reforge_moravias_hegemony = {
-		overextension_impact_modifier = -0.25
-	}
-	gma_apostles_to_the_slavs = {
-		missionaries = 1
-	}
-	gma_princes_of_nitra_kings_of_moravia = {
-		monarch_admin_power = 1
-	}
-	gma_rebuild_veligrad = {
-		build_time = -0.1
-		development_cost = -0.05
-	}
-	gma_rex_sclavorum = {
-		legitimacy = 1
-		devotion = 1
-		republican_tradition = 0.3
-		meritocracy = 1
-		horde_unity = 1
-	}
-	gma_canonize_cyril_methodius = {
-		tolerance_own = 3
-	}
-	gma_svatopluks_legacy = {
-		discipline = 0.05
-		max_absolutism = 5
 	}
 }
 

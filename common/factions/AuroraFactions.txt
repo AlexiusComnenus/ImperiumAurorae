@@ -25,9 +25,8 @@ assimilationists =
 	{
 		global_unrest = 2
 		reduced_liberty_desire = -10
-		diplomatic_annexation_cost = -0.15
-		culture_conversion_cost = -0.25
-		culture_conversion_time = -0.25
+		diplomatic_annexation_cost = -0.10
+		culture_conversion_cost = -0.20
 		manpower_in_own_culture_provinces = 0.15
 	}
 }
@@ -43,7 +42,7 @@ supremacists =
 		diplomatic_reputation = -2
 		improve_relation_modifier = -0.25
 		warscore_cost_vs_other_religion = -0.05
-		core_creation = -0.1
-		land_morale = 0.10
+		core_creation = -0.05
+		land_morale = 0.05
 	}
 }

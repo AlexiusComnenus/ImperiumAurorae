@@ -10,6 +10,7 @@
  
  has_resolved_centralization_chain: "Has resolved all events of the Centralization Reforms."
  no_ally_saxony_tt: "Saxony cannot ally non-Germanic countries except for select exceptions."
+ not_king_of_germany_tt: "The King of Germany cannot fabricate claims!"
  #Ideas
  sax_bane_of_charlemagne: "Bane of Charlemagne"
  sax_bane_of_charlemagne_desc: "The tyrant Karl thought he could be an emperor. He tried to exert his control over Saxonia. But here he met his end!"
@@ -223,6 +224,9 @@
  hsa_grinning_steers_head_ia_desc: "The rich lands of Mecklenburg both feed our great city and supply the soldiers with which to defend it. We should invest into improving these lands, that they might safeguard our prosperity and sovereignty both."
  
  # events
+ saxon_fief.85.title: "Niche Case Fixer"
+ saxon_fief.85.desc: "You did something that disrupted the German Crown mechanic. This event fixes it. You can now close the event."
+ saxon_fief.85.1: "OK"
  ia_flavor_sax.1.t: "The Price of Peace"
  ia_flavor_sax.1.d: "While our control over most of our de jure subjects has slipped in the past century, on paper they do still owe us fealty, taxes, and levies. Our council has proposed today that we remind the [saxony_war_target.Monarch.GetTitle] of @[saxony_war_target.GetTag]  [saxony_war_target.GetName] of their obligations to us. What shall we demand?"
  ia_flavor_sax.1.a: "The Sachsengeld"
@@ -466,6 +470,8 @@
  
  hide_show_ivycurse_events_title: "Hide/Show Ivycurse Provincial Events"
  hide_show_ivycurse_events_desc: "Toggle to hide/show the provincial plague events during the Ivycurse"
+ show_ivycurse_events_tt: "§GShow§! the events!" 
+ hide_ivycurse_events_tt: "§RHide§! the events!"
  province_has_lost_dev_tt_sanitary: "The province has been §Rdevastated§! by the §PIvycurse§!, but was §Ysomewhat mitigated§! by our §GSanitary Standards§!!"
  province_has_lost_dev_tt: "The province has been §Rdevastated§! by the §PIvycurse§!!"
  ivycurse_20years_tt: "We have cured the Ivycurse!"

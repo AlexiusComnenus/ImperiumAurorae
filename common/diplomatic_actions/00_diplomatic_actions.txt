@@ -494,11 +494,38 @@ callaction = {
 	condition = {
 		tooltip = not_subject_of_enemy_tt
 		potential = {
-			FROM = { is_subject = yes OR = { is_subject_of_type = ia_advanced_tributary_state  is_subject_of_type = tributary_state 	is_subject_of_type = trade_protectorate } }
+			FROM = { is_subject = yes }
+			FROM = { overlord = { war_with = ROOT } }
 			NOT = { FROM = { overlord = { any_subject_country = { tag = ROOT } } } }
 		}
 		allow = {
-			NOT = { FROM = { overlord = { war_with = ROOT } } }
+			OR = { 
+				NOT = { FROM = { overlord = { war_with = ROOT } } }
+				FROM = {
+					overlord = {
+						is_in_war = {
+							casus_belli = cb_independence_war
+							attackers = ROOT
+						}
+					}
+				}
+				FROM = {
+					overlord = {
+						is_in_war = {
+							casus_belli = cb_colonial_independence_war
+							attackers = ROOT
+						}
+					}
+				}
+				FROM = {
+					overlord = {
+						is_in_war = {
+							casus_belli = cb_triggered_independence_war
+							attackers = ROOT
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -524,6 +551,15 @@ giftaction = {
 	}
 }
 fabricate_claim = {
+	condition = {
+		tooltip = not_king_of_germany_tt
+		potential = {
+			has_reform = saxon_feudalism
+		}
+		allow = {
+			NOT = { has_reform = saxon_feudalism }
+		}
+	}
 	effect = {
 		change_asha_vahishta = { value = -1 }
 	}

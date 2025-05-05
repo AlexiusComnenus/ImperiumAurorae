@@ -164,12 +164,23 @@ polish_noble_rebels = {
 			}
 			add_local_autonomy = 25
 		}	
+		if = { 
+			limit = { 
+				OR = {
+					tag = PLC 
+					tag = POL 
+				}
+				NOT = { government = monarchy }
+			}
+			change_government = monarchy
+		}
 		add_legitimacy = -50
 		#if = {
 		#	limit = { NOT = { government = monarchy } }
 		#	change_government_to_monarchy = yes
 			#set_legacy_government = feudal_monarchy
 		#}
+		
 		if = { 
 			limit = { 
 				OR = {

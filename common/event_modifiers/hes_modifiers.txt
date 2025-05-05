@@ -494,7 +494,7 @@ hussite_regular_defenestrations_aspect_bonus = {
 
 hussite_taborite_resurgence_aspect_bonus = {
 	relation_with_heretics = -50
-	enforce_religion_cost = -0.5
+	enforce_religion_cost = -0.25
 }
 
 hussite_freedom_to_preach_aspect_bonus = {

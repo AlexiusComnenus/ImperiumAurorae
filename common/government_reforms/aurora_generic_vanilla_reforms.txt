@@ -97,7 +97,7 @@ representation_of_the_crown_reform = {
 	modifiers = {
 		diplomatic_upkeep = 1
 		vassal_forcelimit_bonus = 0.5
-		diplomatic_annexation_cost = -0.1
+		#diplomatic_annexation_cost = -0.1
 		liberty_desire_from_subject_development = -0.10
 		monarch_power_tribute = 1
 	}

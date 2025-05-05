@@ -472,6 +472,13 @@ country_event = {  # Create visigoth communities + startup stuff
 				locked = yes
 			}
 		} 
+		BOH = {
+			country_event = {
+				id = flavor_boh.22
+				days = 35
+				random = 15
+			}
+		}
 		random_country = {
 			limit = {
 				has_reform = chinese_warlord

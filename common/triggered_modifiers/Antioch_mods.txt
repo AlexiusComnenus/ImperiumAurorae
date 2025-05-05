@@ -36,39 +36,6 @@ PaphlagonianCannonSupport = {
 		
 }
 
-righteousness_loss_oe_1 = {
-	potential = { 
-		tag = Z17
-	}
-	trigger = {
-		overextension_percentage = 0.33
-		NOT = { overextension_percentage = 0.67 }
-	}
-	monthly_righteousness = -0.25
-}
-
-righteousness_loss_oe_2 = {
-	potential = { 
-		tag = Z17
-	}
-	trigger = {
-		overextension_percentage = 0.67
-		NOT = { overextension_percentage = 1.01 }
-	}
-	monthly_righteousness = -0.5
-}
-
-righteousness_loss_oe_3 = {
-	potential = { 
-		tag = Z17
-	}
-	trigger = {
-		overextension_percentage = 1
-		#NOT = { overextension_percentage = 1.01 }
-	}
-	monthly_righteousness = -1
-}
-
 righteousness_loss_offensive_war = {
 	potential = { 
 		tag = Z17
@@ -222,16 +189,6 @@ righteousness_gain_defensive_war = {
 		}
 	}
 	monthly_righteousness = 2
-}
-
-righteousness_gain_peace = {
-	potential = { 
-		tag = Z17
-	}
-	trigger = {
-		is_at_war = no
-	}
-	monthly_righteousness = 0.5
 }
 
 righteousness_loss_unaccepted_1 = {

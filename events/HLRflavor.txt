@@ -5030,6 +5030,7 @@ country_event = {
 	picture = HLR_BOHEMIA_eventPicture
 	fire_only_once = yes
 	trigger = {
+		always = no
 		is_emperor = yes
 		NOT = {
 			is_year = 1460
@@ -5038,6 +5039,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 2
 	}
+	is_triggered_only = yes
 	
 	#regular experience
 	option = {

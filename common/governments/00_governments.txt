@@ -14,6 +14,7 @@ monarchy = {
 				negusa_nagast
 				solomonic_empire
 				#Specific:
+				bohemian_germanic_monarchy
 				divine_merovingian_reform
 				true_immortal_reform
 				reichskoenigtum
@@ -393,6 +394,7 @@ monarchy = {
 		}
 		deliberative_assembly = {
 			reforms = {
+				austrian_constitutionalism
 				aenglish_witenagemot
 				fkn_franken_council
 				roman_military_committee

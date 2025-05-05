@@ -986,15 +986,13 @@ zyp_lot_5_aachen = {
 		}
 		
 		trigger = {
-			calc_true_if = {
-				amount = 5
-				all_owned_province = {
-					OR = { 
-						trade_goods = wine
-						trade_goods = champagne
-					}
-					base_production = 8
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = { 
+					trade_goods = wine
+					trade_goods = champagne
 				}
+				base_production = 8
 			}
 		}
 		
@@ -1301,7 +1299,10 @@ zyp_lot_5_nanzig = {
 		required_missions = { zyp_lot_splendor_capital_nanzig }
 		
 		provinces_to_highlight = {
-			trade_goods = wine
+			OR = {
+				trade_goods = wine
+				trade_goods = champagne
+			}
 			OR = {
 				NOT = { owned_by = ROOT }
 				base_production = 8
@@ -1309,12 +1310,13 @@ zyp_lot_5_nanzig = {
 		}
 		
 		trigger = {
-			calc_true_if = {
-				amount = 5
-				all_owned_province = {
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = { 
 					trade_goods = wine
-					base_production = 8
+					trade_goods = champagne
 				}
+				base_production = 8
 			}
 			owns = 4766
 		}

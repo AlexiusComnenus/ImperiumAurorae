@@ -94,6 +94,47 @@ morroco_civil_war_wargoal = {
 	war_name = MORROCO_CIVIL_WAR_NAME
 }
 
+bohemian_civil_war_wargoal = {
+	type = take_capital
+	
+	attacker = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 1
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_archduke_victory
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes
+	}
+	
+	
+	defender = {
+		badboy_factor = 0
+		prestige_factor = 0
+		peace_cost_factor = 1
+
+		allowed_provinces = {
+			always = no
+		}
+
+		peace_options = {
+			po_jiri_victory
+		}
+
+		deny_annex = yes
+		allowed_provinces_are_eligible = yes		
+	}
+	
+	war_name = BOHEMIAN_CIVIL_WAR_NAME
+}
+
 german_civil_war_wargoal = {
 	type = superiority
 	
@@ -489,7 +530,7 @@ ia_grand_dismantle = {
 		}
 		
 		deny_annex = yes
-		allowed_provinces_are_eligible = yes
+		#allowed_provinces_are_eligible = yes
 	}
 	
 	defender = {
@@ -509,7 +550,7 @@ ia_grand_dismantle = {
 		}
 		
 		deny_annex = yes
-		allowed_provinces_are_eligible = yes
+		#allowed_provinces_are_eligible = yes
 	}
 
 	war_name = IA_GRAND_DISMANTLE_WAR_NAME

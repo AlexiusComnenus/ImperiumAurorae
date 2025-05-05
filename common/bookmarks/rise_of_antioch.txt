@@ -1,0 +1,22 @@
+bookmark =
+{
+	name = rise_of_antioch
+	desc = rise_of_antioch_desc
+	date = "1444.11.11"
+	center = 2313
+	
+	default = yes
+	
+	country = Z17
+	country = Z44
+	country = BYZ
+	country = Z42
+	country = YZD
+	country = Z47
+	country = NOV
+	country = TRE
+	country = FEO
+	easy_country = Z17
+	easy_country = BYZ
+	easy_country = Z42
+}

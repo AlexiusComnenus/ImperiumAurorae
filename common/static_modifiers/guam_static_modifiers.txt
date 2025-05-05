@@ -189,6 +189,20 @@ stability = {
 	monthly_divine_authority = 0.05
 }
 
+over_extension = {
+	global_foreign_trade_power = -1.0
+	stability_cost_modifier = 0.5
+	mercenary_cost = 0.5
+	diplomatic_reputation = -2
+	improve_relation_modifier = -0.5
+	global_unrest = 5
+	bureaucrats_influence = 0.5
+	mr_guilds_influence = 0.5
+	yearly_corruption = 0.5
+	ottoman_decadence_gain_modifier = 0.25
+	monthly_righteousness = -1
+}
+
 over_governing_capacity_modifier = {
 	stability_cost_modifier = 1.0
 	ae_impact = 1.0
@@ -522,6 +536,7 @@ peace = {
 	monthly_authority_power = 0.1
 	assimilationists_influence = 0.02
 	monthly_ia_complacency = 0.1
+	monthly_righteousness = 0.5
 }
 
 is_great_power = {

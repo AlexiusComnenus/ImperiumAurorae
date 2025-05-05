@@ -4233,6 +4233,8 @@ schonbrunn_palace = {
 		area_modifier = {}
 		country_modifiers = {
 			diplomats = 1
+			years_to_integrate_personal_union = -5
+			chance_to_inherit = 0.05
 		}
 		on_upgraded = {}
 	}
@@ -4243,8 +4245,10 @@ schonbrunn_palace = {
 		area_modifier = {}
 		country_modifiers = {
 			monthly_splendor = 1
-			chance_to_inherit = 0.05
+			diplomatic_upkeep = 1
+			chance_to_inherit = 0.10
 			diplomats = 1
+			years_to_integrate_personal_union = -10
 		}
 		on_upgraded = {}
 	}
@@ -4255,9 +4259,10 @@ schonbrunn_palace = {
 		area_modifier = {}
 		country_modifiers = {
 			monthly_splendor = 2
-			chance_to_inherit = 0.1 
+			chance_to_inherit = 0.15
 			diplomats = 1
-			years_to_integrate_personal_union = -5
+			diplomatic_upkeep = 2
+			years_to_integrate_personal_union = -15
 		}
 		on_upgraded = {}
 	}

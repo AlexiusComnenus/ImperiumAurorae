@@ -151,6 +151,8 @@ country_decisions = {
 				religion = druidic_pagan_reformed
 				any_ally = { religion = druidic_pagan }
 				any_ally = { religion = druidic_pagan_reformed }
+				overlord = { religion = druidic_pagan }
+				overlord = { religion = druidic_pagan_reformed }
 			}
 		}
 		
@@ -160,6 +162,8 @@ country_decisions = {
 				religion = druidic_pagan_reformed
 				any_ally = { religion = druidic_pagan }
 				any_ally = { religion = druidic_pagan_reformed }
+				overlord = { religion = druidic_pagan }
+				overlord = { religion = druidic_pagan_reformed }
 			}
 			mil_power = 50
 			treasury = 100
@@ -187,6 +191,7 @@ country_decisions = {
 			OR = {
 				has_country_modifier = logistics_school_mod
 				any_ally = { has_country_modifier = logistics_school_mod }
+				overlord = { has_country_modifier = logistics_school_mod }
 			}
 		}
 		
@@ -194,6 +199,7 @@ country_decisions = {
 			OR = {
 				has_country_modifier = logistics_school_mod
 				any_ally = { has_country_modifier = logistics_school_mod }
+				overlord = { has_country_modifier = logistics_school_mod }
 			}
 			mil_power = 50
 			treasury = 100

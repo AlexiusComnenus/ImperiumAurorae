@@ -242,6 +242,7 @@ country_event = {
 				religion = reformed
 				religion = protestant
 				religion = catholic
+				religion = fraticelli
 			}
 		}
 		NOT = {
@@ -262,6 +263,7 @@ country_event = {
 						religion = protestant
 						religion = catholic
 						religion = reformed
+						religion = fraticelli
 					}
 				}
 				save_event_target_as = prayer_book_province
@@ -283,6 +285,7 @@ country_event = {
 					OR = {
 						religion = protestant
 						religion = catholic
+						religion = fraticelli
 						religion = reformed
 					}
 				}
@@ -397,6 +400,7 @@ country_event = {
 			OR = {
 				religion = anglican
 				religion = catholic
+				religion = fraticelli
 				religion = reformed
 				religion = protestant
 			}
@@ -425,6 +429,7 @@ country_event = {
 					OR = {
 						religion = anglican
 						religion = catholic
+						religion = fraticelli
 						religion = reformed
 						religion = protestant
 					}
@@ -450,6 +455,7 @@ country_event = {
 					OR = {
 						religion = anglican
 						religion = catholic
+						religion = fraticelli
 						religion = reformed
 						religion = protestant
 					}
@@ -471,6 +477,7 @@ country_event = {
 					OR = {
 						religion = anglican
 						religion = catholic
+						religion = fraticelli
 						religion = reformed
 						religion = protestant
 					}
@@ -679,7 +686,7 @@ country_event = {
 		any_owned_province = {
 			continent = europe
 			OR = {
-				religion = catholic
+				religion = protestant
 				religion = reformed
 			}
 		}
@@ -696,14 +703,14 @@ country_event = {
 		name = anglican_events.12.a # smash altars, imprison/execute papist resistors
 		trigger = {
 			any_owned_province = {
-				religion = catholic
+				religion = protestant
 				continent = europe
 			}
 		}
 		random_owned_province = {
 			limit = {
 				continent = europe
-				religion = catholic
+				religion = protestant
 				is_capital = no
 			}
 			change_religion = anglican
@@ -719,10 +726,7 @@ country_event = {
 		random_owned_province = {
 			limit = {
 				continent = capital
-				OR = {
-					religion = catholic
-					religion = reformed
-				}
+				religion = protestant
 			}
 			add_province_modifier = {
 				name = anglican_iconoclasm
@@ -780,12 +784,12 @@ country_event = {
 			name = "priest_hunters"
 			duration = 3650
 		}
-		PAP = {
+		TEM = {
 			add_opinion = { who = ROOT modifier = opinion_angry }
 		}
 		random_neighbor_country = {
 			limit = {
-				religion = catholic
+				religion = protestant
 			}
 			add_opinion = { who = ROOT modifier = opinion_irritated }
 		}
@@ -794,12 +798,12 @@ country_event = {
 		name = anglican_events.13.b
 		trigger = {
 			any_neighbor_country = {
-				religion = catholic
+				religion = protestant
 			}
 		}
 		random_neighbor_country = {
 			limit = {
-				religion = catholic
+				religion = protestant
 			}
 			ROOT = {
 				add_casus_belli = {

@@ -1444,6 +1444,19 @@ country_event = {  # Intruder: Ultimatum from Saxonia
 				}
 			}
 		}
+		every_owned_province = {
+			limit = {
+				culture_group = germanic
+				NOT = { culture = teuton }
+				NOT = { culture = anglo_saxon }
+			}
+			remove_core = ROOT
+			event_target:saxon_king = {
+				PREV = {
+					cede_province = PREV
+				}
+			}
+		}
 		every_subject_country = {
 			limit = {
 				culture_group = germanic
@@ -1852,6 +1865,7 @@ country_event = {  # No player alliances with Antioch for no reason
 		any_ally = {
 			tag = Z17
 		}
+		Z17 = { is_emperor = yes }
 	}
 	
 	#immediate = {

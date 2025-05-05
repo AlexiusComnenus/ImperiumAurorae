@@ -1220,6 +1220,11 @@ economic_ideas = {
 exploration_ideas = {
 	category = DIP
 	important = yes
+	
+	trigger = {
+		primitives = no
+		NOT = { has_country_flag = no_more_explo_ideas }
+	}
 
 	bonus = {
 		cb_on_primitives = yes

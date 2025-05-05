@@ -2,6 +2,10 @@
  demi_culverin: "Demi-Culverin"
  chambered_cannon: "Chambered Cannon"
  
+ missions_yes_original_desc: "Has Unique Missions"
+ missions_yes_reworked_desc: "Has Reworked/Expanded Vanilla Missions or Generic Group Missions"
+ DLC_missions_yes_ACE_TOOLTIP_INSTANT: "§VRecommended Imperium Aurorae Content§!"
+ 
  hide_show_corruption_decisions_title: "Show/Hide Corruption Management Decisions"
  hide_show_corruption_decisions_desc: "Some people may not be able to see the corruption management buttons due to resolution or UI mod conflicts, or simply don't like the buttons. If you wish, you can replicate the effects of the corruption buttons via decisions by toggling this decision."
  ai_reduce_corruption_decision_adm_title: "Administrative Corruption Suppression"
@@ -60,6 +64,8 @@
 
  rise_of_antioch: "Rise of the Xizho"
  rise_of_antioch_desc: "With the recent conquest of Rome by the Prince of the Celestial Aurora Chen Yangshing, Christendom is shattered. Poland controls the generally recognized Pope, while Saxonia has set up their own antipope in the Low Countries. Meanwhile, the Celestial Hellenic Empire of the Xizho are quickly purging noncompliant elements and preparing to turn their gaze back towards expansion into a deeply unstable Anatolia."
+ christendom_divided: "Christendom in Splinters"
+ christendom_divided_desc: "With the recent conquest of Rome by the Prince of the Celestial Aurora Chen Yangshing, Christendom is shattered. Poland controls the generally recognized Pope, while Saxonia has set up their own antipope in the Low Countries. The Templars have recently started establishing a banking system throughout Christendom while their Visigothic allies in Valencia stand ready to re-establish Visigoth rule over Iberia. In France, the crippled Carolingian descendants are on their last legs, while the Merovingians have prepared their strength for this moment to strike back and reclaim their holy crown. Meanwhile in the British Isles, the ancient standoff between Brythonics and Anglo-Saxons continues, even as the Druidic Highlanders cast their sights on the Christian Lowlands."
  india_bookmark: "Conflict over India"
  india_bookmark_desc: "Between the more recent Turkish invaders in the North and the earlier Persian invaders over the centuries, much of Indian land is in the hands of foreign rulers. At the same time, the new Cult of the Jade Dragon is gaining sway in the Tamil lands. Only time will tell if a native lord and religion prevail, or if one of the foreign interlopers reshapes Indian history for good!"
  recently_recruited_aurora: "Recently Recruited Aurora General"
@@ -67,6 +73,7 @@
  support_army_of_light_decision_desc: "We will send aid to the Army of Light in their Enlightenment of Central Africa."
  emperor_rechenschaft_member: "Constitution of the Aurora"
  tre_cilicia_culture_conversion_ia: "Our provinces of §YArmenian§! culture in the §YAnatolia§! region will convert to §YCilician§! culture instead."
+ release_all_imperial_land_tt: "All §YImperial Subjects§! and unlawfully held §YImperial Provinces§! will be released!"
 
  xizho_group: "Xizho"
  idali: "Idali"
@@ -593,6 +600,8 @@
  dragon_equality_reforms_desc: "Sick of the wasted potential of half the population, the Dragon Princess has forced sweeping reforms giving women access to positions of power and wealth."
  breach_of_harmony: "In Breach of the Edict of Harmony"
  breach_of_harmony_triggered_modifier: "In Breach of the Edict of Harmony"
+ breach_of_harmony_triggered_modifier_desc: "Under the Edict of Harmony, being at war against other members of the CHE is banned. Our violation of this Imperial law comes with significant diplomatic ramifications!"
+ breach_of_harmony_explanation_tt: "Being §Rat war§! with other §Yimperial member states§! will be §Rbanned§! and violators will incur a §Rmajor diplomatic penalty§!!"
  chen_dynasty_modifier: "Adopted By the Auroral Prince"
  shining_city_antioch: "The Radiant City"
  religious_defection: "Abandoned the True Pope"

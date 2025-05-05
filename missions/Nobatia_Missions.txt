@@ -1,4 +1,4 @@
-# This is all on Alexios (poor me)
+# This is all on Alexios to write the code (poor me)
 
 nobatia_missions_column_1 = {
 	slot = 1
@@ -745,6 +745,9 @@ nobatia_missions_column_2 = {
 					}
 				}
 			}
+			
+			set_country_flag = z42_enabled_frontiers
+			custom_tooltip = z42_enable_frontiers_tt
 		}
 	}
 }

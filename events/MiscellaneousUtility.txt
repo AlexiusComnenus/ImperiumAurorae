@@ -1,3 +1,85 @@
+namespace = fix_tag_traits
+
+country_event = {  # Myrmidons
+	id = fix_tag_traits.1
+	title = fix_tag_traits.1.t
+	desc = fix_tag_traits.1.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		tag = MYM
+		OR = { 
+			NOT = { religion = hellenic_pagan_reformed }
+			NOT = { has_reform = myrmidons_government }
+		}
+		OR = {
+			is_subject = no
+			overlord = { religion = hellenic_pagan_reformed }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = fix_tag_traits.1.a
+		if = {
+			limit = { NOT = { religion = hellenic_pagan_reformed } }
+			change_religion = hellenic_pagan_reformed
+		}
+		if = {
+			limit = { NOT = { has_reform = myrmidons_government } }
+			change_government = theocracy
+			add_government_reform = myrmidons_government
+		}
+	}
+}
+
+country_event = {  # Jomsvikings
+	id = fix_tag_traits.2
+	title = fix_tag_traits.2.t
+	desc = fix_tag_traits.2.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		tag = JOM
+		OR = { 
+			NOT = { religion = norse_pagan_reformed }
+			NOT = { has_reform = jomsviking_government }
+		}
+		OR = {
+			is_subject = no
+			overlord = { religion = norse_pagan_reformed }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = fix_tag_traits.2.a
+		if = {
+			limit = { NOT = { religion = norse_pagan_reformed } }
+			change_religion = norse_pagan_reformed
+		}
+		if = {
+			limit = { NOT = { has_reform = jomsviking_government } }
+			change_government = theocracy
+			add_government_reform = jomsviking_government
+		}
+	}
+}
+
 namespace = change_deity
 
 country_event = {
@@ -372,6 +454,57 @@ country_event = {
 			}
 			add_government_reform = saxon_fief_reform
 		}
+	}
+}
+
+country_event = {
+	id = saxon_fief.85
+	title = saxon_fief.85.title
+	desc = saxon_fief.85.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		any_subject_country = { OR = { is_subject_of_type = saxon_daimyo	is_subject_of_type = german_march  } }
+		NOT = { has_reform = saxon_feudalism }
+		NOT = { tag = GER }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		if = {
+			limit = { any_known_country = { has_reform = saxon_feudalism } }
+			every_subject_country = {
+				limit = { OR = { is_subject_of_type = saxon_daimyo	is_subject_of_type = german_march  } }
+				random_known_country = {
+					limit = { has_reform = saxon_feudalism }
+					create_subject = {
+						subject_type = saxon_daimyo
+						subject = PREV
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { culture_group = germanic 		government = monarchy }
+			add_government_reform = saxon_feudalism
+		}
+		else = {
+			every_subject_country = {
+				limit = { OR = { is_subject_of_type = saxon_daimyo	is_subject_of_type = german_march  } }
+				grant_independence = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "saxon_fief.85.1"
+		
 	}
 }
 
@@ -904,6 +1037,10 @@ country_event = {
 			
 			any_core_country = {
 				NOT = { exists = yes }
+				if = {
+					limit = { ROOT = { culture_group = french } }
+					NOT = { tag = FRA }
+				}
 				PREV = {
 					culture_group = PREV
 				}
@@ -938,6 +1075,10 @@ country_event = {
 			
 				any_core_country = {
 					NOT = { exists = yes }
+					if = {
+						limit = { ROOT = { culture_group = french } }
+						NOT = { tag = FRA }
+					}
 					PREV = {
 						culture_group = PREV
 					}
@@ -966,6 +1107,10 @@ country_event = {
 			random_core_country = {
 				limit = {
 					NOT = { exists = yes }
+					if = {
+						limit = { ROOT = { culture_group = french } }
+						NOT = { tag = FRA }
+					}
 					PREV = {
 						culture_group = PREV
 					}
@@ -1206,5 +1351,6 @@ country_event = {  # Removing Explo Ideas
 			}
 			add_idea_group = maritime_ideas
 		}
+		set_country_flag = no_more_explo_ideas
 	}
 }

@@ -1206,51 +1206,23 @@ country_event = {  # Intruder: Ultimatum from Antioch
 			name = shameful_grovelling_lite_version
 			duration = 1825
 		}
-		every_owned_province = {
-			limit = {
-				is_part_of_hre = yes
-			}
-			remove_core = ROOT
-			random_core_country = {
-				limit = {
-					PREV = {
-						culture = PREV
-					}
-				}
-				PREV = {
-					cede_province = PREV
-				}
-			}
-		}
-		every_owned_province = {
-			limit = {
-				is_part_of_hre = yes
-			}
-			remove_core = ROOT
-			random_core_country = {
-				PREV = {
-					cede_province = PREV
-				}
-			}
-		}
-		every_subject_country = {
-			limit = {
-				is_part_of_hre = yes
-			}
-			grant_independence = yes
-		}
-		every_subject_country = {
+		custom_tooltip = release_all_imperial_land_tt
+		hidden_effect = {
 			every_owned_province = {
 				limit = {
 					is_part_of_hre = yes
 				}
-				remove_core = PREV
+				remove_core = ROOT
 				random_core_country = {
 					limit = {
 						PREV = {
 							culture = PREV
 						}
 					}
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
 					PREV = {
 						cede_province = PREV
 					}
@@ -1260,10 +1232,79 @@ country_event = {  # Intruder: Ultimatum from Antioch
 				limit = {
 					is_part_of_hre = yes
 				}
-				remove_core = PREV
+				remove_core = ROOT
 				random_core_country = {
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
 					PREV = {
 						cede_province = PREV
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				remove_core = ROOT
+				emperor = {
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				grant_independence = yes
+			}
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					remove_core = PREV
+					random_core_country = {
+						limit = {
+							PREV = {
+								culture = PREV
+							}
+						}
+						if = {
+							limit = { NOT = { exists = PREV } }
+							ROOT = { release = PREV }
+						}
+						PREV = {
+							cede_province = PREV
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					remove_core = PREV
+					random_core_country = {
+						if = {
+							limit = { NOT = { exists = PREV } }
+							ROOT = { release = PREV }
+						}
+						PREV = {
+							cede_province = PREV
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					remove_core = PREV
+					emperor = {
+						PREV = {
+							cede_province = PREV
+						}
 					}
 				}
 			}
@@ -1471,12 +1512,13 @@ country_event = {  # Antioch fix wrong religion
 	option = {
 		name = antioch.25.a
 		if = {
-			limit = { NOT = { has_reform = celestial_xizho_empire } }
-			add_government_reform = celestial_xizho_empire
-		}
-		if = {
 			limit = { NOT = { religion = hellenic_pagan_reformed } }
 			change_religion = hellenic_pagan_reformed
+		}
+		if = {
+			limit = { NOT = { has_reform = celestial_xizho_empire } }
+			change_government = theocracy
+			add_government_reform = celestial_xizho_empire
 		}
 		
 		if = {

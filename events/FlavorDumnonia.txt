@@ -73,7 +73,10 @@ country_event = {
 	option = {
 		name = ia_flavor_eng.3.a
 		
-		kill_ruler = yes
+		if = {
+			limit = { has_ruler_flag = cynfyn_pendraig }
+			kill_ruler = yes
+		}
 		add_legitimacy = -50
 		add_ruler_modifier = {
 			name = sibyls_regency_mod

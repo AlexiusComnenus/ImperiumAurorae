@@ -167,7 +167,10 @@ deutches_reich_reform = {
 	allow_normal_conversion = no
 	can_change_primary_culture = no
 	potential = {
-		has_reform = deutches_reich_reform
+		OR = { 
+			has_reform = deutches_reich_reform
+			have_had_reform = deutches_reich_reform
+		}
 		tag = GER
 		culture_group = germanic
 	}
@@ -466,5 +469,103 @@ hussite_wagenburgs = {
 	modifiers = {
 		global_defender_dice_roll_bonus = 1
 		shock_damage_received = -0.10
+	}
+}
+
+austrian_constitutionalism = {
+	icon = "constitution"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = austrian_constitutionalism
+			have_had_reform = austrian_constitutionalism
+		}
+	}
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	
+	modifiers = {
+		reduced_liberty_desire_on_same_continent = 20
+		num_accepted_cultures = 2
+	}
+	
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+bohemian_elective_kingdom_reform = {
+	icon = "bohemian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			primary_culture = czech
+			primary_culture = czech_new
+		}
+		NOT = { has_country_flag = bohemia_abolished }
+	}
+	nation_designer_trigger = {
+		OR = {
+			primary_culture = czech
+			primary_culture = czech_new
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	modifiers = {
+		diplomatic_reputation = 1
+		nobles_loyalty_modifier = 0.1
+		nobles_privilege_slots = 1
+		nobles_influence_modifier = 0.05
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			has_ruler_election = yes
+			has_improved_ruler_election = yes
+		}
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+bohemian_germanic_monarchy = {
+	icon = "bohemian_monarchy"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			primary_culture = sudeten
+		}
+	}
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	
+	modifiers = {
+		vassal_forcelimit_bonus = 0.25
+		vassal_manpower_bonus = 0.25
+		vassal_naval_forcelimit_bonus = 0.25
+		vassal_sailors_bonus = 0.25
+		vassal_income = 0.25
+	}
+	
+	#conditional = {
+	#	allow = {
+	#		has_dlc = "Common Sense"
+	#	}
+	#	has_parliament = yes
+	#}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
 	}
 }

@@ -341,9 +341,11 @@ country_decisions = {
 			if = {
 				limit = { has_country_flag = show_ivycurse_events_flag }
 				clr_country_flag = show_ivycurse_events_flag
+				custom_tooltip = show_ivycurse_events_tt
 			}
 			else = {
 				set_country_flag = show_ivycurse_events_flag
+				custom_tooltip = hide_ivycurse_events_tt
 			}
 		}
 	}

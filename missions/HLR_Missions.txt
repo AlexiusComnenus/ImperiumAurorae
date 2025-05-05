@@ -31,7 +31,6 @@ emp_ger_slot_1_westernconversion = {
 			owns_all_provinces = {
 				area = wallonia_area
 			}
-			1866 = { is_territory = no }
 			num_of_owned_provinces_with = { 
 					value = 2
 					area = bourgogne_area
@@ -52,7 +51,6 @@ emp_ger_slot_1_westernconversion = {
 						continent = europe
 						development = 25
 					}
-					1866 = { culture = wallonian }
 					num_of_owned_provinces_with = { 
 						value = 3
 						culture = burgundian
@@ -596,11 +594,12 @@ emp_ger_slot_4_war = {
 		required_missions = { }
 		position = 1
 		trigger = {
-			has_global_modifier_value = {
-				which = discipline
-				value = 0.15
-				extra_shortcut = yes
-			}
+			#has_global_modifier_value = {
+			#	which = discipline
+			#	value = 0.15
+			#	extra_shortcut = yes
+			#}
+			army_professionalism = 0.50
 			army_size = 200
 			army_size_percentage = 0.8
 			manpower = 200
@@ -865,15 +864,15 @@ emp_ger_slot_4_war = {
 		}
 		position = 5
 		trigger = {
-			has_global_modifier_value = {
-				which = discipline
-				value = 0.20
-				extra_shortcut = yes
-			}
+			#has_global_modifier_value = {
+			#	which = discipline
+			#	value = 0.20
+			#	extra_shortcut = yes
+			#}
 			army_size = 250
 			army_size_percentage = 0.8
 			manpower = 250
-			army_professionalism = 0.50
+			army_professionalism = 1
 			army_tradition = 60
 		}
 		effect = {

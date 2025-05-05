@@ -19,15 +19,23 @@ country_decisions = {
 			NOT = { tag = HLR }
 			NOT = { tag = ROM }
 			NOT = { tag = AUH }
+			NOT = { tag = NED }
 			OR = {
 				ai = no
 				AND = {
 					ai = yes
-					num_of_cities = 15
+					num_of_cities = 25
 				}
 			}
 			culture_group = germanic
 			NOT = { primary_culture = dutch }
+			NOT = { primary_culture = flemish }
+			NOT = { primary_culture = teuton }
+			NOT = { primary_culture = frisian }
+			OR = { 
+				NOT = { primary_culture = anglo_saxon }
+				has_country_flag = aengland_missions_usurpation_flag
+			}
 			is_colonial_nation = no
 			OR = {
 				is_former_colonial_nation = no
@@ -37,6 +45,7 @@ country_decisions = {
 				}
 			}
 			NOT = { has_reform = saxon_feudalism }
+			NOT = { has_country_flag = hab_blocked_germany }
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -144,14 +153,6 @@ country_decisions = {
 			}
 		}
 		allow = {
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = remove_germany_tech_requirement_flag
-					}
-				}
-				adm_tech = 18
-			}
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			OR = {
@@ -203,25 +204,6 @@ country_decisions = {
 			change_tag = GER
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
-			if = {
-				limit = {
-					is_emperor = yes
-				}
-				dismantle_hre = yes
-			}
-			else_if = {
-				limit = { is_part_of_hre = yes }
-				emperor = {
-					add_opinion = {
-						who = root
-						modifier = opinion_left_empire
-					}
-				}
-				set_in_empire = no
-				emperor = {
-					country_event = { id = hre_event.5 }
-				}
-			}
 			custom_tooltip = become_an_empire_tt
 			hidden_effect = { set_government_rank = 3 }
 			north_german_region = {
@@ -263,12 +245,9 @@ country_decisions = {
 			factor = 100
 			modifier = {
 				factor = 0
-				NOT = { adm_tech = 18 }
-			}
-			modifier = {
-				factor = 0
 				NOT = { num_of_owned_provinces_with = { OR = { region = north_german_region region = south_german_region } value = 25 } }
 			}
 		}
+		ai_importance = 400
 	}
 }

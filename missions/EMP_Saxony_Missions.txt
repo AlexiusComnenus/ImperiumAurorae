@@ -724,7 +724,7 @@ ia_sax_mission_3_tge = {
 			change_price = {
 				trade_goods = salt
 				key = saxon_salt_monopoly
-				value = 0.5
+				value = 0.25
 				duration = -1
 			}
 		}

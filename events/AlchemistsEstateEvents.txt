@@ -159,10 +159,10 @@ country_event = {
 	picture = NOBLE_ESTATE_eventPicture
 	
 	trigger = {
-		has_estate = estate_nobles
+		has_estate = estate_alchemists
 		estate_influence = {
 			estate = estate_nobles
-			influence = 15
+			influence = estate_alchemists
 		}
 		NOT = {
 			has_estate_influence_modifier = {

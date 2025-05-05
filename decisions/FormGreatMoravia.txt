@@ -19,12 +19,9 @@ country_decisions = {
 					tag = MVA
 					was_tag = MVA
 				}
-				AND = {
-					OR = {
-						tag = BOH
-						was_tag = BOH
-					}
-					has_dlc = "Winds of Change"
+				OR = {
+					tag = BOH
+					was_tag = BOH
 				}
 			}
 			is_colonial_nation = no
@@ -57,8 +54,11 @@ country_decisions = {
 					OR = {
 						tag = BOH
 						was_tag = BOH
+						tag = MVA
+						was_tag = MVA
 					}
-					has_dlc = "Winds of Change"
+					ai = no
+					#has_dlc = "Winds of Change"
 				}
 				custom_trigger_tooltip = {
 					tooltip = boh_has_unlocked_great_moravia
@@ -123,47 +123,7 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
-			if = {
-				limit = {
-					has_dlc = "Winds of Change"
-					OR = {
-						tag = BOH
-						was_tag = BOH
-					}
-				}
-				if = {
-					limit = {
-						has_country_flag = boh_empowered_ni
-					}
-					custom_tooltip = boh_moravia_form_bonus_ni_yes
-					tooltip = {
-						add_country_modifier = {
-							name = czech_nationalism
-							duration = -1
-						}
-					}
-				}
-				else = {
-					custom_tooltip = boh_moravia_form_bonus_ni_no
-					tooltip = {
-						add_country_modifier = {
-							name = czech_nationalism
-							duration = -1
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_flag = boh_empowered_ni
-					}
-					add_country_modifier = {
-						name = czech_nationalism
-						duration = -1
-					}
-				}
-			}
+			
 		}
 		ai_will_do = {
 			factor = 1

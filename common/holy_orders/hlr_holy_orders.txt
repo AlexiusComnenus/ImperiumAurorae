@@ -3,7 +3,10 @@
 hlr_teutonic_order = {
 	icon = GFX_holy_order_hlr_teutons
 	trigger = {
-		religion = catholic
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 230 230 230 }
@@ -29,7 +32,10 @@ hlr_teutonic_order = {
 hlr_johanniter_order = {
 	icon = GFX_holy_order_hlr_johanniter
 	trigger = {
-		religion = catholic
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 213 59 59 }
@@ -55,7 +61,10 @@ hlr_johanniter_order = {
 hlr_lazarus_order = {
 	icon = GFX_holy_order_hlr_lazarus
 	trigger = {
-		religion = catholic
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 97 162 93 }

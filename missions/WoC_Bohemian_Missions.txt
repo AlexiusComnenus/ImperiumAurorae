@@ -6,8 +6,11 @@ woc_boh_first_branch = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -21,7 +24,7 @@ woc_boh_first_branch = {
 			army_size = HUN
 			custom_trigger_tooltip = {
 				tooltip = hussite_regency_tt
-				has_country_flag = hussite_regency_mission_flag
+				has_country_flag = resolved_bohemian_civil_war_flag
 			}
 			HUN = {
 				custom_trigger_tooltip = {
@@ -241,7 +244,7 @@ woc_boh_first_branch = {
 				}
 				custom_tooltip = boh_hungary_subject_yes
 				tooltip = {
-					custom_tooltip = boh_ownership_of_nitra_tt
+					#custom_tooltip = boh_ownership_of_nitra_tt
 					HUN = {
 						add_liberty_desire = -25
 					}
@@ -250,7 +253,7 @@ woc_boh_first_branch = {
 			else = {
 				custom_tooltip = boh_hungary_subject_no
 				tooltip = {
-					custom_tooltip = boh_ownership_of_nitra_tt
+					#custom_tooltip = boh_ownership_of_nitra_tt
 					HUN = {
 						add_liberty_desire = -25
 					}
@@ -289,7 +292,7 @@ woc_boh_first_branch = {
 							is_subject_of = ROOT
 						}
 					}
-					set_country_flag = boh_ownership_nitra
+					#set_country_flag = boh_ownership_nitra
 					HUN = {
 						add_liberty_desire = -25
 					}
@@ -404,13 +407,11 @@ woc_boh_first_branch = {
 			OR = {
 				AND = {
 					region = balkan_region
-					owned_by = TUR
+					owned_by = BYZ
 				}
 				AND = {
 					OR = {
-						area = bulgaria_area
-						area = silistria_area
-						province_id = 150
+						province_id = 151
 					}
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
@@ -418,18 +419,11 @@ woc_boh_first_branch = {
 		}
 		
 		trigger = {
-			150 = {
+			151 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 6
-				OR = {
-					area = bulgaria_area
-					area = silistria_area
-				}
-			}
 			NOT = {
-				TUR = {
+				BYZ = {
 					any_owned_province = {
 						region = balkan_region
 					}
@@ -539,7 +533,7 @@ woc_boh_first_branch = {
 			OR = {
 				custom_trigger_tooltip = {
 					tooltip = hussite_regency_tt
-					has_country_flag = hussite_regency_mission_flag
+					has_country_flag = resolved_bohemian_civil_war_flag
 				}
 				is_year = 1500
 			}
@@ -553,17 +547,18 @@ woc_boh_first_branch = {
 		}
 		
 		effect = {
-			hidden_effect = {
-				if = {
-					limit = { ai = yes }
-					country_event = {
-						id = flavor_boh.14
-					}
-				}
-			}
+			#hidden_effect = {
+			#	if = {
+			#		limit = { ai = yes }
+			#		country_event = {
+			#			id = flavor_boh.14
+			#		}
+			#	}
+			#}
 			if = {
 				limit = {
 					NOT = { religion = catholic }
+					NOT = { religion = fraticelli }
 				}
 				custom_tooltip = boh_unlock_hussite_branching_tt_yes
 				tooltip = {
@@ -586,7 +581,7 @@ woc_boh_first_branch = {
 			}
 			if = {
 				limit = {
-					religion = catholic 
+					OR = { religion = catholic  religion = fraticelli }
 				}
 				custom_tooltip = boh_unlock_catholic_branching_tt_yes
 				tooltip = {
@@ -610,7 +605,7 @@ woc_boh_first_branch = {
 			hidden_effect = {
 				if = {
 					limit = {
-						religion = catholic 
+						OR = { religion = catholic  religion = fraticelli }
 					}
 					clr_country_flag = boh_hussite_missions
 					clr_country_flag = boh_catholic_missions
@@ -651,8 +646,11 @@ boh_first_locked = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = {
 			OR = {
 				has_country_flag = boh_hussite_missions
@@ -709,8 +707,11 @@ boh_first_unlocked_catholic = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		has_country_flag = boh_catholic_missions
 		NOT = {
 			has_country_flag = boh_hussite_missions
@@ -776,7 +777,7 @@ boh_first_unlocked_catholic = {
 		effect = {
 			if = {
 				limit = {
-					religion = catholic
+					OR = { religion = catholic	religion = fraticelli }
 				}
 				custom_tooltip = boh_unlock_catholic_branching_tt_yes
 				tooltip = {
@@ -808,7 +809,7 @@ boh_first_unlocked_catholic = {
 			if = { #fallback reward
 				limit = {
 					NOT = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
 				}
 				custom_tooltip = boh_empty
@@ -841,7 +842,7 @@ boh_first_unlocked_catholic = {
 			hidden_effect = {
 				if = {
 					limit = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
 					add_reform_desire = -0.02
 					add_papal_influence = 20
@@ -895,7 +896,7 @@ boh_first_unlocked_catholic = {
 		effect = {
 			if = {
 				limit = {
-					religion = catholic
+					OR = { religion = catholic	religion = fraticelli }
 				}
 				custom_tooltip = boh_unlock_catholic_branching_tt_yes
 				tooltip = {
@@ -919,7 +920,7 @@ boh_first_unlocked_catholic = {
 			if = { #fallback reward
 				limit = {
 					NOT = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
 				}
 				custom_tooltip = boh_not_catholic_tt_yes
@@ -942,7 +943,7 @@ boh_first_unlocked_catholic = {
 			hidden_effect = {
 				if = {
 					limit = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
 					set_country_flag = hun_empower_religious_diplomats
 					add_country_modifier = {
@@ -987,11 +988,11 @@ boh_first_unlocked_catholic = {
 		effect = {
 			if = {
 				limit = {
-					religion = catholic
+					OR = { religion = catholic	religion = fraticelli }
 				}
 				custom_tooltip = boh_unlock_catholic_branching_tt_yes
 				tooltip = {
-					custom_tooltip = boh_empower_diplo_advisors_tt
+					#custom_tooltip = boh_empower_diplo_advisors_tt
 					add_country_modifier = {
 						name = boh_triumph_of_the_cross
 						duration = 7300
@@ -1001,17 +1002,17 @@ boh_first_unlocked_catholic = {
 			else = {
 				custom_tooltip = boh_unlock_catholic_branching_tt_no
 				tooltip = {
-					custom_tooltip = boh_empower_diplo_advisors_tt
+					#custom_tooltip = boh_empower_diplo_advisors_tt
 					add_country_modifier = {
 						name = boh_triumph_of_the_cross
-						duration = 7300
+						duration = -1
 					}
 				}
 			}
 			if = { #fallback reward
 				limit = {
 					NOT = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
 				}
 				custom_tooltip = boh_not_catholic_tt_yes
@@ -1032,12 +1033,12 @@ boh_first_unlocked_catholic = {
 			hidden_effect = {
 				if = {
 					limit = {
-						religion = catholic
+						OR = { religion = catholic	religion = fraticelli }
 					}
-					set_country_flag = boh_empower_diplo_advisors
+					#set_country_flag = boh_empower_diplo_advisors
 					add_country_modifier = {
 						name = boh_triumph_of_the_cross
-						duration = 7300
+						duration = -1
 					}
 				}
 				else = {
@@ -1059,8 +1060,11 @@ boh_first_unlocked_hussite = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		has_country_flag = boh_hussite_missions
 		NOT = {
 			has_country_flag = boh_catholic_missions
@@ -1086,18 +1090,18 @@ boh_first_unlocked_hussite = {
 				religion = hussite
 				owned_by = ROOT
 			}
-			erzgebirge_area = {
-				type = all
-				religion = hussite
-				owned_by = ROOT
-			}
+			#erzgebirge_area = {
+			#	type = all
+			#	religion = hussite
+			#	owned_by = ROOT
+			#}
 		}
 		
 		provinces_to_highlight = {
 			OR = {
 				area = bohemia_area
 				area = moravia_area
-				area = erzgebirge_area
+				#area = erzgebirge_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -1277,17 +1281,17 @@ boh_first_unlocked_hussite = {
 				region = north_german_region
 				region = south_german_region
 			}
-			owner = { NOT = { religion = hussite } }
+			owner = { NOT = { religion = ROOT } }
 		}
 		
 		trigger = {
 			north_german_region = {
 				type = all
-				owner = { religion = hussite }
+				owner = { religion = ROOT }
 			}
 			south_german_region = {
 				type = all
-				owner = { religion = hussite }
+				owner = { religion = ROOT }
 			}
 		}
 		
@@ -1365,8 +1369,11 @@ woc_boh_second_branch = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1434,41 +1441,7 @@ woc_boh_second_branch = {
 		
 		effect = {
 			add_adm_power = 100
-			if = {
-				limit = {
-					exists = SAX
-					SAX = {
-						is_subject_of = ROOT 
-					}
-				}
-				tooltip = {
-					custom_tooltip = boh_saxony_elector_subject_tt_yes
-					tooltip = {
-						country_event = { id = emp_mission_events.9 }
-						custom_tooltip = boh_saxony_event_tooltip
-					}
-				}
-			}
-			else = {
-				tooltip = {
-					custom_tooltip = boh_saxony_elector_subject_tt_no
-					tooltip = {
-						country_event = { id = emp_mission_events.9 }
-						custom_tooltip = boh_saxony_event_tooltip
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						exists = SAX
-						SAX = {
-							is_subject_of = ROOT 
-						}
-					}
-					country_event = { id = emp_mission_events.9 }
-				}
-			}
+			add_prestige_or_monarch_power = { amount = 20 }
 		}
 	}
 	
@@ -1598,104 +1571,20 @@ woc_boh_third_branch = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	
-	boh_humiliate_austria = {
-		icon = humiliate_austria
-		required_missions = { }
-		position = 1
-		
-		provinces_to_highlight = {
-			owned_by = HAB
-		}
-		
-		trigger = {
-			is_subject = no
-			if = {
-				limit = {
-					has_dlc = "Rights of Man"
-				}
-				OR = {
-					HAB = { humiliated_by = ROOT }
-					NOT = { exists = HAB }
-					AND = {
-						is_great_power = yes
-						HAB = { is_great_power = no }
-					}
-				}
-			}
-			else = {
-				OR = {
-					HAB = { humiliated_by = ROOT }
-					NOT = { exists = HAB }
-				}
-			}
-		}
-		
-		effect = {
-			add_dip_power = 100
-			add_country_modifier = {
-				name = boh_humiliated_habsburgs
-				duration = 9125
-			}
-			inner_austria_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			austria_proper_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			if = {
-				limit = {
-					HAB = { humiliated_by = ROOT }
-				}
-				custom_tooltip = boh_humiliated_hab_tt_yes
-				tooltip = {
-					add_prestige_or_monarch_power = {
-						amount = 25
-					}
-				}
-			}
-			else = {
-				custom_tooltip = boh_humiliated_hab_tt_no
-				tooltip = {
-					add_prestige_or_monarch_power = {
-						amount = 25
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						HAB = { humiliated_by = ROOT }
-					}
-					add_prestige_or_monarch_power = {
-						amount = 25
-					}
-				}
-			}
-		}
-		
-		ai_weight = {
-			factor = 500
-		}
-	}
 	
 	boh_otakars_legacy = {
 		icon = mission_the_renaissance_king
-		required_missions = { boh_humiliate_austria }
-		position = 2
+		required_missions = {  }
+		position = 1
 		
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
@@ -1761,27 +1650,6 @@ woc_boh_third_branch = {
 				}
 				add_permanent_claim = ROOT
 			}
-			if = {
-				limit = {
-					has_country_modifier = boh_humiliated_habsburgs
-				}
-				custom_tooltip = boh_humiliated_permanent_yes
-			}
-			else = {
-				custom_tooltip = boh_humiliated_permanent_no
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						has_country_modifier = boh_humiliated_habsburgs
-					}
-					remove_country_modifier = boh_humiliated_habsburgs
-					add_country_modifier = {
-						name = boh_humiliated_habsburgs
-						duration = -1
-					}
-				}
-			}
 		}
 		
 		ai_weight = {
@@ -1799,6 +1667,7 @@ woc_boh_third_branch = {
 			prestige = 90
 			legitimacy = 90
 			total_development = 500
+			culture_group = west_slavic
 		}
 		
 		effect = {
@@ -2063,7 +1932,7 @@ woc_boh_third_branch = {
 				AND = {
 					region = balkan_region
 					owner = {
-						religion_group = muslim
+						religion = hellenic_pagan_reformed
 					}
 				}
 			}
@@ -2091,13 +1960,19 @@ woc_boh_third_branch = {
 			balkan_region = {
 				type = all
 				owner = {
-					NOT = { religion_group = muslim }
+					NOT = { religion = hellenic_pagan_reformed }
 				}
 			}
 		}
 		
 		effect = {
-			override_country_name = BOH_COMMONWEALTH
+			if = {
+				limit = { culture_group = germanic }
+				override_country_name = BOH_COMMONWEALTH
+			}
+			else = {
+				override_country_name = MVA_COMMONWEALTH
+			}
 			set_country_flag = is_BOH_COMMONWEALTH_flag
 			set_country_flag = has_overriden_name_flag
 			add_power_projection = {
@@ -2450,8 +2325,11 @@ woc_boh_fourth_branch = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -2593,41 +2471,7 @@ woc_boh_fourth_branch = {
 		
 		effect = {
 			add_mil_power = 100
-			if = {
-				limit = {
-					exists = BRA
-					BRA = {
-						is_subject_of = ROOT 
-					}
-				}
-				tooltip = {
-					custom_tooltip = boh_brandenburg_elector_subject_tt_yes
-					tooltip = {
-						country_event = { id = emp_mission_events.8 }
-						custom_tooltip = boh_brandenburg_event_tooltip
-					}
-				}
-			}
-			else = {
-				tooltip = {
-					custom_tooltip = boh_brandenburg_elector_subject_tt_no
-					tooltip = {
-						country_event = { id = emp_mission_events.8 }
-						custom_tooltip = boh_brandenburg_event_tooltip
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						exists = BRA
-						BRA = {
-							is_subject_of = ROOT 
-						}
-					}
-					country_event = { id = emp_mission_events.8 }
-				}
-			}
+			add_prestige_or_monarch_power = { amount = 20 }
 		}
 	}
 	
@@ -2710,18 +2554,7 @@ woc_boh_fourth_branch = {
 			}
 			if = {
 				limit = {
-					tag = BOH
-				}
-				custom_tooltip = boh_empower_ni_yes
-			}
-			else = {
-				custom_tooltip = boh_empower_ni_no
-			}
-			if = {
-				limit = {
-					NOT = {
-						tag = BOH
-					}
+					primary_culture = czech
 				}
 				custom_tooltip = boh_not_empower_ni_yes
 				tooltip = {
@@ -2743,12 +2576,8 @@ woc_boh_fourth_branch = {
 			hidden_effect = {
 				if = {
 					limit = {
-						tag = BOH
+						primary_culture = czech
 					}
-					set_country_flag = boh_empowered_ni
-					swap_free_idea_group = yes
-				}
-				else = {
 					add_country_modifier = {
 						name = czech_nationalism
 						duration = -1
@@ -2768,8 +2597,11 @@ woc_boh_fifth_branch = {
 		has_dlc = "Winds of Change"
 	}
 	potential = {
-		has_dlc = "Winds of Change"
-		tag = BOH
+		#has_dlc = "Winds of Change"
+		OR = {
+			tag = BOH
+			tag = MVA
+		}
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -2782,7 +2614,7 @@ woc_boh_fifth_branch = {
 		trigger = {
 			OR = {
 				AND = {
-					GLG = {
+					SIL = {
 						has_opinion = {
 							who = ROOT
 							value = 200
@@ -2791,25 +2623,14 @@ woc_boh_fifth_branch = {
 							liberty_desire = 1
 						}
 					}
-					OPL = {
-						has_opinion = {
-							who = ROOT
-							value = 200
-						}
-						NOT = {
-							liberty_desire = 1
-						}
-					}
-					NOT = {
-						exists = SIL
+					silesia_area = {
+						type = all
+						owned_by = SIL
 					}
 				}
 				AND = {
 					NOT = {
-						exists = GLG
-					}
-					NOT = {
-						exists = OPL
+						exists = SIL
 					}
 					silesia_area = {
 						type = all
@@ -2859,7 +2680,7 @@ woc_boh_fifth_branch = {
 			}
 			if = {
 				limit = {
-					GLG = {
+					SIL = {
 						has_opinion = {
 							who = ROOT
 							value = 200
@@ -2868,37 +2689,20 @@ woc_boh_fifth_branch = {
 							liberty_desire = 1
 						}
 					}
-					OPL = {
-						has_opinion = {
-							who = ROOT
-							value = 200
-						}
-						NOT = {
-							liberty_desire = 1
-						}
-					}
-					NOT = {
-						exists = SIL
+					silesia_area = {
+						type = all
+						owned_by = SIL
 					}
 				}
 				custom_tooltip = boh_silesia_diplomatic_tt_yes
-				tooltip = {
-					custom_tooltip = boh_create_silesia_vassal_tt
-				}
 			}
 			else = {
 				custom_tooltip = boh_silesia_diplomatic_tt_no
-				tooltip = {
-					custom_tooltip = boh_create_silesia_vassal_tt
-				}
 			}
 			if = {
 				limit = {
 					NOT = {
-						exists = GLG
-					}
-					NOT = {
-						exists = OPL
+						exists = SIL
 					}
 					silesia_area = {
 						type = all
@@ -2936,10 +2740,7 @@ woc_boh_fifth_branch = {
 				if = {
 					limit = {
 						NOT = {
-							exists = GLG
-						}
-						NOT = {
-							exists = OPL
+							exists = SIL
 						}
 						silesia_area = {
 							type = all
@@ -2961,71 +2762,28 @@ woc_boh_fifth_branch = {
 				}
 				else_if = {
 					limit = {
-						if = {
-							limit = {
-								GLG = {
-									has_opinion = {
-										who = ROOT
-										value = 200
-									}
-									NOT = {
-										liberty_desire = 1
-									}
-								}
-								OPL = {
-									has_opinion = {
-										who = ROOT
-										value = 200
-									}
-									NOT = {
-										liberty_desire = 1
-									}
-								}
-								NOT = {
-									exists = SIL
-								}
+						SIL = {
+							has_opinion = {
+								who = ROOT
+								value = 200
 							}
+							NOT = {
+								liberty_desire = 1
+							}
+						}
+						silesia_area = {
+							type = all
+							owned_by = SIL
 						}
 					}
-					if = {
-						limit = {
-							GLG = {
-								ai = yes
-							}
-						}
-						OPL = {
-							inherit = GLG
-							change_tag = SIL
-						}
-						create_subject = {
-							subject_type = incorporated_vassal
-							subject = SIL
-							keep_liberty_desire = yes
-						}
-						SIL = {
-							set_country_flag = free_incorporated_vassal
-							custom_tooltip = WoC_free_integrated_vassal_str
-						}
+					create_subject = {
+						subject_type = incorporated_vassal
+						subject = SIL
+						keep_liberty_desire = yes
 					}
-					else_if = {
-						limit = {
-							OPL = {
-								ai = yes
-							}
-						}
-						GLG = {
-							inherit = OPL
-							change_tag = SIL
-						}
-						create_subject = {
-							subject_type = incorporated_vassal
-							subject = SIL
-							keep_liberty_desire = yes
-						}
-						SIL = {
-							set_country_flag = free_incorporated_vassal
-							custom_tooltip = WoC_free_integrated_vassal_str
-						}
+					SIL = {
+						set_country_flag = free_incorporated_vassal
+						custom_tooltip = WoC_free_integrated_vassal_str
 					}
 				}
 			}
@@ -3111,8 +2869,8 @@ woc_boh_fifth_branch = {
 					custom_tooltip = boh_cb_poland_tt_yes
 					tooltip = {
 						add_casus_belli = {
-							type = cb_restore_personal_union
-							months = 300
+							type = cb_fabricated_claims
+							months = 600
 							target = POL
 						}
 					}
@@ -3121,8 +2879,8 @@ woc_boh_fifth_branch = {
 					custom_tooltip = boh_cb_poland_tt_no
 					tooltip = {
 						add_casus_belli = {
-							type = cb_restore_personal_union
-							months = 300
+							type = cb_fabricated_claims
+							months = 600
 							target = POL
 						}
 					}
@@ -3143,8 +2901,8 @@ woc_boh_fifth_branch = {
 					custom_tooltip = boh_cb_plc_tt_yes
 					tooltip = {
 						add_casus_belli = {
-							type = cb_restore_personal_union
-							months = 300
+							type = cb_fabricated_claims
+							months = 600
 							target = PLC
 						}
 					}
@@ -3153,8 +2911,8 @@ woc_boh_fifth_branch = {
 					custom_tooltip = boh_cb_plc_tt_no
 					tooltip = {
 						add_casus_belli = {
-							type = cb_restore_personal_union
-							months = 300
+							type = cb_fabricated_claims
+							months = 600
 							target = PLC
 						}
 					}
@@ -3202,8 +2960,8 @@ woc_boh_fifth_branch = {
 						}
 					}
 					add_casus_belli = {
-						type = cb_restore_personal_union
-						months = 300
+						type = cb_fabricated_claims
+						months = 600
 						target = PLC
 					}
 				}
@@ -3216,8 +2974,8 @@ woc_boh_fifth_branch = {
 						}
 					}
 					add_casus_belli = {
-						type = cb_restore_personal_union
-						months = 300
+						type = cb_fabricated_claims
+						months = 600
 						target = POL
 					}
 				}
@@ -3438,324 +3196,6 @@ woc_boh_fifth_branch = {
 		}
 	}
 	
-	boh_control_the_electors = {
-		icon = influence_the_princes
-		required_missions = { }
-		position = 7
-		
-		trigger = {
-			if = {
-				limit = {
-					hre_size = 1
-				}
-				calc_true_if = {
-					all_elector = {
-						preferred_emperor = ROOT
-					}
-					amount = 4
-				}
-			}
-			else = {
-				num_of_allies = 3
-			}
-		}
-		
-		provinces_to_highlight = {
-			owner = {
-				is_elector = yes
-				NOT = {
-					preferred_emperor = ROOT
-				}
-			}
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = "gen_hre_diplomacy_mod"
-				duration = 5475
-			}
-			if = {
-				limit = {
-					has_dlc = "The Cossacks"
-				}
-				custom_tooltip = boh_trust_electors_tt
-				hidden_effect = {
-					every_elector = {
-						limit = {
-							preferred_emperor = ROOT
-						}
-						add_trust = {
-							who = ROOT
-							value = 10
-							mutual = yes
-						}
-					}
-				}
-			}
-			else = {
-				define_advisor = {
-					type = statesman
-					skill = 2
-					culture = ROOT
-					religion = ROOT
-					cost_multiplier = 0.5
-				}
-			}
-		}
-	}
 	
-	boh_karels_claims = {
-		icon = mission_karels_heritage
-		required_missions = { boh_control_the_electors }
-		position = 8
-		
-		trigger = {
-			if = {
-				limit = {
-					hre_size = 1
-				}
-				is_emperor = yes
-			}
-			else = {
-				government_rank = 3
-			}
-		}
-		
-		effect = {
-			custom_tooltip = boh_dip_for_reform_votes_tt
-			add_country_modifier = {
-				name = "boh_luxembourg_legacy"
-				duration = 7300
-			}
-			94 = {
-				if = {
-					limit = {
-						NOT = { is_core = ROOT }
-						NOT = { is_permanent_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			custom_tooltip = boh_perma_claim_hre_provinces_tt
-			hidden_effect = {
-				every_country = {
-					limit = {
-						is_part_of_hre = yes 
-					}
-					ROOT = {
-						add_dip_power = 1
-					}
-				}
-				every_province = {
-					limit = {
-						is_part_of_hre = yes
-						owner = {
-							NOT = {
-								is_part_of_hre = yes
-							}
-						}
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-		}
-	}
-	
-	boh_reformatio_sigismundi = {
-		icon = reformatio_sigismundi
-		required_missions = { boh_karels_claims }
-		position = 9
-		
-		trigger = {
-			if = {
-				limit = {
-					hre_size = 1
-				}
-				is_emperor = yes
-				if = {
-					limit = {
-						has_dlc = "Emperor"
-					}
-					hre_reform_passed = emperor_perpetual_diet
-				}
-				else = {
-					hre_reform_passed = gemeinerpfennig
-				}
-			}
-			else = {
-				reform_level = 7
-			}
-		}
-		
-		effect = {
-			country_event = { id = flavor_boh.17 }
-			custom_tooltip = boh_reformatio_sigismundi_insight_tt
-		}
-	}
-	
-	boh_peace_in_europe = {
-		icon = peace_in_europe
-		required_missions = { boh_reformatio_sigismundi }
-		position = 10
-		
-		provinces_to_highlight = {
-			NOT = {
-				owned_by = ROOT
-			}
-			owner = {
-				capital_scope = {
-					continent = europe
-				}
-				OR = {
-					army_size = ROOT
-					total_development = ROOT
-				}
-			}
-		}
-		
-		trigger = {
-			is_at_war = no
-			if = {
-				limit = {
-					hre_size = 1
-				}
-				calc_true_if = {
-					all_province = {
-						is_part_of_hre = yes
-					}
-					amount = 300
-				}
-				is_emperor = yes
-			}
-			else = {
-				total_development = 2000
-			}
-			custom_trigger_tooltip = {
-				tooltip = boh_biggest_eu_army
-				NOT = {
-					any_country = {
-						capital_scope = {
-							continent = europe
-						}
-						army_size = ROOT
-					}
-				}
-			}
-			custom_trigger_tooltip = {
-				tooltip = boh_biggest_eu_dev
-				NOT = {
-					any_country = {
-						capital_scope = {
-							continent = europe
-						}
-						total_development = ROOT
-					}
-				}
-			}
-		}
-		
-		effect = {
-			add_absolutism = 10
-			add_revolutionary_zeal = 10
-			add_country_modifier = {
-				name = "boh_peace_in_europe"
-				duration = -1
-			}
-			if = {
-				limit = {
-					NOT = {
-						any_country = {
-							army_size = ROOT
-						}
-					}
-					NOT = {
-						any_country = {
-							total_development = ROOT
-						}
-					}
-				}
-				custom_tooltip = boh_global_hegemon_tt_yes
-				tooltip = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Res Publica"
-								has_dlc = "Common Sense"
-							}
-						}
-						add_country_modifier = {
-							name = "boh_hegemon"
-							desc = "boh_until_lose_war"
-							duration = -1
-						}
-					}
-					else = {
-						add_country_modifier = {
-							name = "boh_hegemon_dlcless"
-							duration = -1
-						}
-					}
-				}
-			}
-			else = {
-				custom_tooltip = boh_global_hegemon_tt_no
-				tooltip = {
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Res Publica"
-								has_dlc = "Common Sense"
-							}
-						}
-						add_country_modifier = {
-							name = "boh_hegemon"
-							desc = "boh_until_lose_war"
-							duration = -1
-						}
-					}
-					else = {
-						add_country_modifier = {
-							name = "boh_hegemon_dlcless"
-							duration = -1
-						}
-					}
-				}
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						NOT = {
-							any_country = {
-								army_size = ROOT
-							}
-						}
-						NOT = {
-							any_country = {
-								total_development = ROOT
-							}
-						}
-					}
-					if = {
-						limit = {
-							OR = {
-								has_dlc = "Res Publica"
-								has_dlc = "Common Sense"
-							}
-						}
-						add_country_modifier = {
-							name = "boh_hegemon"
-							duration = -1
-						}
-					}
-					else = {
-						add_country_modifier = {
-							name = "boh_hegemon_dlcless"
-							duration = -1
-						}
-					}
-				}
-			}
-		}
-	}
 	
 }

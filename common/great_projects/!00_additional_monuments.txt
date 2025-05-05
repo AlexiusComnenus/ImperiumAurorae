@@ -613,6 +613,7 @@ schloss_berlepsch = {
 		}
 
 		country_modifiers = {
+			drill_gain_modifier = 0.05
 		}
 		
 		on_upgraded = {
@@ -639,7 +640,16 @@ schloss_berlepsch = {
 		}
 
 		country_modifiers = {
-			infantry_power = 0.1
+			drill_gain_modifier = 0.10
+		}
+		
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = hessian }
+			}
+			modifier = { 
+				infantry_power = 0.1
+			}
 		}
 		
 		on_upgraded = {

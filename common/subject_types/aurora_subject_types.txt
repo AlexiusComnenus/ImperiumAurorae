@@ -234,6 +234,21 @@ brother_kingdom = {
 	is_march = yes
 }
 
+integrated_personal_union = {
+	copy_from = personal_union
+	sprite = GFX_icon_integrated_personal_union_subject_type
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_integrated_personal_union_subject_type
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_integrated_personal_union_subject_type
+	annex_cost_per_development = 6.0
+	takes_diplo_slot = no
+	
+	divert_trade = yes
+	fortify_march = yes
+	send_officers = yes
+	subsidize_armies = yes
+	is_march = yes
+}
+
 saxon_daimyo = {
 	copy_from = vassal
 	count = vassal

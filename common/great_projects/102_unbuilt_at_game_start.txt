@@ -1878,6 +1878,7 @@ brandenburg_gate = {
 		#}
 		on_upgraded = {
 		}
+	}
 }
 
 

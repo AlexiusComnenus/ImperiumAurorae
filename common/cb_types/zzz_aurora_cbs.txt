@@ -99,6 +99,15 @@ cb_morroco_civil_war = {
 	war_goal = morroco_civil_war_wargoal
 }
 
+cb_bohemian_civil_war = {
+	valid_for_subject = no
+	ai_peace_desire = -300
+	
+	is_triggered_only = yes
+
+	war_goal = bohemian_civil_war_wargoal
+}
+
 cb_german_civil_war = {
 	valid_for_subject = no
 	ai_peace_desire = -1000

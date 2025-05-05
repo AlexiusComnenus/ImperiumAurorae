@@ -597,6 +597,13 @@ country_event = {
 			duration = -1
 		}
 		
+		change_price = {
+			trade_goods = saffron
+			key = SPICE_TRADE
+			value = 0.285714
+			duration = -1
+		}
+		
 		
 		
 		add_years_of_income  = 0.25
@@ -1318,6 +1325,14 @@ country_event = {
 		
 		change_price = {
 			trade_goods = cinnamon
+			key = DECLINE_OF_SPICE_TRADE
+			value = -0.285714
+			duration = -1
+		}
+		
+		
+		change_price = {
+			trade_goods = saffron
 			key = DECLINE_OF_SPICE_TRADE
 			value = -0.285714
 			duration = -1

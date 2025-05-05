@@ -1,6 +1,6 @@
 country_decisions = {
 
-	pol_commonwealth = {
+	pol_commonwealth_ia = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
@@ -148,7 +148,7 @@ country_decisions = {
 		do_not_integrate = HUN
 	}
 
-	lit_commonwealth = {
+	lit_commonwealth_ia = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
@@ -302,7 +302,7 @@ country_decisions = {
 		do_not_integrate = POL
 	}
 	
-	commonwealth_enforced = {
+	commonwealth_enforced_ia = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes

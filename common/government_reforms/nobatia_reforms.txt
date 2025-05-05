@@ -3,6 +3,7 @@ nobatia_hellenic_crusade_reform = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	force_conversion_gives_global_holy_war_released_modifier = yes
+	papacy = yes
 	potential = {
 		OR = {
 			has_reform = nobatia_hellenic_crusade_reform

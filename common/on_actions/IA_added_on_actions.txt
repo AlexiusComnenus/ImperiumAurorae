@@ -81,6 +81,9 @@ on_yearly_pulse_2 = {
 		dotfset.29
 		dotfset.30
 		dotfset.31
+		saxon_fief.85
+		fix_tag_traits.1
+		fix_tag_traits.2
 	}
 	random_events = {
 		250 = ia_flavor_sax.22

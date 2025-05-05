@@ -22,6 +22,7 @@ country_decisions = {
 				limit = { ai = yes }
 				is_subject = no
 			}
+			NOT = { has_country_flag = hab_blocked_germany }
 		}
 		
 		allow = {
@@ -91,6 +92,7 @@ country_decisions = {
 				limit = { ai = yes }
 				is_subject = no
 			}
+			NOT = { has_country_flag = hab_blocked_germany }
 		}
 		
 		allow = {

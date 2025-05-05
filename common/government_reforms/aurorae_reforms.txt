@@ -88,6 +88,33 @@ ayyubid_dynasty = {
 
 }
 
+austrian_archduchy_reform = {
+	icon = "austrian_archduchy_reform"
+	allow_normal_conversion = yes
+	legacy_equivalent = austrian_archduchy
+	valid_for_nation_designer = no
+	potential = {
+		always = no
+		OR = {
+			tag = HAB
+			was_tag = HAB
+			has_reform = austrian_archduchy_reform
+			have_had_reform = austrian_archduchy_reform
+			primary_culture = austrian
+		}
+	}
+	#nation_designer_cost = 0
+	modifiers = {
+		liberty_desire_from_subject_development = -0.33
+		nobles_influence_modifier = 0.05
+		maratha_exclusive_influence_modifier = 0.05
+		rajput_exclusive_influence_modifier = 0.05
+	}
+	custom_attributes = {
+		buffed_strong_duchies = yes #+5% Loyalty
+	}
+}
+
 merchant_theocracy_reform = {
 	icon = "pope"
 	allow_normal_conversion = yes
@@ -1009,6 +1036,7 @@ antioch_hellenic_crusade_reform = {
 	lock_level_when_selected = yes
 	force_conversion_gives_global_holy_war_released_modifier = yes
 	can_change_primary_culture = no
+	papacy = yes
 	potential = {
 		OR = {
 			tag = Z17
@@ -1563,6 +1591,7 @@ auroral_horde = {
 	}
 	nomad = yes
 	monastic = yes
+	papacy = yes
 	raze_province = yes
 	modifiers = {
 		cavalry_cost = -0.1

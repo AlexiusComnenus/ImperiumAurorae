@@ -4,3 +4,4 @@ government_rank = 1
 technology_group = indian
 religion = zun_pagan
 primary_culture = afghani
+capital = 2226

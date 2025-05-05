@@ -1685,7 +1685,15 @@ styrian_arsenal = {
 		}
 		country_modifiers = {
 			infantry_cost = -0.05
-			land_forcelimit_modifier = 0.025
+		}
+		
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = austrian }
+			}
+			modifier = { 
+				land_forcelimit_modifier = 0.025
+			}
 		}
 
 		#what effects happen when this tier is achieved
@@ -1711,8 +1719,16 @@ styrian_arsenal = {
 			infantry_cost = -0.05
 			cavalry_cost = -0.05
 			artillery_cost = -0.05
-			land_forcelimit_modifier = 0.025
-			land_morale = 0.025
+		}
+		
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = austrian }
+			}
+			modifier = { 
+				land_forcelimit_modifier = 0.025
+				land_morale = 0.025
+			}
 		}
 		on_upgraded = {
 		}
@@ -1737,8 +1753,16 @@ styrian_arsenal = {
 			infantry_cost = -0.1
 			cavalry_cost = -0.1
 			artillery_cost = -0.1
-			land_forcelimit_modifier = 0.05
-			land_morale = 0.05
+		}
+		
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = austrian }
+			}
+			modifier = { 
+				land_forcelimit_modifier = 0.05
+				land_morale = 0.05
+			}
 		}
 		on_upgraded = {
 		}
