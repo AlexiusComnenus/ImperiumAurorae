@@ -150,9 +150,8 @@ canal_system = {
 		allowed_num_of_buildings = 1
 	}
 	
-	#xorme_ai 
 	ai_will_do = {
-		factor = 1.5 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
+		factor = 10 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
 		modifier = {
 			factor = 0
 			FROM = { num_of_loans = 1 }
@@ -216,10 +215,9 @@ road_network = {
 		province_trade_power_modifier = 0.2
 		allowed_num_of_buildings = 1
 	}
-	
-	#xorme_ai 
+	 
 	ai_will_do = {
-		factor = 1.5 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
+		factor = 10 # Because hard-coded AI only considers what it will gain, not what its enemies will lose.
 		modifier = {
 			factor = 0
 			FROM = { num_of_loans = 1 }
@@ -230,7 +228,7 @@ road_network = {
 		}
 		modifier = {
 			factor = 100.0
-			FROM = { treasury = 10000 }
+			FROM = { treasury = 1000 }
 		}
 		modifier = {
 			factor = 10
@@ -1106,6 +1104,7 @@ courthouse = {
 		local_autonomy = -0.1
 		local_governing_cost = -0.25
 		allowed_num_of_buildings = 1
+		min_local_autonomy = -5
 	}
 	build_trigger = {
 		if = {
@@ -1189,10 +1188,6 @@ courthouse = {
 		modifier = {
 			factor = 15.0
 			FROM = { governing_capacity_percentage = 1.1 }
-		}
-		modifier = {
-			factor = 100.0
-			has_province_modifier = xorme_ai_agenda_building_spot
 		}
 		#FROM CASH
 		modifier = {
@@ -2281,6 +2276,7 @@ town_hall = {
 		local_autonomy = -0.2
 		local_governing_cost = -0.5
 		allowed_num_of_buildings = 1
+		min_local_autonomy = -10
 	}
 
 	on_built = {

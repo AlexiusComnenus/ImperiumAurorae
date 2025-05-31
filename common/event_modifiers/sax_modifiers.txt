@@ -299,7 +299,11 @@ thuringians_oppressed = {
 }
 
 Kleinstaaterei = {
-	min_local_autonomy = 30
+	min_local_autonomy = 10
+}
+
+Kleinstaaterei_lesser = {
+	min_local_autonomy = 5
 }
 
 sax_beer_truce = {

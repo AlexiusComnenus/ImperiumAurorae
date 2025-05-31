@@ -508,6 +508,42 @@ country_event = {
 	}
 }
 
+country_event = {
+	id = saxon_fief.86
+	title = saxon_fief.86.title
+	desc = saxon_fief.86.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1544
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "saxon_fief.86.1"
+		every_province = {
+			limit = {
+				has_province_modifier = Kleinstaaterei
+			}
+			remove_province_modifier = Kleinstaaterei
+			add_permanent_province_modifier = {
+				name = Kleinstaaterei_lesser
+				duration = -1
+			}
+			province_event = {
+				id = capital_autonomy.2
+			}
+		}
+	}
+}
+
 namespace = french_appanage
 
 country_event = {
@@ -1352,5 +1388,149 @@ country_event = {  # Removing Explo Ideas
 			add_idea_group = maritime_ideas
 		}
 		set_country_flag = no_more_explo_ideas
+	}
+}
+
+province_event = {  # remove buildings on conquest
+	id = dotfset.32
+	title = dotfset.32.t
+	desc = dotfset.32.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = dotfset.32.a
+		if = {
+			limit = { has_building = courthouse }
+			remove_building = courthouse
+		}
+		if = {
+			limit = { has_building = town_hall }
+			remove_building = town_hall
+		}
+		if = {
+			limit = { has_building = state_house }
+			remove_building = state_house
+		}
+		if = {
+			limit = { has_building = canal_system }
+			random = {
+				chance = 50
+				remove_building = canal_system
+			}
+		}
+		if = {
+			limit = { has_building = road_network }
+			random = {
+				chance = 25
+				remove_building = road_network
+			}
+		}
+		if = {
+			limit = { has_building = barracks }
+			random = {
+				chance = 50
+				remove_building = barracks
+			}
+		}
+		if = {
+			limit = { has_building = training_fields }
+			random = {
+				chance = 50
+				remove_building = training_fields
+			}
+		}
+		if = {
+			limit = { has_building = shipyard }
+			random = {
+				chance = 50
+				remove_building = shipyard
+			}
+		}
+		if = {
+			limit = { has_building = regimental_camp }
+			random = {
+				chance = 50
+				remove_building = regimental_camp
+			}
+		}
+		if = {
+			limit = { has_building = conscription_center }
+			random = {
+				chance = 50
+				remove_building = conscription_center
+			}
+		}
+	}
+}
+
+namespace = devastation_mechanic
+
+country_event = {	devastation starter event
+	id = devastation_mechanic.1
+	title = devastation_mechanic.1.title
+	desc = devastation_mechanic.1.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "devastation_mechanic.1.a"
+		
+	}
+}
+
+province_event = {	devastation province event
+	id = devastation_mechanic.2
+	title = devastation_mechanic.2.title
+	desc = devastation_mechanic.2.desc
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "devastation_mechanic.2.a"
+		
+	}
+}
+
+province_event = {	refugees province event
+	id = devastation_mechanic.3
+	title = devastation_mechanic.3.title
+	desc = devastation_mechanic.3.desc
+	picture = ARTWORK_eventPicture
+	
+	#hidden = yes
+	is_triggered_only = yes
+	goto = yes
+	
+	trigger = {
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "devastation_mechanic.3.a"
+		
 	}
 }

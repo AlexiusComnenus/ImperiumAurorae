@@ -267,7 +267,7 @@ saxon_tributary = {
 	attacker = {
 		badboy_factor = 0.5
 		prestige_factor = 2
-		peace_cost_factor = 0.2
+		peace_cost_factor = 0.5
 
 		required_treaty_to_take_provinces = {
 			po_subjugate_tributary_state
@@ -275,10 +275,8 @@ saxon_tributary = {
 		
 		peace_options = {
 			po_subjugate_tributary_state
+			po_ai_tributize
 			po_change_religion
-			po_release_annexed
-			po_return_cores
-			po_release_vassals
 		}
 	}
 	

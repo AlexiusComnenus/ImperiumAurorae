@@ -5,6 +5,7 @@ technology_group = eastern
 religion = orthodox
 primary_culture = pontic_greek
 capital = 330
+fixed_capital = 330
 historical_friend = FEO
 1424.11.11= {
 	#monarch = {

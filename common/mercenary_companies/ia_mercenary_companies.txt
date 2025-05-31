@@ -121,6 +121,8 @@ merc_varangian_guard = {
     trigger = {
 		tag = BYZ
 		owns = 151
+		is_allowed_to_recruit_mercenaries = yes
+		mission_completed = BYZ_varangian_guard
 	}
 	cost_modifier = 1.5
 	modifier = {
@@ -135,6 +137,28 @@ merc_varangian_guard = {
 		drill_decay_modifier = -0.5
 		allow_mercenary_drill = yes
 		land_attrition = -0.50
+	}
+}
+
+merc_byz_varangian_guard = {
+    regiments_per_development = 0.02 #1 regiment every 50 dev. Reaches max at 400 dev.
+	max_size = 8
+	min_size = 8
+	no_additional_manpower_from_max_size = yes
+    home_province = 151 # Constantinople
+	cavalry_weight = 0 #Pure infantry
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_cap = 0 
+	sprites = { dlc006_byz_sprite_pack easterngfx_sprite_pack }
+    trigger = {
+		always = no
+		is_allowed_to_recruit_mercenaries = yes
+		mission_completed = BYZ_varangian_guard
+	}
+	modifier = { 
+		fire_damage_received = -0.33 #very powerful, but very limited numbers.
+		shock_damage_received = -0.33
+		morale_damage_received = -0.33
 	}
 }
 

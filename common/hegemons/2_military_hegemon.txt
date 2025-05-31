@@ -49,7 +49,7 @@ military_hegemon = {
 	scale = {
 		movement_speed = 0.1
 		land_attrition = -0.2
-		global_unrest = -3
+		global_regiment_cost = -0.15
 	}
 	
 	max = {

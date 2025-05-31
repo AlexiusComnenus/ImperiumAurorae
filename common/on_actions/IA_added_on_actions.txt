@@ -94,6 +94,12 @@ on_yearly_pulse_2 = {
 	}
 }
 
+on_yearly_pulse_3 = {
+	events = {
+		saxon_fief.86
+	}
+}
+
 on_monthly_pulse = {
 	#events = {
 	#	ia_flavor_tem.25
@@ -111,6 +117,12 @@ on_monthly_pulse = {
 on_province_owner_change = {
 	events = {
 		capital_autonomy.2
+	}
+}
+
+on_conquest = {
+	events = {
+		dotfset.32
 	}
 }
 

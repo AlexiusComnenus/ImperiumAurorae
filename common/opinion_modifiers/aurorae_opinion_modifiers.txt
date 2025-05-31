@@ -47,3 +47,9 @@ sided_with_sibyl = {
 aen_sworn_allies = {
 	opinion = 200
 }
+
+norse_invaders = {
+	opinion = -200
+	yearly_decay = 3	
+    years = 50                
+}

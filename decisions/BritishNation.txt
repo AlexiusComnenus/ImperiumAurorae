@@ -37,6 +37,10 @@ country_decisions = {
 					ai = no
 				}
 			}
+			OR = {
+				NOT = { government = monarchy }
+				has_global_flag = destroyed_dumnonia_flag
+			}
 		}
 		provinces_to_highlight = {
 			OR = {

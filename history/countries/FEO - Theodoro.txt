@@ -5,6 +5,7 @@ technology_group = eastern
 religion = orthodox
 primary_culture = goths
 capital = 2410
+fixed_capital = 2410
 historical_friend = TRE
 historical_friend = VAL
 1440.3.8= {

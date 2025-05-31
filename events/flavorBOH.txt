@@ -1381,8 +1381,8 @@ country_event = {	# Saxony's response to seek support
 		add_manpower = -8
 		BOH = { set_country_flag = boh_received_saxon_support }
 		
-		add_truce = BOH
-		BOH = { add_truce = SAX }
+		add_truce_with = BOH
+		BOH = { add_truce_with = SAX }
 		add_historical_friend = BOH
 		BOH = { add_historical_friend = SAX }
 	}
@@ -1457,6 +1457,30 @@ country_event = {	# Civil War starts
 				culture = czech
 				age = 25
 			}
+			define_ruler_to_general = {
+				fire = 5
+				shock = 3
+				manuever = 5
+				siege = 2
+			}
+			if = {
+				limit = {
+					NOT = { adm_tech = 4 }
+				}
+				add_adm_tech = 1
+			}
+			if = {
+				limit = {
+					NOT = { dip_tech = 4 }
+				}
+				add_dip_tech = 1
+			}
+			if = {
+				limit = {
+					NOT = { mil_tech = 4 }
+				}
+				add_mil_tech = 1
+			}
 			if = {
 				limit = { BOH = { ai = no } }
 				hidden_effect = {
@@ -1476,14 +1500,36 @@ country_event = {	# Civil War starts
 				add_manpower = 5
 				change_government = monarchy
 				add_government_reform = bohemian_elective_kingdom_reform
+				capital_scope = {
+					infantry = MVA
+					infantry = MVA
+					infantry = MVA
+					infantry = MVA
+					infantry = MVA
+				}
+			}
+			
+			if = {
+				limit = {
+					has_dlc = "Rights of Man" 
+				}
+				hidden_effect = { add_ruler_personality_ancestor = { key = zealot } }
 			}
 			if = {
 				limit = { exists = SIL }
 				create_march = SIL
+				SIL = { 
+					add_liberty_desire = -75
+					change_religion = hussite
+				}
 			}
 			if = {
 				limit = { exists = SLO }
 				create_march = SLO
+				SLO = { 
+					add_liberty_desire = -75
+					change_religion = hussite
+				}
 			}
 		}
 		declare_war_with_cb = {
@@ -1532,6 +1578,19 @@ country_event = {	# Civil War starts
 				culture = czech
 				age = 25
 			}
+			define_ruler_to_general = {
+				fire = 5
+				shock = 3
+				manuever = 5
+				siege = 2
+			}
+			
+			if = {
+				limit = {
+					has_dlc = "Rights of Man" 
+				}
+				hidden_effect = { add_ruler_personality_ancestor = { key = zealot } }
+			}
 			hidden_effect = {
 				capital_scope = {
 					build_to_forcelimit = {
@@ -1548,6 +1607,7 @@ country_event = {	# Civil War starts
 				create_march = SIL
 				SIL = {
 					change_religion = hussite
+					add_liberty_desire = -25
 				}
 			}
 			if = {
@@ -1555,6 +1615,7 @@ country_event = {	# Civil War starts
 				create_march = SLO
 				SLO = {
 					change_religion = hussite
+					add_liberty_desire = -25
 				}
 			}
 		}
@@ -1562,7 +1623,16 @@ country_event = {	# Civil War starts
 			who = MVA
 			casus_belli = cb_bohemian_civil_war
 		}
+		hidden_effect = {
+			capital_scope = {
+				build_to_forcelimit = {
+					infantry = 0.85
+					cavalry = 0.35
+				}
+			}
+		}
 		switch_tag = MVA
+		
 	}
 }
 

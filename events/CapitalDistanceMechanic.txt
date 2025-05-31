@@ -2597,6 +2597,24 @@ province_event = {
 			#}
 			if = {
 				limit = {
+					ROOT = { has_province_modifier = Kleinstaaterei }
+				}
+				multiply_variable = {
+					which = dist
+					value = 8
+				}
+			}
+			else_if = {
+				limit = {
+					ROOT = { has_province_modifier = Kleinstaaterei_lesser }
+				}
+				multiply_variable = {
+					which = dist
+					value = 4
+				}
+			}
+			if = {
+				limit = {
 					NOT = { ROOT = { has_building = road_network } }
 				}
 				multiply_variable = {

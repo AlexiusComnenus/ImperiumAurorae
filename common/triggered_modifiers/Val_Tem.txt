@@ -246,7 +246,6 @@ other_lucky_nation = {
 			tag = SWE
 			#tag = POL
 			tag = PLC
-			tag = WLS
 			tag = CRN
 			tag = BYZ
 			tag = Z44

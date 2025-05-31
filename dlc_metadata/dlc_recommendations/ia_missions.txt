@@ -1,0 +1,63 @@
+
+# Has missions
+missions_yes_ACE = {
+	reason = {
+		tooltip_desc = "missions_yes_original_desc"
+		tooltip_reason = ""
+		weight = 100
+		trigger = {
+			OR = {
+				tag = Z17
+				tag = VAL
+				tag = BRI
+				tag = Z42
+				tag = HSC
+				tag = Z21
+				tag = NRM
+				primary_culture = alsatian
+				tag = SAX
+				tag = HES
+				tag = FLA
+				tag = BRB
+				tag = HOL
+				tag = TEM
+				tag = HAB
+				tag = NOV
+				tag = GRA
+			}
+		}
+	}
+	reason = {
+		tooltip_desc = "missions_yes_reworked_desc"
+		tooltip_reason = ""
+		weight = 50
+		trigger = {
+			OR = {
+				culture_group = french
+				tag = RIG
+				tag = BOH
+				tag = SWE
+				tag = Z47
+				tag = TRE
+				tag = FEO
+				culture_group = east_asian
+				culture_group = byzantine
+				tag = GOT
+				tag = VEN
+				tag = HUN
+				tag = GEO
+			}
+		}
+	}
+}
+
+#missions_no = {
+#	reason = {
+#		tooltip_desc = "missions_no_desc"
+#		tooltip_reason = ""
+#		weight = 1
+#		trigger = {
+#			always = yes
+#		}
+#	}
+#}

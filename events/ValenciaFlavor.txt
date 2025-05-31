@@ -417,13 +417,13 @@ country_event = {  # Create visigoth communities + startup stuff
 		north_german_region = {
 			add_permanent_province_modifier = {
 				name = Kleinstaaterei
-				duration = 36500
+				duration = -1
 			}
 		}
 		south_german_region = {
 			add_permanent_province_modifier = {
 				name = Kleinstaaterei
-				duration = 36500
+				duration = -1
 			}
 		}
 		Z17 = { 
@@ -521,6 +521,17 @@ country_event = {  # Create visigoth communities + startup stuff
 			attitude = attitude_rivalry
 			who = FRA
 			locked = yes
+		}
+		every_country = {
+			limit = { OR = { culture_group = gaelic 	primary_culture = anglo_saxon } }
+			add_opinion = {
+				who = NOR
+				modifier = norse_invaders
+			}
+			add_opinion = {
+				who = DAN
+				modifier = norse_invaders
+			}
 		}
 		TEM = { 
 			set_ai_personality = {

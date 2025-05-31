@@ -218,10 +218,6 @@ bgm_hab_missions_2 = {
 		# free mission
 
 		trigger = {
-			if = {
-				limit = { ai = no }
-				has_country_modifier = annexers_legacy
-			}
 			TIR = { exists = no }
 			STY = { exists = no }
 		}

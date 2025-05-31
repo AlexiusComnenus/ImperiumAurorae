@@ -189,6 +189,16 @@ stability = {
 	monthly_divine_authority = 0.05
 }
 
+nationalism = {
+	local_unrest = 0.5					#for each year revolt risk!
+	local_development_cost = 0.01
+	local_production_efficiency = -0.02
+	local_tax_modifier = -0.02
+	local_manpower_modifier = -0.03
+	local_build_cost = 0.02
+	local_build_time = 0.04
+}
+
 over_extension = {
 	global_foreign_trade_power = -1.0
 	stability_cost_modifier = 0.5
@@ -253,6 +263,8 @@ difficulty_normal_ai = {
 	yearly_army_professionalism = 0.005
 	free_leader_pool = 10
 	leader_cost = -0.50
+	global_monthly_devastation = -0.1
+	global_prosperity_growth = 0.5
 }
 
 difficulty_hard_ai = {
@@ -270,6 +282,8 @@ difficulty_hard_ai = {
 	yearly_army_professionalism = 0.0075
 	free_leader_pool = 15
 	leader_cost = -0.60
+	global_monthly_devastation = -0.15
+	global_prosperity_growth = 0.75
 }
 
 difficulty_very_hard_ai = {
@@ -297,6 +311,8 @@ difficulty_very_hard_ai = {
 	yearly_army_professionalism = 0.01
 	free_leader_pool = 20
 	leader_cost = -0.75
+	global_monthly_devastation = -0.2
+	global_prosperity_growth = 1
 }
 
 luck = {
@@ -537,6 +553,44 @@ peace = {
 	assimilationists_influence = 0.02
 	monthly_ia_complacency = 0.1
 	monthly_righteousness = 0.5
+}
+
+occupied = {
+	local_tax_modifier = -0.5
+	trade_goods_size_modifier = -0.5
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_sailors_modifier = -0.5
+	local_institution_spread = -0.1
+
+	local_monthly_devastation = 0.5
+}
+
+under_siege = {
+	trade_goods_size_modifier = -0.25
+	province_trade_power_modifier = -0.25
+	local_institution_spread = -0.1
+
+	local_monthly_devastation = 0.6
+}
+
+scorched_earth = {
+	local_hostile_movement_speed = -0.50
+	local_monthly_devastation = 0.5
+}
+
+blockaded = {
+	regiment_recruit_speed = 0.2
+	ship_recruit_speed = 0.2
+	local_monthly_devastation = 0.4
+	province_trade_power_modifier = -1
+}
+
+patriarch_state = {
+	local_state_maintenance_modifier = 0.25
+	local_monthly_devastation = -0.15
+	local_religious_conversion_resistance = 0.5
+	local_tax_modifier = 0.25
 }
 
 is_great_power = {
