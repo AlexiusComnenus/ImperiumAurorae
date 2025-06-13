@@ -2047,7 +2047,7 @@ eastern = {
 
 	confucianism = {
 		color = { 214 229 140 }
-		icon = 99
+		icon = 30
 		country = {
 			tolerance_heretic = 3
 			adm_tech_cost_modifier = -0.1
