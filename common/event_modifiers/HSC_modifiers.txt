@@ -10,6 +10,7 @@ ended_cornish_piracy = {
 }
 
 gaeldom_new_era = {
+	all_power_cost = -0.05
 	global_prosperity_growth = 0.5
 	build_time = -0.25
 	global_tax_modifier = 0.20

@@ -5,8 +5,6 @@ graphical_culture = westerngfx
 color = { 130 130 130 }
 
 historical_idea_groups = {
-	logistics_ideas
-	cultural_ideas
 	trade_ideas
 	defensive_ideas
 	religious_ideas
@@ -18,10 +16,6 @@ historical_idea_groups = {
 }
 
 historical_units = {
-	pre_western_infantry_1a
-	pre_western_cavalry_1a
-	pre_western_infantry_2b
-	pre_western_cavalry_2b
 	halberd_infantry
 	western_medieval_knights
 	western_men_at_arms
@@ -36,8 +30,6 @@ historical_units = {
 	open_order_cavalry
 	napoleonic_square
 	napoleonic_lancers
-	post_western_infantry_b
-	post_western_cavalry_b
 }
 
 monarch_names = {

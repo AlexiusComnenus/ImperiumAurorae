@@ -1893,6 +1893,9 @@ buda_castle = {
 	type = monument
 
 	build_trigger = {
+		owner = { culture_group = carpathian }
+		
+		province_is_or_accepts_culture = yes
 	}
 
 	on_built = {
@@ -1902,9 +1905,15 @@ buda_castle = {
 	}
 
 	can_use_modifiers_trigger = {
+		owner = { culture_group = carpathian }
+		
+		province_is_or_accepts_culture = yes
 	}
 
 	can_upgrade_trigger = {
+		owner = { culture_group = carpathian }
+		
+		province_is_or_accepts_culture = yes
 	}
 
 	keep_trigger = {

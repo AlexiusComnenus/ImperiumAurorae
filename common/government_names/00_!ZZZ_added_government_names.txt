@@ -244,6 +244,11 @@ saxon_fief_reform_monarchy = {
 				has_reform = saxon_fief_reform
 				is_subject_of_type = saxon_daimyo
 			}
+			AND = {
+				NOT = { is_subject_of_type = march }
+				is_subject = yes
+				culture_group = germanic
+			}
 			#AND = { 
 			#	culture_group = germanic
 			#	NOT = { primary_culture = dutch }

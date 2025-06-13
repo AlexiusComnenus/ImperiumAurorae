@@ -180,10 +180,6 @@ estate_peasants_land_rights = {
 			NOT = { has_estate_privilege = estate_peasants_land_rights }
 		}
 		modifier = {
-			factor = 0.8
-			is_absolutism_active = yes
-		}
-		modifier = {
 			factor = 2
 			governing_capacity_percentage = 0.9
 		}
@@ -317,6 +313,8 @@ estate_peasants_armed_citizenry = {
 	}
 	benefits = {
 		country_military_power = 1
+		infantry_cost = -0.05
+		reinforce_cost_modifier = -0.10
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
@@ -386,7 +384,7 @@ estate_peasants_levies = {
 		#}
 	}
 	modifier_by_land_ownership = {
-		global_tax_modifier = -0.25
+		global_tax_modifier = -0.5
 		global_manpower_modifier = 0.5
 	}
 	penalties = {
@@ -412,7 +410,7 @@ estate_peasants_levies = {
 	#	modifier = { monthly_ottoman_decadence = 0.02 }
 	#}
 	ai_will_do = {
-		factor = 5
+		factor = 10
 		modifier = {
 			factor = 1.5
 			any_rival_country = {
@@ -465,10 +463,6 @@ estate_peasants_levies = {
 			factor = 0.5
 			NOT = { current_income_balance = 0 }
 		}
-		modifier = {
-			factor = 0.5
-			is_absolutism_active = yes
-		}
 	}
 }
 
@@ -503,10 +497,6 @@ estate_peasants_advisors = {
 	#}
 	ai_will_do = {
 		factor = 9
-		modifier = {
-			factor = 0.5
-			is_absolutism_active = yes
-		}
 		modifier = {
 			factor = 3
 			uses_meritocracy = yes
@@ -562,11 +552,11 @@ estate_peasants_lowered_taxes = {
 	#	modifier = { monthly_ottoman_decadence = 0.02 }
 	#}
 	ai_will_do = {
-		factor = 10
-		modifier = {
-			factor = 0
-			is_absolutism_active = yes
-		}
+		factor = 30
+		#modifier = {
+		#	factor = 0
+		#	is_absolutism_active = yes
+		#}
 	}
 }
 
@@ -1022,7 +1012,10 @@ estate_peasants_homeland_defense = {
 	influence = 0.1
 	loyalty = 0.05
 	is_valid = {
-		
+		OR = { 
+			is_at_war = yes 
+			NOT = { has_estate_privilege = estate_peasants_homeland_defense }
+		}
 	}
 	on_granted = {
 		#change_estate_land_share = {
@@ -1042,14 +1035,19 @@ estate_peasants_homeland_defense = {
 		#loyalty = -10
 		#}
 	}
+	can_select = {
+		is_at_war = yes
+	}
 	penalties = {
 		discipline = -0.075
 	}
 	benefits = {
 		#hostile_attrition = 1
 		land_morale = 0.05
-		land_forcelimit_modifier = 0.20
-		manpower_recovery_speed = 0.20
+		land_forcelimit_modifier = 0.25
+		global_manpower_modifier = 0.25
+		infantry_cost = -0.2
+		reinforce_cost_modifier = -0.5	
 	}
 	can_revoke = {
 		NOT = { is_at_war = yes }
@@ -1057,7 +1055,7 @@ estate_peasants_homeland_defense = {
 	#conditional_modifier = { #something with emperor.
 	#}
 	ai_will_do = {
-		factor = 0
+		factor = 1000
 	}
 }
 
@@ -1256,13 +1254,14 @@ estate_peasants_collective_landownership = {
 	benefits = {
 	}
 	modifier_by_land_ownership = {
-		min_autonomy = 25
-		global_manpower_modifier = 0.25
-		global_trade_goods_size_modifier = 0.4
+		global_manpower_modifier = 0.5
+		global_trade_goods_size_modifier = -0.25
+		infantry_cost = -0.20	
 	}
 	ai_will_do = {
 		factor = 0
 	}
+	cooldown_years = 10
 }
 
 estate_peasants_cashless_society = {
@@ -1307,10 +1306,38 @@ estate_peasants_grain_dole = {
 	benefits = {
 		global_unrest = -2 
 		development_cost = -0.05
+		recover_army_morale_speed = 0.10
 	}
 	ai_will_do = {
 		factor = 0
 	}
+	cooldown_years = 10
+}
+
+estate_peasants_public_works = {
+	icon = privilege_development_efficiency
+	max_absolutism = -10
+	influence = 0.10
+	loyalty = 0.05
+	is_valid = {
+		NOT = { total_development = 600 }
+		NOT = { monthly_income = 60 }
+	}
+	can_select = {
+		is_at_war = no
+	}
+	penalties = {
+		stability_cost_to_declare_war = 1
+		global_manpower_modifier = -0.25
+	}
+	benefits = {
+		development_cost = -0.05
+		build_cost = -0.3
+	}
+	ai_will_do = {
+		factor = 0
+	}
+	cooldown_years = 10
 }
 
 ###########################################

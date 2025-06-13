@@ -367,16 +367,16 @@ powerful_druid_personality = {
 		
 		chance = {
 			modifier = {
-				factor = 1
+				factor = 2
 				ADM = 5
 			}
 			modifier = {
-				factor = 1
+				factor = 2
 				DIP = 5
 			}
 			modifier = {
-				factor = 1
-				MIL = 6
+				factor = 3
+				MIL = 4
 			}
 			modifier = {
 				factor = 1000

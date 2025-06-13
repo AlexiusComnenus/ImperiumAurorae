@@ -19,12 +19,17 @@ CHO_all_estates_disasters = {
 }
 
 has_exempt_from_seize_land_for_estate_peasants = {
-	#OR = {
-		#has_estate_privilege = estate_peasants_land_rights_privilege
-		#has_estate_privilege = estate_peasants_allow_personal_fortunes_privilege
-		#has_estate_privilege = estate_peasants_single_whip_law_privilege
-	#}
+	OR = {
+		has_estate_privilege = estate_peasants_levies
+	}
+}
+
+has_exempt_from_seize_land_for_estate_holy_orders = {
 	always = no
+}
+
+has_exempt_from_seize_land_for_estate_alchemists = {
+	has_estate_privilege = estate_alchemists_land_rights
 }
 
 has_exempt_from_seize_land_for_estate_trade_company = {

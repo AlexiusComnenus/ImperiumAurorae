@@ -61,6 +61,8 @@ aengland_tolerant_reform = {
 		#reverse_relation_with_heretic_religion = 20
 		advisor_pool = 2
 		idea_cost = -0.05
+		development_cost = -0.05
+		manpower_in_accepted_culture_provinces = 0.1
 		reform_progress_growth = 0.1
 	}
 	

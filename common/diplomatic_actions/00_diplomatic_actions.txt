@@ -528,6 +528,35 @@ callaction = {
 			}
 		}
 	}
+	condition = {
+		tooltip = CANNOT_DECLARE_WARS_BRUDERSTREIT
+		potential = {
+			FROM = { 
+				OR = {
+					has_reform = saxon_feudalism
+				}
+			}
+		}
+		allow = { 
+			FROM = { NOT = { has_disaster = war_of_the_roses } }
+			
+		}
+	}
+	condition = {
+		tooltip = CANNOT_CALL_AGAINST_HISTORICAL_FRIENDS
+		potential = {
+			FROM = { 
+				any_known_country = {
+					FROM = { historical_friend_with = PREV }
+				}
+			}
+		}
+		allow = { 
+			NOT = {
+				any_war_enemy_country = { FROM = { historical_friend_with = PREV } }
+			}
+		}
+	}
 }
 
 guaranteeaction = {

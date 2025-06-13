@@ -8,7 +8,7 @@ novgorod_missions_column_1 = {
 	has_country_shield = yes
 	
 	nov_torppari_rebellion = {
-		icon = mission_castle_construction
+		icon = protect_against_austria
 		required_missions = {
 			
 		}
@@ -27,16 +27,20 @@ novgorod_missions_column_1 = {
 		}
 		
 		effect = {
-			custom_tooltip = baguette_you_didnt_give_a_reward_tt
+			#custom_tooltip = baguette_you_didnt_give_a_reward_tt
+			laponia_area = { add_permanent_claim = ROOT }
+			finland_area = { add_permanent_claim = ROOT }
+			bothnia_area = { add_permanent_claim = ROOT }
+			north_karelia = { add_permanent_claim = ROOT }
 		}
 	}
 	
 	nov_integrate_the_ugrics = {
-		icon = mission_castle_construction
+		icon = mission_address_the_ethnic_situation
 		required_missions = {
-			
+			nov_torppari_rebellion
 		}
-		position = 4
+		position = 2
 		
 		provinces_to_highlight = {
 			OR = {
@@ -44,7 +48,10 @@ novgorod_missions_column_1 = {
 				area = finland_area
 				area = bothnia_area
 			}
-			NOT = { country_or_subject_holds = ROOT }
+			OR = {
+				unrest = 0 
+				NOT = { country_or_subject_holds = ROOT }
+			}
 		}
 		
 		trigger = {
@@ -55,6 +62,7 @@ novgorod_missions_column_1 = {
 					area = finland_area
 					area = bothnia_area
 				}
+				NOT = { unrest = 0 }
 			}
 		}
 		
@@ -136,11 +144,11 @@ novgorod_missions_column_1 = {
 	}
 	
 	nov_reestablish_hanseatic_ties = {
-		icon = mission_castle_construction
+		icon = mission_galleass
 		required_missions = {
 			
 		}
-		position = 5
+		position = 4
 		
 		#provinces_to_highlight = {
 		#}
@@ -190,7 +198,7 @@ novgorod_missions_column_1 = {
 	}
 	
 	nov_occupy_livonia = {
-		icon = mission_castle_construction
+		icon = mission_fekete_sereg
 		required_missions = {
 			
 		}
@@ -245,7 +253,7 @@ novgorod_missions_column_1 = {
 	}
 	
 	nov_polish_border = {
-		icon = mission_castle_construction
+		icon = league_of_the_public_weal
 		required_missions = {
 			nov_occupy_livonia
 		}
@@ -288,7 +296,7 @@ novgorod_missions_column_1 = {
 	}
 	
 	nov_consolidate_baltics = {
-		icon = mission_castle_construction
+		icon = polish_subjects
 		required_missions = {
 			nov_polish_border
 		}
@@ -336,7 +344,7 @@ novgorod_missions_column_1 = {
 	}
 	
 	nov_monopolize_amber_trade = {
-		icon = mission_castle_construction
+		icon = reform_the_state
 		required_missions = {
 			nov_consolidate_baltics
 		}
@@ -395,7 +403,13 @@ novgorod_missions_column_1 = {
 				}
 				
 				38 = {
-					country_or_subject_holds = ROOT
+					OR = {
+						country_or_subject_holds = ROOT
+						AND = {
+							country_or_subject_holds = RIG
+							RIG = { historical_friend_with = ROOT }
+						}
+					}
 					development = 30
 					num_of_buildings_in_province = 6
 					province_has_center_of_trade_of_level = 3
@@ -424,7 +438,13 @@ novgorod_missions_column_1 = {
 				}
 				
 				38 = {
-					country_or_subject_holds = ROOT
+					OR = {
+						country_or_subject_holds = ROOT
+						AND = {
+							country_or_subject_holds = RIG
+							RIG = { historical_friend_with = ROOT }
+						}
+					}
 					num_of_buildings_in_province = 6
 					province_has_center_of_trade_of_level = 3
 				}
@@ -446,6 +466,12 @@ novgorod_missions_column_1 = {
 				trade_goods = amber
 				key = amber_monopoly_tt
 				value = 0.4
+				duration = -1
+			}
+			change_price = {
+				trade_goods = jewellery
+				key = amber_monopoly_tt
+				value = 0.2
 				duration = -1
 			}
 			38 = {
@@ -521,7 +547,7 @@ novgorod_missions_column_2 = {
 	has_country_shield = yes
 	
 	nov_invest_in_local_guilds = {
-		icon = mission_castle_construction
+		icon = reform_the_monte
 		required_missions = {
 			
 		}
@@ -567,7 +593,7 @@ novgorod_missions_column_2 = {
 	}
 	
 	nov_baltic_gateway = {
-		icon = mission_castle_construction
+		icon = renaissance_city
 		required_missions = {
 			nov_invest_in_local_guilds
 			nov_torppari_rebellion
@@ -621,7 +647,7 @@ novgorod_missions_column_2 = {
 	}
 	
 	nov_settle_cherdyn = {
-		icon = mission_castle_construction
+		icon = renovate_berlin
 		required_missions = {
 			nov_follow_the_vologda
 		}
@@ -659,14 +685,17 @@ novgorod_missions_column_2 = {
 	}
 	
 	nov_revive_fur_trade = {
-		icon = mission_castle_construction
+		icon = sponsor_the_arts
 		required_missions = {
 			
 		}
 		position = 7
 		
 		provinces_to_highlight = {
-			trade_goods = fur
+			OR = {
+				trade_goods = fur
+				trade_goods = fur_clothing
+			}
 			owned_by = ROOT
 			NOT = { base_production = 4 }
 		}
@@ -674,7 +703,10 @@ novgorod_missions_column_2 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 6
-				trade_goods = fur
+				OR = {
+					trade_goods = fur
+					trade_goods = fur_clothing
+				}
 				is_core = ROOT
 				base_production = 4
 			}
@@ -686,7 +718,10 @@ novgorod_missions_column_2 = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						trade_goods = fur
+						OR = {
+							trade_goods = fur
+							trade_goods = fur_clothing
+						}
 						is_core = ROOT
 						base_production = 4
 					}
@@ -696,11 +731,23 @@ novgorod_missions_column_2 = {
 					}
 				}
 			}
+			change_price = {
+				trade_goods = fur
+				key = nov_fur_trade_revived
+				value = 0.25
+				duration = 18250
+			}
+			change_price = {
+				trade_goods = fur_clothing
+				key = nov_fur_trade_revived
+				value = 0.25
+				duration = -1
+			}
 		}
 	}
 	
 	nov_new_winter_lodges = {
-		icon = mission_castle_construction
+		icon = mission_calpulli_household
 		required_missions = {
 			nov_revive_fur_trade
 			nov_great_taiga
@@ -708,7 +755,10 @@ novgorod_missions_column_2 = {
 		position = 8
 		
 		provinces_to_highlight = {
-			trade_goods = fur
+			OR = {
+				trade_goods = fur
+				trade_goods = fur_clothing
+			}
 			owned_by = ROOT
 			OR = { 
 				NOT = { base_production = 6 }
@@ -719,7 +769,10 @@ novgorod_missions_column_2 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 12
-				trade_goods = fur
+				OR = {
+					trade_goods = fur
+					trade_goods = fur_clothing
+				}
 				is_core = ROOT
 				base_production = 6
 				has_production_building_trigger = yes
@@ -732,7 +785,10 @@ novgorod_missions_column_2 = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						trade_goods = fur
+						OR = {
+							trade_goods = fur
+							trade_goods = fur_clothing
+						}
 						is_core = ROOT
 						base_production = 6
 						has_production_building_trigger = yes
@@ -747,7 +803,7 @@ novgorod_missions_column_2 = {
 	}
 	
 	nov_venturing_eastwards = {
-		icon = mission_castle_construction
+		icon = unite_the_realm
 		required_missions = {
 			nov_new_winter_lodges
 		}
@@ -765,9 +821,15 @@ novgorod_missions_column_2 = {
 				has_production_building_trigger = yes
 				has_manpower_building_trigger = yes
 			}
-			trade_goods_produced_amount = {
-				trade_goods = fur
-				amount = 20
+			OR = {
+				trade_goods_produced_amount = {
+					trade_goods = fur
+					amount = 20
+				}
+				trade_goods_produced_amount = {
+					trade_goods = fur_clothing
+					amount = 20
+				}
 			}
 		}
 		
@@ -791,7 +853,7 @@ novgorod_missions_column_3 = {
 	has_country_shield = yes
 	
 	nov_refurbish_sawmills = {
-		icon = mission_castle_construction
+		icon = mississippi_company
 		required_missions = {
 			
 		}
@@ -871,7 +933,7 @@ novgorod_missions_column_3 = {
 	}
 	
 	nov_rebuild_granaries = {
-		icon = mission_castle_construction
+		icon = public_works
 		required_missions = {
 			nov_refurbish_sawmills
 			nov_invest_in_local_guilds
@@ -971,7 +1033,7 @@ novgorod_missions_column_3 = {
 	}
 	
 	nov_defeat_the_traitors = {
-		icon = mission_castle_construction
+		icon = the_russian_campaign
 		required_missions = {
 			nov_follow_the_vologda
 		}
@@ -1012,7 +1074,7 @@ novgorod_missions_column_3 = {
 	}
 	
 	nov_unite_upper_rus = {
-		icon = mission_castle_construction
+		icon = encroach_on_the_germans
 		required_missions = {
 			nov_defeat_the_traitors
 		}
@@ -1046,7 +1108,7 @@ novgorod_missions_column_3 = {
 	}
 	
 	nov_great_taiga = {
-		icon = mission_castle_construction
+		icon = claim_the_borderlands
 		required_missions = {
 			
 		}
@@ -1056,8 +1118,7 @@ novgorod_missions_column_3 = {
 			has_terrain = forest
 			owned_by = ROOT
 			OR = {
-				NOT = { base_production = 3 }
-				NOT = { num_of_buildings_in_province = 1 }
+				NOT = { num_of_times_improved = 3 }
 			}
 		}
 		
@@ -1066,8 +1127,7 @@ novgorod_missions_column_3 = {
 				value = 6
 				has_terrain = forest
 				is_core = ROOT
-				base_production = 3
-				num_of_buildings_in_province = 1
+				num_of_times_improved = 3
 			}
 		}
 		
@@ -1093,12 +1153,12 @@ novgorod_missions_column_3_tge = {
 	ai = yes
 	potential = {
 		tag = NOV
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
 	nov_expand_logging_industry = {
-		icon = mission_castle_construction
+		icon = alpine_fortifications
 		required_missions = {
 			nov_great_taiga
 		}
@@ -1177,7 +1237,7 @@ novgorod_missions_column_3_tge = {
 	}
 	
 	nov_seek_german_expertise = {
-		icon = mission_castle_construction
+		icon = catholic_confraternity
 		required_missions = {
 			nov_expand_logging_industry
 		}
@@ -1225,7 +1285,7 @@ novgorod_missions_column_4 = {
 	has_country_shield = yes
 	
 	nov_prepared_army = {
-		icon = mission_castle_construction
+		icon = the_italian_league
 		required_missions = {
 			
 		}
@@ -1268,7 +1328,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_march_to_frozen_sea = {
-		icon = mission_castle_construction
+		icon = support_the_orders
 		required_missions = {
 			nov_prepared_army
 		}
@@ -1316,7 +1376,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_follow_the_vologda = {
-		icon = mission_castle_construction
+		icon = support_the_bulk_trades
 		required_missions = {
 			nov_march_to_frozen_sea
 		}
@@ -1359,7 +1419,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_retake_kazan = {
-		icon = mission_castle_construction
+		icon = revenge_for_nicopolis
 		required_missions = {
 			nov_follow_the_vologda
 		}
@@ -1406,7 +1466,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_expel_the_cumans = {
-		icon = mission_castle_construction
+		icon = the_hundred_years_war
 		required_missions = {
 			nov_retake_kazan
 		}
@@ -1450,7 +1510,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_fortify_the_east = {
-		icon = mission_castle_construction
+		icon = the_alpine_wall
 		required_missions = {
 			nov_expel_the_cumans
 		}
@@ -1517,7 +1577,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_mineral_surveys = {
-		icon = mission_castle_construction
+		icon = secure_the_sava
 		required_missions = {
 			
 		}
@@ -1589,7 +1649,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_found_cherepovets = {
-		icon = mission_castle_construction
+		icon = reclaim_the_ducal_lands
 		required_missions = {
 			nov_mineral_surveys
 		}
@@ -1626,7 +1686,7 @@ novgorod_missions_column_4 = {
 	}
 	
 	nov_develop_new_mines = {
-		icon = mission_castle_construction
+		icon = up_the_adige
 		required_missions = {
 			nov_found_cherepovets
 		}
@@ -1724,7 +1784,7 @@ novgorod_missions_column_5_upper = {
 	has_country_shield = yes
 	
 	nov_turmoil_in_the_streets = {
-		icon = mission_castle_construction
+		icon = ven_army_republic
 		required_missions = {
 			
 		}
@@ -1761,6 +1821,53 @@ novgorod_missions_column_5_upper = {
 	}
 }
 
+novgorod_missions_column_5_branching_orthodox = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = NOV
+		has_country_flag = nov_chose_orthodox_path_flag
+	}
+	has_country_shield = yes
+	
+	nov_purge_the_bogomils = {
+		icon = protectors_of_christendom
+		required_missions = {
+			nov_turmoil_in_the_streets
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			region = russia_region
+			religion = bogomilist
+		}
+		
+		trigger = {
+			religious_unity = 0.99
+			NOT = {
+				any_owned_province = {
+					unrest = 0
+				}
+			}
+			capital_scope = {
+				NOT = { devastation = 0.01 }
+			}
+			russia_region = {
+				type = all
+				NOT = { religion = bogomilist }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_temp_buff
+				duration = -1
+			}
+		}
+	}
+}
+
 novgorod_missions_column_5_branching_bogomil = {
 	slot = 5
 	generic = no
@@ -1772,7 +1879,7 @@ novgorod_missions_column_5_branching_bogomil = {
 	has_country_shield = yes
 	
 	nov_united_against_tyranny = {
-		icon = mission_castle_construction
+		icon = protectors_of_christendom
 		required_missions = {
 			nov_turmoil_in_the_streets
 		}
@@ -1804,7 +1911,7 @@ novgorod_missions_column_5_branching_bogomil = {
 	}
 	
 	nov_liberate_the_peasantry = {
-		icon = mission_castle_construction
+		icon = prosperity_for_all
 		required_missions = {
 			nov_united_against_tyranny
 		}
@@ -1822,7 +1929,7 @@ novgorod_missions_column_5_branching_bogomil = {
 				value = 50
 				religion = bogomilist
 			}
-			army_size = 100
+			#army_size = 100
 		}
 		
 		effect = {
@@ -1830,11 +1937,13 @@ novgorod_missions_column_5_branching_bogomil = {
 				name = nov_beacon_of_liberty_tier_1
 				duration = -1
 			}
+			set_country_flag = nov_endgame_tag_flag
+			custom_tooltip = nov_become_egt_tt
 		}
 	}
 	
 	nov_lead_the_revolution = {
-		icon = mission_castle_construction
+		icon = knights_of_the_new_world
 		required_missions = {
 			nov_liberate_the_peasantry
 		}
@@ -1852,7 +1961,7 @@ novgorod_missions_column_5_branching_bogomil = {
 				value = 100
 				religion = bogomilist
 			}
-			army_size = 250
+			#army_size = 250
 			is_defender_of_faith = yes
 		}
 		
@@ -1864,6 +1973,42 @@ novgorod_missions_column_5_branching_bogomil = {
 			}
 			
 			add_government_reform = bogomilist_veche_republic
+		}
+	}
+	
+	nov_victory_of_the_revolution = {
+		icon = la_marseillaise
+		required_missions = {
+			nov_lead_the_revolution
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			calc_true_if = {
+				all_country = {
+					has_government_attribute = is_peasants_republic
+				}
+				amount = 20
+			}
+			is_defender_of_faith = yes
+		}
+		
+		effect = {
+			remove_country_modifier = nov_beacon_of_liberty_tier_1
+			remove_country_modifier = nov_beacon_of_liberty_tier_2
+			add_country_modifier = {
+				name = nov_beacon_of_liberty_tier_3
+				duration = -1
+			}
+			
+			add_power_projection = { 
+				type = 25_permanent_power_projection
+				amount = 20
+			}
+			custom_tooltip = permanent_pp_tt
 		}
 	}
 }
@@ -1878,7 +2023,7 @@ novgorod_missions_column_5_lower = {
 	has_country_shield = yes
 	
 	nov_city_of_kazan = {
-		icon = mission_castle_construction
+		icon = kingdom_of_cyprus
 		required_missions = {
 			nov_expel_the_cumans
 		}

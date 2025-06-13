@@ -3799,20 +3799,26 @@ peasant_revolt_leader_personality = {
 	war_chance_multiplier = 2.5
 	wants_land = yes
 	
-	chance = {	
+	chance = {
+		modifier = {
+			factor = 500
+			has_government_attribute = is_peasants_republic
+		}
 	}
 }
 
 merchant_basileus_personality = {	
 	allow = {
-		OR = {
-			is_playing_custom_nation = yes
-			has_country_flag = feo_merchant_basileus_flag
-		}
+		has_country_flag = feo_merchant_basileus_flag
 		culture_group = byzantine
 	}
 	
-	chance = { }
+	chance = { 
+		modifier = {
+			factor = 100
+			has_country_flag = feo_merchant_basileus_flag
+		}
+	}
 	
 	trade_efficiency = 0.1
 	global_trade_goods_size_modifier = 0.1

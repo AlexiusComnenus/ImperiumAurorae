@@ -1,4 +1,6 @@
-﻿l_english:
+﻿l_english: 
+ PRYDAIN_NAME: "Prydain"
+ PRYDAIN_NAME_ADJ: "Prydain"
 
  #Mechanics Tooltips
  mechanic_always_archdruid_personality_yes: "Rulers are practically guaranteed to be §YPowerful Druids§!"
@@ -61,6 +63,8 @@
  KOI_catnaps_desc: "Naps are good. Naps in the sun are better."
  KOI_outsource_navies: "Outsource the Navies"
  KOI_outsource_navies_desc: "Ships? Oceans? Ugh, let's leave those to our human servants."
+ make_druid_ruler_general_title: "Powerful Druid Ruler-General"
+ make_druid_ruler_general_desc: "Our Powerful Druid ruler shall take the field of battle!"
  
  #Diplo Tooltips
  druidic_brotherhood_title: "Druidic Brotherhood"

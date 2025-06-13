@@ -1,6 +1,6 @@
 NOV_ideas = {
 	start = {
-		shock_damage_received = -0.15
+		shock_damage_received = -0.10
 		legitimacy = 1
 		devotion = 1
 		republican_tradition = 0.3
@@ -9,7 +9,7 @@ NOV_ideas = {
 	}
 	
 	bonus = {
-		discipline = 0.05
+		land_morale	= 0.10
 	}
 	
 	trigger = {
@@ -20,12 +20,13 @@ NOV_ideas = {
 	nov_druzhina_companions = {
 		infantry_power = 0.1
 	}
-	grand_dukes_army = {
+	nov_republic_army = {
 		global_manpower_modifier = 0.20
 	}
-	nov_integration_of_the_boyars = {
-		diplomatic_annexation_cost = -0.2
+	nov_integration_of_the_druzhina = {
+		diplomatic_annexation_cost = -0.1
 		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
 	}
 	nov_renowned_merchants = {
 		merchants = 1
@@ -38,7 +39,7 @@ NOV_ideas = {
 		production_efficiency = 0.10
 	}
 	nov_meritocracy = {
-		advisor_cost = -0.10
+		advisor_cost = -0.20
 		all_estate_influence_modifier = -0.1
 	}
 }

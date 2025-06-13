@@ -1568,7 +1568,7 @@ antioch_missions_tge_special = {
 	ai = yes
 	potential = {
 		tag = Z17
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	

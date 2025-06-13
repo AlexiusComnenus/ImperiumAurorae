@@ -61,7 +61,7 @@ cb_declare_anti_king = {
 		po_trade_power
 		po_humiliate
 		po_enforce_rebel_demands
-		pte_spawn_reformation_center_in_capital
+		#pte_spawn_reformation_center_in_capital
 	}
 }
 
@@ -177,7 +177,7 @@ cb_convert_slavic_pagans = {
 		po_form_personal_union
 		po_gold
 		po_become_vassal
-		po_become_protectorate
+		#po_become_protectorate
 		po_concede_defeat
 		po_annul_treaties
 		po_change_government

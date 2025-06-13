@@ -1,0 +1,333 @@
+##############################
+# Peasant Flavor Events
+#                            
+# Written by Alexios
+##############################
+
+namespace = peasantsevents
+
+
+#Advancement of the Peasants
+country_event = {
+	id = peasantsevents.1
+	title = peasantsevents.1.t
+	desc = peasantsevents.1.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_peasants
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_ADVANCES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_ADVANCES_20
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+
+	option = {
+		name = peasantsevents.1.a #Ok
+		add_estate_influence_modifier = {
+			estate = estate_peasants
+			desc = EST_VAL_PEASANTS_ADVANCES
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+#Decline of the Peasants
+country_event = {
+	id = peasantsevents.2
+	title = peasantsevents.2.t
+	desc = peasantsevents.2.d
+	picture = NOBLE_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_peasants
+		estate_influence = {
+			estate = estate_peasants
+			influence = 15
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_ADVANCES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_peasants
+				modifier = EST_VAL_PEASANTS_ADVANCES_20
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = peasantsevents.2.a #Ok
+		add_estate_influence_modifier = {
+			estate = estate_peasants
+			desc = EST_VAL_PEASANTS_DECLINES
+			influence = -10
+			duration = 5475
+		}
+	}
+}
+
+# Peasants develop province for you
+country_event = {
+	id = peasantsevents.3
+	title = peasantsevents.3.t
+	desc = peasantsevents.3.d
+	picture = FEAST_eventPicture
+	
+	trigger = {
+		has_estate = estate_peasants
+		estate_influence = {
+			estate = estate_peasants
+			influence = 25
+		}
+		estate_loyalty = {
+			estate = estate_peasants
+			loyalty = 40
+		}
+		any_owned_province = {
+			is_state_core = ROOT
+			NOT = { development = 11 }
+			province_is_or_accepts_culture = yes
+			NOT = { devastation = 1 }
+		}
+		NOT = { is_great_power = yes }
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_peasants
+				influence = 60
+			}
+		}
+		modifier = {
+			factor = 4.0
+			estate_loyalty = {
+				estate = estate_peasants
+				loyalty = 60
+			}
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				is_state_core = ROOT
+				NOT = { development = 11 }
+				province_is_or_accepts_culture = yes
+				NOT = { devastation = 1 }
+			}
+			save_event_target_as = peasants_development_province
+		}
+	}
+	
+	option = {	#grant them extra rights to do it
+		name = peasantsevents.3.a 
+		ai_chance = { factor = 100 }
+		goto = peasants_development_province
+		adm_power_cost = 30
+		event_target:peasants_development_province = {
+			add_base_tax = 1
+			add_base_production = 2
+			add_base_manpower = 1
+			add_local_autonomy = 25
+		}
+		change_estate_land_share = {
+			estate = estate_peasants
+			share = 2
+		}
+	}
+	
+	option = {	# good for them
+		name = peasantsevents.3.b
+		ai_chance = { factor = 0 }
+		goto = peasants_development_province
+		event_target:peasants_development_province = {
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+}
+
+# Peasants return to the land
+country_event = {
+	id = peasantsevents.4
+	title = peasantsevents.4.t
+	desc = peasantsevents.4.d
+	picture = FARMING_eventPicture
+	
+	trigger = {
+		has_estate = estate_peasants
+		any_owned_province = {
+			is_state_core = ROOT
+			#NOT = { development = 11 }
+			province_is_or_accepts_culture = yes
+			#NOT = { devastation = 1 }
+		}
+		years_of_manpower = 2
+		is_at_war = no
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_peasants
+				influence = 60
+			}
+		}
+		modifier = {
+			factor = 4.0
+			years_of_manpower = 6
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				is_state_core = ROOT
+				province_is_or_accepts_culture = yes
+			}
+			save_event_target_as = peasants_development_province
+		}
+	}
+	
+	option = {	# give them land and send them home
+		name = peasantsevents.4.a 
+		ai_chance = { factor = 100 }
+		goto = peasants_development_province
+		
+		event_target:peasants_development_province = {
+			add_base_tax = 2
+			add_base_production = 1
+			add_local_autonomy = 15
+		}
+		change_estate_land_share = {
+			estate = estate_peasants
+			share = 1
+		}
+		add_yearly_manpower = -2
+	}
+	
+	option = {	# Deny them the land
+		name = peasantsevents.4.b
+		ai_chance = { factor = 0 }
+		goto = peasants_development_province
+		add_yearly_manpower = -2
+		event_target:peasants_development_province = {
+			add_devastation = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_peasants
+			loyalty = -20
+		}
+	}
+}
+
+# Peasants pay off our debt
+country_event = {
+	id = peasantsevents.5
+	title = peasantsevents.5.t
+	desc = peasantsevents.5.d
+	picture = OVEREXTENSION_eventPicture
+	
+	trigger = {
+		has_estate = estate_peasants
+		num_of_loans = 10
+		NOT = { treasury = 150 }
+		is_at_war = no
+		estate_influence = {
+			estate = estate_peasants
+			influence = 50
+		}
+		estate_loyalty = {
+			estate = estate_peasants
+			loyalty = 60
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_peasants
+				influence = 75
+			}
+		}
+		modifier = {
+			factor = 2.0
+			estate_loyalty = {
+				estate = estate_peasants
+				loyalty = 80
+			}
+		}
+	}
+	
+	option = {	# Amazing news!
+		name = peasantsevents.5.a 
+		ai_chance = { factor = 100 }
+		
+		change_estate_land_share = {
+			estate = estate_peasants
+			share = 2.5
+		}
+		add_years_of_income = 1.5
+	}
+	
+	option = {	# No, we won't sell our land
+		name = peasantsevents.5.b 
+		ai_chance = { factor = 0 }
+		
+		add_estate_loyalty = {
+			estate = estate_peasants
+			loyalty = -10
+		}
+	}
+}

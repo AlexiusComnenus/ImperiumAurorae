@@ -59,6 +59,12 @@ spriteTypes = {
 		texturefile = "gfx//interface//bgm_wartax.dds"
 		noOfFrames = 2
 	}
+	spriteType = {
+		name = "GFX_splendour_advisor_button"
+		texturefile = "gfx//interface//splendouradvisor.dds"
+		loadType = "INGAME"
+		transparencecheck = yes	
+	}
 
 	textSpriteType = {
 		name = "GFX_take_loan_button"

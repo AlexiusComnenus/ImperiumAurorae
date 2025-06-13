@@ -515,6 +515,7 @@ machu_picchu = {
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
 			idea_cost = -0.05
+			monthly_divine_authority = 0.01
 		}
 
 		#what effects happen when this tier is achieved
@@ -551,6 +552,7 @@ machu_picchu = {
 		country_modifiers = {
 			idea_cost = -0.1
 			reform_progress_growth = 0.1
+			monthly_divine_authority = 0.02
 		}
 
 		#what effects happen when this tier is achieved
@@ -582,6 +584,7 @@ machu_picchu = {
 			idea_cost = -0.15
 			reform_progress_growth = 0.1
 			mercantilism_cost = -0.15
+			monthly_divine_authority = 0.04
 		}
 
 		#what effects happen when this tier is achieved
@@ -5476,6 +5479,7 @@ qhapaq_nam = {
 			yearly_authority = 0.1
 			reinforce_speed = 0.1
 			trade_efficiency = 0.05
+			monthly_divine_authority = 0.02
 		}
 		on_upgraded = {
 		}
@@ -5498,6 +5502,7 @@ qhapaq_nam = {
 			yearly_authority = 0.2
 			reinforce_speed = 0.2
 			trade_efficiency = 0.1
+			monthly_divine_authority = 0.04
 		}
 		on_upgraded = {
 		}
@@ -5520,6 +5525,7 @@ qhapaq_nam = {
 			yearly_authority = 0.3
 			reinforce_speed = 0.33
 			trade_efficiency = 0.2
+			monthly_divine_authority = 0.08
 		}
 		on_upgraded = {
 		}
@@ -5955,6 +5961,7 @@ tiwanaku = {
 		country_modifiers = {
 			yearly_authority = 0.1
 			global_missionary_strength = 0.005
+			monthly_divine_authority = 0.02
 		}
 		on_upgraded = {
 		}
@@ -5975,6 +5982,7 @@ tiwanaku = {
 			yearly_authority = 0.2
 			global_missionary_strength = 0.01
 			religious_unity = 0.15
+			monthly_divine_authority = 0.04
 		}
 		on_upgraded = {
 		}
@@ -5995,6 +6003,7 @@ tiwanaku = {
 			yearly_authority = 0.3
 			global_missionary_strength = 0.02
 			religious_unity = 0.3
+			monthly_divine_authority = 0.08
 		}
 		on_upgraded = {
 		}

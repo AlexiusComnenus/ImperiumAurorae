@@ -7,7 +7,7 @@ bgm_hab_missions_1 = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 	}
 	has_country_shield = yes
@@ -206,7 +206,7 @@ bgm_hab_missions_2 = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 	}
 	has_country_shield = yes
@@ -353,7 +353,7 @@ bgm_hab_missions_3 = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 	}
 	has_country_shield = yes
@@ -550,7 +550,7 @@ bgm_hab_missions_4 = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 	}
 	has_country_shield = yes
@@ -721,7 +721,7 @@ bgm_hab_missions_5 = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 	}
 	has_country_shield = yes
@@ -834,7 +834,7 @@ bgm_hab_missions_5_dip = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 		#NOT = { has_country_flag = hab_conquer }
 	}
@@ -905,7 +905,7 @@ bgm_hab_missions_4_mil = {
 	potential = {
 		OR = {
 			tag = HAB
-			tag = AHU
+			tag = AUH
 		}
 		#has_country_flag = hab_conquer
 	}

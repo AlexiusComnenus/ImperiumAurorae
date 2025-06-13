@@ -385,7 +385,7 @@ country_event = {
 	option = {  #stand alone
 		name = antioch.9.a
 		
-		ai_chance = { factor = 0 }
+		ai_chance = { factor = 1 }
 		add_prestige = 10
 	}
 	
@@ -394,7 +394,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 			modifier = {
-				factor = 0
+				factor = 0.1
 				alliance_with = emperor
 			}
 		}
@@ -406,6 +406,14 @@ country_event = {
 		name = antioch.9.c
 		ai_chance = {
 			factor = 50
+			modifier = {
+				factor = 0
+				emperor = { ai = no }
+				any_known_country = {
+					NOT = { is_emperor = yes }
+					ai = no
+				}
+			}
 		}
 		
 		Z17 = {
@@ -1021,6 +1029,7 @@ country_event = {  # TGE missions show
 	picture = BIG_BOOK_eventPicture
 	
 	major = yes
+	hidden = yes
 	
 	trigger = {
 		is_emperor = yes
@@ -1036,16 +1045,16 @@ country_event = {  # TGE missions show
 	
 	option = {
 		name = antioch.19.a
-		swap_non_generic_missions = yes
-		SAX = {
-			swap_non_generic_missions = yes
-		}
-		Z42 = {
-			swap_non_generic_missions = yes
-		}
-		NOV = {
-			swap_non_generic_missions = yes
-		}
+		#swap_non_generic_missions = yes
+		#SAX = {
+		#	swap_non_generic_missions = yes
+		#}
+		#Z42 = {
+		#	swap_non_generic_missions = yes
+		#}
+		#NOV = {
+		#	swap_non_generic_missions = yes
+		#}
 		hidden_effect = {
 			4703 = {
 				change_trade_goods = tin
@@ -1638,6 +1647,7 @@ country_event = {  # Grant land to the Auroral Guard
 						is_core = ROOT
 					}
 				}
+				NOT = { tag = Z00 }
             }
 		}
 	}
@@ -1649,6 +1659,7 @@ country_event = {  # Grant land to the Auroral Guard
 					NOT = { is_core = ROOT }
 					any_core_country = {
 						exists = no
+						NOT = { tag = Z00 }
 						NOT = {
 							any_core_province = {
 								is_core = ROOT
@@ -1659,6 +1670,7 @@ country_event = {  # Grant land to the Auroral Guard
 				random_core_country = {
 					limit = {
 						exists = no
+						NOT = { tag = Z00 }
 						NOT = {
 							any_core_province = {
 								is_core = ROOT

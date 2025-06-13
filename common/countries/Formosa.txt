@@ -2,12 +2,12 @@ ck2_converter_generated = yes
 graphical_culture = asiangfx
 color = { 218 234 15 }
 historical_idea_groups = {
+	expansion_ideas
+	plutocracy_ideas
 	trade_ideas
 	economic_ideas
 	defensive_ideas
-	administrative_ideas
 	humanist_ideas
-	quantity_ideas
 	influence_ideas
 	offensive_ideas
 }
@@ -28,6 +28,8 @@ historical_units = {
 	reformed_manchu_rifle
 }
 monarch_names = {
+	"Yingjiu #0" = 10
+	"Yingwen #0 = -10
 	"Bangzuo #0" = 0
 	"Bao #0" = 0
 	"Bian #0" = 10

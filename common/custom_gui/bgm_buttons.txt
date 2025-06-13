@@ -160,3 +160,18 @@ custom_button = {
 	}
     tooltip = deflate_economy_button
 }
+
+custom_button = {
+    name = splendour_advisor_button
+    potential = {
+        ai = no #make sure the AI gets an event or something similar where they can choose their branch the moment these buttons get unlocked for the player
+    }
+    trigger = { 
+		splendor = 300
+	}
+    effect = { 
+		country_event = { id = dotfset.33 }
+		add_splendor = -300
+	}
+    tooltip = splendour_advisor_button_tt
+}

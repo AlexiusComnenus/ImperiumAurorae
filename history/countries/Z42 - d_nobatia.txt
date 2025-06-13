@@ -54,4 +54,8 @@ elector = yes
 1444.11.11= {
 	add_prestige = 32
 	add_treasury = 65
+	set_religious_school = {
+		group = christian
+		school = righteous_illumination_school
+	}
 }

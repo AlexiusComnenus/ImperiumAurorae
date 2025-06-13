@@ -49,9 +49,9 @@ christian = {
 					limit = {
 						ai = yes
 					}
-					NOT = { has_country_modifier = has_invited_scholar_recently }
 					NOT = { has_reform = free_city }
 				}
+				NOT = { has_country_modifier = has_invited_scholar_recently }
 				#NOT = { has_country_modifier = righteous_illumination_scholar_modifier }
 			}
 
@@ -124,9 +124,9 @@ christian = {
 					limit = {
 						ai = yes
 					}
-					NOT = { has_country_modifier = has_invited_scholar_recently }
 					NOT = { has_reform = free_city }
 				}
+				NOT = { has_country_modifier = has_invited_scholar_recently }
 			}
 
 			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
@@ -180,7 +180,6 @@ christian = {
 					adm_power_cost = 50
 				}
 				religion = hellenic_pagan_reformed
-				NOT = { tag = Z17 }
 				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
 				if = {
 					limit = {
@@ -196,11 +195,11 @@ christian = {
 					#}
 					#hidden_progressive_opinion_for_scholar_trigger = yes
 				}
+				NOT = { has_country_modifier = has_invited_scholar_recently }
 				if = {
 					limit = {
 						ai = yes
 					}
-					NOT = { has_country_modifier = has_invited_scholar_recently }
 					NOT = { has_reform = free_city }
 				}
 			}
@@ -254,15 +253,13 @@ christian = {
 					adm_power_cost = 50
 				}
 				religion = hellenic_pagan_reformed
-				NOT = { tag = Z17 }
-				has_reform = free_city
-				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
 				if = {
-					limit = {
-						ai = yes
-					}
-					NOT = { has_country_modifier = has_invited_scholar_recently }
+					limit = { ai = yes }
+					has_reform = free_city
 				}
+				NOT = { has_country_flag = daohellenic_doctrines_picking_blocked }
+				
+				NOT = { has_country_modifier = has_invited_scholar_recently }
 			}
 
 			# THIS = Nation wanting to invite the scholar, FORM = Nation that sends scholar
@@ -294,10 +291,11 @@ christian = {
 			picture = "GFX_icon_harmonic_cultivation"
 
 			# religion_sub_modifier = no is possible, will hide icon in religious screen
-			development_cost = -0.15
-			global_trade_goods_size_modifier = 0.15
-			global_prov_trade_power_modifier = -0.9
-			global_trade_power = -2
+			development_cost = -0.10
+			global_trade_goods_size_modifier = 0.10
+			stability_cost_to_declare_war = 1
+			province_warscore_cost = 1
+			global_autonomy = 0.15
 		}
 	}
 

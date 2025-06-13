@@ -507,6 +507,27 @@ country_decisions = {
 		}
 	}
 	
+	splendour_recruit_advisor_decision = {
+		
+		#color = { 255 152 45 }
+		
+		potential = {
+			always = no
+			ai = no
+		}
+		allow = {
+			always = no
+			splendor = 300
+		}
+		effect = {
+			country_event = { id = dotfset.33 }
+			add_splendor = -300
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	open_dusk_menu_decision = {
 		major = yes
 		color = { 255 152 45 }

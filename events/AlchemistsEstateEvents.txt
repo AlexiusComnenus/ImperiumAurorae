@@ -161,8 +161,8 @@ country_event = {
 	trigger = {
 		has_estate = estate_alchemists
 		estate_influence = {
-			estate = estate_nobles
-			influence = estate_alchemists
+			estate = estate_alchemists
+			influence = 15
 		}
 		NOT = {
 			has_estate_influence_modifier = {
@@ -301,6 +301,376 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+# Eureka initiation event
+country_event = {
+	id = alchemistevents.5
+	title = alchemistevents.5.t
+	desc = alchemistevents.5.d
+	picture = INVENTION_eventPicture
+	
+	trigger = {
+		has_estate = estate_alchemists
+		estate_influence = {
+			estate = estate_alchemists
+			influence = 20
+		}
+		estate_loyalty = {
+			estate = estate_alchemists
+			loyalty = 30
+		}
+		OR = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_metal_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_metal_military }
+			}
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_wood_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_wood_military }
+			}
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_water_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_water_military }
+			}
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_fire_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_fire_military }
+			}
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_earth_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_earth_military }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 2.0
+			estate_influence = {
+				estate = estate_alchemists
+				influence = 50
+			}
+		}
+		modifier = {
+			factor = 2.0
+			estate_loyalty = {
+				estate = estate_alchemists
+				loyalty = 60
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_estate_privilege = estate_alchemists_right_of_counsel
+		}
+		modifier = {
+			factor = 1.5
+			has_estate_privilege = estate_alchemists_court_alchemist
+		}
+		modifier = {
+			factor = 3.0
+			has_estate_privilege = estate_alchemists_cutting_edge_research
+		}
+		modifier = {
+			factor = 1.5
+			has_estate_privilege = estate_alchemists_public_education
+		}
+	}
+	
+	option = {	# Eureka of Metal
+		name = alchemistevents.5.a
+		ai_chance = { factor = 20 }
+		trigger = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_metal_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_metal_military }
+			}
+		}
+		country_event = { id = alchemistevents.6 }
+	}
+	option = {	# Eureka of Metal
+		name = alchemistevents.5.b
+		ai_chance = { factor = 20 }
+		trigger = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_wood_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_wood_military }
+			}
+		}
+		country_event = { id = alchemistevents.7 }
+	}
+	option = {	# Eureka of Metal
+		name = alchemistevents.5.c
+		ai_chance = { factor = 20 }
+		trigger = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_water_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_water_military }
+			}
+		}
+		country_event = { id = alchemistevents.8 }
+	}
+	option = {	# Eureka of Metal
+		name = alchemistevents.5.e
+		ai_chance = { factor = 20 }
+		trigger = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_fire_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_fire_military }
+			}
+		}
+		country_event = { id = alchemistevents.9 }
+	}
+	option = {	# Eureka of Metal
+		name = alchemistevents.5.f
+		ai_chance = { factor = 20 }
+		trigger = {
+			AND = {
+				NOT = { has_country_modifier = alchemists_eureka_earth_civilian }
+				NOT = { has_country_modifier = alchemists_eureka_earth_military }
+			}
+		}
+		country_event = { id = alchemistevents.10 }
+	}
+}
+
+country_event = {	#Eureka of metal
+	id = alchemistevents.6
+	title = alchemistevents.6.t
+	desc = alchemistevents.6.d
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {	# Military
+		name = alchemistevents.6.a
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { any_war_enemy_country = { ai = no }	}
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_metal_military
+			duration = 3650
+		}
+	}
+	option = {	# Civilian
+		name = alchemistevents.6.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				any_war_enemy_country = { ai = no }
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_metal_civilian
+			duration = 3650
+		}
+	}
+}
+
+country_event = {	#Eureka of wood
+	id = alchemistevents.7
+	title = alchemistevents.7.t
+	desc = alchemistevents.7.d
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {	# Military
+		name = alchemistevents.7.a
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { any_war_enemy_country = { ai = no }	}
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_wood_military
+			duration = 3650
+		}
+	}
+	option = {	# Civilian
+		name = alchemistevents.7.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				any_war_enemy_country = { ai = no }
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_wood_civilian
+			duration = 3650
+		}
+	}
+}
+
+country_event = {	#Eureka of water
+	id = alchemistevents.8
+	title = alchemistevents.8.t
+	desc = alchemistevents.8.d
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {	# Military
+		name = alchemistevents.8.a
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { any_war_enemy_country = { ai = no }	}
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_water_military
+			duration = 3650
+		}
+	}
+	option = {	# Civilian
+		name = alchemistevents.8.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				any_war_enemy_country = { ai = no }
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_water_civilian
+			duration = 3650
+		}
+	}
+}
+
+country_event = {	#Eureka of fire
+	id = alchemistevents.9
+	title = alchemistevents.9.t
+	desc = alchemistevents.9.d
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {	# Military
+		name = alchemistevents.9.a
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { any_war_enemy_country = { ai = no }	}
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_fire_military
+			duration = 3650
+		}
+	}
+	option = {	# Civilian
+		name = alchemistevents.9.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				any_war_enemy_country = { ai = no }
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_fire_civilian
+			duration = 3650
+		}
+	}
+}
+
+country_event = {	#Eureka of metal
+	id = alchemistevents.10
+	title = alchemistevents.10.t
+	desc = alchemistevents.10.d
+	picture = INVENTION_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {	# Military
+		name = alchemistevents.10.a
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0.1
+				NOT = { any_war_enemy_country = { ai = no }	}
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_earth_military
+			duration = 3650
+		}
+	}
+	option = {	# Civilian
+		name = alchemistevents.10.b
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 0
+				any_war_enemy_country = { ai = no }
+			}
+		}
+		add_country_modifier = {
+			name = alchemists_eureka_earth_civilian
+			duration = 3650
 		}
 	}
 }

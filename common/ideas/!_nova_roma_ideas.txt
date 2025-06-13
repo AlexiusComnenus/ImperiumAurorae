@@ -30,7 +30,6 @@ nova_roma_ideas = {
 	marine_proficiency = {
 		land_morale = 0.10
 		morale_damage = 0.025
-		is_marine_modifier = yes
 	}
 	roman_administration = {
 		administrative_efficiency = 0.075

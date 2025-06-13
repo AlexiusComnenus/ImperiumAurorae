@@ -222,6 +222,9 @@ estate_alchemists_right_of_counsel = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
 		modifier = { monthly_russian_modernization = -0.025 }
 	}
+	on_granted  = {
+		custom_tooltip = increases_chances_of_eureka_tt
+	}
 	ai_will_do = {
 		factor = 10
 		modifier = {
@@ -257,8 +260,9 @@ estate_alchemists_court_alchemist = {
 		modifier = { imperial_mandate = 0.05 }
 	}
 	on_granted  = {
-		custom_tooltip = can_start_immortality_project_tt
+		custom_tooltip = increases_chances_of_eureka_tt
 		custom_tooltip = enables_decision_to_recruit_alchemist_tt
+		custom_tooltip = can_start_immortality_project_tt
 	}
 	can_revoke = {
 		custom_trigger_tooltip = {
@@ -354,6 +358,9 @@ estate_alchemists_cutting_edge_research = {
 		global_trade_goods_size_modifier = 0.2
 		governing_cost = 0.1
 	}
+	on_granted = {
+		custom_tooltip = increases_chances_of_eureka_tt
+	}
 	ai_will_do = {
 		factor = 0
 		modifier = {
@@ -396,6 +403,8 @@ estate_alchemists_public_education = {
 		state_maintenance_modifier = 0.25
 	}
 	on_granted = {
+		custom_tooltip = increases_chances_of_eureka_tt
+		custom_tooltip = ""
 		custom_tooltip = when_loyal_tt
 		custom_tooltip = scaling_with_estate_influence_tt
 		custom_tooltip = alchemists_public_education_loyal_tt

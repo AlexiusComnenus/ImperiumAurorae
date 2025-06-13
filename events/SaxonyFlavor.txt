@@ -485,6 +485,13 @@ country_event = {  # Dec the goddamn war for AI
 		ai = yes
 		NOT = { war_exhaustion = 0.5 }
 		has_any_disaster = no
+		OR = {
+			AND = {
+				has_global_flag = sax_bullied_flanders
+				has_global_flag = sax_bullied_france
+			}
+			is_year = 1455
+		}
 	}
 	
 	immediate = {
@@ -1080,8 +1087,13 @@ country_event = {  # Dec the goddamn war for AI
 			is_subject = no
 		}
 		ai = yes
-		has_global_flag = sax_bullied_flanders
-		has_global_flag = sax_bullied_france
+		OR = {
+			AND = {
+				has_global_flag = sax_bullied_flanders
+				has_global_flag = sax_bullied_france
+			}
+			is_year = 1455
+		}
 	}
 	
 	immediate = {

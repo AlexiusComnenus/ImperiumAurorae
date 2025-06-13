@@ -156,7 +156,7 @@ country_event = {  # Final Crusade
 			join_league = ROOT
 			add_country_modifier = {
 				name = templarite_last_crusade_starter_bonus
-				duration = 1825
+				duration = 1915
 			}
 			add_country_modifier = {
 				name = suddenpacifism
@@ -181,11 +181,11 @@ country_event = {  # Final Crusade
 			play_sound = deus_vult_sfx
 		}
 		hidden_effect = {
-			country_event = { id = ia_flavor_tem.27	days = 30}
+			country_event = { id = ia_flavor_tem.27	days = 90}
 		}
 		add_country_modifier = {
 			name = templarite_last_crusade_starter_bonus
-			duration = 1825
+			duration = 1915
 		}
 	}
 }

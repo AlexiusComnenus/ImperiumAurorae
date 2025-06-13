@@ -1166,6 +1166,8 @@ cb_crush_the_revolution = {
 		NOT = { truce_with = FROM }
 		FROM = {
 			is_revolutionary = yes
+			NOT = { has_reform = almohad_commune_reform }
+			NOT = { has_reform = bogomilist_veche_republic }
 		}
 	}
 
@@ -1177,18 +1179,14 @@ cb_spread_the_revolution = {
 
 	prerequisites = {
 		is_revolutionary = yes
-		OR = {
-			ai = no
-			capital_scope = { continent = europe }
-			is_revolution_target = yes
-		}
 		NOT = { has_reform = almohad_commune_reform }
+		NOT = { has_reform = bogomilist_veche_republic }
 		FROM = {
 			NOT = { is_subject_of = ROOT }
 			is_revolutionary = no
 		}
-		NOT = { current_age = age_of_discovery }
-		current_age = age_of_revolutions
+		#NOT = { current_age = age_of_discovery }
+		#current_age = age_of_revolutions
 	}
 
 	war_goal = superiority_revolution

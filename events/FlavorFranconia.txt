@@ -128,7 +128,7 @@ country_event = {
 		name = ia_flavor_fkn.5.a
 		random_owned_province = {
 			limit = {
-				has_state_edict = fkn_enable_wine_creation
+				has_state_edict = fkn_wine_state_edict
 				NOT = { trade_goods = wine }
 			}
 			change_trade_goods = wine

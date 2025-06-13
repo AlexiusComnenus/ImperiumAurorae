@@ -9,11 +9,9 @@ revolutionary_colors = { 1  0  4 }
 preferred_religion = fraticelli
 
 historical_idea_groups = {
-	logistics_ideas
-	cultural_ideas
 	innovativeness_ideas
 	offensive_ideas
-	diplomatic_ideas
+	spy_ideas
 	quality_ideas
 	economic_ideas
 	trade_ideas
@@ -22,10 +20,6 @@ historical_idea_groups = {
 }
 
 historical_units = {
-	pre_western_infantry_1a
-	pre_western_cavalry_1a
-	pre_western_infantry_2b
-	pre_western_cavalry_2b
 	halberd_infantry
 	western_medieval_knights
 	western_men_at_arms
@@ -40,8 +34,6 @@ historical_units = {
 	open_order_cavalry
 	napoleonic_square
 	napoleonic_lancers
-	post_western_infantry_b
-	post_western_cavalry_b
 }
 
 monarch_names = {

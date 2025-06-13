@@ -265,6 +265,8 @@ difficulty_normal_ai = {
 	leader_cost = -0.50
 	global_monthly_devastation = -0.1
 	global_prosperity_growth = 0.5
+	eunuchs_loyalty_modifier = 0.5	
+	eunuchs_influence_modifier = -0.2	
 }
 
 difficulty_hard_ai = {
@@ -284,6 +286,8 @@ difficulty_hard_ai = {
 	leader_cost = -0.60
 	global_monthly_devastation = -0.15
 	global_prosperity_growth = 0.75
+	eunuchs_loyalty_modifier = 0.5	
+	eunuchs_influence_modifier = -0.2
 }
 
 difficulty_very_hard_ai = {
@@ -313,6 +317,8 @@ difficulty_very_hard_ai = {
 	leader_cost = -0.75
 	global_monthly_devastation = -0.2
 	global_prosperity_growth = 1
+	eunuchs_loyalty_modifier = 0.5	
+	eunuchs_influence_modifier = -0.2
 }
 
 luck = {
@@ -381,6 +387,8 @@ innovativeness = {
 	church_influence_modifier = -0.1
 	burghers_loyalty_modifier = 0.1
 	burghers_influence_modifier = 0.1
+	alchemists_loyalty_modifier = 0.1
+	alchemists_influence_modifier = 0.2
 }
 
 provincial_tax_income = {
@@ -641,6 +649,7 @@ expanded_infrastructure = {
     local_build_time = -0.05
     local_governing_cost_increase = 5
     local_great_project_upgrade_cost = -0.05
+	supply_limit = 2.5	
 }
 
 centralize_state = {

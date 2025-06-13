@@ -175,7 +175,7 @@ plutocracy_ideas = {
 	}
 	free_cities = {
 		caravan_power = 0.25
-		development_cost_modifier = -0.10
+		development_cost_modifier = -0.05
 	}
 	emancipation = {
 		manpower_recovery_speed = 0.20
@@ -670,7 +670,7 @@ spy_ideas = {
 
 	vetting = {
 		global_spy_defence = 0.33
-		yearly_corruption = -0.2
+		yearly_corruption = -0.1
 	}
 	
 	privateers = {
@@ -1794,6 +1794,8 @@ expansion_ideas = {
 				tag = JOM
 				tag = MYM
 				tag = Y11
+				tag = LFA
+				tag = FRM
 			}
 		}
 		modifier = {

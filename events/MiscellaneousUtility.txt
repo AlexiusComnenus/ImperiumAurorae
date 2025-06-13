@@ -748,7 +748,7 @@ country_event = {  #  dotf
 	}
 	
 	mean_time_to_happen = {
-		months = 10
+		days = 1
 	}
 	
 	
@@ -862,7 +862,7 @@ province_event = {  #  place forts
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	
@@ -890,82 +890,259 @@ country_event = {  #  place buildings
 	
 	trigger = {
 		ai = yes
-		is_year = 1490
+		#is_year = 1490
 		is_bankrupt	= no
-		is_at_war = no
+		#is_at_war = no
 		NOT = { num_of_loans = 5 }
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	
 	option = {
 		name = dotfset.26.a
-		every_owned_province = {
-			limit = {
-				is_core = ROOT
-				controlled_by = owner
-				has_owner_religion = yes
-				base_production	= 4
-				NOT = { has_production_building_trigger = yes }
-			}
-			random = {
-				chance = 10
-				add_building = workshop
-			}
-		}
-		every_owned_province = {
-			limit = {
-				is_core = ROOT
-				base_manpower = 4
-				controlled_by = owner
-				has_owner_religion = yes
-				NOT = { has_manpower_building_trigger = yes }
-			}
-			random = {
-				chance = 10
-				add_building = barracks
-			}
-		}
-		every_owned_province = {
-			limit = {
-				is_core = ROOT
-				controlled_by = owner
-				has_owner_religion = yes
-				base_tax = 3
-				NOT = { has_tax_building_trigger = yes }
-			}
-			random = {
-				chance = 10
-				add_building = temple
-			}
-		}
-		every_owned_province = {
-			limit = {
-				is_core = ROOT
-				controlled_by = owner
-				has_owner_religion = yes
-				NOT = { has_courthouse_building_trigger = yes }
-			}
-			random = {
-				chance = 10
-				add_building = courthouse
-			}
-		}
 		if = {
-			limit = { is_great_power = yes }
+			limit = {
+				adm_tech = 6
+				NOT = { adm_tech = 24 }
+			}
 			every_owned_province = {
 				limit = {
 					is_core = ROOT
 					controlled_by = owner
-					has_owner_religion = yes
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					base_production	= 4
+					NOT = { has_production_building_trigger = yes }
+				}
+				random = {
+					chance = 10
+					#add_building = workshop
+					add_building_construction = {
+						building = workshop
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { adm_tech = 24 }
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					base_production	= 6
+					OR = { 
+						NOT = { has_production_building_trigger = yes }
+						has_building = workshop
+					}
+				}
+				random = {
+					chance = 20
+					add_building_construction = {
+						building = counting_house
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mil_tech = 6
+				NOT = { mil_tech = 16 }
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					base_manpower = 4
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					NOT = { has_manpower_building_trigger = yes }
+				}
+				random = {
+					chance = 10
+					#add_building = barracks
+					add_building_construction = {
+						building = barracks
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { mil_tech = 16 }
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					base_manpower = 6
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					OR = {
+						NOT = { has_manpower_building_trigger = yes }
+						has_building = barracks
+					}
+				}
+				random = {
+					chance = 20
+					add_building_construction = {
+						building = training_fields
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				adm_tech = 4
+				NOT = { adm_tech = 19 }
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					base_tax = 4
+					NOT = { has_tax_building_trigger = yes }
+				}
+				random = {
+					chance = 10
+					#add_building = temple
+					add_building_construction = {
+						building = temple
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { adm_tech = 19 }
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					base_tax = 6
+					OR = {
+						NOT = { has_tax_building_trigger = yes }
+						has_building = temple
+					}
+				}
+				random = {
+					chance = 20
+					add_building_construction = {
+						building = cathedral
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				adm_tech = 8
+				NOT = { adm_tech = 22 }
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					#has_owner_religion = yes
+					NOT = { has_any_ongoing_construction = yes }
+					NOT = { has_courthouse_building_trigger = yes }
+				}
+				random = {
+					chance = 20
+					#add_building = courthouse
+					add_building_construction = {
+						building = courthouse
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { adm_tech = 22 }
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					#has_owner_religion = yes
+					NOT = { has_any_ongoing_construction = yes }
+					OR = {
+						NOT = { has_courthouse_building_trigger = yes }
+						has_building = courthouse
+					}
+				}
+				random = {
+					chance = 20
+					add_building_construction = {
+						building = town_hall
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				mil_tech = 8
+				NOT = { mil_tech = 22 }
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { local_autonomy = 50 }
+					NOT = { has_any_ongoing_construction = yes }
 					NOT = { has_forcelimit_building_trigger = yes }
 				}
 				random = {
-					chance = 2
-					add_building = regimental_camp
+					chance = 10
+					#add_building = regimental_camp
+					add_building_construction = {
+						building = regimental_camp
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { mil_tech = 22 }
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { local_autonomy = 50 }
+					NOT = { has_any_ongoing_construction = yes }
+					OR = { 
+						NOT = { has_forcelimit_building_trigger = yes }
+						has_building = regimental_camp
+					}
+				}
+				random = {
+					chance = 10
+					add_building_construction = {
+						building = conscription_center
+						speed = 0.5
+						cost = 0
+					}
 				}
 			}
 		}
@@ -1025,7 +1202,7 @@ country_event = {  #  white peaces
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	option = {
@@ -1073,6 +1250,7 @@ country_event = {
 			
 			any_core_country = {
 				NOT = { exists = yes }
+				NOT = { tag = Z00 }
 				if = {
 					limit = { ROOT = { culture_group = french } }
 					NOT = { tag = FRA }
@@ -1108,6 +1286,7 @@ country_event = {
 		random_owned_province = {
 			limit = {
 				NOT = { is_core = ROOT }
+				NOT = { tag = Z00 }
 			
 				any_core_country = {
 					NOT = { exists = yes }
@@ -1143,6 +1322,7 @@ country_event = {
 			random_core_country = {
 				limit = {
 					NOT = { exists = yes }
+					NOT = { tag = Z00 }
 					if = {
 						limit = { ROOT = { culture_group = french } }
 						NOT = { tag = FRA }
@@ -1290,7 +1470,7 @@ country_event = {  #  Gold Mining
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	option = {
@@ -1361,7 +1541,7 @@ country_event = {  # Removing Explo Ideas
 	}
 	
 	mean_time_to_happen = {
-		months = 1
+		days = 1
 	}
 	
 	option = {
@@ -1466,9 +1646,270 @@ province_event = {  # remove buildings on conquest
 	}
 }
 
+country_event = {  # splendour advisors
+	id = dotfset.33
+	title = dotfset.33.t
+	desc = dotfset.33.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Admin advisor
+		name = dotfset.33.a
+		country_event = { id = dotfset.34 }
+	}
+	
+	option = {	# Diplo advisor
+		name = dotfset.33.b
+		country_event = { id = dotfset.35 }
+	}
+	
+	option = {	# Mil advisor
+		name = dotfset.33.c
+		country_event = { id = dotfset.36 }
+	}
+}
+
+country_event = {  # splendour advisors -- admin
+	id = dotfset.34
+	title = dotfset.34.t
+	desc = dotfset.34.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = dotfset.34.a
+		
+		define_advisor = {
+			type = philosopher
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.b
+		
+		define_advisor = {
+			type = natural_scientist
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.c
+		
+		define_advisor = {
+			type = artist
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.e
+		
+		define_advisor = {
+			type = treasurer
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.f
+		
+		define_advisor = {
+			type = theologian
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.g
+		
+		define_advisor = {
+			type = master_of_mint
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.h
+		
+		define_advisor = {
+			type = inquisitor
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.34.i
+		
+		add_splendor = 300
+		
+	}
+}
+
+country_event = {  # splendour advisors -- diplo
+	id = dotfset.35
+	title = dotfset.35.t
+	desc = dotfset.35.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = dotfset.35.a
+		
+		define_advisor = {
+			type = statesman
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.b
+		
+		define_advisor = {
+			type = naval_reformer
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.c
+		
+		define_advisor = {
+			type = trader
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.e
+		
+		define_advisor = {
+			type = spymaster
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.f
+		
+		define_advisor = {
+			type = colonial_governor
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.g
+		
+		define_advisor = {
+			type = diplomat
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.h
+		
+		define_advisor = {
+			type = navigator
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.35.i
+		
+		add_splendor = 300
+		
+	}
+}
+
+country_event = {  # splendour advisors -- mil
+	id = dotfset.36
+	title = dotfset.36.t
+	desc = dotfset.36.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = dotfset.36.a
+		
+		define_advisor = {
+			type = army_reformer
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.b
+		
+		define_advisor = {
+			type = army_organiser
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.c
+		
+		define_advisor = {
+			type = commandant
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.e
+		
+		define_advisor = {
+			type = quartermaster
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.f
+		
+		define_advisor = {
+			type = recruitmaster
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.g
+		
+		define_advisor = {
+			type = fortification_expert
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.h
+		
+		define_advisor = {
+			type = grand_captain
+			skill = 2
+		}
+	}
+	
+	option = {	
+		name = dotfset.36.i
+		
+		add_splendor = 300
+		
+	}
+}
+
 namespace = devastation_mechanic
 
-country_event = {	devastation starter event
+country_event = {	# devastation starter event
 	id = devastation_mechanic.1
 	title = devastation_mechanic.1.title
 	desc = devastation_mechanic.1.desc
@@ -1490,7 +1931,7 @@ country_event = {	devastation starter event
 	}
 }
 
-province_event = {	devastation province event
+province_event = {	# devastation province event
 	id = devastation_mechanic.2
 	title = devastation_mechanic.2.title
 	desc = devastation_mechanic.2.desc
@@ -1512,7 +1953,7 @@ province_event = {	devastation province event
 	}
 }
 
-province_event = {	refugees province event
+province_event = {	# refugees province event
 	id = devastation_mechanic.3
 	title = devastation_mechanic.3.title
 	desc = devastation_mechanic.3.desc

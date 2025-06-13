@@ -53,6 +53,7 @@ capital = 52
 	add_prestige = 63
 	add_treasury = 47
 	add_historical_rival = FRA
+	add_historical_rival = HLR
 	add_historical_friend = Z21
 	add_truce_with = BOH
 }

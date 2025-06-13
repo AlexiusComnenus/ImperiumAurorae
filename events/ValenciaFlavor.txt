@@ -591,6 +591,64 @@ country_event = {  # Create visigoth communities + startup stuff
 			complete_mission = pol_varna_aftermath
 		}
 		set_allow_female_emperor = yes
+		
+		random_country = {
+			limit = {
+				religious_school = {
+					group = christian
+					school = righteous_illumination_school
+				}
+			}
+			random_country = {
+				limit = {
+					religious_school = {
+						group = christian
+						school = harmonic_cultivation_school
+					}
+				}
+				set_school_opinion = { who = PREV opinion = 1 }
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = christian
+					school = righteous_illumination_school
+				}
+			}
+			random_country = {
+				limit = {
+					religious_school = {
+						group = christian
+						school = draconic_inquisition_school
+					}
+				}
+				set_school_opinion = { who = PREV opinion = 1 }
+			}
+		}
+		random_country = {
+			limit = {
+				religious_school = {
+					group = christian
+					school = golden_path_school
+				}
+			}
+			random_country = {
+				limit = {
+					religious_school = {
+						group = christian
+						school = draconic_inquisition_school
+					}
+				}
+				set_school_opinion = { who = PREV opinion = -1 }
+			}
+		}
+		Z62 = {
+			set_religious_school = {
+				group = christian
+				school = righteous_illumination_school
+			}
+		}
 	}
 }
 
@@ -762,5 +820,32 @@ country_event = {  # bankruptcy protection
 		ai_chance = { factor = 75 }
 		
 		add_treasury = 1000
+	}
+}
+
+country_event = {  # Gonzalo Fernandez -- El Gran Capitan
+	id = ia_flavor_val.14
+	title = ia_flavor_val.14.t
+	desc = ia_flavor_val.14.d
+	picture = CAROLEANS_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = had_gonzalo_event }
+	}
+	
+	option = {
+		name = ia_flavor_val.14.a
+		ai_chance = { factor = 75 }
+		
+		define_general = {
+			shock = 2
+			fire = 8
+			manuever = 5
+			siege = 4
+			trait = grand_captain
+			name = "Gonzalo Fernández de Córdoba"
+		}
+		set_country_flag = had_gonzalo_event
 	}
 }

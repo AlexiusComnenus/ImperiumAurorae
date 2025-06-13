@@ -31,13 +31,13 @@ Z47_missions_column_1 = {
 			add_legitimacy = 10
 			
 			define_general = {
-				shock = 5
+				shock = 6
 				fire = 5
 				manuever = 5
 				siege = 4
 				name = "Yevpraxia 'Bane of Cumans'"
 				female = yes
-				trait = hardy_warrior_personality
+				trait = horde_breaker_leader
 			}
 			
 			if = {

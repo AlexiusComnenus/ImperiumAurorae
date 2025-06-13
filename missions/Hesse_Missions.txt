@@ -10,7 +10,7 @@ hesse_missions_column_1 = {
 	has_country_shield = yes
 	
 	hes_nassau = {
-		icon = generality_lands
+		icon = assert_our_sovereignty
 		required_missions = {
 			hes_fill_the_ranks
 		}
@@ -59,7 +59,7 @@ hesse_missions_column_1 = {
 	}
 	
 	hes_protect_mining_towns = {
-		icon = generality_lands
+		icon = ansbach_succession
 		required_missions = {
 			hes_along_the_rhine
 		}
@@ -85,7 +85,7 @@ hesse_missions_column_1 = {
 	}
 	
 	hes_decadent_kingdom = {
-		icon = generality_lands
+		icon = french_revolution
 		required_missions = {
 			
 		}
@@ -127,7 +127,7 @@ hesse_missions_column_1 = {
 	}
 	
 	hes_final_blow = {
-		icon = generality_lands
+		icon = hungarian_union
 		required_missions = {
 			hes_decadent_kingdom
 		}
@@ -182,7 +182,7 @@ hesse_missions_column_1_1 = {
 	has_country_shield = yes
 	
 	hes_restore_thuringia = {
-		icon = generality_lands
+		icon = a_strong_government
 		required_missions = {
 			hes_final_blow
 		}
@@ -224,7 +224,7 @@ hesse_missions_column_1_2 = {
 	has_country_shield = yes
 	
 	hes_relief_effort = {
-		icon = generality_lands
+		icon = a_strong_government
 		required_missions = {
 			hes_final_blow
 		}
@@ -276,7 +276,7 @@ hesse_missions_column_2 = {
 	has_country_shield = yes
 	
 	hes_a_shattered_succession = {
-		icon = generality_lands
+		icon = academy_of_the_bran
 		required_missions = {
 			
 		}
@@ -342,7 +342,7 @@ hesse_missions_column_2 = {
 	}
 	
 	hes_fill_the_ranks = {
-		icon = generality_lands
+		icon = expand_the_swiss_guard
 		required_missions = {
 			hes_a_shattered_succession
 		}
@@ -391,7 +391,7 @@ hesse_missions_column_2 = {
 	}
 	
 	hes_frankfurt = {
-		icon = generality_lands
+		icon = develop_provence
 		required_missions = {
 			hes_fill_the_ranks
 		}
@@ -430,7 +430,7 @@ hesse_missions_column_2 = {
 	}
 	
 	hes_mend_broken_crown = {
-		icon = generality_lands
+		icon = carolingian_empire
 		required_missions = {
 			hes_frankfurt
 			hes_mainz
@@ -462,7 +462,7 @@ hesse_missions_column_2 = {
 	}
 	
 	hes_along_the_rhine = {
-		icon = generality_lands
+		icon = adriatic_access
 		required_missions = {
 			hes_mend_broken_crown
 		}
@@ -501,7 +501,7 @@ hesse_missions_column_2 = {
 	}
 	
 	hes_eliminate_koln = {
-		icon = generality_lands
+		icon = boh_humiliate_austria
 		required_missions = {
 			hes_along_the_rhine
 		}
@@ -556,7 +556,7 @@ hesse_missions_column_3 = {
 	has_country_shield = yes
 	
 	hes_mainz = {
-		icon = generality_lands
+		icon = a_worthy_navy
 		required_missions = {
 			hes_fill_the_ranks
 		}
@@ -578,7 +578,7 @@ hesse_missions_column_3 = {
 	}
 	
 	hes_dutch_merchants = {
-		icon = generality_lands
+		icon = adjust_the_general_means
 		required_missions = {
 			hes_along_the_rhine
 		}
@@ -662,7 +662,7 @@ hesse_missions_column_3 = {
 	}
 	
 	hes_bulwark_of_the_rhine = {
-		icon = generality_lands
+		icon = a.e.i.o.u.
 		required_missions = {
 			hes_hessian_supremacy
 			hes_dutch_merchants
@@ -702,7 +702,7 @@ hesse_missions_column_4 = {
 	has_country_shield = yes
 	
 	hes_standardize_drilling_methods = {
-		icon = generality_lands
+		icon = army_reforms
 		required_missions = {
 			hes_rebuild_schloss_berlepsch
 		}
@@ -726,7 +726,7 @@ hesse_missions_column_4 = {
 	}
 	
 	hes_officer_academy = {
-		icon = generality_lands
+		icon = balance_of_power
 		required_missions = {
 			hes_standardize_drilling_methods
 		}
@@ -766,7 +766,7 @@ hesse_missions_column_4 = {
 	}
 	
 	hes_hessian_quality = {
-		icon = generality_lands
+		icon = establish_a_standing_army
 		required_missions = {
 			hes_officer_academy
 		}
@@ -803,7 +803,7 @@ hesse_missions_column_5 = {
 	has_country_shield = yes
 	
 	hes_rebuild_schloss_berlepsch = {
-		icon = generality_lands
+		icon = alpine_defenses
 		required_missions = {
 			
 		}
@@ -843,7 +843,7 @@ hesse_missions_column_5 = {
 	}
 	
 	hes_old_berlepsch_chapel = {
-		icon = generality_lands
+		icon = answer_the_roman_question
 		required_missions = {
 			hes_rebuild_schloss_berlepsch
 		}
@@ -876,7 +876,7 @@ hesse_missions_column_5 = {
 		}
 	}
 	hes_restore_aufmarschplatz = {
-		icon = generality_lands
+		icon = interest_of_holland
 		required_missions = {
 			hes_old_berlepsch_chapel
 		}
@@ -928,7 +928,7 @@ hesse_missions_column_5 = {
 	}
 	
 	hes_reinforce_walls = {
-		icon = generality_lands
+		icon = fortress_of_belgrade
 		required_missions = {
 			hes_restore_aufmarschplatz
 		}
@@ -974,7 +974,7 @@ hesse_missions_column_5 = {
 	}
 	
 	hes_hessian_doctrine = {
-		icon = generality_lands
+		icon = enlightened_absolutism
 		required_missions = {
 			hes_hessian_quality
 			hes_reinforce_walls
@@ -1022,6 +1022,7 @@ hesse_missions_column_5 = {
 				type = 25_permanent_power_projection
 				amount = 15 
 			}
+			custom_tooltip = permanent_pp_tt
 		}
 	}
 }

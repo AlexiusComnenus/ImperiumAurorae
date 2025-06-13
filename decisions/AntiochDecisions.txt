@@ -32,6 +32,104 @@ country_decisions = {
 		}
 	}
 	
+	make_druid_ruler_general = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			ruler_has_personality = powerful_druid_personality
+			is_monarch_leader = no
+		}
+		
+		allow = {
+			ruler_has_personality = powerful_druid_personality
+			is_monarch_leader = no
+			has_regency = no
+		}
+		
+		effect = {
+			if = {
+				limit = { mil = 6 }
+				define_ruler_to_general = {
+					shock = 3
+					fire = 10
+					manuever = 6
+					siege = 4
+					trait = war_druid
+				}
+			}
+			else_if = {
+				limit = { mil = 5 }
+				define_ruler_to_general = {
+					shock = 2
+					fire = 9
+					manuever = 5
+					siege = 4
+					trait = war_druid
+				}
+			}
+			else_if = {
+				limit = { mil = 4 }
+				define_ruler_to_general = {
+					shock = 2
+					fire = 7
+					manuever = 4
+					siege = 3
+					trait = war_druid
+				}
+			}
+			else_if = {
+				limit = { mil = 3 }
+				define_ruler_to_general = {
+					shock = 2
+					fire = 6
+					manuever = 4
+					siege = 2
+					trait = war_druid
+				}
+			}
+			else_if = {
+				limit = { mil = 2 }
+				define_ruler_to_general = {
+					shock = 2
+					fire = 5
+					manuever = 3
+					siege = 2
+					trait = war_druid
+				}
+			}
+			else_if = {
+				limit = { mil = 1 }
+				define_ruler_to_general = {
+					shock = 2
+					fire = 4
+					manuever = 2
+					siege = 1
+					trait = war_druid
+				}
+			}
+			else = {
+				define_ruler_to_general = {
+					shock = 1
+					fire = 4
+					manuever = 1
+					siege = 1
+					trait = war_druid
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_at_war = no
+			}
+			modifier = {
+				factor = 0
+				war_score = -25
+			}
+		}
+	}
+	
 	recruit_aurora_general = {
 		major = yes
 		color = { 255 243 51 }

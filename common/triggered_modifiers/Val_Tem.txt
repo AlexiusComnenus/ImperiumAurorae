@@ -226,12 +226,17 @@ ai_chinese_emperor_boost = {
 	trigger = {
 		is_emperor_of_china = yes
 		ai = yes
-		is_at_war = no
+		#is_at_war = no
 	}
 	
 	global_monthly_devastation = -0.2
 	global_prosperity_growth = 0.5
 	imperial_mandate = 0.15
+	development_cost_modifier = -0.1
+	development_cost = -0.2
+	country_admin_power = 2
+	country_diplomatic_power = 2
+	country_military_power = 2
 }
 
 other_lucky_nation = {

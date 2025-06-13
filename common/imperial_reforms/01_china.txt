@@ -136,25 +136,6 @@ reform_civil_registration_decision = {
 	emperor = { development_cost = -0.05 autonomy_change_time = -0.2 }
 }
 
-establish_silver_standard_decision = {
-	empire = celestial_empire 
-	trigger = {
-		NOT = { inflation = 1 } 
-		OR = { 
-			monthly_adm = 10 
-			adm = 5 
-			national_focus = ADM 
-		}
-		is_in_deficit = no 
-		empire_of_china_reform_passed = codify_single_whip_law_decision
-	}
-	member = { interest = -0.5 } 
-	emperor = { 
-		monthly_gold_inflation_modifier = -0.1 
-		inflation_reduction = 0.05
-	}
-}
-
 kanhe_certificate_decision = {
 	empire = celestial_empire 
 	trigger = {
@@ -165,10 +146,54 @@ kanhe_certificate_decision = {
 			national_focus = DIP 
 		}
 	}
-	member = { trade_efficiency = 0.05 } 
+	member = { trade_efficiency = 0.1 } 
 	emperor = { 
 		merchants = 1 
 		placed_merchant_power = 10 
+	}
+}
+
+seaban_decision_ia = {
+	empire = celestial_empire
+	emperor = {
+		diplomats = 1
+		envoy_travel_time = -0.33
+		trade_efficiency = 0.1
+	}
+	member = {
+		global_ship_trade_power = 0.2
+		envoy_travel_time = -0.2
+	}
+}
+
+unifed_trade_market_decision = {
+	empire = celestial_empire 
+	trigger = { 
+		empire_of_china_reform_passed = seaban_decision_ia
+		empire_of_china_reform_passed = kanhe_certificate_decision
+		OR = { 
+			#mission_completed = mng_improve_haijin_policy
+			#mission_completed = mng_repeal_haijin_policy
+			mercantilism = 50 
+			dip = 6
+		}
+		OR = {
+			full_idea_group = trade_ideas
+			trade_income_percentage = 0.35
+			home_trade_node = {
+				highest_value_trade_node = yes
+				is_strongest_trade_power = ROOT
+			}
+		}
+	}
+	member = {
+		global_trade_power = 0.1
+		trade_steering = 0.20
+	} 
+	emperor = { 
+		merchants = 1
+		trade_steering = 0.25
+		embargo_efficiency = 0.5
 	}
 }
 
@@ -204,35 +229,6 @@ promote_bureaucratic_faction_decision = {
 		adm_tech_cost_modifier = -0.05
 	}
 	disabled_by = promote_military_faction_decision
-}
-
-unifed_trade_market_decision = {
-	empire = celestial_empire 
-	trigger = { 
-		empire_of_china_reform_passed = seaban_decision
-		empire_of_china_reform_passed = kanhe_certificate_decision
-		OR = { 
-			mission_completed = mng_improve_haijin_policy
-			mission_completed = mng_repeal_haijin_policy
-			mercantilism = 50 
-			dip = 6
-		}
-		OR = {
-			full_idea_group = trade_ideas
-			trade_income_percentage = 0.35
-			home_trade_node = {
-				highest_value_trade_node = yes
-				is_strongest_trade_power = ROOT
-			}
-		}
-	}
-	member = {
-		global_trade_power = 0.1
-	} 
-	emperor = { 
-		merchants = 1 
-		global_trade_goods_size_modifier = 0.05
-	}
 }
 
 reform_the_military_branch_decision = {
@@ -404,14 +400,6 @@ new_world_discovery_decision = {
 	}
 }
 
-seaban_decision = {
-	empire = celestial_empire
-	emperor = {
-		diplomats = 1
-		trade_efficiency = 0.05
-	}
-}
-
 reign_in_estates_decision = {
 	empire = celestial_empire
 	trigger = {
@@ -458,4 +446,23 @@ codify_single_whip_law_decision = {
 		vassal_forcelimit_bonus = 0.25
 	}
 	
+}
+
+establish_silver_standard_decision = {
+	empire = celestial_empire 
+	trigger = {
+		NOT = { inflation = 1 } 
+		OR = { 
+			monthly_adm = 10 
+			adm = 5 
+			national_focus = ADM 
+		}
+		is_in_deficit = no 
+		empire_of_china_reform_passed = codify_single_whip_law_decision
+	}
+	member = { interest = -0.5 } 
+	emperor = { 
+		monthly_gold_inflation_modifier = -0.1 
+		inflation_reduction = 0.05
+	}
 }

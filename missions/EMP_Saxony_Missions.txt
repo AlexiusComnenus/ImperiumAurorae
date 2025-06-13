@@ -702,7 +702,7 @@ ia_sax_mission_3_tge = {
 		has_reform = saxon_feudalism
 		tag = SAX
 		NOT = { map_setup = map_setup_random }
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -763,7 +763,7 @@ ia_sax_mission_4_tge = {
 		has_reform = saxon_feudalism
 		tag = SAX
 		NOT = { map_setup = map_setup_random }
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	

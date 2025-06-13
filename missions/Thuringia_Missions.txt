@@ -175,7 +175,7 @@ thuringia_missions_column_1 = {
 				limit = { has_country_modifier = thu_horrible_council }
 				add_country_modifier = {
 					name = thu_magneric_relief
-					duration = -1
+					duration = 9125
 				}
 			}
 		}

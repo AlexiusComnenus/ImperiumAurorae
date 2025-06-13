@@ -6,6 +6,8 @@
  completed_representation_mission_tt: "Has made a decision in the §YFuture of Austria§! decision from the §YMission Tree§!!"
  bohemian_germanic_monarchy: "Germanized Crown of Bohemia"
  bohemian_germanic_monarchy_desc: "Over the years, the Court of Bohemia has steadily drifted into Germanic orbit. With most of the courtiers and even the Archduke speaking German, it is difficult to tell any difference between Bohemia's court and that of any fully German court."
+ provoke_magnate_revolt_in_poland_title: "Incite Magnate Revolt in Poland"
+ provoke_magnate_revolt_in_poland_desc: "Using our connections with the regional magnates in Poland, we can whisper poison in their ears about the intentions of the Polish Crown."
  
  auh_second_ia: "Multicultural Empire"
  auh_second_ia_desc: "Mighty Austria has grown to encompass more than just Germans, but also the Magyars, Slavs, and Italians. To prevent separatism and promote cultural diffusion, we shall enact a policy of equal treatment for all peoples throughout the empire."
@@ -102,6 +104,9 @@
  BGM_HAB_missions.2.d:0 "For far too long, Austria has languished as a border March of the German Realm, ravaged by outside invaders and internal foes alike. But now, we stand upon a precipice, for we have established ourselves as uniters of a multicultural realm. Shall we embrace a new Austrian identity, separate from Germany, as many of our new subjects demand, or shall we utilize this strength to become rulers of Germany?"
  BGM_HAB_missions.2.b:0 "We will forge our own Empire."
  BGM_HAB_missions.2.c:0 "The future lies in Germany."
+ flavor_boh.28.t: "The Magnate Revolt"
+ flavor_boh.28.d: "The great magnates of Poland, dissatisfied with the steady growth of royal authority in recent years, have gathered together in a conspiracy to divide the realm amongst themselves! They believe that this is their last opportunity to protect their supposed rights and liberties from the depradations of the Crown."
+ flavor_boh.28.a: "Crush the rebels!"
 
  hab_absolutism_or_reformation:0 "We must have §YWeathered the Religious Turmoil Disaster§! or reach the §YAge of Absolutism§! without encountering it."
  

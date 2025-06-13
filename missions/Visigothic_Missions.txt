@@ -450,6 +450,12 @@ visigoth_missions_column_2 = {
 		}
 		
 		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = had_gonzalo_event }
+				}
+				country_event = { id = ia_flavor_val.14 }
+			}
 			CAS = {
 				add_liberty_desire = -20
 			}
@@ -1352,6 +1358,12 @@ visigoth_missions_column_4 = {
 		}
 		
 		effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = had_gonzalo_event }
+				}
+				country_event = { id = ia_flavor_val.14 }
+			}
 			if = {
 				limit = { ai = yes }
 				196 = {

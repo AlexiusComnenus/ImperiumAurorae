@@ -990,9 +990,23 @@ lubeck_missions_3 = { #Made by Big Boss
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			development_in_provinces = {
-				value = 40 
-				area = mecklenburg_area 
+			OR = {
+				development_in_provinces = {
+					value = 40 
+					area = mecklenburg_area 
+				}
+				any_ally = {
+					development_in_provinces = {
+						value = 40 
+						area = mecklenburg_area 
+					}
+				}
+				any_subject_country = {
+					development_in_provinces = {
+						value = 40 
+						area = mecklenburg_area 
+					}
+				}
 			}
 		}
 		effect = {

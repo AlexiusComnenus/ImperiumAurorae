@@ -38,21 +38,40 @@ CHI_ideas = {
 	}
 }
 
-template_ideas = {
+taiwan_ideas = {
     start = {
-        production_efficiency = 0.15
-        adm_tech_cost_modifier = -0.1
+        galley_power = 0.15
+		ship_durability = 0.05
+		may_explore = yes
     }
     
     bonus = {
-        global_manpower_modifier = 0.25
+        naval_morale = 0.15
     }
     
     trigger = {
-        always = no
+        tag = FRM
     }
     free = yes
     
+    frm_pirate_marines = {
+		has_marines = yes
+		allowed_marine_fraction = 0.5
+		global_sailors_modifier = 0.5
+	}
+	frm_polynesian_understanding = {
+		range = 0.5
+		colonist_placement_chance = 0.15
+		native_assimilation = 0.5
+	}
+	frm_ingenuity_under_pressure = {
+		technology_cost = -0.05
+		development_cost = -0.1
+	}
+	frm_protection_racket = {
+		global_ship_trade_power = 0.25
+		trade_steering = 0.25
+	}
     keju_examination = {
         advisor_pool = 1
         advisor_cost = -0.1
@@ -61,27 +80,8 @@ template_ideas = {
         idea_cost = -0.05
         reform_progress_growth = 0.15
     }
-    order_of_four_occupations = {
-        yearly_harmony = 0.5
-        all_estate_loyalty_equilibrium = 0.05
-    }
-    nation_of_rites_and_etiquette = {
-        prestige = 1
-    }
     firearm_training = {
         infantry_fire = 0.15
-    }
-    son_of_heaven = {
-        legitimacy = 1
-        devotion = 1
-        republican_tradition = 0.3
-        meritocracy = 1
-        horde_unity = 1
-        imperial_mandate = 0.05
-    }
-    middle_kingdom = {
-        liberty_desire_from_subject_development = -0.25
-		monarch_power_tribute = 1
     }
 }
 

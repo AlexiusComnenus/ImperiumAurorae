@@ -4,7 +4,7 @@ hsc_ideas = {
 		global_missionary_strength = 0.02
 	}
 	bonus = {
-		build_cost = -0.1
+		fire_damage_received = -0.10
 	}
 	trigger = {
 		tag = HSC
@@ -12,17 +12,20 @@ hsc_ideas = {
 	free = yes
 
 	oath_of_service = {
-		manpower_recovery_speed = 0.20
+		manpower_recovery_speed = 0.25
 	}
 	the_great_voyage = {
 		colonists = 1
+		range = 0.5
 	}
 	brothers_of_the_land = {
 		native_uprising_chance = -0.50
 		native_assimilation = 0.50
+		global_colonial_growth = 20
 	}
 	druidic_teachings = {
 		culture_conversion_cost = -0.20
+		development_cost_in_primary_culture = -0.1
 	}
 	natures_love = {
 		tolerance_own = 3

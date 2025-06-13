@@ -30,7 +30,7 @@ Z21_ideas = {
 		shock_damage_received = -0.10
 	}
 	Z21_burghal_hidage = {
-		global_tax_modifier = 0.10
+		global_tax_modifier = 0.15
 		fort_maintenance_modifier = -0.25
 	}
 	Z21_commercial_burhs = {
@@ -69,7 +69,7 @@ AVE_ideas = {
 	Z21_repelling_the_heathens = {	# same as before
 	}
 	Z21_burghal_hidage_advanced = {
-		global_tax_modifier = 0.25
+		global_tax_modifier = 0.3
 		fort_maintenance_modifier = -0.25
 	}
 	Z21_commercial_burhs = {	# same as before

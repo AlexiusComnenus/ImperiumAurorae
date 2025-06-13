@@ -48,7 +48,7 @@ Aengland_Missions_1 = {
 		
 		trigger = {
 			num_of_provinces_owned_or_owned_by_subjects_with = {
-				value = 6
+				value = 4
 				OR = {
 					area = western_norway
 					area = jutland_area

@@ -1,0 +1,20 @@
+alliance = {
+	first = NOV
+	second = SMO
+	start_date = 1380.1.1
+	end_date = 1667.1.1
+}
+
+alliance = {
+	first = FEO
+	second = TRE
+	start_date = 1380.1.1
+	end_date = 1667.1.1
+}
+
+alliance = {
+	first = RIG
+	second = HSA
+	start_date = 1380.1.1
+	end_date = 1667.1.1
+}

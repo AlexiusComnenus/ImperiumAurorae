@@ -7,7 +7,7 @@ take_capital_replace_pope = {
 		peace_cost_factor = 0.75
 
 		peace_options = {
-			po_replace_pope
+			#po_replace_pope
 			po_change_religion
 			po_gold
 		}
@@ -98,7 +98,7 @@ take_capital_declare_anti_king = {
 
 		peace_options = {
 			po_become_hre_emperor
-			po_become_illegitimate_hre_emperor
+			#po_become_illegitimate_hre_emperor
 		}
 	}
 
@@ -108,7 +108,7 @@ take_capital_declare_anti_king = {
 		peace_cost_factor = 1
 
 		peace_options = {
-			po_imprison_enemy_ruler
+			#po_imprison_enemy_ruler
 			po_demand_provinces
 		}
 	}
@@ -133,7 +133,7 @@ take_capital_free_imprisoned_ruler = {
 		allowed_provinces_are_eligible = yes
 
 		peace_options = {
-			po_free_imprisoned_ruler
+			#po_free_imprisoned_ruler
 			po_demand_provinces
 		}
 
@@ -279,7 +279,7 @@ revoke_elector_golden_bull = {
 		peace_cost_factor = 0.75
 
 		peace_options = {
-			po_revoke_elector_golden_bull
+			#po_revoke_elector_golden_bull
 			po_change_religion
 		}
 	}
@@ -308,7 +308,7 @@ superiority_hre_hussite_coalition = {
 		peace_cost_factor = 1
 
 		peace_options = {
-			po_hre_hussite_coalition_enforce_religion
+			#po_hre_hussite_coalition_enforce_religion
 			po_demand_provinces
 		}
 	}
@@ -338,12 +338,12 @@ superiority_hre_italian_war = {
 			always = no
 		}
 
-		required_treaty_to_take_provinces = {
-			po_hre_italian_war_emperor
-		}
+		#required_treaty_to_take_provinces = {
+		#	po_hre_italian_war_emperor
+		#}
 
 		peace_options = {
-			po_hre_italian_war_emperor
+			#po_hre_italian_war_emperor
 			po_demand_provinces
 		}
 	}
@@ -353,12 +353,12 @@ superiority_hre_italian_war = {
 		prestige_factor = 1
 		peace_cost_factor = 1
 
-		required_treaty_to_take_provinces = {
-			po_hre_italian_war_pope
-		}
+		#required_treaty_to_take_provinces = {
+		#	po_hre_italian_war_pope
+		#}
 
 		peace_options = {
-			po_hre_italian_war_pope
+			#po_hre_italian_war_pope
 			po_demand_provinces
 		}
 	}
@@ -405,8 +405,8 @@ superiority_challenge_foreign_emperor = {
 		}
 
 		peace_options = {
-			po_become_hre_emperor
-			po_become_illegitimate_hre_emperor
+			#po_become_hre_emperor
+			#po_become_illegitimate_hre_emperor
 		}
 	}
 
@@ -420,7 +420,7 @@ superiority_challenge_foreign_emperor = {
 		}
 
 		peace_options = {
-			po_become_legitimate_foreign_emperor
+			#po_become_legitimate_foreign_emperor
 			po_demand_provinces
 		}
 	}

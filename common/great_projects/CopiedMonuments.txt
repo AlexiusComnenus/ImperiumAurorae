@@ -142,6 +142,12 @@ tower_of_london = {
 			}
 			province_is_or_accepts_culture = yes
 		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				culture = anglo_saxon
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -163,6 +169,12 @@ tower_of_london = {
 			}
 			province_is_or_accepts_culture = yes
 		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				culture = anglo_saxon
+			}
+		}
 	}
 
 	#can our country upgrade it?
@@ -173,6 +185,12 @@ tower_of_london = {
 				culture = anglo_saxon
 			}
 			province_is_or_accepts_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = gaelic
+				culture = anglo_saxon
+			}
 		}
 	}
 
@@ -555,6 +573,12 @@ kremlin = {
 			culture_group = slavic
 		}
 		province_is_or_accepts_culture = yes
+		owner = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = slavic
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -574,6 +598,12 @@ kremlin = {
 			culture_group = slavic
 		}
 		province_is_or_accepts_culture = yes
+		owner = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = slavic
+			}
+		}
 	}
 
 	#can our country upgrade it?
@@ -583,6 +613,12 @@ kremlin = {
 			culture_group = slavic
 		}
 		province_is_or_accepts_culture = yes
+		owner = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = slavic
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -806,6 +842,8 @@ alhambra = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			local_defensiveness = 0.25
+			local_development_cost = -0.25
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -814,8 +852,9 @@ alhambra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			vassal_income = 0.1
+			global_tariffs = 0.05	
 			reduced_liberty_desire = 5
+			vassal_naval_forcelimit_bonus = 0.1	
 		}
 
 		#what effects happen when this tier is achieved
@@ -836,6 +875,8 @@ alhambra = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			local_defensiveness = 0.5
+			local_development_cost = -0.5
 		}
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
@@ -844,9 +885,10 @@ alhambra = {
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			vassal_income = 0.1
+			global_tariffs = 0.1
 			reduced_liberty_desire = 5
-			diplomatic_reputation = 1
+			reduced_liberty_desire_on_other_continent = 5
+			vassal_naval_forcelimit_bonus = 0.25
 		}
 
 		#what effects happen when this tier is achieved
@@ -871,14 +913,16 @@ alhambra = {
 
 		#what modifiers are added to the provinces in the map area when we have this project here on this tier
 		area_modifier = {
+			local_defensiveness = 0.5
+			local_development_cost = -0.5
 		}
 
 		#what modifiers are added to the country when we have this project here on this tier
 		country_modifiers = {
-			administrative_efficiency = 0.05
-			vassal_income = 0.1
+			global_tariffs = 0.2
 			reduced_liberty_desire = 10
-			diplomatic_reputation = 1
+			reduced_liberty_desire_on_other_continent = 10	
+			vassal_naval_forcelimit_bonus = 0.5
 		}
 
 		#what effects happen when this tier is achieved
@@ -1086,15 +1130,6 @@ bran_castle = {
 	type = monument
 
 	build_trigger = {
-		if = {
-			limit = {
-				owner = {
-					NOT = { has_country_flag = teu_can_utilize_bran_castle }
-				}
-			}
-			culture_group = carpathian
-			province_is_or_accepts_culture = yes
-		}
 	}
 
 	on_built = {
@@ -1104,27 +1139,9 @@ bran_castle = {
 	}
 
 	can_use_modifiers_trigger = {
-		if = {
-			limit = {
-				owner = {
-					NOT = { has_country_flag = teu_can_utilize_bran_castle }
-				}
-			}
-			culture_group = carpathian
-			province_is_or_accepts_culture = yes
-		}
 	}
 
 	can_upgrade_trigger = {
-		if = {
-			limit = {
-				owner = {
-					NOT = { has_country_flag = teu_can_utilize_bran_castle }
-				}
-			}
-			culture_group = carpathian
-			province_is_or_accepts_culture = yes
-		}
 	}
 
 	keep_trigger = {
@@ -1155,7 +1172,7 @@ bran_castle = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_defensiveness = 0.15
+			local_defensiveness = 0.25
 		}
 		area_modifier = {
 		}
@@ -1175,6 +1192,7 @@ bran_castle = {
 			factor = 2500
 		}
 		province_modifiers = {
+			local_defensiveness = 0.35
 		}
 		area_modifier = {
 			local_defensiveness = 0.15
@@ -1195,6 +1213,7 @@ bran_castle = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_defensiveness = 0.5
 		}
 		area_modifier = {
 			local_defensiveness = 0.25
@@ -3718,6 +3737,7 @@ imperial_city_kyoto = {
 	build_trigger = {
 		culture_group = japanese_g
 		province_is_or_accepts_culture = yes
+		owner = { culture_group = japanese_g }
 	}
 
 	on_built = {
@@ -3729,11 +3749,13 @@ imperial_city_kyoto = {
 	can_use_modifiers_trigger = {
 		culture_group = japanese_g
 		province_is_or_accepts_culture = yes
+		owner = { culture_group = japanese_g }
 	}
 
 	can_upgrade_trigger = {
 		culture_group = japanese_g
 		province_is_or_accepts_culture = yes
+		owner = { culture_group = japanese_g }
 	}
 
 	keep_trigger = {

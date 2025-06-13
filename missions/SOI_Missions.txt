@@ -550,7 +550,7 @@ soi_missions_column_2_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -2162,7 +2162,7 @@ soi_missions_column_1_bottom_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -2335,7 +2335,7 @@ soi_missions_column_2_bottom_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -2389,7 +2389,7 @@ soi_missions_column_3_bottom_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -2549,7 +2549,7 @@ soi_missions_column_4_bottom_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	
@@ -2612,7 +2612,7 @@ soi_missions_column_5_bottom_tge = {
 	ai = yes
 	potential = {
 		tag = SOI
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	

@@ -29,7 +29,7 @@ country_event = {
 				set_country_flag = not_meta_devver
 			}
 			else = {
-				set_country_flag = meta_devver
+				#set_country_flag = meta_devver
 			}
 			
 			if = {

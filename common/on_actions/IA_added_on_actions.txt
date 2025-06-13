@@ -56,6 +56,9 @@ on_five_year_pulse_2 = {
 		100 = alchemistevents.2
 		100 = alchemistevents.3
 		50 = alchemistevents.4
+		100 = peasantsevents.1
+		100 = peasantsevents.2
+		50 = peasantsevents.4
 	}
 }
 
@@ -89,6 +92,9 @@ on_yearly_pulse_2 = {
 		250 = ia_flavor_sax.22
 		250 = ia_flavor_sax.23
 		#75 = ia_flavor_tem.11
+		100 = peasantsevents.3
+		140 = peasantsevents.5
+		10 = alchemistevents.5
 		
 		1000 = 0
 	}

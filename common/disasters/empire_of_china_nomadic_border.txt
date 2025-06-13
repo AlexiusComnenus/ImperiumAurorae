@@ -20,6 +20,119 @@ empire_of_china_nomadic_border = {
 			}
 			#NOT = { is_subject_of = ROOT }
 		}
+		custom_trigger_tooltip = {
+			tooltip = empire_of_china_nomadic_border_great_wall_no_tt
+			OR = {
+				NOT = {
+					698 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningha
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					699 = {
+						has_great_project = {
+							type = the_great_wall_of_china_lanzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					2182 = {
+						has_great_project = {
+							type = the_great_wall_of_china_liangzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					708 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhangye
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					4223 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hetao
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					702 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hohhot
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					697 = {
+						has_great_project = {
+							type = the_great_wall_of_china_datong
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					696 = {
+						has_great_project = {
+							type = the_great_wall_of_china_baoding
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					4195 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhending
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					2136 = {
+						has_great_project = {
+							type = the_great_wall_of_china_xuanhua
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					703 = {
+						has_great_project = {
+							type = the_great_wall_of_china_chengde
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+				NOT = {
+					704 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningyuan
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
 	}
 	
 	can_stop = { 
@@ -48,6 +161,95 @@ empire_of_china_nomadic_border = {
 								max_years_since = 15
 							}
 						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = empire_of_china_nomadic_border_great_wall_yes_tt
+				AND = {
+					698 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningha
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					699 = {
+						has_great_project = {
+							type = the_great_wall_of_china_lanzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					2182 = {
+						has_great_project = {
+							type = the_great_wall_of_china_liangzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					708 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhangye
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					4223 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hetao
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					702 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hohhot
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					697 = {
+						has_great_project = {
+							type = the_great_wall_of_china_datong
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					696 = {
+						has_great_project = {
+							type = the_great_wall_of_china_baoding
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					4195 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhending
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					2136 = {
+						has_great_project = {
+							type = the_great_wall_of_china_xuanhua
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					703 = {
+						has_great_project = {
+							type = the_great_wall_of_china_chengde
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					704 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningyuan
+							tier = 2
+						}
+						controlled_by = ROOT
 					}
 				}
 			}
@@ -163,6 +365,95 @@ empire_of_china_nomadic_border = {
 								max_years_since = 15
 							}
 						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = empire_of_china_nomadic_border_great_wall_yes_tt
+				AND = {
+					698 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningha
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					699 = {
+						has_great_project = {
+							type = the_great_wall_of_china_lanzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					2182 = {
+						has_great_project = {
+							type = the_great_wall_of_china_liangzhou
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					708 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhangye
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					4223 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hetao
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					702 = {
+						has_great_project = {
+							type = the_great_wall_of_china_hohhot
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					697 = {
+						has_great_project = {
+							type = the_great_wall_of_china_datong
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					696 = {
+						has_great_project = {
+							type = the_great_wall_of_china_baoding
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					4195 = {
+						has_great_project = {
+							type = the_great_wall_of_china_zhending
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					2136 = {
+						has_great_project = {
+							type = the_great_wall_of_china_xuanhua
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					703 = {
+						has_great_project = {
+							type = the_great_wall_of_china_chengde
+							tier = 2
+						}
+						controlled_by = ROOT
+					}
+					704 = {
+						has_great_project = {
+							type = the_great_wall_of_china_ningyuan
+							tier = 2
+						}
+						controlled_by = ROOT
 					}
 				}
 			}

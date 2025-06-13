@@ -187,4 +187,34 @@ country_decisions = {
 			factor = 1
 		}
 	}
+	
+	provoke_magnate_revolt_in_poland = {
+		major = yes
+		potential = {
+			is_free_or_tributary_trigger = yes
+			OR = {
+				tag = GMA
+				tag = MVA
+			}
+			NOT = { has_global_flag = polish_revolt_fired }
+		}
+		allow = {
+			is_at_war = no
+			has_spy_network_in = {
+				who = POL
+				value = 75
+			}
+			treasury = 150
+			POL = { is_at_war = no }
+		}
+		effect = {
+			add_treasury = -150
+			add_spy_network_in = {
+				who = POL
+				value = -50
+			}
+			
+			POL = { country_event = { id = flavor_boh.28 } }
+		}
+	}
 }

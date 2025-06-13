@@ -121,3 +121,16 @@ horde_breaker_leader = {
 	morale_damage_received = -0.10
 	shock_damage_received = -0.10
 }
+
+grand_captain = {
+	allow = {
+		is_admiral = no
+		army_tradition = 90
+	}
+	
+	land_morale = 0.10
+	fire_damage = 0.15
+	shock_damage = 0.15
+	land_attrition = -0.10
+	movement_speed = 0.10
+}

@@ -15,6 +15,12 @@ country_event = {
 		days = 360
 	}
 	
+	immediate = {
+		capital_scope = {
+			add_devastation = 15
+		}
+	}
+	
 	option = {	# Boris the Bogomil
 		name = ia_flavor_nov.1.a
 		
@@ -30,10 +36,12 @@ country_event = {
 		
 		hidden_effect = {
 			add_ruler_personality = inspiring_leader_personality
+			add_ruler_personality = peasant_revolt_leader_personality
 			add_ruler_personality = kind_hearted_personality
 			
 			set_country_flag = had_novgorod_starting_event_flag
 			set_country_flag = nov_chose_bogomil_path_flag
+			clr_country_flag = nov_chose_orthodox_path_flag
 		}
 	}
 	
@@ -53,8 +61,10 @@ country_event = {
 		hidden_effect = {
 			add_ruler_personality = zealot_personality
 			add_ruler_personality = strict_personality
+			add_ruler_personality = last_knight_personality
 			
 			set_country_flag = had_novgorod_starting_event_flag
+			clr_country_flag = nov_chose_bogomil_path_flag
 			set_country_flag = nov_chose_orthodox_path_flag
 		}
 	}
@@ -117,8 +127,11 @@ country_event = {	# Lumber Creation
 					has_terrain = forest
 					has_terrain = woods
 				}
+				NOT = { trade_goods = lumber }
+				NOT = { trade_goods = woodworking }
 			}
 			save_event_target_as = lumber_province_1
+			set_province_flag = lumber_province_1_flag
 		}
 		random_owned_province = {
 			limit = {
@@ -127,8 +140,12 @@ country_event = {	# Lumber Creation
 					has_terrain = forest
 					has_terrain = woods
 				}
+				NOT = { trade_goods = lumber }
+				NOT = { trade_goods = woodworking }
+				NOT = { has_province_flag = lumber_province_1_flag }
 			}
 			save_event_target_as = lumber_province_2
+			set_province_flag = lumber_province_2_flag
 		}
 		random_owned_province = {
 			limit = {
@@ -137,8 +154,20 @@ country_event = {	# Lumber Creation
 					has_terrain = forest
 					has_terrain = woods
 				}
+				NOT = { trade_goods = lumber }
+				NOT = { trade_goods = woodworking }
+				NOT = { has_province_flag = lumber_province_1_flag }
+				NOT = { has_province_flag = lumber_province_2_flag }
 			}
 			save_event_target_as = lumber_province_3
+		}
+		hidden_effect = {
+			event_target:lumber_province_1 = {
+				clr_province_flag = lumber_province_1_flag
+			}
+			event_target:lumber_province_2 = {
+				clr_province_flag = lumber_province_2_flag
+			}
 		}
 	}
 	

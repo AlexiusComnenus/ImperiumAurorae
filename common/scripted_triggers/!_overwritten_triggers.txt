@@ -1,14 +1,31 @@
 has_production_building_trigger = {
-	OR = {
-		has_building = workshop
-		has_building = counting_house
-		has_building = steam_factory
-		custom_trigger_tooltip = {
-			tooltip = silver_tooltip
-			OR = {
-				trade_goods = silver
-				trade_goods = gold
+	custom_trigger_tooltip = {
+		tooltip = has_production_building_trigger_tooltip
+		OR = {
+			has_building = workshop
+			has_building = counting_house
+			has_building = steam_factory
+			custom_trigger_tooltip = {
+				tooltip = silver_tooltip
+				OR = {
+					trade_goods = silver
+					trade_goods = gold
+				}
 			}
+		}
+	}
+}
+
+republic_with_female_rulers_trigger = {
+	OR = {
+		has_active_policy = mandatory_service
+		has_country_modifier = sister_suffragettes
+		has_country_modifier = mary_inheritance_reforms
+		has_reform = democratic_values_reform
+		has_reform = gaelic_council_elders
+		has_global_modifier_value = {
+			which = female_advisor_chance
+			value = 0.35
 		}
 	}
 }
@@ -184,6 +201,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = UKR }
 				NOT = { was_tag = AVE }
 				NOT = { was_tag = FRW }
+				NOT = { has_country_flag = nov_endgame_tag_flag }
 				NOT = { tag = MUG }
 				NOT = { tag = TUR }
 				NOT = { tag = BYZ }
