@@ -297,6 +297,7 @@ other_lucky_nation = {
 			tag = GER
 			tag = LOT
 			tag = HLR
+			tag = FRM
 			AND = {
 				is_emperor_of_china = yes
 				is_year = 1480
@@ -377,6 +378,7 @@ other_lucky_nation_2 = {
 			tag = FLA
 			tag = HES
 			tag = BAV
+			tag = NOV
 		}
 		ai = yes
 		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
@@ -446,6 +448,7 @@ early_game_protection = {
 			tag = Z47
 			tag = GOL
 			tag = HAB
+			tag = NOV
 		}
 		ai = yes
 	}

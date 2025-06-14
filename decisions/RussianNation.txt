@@ -97,7 +97,11 @@ country_decisions = {
 			OR = {
 				owns_core_province = 306		# Nijni-Novgorod
 				owns_core_province = 307		# Vladimir	
-			}			
+			}	
+			if = {
+				limit = { ai = yes }
+				NOT = { religion = bogomilist }
+			}
 		}
 		effect = {
 			hidden_effect = {

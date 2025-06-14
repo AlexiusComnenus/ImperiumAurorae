@@ -92,8 +92,8 @@ on_yearly_pulse_2 = {
 		250 = ia_flavor_sax.22
 		250 = ia_flavor_sax.23
 		#75 = ia_flavor_tem.11
-		100 = peasantsevents.3
-		140 = peasantsevents.5
+		200 = peasantsevents.3
+		280 = peasantsevents.5
 		10 = alchemistevents.5
 		
 		1000 = 0

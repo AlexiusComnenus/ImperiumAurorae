@@ -2463,6 +2463,8 @@ estate_nobles_early_serfdom = {
 		NOT = { has_country_flag = level_two_serfdom_privileges }
 		NOT = { has_country_flag = level_three_serfdom_privileges }
 		NOT = { has_country_flag = final_serfdom_privileges }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_nobles_increased_peasant_freedom }
@@ -2548,6 +2550,8 @@ estate_nobles_legalized_serfdom = {
 		NOT = { has_country_flag = liberated_peasants }
 		NOT = { has_country_flag = level_three_serfdom_privileges }
 		NOT = { has_country_flag = final_serfdom_privileges }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_revoke = no
 	on_granted = {
@@ -2626,6 +2630,8 @@ estate_nobles_total_serfdom = {
 		}
 		NOT = { has_country_flag = liberated_peasants }
 		NOT = { has_country_flag = final_serfdom_privileges }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_revoke = no
 	on_granted = {
@@ -2700,6 +2706,8 @@ estate_nobles_restricted_serfdom = {
 		}
 		has_estate_privilege = estate_nobles_restricted_serfdom
 		NOT = { has_country_flag = liberated_peasants }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_revoke = no
 	on_granted = {
@@ -2774,6 +2782,8 @@ estate_nobles_devastating_serfdom = {
 		}
 		has_estate_privilege = estate_nobles_devastating_serfdom
 		NOT = { has_country_flag = liberated_peasants }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_revoke = no
 	on_granted = {
@@ -2850,6 +2860,8 @@ estate_nobles_increased_peasant_freedom = {
 		}
 		NOT = { has_country_flag = level_two_serfdom_privileges }
 		NOT = { has_country_flag = enserfed_peasants }
+		NOT = { has_estate = estate_peasants }
+		NOT = { religion = bogomilist
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_nobles_early_serfdom }

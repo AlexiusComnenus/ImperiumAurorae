@@ -2,6 +2,10 @@ sound = {
 	name = deus_vult_sfx
 	file = "deus_vult_sfx.wav"
 }
+sound = {
+	name = finnish_song_lol_sfx
+	file = "finnish_song_lol.wav"
+}
 ##Pagan
 	#Pagan
 	sound = {

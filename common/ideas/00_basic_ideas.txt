@@ -1816,6 +1816,9 @@ expansion_ideas = {
 					has_empty_adjacent_province = yes
 				}
 			}
+			NOT = { tag = FRM }
+			NOT = { tag = JOM }
+			NOT = { tag = MYM }
 		}
 		modifier = {
 			factor = 0.9

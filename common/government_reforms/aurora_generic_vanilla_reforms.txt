@@ -1050,6 +1050,9 @@ peasants_republic = {
 		is_peasants_republic = yes
 	}
 	duration = 4
+	ai = {
+		factor = 1000
+	}
 }
 
 #Legitimation of Power

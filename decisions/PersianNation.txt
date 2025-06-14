@@ -111,19 +111,19 @@ country_decisions = {
 			is_tribal = no
 			NOT = { exists = PER }
 			NOT = { exists = ERS }
-			owns_core_province = 414		# Hamadan
-			owns_core_province = 429		# Isfahan
-			owns_core_province = 433		# Yazd
-			owns_core_province = 2213		# Qom
-			owns_core_province = 2215		# Qazvin
+			owns_or_non_sovereign_subject_of = 414		# Hamadan
+			owns_or_non_sovereign_subject_of = 429		# Isfahan
+			owns_or_non_sovereign_subject_of = 433		# Yazd
+			owns_or_non_sovereign_subject_of = 2213		# Qom
+			owns_or_non_sovereign_subject_of = 2215		# Qazvin
 			OR = {
-				owns_core_province = 426		# Amol
-				owns_core_province = 2218		# Shiraz
+				owns_or_non_sovereign_subject_of = 426		# Amol
+				owns_or_non_sovereign_subject_of = 2218		# Shiraz
 			}
 			OR = {
-				owns_core_province = 416		# Tabriz
-				owns_core_province = 432		# Kerman
-				owns_core_province = 2221		# Mashhad
+				owns_or_non_sovereign_subject_of = 416		# Tabriz
+				owns_or_non_sovereign_subject_of = 432		# Kerman
+				owns_or_non_sovereign_subject_of = 2221		# Mashhad
 			}
 			if = {
 				limit = {

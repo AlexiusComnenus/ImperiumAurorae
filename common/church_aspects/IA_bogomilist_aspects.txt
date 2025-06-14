@@ -30,6 +30,9 @@ bog_appeal_to_the_peasantry = {
 	modifier = {
 		global_missionary_strength = 0.03
 	}
+	ai_will_do = {
+		factor = 100
+	}
 }
 
 bog_mountain_guerillas = {
@@ -46,6 +49,13 @@ bog_mountain_guerillas = {
 	}
 	modifier = {
 		land_morale = 0.10
+	}
+	ai_will_do = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
 	}
 }
 
@@ -64,6 +74,17 @@ bog_full_liberty_to_elect = {
 	modifier = {
 		idea_cost = -0.05
 	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
 }
 
 bog_lift_taxation = {
@@ -80,6 +101,17 @@ bog_lift_taxation = {
 	}
 	modifier = {
 		development_cost = -0.10
+	}
+	ai_will_do = {
+		factor = 15
+		modifier = {
+			factor = 5
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
 	}
 }
 
@@ -98,6 +130,17 @@ bog_reject_material_temptations = {
 	modifier = {
 		country_admin_power = 1
 	}
+	ai_will_do = {
+		factor = 15
+		modifier = {
+			factor = 5
+			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
 }
 
 bog_eternal_struggle = {
@@ -115,5 +158,15 @@ bog_eternal_struggle = {
 	}
 	modifier = {
 		manpower_recovery_speed = 2.5
+	}
+	ai_will_do = {
+		factor = 200
+		modifier = {
+			factor = 0
+			OR = {
+				is_at_war = no
+				war_score = -20
+			}
+		}
 	}
 }

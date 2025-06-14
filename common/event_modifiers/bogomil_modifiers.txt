@@ -41,3 +41,13 @@ bog_eternal_struggle_modifier = {
 	development_cost = 0.1
 	religion = yes
 }
+
+peasants_settling_province = {
+	local_development_cost = -0.1
+	trade_goods_size = 0.02
+}
+
+peasants_retired_soldiers = {
+	local_development_cost = -0.15
+	trade_goods_size = 0.02
+}

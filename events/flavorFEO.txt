@@ -47,7 +47,7 @@ country_event = {
 	option = {	
 		name = "flavor_feo.2.a"
 		
-		ai_chance = { factor = 3 }
+		ai_chance = { factor = 0 }
 		
 		custom_tooltip = FEO_FORMING_BYZANTIUM_GIVES_US_RULER_STATS
 		set_country_flag = feo_byzantium_formation_stats_flag
@@ -56,7 +56,7 @@ country_event = {
 	option = {	
 		name = "flavor_feo.2.b"
 		
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 100 }
 		
 		add_government_reform = gothic_monarchy_reform
 	}

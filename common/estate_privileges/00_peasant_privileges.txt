@@ -410,7 +410,7 @@ estate_peasants_levies = {
 	#	modifier = { monthly_ottoman_decadence = 0.02 }
 	#}
 	ai_will_do = {
-		factor = 10
+		factor = 25
 		modifier = {
 			factor = 1.5
 			any_rival_country = {
@@ -496,7 +496,7 @@ estate_peasants_advisors = {
 	#	modifier = { monthly_ottoman_decadence = 0.02 }
 	#}
 	ai_will_do = {
-		factor = 9
+		factor = 30
 		modifier = {
 			factor = 3
 			uses_meritocracy = yes
@@ -1042,12 +1042,19 @@ estate_peasants_homeland_defense = {
 		discipline = -0.075
 	}
 	benefits = {
-		#hostile_attrition = 1
 		land_morale = 0.05
 		land_forcelimit_modifier = 0.25
 		global_manpower_modifier = 0.25
 		infantry_cost = -0.2
 		reinforce_cost_modifier = -0.5	
+	}
+	conditional_modifier = {
+		trigger = { is_at_war = yes		NOT = { war_score = -20 } }
+		modifier = {
+			hostile_attrition = 1
+			defensiveness = 0.15
+			infantry_cost = -0.1
+		}
 	}
 	can_revoke = {
 		NOT = { is_at_war = yes }
@@ -1259,7 +1266,7 @@ estate_peasants_collective_landownership = {
 		infantry_cost = -0.20	
 	}
 	ai_will_do = {
-		factor = 0
+		factor = 1000
 	}
 	cooldown_years = 10
 }
@@ -1309,7 +1316,7 @@ estate_peasants_grain_dole = {
 		recover_army_morale_speed = 0.10
 	}
 	ai_will_do = {
-		factor = 0
+		factor = 1000
 	}
 	cooldown_years = 10
 }
