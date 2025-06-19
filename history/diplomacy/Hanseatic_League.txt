@@ -2,30 +2,6 @@
 
 alliance = {
 	first = HSA
-	second = LAU
-	trade_league = 1
-	start_date = 1380.1.1
-	end_date = 1667.1.1
-}
-
-alliance = {
-	first = HSA
-	second = DTT
-	trade_league = 1
-	start_date = 1380.1.1
-	end_date = 1667.1.1
-}
-
-alliance = {
-	first = HSA
-	second = OLD
-	trade_league = 1
-	start_date = 1380.1.1
-	end_date = 1692.1.1
-}
-
-alliance = {
-	first = HSA
 	second = BRE
 	trade_league = 1
 	start_date = 1380.1.1
@@ -41,105 +17,21 @@ alliance = {
 }
 
 alliance = {
-	first = HSA
-	second = BRE
+	first = BRE
+	second = HSA
 	start_date = 1380.1.1
 	end_date = 1563.1.1
 }
 
 alliance = {
-	first = HSA
-	second = OLD
-	start_date = 1380.1.1
-	end_date = 1692.1.1
-}
-
-alliance = {
-	first = HSA
-	second = LAU
+	first = HAM
+	second = HSA
 	start_date = 1380.1.1
 	end_date = 1667.1.1
 }
 
 alliance = {
-	first = HSA
-	second = DTT
-	start_date = 1380.1.1
-	end_date = 1667.1.1
-}
-
-alliance = {
-	first = HSA
-	second = HAM
-	start_date = 1380.1.1
-	end_date = 1667.1.1
-}
-
-alliance = {
-	first = OLD
-	second = BRE
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = OLD
-	second = LAU
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = OLD
-	second = DTT
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = OLD
-	second = HAM
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
 	first = BRE
-	second = LAU
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = BRE
-	second = DTT
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = BRE
-	second = HAM
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = LAU
-	second = HAM
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = LAU
-	second = DTT
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = DTT
 	second = HAM
 	start_date = 1380.1.1
 	end_date = 1563.1.1

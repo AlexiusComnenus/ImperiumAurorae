@@ -23,6 +23,46 @@ country_decisions = {
 	#		factor = 0
 	#	}
 	#}
+	
+	expand_parliament = {
+		major = yes
+        color = { 235 102 255 }
+		potential = {
+			has_parliament = yes
+		}
+
+
+		allow = {
+			has_parliament = yes
+			NOT = {
+				all_owned_province = { 
+					OR = {
+						has_seat_in_parliament = yes
+						province_is_or_accepts_culture = no
+						is_state = no
+					}
+				}
+			}
+		}
+
+
+		effect = {
+			custom_tooltip = add_all_provinces_parliament_seats_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { 
+						has_seat_in_parliament = no 
+						province_is_or_accepts_culture = yes
+						is_state = yes
+					}
+					set_seat_in_parliament = yes
+				}
+			}
+		}
+		ai_will_do = {
+            factor = 1
+        }
+	}
 
 	capital_in_belgrade_EXTRA = { #New Religions
 		potential = {

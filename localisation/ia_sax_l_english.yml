@@ -8,9 +8,9 @@
  NGC_ADJ: "North German"
  SGC_ADJ: "South German"
  Kleinstaaterei: "§RKleinstaaterei§!"
- Kleinstaaterei_desc: "Applies a §R8x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
+ Kleinstaaterei_desc: "Applies a §R6x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
  Kleinstaaterei_lesser: "Declining §RKleinstaaterei§!" 
- Kleinstaaterei_lesser_desc: "Applies a §R4x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
+ Kleinstaaterei_lesser_desc: "Applies a §R3x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
  
  has_resolved_centralization_chain: "Has resolved all events of the Centralization Reforms."
  no_ally_saxony_tt: "Saxony cannot ally non-Germanic countries except for select exceptions."
@@ -226,9 +226,13 @@
  sax_beer_monopoly_title: "Beer Monopoly"
  sax_beer_monopoly_desc: "Truly, us Germans are somewhat addicted to beer. From the King to the lowliest peasant, everyone loves to drink beer. If we set up a Crown Monopoly on the beer trade, think of the profits for the royal coffers!"
  hsa_pen_sword_ia_title: "The Northern Rush"
- hsa_pen_sword_ia_desc: "Saxonia's ambitions threaten our independence and our trade. Let us cut them off from expansion into Denmark before it is too late, and they place a complete stranglehold on Germanic trade."
+ hsa_pen_sword_ia_desc: "Saxony's ambitions threaten our independence and our trade. Let us cut them off from expansion into Denmark before it is too late, and they place a complete stranglehold on Germanic trade."
  hsa_grinning_steers_head_ia_title: "Develop Mecklenburg"
  hsa_grinning_steers_head_ia_desc: "The rich lands of Mecklenburg both feed our great city and supply the soldiers with which to defend it. We should invest into improving these lands, that they might safeguard our prosperity and sovereignty both."
+ hsa_double_entry_bookkeeping_ia_title: "Double Entry Bookkeeping"
+ hsa_double_entry_bookkeeping_ia_desc: "Various advances in the field of business and trade have proven valuable in the profound surge of wealth in Iberia and the Templar Order. If we are to keep up with competition, it would be wise to learn from these advances and work towards creating a 'banking system'."
+ hsa_either_trade_or_subject_all_100_tt: "All §Ysubjects§! and §YTrade League Members§! have at least §G100 opinion§! of us."
+ largest_trade_fleet_in_europe_tttt: "Has the §Glargest§! §YTrade Fleet§! (light ships) in §Ythe Old World§!!"
  
  # events
  saxon_fief.85.title: "Niche Case Fixer"

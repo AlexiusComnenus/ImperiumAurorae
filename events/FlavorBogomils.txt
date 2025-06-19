@@ -33,6 +33,7 @@ country_event = {
 	
 	option = {
 		name = ia_flavor_bog.1.a
+		ai_chance = { factor = 33 }
 		add_stability = -1
 		add_papal_influence = 50
 		HRZ = { 
@@ -62,6 +63,7 @@ country_event = {
 	
 	option = {
 		name = ia_flavor_bog.1.b
+		ai_chance = { factor = 33 }
 		excommunicate = ROOT
 		add_legitimacy = -50
 		
@@ -124,6 +126,13 @@ country_event = {
 	}
 	option = {
 		name = ia_flavor_bog.1.c
+		ai_chance = { 
+			factor = 34 
+			modifier = {
+				factor = 100
+				VEN = { ai = no }
+			}
+		}
 		change_religion = bogomilist
 		inherit = HRZ
 		grant_independence = yes
@@ -151,6 +160,11 @@ country_event = {
 				who = ROOT
 				modifier = renounced_as_heretics
 				multiplier = 5
+			}
+			add_casus_belli = {
+				target = BOS
+				type = cb_vassalize_mission
+				months = 240
 			}
 		}
 		POL = {

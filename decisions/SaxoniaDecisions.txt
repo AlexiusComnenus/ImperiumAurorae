@@ -209,9 +209,10 @@ country_decisions = {
 					target = DAN
 				}
 				NOT = { war_with = DAN }
+				is_free_or_tributary_trigger = yes
 			}
 			DAN = {
-				NOT = { is_subject = yes }
+				is_free_or_tributary_trigger = yes
 			}
 			has_country_flag = sax_befriended_sca
 		}
@@ -232,6 +233,7 @@ country_decisions = {
 						type = cb_restore_personal_union
 						target = DAN
 					}
+					is_free_or_tributary_trigger = yes
 				}
 				declare_war_with_cb = {
 					who = DAN
@@ -262,9 +264,10 @@ country_decisions = {
 					target = NOR
 				}
 				NOT = { war_with = NOR }
+				is_free_or_tributary_trigger = yes
 			}
 			NOR = {
-				NOT = { is_subject = yes }
+				is_free_or_tributary_trigger = yes
 			}
 			has_country_flag = sax_befriended_sca
 		}
@@ -285,6 +288,7 @@ country_decisions = {
 						type = cb_restore_personal_union
 						target = NOR
 					}
+					is_free_or_tributary_trigger = yes
 				}
 				declare_war_with_cb = {
 					who = NOR
@@ -316,9 +320,10 @@ country_decisions = {
 					target = SWE
 				}
 				NOT = { war_with = SWE }
+				is_free_or_tributary_trigger = yes
 			}
 			SWE = {
-				NOT = { is_subject = yes }
+				is_free_or_tributary_trigger = yes
 			}
 			has_country_flag = sax_befriended_sca
 		}
@@ -339,6 +344,7 @@ country_decisions = {
 						type = cb_restore_personal_union
 						target = SWE
 					}
+					is_free_or_tributary_trigger = yes
 				}
 				declare_war_with_cb = {
 					who = SWE

@@ -210,6 +210,15 @@ can_burn_colony = {
 }
 
 can_colonize_province = {
+	condition = {
+		tooltip = "NO_COLONIZE"
+		potential = {
+			has_province_modifier = no_colonization_allowed_modifier
+		}
+		allow = {
+			always = no
+		}
+	}
 }
 
 can_colonize_province_siberian_frontier = {

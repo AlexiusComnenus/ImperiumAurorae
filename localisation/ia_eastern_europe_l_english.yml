@@ -55,6 +55,7 @@
  mechanic_enables_estate_peasants_yes: "Enables the §YPeasants§! Estate"
  bogomilist_veche_republic: "Bogomil Union"
  bogomilist_veche_republic_desc: "This Republic has as its foundational values the ideals of Bogomilism adapted to the Northern Rus culture, whereby even the peasants are properly represented in government."
+ is_ruled_by_peasants_tt: "Is ruled by the §YPeasants§!!"
 
  #Modifiers
  cumania_collapse_mod: "Cumania in Collapse"

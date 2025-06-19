@@ -407,7 +407,10 @@ got_pirate_slot_3 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns_or_non_sovereign_subject_of = 45
+			OR = {
+				owns_or_non_sovereign_subject_of = 45
+				any_ally = { owns_or_non_sovereign_subject_of = 45 }
+			}
 		}
 		effect = {
 			add_mercantilism = 3
@@ -741,7 +744,10 @@ got_pirate_slot_4 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns_or_non_sovereign_subject_of = 43
+			OR = {
+				owns_or_non_sovereign_subject_of = 43
+				any_ally = { owns_or_non_sovereign_subject_of = 43 }
+			}
 		}
 		effect = {
 			add_mercantilism = 3
@@ -907,7 +913,10 @@ got_pirate_slot_5 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns_or_non_sovereign_subject_of = 38
+			OR = {
+				owns_or_non_sovereign_subject_of = 38
+				any_ally = { owns_or_non_sovereign_subject_of = 38 }
+			}
 		}
 		effect = {
 			add_mercantilism = 3

@@ -52,13 +52,13 @@ on_heir_death = {
 on_five_year_pulse_2 = {
 	random_events = {
 		# Alchemists
-		50 = alchemistevents.1
+		100 = alchemistevents.1
 		100 = alchemistevents.2
 		100 = alchemistevents.3
-		50 = alchemistevents.4
+		100 = alchemistevents.4
 		100 = peasantsevents.1
 		100 = peasantsevents.2
-		50 = peasantsevents.4
+		100 = peasantsevents.4
 	}
 }
 

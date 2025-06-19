@@ -233,6 +233,7 @@ bogomilist_veche_republic = {
 	legacy_equivalent = veche_republic_legacy
 	modifiers = {
 		has_streltsy = yes
+		max_revolutionary_zeal = 25
 		allowed_streltsy_fraction = 0.25
 		development_cost = -0.1
 		diplomatic_annexation_cost = -0.1

@@ -308,6 +308,13 @@ tre_chaldian_deposits_modifier = {
 	local_development_cost_modifier = -0.25
 }
 
+ven_men_of_war_modifier = {
+	movement_speed = 0.10
+	land_morale = 0.10
+	infantry_fire = 0.25
+	is_mercenary_modifier = yes
+}
+
 alchemists_made_kaboom = {
 	global_unrest = 2
 	alchemists_influence_modifier = -0.10
@@ -496,4 +503,8 @@ centralized_state_modifier_ia_10 = {
     local_sailors_modifier = 0.20
     province_trade_power_modifier = 0.20
     trade_goods_size_modifier = 0.20
+}
+
+no_colonization_allowed_modifier = {
+	trade_goods_size = 0.01
 }

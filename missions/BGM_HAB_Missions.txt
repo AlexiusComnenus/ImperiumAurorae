@@ -772,10 +772,13 @@ bgm_hab_missions_5 = {
 			}
 		}
 		effect = {
-			add_mil_power = 100
 			add_country_modifier = {
 				name = hab_alpine_union
 				duration = -1
+			}
+			custom_tooltip = hsc_unlock_highlands_privilege_tt
+			hidden_effect = {
+				set_country_flag = hsc_unlocked_highlands_privilege_flag
 			}
 		}
 	}

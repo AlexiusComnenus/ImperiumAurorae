@@ -2004,6 +2004,7 @@ estate_burghers_forest_expansion = {
 					name = estate_burghers_forest_expansion_forest
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 			every_owned_province = {
 				limit = {
@@ -2013,6 +2014,7 @@ estate_burghers_forest_expansion = {
 					name = estate_burghers_forest_expansion_woods
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 	}
@@ -2028,6 +2030,7 @@ estate_burghers_forest_expansion = {
 				}
 				remove_province_modifier = estate_burghers_forest_expansion_forest
 				remove_province_modifier = estate_burghers_forest_expansion_woods
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 	}
@@ -2087,6 +2090,7 @@ estate_burghers_mountain_expansion = {
 					name = estate_burghers_mountain_expansion_mountains
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 			every_owned_province = {
 				limit = {
@@ -2096,6 +2100,7 @@ estate_burghers_mountain_expansion = {
 					name = estate_burghers_mountain_expansion_highlands
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 			every_owned_province = {
 				limit = {
@@ -2105,6 +2110,7 @@ estate_burghers_mountain_expansion = {
 					name = estate_burghers_mountain_expansion_hills
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 	}
@@ -2122,6 +2128,7 @@ estate_burghers_mountain_expansion = {
 				remove_province_modifier = estate_burghers_mountain_expansion_mountains
 				remove_province_modifier = estate_burghers_mountain_expansion_highlands
 				remove_province_modifier = estate_burghers_mountain_expansion_hills
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 	}

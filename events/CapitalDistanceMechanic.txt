@@ -2601,7 +2601,7 @@ province_event = {
 				}
 				multiply_variable = {
 					which = dist
-					value = 8
+					value = 6
 				}
 			}
 			else_if = {
@@ -2610,7 +2610,7 @@ province_event = {
 				}
 				multiply_variable = {
 					which = dist
-					value = 4
+					value = 3
 				}
 			}
 			if = {

@@ -750,7 +750,7 @@ state_opera = {
 			factor = 1000
 		}
 		province_modifiers = {
-			local_development_cost = -0.5
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 		}
@@ -771,7 +771,7 @@ state_opera = {
 			factor = 2500
 		}
 		province_modifiers = {
-			local_development_cost = -1.25
+			local_development_cost = -0.25
 		}
 		area_modifier = {
 			local_development_cost = -0.25
@@ -792,7 +792,7 @@ state_opera = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_development_cost = -2.5
+			local_development_cost = -0.5
 		}
 		area_modifier = {
 			local_development_cost = -0.5
@@ -3473,7 +3473,7 @@ university_moscow = {
 
 palace_soviets = {
 	# province it starts in
-	start = 295
+	start = 310
 	
 	date = 1368.01.01
 	time = {
@@ -3491,7 +3491,10 @@ palace_soviets = {
 	
 	build_trigger = {
 		owner = {
-			has_reform = socialist_reform
+			custom_trigger_tooltip  = {
+				tooltip = is_ruled_by_peasants_tt
+				has_government_attribute = is_peasants_republic
+			}
 		}
 	}
 	on_built = {
@@ -3500,12 +3503,18 @@ palace_soviets = {
 	}
 	can_use_modifiers_trigger = {
 		owner = {
-			has_reform = socialist_reform
+			custom_trigger_tooltip  = {
+				tooltip = is_ruled_by_peasants_tt
+				has_government_attribute = is_peasants_republic
+			}
 		}
 	}
 	can_upgrade_trigger = {
 		owner = {
-			has_reform = socialist_reform
+			custom_trigger_tooltip  = {
+				tooltip = is_ruled_by_peasants_tt
+				has_government_attribute = is_peasants_republic
+			}
 		}
 	}
 
@@ -3539,14 +3548,13 @@ palace_soviets = {
 			factor = 1000
 		}
 		province_modifiers = {
-			development_cost = -0.4
+			local_development_cost = -0.2
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
-			global_tax_modifier = 0.15
-			production_efficiency = 0.15
-			free_policy = 1
+			peasants_loyalty_modifier = 0.05
+			peasants_influence_modifier = 0.05
 		}
 
 		#what effects happen when this tier is achieved
@@ -3562,14 +3570,15 @@ palace_soviets = {
 			factor = 2500
 		}
 		province_modifiers = {
-			development_cost = -0.8
 		}
 		area_modifier = {
+			local_development_cost = -0.25
+			local_production_efficiency = 0.25
 		}
 		country_modifiers = {
-			global_tax_modifier = 0.3
-			production_efficiency = 0.3
-			free_policy = 2
+			state_governing_cost = -0.05
+			peasants_loyalty_modifier = 0.10
+			peasants_influence_modifier = 0.10
 		}
 		on_upgraded = {
 		}
@@ -3583,14 +3592,17 @@ palace_soviets = {
 			factor = 5000
 		}
 		province_modifiers = {
-			development_cost = -1.6
+			local_production_efficiency = 0.25
 		}
 		area_modifier = {
+			local_development_cost = -0.5
+			local_production_efficiency = 0.25
 		}
 		country_modifiers = {
-			global_tax_modifier = 0.5
-			production_efficiency = 0.5
-			free_policy = 3
+			global_autonomy = -0.025
+			state_governing_cost = -0.1
+			peasants_loyalty_modifier = 0.10
+			peasants_influence_modifier = 0.10
 		}
 		on_upgraded = {
 		}
@@ -3677,7 +3689,7 @@ bolshoi_theatre = {
 			factor = 1000
 		}
 		province_modifiers = {
-			development_cost = -0.05
+			local_development_cost = -0.05
 			local_tax_modifier = 0.05
 		}
 		area_modifier = {
@@ -3700,7 +3712,7 @@ bolshoi_theatre = {
 			factor = 2500
 		}
 		province_modifiers = {
-			development_cost = -0.15
+			local_development_cost = -0.15
 			local_tax_modifier = 0.15
 		}
 		area_modifier = {
@@ -3724,7 +3736,7 @@ bolshoi_theatre = {
 		province_modifiers = {
 		}
 		area_modifier = {
-			development_cost = -0.45
+			local_development_cost = -0.45
 			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
@@ -6379,7 +6391,7 @@ das_parlament = {
 		country_modifiers = {
 			republican_tradition = 0.1
 			legitimacy = 0.25
-			governing_capacity_modifier = 0.1
+			governing_capacity_modifier = 0.05
 			advisor_cost = -0.025
 		}
 
@@ -6403,7 +6415,7 @@ das_parlament = {
 		country_modifiers = {
 			republican_tradition = 0.2
 			legitimacy = 0.5
-			governing_capacity_modifier = 0.15
+			governing_capacity_modifier = 0.10
 			advisor_cost = -0.05
 		}
 		on_upgraded = {
@@ -6427,7 +6439,7 @@ das_parlament = {
 			legitimacy = 0.5
 			devotion = 0.5
 			governing_capacity_modifier = 0.2
-			advisor_cost = -0.05
+			advisor_cost = -0.1
 		}
 		on_upgraded = {
 		}

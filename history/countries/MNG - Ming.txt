@@ -10,8 +10,8 @@ capital = 1821
 	monarch = {
 		name = "Yuanzhang" # Hongwu Emperor
 		dynasty = "Zhu"
-		adm = 6
-		dip = 3
-		mil = 2
+		adm = 4
+		dip = 1
+		mil = 4
 	}
 }

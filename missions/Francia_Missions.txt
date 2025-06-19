@@ -791,7 +791,7 @@ francia_missions_3 = {
 	frw_revive_frankish_culture = {
 		position = 6
 		icon = the_great_school
-		required_missions = { frw_push_to_aachen frw_control_dutch_trade frw_francia_resurgent }
+		required_missions = { frw_francia_resurgent }
 		provinces_to_highlight = {
 		}
 		trigger = {
@@ -801,6 +801,10 @@ francia_missions_3 = {
 					NOT = { culture_group = french }
 					NOT = { unrest = 0.1 }
 				}
+			}
+			development_in_provinces = {
+				value = 800
+				culture_group = french
 			}
 		}
 		effect = {
@@ -813,6 +817,16 @@ francia_missions_3 = {
 				every_owned_province = {
 					limit = { culture_group = french }
 					change_culture = frankish
+				}
+				every_subject_country = {
+					limit = { culture_group = french }
+					change_primary_culture = frankish
+					set_ruler_culture = frankish
+					set_heir_culture = frankish
+					every_owned_province = {
+						limit = { culture_group = french }
+						change_culture = frankish
+					}
 				}
 			}
 			set_country_flag = frw_assimilation_enabled_flag

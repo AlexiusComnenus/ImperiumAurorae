@@ -15,7 +15,7 @@ almohad_commune_reform = {
 
 	modifiers = {
 		land_morale = 0.1
-		max_revolutionary_zeal = 50
+		max_revolutionary_zeal = 25
 		monarch_lifespan = -0.25
 		global_trade_goods_size_modifier = -0.1
 		global_tax_modifier = 0.75

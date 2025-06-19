@@ -40,6 +40,6 @@ NOV_ideas = {
 	}
 	nov_meritocracy = {
 		advisor_cost = -0.20
-		all_estate_influence_modifier = -0.1
+		nobles_influence_modifier = -0.1
 	}
 }

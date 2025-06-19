@@ -2688,10 +2688,10 @@ HSA_ideas = {
 	}
 	hsa_shipbuilding = {
 		light_ship_cost = -0.20
-		global_sailors_modifier = 0.15
+		global_sailors_modifier = 0.25
 	}
 	reformed_hanstag = {
-		stability_cost_modifier = -0.1
+		stability_cost_modifier = -0.2
 		justify_trade_conflict_cost = -0.1
 	}
 	hanseatic_levy_system = {
@@ -17687,7 +17687,8 @@ FU2_ideas = {
 	}
 	
 	trigger = {
-		tag = HSA
+		OR = { tag = HSA	was_tag = HSA }
+		NOT = { tag = GER }
 		has_country_flag = hsa_proclaimed_queen_of_the_hansa_flag
 	}
 	free = yes 
@@ -17711,6 +17712,7 @@ FU2_ideas = {
 	}
 	FU2_spread_the_northern_style = {
 		idea_cost = -0.1
+		monthly_splendor = 2
 	}
 	regularised_contribution = {
 		global_prov_trade_power_modifier = 0.20

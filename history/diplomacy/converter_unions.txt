@@ -1,10 +1,10 @@
-union=
-{
-	first="Z25"
-	second="Z26"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
+#union=
+#{
+#	first="Z25"
+#	second="Z26"
+#	start_date="1444.11.11"
+#	end_date="1836.1.1"
+#}
 
 union=
 {
@@ -14,13 +14,13 @@ union=
 	end_date="1836.1.1"
 }
 
-union=
-{
-	first="Z25"
-	second="Z31"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
+#union=
+#{
+#	first="Z25"
+#	second="Z31"
+#	start_date="1444.11.11"
+#	end_date="1836.1.1"
+#}
 
 union=
 {

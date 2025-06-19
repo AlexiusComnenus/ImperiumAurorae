@@ -40,7 +40,10 @@ po_spread_commune = {
 	is_visible = { # Defaults to equivalent of "always = yes"
 		is_in_war = { casus_belli = cb_spread_the_commune }
 		FROM = { is_in_war = { casus_belli = cb_spread_the_commune } }
-		has_reform = almohad_commune_reform
+		OR = {
+			has_reform = almohad_commune_reform
+			has_government_attribute = can_spread_commune
+		}
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
 		always = yes

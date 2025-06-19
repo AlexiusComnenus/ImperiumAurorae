@@ -2058,7 +2058,7 @@ venice_missions_slot_4 = {
 		effect = {
 			add_country_modifier = {
 				name = ven_meditteranean_patrols_modifier
-				duration = 9125
+				duration = -1
 			}
 		}
 	}

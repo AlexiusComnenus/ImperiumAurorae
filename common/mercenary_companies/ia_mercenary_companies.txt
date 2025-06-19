@@ -204,7 +204,7 @@ merc_legion_of_dusk = {
 }
 
 merc_meissen_guard = {
-    regiments_per_development = 0.04
+    regiments_per_development = 0.05
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
 	cavalry_weight = 0
 	artillery_weight = 0.25
@@ -230,7 +230,7 @@ merc_meissen_guard = {
 }
 
 merc_aen_bastion_guard = {
-    regiments_per_development = 0.04
+    regiments_per_development = 0.06
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
 	cavalry_weight = 0
 	artillery_weight = 0.15
@@ -255,7 +255,7 @@ merc_aen_bastion_guard = {
 }
 
 merc_aen_order_of_the_lionhearted = {
-    regiments_per_development = 0.04
+    regiments_per_development = 0.06
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
 	cavalry_weight = 0.3
 	artillery_weight = 0.15
@@ -281,7 +281,7 @@ merc_aen_order_of_the_lionhearted = {
 }
 
 merc_aen_hessian_foreign_legion = {
-    regiments_per_development = 0.04
+    regiments_per_development = 0.06
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
 	cavalry_weight = 0
 	artillery_weight = 0.15

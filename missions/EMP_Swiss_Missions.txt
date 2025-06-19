@@ -435,6 +435,10 @@ swiss_missions_2 = {
 				4722 = { change_trade_goods = cheese } 
 			}
 			country_event = { id = FU_Switzerland_Events.2 }
+			custom_tooltip = hsc_unlock_highlands_privilege_tt
+			hidden_effect = {
+				set_country_flag = hsc_unlocked_highlands_privilege_flag
+			}
 		}
 	}
 }

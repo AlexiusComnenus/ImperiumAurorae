@@ -1889,7 +1889,8 @@ novgorod_missions_column_5_branching_bogomil = {
 		#}
 		
 		trigger = {
-			religious_unity = 0.99
+			religion = bogomilist
+			religious_unity = 0.90
 			NOT = {
 				any_owned_province = {
 					unrest = 0
@@ -1921,6 +1922,7 @@ novgorod_missions_column_5_branching_bogomil = {
 		#}
 		
 		trigger = {
+			religion = bogomilist
 			custom_trigger_tooltip = {
 				tooltip = nov_supremacy_1_tt
 				check_variable = { which = NovWins value = 10 }
@@ -1953,6 +1955,7 @@ novgorod_missions_column_5_branching_bogomil = {
 		#}
 		
 		trigger = {
+			religion = bogomilist
 			custom_trigger_tooltip = {
 				tooltip = nov_supremacy_2_tt
 				check_variable = { which = NovWins value = 25 }
@@ -1987,9 +1990,13 @@ novgorod_missions_column_5_branching_bogomil = {
 		#}
 		
 		trigger = {
+			religion = bogomilist
 			calc_true_if = {
 				all_country = {
-					has_government_attribute = is_peasants_republic
+					custom_trigger_tooltip  = {
+						tooltip = is_ruled_by_peasants_tt
+						has_government_attribute = is_peasants_republic
+					}
 				}
 				amount = 20
 			}
