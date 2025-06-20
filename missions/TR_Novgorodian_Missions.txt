@@ -2000,7 +2000,7 @@ novgorod_missions_column_5_branching_bogomil = {
 				}
 				amount = 20
 			}
-			is_defender_of_faith = yes
+			#is_defender_of_faith = yes
 		}
 		
 		effect = {

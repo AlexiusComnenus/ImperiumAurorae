@@ -1,6 +1,23 @@
 ﻿l_english:
  
  #Ideas
+ BHS_ideas: "Brotherhood Ideas"
+ BHS_ideas_start: "Brotherhood Traditions"
+ BHS_ideas_bonus: "Brotherhood Ambition"
+ bhs_develop_the_balkans: "Develop the Balkans"
+ bhs_develop_the_balkans_desc: "With the fall of Jerusalem to the Dao-Hellenics, the Balkans are now the new home of our Order. We must develop the Balkans that our Order always has recruits for the army and gold in the coffers."
+ bhs_cataphract_traditions: "Cataphract Traditions"
+ bhs_cataphract_traditions_desc: "Our order has a long tradition of warfare stemming from the Byzantine Cataphracts who were our first knights. May the metal steeds crush our enemies underfoot, heedless of enemy blades!"
+ bhs_convert_the_heretics: "End Heresy"
+ bhs_convert_the_heretics_desc: "The Balkans are a hotbed of all sorts of heretics, be they gnostics or papists. We shall bring them all to the True Faith!"
+ bhs_rally_the_faithful: "Rally the Faithful"
+ bhs_rally_the_faithful_desc: "May the Archangel Michael, Strategos of God's Army, inspire our people to greatness!"
+ bhs_balkan_resilience: "Balkan Resilience"
+ bhs_balkan_resilience_desc: "We can learn much from the fierce ways of the Balkan Slavs. Their resilience in the face of enemy invasions is legendary, and now the same shall be said of the Brotherhood!"
+ bhs_byzantine_roots: "Rhoman Roots"
+ bhs_byzantine_roots_desc: "The Brotherhood was founded and initially supplied by the great Rhoman Empire. Their traditions inspire our legal code to this day, and the Rhoman spirit is strong in our faith."
+ bhs_greek_jurisprudence: "Greek Jurisprudence"
+ bhs_greek_jurisprudence_desc: "Though many of our people are now Slavs, the majority of our lawyers and judges remain Greek in studies if not blood."
  ia_legacy_hakapeliitta: "Hakkaa päälle!"
  ia_legacy_hakapeliitta_desc: "Cut them down!"
  ia_sisun_voima: "Sisun Voima"

@@ -63,6 +63,15 @@ po_spread_commune = {
 			}
 			
 			add_government_reform = peasants_republic
+			if = {
+				limit = { NOT = { total_development = 200 } }
+				ROOT = {
+					create_subject = {
+						subject_type = trade_protectorate
+						subject = FROM
+					}
+				}
+			}
 		}
 	}
 	ai_weight = { # Defaults to always evaluate to 0

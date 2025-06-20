@@ -327,7 +327,7 @@ alchemists_made_drugs = {
 }
 
 alchemists_eureka_metal_civilian = {
-	trade_goods_size_modifier = 0.10
+	global_trade_goods_size_modifier = 0.10
 }
 
 alchemists_eureka_metal_military = {

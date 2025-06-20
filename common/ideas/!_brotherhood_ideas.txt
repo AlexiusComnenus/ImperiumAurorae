@@ -1,0 +1,40 @@
+BHS_ideas = {
+	start = {
+		defensiveness = 0.15
+		num_accepted_cultures = 2
+	}
+	bonus = {
+		land_attrition = -0.10
+	}
+	trigger = {
+		tag = BHS
+	}
+	free = yes
+
+	bhs_develop_the_balkans = {
+		build_cost = -0.1
+		development_cost = -0.1
+	}
+	bhs_cataphract_traditions = {
+		shock_damage_received = -0.1
+		morale_damage = 0.1
+	}
+	bhs_convert_the_heretics = {
+		global_heretic_missionary_strength = 0.03
+	}
+	bhs_rally_the_faithful = {
+		army_tradition = 0.5
+		manpower_in_true_faith_provinces = 0.20
+	}
+	bhs_balkan_resilience = {
+		hostile_attrition = 1
+		garrison_damage = 0.5
+	}
+	bhs_byzantine_roots = {
+		reform_progress_growth = 0.25
+	}
+	bhs_greek_jurisprudence = {
+		global_autonomy = -0.05
+		stability_cost_modifier = -0.1
+	}
+}

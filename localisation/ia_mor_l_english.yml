@@ -14,7 +14,7 @@
  po_revolutionaries_annex_desc: "§JVictory for the Revolution!§!"
  po_loyalists_annex_desc: "§JVictory for the Loyalists!§!"
  po_pretenders_annex_desc: "§JVictory for the Wattasids!§!"
- po_spread_commune_desc: "This will establish a new Peasant Republic government in this country, §Rkilling their ruler and heir.§! They will also suffer from severe administrative penalties due to the execution of all their existing governmental infrastructure"
+ po_spread_commune_desc: "This will establish a new Peasant Republic government in this country, §Rkilling their ruler and heir.§! They will also suffer from severe administrative penalties due to the execution of all their existing governmental infrastructure. If they are §Rbelow 200 development§!, they will become our §YProtectorate§!!"
  PEACE_po_revolutionaries_annex: "§JClaim Victory§!"
  PEACE_po_loyalists_annex: "§JClaim Victory§!"
  PEACE_po_pretenders_annex: "§JClaim Victory§!"

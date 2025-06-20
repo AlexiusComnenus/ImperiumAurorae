@@ -2,7 +2,6 @@ veche_republic = {
 	icon = "russian_principality"
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
-	papacy = yes
 	potential = {
 		NOT = { has_reform = great_veche_republic }
 		NOT = { have_had_reform = great_veche_republic }
@@ -238,6 +237,7 @@ bogomilist_veche_republic = {
 		development_cost = -0.1
 		diplomatic_annexation_cost = -0.1
 		peasants_privilege_slots = 2
+		missionaries = 1
 	}
 	valid_for_nation_designer = no
 	fixed_rank = 3

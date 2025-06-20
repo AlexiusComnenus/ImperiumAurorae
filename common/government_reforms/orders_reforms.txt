@@ -168,7 +168,8 @@ brotherhood_government = {
 	}
 	lock_level_when_selected = yes
 	modifiers = {
-		num_accepted_cultures = 2
+		leader_cost = -0.10
+		land_forcelimit = 5
 		relation_with_accepted_culture = 25
 		global_unrest = -1
 		reverse_relation_with_same_religion = 30

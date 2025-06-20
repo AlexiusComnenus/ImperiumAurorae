@@ -2270,6 +2270,7 @@ greek_ideas = {
 	
 	trigger = {
 		primary_culture = greek
+		NOT = { tag = BHS }
 	}
 	free = yes
 	
