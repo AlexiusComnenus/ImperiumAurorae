@@ -242,7 +242,8 @@ nov_beacon_of_liberty_tier_3 = {
 	prestige_decay = -0.01
 	manpower_in_true_faith_provinces = 0.20
 	enforce_religion_cost = -0.25
-	warscore_cost_vs_other_religion = -0.15
+	warscore_cost_vs_other_religion = -0.10
+	max_revolutionary_zeal = 15
 	religion = yes
 }
 

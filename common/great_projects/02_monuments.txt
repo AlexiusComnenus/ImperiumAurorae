@@ -3579,6 +3579,7 @@ palace_soviets = {
 			state_governing_cost = -0.05
 			peasants_loyalty_modifier = 0.10
 			peasants_influence_modifier = 0.10
+			max_revolutionary_zeal = 5
 		}
 		on_upgraded = {
 		}
@@ -3603,6 +3604,7 @@ palace_soviets = {
 			state_governing_cost = -0.1
 			peasants_loyalty_modifier = 0.10
 			peasants_influence_modifier = 0.10
+			max_revolutionary_zeal = 10
 		}
 		on_upgraded = {
 		}
