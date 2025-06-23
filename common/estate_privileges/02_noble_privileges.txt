@@ -377,6 +377,12 @@ estate_nobles_levies = {
 			}
 			NOT = { has_estate_privilege = estate_maratha_levies_for_muslims }
 		}
+		if = {
+			limit = {
+				has_estate = estate_peasants
+			}
+			NOT = { has_estate_privilege = estate_peasants_levies }
+		}
 	}
 	on_granted = {
 		if = {

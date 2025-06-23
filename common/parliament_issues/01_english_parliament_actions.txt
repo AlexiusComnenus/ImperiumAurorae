@@ -760,7 +760,7 @@ colonial_venture_act = {
 		has_not_enacted_parliament_action = {
 			parliament_action = colonial_venture_act
 		}
-		has_government_attribute = english_parliament
+		#has_government_attribute = english_parliament
 		NOT = { has_country_modifier = colonial_venture_act_modifier }
 		has_issue_unlocked = {
 			issue = colonial_venture_act
@@ -964,7 +964,7 @@ act_of_exploration = {
 	category = 4
 
 	allow = {
-		has_government_attribute = english_parliament
+		#has_government_attribute = english_parliament
 		has_issue_unlocked = {
 			issue = act_of_exploration
 		}
@@ -1230,7 +1230,7 @@ acts_of_taxation = {
 		has_not_enacted_parliament_action = {
 			parliament_action = act_of_representation
 		}
-		has_government_attribute = english_parliament
+		#has_government_attribute = english_parliament
 	}
 	
 	effect = {
@@ -1308,7 +1308,7 @@ the_sugar_act = {
 		has_not_enacted_parliament_action = {
 			parliament_action = the_sugar_act
 		}
-		has_government_attribute = english_parliament
+		#has_government_attribute = english_parliament
 		has_issue_unlocked = {
 			issue = the_sugar_act
 		}
@@ -1378,7 +1378,7 @@ the_spice_act = {
 		has_not_enacted_parliament_action = {
 			parliament_action = the_spice_act
 		}
-		has_government_attribute = english_parliament
+		#has_government_attribute = english_parliament
 		has_issue_unlocked = {
 			issue = the_spice_act
 		}

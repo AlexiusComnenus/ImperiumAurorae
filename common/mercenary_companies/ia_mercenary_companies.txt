@@ -229,6 +229,75 @@ merc_meissen_guard = {
 	}
 }
 
+merc_riga_city_watch = {
+    regiments_per_development = 0.05
+	mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	cavalry_weight = 0
+	artillery_weight = 0
+	home_province = 38
+	counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		tag = RIG
+		owns = 38
+	}
+	cost_modifier = 0.75
+	modifier = {
+		allow_mercenary_drill = yes
+	}
+}
+
+merc_riga_metropolitan_guard = {
+    regiments_per_development = 0.07
+	#mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	cavalry_weight = 0.1
+	artillery_weight = 0 
+	min_size = 15
+	home_province = 38
+	#counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		tag = RIG
+		owns = 38
+		38 = { development = 30 }
+	}
+	cost_modifier = 1
+	modifier = {
+		allow_mercenary_drill = yes
+		infantry_power = 0.1
+		leader_land_shock = 2
+		leader_land_fire = 2
+	}
+}
+
+merc_riga_foreign_legion = {
+    regiments_per_development = 0.09
+	#mercenary_desc_key = FREE_OF_FORCELIMIT_COST
+	cavalry_weight = 0.1
+	artillery_weight = 0 
+	min_size = 30
+	home_province = 38
+	#counts_towards_force_limit = no
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		tag = RIG
+		owns = 38
+		38 = { development = 60 }
+	}
+	cost_modifier = 1.5
+	modifier = {
+		force_march_free = yes
+		allow_mercenary_drill = yes
+		infantry_power = 0.1
+		leader_land_shock = 3
+		leader_land_fire = 3
+		leader_land_manuever = 2
+		land_morale = 0.1
+		drill_decay_modifier = -0.5
+		discipline = 0.05
+	}
+}
+
 merc_aen_bastion_guard = {
     regiments_per_development = 0.06
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
@@ -243,10 +312,10 @@ merc_aen_bastion_guard = {
 	cost_modifier = 0.5
 	modifier = {
 		force_march_free = yes
-		manpower_recovery_speed = 0.5
+		manpower_recovery_speed = -0.5
 		leader_land_shock = 3
 		leader_land_fire = 3
-		reinforce_speed = 0.25
+		reinforce_speed = -0.25
 		drill_decay_modifier = -0.5
 		allow_mercenary_drill = yes
 		shock_damage_received = -0.30
@@ -268,10 +337,10 @@ merc_aen_order_of_the_lionhearted = {
 	cost_modifier = 0.5
 	modifier = {
 		force_march_free = yes
-		manpower_recovery_speed = 0.5
+		manpower_recovery_speed = -0.5
 		leader_land_shock = 6
 		leader_land_fire = 1
-		reinforce_speed = 0.25
+		reinforce_speed = -0.25
 		drill_decay_modifier = -0.5
 		allow_mercenary_drill = yes
 		morale_damage = 0.25
@@ -294,10 +363,10 @@ merc_aen_hessian_foreign_legion = {
 	cost_modifier = 0.5
 	modifier = {
 		force_march_free = yes
-		manpower_recovery_speed = 0.5
+		manpower_recovery_speed = -0.5
 		leader_land_shock = 4
 		leader_land_fire = 4
-		reinforce_speed = 0.25
+		reinforce_speed = -0.25
 		drill_decay_modifier = -0.5
 		allow_mercenary_drill = yes
 		land_attrition = -0.25

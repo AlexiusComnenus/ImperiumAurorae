@@ -901,7 +901,7 @@ venice_missions_slot_2 = {
 							}
 						}
 					}
-					development = 50
+					development = 40
 				}
 			}	
 		}

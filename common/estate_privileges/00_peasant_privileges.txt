@@ -318,7 +318,7 @@ estate_peasants_armed_citizenry = {
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
-		modifier = { monthly_russian_modernization = -0.05 }
+		modifier = { monthly_russian_modernization = 0.02 }
 	}
 	#conditional_modifier = {
 	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
@@ -366,22 +366,28 @@ estate_peasants_levies = {
 	influence = 0.1
 	loyalty = 0.1
 	is_valid = {
-		#NOT = { has_estate_privilege = estate_nobles_golden_liberty }
+		NOT = { has_estate_privilege = estate_nobles_golden_liberty }
 	}
 	can_select = {
-		#NOT = { has_estate_privilege = estate_nobles_golden_liberty }
-		#if = {
-		#	limit = {
-		#		has_estate = estate_maratha
-		#	}
-		#	NOT = { has_estate_privilege = estate_maratha_levies }
-		#}
-		#if = {
-		#	limit = {
-		#		has_estate = estate_maratha
-		#	}
-		#	NOT = { has_estate_privilege = estate_maratha_levies_for_muslims }
-		#}
+		NOT = { has_estate_privilege = estate_nobles_golden_liberty }
+		if = {
+			limit = {
+				has_estate = estate_maratha
+			}
+			NOT = { has_estate_privilege = estate_maratha_levies }
+		}
+		if = {
+			limit = {
+				has_estate = estate_maratha
+			}
+			NOT = { has_estate_privilege = estate_maratha_levies_for_muslims }
+		}
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			NOT = { has_estate_privilege = estate_nobles_levies }
+		}
 	}
 	modifier_by_land_ownership = {
 		global_tax_modifier = -0.5
@@ -489,7 +495,7 @@ estate_peasants_advisors = {
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
-		modifier = { monthly_russian_modernization = -0.05 }
+		modifier = { monthly_russian_modernization = 0.02 }
 	}
 	#conditional_modifier = {
 	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
@@ -545,7 +551,7 @@ estate_peasants_lowered_taxes = {
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
-		modifier = { monthly_russian_modernization = -0.05 }
+		modifier = { monthly_russian_modernization = 0.02 }
 	}
 	#conditional_modifier = {
 	#	trigger = { has_government_mechanic = ottoman_decadence_mechanic }
@@ -1016,6 +1022,10 @@ estate_peasants_homeland_defense = {
 			is_at_war = yes 
 			NOT = { has_estate_privilege = estate_peasants_homeland_defense }
 		}
+		OR = {
+			religion = bogomilist
+			has_government_attribute = is_peasants_republic
+		}
 	}
 	on_granted = {
 		#change_estate_land_share = {
@@ -1040,6 +1050,7 @@ estate_peasants_homeland_defense = {
 	}
 	penalties = {
 		discipline = -0.075
+		special_unit_forcelimit = -0.5
 	}
 	benefits = {
 		land_morale = 0.05
@@ -1244,6 +1255,10 @@ estate_peasants_collective_landownership = {
 	influence = 0.1
 	loyalty = 0.05
 	is_valid = {
+		OR = {
+			religion = bogomilist
+			has_government_attribute = is_peasants_republic
+		}
 	}
 	can_select = {
 		OR = {

@@ -1174,7 +1174,7 @@ ia_hsc_mission_4 = {
 		
 		provinces_to_highlight = {
 			region = british_isles_region
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			country_or_non_sovereign_subject_holds = ROOT
 			unrest = 0
 		}
 		

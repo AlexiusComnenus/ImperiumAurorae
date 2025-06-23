@@ -320,7 +320,7 @@ Generic_British_Colonial_Missions_3 = {
 		}	
 		effect = {
 			unlock_issue = { issue = acts_of_taxation }
-			unlock_issue = { issue = act_of_representation }
+			#unlock_issue = { issue = act_of_representation }
 			create_conquistador = {
 				tradition = 80
 			}
@@ -644,9 +644,9 @@ Generic_British_Colonial_Missions_4 = {
 			}
 		}	
 		effect = {
-			unlock_issue = {
-				issue = the_gold_act
-			}
+			#unlock_issue = {
+			#	issue = the_gold_act
+			#}
 			add_country_modifier = {
 				name = "eng_caribbean_trade"
 				duration = 5475

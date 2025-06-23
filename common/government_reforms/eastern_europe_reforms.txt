@@ -233,7 +233,7 @@ bogomilist_veche_republic = {
 	modifiers = {
 		has_streltsy = yes
 		max_revolutionary_zeal = 25
-		allowed_streltsy_fraction = 0.25
+		allowed_rev_guard_fraction = -0.4
 		development_cost = -0.1
 		diplomatic_annexation_cost = -0.1
 		peasants_privilege_slots = 2
@@ -252,6 +252,12 @@ bogomilist_veche_republic = {
 				ROOT = { break_alliance = PREV }
 			}
 		}
+		change_country_color = { 
+			color = { 144 48 65 }
+		}
+	}
+	removed_effect = {
+		restore_country_color = yes
 	}
 
 	custom_attributes = {

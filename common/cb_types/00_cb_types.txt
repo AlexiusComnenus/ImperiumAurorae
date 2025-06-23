@@ -699,6 +699,8 @@ cb_revolutionary = {
 				has_reform = shogunate
 				has_reform = colonial_government
 				government = native
+				is_emperor = yes
+				tag = TEM
 			}
 		}
 		OR = {
@@ -1184,6 +1186,8 @@ cb_spread_the_revolution = {
 		FROM = {
 			NOT = { is_subject_of = ROOT }
 			is_revolutionary = no
+			NOT = { is_emperor = yes }
+			NOT = { tag = TEM }
 		}
 		#NOT = { current_age = age_of_discovery }
 		#current_age = age_of_revolutions
@@ -1196,6 +1200,7 @@ cb_annex_the_revolution = {
 	valid_for_subject = no
 
 	prerequisites = {
+		always = no
 		is_revolutionary = yes
 		FROM = {
 			NOT = { is_subject_of = ROOT }

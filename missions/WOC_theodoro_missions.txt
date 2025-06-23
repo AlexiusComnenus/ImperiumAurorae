@@ -1295,7 +1295,7 @@ feo_5_russian_alliance = {
 				alliance_with = ROOT
 				has_opinion = {
 					who = ROOT
-					value = 200
+					value = 100
 				}
 			}
 		} 

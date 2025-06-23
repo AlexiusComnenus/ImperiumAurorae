@@ -73,6 +73,9 @@
  bogomilist_veche_republic: "Bogomil Union"
  bogomilist_veche_republic_desc: "This Republic has as its foundational values the ideals of Bogomilism adapted to the Northern Rus culture, whereby even the peasants are properly represented in government."
  is_ruled_by_peasants_tt: "Is ruled by the §YPeasants§!!"
+ merc_riga_city_watch: "§GRiga City Watch§!"
+ merc_riga_metropolitan_guard: "§GRiga Metropolitan Guard§!"
+ merc_riga_foreign_legion: "§GForeign Legion of Riga§!"
 
  #Modifiers
  cumania_collapse_mod: "Cumania in Collapse"

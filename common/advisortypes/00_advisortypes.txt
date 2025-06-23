@@ -1290,7 +1290,7 @@ trader = {
 	trade_efficiency = 0.034
 	skill_scaled_modifier = {
 		trigger = { always = yes }
-		modifier = { diplomatic_reputation = 0.033 }
+		modifier = { trade_efficiency = 0.033 }
 	}
 	
 	skill_scaled_modifier = {
