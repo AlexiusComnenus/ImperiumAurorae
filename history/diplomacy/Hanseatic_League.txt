@@ -18,20 +18,6 @@ alliance = {
 
 alliance = {
 	first = BRE
-	second = HSA
-	start_date = 1380.1.1
-	end_date = 1563.1.1
-}
-
-alliance = {
-	first = HAM
-	second = HSA
-	start_date = 1380.1.1
-	end_date = 1667.1.1
-}
-
-alliance = {
-	first = BRE
 	second = HAM
 	start_date = 1380.1.1
 	end_date = 1563.1.1

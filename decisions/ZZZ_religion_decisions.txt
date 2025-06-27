@@ -812,7 +812,7 @@ country_decisions = {
 	spreading_of_norse_rituals_EXTRA = {
 		potential = {
 			NOT = { has_country_modifier = spreading_norse_rituals }
-			religion = norse_pagan
+			#religion = norse_pagan
 			religion = norse_pagan_reformed
 		}
 		allow = {
@@ -834,17 +834,52 @@ country_decisions = {
 		}
 	}
 	embrace_reformed_norse = {
+		major = yes
+        color = { 235 102 255 }
 		potential = {
 			religion = norse_pagan
 		}
 		allow = {
-			adm_tech = 5
+			OR = {
+				any_ally = { religion = norse_pagan_reformed }
+				overlord = { religion = norse_pagan_reformed }
+			}
 			stability = 3
 		}
 		effect = {
 			change_religion = norse_pagan_reformed
 			add_prestige = -100
 			add_stability = -3
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			capital_scope = {
+				area = {
+					limit = {
+						religion = norse_pagan
+						owned_by = ROOT
+					}
+					change_religion = norse_pagan_reformed
+				}
+			}
+			custom_tooltip = every_other_norse_province_50_chance_to_convert_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = norse_pagan }
+					random_list = {
+						50 = {
+							change_religion = norse_pagan_reformed
+						}
+						50 = {
+							add_province_modifier = {
+								name = "heresy"
+								duration = 3650
+							}
+						}
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1

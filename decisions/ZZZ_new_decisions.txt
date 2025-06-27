@@ -273,19 +273,20 @@ country_decisions = {
 	### Reform Pagan Faiths
 	ZZZ_enhanced_reform_norse_pagan = {
 		major = yes
+        color = { 235 102 255 }
 		potential = {
-			NOT = { has_global_flag = ZZZ_enhanced_norse_pagan_reformed }
-			NOT = { has_global_flag = ZZZ_enhanced_random_world }
+			#NOT = { has_global_flag = ZZZ_enhanced_norse_pagan_reformed }
+			#NOT = { has_global_flag = ZZZ_enhanced_random_world }
 			religion = norse_pagan
 		}
 
 		provinces_to_highlight = {
 			OR = {
-				province_id = 2972 #Paderborn
+				#province_id = 2972 #Paderborn
 				province_id = 12   #Sjaelland
 				province_id = 1    #Stockholm
 				province_id = 20   #Trondelag
-				province_id = 96   #Zeeland
+				#province_id = 96   #Zeeland
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -295,12 +296,12 @@ country_decisions = {
 
 		allow = {
 			government_rank = 2
-			stability = 2
-			owns_core_province = 2972 #Paderborn
+			#stability = 2
+			#owns_core_province = 2972 #Paderborn
 			owns_core_province = 12   #Sjaelland
 			owns_core_province = 1    #Stockholm
 			owns_core_province = 20   #Trondelag
-			owns_core_province = 96   #Zeeland
+			#owns_core_province = 96   #Zeeland
 		}
 
 		effect = {
@@ -328,16 +329,20 @@ country_decisions = {
 					add_base_manpower = 1
 				}
 			}
-			every_owned_province = {
-				limit = { religion = norse_pagan }
-				random_list = {
-					75 = {
-						change_religion = norse_pagan_reformed
-					}
-					25 = {
-						add_province_modifier = {
-							name = "heresy"
-							duration = 3650
+			
+			custom_tooltip = every_other_norse_province_75_chance_to_convert_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = { religion = norse_pagan }
+					random_list = {
+						75 = {
+							change_religion = norse_pagan_reformed
+						}
+						25 = {
+							add_province_modifier = {
+								name = "heresy"
+								duration = 3650
+							}
 						}
 					}
 				}
@@ -346,16 +351,6 @@ country_decisions = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				NOT = {
-					owns_core_province = 2972 #Paderborn
-					owns_core_province = 12   #Sjaelland
-					owns_core_province = 1    #Stockholm
-					owns_core_province = 20   #Trondelag
-					owns_core_province = 96   #Zeeland
-				}
-				factor = 0
-			}
 		}
 	}
 

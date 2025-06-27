@@ -122,7 +122,7 @@ country_decisions = {
 						tag = MOR 
 						has_dlc = "Golden Century"
 					}
-					complete_mission = gra_overcome_internal_strife
+					#complete_mission = gra_overcome_internal_strife
 				}
 			}
 			hidden_effect = {
@@ -131,7 +131,7 @@ country_decisions = {
 						tag = MOR 
 						has_dlc = "Golden Century"
 					}
-					complete_mission = gra_friends_in_high_places
+					#complete_mission = gra_friends_in_high_places
 				}
 			}
 			change_tag = ADU

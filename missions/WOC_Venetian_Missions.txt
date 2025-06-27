@@ -1359,7 +1359,7 @@ venice_missions_slot_3 = {
 				NOT = { tag = ROOT }
 				has_spy_network_in = {
 					who = ROOT
-					value = 25
+					value = 50
 				}
 				NOT = {
 					has_opinion = {
@@ -1370,6 +1370,14 @@ venice_missions_slot_3 = {
 				NOT = {
 					truce_with = ROOT
 				}
+				NOT = {
+					ROOT = {
+						has_won_war_against = {
+							who = PREV
+							max_years_since = 100
+						}
+					}
+				}
 			}
 		}
 		trigger = {
@@ -1378,7 +1386,7 @@ venice_missions_slot_3 = {
 					NOT = {
 						has_spy_network_in = {
 							who = ROOT
-							value = 25
+							value = 50
 						}
 					}
 					has_opinion = {
@@ -1386,35 +1394,39 @@ venice_missions_slot_3 = {
 						value = 100
 					}
 					truce_with = ROOT	
+					ROOT = {
+						has_won_war_against = {
+							who = PREV
+							max_years_since = 100
+						}
+					}
 				}
 			}
 			OR = {
 				diplomat = 3
 				spymaster = 3
 			}
-			if = {
-				limit = {
-					tag = VEN
-					NOT = { has_country_flag = LNS_ideas_flag }
-				}
-				has_idea = state_inquisition
-			}
+			#if = {
+			#	limit = {
+			#		tag = VEN
+			#		NOT = { has_country_flag = LNS_ideas_flag }
+			#	}
+			#	has_idea = state_inquisition
+			#}
 			
 		}
 		effect = {
-			if = {
-				limit = { tag = VEN	}
-				custom_tooltip = ven_upgrade_state_inuisition_idea_tt
-				hidden_effect = {
-					set_country_flag = ven_upgrade_state_inuisition_idea_flag
-					swap_free_idea_group = yes
-				}
-			}
-			else = {
-				add_country_modifier = {
-					name = ven_standardized_relazioni
-					duration = 7300
-				}
+			#if = {
+			#	limit = { tag = VEN	}
+			#	custom_tooltip = ven_upgrade_state_inuisition_idea_tt
+			#	hidden_effect = {
+			#		set_country_flag = ven_upgrade_state_inuisition_idea_flag
+			#		swap_free_idea_group = yes
+			#	}
+			#}
+			add_country_modifier = {
+				name = ven_standardized_relazioni
+				duration = 7300
 			}
 		}
 	}
@@ -1422,14 +1434,19 @@ venice_missions_slot_3 = {
 	ven_of_wealth_and_power = {
 		icon = ven_of_wealth_and_power
 		position = 5
-		required_missions = { wof_ven_plague_doctor_training wof_ven_standardize_relazioni ven_academy_of_the_unknowns wof_ven_expand_the_doges_palace }
+		required_missions = { wof_ven_standardize_relazioni wof_ven_expand_the_doges_palace }
 		provinces_to_highlight = {
 			ROOT = {
 				home_trade_node = { province_id = PREV_PREV }
 			}
 		}
 		trigger = {
-			home_trade_node = { highest_value_trade_node = yes }
+			home_trade_node = { 
+				OR = {
+					highest_value_trade_node = yes 
+					trade_node_value = 100
+				}
+			}
 			num_of_trading_bonuses = 6
 		}
 		effect = {

@@ -1206,7 +1206,7 @@ rector_palace = {
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
@@ -1217,14 +1217,14 @@ rector_palace = {
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
 		owner = { government = republic }
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -1344,7 +1344,7 @@ sponza_palace = {
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 	on_built = {
 	}
@@ -1355,14 +1355,14 @@ sponza_palace = {
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 	can_upgrade_trigger = {
 		owner = { government = republic }
 		owner = {
 			OR = { culture_group = latin	culture_group = south_slavic }
 		}
-		province_is_or_accepts_culture = yes
+		#province_is_or_accepts_culture = yes
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -3470,6 +3470,7 @@ grand_canal = {
 			factor = 1000
 		}
 		province_modifiers = {
+			local_development_cost = -0.25
 			trade_value = 5
 			naval_forcelimit = 5
 		}
@@ -3494,6 +3495,7 @@ grand_canal = {
 			factor = 2500
 		}
 		province_modifiers = {
+			local_development_cost = -0.4
 			trade_value = 10
 			naval_forcelimit = 10
 		}
@@ -3517,12 +3519,13 @@ grand_canal = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_development_cost = -0.75
 			trade_value = 20
 			naval_forcelimit = 15
 		}
 		area_modifier = {
-			local_development_cost = -0.15
-			local_build_cost = -0.15
+			local_development_cost = -0.25
+			local_build_cost = -0.25
 		}
 		country_modifiers = {
 			global_own_trade_power = 0.25

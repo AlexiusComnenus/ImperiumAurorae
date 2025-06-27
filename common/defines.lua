@@ -1623,7 +1623,7 @@ NAI = {
 	CALL_ACCEPTANCE_COALITION_VS_SUBJECT = -60, -- Acceptance penalty when an AI's Tributary (or currently non-existing Subject type with similar mechanic) calls to war against someone who is in a coalition against them
 	WANT_TRIBUTARY_LOST_MANDATE = 10, -- How important it is for Celestial Emperor to make tributaries out of neighbors.
 	NOMINAL_ARMY_SIZE_MULTIPLIER = 1.1, -- This will multiply with the AI's desired regiment count per unit. Does not affect total size of all armies 
-	MIN_CAV_PERCENTAGE = 5, --AI will always try to have at least this many % of their army as cav, regardless of time in the game.
+	MIN_CAV_PERCENTAGE = 0, --AI will always try to have at least this many % of their army as cav, regardless of time in the game.
 	MAX_CAV_PERCENTAGE = 100, -- For modding, actual ratio is dynamically computed but will be no higher than this.
 	FOG_OF_WAR_FORGET_CHANCE = 1, --Daily percentage chance of AI forgetting a unit that's hidden in Fog of War.
 	DIPLOMATIC_ACTION_ABANDON_UNION_BASE_FACTOR = 60, --AI scoring to abandoning Personal Union (given high enough LD and strength).
@@ -1675,7 +1675,7 @@ NAI = {
 	HRE_DESIRE_WANTS_TO_WARN_EMPEROR = -100,
 	HRE_DESIRE_THREATENED_BY_EMPEROR = 80,
 	HRE_DESIRE_DIFFERENT_RELIGION = -80,
-	HRE_DESIRE_GENERAL_INERTIA = -50,
+	HRE_DESIRE_GENERAL_INERTIA = -10,
 	HRE_DESIRE_MIN_THREAT_LEVEL = 20,
 	HRE_DESIRE_THREATENED_BY_MULTIPLIER = 1.0,
 	
@@ -1749,7 +1749,7 @@ NAI = {
 	GOVERNING_CAPACITY_OVER_PERCENTAGE_TOLERATED = 0.5,
 	GOVERNING_CAPACITY_REFORM_PROGRESS_GAP_TOLERANCE = 50,
 	GOVERNING_CAPACITY_REFORM_BIAS_IF_NEEDED = 100,
-	DANGEROUS_OVEREXTENSION_PERCENTAGE = 0.1,
+	DANGEROUS_OVEREXTENSION_PERCENTAGE = 1.1,
 
 	DEBASE_THRESHOLD = 1,-- AI will not debase if it has more gold than this.
 
@@ -1912,8 +1912,8 @@ NAI = {
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_SAILORS_MILITARIST_MULT = 1.5,
 	
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_HEIR_BASE_SCORE = 50,
-	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_HEIR_SAME_DYNASTY_MULT = 0.5,
-	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_HEIR_ALREADY_OVERLORD_MULT = 0.5,
+	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_HEIR_SAME_DYNASTY_MULT = 0,
+	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_HEIR_ALREADY_OVERLORD_MULT = 0,
 
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_TRUST_BASE_SCORE = 50,
 	DIPLOMATIC_ACTION_TRADE_FAVORS_FOR_TRUST_PREPARING_FOR_WAR_SCORE = 50,
@@ -1942,7 +1942,7 @@ NAI = {
 	DIPLOMATIC_ACTION_IMPROVE_RELATIONS_JOIN_HRE_FACTOR = 500, -- AI scoring for improve relations with the emperor is increased by this if they want to join the HRE.
 	DIPLOMATIC_ACTION_IMPROVE_RELATIONS_VASSALIZE_FACTOR = 150, -- AI scoring for improve relations is increased by this if they have an attitude with 'vassalize' desire (also applied to royal marriage desire)
 	DIPLOMATIC_ACTION_IMPROVE_RELATIONS_SUPPORTING_HEIR_FACTOR = 50, -- AI scoring for improve relations is increased by this if they are also supporting a heir in the country
-	DIPLOMATIC_ACTION_GRANT_ELECTORATE_PROVINCE_PENALTY_THRESHOLD = 4, -- AI scoring for grant electorate is reduced if target has at least this many provinces
+	DIPLOMATIC_ACTION_GRANT_ELECTORATE_PROVINCE_PENALTY_THRESHOLD = 200, -- AI scoring for grant electorate is reduced if target has at least this many provinces
 	DIPLOMATIC_ACTION_GRANT_ELECTORATE_PROVINCE_PENALTY_MULT = 1.1, -- AI scoring for grant electorate is multiplied by this for each province above threshold
 	DIPLOMATIC_ACTION_EMBARGO_TRADE_INTEREST_FACTOR = 25, -- AI scoring for embargo is increased by this if they have trade interest
 	DIPLOMATIC_ACTION_EMBARGO_WAR_FACTOR = 50, -- AI scoring for embargo is increased by this if they are at war

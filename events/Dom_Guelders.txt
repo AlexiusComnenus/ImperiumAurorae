@@ -140,7 +140,7 @@ country_event = { #Burgundy> Gelre Claim Throne
 		#}
 		custom_tooltip = burgundy_warning_mission_tt
 		hidden_effect = {
-		complete_mission = dom_ned_bur_duchy_of_gelre
+		#complete_mission = dom_ned_bur_duchy_of_gelre
 		}
 	}
 	option = { #reject
@@ -184,7 +184,7 @@ country_event = { #Gelre > Burgundy Claim Throne
 		}
 		custom_tooltip = gelre_warning_mission_tt
 		hidden_effect = {
-			complete_mission = dom_gel_title_of_gelre
+			#complete_mission = dom_gel_title_of_gelre
 		}
 	}
 	option = { #reject

@@ -917,9 +917,9 @@ country_event = { #clear groot_desseyn
 	immediate = {
 		hidden_effect = {
 			clr_country_flag = dom_ned_desseyn_challenge
-			complete_mission = dom_ned_gold_coast
-			complete_mission = dom_ned_brazilian_exp
-			complete_mission = dom_ned_siege_luanda
+			#complete_mission = dom_ned_gold_coast
+			#complete_mission = dom_ned_brazilian_exp
+			#complete_mission = dom_ned_siege_luanda
 		}
 	}
 	

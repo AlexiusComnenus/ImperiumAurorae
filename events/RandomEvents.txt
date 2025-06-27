@@ -12895,6 +12895,14 @@ country_event = {
 
 	option = {
 		name = "EVTOPTA6428"
+		every_owned_province = {
+			OR = {
+				trade_goods = gold
+				trade_goods = silver
+			}
+			add_base_production = 1
+			add_base_tax = 1
+		}
 		if = {
 			limit = {
 				has_dlc = "Leviathan"

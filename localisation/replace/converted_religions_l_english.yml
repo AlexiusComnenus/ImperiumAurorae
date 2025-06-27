@@ -68,6 +68,22 @@
  karaite_faith: "Karaite"
  jain: "Jain"
  arianism: "Arian"
+ odin_reformed:0 "Odin"
+ odin_reformed_desc:0 "Odin is the major god of the Norse pantheon, commonly associated with war, victory and death."
+ freya_reformed:0 "Freya"
+ freya_reformed_desc:0 "Freyja is the goddess commonly worshipped for her love, beauty, fertility and her promises of wealth."
+ tor_reformed:0 "Tor"
+ tor_reformed_desc:0 "Tor is the son of Odin and is the god protecting humankind against the terrors trying to enter Midgard."
+ tyr_reformed:0 "Tyr"
+ tyr_reformed_desc:0 "Tyr is the one-handed god of justice and one of the most courageous gods."
+ snotra_reformed:0 "Snotra"
+ snotra_reformed_desc:0 "Snotra is the clever goddess. A wise man or woman can be called snotr in her honor."
+ njord_reformed:0 "Njord"
+ njord_reformed_desc:0 "The father of Freya, god of the sea and wealth will bring food to the table for his worshippers."
+ every_other_norse_province_75_chance_to_convert_tt: "Every other §YUnreformed Norse§! province has a §Y75% chance§! to also convert to §GReformed Norse§!!"
+ every_other_norse_province_50_chance_to_convert_tt: "Every other §YUnreformed Norse§! province has a §Y50% chance§! to also convert to §GReformed Norse§!!"
+ embrace_reformed_norse_title: "Embrace the Norse Reformation"
+ embrace_reformed_norse_desc: "We shall convert to the §YReformed Norse§! religion!"
 
  #I:R religions
 

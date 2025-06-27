@@ -1238,6 +1238,14 @@ doges_palace = {
 	type = monument
 
 	build_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+			government = republic
+		}
 	}
 
 	on_built = {
@@ -1247,9 +1255,25 @@ doges_palace = {
 	}
 
 	can_use_modifiers_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+			government = republic
+		}
 	}
 
 	can_upgrade_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+			government = republic
+		}
 	}
 
 	keep_trigger = {
@@ -3870,14 +3894,35 @@ venetian_arsenal_gp = {
 	starting_tier = 1
 	type = monument
 	build_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+		}
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+		}
 	}
 	can_upgrade_trigger = {
+		owner = {
+			OR = { 
+				culture_group = latin
+				culture_group = roman_group
+				primary_culture = idali
+			}
+		}
 	}
 	keep_trigger = {
 	}
@@ -3905,15 +3950,14 @@ venetian_arsenal_gp = {
 			factor = 1000
 		}
 		province_modifiers = {
-			ship_recruit_speed = -0.1
 			local_ship_repair = 0.1
 			local_ship_cost = -0.1
 		}
 		area_modifier = {
-			
+			ship_recruit_speed = -0.1
 		}
 		country_modifiers = {
-
+			galley_power = 0.05
 		}
 		on_upgraded = {
 		}
@@ -3926,17 +3970,20 @@ venetian_arsenal_gp = {
 			factor = 2500
 		}
 		province_modifiers = {
-			ship_recruit_speed = -0.5
 			local_ship_repair = 0.5
 			local_ship_cost = -0.25
 		}
 		area_modifier = {
-			
+			ship_recruit_speed = -0.5
+			local_has_galleass = yes
 		}
 		region_modifier = { 
 			
 		}
 		country_modifiers = {
+			galley_power = 0.1
+			allowed_galleass_fraction = 0.1
+			has_galleass = yes
 		}	
 		on_upgraded = {
 		}
@@ -3949,15 +3996,16 @@ venetian_arsenal_gp = {
 			factor = 5000
 		}
 		province_modifiers = {
-			ship_recruit_speed = -0.5
 			local_ship_repair = 0.5
 			local_ship_cost = -0.25
 		}
 		area_modifier = {
 			local_has_galleass = yes
+			ship_recruit_speed = -0.5
 		}
 		country_modifiers = {
 			allowed_galleass_fraction = 0.25
+			galley_power = 0.15
 			has_galleass = yes
 		}
 		on_upgraded = { }

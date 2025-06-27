@@ -46,6 +46,10 @@
  nov_western_demands_desc: "Our furs are not just practical for cold weather, they have become luxury goods in high demand in the west. What used to be subsistence hunting and trapping has evolved into a great industry bringing prosperity to the cold north."
  nov_meritocracy: "Meritocratic Rule"
  nov_meritocracy_desc: "There is but one absolute rule for climbing the ladder in Novgorod: you must be capable. Only the brightest minds rise to the top here, regardless of the attempts by the various factions to push their own agents."
+ PAP_ia_swiss_guard: "Establish the Swiss Guard"
+ PAP_ia_swiss_guard_desc: "When the Demon Prince captured Rome, it was a contingent of brave Swiss mercenaries who fought to the very last man to protect the Holy Father. While their sacrifices were ultimately in vain, we shall honor their bravery by recruiting the new Pontifical Guard from Switzerland."
+ PAP_ia_kingdom_of_god: "Kingdom of God"
+ PAP_ia_kingdom_of_god_desc: "The world has fallen to heresy, fanaticism, and collective insanity. It is up to the only true Vicar of God to restore Faith and Reason in the Kingdom of God."
 
  #Mechanics Tooltips
  kyiv_nation_title: "Reform Kiev"
@@ -101,6 +105,7 @@
  nov_weathered_hunters: "Weathered Hunters"
  nov_steady_lumber_supply: "Steady Lumber Supply"
  trade_protectorate_overlord_modifier_ia: "Protectorate Overlord Modifier"
+ large_trade_protectorate_overlord_modifier_ia: "Large Protectorate Overlord Modifier"
  nov_german_expertise: "German Expertise"
  nov_rich_iron_deposits: "Rich Iron Deposits"
  nov_new_mining_towns: "New Mining Towns"

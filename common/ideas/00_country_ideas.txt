@@ -1445,7 +1445,7 @@ VEN_ideas = {
 	}
 	printing_industry = {
 		institution_spread_from_true_faith = 0.33
-		technology_cost = -0.05
+		technology_cost = -0.1
 	}
 	stato_da_mar = {
 		trade_efficiency = 0.2
@@ -1498,6 +1498,8 @@ VEN_ideas_2 = {
 	state_inquisition_2 = {
 		diplomats = 1 
 		max_absolutism = 10
+		global_spy_defence = 0.3
+		yearly_corruption = -0.05
 	}
 	conscription = {
 		#Present in the previous VEN_ideas ideaset
@@ -1512,7 +1514,7 @@ VEN_ideas_2 = {
 
 LNS_ideas = {
 	start = {
-		trade_steering = 0.33
+		trade_steering = 0.5
 		galley_power = 0.25
 	}
 	
@@ -1523,11 +1525,13 @@ LNS_ideas = {
 	trigger = {
 		tag = VEN
 		NOT = { has_country_flag = ven_upgrade_state_inuisition_idea_flag }
+		has_country_flag = LNS_ideas_flag
 	}
 	free = yes		#will be added at load.
 	
 	lns_renaissance_art = {
 		technology_cost = -0.1
+		institution_spread_from_true_faith = 0.33
 	}
 	stato_da_mar = {
 		#Present in the previous VEN_ideas ideaset
@@ -1541,14 +1545,16 @@ LNS_ideas = {
 	}
 	backing_of_the_ducat = {
 		naval_forcelimit_modifier = 0.5
+		inflation_reduction = 0.1
 	}
 	reform_the_uscocchi = {
-		global_ship_trade_power = 0.35
+		global_ship_trade_power = 0.5
 		global_trade_goods_size_modifier = 0.1
 	}
 	maggior_consiglio = {
 		max_absolutism = 10
 		max_revolutionary_zeal = 10
+		yearly_corruption = -0.1
 	}
 }
 
@@ -3529,8 +3535,8 @@ GRA_ideas = {
 
 PAP_ideas = {
 	start = {
-		diplomatic_reputation = 1
-		religious_unity = 0.25
+		diplomatic_reputation = 2
+		monarch_admin_power = 1
 	}
 
 	bonus = {
@@ -3544,24 +3550,30 @@ PAP_ideas = {
 	
 	ecclesiastical_primacy = {
 		tolerance_own = 2
+		reverse_relation_with_same_religion = 25
 	}
 	papal_investiture_and_tithes = {
 		global_tax_modifier = 0.4
 	}
-	glory_of_rome = {
-		prestige_decay = -0.01
+	PAP_ia_swiss_guard = {
+		mercenary_manpower = 0.25
+		merc_leader_army_tradition = 0.5
 	}
 	donation_of_constantine = {
 		fabricate_claims_cost = -0.25
+		ae_impact = -0.15
 	}
 	centralize_the_states = {
 		production_efficiency = 0.1
+		global_autonomy = -0.025
 	}
-	the_vatican_museums = {
-		free_dip_policy = 1
+	PAP_ia_kingdom_of_god = {
+		global_heretic_missionary_strength = 0.02
+		enforce_religion_cost = -0.33
 	}
 	holy_father = {
-		ae_impact = -0.10
+		global_religious_conversion_resistance = 1
+		appoint_cardinal_cost = -0.5
 	}
 }
 

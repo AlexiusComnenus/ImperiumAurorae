@@ -21,6 +21,34 @@ true_immortal_reform = {
 	heir = no
 }
 
+ven_promissione_ducale_reform = {
+	icon = "ven_promissione_ducale_reform"
+	allow_normal_conversion = yes
+	potential = {
+		is_or_was_tag = { tag = VEN }
+		government = republic
+	}
+	trigger = {
+		OR = {
+			has_unlocked_government_reform = { government_reform = ven_promissione_ducale_reform }
+			have_had_reform = ven_promissione_ducale_reform
+		}
+	}
+	modifiers = {
+		yearly_corruption = -0.1
+		diplomatic_upkeep = 1
+		merchants = 1
+		candidate_random_bonus = 1
+		monthly_authority_power = 0.1
+	}
+	custom_attributes = {
+		can_establish_trade_protectorates = yes
+	}
+	ai = {
+		factor = 10
+	}
+}
+
 ayyubid_dynasty = {
 	icon = ayyubid_dynasty
 	allow_convert = no
@@ -1446,7 +1474,7 @@ privateer_republic = {
 		max_absolutism = 10
 		naval_forcelimit_modifier = 0.5
 		capture_ship_chance = 0.33
-		state_governing_cost = 0.75
+		state_governing_cost = 0.25
 		may_perform_slave_raid = yes
 		allowed_marine_fraction = 0.6
 	}
