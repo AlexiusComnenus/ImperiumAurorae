@@ -387,6 +387,8 @@ seat_of_the_rigan_archbishopric = {
 	development_cost_modifier = -0.25
 	development_cost_in_primary_culture = -0.40
 	global_trade_goods_size_modifier = 0.5
+	allowed_num_of_buildings = 2
+	allowed_num_of_manufactories = 4
 }
 
 cathedral_of_riga = {
@@ -460,12 +462,16 @@ fortification_of_riga = {
 				}
 			}
 		}
+		owned_by = controller
 	}
 	local_manpower = 10
 	local_manpower_modifier = 0.5
 	land_forcelimit = 20
 	local_fort_maintenance_modifier = -0.9
 	local_defensiveness = 1
+	local_defender_dice_roll_bonus = 2
+	local_garrison_damage = 1
+	local_garrison_size = 1
 	nobles_loyalty_modifier = 0.1
 }
 

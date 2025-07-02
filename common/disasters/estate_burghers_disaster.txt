@@ -128,9 +128,9 @@ estate_burghers_disaster = {
 	}
 	
 	modifier = {	
-		land_morale = -0.1
+		trade_efficiency = 0.15
 		global_manpower_modifier = -0.20
-		land_forcelimit_modifier = -0.10
+		land_forcelimit_modifier = -0.20
 		prestige = -1
 	}
 

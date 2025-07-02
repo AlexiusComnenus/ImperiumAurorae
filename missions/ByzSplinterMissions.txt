@@ -197,9 +197,7 @@ Byz_Splinter_3 = {
 			
 				}
 			}
-			GRE = {
-				inherit = BYZ
-			}
+			BYZ = { change_tag = GRE }
 			change_tag = BYZ
 			restore_country_name_effect = yes
 			swap_non_generic_missions = yes

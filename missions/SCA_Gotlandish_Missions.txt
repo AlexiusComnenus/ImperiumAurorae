@@ -27,7 +27,7 @@ got_pirate_slot_1 = {
 			NOT = {
 				privateer_power = {
 					country = ROOT
-					share = 15
+					share = 7.5
 				}
 			}
 			has_discovered = ROOT
@@ -39,7 +39,7 @@ got_pirate_slot_1 = {
 				all_trade_node = {
 					privateer_power = {
 						country = ROOT
-						share = 15
+						share = 7.5
 					}
 				}
 				amount = 10

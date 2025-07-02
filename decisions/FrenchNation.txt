@@ -137,6 +137,9 @@ country_decisions = {
 		}
 		allow = {
 			has_regency = no
+			government = monarchy
+			has_reform = divine_merovingian_reform
+			is_free_or_tributary_trigger = yes
 		}
 		effect = {
 			hidden_effect = {

@@ -123,7 +123,7 @@ sax_sca_partnership = {
 	trade_efficiency = 0.15
 	army_tradition_decay = -0.005
 	navy_tradition_decay = -0.005
-	leader_cost = -0.15
+	leader_cost = -0.05
 }
 
 old_saxon_capital = {

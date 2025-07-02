@@ -80,6 +80,38 @@ country_event = {  # Jomsvikings
 	}
 }
 
+country_event = {  # Antioch joining their subject wars properly
+	id = fix_tag_traits.3
+	title = fix_tag_traits.3.t
+	desc = fix_tag_traits.3.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = fix_tag_traits.3.a
+		#join_all_defensive_wars_of = event_target:make_antioch_join_their_wars_target
+		create_subject = {
+			subject_type = vassal
+			subject = event_target:make_antioch_join_their_wars_target
+		}
+		create_subject = {
+			subject_type = aurora_beneficiary
+			subject = event_target:make_antioch_join_their_wars_target
+		}
+	}
+}
+
 namespace = change_deity
 
 country_event = {
@@ -903,6 +935,29 @@ country_event = {  #  place buildings
 	
 	option = {
 		name = dotfset.26.a
+		if = {
+			limit = {
+				adm_tech = 17
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+					controlled_by = owner
+					NOT = { nationalism = 5 }
+					NOT = { has_any_ongoing_construction = yes }
+					NOT = { has_building = university }
+				}
+				random = {
+					chance = 10
+					#add_building = workshop
+					add_building_construction = {
+						building = university
+						speed = 0.5
+						cost = 0
+					}
+				}
+			}
+		}
 		if = {
 			limit = {
 				adm_tech = 6

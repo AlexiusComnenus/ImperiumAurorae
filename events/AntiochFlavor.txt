@@ -196,7 +196,7 @@ country_event = {
 			factor = 20
 		}
 		trigger = {
-			NOT = { is_subject_of = emperor }
+			NOT = { is_subject_of = Z17 }
 		}
 		
 		add_prestige = 25
@@ -230,7 +230,7 @@ country_event = {
 			factor = 40
 		}
 		trigger = {
-			NOT = { is_subject_of = emperor }
+			NOT = { is_subject_of = Z17 }
 			NOT = { is_subject = yes }
 		}
 		
@@ -252,10 +252,14 @@ country_event = {
 			factor = 40
 		}
 		trigger = {
+			OR = {
+				is_subject = no
+				is_subject_of = Z17
+			}
 			OR = { 
 				tag = BYZ
 				tag = Z44
-				is_subject_of = emperor
+				is_subject_of = Z17
 			}
 		}
 		
@@ -387,12 +391,19 @@ country_event = {
 		
 		ai_chance = { factor = 1 }
 		add_prestige = 10
+		emperor = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 1200
+			}
+		}
 	}
 	
 	option = {
 		name = antioch.9.b
 		ai_chance = {
-			factor = 50
+			factor = 0
 			modifier = {
 				factor = 0.1
 				alliance_with = emperor
@@ -409,10 +420,10 @@ country_event = {
 			modifier = {
 				factor = 0
 				emperor = { ai = no }
-				any_known_country = {
-					NOT = { is_emperor = yes }
-					ai = no
-				}
+				#any_known_country = {
+				#	NOT = { is_emperor = yes }
+				#	ai = no
+				#}
 			}
 		}
 		

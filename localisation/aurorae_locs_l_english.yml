@@ -138,6 +138,7 @@
  open_dusk_menu_decision_desc: "Open the Legion of Dusk Interaction Menu"
  antioch_must_unify_the_empire_first_tt: "Must complete the House United mission to declare war outside the Empire before 1494."
  antioch_can_declare_wars_tt: "We will be able to §Ydeclare war§! outside of the CHE!"
+ too_many_royal_marriages_tt: "We cannot have more than 10 Royal Marriages"
 
  cb_antioch_crusade_desc:0 "The Light must be spread."
  unlocks_celestial_crusade_tt:"Unlocks the §YCelestial Crusade§! Casus Belli against heathens and heretics that border our subjects or us."
@@ -272,6 +273,8 @@
  font_of_enlightenment_reform_desc: "We look to the Font of Enlightenment, none other than the great Prince of the Aurora Chen Yangshing, for guidance in philosophical and spiritual matters. Through His sage wisdom we will all know harmony."
  auroral_horde: "Auroral Horde"
  auroral_horde_desc: "This nomadic state started as a band of plucky Dao-Hellenic adventurers looking for gold and the opportunity to spread the Light."
+ cultivators_order: "Cultivators Order"
+ cultivators_order_desc: "This state is ruled by a Order of Cultivators, who focus on their studies towards enlightenment and immortality. While cultivators will often possess supernatural abilities or abnormally high physical fitness, their focus is not quite directed towards ruling a state."
 
  antioch_ideas_start:0 "Celestial Hellenic traditions"
  antioch_ideas_bonus:0 "Celestial Hellenic ambitions"
@@ -520,7 +523,8 @@
  ENABLES_STAKES:0 "Stake-smiths will be added to the roster of the §YAuroral Guard§!."
  reckoning_tooltip:0 "§RThere will be a reckoning...§!"
  tt_start_war_of_harmony: "§RThis will start an irreversible sequences of events leading to a global war!§!"
- borked_tooltip_tt: "Sorry! This tooltip breaks a lot. The rewards still work, though =)"
+ borked_tooltip_tt: "Sorry! This tooltip breaks a lot. The rewards still work, though =)" 
+ mechanic_enables_estate_alchemists_yes: "Enables the §YAlchemists§! Estate"
  
  estate_aurora:0 "Auroral Guard"
  estate_aurora_ownership: "Land Share"

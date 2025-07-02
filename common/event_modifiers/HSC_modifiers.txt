@@ -130,3 +130,21 @@ ia_around_the_cape = {
 	global_colonial_growth = 15
 	colonist_placement_chance = 0.20
 }
+
+last_king_in_residence = {
+	min_local_autonomy = 50
+	local_unrest = -10
+	local_missionary_strength = -1
+	local_religious_unity_contribution = -1
+	local_religious_conversion_resistance = 5
+	max_attrition = 10
+	local_hostile_attrition = 5
+	local_hostile_movement_speed = -0.5
+	local_friendly_movement_speed = -0.25
+	local_build_cost = 2
+	local_monthly_devastation = -1
+	local_governing_cost = -1
+	allowed_num_of_manufactories = -10
+	local_development_cost = 0.5
+	province_trade_power_value = 1
+}

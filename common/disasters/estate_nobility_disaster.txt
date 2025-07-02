@@ -126,7 +126,8 @@ estate_nobility_disaster = {
 	}
 	
 	modifier = {
-		global_tax_modifier = -0.20
+		army_tradition_decay = -0.015
+		global_tax_modifier = -0.50
 		global_trade_power = -0.20
 		trade_efficiency = -0.20
 	}

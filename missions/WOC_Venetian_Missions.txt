@@ -1345,6 +1345,7 @@ venice_missions_slot_3 = {
 				unlock_government_reform = {
 					government_reform = ven_promissione_ducale_reform
 				}
+				add_government_reform = ven_promissione_ducale_reform
 			}
 		}
 	}

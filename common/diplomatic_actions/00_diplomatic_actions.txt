@@ -257,6 +257,17 @@ declarewar = {
 				days = 10
 			}
 		}
+		if = {
+			limit = {
+				FROM = { overlord = { is_emperor = yes } 	is_subject_of_type = aurora_beneficiary }
+			}
+			FROM = {
+				save_global_event_target_as = make_antioch_join_their_wars_target
+			}
+			emperor = {
+				country_event = { id = fix_tag_traits.3 }
+			}
+		}
 	}
 }
 
@@ -485,6 +496,15 @@ royal_marriage = {
 			NOT = { war_with = FROM }
 		}
 	}
+	condition = {
+		tooltip = too_many_royal_marriages_tt
+		potential = {
+			num_of_royal_marriages = 10
+		}
+		allow = {
+			NOT = { num_of_royal_marriages = 10 }
+		}
+	}
 	effect = {
 		change_asha_vahishta = { value = 0.5 }
 	}
@@ -545,6 +565,7 @@ callaction = {
 	condition = {
 		tooltip = CANNOT_CALL_AGAINST_HISTORICAL_FRIENDS
 		potential = {
+			NOT = { is_subject_of = FROM }
 			FROM = { 
 				any_known_country = {
 					FROM = { historical_friend_with = PREV }
@@ -553,7 +574,10 @@ callaction = {
 		}
 		allow = { 
 			NOT = {
-				any_war_enemy_country = { FROM = { historical_friend_with = PREV } }
+				any_war_enemy_country = { 
+					FROM = { historical_friend_with = PREV }
+					is_free_or_tributary_trigger = yes
+				}
 			}
 		}
 	}

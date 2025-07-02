@@ -120,6 +120,8 @@
  bri_menowar_mod: "Great Men'o'war"
  ia_colonial_rush: "Colonial Rush"
  ia_around_the_cape: "Round the Cape"
+ last_king_in_residence: "§JLast King's Court§!"
+ last_king_in_residence_desc: "The Last King holds his court of trees and shadows in this province, protecting his corner of untouched wilderness from the world outside."
  
  #Missions
  hsc_gold_mining_title: "Establish a Mint"
@@ -223,3 +225,7 @@
  gaeldom.6.t: "Fall of the Cuman Irish Kingdom"
  gaeldom.6.d: "Ever since the legendary Cuman adventurer Yurukhan of Azov hired a band of plucky Gothic pirates from Theodoro and invaded Ireland with his sworn banners, the Kingdom of Ireland has been ruled by his descendants. Today however, the Cumans have been driven from the Emerald Isle once again and been forced back to Azov. While the Azovian dynasty of Ireland clings to the royal title, in truth they have no more influence in the de jure Kingdom."
  gaeldom.6.a: "A disaster!"
+ gaeldom.7.t: "The Last King"
+ gaeldom.7.d: "The hollow of the old Oak where the starlight never falls\n Lives a King without a Kingdom, behind moss covered walls\n Golden hair turns silver white\n Eyes like winters first frost\n He counts the years and falling leaves for all he has lost\n The last king wears a crown of bone\n Sits upon a throne of stone\n All his people gone away like morning mist at break of day\n The forest keeps his secrets well, stories that he will never tell.\n \n I heard him singing in the night, an old song sad and low\n  About a time when Magic lived a thousand years ago\n He speaks to shadows on the wall, they answer back in kind\n The only court he holds these days exists within his mind.\n \n The last king wears a crown of bone, sits upon a throne of stone\n  All his people gone away, like morning mist at break of day\n The forest keeps his secrets well, stories that he will never tell. \n \n Some say he is waiting for the dawn, when elves will walk again\n Some say he is just a madman lost, who's forgotten how to mend\n  But I have seen the light behind his eyes when autumn winds blow cold\n  There is magic there that wont give up\n A fire burning old\n The last king wears a crown of bone, sits upon a throne of stone\n All his people gone away like morning mist at break of day, but the forest keeps him company and that's enough."
+ gaeldom.7.a: "The Last King shall have his Court"
+ gaeldom.7.b: "Bah, sounds like a random madman"

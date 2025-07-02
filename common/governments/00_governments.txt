@@ -1328,6 +1328,7 @@ theocracy = {
 	reform_levels = {
 		theocratic_leadership = {
 			reforms = {
+				cultivators_order
 				true_immortal_reform
 				celestial_xizho_empire
 				mingjiao_reform

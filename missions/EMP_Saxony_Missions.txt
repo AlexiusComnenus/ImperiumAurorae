@@ -409,6 +409,7 @@ ia_sax_mission_2 = {
 		
 		
 		trigger = {
+			has_any_disaster = no
 			IF = {
 				limit = { ai = no }
 				OR = {

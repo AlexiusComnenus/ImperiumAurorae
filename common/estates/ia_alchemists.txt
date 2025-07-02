@@ -9,6 +9,7 @@ estate_alchemists = {
 			culture_group = east_asian
 			religion = taoism
 			has_harmonized_with = taoism
+			has_government_attribute = enables_estate_alchemists
 		}
 	}
 

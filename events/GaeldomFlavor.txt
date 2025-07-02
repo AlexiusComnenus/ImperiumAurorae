@@ -1,7 +1,7 @@
 ##############################
 # Gaeldom Events
 #                            
-# Written by Baguette, Coded by Alexios
+# Coded by Alexios
 ##############################
 
 namespace = gaeldom
@@ -284,5 +284,89 @@ country_event = {	# Fall of the Cuman Irish Kingdom
 		2601 = {
 			decolonize = THIS
 		}
+	}
+}
+
+country_event = {	# King without a Kingdom
+	id = gaeldom.7
+	title = gaeldom.7.t
+	desc = gaeldom.7.d
+	picture = FORESTS_eventPicture
+	
+	trigger = {
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		is_year = 1480
+		any_owned_province = {
+			OR = {
+				has_terrain = forest
+				has_terrain = woods
+			}
+			NOT = { development = 10 }
+			is_core = ROOT
+			has_owner_religion = yes
+			is_overseas = no
+		}
+	}
+	
+	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			ai = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.2
+			ai = no
+		}
+		modifier = {
+			factor = 0.1
+			is_year = 1550
+		}
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = forest
+					has_terrain = woods
+				}
+				NOT = { development = 10 }
+				is_core = ROOT
+				has_owner_religion = yes
+				is_overseas = no
+			}
+			save_event_target_as = last_king_province
+		}
+	}
+	
+	option = {
+		name = gaeldom.7.a
+		ai_chance = { factor = 100 }
+		goto = last_king_province
+		
+		event_target:last_king_province = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_permanent_province_modifier = {
+				name = last_king_in_residence
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = gaeldom.7.b
+		ai_chance = { factor = 0 }
+		
 	}
 }

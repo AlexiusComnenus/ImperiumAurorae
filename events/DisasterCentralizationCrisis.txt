@@ -1298,7 +1298,7 @@ country_event = {		#	Meritocracy?
 		
 		add_country_modifier = {
 			name = sax_rise_of_meritocracy
-			duration = 7300
+			duration = -1
 		}
 		remove_country_modifier = sax_nobles_partnership
 		
@@ -1356,7 +1356,7 @@ country_event = {		#	Meritocracy?
 		
 		add_country_modifier = {
 			name = sax_rise_of_meritocracy
-			duration = 7300
+			duration = -1
 		}
 		
 		add_estate_loyalty = {

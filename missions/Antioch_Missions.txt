@@ -907,9 +907,7 @@ antioch_missions_column_3 = {
 					NOT = { has_global_flag = antioch_puppet_victory }
 					BYZ = { NOT = { is_subject_of = ROOT } }
 				}
-				GRE = {
-					inherit = BYZ
-				}
+				BYZ = { change_tag = GRE }
 			}
 		}
 		ai_weight = {
@@ -1225,6 +1223,9 @@ antioch_missions_column_4 = {
 		
 		effect = {
 			kastamonu_area = {
+				limit = {
+					owned_by = ROOT
+				}
 				add_core = Z44
 				remove_core = Z17
 				cede_province = Z44

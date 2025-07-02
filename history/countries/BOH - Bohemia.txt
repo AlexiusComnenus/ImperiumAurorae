@@ -19,6 +19,7 @@ add_accepted_culture = czech
 	}
 	add_ruler_personality = calm_personality
 	add_ruler_personality = infertile_personality
+	add_ruler_personality = immortal_personality
 	add_ruler_modifier = { name = boh_no_heirs	duration = -1 }
 	add_ruler_modifier = { name = lifespan_protection	hidden = yes	duration = 3650 }
 }

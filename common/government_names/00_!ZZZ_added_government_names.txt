@@ -125,6 +125,54 @@ harmonic_confluence_monarchy = {
 	}
 }
 
+cultivators_order_names = {
+	rank = {
+		1 = cultivators_order_duchy
+		2 = cultivators_order_kingdom
+		3 = cultivators_order_empire
+	}
+
+	ruler_male = {
+		1 = cultivators_order_ruler_duke
+		2 = cultivators_order_ruler_king
+		3 = cultivators_order_ruler_emperor
+	}
+
+	ruler_female = {
+		1 = cultivators_order_ruler_duke
+		2 = cultivators_order_ruler_king
+		3 = cultivators_order_ruler_emperor
+	}
+
+	trigger = {
+		has_reform = cultivators_order
+	}
+}
+
+mingjiao_reform_names = {
+	rank = {
+		1 = mingjiao_reform_name
+		2 = mingjiao_reform_name
+		3 = mingjiao_reform_name
+	}
+
+	ruler_male = {
+		1 = mingjiao_reform_ruler
+		2 = mingjiao_reform_ruler
+		3 = mingjiao_reform_ruler
+	}
+
+	ruler_female = {
+		1 = mingjiao_reform_ruler
+		2 = mingjiao_reform_ruler
+		3 = mingjiao_reform_ruler
+	}
+
+	trigger = {
+		has_reform = mingjiao_reform
+	}
+}
+
 byzantine_warlord_monarchy = {
 	rank = {
 		1 = pretender_theme

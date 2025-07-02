@@ -34,6 +34,7 @@ on_war_won = {
 		ia_flavor_hes.4
 		ia_flavor_nov.4
 		ia_flavor_eng.13
+		saxon_province.1
 	}
 }
 
@@ -64,7 +65,6 @@ on_five_year_pulse_2 = {
 
 on_yearly_pulse_2 = {
 	events = {
-		saxon_province.1
 		besseres_hrr_imperial_diet_events.1000
 		dutch_domination.60
 		dotfset.26

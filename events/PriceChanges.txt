@@ -67,7 +67,7 @@ country_event = {
 	major = yes
 
 	trigger = {
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		OR = {
 			1371 = {	# Canton
 				trade_share = {
@@ -296,10 +296,10 @@ country_event = {
 
 	trigger = {
 		is_great_power = yes
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		any_owned_province = {
 			trade_goods = wool
-			continent = europe
+			OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion }
 		} 
 		OR = {
 			504 = { #Indus
@@ -438,7 +438,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			capital_scope = { continent = europe }
+			capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 			AND = {
 				any_owned_province = { continent = europe }
 				dip_tech = 20
@@ -594,6 +594,13 @@ country_event = {
 			trade_goods = cloves
 			key = SPICE_TRADE
 			value = 0.285714
+			duration = -1
+		}
+		
+		change_price = {
+			trade_goods = vanilla
+			key = SPICE_TRADE
+			value = 0.3
 			duration = -1
 		}
 		
@@ -1008,7 +1015,7 @@ country_event = {
 	major = yes
 
 	trigger = {
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		dip_tech = 22
 		OR = {
 			504 = { #Indus
@@ -1102,7 +1109,7 @@ country_event = {
 
 	trigger = {
 		OR = {
-			capital_scope = { continent = europe }
+			capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 			is_colonial_nation = yes
 		}
 		OR = {
@@ -1281,13 +1288,27 @@ country_event = {
 
 	trigger = {
 		is_year = 1600
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		religion_group = christian
-		spices = 3
-		any_known_country = {
-			capital_scope = { continent = europe }
-			religion_group = christian
+		OR = {
 			spices = 3
+			cloves = 3
+			vanilla = 3
+			nutmeg = 3
+			cinnamon = 3
+			saffron = 3
+		}
+		any_known_country = {
+			capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
+			religion_group = christian
+			OR = {
+				spices = 3
+				cloves = 3
+				vanilla = 3
+				nutmeg = 3
+				cinnamon = 3
+				saffron = 3
+			}
 		}
 		NOT = { has_global_flag = decline_of_spices_happened }
 	}
@@ -1312,6 +1333,13 @@ country_event = {
 			trade_goods = cloves
 			key = DECLINE_OF_SPICE_TRADE
 			value = -0.285714
+			duration = -1
+		}
+		
+		change_price = {
+			trade_goods = vanilla
+			key = DECLINE_OF_SPICE_TRADE
+			value = -0.25
 			duration = -1
 		}
 		
@@ -1353,9 +1381,9 @@ country_event = {
 
 	trigger = {
 		OR = {
-			capital_scope = { continent = europe }
+			capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 			AND = {
-				any_owned_province = { continent = europe }
+				any_owned_province = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 				dip_tech = 25
 			}
 		}
@@ -1407,12 +1435,12 @@ country_event = {
 	trigger = {
 		OR = {
 			AND = {
-				capital_scope = { continent = europe }
+				capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 				dip_tech = 15
-				OR = {
-					current_age = age_of_absolutism #Not before this
-					current_age = age_of_revolutions
-				}
+				#OR = {
+				#	current_age = age_of_absolutism #Not before this
+				#	current_age = age_of_revolutions
+				#}
 				OR = {
 					504 = { #Indus
 						trade_share = {
@@ -1493,11 +1521,11 @@ country_event = {
 	major = yes
 
 	trigger = {
-		capital_scope = { continent = europe }
-		owns = 2047 #Tirhut
-		owns = 2063 #Central Doabd
-		bengal_region = { type = all owned_by = ROOT }
-		bihar_area = { type = all owned_by = ROOT }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
+		owns_or_subject_of = 2047 #Tirhut
+		owns_or_subject_of = 2063 #Central Doabd
+		#bengal_region = { type = all owned_by = ROOT }
+		#bihar_area = { type = all owned_by = ROOT }
 	}
 	mean_time_to_happen = {
 		months = 60
@@ -1551,13 +1579,13 @@ country_event = {
 	major = yes
 
 	trigger = {
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		dip_tech = 12
-		OR = {
-			current_age = age_of_reformation #Not before this
-			current_age = age_of_absolutism
-			current_age = age_of_revolutions
-		}
+		#OR = {
+		#	current_age = age_of_reformation #Not before this
+		#	current_age = age_of_absolutism
+		#	current_age = age_of_revolutions
+		#}
 		OR = {
 			524 = { #Deccan
 				trade_share = {
@@ -2161,8 +2189,8 @@ country_event = {
 		OR = {
 			colony = 1 #1 Colonial Country
 			AND = {
-				capital_scope = { continent = europe }
-				any_owned_province = { NOT = { continent = europe } }
+				capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
+				any_owned_province = { NOT = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } } }
 			}
 			AND = {
 				capital_scope = { continent = africa }

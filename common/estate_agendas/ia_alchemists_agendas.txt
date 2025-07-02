@@ -13,6 +13,7 @@ estate_alchemists_develop_x = {
 				trade_goods = auroral_silk
 				trade_goods = mercury
 			}
+			is_state_core = root
 		}
 	}
 	pre_effect = {
@@ -23,9 +24,6 @@ estate_alchemists_develop_x = {
 					trade_goods = mercury
 				}
 				is_state_core = root
-				area_for_scope_province = {
-					is_capital_of = root
-				}
 			}
 			save_event_target_as = agenda_province
 		}
