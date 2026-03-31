@@ -3200,7 +3200,7 @@ woc_hun_fifth_branch = {
 					}
 					event_target:saxon_king = { tag = SAX }
 				}
-				military_strength = {
+				army_strength = {
 					who = event_target:saxon_king
 					value = 2.0
 				}
@@ -3212,7 +3212,7 @@ woc_hun_fifth_branch = {
 							who = GER
 							max_years_since = 20
 						}
-						military_strength = {
+						army_strength = {
 							who = GER
 							value = 2.0
 						}

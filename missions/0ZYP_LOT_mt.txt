@@ -224,7 +224,7 @@ zyp_lot_3 = {
 					NOT = { exists = GER }
 					GER = { has_country_flag = lost_to_carolingians_flag }
 					AND = {
-						military_strength = {
+						army_strength = {
 							who = GER
 							value = 3
 						}

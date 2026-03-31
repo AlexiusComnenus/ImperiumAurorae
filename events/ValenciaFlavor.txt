@@ -765,6 +765,7 @@ country_event = {  # Visigoth uprisings
 		tag = VAL
 		any_core_province = { NOT = { owned_by = ROOT } }
 		NOT = { is_year = 1490 }
+		NOT = { has_country_modifier = recent_visigoth_uprisings_modifier }
 	}
 	
 	mean_time_to_happen = {
@@ -774,6 +775,11 @@ country_event = {  # Visigoth uprisings
 	option = {
 		name = ia_flavor_val.10.a
 		ai_chance = { factor = 75 }
+		add_country_modifier = {
+			name = recent_visigoth_uprisings_modifier
+			duration = 1825
+			hidden = yes
+		}
 		
 		every_core_province = {
 			limit = { 

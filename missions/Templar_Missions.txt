@@ -80,32 +80,29 @@ templar_missions_column_1 = {
 		position = 3
 		
 		trigger = {
-			OR = {
-				reverse_has_opinion = {
-					who = VAL
-					value = 200
-				}
-				reverse_has_opinion = {
-					who = SPA
-					value = 200
-				}
+			reverse_has_opinion = {
+				who = VAL
+				value = 200
 			}
 			any_ally = {
-				OR = {
-					tag = VAL
-					was_tag = VAL
-				}
+				tag = VAL
 				trust = { 
 					who = TEM 
 					value = 90 
 				}
-				NOT = {
-					military_strength = {
-						who = ROOT
-						value = 0.5
-					}
-				}
+				#NOT = {
+				#	army_strength = {
+				#		who = ROOT
+				#		value = 0.5
+				#	}
+				#}
+				is_at_war = no
 			}
+			army_strength = {
+				who = VAL
+				value = 2.0
+			}
+			is_at_war = no
 		}
 		
 		effect = {

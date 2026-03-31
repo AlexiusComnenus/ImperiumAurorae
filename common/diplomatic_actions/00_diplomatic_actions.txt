@@ -208,7 +208,14 @@ declarewar = {
 			FROM = { is_subject = yes }
 		}
 		allow = {
-			FROM = { overlord = { NOT = { truce_with = ROOT } } }
+			FROM = { 
+				overlord = { 
+					OR = {
+						NOT = { truce_with = ROOT } 
+						overlord_of = ROOT
+					}
+				} 
+			}
 		}
 	}
 	condition = {

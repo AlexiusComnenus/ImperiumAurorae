@@ -2194,7 +2194,7 @@ country_event = {  # Crusader State wants independence
 			}
 			OR = {
 				total_development = 400
-				military_strength = {
+				army_strength = {
 					who = ROOT
 					value = 0.4
 				}
@@ -2214,7 +2214,7 @@ country_event = {  # Crusader State wants independence
 				}
 				OR = {
 					total_development = 400
-					military_strength = {
+					army_strength = {
 						who = ROOT
 						value = 0.4
 					}

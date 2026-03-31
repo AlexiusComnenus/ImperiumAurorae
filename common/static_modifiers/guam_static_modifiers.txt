@@ -556,7 +556,7 @@ difficulty_normal_ai = {
 	eunuchs_influence_modifier = -0.2
 	transport_cost = -1
 	naval_maintenance_modifier = -0.25
-	global_missionary_strength = 0.01	
+	global_missionary_strength = 0.01
 }
 
 difficulty_hard_ai = {

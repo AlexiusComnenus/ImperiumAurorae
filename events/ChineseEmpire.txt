@@ -364,7 +364,7 @@ country_event = {
 		FRM = {
 			is_subject = no
 		}
-		military_strength = {
+		army_strength = {
 			who = FRM
 			value = 2.0
 		}
@@ -468,7 +468,7 @@ country_event = {
 		LFA = {
 			is_subject = no
 		}
-		military_strength = {
+		army_strength = {
 			who = LFA
 			value = 2.0
 		}

@@ -515,7 +515,7 @@ parliamentary_reform = {
 		global_unrest = -1
 		max_absolutism = -15
 		administrative_efficiency = -0.025
-		global_autonomy = 0.03
+		global_autonomy = 0.025
 		advisor_cost = -0.1
 	}
 	potential = {

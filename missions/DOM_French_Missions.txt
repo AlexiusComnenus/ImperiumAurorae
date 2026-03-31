@@ -277,7 +277,7 @@ french_missions_1 = {
 				}
 				OR = { 
 					SAX = { is_rival = ROOT } 
-					military_strength = {
+					army_strength = {
 						who = SAX
 						value = 2.0
 					}
