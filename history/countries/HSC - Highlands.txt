@@ -5,6 +5,7 @@ technology_group = western
 religion = druidic_pagan
 primary_culture = pictish
 capital = 251
+historical_friend = KOI
 1444.11.11= {
 	monarch = {
 		name = "Aveline"
@@ -19,4 +20,5 @@ capital = 251
 	add_ruler_personality = bold_fighter_personality
 	add_ruler_personality = conqueror_personality
 	add_ruler_personality = powerful_druid_personality
+	add_prestige = 57
 }

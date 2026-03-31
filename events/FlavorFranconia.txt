@@ -54,6 +54,16 @@ country_event = {
 	trigger = {
 		#tag = FKN
 	}
+	immediate = {
+		hidden_effect = {
+			79 = {
+				add_province_modifier = {
+					name = fkn_grape_untamed
+					duration = 1095
+				}
+			}
+		}
+	}
 	
 	option = {
 		name = ia_flavor_fkn.3.a
@@ -66,11 +76,12 @@ country_event = {
 		}
 		
 		add_prestige = -20
-
-		79 = {
-			add_province_modifier = {
-				name = fkn_grape_untamed
-				duration = -1
+		tooltip = {
+			79 = {
+				add_province_modifier = {
+					name = fkn_grape_untamed
+					duration = 1095
+				}
 			}
 		}
 	}
@@ -90,18 +101,24 @@ country_event = {
 	
 	option = {
 		name = ia_flavor_fkn.4.a
-		trigger = { is_subject = yes }
+		trigger = { is_subject = yes 	is_subject_of_type = saxon_daimyo }
 		overlord = {
 			create_subject = {
 				subject_type = german_march
 				subject = ROOT
 			}
 		}
+		#add_manpower = 10
+		#add_ruler_personality = conqueror_personality
+		add_ruler_modifier = { 
+			name = fkn_united_reward
+			duration = -1
+		}
 	}
 	
 	option = {
 		name = ia_flavor_fkn.4.b
-		trigger = { is_subject = no }
+		trigger = { NOT = { is_subject_of_type = saxon_daimyo } }
 		
 		add_manpower = 10
 		add_ruler_personality = conqueror_personality
@@ -123,14 +140,46 @@ country_event = {
 	trigger = {
 		always = yes
 	}
-	
-	option = {
-		name = ia_flavor_fkn.5.a
+	immediate = {
 		random_owned_province = {
 			limit = {
 				has_state_edict = fkn_wine_state_edict
 				NOT = { trade_goods = wine }
 			}
+			save_event_target_as = wine_province_1
+			set_province_flag = wine_province_1_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_state_edict = fkn_wine_state_edict
+				NOT = { trade_goods = wine }
+				NOT = { has_province_flag = wine_province_1_flag }
+			}
+			save_event_target_as = wine_province_2
+			set_province_flag = wine_province_2_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_state_edict = fkn_wine_state_edict
+				NOT = { trade_goods = wine }
+				NOT = { has_province_flag = wine_province_1_flag }
+				NOT = { has_province_flag = wine_province_2_flag }
+			}
+			save_event_target_as = wine_province_3
+		}
+		hidden_effect = {
+			event_target:wine_province_1 = {
+				clr_province_flag = lumber_province_1_flag
+			}
+			event_target:wine_province_2 = {
+				clr_province_flag = lumber_province_2_flag
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.5.a
+		event_target:wine_province_1 = {
 			change_trade_goods = wine
 			hidden_effect = {
 				change_variable = {
@@ -139,15 +188,14 @@ country_event = {
 				}
 			}
 		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_treasury = -50
 	}
 	
 	option = {
 		name = ia_flavor_fkn.5.b
-		random_owned_province = {
-			limit = {
-				has_state_edict = fkn_enable_wine_creation
-				NOT = { trade_goods = wine }
-			}
+		event_target:wine_province_2 = {
 			change_trade_goods = wine
 			hidden_effect = {
 				change_variable = {
@@ -156,15 +204,14 @@ country_event = {
 				}
 			}
 		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_treasury = -50
 	}
 	
 	option = {
 		name = ia_flavor_fkn.5.c
-		random_owned_province = {
-			limit = {
-				has_state_edict = fkn_enable_wine_creation
-				NOT = { trade_goods = wine }
-			}
+		event_target:wine_province_3 = {
 			change_trade_goods = wine
 			hidden_effect = {
 				change_variable = {
@@ -173,6 +220,9 @@ country_event = {
 				}
 			}
 		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_treasury = -50
 	}
 	
 	option = {
@@ -275,13 +325,148 @@ country_event = {
 		name = ia_flavor_fkn.8.a
 		
 		2955 = {
+			change_trade_goods = beer
 			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
 		}
 		65 = {
+			change_trade_goods = beer
 			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
 		}
 		76 = {
+			change_trade_goods = beer
 			add_province_triggered_modifier = fkn_paulaner_beer_province_mod
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.9
+	title = ia_flavor_fkn.9.t
+	desc = ia_flavor_fkn.9.d
+	picture = FARMING_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#tag = FKN
+	}
+	
+	immediate = {
+		hidden_effect = {
+			4717 = {
+				add_province_modifier = {
+					name = fkn_all_barrels_filled
+					duration = 5840
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_fkn.9.a
+		tooltip = {
+			4717 = {
+				add_province_modifier = {
+					name = fkn_all_barrels_filled
+					duration = 5840
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_fkn.10
+	title = ia_flavor_fkn.10.t
+	desc = ia_flavor_fkn.10.d
+	picture = SCIENTISTS_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.10.a
+		
+		add_prestige_or_monarch_power = { amount = 100 }
+	}
+}
+
+country_event = {	# white gold
+	id = ia_flavor_fkn.11
+	title = ia_flavor_fkn.11.t
+	desc = ia_flavor_fkn.11.d
+	picture = FEAST_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#tag = FKN
+	}
+	
+	option = {
+		name = ia_flavor_fkn.11.a
+		
+		
+		add_power_projection = { 
+			type = 25_permanent_power_projection
+			amount = 25
+		}
+		79 = {
+			center_of_trade = 3
+		}
+		set_country_flag = fkn_white_gold_flag
+	}
+}
+
+country_event = {		# Vintner Heir Selection
+	id = ia_flavor_fkn.12
+	title = ia_flavor_fkn.12.t
+	desc = ia_flavor_fkn.12.d
+	picture = FEAST_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_heir = no
+		has_reform = fkn_vintner_monarchy
+	}
+	
+	option = {	# Studious
+		name = ia_flavor_fkn.12.a
+		
+		define_heir = {
+			dynasty = "von Hohenzollern"
+			change_adm = 2
+			max_random_dip = 5
+			max_random_mil = 5
+			age = 21
+			claim = 75
+		}
+	}
+	option = {	# Partier
+		name = ia_flavor_fkn.12.b
+		
+		define_heir = {
+			dynasty = "von Hohenzollern"
+			change_dip = 2
+			max_random_adm = 5
+			max_random_mil = 5
+			age = 21
+			claim = 50
+		}
+	}
+	option = {	# Worker
+		name = ia_flavor_fkn.12.c
+		
+		define_heir = {
+			change_mil = 3
+			max_random_dip = 5
+			max_random_adm = 5
+			age = 21
+			claim = 25
 		}
 	}
 }

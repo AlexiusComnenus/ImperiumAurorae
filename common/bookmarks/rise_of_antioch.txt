@@ -11,6 +11,7 @@ bookmark =
 	country = Z44
 	country = BYZ
 	country = Z42
+	country = KRM
 	country = YZD
 	country = Z47
 	country = NOV

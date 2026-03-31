@@ -3,14 +3,14 @@ graphical_culture = westerngfx
 color = { 194 140 86 }
 revolutionary_colors = { 9 0 5 }
 historical_idea_groups = {
-	defensive_ideas
-	trade_ideas
-	religious_ideas
-	economic_ideas
+	expansion_ideas
 	plutocracy_ideas
-	diplomatic_ideas
+	infrastructure_ideas
+	trade_ideas
+	defensive_ideas
+	economic_ideas
 	offensive_ideas
-	spy_ideas
+	quantity_ideas
 }
 random_nation_chance = 0
 historical_units = {

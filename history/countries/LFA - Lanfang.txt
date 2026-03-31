@@ -1,9 +1,9 @@
 government = republic
-add_government_reform = oligarchy_reform
+add_government_reform = kongsi_federation
 government_rank = 1
 technology_group = chinese
 religion = confucianism
-add_harmonized_religion = taoism
+add_harmonized_religion = hinduism
 primary_culture = hakka
 capital = 640
 1777.1.1= {

@@ -1,0 +1,125 @@
+ia_yor_mission_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = YOR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yor_establish_pyre_templars = {
+		icon = kingdom_of_cyprus
+		required_missions = {
+			
+		}
+		position = 1
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = yor_has_heard_the_call_tt
+				has_country_flag = can_establish_pyre_templars_flag
+			}
+			manpower = 50
+		}
+		
+		effect = {
+			add_manpower = -50
+			country_event = { id = mhadi.9 }
+		}
+	}
+	
+	yor_begin_ritual = {
+		icon = kingdom_of_cyprus
+		required_missions = {
+			yor_invite_the_apostle
+		}
+		position = 3
+		
+		trigger = {
+			has_country_modifier = twelfth_bell_toll_modifier
+			has_government_power = {
+				mechanic_type = ia_apocalypse_mechanic
+				power_type = bell_progress
+				value = 75
+			}
+			num_of_owned_provinces_with = {
+				value = 300
+				is_core = ROOT
+			}
+			is_at_war = no
+			hre_leagues_enabled = no
+			custom_trigger_tooltip = {
+				tooltip = antioch_survive_ivycurse_tt
+				OR = {
+					had_country_flag = {
+						flag = ivycurse_cured_selfish
+						days = 7300
+					}
+					had_global_flag	= {
+						flag = ivycurse_cured
+						days = 730
+					}
+					#has_country_flag = ivycurse_cured_selfish
+					#has_global_flag = ivycurse_cured
+					has_global_flag = ivycurse_disabled
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = mhadi.14 }
+		}
+	}
+}
+
+ia_yor_mission_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = YOR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	yor_invite_the_apostle = {
+		icon = kingdom_of_cyprus
+		required_missions = {
+			yor_establish_pyre_templars
+		}
+		position = 2
+		
+		trigger = {
+			has_country_modifier = eighth_bell_toll_modifier
+			has_government_power = {
+				mechanic_type = ia_apocalypse_mechanic
+				power_type = bell_progress
+				value = 50
+			}
+		}
+		
+		effect = {
+			country_event = { id = mhadi.11 }
+		}
+	}
+	
+	yor_the_end = {
+		icon = kingdom_of_cyprus
+		required_missions = {
+			yor_begin_ritual
+		}
+		position = 4
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = yor_has_completed_the_ritual_tt
+				has_country_flag = yor_completed_the_ritual_flag
+			}
+		}
+		
+		effect = {
+			country_event = { id = mhadi.17 }
+		}
+	}
+}

@@ -4480,6 +4480,7 @@ iranian	= {
 			Shirin Soraya Touran Tourandokht Yasaman Yekta Zarrindokht Zeynab Zohreh Atiya
 		}
 	}
+	province = { local_has_qizilbash = yes }
 }
 
 altaic = {

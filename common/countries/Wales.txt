@@ -59,7 +59,6 @@ monarch_names = {
 	"Idwal #1" = 10
 	"Idwal Foel #1" = 10
 	"Ifwr #1" = 10
-	"Llywelyn #2" = 10
 	"Lowry #0" = -1
 	"Madog #0" = 0
 	"Maelcwn #0" = 0

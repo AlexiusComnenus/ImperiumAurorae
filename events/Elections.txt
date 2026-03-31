@@ -241,7 +241,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTB700"	# An administrator type
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 		if = {
 			limit = { republic_with_female_rulers_trigger = yes }
 			random_list = {
@@ -303,7 +303,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTC700"	# A diplomat
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 		if = {
 			limit = { republic_with_female_rulers_trigger = yes }
 			random_list = {
@@ -365,7 +365,7 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTD700"	# A military man
-		ai_chance = { factor = 20 }
+		ai_chance = { factor = 10 }
 		if = {
 			limit = { republic_with_female_rulers_trigger = yes }
 			random_list = {
@@ -431,7 +431,7 @@ country_event = {
 		trigger = {
 			has_government_attribute = enables_nepotism
 		}
-		ai_chance = { factor = 10 }
+		ai_chance = { factor = 1 }
 		if = {
 			limit = {
 				has_country_flag = strengthened_signoria_flag

@@ -9,6 +9,7 @@ base_tax = 5
 base_production = 1
 base_manpower = 4
 add_core = Z14
+add_core = GUJ
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

@@ -1,0 +1,34 @@
+﻿l_german:
+ # GUIs:
+ rce_alert_button_religion_mechanic_tt: "§YReligionsmechanik§!"
+ rce_alert_button_religion_mechanic_tt_delayed: "[This.GetRCEAlertTextReligionMechanic] \n\nMöglicherwise wollt Ihr daher den §YReligion§!-Tab öffnen. Diesen Hinweis anzuklicken, wird Euch nicht dorthin bringen. \n--------------\n§GKlicken, um auszuwählen, ob dieser Hinweis ausgeblendet werden soll.§!"
+
+ rce_alerts_popup_title: "Hinweis '§YReligionsmechanik§!' ausblenden?"
+ rce_alerts_popup_desc: "Wollt Ihr den Hinweis '§YReligionsmechanik§!' ausblenden? \nDieser Hinweis zeigt Euch an, dass Ihr, wahrscheinlich, eine Religionsmechanik nutzen könnt. \n\nEin ausgeblendeter Hinweis kann mithilfe einer Entscheidung wieder eingeblendet werden."
+
+ # Customizable Localization:
+ string_rce_alert_text_religion_mechanic_sylvan_affinity: "Ihr habt eine hohe §YWaldaffinität§! ([This.RceGetReligionMechanicSylvanAffinityValue]). Möglicherweise wollt Ihr diese für Foki oder das Weihen eines Hains nutzen."
+ string_rce_alert_text_religion_mechanic_four_tenets_system: "Ihr habt genug §YHerrscher-Studienfortschritt§!, um eine §YLehre§! auszuwählen. Möglicherweise wollt Ihr das jetzt tun."
+ string_rce_alert_text_religion_mechanic_manichaeism_purity_liturical_focus: "Ihr habt noch keinen §YLiturgischen Fokus§! für Euren derzeitigen Herrscher ausgewählt. Möglicherweise wollt Ihr diesen jetzt auswählen."
+ string_rce_alert_text_religion_mechanic_manichaeism_purity: "Eure derzeitige Menge an §YReinheit§! ([This.RceGetReligionMechanicManichaeismPurityValue]) erlaubt es Euch, mehr §YNebenfoki§! auszuwählen als momentan ausgewählt sind. Möglicherweise wollt Ihr nun mehr Nebenfoki auswählen."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy_can_select_center_of_reformation_and_holy_site_interaction: "Ihr seid der momentane Kontrolleur des Patriarchats und es ist kein §YKonvertierungszentrum§! ausgewählt. Möglicherweise wollte Ihr dies jetzt tun. You may be able to do that now. \n\nIhr habt genug §YPatriarchalen Einfluss§! ([This.RceGetReligionMechanicNestorianPatriarchyValue]), um Euch eine Interaktion mit einer heiligen Stätte leisten zu können. Möglicherweise wollt Ihr nachschauen, ob Ihr auch die anderen Bedingungen erfüllt und es möglich ist, eine Interaktion mit einer heiligen Stätte durchzuführen."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy_can_select_center_of_reformation: "Ihr seid der momentane Kontrolleur des Patriarchats und es ist kein §YZentrum der Konvertierung§! ausgewählt. Möglicherweise wollte Ihr dies jetzt tun."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy: "Ihr habt genug §YPatriarchalen Einfluss§! ([This.RceGetReligionMechanicNestorianPatriarchyValue]), um Euch eine Interaktion mit einer heiligen Stätte leisten zu können. Möglicherweise wollt Ihr nachschauen, ob Ihr auch die anderen Bedingungen erfüllt und es möglich ist, eine Interaktion mit einer heiligen Stätte durchzuführen."
+ string_rce_alert_text_religion_mechanic_sukha_can_sponsor_festival: "Ihr könnt ein Fest fördern und so einen Bonus erhalten und Euer jährliches Sukha-Wachstum erhöhen. Möglicherweise wollte Ihr dies jetzt tun."
+
+ # Decisions:
+ rce_religion_enable_alerts_decision_title: "Einstellungen zu ausgeblendeten Hinweisen (RCE)"
+ rce_religion_enable_alerts_decision_desc: "Mithilfe dieser Entscheidung könnt Ihr ausgeblendete Hinweise der Mod §YReligions & Cultures Expanded§! wieder einblenden."
+
+ # Events:
+ rce_alerts_events.EVTNAME100: "Ausgeblendete Hinweise"
+ rce_alerts_events.EVTDESC100: "Wählt hier aus, welchen Hinweis Ihr wieder einblenden möchtet. Der Hinweis wird danach wieder erscheinen, wenn seine Bedingungen erfüllt sind."
+ rce_alerts_events100.EVTOPT0: "Abbrechen."
+ rce_alerts_events100.EVTOPT1: "Den Hinweis '§YReligionsmechanik§!' wieder einblenden."
+
+ # Tooltips:
+ rce_alerts_events.100.tt.0: "Keine ausgeblendeten Hinweise werden wieder eingeblendet."
+ rce_alerts_events.100.tt.1: "Der Hinweis '§YReligionsmechanik§!' wird wieder erscheinen, sobald seine Bedingungen erfüllt sind."
+
+ rce_alerts_events.1.tt.1: "Der Hinweis '§YReligionsmechanik§!' wird versteckt. Ihr könnt ihn mithilfe einer §YEntscheidung§! wieder einblenden."
+ rce_alerts_events.1.tt.2: "Der Hinweis '§YReligionsmechanik§!' wird sichtbar bleiben, solange seine Bedingungen erfüllt sind."

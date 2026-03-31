@@ -291,6 +291,10 @@ DOM_Qing_Related_Missions_1 = {
 			tag = EJZ
 			tag = NHX
 			tag = MHX
+			AND = {
+				tag = GJN
+				has_country_flag = gjn_enable_manchu_missions_flag
+			}
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -428,6 +432,7 @@ chinese_kingdoms_1 = {
 	potential = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	
 	solidify_our_borders = {
@@ -478,6 +483,7 @@ chinese_kingdoms_1 = {
 			if = {	
 				limit = { 
 					capital_scope = { region = xinan_region }
+					ai = no
 				}
 				667 = {
 					owned_by = ROOT 
@@ -494,6 +500,7 @@ chinese_kingdoms_1 = {
 			else_if = {
 				limit = { 
 					capital_scope = { region = south_china_region }
+					ai = no
 				}
 				OR = {
 					667 = {
@@ -520,7 +527,11 @@ chinese_kingdoms_1 = {
 					}
 				}
 			}
-			else = {
+			else_if = {
+				limit = { 
+					capital_scope = { region = north_china_region }
+					ai = no
+				}
 				1816 = {
 					owned_by = ROOT 
 					if = { 
@@ -530,6 +541,18 @@ chinese_kingdoms_1 = {
 					OR = { 
 						num_of_times_improved = 5 
 						is_capital_of = ROOT 
+					}
+				}
+			}
+			else = {
+				capital_scope = {
+					if = { 
+						limit = { has_dlc = "Mandate of Heaven" } 
+						NOT = { devastation = 1 } 
+					}
+					OR = {
+						num_of_times_improved = 5
+						development = 25
 					}
 				}
 			}
@@ -624,6 +647,7 @@ ming_missions_1_b = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 
 
@@ -861,7 +885,7 @@ DOM_Qing_Missions_1_b_formable = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -1313,6 +1337,10 @@ DOM_Qing_Missions_2 = {
 			tag = EJZ
 			tag = NHX
 			tag = MHX
+			AND = {
+				tag = GJN
+				has_country_flag = gjn_enable_manchu_missions_flag
+			}
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -1553,7 +1581,8 @@ DOM_Qing_Missions_2 = {
 		effect = { 
 			if = {
 				limit = { 
-					NOT = { tag = QNG } 
+					NOT = { tag = QNG }
+					NOT = { tag = GJN }
 				}
 				override_country_name = LJN 
 				set_country_flag = is_LJN_flag
@@ -1610,6 +1639,7 @@ chinese_kingdoms_2 = {
 	potential = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	
 	conquer_xinan = {
@@ -1779,6 +1809,7 @@ ming_missions_2_b = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 
 	
@@ -2170,7 +2201,7 @@ DOM_Qing_Missions_2_b = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -2380,6 +2411,7 @@ chinese_kingdoms_3 = {
 	potential = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	
 	chi_independence_ia = {
@@ -3309,6 +3341,10 @@ DOM_Qing_Missions_3 = {
 			tag = EJZ
 			tag = NHX
 			tag = MHX
+			AND = {
+				tag = GJN
+				has_country_flag = gjn_enable_manchu_missions_flag
+			}
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -3560,7 +3596,7 @@ DOM_Qing_Missions_3 = {
 		effect = { 
 			if = { 
 				limit = { 
-					NOT = { tag = QNG } 
+					NOT = {	OR = { tag = QNG 	tag = GJN } } 
 				}
 				add_country_modifier = { 
 					name = mch_first_manchu_alphabet_modifier
@@ -3688,6 +3724,7 @@ ming_missions_3_b = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 
 	
@@ -3992,7 +4029,7 @@ DOM_Qing_Missions_3_b = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
@@ -4170,6 +4207,7 @@ DOM_Qing_Missions_3_b = {
 							dip = 3
 							mil = 4
 						}
+						hidden_effect = { ia_save_historical_relations_effect = yes }
 						change_tag = CZH
 						on_change_tag_effect = yes
 					}
@@ -4299,6 +4337,7 @@ chinese_kingdoms_4 = {
 	potential = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	
 	conquer_south_china = {
@@ -4850,6 +4889,10 @@ DOM_Qing_Missions_4 = {
 			tag = EJZ
 			tag = NHX
 			tag = MHX
+			AND = {
+				tag = GJN
+				has_country_flag = gjn_enable_manchu_missions_flag
+			}
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -4939,6 +4982,7 @@ ming_missions_4_b = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 	
 	
@@ -5250,6 +5294,7 @@ ming_missions_4_moh = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 
 
@@ -5284,7 +5329,7 @@ DOM_Qing_Missions_4_b = {
 	ai = yes
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Domination"
 	}
@@ -5295,24 +5340,18 @@ DOM_Qing_Missions_4_b = {
 		required_missions = {  } 
 		position = 10
 		trigger = {
-			if = {
-				limit = { is_emperor_of_china = yes } 
-				imperial_mandate = 75 
-				empire_of_china_num_reforms_passed = 1
-				meritocracy = 80 
-			}
-			else = { 
-				legitimacy_equivalent = 90 
-				has_adm_advisor_3 = yes 
-				has_dip_advisor_3 = yes 
-				has_mil_advisor_3 = yes 
-			}
+			is_emperor_of_china = yes
+			imperial_mandate = 75 
+			empire_of_china_num_reforms_passed = 1
+			meritocracy = 80 
+		
+			has_adm_advisor_3 = yes 
+			has_dip_advisor_3 = yes 
+			has_mil_advisor_3 = yes 
 			stability = 3 
-			OR = { 
-				monthly_adm = 10 
-				monthly_dip = 10 
-				monthly_mil = 10 
-			}
+			monthly_adm = 10 
+			monthly_dip = 10 
+			monthly_mil = 10 
 		}
 		
 		effect = {
@@ -5403,6 +5442,7 @@ chinese_kingdoms_5 = {
 	potential = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	
 	settle_internal_affairs = {
@@ -5413,30 +5453,77 @@ chinese_kingdoms_5 = {
 		trigger = {
 			if = {
 				limit = { has_estate = estate_burghers }
-				estate_loyalty = {
-					estate = estate_burghers 
-					loyalty = 55
+				OR = {
+					estate_loyalty = {
+						estate = estate_burghers 
+						loyalty = 55
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_burghers  
+							influence = 10 
+						}
+					}
 				}
 			}
 			if = {
 				limit = { has_estate = estate_nobles }
-				estate_loyalty = {
-					estate = estate_nobles 
-					loyalty = 55 
+				OR = {
+					estate_loyalty = {
+						estate = estate_nobles 
+						loyalty = 55
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_nobles  
+							influence = 10 
+						}
+					}
 				}
 			}
 			if = {
 				limit = { has_estate = estate_church }
-				estate_loyalty = {
-					estate = estate_church 
-					loyalty = 55 
+				OR = {
+					estate_loyalty = {
+						estate = estate_church 
+						loyalty = 55
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_church  
+							influence = 10 
+						}
+					}
 				}
 			}
 			if = {
 				limit = { has_estate = estate_eunuchs }
-				estate_loyalty = {
-					estate = estate_eunuchs 
-					loyalty = 55 
+				OR = {
+					estate_loyalty = {
+						estate = estate_eunuchs 
+						loyalty = 55
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_eunuchs  
+							influence = 10 
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_estate = estate_alchemists }
+				OR = {
+					estate_loyalty = {
+						estate = estate_alchemists 
+						loyalty = 55
+					}
+					NOT = {
+						estate_influence = {
+							estate = estate_alchemists  
+							influence = 10 
+						}
+					}
 				}
 			}
 			NOT = { num_of_loans = 1 } 
@@ -5965,6 +6052,10 @@ DOM_Qing_Missions_5 = {
 			tag = EJZ
 			tag = NHX
 			tag = MHX
+			AND = {
+				tag = GJN
+				has_country_flag = gjn_enable_manchu_missions_flag
+			}
 		}
 		NOT = { map_setup = map_setup_random }
 	}
@@ -6137,6 +6228,7 @@ ming_missions_5_b = {
 		#	has_country_flag = enable_emperor_of_china_missions_flag
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
+		NOT = { is_or_was_tag = { tag = GJN } }
 	}
 	has_country_shield = yes 
 	
@@ -6393,7 +6485,7 @@ DOM_Qing_Missions_5_dynamic_b = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
@@ -6498,7 +6590,7 @@ DOM_Qing_Missions_5_intial = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_country_flag = qng_close_ports_flag }
 		NOT = { has_country_flag = qng_open_ports_flag } 
@@ -6623,7 +6715,7 @@ DOM_Qing_Missions_5_a = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 		NOT = { has_country_flag = qng_close_ports_flag }
 		has_country_flag = qng_open_ports_flag 
@@ -6713,7 +6805,7 @@ DOM_Qing_Missions_5_b = {
 	#potential_on_load = { has_dlc = "Mandate of Heaven" }
 	potential = {
 		has_dlc = "Domination"
-		tag = QNG
+		OR = { tag = QNG 	tag = GJN }
 		NOT = { map_setup = map_setup_random }
 		has_country_flag = qng_close_ports_flag
 		NOT = { has_country_flag = qng_open_ports_flag }

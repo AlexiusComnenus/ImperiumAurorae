@@ -27,14 +27,15 @@ VAL_ideas = {
 		ship_durability = 0.10
 	}
 	val_embrace_the_reformation = {
-		cb_on_religious_enemies = yes
-		enforce_religion_cost = -0.25
+		enforce_religion_cost = -0.15
+		warscore_cost_vs_other_religion = -0.1
 	}
 	life_on_the_sea = {
-		allowed_marine_fraction = 0.5
-		sailors_recovery_speed = 0.5
+		allowed_marine_fraction = 0.25
+		sailors_recovery_speed = 0.25
 	}
 	from_the_ashes = {
 		morale_damage_received = -0.1
+		core_creation = -0.1
 	}
 }

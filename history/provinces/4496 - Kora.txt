@@ -10,6 +10,7 @@ base_production = 5
 base_manpower = 2
 add_core = DLH
 add_core = Z11
+add_core = ODH
 add_permanent_claim = HIN
 discovered_by = MGE
 discovered_by = eastern

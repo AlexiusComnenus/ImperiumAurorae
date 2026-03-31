@@ -36,7 +36,7 @@ chosen_of_ashoka_ideas = {
 	}
 	ZZZ_major_edict_7 = {
 		num_accepted_cultures = 2
-		no_religion_penalty = yes
+		tolerance_heathen = 2
 	}
 	ZZZ_men_to_protect_india = {
 		global_manpower_modifier = 0.25

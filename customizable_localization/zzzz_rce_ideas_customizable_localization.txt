@@ -1,0 +1,444 @@
+# Religions & Cultures Expanded:
+defined_text = {
+	name = rce_NPA_ideas
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_start
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_start
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_bonus
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_bonus
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_1
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_1
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_2
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_2
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_3
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_3
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_4
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_4
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_5
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_5
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_6
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_6
+	}
+}
+defined_text = {
+	name = rce_NPA_ideas_7
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_NPA_ideas_7
+	}
+}
+
+defined_text = {
+	name = rce_assyria_ideas
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_start
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_start
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_bonus
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_bonus
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_1
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_1
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_2
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_2
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_3
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_3
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_4
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_4
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_5
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_5
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_6
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_6
+	}
+}
+defined_text = {
+	name = rce_assyria_ideas_7
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_assyria_ideas_7
+	}
+}
+
+defined_text = {
+	name = rce_empire_of_light_ideas
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_start
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_start
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_bonus
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_bonus
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_1
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_1
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_2
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_2
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_3
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_3
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_4
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_4
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_5
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_5
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_6
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_6
+	}
+}
+defined_text = {
+	name = rce_empire_of_light_ideas_7
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_empire_of_light_ideas_7
+	}
+}
+
+defined_text = {
+	name = rce_coptic_egypt_ideas
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_start
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_start
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_bonus
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_bonus
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_1
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_1
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_2
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_2
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_3
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_3
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_4
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_4
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_5
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_5
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_6
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_6
+	}
+}
+defined_text = {
+	name = rce_coptic_egypt_ideas_7
+	random = no
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = rce_coptic_egypt_ideas_7
+	}
+}

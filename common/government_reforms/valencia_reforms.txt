@@ -37,13 +37,6 @@ regnum_gothorum_reform = {
 		locked_government_type = yes
 	}
 	
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		#government_abilities = {
-		#	naval_professionalism_mechanic
-		#}
-	}
-	
 	ai = {
 		factor = 1000 # should always be picked if available
 	}
@@ -151,13 +144,6 @@ imperium_gothorum_reform = {
 	
 	ai = {
 		factor = 1000 # should always be picked if available
-	}
-	
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		#government_abilities = {
-		#	naval_professionalism_mechanic
-		#}
 	}
 }
 
@@ -284,6 +270,45 @@ valencia_parliament = {
 		}
 		has_parliament = yes
 	}
+	ai = {
+		factor = 1000
+	}
+}
+
+order_of_st_jeanne_the_voice_of_god = {
+	icon = "sisterhood"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = order_of_st_jeanne_the_voice_of_god
+			have_had_reform = order_of_st_jeanne_the_voice_of_god
+		}
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = order_of_st_jeanne_the_voice_of_god
+			have_had_reform = order_of_st_jeanne_the_voice_of_god
+		}
+		religion = protestant
+	}
+	lock_level_when_selected = no
+	valid_for_nation_designer = no
+	modifiers = {
+		army_tradition_decay = -0.01
+		leader_land_fire = 1
+		leader_land_shock = 1
+		leader_cost = -0.10
+		establish_order_cost = -0.5
+		warscore_cost_vs_other_religion = -0.15
+		relation_with_heathens = -50
+		reverse_relation_with_heathen_religion = -50
+		relation_with_heretics = -100
+		reverse_relation_with_heretic_religion = -100
+		holy_orders_loyalty_modifier = 0.2
+		holy_orders_influence_modifier = 0.1
+	}
+	
 	ai = {
 		factor = 1000
 	}

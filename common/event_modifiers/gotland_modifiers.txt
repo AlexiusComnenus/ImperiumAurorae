@@ -97,3 +97,39 @@ got_looking_beyond = {
 	may_explore = yes
 	range = 1
 }
+
+got_global_piracy = {
+	colonists = 1
+	range = 0.5
+	trade_range_modifier = 0.5
+	may_explore = yes
+}
+
+norse_viking_time = {
+	global_tax_modifier = -0.3
+	production_efficiency = -0.15
+	available_province_loot = 0.75
+	loot_amount = 0.5
+	global_ship_recruit_speed = -0.5
+	global_ship_cost = -0.25
+	sailors_recovery_speed = 0.25
+	global_regiment_recruit_speed = -0.25
+	global_regiment_cost = -0.10
+	religion = yes
+}
+
+norse_peace_time = {
+	stability_cost_to_declare_war = 1
+	production_efficiency = 0.10
+	trade_efficiency = 0.15
+	development_cost = -0.05
+	war_exhaustion = 0.10
+	religion = yes
+}
+
+norse_peace_time_ai = {
+	production_efficiency = 0.10
+	trade_efficiency = 0.15
+	development_cost = -0.05
+	religion = yes
+}

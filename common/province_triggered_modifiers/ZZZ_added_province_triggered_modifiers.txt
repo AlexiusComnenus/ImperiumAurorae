@@ -20,13 +20,37 @@ religious_center = {
 		}
 		else_if = {
 			limit = {
+				province_id = 43 # Danzig
+			}
+			religion = catholic
+		}
+		else_if = {
+			limit = {
+				province_id = 99 # Gelre
+			}
+			religion = fraticelli
+		}
+		else_if = {
+			limit = {
 				province_id = 409 # Hillah
 			}
 			religion = shiite
 		}
 		else_if = {
 			limit = {
-				province_id = 2313 # Hillah
+				OR = {
+					province_id = 252 # Tree of Life
+					province_id = 234 # Stonehenge
+				}
+			}
+			OR = {
+				religion = druidic_pagan
+				religion = druidic_pagan_reformed
+			}
+		}
+		else_if = {
+			limit = {
+				province_id = 2313 # Antioch
 			}
 			religion = hellenic_pagan_reformed
 		}
@@ -365,6 +389,8 @@ seat_of_the_rigan_archbishopric = {
 		has_tax_building_trigger = yes
 		owner = {
 			government = theocracy
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
 		}
 		custom_trigger_tooltip = {
 			tooltip = not_more_than_10_provinces_outside_europe
@@ -398,6 +424,11 @@ cathedral_of_riga = {
 	trigger = {
 		is_capital = yes
 		has_tax_building_trigger = yes
+		owner = {
+			government = theocracy
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+		}
 		custom_trigger_tooltip = {
 			tooltip = not_more_than_10_provinces_outside_europe
 			owner = {
@@ -411,8 +442,8 @@ cathedral_of_riga = {
 		}
 	}
 	local_development_cost = -2
-	tax_income = 60
-	local_tax_modifier = 0.5
+	tax_income = 12
+	local_tax_modifier = 1
 	local_governing_cost = -1
 	church_loyalty_modifier = 0.1
 }
@@ -436,8 +467,8 @@ market_of_riga = {
 			}
 		}
 	}
-	trade_goods_size = 3
-	trade_goods_size_modifier = 2
+	#trade_goods_size = 3
+	trade_goods_size_modifier = 2.5
 	province_trade_power_value = 5
 	naval_forcelimit = 20
 	local_sailors = 10000
@@ -464,9 +495,9 @@ fortification_of_riga = {
 		}
 		owned_by = controller
 	}
-	local_manpower = 10
-	local_manpower_modifier = 0.5
-	land_forcelimit = 20
+	#local_manpower = 10
+	local_manpower_modifier = 0.75
+	land_forcelimit = 5
 	local_fort_maintenance_modifier = -0.9
 	local_defensiveness = 1
 	local_defender_dice_roll_bonus = 2
@@ -493,7 +524,7 @@ mercenaries_of_riga = {
 			}
 		}
 	}
-	mercenary_discipline = 0.05
+	#mercenary_discipline = 0.05
 	mercenary_manpower = 0.25
 	merc_leader_army_tradition = 0.25
 	allow_mercenary_drill = yes
@@ -508,6 +539,29 @@ mercenaries_of_riga = {
 	#shock_damage_received = -0.25
 	#fire_damage_received = -0.25
 	local_has_streltsy = yes
-	local_has_carolean = yes
-	manpower_recovery_speed = 0.50	
+	local_has_carolean = yes	
+}
+
+feo_heart_of_steppes = {
+	potential = {
+	
+	}
+
+	trigger = {
+		controlled_by = owner
+	}
+
+	caravan_power = 0.25
+	merchants = 1
+	cossacks_loyalty_modifier = 0.1
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
 }

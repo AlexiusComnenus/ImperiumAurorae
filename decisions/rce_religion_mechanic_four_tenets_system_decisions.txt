@@ -1,0 +1,403 @@
+country_decisions = {
+	# AI Decisions Below
+	rce_religion_mechanic_four_tenets_system_meditate_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			has_regency = no
+			NOT = { rce_has_religion_mechanic_four_tenets_system_ability_4 = yes }
+			if = {
+				limit = {
+					has_ruler_flag = rce_religion_mechanic_four_tenets_system_meditated
+				}
+				custom_trigger_tooltip = {
+					tooltip = rce_religion_mechanic_four_tenets_system_meditated_not_done_recently_tt_with_year
+					had_ruler_flag = { flag = rce_religion_mechanic_four_tenets_system_meditated days = 2190 }
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = rce_religion_mechanic_four_tenets_system_meditated_not_done_recently_tt
+					always = yes
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_ruler_modifier = rce_religion_mechanic_four_tenets_system_meditate_modifier
+				}
+				tooltip = {
+					add_country_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_meditate_modifier
+						duration = 365
+						desc = RCE_UNTIL_MONARCH_DEATH_OR_1_YEAR
+					}
+				}
+			}
+			else = {
+				clr_ruler_flag = rce_religion_mechanic_four_tenets_system_meditated
+				set_ruler_flag = rce_religion_mechanic_four_tenets_system_meditated
+				add_ruler_modifier = {
+					name = rce_religion_mechanic_four_tenets_system_meditate_modifier
+					duration = 365
+				}
+				rce_export_monthly_religion_mechanic_four_tenets_system_value_gain = yes
+				hidden_effect = {
+					export_to_variable = {
+						which = rce_religion_mechanic_four_tenets_system_meditate_used_year
+						value = trigger_value:is_year
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	rce_religion_mechanic_four_tenets_system_ability_1_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			hidden_trigger = {
+				NOT = { has_country_flag = rce_religion_mechanic_four_tenets_system_selecting_ability_1 }
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_1 = yes
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+			else = {
+				has_regency = no
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_1 = yes
+				}
+				custom_tooltip = rce_religion_mechanic_four_tenets_system_ability_selected_tt
+				tooltip = {
+					if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_1
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_1
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_2
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_2
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_3
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_3
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+				}
+			}
+			else = {
+				country_event = { id = rce_religion_mechanic_four_tenets_system_events.1 tooltip = rce_religion_mechanic_four_tenets_system_ability_can_pick_tt }
+				tooltip = {
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_1
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_2
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_1_modifier_3
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rce_religion_mechanic_four_tenets_system_ability_2_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			hidden_trigger = {
+				NOT = { has_country_flag = rce_religion_mechanic_four_tenets_system_selecting_ability_2 }
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_2 = yes
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+			else = {
+				has_regency = no
+				rce_has_religion_mechanic_four_tenets_system_ability_1 = yes
+				rce_has_religion_mechanic_four_tenets_system_value = { value = 100 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_2 = yes
+				}
+				custom_tooltip = rce_religion_mechanic_four_tenets_system_ability_selected_tt
+				tooltip = {
+					if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_1
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_1
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_2
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_2
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_3
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_3
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+				}
+			}
+			else = {
+				country_event = { id = rce_religion_mechanic_four_tenets_system_events.2 tooltip = rce_religion_mechanic_four_tenets_system_ability_can_pick_tt }
+				tooltip = {
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_1
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_2
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_2_modifier_3
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rce_religion_mechanic_four_tenets_system_ability_3_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			hidden_trigger = {
+				NOT = { has_country_flag = rce_religion_mechanic_four_tenets_system_selecting_ability_3 }
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_3 = yes
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+			else = {
+				has_regency = no
+				rce_has_religion_mechanic_four_tenets_system_ability_2 = yes
+				rce_has_religion_mechanic_four_tenets_system_value = { value = 100 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_3 = yes
+				}
+				custom_tooltip = rce_religion_mechanic_four_tenets_system_ability_selected_tt
+				tooltip = {
+					if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_1
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_1
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_2
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_2
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_3
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_3
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+				}
+			}
+			else = {
+				country_event = { id = rce_religion_mechanic_four_tenets_system_events.3 tooltip = rce_religion_mechanic_four_tenets_system_ability_can_pick_tt }
+				tooltip = {
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_1
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_2
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_3_modifier_3
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rce_religion_mechanic_four_tenets_system_ability_4_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			hidden_trigger = {
+				NOT = { has_country_flag = rce_religion_mechanic_four_tenets_system_selecting_ability_4 }
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_4 = yes
+				}
+				hidden_trigger = {
+					always = no
+				}
+			}
+			else = {
+				has_regency = no
+				rce_has_religion_mechanic_four_tenets_system_ability_3 = yes
+				rce_has_religion_mechanic_four_tenets_system_value = { value = 100 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_four_tenets_system_ability_4 = yes
+				}
+				custom_tooltip = rce_religion_mechanic_four_tenets_system_ability_selected_tt
+				tooltip = {
+					if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_1
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_1
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_2
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_2
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+					else_if = {
+						limit = {
+							has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_3
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_3
+							duration = -1
+							desc = RCE_UNTIL_MONARCH_DEATH
+						}
+					}
+				}
+			}
+			else = {
+				country_event = { id = rce_religion_mechanic_four_tenets_system_events.4 tooltip = rce_religion_mechanic_four_tenets_system_ability_can_pick_tt }
+				tooltip = {
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_1
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_2
+						duration = -1
+					}
+					add_ruler_modifier = {
+						name = rce_religion_mechanic_four_tenets_system_ability_4_modifier_3
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

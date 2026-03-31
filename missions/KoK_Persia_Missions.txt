@@ -126,10 +126,10 @@ kok_persia_conquest_mission_slot_1 = {
 		position = 4
 		provinces_to_highlight = {
 			region = anatolia_region
-			is_island = no
 			owner = {
-				primary_culture = turkish
-				NOT = { is_subject_of = root }
+				culture_group = byzantine
+				#NOT = { is_subject_of = root }
+				#NOT = { tag = root }
 			}
 			NOT = { country_or_non_sovereign_subject_holds = root }
 		}
@@ -139,8 +139,9 @@ kok_persia_conquest_mission_slot_1 = {
 				NOT = {
 					anatolia_region = {
 						owner = {
-							primary_culture = turkish
+							culture_group = byzantine
 							NOT = { is_subject_of = root }
+							NOT = { tag = ROOT }
 						}
 					}
 				}
@@ -151,25 +152,29 @@ kok_persia_conquest_mission_slot_1 = {
 			add_permanent_claim_multi_provinces = { target = morea_area }
 			add_permanent_claim_multi_provinces = { target = thrace_area }
 			add_permanent_claim_multi_provinces = { target = macedonia_area }
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Cradle of Civilization"
-						has_dlc = "Domination"
-					}
-				}
-				capital_scope = {
-					create_units_of_type_in_province = {
-						custom_tooltip = per_end_the_turkish_threat_at
-						amount = 10
-						unit_type = janissary_infantry
-						who = root
-					}
-				}
+			add_power_projection = { 
+				type = mission_rewards_power_projection
+				amount = 15 
 			}
-			else = {
-				add_manpower = 10
-			}
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			has_dlc = "Cradle of Civilization"
+			#			has_dlc = "Domination"
+			#		}
+			#	}
+			#	capital_scope = {
+			#		create_units_of_type_in_province = {
+			#			#custom_tooltip = per_end_the_turkish_threat_at
+			#			amount = 10
+			#			unit_type = janissary_infantry
+			#			who = root
+			#		}
+			#	}
+			#}
+			#else = {
+			#	add_manpower = 10
+			#}
 		}
 	}
 	per_claim_constantinople = {
@@ -464,18 +469,14 @@ kok_persia_conquest_mission_slot_2 = {
 				region = persia_region
 				region = caucasia_region
 			}
-			owned_by = QAR
+			country_or_subject_holds = IRQ
 		}
 		trigger = {
-			OR = {
-				AND = {
-					NOT = { persia_region = { owned_by = QAR } }
-					NOT = { caucasia_region = { owned_by = QAR } }
-				}
-				AKK = { is_subject_of = root }
-				alliance_with = QAR
+			AND = {
+				NOT = { persia_region = { country_or_subject_holds = IRQ } }
+				NOT = { caucasia_region = { country_or_subject_holds = IRQ } }
 			}
-		}
+	}
 		effect = {
 			custom_tooltip = per_butcher_black_sheep_ct
 			hidden_effect = {
@@ -483,22 +484,7 @@ kok_persia_conquest_mission_slot_2 = {
 				mashriq_region = { limit = { NOT = { is_core = root } NOT = { is_permanent_claim = root } culture = kurdish } add_permanent_claim = root }
 				persia_region = { limit = { NOT = { is_core = root } NOT = { is_permanent_claim = root } culture = kurdish } add_permanent_claim = root }
 			}
-			simple_dynamic_effect = {
-				first_custom_tooltip = per_butcher_black_sheep_at
-				first_limit = "
-					OR = {
-						AND = {
-							NOT = { persia_region = { owned_by = QAR } }
-							NOT = { caucasia_region = { owned_by = QAR } }
-						}
-						QAR = { is_subject_of = root }
-					}
-				"
-				first_effect = "add_adm_power = 100"
-				second_custom_tooltip = per_butcher_black_sheep_bt
-				second_limit = "alliance_with = QAR"
-				second_effect = "add_dip_power = 100"
-			}
+			add_adm_power = 100
 		}
 	}
 	per_protect_the_west_iranian = {
@@ -559,7 +545,7 @@ kok_persia_conquest_mission_slot_2 = {
 							region = mashriq_region
 							region = persia_region
 						}
-						culture_group = root
+						culture_group = iranian
 					}
 					add_nationalism = -20
 				}
@@ -3188,15 +3174,15 @@ kok_persia_culture_mission_slot_1 = {
 		trigger = {
 			OR = {
 				production_leader = { trade_goods = silk } 
-				trade_goods_produced_amount = { trade_goods = silk amount = 20 }
+				trade_goods_produced_amount = { trade_goods = silk amount = 32 }
 			}
 			OR = {
 				production_leader = { trade_goods = cloth } 
-				trade_goods_produced_amount = { trade_goods = cloth amount = 20 }
+				trade_goods_produced_amount = { trade_goods = cloth amount = 12 }
 			}
 			OR = {
 				production_leader = { trade_goods = dyes } 
-				trade_goods_produced_amount = { trade_goods = dyes amount = 20 }
+				trade_goods_produced_amount = { trade_goods = dyes amount = 8 }
 			}
 		}
 		effect = {

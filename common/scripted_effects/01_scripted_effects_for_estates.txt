@@ -3126,6 +3126,13 @@ on_loan_repaid_estate_privileges_effect = {
 		}
 		remove_estate_privilege = estate_jains_indebted_to_jains
 	}
+	if = {
+		limit = {
+			has_estate_privilege = estate_holy_orders_indebted_to_holy_orders
+			has_estate_loan = no
+		}
+		remove_estate_privilege = estate_holy_orders_indebted_to_holy_orders
+	}
 }
 
 

@@ -53,6 +53,8 @@ beleares_protected = {
 	local_warscore_cost_modifier = 10
 	hostile_disembark_speed = 0.5
 	local_core_creation = 100
+	block_slave_raid = yes
+	hostile_fleet_attrition = 5
 }
 
 templar_bank = {
@@ -135,6 +137,8 @@ thu_major_wheat_fields = {
 	
 	trade_goods_size = 1
 	local_production_efficiency = 0.25
+	local_development_cost = -0.25
+	global_manpower_modifier = 0.05
 }
 
 thu_breadbasket_of_germany = {
@@ -149,6 +153,9 @@ thu_breadbasket_of_germany = {
 	
 	trade_goods_size = 2
 	local_production_efficiency = 0.5
+	local_development_cost = -0.5
+	global_manpower_modifier = 0.05
+	manpower_recovery_speed = 0.05
 }
 
 fkn_brand_protection_province_mod = {
@@ -157,13 +164,22 @@ fkn_brand_protection_province_mod = {
 	trigger = {
 		trade_goods = wine
 		owner = {
-			tag = FKN
-			was_tag = FKN
+			OR = { 
+				tag = FKN
+				was_tag = FKN
+				overlord = {
+					OR = {
+						tag = FKN
+						was_tag = FKN
+					}
+				}
+			}
 		}
 	}
 	
 	trade_goods_size = 1
 	local_production_efficiency = 0.5
+	local_development_cost_modifier = -0.25
 }
 
 fkn_paulaner_beer_province_mod = {
@@ -172,11 +188,61 @@ fkn_paulaner_beer_province_mod = {
 	trigger = {
 		trade_goods = beer
 		owner = {
-			tag = FKN
-			was_tag = FKN
+			OR = {
+				tag = FKN
+				was_tag = FKN
+			}
 		}
 	}
 	
 	trade_goods_size_modifier = 0.25
 	trade_value_modifier = 0.5
+	local_development_cost_modifier = -0.25
+}
+
+fkn_white_gold_fame = {
+	potential = { always = yes }
+	
+	trigger = {
+		trade_goods = wine
+		owner = {
+			OR = { 
+				tag = FKN
+				was_tag = FKN
+				overlord = {
+					OR = {
+						tag = FKN
+						was_tag = FKN
+					}
+				}
+			}
+		}
+	}
+	
+	trade_value_modifier = 1
+	local_development_cost = -0.5
+}
+
+hes_saxon_funding = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			is_subject = yes
+			tag = HES
+			overlord = { 
+				has_reform = saxon_feudalism
+			} 
+		}
+	}
+	tax_income = 36
+	on_deactivation = {
+		81 = {
+			province_event = {
+				id = ia_hesse.8
+			}
+		}
+	}
 }

@@ -92,7 +92,7 @@ offer_imperial_protectorate = {
 
 	ai_acceptance = {
         	add_entry = {
-            		name = DIPLO_OPPINION
+            name = DIPLO_OPPINION
 			export_to_variable = {
 				variable_name = ai_value
 				value = opinion
@@ -154,9 +154,14 @@ offer_imperial_protectorate = {
 			}
 			export_to_variable = {
 				variable_name = ai_value
-				value = 1
+				value = monthly_income
+				who = ROOT
 			}
 			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = -1000
 			}
@@ -164,44 +169,135 @@ offer_imperial_protectorate = {
 		add_entry = {
 			name = attitude_neutral_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -20 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = -20 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -20
+			}
 		}
 		add_entry = {
 			name = attitude_rivalry_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -1000 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = -1000 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = attitude_hostile_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -1000 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = -1000 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = attitude_friendly_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 10 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = 10 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = 10
+			}
 		}
 		add_entry = {
 			name = attitude_threatened_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = 10 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = 10 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = 10
+			}
 		}
 		add_entry = {
 			name = attitude_outraged_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_outraged } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -1000 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = -1000 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = attitude_domineering_DIPLO_ATTITUDE_TT
 			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_domineering } } }
-			export_to_variable = { variable_name = ai_value value = 1 }
-			multiply_variable = { which = ai_value value = -1000 }
+			#export_to_variable = { variable_name = ai_value value = 1 }
+			#multiply_variable = { which = ai_value value = -1000 }
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = DIPLO_BORDER_DISTANCE_TT

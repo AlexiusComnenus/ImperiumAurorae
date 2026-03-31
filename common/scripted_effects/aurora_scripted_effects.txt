@@ -55,6 +55,24 @@ dismantle_nation_effect = {
 	}
 }
 
+old_byz_death_effect = {
+	if = {
+		limit = { NOT = { exists = GRE } }
+		BYZ = { change_tag = GRE }
+	}
+	else_if = {
+		limit = { NOT = { exists = TRE } }
+		BYZ = { change_tag = TRE }
+	}
+	else_if = {
+		limit = { NOT = { exists = RMN } }
+		BYZ = { change_tag = RMN }
+	}
+	else = {
+		GRE = { inherit = BYZ }
+	}
+}
+
 
 bogomilism_clear_old_aspects_effect = {
 	if = {
@@ -206,4 +224,39 @@ ia_BYZ_convert_to_greek_culture = { #It's here in case I want to add anatolian-t
 	else = {
 		change_culture = anatolian
 	}
+}
+
+ia_become_saxon_fief_effect = {
+	if = {
+		limit = {
+			NOT = { has_reform = prussian_monarchy }
+			NOT = { has_reform = prussian_republic_reform }
+			NOT = { tag = NED }
+			NOT = { tag = PRU }
+			NOT = { tag = FKN }
+			NOT = { tag = BOH }
+			NOT = { tag = LOT }
+			NOT = { tag = SWI }
+			NOT = { has_reform = german_free_city }
+			NOT = { has_reform = peasants_republic }
+		}
+		add_government_reform = saxon_fief_reform
+	}
+	regenerate_government_mechanics = yes
+}
+
+ia_save_historical_relations_effect = {
+	every_country = {
+		limit = { historical_friend_with = FROM }
+		set_country_flag = our_historical_friend_flag
+	}
+	every_country = {
+		limit = { historical_rival_with = FROM }
+		set_country_flag = our_historical_rival_flag
+	}
+}
+
+ia_change_culture_without_consequence_effect = {
+	add_stability = 1
+	remove_country_modifier = changed_primary_culture_modifier
 }

@@ -1,6 +1,6 @@
 #Mission Mercs
 merc_arumer_zwarte_hoop = {
-    regiments_per_development = 0.02
+    regiments_per_development = 0.05
 	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
     home_province = 100 #Friesland
     cost_modifier = 0.25

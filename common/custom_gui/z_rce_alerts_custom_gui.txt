@@ -1,0 +1,113 @@
+custom_button = {
+	name = rce_alert_button_religion_mechanic
+	potential = {
+		ai = no
+		NOT = { has_country_flag = rce_alert_religion_mechanic_disabled }
+		OR = {
+			AND = {
+				rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+				rce_has_religion_mechanic_sylvan_affinity_value = { value = 80 }
+			}
+			AND = {
+				rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+				OR = {
+					NOT = { rce_has_religion_mechanic_four_tenets_system_ability_1 = yes }
+					AND = {
+						rce_has_religion_mechanic_four_tenets_system_value = { value = 100 }
+						NOT = { rce_has_religion_mechanic_four_tenets_system_ability_4 = yes }
+					}
+				}
+				has_regency = no
+			}
+			AND = {
+				rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+				OR = {
+					rce_has_not_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+					rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+				}
+			}
+		}
+	}
+	effect = {
+		custom_tooltip = rce_alert_button_religion_mechanic_tt_delayed
+		hidden_effect = {
+			set_country_flag = rce_dismissing_alert
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+	}
+	frame = {
+		number = 3
+		trigger = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+	}
+	frame = {
+		number = 4
+		trigger = {
+			rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+		}
+	}
+	frame = {
+		number = 5
+		trigger = {
+			rce_uses_religion_mechanic = { mechanic = nestorian_patriarchy }
+		}
+	}
+	frame = {
+		number = 6
+		trigger = {
+			rce_uses_religion_mechanic = { mechanic = sukha }
+		}
+	}
+	# Fallback
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_alert_button_religion_mechanic_tt
+}
+
+custom_window = {
+	name = rce_alerts_popup_window
+	potential = {
+		ai = no
+		has_country_flag = rce_dismissing_alert
+	}
+}
+custom_text_box = {
+	name = rce_alerts_popup_title
+	potential = {
+		always = yes
+	}
+}
+custom_text_box = {
+	name = rce_alerts_popup_desc
+	potential = {
+		always = yes
+	}
+}
+custom_button = {
+	name = rce_alerts_popup_cancel_button
+	effect = {
+		hidden_effect = {
+			clr_country_flag = rce_alert_religion_mechanic_disabled
+			clr_country_flag = rce_dismissing_alert
+		}
+	}
+}
+custom_button = {
+	name = rce_alerts_popup_accept_button
+	effect = {
+		hidden_effect = {
+			set_country_flag = rce_alert_religion_mechanic_disabled
+			clr_country_flag = rce_dismissing_alert
+		}
+	}
+}

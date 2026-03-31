@@ -1,7 +1,8 @@
 wielding_excalibur = {
-	morale_damage = 0.10
-	fire_damage_received = -0.10
 	shock_damage = 0.10	
+	legitimacy = 2
+	max_absolutism = 20
+	reform_progress_growth = 0.2
 }
 
 administrative_corruption_suppression = {
@@ -51,4 +52,10 @@ wei_suo_draft_modifier = {
 	global_trade_goods_size_modifier = -0.5
 	global_tax_modifier = -0.5
 	manpower_recovery_speed = 1.5
+}
+
+eng_civil_war_consequences = {
+	global_manpower_modifier = -0.25
+	land_morale = -0.05
+	army_tradition = 1
 }

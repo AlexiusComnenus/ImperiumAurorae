@@ -3,10 +3,8 @@
 hlr_teutonic_order = {
 	icon = GFX_holy_order_hlr_teutons
 	trigger = {
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 230 230 230 }
@@ -23,7 +21,7 @@ hlr_teutonic_order = {
         factor = 2
         	modifier = {
            		factor = 2.0
-            		NOT = { religion = ROOT }
+            	NOT = { religion = ROOT }
         	}
    	}
 	localization = holy_order
@@ -32,10 +30,8 @@ hlr_teutonic_order = {
 hlr_johanniter_order = {
 	icon = GFX_holy_order_hlr_johanniter
 	trigger = {
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 213 59 59 }
@@ -61,10 +57,8 @@ hlr_johanniter_order = {
 hlr_lazarus_order = {
 	icon = GFX_holy_order_hlr_lazarus
 	trigger = {
-		OR = {
-			religion = catholic
-			religion = fraticelli
-		}
+		religion_group = christian
+		NOT = { religion = hellenic_pagan_reformed }
 		has_government_attribute = unlock_hlr_holy_orders
 	}
 	color = { 97 162 93 }
@@ -75,7 +69,7 @@ hlr_lazarus_order = {
 	}
 	modifier = {
 		local_unrest = -1
-		local_production_efficiency = 0.10
+		local_production_efficiency = 0.15
 	}
 	ai_priority = {
         	factor = 2

@@ -1473,3 +1473,5 @@ ship_names = {
 	"Ørnen"
 	"Øsels Ørn"
 }
+
+preferred_religion = protestant

@@ -44,6 +44,9 @@
  got_aland_defences: "Åland Defences"
  got_swedish_landfall: "Landfall in Sweden"
  got_looking_beyond: "Looking Beyond"
+ norse_viking_time: "Time of Vikingr"
+ norse_peace_time: "Time of Peace"
+ norse_peace_time_ai: "Time of Peace (AI)"
 
  #Missions
  got_pirate_conquer_norwegian_coast_title: "Conquer Western Coast"
@@ -68,10 +71,10 @@
  got_pirate_kronborg_the_pirate_castle_ia_desc: "The pirate's flag now flies above Kronborg Castle! Both the Sound Toll and the royal palace belong to us now, and the former Kingdom of Denmark is at our mercy."
 
  # events
- ia_flavor_gotland.1.t: "Hunt Them Down!"
+ ia_flavor_gotland.1.t: "§RHunt Them Down!§!"
  ia_flavor_gotland.1.d: "The Danish army is in disarray and their capital has been captured! Our proud buccaneers are now in the process of hunting down every last surviving royal and otherwise royally-associated official. The Danish state will be fully dismantled that we may rebuild it from ground up! Unfortunately, the Swedes are taking the opportunity to absorb some of their land in the chaos, but oh well..."
  ia_flavor_gotland.1.a: "To Victory!"
- ia_flavor_gotland.2.t: "Blaze in Kopenhagen!"
+ ia_flavor_gotland.2.t: "§RBlaze in Kopenhagen!§!"
  ia_flavor_gotland.2.d: "It seems our victorious forces landing in Kopenhagen have gotten a bit wild. The entire city is now on fire even as we loot and pillage anything that isn't nailed down."
  ia_flavor_gotland.2.a: "Oh well!"
  ia_flavor_gotland.3.t: "Gotland invites settlers"
@@ -82,7 +85,7 @@
  ia_flavor_gotland.4.b: "It seems that the Gutnish pirates have recently gotten rather wild at razing the entire landscape of Denmark. Many of the former residents have been forced to flee, many escaping through the Hansa into our lands to avoid the tyrannical serfdom that would be their fate in the Saxon realm. Shall we offer them refuge?"
  ia_flavor_gotland.4.a: "Of course!"
  ia_flavor_gotland.4.b: "We do not have space for them."
- ia_flavor_gotland.5.t: "Purge of Denmark"
+ ia_flavor_gotland.5.t: "§RPurge of Denmark§!"
  ia_flavor_gotland.5.d: "Traitors and royalists are hiding everywhere among the now conquered people of Denmark! Some of our advisors and captains are suggesting that we simply pillage everything worth anything and burn the rest, and leave these traitors to starve or flee. This will clean up the country nicely, they say..."
  ia_flavor_gotland.5.a: "Burn, baby, burn!"
  ia_flavor_gotland.5.b: "We must have patience..."
@@ -104,3 +107,7 @@
  ia_flavor_gotland.11.d: "With the historical lands of the Danelaw under our control, we must decide what to do with it. Shall we place it under colonial self-rule or maintain direct control?"
  ia_flavor_gotland.11.a: "Colonial Self-Rule"
  ia_flavor_gotland.11.b: "Direct Control"
+ norse_events.10.t: "Plotting our Course"
+ norse_events.10.desc: "It is time for our [Root.Monarch.GetTitle] to plot the course of our nation for the next decade. When times are rough and the soils run dry, it is traditional for our people to 'go Viking' and extract the basis of survival from the corpses of our enemies. Is it time to go Viking, or are farms sufficient?"
+ norse_events.10.a: "We must go Viking!"
+ norse_events.10.b: "It is time to farm."

@@ -30,12 +30,12 @@ country_decisions = {
 			NOT = { owned_by = ROOT }
 		}
 		allow = {
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				custom_trigger_tooltip = {
 					tooltip = BYZ_highlighted_by_decision
 					BYZ_roman_empire_decision_trigger = yes
 				}
-				value = 425
+				value = 325
 			}
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
@@ -49,6 +49,7 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			restore_country_name = yes
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ROM
 			on_change_tag_effect = yes
 			change_primary_culture = roman

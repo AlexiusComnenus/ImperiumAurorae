@@ -1,0 +1,144 @@
+prayer_power_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 17
+	available = {
+		has_reform = kingdom_of_god_reform
+	}
+
+	powers = {
+		ia_prayer_energy = {
+			gui = cultural_unity_gov_mech
+			min = 0
+			max = 100
+			base_monthly_growth = 0
+			scaled_modifier = {
+				start_value = 0 
+				end_value = 100 
+				modifier = {
+					global_trade_goods_size_modifier = 0.2
+				}
+			}
+			is_good = yes
+		}	
+	}
+	
+	interactions = {
+		ia_angelize_winged_guard = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_march_divided_fight_united
+			trigger = {
+				has_government_power = {
+					mechanic_type = prayer_power_mechanic
+					power_type = ia_prayer_energy
+					value = 50
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = prayer_power_mechanic
+					power_type = ia_prayer_energy
+					value = -50
+				}
+				if = {
+					limit = {
+						NOT = { has_leader = "Archangel Michael" }
+					}
+					define_general = {
+						shock = 7
+						fire = 7
+						manuever = 6
+						siege = 4
+						name = "Archangel Michael"
+						trait = voice_of_god_generaltrait
+					}
+				}
+				add_country_modifier = {
+					name = pap_angelized_winged_guard
+					duration = 90
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0
+					is_at_war = no
+				}
+				modifier = {
+					factor = 0
+					has_leader = "Archangel Michael"
+					NOT = { has_country_modifier = pap_recently_used_gospel_of_bullets }
+				}
+			}
+		}
+		
+		ia_faith_tithe = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_rewrite_military_manual
+			trigger = {
+				curia_treasury_size = 1000
+			}
+			effect = { 
+				add_curia_treasury = -1000
+				add_government_power = {
+					mechanic_type = prayer_power_mechanic
+					power_type = ia_prayer_energy
+					value = 20
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0
+					NOT = { curia_treasury_size = 2000 }
+				}
+				modifier = {
+					factor = 0
+					has_government_power = {
+						mechanic_type = prayer_power_mechanic
+						power_type = ia_prayer_energy
+						value = 75
+					}
+				}
+			}
+		}
+		
+		ia_gospel_of_bullets = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_upgrade	
+			trigger = {
+				has_government_power = {
+					mechanic_type = prayer_power_mechanic
+					power_type = ia_prayer_energy
+					value = 90
+				}
+				has_country_flag = gospel_of_bullets_unlocked_flag
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = prayer_power_mechanic
+					power_type = ia_prayer_energy
+					value = -90
+				}
+				add_country_modifier = {
+					name = pap_gospel_of_bullets
+					duration = 90
+				}
+				add_country_modifier = {
+					name = pap_recently_used_gospel_of_bullets
+					duration = 1825
+					hidden = yes
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 50
+				modifier = {
+					factor = 0
+					is_at_war = no
+				}
+			}
+		}
+	}
+}

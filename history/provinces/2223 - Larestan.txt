@@ -1,5 +1,5 @@
-owner = IRQ
-controller = IRQ
+owner = FRS
+controller = FRS
 capital = "Lar"
 is_city = yes
 culture = seleucian
@@ -8,7 +8,7 @@ trade_goods = iron
 base_tax = 4
 base_production = 2
 base_manpower = 3
-add_core = IRQ
+add_core = FRS
 add_core = KRM
 add_permanent_claim = PER
 discovered_by = MGE

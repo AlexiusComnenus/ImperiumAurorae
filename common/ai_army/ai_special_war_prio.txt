@@ -1,0 +1,46 @@
+
+province = { # take Antioch
+    war = {
+        active = {
+			is_in_war = {
+				casus_belli = cb_final_crusade
+			}
+			war_with = Z17
+        }
+        eval_add = {
+            factor = 10000
+            modifier = {
+                factor = 0
+				is_capital_of = Z17
+            }
+            modifier = {
+                factor = 0.0001
+				OR = {
+					province_id = 379
+					province_id = 341
+					province_id = 118
+					province_id = 151
+				}
+            }
+        }
+    }
+}
+
+province = { # fight for siege of antioch
+    war = {
+        active = {
+			is_in_war = {
+				casus_belli = cb_final_crusade
+			}
+			Z17 = { capital_scope = { has_siege = yes } }
+        }
+        eval_add = {
+            factor = 20000
+            modifier = {
+                factor = 0
+				is_capital_of = Z17
+				has_siege = yes
+            }
+        }
+    }
+}

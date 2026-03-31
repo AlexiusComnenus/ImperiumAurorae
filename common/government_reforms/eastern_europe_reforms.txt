@@ -233,7 +233,6 @@ bogomilist_veche_republic = {
 	modifiers = {
 		has_streltsy = yes
 		max_revolutionary_zeal = 25
-		allowed_rev_guard_fraction = -0.4
 		development_cost = -0.1
 		diplomatic_annexation_cost = -0.1
 		peasants_privilege_slots = 2
@@ -291,5 +290,27 @@ bogomilist_veche_republic = {
 			has_dlc = "Common Sense"
 		}
 		has_parliament = yes
+	}
+}
+
+nov_national_institute_gov_reform = {
+    icon = "map_2"
+	potential = {
+		tag = NOV
+	}
+	
+	modifiers = {
+        governing_capacity_modifier = 0.1
+        movement_speed = 0.1
+        leader_land_manuever = 1 
+        #max_general_maneuver = 1
+	}
+
+	custom_attributes = {
+		centralize_state_development = yes
+	}
+
+	ai = {
+		factor = 1000 # should always be picked if available
 	}
 }

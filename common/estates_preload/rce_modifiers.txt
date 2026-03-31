@@ -1,0 +1,87 @@
+estate_special = {
+	# Sukha Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_yearly_religion_mechanic_sukha_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_sukha
+			religion = jainism
+		}
+	}
+	# Hindu Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_monthly_religion_mechanic_hindu_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_hindu
+			religion = hinduism
+			uses_personal_deities = yes
+		}
+	}
+	# Four Tenets System Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_monthly_religion_mechanic_four_tenets_system_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_four_tenets_system
+			religion = hellenic_pagan_reformed
+		}
+	}
+	modifier_definition = {
+		type = loyalty
+		key = rce_monthly_religion_mechanic_four_tenets_system_change_modifier
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_four_tenets_system
+			religion = hellenic_pagan_reformed
+		}
+	}
+	# Sylvan Affinity Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_monthly_religion_mechanic_sylvan_affinity_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_sylvan_affinity
+			OR = {
+				religion = druidic_pagan
+				religion = druidic_pagan_reformed
+			}
+		}
+	}
+	modifier_definition = {
+		type = loyalty
+		key = rce_monthly_religion_mechanic_sylvan_affinity_change_modifier
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_sylvan_affinity
+			OR = {
+				religion = druidic_pagan
+				religion = druidic_pagan_reformed
+			}
+		}
+	}
+	# Nestorian Patriarchy Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_yearly_religion_mechanic_nestorian_patriarchy_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_nestorian_patriarchy
+			religion = nestorian
+		}
+	}
+	modifier_definition = {
+		type = loyalty
+		key = rce_religion_mechanic_nestorian_patriarchy_change_malus_from_conversion_reduction
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_nestorian_patriarchy
+			religion = nestorian
+		}
+	}
+	# Manichaeism Purity Mechanic
+	modifier_definition = {
+		type = privileges
+		key = rce_monthly_religion_mechanic_manichaeism_purity_change
+		trigger = {
+			# keep the same as rce_uses_religion_mechanic_manichaeism_purity
+			religion = manichean
+		}
+	}
+}

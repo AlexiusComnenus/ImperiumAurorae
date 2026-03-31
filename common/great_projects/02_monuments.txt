@@ -1956,6 +1956,8 @@ babylon = {
 			local_manpower_modifier = 0.25
 		}
 		area_modifier = {
+			local_build_cost = -0.10
+			local_development_cost = -0.10
 		}
 		country_modifiers = {
 		}
@@ -1981,7 +1983,10 @@ babylon = {
 		country_modifiers = {
 			max_absolutism = 5
 			yearly_absolutism = 0.05
-			global_allowed_num_of_manufactories = 1
+		}
+		region_modifier = {
+			local_build_cost = -0.10
+			local_development_cost = -0.10
 		}
 		on_upgraded = {
 		}
@@ -1995,19 +2000,21 @@ babylon = {
 			factor = 5000
 		}
 		province_modifiers = {
-			local_development_cost = -0.50
-			local_manpower_modifier = 0.50
+			local_development_cost = -0.75
+			local_manpower_modifier = 1
 		}
 		area_modifier = {
+			local_build_cost = -0.15
+			local_development_cost = -0.15
 		}
 		country_modifiers = {
 			max_absolutism = 10
 			yearly_absolutism = 0.1
-			global_allowed_num_of_manufactories = 1
 		}
 		region_modifier = {
 			local_build_cost = -0.10
 			local_development_cost = -0.10
+			allowed_num_of_manufactories = 1
 		}
 		on_upgraded = {
 		}
@@ -3883,7 +3890,11 @@ kyiv_university = {
 	
 	build_trigger = {
 		owner = {
-			adm_tech = 26
+			OR = { 
+				culture_group = east_slavic
+				culture_group = slavic
+			}
+			innovativeness = 20
 		}
 	}
 	on_built = {
@@ -3892,12 +3903,18 @@ kyiv_university = {
 	}
 	can_use_modifiers_trigger = {
 		owner = {
-			adm_tech = 26
+			OR = { 
+				culture_group = east_slavic
+				culture_group = slavic
+			}
 		}
 	}
 	can_upgrade_trigger = {
 		owner = {
-			adm_tech = 26
+			OR = { 
+				culture_group = east_slavic
+				culture_group = slavic
+			}
 		}
 	}
 
@@ -3937,12 +3954,13 @@ kyiv_university = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			technology_cost = -0.025
-			idea_cost = -0.1
+			technology_cost = -0.01
+			idea_cost = -0.025
 		}
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_building = university
 		}
 	}
 
@@ -3961,8 +3979,8 @@ kyiv_university = {
 			local_development_cost = -0.25
 		}
 		country_modifiers = {
-			technology_cost = -0.05
-			idea_cost = -0.2
+			technology_cost = -0.025
+			idea_cost = -0.05
 		}
 		on_upgraded = {
 		}
@@ -3984,7 +4002,7 @@ kyiv_university = {
 		}
 		country_modifiers = {
 			technology_cost = -0.05
-			idea_cost = -0.3
+			idea_cost = -0.1
 		}
 		on_upgraded = {
 		}
@@ -4763,7 +4781,7 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 0.25
+			diplomatic_reputation = 0.5
 			improve_relation_modifier = 0.025
 		}
 
@@ -4784,10 +4802,9 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 0.25
-			improve_relation_modifier = 0.025
-			ae_impact = -0.025
-			unjustified_demands = -0.05
+			diplomatic_reputation = 1
+			improve_relation_modifier = 0.05
+			unjustified_demands = -0.1
 		}
 		on_upgraded = {
 		}
@@ -4805,10 +4822,9 @@ nymphenburg = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			diplomatic_reputation = 0.5
-			improve_relation_modifier = 0.05
-			ae_impact = -0.05
-			unjustified_demands = -0.1
+			diplomatic_reputation = 2
+			improve_relation_modifier = 0.1
+			unjustified_demands = -0.25
 		}
 		on_upgraded = {
 		}
@@ -5652,6 +5668,7 @@ humboldt_university = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_building = university
 		}
 	}
 
@@ -5923,7 +5940,7 @@ balliol = {
 		}
 		country_modifiers = {
 			technology_cost = -0.01
-			idea_cost = -0.075
+			idea_cost = -0.025
 			advisor_cost = -0.025
 		}
 
@@ -5951,12 +5968,13 @@ balliol = {
 		}
 		country_modifiers = {
 			technology_cost = -0.025
-			idea_cost = -0.075
+			idea_cost = -0.05
 			advisor_cost = -0.025
 		}
 		on_upgraded = {
 			owner = {
 				change_innovativeness = 1
+				country_event = { id = gaeldom.8 }
 			}
 		}
 	}
@@ -6545,6 +6563,7 @@ university_copenhagen = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_building = university
 		}
 	}
 
@@ -6783,7 +6802,7 @@ stockholm_palace = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 	on_built = {
@@ -6798,7 +6817,7 @@ stockholm_palace = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 	can_upgrade_trigger = {
@@ -6809,7 +6828,7 @@ stockholm_palace = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 
@@ -6927,7 +6946,7 @@ uppsala_university = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 	on_built = {
@@ -6942,7 +6961,7 @@ uppsala_university = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 	can_upgrade_trigger = {
@@ -6953,7 +6972,7 @@ uppsala_university = {
 				}
 				has_owner_culture = yes
 			}
-			tag = SCA
+			owner = { tag = SCA }
 		}
 	}
 
@@ -6999,6 +7018,7 @@ uppsala_university = {
 
 		#what effects happen when this tier is achieved
 		on_upgraded = {
+			add_building = university
 		}
 	}
 

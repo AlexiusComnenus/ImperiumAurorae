@@ -1,5 +1,5 @@
-owner = Z64
-controller = Z64
+owner = GNV
+controller = GNV
 capital = "Lausanne"
 is_city = yes
 culture = burgundian
@@ -8,7 +8,7 @@ trade_goods = livestock
 base_tax = 3
 base_production = 2
 base_manpower = 2
-add_core = Z64
+add_core = GNV
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

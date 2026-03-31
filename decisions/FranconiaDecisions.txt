@@ -1,6 +1,7 @@
 country_decisions = {
 	fkn_explore_for_new_vineyards = { #Reduce inflation
 		potential = {
+			ai = no
 			has_country_flag = fkn_enable_wine_creation
 			NOT = {
 				check_variable = {
@@ -10,7 +11,11 @@ country_decisions = {
 			}
 		}
 		allow = {
+			ai = no
 			any_owned_province = { has_state_edict = fkn_wine_state_edict }
+			treasury = 50
+			dip_power = 25
+			adm_power = 25
 		}
 		effect = {
 			country_event = { id = ia_flavor_fkn.5 }

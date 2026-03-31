@@ -59,7 +59,7 @@ country_decisions = {
 	 	effect = {
 			hidden_effect = {
 				every_country = {
-					limit = { government = native }
+					limit = { OR = { government = native 	has_reform = polynesian_kingdom 	has_reform = polynesian_tribe } }
 					every_owned_province = {
 						decolonize = THIS
 					}

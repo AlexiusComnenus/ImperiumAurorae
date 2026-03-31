@@ -371,7 +371,10 @@ country_event = {
 		}
 		modifier = {
 			factor = 1.5
-			has_estate_privilege = estate_alchemists_court_alchemist
+			OR = {
+				has_estate_privilege = estate_alchemists_court_alchemist
+				ruler_has_personality = immortal_personality
+			}
 		}
 		modifier = {
 			factor = 3.0

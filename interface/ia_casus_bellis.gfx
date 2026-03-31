@@ -24,4 +24,37 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 
+	spriteType = {
+		name = "GFX_cb_super_badboy_mhadi"
+		texturefile = "gfx/interface/casus_bellis/cb_super_badboy_mhadi.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_ab_daohellenic_rise"
+		texturefile = "gfx/interface/ages/ab_adm_efficiency.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ab_saxon_reduced_lib_desire"
+		texturefile = "gfx/interface/ages/ab_same_contine_lib_desire.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ab_templarite_zealotry"
+		texturefile = "gfx/interface/ages/ab_warscore_vs_religion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ab_celestial_artillery"
+		texturefile = "gfx/interface/ages/ab_backrow_artillery.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_ab_revolutionary_morale"
+		texturefile = "gfx/interface/ages/ab_allow_anti_revolutionary_zeal.dds"
+	}
+
 }

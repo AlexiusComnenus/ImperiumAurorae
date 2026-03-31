@@ -10,6 +10,7 @@ FAP_ideas = {
 
 	trigger = {
 		tag = FAP
+		always = no
 	}
 	free = yes		#will be added at load.
 

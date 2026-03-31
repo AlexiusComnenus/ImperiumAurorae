@@ -38,10 +38,11 @@ country_decisions = {
 			NOT = { is_subject = yes }
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = NGC
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
-			north_german_region = {
+			south_german_region = {
 				limit = {
 					NOT = { owned_by = root }
 					NOT = { is_permanent_claim = root }
@@ -108,6 +109,7 @@ country_decisions = {
 			#NOT = { any_known_country = { has_reform = saxon_feudalism } }
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = SGC
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -236,6 +238,7 @@ country_decisions = {
 			owns_or_non_sovereign_subject_of = 2955			#Ingolstadt
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = BAV
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -343,6 +346,7 @@ country_decisions = {
 		effect = {
 			random_subject_country = {
 				limit = { primary_culture = bavarian }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = BAV
 				on_change_tag_effect = yes
 				restore_country_name_effect = yes
@@ -467,6 +471,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = POM
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -589,6 +594,7 @@ country_decisions = {
 		effect = {
 			random_subject_country = {
 				limit = { primary_culture = pommeranian }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = POM
 				on_change_tag_effect = yes
 				restore_country_name_effect = yes
@@ -634,14 +640,7 @@ country_decisions = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 79
-				AND = {
-					NOT = { ROOT = { owns_core_province = 71 } }
-					province_id = 67
-				}
-				AND = {
-					NOT = { ROOT = { owns_core_province = 67 } }
-					province_id = 71
-				}
+				province_id = 67
 				AND = {
 					ROOT = {
 						NOT = {
@@ -681,27 +680,38 @@ country_decisions = {
 		allow = {
 			is_at_war = no
 			#adm_tech = 10
-			OR = { #Wurzburg was the theoretical holder of the title
-				tag = WBG
-				NOT = { exists = WBG }
-			}
-			owns_core_province = 79			#Wurzburg
-			OR = {
-				owns_core_province = 71			#Ansbach
-				owns_core_province = 67			#Nurnberg
-			}
-			num_of_owned_provinces_with = {
+			owns_or_non_sovereign_subject_of = 79			#Wurzburg
+			owns_or_non_sovereign_subject_of = 67			#Nurnberg
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 6
 				culture = franconian
 				continent = europe
-				is_core = root
+				is_core = owner
 			}
-			OR = { #just to make it not so easy (owning 6 provinces is really not so hard; Franconia is 70 development at start, so this is that +5)
-				total_development = 75
-				grown_by_states = 4
-			}
+			#OR = { #just to make it not so easy (owning 6 provinces is really not so hard; Franconia is 70 development at start, so this is that +5)
+			#	total_development = 75
+			#	grown_by_states = 4
+			#}
 		}
 		effect = {
+			custom_tooltip = fkn_integrate_franconian_subjects_tt
+			every_subject_country = {
+				limit = {
+					all_owned_province = { culture = franconian }
+					NOT = { liberty_desire = 51 }
+				}
+				set_country_flag = fkn_to_annex_flag
+				#add_treasury = 100
+				#ROOT = { add_treasury = 100 }
+			}
+			every_subject_country = {
+				limit = {
+					has_country_flag = fkn_to_annex_flag
+				}
+				disband_all_units = yes
+				ROOT = { inherit = PREV }
+			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = FKN
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -726,16 +736,7 @@ country_decisions = {
 			add_prestige = 25
 			set_country_flag = formed_franconia_flag
 
-			if = {
-				limit = {
-					total_development = 100
-					OR = {
-						is_elector = yes
-						is_part_of_hre = no
-					}
-				}
-				set_government_rank = 2
-			}
+			set_government_rank = 2
 
 			swap_non_generic_missions = yes
 			
@@ -745,6 +746,12 @@ country_decisions = {
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			if = {
+				limit = { NOT = { government = monarchy } }
+				change_government = monarchy
+			}
+			add_government_reform = fkn_vintner_monarchy
+			set_capital = 67
 		}
 		ai_will_do = {
 			factor = 1
@@ -784,6 +791,7 @@ country_decisions = {
 		effect = {
 			random_subject_country = {
 				limit = { primary_culture = franconian }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FKN
 				on_change_tag_effect = yes
 				restore_country_name_effect = yes
@@ -864,6 +872,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = SWA
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -977,6 +986,7 @@ country_decisions = {
 		effect = {
 			random_subject_country = {
 				limit = { primary_culture = swabian }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = SWA
 				on_change_tag_effect = yes
 				restore_country_name_effect = yes
@@ -1081,6 +1091,7 @@ country_decisions = {
 			1758 = {
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = HAN
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -1251,6 +1262,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = WES
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -1384,6 +1396,8 @@ country_decisions = {
 					primary_culture = hannoverian #Westphalian
 					primary_culture = hessian
 				} }
+				
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = WES
 				on_change_tag_effect = yes
 				restore_country_name_effect = yes

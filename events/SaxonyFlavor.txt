@@ -759,7 +759,7 @@ country_event = {  # Grew too much ultimatum
 				subject = ROOT
 			}
 		}
-		add_government_reform = saxon_fief_reform
+		ia_become_saxon_fief_effect = yes
 	}
 	
 	option = {	# Fight!
@@ -1025,7 +1025,7 @@ country_event = {  # Flanders: Ultimatum from Saxonia
 				subject = ROOT
 			}
 		}
-		add_government_reform = saxon_fief_reform
+		ia_become_saxon_fief_effect = yes
 	}
 	
 	option = {	# Fight!
@@ -1235,11 +1235,12 @@ country_event = {  # Outsider took germanic land
 		NOT = { has_country_modifier = block_event_18 }
 		any_known_country = {
 			NOT = { truce_with = ROOT }
-			NOT = { is_subject_of = ROOT }
+			#NOT = { is_subject_of = ROOT }
 			NOT = { war_with = ROOT }
 			NOT = { culture_group = germanic }
 			NOT = { historical_friend_with = ROOT }
 			NOT = { ROOT = { historical_friend_with = PREV } }
+			is_free_or_tributary_trigger = yes
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 1
 				culture_group = germanic
@@ -1275,7 +1276,8 @@ country_event = {  # Outsider took germanic land
             random_known_country = {
 				limit = {
 					NOT = { truce_with = ROOT }
-					NOT = { is_subject_of = ROOT }
+					#NOT = { is_subject_of = ROOT }
+					is_free_or_tributary_trigger = yes
 					NOT = { war_with = ROOT }
 					NOT = { culture_group = germanic }
 					NOT = { historical_friend_with = ROOT }
@@ -1476,6 +1478,67 @@ country_event = {  # Intruder: Ultimatum from Saxonia
 				NOT = { primary_culture = anglo_saxon }
 			}
 			grant_independence = yes
+		}
+		every_subject_country = {
+			limit = {
+				NOT = { culture_group = germanic }
+				any_owned_province = { culture_group = germanic }
+			}
+			every_owned_province = {
+				limit = {
+					culture_group = germanic
+					NOT = { culture = teuton }
+					NOT = { culture = anglo_saxon }
+				}
+				remove_core = ROOT
+				random_core_country = {
+					limit = {
+						PREV = {
+							culture = PREV
+						}
+					}
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					culture_group = germanic
+					NOT = { culture = teuton }
+					NOT = { culture = anglo_saxon }
+				}
+				remove_core = ROOT
+				random_core_country = {
+					limit = {
+						culture_group = germanic
+					}
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					culture_group = germanic
+					NOT = { culture = teuton }
+					NOT = { culture = anglo_saxon }
+				}
+				remove_core = ROOT
+				event_target:saxon_king = {
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
 		}
 	}
 	
@@ -2036,6 +2099,7 @@ country_event = {
 			limit = {
 				is_subject_of_type = saxon_daimyo
 				NOT = { tag = THU }
+				NOT = { has_country_modifier = resigned_from_german_march }
 			}
 			if = {
 				limit = {
@@ -2107,7 +2171,7 @@ country_event = {  # Bully France, but for Hainut
 				subject = ROOT
 			}
 		}
-		add_government_reform = saxon_fief_reform
+		ia_become_saxon_fief_effect = yes
 	}
 	
 	option = {	# We'll do it on our own

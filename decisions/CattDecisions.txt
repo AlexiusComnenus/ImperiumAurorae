@@ -1,0 +1,912 @@
+country_decisions = {
+	
+	koi_abduct_the_pallas_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_pallas_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 4679
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 4679
+		4679 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_pallas_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_pallas_cat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+	koi_abduct_the_fishing_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_fishing_cat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2039
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2039
+		2039 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_fishing_cat_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_fishing_cat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+	koi_abduct_the_egyptian_mau = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_egyptian_mau_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 361
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 361
+		361 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_egyptian_mau_rescued
+		add_treasury = -1000
+		country_event = {
+		id = catt.13 
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+	koi_abduct_the_snow_leopard = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_snow_leopard_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2074
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2074
+		2074 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_snow_leopard_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_big_cat_counter
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		if = {
+			limit = { check_variable = {
+				which = KoiBigCatsRescued
+				value = 4
+				} 
+			}
+			country_event = {
+			id = catt.14
+			}
+		}
+		else = {
+			hidden_effect = {
+			change_variable = {
+			which = KoiBigCatsRescued
+			value = 1
+					}
+				}
+
+		}
+	}
+}
+	koi_abduct_the_jaguar = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_jaguar_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2890
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2890
+		2890 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_jaguar_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_big_cat_counter
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		if = {
+			limit = { check_variable = {
+				which = KoiBigCatsRescued
+				value = 4
+				} 
+			}
+			country_event = {
+			id = catt.14
+			}
+		}
+		else = {
+			hidden_effect = {
+			change_variable = {
+			which = KoiBigCatsRescued
+			value = 1
+					}
+				}
+
+		}
+	}
+}
+	koi_abduct_the_african_lion = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_african_lion_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 1196
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 1196
+		1196 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_african_lion_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_big_cat_counter
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		if = {
+			limit = { check_variable = {
+				which = KoiBigCatsRescued
+				value = 4
+				} 
+			}
+			country_event = {
+			id = catt.14
+			}
+		}
+		else = {
+			hidden_effect = {
+			change_variable = {
+			which = KoiBigCatsRescued
+			value = 1
+					}
+				}
+			}
+		}
+	}
+	koi_abduct_the_caucasian_leopard = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_caucasian_leopard_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 425
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 425
+		425 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_caucasian_leopard_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_big_cat_counter
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		if = {
+			limit = { check_variable = {
+				which = KoiBigCatsRescued
+				value = 4
+				} 
+			}
+			country_event = {
+			id = catt.14
+			}
+		}
+		else = {
+			hidden_effect = {
+			change_variable = {
+			which = KoiBigCatsRescued
+			value = 1
+					}
+				}
+			}
+		}
+	}
+	koi_abduct_the_amur_tiger = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_amur_tiger_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2108
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2108
+		2108 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_amur_tiger_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_big_cat_counter
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		if = {
+			limit = { check_variable = {
+				which = KoiBigCatsRescued
+				value = 4
+				} 
+			}
+			country_event = {
+			id = catt.14
+			}
+		}
+		else = {
+			hidden_effect = {
+			change_variable = {
+			which = KoiBigCatsRescued
+			value = 1
+					}
+				}
+			}
+		}
+	}
+	koi_abduct_the_caracal = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_caracal_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 1175
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 1175
+		1175 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_caracal_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_caracal
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+	koi_abduct_the_chinese_mountain_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_chinese_mountain_cat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2183
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2183
+		2183 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_chinese_mountain_cat_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_chinese_mountain_cat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+koi_abduct_the_abyssinian_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_abyssinian_cat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 1212
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 1212
+		1212 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_abyssinian_cat_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_abyssinian_cat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+koi_abduct_the_bay_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_bay_cat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 4806
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 4806
+		4806 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_bay_cat_rescued
+		add_treasury = -1000
+		custom_tooltip = koi_bay_cat_tt
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+			}
+		}
+koi_abduct_the_asiatic_cheetah = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_asiatic_cheetah_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 433
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 433
+		433 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_asiatic_cheetah_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_asiatic_cheetah
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+koi_abduct_the_bobcat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_bobcat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 2480
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 2480
+		2480 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_bobcat_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_bobcat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+koi_abduct_the_persian_cat = {
+	major = yes
+	color = { 255 51 204 }
+	potential = {
+		tag = KOI
+		has_country_flag = unite_felinekind_enabled
+		NOT = { has_country_flag = koi_persian_cat_rescued }
+	}
+	provinces_to_highlight = {
+	province_id = 428
+	NOT = { owned_by = ROOT }
+	}
+	allow = {
+		treasury = 1000
+		OR = {
+		owns_or_subject_of = 428
+		428 = {
+			owner = {
+				has_spy_network_from = {
+				who = ROOT
+				value = 90
+						}
+					}
+				}
+			}
+		}
+	effect = {
+		set_country_flag = koi_persian_cat_rescued
+		add_treasury = -1000
+		add_country_modifier = {
+		name = koi_has_persian_cat
+		duration = -1
+			}
+		hidden_effect = {
+			change_variable = {
+			which = KoiFelinesEnlightened
+			value = 1
+				}
+			}
+		}
+	}
+koi_feast_of_goibniu = {
+	major = yes
+	potential = {
+		religion = druidic_pagan
+		KOI = { has_country_flag = koi_feast_enabled } 
+		NOT = { ruler_has_personality = immortal_personality }
+	}
+	provinces_to_highlight = {
+	province_id = 4365
+	}
+	allow = {
+		custom_trigger_tooltip = {
+			tooltip = koi_cats_liveninelives
+			NOT = { culture = cat }
+		}
+		KOI = {
+			has_opinion = {
+				who = FROM
+				value = 180
+			}
+		}
+	}
+	ai_will_do = {
+	factor = 1
+	modifier = {
+	 	factor = 0
+	 	AND = {
+	 	NOT = { mil = 5 
+	 	dip = 5
+	 	adm = 5 
+	 			}
+			}
+		}
+	}
+	effect = {
+	tooltip = {
+	random_list = {
+    80 = {
+        add_ruler_personality = immortal_personality 
+    	}
+    20 = {
+    	custom_tooltip = koi_feast_of_goibniu_tt
+    				}
+        		}
+			}
+		hidden_effect = {
+			if = {
+				limit = { has_ruler_flag = goibniu_will_immortalize }
+				add_ruler_personality = immortal_personality
+			}
+			else_if = {
+				limit = { has_ruler_flag = goibniu_will_die }
+				kill_ruler = yes
+				}
+			}
+		}
+	}
+koi_unequip_armor_decision = {
+	 major = yes
+	 color = { 255 0 0 }
+	potential = {
+		tag = KOI
+		has_country_flag = koi_armor_equipped
+		NOT = { has_country_flag = koi_armor_unequipped }
+		}
+	allow = {
+		NOT = {
+			has_country_modifier = koi_armor_doctrine_change
+			}
+		}
+	effect = {
+		if = {
+			limit = { 
+			check_variable = {
+			which = KoiArmorEquips
+			value = 1
+			}
+		}
+		add_country_modifier = {
+			name = koi_armor_doctrine_change
+			duration = 3650
+		}
+	}
+	else = {
+		custom_tooltip = koi_first_unequip_tt
+	}
+		remove_country_modifier = koi_has_cat_armor
+		hidden_effect = {
+			change_variable = {
+			which = KoiArmorEquips
+			value = 1
+			}
+			set_country_flag = koi_armor_unequipped
+			clr_country_flag = koi_armor_equipped
+		}
+	}
+	ai_will_do = {
+		factor = 0
+		}
+	}
+
+koi_equip_armor_decision = {
+	 major = yes
+	 color = { 255 0 0 }
+	potential = {
+		tag = KOI
+		has_country_flag = koi_armor_unequipped
+		NOT = { has_country_flag = koi_armor_equipped }
+		}
+	allow = {
+		NOT = {
+			has_country_modifier = koi_armor_doctrine_change
+			}
+		}
+	effect = {
+		add_country_modifier = {
+			name = koi_armor_doctrine_change
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = koi_has_cat_armor
+			duration = -1
+		}
+		hidden_effect = {
+			change_variable = {
+			which = KoiArmorEquips
+			value = 1
+			}
+			set_country_flag = koi_armor_equipped
+			clr_country_flag = koi_armor_unequipped
+		}
+	}
+	ai_will_do = {
+		factor = 0
+		}
+	}
+
+	koi_trial_against_failinis_decision = {
+	 major = yes
+	 color = { 255 0 0 }
+	potential = {
+		tag = KOI
+		has_country_flag = KoiEnableFailinisTrials
+		}
+	allow = {
+		if = {
+			limit = { has_country_flag = "Cats challenged Failinis" }
+			had_country_flag = {
+				flag = "Cats challenged Failinis"
+				days = 3650
+				}
+			}
+			mil_power = 150
+			num_of_generals = 1
+		custom_trigger_tooltip = {
+			check_variable = {
+			which = KoiFailinisBattlesWon
+			value = 25
+			}
+			tooltip = KoiFailinisExplainDecision
+			}
+		}
+	effect = {
+		clr_country_flag = "Cats challenged Failinis"
+		country_event = {
+			id = catt.18
+			}
+		}
+	ai_will_do = {
+		factor = 100
+		}
+	}
+
+	koi_bathe_the_smelly_dog = {
+	potential = {
+		tag = KOI
+		has_country_flag = KoiEnableFailinisTrials
+		}	
+	allow = {
+		has_leader_with = {
+			fire = 10
+		}
+	}
+	effect = {
+		tooltip = {
+		change_price = {
+    		trade_goods = wine
+    		key = koi_bathed_failinis
+    		value = -0.75
+    		duration = -1
+			}
+		change_price = {
+    		trade_goods = champagne
+    		key = koi_bathed_failinis
+    		value = -0.75
+    		duration = -1
+			}
+		}
+		hidden_effect = {
+			country_event = {
+			id = catt.93
+			days = 730
+				}
+		change_price = {
+    		trade_goods = wine
+    		key = koi_bathed_failinis
+    		value = -0.75
+    		duration = 730
+			}
+		change_price = {
+    		trade_goods = champagne
+    		key = koi_bathed_failinis
+    		value = -0.75
+    		duration = 730
+				}
+			}
+		}
+	ai_will_do = {
+		factor = 100
+		}
+	}
+}

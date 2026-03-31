@@ -29,17 +29,18 @@ historical_units = {
 	western_men_at_arms
 }
 monarch_names = {
-	"Adalbero #0" = 0
-	"Ado #1" = 10
-	"Berengar #0" = 0
+	"Étiennette #0" = -1
+	"Berengar #0" = 10
 	"Dietpold #0" = 0
 	"Eberhard #1" = 10
 	"Eufemia #0" = -1
-	"Friedrich #2" = 10
+	"Friedrich #2" = 40
 	"Giselbert #0" = 0
 	"Gotzelo #0" = 0
 	"Gozbert #1" = 10
 	"Heinrich #4" = 10
+	"Adalbero #0" = 0
+	"Ado #1" = 10
 	"Hetan #2" = 10
 	"Hruodis #1" = 10
 	"Jürgen #0" = 0
@@ -53,7 +54,6 @@ monarch_names = {
 	"Trude #0" = -1
 	"Walram #0" = 0
 	"Wenzel #0" = 0
-	"Étiennette #0" = -1
 }
 leader_names = {
 	"Blochberger"

@@ -197,7 +197,7 @@ colossus = {
 	
 	build_cost = 250
 	
-	can_be_moved = yes
+	can_be_moved = no
 	
 	move_days_per_unit_distance = 2
 	
@@ -250,7 +250,9 @@ colossus = {
 		}
 
 		province_modifiers = {
-			trade_value = 1
+			trade_value_modifier = 0.1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
 		}
 
 		area_modifier = {
@@ -276,7 +278,9 @@ colossus = {
 		}
 
 		province_modifiers = {
-			trade_value = 5
+			trade_value_modifier = 0.25
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
 		}
 
 		area_modifier = {
@@ -297,7 +301,9 @@ colossus = {
 		}
 
 		province_modifiers = {
-			trade_value = 5 
+			trade_value_modifier = 0.5
+			hostile_fleet_attrition = 5
+			block_slave_raid = yes
 		}
 
 		area_modifier = {
@@ -384,6 +390,9 @@ theodosian_walls = {
 
 		province_modifiers = {
 			local_defensiveness = 0.2
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
+			local_development_cost = -0.25
 		}
 
 		area_modifier = {
@@ -429,9 +438,13 @@ theodosian_walls = {
 		province_modifiers = {
 			local_defensiveness = 0.25
 			local_defender_dice_roll_bonus = 1	
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
+			local_development_cost = -0.25
 		}
 
 		area_modifier = {
+			local_development_cost = -0.25
 		}
 
 		country_modifiers = {
@@ -475,9 +488,13 @@ theodosian_walls = {
 		province_modifiers = {
 			local_defensiveness = 0.5
 			local_defender_dice_roll_bonus = 2
+			block_slave_raid = yes
+			hostile_fleet_attrition = 5
+			local_development_cost = -0.75
 		}
 
 		area_modifier = {
+			local_development_cost = -0.25
 		}
 
 		country_modifiers = {

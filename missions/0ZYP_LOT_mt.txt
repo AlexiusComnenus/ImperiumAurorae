@@ -63,10 +63,97 @@ zyp_lot_3 = {
 		}
 	}
 	
-	lot_carolingian_resurgence = {
-		icon = carolingian_empire
+	lot_search_for_durandal = {
+		icon = push_on_to_bulgaria
 		position = 4
 		required_missions = {  }
+		provinces_to_highlight = {
+			province_id = 211
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				211 = {
+					OR = {
+						controlled_by = ROOT
+						owner = { alliance_with = ROOT }
+						owner = { is_subject_of = ROOT }
+						owner = { 
+							if = {
+								limit = { is_free_or_tributary_trigger = yes }
+								has_spy_network_from = {
+									who = ROOT
+									value = 60
+								}
+							}
+							else = {
+								overlord = {
+									has_spy_network_from = {
+										who = ROOT
+										value = 60
+									}
+								}
+							}
+						}
+					}
+				}
+				treasury = 250
+			}
+			else = {
+				is_year = 1470
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = durandal_modifier
+				duration = -1
+			}
+			change_mil = 3
+			add_treasury = -250
+		}
+	}
+	
+	lot_reestablish_paladins = {
+		icon = support_the_orders
+		position = 5
+		required_missions = { lot_search_for_durandal }
+		
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				OR = {
+					army_tradition = 65
+					army_professionalism = 0.25
+				}
+				any_owned_province = { has_building = armory }
+			}
+			else = {
+				OR = {
+					is_year = 1490
+					any_owned_province = { has_building = armory }
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = lot_order_of_paladins
+				duration = -1
+			}
+			add_country_modifier = {
+				name = lot_order_of_paladins_modifiers
+				duration = -1
+			}
+		}
+	}
+	
+	lot_carolingian_resurgence = {
+		icon = carolingian_empire
+		position = 6
+		required_missions = { lot_reestablish_paladins }
 		
 		
 		trigger = {
@@ -85,6 +172,10 @@ zyp_lot_3 = {
 			add_power_projection = {
 				type = mission_rewards_power_projection
 				amount = 20
+			}
+			add_country_modifier = {
+				name = lot_paladins_resurgent
+				duration = -1
 			}
 			LOT = { set_dynasty = "Karolinger" }
 			override_country_name = lot_karolingerreich
@@ -118,7 +209,7 @@ zyp_lot_3 = {
 	
 	lot_carolingian_revenge = {
 		icon = join_the_empire
-		position = 5
+		position = 7
 		required_missions = { lot_carolingian_resurgence }
 		
 		
@@ -129,8 +220,19 @@ zyp_lot_3 = {
 					NOT = { any_known_country = { has_reform = saxon_feudalism } }
 					has_reform = saxon_feudalism
 				}
-				NOT = { exists = GER }
+				OR = {
+					NOT = { exists = GER }
+					GER = { has_country_flag = lost_to_carolingians_flag }
+					AND = {
+						military_strength = {
+							who = GER
+							value = 3
+						}
+						GER = { is_great_power = no }
+					}
+				}
 			}
+			is_at_war = no
 		}
 		
 		effect = {
@@ -141,6 +243,10 @@ zyp_lot_3 = {
 			custom_tooltip = permanent_pp_tt
 			add_prestige_or_monarch_power = { amount = 100 }
 			add_country_modifier = {
+				name = lot_carolingian_paladins_returned
+				duration = -1
+			}
+			add_country_modifier = {
 				name = lot_carolingian_revenge_modifier
 				duration = -1
 			}
@@ -150,6 +256,7 @@ zyp_lot_3 = {
 					NOT = { any_known_country = { has_reform = saxon_feudalism } }
 					NOT = { has_reform = saxon_feudalism }
 				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = HLR
 				on_change_tag_effect = yes
 				set_government_rank = 3
@@ -969,7 +1076,7 @@ zyp_lot_5_aachen = {
 		}
 	}
 
-	zyp_lot_wine_production = {
+	zyp_lot_wine_production_aachen = {
 		icon = up_the_adige
 		position = 2
 		required_missions = { zyp_lot_splendor_capital_aachen }
@@ -1330,6 +1437,19 @@ zyp_lot_5_nanzig = {
 					duration = -1 #10950
 				}
 			}
+			every_owned_province = {
+				limit = {
+					OR = { 
+						trade_goods = wine
+						trade_goods = champagne
+					}
+					base_production = 8
+				}
+				add_province_modifier = {
+					name = lot_aachen_prestige
+					duration = -1 #10950
+				}
+			}
 		}
 	}
 
@@ -1345,6 +1465,16 @@ zyp_lot_5_nanzig = {
 			OR = {
 				tolerance_to_this = 5
 				full_idea_group = religious_ideas
+			}
+			if = {
+				limit = { ai = no }
+				OR = {
+					AND = {
+						prestige = 75
+						legitimacy_equivalent = 90
+					}
+					full_idea_group = court_ideas
+				}
 			}
 		}
 		
@@ -1364,27 +1494,31 @@ zyp_lot_5_nanzig = {
 		}
 		
 		trigger = {
-			calc_true_if = {
-				amount = 8
-				all_owned_province = {
-					region = low_countries_region
-					trade_goods = cloth
-					OR = {
-						base_production = 8
-						AND = {
-							OR = {
-								has_building = workshop
-								has_building = counting_house
-							}
-							has_building = textile
-						}
+			num_of_owned_provinces_with = {
+				value = 6
+				region = low_countries_region
+				OR = { trade_goods = cloth	trade_goods = uniforms }
+				OR = {
+					base_production = 12
+					AND = {
+						has_production_building_trigger = yes
+						has_building = textile
 					}
 				}
 			}
 		}
 		
 		effect = {
-			add_years_of_income = 1
+			add_years_of_owned_provinces_production_income = {
+				years = 2
+				trigger = {
+					OR = {
+						trade_goods = cloth
+						trade_goods = uniforms
+					}
+				}
+				custom_tooltip = lot_cloth_income_tt
+			}
 			add_country_modifier = {
 				name = lot_cloth_production
 				duration = 18250

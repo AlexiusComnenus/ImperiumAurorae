@@ -138,6 +138,17 @@ country_event = {  # Final Crusade
 	
 	major = yes
 	
+	immediate = {
+		
+		hidden_effect = {
+			add_country_modifier = {
+				name = suddenpacifism
+				duration = 730
+				hidden = yes
+			}
+		}
+	}
+	
 	option = {
 		name = ia_flavor_tem.3.a
 		ai_chance = { factor = 33 }
@@ -150,6 +161,7 @@ country_event = {  # Final Crusade
 				has_matching_religion = ROOT
 				is_subject = no
 				is_part_of_hre = no
+				NOT = { has_reform = saxon_feudalism }
 			}
 			every_war_enemy_country = { white_peace = PREV }
 			#form_coalition_against = emperor
@@ -158,10 +170,12 @@ country_event = {  # Final Crusade
 				name = templarite_last_crusade_starter_bonus
 				duration = 1915
 			}
-			add_country_modifier = {
-				name = suddenpacifism
-				duration = 730
-				hidden = yes
+			hidden_effect = {
+				add_country_modifier = {
+					name = suddenpacifism
+					duration = 730
+					hidden = yes
+				}
 			}
 			play_sound = deus_vult_sfx
 		}
@@ -174,6 +188,14 @@ country_event = {  # Final Crusade
 				}
 				is_subject = no
 				NOT = { is_emperor = yes }
+				NOT = { has_reform = saxon_feudalism }
+			}
+			hidden_effect = {
+				add_country_modifier = {
+					name = suddenpacifism
+					duration = 730
+					hidden = yes
+				}
 			}
 			every_war_enemy_country = { white_peace = PREV }
 			#form_coalition_against = ROOT
@@ -181,7 +203,14 @@ country_event = {  # Final Crusade
 			play_sound = deus_vult_sfx
 		}
 		hidden_effect = {
-			country_event = { id = ia_flavor_tem.27	days = 90}
+			country_event = { id = ia_flavor_tem.27	days = 180 }
+			emperor = {
+				add_country_modifier = {
+					name = suddenpacifism
+					duration = 730
+					hidden = yes
+				}
+			}
 		}
 		add_country_modifier = {
 			name = templarite_last_crusade_starter_bonus
@@ -213,6 +242,8 @@ country_event = {  # Slay Yangshing
 			name = immortal_slayer
 			duration = -1
 		}
+		
+		set_global_flag = yangshing_dead_flag
 	}
 }
 
@@ -309,7 +340,10 @@ country_event = {  # Valencia march event
 			}
 			random_country = {
 				limit = { tag = VAL }
-				create_march = KOS
+				create_subject = {
+					subject_type = crusader_state_subject
+					subject = KOS
+				}
 			}
 		}
 		
@@ -319,13 +353,19 @@ country_event = {  # Valencia march event
 			}
 			random_country = {
 				limit = { tag = VAL }
-				create_march = KCL
+				create_subject = {
+					subject_type = crusader_state_subject
+					subject = KCL
+				}
 			}
 		}
 		
 		random_country = {
 			limit = { tag = VAL }
-			create_march = ROOT
+			create_subject = {
+				subject_type = crusader_state_subject
+				subject = ROOT
+			}
 		}
 	}
 	
@@ -359,8 +399,10 @@ country_event = {  # Prophetess arrives
 				NOT = { government = theocracy }
 			}
 			change_government = theocracy
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = TEM
-			add_government_reform = monastic_order_reform
+			on_change_tag_effect = yes
+			add_government_reform = templar_order_government
 			add_government_reform = templar_crusade_reform
 			swap_non_generic_missions = yes
 			country_event = { id = ideagroups.1 } #Swap Ideas
@@ -371,9 +413,9 @@ country_event = {  # Prophetess arrives
 			dynasty = "d'Acre"
 			age = 30
 			claim = 100
-			adm = 9
-			dip = 9
-			mil = 9
+			adm = 2
+			dip = 6
+			mil = 6
 			hide_skills = yes
 			religion = protestant
 			female = yes
@@ -422,8 +464,17 @@ country_event = {  # News of Prophetess
 		ai_chance = {
 			factor = 40
 			modifier = {
-				factor = 1000
+				factor = 10000
 				any_ally = { 
+					OR = {
+						tag = VAL
+						tag = TEM
+					}
+				}
+			}
+			modifier = {
+				factor = 10000
+				overlord = { 
 					OR = {
 						tag = VAL
 						tag = TEM
@@ -445,10 +496,16 @@ country_event = {  # News of Prophetess
 				or = { 
 					tag = BRB
 					tag = NED
+					tag = ENG
+					tag = CRN
+					tag = WLS
+					tag = SWE
+					tag = SCA
+					was_tag = SWE
 				}
 			}
 			modifier = {
-				factor = 0.25
+				factor = 0.1
 				any_ally = { 
 					OR = {
 						tag = FAP
@@ -464,6 +521,19 @@ country_event = {  # News of Prophetess
 						tag = PAP
 					}
 				}
+			}
+			modifier = {
+				factor = 0
+				overlord = { 
+					OR = {
+						tag = FAP
+						tag = PAP
+					}
+				}
+			}
+			modifier = {
+				factor = 0.1
+				dynasty = "Meroveching"
 			}
 		}
 		
@@ -492,12 +562,10 @@ country_event = {  # News of Prophetess
 			factor = 20
 			modifier = {
 				factor = 5
-				overlord = { 
-					any_ally = {
-						OR = {
-							tag = PAP
-							tag = FAP
-						}
+				any_ally = {
+					OR = {
+						tag = PAP
+						tag = FAP
 					}
 				}
 			}
@@ -567,10 +635,24 @@ country_event = {  # Jeanne resurrects
 		has_global_flag = jeanne_arrived
 		NOT = { ruler_has_personality = voice_of_god_personality }
 		religion = protestant
+		NOT = { has_global_flag = last_crusade_defeated_flag }
+		NOT = { has_global_flag = last_crusade_victorious_flag }
+		NOT = { has_global_flag = last_crusade_ended }
+		NOT = { has_global_flag = last_crusade_draw_flag }
+		NOT = { has_global_flag = yangshing_dead_flag }
+		NOT = { has_global_flag = block_jeanne_respawning }
 	}
 	
 	mean_time_to_happen = {
 		months = 60
+		modifier = {
+			factor = 0.5
+			at_war_with_religious_enemy = yes
+		}
+		modifier = {
+			factor = 0.1
+			war_with = Z17
+		}
 	}
 	
 	option = {
@@ -581,9 +663,9 @@ country_event = {  # Jeanne resurrects
 			dynasty = "d'Acre"
 			age = 30
 			claim = 100
-			adm = 9
-			dip = 9
-			mil = 9
+			adm = 2
+			dip = 6
+			mil = 6
 			hide_skills = yes
 			religion = protestant
 			female = yes
@@ -606,7 +688,9 @@ country_event = {  # Jeanne resurrects
 				NOT = { tag = TEM }
 				NOT = { exists = TEM }
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = TEM
+			on_change_tag_effect = yes
 			country_event = { id = ideagroups.1 } #Swap Ideas
 			swap_non_generic_missions = yes
 			complete_mission = templar_establish_banks
@@ -852,11 +936,7 @@ country_event = { # Fix wrong religion
 			tag = VAL
 		}
 		NOT = {
-			OR = {
-				religion = catholic
-				religion = fraticelli
-				religion = protestant
-			}
+			religion = protestant
 		}
 		is_religion_enabled = protestant
 		religion_years = { protestant = 5 }
@@ -1146,6 +1226,7 @@ country_event = { # end the war after 20 years
 				is_in_war = { 
 					casus_belli = cb_final_crusade
 				}
+				NOT = { tag = KOJ }
 			}
 			country_event = {
 				id = ia_flavor_tem.12
@@ -1163,6 +1244,7 @@ country_event = { # end the war after 20 years
 			create_march = KOJ
 		}
 		white_peace = Z17	
+		set_global_flag = last_crusade_victorious_flag
 	}
 	option = {
 		name = ia_flavor_tem.22.b
@@ -1186,6 +1268,7 @@ country_event = { # end the war after 20 years
 		
 		white_peace = Z17
 		set_hre_religion_locked = yes	
+		set_global_flag = last_crusade_draw_flag
 	}
 	
 	option = {
@@ -1220,6 +1303,7 @@ country_event = { # end the war after 20 years
 		}
 		white_peace = Z17
 		set_hre_religion_locked = yes	
+		set_global_flag = last_crusade_defeated_flag
 	}
 }
 
@@ -1251,6 +1335,9 @@ province_event = { # province flipping
 	option = {
 		name = ia_flavor_tem.23.a
 		cede_province = controller 
+		add_base_tax = -1
+		add_base_production = -1
+		add_base_manpower = -1
 		IF = {
 			limit = { owner = { is_part_of_hre = yes } }
 			set_in_empire = yes
@@ -1368,7 +1455,7 @@ country_event = {  # Final Crusade
 		name = ia_flavor_tem.3.a
 		ai_chance = { factor = 33 }
 		
-		
+		set_global_flag = last_crusade_started
 		emperor = {
 			random_known_country = {
 				limit = {
@@ -1714,5 +1801,462 @@ country_event = {  # Disband the Legion of Dusk
 		name = ia_flavor_tem.31.a
 		
 		
+	}
+}
+
+country_event = {  # Jeanne no longer resurrects: mission complete
+	id = ia_flavor_tem.32
+	title = ia_flavor_tem.32.t
+	desc = ia_flavor_tem.32.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	
+	trigger = {
+		tag = TEM
+		has_global_flag = jeanne_arrived
+		NOT = { ruler_has_personality = voice_of_god_personality }
+		religion = protestant
+		NOT = { has_global_flag = last_crusade_defeated_flag }
+		NOT = { has_global_flag = block_jeanne_respawning }
+		OR = { 
+			has_global_flag = yangshing_dead_flag 
+			NOT = { hre_size = 1 }
+			NOT = { exists = Z17 }
+			has_global_flag = last_crusade_victorious_flag
+		}
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = ia_flavor_tem.32.a
+		set_global_flag = block_jeanne_respawning
+		add_country_modifier = {
+			name = templarite_last_crusade_victory
+			duration = 18250
+		}
+		custom_tooltip = templarites_share_modifier_tt
+		hidden_effect = {
+			every_country = {
+				limit = { religion = protestant }
+				add_country_modifier = {
+					name = templarite_last_crusade_victory
+					duration = 18250
+				}
+			}
+		}
+	}
+}
+
+country_event = {  # Jeanne no longer resurrects: failure of the crusade
+	id = ia_flavor_tem.33
+	title = ia_flavor_tem.33.t
+	desc = ia_flavor_tem.33.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	
+	trigger = {
+		tag = TEM
+		has_global_flag = jeanne_arrived
+		NOT = { ruler_has_personality = voice_of_god_personality }
+		NOT = { has_global_flag = block_jeanne_respawning }
+		religion = protestant
+		OR = { 
+			has_global_flag = last_crusade_defeated_flag
+			has_global_flag = last_crusade_draw_flag
+			AND = {
+				has_global_flag = last_crusade_ended
+				NOT = { has_global_flag = last_crusade_victorious_flag }
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = ia_flavor_tem.33.a
+		set_global_flag = block_jeanne_respawning
+		
+		if = {
+			limit = { has_global_flag = last_crusade_defeated_flag }
+			add_country_modifier = {
+				name = templarite_last_crusade_failure
+				duration = 18250
+			}
+			custom_tooltip = templarites_share_modifier_tt
+			hidden_effect = {
+				every_country = {
+					limit = { religion = protestant }
+					add_country_modifier = {
+						name = templarite_last_crusade_failure
+						duration = 18250
+					}
+				}
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = templarite_last_crusade_draw
+				duration = 18250
+			}
+			custom_tooltip = templarites_share_modifier_tt
+			hidden_effect = {
+				every_country = {
+					limit = { religion = protestant }
+					add_country_modifier = {
+						name = templarite_last_crusade_draw
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+}
+
+province_event = {  # Spread of Irenicism: province event
+	id = ia_flavor_tem.34
+	title = ia_flavor_tem.34.t
+	desc = ia_flavor_tem.34.d
+	picture = ANGLICAN_SERMON_eventPicture
+	goto = ROOT
+	
+	trigger = {
+		OR = {
+			religion = protestant
+			religion = catholic
+			religion = fraticelli
+		}
+		OR = {
+			has_global_flag = block_jeanne_respawning
+			is_year = 1630
+		}
+		NOT = { country_or_subject_holds = TEM }
+		NOT = { country_or_subject_holds = VAL }
+		NOT = { country_or_subject_holds = PAP }
+		NOT = { country_or_subject_holds = FAP }
+		NOT = { owner = { religion = catholic any_subject_country = { tag = PAP } } }
+		NOT = { owner = { religion = fraticelli any_subject_country = { tag = FAP } } }
+		NOT = { owner = { religion = catholic alliance_with = PAP } }
+		NOT = { owner = { religion = catholic overlord = { alliance_with = PAP } } }
+		#NOT = { has_global_flag = last_crusade_victorious_flag }
+		NOT = { has_province_flag = converted_to_irenicist_flag }
+		NOT = { has_province_modifier = religious_zeal_at_conv }
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+	}
+	
+	immediate = {
+		set_province_flag = converted_to_irenicist_flag
+	}
+	
+	option = {
+		name = ia_flavor_tem.34.a
+		ai_chance = { 
+			factor = 100
+		}
+		
+		change_religion = anglican
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 9000
+		}
+	}
+	
+	option = {
+		trigger = { owner = { adm_power = 0 	dip_power = 0  NOT = { religion = anglican } } }
+		name = ia_flavor_tem.34.b
+		ai_chance = { 
+			factor = 0
+		}
+		
+		owner = {
+			dip_power_cost = 40
+			adm_power_cost = 40
+		}
+		change_religion = anglican
+		
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+country_event = {  # Order of St. Jeanne the Voice of God
+	id = ia_flavor_tem.35
+	title = ia_flavor_tem.35.t
+	desc = ia_flavor_tem.35.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	
+	trigger = {
+		OR = { 
+			tag = TEM
+			tag = VAL
+		}
+		religion = protestant
+		has_global_flag = block_jeanne_respawning
+		had_global_flag = {
+			flag = block_jeanne_respawning
+			days = 10950
+		}
+		NOT = { has_country_flag = had_order_of_st_jeanne_event_flag }
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		set_country_flag = had_order_of_st_jeanne_event_flag
+	}
+	
+	option = {
+		name = ia_flavor_tem.35.a
+		add_government_reform = order_of_st_jeanne_the_voice_of_god
+		if = {
+			limit = { tag = TEM }
+			override_country_name = ORDER_OF_ST_JEANNE_NAME
+		}
+	}
+}
+
+country_event = { # dev loss during last crusade
+	id = ia_flavor_tem.36
+	title = ia_flavor_tem.36.t
+	desc = ia_flavor_tem.36.d
+	picture = WOUNDED_SOLDIERS_eventPicture
+	
+	trigger = {
+		is_in_war = {
+			casus_belli = cb_final_crusade
+		}
+		any_owned_province = {
+			NOT = { controlled_by = ROOT }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	option = {
+		name = ia_flavor_tem.36.a
+		every_owned_province = {
+			limit = {
+				NOT = { controlled_by = ROOT }
+				development = 11
+				controller = {
+					is_in_war = {
+						casus_belli = cb_final_crusade
+					}
+				}
+			}
+			add_base_manpower = -1
+			add_base_production = -1
+			add_base_tax = -1
+			add_devastation = 10
+		}
+	}
+}
+
+province_event = {  # Spread of Abolitionism: province event
+	id = ia_flavor_tem.37
+	title = ia_flavor_tem.37.t
+	desc = ia_flavor_tem.37.d
+	picture = STREET_SPEECH_eventPicture
+	goto = ROOT
+	
+	trigger = {
+		has_revolution_in_province = yes
+		is_religion_enabled = abolitionist
+		NOT = { country_or_subject_holds = TEM }
+		NOT = { country_or_subject_holds = VAL }
+		NOT = { country_or_subject_holds = PAP }
+		NOT = { country_or_subject_holds = FAP }
+		NOT = { religion = bogomilist }
+		NOT = { religion = abolitionist }
+		NOT = { religion = lollard }
+		#NOT = { owner = { religion = catholic any_subject_country = { tag = PAP } } }
+		#NOT = { owner = { religion = fraticelli any_subject_country = { tag = FAP } } }
+		NOT = { is_part_of_hre = yes }
+		NOT = { has_province_modifier = religious_zeal_at_conv }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	immediate = {
+		set_province_flag = converted_to_abolitionist_flag
+	}
+	
+	option = {
+		name = ia_flavor_tem.37.a
+		ai_chance = { 
+			factor = 100
+		}
+		
+		change_religion = abolitionist
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 9000
+		}
+	}
+	
+	option = {
+		trigger = { owner = { adm_power = 0 	mil_power = 0  NOT = { religion = abolitionist } } }
+		name = ia_flavor_tem.37.b
+		ai_chance = { 
+			factor = 0
+		}
+		
+		owner = {
+			mil_power_cost = 40
+			adm_power_cost = 40
+		}
+		change_religion = abolitionist
+		
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 3650
+		}
+	}
+}
+
+country_event = {  # The Knight of Eternity
+	id = ia_flavor_tem.38
+	title = ia_flavor_tem.38.t
+	desc = ia_flavor_tem.38.d
+	picture = CROSSROAD_eventPicture
+	
+	trigger = {
+		has_reform = templar_order_government
+		has_reform = order_of_st_jeanne_the_voice_of_god
+		religion = protestant
+		NOT = { has_leader = "The Knight Left Behind" }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			at_war_with_religious_enemy = yes
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.38.a
+		
+		define_general = {
+			fire = 5
+			shock = 7
+			manuever = 8
+			siege = 3
+			name = "The Knight Left Behind"
+			female = yes
+			trait = voice_of_god_generaltrait
+		}
+	}
+}
+
+country_event = {  # Crusader State wants independence
+	id = ia_flavor_tem.39
+	title = ia_flavor_tem.39.t
+	desc = ia_flavor_tem.39.d
+	picture = CROSSROAD_eventPicture
+	
+	trigger = {
+		religion = protestant
+		OR = {
+			has_global_flag = last_crusade_ended
+			AND = {
+				NOT = { is_at_war = yes }
+				has_global_flag = last_crusade_started
+			}
+		}
+		any_subject_country = {
+			NOT = { war_exhaustion = 2 }
+			NOT = { has_country_modifier = disloyal_crusader_state_mod }
+			OR = {
+				has_country_flag = crusader_state_flag
+			}
+			OR = {
+				total_development = 400
+				military_strength = {
+					who = ROOT
+					value = 0.4
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_subject_country = {
+			limit = {
+				NOT = { war_exhaustion = 2 }
+				NOT = { has_country_modifier = disloyal_crusader_state_mod }
+				OR = {
+					has_country_flag = crusader_state_flag
+				}
+				OR = {
+					total_development = 400
+					military_strength = {
+						who = ROOT
+						value = 0.4
+					}
+				}
+			}
+			save_event_target_as = too_big_crusader_state
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.39.a
+		ai_chance = { factor = 80 }
+		
+		event_target:too_big_crusader_state = {
+			grant_independence = yes
+			
+			add_historical_friend = ROOT
+			ROOT = { add_historical_friend = PREV }
+			create_alliance = ROOT
+		}
+	}
+	
+	option = {
+		name = ia_flavor_tem.39.b
+		ai_chance = { factor = 20 }
+		
+		event_target:too_big_crusader_state = {
+			add_liberty_desire = -80
+			add_country_modifier = {
+				name = disloyal_crusader_state_mod
+				duration = 29200
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_tyrant_overlord
+				multiplier = 5
+			}
+			add_trust = {
+				who = ROOT
+				value = -75
+				mutual = yes
+			}
+		}
 	}
 }

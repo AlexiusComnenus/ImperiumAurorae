@@ -62,10 +62,19 @@ po_add_country_to_hre = {
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
-			value = 10
+			value = monthly_income
+			who = ROOT
 		}
-		limit = {
-			FROM = { NOT = { num_of_cities = ROOT } }
+		multiply_variable = {
+			which = ai_value
+			value = 0
+		}
+		change_variable = {
+			which = ai_value
+			value = 10000
+		}
+		limit = { # if limit evaluates false, ai_weight will evaluate to 0 regardless
+			always = yes
 		}
 	}
 }

@@ -12,6 +12,7 @@ base_manpower = 1
 extra_cost = 13
 center_of_trade = 1
 add_core = BNG
+add_core = Z08
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

@@ -44,14 +44,14 @@ country_event = {
 		name = catholic_flavor.3.a
 		add_prestige = 25
 		add_legitimacy = 25
-		set_religion_papacy_active = {
-			religion = catholic
-			active = no
-		}
-		set_religion_papacy_active = {
-			religion = fraticelli
-			active = no
-		}
+		#set_religion_papacy_active = {
+		#	religion = catholic
+		#	active = no
+		#}
+		#set_religion_papacy_active = {
+		#	religion = fraticelli
+		#	active = no
+		#}
 	}
 }
 
@@ -68,6 +68,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		NOT = {
 			has_global_flag = pap_disables_simony_flag
 		}
@@ -112,6 +113,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		#NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		#is_year = 1480
 		ruler_age = 45
 		NOT = {
@@ -187,6 +189,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		#NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		any_owned_province = {
 			OR = { religion = catholic  religion = fraticelli }
 		}
@@ -248,6 +251,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		#NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 
 	}
 	
@@ -284,6 +288,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		any_owned_province = {
 			OR = { religion = catholic  religion = fraticelli }
 		}
@@ -330,6 +335,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		reform_desire = 0.5
 	}
 	
@@ -363,6 +369,7 @@ country_event = {
 		OR = { religion = catholic  religion = fraticelli }
 		#NOT = { is_religion_enabled = protestant }
 		NOT = { tag = PAP }
+		NOT = { tag = FAP }
 		reform_desire = 0.25
 		#is_year = 1520
 	}
@@ -381,5 +388,110 @@ country_event = {
 		add_reform_desire = 0.005
 		add_papal_influence = 10
 		add_devotion = 1
+	}
+}
+
+# Curia controller based on dynasty
+country_event = {
+	id = catholic_flavor.11
+	title = catholic_flavor.11.t
+	desc = catholic_flavor.11.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				religion = catholic
+				tag = PAP
+			}
+			AND = {
+				religion = fraticelli
+				tag = FAP
+			}
+		}
+		OR = {
+			AND = {
+				ruler_is_foreigner = yes
+				any_known_country = {
+					religion = ROOT
+					is_free_or_tributary_trigger = yes
+					dynasty = ROOT
+				}
+			}
+			AND = {
+				is_subject = yes
+				overlord = { religion = ROOT }
+			}
+			AND = {
+				tag = PAP
+				religion = catholic
+				has_global_flag = papacy_permanent_curia_controller_flag
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { is_subject = yes }
+				random_country = {
+					limit = {
+						overlord_of = ROOT
+						religion = ROOT
+					}
+					save_event_target_as = new_curia_controller
+				}
+			}
+			random_country = {
+				limit = {
+					is_free_or_tributary_trigger = yes
+					religion = ROOT
+					dynasty = ROOT
+				}
+				save_event_target_as = new_curia_controller
+			}
+			every_known_country = {
+				limit = {
+					is_free_or_tributary_trigger = yes
+					religion = ROOT
+					dynasty = ROOT
+					total_development = event_target:new_curia_controller
+				}
+				save_event_target_as = new_curia_controller
+			}
+			every_known_country = {
+				limit = {
+					is_free_or_tributary_trigger = yes
+					religion = ROOT
+					dynasty = ROOT
+					overlord_of = ROOT
+				}
+				save_event_target_as = new_curia_controller
+			}
+			if = {
+				limit = { 
+					has_global_flag = papacy_permanent_curia_controller_flag 
+					religion = catholic
+					tag = PAP
+				}
+				PAP = {
+					save_event_target_as = new_curia_controller
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	
+	option = {
+		name = catholic_flavor.11.a
+		
+		transfer_papal_controller = event_target:new_curia_controller
 	}
 }

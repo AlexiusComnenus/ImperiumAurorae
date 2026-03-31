@@ -45,6 +45,7 @@ country_decisions = {
 			owns_core_province = 1756	# Budjak
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = RMN
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes

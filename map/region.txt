@@ -185,7 +185,6 @@ iberia_region = {
 		beieras_area
 		basque_country
 		galicia_area
-		baleares_area
 		extremadura_area
 	}
 }
@@ -309,6 +308,7 @@ egypt_region = {
 
 maghreb_region = {
 	areas = {
+		baleares_area
 		fezzan_area
 		tunisia_area
 		djerba_area
@@ -882,7 +882,6 @@ south_china_region = {
 		huguang_area
 		zhejiang_area
 		south_anhui_area
-		taiwan_area
 		south_jiangsu_area
 		hunan_area
 		guangxi_area
@@ -1070,6 +1069,7 @@ moluccas_region = {
 		south_sulawesi_area
 		makassar_area
 		spice_islands_area
+		taiwan_area
 	}
 	monsoon = {
 		00.10.01

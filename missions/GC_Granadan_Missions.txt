@@ -2739,15 +2739,15 @@ gra_missions_4_early = {
 		required_missions = { granada_baetic_range granada_sunni_army } 
 		
 		trigger = {
-			1748 = {
-				owned_by = GRA
-				OR = {
-					has_building = fort_15th
-					has_building = fort_16th
-					has_building = fort_17th
-					has_building = fort_18th
-				}
-			}
+			#1748 = {
+			#	owned_by = GRA
+			#	OR = {
+			#		has_building = fort_15th
+			#		has_building = fort_16th
+			#		has_building = fort_17th
+			#		has_building = fort_18th
+			#	}
+			#}
 			num_of_owned_provinces_with = {
 				value = 3
 				OR = {
@@ -2759,7 +2759,22 @@ gra_missions_4_early = {
 			}
 		}
 		effect = { #This is what you get after you finished your mission.
-			1748 = {
+			#1748 = {
+			#	add_province_modifier = { 
+			#		name = "gra_defensive_operations"
+			#		duration = 5475
+			#	}
+			#}
+			random_owned_province = {
+				limit = {
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+					NOT = { has_province_modifier = gra_defensive_operations }
+				}
 				add_province_modifier = { 
 					name = "gra_defensive_operations"
 					duration = 5475

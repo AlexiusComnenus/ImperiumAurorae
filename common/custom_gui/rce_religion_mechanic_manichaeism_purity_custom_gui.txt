@@ -1,0 +1,473 @@
+custom_window = {
+	name = rce_religion_mechanic_manichaeism_purity_window
+	potential = {
+		ai = no
+		rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+	}
+}
+
+custom_text_box = {
+	name = rce_religion_mechanic_manichaeism_purity_value_text
+	potential = {
+		always = yes
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_value_text_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_knowledge_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_knowledge_decision decision accordingly
+	trigger = {
+		rce_has_religion_mechanic_manichaeism_purity_value = { value = 20 }
+		NOT = { has_country_modifier = rce_religion_mechanic_manichaeism_purity_knowledge_modifier }
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		rce_add_religion_mechanic_manichaeism_purity_value = { value = -20 }
+		add_country_modifier = {
+			name = rce_religion_mechanic_manichaeism_purity_knowledge_modifier
+			duration = 3650
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_knowledge_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_wind_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_wind_decision decision accordingly
+	trigger = {
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind } }
+			}
+			rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+			rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+		}
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind } }
+			}
+			hidden_effect = {
+				rce_add_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+			}
+		}
+		else = {
+			rce_remove_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_currently_active
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_wind_moon_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_wind_sun_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_wind_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_water_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_water_decision decision accordingly
+	trigger = {
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water } }
+			}
+			rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+			rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+		}
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water } }
+			}
+			hidden_effect = {
+				rce_add_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+			}
+		}
+		else = {
+			rce_remove_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_currently_active
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_water_moon_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_water_sun_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_water_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_air_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_air_decision decision accordingly
+	trigger = {
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air } }
+			}
+			rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+			rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+		}
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air } }
+			}
+			hidden_effect = {
+				rce_add_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+			}
+		}
+		else = {
+			rce_remove_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_currently_active
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_air_moon_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_air_sun_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_air_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_light_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_light_decision decision accordingly
+	trigger = {
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light } }
+			}
+			rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+			rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+		}
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light } }
+			}
+			hidden_effect = {
+				rce_add_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+			}
+		}
+		else = {
+			rce_remove_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_currently_active
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_light_moon_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_light_sun_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_light_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_fire_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_fire_decision decision accordingly
+	trigger = {
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire } }
+			}
+			rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+			rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = yes
+		}
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		if = {
+			limit = {
+				NOT = { rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire } }
+			}
+			hidden_effect = {
+				rce_add_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+			}
+		}
+		else = {
+			rce_remove_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_currently_active
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_moon_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_fire_moon_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+		if = {
+			limit = {
+				rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+			}
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_yes
+		}
+		else = {
+			custom_tooltip = rce_religion_mechanic_manichaeism_purity_focus_button_tt_sun_no
+		}
+		tooltip = {
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_fire_sun_modifier
+				duration = -1
+				desc = rce_religion_mechanic_manichaeism_purity_until_ruler_death_or_focus_disabled_tt
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_fire_button_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_moon_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_moon_decision decision accordingly
+	potential = {
+		NOT = { rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon } }
+	}
+	trigger = {
+		rce_has_not_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		rce_set_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_moon_button_tt
+}
+custom_icon = {
+	name = rce_religion_mechanic_manichaeism_purity_moon_selected_icon
+	potential = {
+		rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = moon }
+	}
+	frame = {
+		number = 2
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_moon_selected_icon_tt
+}
+
+custom_button = {
+	name = rce_religion_mechanic_manichaeism_purity_sun_button
+	# if you change this, make sure to change the rce_religion_mechanic_manichaeism_purity_sun_decision decision accordingly
+	potential = {
+		NOT = { rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun } }
+	}
+	trigger = {
+		rce_has_not_any_religion_mechanic_manichaeism_purity_liturgical_focus = yes
+	}
+	effect = {
+		custom_tooltip = rce_tooltip_effect_text
+		rce_set_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_sun_button_tt
+}
+custom_icon = {
+	name = rce_religion_mechanic_manichaeism_purity_sun_selected_icon
+	potential = {
+		rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = { focus = sun }
+	}
+	frame = {
+		number = 2
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_religion_mechanic_manichaeism_purity_sun_selected_icon_tt
+}

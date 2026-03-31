@@ -23,7 +23,7 @@ revolutionary_rebels = {
 	infantry = 0.6
 	cavalry = 0.3
 	
-	morale = 1.1
+	morale = 1.3
 	
 	# Possible handle actions
 	handle_action_negotiate = no
@@ -35,7 +35,7 @@ revolutionary_rebels = {
 	spawn_chance = {
 		factor = 1
 		modifier = {
-			factor = 0
+			factor = 0.1
 			owner = {
 				has_parliament = yes
 			}
@@ -48,21 +48,19 @@ revolutionary_rebels = {
 		}	
 		modifier = {
 			factor = 2
+			is_year = 1630
+		}
+		modifier = {
+			factor = 2
+			is_year = 1670
+		}
+		modifier = {
+			factor = 2
 			is_year = 1700
-		}
-		modifier = {
-			factor = 2
-			is_year = 1740
-		}
-		modifier = {
-			factor = 2
-			is_year = 1780
 		}
 		modifier = {
 			factor = 5
 			owner = {
-				government = monarchy
-				NOT = { legitimacy = 80 }
 				absolutism = 80
 			}
 		}
@@ -73,8 +71,12 @@ revolutionary_rebels = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 20
 			has_revolution_in_province = yes
+		}
+		modifier = {
+			factor = 2000
+			religion = abolitionist
 		}
 		modifier = {
 			factor = 0.05
@@ -82,7 +84,7 @@ revolutionary_rebels = {
 		}
 		modifier = {
 			factor = 0
-			NOT = { current_age = age_of_revolutions }
+			NOT = { is_religion_enabled = abolitionist }
 		}
 		modifier = {
 			factor = 5.0
@@ -91,15 +93,15 @@ revolutionary_rebels = {
 			}
 		}
 		modifier = {
-			factor = 5.0
+			factor = 30.0
 			owner = { has_disaster = revolution }
 		}		
 		
 
 		modifier = {
-			factor = 0.1
+			factor = 0.01
 			owner = {
-				NOT = { has_institution = enlightenment }
+				is_part_of_hre = yes
 			}
 		}
 
@@ -149,18 +151,15 @@ revolutionary_rebels = {
 		if = {
 			limit = {
 				has_dlc = "Emperor"
-				has_revolution_in_province = no
+				OR = { 
+					has_revolution_in_province = no
+					NOT = { religion = abolitionist }
+				}
 				has_global_flag = first_revolution_center_spawned
 				NOT = { has_global_flag = no_more_revolutions_ever }
-				OR = {
-					same_continent = event_target:revolution_center
-					AND = {
-						enlightenment = 100
-						development = 10
-					}
-				}
 			}
 			set_revolution_in_province = yes
+			change_religion = abolitionist
 		}
 	}
 	
@@ -193,8 +192,16 @@ revolutionary_rebels = {
 		}
 		add_prestige = -50
 		if = {
+			limit = { has_disaster = french_revolution }
+			country_event = { id = french_revolution.2 }
+		}
+		else_if = {
 			limit = {
-				has_disaster = revolution
+				OR = { 
+					has_disaster = revolution
+					current_age = age_of_revolutions
+					current_age = age_of_absolutism
+				}
 			}
 			custom_tooltip = the_revolution_will_succeed
 			tooltip = {
@@ -225,10 +232,6 @@ revolutionary_rebels = {
 				country_event = { id = revolution.41 } #Indians
 			}
 		}
-		else_if = {
-			limit = { has_disaster = french_revolution }
-			country_event = { id = french_revolution.2 }
-		}
 		else = {
 			if = {
 				limit = {
@@ -236,6 +239,9 @@ revolutionary_rebels = {
 						OR = {
 							government = republic
 							has_reform = papacy_reform
+							has_reform = mhadi_reform
+							has_reform = celestial_xizho_empire
+							has_reform = templar_order_government
 							has_reform = steppe_horde
 							has_reform = celestial_empire
 							has_reform = iqta
@@ -255,6 +261,9 @@ revolutionary_rebels = {
 					NOT = {
 						OR = {
 							has_reform = papacy_reform
+							has_reform = mhadi_reform
+							has_reform = celestial_xizho_empire
+							has_reform = templar_order_government
 							has_reform = steppe_horde
 							has_reform = celestial_empire
 							has_reform = iqta
@@ -269,6 +278,7 @@ revolutionary_rebels = {
 							has_disaster = granada_succession_war
 						}
 					}
+					reform_level = 6
 				}
 				add_government_reform = parliamentary_reform
 			}

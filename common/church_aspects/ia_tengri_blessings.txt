@@ -1,0 +1,84 @@
+tengri_blessed_ruler = {
+	is_blessing = yes
+
+	modifier = {
+		legitimacy = 1
+		horde_unity = 0.5
+		republican_tradition = 0.2
+		devotion = 0.5
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 3
+			NOT = {
+				OR = {
+					legitimacy = 70
+					republican_tradition = 70
+					devotion = 70
+				}
+			}
+		}
+	}
+}
+
+tengri_recruit_riders = {
+	is_blessing = yes
+
+	modifier = {
+		cavalry_power = 0.10
+	}
+	ai_will_do = {
+		factor = 10000
+		modifier = {
+			factor = 3
+			NOT = {
+				manpower = 4
+			}
+		}
+	}
+}
+
+tengri_resupply_stations = {
+	is_blessing = yes
+
+	modifier = {
+		movement_speed = 0.10
+		caravan_power = 0.2
+	}
+	ai_will_do = {
+		factor = 500
+	}
+}
+
+tengri_righteous_conquests = {
+	is_blessing = yes
+
+	modifier = {
+		core_creation = -0.1
+		overextension_impact_modifier = -0.1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			overextension_percentage = 0.7
+		}
+		modifier = {
+			factor = 3
+			overextension_percentage = 0.5
+		}
+	}
+}
+
+tengri_enhanced_shamans = {
+	is_blessing = yes
+
+	modifier = {
+		same_religion_advisor_cost = -0.15
+		global_missionary_strength = 0.01
+	}
+	ai_will_do = {
+		factor = 15
+	}
+}

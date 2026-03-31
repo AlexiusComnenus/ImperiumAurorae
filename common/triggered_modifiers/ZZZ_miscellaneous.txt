@@ -100,6 +100,25 @@ aen_ger_eternal_friendship = {
 	mercenary_manpower = 0.20
 }
 
+ia_defensive_ideas_last_stand_modifier = {
+	potential = {
+		defensive_ideas = 6
+	}
+	trigger = {
+		any_known_country = {
+			offensive_war_with = ROOT
+			war_score_against = {
+				who = ROOT
+				value = 50
+			}
+		}
+	}
+	
+	own_territory_dice_roll_bonus = 1
+	fire_damage = 0.15
+	shock_damage = 0.15
+}
+
 ######################################
 # Fraticelli control of Rome.
 ######################################
@@ -134,12 +153,9 @@ fraticelli_subjugation = {
 
 	trigger = {
 		overlord_of = FAP
-		NOT = { tag = ITA }
-		NOT = { tag = ROM }
-		NOT = { tag = HLR }
 	}
 
-	diplomatic_reputation = +2
-	papal_influence = +10
+	diplomatic_reputation = 2
+	papal_influence = 5
 	#icon = 9
 }

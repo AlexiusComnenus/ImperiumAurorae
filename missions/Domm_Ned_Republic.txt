@@ -381,7 +381,7 @@ dom_ned_statists_branch_slot_3_branch = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = fla_prosperous_burghers
+				name = ned_big_prosperous_burghers
 				duration = 7300
 			}
 		}
@@ -421,9 +421,13 @@ dom_ned_statists_branch_slot_3_branch = {
 			}
 		}
 		effect = {
-			custom_tooltip = tooltip_wip
+			#custom_tooltip = tooltip_wip
 			add_dip_power = 100
 			add_adm_power = 100
+			add_country_modifier = {
+				name = ned_chambers_of_commerce_modifier
+				duration = -1
+			}
 		}
 		ai_weight = {
 			factor = 500	#Tall
@@ -544,7 +548,7 @@ dom_ned_statists_branch_slot_2_branch = {
 		#completed_by = 1580.1.1
 		
 		trigger = {
-			statists_vs_orangists = -0.95
+			NOT = { statists_vs_orangists = -0.95 }
 		}
 		effect = {
 			add_government_reform = bataafs_republiek # - Stadhouderless Republic or Presidential Republic
@@ -1015,20 +1019,18 @@ dom_ned_united_republic_slot_4_branch = {
 		
 		trigger = { #check for war or something
 			235 = {
-				num_of_units_in_province = {
-					who = ROOT
-					type = marine_infantry
-					amount = 1
-				}
+				controlled_by = ROOT
 			}
-			NOT = {
-				any_known_country = {
+			all_known_country = {
+				OR = {
 					capital_scope = {
-						region = british_isles_region
+						NOT = { region = british_isles_region }
 					}
-					naval_strength = {
-						who = ROOT
-						value = 0.5
+					NOT = {
+						naval_strength = {
+							who = ROOT
+							value = 0.5
+						}
 					}
 				}
 			}
@@ -1040,65 +1042,36 @@ dom_ned_united_republic_slot_4_branch = {
 			#}
 		}
 		effect = {			
-			if = {
-				limit = {
-					exists = ENG
-					NOT = { exists = GBR }
-					ENG = { 
-						valid_for_personal_unions_trigger = yes
+			235 = {
+				owner = {
+					add_country_modifier = {
+						name = medway_raided
+						duration = 3650
 					}
-					OR = {	
-						has_reform = dutch_republic
-						government = monarchy
-					}
-					religion_group = christian
-				}
-				add_casus_belli = {
-					type = cb_restore_personal_union
-					months = 300
-					target = ENG
+					add_navy_tradition = -20
 				}
 			}
-			else_if = {
+			add_navy_tradition = 20
+			home_counties_area = {
 				limit = {
-					exists = GBR
-					GBR = {
-						valid_for_personal_unions_trigger = yes
-					}
-					OR = {
-						government = monarchy
-						has_reform = dutch_republic
-					}
-					religion_group = christian
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
 				}
-				add_casus_belli = {
-					type = cb_restore_personal_union
-					months = 300
-					target = GBR
-				}
+				add_permanent_claim = ROOT
 			}
-			else = {
-				home_counties_area = {
-					limit = {
-						NOT = { is_permanent_claim = ROOT }
-						NOT = { is_core = ROOT	}
-					}
-					add_permanent_claim = ROOT
+			east_anglia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
 				}
-				east_anglia_area = {
-					limit = {
-						NOT = { is_permanent_claim = ROOT }
-						NOT = { is_core = ROOT	}
-					}
-					add_permanent_claim = ROOT
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
 				}
-				east_midlands_area = {
-					limit = {
-						NOT = { is_permanent_claim = ROOT }
-						NOT = { is_core = ROOT	}
-					}
-					add_permanent_claim = ROOT
-				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -1148,8 +1121,8 @@ dom_ned_united_republic_slot_4_branch = {
 			1269 = {
 				add_trade_modifier = {
 					who = root
-					duration = 7300
-					power = 30
+					duration = 18250
+					power = 40
 					key = DUTCH_CHANNEL_SUPREMACY
 				}
 			}
@@ -1180,6 +1153,13 @@ dom_ned_united_republic_slot_4_branch = {
 				add_prestige_or_monarch_power = { amount = 10 }
  				add_adm_power = 100
 			}
+			british_isles_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	
@@ -1191,68 +1171,30 @@ dom_ned_united_republic_slot_4_branch = {
 				
 		provinces_to_highlight = {
 			OR = {
-				area = lowlands_area
-				area = highlands_area
-				area = kingdom_of_the_isles_area
-				area = ulster_area
-				area = leinster_area
-				area = connacht_area
+				area = west_midlands_area
+				area = wessex_area
+				area = wales_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			lowlands_area = {
+			west_midlands_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			highlands_area = {
+			wessex_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			kingdom_of_the_isles_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			ulster_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			leinster_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			connacht_area = {
+			wales_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			if = {
-				limit = {
-					OR = {
-						has_reform = dutch_republic
-						has_reform = states_general_reform
-					}
-				}
-				change_statists_vs_orangists = 0.2
-			}
-			else_if = {
-				limit = {
-					government = monarchy
-					NOT = { has_reform = states_general_reform }
-				}
-				add_legitimacy = 20
-			}
-			else_if = {
-				limit = {
-					government = republic
-					NOT = { has_reform = states_general_reform }
-				}
-				add_republican_tradition = 20
-			}
-			else = {
-				add_prestige_or_monarch_power = { amount = 10 }
-				add_adm_power = 100
+			add_country_modifier = {
+				name = ned_british_supremacy
+				duration = -1
 			}
 		}
 	}
@@ -1278,140 +1220,60 @@ dom_ned_big_small_slot2_group = {
 		completed_by = 1660.1.1 #Dano-Swedish War
 		
 		provinces_to_highlight = {
-			is_capital_of = SWE 
+			province_id = 12 
 		}
 		trigger = {
-			if = { limit = { SWE = { exists = YES } }
+			12 = {
 				OR = {
-					AND = {
-						alliance_with = SWE				
-						4163 = {
-							owned_by = SWE
-						}
-					}
-					AND = {
-						is_rival = SWE
-						SWE = { 
-							great_power_rank = 7
-						}
-						DAN = {
-							guaranteed_by = NED
-						}
-					}
-					4163 = {
-						owned_by = ROOT
-					}
-				}
-			}
-			else = {
-				OR = {
-					any_country = {
-						culture_group = scandinavian
-						great_power_rank = 7
-					}
-					4163 = {
-						owned_by = ROOT
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						alliance_with = ROOT
+						trust = { who = ROOT value = 75 }
 					}
 				}
 			}
 		}
 		effect = {
-			trigger_mission_award_tooltip = {
-				tooltip = ned_swedes_tt
-				trigger = alliance_with
-				triggervalue = SWE
-			}
-			tooltip = {
-				4163 = {
-					change_province_name = "Göteborg"
-					if = { limit = { ROOT = { primary_culture = dutch } }
-					change_culture = dutch
-					}
-					if = { limit = { ROOT = {primary_culture = frisian } }
-					change_culture = frisian
-					}
-					if = { limit = { ROOT = {primary_culture = flemish } }
-					change_culture = flemish
-					}
-					add_base_production = 2
-				}
-				add_country_modifier = {
-					name = ned_nordic_lumber
-					duration = -1
-				}
-			}
-			trigger_mission_award_tooltip = {
-				tooltip = ned_swedes_alt_tt
-				trigger = is_rival
-				triggervalue = SWE
-			}
-			tooltip = {
-				add_power_projection = {
+			if = {
+				limit = { 12 = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_power_projection = { 
 					type = mission_rewards_power_projection
-					amount = 10
-				}
-				reverse_add_opinion = {
-					who = DAN
-					modifier = guaranteed_danish_independence
+					amount = 20
 				}
 			}
-			custom_tooltip = tooltip_wip
-			hidden_effect = {
-				if = {
-					limit = {
-						alliance_with = SWE
-					}
-					4163 = {
-						change_province_name = "Göteborg"
-						if = { limit = { primary_culture = dutch } 
-						change_culture = dutch
-						}
-						if = { limit = { primary_culture = frisian } 
-						change_culture = frisian
-						}
-						if = { limit = { primary_culture = flemish } 
-						change_culture = flemish
-						}
-						add_base_production = 2
+			else = {
+				12 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 18250
+						power = 40
+						key = ned_sound_toll_exemption_tt
 					}
 				}
-				else_if = {
-					limit = {
-						is_rival = SWE
-					}
-					add_power_projection = {
-						type = mission_rewards_power_projection
-						amount = 25
-					}
-					add_opinion = {
-						who = DAN
-						modifier = guaranteed_danish_independence
-					}
-				}
-				else = {
-					4163 = {
-						change_province_name = "Göteborg"
-						if = { limit = { ROOT = { primary_culture = dutch } }
-						change_culture = dutch
-						}
-						if = { limit = { ROOT = {primary_culture = frisian } }
-						change_culture = frisian
-						}
-						if = { limit = { ROOT = {primary_culture = flemish } }
-						change_culture = flemish
-						}
-						add_base_production = 2
-					}
-					add_country_modifier = {
-						name = ned_nordic_lumber
-						duration = -1
-					}
+			}
+			38 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 18250
+					power = 40
+					key = ned_sound_toll_penetration_tt
 				}
 			}
 		}
 	}
-	
-	
+}	
+
+dom_ned_temp_hidden_group = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = NED
+		always = no
+		NOT = { map_setup = map_setup_random }
+		#has_country_flag = dom_ned_modded_missions
+	}
+	has_country_shield = yes	
 	dom_ned_league_of_augsburg = {
 		icon = balance_of_power
 		required_missions = {  }
@@ -1627,7 +1489,7 @@ dom_ned_orangist_branch_slot_3_branch = {
 		position = 19
 				
 		trigger = {
-			total_development = 500
+			total_development = 1500
 		}
 		effect = {
 			add_country_modifier = {
@@ -1645,14 +1507,39 @@ dom_ned_orangist_branch_slot_3_branch = {
 		required_missions = { dom_ned_further_urbanization_1 }
 		position = 20
 				
+		provinces_to_highlight = {
+			owned_by = ROOT
+			region = low_countries_region
+			OR = {
+				has_trade_building_trigger = no
+				has_production_building_trigger = no
+				has_tax_building_trigger = no
+			}
+		}
+		
 		trigger = {
-			marketplace = 10
-			temple = 10
-			workshop = 10
+			custom_trigger_tooltip = {
+				tooltip = fla_commercial_infrastructure_tt
+				NOT = {
+					any_owned_province = {
+						region = low_countries_region
+						OR = {
+							has_trade_building_trigger = no
+							has_production_building_trigger = no
+							has_tax_building_trigger = no
+						}
+					}
+				}
+			}
 		}
 		effect = {
+			#custom_tooltip = tooltip_wip
 			add_dip_power = 100
 			add_adm_power = 100
+			add_country_modifier = {
+				name = ned_chambers_of_commerce_modifier
+				duration = -1
+			}
 		}
 		ai_weight = {
 			factor = 500	#Tall

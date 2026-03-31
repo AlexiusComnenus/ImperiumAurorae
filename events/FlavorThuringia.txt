@@ -18,6 +18,7 @@ country_event = {
 		tag = THU
 		has_country_flag = eternal_regency
 		heir_age = 10
+		NOT = { is_lesser_in_union = yes }
 	}
 	
 	option = {
@@ -367,11 +368,14 @@ country_event = {	# Burying the Hatchet
 	option = {	# Become March
 		name = ia_flavor_thu.8.a
 		
-		SAX = {
-			create_subject = {
-				subject_type = german_march
-				subject = THU
-			}
+		overlord = {
+            if = {
+            	limit = { has_reform = saxon_feudalism }
+			    create_subject = {
+				    subject_type = german_march
+				    subject = THU
+			    }
+            }
 		}
 		
 		add_government_reform = thu_saxon_march_reform

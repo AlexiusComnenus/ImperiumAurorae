@@ -100,7 +100,6 @@ country_event = {
 	trigger = {
 		papacy_active = yes
 		NOT = { exists = PAP }
-		NOT = { exists = ITA }
 		religion = catholic
 		#government = theocracy
 		NOT = { has_ruler_flag = refused_papacy }

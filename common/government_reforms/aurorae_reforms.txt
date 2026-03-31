@@ -1,26 +1,4 @@
 
-true_immortal_reform = {
-	icon = "free_city"
-	allow_normal_conversion = no
-	potential = {
-		has_reform = true_immortal_reform
-	}
-	valid_for_nation_designer = no
-	lock_level_when_selected = yes
-
-	modifiers = {
-		
-	}
-	fixed_rank = 3
-
-	custom_attributes = {
-		locked_government_type = yes
-	}
-	duration = 1200
-	has_term_election = yes
-	heir = no
-}
-
 ven_promissione_ducale_reform = {
 	icon = "ven_promissione_ducale_reform"
 	allow_normal_conversion = yes
@@ -47,6 +25,145 @@ ven_promissione_ducale_reform = {
 	ai = {
 		factor = 10
 	}
+}
+
+holy_imperial_monarchy_reform = {
+	icon = "holy_roman_emperor"
+	allow_normal_conversion = yes
+	potential = {
+		tag = HLR
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 150
+	modifiers = {
+		governing_capacity_modifier = 0.20
+		max_absolutism = 20
+		max_absolutism_effect = 0.1
+		diplomatic_reputation = 2
+		province_warscore_cost = -0.1
+		core_creation = -0.1
+	}
+	custom_attributes = {
+		seizing_land_loyalty = yes
+		seizing_land_no_rebels = yes
+	}
+	ai = {
+		factor = 1
+	}
+}
+
+
+cossacks_reform = {
+	icon = "horde_riding"
+	legacy_equivalent = cossacks_legacy_reform
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			AND = {
+				tag = ZAZ
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = cossacks_reform
+			have_had_reform = cossacks_reform
+		}
+	}
+	trigger = {
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+	}
+	
+	raze_province = yes
+	government_abilities = {
+		cossacks_mechanic
+	}
+
+	conditional = {
+		allow = { has_dlc = "Origins" }
+		custom_attributes = {
+			has_itinerant_capital = yes
+		}
+	}
+	valid_for_new_country = yes
+
+	nation_designer_trigger = {
+		any_owned_province = {
+			has_terrain = steppe
+		}
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 60
+
+	modifiers = {
+		raze_power_gain = -0.50
+		cavalry_power = 0.2
+		cavalry_cost = -0.2
+		cav_to_inf_ratio = 0.25
+		governing_capacity = 50
+		allowed_cossack_fraction = 0.25
+		move_capital_cost_modifier = -0.75
+		cossacks_loyalty_modifier = 0.25
+		cossacks_influence_modifier = 0.2
+		cossacks_privilege_slots = 2
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "The Cossacks"
+		}
+		custom_attributes = {
+			enables_estate_cossacks = yes
+		}
+	}
+	custom_attributes = {
+		enables_horde_idea_group = yes
+		disables_estate_nobles = yes
+		locked_government_type = yes
+	}
+
+	duration = 4
+}
+
+kongsi_federation = {
+	allow_normal_conversion = yes
+	icon = "peasant_republic"
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			tag = LFA
+			have_had_reform = kongsi_federation
+		}
+	}
+	trigger = {
+		is_not_blocked_by_estate_privilege = { estate = estate_nobles }
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		primary_culture = hakka
+		technology_group = chinese
+	}
+	modifiers = {
+		production_efficiency = 0.1
+		republican_tradition = 0.5
+		max_absolutism = -25
+		peasants_influence_modifier = 0.10
+		peasants_loyalty_modifier = 0.10
+	}
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		allow_draft_transport_ships = yes
+		disables_estate_nobles = yes
+		enables_estate_peasants = yes
+		locked_government_type = yes
+		is_peasants_republic = yes
+	}
+	duration = 4
 }
 
 ayyubid_dynasty = {
@@ -220,7 +337,7 @@ merchant_theocracy_reform = {
 	custom_attributes = {
 		is_merchant_republic = yes
 		can_sell_indulgences = yes
-		enables_divine_idea_group = no
+		#enables_divine_idea_group = no
 		enables_plutocratic_idea_group = yes
 		elections_increase_factions_influence = yes
 	}
@@ -242,7 +359,8 @@ crusading_zeal_reform = {
 		religion = protestant
 	}
 	modifiers = {
-		church_influence_modifier = 0.10
+		holy_orders_loyalty_modifier = 0.05
+		holy_orders_influence_modifier = 0.15
 		manpower_recovery_speed = 0.15
 		land_morale = 0.05
 		naval_morale = 0.05
@@ -319,14 +437,15 @@ bog_sponsor_public_schools_reform = {
 	potential = {
 		NOT = { has_government_attribute = is_pirate_republic_reform }
 		OR = {
-			is_revolutionary = no
-			NOT = { has_dlc = "Emperor" }
+			religion = bogomilist
+			is_revolutionary = yes
 		}
-		religion = bogomilist
 	}
 	modifiers = {
 		embracement_cost = -0.25
 		institution_spread_from_true_faith = 0.25
+		culture_conversion_time = -0.1
+		same_culture_advisor_cost = -0.1
 	}
 	custom_attributes = {
 	}
@@ -956,7 +1075,7 @@ mughal_government = {
 			cavalry_power = 0.1
 		}
 		maghrebi = {
-			privateer_efficiency = 0.25
+			privateer_efficiency = 0.1
 		}
 		malay = {
 			merchants = 1
@@ -1127,8 +1246,8 @@ byzantine_monarchy_reform = {
 		monthly_splendor = 2
 		prestige = 0.5
 		advisor_pool = 1
-		relation_with_same_culture = -200
-		relation_with_same_culture_group = -200
+		#relation_with_same_culture = -200
+		#relation_with_same_culture_group = -200
 		monthly_heir_claim_increase = -0.3
 		stability_cost_modifier = 0.25
 		yearly_corruption = 0.1
@@ -1137,7 +1256,7 @@ byzantine_monarchy_reform = {
 	
 	
 	valid_for_nation_designer = yes
-	icon = holy_roman_emperor
+	icon = pronoiar_monarchy_reform
 	allow_normal_conversion = yes
 	allow_convert = no
 	lock_level_when_selected = yes
@@ -1145,12 +1264,12 @@ byzantine_monarchy_reform = {
 	ai = {
 		factor = 1000
 	}
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		government_abilities = {
-			byzantine_succession_mechanic
-		}
-	}
+	#conditional = {
+	#	allow = { has_dlc = "Domination" }
+	#	government_abilities = {
+	#		byzantine_succession_mechanic
+	#	}
+	#}
 	conditional = {
 		allow = { has_dlc = "King of Kings" }
 		custom_attributes = {
@@ -1191,8 +1310,8 @@ palaiologid_government = {
 		monarch_military_power = 3
 		land_forcelimit = 5
 		nobles_loyalty_modifier = 0.1
-		relation_with_same_culture = -200
-		relation_with_same_culture_group = -200
+		#relation_with_same_culture = -200
+		#relation_with_same_culture_group = -200
 	}
 
 	conditional = {
@@ -1403,14 +1522,14 @@ harmonic_confluence = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
 	modifiers = {
-		nobles_influence_modifier = 0.05
-		burghers_influence_modifier = 0.05
-		nobles_loyalty_modifier = 0.1
-		burghers_loyalty_modifier = 0.1
+		all_estate_loyalty_equilibrium = 0.05
+		church_influence_modifier = 0.05
+		alchemists_influence_modifier = 0.05
 		cavalry_cost = -0.2
 		cavalry_power = 0.15
 		relation_with_heretics = -10
 		reverse_relation_with_heretic_religion = -10
+		global_autonomy = -0.025
 	}
 	ai = {
 		factor = 75 #unique
@@ -1455,7 +1574,7 @@ cultivators_order = {
 		alchemists_influence_modifier = 0.15
 		alchemists_loyalty_modifier = 0.1
 		infantry_cost = 0.2
-		infantry_shock = 0.25
+		infantry_shock = 0.5
 		global_manpower_modifier = -0.25
 		mercenary_manpower = -0.5
 		monarch_lifespan = 0.5
@@ -1467,7 +1586,7 @@ cultivators_order = {
 		enables_estate_alchemists = yes
 	}
 	ai = {
-		factor = 75 #unique
+		factor = 1000 #unique
 	}
 }
 
@@ -1587,6 +1706,12 @@ privateer_republic = {
 		is_pirate_republic_reform = yes
 		elections_increase_factions_influence = yes
 		cannot_become_dictatorship = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
 	}
 	
 }

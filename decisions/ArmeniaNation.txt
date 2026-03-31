@@ -34,6 +34,7 @@ country_decisions = {
 		}
 		effect = {
 			add_prestige = 25
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ARM
 			on_change_tag_effect = yes
 			if = {

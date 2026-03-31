@@ -91,7 +91,7 @@
  aegyptian: "Aegyptian"
  arabus: "Arabus"
  graecus: "Graecus"
- gaulic: "Gaulic"
+ gaulic: "Gallic"
  theodisc: "Germanic"
  pannonian: "Pannonian"
  wenedyk: "Venedic"
@@ -190,5 +190,5 @@
 
  xizho:0 "Xizho"
  cumano_rus: "Cumano-Rus"
-
+ eastern_hellenistic: "Eastern Hellenistic"
 

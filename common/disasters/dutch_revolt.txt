@@ -23,6 +23,8 @@ dutch_revolt_disaster = {
 			}
 		}
 		NOT = { exists = NED }
+		NOT = { tag = HLR }
+		NOT = { has_reform = stadthalter_monarchy_reform }
 		#NOT = { capital_scope = { region = low_countries_region } }
 		is_free_or_tributary_trigger = yes
 		num_of_cities = 6
@@ -61,23 +63,6 @@ dutch_revolt_disaster = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					has_dlc = "Emperor"
-				}
-				AND = {
-					is_emperor = yes
-					NOT = { hre_reform_passed = emperor_gemeinerpfennig }
-					NOT = { stability = 2 }
-				}
-			}
-			else = {
-				AND = {
-					is_emperor = yes
-					NOT = { hre_reform_passed = gemeinerpfennig }
-					NOT = { stability = 2 }
-				}
-			}
 		}
 		if = {
 			limit = { has_government_attribute = no_more_dutch_revolt }
@@ -89,6 +74,8 @@ dutch_revolt_disaster = {
 		OR = {
 			#has_any_disaster = yes
 			exists = NED
+			tag = HLR
+			has_reform = stadthalter_monarchy_reform
 			#is_year = 1650
 		}
 	}

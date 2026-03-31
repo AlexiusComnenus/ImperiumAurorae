@@ -20,7 +20,7 @@ the_great_wall_of_china_ningha = {
 	move_days_per_unit_distance = 1
 	
 	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
-	starting_tier = 0
+	starting_tier = 1
 	
 	#project type
 	type = monument
@@ -30,6 +30,12 @@ the_great_wall_of_china_ningha = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -54,6 +60,12 @@ the_great_wall_of_china_ningha = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -66,6 +78,12 @@ the_great_wall_of_china_ningha = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -120,6 +138,7 @@ the_great_wall_of_china_ningha = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -151,6 +170,7 @@ the_great_wall_of_china_ningha = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -184,6 +204,7 @@ the_great_wall_of_china_ningha = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -227,7 +248,7 @@ the_great_wall_of_china_lanzhou = {
 	move_days_per_unit_distance = 1
 	
 	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
-	starting_tier = 0
+	starting_tier = 1
 	
 	#project type
 	type = monument
@@ -237,6 +258,12 @@ the_great_wall_of_china_lanzhou = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -261,6 +288,12 @@ the_great_wall_of_china_lanzhou = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -273,6 +306,12 @@ the_great_wall_of_china_lanzhou = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -327,6 +366,7 @@ the_great_wall_of_china_lanzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -358,6 +398,7 @@ the_great_wall_of_china_lanzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -391,6 +432,7 @@ the_great_wall_of_china_lanzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -434,7 +476,7 @@ the_great_wall_of_china_liangzhou = {
 	move_days_per_unit_distance = 1
 	
 	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
-	starting_tier = 0
+	starting_tier = 1
 	
 	#project type
 	type = monument
@@ -444,6 +486,12 @@ the_great_wall_of_china_liangzhou = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -468,6 +516,12 @@ the_great_wall_of_china_liangzhou = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -480,6 +534,12 @@ the_great_wall_of_china_liangzhou = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -534,6 +594,7 @@ the_great_wall_of_china_liangzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -565,6 +626,7 @@ the_great_wall_of_china_liangzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -598,6 +660,7 @@ the_great_wall_of_china_liangzhou = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -641,7 +704,7 @@ the_great_wall_of_china_zhangye = {
 	move_days_per_unit_distance = 1
 	
 	#tier that the project starts at when first placed in the game (be that at game start or when built by a country as the game progresses)
-	starting_tier = 0
+	starting_tier = 1
 	
 	#project type
 	type = monument
@@ -651,6 +714,12 @@ the_great_wall_of_china_zhangye = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -675,6 +744,12 @@ the_great_wall_of_china_zhangye = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -687,6 +762,12 @@ the_great_wall_of_china_zhangye = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -741,6 +822,7 @@ the_great_wall_of_china_zhangye = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -772,6 +854,7 @@ the_great_wall_of_china_zhangye = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -805,6 +888,7 @@ the_great_wall_of_china_zhangye = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -859,6 +943,12 @@ the_great_wall_of_china_hetao = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -882,6 +972,12 @@ the_great_wall_of_china_hetao = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -894,6 +990,12 @@ the_great_wall_of_china_hetao = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -948,6 +1050,7 @@ the_great_wall_of_china_hetao = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -979,6 +1082,7 @@ the_great_wall_of_china_hetao = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -1012,6 +1116,7 @@ the_great_wall_of_china_hetao = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -1066,6 +1171,12 @@ the_great_wall_of_china_hohhot = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1089,6 +1200,12 @@ the_great_wall_of_china_hohhot = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1101,6 +1218,12 @@ the_great_wall_of_china_hohhot = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -1155,6 +1278,7 @@ the_great_wall_of_china_hohhot = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -1186,6 +1310,7 @@ the_great_wall_of_china_hohhot = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -1219,6 +1344,7 @@ the_great_wall_of_china_hohhot = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -1273,6 +1399,12 @@ the_great_wall_of_china_datong = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1296,6 +1428,12 @@ the_great_wall_of_china_datong = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1308,6 +1446,12 @@ the_great_wall_of_china_datong = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -1362,6 +1506,7 @@ the_great_wall_of_china_datong = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -1393,6 +1538,7 @@ the_great_wall_of_china_datong = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -1426,6 +1572,7 @@ the_great_wall_of_china_datong = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -1480,6 +1627,12 @@ the_great_wall_of_china_baoding = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1503,6 +1656,12 @@ the_great_wall_of_china_baoding = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1515,6 +1674,12 @@ the_great_wall_of_china_baoding = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -1569,6 +1734,7 @@ the_great_wall_of_china_baoding = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -1600,6 +1766,7 @@ the_great_wall_of_china_baoding = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -1633,6 +1800,7 @@ the_great_wall_of_china_baoding = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -1687,6 +1855,12 @@ the_great_wall_of_china_zhending = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1710,6 +1884,12 @@ the_great_wall_of_china_zhending = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1722,6 +1902,12 @@ the_great_wall_of_china_zhending = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -1776,6 +1962,7 @@ the_great_wall_of_china_zhending = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -1807,6 +1994,7 @@ the_great_wall_of_china_zhending = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -1840,6 +2028,7 @@ the_great_wall_of_china_zhending = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -1894,6 +2083,12 @@ the_great_wall_of_china_xuanhua = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1917,6 +2112,12 @@ the_great_wall_of_china_xuanhua = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -1929,6 +2130,12 @@ the_great_wall_of_china_xuanhua = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -1983,6 +2190,7 @@ the_great_wall_of_china_xuanhua = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -2014,6 +2222,7 @@ the_great_wall_of_china_xuanhua = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -2047,6 +2256,7 @@ the_great_wall_of_china_xuanhua = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -2101,6 +2311,12 @@ the_great_wall_of_china_chengde = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -2124,6 +2340,12 @@ the_great_wall_of_china_chengde = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -2136,6 +2358,12 @@ the_great_wall_of_china_chengde = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -2190,6 +2418,7 @@ the_great_wall_of_china_chengde = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -2221,6 +2450,7 @@ the_great_wall_of_china_chengde = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -2254,6 +2484,7 @@ the_great_wall_of_china_chengde = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1
@@ -2308,6 +2539,12 @@ the_great_wall_of_china_ningyuan = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -2331,6 +2568,12 @@ the_great_wall_of_china_ningyuan = {
 			owner = {
 				culture_group = east_asian
 			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
+			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
 				owner = { has_country_flag = hordes_unlocked_wall_of_china }
@@ -2343,6 +2586,12 @@ the_great_wall_of_china_ningyuan = {
 		OR = { 
 			owner = {
 				culture_group = east_asian
+			}
+			owner = {
+				culture_group = tibetan_group
+			}
+			owner = {
+				is_emperor_of_china = yes
 			}
 			custom_trigger_tooltip = {
 				tooltip = COMPLETED_SPECIAL_MISSION_THAT_UNLOCKS_GREAT_PROJECT
@@ -2397,6 +2646,7 @@ the_great_wall_of_china_ningyuan = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 1
 			garrison_growth = 0.33
 			local_defensiveness = 0.35
 		}
@@ -2428,6 +2678,7 @@ the_great_wall_of_china_ningyuan = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 2
 			garrison_growth = 0.66
 			local_defensiveness = 0.60
 			local_garrison_size = 0.50
@@ -2461,6 +2712,7 @@ the_great_wall_of_china_ningyuan = {
 
 		#what modifiers are added to the province when we have this project here on this tier
 		province_modifiers = {
+			fort_level = 3
 			garrison_growth = 1
 			local_defensiveness = 1
 			local_garrison_size = 1

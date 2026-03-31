@@ -1,0 +1,21 @@
+rce_religion_mechanic_four_tenets_system_full_teachings_triggered_modifier = {
+	potential = {
+		rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+	}
+	trigger = {
+		rce_has_religion_mechanic_four_tenets_system_ability_4 = yes
+	}
+
+	monarch_lifespan = 0.2
+}
+
+#rce_religion_mechanic_four_tenets_system_religious_ideas_5_triggered_modifier = {
+#	potential = {
+#		rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+#	}
+#	trigger = {
+#		religious_ideas = 5
+#	}
+#
+#	rce_monthly_religion_mechanic_four_tenets_system_change = 0.3
+#}

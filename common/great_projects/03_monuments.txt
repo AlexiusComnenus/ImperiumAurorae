@@ -693,14 +693,26 @@ new_castle = {
 	type = monument
 	
 	build_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
 	on_built = {
 	}
 	on_destroyed = {
 	}
 	can_use_modifiers_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
 	can_upgrade_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -741,7 +753,6 @@ new_castle = {
 		area_modifier = {
 		}
 		country_modifiers = {
-			garrison_size = 0.05
 		}
 		on_upgraded = {
 		}
@@ -759,11 +770,10 @@ new_castle = {
 			local_hostile_attrition = 2
 		}
 		area_modifier = {
-			local_manpower_modifier = 0.4
-			local_tax_modifier = 0.4
+			local_manpower_modifier = 0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-			garrison_size = 0.1
 		}
 		on_upgraded = {
 		}
@@ -786,9 +796,16 @@ new_castle = {
 			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-			garrison_size = 0.2
-			diplomatic_reputation = 1
-			improve_relation_modifier = 0.1
+		}
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = bavarian }
+			}
+			modifier = { 
+				garrison_size = 0.2
+				diplomatic_reputation = 1
+				improve_relation_modifier = 0.1
+			}
 		}
 		on_upgraded = {
 		}
@@ -814,14 +831,24 @@ nuremberg_castle = {
 	type = monument
 	
 	build_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
-	on_built = {
-	}
-	on_destroyed = {
-	}
+	
 	can_use_modifiers_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
+
 	can_upgrade_trigger = {
+		culture_group = germanic
+		owner = {
+			culture_group = germanic
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -916,9 +943,16 @@ nuremberg_castle = {
 			local_tax_modifier = 0.5
 		}
 		country_modifiers = {
-			leader_siege = 1
-			diplomatic_reputation = 1
 			prestige = 0.5
+		}
+		conditional_modifier = {
+			trigger = { 
+				owner = { primary_culture = franconian }
+			}
+			modifier = { 
+				leader_siege = 1
+				diplomatic_reputation = 1
+			}
 		}
 		on_upgraded = {
 		}
@@ -1524,6 +1558,8 @@ dubrovnik_fortress = {
 			local_sailors_modifier = 0.5
 			blockade_force_required = 0.5
 			hostile_disembark_speed = 1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.1
@@ -1551,6 +1587,8 @@ dubrovnik_fortress = {
 			hostile_disembark_speed = 1.5
 			local_defender_dice_roll_bonus = 1
 			local_own_coast_naval_combat_bonus = 1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.25
@@ -1577,6 +1615,8 @@ dubrovnik_fortress = {
 			hostile_disembark_speed = 2.5
 			local_defender_dice_roll_bonus = 2
 			local_own_coast_naval_combat_bonus = 2
+			block_slave_raid = yes
+			hostile_fleet_attrition = 5
 		}
 		area_modifier = {
 			local_manpower_modifier = 0.5
@@ -2308,6 +2348,8 @@ university_poitiers = { #Université de Poitiers
 		owner = {
 			OR = {
 				culture_group = french
+				primary_culture = frankish
+				culture_group = roman_group
 				tag = SOI
 				tag = GLL
 				tag = ENG
@@ -2358,6 +2400,7 @@ university_poitiers = { #Université de Poitiers
 		#what effects happen when this tier is achieved
 		on_upgraded = {
 			add_base_tax = 1
+			add_building = university
 		}
 	}
 
@@ -3473,6 +3516,7 @@ grand_canal = {
 			local_development_cost = -0.25
 			trade_value = 5
 			naval_forcelimit = 5
+			local_own_coast_naval_combat_bonus = 1
 		}
 		area_modifier = {
 			local_development_cost = -0.05
@@ -3498,6 +3542,7 @@ grand_canal = {
 			local_development_cost = -0.4
 			trade_value = 10
 			naval_forcelimit = 10
+			local_own_coast_naval_combat_bonus = 2
 		}
 		area_modifier = {
 			local_development_cost = -0.1
@@ -3522,6 +3567,7 @@ grand_canal = {
 			local_development_cost = -0.75
 			trade_value = 20
 			naval_forcelimit = 15
+			local_own_coast_naval_combat_bonus = 3
 		}
 		area_modifier = {
 			local_development_cost = -0.25

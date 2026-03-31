@@ -243,6 +243,7 @@ age_of_discovery = {
 					tag = HOL
 					tag = KCL
 					tag = KOS
+                    tag = KOI
 				}
 			}
 			modifier = {
@@ -323,11 +324,14 @@ age_of_reformation = {
 			OR = {
 				religion = protestant
 				religion = reformed
-				religion = anglican
-				religion = hussite
-				religion = cathar
-				religion = waldensian
+				#religion = anglican
+				#religion = hussite
+				#religion = cathar
+				#religion = waldensian
 				religion = lollard
+				religion = bogomilist
+				religion = hellenic_pagan_reformed
+				religion = manichean
 			}
 		}
 		
@@ -606,6 +610,7 @@ age_of_absolutism = {
 	}
 	
 	papacy = 1.5
+	religious_conflicts = no
 	
 	absolutism = {
 		harsh_treatment = 1
@@ -651,10 +656,7 @@ age_of_absolutism = {
 		}
 		
 		obj_win_religious_war = {
-			custom_trigger_tooltip = {
-				tooltip = obj_religious_league_war_on_winning_side_tooltip
-				has_country_flag = religious_league_war_on_winning_side
-			}
+			has_country_modifier = joined_league_war
 			
 		}
 	}	
@@ -827,6 +829,10 @@ age_of_absolutism = {
 				OR = {
 					tag = MCH
 					tag = QNG
+					AND = {
+						empire_of_china_reform_passed = modernize_the_banners_decision
+						is_emperor_of_china = yes
+					}
 				}
 			}
 			effect = {
@@ -859,6 +865,7 @@ age_of_revolutions = {
 	}
 	
 	papacy = 2.0
+	religious_conflicts = no
 	absolutism = {
 		harsh_treatment = 1
 		stability = 1
@@ -868,7 +875,7 @@ age_of_revolutions = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		automatic_seat_in_parliament = -2
+		automatic_seat_in_parliament = -1
 		manual_seat_in_parliament = -2
 		war_exhaustion = -1
 	}	
@@ -913,11 +920,15 @@ age_of_revolutions = {
 
 	abilities = {
 		ab_allow_anti_revolutionary_zeal = {
+			allow = {
+				is_revolutionary = no
+			}
 			effect = { 
 				on_age_ability_taken = { age = age_of_revolutions }
 			}
 			modifier = {
-				liberty_desire_from_subject_development = -0.33
+				liberty_desire_from_subject_development = -0.1
+				reduced_liberty_desire_on_same_continent = 15
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -1006,6 +1017,9 @@ age_of_revolutions = {
 			}
 		}
 		ab_same_contine_lib_desire = {
+			allow = {
+				is_revolutionary = yes
+			}
 			effect = { 
 				on_age_ability_taken = { age = age_of_revolutions }
 			}
@@ -1039,7 +1053,7 @@ age_of_revolutions = {
 				}
 			}
 			modifier = {
-				fire_damage_received = -0.2
+				fire_damage_received = -0.1
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -1093,7 +1107,7 @@ age_of_revolutions = {
 				is_revolution_target = yes
 			}
 			modifier = {
-				morale_damage_received = -0.2
+				morale_damage = 0.25
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {

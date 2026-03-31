@@ -1,0 +1,77 @@
+sound = {
+	name = defender_of_the_jainism_faith
+	file = "claim_defender_faith_coptic.wav"
+}
+sound = {
+	name = start_convert_jainism
+	file = "start_conversion_eastern_hinduism.wav"
+}
+sound = {
+	name = religion_jainism
+	file = "tab_religion_india.wav"
+}
+
+sound = {
+	name = defender_of_the_tibetan_buddhism_faith
+	file = "claim_defender_faith_coptic.wav"
+}
+sound = {
+	name = start_convert_tibetan_buddhism
+	file = "start_conversion_eastern_buddhism.wav"
+}
+sound = {
+	name = religion_tibetan_buddhism
+	file = "tab_religion_eastern.wav"
+}
+
+sound = {
+	name = defender_of_the_vidilist_faith
+	file = "claim_defender_faith_coptic.wav"
+}
+sound = {
+	name = start_convert_vidilist
+	file = "start_conversion_norse.wav"
+}
+sound = {
+	name = religion_vidilist
+	file = "tab_religion_pagan.wav"
+}
+
+sound = {
+	name = defender_of_the_nestorian_faith
+	file = "claim_defender_faith_orthodox.wav"
+}
+sound = {
+	name = start_convert_nestorian
+	file = "start_conversion_christian_orthodox.wav"
+}
+sound = {
+	name = religion_nestorian
+	file = "tab_religion_christian.wav"
+}
+
+sound = {
+	name = defender_of_the_manichaeism_faith
+	file = "claim_defender_faith_coptic.wav"
+}
+sound = {
+	name = start_convert_manichaeism
+	file = "start_conversion_zoroastrian.wav"
+}
+sound = {
+	name = religion_manichaeism
+	file = "start_conversion_zoroastrian.wav"
+}
+
+sound = {
+	name = defender_of_the_bogomilist_faith
+	file = "claim_defender_faith_orthodox.wav"
+}
+sound = {
+	name = start_convert_bogomilist
+	file = "start_conversion_christian_orthodox.wav"
+}
+sound = {
+	name = religion_bogomilist
+	file = "tab_religion_christian.wav"
+}

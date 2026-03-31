@@ -80,7 +80,8 @@ trading_city_ideas = {
 colonial_ideas = {
 	start = {
 		development_cost = -0.1
-		no_religion_penalty = yes
+		tolerance_heretic = 1
+		tolerance_heathen = 1
 	}
 	
 	bonus = {
@@ -116,7 +117,7 @@ colonial_ideas = {
 		global_colonial_growth = 20
 	}
 	liberty_heroes = {
-		global_unrest = -1
+		global_unrest = -2
 		free_leader_pool = 1
 	}
 }
@@ -124,7 +125,7 @@ colonial_ideas = {
 barbary_pirate_ideas = {
 	start = {
 		galley_power = 0.2
-		privateer_efficiency = 0.2
+		privateer_efficiency = 0.1
 	}
 	bonus = {
 		legitimacy = 1
@@ -192,7 +193,8 @@ pirate_ideas = {
 	free = yes
 	
 	pirates_religious_apathy = {
-		no_religion_penalty = yes
+		tolerance_heathen = 2
+		tolerance_heretic = 2
 	}	
 	pirates_plunder = {
 		loot_amount = 0.25
@@ -604,8 +606,8 @@ mindanao_ideas = {
 		land_morale = 0.1
 	}
 	mindanao_pirates_of_mindanao = {
-		embargo_efficiency = 0.1	
-		privateer_efficiency = 0.25
+		embargo_efficiency = 0.5	
+		privateer_efficiency = 0.1
 	}
 }
 
@@ -1237,8 +1239,8 @@ sumatran_ideas = {
 		global_missionary_strength = 0.02
 	}
 	spice_pirates = {
-		light_ship_power = 0.10
-		privateer_efficiency = 0.15
+		light_ship_power = 0.2
+		privateer_efficiency = 0.10
 	}
 	center_of_scholarship = {
 		advisor_cost = -0.15

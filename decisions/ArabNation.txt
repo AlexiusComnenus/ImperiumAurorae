@@ -56,7 +56,6 @@ country_decisions = {
 			owns_core_province = 403			#Nizwa
 		}
 		effect = {
-			on_change_tag_effect = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -89,7 +88,9 @@ country_decisions = {
 			}
 			add_prestige = 25
 			set_country_flag = formed_arabia_flag
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ARB
+			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
 			if = {
 				limit = { has_custom_ideas = no }

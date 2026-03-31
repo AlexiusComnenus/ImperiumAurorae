@@ -1,0 +1,51 @@
+on_religion_change = {
+	rce_clear_all_religion_mechanic_sylvan_affinity_modifiers = yes
+}
+
+on_monthly_pulse = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		rce_add_monthly_religion_mechanic_sylvan_affinity_value = yes
+	}
+}
+
+on_bi_yearly_pulse_5 = {
+	random_events = {
+		100 = rce_religion_mechanic_sylvan_affinity_events.2
+	}
+}
+
+on_five_year_pulse_2 = {
+	random_events = {
+		100 = rce_religion_mechanic_sylvan_affinity_events.3
+	}
+}
+
+# ROOT = annexing country, FROM = annexed country
+on_annexed = {
+	FROM = {
+		if = {
+			limit = {
+				rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			}
+			rce_clear_all_religion_mechanic_sylvan_affinity_modifiers = yes
+		}
+	}
+}
+
+# ROOT = released country, FROM = releasing country
+on_country_released = {
+	rce_clear_all_religion_mechanic_sylvan_affinity_modifiers = yes
+}
+
+# ROOT = released country
+on_country_creation = {
+	rce_clear_all_religion_mechanic_sylvan_affinity_modifiers = yes
+}
+
+# ROOT = vassal, FROM = overlord
+on_create_vassal = {
+	rce_clear_all_religion_mechanic_sylvan_affinity_modifiers = yes
+}

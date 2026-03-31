@@ -41,11 +41,26 @@ country_event = {  # Is it time for independence?
 		hidden_effect = {
 			if = {
 				limit = { HSC = { ai = yes } }
+				SCO = {
+					every_ally = {
+						break_alliance = SCO
+					}
+				}
 				HSC = {
 					declare_war_with_cb = {
 						who = SCO
 						casus_belli = cb_annex
 					}
+					capital_scope = {
+						infantry = HSC
+						infantry = HSC
+						infantry = HSC
+						galley = HSC
+						galley = HSC
+						heavy_ship = HSC
+						heavy_ship = HSC
+					}
+					add_treasury = 150
 				}
 			}
 		}
@@ -95,11 +110,26 @@ country_event = {  # Is it time for independence?
 		hidden_effect = {
 			if = {
 				limit = { HSC = { ai = yes } }
+				SCO = {
+					every_ally = {
+						break_alliance = SCO
+					}
+				}
 				HSC = {
 					declare_war_with_cb = {
 						who = SCO
 						casus_belli = cb_annex
 					}
+					capital_scope = {
+						infantry = HSC
+						infantry = HSC
+						infantry = HSC
+						galley = HSC
+						galley = HSC
+						heavy_ship = HSC
+						heavy_ship = HSC
+					}
+					add_treasury = 150
 				}
 			}
 		}
@@ -133,7 +163,33 @@ country_event = {  # Is it time for independence?
 			}
 		}
 		create_alliance = HSC
-		HSC = { join_all_defensive_wars_of = ROOT }
+		
+		hidden_effect = {
+			if = {
+				limit = { HSC = { ai = yes } }
+				SCO = {
+					every_ally = {
+						break_alliance = SCO
+					}
+				}
+				HSC = {
+					declare_war_with_cb = {
+						who = SCO
+						casus_belli = cb_annex
+					}
+					capital_scope = {
+						infantry = HSC
+						infantry = HSC
+						infantry = HSC
+						galley = HSC
+						galley = HSC
+						heavy_ship = HSC
+						heavy_ship = HSC
+					}
+					add_treasury = 150
+				}
+			}
+		}
 		add_historical_friend = HSC
 		HSC = { add_historical_friend = ROOT }
 		
@@ -306,6 +362,8 @@ country_event = {  # The Soisson Heir
 		
 		add_ruler_personality = inspiring_leader_personality
 		add_ruler_personality = legendary_conqueror_personality
+		add_ruler_personality = careful_personality
+		add_ruler_personality = fierce_negotiator_personality
 		
 		hidden_effect = {
 			kill_heir = { allow_new_heir = no }
@@ -351,6 +409,7 @@ country_event = {  # Rise of the Gauls
 			change_religion = ROOT
 			change_culture = gallic
 		}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = GLL
 		on_change_tag_effect = yes
 		restore_country_name = yes
@@ -377,6 +436,7 @@ country_event = {  # Rise of the Gauls
 			}
 		}
 		change_primary_culture = gallic
+		hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 	}
 	
 }
@@ -393,6 +453,7 @@ country_event = {  # Rise of Domnonée
 		name = ia_flavor_bri.7.a
 		ai_chance = { factor = 100 }
 		
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = ENG
 		on_change_tag_effect = yes
 		restore_country_name = yes
@@ -403,6 +464,13 @@ country_event = {  # Rise of Domnonée
 			}
 			set_government_rank = 2
 		}
+		if = {
+			limit = {
+				NOT = { government = monarchy }
+			}
+			change_government = monarchy
+		}
+		add_government_reform = dumnonia_monarchy_reform
 		add_prestige = 25
 		if = {
 			limit = {
@@ -433,6 +501,7 @@ country_event = {  # Rise of the Soissons
 			change_religion = ROOT
 			change_culture = gaulic
 		}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = SOI
 		on_change_tag_effect = yes
 		restore_country_name = yes
@@ -460,6 +529,7 @@ country_event = {  # Rise of the Soissons
 		}
 		change_primary_culture = gaulic
 		add_government_reform = roman_diocese
+		hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 	}	
 }
 
@@ -912,6 +982,7 @@ country_event = {  # Aegidius becomes immortal?
 			remove_ruler_personality = visions_of_the_past_personality
 			add_ruler_personality = possessed_by_majorian_personality
 			add_ruler_personality = immortal_personality
+			set_country_flag = majorians_boon
 		}
 	}
 	
@@ -922,6 +993,7 @@ country_event = {  # Aegidius becomes immortal?
 		custom_tooltip = majorians_knowledge_tt
 		hidden_effect = {
 			set_country_flag = majorians_boon
+			add_ruler_personality = possessed_by_majorian_personality
 		}
 	}
 }
@@ -958,6 +1030,7 @@ country_event = {  # New heir
 			change_mil = 2
 			claim = 100
 		}
+		hidden_effect = { add_heir_personality = possessed_by_majorian_personality }
 	}
 }
 
@@ -986,6 +1059,7 @@ country_event = {  # Majorian's boon, non-Aegidius version
 		custom_tooltip = majorians_knowledge_tt
 		hidden_effect = {
 			set_country_flag = majorians_boon
+			add_ruler_personality = possessed_by_majorian_personality
 		}
 	}
 }

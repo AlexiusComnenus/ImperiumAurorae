@@ -56,9 +56,9 @@
  #Reforms
  reichskoenigtum:0 "Imperial Kingdom"
  reichskoenigtum_desc:0 "A subject Kingdom separated from the Holy Roman Empire which formal Title still lies with the Emperor, reigned by a Plenipotentiary elected in the Reichstag."
- hlr_catholic_orders_reform:0 "Katholic Knight Holy Orders"
+ hlr_catholic_orders_reform:0 "Knightly Holy Orders"
  hlr_catholic_orders_reform_desc:0 "An increased clerical influence has also elevated the influence of old Holy Orders in our lands. Let us use their activities for the Empire's benefit!"
- mechanic_unlock_hlr_holy_orders_yes:0 "Unlocks Catholic Knight Holy Orders"
+ mechanic_unlock_hlr_holy_orders_yes:0 "Unlocks Knightly Holy Orders"
  hlr_reichsbund:0 "Reichsbund"
  hlr_reichsbund_desc:0 "The Empire and its subjects are represented in the Reichsbund. It is our sacred duty to maintain, strengthen and extend this carefully constructed sphere of influence."
 

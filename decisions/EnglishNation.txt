@@ -30,8 +30,8 @@ country_decisions = {
 			OR = {
 				province_id = 242		# Gwynedd
 				province_id = 237		# Oxfordshire
-				province_id = 234		# Wessex
-				province_id = 4130		# Stradneth
+				province_id = 239		# Caerloyw
+				province_id = 233		# Kernow
 				province_id = 241		# Morgannwg
 			}
 			OR = {
@@ -46,11 +46,12 @@ country_decisions = {
 			NOT = { exists = ENG }
 			owns_core_province = 242		# Gwynedd
 			owns_core_province = 237		# Oxfordshire
-			owns_core_province = 234		# Oxfordshire
-			owns_core_province = 4130		# Stradneth
+			owns_core_province = 239		# Caerloyw
+			owns_core_province = 233		# Kernow
 			owns_core_province = 241		# Morgannwg
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ENG
 			on_change_tag_effect = yes
 			restore_country_name = yes
@@ -129,20 +130,45 @@ country_decisions = {
 			if = {
 				limit = {
 					NOT = { government = monarchy }
-					NOT = { has_government_attribute = locked_government_type }
 				}
 				change_government = monarchy
 			}
+			add_government_reform = dumnonia_monarchy_reform
 			set_country_flag = formed_england_flag
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
+			set_capital = 239
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		ai_importance = 400
+	}
+	
+	albion_request_boon = {
+		major = yes
+		potential = {
+			has_country_flag = albion_in_court_flag
+			NOT = { has_country_modifier = sought_boon_from_albion }
+		}
+		allow = {
+			has_country_flag = albion_in_court_flag
+			NOT = { has_country_modifier = sought_boon_from_albion }
+		}
+		effect = {
+			if = {
+				limit = { ai = yes }
+				country_event = { id = gaeldom.22 }
+			}
+			else = {
+				country_event = { id = gaeldom.21 }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
 	}
 	
 }

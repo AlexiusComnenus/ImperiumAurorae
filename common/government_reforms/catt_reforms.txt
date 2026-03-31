@@ -1,0 +1,135 @@
+cat_clowder_hierarchy = {
+	icon = "fist_in_air"
+	allow_convert = no
+	potential = {
+		tag = KOI
+	}
+	allow_force_tributary = no
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	rulers_can_be_generals = yes
+	fixed_rank = 1
+    papacy = yes
+    min_autonomy = 30
+
+	modifiers = {
+		all_estate_loyalty_equilibrium = -0.1
+		governing_capacity_modifier = -0.75
+		nobles_influence_modifier = 0.20
+        merchants = -1
+        rce_monthly_religion_mechanic_sylvan_affinity_change = 1
+        build_cost = 0.2
+        diplomatic_upkeep = -3
+        monthly_reform_progress_modifier = -0.25
+        global_unrest = 10
+        development_cost = 0.1
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+        heir = no
+	}
+}
+
+blessed_theocatcy_reform = {
+	icon = "consolidate_power_in_doge_reform"
+	allow_convert = no
+	potential = {
+		tag = KOI
+		NOT = { has_reform = cat_clowder_hierarchy }
+	}
+	allow_force_tributary = no
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	rulers_can_be_generals = yes
+	disallowed_trade_goods = { exotic_fur }
+    papacy = yes
+	boost_income = yes
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Winds of Change"
+		}
+		government_abilities = {
+			catt_meows_and_purrs
+		}
+	}
+
+	modifiers = {
+		governing_capacity_modifier = -0.25
+        merchants = 2
+        min_autonomy_in_territories = -0.4
+        rce_monthly_religion_mechanic_sylvan_affinity_change = 2
+        global_foreign_trade_power = 0.5
+        reduced_trade_penalty_on_non_main_tradenode = 0.25 
+        devotion = -1
+        global_autonomy = -0.05
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+        heir = no
+        disables_estate_nobles = yes
+        lottery_election = yes
+		election_on_death = yes
+		heir = no
+		locked_government_type = yes
+		always_archdruid_personality = yes
+		bonus_stats_for_elected_ruler = yes
+		enables_plutocratic_idea_group = yes
+		enables_divine_idea_group = yes
+	}
+}
+
+koi_hands_and_paws_reform = {
+	icon = "new_order_regiments"
+	potential = {
+		tag = KOI
+		has_country_flag = koi_paws_and_hands_enable
+	}
+	modifiers = {
+		global_sailors_modifier = 0.5
+		num_accepted_cultures = 2
+		manpower_in_accepted_culture_provinces = 0.33
+		infantry_power = 0.05
+		artillery_power = 0.05
+		sailor_maintenance_modifer = -0.2
+	}
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+

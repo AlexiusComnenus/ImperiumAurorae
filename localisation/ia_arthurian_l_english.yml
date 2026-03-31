@@ -4,6 +4,8 @@
  english_nation_arthurian_title: "Restore the Kingdom of Dumnonea"
  english_nation_arthurian_desc: "We shall reclaim the mantle of the legendary Arthur Pendraig and restore his kingdom!"
  english_nation_arthurian_tooltip: "Form Dumnonea"
+ change_primary_culture_decision_title: "Change Cultural Identity"
+ change_primary_culture_decision_desc: "Due to changes in our demographics, it may be time to consider a change of Primary Culture."
  
  arthurian_courage: "Courage"
  arthurian_courage_desc: "Be true to what you believe in, and fight for what is right, regardless of the forces arrayed against you."
@@ -19,10 +21,14 @@
  arthurian_humility_desc: "A knight is foremost a servant of the people. This is so that the people may live a safe, prosperous, and happy life. Encourage joy in others, and remember to join them, especially the common folk. A Knight will face challenges and doubts on their journey, so reminders of what you're fighting for are necessary."
  arthurian_selflessness: "Selflessness"
  arthurian_selflessness_desc: "There is no greater service to this world than giving your life in the defence of the weak. You will be a beacon of hope to all, so that they will follow in your footsteps. Do not mourn your own inevitable death, for you will be judged fairly, and will rejoin those you have lost."
+ ia_crn_tin_mining: "Legacy of Tin"
+ ia_crn_tin_mining_desc: "The tin mines of Cornwall have been famous since ancient times. Through the Armorican mines have taken over the mainland markets, Cornish tin remains the highest standard of quality in the Isles."
+ allow_church_separation: "Allow Church Separation"
  
  #Diplo Tooltips
  powerful_druid_personality: "Powerful Druid"
  powerful_druid_personality_desc: "Powerful Druids possess strong influence over the forces of nature. The mere presence of such a druid can cause nearby farms to become fertile, rivers to run clean, and injuries to heal swiftly."
+ advisor_events_maybe_later: "Maybe later..."
  
  #Government
  welsh_duchy: "Dugiaeth"
@@ -36,9 +42,14 @@
  welsh_ruler_emperor_female: "Ymerodres"
  welsh_heir: "Aer Tywysog"
  welsh_heir_female: "Aeres Tywysoges"
+ eng_draw_the_sword_tt: "§RUntested Rulers§! must §Ypass the Trials of the Lake§! to draw §J<<Caledfwlch>>§!!"
+ dumnonia_monarchy_reform: "Court of Caer Lleon"
+ dumnonia_monarchy_reform_desc: "The Court of Caer Lleon upholds the highest standards of chivalry anywhere in Europe. Led by a worthy wielder of Excalibur, every member of the Round Table pledges to always adhere to the tenets of Courage, Justice, Mercy, Charity, Honour, Humility, and Selflessness."
  
  #Modifiers
- wielding_excalibur: "Wielding §J<<Caliburn>>§!"
+ changing_primary_culture_modifier: "Process of Cultural Shift"
+ changed_primary_culture_modifier: "Recently changed National Identity"
+ wielding_excalibur: "Wielding §J<<Caledfwlch>>§!"
  wielding_excalibur_desc: "With a design of two chimeras on the golden hilt, when the sword was unsheathed what was seen from the mouths of the two chimeras was like two flames of fire, so dreadful that it was not easy for anyone to look. And 'twas the finest sword that there was, which sliced through iron as through wood..."
  administrative_corruption_suppression: "Suppressing Corruption Administratively"
  espionage_corruption_suppression: "Suppressing Corruption via Secret Police"
@@ -50,6 +61,7 @@
  sibyls_regency_mod: "Queen Sibyl's Regency"
  disappearance_of_gerens: "The Duke is Missing!"
  sided_with_sibyl: "Sided With Sibyl"
+ eng_civil_war_consequences: "Aftermath of the Civil War"
  
  #Missions
  swe_declare_independence_ia_title: "Rise of Sweden"
@@ -58,6 +70,9 @@
  swe_swedish_allies_ia_desc: "With the Church split between rival Polish and Saxon antipopes, we need to find our own allies in this chaotic world."
  
  # events
+ ia_change_primary_culture_events.1.title: "Embracing Cultural Shift"
+ ia_change_primary_culture_events.1.desc: "Reflecting the population of our state, we have completed the cultural shift to embrace our dominant culture as our new Primary Culture."
+ ia_change_primary_culture_events.1.a: "I, for one, welcome our new overlords."
  ia_flavor_eng.1.t: "Cynfyn's Reign"
  ia_flavor_eng.1.d: "Cynfyn VI Pendraig, blessed be his name, is a kind and soft-hearted man. As the eldest son of the previous King of Cernyw, he was raised from birth to be the heir, but always preferred the company of his books more than the burdens of rulership. After his acession to the throne, he handed most of the responsibility off to his queen, the French Princess Sibyl Capet, who eagerly rose to the task. Unfortunately, this eagerness stemmed from a deep-seated ambition and a dose of resentment towards her neglectful husband, and she quickly started to bring the nobles under her influence, sometimes resorting to bribery from the royal treasury. Cynfyn's younger brother, Gerens, who inherited the Duchy of Cernyw, is the leader of the main political faction opposing the Queen's takeover of the kingdom. Now, the situation in Cymru is tense and violence might erupt at any moment..."
  ia_flavor_eng.1.a: "Everything is fine!"

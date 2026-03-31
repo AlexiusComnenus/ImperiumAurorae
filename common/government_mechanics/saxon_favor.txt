@@ -1,0 +1,160 @@
+saxon_favor_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 17
+	available = {
+		#OR = {
+		#	is_subject_of_type = german_march
+		#	is_subject_of_type = saxon_daimyo
+		#}
+		#is_subject_of_type = german_march
+		overlord = { has_reform = saxon_feudalism }
+	}
+
+	powers = {
+		ia_court_influence = {
+			gui = cultural_unity_gov_mech
+			min = 0
+			max = 100
+			base_monthly_growth = 0.5
+			scaled_modifier = {
+				start_value = 0 
+				end_value = 100 
+				modifier = {
+					prestige = 1
+				}
+			}
+			is_good = yes
+		}	
+	}
+	
+	interactions = {
+		ia_fake_peasants = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_march_divided_fight_united
+			trigger = {
+				overlord = { has_reform = saxon_feudalism }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 30
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -30
+				}
+				add_loan = {
+					fixed_interest = 0
+					duration = 60
+					estate_loan = yes
+				}
+				add_loan = {
+					fixed_interest = 0
+					duration = 60
+					estate_loan = yes
+				}
+				add_loan = {
+					fixed_interest = 0
+					duration = 60
+					estate_loan = yes
+				}
+				add_loan = {
+					fixed_interest = 0
+					duration = 60
+					estate_loan = yes
+				}
+				add_inflation = -0.4
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0
+					has_estate_loan = yes
+				}
+			}
+		}
+		
+		ia_falsify_records = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_rewrite_military_manual
+			trigger = {
+				overlord = { has_reform = saxon_feudalism }
+				OR = {
+					is_subject_of_type = saxon_daimyo
+					is_subject_of_type = german_march
+				}
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 50
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -50
+				}
+				add_yearly_manpower = 1
+				overlord = {
+					add_country_modifier = {
+						name = sax_falsified_census
+						duration = 1825
+					}
+				}
+			}
+			cooldown_years = 10
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 0
+					not = { liberty_desire = 50 }
+				}
+			}
+		}
+		
+		ia_sweet_talk = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_upgrade	
+			trigger = {
+				overlord = { has_reform = saxon_feudalism }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 90
+				}
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -90
+				}
+				custom_tooltip = ia_sweet_talk_tt
+				hidden_effect = {
+					overlord = {
+						add_aggressive_expansion = {
+							who = ROOT
+							value = -25
+							apply_calc = no
+						}
+						every_subject_country = {
+							add_aggressive_expansion = {
+								who = ROOT
+								value = -15
+								apply_calc = no
+							}
+						}
+					}
+				}
+			}
+			cooldown_years = 8
+			ai_chance = {
+				factor = 10
+			}
+		}
+	}
+}

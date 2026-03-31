@@ -1,0 +1,1674 @@
+########################################
+# Flavor Events for Papal States
+#
+# New IA events by Alexios
+# 
+########################################
+
+namespace = flavor_pap
+normal_or_historical_nations = yes
+
+# The Commissioning of the Saint Peter's Basilica
+country_event = {
+	id = flavor_pap.1
+	title = "flavor_pap.EVTNAME1"
+	desc = "flavor_pap.EVTDESC1"
+	picture = ST_PETERS_CHURCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		is_year = 1500
+		NOT = { is_year = 1550 }
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA1"
+		add_ruler_modifier = { name = pap_saint_peters_basilica }
+		if = {
+			limit = {
+				has_dlc = "Leviathan"
+			}
+			118 = {
+				set_great_project_tier_1 = {
+					type = stpeters_cathedral
+				}
+			}
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB1"
+		add_adm_power = 25
+		add_mil_power = 25
+		add_dip_power = 25
+	}
+}
+
+# The Foundation of Societas Jesu
+country_event = {
+	id = flavor_pap.2
+	title = "flavor_pap.EVTNAME2"
+	desc = "flavor_pap.EVTDESC2"
+	picture = RELIGION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		OR = {
+			AND = {
+				POR = { 
+					religion = catholic
+					has_country_modifier = the_societas_jesu 
+				}
+			}
+			AND = {
+				SPA = { 
+					religion = catholic
+					has_country_modifier = the_societas_jesu 
+				}
+			}
+		}
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA2"
+		random_known_country = {
+			limit = {
+				tag = POR
+				has_country_modifier = the_societas_jesu 
+			}
+			tooltip = { 
+				add_papal_influence = 10 
+			}
+			country_event = {
+				id = flavor_pap.3
+			}
+		}
+		random_known_country = {
+			limit = {
+				tag = SPA 
+				has_country_modifier = the_societas_jesu 
+			}
+			tooltip = {	
+				add_papal_influence = 10 
+			}
+			country_event = {
+				id = flavor_pap.3
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# SPA/POR - The Foundation of Societas Jesu
+country_event = {
+	id = flavor_pap.3
+	title = "flavor_pap.EVTNAME3"
+	desc = "flavor_pap.EVTDESC3"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA3"
+		add_papal_influence = 10
+		
+		# if = {
+			# limit = { 
+				# religion_group = christian 
+				# has_dlc = "Golden Century"
+			# }
+			# custom_tooltip = enable_jesuit_order_tt
+			# set_country_flag = enable_jesuit_order_flag
+		# }
+	}
+}
+
+# Reorganisation of the Holy Inquisition
+country_event = {
+	id = flavor_pap.4
+	title = "flavor_pap.EVTNAME4"
+	desc = "flavor_pap.EVTDESC4"
+	picture = RELIGION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		NOT = { is_year = 1550 }
+		SPA = {
+			has_country_flag = spa_holy_inquisition
+		}
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA4"
+		add_country_modifier = { 
+			name = pap_spanish_inquisition
+			duration = 36500
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB4"
+		add_country_modifier = { 
+			name = pap_moderate_inquisition 
+			duration = 36500
+		}
+	}
+}
+
+# Giordano Bruno
+country_event = {
+	id = flavor_pap.5
+	title = "flavor_pap.EVTNAME5"
+	desc = "flavor_pap.EVTDESC5"
+	picture = RELIGION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		is_year = 1600 
+		NOT = { is_year = 1650 }
+		has_regency = no
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA5"
+		add_ruler_modifier = {
+			name = pap_burned_heretic
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB5"
+		add_adm_power = 25
+		add_mil_power = 25
+		add_dip_power = 25
+	}
+}
+
+# The Cleansing of the Pontinian Marches
+country_event = {
+	id = flavor_pap.6
+	title = "flavor_pap.EVTNAME6"
+	desc = "flavor_pap.EVTDESC6"
+	picture = RELIGION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		is_year = 1700
+		NOT = { is_year = 1800 }
+		owns = 118 # Roma
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA6"
+		118 = { add_base_tax = 1 }
+	}
+}
+
+# The Counter-Reformation and the Reformation of the Catholic Faith
+country_event = {
+	id = flavor_pap.7
+	title = "flavor_pap.7.t"
+	desc = "flavor_pap.7.d"
+	picture = REFORM_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	major = yes
+	# this = country seeing popup, from = original event scope
+	major_trigger = {
+		religion_group = christian
+	}
+	
+	trigger = {
+		tag = PAP
+		religion = catholic
+		has_global_flag = catholic_antipopes_ended
+		had_global_flag = {
+			flag = catholic_antipopes_ended
+			days = 3650
+		}
+		any_known_country = {
+			religion = catholic
+		}
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			is_council_enabled = no
+		}
+		NOT = { has_global_flag = counter_reformation }
+	}
+	
+	option = {
+		name = "flavor_pap.EVTOPTA7"
+		add_prestige = 10
+		add_years_of_income = -0.5
+		if = {
+			limit = {
+				corruption = 0.01
+			}
+			add_corruption = -1
+		}
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			custom_tooltip = flavor_pap.7.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						religion = catholic
+						any_owned_province = {
+							has_cardinal = yes
+						}
+					}
+					country_event = {
+						id = flavor_pap.8
+					}
+				}
+			}
+		}
+		set_global_flag = counter_reformation
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			enable_council = yes
+		}
+	}
+}
+
+# The Council of Trent
+country_event = {
+	id = flavor_pap.8
+	title = "flavor_pap.8.t"
+	desc = "flavor_pap.8.d"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = COUNCIL_TRENT_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = RELIGION_eventPicture
+	}
+	
+
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Emperor"
+	}
+	
+	option = {
+		name = "flavor_pap.EVTOPTA8"
+		custom_tooltip = can_join_council_of_trent_tt
+		PAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_trent
+			}
+		}
+	}
+}
+
+# Sublimis Deus
+# by Daniel Tolman
+country_event = {
+	id = flavor_pap.9
+	title = "flavor_pap.EVTNAME9"
+	desc = "flavor_pap.EVTDESC9"
+	picture = POPE_PREACHING_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		has_dlc = "Golden Century"
+		religion = catholic
+		culture_group = iberian
+		capital_scope = {
+			continent = europe
+		}
+		calc_true_if = {
+			all_subject_country = {
+				is_colonial_nation = yes
+			}
+			amount = 3
+		}
+		any_subject_country = {
+			is_colonial_nation = yes
+			num_of_cities = 15
+		}
+		exists = PAP
+		NOT = { has_country_flag = had_sublimis_deus_event }
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_sublimis_deus_event
+			every_country = {
+				limit = {
+					religion = catholic
+					any_subject_country = {
+						is_colonial_nation = yes
+					}
+					NOT = { has_country_flag = had_sublimis_deus_event }
+				}
+				country_event = { id = flavor_pap.10 days = 3 }
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.9.a"
+		add_papal_influence = 20
+		PAP = {
+			add_opinion = { who = ROOT modifier = opinion_sublimis_deus }
+		}
+		add_country_modifier = {
+			name = "sublimis_deus"
+			duration = 36500
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.9.b"
+		every_subject_country = {
+			limit = {
+				is_colonial_nation = yes
+			}
+			add_country_modifier = {
+				name = "sublimis_deus_not_enforced"
+				duration = 36500
+			}
+		}
+	}
+}
+
+# Sublimis Deus for target countries
+
+country_event = {
+	id = flavor_pap.10
+	title = "flavor_pap.EVTNAME9"
+	desc = "flavor_pap.EVTDESC9"
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.9.a"
+		add_papal_influence = 20
+		PAP = {
+			add_opinion = { who = ROOT modifier = opinion_sublimis_deus }
+		}
+		if = {
+			limit = {
+				culture_group = iberian
+			}
+			add_country_modifier = {
+				name = "sublimis_deus"
+				duration = 36500
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.9.b"
+		every_subject_country = {
+			limit = {
+				is_colonial_nation = yes
+			}
+			add_country_modifier = {
+				name = "sublimis_deus_not_enforced"
+				duration = 36500
+			}
+		}
+	}
+}
+
+# Pope declares the Great Schism mended
+country_event = {
+	id = flavor_pap.11
+	title = "flavor_pap.EVTNAME11"
+	desc = "flavor_pap.EVTDESC11"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA11"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = PAP
+					attitude = attitude_outraged
+				}
+			}
+		}
+		change_religion = catholic
+		capital_scope = {
+			if = {
+				limit = {
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+		}
+		add_stability = -1
+		add_prestige = -30
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB11"
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = -3
+	}
+}
+
+country_event = {
+	id = flavor_pap.12
+	title = "flavor_pap.EVTNAME12"
+	desc = "flavor_pap.EVTDESC12"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_pap.EVTOPTA12"
+		add_country_modifier = {
+			name = pap_papal_mission
+			duration = 5475
+		}
+	}
+}
+
+# The Jesuits return
+country_event = {
+	id = flavor_pap.13
+	title = "flavor_pap.EVTNAME13"
+	desc = "flavor_pap.EVTDESC13"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = yes
+				}
+				save_event_target_as = current_ming_capital
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.EVTOPTA13"
+		set_country_flag = mng_accepted_jesuits
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_reformation_center = no
+			}
+			change_religion = catholic
+			add_permanent_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 7300
+			}
+			if = {
+				limit = { NOT = { renaissance = 100 } }
+				add_institution_embracement = {
+					which = renaissance
+					value = 50
+				}
+			}
+		}
+		add_dip_power = 100
+		add_mil_power = 100
+		add_adm_power = 100
+		every_known_country = {
+			limit = {
+				religion = catholic
+				has_discovered = event_target:current_ming_capital
+			}
+			add_opinion = {
+				who = MNG
+				modifier = opinion_accepted_jesuits
+			}
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB13"
+		add_stability_or_adm_power = yes
+	}
+}
+
+country_event = {
+	id = flavor_pap.14
+	title = "flavor_pap.EVTNAME14"
+	desc = "flavor_pap.EVTDESC14"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = yes
+				}
+				save_event_target_as = current_china_capital
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.EVTOPTA14" # Yes, we may benefit from their learning
+		random_owned_province = {
+			limit = {
+				has_port = yes
+				is_reformation_center = no
+			}
+			change_religion = catholic
+			add_permanent_province_modifier = {
+				name = religious_zeal_at_conv
+				duration = 7300
+			}
+			if = {
+				limit = { NOT = { renaissance = 100 } }
+				add_institution_embracement = {
+					which = renaissance
+					value = 50
+				}
+			}
+		}
+		add_dip_power = 100
+		add_mil_power = 100
+		add_adm_power = 100
+		every_known_country = {
+			limit = {
+				religion = catholic
+				has_discovered = event_target:current_china_capital
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_accepted_jesuits
+			}
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB14"
+		add_stability_or_adm_power = yes
+	}
+}
+
+# Kirishitan return!
+country_event = {
+	id = flavor_pap.15
+	title = "flavor_pap.EVTNAME15"
+	desc = "flavor_pap.EVTDESC15"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { num_of_cities = 8 }
+				all_owned_province = {
+					NOT = { religion = catholic }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+				}
+				change_religion = catholic
+			}
+		}
+		
+		else_if = {
+			limit = {
+				num_of_cities = 8
+				NOT = { num_of_cities = 15 }
+				all_owned_province = {
+					NOT = { religion = catholic }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+		}
+		
+		else_if = {
+			limit = {
+				num_of_cities = 15
+				all_owned_province = {
+					NOT = { religion = catholic }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = { religion = catholic }
+				}
+				change_religion = catholic
+			}
+		}
+			
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					religion = catholic
+					can_spawn_rebels = catholic_rebels
+				}
+				set_province_flag = jap_kirishitan_flag
+			}
+			if = {
+				limit = {
+					num_of_cities = 8
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = japanese_g
+						religion = catholic
+						can_spawn_rebels = catholic_rebels
+						NOT = { has_province_flag = jap_kirishitan_flag }
+					}
+					set_province_flag = jap_kirishitan_flag
+				}
+			}
+			if = {
+				limit = {
+					num_of_cities = 15
+				}
+				random_owned_province = {
+					limit = {
+						culture_group = japanese_g
+						religion = catholic
+						can_spawn_rebels = catholic_rebels
+						NOT = { has_province_flag = jap_kirishitan_flag }
+					}
+					set_province_flag = jap_kirishitan_flag
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_pap.EVTOPTA15" # Stop the missionaries!
+		every_owned_province = {
+			limit = {
+				has_province_flag = jap_kirishitan_flag
+			}
+			spawn_rebels = { 
+				type = catholic_rebels 
+				size = 2 
+			}
+			clr_province_flag = jap_kirishitan_flag
+		}
+	}
+	option = {
+		name = "flavor_pap.EVTOPTB15" # Let them spread their faith
+		add_prestige = -25
+		add_stability = -1
+		every_owned_province = {
+			limit = {
+				has_province_flag = jap_kirishitan_flag
+			}
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+			clr_province_flag = jap_kirishitan_flag
+		}
+	}
+}
+
+# The Borgia Pope by Daniel Tolman
+
+# Borgia Pope
+country_event = {
+	id = flavor_pap.16
+	title = "flavor_pap.16.t"
+	desc = "flavor_pap.16.d"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = POPE_PREACHING_eventPicture
+	}
+	
+	is_triggered_only = yes # on monarch death
+	fire_only_once = yes
+	
+	trigger = {
+		is_year = 1490
+		NOT = { is_year = 1503 }
+		NOT = { is_religion_enabled = protestant }
+		NOT = { has_country_flag = medici_pope_next }
+		tag = PAP
+		220 = {
+			owner = {
+				religion = catholic
+			}
+		}
+		always = no
+	}
+	
+	option = {
+		name = flavor_pap.16.a
+		add_reform_desire = 0.025
+		set_global_flag = borgia_pope_global
+		custom_tooltip = borgia_pope_tt
+		# reduced cost of appointing cardinals, and corruption
+		add_ruler_modifier = {
+			name = "borgia_pope"
+			duration = -1
+		}
+	}
+}
+
+# Cesare Borgia resigns as Cardinal
+country_event = {
+	id = flavor_pap.17
+	title = "flavor_pap.17.t"
+	desc = "flavor_pap.17.d"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = LAND_MILITARY_eventPicture
+	}
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		has_ruler_modifier = borgia_pope
+		always = no
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_pap.17.a
+		add_reform_desire = 0.01
+		add_army_tradition = 10
+		define_general = {
+			name = "Cesare Borgia"
+			shock = 5
+			fire = 4
+			manuever = 4
+			siege = 3
+		}
+	}
+}
+
+# Borgia scandals
+country_event = {
+	id = flavor_pap.18
+	title = "flavor_pap.18.t"
+	desc = "flavor_pap.18.d"
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = CORRUPTION_eventPicture
+	}
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PAP
+		has_ruler_modifier = borgia_pope
+		always = no
+	}
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_pap.18.a
+		add_stability = -1
+		add_ruler_modifier = { # lose diprep
+			name = "scandalized_papacy"
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_pap.18.b
+		trigger = {
+			DIP = 5
+		}
+		add_dip_power = 50
+		add_ruler_modifier = { # add diprep
+			name = "borgia_diplomacy"
+			duration = -1
+		}
+		highlight = yes
+	}
+}
+
+# Death of the Borgia Pope, Cesare goes into exile
+country_event = {
+	id = flavor_pap.19
+	title = "flavor_pap.19.t"
+	desc = {
+		trigger = {
+			has_leader = "Cesare Borgia"
+		}
+		desc = "flavor_pap.19.d"
+	}
+	desc = {
+		trigger = {
+			NOT = { has_leader = "Cesare Borgia" }
+		}
+		desc = "flavor_pap.19.d2"
+	}
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = BAD_POPE_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = POPE_PREACHING_eventPicture
+	}
+	
+	fire_only_once = yes
+	is_triggered_only = yes # on monarch death
+	
+	trigger = {
+		has_global_flag = borgia_pope_global
+		tag = PAP
+		always = no
+	}
+	
+	immediate = {
+		clr_global_flag = borgia_pope_global
+	}
+	
+	option = {
+		name = flavor_pap.19.a
+		if = {
+			limit = {
+				NOT = { is_religion_enabled = protestant }
+			}
+			add_reform_desire = -0.03
+		}
+		if = {
+			limit = {
+				has_leader = "Cesare Borgia"
+			}
+			hidden_effect = {
+				kill_leader = {
+					type = "Cesare Borgia"
+				}
+			}
+			if = {
+				limit = {
+					exists = NAV
+					NAV = {
+						is_subject = no
+					}
+				}
+				NAV = { 
+					country_event = { id = flavor_pap.20 } 
+				}
+			}
+		}
+	}
+}
+
+# Cesare flees to Navarra
+country_event = {
+	id = flavor_pap.20
+	title = "flavor_pap.20.t"
+	desc = "flavor_pap.20.d"
+	picture = LAND_MILITARY_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = flavor_pap.20.a
+		define_general = {
+			name = "Cesare Borgia"
+			shock = 5
+			fire = 4
+			manuever = 4
+			siege = 3
+		}
+	}
+}
+
+# Council of Trent Ends
+country_event = {
+	id = flavor_pap.21
+	title = "flavor_pap.21.t"
+	desc = {
+		trigger = {
+			always = yes
+		}
+		desc = "flavor_pap.21.d"
+	}
+	#desc = {
+	#	trigger = {
+	#		any_known_country = {
+	#			is_in_league_war = yes
+	#		}
+	#	}
+	#	desc = "flavor_pap.21.d2"
+	#}
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = COUNCIL_TRENT_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = RELIGION_eventPicture
+	}
+	
+	fire_only_once = yes
+	major = yes
+	# this = country seeing popup, from = original event scope
+	major_trigger = {
+		religion_group = christian
+	}
+	
+	trigger = {
+		religion = catholic
+		OR = {
+			council_position = harsh
+			council_position = concilatory
+			council_position = neutral
+		}
+		if = {
+			limit = {
+				exists = PAP
+			}
+			tag = PAP
+		}
+		is_council_enabled = yes
+		is_all_concessions_in_council_taken = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+		modifier = {
+			factor = 0.5
+			tag = PAP
+		}
+		modifier = {
+			factor = 0.5
+			is_defender_of_faith = yes
+		}
+	}
+	
+	option = {
+		name = flavor_pap.21.a
+		finish_council = yes
+	}
+}
+
+namespace = ia_flavor_pap
+
+country_event = {	# Succession of Wislawa
+	id = ia_flavor_pap.1
+	title = "ia_flavor_pap.1.t"
+	desc = "ia_flavor_pap.1.d"
+	picture = wihgfx_FEMALE_RULER_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = POL
+	}
+	
+	major = yes
+	major_trigger = {
+		overlord = { tag = POL }
+	}
+
+	option = {
+		name = ia_flavor_pap.1.a
+		every_subject_country = {
+			add_liberty_desire = 25
+		}
+	}
+}
+
+country_event = {	# Riga offer
+	id = ia_flavor_pap.2
+	title = "ia_flavor_pap.2.t"
+	desc = "ia_flavor_pap.2.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Send the offer
+		name = ia_flavor_pap.2.a
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = pap_if_they_accept_tt
+		tooltip = {
+			38 = {
+				add_trade_modifier = {
+					who = RIG
+					duration = 9125
+					power = 25
+					key = pap_riga_deal
+				}
+			}
+			43 = {
+				add_trade_modifier = {
+					who = PAP
+					duration = 9125
+					power = -25
+					key = pap_riga_deal
+				}
+			}
+			add_historical_friend = RIG
+			RIG = { add_historical_friend = PAP }
+		}
+		RIG = { country_event = { id = ia_flavor_pap.3 } }
+	}
+	
+	option = {	# Don't send the offer
+		ai_chance = { factor = 0 }
+		name = ia_flavor_pap.2.b
+		
+	}
+}
+
+country_event = {	# Riga offer: Riga side
+	id = ia_flavor_pap.3
+	title = "ia_flavor_pap.3.t"
+	desc = "ia_flavor_pap.3.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Accept the offer
+		name = ia_flavor_pap.3.a
+		ai_chance = { factor = 100 }
+		
+		38 = {
+			add_trade_modifier = {
+				who = RIG
+				duration = 9125
+				power = 25
+				key = pap_riga_deal
+			}
+		}
+		43 = {
+			add_trade_modifier = {
+				who = PAP
+				duration = 9125
+				power = -25
+				key = pap_riga_deal
+			}
+		}
+		add_historical_friend = PAP
+		PAP = { add_historical_friend = RIG }
+		set_country_flag = will_help_pap_flag
+	}
+	
+	option = {	# Decline the offer
+		name = ia_flavor_pap.2.b
+		ai_chance = { factor = 0 }
+		
+	}
+}
+
+country_event = {	# Denmark offer
+	id = ia_flavor_pap.4
+	title = "ia_flavor_pap.4.t"
+	desc = "ia_flavor_pap.4.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Send the offer
+		name = ia_flavor_pap.4.a
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = pap_if_they_accept_tt
+		tooltip = {
+			DAN = {
+				add_casus_belli = {
+					target = SWE
+					type = cb_restore_personal_union
+					months = 1200
+				}
+				add_casus_belli = {
+					target = NOR
+					type = cb_restore_personal_union
+					months = 1200
+				}
+			}
+			
+			add_historical_friend = DAN
+			DAN = { add_historical_friend = PAP }
+		}
+		DAN = { country_event = { id = ia_flavor_pap.5 } }
+	}
+	
+	option = {	# Don't send the offer
+		ai_chance = { factor = 0 }
+		name = ia_flavor_pap.4.b
+		
+	}
+}
+
+country_event = {	# Denmark offer: Denmark side
+	id = ia_flavor_pap.5
+	title = "ia_flavor_pap.5.t"
+	desc = "ia_flavor_pap.5.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Accept the offer
+		name = ia_flavor_pap.5.a
+		ai_chance = { factor = 100 }
+		
+		add_casus_belli = {
+			target = SWE
+			type = cb_restore_personal_union
+			months = 1200
+		}
+		add_casus_belli = {
+			target = NOR
+			type = cb_restore_personal_union
+			months = 1200
+		}
+		
+		add_historical_friend = PAP
+		PAP = { add_historical_friend = DAN }
+		set_country_flag = will_help_pap_flag
+	}
+	
+	option = {	# Don't accept the offer
+		ai_chance = { factor = 0 }
+		name = ia_flavor_pap.5.b
+		
+	}
+}
+
+country_event = {	# Neustria offer
+	id = ia_flavor_pap.6
+	title = "ia_flavor_pap.6.t"
+	desc = "ia_flavor_pap.6.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Send the offer
+		name = ia_flavor_pap.6.a
+		ai_chance = { factor = 100 }
+		
+		custom_tooltip = pap_if_they_accept_tt
+		tooltip = {
+			NRM = {
+				add_country_modifier = {
+					name = "papal_blessing"
+					duration = 18250
+				}
+				add_country_modifier = {
+					name = "papal_sanction_for_holy_war"
+					duration = 18250
+				}
+				add_country_modifier = {
+					name = "papal_legate"
+					duration = 18250
+				}
+				add_country_modifier = {
+					name = "papal_indulgence"
+					duration = 18250
+				}
+			}
+			
+			add_historical_friend = NRM
+			NRM = { add_historical_friend = PAP }
+		}
+		NRM = { country_event = { id = ia_flavor_pap.7 } }
+	}
+	
+	option = {	# Don't send the offer
+		ai_chance = { factor = 0 }
+		name = ia_flavor_pap.6.b
+		
+	}
+}
+
+country_event = {	# Neustria offer: Neustria side
+	id = ia_flavor_pap.7
+	title = "ia_flavor_pap.7.t"
+	desc = "ia_flavor_pap.7.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {	# Send the offer
+		name = ia_flavor_pap.7.a
+		ai_chance = { factor = 100 }
+		
+		add_country_modifier = {
+			name = "papal_blessing"
+			duration = 18250
+		}
+		add_country_modifier = {
+			name = "papal_sanction_for_holy_war"
+			duration = 18250
+		}
+		add_country_modifier = {
+			name = "papal_legate"
+			duration = 18250
+		}
+		add_country_modifier = {
+			name = "papal_indulgence"
+			duration = 18250
+		}
+		
+		add_historical_friend = PAP
+		PAP = { add_historical_friend = NRM }
+		set_country_flag = will_help_pap_flag
+	}
+	
+	option = {	# Don't send the offer
+		ai_chance = { factor = 0 }
+		name = ia_flavor_pap.7.b
+		
+	}
+}
+
+country_event = {	# Hidden AI Event: add opinion with other AIs
+	id = ia_flavor_pap.8
+	title = "ia_flavor_pap.8.t"
+	desc = "ia_flavor_pap.8.d"
+	picture = ITALIAN_wars_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	fire_only_once = yes
+	
+	trigger = {
+		ai = yes
+		is_year = 1449
+		tag = PAP
+	}
+
+	option = {	# Improve Relations
+		name = ia_flavor_pap.8.a
+		ai_chance = { factor = 100 }
+		
+		if = {
+			limit = {
+				#NRM = { ai = yes }
+				always = yes
+			}
+			NRM = {
+				add_opinion = {
+					who = PAP
+					modifier = boh_papal_reconciled
+					multiplier = 3
+				}
+			}
+			add_opinion = {
+				who = NRM
+				modifier = boh_papal_reconciled
+				multiplier = 3
+			}
+		}
+		
+		if = {
+			limit = {
+				#RIG = { ai = yes }
+				always = yes
+			}
+			RIG = {
+				add_opinion = {
+					who = PAP
+					modifier = boh_papal_reconciled
+					multiplier = 3
+				}
+			}
+			add_opinion = {
+				who = RIG
+				modifier = boh_papal_reconciled
+				multiplier = 3
+			}
+		}
+		
+		if = {
+			limit = {
+				#DAN = { ai = yes }
+				always = yes
+			}
+			DAN = {
+				add_opinion = {
+					who = PAP
+					modifier = boh_papal_reconciled
+					multiplier = 3
+				}
+			}
+			add_opinion = {
+				who = DAN
+				modifier = boh_papal_reconciled
+				multiplier = 3
+			}
+		}
+		
+		create_alliance = MAZ
+	}
+}
+
+country_event = {	# Wislawa demands the presence of Pope at court
+	id = ia_flavor_pap.9
+	title = "ia_flavor_pap.9.t"
+	desc = "ia_flavor_pap.9.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = POL
+		is_year = 1447
+		NOT = { is_year = 1460 }
+		PAP = { is_subject_of = POL }
+		is_papal_controller = yes
+	}
+
+	option = {	# Send the demand
+		name = ia_flavor_pap.9.a
+		ai_chance = { factor = 100 }
+		
+		PAP = { country_event = { id = ia_flavor_pap.10 } }
+	}
+	
+	option = {	# Don't cause trouble
+		name = ia_flavor_pap.9.b
+		ai_chance = { factor = 0 }
+		
+		add_prestige = -25
+	}
+}
+
+country_event = {	# Wislawa demands the presence of Pope at court: Pope version
+	id = ia_flavor_pap.10
+	title = "ia_flavor_pap.10.t"
+	desc = "ia_flavor_pap.10.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	major_trigger = {
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+	}
+
+	option = {	# Refuse the demand
+		name = ia_flavor_pap.10.a
+		ai_chance = { factor = 75 }
+		
+		add_liberty_desire = 25
+		add_reform_desire = 0.025
+		set_country_flag = pap_rejected_queen_flag
+	}
+	
+	option = {	# Accept the demand
+		name = ia_flavor_pap.10.b
+		ai_chance = { factor = 25 }
+		
+		add_prestige = -25
+		add_reform_desire = 0.05
+		POL = { add_papal_influence = 50 }
+	}
+}
+
+country_event = {	# Excommunicate Poland and become own curia controller
+	id = ia_flavor_pap.11
+	title = "ia_flavor_pap.11.t"
+	desc = "ia_flavor_pap.11.d"
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	major_trigger = {
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+	}
+
+	option = {	# Down with the Queen!
+		name = ia_flavor_pap.11.a
+		ai_chance = { factor = 75 }
+		
+		transfer_papal_controller = ROOT
+		excommunicate = POL
+		add_reform_desire = -0.05
+		
+		hidden_effect = {
+			every_province = {
+				limit = {
+					religion = catholic
+					NOT = { owned_by = ROOT }
+				}
+				remove_cardinal = yes
+			}
+		}
+	}
+}
+
+country_event = { # Count le wins
+	id = ia_flavor_pap.12
+	title = ia_flavor_pap.12.t
+	desc = ia_flavor_pap.12.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = { tag = PAP	was_tag = PAP }
+	}
+	
+	option = {
+		name = ia_flavor_pap.12.a
+		
+		if = {
+			limit = { NOT = { has_country_flag = pap_counting_wins } }
+			set_variable = { which = PapWins value = 1 }
+			set_country_flag = pap_counting_wins
+		}
+		else = {
+			change_variable = {
+				which = PapWins
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = { # St. Peter's Heist
+	id = ia_flavor_pap.13
+	title = ia_flavor_pap.13.t
+	desc = ia_flavor_pap.13.d
+	picture = ST_PETERS_CHURCH_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_pap.13.a
+		set_global_flag = stpeters_moved_flag
+		
+		118 = {
+			destroy_great_project = {
+				type = stpeters_cathedral
+			}
+		}
+		43 = {
+			add_great_project = {
+				type = stpeters_cathedral_clone
+				instant = no
+			}
+		}
+		
+		add_country_modifier = {
+			name = pap_throne_of_st_peter
+			duration = -1
+		}
+		add_country_modifier = {
+			name = pap_true_cross
+			duration = -1
+		}
+		add_country_modifier = {
+			name = pap_veil_of_veronica
+			duration = -1
+		}
+		
+		118 = {
+			owner = {
+				add_casus_belli = {
+					target = ROOT
+					type = cb_insult
+					months = 600
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Simon Manus, controversial Alchemist
+	id = ia_flavor_pap.14
+	title = ia_flavor_pap.14.t
+	desc = ia_flavor_pap.14.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		has_reform = kingdom_of_god_reform
+	}
+	
+	fire_only_once = yes
+	
+	option = {	# let's get this lunatic a job
+		name = ia_flavor_pap.14.a
+		ai_chance = { factor = 10 }
+		hire_advisor = {
+			type = alchemist_advisor
+			name = "Simon Manus"
+			skill = 5
+			discount = yes
+		}
+		
+		add_country_modifier = {
+			name = simon_manus_modifier
+			duration = 7300
+		}
+	}
+	
+	option = {	# What about no
+		ai_chance = { factor = 90 }
+		name = ia_flavor_pap.14.b
+		add_devotion = 10
+	}
+}

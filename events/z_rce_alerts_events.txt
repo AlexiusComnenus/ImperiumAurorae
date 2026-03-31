@@ -1,0 +1,45 @@
+namespace = rce_alerts_events
+
+country_event = {
+	id = rce_alerts_events.100
+	title = rce_alerts_events.EVTNAME100
+	desc = rce_alerts_events.EVTDESC100
+	picture = INVENTION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_country_flag = rce_alerts_events_100_active }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = rce_alerts_events_100_active
+		}
+	}
+
+	option = {
+		name = rce_alerts_events100.EVTOPT1
+
+		trigger = {
+			has_country_flag = rce_alert_religion_mechanic_disabled
+		}
+
+		ai_chance = { factor = 0 }
+
+		custom_tooltip = rce_alerts_events.100.tt.1
+		clr_country_flag = rce_alert_religion_mechanic_disabled
+	}
+
+	option = {
+		name = rce_alerts_events100.EVTOPT0
+
+		ai_chance = { factor = 100 }
+
+		custom_tooltip = rce_alerts_events.100.tt.0
+	}
+
+	after = {
+		clr_country_flag = rce_alerts_events_100_active
+	}
+}

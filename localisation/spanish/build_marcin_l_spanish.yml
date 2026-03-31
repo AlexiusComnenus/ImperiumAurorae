@@ -50,7 +50,7 @@
  building_off: "No Resources"
  building_off_desc: "Because of lack of resources you cannot produce cannons\n\nTo Resume the production make sure you have enough of Resources and §RDestroy§! this building"
  building_canal_system: "Canal System"
- building_canal_system_desc: "§TCountry Requirements:§!\n-Administrative Technology (7)\n"
+ building_canal_system_desc: "§TCountry Requirements:§!\n-Administrative Technology (10)\n"
  building_road_network_desc: "§TCountry Requirements:§!\n-Administrative Technology (3)\n"
  
  building_mine: "Mine"

@@ -24,8 +24,8 @@ hsc_ideas = {
 		global_colonial_growth = 20
 	}
 	druidic_teachings = {
-		culture_conversion_cost = -0.20
-		development_cost_in_primary_culture = -0.1
+		global_prosperity_growth = 0.5
+		rce_monthly_religion_mechanic_sylvan_affinity_change = 1
 	}
 	natures_love = {
 		tolerance_own = 3

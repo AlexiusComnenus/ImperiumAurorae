@@ -5,6 +5,7 @@ bookmark =
 	date = "1444.11.11"
 	center = 183
 	
+	default = yes
 	
 	country = VAL
 	country = TEM
@@ -12,7 +13,6 @@ bookmark =
 	country = FLA
 	country = NRM
 	country = BRI
-	country = GRA
 	country = Z21
 	country = HSC
 	country = CRN
@@ -23,8 +23,9 @@ bookmark =
 	country = VEN
 	country = HAB
 	country = BOH
+	country = NUM
 	easy_country = VAL
 	easy_country = TEM
 	easy_country = SAX
-	easy_country = NRM
+	easy_country = FLA
 }

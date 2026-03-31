@@ -39,3 +39,17 @@ add_accepted_culture = prussian
 	add_prestige = 47
 	add_treasury = 46
 }
+
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 7
+}

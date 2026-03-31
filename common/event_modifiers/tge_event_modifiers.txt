@@ -52,12 +52,12 @@ lama_tradegood = {
 
 woad_type = {
 	picture = "woad"
-	trade_value = -0.5
+	trade_value_modifier = -0.1
 }
 
 woad_type_bad = {
 	picture = "woad"
-	trade_value = -1
+	trade_value_modifier = -0.25
 }
 
 indigo_india = {
@@ -74,7 +74,7 @@ honey_modifier_bonus = {
 }
 
 metalworking_modifier_new = {
-	local_production_efficiency = 0.05
+	local_production_efficiency = 0.20
 }
 
 indigo_leader_new = {

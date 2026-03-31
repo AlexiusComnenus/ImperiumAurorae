@@ -8,6 +8,9 @@ feudal_france_reform = {
 			tag = FRW
 		}
 	}
+	trigger = {
+		is_free_or_tributary_trigger = yes
+	}
 	fixed_rank = 2
 	lock_level_when_selected = yes
 
@@ -36,7 +39,11 @@ divine_merovingian_reform = {
 	allow_normal_conversion = no
 	potential = { 
 		OR = {
-			dynasty = "Meroveching"
+			AND = { 
+				dynasty = "Meroveching"
+				government = monarchy
+				government_rank = 2
+			}
 			tag = FRW
 		}
 	}
@@ -80,6 +87,8 @@ merovingian_divine_right_reform = {
 	#lock_level_when_selected = yes
 
 	modifiers = {
+		naval_morale = 0.05
+		land_morale = 0.05
 		diplomatic_upkeep = 2
 		prestige_decay = -0.005
 		max_absolutism = 10
@@ -122,6 +131,7 @@ merovingian_divine_right_reform = {
 	custom_attributes = {
 		temples_modifier = yes
 		improved_defender_of_faith = yes	#Being Defender of Faith increases Dip Rep, Tolerance and Morale
+		enables_divine_idea_group = yes
 	}
 }
 
@@ -201,10 +211,12 @@ gendarmes_reform = {
 	}
 	modifiers = {
 		can_recruit_hussars = yes
+		amount_of_hussars = 10
 		cavalry_power = 0.15
 		cav_to_inf_ratio = 0.15
 		nobles_loyalty_modifier = 0.05
 		morale_damage = 0.05
+		leader_cost = -0.10
 	}
 	ai = {
 		factor = 50
@@ -273,9 +285,10 @@ musketeers_reform = {
 		}
 	}
 	modifiers = {
+		leader_cost = -0.10
 		infantry_fire = 0.2
 		has_musketeer = yes
-		allowed_musketeer_fraction = 0.2
+		allowed_musketeer_fraction = 0.25
 		nobles_influence_modifier = -0.1
 	}
 	

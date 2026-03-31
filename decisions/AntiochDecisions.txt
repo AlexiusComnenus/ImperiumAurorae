@@ -4,7 +4,7 @@ country_decisions = {
 		major = yes
 		color = { 255 243 51 }
 		potential = {
-			tag = Z17
+			has_government_mechanic = righteousness_mechanic
 			is_heir_leader = no
 		}
 		
@@ -15,6 +15,7 @@ country_decisions = {
 				power_type = righteousness
 				value = 25
 			}
+			is_at_war = yes
 		}
 		
 		effect = {
@@ -29,6 +30,106 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 10
+		}
+	}
+	
+	edict_of_synchronicity = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			NOT = { has_global_flag = edict_of_synchronicity_flag }
+			is_emperor = yes
+			OR = {
+				hre_reform_passed = renovatio
+				hre_reform_passed = emperor_reichskrieg
+				hre_reform_passed = emperor_renovatio
+			}
+		}
+		
+		allow = {
+			is_emperor = yes
+			all_country = {
+				OR = {
+					is_part_of_hre = yes
+					capital_scope = { NOT = { continent = europe } }
+				}
+			}
+			imperial_influence = 99
+		}
+		
+		effect = {
+			override_country_name = ELYSIUM_NAME
+			hre_inheritable = yes
+			custom_tooltip = vassalize_the_empire_tt
+			set_global_flag = edict_of_synchronicity_flag
+			hidden_effect = {
+				every_elector = {
+					limit = { NOT = { is_subject_of = ROOT } 	is_part_of_hre = yes }
+					ROOT = {
+						create_subject = {
+							subject_type = aurora_beneficiary
+							subject = PREV
+						}
+					}
+				}
+				every_country = {
+					limit = { NOT = { is_subject_of = ROOT } 	is_part_of_hre = yes }
+					ROOT = {
+						create_subject = {
+							subject_type = vassal
+							subject = PREV
+						}
+					}
+				}
+			}
+			add_imperial_influence = -100
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	edict_of_coherence = {
+		major = yes
+		color = { 255 243 51 }
+		potential = {
+			has_global_flag = edict_of_synchronicity_flag
+			is_emperor = yes
+			OR = {
+				hre_reform_passed = renovatio
+				hre_reform_passed = emperor_reichskrieg
+				hre_reform_passed = emperor_renovatio
+			}
+			ai = no
+		}
+		
+		allow = {
+			is_emperor = yes
+			all_country = {
+				OR = {
+					NOT = { is_part_of_hre = yes }
+					AND = {
+						is_subject_of = ROOT
+						NOT = { liberty_desire = 50 }
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = absorb_the_empire_tt
+			hidden_effect = {
+				every_subject_country = {
+					limit = { is_part_of_hre = yes }
+					disband_all_units = yes
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 	
@@ -422,7 +523,17 @@ country_decisions = {
 		}
 		
 		ai_will_do = {
-			factor = 0
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { 
+					OR = {
+						tag = TEM
+						tag = VAL
+						religion = templarite
+					}
+				}
+			}
 		}
 		ai_importance = 0
 	}

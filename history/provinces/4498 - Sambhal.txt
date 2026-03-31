@@ -8,7 +8,6 @@ trade_goods = cotton
 base_tax = 5
 base_production = 3
 base_manpower = 4
-add_core = DLH
 add_core = GHR
 add_core = MAM
 add_permanent_claim = HIN

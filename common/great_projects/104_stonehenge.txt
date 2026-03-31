@@ -16,7 +16,7 @@ stonehenge = {
 	build_cost = 0
 
 	#can we move it?
-	can_be_moved = yes
+	can_be_moved = no
 
 	#time to move the project one unit of distance, in days
 	move_days_per_unit_distance = 2
@@ -114,6 +114,7 @@ stonehenge = {
 		country_modifiers = {
 			tolerance_heretic = 0.5
 			tolerance_heathen = 0.5
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 0.5
 		}
 
 		#what effects happen when this tier is achieved
@@ -145,6 +146,7 @@ stonehenge = {
 			tolerance_heretic = 0.5
 			tolerance_heathen = 0.5
 			stability_cost_modifier = -0.1
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -177,6 +179,7 @@ stonehenge = {
 			tolerance_heathen = 1
 			stability_cost_modifier = -0.25
 			global_missionary_strength = 0.01
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 2
 		}
 
 		#what effects happen when this tier is achieved

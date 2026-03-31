@@ -77,6 +77,7 @@ nobatia_missions_column_1 = {
 		
 		effect = {
 			change_primary_culture = feijiao
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			random_owned_province = {
 				limit = { culture_group = sudanese }
 				change_culture = feijiao
@@ -115,8 +116,15 @@ nobatia_missions_column_1 = {
 				duration = -1
 			}
 			
-			reset_golden_age = yes
-			extend_golden_age = 600
+			custom_tooltip = golden_age_refresher_tt
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 600
+			}
 			
 			override_country_name = GREAT_NOBATIA
 		}
@@ -259,9 +267,17 @@ nobatia_missions_column_1 = {
 			if = {
 				limit = { ai = no }
 				innovativeness = 40
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 60
+				}
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 50
+				}
 			}
 			else = {
-				is_year = 1560
+				is_year = 1540
 			}
 			adm_power = 200
 			dip_power = 200
@@ -526,7 +542,7 @@ nobatia_missions_column_2 = {
 							}
 						}
 					}
-					is_year = 1480
+					is_year = 1460
 				}
 			}
 		}
@@ -647,11 +663,19 @@ nobatia_missions_column_2 = {
 					development = 25
 					num_of_buildings_in_province = 6
 				}
+				estate_loyalty = {
+					estate = estate_alchemists
+					loyalty = 50
+				}
+				estate_influence = {
+					estate = estate_alchemists
+					influence = 25
+				}
+				treasury = 500
 			}
 			else = {
-				is_year = 1542
+				is_year = 1484
 			}
-			treasury = 500
 		}
 		
 		effect = {
@@ -778,7 +802,7 @@ nobatia_missions_column_3 = {
 				num_of_mercenaries = 3
 				num_of_generals = 1
 			}
-			else = { is_at_war = yes }
+			else = { always = yes }
 		}
 		
 		effect = {
@@ -1068,7 +1092,7 @@ nobatia_missions_column_4 = {
 		position = 5
 		
 		provinces_to_highlight = {
-			OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses }
+			OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses trade_goods = leather }
 			region = horn_of_africa_region
 			OR = { 
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -1083,7 +1107,7 @@ nobatia_missions_column_4 = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 10
 					#region = horn_of_africa_region
-					OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses }
+					OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses trade_goods = leather }
 					base_production = 10
 					has_production_building_trigger = yes
 				}
@@ -1092,7 +1116,7 @@ nobatia_missions_column_4 = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 10
 					#region = horn_of_africa_region
-					OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses }
+					OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses trade_goods = leather }
 					#base_production = 10
 					#has_production_building_trigger = yes
 				}
@@ -1106,7 +1130,7 @@ nobatia_missions_column_4 = {
 			if = {
 				limit = { ai = yes }
 				every_owned_province = {
-					limit = { OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses } }
+					limit = { OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses trade_goods = leather } }
 					add_base_production = 4
 					add_base_tax = 2
 					if = {
@@ -1118,7 +1142,12 @@ nobatia_missions_column_4 = {
 			add_years_of_owned_provinces_production_income = {
 				years = 5
 				trigger = {
-					trade_goods = livestock
+					OR = {
+						trade_goods = livestock
+						trade_goods = camel
+						trade_goods = horses
+						trade_goods = leather
+					}
 				}
 				custom_tooltip = z42_livestock_reward_tt
 			}
@@ -1127,7 +1156,7 @@ nobatia_missions_column_4 = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses }
+						OR = { trade_goods = livestock	trade_goods = camel	trade_goods = horses trade_goods = leather }
 						base_production = 10
 						has_production_building_trigger = yes
 					}
@@ -1242,10 +1271,18 @@ nobatia_missions_column_4 = {
 		#}
 		
 		trigger = {
-			1212 = {
-				trade_share = {
-					country = ROOT
-					share = 50
+			if = {
+				limit = { ai = no }
+				1212 = {
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			else = {
+				1212 = {
+					is_strongest_trade_power = ROOT
 				}
 			}
 		}
@@ -1334,14 +1371,14 @@ nobatia_missions_column_5 = {
 			if = {
 				limit = { ai = no }
 				2798 = {
-					development = 15
-					num_of_buildings_in_province = 3
+					development = 10
+					num_of_buildings_in_province = 1
 				}
 				2798 = {
 					has_owner_religion = yes
 				}
 			}
-			else = { is_year = 1460 }
+			else = { is_year = 1454 }
 		}
 		
 		effect = {
@@ -1382,10 +1419,10 @@ nobatia_missions_column_5 = {
 						area = upper_nubia_area
 						area = dongola_area
 					}
-					development = 10
+					num_of_times_improved = 1
 				}
 			}
-			else = { is_year = 1480 }
+			else = { is_year = 1465 }
 		}
 		
 		effect = {
@@ -1400,6 +1437,27 @@ nobatia_missions_column_5 = {
 			}
 			custom_tooltip = ARB_unlock_oasis_development
 			set_country_flag = ARB_unlock_oasis_development_flag
+			lower_nubia_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				add_permanent_province_modifier = {
+					name = nobatian_nubia_mod
+					duration = -1
+				}
+			}
+			upper_nubia_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				add_permanent_province_modifier = {
+					name = nobatian_nubia_mod
+					duration = -1
+				}
+			}
+			dongola_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				add_permanent_province_modifier = {
+					name = nobatian_nubia_mod
+					duration = -1
+				}
+			}
 		}
 	}
 	
@@ -1513,7 +1571,7 @@ nobatia_missions_column_5_tge = {
 	ai = yes
 	potential = {
 		tag = Z42
-		has_global_flag = tradegood_marcin
+		#has_global_flag = tradegood_marcin
 	}
 	has_country_shield = yes
 	

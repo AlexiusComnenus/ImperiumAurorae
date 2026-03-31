@@ -29,6 +29,8 @@ has_rural_goods = {
 		trade_goods = sea_turtle
 		trade_goods = exotic_fur
 		trade_goods = millet
+		trade_goods = beer
+		trade_goods = cheese
 	}
 }
 
@@ -36,14 +38,13 @@ has_urban_goods = {
 	OR = {
 		trade_goods = cloth
 		trade_goods = silk
+		trade_goods = auroral_silk
 		trade_goods = incense
 		trade_goods = chinaware
 		trade_goods = paper
 		trade_goods = glass
 		#TGESTUFFS
-		trade_goods = beer
 		trade_goods = gunpowder
-		trade_goods = cheese
 		trade_goods = carpet
 		trade_goods = metalworking
 		trade_goods = silver

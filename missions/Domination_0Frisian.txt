@@ -225,31 +225,16 @@ dom_ned_frisian_2_group = {
 					}
 				}
 			}
+			owns_or_non_sovereign_subject_of = 100
+			owns_or_non_sovereign_subject_of = 4382
+			owns_or_non_sovereign_subject_of = 1931
 		}
 		effect = {
 			if = {
 				limit = {
-					tag = EFR
-					is_part_of_hre = no
-				}
-				custom_tooltip = ned_align_emperor_tt
-			#tooltip = { 
-				emperor = {
-					add_trust = {
-						who = ROOT
-						value = 25
-					}
-				}
-				country_event = {
-					id = flavor_efr.1
-				}
-				custom_tooltip = mission_alternatively_tt
-			}
-			if = {
-				limit = {
 					is_subject = yes
 				}
-			custom_tooltip = ned_align_overlord_tt
+				custom_tooltip = ned_align_overlord_tt
 				overlord = {
 					add_trust = {
 						who = ROOT
@@ -261,19 +246,17 @@ dom_ned_frisian_2_group = {
 			tooltip = {
 				add_country_modifier = {
 					name = ned_reunited_friesland
-					duration = -1
+					duration = 7300
 				}
 			}
 			hidden_effect = {
 				if = {
 					limit = {
-						owns_or_non_sovereign_subject_of = 100
-						owns_or_non_sovereign_subject_of = 4382
-						owns_or_non_sovereign_subject_of = 1931
+						is_subject = no
 					}
 					add_country_modifier = {
 						name = ned_reunited_friesland
-						duration = -1
+						duration = 7300
 					}
 				}
 			}
@@ -296,15 +279,6 @@ dom_ned_frisian_2_group = {
 		
 		trigger = {
 			if = {
-				limit = {
-					tag = EFR
-				}
-				OR = {
-					is_part_of_hre = yes
-					army_size = 25
-				}
-			}
-			else_if = {
 				limit = {
 					is_subject = yes				
 				}
@@ -396,45 +370,28 @@ dom_ned_frisian_2_group = {
 			}
 		}
 		effect = {
-			if = {
+			every_owned_province = {
 				limit = {
-					tag = NED
+					culture = frisian
 				}
-				every_owned_province = {
-					limit = {
-						culture = frisian
-					}
-					add_province_modifier = {
-						name = frisians_satisfied
-						duration = 7300
-					}
+				add_province_modifier = {
+					name = frisians_satisfied
+					duration = 7300
 				}
 			}
-			else = {
-			custom_tooltip = impact_dutch_formable_tt 
+			#custom_tooltip = impact_dutch_formable_tt 
 			override_country_name = MAGNA_FRISIA
 			#set_government_rank = 2
 			set_country_flag = magna_frisia_formed
-			#change_country_color = { 
-			#	color = { 79 185 255 }
-			#}
+			change_country_color = { 
+				color = { 79 185 255 }
+			}
 			add_country_modifier = {
 				name = dom_fri_magna_frisia_mod
 				duration = -1
 			}
 			country_event = {
 				id = dom_frisian.8
-			}
-			if = {
-				limit = { is_part_of_hre = yes }
-				tooltip = {
-					set_imperial_incident = incident_king_in_frisia
-				}
-			}
-			#hidden_effect = {
-			#}
-			#event to elect king or stay frisian freedom 
-			#event to choose color?
 			}
 		}
 		#ai_weight = {
@@ -479,7 +436,7 @@ dom_ned_friesland_group = {
 			OR = {
 			trading_part = {
 				trade_goods = grain
-				value = 0.005
+				value = 0.05
 			}
 			AND = {
 				100 = {

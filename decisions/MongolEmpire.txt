@@ -40,14 +40,14 @@ country_decisions = {
 			}
 		}
 		allow = {
-			OR = {
-				tag = GLH
-				tag = ILK
-				custom_trigger_tooltip = {
-					tooltip = IS_CHAGATAI
-					has_country_flag = chagatai_formed_flag
-				}
-			}
+			#OR = {
+			#	tag = GLH
+			#	tag = ILK
+			#	custom_trigger_tooltip = {
+			#		tooltip = IS_CHAGATAI
+			#		has_country_flag = chagatai_formed_flag
+			#	}
+			#}
 			custom_trigger_tooltip = {
 				tooltip = mongolia_decision_tooltip
 				mongolia_region = {
@@ -75,6 +75,7 @@ country_decisions = {
 					}
 				}
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = MGE
 			on_change_tag_effect = yes
 			if = {
@@ -213,6 +214,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ILK
 			on_change_tag_effect = yes
 			add_country_modifier = {

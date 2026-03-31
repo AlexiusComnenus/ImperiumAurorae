@@ -12,6 +12,15 @@ can_join_hre_league = {
 			is_at_war = no
 		}
 	}
+	condition = {
+		tooltip = "CANNOT_JOIN_LEAGUE_GERMAN_KING"
+		potential = {
+			has_reform = saxon_feudalism
+		}
+		allow = {
+			NOT = { has_reform = saxon_feudalism }
+		}
+	}
 }
 
 can_leave_hre_league = {
@@ -26,6 +35,14 @@ can_leave_hre_league = {
 }
 
 can_harsh_treatment = {
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			ai = no
+		}
+	}
 }
 
 can_reduce_war_exhaustion = {
@@ -67,6 +84,16 @@ can_claim_defender_of_faith = {
 		}
 		allow = {
 			ai = no
+		}
+	}
+	condition = {
+		tooltip = "PAP_PERMA_DOTF_TT"
+		potential = {
+			has_global_flag = papacy_permanent_dotf_flag
+			religion = catholic
+		}
+		allow = {
+			tag = PAP
 		}
 	}
 }
@@ -145,6 +172,19 @@ can_decrease_autonomy = {
 }
 
 can_make_core = {
+	condition = {
+		tooltip = "MHADI_CANNOT_MAKE_CORES"
+		potential = {
+			owner = {
+				has_reform = mhadi_reform
+			}
+		}
+		allow = {
+			owner = {
+				NOT = { has_reform = mhadi_reform }
+			}
+		}
+	}
 }
 
 can_make_state = {
@@ -217,6 +257,15 @@ can_colonize_province = {
 		}
 		allow = {
 			always = no
+		}
+	}
+	condition = {
+		#tooltip = "NO_COLONIZE"
+		potential = {
+			FROM = { has_country_modifier = mym_early_no_range }
+		}
+		allow = {
+			region = carribeans_region
 		}
 	}
 }

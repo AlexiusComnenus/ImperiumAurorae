@@ -75,6 +75,7 @@ country_decisions = {
 			is_at_war = no
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = GLH
 			if = {
 				limit = {

@@ -205,8 +205,13 @@ estate_burghers = {
 	custom_name = {
 		desc = estate_emporoi
 		trigger = {
-			tag = BYZ
-			culture_group = byzantine
+			OR = {
+				tag = BYZ
+				AND = { 
+					culture_group = byzantine
+					NOT = { primary_culture = turkish }
+				}
+			}
 		}
 	}
 	custom_name = {

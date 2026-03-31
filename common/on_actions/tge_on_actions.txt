@@ -51,7 +51,7 @@ on_trade_good_changed = {
 		limit = {
 			ROOT = { 
 				trade_goods = indigo 
-				continent = europe
+				OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion }
 			}
 			NOT = { has_province_modifier = woad_type }
 		}

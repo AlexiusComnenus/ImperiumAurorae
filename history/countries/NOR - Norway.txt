@@ -5,6 +5,10 @@ technology_group = western
 religion = catholic
 primary_culture = norwegian
 capital = 23
+1397.1.1 = {
+	set_estate_privilege = estate_nobles_danish_nobility
+	set_estate_privilege = estate_nobles_nobles_instead_of_royal_court
+}
 1444.11.11= {
 	monarch = {
 		name = "Guttorm"

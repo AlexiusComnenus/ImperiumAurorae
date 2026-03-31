@@ -2,7 +2,13 @@ aggressive_expansion = {
 	opinion = -1
 	months = 0
 	yearly_decay = 2.5
-	min = -200
+	min = -300
+}
+
+anglican_reformation_diplomacy = {
+	opinion = 1
+	max = 100
+	yearly_decay = 3
 }
 
 gra_sunni_victory = {

@@ -39,8 +39,8 @@ add_accepted_culture = hannoverian
 }
 1433.11.11= {
 	monarch = {
-		name = "Philip"
-		dynasty = "Berbegni"
+		name = "Bonifacius"
+		dynasty = "Salier"
 		birth_date = 1400.1.1
 		death_date = 1450.11.11
 		adm = 6

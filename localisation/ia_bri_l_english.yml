@@ -6,7 +6,7 @@
  merovingian_ideas_start: "Merovingian Traditions"
  merovingian_ideas_bonus: "Merovingian Ambition"
  blessed_bloodline: "Blessed Bloodline"
- blessed_bloodline_desc: "The line of Merovingians is creditted with numerous miracles and mystical powers. Clearly, they must be blessed with holy power from God!"
+ blessed_bloodline_desc: "The line of Merovingians is credited with numerous miracles and mystical powers. Clearly, they must be blessed with holy power from God!"
  legacy_of_saints: "Legacy of Saints"
  legacy_of_saints_desc: "The many miracles performed by the Merovingians correspond to numerous Sainthoods. Almost every generation of the family has produced at least one Saint, if not multiple."
  living_legends: "Living Legends"
@@ -162,6 +162,9 @@
  roman_construction_materials: "Roman Construction Sector"
  soi_marble_empire_modifier: "Marble Empire"
  soi_counterfeiting_silk: "Counterfeit Auroral Silk"
+ roman_construction_industry: "Center of Roman Construction Industry"
+ bri_rallied_sailors: "Rallied the Sailors"
+ bri_rallied_soldiers: "Rallied the Soldiers"
  
  #Missions
  soi_marble_empire_title: "A Marble Empire"

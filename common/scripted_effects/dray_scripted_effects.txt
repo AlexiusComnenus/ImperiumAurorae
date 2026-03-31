@@ -1,3 +1,94 @@
+# Build To Limit | LAND | MARINES
+ia_build_to_limit_marines = {
+	# 1 #
+	export_to_variable = {
+		which = iaCalcMarineFraction1
+		value = modifier:allowed_marine_fraction
+	}
+	export_to_variable = {
+		which = iaCalcLandForceLimit1
+		value = land_forcelimit
+	}
+	multiply_variable = {
+		which = iaCalcMarineFraction1
+		which = iaCalcLandForceLimit1
+	}	
+	# 2 #
+	export_to_variable = {
+		which = iaCalcMarineFraction2
+		value = modifier:allowed_marine_fraction
+	}
+	export_to_variable = {
+		which = iaCalcLandForceLimit2
+		value = land_forcelimit
+	}	
+	export_to_variable = {
+		which = iaCalcSpecialForceLimit2
+		value = modifier:special_unit_forcelimit
+	}
+	multiply_variable = {
+		which = iaCalcMarineFraction2
+		which = iaCalcLandForceLimit2
+	}		
+	multiply_variable = {
+		which = iaCalcMarineFraction2
+		which = iaCalcSpecialForceLimit2
+		}
+	# 3 #
+	change_variable = {
+		which = iaCalcMarineFraction1
+		which = iaCalcMarineFraction2
+	}		
+	# 4 #
+	subtract_variable = {            
+		which = iaCalcMarineFraction1
+		value = 1
+	}
+	#export_to_variable = {
+	#	which = drayCalcAddedTercio
+	#	value = modifier:amount_of_tercio
+	#}
+	#change_variable = {
+	#	which = iaCalcMarineFraction1
+	#	which = drayCalcAddedTercio
+	#}	
+	# 5 #
+	export_to_variable = {
+		which = iaCalcNumberOfMarines
+		value = trigger_value:num_of_marines
+	}
+	# 6 #
+	while = {
+		limit = {
+			capital_scope = { 
+				controlled_by = ROOT
+				has_siege = no
+			}
+			#years_of_income = 0.2
+			#treasury = 10
+			#manpower_percentage = 0.1
+			sailors = 1000
+			NOT = { army_size_percentage = 1 }
+			NOT = {
+				num_of_marines = 999
+			}
+			check_variable = {
+				which = iaCalcMarineFraction1
+				which = iaCalcNumberOfMarines
+			}
+		}
+		change_variable = {
+			which = iaCalcNumberOfMarines
+			value = 1
+		}
+		#add_treasury = -10
+		#add_manpower = -1
+		capital_scope = {
+			marine_infantry = ROOT
+		}
+	}
+}
+
 # Build To Limit | LAND | TERCIOS
 dray_build_to_limit_tercio = {
 	# 1 #
@@ -167,7 +258,7 @@ dray_build_to_limit_cossack = {
 		#add_treasury = -15
 		add_manpower = -1
 		capital_scope = {
-			cossack_infantry = ROOT
+			cossack_cavalry = ROOT
 		}
 	}
 }
@@ -448,8 +539,10 @@ dray_build_to_limit_hussar = {
 			change_variable = { which = drayHussarsDev which = PREV }
 		}
 	}
-	multiply_variable = { which = drayHussarsDev value = 0.01 }
+	multiply_variable = { which = drayHussarsDev value = 0.025 }
 	change_variable = { which = drayHussarsAmount which = drayHussarsDev }	
+	export_to_variable = { which = tempvarhussars value = modifier:amount_of_hussars }
+	change_variable = { which = drayHussarsAmount which = tempvarhussars }	
 	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }
 	change_variable = { which = drayCalcSpecialForceLimit value = 1 }
 	multiply_variable = { which = drayHussarsAmount which = drayCalcSpecialForceLimit }

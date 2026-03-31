@@ -75,15 +75,18 @@ country_decisions = {
 			}
 			OR = {
 				primary_culture = pommeranian
-				primary_culture = saxon
 				primary_culture = prussian
+				primary_culture = lower_saxon
 			}
 			NOT = { tag = PRU }
+			NOT = { has_reform = saxon_feudalism }
 			OR = {
 				NOT = { exists = PRU }
 				ai = no
 			}
 			NOT = { tag = GER }
+			NOT = { tag = NGC }
+			NOT = { tag = SGC }
 			NOT = { tag = HLR }
 			NOT = { has_reform = celestial_empire }
 		}
@@ -110,6 +113,7 @@ country_decisions = {
 			owns_core_province = 1759		# Potsdam
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = PRU
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes

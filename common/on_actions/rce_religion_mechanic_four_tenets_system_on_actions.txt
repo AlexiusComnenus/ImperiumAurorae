@@ -1,0 +1,103 @@
+on_religion_change = {
+	rce_clear_all_religion_mechanic_four_tenets_system_modifiers = yes
+}
+
+on_monthly_pulse = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			NOT = { rce_has_religion_mechanic_four_tenets_system_ability_4 = yes }
+		}
+		rce_add_monthly_religion_mechanic_four_tenets_system_value = yes
+	}
+}
+
+on_institution_embracement = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		if = {
+			limit = {
+				has_country_modifier = rce_religion_mechanic_four_tenets_system_new_institution_modifier
+			}
+			remove_country_modifier = rce_religion_mechanic_four_tenets_system_new_institution_modifier
+		}
+		add_country_modifier = {
+			name = rce_religion_mechanic_four_tenets_system_new_institution_modifier
+			duration = 730
+		}
+		rce_export_monthly_religion_mechanic_four_tenets_system_value_gain = yes
+	}
+}
+
+on_tech_taken = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		if = {
+			limit = {
+				has_country_modifier = rce_religion_mechanic_four_tenets_system_new_tech_modifier
+			}
+			remove_country_modifier = rce_religion_mechanic_four_tenets_system_new_tech_modifier
+		}
+		add_country_modifier = {
+			name = rce_religion_mechanic_four_tenets_system_new_tech_modifier
+			duration = 730
+		}
+		rce_export_monthly_religion_mechanic_four_tenets_system_value_gain = yes
+	}
+}
+
+on_monarch_death = {
+	rce_set_religion_mechanic_four_tenets_system_value = { value = 0 }
+	if = {
+		limit = {
+			government = theocracy
+		}
+		rce_add_religion_mechanic_four_tenets_system_value = { value = 100 }
+	}
+	else_if = {
+		limit = {
+			government = republic
+		}
+		rce_add_religion_mechanic_four_tenets_system_value = { value = 50 }
+	}
+}
+
+on_five_year_pulse_2 = {
+	random_events = {
+		100 = rce_religion_mechanic_four_tenets_system_events.5
+		100 = rce_religion_mechanic_four_tenets_system_events.6
+		100 = rce_religion_mechanic_four_tenets_system_events.7
+		100 = rce_religion_mechanic_four_tenets_system_events.8
+	}
+}
+
+# ROOT = annexing country, FROM = annexed country
+on_annexed = {
+	FROM = {
+		if = {
+			limit = {
+				rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			}
+			rce_clear_all_religion_mechanic_four_tenets_system_modifiers = yes
+		}
+	}
+}
+
+# ROOT = released country, FROM = releasing country
+on_country_released = {
+	rce_clear_all_religion_mechanic_four_tenets_system_modifiers = yes
+}
+
+# ROOT = released country
+on_country_creation = {
+	rce_clear_all_religion_mechanic_four_tenets_system_modifiers = yes
+}
+
+# ROOT = vassal, FROM = overlord
+on_create_vassal = {
+	rce_clear_all_religion_mechanic_four_tenets_system_modifiers = yes
+}

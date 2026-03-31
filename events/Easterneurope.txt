@@ -23,6 +23,9 @@ country_event = {
 	
 	option = {	# Boris the Bogomil
 		name = ia_flavor_nov.1.a
+		ai_chance = {
+			factor = 8
+		}
 		
 		define_ruler = {
 			name = "Boris 'the Bogomil'"
@@ -47,6 +50,9 @@ country_event = {
 	
 	option = {	# Grigorei the Druzhina
 		name = ia_flavor_nov.1.b
+		ai_chance = {
+			factor = 2
+		}
 		
 		define_ruler = {
 			name = "Grigorei 'the Druzhina'"
@@ -325,6 +331,8 @@ country_event = {
 						cavalry = 1
 					}
 				}
+				change_government = republic
+				add_government_reform = cossacks_reform
 			}
 		}
 	}
@@ -528,5 +536,39 @@ country_event = {
 		}
 		
 		switch_tag = GOL
+	}
+}
+
+province_event = {
+	id = cumania_collapse.4
+	title = cumania_collapse.4.t
+	desc = cumania_collapse.4.d
+	picture = CITY_VIEW_eventPicture
+	goto = ROOT
+	hidden = yes
+	
+	trigger = {
+		has_owner_religion = yes
+		
+		OR = {
+			culture = cuman
+		}
+		
+		owner = {
+			OR = {
+				culture_group = east_slavic
+				primary_culture = goths
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = cumania_collapse.4.a
+		
+		change_culture = cumano_rus
 	}
 }

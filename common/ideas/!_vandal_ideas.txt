@@ -27,7 +27,7 @@ vandal_ideas = {
 		monthly_fervor_increase = 5
 	}
 	TUN_trade_extortion = {
-		privateer_efficiency = 0.25
+		privateer_efficiency = 0.15
 		reduced_trade_penalty_on_non_main_tradenode = 0.50
 	}
 	TUN_terra_sigillata = {

@@ -1,6 +1,6 @@
 owner = CRN
 controller = CRN
-capital = "Bristol"
+capital = "Caerloyw"
 is_city = yes
 culture = welsh
 religion = catholic

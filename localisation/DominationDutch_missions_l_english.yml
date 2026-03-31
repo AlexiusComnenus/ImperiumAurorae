@@ -1,8 +1,10 @@
 ﻿l_english:
  bataafs_republick: "Bataafs Republick"
  bataafs_republick_desc: "A type of ministerial government was introduced for the first time in Dutch history and many of the current government departments date their history back to this period."
- convert_to_jansenism_title: "Convert to Jansenism"
- convert_to_jansenism_desc: "The majority of our nation is Jansenist, it would only be fitting to convert."
+ convert_to_jansenism_title: "Convert to Irenicism"
+ convert_to_jansenism_desc: "The majority of our nation is Irenicist, it would only be fitting to convert."
+ bataafs_republiek: "Bataafse Republiek"
+ bataafs_republiek_desc: "The Batavian Republic has permanently replaced the older, confederal structure of the Dutch Republic with a unitary state lead by a democratically elected president rather than the old, feudal post of Stadhouder."
  
  #################
  #Low Countries
@@ -20,6 +22,7 @@
  keizer_title_fem: "Keizerin"
  fra_destroyed_tt: "If France is shattered (no French tag over 100 dev), you will receive the following rewards:"
  fra_conquered_tt: "If you have fully conquered France, you will receive the following rewards:"
+ ned_chambers_of_commerce_modifier: "Chambers of Commerce"
  
  #Eco Missions
  #dom_ned_kaasmarkten_title: 
@@ -34,8 +37,10 @@
  moedernegotie_tt: "If we own a §YCenter of Trade§!, a random owned §YCenter of Trade§! will be upgraded by §Y1§!:"
  dom_ned_nordic_lumber_title: "Nordic Lumber"
  dom_ned_nordic_lumber_desc: "The Lumber in Norway and in the rest of Scandinavia is vital to our ability to construct new ships. We must secure this supply if we are to become a naval empire."
- dom_ned_the_swedes_title: "The [Root.GetSwedesMissionName]"
- dom_ned_the_swedes_desc: "The [Root.GetSwedesMissionName] were historically a powerful scandinavian nation. It is important that we keep them friendly or to weaken them if we are to keep our trade in the Nordic and Baltic Region Secured."
+ dom_ned_the_swedes_title: "The Sound Toll"
+ dom_ned_the_swedes_desc: "The Danish Sound Toll greatly exploits our merchants passing to the Baltic Sea and maintains a stranglehold on the trade in Lübeck. We must either obtain an exception from the sound toll or take it for ourselves!"
+ ned_sound_toll_exemption_tt: "Dutch Sound Toll Exemption"
+ ned_sound_toll_penetration_tt: "Dutch Merchants in the Baltics"
  ned_swedes_tt: "If we are §Yallied§! with §Y[SWE.GetName]§!,"
  ned_swedes_alt_tt: "§TAlternatively§!, if we are instead §Rrivaled§! with §Y[SWE.GetName]§!,"
  string_the_swedes: "Swedes"
@@ -160,7 +165,8 @@
  #dom_ned_find_spice_islands_desc: "We must send our explorers across all the ends of the Earth to make sure we can find the lucrative Spice Islands and exploit them for our personal gain."
  
  dom_ned_groot_desseyn_title: "Groot Desseyn"
- dom_ned_groot_desseyn_desc: "Groot Desseyn was a war plan by the Dutch State to cripple the Portuguese and Spanish in their colonial ambitions. By targetting all Portuguese colonies, they hoped to be able to make a lucrative profit. \n\n§RWarning§!: Completing this mission starts a §Ytimed§! objective\n"
+ dom_ned_groot_desseyn_desc: "Groot Desseyn was a war plan by the Dutch State to cripple the Iberians in their colonial ambitions. By targetting vital fortifications and trading posts in Africa, we can divert their profits to our coffers instead! \n\n§RWarning§!: Completing this mission starts a §Ytimed§! objective\n"
+ piet_hein_begun_flag: "Groot Desseyn Initiated"
  dom_ned_sail_west_title: "Sail West"
  dom_ned_sail_west_desc: "Sail West - Connection Mission - §RWIP§!"
  dom_ned_round_the_cape_title: "Round the Cape"
@@ -197,8 +203,8 @@
  dom_ned_dutch_polder_desc: "If we are to finish the Polders in Holland it will improve our knowledge of land reclamation. With plenty of lakes in our nation, we can drain them with sophisticated windmills, the land that is left can then be turned into new farmland. These so called Polders will greatly improve our production."
  ned_polder_bonus_tt: "\nThe §YMagnificent§! level of the §YDutch Polders§! will gain a complimentary modifier"
  ned_25_25_tt: "\nGain §Y25§! Trust and Favors from every §YAlly§! with at least §G50§! opinion"
- dom_ned_defeat_the_jacobites_title: "Defeat the Jacobites"
- dom_ned_defeat_the_jacobites_desc: "With the conquest of English Lands, we are now only held back by the Northern Rebels. The Jacobites historically formed in opposition to William III of Orange and his Glorious Revolution, as they would support the Ousted King James II. They were opposed to William in the Williamite Wars in Ireland and would rise up in Scotland in 1689. - §RWIP§!"
+ dom_ned_defeat_the_jacobites_title: "Defeat the Brythonics"
+ dom_ned_defeat_the_jacobites_desc: "With the conquest of Ænglish lands, our main rivals are now the Brythonics claiming Arthurian legacy. We shall show them that they, too, will fall before Dutch might."
  dom_ned_league_of_augsburg_title: "League of Augsburg"
  dom_ned_league_of_augsburg_desc: "William III of Orange would engineer a Grand Anti-French Alliance in 1689 to oppose the Expansionist Policies of King Louis XIV. King Louis had recently invaded the Netherlands in the Franco-Dutch War and was only narrowly held back from taking control over all of the Lowlands."
  dom_ned_ties_in_germany_title: "Van Duitsen Bloed"
@@ -213,7 +219,7 @@
  dom_ned_form_dutch_republic_title: "Form the Netherlands"
  dom_ned_form_dutch_republic_desc: "It is time to unify the Lowlands under a single Nation. The Netherlands was historically formed as a revolt against the Catholic Habsburgs in 1579."
  dom_ned_raid_medway_title: "Raid on the Medway"
- dom_ned_raid_medway_desc: "During the Second Anglo-Dutch War, the Dutch Navy successfully landed a marine force near Chatham Dockyards in the province of Kent, dismantling the defensives so that the navy could sail up the Thames, where they'd burn and capture English ships and captured the Flagship of the English Fleet and brought it back home."
+ dom_ned_raid_medway_desc: "During the Second Anglo-Dutch War, the Dutch Navy successfully landed a marine force near Chatham Dockyards in the province of Cent, dismantling the defenses so that the navy could sail up the Thames, where they'd burn and capture Ænglish ships and captured the Flagship of the Ænglish Fleet and brought it back home."
 
  dom_ned_orangist-statist_unknown1_title: "Branching Mission"
  dom_ned_orangist-statist_unknown1_desc: "Branching"
@@ -228,8 +234,8 @@
  dom_ned_start_colonizing_desc: "Europe is unraveling. We must find new lands to settle and escape from this chaos, and quickly! Send our bravest adventurers as the vanguard to seek new havens."
  dutch_colonization_kickstart: "The Vanguard"
  
- dom_ned_orangist_dynasty_title: "Erfstadhouders"
- dom_ned_orangist_dynasty_desc: "After the Death of William III of Orange and his lack of an heir, the Statists enacted the second stadtholderless period, however their rule came to an end and William IV of Orange wanted to secure his family's hereditary status as Stadholders."
+ dom_ned_orangist_dynasty_title: "Proclaim the Rijk"
+ dom_ned_orangist_dynasty_desc: "For a safe and secure society, we must proclaim the Dutch Empire!"
  dom_ned_statist_republic_title: "Statist Republic"
  dom_ned_statist_republic_desc: "It is time to finally end the Stadholder position and become a more Presidential Republic"
  dom_ned_concert_of_europe_title: "Concert of Europe"
@@ -282,8 +288,8 @@
  dom_ned_maurician_reforms_desc: "In the 16th century, the musket (a handheld firearm) became commonplace, but they were very slow to reload. Army tacticians typically deployed musket-men in formations to maximize firepower. The muskets would thus be arranged in lines (twelve, eight or six deep). When the front rank fired, they would move away to the rear to reload, after which the next rank would fire. This maximized the firepower of the 16th century muskets and overcame their disadvantage of slow reloading. It was Maurice of Orange-Nassau who pioneered the use of these musket formations and taught it to Dutch troops in the Eighty Years' War. His development of military strategy and tactics made the Dutch army the most modern in Europe."
  dom_ned_strengthen_the_vroedschappen_title: "Strengthen the Vroedschappen"
  dom_ned_strengthen_the_vroedschappen_desc: "The 'vroedschap', the humble city council, is the foundation upon which our great system of government rests. To curry favor with it is to curry favor with the nation itself."
- dom_ned_the_glorious_revolution_title: "The Glorious Revolution"
- dom_ned_the_glorious_revolution_desc: "The British Isles have long been a source of competition for our country. Happily for us, the British have their own internal problems, and given the right opportunity we could use one of their domestic grievances to justify our own... intervention in British affairs."
+ dom_ned_the_glorious_revolution_title: "Ænglish Conquest"
+ dom_ned_the_glorious_revolution_desc: "The British Isles have long been a source of competition for our country. Happily for us, the British have their own internal problems involving the Anglo-Brythonic conflicts, and with the right invitation we could stage an invasion of the Ænglish lands."
  dom_ned_je_maintiendrai_title: "Je Maintiendrai"
  dom_ned_je_maintiendrai_desc: "Our successes are truly glorious, and our leadership second to none. Our people and the nations of the world need to know how truly great we are."
  dom_ned_religious_unity_title: "Religious Unity"
@@ -715,7 +721,7 @@
  brb_nederlotharingen_desc: "While we may not exercise our primacy over the wayward vassals, The Duchy of Nederlotharingen is rightfully in our possession. It is time we taught these rebels who their ruler is."
  brb_united_lotharingia_title: "Unite Lotharingia"
  brb_united_lotharingia_desc: "It is time to unify both Lotharingia's together."
- dom_ned_lotharingian_tt: "§YBurgundian§! culture gets converted into the §YLotharingian§! culture of the §YGermanic§! culture group."
+ dom_ned_lotharingian_tt: "§YBurgundian§! culture gets converted into the §Austrasian§! culture of the §YGermanic§! culture group."
  
  #Flanders Missions
  fla_gulden_sporen_title: "Legacy of the Gulden Sporen"

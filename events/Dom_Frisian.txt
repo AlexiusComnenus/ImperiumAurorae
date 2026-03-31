@@ -78,7 +78,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = FRI
+		#tag = FRI
 	}
 	
 	option = {
@@ -125,6 +125,7 @@ country_event = {
 	picture = GENERALS_DISCUSSING_eventPicture
 	
 	fire_only_once = yes
+	is_triggered_only = yes
 	
 	trigger = {
 		tag = FRI
@@ -132,7 +133,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 90
+		months = 1
 	}
 	
 	option = {
@@ -565,11 +566,6 @@ country_event = { #A Frisian King? - Magna Frisia
 				mil = 2
 				claim = 95
 			}
-		}
-		else = {
-			set_government_rank = 2
-			add_prestige = 20
-			add_legitimacy = 20
 		}
 		#set_legacy_government = administrative_monarchy
 	}

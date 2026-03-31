@@ -12,6 +12,7 @@ merc_aurora_knights = {
 			is_emperor = yes
 			tag = Z17
 		}
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 2
 	modifier = {
@@ -45,6 +46,7 @@ merc_order_of_dawn = {
     trigger = {
 		is_emperor = no
 		religion = hellenic_pagan_reformed
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 1.5
 	counts_towards_force_limit = no
@@ -90,6 +92,7 @@ merc_templar_knights = {
 		}
 		religion_group = christian
 		NOT = { religion = hellenic_pagan_reformed }
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 1.5
 	modifier = {
@@ -183,6 +186,7 @@ merc_legion_of_dusk = {
 		#is_year = 1500
 		#religion_group = christian
 		NOT = { religion = hellenic_pagan_reformed }
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 1.25
 	modifier = {
@@ -238,8 +242,15 @@ merc_riga_city_watch = {
 	counts_towards_force_limit = no
 	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
     trigger = {
-		tag = RIG
+        OR = { 
+		    tag = RIG
+            AND = {
+                was_tag = RIG
+                tag = LVA
+            }
+        }
 		owns = 38
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 0.75
 	modifier = {
@@ -257,9 +268,16 @@ merc_riga_metropolitan_guard = {
 	#counts_towards_force_limit = no
 	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
     trigger = {
-		tag = RIG
+		OR = { 
+		    tag = RIG
+            AND = {
+                was_tag = RIG
+                tag = LVA
+            }
+        }
 		owns = 38
 		38 = { development = 30 }
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 1
 	modifier = {
@@ -280,9 +298,16 @@ merc_riga_foreign_legion = {
 	#counts_towards_force_limit = no
 	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
     trigger = {
-		tag = RIG
+		OR = { 
+		    tag = RIG
+            AND = {
+                was_tag = RIG
+                tag = LVA
+            }
+        }
 		owns = 38
 		38 = { development = 60 }
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	cost_modifier = 1.5
 	modifier = {
@@ -373,6 +398,120 @@ merc_aen_hessian_foreign_legion = {
 		drill_gain_modifier = 0.50
 		discipline = 0.10
 	}
+}
+
+merc_flameheralds = {
+    regiments_per_development = 0.05
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0.15
+	artillery_weight = 0.15
+	home_province = 539
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		religion = lollard
+	}
+	cost_modifier = 1.1
+	modifier = {
+		land_morale = 0.10
+		reinforce_speed = 0.25
+		fire_damage = 0.2
+	}
+}
+
+merc_pyre_zealots = {
+    regiments_per_development = 0.06
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0.15
+	artillery_weight = 0.15
+	home_province = 539
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		religion = lollard
+	}
+	cost_modifier = 0.75
+	modifier = {
+		reinforce_speed = 0.25
+		shock_damage = 0.25
+	}
+}
+
+merc_crazed_horde = {
+    regiments_per_development = 0.08
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0
+	home_province = 539
+	sprites = { dlc040_liv_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		religion = lollard
+	}
+	cost_modifier = 0.33
+	modifier = {
+		reinforce_speed = 0.5
+		discipline = -0.05
+	}
+}
+
+merc_children_of_the_forest = {
+    regiments_per_development = 0.06
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+	cavalry_weight = 0
+	artillery_weight = 0
+	counts_towards_force_limit = no
+    trigger = {
+		has_country_flag = children_of_the_forest_unlocked
+		any_owned_province = {
+			has_province_modifier = last_king_in_residence
+		}
+	}
+	cost_modifier = 1.2
+	modifier = {
+		movement_speed = 0.25
+		infantry_fire = 1
+		fire_damage_received = -0.2
+		shock_damage_received = -0.10
+		manpower_recovery_speed = -0.75
+		reinforce_speed = -0.5
+		drill_decay_modifier = -0.75
+		allow_mercenary_drill = yes
+	}
+}
+
+merc_koi_catt_cannons = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0
+    artillery_weight = 1
+    cost_modifier = 0.5
+    trigger = {
+        is_allowed_to_recruit_mercenaries = yes
+		has_country_flag = koi_unlocked_mercs
+		}
+    modifier = {
+    	fire_damage = 0.15
+    	land_attrition = -0.50
+    	land_maintenance_modifier = -0.50
+    	allow_mercenary_drill = yes
+    	regiment_manpower_usage = -0.25
+    }
+}
+
+merc_koi_catt_infantry = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0
+    artillery_weight = 0
+    cost_modifier = 0.5
+    cavalry_cap = 0
+    trigger = {
+        is_allowed_to_recruit_mercenaries = yes
+		has_country_flag = koi_unlocked_mercs
+		}
+    modifier = {
+    	fire_damage = 0.15
+    	land_attrition = -0.50
+    	land_maintenance_modifier = -0.50
+    	allow_mercenary_drill = yes
+    	regiment_manpower_usage = -0.25
+    }
 }
 
 # some good sprite packs

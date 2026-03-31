@@ -24,3 +24,4 @@ discovered_by = nomad_group
 discovered_by = ottoman
 discovered_by = western
 add_province_triggered_modifier = non_catholic_rome
+add_building = university

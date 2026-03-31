@@ -43,6 +43,7 @@ country_event = {
 		NOT = {
 			has_country_modifier = "political_recusancy"
 		}
+		always = no
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -335,6 +336,7 @@ country_event = {
 			religion = anglican
 			type = statesman
 		}
+		always = no
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -1063,5 +1065,237 @@ country_event = {
 			name = angry_nonconformists
 			duration = 3650
 		}
+	}
+}
+
+# Local Charity
+country_event = {
+	id = anglican_events.16
+	title = anglican_events.16.t
+	desc = anglican_events.16.d
+	picture = ROYAL_SOCIETY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = anglican
+		is_at_war = no
+		NOT = { has_disaster = bonfire_of_the_vanities_disaster }
+		any_owned_province = {
+			OR = {
+				NOT = { development = 10 }
+				devastation = 10
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				OR = {
+					NOT = { development = 10 }
+					devastation = 10
+				}
+			}
+			save_event_target_as = irenicist_charity_province
+		}
+	}
+	
+	option = {	# gib help!
+		name = anglican_events.16.a
+		goto = irenicist_charity_province
+		ai_chance = { 
+			factor = 99
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.3 }
+			}
+		}
+		
+		add_years_of_income = -0.25
+		event_target:irenicist_charity_province = {
+			add_base_tax = 1
+			add_devastation = -20
+			add_province_modifier = {
+				name = irenicist_charity_province_modifier
+				duration = 7300
+			}
+		}
+	}
+	option = {	# nah can't afford it
+		name = anglican_events.16.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_church_power = -25
+	}
+}
+
+# Foreign Charity
+country_event = {
+	id = anglican_events.17
+	title = anglican_events.17.t
+	desc = anglican_events.17.d
+	picture = ROYAL_SOCIETY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = anglican
+		is_at_war = no
+		NOT = { has_disaster = bonfire_of_the_vanities_disaster }
+		any_neighbor_country = {
+			any_owned_province = {
+				OR = {
+					NOT = { development = 10 }
+					devastation = 10
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_neighbor_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						NOT = { development = 10 }
+						devastation = 10
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						NOT = { development = 10 }
+						devastation = 10
+					}
+				}
+				save_event_target_as = irenicist_charity_province
+			}
+		}
+	}
+	
+	option = {	# gib help!
+		name = anglican_events.17.a
+		goto = irenicist_charity_province
+		ai_chance = { 
+			factor = 99
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.6 }
+			}
+		}
+		
+		add_years_of_income = -0.5
+		event_target:irenicist_charity_province = {
+			add_base_tax = 1
+			add_devastation = -20
+			owner = {
+				add_opinion = {
+					who = ROOT
+					modifier = anglican_reformation_diplomacy
+					multiplier = 25
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = anglican_reformation_diplomacy
+					multiplier = 25
+				}
+			}
+		}
+		add_church_power = 25
+		add_prestige = 5
+	}
+	option = {	# nah can't afford it
+		name = anglican_events.17.b
+		ai_chance = { 
+			factor = 1
+		}
+		
+		add_prestige = -5
+	}
+}
+
+# Reformation of the Irenicist Faith: Pacifism
+country_event = {
+	id = anglican_events.18
+	title = anglican_events.18.t
+	desc = anglican_events.18.d
+	picture = COUNCIL_TRENT_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		religion = anglican
+		is_at_war = no
+		NOT = { has_disaster = bonfire_of_the_vanities_disaster }
+		has_global_flag = last_crusade_ended
+		is_defender_of_faith_of_tier = 3
+		NOT = { has_global_flag = irenicist_reforms_passed }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {	# Pass the reforms!
+		name = anglican_events.18.a
+		ai_chance = { 
+			factor = 100
+		}
+		set_global_flag = irenicist_reforms_passed
+		custom_tooltip = irenicist_reforms_tt
+		hidden_effect = {
+			if = {
+				limit = {
+					Z17 = { is_emperor = yes }
+				}
+				Z17 = { country_event = { id = anglican_events.19 	days = 10 } }
+			}
+		}
+	}
+	option = {	# Nah
+		name = anglican_events.18.b
+		ai_chance = { 
+			factor = 0
+		}
+		
+		add_prestige = -10
+	}
+}
+
+country_event = {	# Antioch's Response
+	id = anglican_events.19
+	title = anglican_events.19.t
+	desc = anglican_events.19.d
+	picture = COUNCIL_TRENT_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	# The Irenicists are not enemies
+		name = anglican_events.19.a
+		ai_chance = { 
+			factor = 100
+		}
+		set_global_flag = daohellenic_irenicist_truce_flag
+		custom_tooltip = no_more_holy_wars_vs_irenicists_tt
+	}
+	option = {	# Nah
+		name = anglican_events.19.b
+		ai_chance = { 
+			factor = 0
+		}
+		
+		add_prestige = -10
 	}
 }

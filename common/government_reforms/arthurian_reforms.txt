@@ -1,0 +1,33 @@
+dumnonia_monarchy_reform = {
+	icon = gothic_monarchy_reform
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	potential = {
+		tag = ENG
+	}
+	trigger = {
+		tag = ENG
+	} 
+	valid_for_nation_designer = no
+
+	modifiers = {
+		#legitimacy = -2
+		#max_absolutism = -20
+		#reform_progress_growth = -0.1
+		prestige_from_land = 0.5
+		army_tradition_from_battle = 0.50
+	}
+	effect = {
+		custom_tooltip = eng_draw_the_sword_tt
+	}
+	
+	custom_attributes = {
+		locked_government_type = yes
+		winning_battles_increases_legitimacy = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}

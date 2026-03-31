@@ -14,7 +14,7 @@ country_decisions = {
 			#	is_free_or_tributary_trigger = yes
 			#	ai = no
 			#}
-			NOT = { exists = GER }
+			NOT = { tag = GER }
 			NOT = { tag = PAP }
 			NOT = { tag = HLR }
 			NOT = { tag = ROM }
@@ -155,6 +155,7 @@ country_decisions = {
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
+			NOT = { exists = GER }
 			OR = {
 				government = monarchy
 				government = republic
@@ -201,6 +202,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = GER
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes

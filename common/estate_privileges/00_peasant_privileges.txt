@@ -1044,27 +1044,33 @@ estate_peasants_homeland_defense = {
 		#estate = estate_church
 		#loyalty = -10
 		#}
+		custom_tooltip = peasants_defense_explanation_tt
 	}
 	can_select = {
 		is_at_war = yes
 	}
 	penalties = {
-		discipline = -0.075
+		discipline = -0.05
 		special_unit_forcelimit = -0.5
 	}
 	benefits = {
-		land_morale = 0.05
 		land_forcelimit_modifier = 0.25
 		global_manpower_modifier = 0.25
 		infantry_cost = -0.2
-		reinforce_cost_modifier = -0.5	
 	}
 	conditional_modifier = {
-		trigger = { is_at_war = yes		NOT = { war_score = -20 } }
+		trigger = { is_at_war = yes		NOT = { war_score = -25 } }
 		modifier = {
 			hostile_attrition = 1
 			defensiveness = 0.15
 			infantry_cost = -0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = { is_in_war = { defender_leader = ROOT }  NOT = { is_in_war = { attackers = ROOT } } }
+		modifier = {
+			reinforce_cost_modifier = -0.5	
+			land_morale = 0.05
 		}
 	}
 	can_revoke = {

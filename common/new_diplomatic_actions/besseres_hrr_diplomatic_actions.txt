@@ -187,10 +187,18 @@ add_country_to_hre_action = {
 				FROM = { government_rank = 3 }
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = GOVERNMENT_RANK
@@ -201,10 +209,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 100
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -100
+			}
 		}
 		add_entry = {
 			name = WRONG_RELIGION
@@ -213,10 +229,18 @@ add_country_to_hre_action = {
 				hre_religion_locked = no
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 25
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -25
+			}
 		}
 		add_entry = {
 			name = WRONG_RELIGION
@@ -225,10 +249,18 @@ add_country_to_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 50
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -50
+			}
 		}
 		add_entry = {
 			name = NUM_OF_HRE_REFORMS
@@ -1127,10 +1159,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ENEMY_OR_RIVAL
@@ -1141,10 +1181,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ATTITUDE_TOWARDS_ROOT
@@ -1159,10 +1207,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = EMPEROR_ARMY_STRENGTH
@@ -1173,10 +1229,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 10
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -10
+			}
 		}
 		add_entry = {
 			name = EMPEROR_ARMY_STRENGTH
@@ -1184,10 +1248,18 @@ add_country_to_hre_action = {
 				FROM = { army_strength = { who = ROOT value = 10 } }
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 15
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -15
+			}
 		}
 		add_entry = {
 			name = FROM_OWNS_HRE_PROVINCES_BUT_HAS_HIGH_RANK
@@ -1200,10 +1272,18 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 30
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -30
+			}
 		}
 
 		# Positive Values:
@@ -1219,6 +1299,15 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 20
 			}
@@ -1229,6 +1318,15 @@ add_country_to_hre_action = {
 				alliance_with = FROM
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 25
 			}
@@ -1240,6 +1338,15 @@ add_country_to_hre_action = {
 				hre_religion_locked = no
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -1251,6 +1358,15 @@ add_country_to_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 20
 			}
@@ -1263,6 +1379,15 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 5
 			}
@@ -1283,6 +1408,15 @@ add_country_to_hre_action = {
 				NOT = { army_strength = { who = FROM value = 10 } }
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -1293,6 +1427,15 @@ add_country_to_hre_action = {
 				army_strength = { who = FROM value = 10 }
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 15
 			}
@@ -1308,6 +1451,15 @@ add_country_to_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -1467,6 +1619,15 @@ ask_to_join_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -1477,6 +1638,15 @@ ask_to_join_hre_action = {
 				alliance_with = FROM
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 25
 			}
@@ -1488,6 +1658,15 @@ ask_to_join_hre_action = {
 				hre_religion_locked = no
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -1499,6 +1678,15 @@ ask_to_join_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 20
 			}
@@ -1511,6 +1699,15 @@ ask_to_join_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 15
 			}
@@ -1567,10 +1764,18 @@ ask_to_join_hre_action = {
 				hre_religion_locked = no
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 25
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -25
+			}
 		}
 		add_entry = {
 			name = WRONG_RELIGION
@@ -1579,10 +1784,18 @@ ask_to_join_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 50
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -50
+			}
 		}
 		add_entry = {
 			name = NUM_OF_HRE_REFORMS
@@ -2478,10 +2691,18 @@ ask_to_join_hre_action = {
 				is_great_power = yes
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ENEMY_OR_RIVAL
@@ -2492,10 +2713,18 @@ ask_to_join_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ATTITUDE_TOWARDS_ROOT
@@ -2509,10 +2738,18 @@ ask_to_join_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = EMPEROR_ARMY_STRENGTH
@@ -2521,10 +2758,18 @@ ask_to_join_hre_action = {
 				NOT = { army_strength = { who = FROM value = 10 } }
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 10
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -10
+			}
 		}
 		add_entry = {
 			name = EMPEROR_ARMY_STRENGTH
@@ -2532,10 +2777,18 @@ ask_to_join_hre_action = {
 				army_strength = { who = FROM value = 10 }
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 15
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -15
+			}
 		}
 
 		# Flexible Values:
@@ -2857,10 +3110,18 @@ request_kingdom_rank_in_hre_action = {
 				hre_religion_locked = no
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 50
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -50
+			}
 		}
 		add_entry = {
 			name = WRONG_RELIGION
@@ -2869,10 +3130,18 @@ request_kingdom_rank_in_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -50
+			}
 		}
 		add_entry = {
 			name = ENEMY_OR_RIVAL
@@ -2883,10 +3152,18 @@ request_kingdom_rank_in_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ATTITUDE_TOWARDS_ROOT
@@ -2901,10 +3178,18 @@ request_kingdom_rank_in_hre_action = {
 				}
 			}
 			export_to_variable = {
-				which = ai_value
-				value = 1000
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
 			}
-			multiply_variable = { which = ai_value value = -1 }
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -1000
+			}
 		}
 		add_entry = {
 			name = ATTITUDE_TOWARDS_ROOT
@@ -2918,8 +3203,17 @@ request_kingdom_rank_in_hre_action = {
 				}
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
 				which = ai_value
-				value = 10
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = 25
 			}
 		}
 		add_entry = {
@@ -2928,8 +3222,17 @@ request_kingdom_rank_in_hre_action = {
 				alliance_with = FROM
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
 				which = ai_value
-				value = 10
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = 25
 			}
 		}
 		add_entry = {
@@ -2939,6 +3242,15 @@ request_kingdom_rank_in_hre_action = {
 				hre_religion_locked = yes
 			}
 			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
 				which = ai_value
 				value = 10
 			}
@@ -2987,16 +3299,10 @@ request_kingdom_rank_in_hre_action = {
 
 	ai_will_do = {
 		OR = {
-			tag = BUR
-			tag = BAV
-			tag = SAX
-			AND = {
-				total_development = 400
-				total_development = FROM
-				num_of_cities = FROM
-				num_of_cities = 20
-				alliance_with = FROM
-			}
+			total_development = 400
+			total_development = FROM
+			num_of_cities = FROM
+			num_of_cities = 20
 		}
 	}
 }

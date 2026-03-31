@@ -169,10 +169,10 @@ french_minor_missions_4 = {
 				capital_scope = {
 					base_tax = 7
 				}
-				total_base_tax = 30
+				total_base_tax = 42
 				has_global_modifier_value = {
 					which = global_tax_modifier
-					value = 0.3
+					value = 0.4
 				}
 			}
 		}
@@ -192,23 +192,23 @@ french_minor_missions_4 = {
 			OR = {
 				AND = {
 					is_capital_of = ROOT
-					NOT = { base_manpower = 6 }
+					NOT = { base_manpower = 7 }
 				}
 				AND = {
 					NOT = { is_capital_of = ROOT }
-					NOT = { base_manpower = 4 }
+					NOT = { base_manpower = 5 }
 				}
 			}
 		}
 		trigger = {
 			OR = {
 				capital_scope = {
-					base_manpower = 6
+					base_manpower = 7
 				}
 				calc_true_if = {
 					amount = 5
 					all_owned_province = {
-						base_manpower = 4
+						base_manpower = 5
 					}
 				}
 			}
@@ -216,6 +216,7 @@ french_minor_missions_4 = {
 		effect = {
 			add_army_professionalism = 0.05
 			add_army_tradition = 15
+			add_manpower = 5
 		}
 	}
 
@@ -227,9 +228,7 @@ french_minor_missions_4 = {
 			
 		}
 		trigger = {
-			all_owned_province = {
-				is_prosperous = yes
-			}
+			current_income_balance = 1
 			has_adm_advisor = yes
 			has_dip_advisor = yes
 			has_mil_advisor = yes
@@ -308,7 +307,7 @@ french_minor_missions_5 = {
 				}
 				has_global_modifier_value = {
 					which = global_tax_modifier
-					value = 0.35
+					value = 0.6
 				}
 				full_idea_group = economic_ideas
 			}
@@ -318,6 +317,8 @@ french_minor_missions_5 = {
 				name = fra_min_feudal_taxes
 				duration = 14600
 			}
+			add_treasury = 250
+			add_inflation = -2
 		}
 	}
 	embrace_the_renaissance = {
@@ -347,7 +348,6 @@ french_minor_missions_5 = {
 			
 		}
 		trigger = {
-			religious_unity = 1
 			stability = 0
 			is_at_war = no
 			capital_scope = {
@@ -357,7 +357,7 @@ french_minor_missions_5 = {
 		effect = {
 			add_estate_loyalty = {
 				estate = estate_nobles
-				loyalty = 20
+				loyalty = 10
 			}
 			add_prestige = 30
 			add_stability = 1
@@ -828,10 +828,12 @@ bgm_fra_min_dip_slo1 = {
 			
 			if = {
 				limit = { NOT = { dynasty = "Meroveching" } }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRA
 				on_change_tag_effect = yes		
 			}
 			else = {
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRW
 				on_change_tag_effect = yes
 			}
@@ -1071,10 +1073,12 @@ bgm_fra_min_mil_slot1 = {
 			
 			if = {
 				limit = { NOT = { dynasty = "Meroveching" } }
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRA
 				on_change_tag_effect = yes		
 			}
 			else = {
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRW
 				on_change_tag_effect = yes
 			}
@@ -1363,7 +1367,11 @@ bgm_fra_min_slot3_cont1_dip = {
 			
 		}
 		effect = { 
-			
+			add_country_modifier = {
+				name = frw_swelling_courage
+				duration = 7300
+			}
+			add_manpower = 5
 		}
 	}
 
@@ -1394,12 +1402,12 @@ bgm_fra_min_slot3_cont1_dip = {
 		}
 		position = 6
 		trigger = {
-			stability = 0
+			stability = 1
 			legitimacy = 50
 			prestige = 0
 			is_subject = no
 			is_at_war = no
-			NOT = { num_of_loans = 1 }
+			NOT = { num_of_loans = 10 }
 			NOT = { war_exhaustion = 1 }
 		}
 		effect = {
@@ -1467,7 +1475,11 @@ bgm_fra_min_slot3_cont1_mil = {
 			
 		}
 		effect = { 
-			
+			add_country_modifier = {
+				name = frw_swelling_courage
+				duration = 7300
+			}
+			add_manpower = 5
 		}
 	}
 
@@ -1498,12 +1510,12 @@ bgm_fra_min_slot3_cont1_mil = {
 		}
 		position = 6
 		trigger = {
-			stability = 0
+			stability = 1
 			legitimacy = 50
 			prestige = 0
 			is_subject = no
 			is_at_war = no
-			NOT = { num_of_loans = 1 }
+			NOT = { num_of_loans = 10 }
 			NOT = { war_exhaustion = 1 }
 		}
 		effect = {
@@ -1572,7 +1584,6 @@ french_minor_missions_3_navy = {
 			}
 			navy_size_percentage = 0.9
 			heavy_ship_fraction = 0.15
-			transport_fraction = 0.3
 		}
 		effect = {
 			add_navy_tradition = 15

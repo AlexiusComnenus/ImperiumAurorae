@@ -1,0 +1,446 @@
+##############################
+# Myrmidon Flavor Events 
+#                            
+# Written by Alexios
+##############################
+namespace = ia_flavor_mym
+
+province_event = {
+	id = ia_flavor_mym.1
+	title = ia_flavor_mym.1.t
+	desc = ia_flavor_mym.1.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		is_city = yes
+		NOT = { has_province_flag = mym_dont_transfer_flag }
+		owner = { OR = { tag = MYM 	has_reform = myrmidons_government } }
+		OR = {
+			AND = {
+				region = mexico_region
+				MEX = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = central_america_region
+				CAM = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = colombia_region
+				VNZ = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = brazil_region
+				BRZ = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = la_plata_region
+				LAP = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				OR = {
+					region = peru_region
+					region = upper_peru_region
+				}
+				PEU = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				OR = {
+					region = mississippi_region
+					region = great_plains_region
+				}
+				LOU = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				OR = {
+					region = canada_region
+					region = hudson_bay_region
+				}
+				QUE = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = rio_grande_region
+				TEX = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = california_region
+				CAL = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = cascadia_region
+				ALA = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = mexico_region
+				MEX = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = great_lakes_region
+				ILI = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = southeast_america_region
+				FLO = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+			AND = {
+				region = northeast_america_region
+				VRM = { overlord = { OR = { tag = MYM 	has_reform = myrmidons_government } } }
+			}
+		}
+	}
+	
+	option = {
+		name = ia_flavor_mym.1.a
+		
+		if = {
+			limit = { region = mexico_region }
+			cede_province = MEX
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = central_america_region }
+			cede_province = CAM
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = colombia_region }
+			cede_province = VNZ
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = brazil_region }
+			cede_province = BRZ
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = la_plata_region }
+			cede_province = LAP
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					region = peru_region
+					region = upper_peru_region
+				} 
+			}
+			cede_province = PEU
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					region = mississippi_region
+					region = great_plains_region
+				} 
+			}
+			cede_province = LOU
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					region = canada_region
+					region = hudson_bay_region
+				}
+			}
+			cede_province = QUE
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = rio_grande_region }
+			cede_province = TEX
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = california_region }
+			cede_province = CAL
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = cascadia_region }
+			cede_province = ALA
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = great_lakes_region }
+			cede_province = ILI
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = southeast_america_region }
+			cede_province = FLO
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+		else_if = {
+			limit = { region = northeast_america_region }
+			cede_province = VRM
+			add_core_construction = {
+				speed = 1
+				cost = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_mym.2
+	title = ia_flavor_mym.2.t
+	desc = ia_flavor_mym.2.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { is_year = 1450 }
+		tag = MYM
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = mym_early_no_range
+				duration = -1
+			}
+			set_country_flag = no_colonial_nations
+			add_country_modifier = { 
+				name = mym_guarantee_good_stats
+				duration = 3650
+				hidden = yes
+			}
+			487 = { change_trade_goods = unknown }
+		}
+	}
+	
+	option = {
+		name = ia_flavor_mym.2.a
+		add_country_modifier = {
+			name = mym_early_no_range
+			duration = -1
+		}
+		487 = {
+			add_province_modifier = {
+				name = mym_dont_touch_me_lol
+				duration = 27375
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_mym.3
+	title = ia_flavor_mym.3.t
+	desc = ia_flavor_mym.3.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_mym.3.a
+		add_country_modifier = {
+			name = mym_enable_frontiers
+			duration = -1
+		}
+		exile_ruler_as = { name = xufu_left }
+		488 = {
+			add_siberian_construction = 800
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_mym.4
+	title = ia_flavor_mym.4.t
+	desc = ia_flavor_mym.4.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ia_flavor_mym.4.a
+		define_explorer = {
+			name = "Peng Guanting"
+			female = yes
+			trait = great_explorer_personality
+			shock = 2
+			fire = 2
+			manuever = 8
+			siege = 0
+		}
+		add_navy_tradition = 25
+		
+		mediterrenean_region = {
+			discover_country = ROOT
+		}
+		egypt_region = {
+			discover_country = ROOT
+		}
+		maghreb_region = {
+			discover_country = ROOT
+		}
+		syria_area = {
+			discover_country = ROOT
+		}
+		palestine_area = {
+			discover_country = ROOT
+		}
+		aleppo_area = {
+			discover_country = ROOT
+		}
+		
+		custom_tooltip = mym_cultural_change_tt
+		hidden_effect = {
+			change_primary_culture = xienjing
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
+			every_subject_country = {
+				limit = {
+					primary_culture = xizho
+				}
+				change_primary_culture = xienjing
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
+			}
+			south_america = {
+				limit = { culture = xizho }
+				change_culture = xienjing
+			}
+			north_america = {
+				limit = { culture = xizho }
+				change_culture = xienjing
+			}
+			capital_scope = {
+				light_ship = ROOT
+				light_ship = ROOT
+				light_ship = ROOT
+				light_ship = ROOT
+				light_ship = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ia_flavor_mym.5
+	title = ia_flavor_mym.5.t
+	desc = ia_flavor_mym.5.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	# Western Protectorate
+		name = ia_flavor_mym.5.a
+		add_stability = -3
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+			}
+		}
+		
+		override_country_name = MYM_WESTERN_PROTECTORATE
+		add_government_reform = myrmidon_western_protectorate
+		
+		add_historical_friend = Z17
+		Z17 = { add_historical_friend = ROOT }
+		create_alliance = Z17
+	}
+	
+	option = {	# Paradise Initiative
+		name = ia_flavor_mym.5.b
+		add_stability = -3
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+			}
+		}
+		
+		override_country_name = MYM_PARADISE_INITIATIVE
+		add_government_reform = myrmidon_paradise_initiative
+		
+		add_historical_rival = Z17
+		Z17 = { add_historical_rival = ROOT }
+		break_alliance = Z17
+	}
+}
+
+country_event = {	# Fountain of Youth
+	id = ia_flavor_mym.6
+	title = ia_flavor_mym.6.t
+	desc = ia_flavor_mym.6.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Civilian Applications
+		name = ia_flavor_mym.6.a
+		ai_chance = { factor = 0 }
+		add_country_modifier = {
+			name = mym_fountain_civilian
+			duration = -1
+		}
+	}
+	
+	option = {	# Military Applications
+		name = ia_flavor_mym.6.b
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = mym_fountain_military
+			duration = -1
+		}
+	}
+}

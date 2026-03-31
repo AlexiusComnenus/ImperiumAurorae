@@ -1,6 +1,6 @@
 government = monarchy
 add_government_reform = saxon_feudalism
-government_rank = 1
+government_rank = 2
 technology_group = western
 religion = fraticelli
 primary_culture = saxon
@@ -56,4 +56,14 @@ capital = 52
 	add_historical_rival = HLR
 	add_historical_friend = Z21
 	add_truce_with = BOH
+	set_estate_privilege = estate_nobles_levies
+	set_estate_privilege = estate_nobles_ia_enforced_serfdom
+	change_estate_land_share = {
+		estate = estate_burghers
+		share = -5
+	}
+	change_estate_land_share = {
+		estate = estate_church
+		share = -5
+	}
 }

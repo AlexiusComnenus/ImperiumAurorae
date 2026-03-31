@@ -1,0 +1,1103 @@
+country_decisions = {
+	# AI Decisions Below
+	rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			if = {
+				limit = {
+					has_country_flag = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_used
+				}
+				custom_trigger_tooltip = {
+					tooltip = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_not_used_recently_tt_with_year
+					had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_used days = 1825 }
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_not_used_recently_tt
+					always = yes
+				}
+			}
+			rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = yes
+			rce_has_religion_mechanic_sylvan_affinity_value = { value = 75 }
+			any_owned_province = {
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			rce_add_religion_mechanic_sylvan_affinity_value = { value = -75 }
+			custom_tooltip = " "
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_no
+			}
+			custom_tooltip = rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button_tt_spring_effect
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_no
+			}
+			custom_tooltip = rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button_tt_summer_effect
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_no
+			}
+			custom_tooltip = rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button_tt_fall_effect
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_no
+			}
+			custom_tooltip = rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button_tt_winter_effect
+			hidden_effect = {
+				if = {
+					limit = {
+						rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+						}
+						save_event_target_as = target_province
+					}
+					if = {
+						limit = {
+							has_saved_event_target = target_province
+						}
+						event_target:target_province = {
+							add_base_manpower = 2
+							add_province_modifier = {
+								name = rce_religion_mechanic_sylvan_affinity_spring_grove_province_modifier
+								duration = 1825
+							}
+							area = {
+								limit = {
+									owned_by = ROOT
+								}
+								add_province_modifier = {
+									name = rce_religion_mechanic_sylvan_affinity_spring_grove_area_modifier
+									duration = 1825
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+						}
+						save_event_target_as = target_province
+					}
+					if = {
+						limit = {
+							has_saved_event_target = target_province
+						}
+						event_target:target_province = {
+							add_base_tax = 2
+							add_province_modifier = {
+								name = rce_religion_mechanic_sylvan_affinity_summer_grove_province_modifier
+								duration = 1825
+							}
+							area = {
+								limit = {
+									owned_by = ROOT
+								}
+								add_province_modifier = {
+									name = rce_religion_mechanic_sylvan_affinity_summer_grove_area_modifier
+									duration = 1825
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+						}
+						save_event_target_as = target_province
+					}
+					if = {
+						limit = {
+							has_saved_event_target = target_province
+						}
+						event_target:target_province = {
+							add_base_production = 2
+							add_province_modifier = {
+								name = rce_religion_mechanic_sylvan_affinity_fall_grove_province_modifier
+								duration = 1825
+							}
+							area = {
+								limit = {
+									owned_by = ROOT
+								}
+								add_province_modifier = {
+									name = rce_religion_mechanic_sylvan_affinity_fall_grove_area_modifier
+									duration = 1825
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+						}
+						save_event_target_as = target_province
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+							OR = {
+								fort_level = 2
+								AND = {
+									is_capital = yes
+									fort_level = 1
+								}
+							}
+						}
+						save_event_target_as = target_province
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+							OR = {
+								fort_level = 2
+								AND = {
+									is_capital = yes
+									fort_level = 1
+								}
+							}
+							area_for_scope_province = {
+								OR = {
+									NOT = { country_or_subject_holds = ROOT }
+									any_neighbor_province = {
+										NOT = { country_or_subject_holds = ROOT }
+									}
+								}
+							}
+						}
+						save_event_target_as = target_province
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = yes
+							region_for_scope_province = { is_capital_of = ROOT }
+							OR = {
+								fort_level = 2
+								AND = {
+									is_capital = yes
+									fort_level = 1
+								}
+							}
+							any_neighbor_province = {
+								NOT = { country_or_subject_holds = ROOT }
+							}
+						}
+						save_event_target_as = target_province
+					}
+					if = {
+						limit = {
+							has_saved_event_target = target_province
+						}
+						event_target:target_province = {
+							random_list = {
+								33 = {
+									add_base_tax = 2
+								}
+								33 = {
+									add_base_production = 2
+								}
+								33 = {
+									add_base_manpower = 2
+								}
+							}
+							add_province_modifier = {
+								name = rce_religion_mechanic_sylvan_affinity_winter_grove_province_modifier
+								duration = 1825
+							}
+							area = {
+								limit = {
+									owned_by = ROOT
+								}
+								add_province_modifier = {
+									name = rce_religion_mechanic_sylvan_affinity_winter_grove_area_modifier
+									duration = 1825
+								}
+							}
+						}
+					}
+				}
+				clr_country_flag = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_used
+				set_country_flag = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_used
+				export_to_variable = {
+					which = rce_religion_mechanic_sylvan_affinity_consecrated_new_grove_used_year
+					value = trigger_value:is_year
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rce_religion_mechanic_sylvan_affinity_select_seasonal_affinity_decision = {
+		# not the same as rce_religion_mechanic_sylvan_affinity_select_seasonal_affinity_button
+		# triggers partly taken from the individual seasonal affinity buttons
+		# AI only event to pick
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			NOT = { has_country_flag = rce_religion_mechanic_sylvan_affinity_selecting_seasonal_affinity }
+			OR = {
+				NOT = { has_country_flag = rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selected }
+				had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selected days = 7300 }
+			}
+		}
+		effect = {
+			set_country_flag = rce_religion_mechanic_sylvan_affinity_selecting_seasonal_affinity
+			country_event = { id = rce_religion_mechanic_sylvan_affinity_events.1 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rce_religion_mechanic_sylvan_affinity_sergetoja_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			if = {
+				limit = {
+					NOT = { rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes }
+				}
+				rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = yes
+				rce_has_religion_mechanic_sylvan_affinity_value = { value = 7 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+				}
+				if = {
+					limit = {
+						NOT = { had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_sergetoja_modifier_active days = 90 } }
+					}
+					custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_disabled_too_soon
+					hidden_effect = {
+						remove_country_modifier = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+							duration = 365
+						}
+					}
+				}
+				clr_country_flag = rce_religion_mechanic_sylvan_affinity_sergetoja_modifier_active
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_sergetoja_spring_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_sergetoja_summer_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_sergetoja_fall_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_sergetoja_winter_modifier
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_currently_active
+			}
+			else = {
+				rce_add_religion_mechanic_sylvan_affinity_value = { value = -6 }
+				custom_tooltip = " "
+				hidden_effect = {
+					set_country_flag = rce_religion_mechanic_sylvan_affinity_sergetoja_modifier_active
+					if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_sergetoja_spring_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_sergetoja_summer_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_sergetoja_fall_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_sergetoja_winter_modifier
+							duration = -1
+						}
+					}
+				}
+			}
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_sergetoja_spring_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_sergetoja_summer_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_sergetoja_fall_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_sergetoja_winter_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { rce_has_religion_mechanic_sylvan_affinity_value = { value = 40 } }
+			}
+			modifier = {
+				factor = 0
+				rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+			}
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					amount = 2
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+				ROOT = {
+					NOT = {
+					num_of_owned_provinces_with = { 
+						OR = {
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_spring_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_summer_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_fall_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_winter_grove_province_modifier
+							}
+						value = 1
+							}
+						}
+					}
+					NOT = {
+					calc_true_if = {
+					amount = 1
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+						}
+					}
+				} 
+			}
+		}
+	}
+
+	rce_religion_mechanic_sylvan_affinity_nukirpeja_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			if = {
+				limit = {
+					NOT = { rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes }
+				}
+				rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = yes
+				rce_has_religion_mechanic_sylvan_affinity_value = { value = 7 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+				}
+				if = {
+					limit = {
+						NOT = { had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_nukirpeja_modifier_active days = 90 } }
+					}
+					custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_disabled_too_soon
+					hidden_effect = {
+						remove_country_modifier = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+							duration = 365
+						}
+					}
+				}
+				clr_country_flag = rce_religion_mechanic_sylvan_affinity_nukirpeja_modifier_active
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_nukirpeja_spring_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_nukirpeja_summer_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_nukirpeja_fall_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_nukirpeja_winter_modifier
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_currently_active
+			}
+			else = {
+				rce_add_religion_mechanic_sylvan_affinity_value = { value = -6 }
+				custom_tooltip = " "
+				hidden_effect = {
+					set_country_flag = rce_religion_mechanic_sylvan_affinity_nukirpeja_modifier_active
+					if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_nukirpeja_spring_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_nukirpeja_summer_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_nukirpeja_fall_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_nukirpeja_winter_modifier
+							duration = -1
+						}
+					}
+				}
+			}
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_nukirpeja_spring_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_nukirpeja_summer_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_nukirpeja_fall_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_nukirpeja_winter_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { rce_has_religion_mechanic_sylvan_affinity_value = { value = 40 } }
+			}
+			modifier = {
+				factor = 0
+				rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+			}
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					amount = 2
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+				ROOT = {
+					NOT = {
+					num_of_owned_provinces_with = { 
+						OR = {
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_spring_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_summer_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_fall_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_winter_grove_province_modifier
+							}
+						value = 1
+							}
+						}
+					}
+					NOT = {
+					calc_true_if = {
+					amount = 1
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+						}
+					}
+				}  
+			}
+		}
+	}
+
+	rce_religion_mechanic_sylvan_affinity_audeja_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			if = {
+				limit = {
+					NOT = { rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes }
+				}
+				rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = yes
+				rce_has_religion_mechanic_sylvan_affinity_value = { value = 7 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+				}
+				if = {
+					limit = {
+						NOT = { had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_audeja_modifier_active days = 90 } }
+					}
+					custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_disabled_too_soon
+					hidden_effect = {
+						remove_country_modifier = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+							duration = 365
+						}
+					}
+				}
+				clr_country_flag = rce_religion_mechanic_sylvan_affinity_audeja_modifier_active
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_audeja_spring_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_audeja_summer_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_audeja_fall_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_audeja_winter_modifier
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_currently_active
+			}
+			else = {
+				rce_add_religion_mechanic_sylvan_affinity_value = { value = -6 }
+				custom_tooltip = " "
+				hidden_effect = {
+					set_country_flag = rce_religion_mechanic_sylvan_affinity_audeja_modifier_active
+					if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_audeja_spring_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_audeja_summer_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_audeja_fall_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_audeja_winter_modifier
+							duration = -1
+						}
+					}
+				}
+			}
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_audeja_spring_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_audeja_summer_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_audeja_fall_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_audeja_winter_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { rce_has_religion_mechanic_sylvan_affinity_value = { value = 40 } }
+			}
+			modifier = {
+				factor = 0
+				rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+			}
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					amount = 2
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+				ROOT = {
+					NOT = {
+					num_of_owned_provinces_with = { 
+						OR = {
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_spring_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_summer_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_fall_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_winter_grove_province_modifier
+							}
+						value = 1
+							}
+						}
+					}
+					NOT = {
+					calc_true_if = {
+					amount = 1
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+						}
+					}
+				} 
+			}
+		}
+	}
+
+	rce_religion_mechanic_sylvan_affinity_verpiancioji_decision = {
+		potential = {
+			ai = yes
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		allow = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			if = {
+				limit = {
+					NOT = { rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes }
+				}
+				rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = yes
+				rce_has_religion_mechanic_sylvan_affinity_value = { value = 7 }
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+				}
+				if = {
+					limit = {
+						NOT = { had_country_flag = { flag = rce_religion_mechanic_sylvan_affinity_verpiancioji_modifier_active days = 90 } }
+					}
+					custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_disabled_too_soon
+					hidden_effect = {
+						remove_country_modifier = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_focus_disabled_too_soon_modifier
+							duration = 365
+						}
+					}
+				}
+				clr_country_flag = rce_religion_mechanic_sylvan_affinity_verpiancioji_modifier_active
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_verpiancioji_spring_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_verpiancioji_summer_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_verpiancioji_fall_modifier
+				remove_country_modifier = rce_religion_mechanic_sylvan_affinity_verpiancioji_winter_modifier
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_currently_active
+			}
+			else = {
+				rce_add_religion_mechanic_sylvan_affinity_value = { value = -6 }
+				custom_tooltip = " "
+				hidden_effect = {
+					set_country_flag = rce_religion_mechanic_sylvan_affinity_verpiancioji_modifier_active
+					if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_verpiancioji_spring_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_verpiancioji_summer_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_verpiancioji_fall_modifier
+							duration = -1
+						}
+					}
+					else_if = {
+						limit = {
+							rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+						}
+						add_country_modifier = {
+							name = rce_religion_mechanic_sylvan_affinity_verpiancioji_winter_modifier
+							duration = -1
+						}
+					}
+				}
+			}
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = spring }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_spring_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_verpiancioji_spring_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = summer }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_summer_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_verpiancioji_summer_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = fall }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_fall_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_verpiancioji_fall_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+			if = {
+				limit = {
+					rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = { season = winter }
+				}
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_yes
+			}
+			else = {
+				custom_tooltip = rce_religion_mechanic_sylvan_affinity_button_tt_winter_no
+			}
+			tooltip = {
+				add_country_modifier = {
+					name = rce_religion_mechanic_sylvan_affinity_verpiancioji_winter_modifier
+					duration = -1
+					desc = rce_religion_mechanic_sylvan_affinity_until_focus_disabled_tt
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { rce_has_religion_mechanic_sylvan_affinity_value = { value = 40 } }
+			}
+			modifier = {
+				factor = 0
+				rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+			}
+			modifier = {
+				factor = 0
+				calc_true_if = {
+					amount = 2
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+				}
+			}
+			modifier = {
+				factor = 0
+				AND = {
+				ROOT = {
+					NOT = {
+					num_of_owned_provinces_with = { 
+						OR = {
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_spring_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_summer_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_fall_grove_province_modifier
+						has_province_modifier = rce_religion_mechanic_sylvan_affinity_winter_grove_province_modifier
+							}
+						value = 1
+							}
+						}
+					}
+					NOT = {
+					calc_true_if = {
+					amount = 1
+					rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = yes
+					rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = yes
+						}
+					}
+				} 
+			}
+		}
+	}
+}

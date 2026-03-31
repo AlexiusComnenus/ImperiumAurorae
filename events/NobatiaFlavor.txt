@@ -20,7 +20,7 @@ country_event = {
 	
 	option = { # Reichskrieg!
 		name = ia_flavor_z42.1.a
-		ai_chance = { factor = 60 }
+		ai_chance = { factor = 90 }
 		custom_tooltip = abyssinia_reichskrieg_tt
 		hidden_effect = {
 			emperor = {
@@ -34,7 +34,7 @@ country_event = {
 	option = { # thoughts and prayers
 		name = ia_flavor_z42.1.b
 		ai_chance = {
-			factor = 40
+			factor = 10
 		}
 		custom_tooltip = abyssinia_contributions_tt
 		hidden_effect = {

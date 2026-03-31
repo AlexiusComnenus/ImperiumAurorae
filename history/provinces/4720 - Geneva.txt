@@ -1,5 +1,5 @@
-owner = Z64
-controller = Z64
+owner = GNV
+controller = GNV
 capital = "Geneva"
 is_city = yes
 culture = burgundian
@@ -8,7 +8,7 @@ trade_goods = cloth
 base_tax = 3
 base_production = 3
 base_manpower = 2
-add_core = Z64
+add_core = GNV
 add_permanent_claim = SAV
 discovered_by = MGE
 discovered_by = eastern

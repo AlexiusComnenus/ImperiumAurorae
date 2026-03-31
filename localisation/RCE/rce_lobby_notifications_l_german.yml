@@ -1,0 +1,99 @@
+﻿l_german:
+ # Bookmarks:
+ RCE_BOOKMARK_INDIA: "§MRCE§!: §OIndien & Tibet§!"
+ RCE_BOOKMARK_INDIA_DESC: "Neue Religionen: §YNang Chosisch§! und §YJainistisch§!. Geänderte Religionen: §YHinduistisch§!. Die Mechanik von §YHinduistisch§! wurde im Vergleich zum Basisspiel verändert. \n\nDie folgenden Länder werden nach dem Spielstart der Religion §YNang Chosisch§! folgen oder Provinzen besitzen, die der Religion folgen: @UTS §YTsang§!, @LDK §YLadakh§!, @GUG §YGuge§!, @PHA §YÜ§!, @KAM §YKham§!, @KRC §YKorchin§! und @OIR §YOiraten§!. \nDie folgenden Länder werden nach Spielstart §YJainistische§! Provinzen besitzen: @MER §YMewar§!, @KAT §YKutch§! und @BAH §YBahmanis§!. \nStartprovinzen und -nationen von §YHinduistisch§! wurden nicht verändert."
+ RCE_BOOKMARK_MIDDLE_EAST: "§MRCE§!: §ONaher Osten§!"
+ RCE_BOOKMARK_MIDDLE_EAST_DESC: "Neue Religionen: §YNestorianisch§! und §YManichäisch§!. Die folgenden Länder werden nach Spielstart §YNestorianische§! Provinzen besitzen: @QAR §YQara Qoyunlu§!, @BTL §YBitlis§!, @MHR §YMahra§!, @TIM §YTimuridenreich§!, @KAS §YYarkand§! und @KHA §YMongolen§!. Die folgenden Länder werden nach Spielstart §YManichäische§! Provinzen besitzen: @MSY §YMushasha§!, @OIR §YOiraten§! und @MNG §YMing§!. Die folgenden Kulturen wurden in eine andere Kulturgruppe verschoben: §YParthisch§! (§lIranisch§!), §YPhönizisch§!, §YBabylonisch§! und §YHebräisch§! (§lAramäisch§!). Die Kultur §YAserbaidschanisch§! wurde umbenannt in §YAltaserbaidschanisch§!. Die folgenden Kulturen wurden hinzugefügt: §YAfscharisch§!, §YFarsisch§! (§lIranisch§!), §YAserisch§!, §YQaschqaiisch§!, §YKalmückisch§!, §YOghusisch§! (§lAltaisch§!), §YKoptisch§! (§lSudanesisch§!), §YAssyrisch§!, §YManichäisch§! und §YChaldäisch§! (§lAramäisch§!). Länder mit der Primärkultur §YTürkisch§! ändern diese in §YOghusisch§!, §YTürkisch§! wird sich mit der Zeit ausbreiten. Länder mit der Primärkultur §YAserbaidschanisch§! ändern diese in §YAserisch§!."
+ RCE_BOOKMARK_EASTERN_EUROPE: "§MRCE§!: §OOsteuropa§!"
+ RCE_BOOKMARK_EASTERN_EUROPE_DESC: "Neue Religionen: §YVidilistisch§! und §YBogomilisch§!. \n\nDie folgenden Länder werden nach Spielstart §YVidilistische§! Provinzen besitzen: @LIT §YLithuania§!. \nDie folgenden Länder werden nach Spielstart §YBogomilische§! Provinzen besitzen: @BOS §YBosnia§!, @HRZ §YHerzegovina§! und @TUR §YOttomans§!."
+
+ # Notifications (using the DLC Buttons):
+ rce_lobby_info_entry_tooltip: "Klicken für mehr Details."
+ rce_lobby_info_religion_entry_tooltip: "Änderungen von Länder- und Provinzreligionen zu Spielbeginn werden in der Lobby nicht visuell dargestellt. \n--------------\nKlicken für mehr Details."
+ rce_lobby_info_culture_entry_tooltip: "Änderungen von Länder- und Provinzkulturen zu Spielbeginn werden in der Lobby nicht visuell dargestellt. \n--------------\nKlicken für mehr Details."
+ ## Religion:
+ ### Country Info:
+ DLC_rce_entry_country_religion_info_hinduism_TOOLTIP_INSTANT: "Die Mechanik für den §YHinduistischen§! Glauben wurde geändert."
+ LANDING_rce_entry_country_religion_info_hinduism_TEXT: "Die Mechanik für den §YHinduistischen§! Glauben wurde geändert."
+ LANDING_rce_entry_country_religion_info_hinduism_FLAVOR_TEXT: "Die Religion verwendet nun eine Kombination aus §YNebengöttern§! und §YHauptgöttern§!. Die Nebengötter funktionieren mechanisch wie im Basisspiel, aber die Götter und ihre Boni wurden geändert und sie haben einen zusätzlichen Bonus erhalten, der von dem gewählten Hauptgott und der Hingabe zu dieser abhängt. Jeder Hauptgott besitzt §Y6§! Stufen der Hingabe."
+
+ ### Country:
+ DLC_rce_entry_country_change_religion_tibetan_buddhism_TOOLTIP_INSTANT: "Zu Spielbeginn wird die Landesreligion zu §YNang Chosisch§! geändert"
+ LANDING_rce_entry_country_change_religion_tibetan_buddhism_TEXT: "Die Landesreligion wird zu Spielbeginn zu §YNang Chosisch§! geändert."
+ LANDING_rce_entry_country_change_religion_tibetan_buddhism_FLAVOR_TEXT: "§YNang Chosisch§! ist ein buddhistischer Glaube, der hauptsächlich in Tibet vorkommt. \n\nBasis-Modifikatoren: \n   Festungsverteidigung: §G+20.0%§! \n   Institutionsverbreitung (Wahrer Glaube): §G+20.0%§! \n\nDie Religion verwendet die '§YVier-Tenets-System§!'-Mechanik, die es erlaubt, mit der Zeit bis zu §Y4§! Modifikatoren anzunehmen, die bis zum Tod des Herrschers bestehen bleiben."
+
+ ### Province:
+ DLC_rce_entry_province_change_religion_jainism_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YJainistisch§! (§lDharmisch§!) geändert."
+ LANDING_rce_entry_province_change_religion_jainism_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YJainistisch§! geändert: §YKutch§!, §YSatara§!, §YGorwar§!, §YMandsaur§!, §YKolhapur§!, §YVagad§! und §YBhilwara§!. \n\n§OZu Jainistisch zu konvertieren ist als ein anderer Dharmischer Glaube möglich mithilfe des Buttons im Religion-Tab sowie mithilfe von Rebellen.§!"
+ LANDING_rce_entry_province_change_religion_jainism_FLAVOR_TEXT: "§YJainistisch§! ist ein §lDharmischer§! Glaube, der in Indien vorkommt. \n\nBasis-Modifikatoren: \n   Unruhe (Global): §G-2.00§! \n   Beziehungen Verbessern: §G+20.0%§! \n\nDie Religion verwendet die '§YSukha§!'-Mechanik, die einen skalierenden Bonus basierend auf einem Wert zwischen §Y0§! und §Y100§! gewährt."
+
+ DLC_rce_entry_province_change_religion_tibetan_buddhism_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YNang Chosisch§! (§lBuddhistisch§!) geändert."
+ LANDING_rce_entry_province_change_religion_tibetan_buddhism_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YNang Chosisch§! geändert: §YShigatse§!, §YLhasa§!, §YTachienlu§!, §YGyegu§!, §YDorno-Gobi§!, §YXilin Gol§!, §YLadakh§!, §YEreen§!, §YZasagt§!, §YTsaparang§!, §YNyingchi§!, §YQamdo§!, §YMarkam§!, §YDege§!, §YGarze§!, §YGovi§!, §YKhara Narin Ula§!, §YNagchu§!, §YDundgovi§!, §YSakya§!, §YGyirong§!, §YPurang§!, §YNedong§!, §YTsurphu§!, §YDamxung§!, §YRutog§!, §YSkardu§!, §YSainshand§!, §YUrad§!, §YUjimqin§!, §YKorchin§! und §YNoyon§!. \n\n§OZu Nang Chosisch zu konvertieren ist als ein anderer Buddhistischer Glaube möglich mithilfe des Buttons im Religion-Tab sowie mithilfe von Rebellen.§!"
+ LANDING_rce_entry_province_change_religion_tibetan_buddhism_FLAVOR_TEXT: "§YNang Chosisch§! ist ein §lBuddhistischer§! Glaube, der hauptsächlich in Tibet vorkommt. \n\nBasis-Modifikatoren: \n   Festungsverteidigung: §G+20.0%§! \n   Institutionsverbreitung (Wahrer Glaube): §G+20.0%§! \n\nDie Religion verwendet die '§YVier-Tenets-System§!'-Mechanik, die es erlaubt, mit der Zeit bis zu §Y4§! Modifikatoren anzunehmen, die bis zum Tod des Herrschers bestehen bleiben."
+
+ DLC_rce_entry_province_change_religion_vidilist_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YVidilistisch§! (§lHeidnisch§!) geändert."
+ LANDING_rce_entry_province_change_religion_vidilist_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YVidilistisch§! geändert: §YZemaitija§! und §YVilkmerge§!. \n\nEs ist nicht möglich diese innerhalb der ersten §Y5 Jahre§! zu konvertieren und Rebellen können einmalig mithilfe einer Entscheidung erzeugt werden. \n§OZu Vidilistisch zu konvertieren ist nur mithilfe von Rebellen möglich!§!"
+ LANDING_rce_entry_province_change_religion_vidilist_FLAVOR_TEXT: "§YVidilistisch§! ist ein §lHeidnischer§! Glaube, der im Baltikum vorkommt. \n\nBasis-Modifikatoren: \n   Zermürbung (Gegner): §G+1.00§! \n   Diplomatische Reputation: §G+1.00§! \n\nDie Religion verwendet die '§YWaldaffinität§!'-Mechanik, die es erlaubt, eine saisonale Affinität und Foki (ähnlich denen der Eifer-Foki) mit Boni auszuwählen, die von der ausgewählten saisonalen Affinität abhängig sind."
+
+ DLC_rce_entry_province_change_religion_nestorian_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YNestorianisch§! (§lChristlich§!) geändert."
+ LANDING_rce_entry_province_change_religion_nestorian_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YNestorianisch§! geändert: §YHotan§!, §YDornod§!, §YKashgar§!, §YNertscha§!, §YSuqutra§!, §YPjöngjang§!, §YKuqa§!, §YUrmia§!, §YBitlis§!, §YTermiz§! und §YOrkhon§!. \n\nEs ist nicht möglich diese innerhalb der ersten §Y5 Jahre§! zu konvertieren. \n§OZu Nestorianisch zu konvertieren ist möglich mithilfe einer Entscheidung, wenn die Primärkultur Assyrisch ist und die Landesreligion in der Christlichen oder Dharmischen Religionsgruppe ist oder die Landesreligion in der Christlichen Religionsgruppe ist und Nestorianisch die dominante Religion im Land ist, sowie mithilfe von Rebellen.§!"
+ LANDING_rce_entry_province_change_religion_nestorian_FLAVOR_TEXT: "§YNestorianisch§! ist ein §lChristlicher§! Glaube, der in Asien vorkommt. \n\nBasis-Modifikatoren: \n   Handelseffizienz: §G+10.0%§! \n   Missionare: §G+1§! \n\nDie Religion verwendet die '§YNestorianisches Patriarchat§!'-Mechanik, die ähnlich wie die päpstliche Kurie funktioniert. Es gibt einen Kontrolleur des Patriarchats, der spezifische Boni erhält und beim Tod des derzeitigen Patriarchen bestimmt wird. Zusätzlich können Länder Patriachalen Einfluss für Boni, die abhängig von heiligen Stätten sind, ausgeben."
+
+ DLC_rce_entry_province_change_religion_manichaeism_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YManichäisch§! (§lZoroastrisch§!) geändert."
+ LANDING_rce_entry_province_change_religion_manichaeism_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YManichäisch§! geändert: §YChuguchak§!, §YJianning§! und §YSchuschtar§!. \n\nEs ist nicht möglich diese innerhalb der ersten §Y5 Jahre§! zu konvertieren und Rebellen können einmalig mithilfe einer Entscheidung erzeugt werden. \n§OZu Manichäisch zu konvertieren ist mögliche mithilfe einer Entscheidung, wenn die Primärkultur Manichäisch ist und die Landesreligion in der Religionsgruppe Christlich oder Zoroastrisch ist, sowie als ein anderer Zoroastrischer Glaube mithilfe des Buttons im Religion-Tab sowie mithilfe von Rebellen.§!"
+ LANDING_rce_entry_province_change_religion_manichaeism_FLAVOR_TEXT: "§YManichäisch§! ist ein §lZoroastrischer§! Glaube, der in Persien vorkommt. \n\nBasis-Modifikatoren: \n   Akzeptierte Kulturen: §G+2.00§! \n   Schaden (Fernkampf): §G+10.0%§! \n   Monatliche Reinheit: §R-0.25§! \n\nDie Religion verwendet die '§YReinheit§!'-Mechanik, die es erlaubt, einen Liturgischen Fokus für die Lebensdauer des Herrschers sowie bis zu §Y3§! Nebenfoki zu wählen, deren Boni abhängig von dem gewählten Liturgischen Fokus sind."
+
+ DLC_rce_entry_province_change_religion_bogomilist_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YBogomilisch§! (§lChristlich§!) geändert."
+ LANDING_rce_entry_province_change_religion_bogomilist_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YBogomilisch§! geändert: §YHum§!, §YSkopje§! und §YVisoki§!. \n\n§OZu Bogomilisch zu konvertieren ist als Orthodoxer Glaube möglich mithilfe des Buttons im Religion-Tab sowie mithilfe von Rebellen.§!"
+ LANDING_rce_entry_province_change_religion_bogomilist_FLAVOR_TEXT: "§YBogomilisch§! ist ein §lChristlicher§! Glaube, der auf dem Balkan vorkommt. \n\nBasis-Modifikatoren: \n   Kosten (Berater): §G-10.0%§! \n   Einfluss (Alle Stände): §Y-10.0%§! \n\nDie Religion verwendet §YKirchenaspekte§!, die es erlauben, ein Gebäude in einer Provinz für einen gebiets- oder landesweiten Bonus zu opfern."
+
+ DLC_rce_entry_province_change_religion_coptic_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YReligion§! in mindestens einer im Besitz befindlichen §YProvinz§! zu §YKoptisch§! (§lChristlich§!) geändert."
+ LANDING_rce_entry_province_change_religion_coptic_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YKoptisch§! geändert: §YUshmunayn§! und §YGirga§!."
+ LANDING_rce_entry_province_change_religion_coptic_FLAVOR_TEXT: "§YKoptisch§! ist ein §lChristlicher§! Glaube, der in Teilen Ostafrikas, Anatoliens und Kaukasiens vorkommt. \n§YKoptisch§! wurde im Vergleich zum Basisspiel nicht verändert."
+
+ ## Culture:
+ ### Country:
+ DLC_rce_entry_country_change_culture_oghuz_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YPrimärkultur§! zu §YOghusisch§! (§lAltaisch§!) geändert."
+ LANDING_rce_entry_country_change_culture_oghuz_culture_TEXT: "Die Primärkultur wird zu Spielbeginn zu §YOghusisch§! geändert."
+ LANDING_rce_entry_country_change_culture_oghuz_culture_FLAVOR_TEXT: "§YOghusisch§! ist Teil der Kulturgruppe §lAltaisch§!. \n\n§YTürkisch§! hat sich aufgrund des arabischen Einflusses entwickelt, der sich in der §YOghusischen§! Kultur verbreitet hat. \n§YOghusische§! Provinzen, die neben Provinzen desselben Besitzers liegen, die eine Kultur aus der Kulturgruppe §lLevantinisch§! besitzen, werden mit der Zeit ihre Kultur zu §YTürkisch§! ändern."
+
+ DLC_rce_entry_country_change_culture_farsi_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YPrimärkultur§! zu §YFarsisch§! (§lIranisch§!) geändert."
+ LANDING_rce_entry_country_change_culture_farsi_culture_TEXT: "Die Primärkultur wird zu Spielbeginn zu §YFarsisch§! geändert."
+ LANDING_rce_entry_country_change_culture_farsi_culture_FLAVOR_TEXT: "§YFarsisch§! ist Teil der Kulturgruppe §lIranisch§!. \n\nDie Primärnation dieser Kultur ist @FRS §YFars§!."
+
+ DLC_rce_entry_country_change_culture_azeri_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YPrimärkultur§! zu §YAserisch§! (§lAltaisch§!) geändert."
+ LANDING_rce_entry_country_change_culture_azeri_culture_TEXT: "Die Primärkultur wird zu Spielbeginn zu §YAserisch§! geändert."
+ LANDING_rce_entry_country_change_culture_azeri_culture_FLAVOR_TEXT: "§YAserisch§! ist Teil der Kulturgruppe §lAltaisch§!. \n\nDie Primärnation dieser Kultur ist @ARL §YArdabil§!. \n\n@PER §YPersien§! als ein Land mit dieser Primärkultur zu gründen, wird die Primärkultur zu §YAltaserbaidschanisch§! (§lIranisch§!, umbenannt von §YAserbaidschanisch§!) ändern und §YAserisch§! ohne Kosten akzeptieren."
+
+ ### Province:
+ DLC_rce_entry_province_change_culture_coptic_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YKoptisch§! (§lSudanesisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_coptic_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YKoptisch§! geändert: §YUshmunayn§! und §YGirga§!."
+ LANDING_rce_entry_province_change_culture_coptic_culture_FLAVOR_TEXT: "§YKoptisch§! ist Teil der Kulturgruppe §lSudanesisch§!."
+
+ DLC_rce_entry_province_change_culture_assyrian_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YAssyrisch§! (§lAramäisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_assyrian_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YAssyrisch§! geändert: §YUrmia§! und §YBitlis§!."
+ LANDING_rce_entry_province_change_culture_assyrian_culture_FLAVOR_TEXT: "§YAssyrisch§! ist Teil der Kulturgruppe §lAramäisch§!."
+
+ DLC_rce_entry_province_change_culture_avshars_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YAfscharisch§! (§lIranisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_avshars_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YAfscharisch§! geändert: §YKayseri§!."
+ LANDING_rce_entry_province_change_culture_avshars_culture_FLAVOR_TEXT: "§YAfscharisch§! ist Teil der Kulturgruppe §lIranisch§!."
+
+ DLC_rce_entry_province_change_culture_qashqai_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YQaschqaiisch§! (§lAltaisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_qashqai_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YQaschqaiisch§! geändert: §YDashtistan§!, §YKazerun§! und §YSiraf§!."
+ LANDING_rce_entry_province_change_culture_qashqai_culture_FLAVOR_TEXT: "§YQaschqaiisch§! ist Teil der Kulturgruppe §lAltaisch§!."
+
+ DLC_rce_entry_province_change_culture_oghuz_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YOghusisch§! (§lAltaisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_oghuz_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YOghusisch§! geändert: §YIzmit§!, §YHüdavendigar§!, §YIzmir§!, §YMentese§!, §YKütahya§!, §YKonya§!, §YKaraman§!, §YKastamonu§!, §YAnkara§!, §YAdana§!, §YSinope§!, §YSivas§!, §YDulkadir§!, §YAmasya§!, §YHamid§!, §YKarasi§!, §YSaruhan§!, §YTekke§!, §YBolu§!, §YBozok§!, §YIçel§!, §YMalatya§!, §YAntep§!, §YAksaray§!, §YDenizli§!, §YAydin§!, §YDivrigi§!, §YKarahisar§!, §YSultanönü§!, §YKangiri§!, §YKirsehir§! und §YTokat§!."
+ LANDING_rce_entry_province_change_culture_oghuz_culture_FLAVOR_TEXT: "§YOghusisch§! ist Teil der Kulturgruppe §lAltaisch§!. \n\n§YTürkisch§! hat sich aufgrund des arabischen Einflusses entwickelt, der sich in der §YOghusischen§! Kultur verbreitet hat. \n§YOghusische§! Provinzen, die neben Provinzen desselben Besitzers liegen, die eine Kultur aus der Kulturgruppe §lLevantinisch§! besitzen, werden mit der Zeit ihre Kultur zu §YTürkisch§! ändern."
+
+ DLC_rce_entry_province_change_culture_farsi_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YFarsisch§! (§lIranisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_farsi_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YFarsisch§! geändert: §YSchiras§!, §YBandar Lengeh§!, §YLarestan§!, §YFasa§! und §YDarab§!."
+ LANDING_rce_entry_province_change_culture_farsi_culture_FLAVOR_TEXT: "§YFarsisch§! ist Teil der Kulturgruppe §lIranisch§!. \n\nDie Primärnation dieser Kultur ist @FRS §YFars§!."
+
+ DLC_rce_entry_province_change_culture_manichaean_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YManichäisch§! (§lAramäisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_manichaean_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YManichäisch§! geändert: §YHoveizeh§!."
+ LANDING_rce_entry_province_change_culture_manichaean_culture_FLAVOR_TEXT: "§YManichäisch§! ist Teil der Kulturgruppe §lAramäisch§!."
+
+ DLC_rce_entry_province_change_culture_azeri_culture_TOOLTIP_INSTANT: "Zu Spielbeginn wird die §YKultur§! von mindestens einer im Besitz befindlichen §YProvinz§! zu §YAserisch§! (§lAltaisch§!) geändert."
+ LANDING_rce_entry_province_change_culture_azeri_culture_TEXT: "Die folgenden Provinzen werden nach Spielbeginn zu §YAserisch§! geändert: §YTäbris§!, §YGanja§!, §YSchirwan§!, §YArdabil§!, §YMaragha§!, §YZandschan§!, §YQazvin§!, §YSamaxi§!, §YMianeh§!, §YKhoy§!, §YShaki§!, §YSoltanye§!, und §YAstara§!."
+ LANDING_rce_entry_province_change_culture_azeri_culture_FLAVOR_TEXT: "§YAserisch§! ist Teil der Kulturgruppe §lAltaisch§!. \n\nDie Primärnation dieser Kultur ist @ARL §YArdabil§!. \n\n@PER §YPersien§! als ein Land mit dieser Primärkultur zu gründen, wird die Primärkultur zu §YAltaserbaidschanisch§! (§lIranisch§!, umbenannt von §YAserbaidschanisch§!) ändern und §YAserisch§! ohne Kosten akzeptieren."

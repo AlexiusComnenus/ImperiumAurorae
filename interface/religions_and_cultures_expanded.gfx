@@ -1,0 +1,439 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_rce_state_missionary_button"
+		textureFile = "gfx/interface/rce_state_missionary_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_state_missionary_button_glow"
+		textureFile = "gfx/interface/rce_state_missionary_button_glow.dds"
+	}
+
+	# Alerts:
+	spriteType = {
+		name = "GFX_rce_alert_icons_strip"
+		textureFile = "gfx/interface/rce_alert_icons_strip.dds"
+		noOfFrames = 6
+		transparencecheck = yes
+	}
+
+	# Casus Bellis:
+	spriteType = {
+		name = "GFX_cb_rce_religion_mechanic_nestorian_patriarchy_excommunication"
+		texturefile = "gfx/interface/casus_bellis/cb_excommunication.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_cb_rce_religion_mechanic_nestorian_patriarchy_remove_center_of_reformation"
+		texturefile = "gfx/interface/casus_bellis/cb_religious_conformance.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+
+	# Diplomatic Actions Categories:
+	spriteType = {
+		name = "GFX_diplomacy_action_patriarch_authority"
+		texturefile = "gfx//interface//icon_diplomacy_papacy.dds"
+		alwaystransparent = yes
+	}
+
+	# Church Aspects:
+	## Button Overlay:
+	spriteType = {
+		name = "GFX_anglican_aspects_icon_strip_overlay"
+		texturefile = "gfx/interface/anglican_aspects_icon_strip_overlay.dds"
+		noOfFrames = 2
+	}
+	## Alert Icons:
+	spriteType = {
+		name = "GFX_alert_pick_church_aspect_bogomilist"
+		texturefile = "gfx/interface/alert_pick_church_aspect_bogomilist.dds"
+		alwaystransparent = yes
+	}
+
+	# Religion Mechanics:
+	## Sukha Mechanic:
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sukha_bar_frame"
+		textureFile = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_bar_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sukha_bar_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_bar_empty.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sukha_bar_overlay"
+		textureFile = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_bar_overlay.dds"
+	}
+	progressbartype = {
+		name = "GFX_rce_religion_mechanic_sukha_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_bar.dds"
+		textureFile2 = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_bar_empty.dds"
+		size = { x = 300 y = 18 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sukha_meditate_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_meditate_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sukha_sponsor_festival_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sukha_mechanic/mechanic_sponsor_festival_button.dds"
+	}
+
+	## Hindu Mechanic:
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_major_deity_shiva"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_major_deity_shiva.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_major_deity_brahma"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_major_deity_brahma.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_major_deity_vishnu"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_major_deity_vishnu.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_empty_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_empty_button.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_dedication_bar_frame"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_dedication_bar_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_dedication_bar_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_dedication_bar_empty.dds"
+	}
+	progressbartype = {
+		name = "GFX_rce_religion_mechanic_hindu_dedication_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_dedication_bar.dds"
+		textureFile2 = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_dedication_bar_empty.dds"
+		size = { x = 136 y = 12 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_reset_minor_deity_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_reset_minor_deity_button.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_spend_dedication_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_spend_dedication_button.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_hindu_toggle_dedication_focus_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/hindu_mechanic/mechanic_toggle_dedication_focus_button.dds"
+		transparencecheck = yes
+		noOfFrames = 2
+	}
+
+	## Four Tenets System
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_button_selected"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_button_selected.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_bar_frame"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_bar_frame.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_bar_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_bar_empty.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_bar_full"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_bar_full.dds"
+	}
+	progressbartype = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_bar"
+		color = { 1.0 0.0 0.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_bar.dds"
+		textureFile2 = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_bar_empty.dds"
+		size = { x = 64 y = 18 }
+		effectFile = "gfx/FX/progress.lua"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_meditate_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_meditate_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_ability_1_icon_strip"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_ability_1_icon_strip.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_ability_2_icon_strip"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_ability_2_icon_strip.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_ability_3_icon_strip"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_ability_3_icon_strip.dds"
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_four_tenets_system_ability_4_icon_strip"
+		textureFile = "gfx/interface/rce_religion_mechanics/four_tenets_system_mechanic/mechanic_ability_4_icon_strip.dds"
+		noOfFrames = 3
+	}
+
+	## Seasonal Affinity Mechanic
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_value_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_value_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_consecrate_new_grove_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_select_seasonal_affinity_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_select_seasonal_affinity_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_sergetoja_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_sergetoja_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_nukirpeja_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_nukirpeja_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_audeja_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_audeja_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_verpiancioji_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_verpiancioji_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selection_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_seasonal_affinity_selection_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_spring_icon"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_seasonal_affinity_spring_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_summer_icon"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_seasonal_affinity_summer_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_fall_icon"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_seasonal_affinity_fall_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_winter_icon"
+		textureFile = "gfx/interface/rce_religion_mechanics/sylvan_affinity_mechanic/mechanic_seasonal_affinity_winter_icon.dds"
+	}
+
+	## Nestorian Patriarchy Mechanic
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_religion_tab_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_religion_tab_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_value_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_value_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_button.dds"
+	}
+	frameAnimatedSpriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_button_overlay"
+		texturefile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_button_overlay.dds"
+		noOfFrames = 13
+		loadType = "INGAME"
+		alwaystransparent = yes
+		animation_rate_fps = 13
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 2.0
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_center_of_reformation_icons"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_center_of_reformation_icons.dds"
+		noOfFrames = 10
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_centers_of_reformation_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_centers_of_reformation_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_center_of_reformation_target_overlay"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_center_of_reformation_target_overlay.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_interaction_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/mechanic_interaction_button.dds"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_constantinople"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_constantinople.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_arbil"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_arbil.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_xian"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_xian.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_herat"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_herat.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_hotan"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_hotan.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_antioch"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_antioch.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_pataliputra"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_pataliputra.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_gyeongju"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_gyeongju.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_nestorian_patriarchy_holy_site_socotra"
+		textureFile = "gfx/interface/rce_religion_mechanics/nestorian_patriarchy_mechanic/holy_sites/mechanic_holy_site_socotra.dds"
+	}
+
+	## Manichaeism Purity Mechanic
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_value_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_value_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_air_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_air_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_fire_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_fire_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_water_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_water_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_wind_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_wind_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_light_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_light_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_knowledge_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_knowledge_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_sun_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_sun_button.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_manichaeism_purity_moon_button"
+		textureFile = "gfx/interface/rce_religion_mechanics/manichaeism_purity_mechanic/mechanic_moon_button.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+
+	## Bogomilist Church Aspects Mechanic:
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_dev_value_bg"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_dev_value_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_dissolve_church_properties"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_dissolve_church_properties.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_deprivatize_mercantile_charters"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_deprivatize_mercantile_charters.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_institute_clerical_administration"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_institute_clerical_administration.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_distribute_the_means_of_production"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_distribute_the_means_of_production.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_slacken_recruitment_for_the_holy_war"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_slacken_recruitment_for_the_holy_war.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_standarize_holy_knights"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_standarize_holy_knights.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_organize_colonial_voyages"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_organize_colonial_voyages.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_rce_religion_mechanic_bogomilist_church_aspects_aspect_promote_ascetic_lifestyle"
+		textureFile = "gfx/interface/rce_religion_mechanics/bogomilist_church_aspects_mechanic/mechanic_aspect_promote_ascetic_lifestyle.dds"
+		legacy_lazy_load = no
+	}
+}

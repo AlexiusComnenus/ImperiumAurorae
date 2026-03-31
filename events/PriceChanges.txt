@@ -2983,3 +2983,228 @@ country_event = {
 		}
 	}
 }
+
+namespace = ia_prices
+
+# German Civil War
+country_event = {
+	id = ia_prices.1
+	title = ia_prices.1.t
+	desc = ia_prices.1.d
+	picture = easterngfx_WOUNDED_SOLDIERS_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = ia_prices.1.a
+		custom_tooltip = unlock_uniforms_early_tt
+		change_price = {
+			trade_goods = munitions
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = cannon
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = gunpowder
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = munitions
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cannon
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = gunpowder
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = uniforms
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = uniforms
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = leather
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.3
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = leather
+			key = GERMAN_CIVIL_WAR_TT
+			value = 0.2
+			duration = -1
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_war = {
+						casus_belli = cb_saxon_independence
+					}
+				}
+				set_country_flag = participated_in_german_civil_war_flag
+			}
+		}
+	}
+}
+
+# German Civil War
+country_event = {
+	id = ia_prices.2
+	title = ia_prices.2.t
+	desc = ia_prices.2.d
+	picture = easterngfx_WOUNDED_SOLDIERS_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	is_triggered_only = yes
+	trigger = {
+		tag = Z17
+		is_in_war = {
+			casus_belli = cb_final_crusade
+		}
+	}
+	
+	
+	option = {
+		name = ia_prices.2.a
+		change_price = {
+			trade_goods = munitions
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = cannon
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = gunpowder
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = iron
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = copper
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = tin
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = lead
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = uniforms
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = leather
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = horses
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = optics
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = sulfur
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.4
+			duration = 7300
+		}
+		change_price = {
+			trade_goods = munitions
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = cannon
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = gunpowder
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = horses
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = optics
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+		change_price = {
+			trade_goods = sulfur
+			key = LAST_CRUSADE_PRICES_TT
+			value = 0.1
+			duration = -1
+		}
+	}
+}

@@ -13,8 +13,14 @@ spriteTypes = {
 		name = "GFX_great_project_tree_of_life"	
 		texturefile = "gfx//interface//great_projects//great_project_tree_of_life.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_great_project_stpeters_cathedral_clone"	
+		texturefile = "gfx//interface//great_projects//great_project_saint_peters_cathedral_clone.dds"
+	}
 
 }
+
 
 spriteTypes = {
 

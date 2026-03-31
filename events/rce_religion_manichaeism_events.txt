@@ -1,0 +1,43 @@
+namespace = rce_religion_manichaeism_events
+
+country_event = {
+	id = rce_religion_manichaeism_events.1
+	title = rce_religion_manichaeism_events.EVTNAME1
+	desc = rce_religion_manichaeism_events.EVTDESC1
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = rce_religion_manichaeism_events1.EVTOPT1
+
+		goto = 4289
+
+		ai_chance = { factor = 100 }
+
+		4289 = {
+			manichean_rebels = 3
+		}
+	}
+
+	option = {
+		name = rce_religion_manichaeism_events1.EVTOPT2
+
+		ai_chance = { factor = 0 }
+
+		add_stability = -1
+		add_prestige = -20
+	}
+
+	option = {
+		name = rce_religion_manichaeism_events1.EVTOPT3
+
+		ai_chance = { factor = 0 }
+
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = rce_religion_mechanic_manichaeism_purity_assimilation_of_mandeans_modifier
+			duration = 7300
+		}
+	}
+}

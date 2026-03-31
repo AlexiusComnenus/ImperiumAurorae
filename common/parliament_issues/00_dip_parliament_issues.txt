@@ -240,7 +240,7 @@ emergency_impressment_act = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 0
 		modifier = {
 			factor = 2
 			NOT = {
@@ -515,8 +515,8 @@ issue_letters_of_marque = {
 	
 	
 	modifier = {
-		privateer_efficiency = 0.15
-		embargo_efficiency = 0.1
+		privateer_efficiency = 0.10
+		embargo_efficiency = 0.5
 		light_ship_cost = -0.1
 	}
 

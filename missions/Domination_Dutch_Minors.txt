@@ -2428,7 +2428,7 @@ dom_ned_brabant_2_group = {
 					area = frisia_area
 				}
 			}
-			is_free_or_tributary_trigger = yes
+			#is_free_or_tributary_trigger = yes
 
 			#just in case (but hidden for a normal run)
 			if = {
@@ -2488,11 +2488,13 @@ dom_ned_brabant_2_group = {
 						limit = { has_consort = yes }
 						set_consort_culture = alsatian
 					}
+					ia_change_culture_without_consequence_effect = yes
 					every_subject_country = {
 						limit = {
 							primary_culture = burgundian
 						}
 						change_primary_culture = alsatian
+						ia_change_culture_without_consequence_effect = yes
 					}
 					every_province = {
 						limit = {
@@ -2514,6 +2516,7 @@ dom_ned_brabant_2_group = {
 							primary_culture = burgundian
 						}
 						change_primary_culture = alsatian
+						ia_change_culture_without_consequence_effect = yes
 					}
 					every_province = {
 						limit = {
@@ -2877,6 +2880,7 @@ dom_ned_flanders_france_3_group = {
 					name = ned_king_of_france
 					duration = -1
 				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRA
 				on_change_tag_effect = yes
 				swap_non_generic_missions = yes
@@ -2898,6 +2902,7 @@ dom_ned_flanders_france_3_group = {
 						}
 						NOT = { exists = FRA }
 					}
+					hidden_effect = { ia_save_historical_relations_effect = yes }
 					change_tag = FRA
 					on_change_tag_effect = yes
 					swap_non_generic_missions = yes

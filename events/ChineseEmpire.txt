@@ -284,7 +284,9 @@ country_event = {
 	
 	trigger = {
 		is_emperor_of_china = yes
-		ai = yes
+		#OR = { 
+		#	ai = yes
+		#}
 		NOT = { has_disaster = bonfire_of_the_vanities_disaster }
 		OR = { NOT = { imperial_mandate = 1 } is_subject = yes }
 		any_known_country = {
@@ -323,14 +325,178 @@ country_event = {
 		ai_chance = {
 			factor = 75
 		}
-		
-		add_government_reform = chinese_warlord
+		hidden_effect = {
+			add_government_reform = chinese_warlord
+		}
 		
 		set_emperor_of_china = event_target:new_chinese_emperor
 		
-		event_target:new_chinese_emperor = {
-			add_government_reform = celestial_empire
+		hidden_effect = {
+			event_target:new_chinese_emperor = {
+				add_government_reform = celestial_empire
+			}
+			every_subject_country = {
+				limit = { is_subject_of_type = tributary_state }
+				event_target:new_chinese_emperor = {
+					create_subject = {
+						subject_type = tributary_state
+						subject = PREV
+					}
+				}
+			}
 		}
+	}
+}
+
+country_event = {
+	id = celestial_empire_events.5
+	title = celestial_empire_events.5.t
+	desc = celestial_empire_events.5.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		imperial_mandate = 50
+		NOT = { tag = FRM }
+		FRM = {
+			is_subject = no
+		}
+		military_strength = {
+			who = FRM
+			value = 2.0
+		}
+		total_development = 800
+		stability = 1
+		NOT = { has_country_flag = offered_taiwan_tributary }
+	}
+	
+	immediate = {
+		set_country_flag = offered_taiwan_tributary
+	}
+	
+	option = {
+		name = "celestial_empire_events.5.a"
+		ai_chance = {
+			factor = 75
+		}
+		
+		FRM = { country_event = { id = celestial_empire_events.6 } }
+	}
+	
+	option = {
+		name = "celestial_empire_events.5.b"
+		ai_chance = {
+			factor = 0
+		}
+		
+		add_prestige = -10
+	}
+}
+
+country_event = {
+	id = celestial_empire_events.6
+	title = celestial_empire_events.6.t
+	desc = celestial_empire_events.6.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			is_rival = ROOT
+			is_enemy = ROOT
+			alliance_with = ROOT
+			is_subject_of = ROOT
+			is_neighbor_of = ROOT
+			war_with = ROOT
+			is_emperor_of_china = yes
+			culture_group = east_asian
+			culture_group = japanese_g
+		}
+	}
+	
+	immediate = {
+	}
+	
+	option = {
+		name = "celestial_empire_events.6.a"
+		ai_chance = {
+			factor = 75
+		}
+		
+		FROM = { 
+			create_subject = {
+				subject_type = tributary_state
+				subject = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "celestial_empire_events.6.b"
+		ai_chance = {
+			factor = 0
+		}
+		
+		add_prestige = 10
+		FROM = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_force_tributary_mission
+				months = 1200
+			}
+		}
+	}
+}
+
+country_event = {
+	id = celestial_empire_events.7
+	title = celestial_empire_events.7.t
+	desc = celestial_empire_events.7.d
+	picture = east_asian_COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		imperial_mandate = 60
+		NOT = { tag = LFA }
+		LFA = {
+			is_subject = no
+		}
+		military_strength = {
+			who = LFA
+			value = 2.0
+		}
+		total_development = 800
+		stability = 1
+		NOT = { has_country_flag = offered_lanfang_tributary }
+	}
+	
+	immediate = {
+		set_country_flag = offered_lanfang_tributary
+	}
+	
+	option = {
+		name = "celestial_empire_events.7.a"
+		ai_chance = {
+			factor = 75
+		}
+		
+		LFA = { country_event = { id = celestial_empire_events.6 } }
+	}
+	
+	option = {
+		name = "celestial_empire_events.7.b"
+		ai_chance = {
+			factor = 0
+		}
+		
+		add_prestige = -10
 	}
 }
 
@@ -343,7 +509,14 @@ country_event = {
 	
 	is_triggered_only = yes
 	fire_only_once = yes
-	#major = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			is_neighbor_of = GJN
+			is_subject_of = GJN
+			has_reform = chinese_warlord
+		}
+	}
 	
 	trigger = {
 		is_emperor_of_china = yes
@@ -372,9 +545,157 @@ country_event = {
 		}
 		add_stability = -1
 		set_meritocracy = 40
+		custom_tooltip = gjn_lose_mandate_tt
 		
 		hidden_effect = {
-			
+			set_country_flag = zhezhong_the_test_flag
+		}
+	}
+}
+
+country_event = {	# The Death of Zhezhong
+	id = great_jin_events.2
+	title = great_jin_events.2.t
+	desc = great_jin_events.2.d
+	picture = east_asian_COURT_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	#major = yes
+	#major_trigger = {
+	#	OR = {
+	#		is_neighbor_of = GJN
+	#		is_subject_of = GJN
+	#		has_reform = chinese_warlord
+	#	}
+	#}
+	
+	trigger = {
+		#is_emperor_of_china = yes
+		tag = GJN
+		has_country_flag = zhezhong_the_test_flag
+	}
+	
+	immediate = {
+		clr_country_flag = zhezhong_the_test_flag
+	}
+	
+	option = {	# Great Jin Collapses
+		name = "great_jin_events.2.a"
+		trigger = {
+			NOT = {
+				AND = {
+					is_emperor_of_china = yes
+					stability = 1
+					OR = {
+						imperial_mandate = 50
+						empire_of_china_num_reforms_passed = 1
+					}
+					meritocracy = 60
+				}
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		if = {
+			limit = { is_emperor_of_china = yes }
+			add_mandate = -100
+			country_event = { id = celestial_empire_events.4 }
+		}
+		
+		custom_tooltip = gjn_explosion_tt
+		hidden_effect = {
+			set_country_flag = gjn_enable_manchu_missions_flag
+			swap_non_generic_missions = yes
+			release_all_subjects = yes
+	
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
+						region = xinan_region
+					}
+					any_core_country = {
+						primary_culture = PREV
+						PREV = {
+							NOT = { owned_by = PREV }
+						}
+					}
+				}
+				#remove_core = ROOT
+				random_core_country = {
+					limit = {
+						PREV = {
+							culture = PREV
+							NOT = { PREV = { tag = ROOT } }
+						}
+					}
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
+						region = xinan_region
+					}
+					any_core_country = {
+						culture_group = PREV
+						PREV = {
+							NOT = { owned_by = PREV }
+						}
+					}
+				}
+				#remove_core = ROOT
+				random_core_country = {
+					limit = {
+						PREV = {
+							culture_group = PREV
+							NOT = { PREV = { tag = ROOT } }
+						}
+					}
+					if = {
+						limit = { NOT = { exists = PREV } }
+						ROOT = { release = PREV }
+					}
+					PREV = {
+						cede_province = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	option = {	# The Great Jin Survives
+		name = "great_jin_events.2.b"
+		trigger = {
+			AND = {
+				is_emperor_of_china = yes
+				stability = 1
+				OR = {
+					imperial_mandate = 50
+					empire_of_china_num_reforms_passed = 1
+				}
+				meritocracy = 60
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_country_modifier = {
+			name = gjn_resurgent
+			duration = -1
 		}
 	}
 }

@@ -1,0 +1,114 @@
+namespace = religions_and_cultures_expanded_events
+namespace = rce_events
+
+# set global flag for the mod being active
+country_event = {
+	id = religions_and_cultures_expanded_events.1
+	title = religions_and_cultures_expanded_events.EVTNAME1
+	desc = religions_and_cultures_expanded_events.EVTDESC1
+	picture = INVENTION_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		NOT = { has_global_flag = religions_and_cultures_expanded_mod_active }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = religions_and_cultures_expanded_mod_active
+		}
+	}
+
+	option = {
+		name = religions_and_cultures_expanded_events1.EVTOPT1
+
+		ai_chance = { factor = 100 }
+	}
+}
+
+# cheat event to convert to a new/changed religion
+country_event = {
+	id = rce_events.1
+	title = rce_events.EVTNAME1
+	desc = rce_events.EVTDESC1
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+	}
+
+	option = {
+		name = dao_hellenic
+
+		highlight = yes
+
+		ai_chance = { factor = 0 }
+
+		change_religion = hellenic_pagan_reformed
+	}
+
+	option = {
+		name = druidic
+
+		highlight = yes
+
+		ai_chance = { factor = 0 }
+
+		change_religion = druidic_pagan
+	}
+
+	option = {
+		name = manichean
+
+		highlight = yes
+
+		ai_chance = { factor = 0 }
+
+		change_religion = manichean
+	}
+
+	option = {
+		name = rce_events1.EVTOPT1
+
+		ai_chance = { factor = 100 }
+	}
+}
+
+# cheat event to give power for a new religion mechanic
+country_event = {
+	id = rce_events.2
+	title = rce_events.EVTNAME2
+	desc = rce_events.EVTDESC2
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		always = no
+		OR = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+			rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+		}
+	}
+
+	option = {
+		name = rce_events2.EVTOPT1
+
+		ai_chance = { factor = 0 }
+		rce_add_religion_mechanic_four_tenets_system_value = { value = 100 }
+		rce_add_religion_mechanic_sylvan_affinity_value = { value = 100 }
+		rce_add_religion_mechanic_manichaeism_purity_value = { value = 100 }
+	}
+
+	option = {
+		name = rce_events2.EVTOPT2
+
+		ai_chance = { factor = 100 }
+	}
+}

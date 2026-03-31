@@ -225,6 +225,7 @@ country_event = {
 	}
 
 	trigger = {
+		always = no
 		tag = FAP
 
 		OR = {
@@ -255,9 +256,7 @@ country_event = {
 		NOT = { has_global_flag = counter_reformation }
 	}
 
-	mean_time_to_happen = {
-		months = 100
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = "flavor_pap.EVTOPTA7"
@@ -1207,7 +1206,6 @@ country_event = {
 	trigger = {
 		papacy_active = yes
 		NOT = { exists = FAP }
-		NOT = { exists = ITA }
 		religion = fraticelli
 		#government = theocracy
 		NOT = { has_ruler_flag = refused_papacy }

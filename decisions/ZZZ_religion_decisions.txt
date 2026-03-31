@@ -324,8 +324,10 @@ country_decisions = {
 				owns_core_province = 39 #Courland
 				owns_core_province = 1935 #Semigallia
 			}
+			always = no
 		}
 		allow = {
+			always = no
 			stability = 2
 			adm_tech = 12
 			custom_trigger_tooltip = {
@@ -380,7 +382,7 @@ country_decisions = {
 			OR = {
 				religion = cathar
 				religion = waldensian
-				religion = lollard
+				#religion = lollard
 			}
 		}
 		allow = {
@@ -404,7 +406,7 @@ country_decisions = {
 			OR = {
 				religion = cathar
 				religion = waldensian
-				religion = lollard
+				#religion = lollard
 				AND = {
 					religion = catholic
 					has_country_modifier = the_statue_in_restraint_of_appeals
@@ -440,7 +442,7 @@ country_decisions = {
 			OR = {
 				religion = cathar
 				religion = waldensian
-				religion = lollard
+				#religion = lollard
 			}
 			adm_tech = 11
 		}
@@ -888,8 +890,12 @@ country_decisions = {
 	
 	change_hellenic_deity = {
 		potential = {
-			prestige = 0
-			religion = hellenic_pagan_reformed
+			OR = {
+				#religion = hellenic_pagan_reformed
+				religion = hellenic_pagan
+				religion = norse_pagan_reformed
+				#has_country_flag = has_norse_flexible_deities_permanent
+			}
 		}
 		allow = {
 			prestige = 90
@@ -903,6 +909,46 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 0.5
+		}
+	}
+	
+	norse_flexible_deity_decision = {
+		potential = {
+			has_dlc = "Wealth of Nations"
+			religion = norse_pagan_reformed
+			has_country_flag = has_norse_flexible_deities_permanent
+			always = no
+		}
+		allow = {
+			always = no
+			has_regency = no
+			custom_trigger_tooltip = {
+				tooltip = decision_once_every_twenty_years
+				OR = {
+					has_personal_deity = odin
+					has_personal_deity = freya
+					has_personal_deity = tor
+					has_personal_deity = tyr
+					has_personal_deity = njord
+					has_personal_deity = snotra
+				}
+				OR = {
+					NOT = { has_country_flag = flexible_norse_deity_decision }
+					had_country_flag = {
+						flag = flexible_norse_deity_decision
+						days = 7300
+					}
+				}
+			}
+		}
+		effect = {
+			reduce_legitimacy_large_effect = yes
+			clr_country_flag = flexible_norse_deity_decision
+			set_country_flag = flexible_norse_deity_decision
+			country_event = { id = norse_events.1 }
+		}
+		ai_will_do = {
+			factor = 0
 		}
 	}
 }

@@ -838,6 +838,7 @@ benevolent_personality = {
 	gift_chance = 25
 	
 	reduced_liberty_desire = 5
+	liberty_desire_from_subject_development = -0.05
 	nation_designer_cost = 2
 }
 
@@ -849,6 +850,7 @@ zealot_personality = {
 			NOT = { ruler_has_personality = free_thinker_personality }
 			NOT = { ruler_has_personality = drunkard_personality }
 			NOT = { ruler_has_personality = sinner_personality }
+			NOT = { ruler_has_personality = ia_pacifist_personality }
 		}
 	}
 
@@ -1089,7 +1091,7 @@ midas_touched_personality = {
 	wants_gold = yes
 	custom_ai_explanation = "AI_RULER_PICK_IDEA_GROUPS"
 	
-	global_tax_modifier = 0.1 
+	global_tax_modifier = 0.2 
 	nation_designer_cost = 2
 } #Opens Exceptional Year, 1 better event
 
@@ -1650,6 +1652,7 @@ conqueror_personality = {
 		allow = {
 			MIL = 3
 			NOT = { ruler_has_personality = legendary_conqueror_personality }
+			NOT = { ruler_has_personality = ia_pacifist_personality }
 		}
 	
 		chance = {
@@ -1662,6 +1665,10 @@ conqueror_personality = {
 				has_country_flag = BYZ_double_conqueror_chance_flag
 			}
 			modifier = {
+				factor = 2
+				dynasty = "Karolinger"
+			}
+			modifier = {
 				factor = 1
 				MIL = 6
 			}
@@ -1672,6 +1679,7 @@ conqueror_personality = {
 		allow = {
 			heir_MIL = 3
 			NOT = { heir_has_personality = legendary_conqueror_personality }
+			NOT = { heir_has_personality = ia_pacifist_personality }
 		}
 	
 		chance = {
@@ -1684,6 +1692,10 @@ conqueror_personality = {
 				has_country_flag = BYZ_double_conqueror_chance_flag
 			}
 			modifier = {
+				factor = 2
+				dynasty = "Karolinger"
+			}
+			modifier = {
 				factor = 1
 				heir_MIL = 6
 			}
@@ -1694,6 +1706,7 @@ conqueror_personality = {
 		allow = {
 			consort_MIL = 3
 			NOT = { consort_has_personality = legendary_conqueror_personality }
+			NOT = { consort_has_personality = ia_pacifist_personality }
 		}
 
 		chance = {
@@ -1903,7 +1916,7 @@ strict_personality = {
 	wants_avoid_loans = yes
 	wants_ecumenical_council = yes
 	
-	discipline = 0.05
+	discipline = 0.025
 
 	nation_designer_cost = 5
 } #1 easier event
@@ -2163,6 +2176,7 @@ babbling_buffoon_personality = {
 		allow = {
 			NOT = { ruler_has_personality = charismatic_negotiator_personality }
 			NOT = { ruler_has_personality = silver_tongue_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 			NOT = { has_country_flag = boh_prevent_negative_traits }
 			NOT = { dip = 5 }
 		}
@@ -2263,6 +2277,7 @@ embezzler_personality = {
 	ruler_allow = {
 		allow = {
 			NOT = { ruler_has_personality = incorruptible_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2357,6 +2372,7 @@ infertile_personality = {
 	ruler_allow = {
 		allow = {
 			NOT = { ruler_has_personality = fertile_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2466,6 +2482,7 @@ drunkard_personality = {
 			NOT = { ruler_has_personality = pious_personality }
 			NOT = { ruler_has_personality = entrepreneur_personality }
 			NOT = { ruler_has_personality = zealot_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2563,6 +2580,7 @@ sinner_personality = {
 		allow = {
 			NOT = { ruler_has_personality = pious_personality }
 			NOT = { ruler_has_personality = zealot_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 		chance = {
 			modifier = {
@@ -2657,6 +2675,7 @@ greedy_personality = {
 	ruler_allow = {
 		allow = {
 			NOT = { ruler_has_personality = midas_touched_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2784,6 +2803,8 @@ cruel_personality = {
 			NOT = { ruler_has_personality = just_personality }
 			NOT = { ruler_has_personality = kind_hearted_personality }
 			NOT = { has_country_flag = hsn_prevent_leader_trait }
+			NOT = { ruler_has_personality = ia_pacifist_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2876,6 +2897,7 @@ naive_personality = {
 			NOT = { ruler_has_personality = silver_tongue_personality }
 			NOT = { ruler_has_personality = careful_personality }
 			NOT = { has_country_flag = boh_prevent_negative_traits }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -2987,6 +3009,7 @@ craven_personality = {
 			NOT = { ruler_has_personality = inspiring_leader_personality }
 			NOT = { ruler_has_personality = bold_fighter_personality }
 			NOT = { has_country_flag = hsn_prevent_leader_trait }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -3089,6 +3112,7 @@ loose_lips_personality = {
 		allow = {
 			NOT = { ruler_has_personality = intricate_web_weaver_personality }
 			NOT = { ruler_has_personality = secretive_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -3180,10 +3204,9 @@ loose_lips_personality = {
 obsessive_perfectionist_personality = {
 	ruler_allow = {
 		allow = {
-			OR = {
-				NOT = { ruler_has_personality = patron_of_arts_personality }
-				NOT = { ruler_has_personality = architectural_visionary_personality }
-			}
+			NOT = { ruler_has_personality = patron_of_arts_personality }
+			NOT = { ruler_has_personality = architectural_visionary_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -3275,6 +3298,7 @@ malevolent_personality = {
 		allow = {
 			NOT = { ruler_has_personality = benevolent_personality }
 			NOT = { ruler_has_personality = kind_hearted_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -3329,6 +3353,7 @@ malevolent_personality = {
 		allow = {
 			NOT = { consort_has_personality = benevolent_personality }
 			NOT = { consort_has_personality = kind_hearted_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 
 		chance = {
@@ -3365,6 +3390,7 @@ malevolent_personality = {
 	send_warning_desire = 50
 	
 	reduced_liberty_desire = -5
+	liberty_desire_from_subject_development = 0.10
 	nation_designer_cost = -2
 } #1 less bad
 
@@ -3379,7 +3405,7 @@ immortal_personality = {
 			factor = -2
 		}
 	}
-
+	
 	immortal = 1 # dummy modifier only used to get the right icon
 	nation_designer_cost = 800
 	static = yes # Makes nation_designer_cost not scale with age etc. 
@@ -3395,7 +3421,6 @@ legendary_pirate_personality = {
 			factor = -2
 		}
 	}
-	privateer_efficiency = 0.25
 	leader_naval_shock = 2
 	navy_tradition_decay = -0.01
 	
@@ -3503,6 +3528,7 @@ petty_personality = {
 	ruler_allow = {
 		allow = {
 			NOT = { ruler_has_personality = humane_personality }
+			NOT = { ruler_has_personality = immortal_personality }
 		}
 	
 		chance = {
@@ -3656,10 +3682,22 @@ reformist_personality = {
 
 legendary_conqueror_personality = { 
 	
-	allow = { has_country_flag = TIM_legendary_conqueror_flag }
+	allow = {
+		OR = {
+			has_country_flag = TIM_legendary_conqueror_flag 
+			dynasty = "Komnenos"
+			dynasty = "Pendraig"
+			dynasty = "van Vlaanderen"
+			dynasty = "Meroveching"
+			dynasty = "Karolinger"
+			dynasty = "Syagrii"
+			dynasty = "Rurikovich"
+			dynasty = "Borjigin"
+		}
+	}
 	
-	core_creation = -0.15
-	province_warscore_cost = -0.15
+	core_creation = -0.10
+	province_warscore_cost = -0.10
 	shock_damage = 0.1
 	
 	nation_designer_cost = 10
@@ -3843,12 +3881,19 @@ reaver_personality = {
 	
 		chance = {
 			modifier = {
-				factor = 1
+				factor = 2
 				is_monarch_leader = yes
 			}
 			modifier = {
-				factor = 1
+				factor = 2
 				MIL = 6
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+				}
 			}
 		}
 	}
@@ -3883,10 +3928,14 @@ reaver_personality = {
 		}
 	}
 	allow = {
-		has_country_flag = unlocked_reaver_personality_flag
+		OR = {
+			has_country_flag = unlocked_reaver_personality_flag
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
 	}
 
-	available_province_loot = 0.15
+	available_province_loot = 1
 	raze_power_gain = 0.2
 	nation_designer_cost = 2
 	

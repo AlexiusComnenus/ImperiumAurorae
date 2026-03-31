@@ -24,5 +24,5 @@ dependencies={
 	"Trade Goods Expanded"
 }
 supported_version="v1.37.*"
-path="C:/Users/lukak/Documents/Paradox Interactive/Europa Universalis IV/mod/empireofdawn"
+path="C:/Users/Alexios Komnenos/Documents/Paradox Interactive/Europa Universalis IV/mod/empireofdawn"
 remote_file_id="2822227581"

@@ -99,7 +99,7 @@ barbaro_germanic = {
 	male_names = { Gunther Rolf }
 
 	frankish = {
-		primary = FRA
+		primary = FRW
 		male_names = {
 			Abrahil Abram Adalbald Adalbert Adalgari Adalgrim Aegidius Ageric Agilbert Agiulf Ailbert Albric Aldedramn
 			Andica Ansovald Arcambald Aregisel Arnegisel Arnulf Ascaric Audovald Austregisel Autbert Autgari Autgeri
@@ -1197,7 +1197,7 @@ cat_group = {
 		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
 		}
 		country = { global_unrest = -4	relation_with_same_culture = 50		monarch_lifespan = 9 }
-		province = { local_unrest = 8	local_autonomy = 0.075		local_missionary_strength = -0.05 }
+		province = { local_unrest = 8	local_autonomy = 0.075		local_missionary_strength = -0.05 	local_culture_conversion_cost = 10 	local_culture_conversion_time = 10 local_sailors_modifier = -0.9 local_manpower_modifier = 0.5 }
 	}
 }
 bear_group = {

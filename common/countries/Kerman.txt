@@ -1,5 +1,5 @@
 ck2_converter_generated = yes
-graphical_culture = asiangfx
+graphical_culture = easterngfx
 color = { 104 189 104 }
 historical_idea_groups = {
 	defensive_ideas
@@ -33,19 +33,6 @@ monarch_names = {
 	"Kleopatra #2" = -5
 	"Filippos #2" = 3
 	"Selene #1" = -2
-}
-leader_names = {
-	"Ahrari"
-	"Ansari"
-	"Azizi"
-	"Daei"
-	"Dalwand"
-	"Fatemi"
-	"Jalili"
-	"Qazai"
-	"Sabet"
-	"Sabiri"
-	"Shahy"
 }
 ship_names = {
 	"Abathur"

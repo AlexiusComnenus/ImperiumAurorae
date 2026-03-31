@@ -32,6 +32,7 @@ house_of_wisdom = {
 		OR = {
 			owner = { culture_group = iranian }
 			owner = { culture_group = turko_semitic }
+			owner = { culture_group = eastern_hellenistic }
 			owner = { mission_completed = antioch_enlighten_iraq }
 		}
 	}

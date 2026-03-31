@@ -1,4 +1,18 @@
 ﻿l_english:
+ EVTOPTA9470: "Take that, Merovingians!"
+ EVTOPTB9470: "The Blood is Strong"
+ dynastic_events.8.a: "At least it is not the Merovingians."
+ dynastic_events.8.b: "M.E.I.O.U."
+ obj_christian_convert: "Embrace Millennialism"
+ obj_christian_convert_desc: "It is time to usher in a new era!"
+ flexible_negotiation: "Proactive Public Relations"
+ flexible_negotiation_desc: "It is necessary to invest in our reputation as a benevolent power and honorable ally, such that slander about our so-called aggressive expansion find no tractions among the doubters."
+ state_propaganda: "Ruthless Negotiators"
+ state_propaganda_desc: "Our 'peace' envoys are armed with the most vile blackmail and give not an inch when it comes to extracting maximal concessions at the negotiating table."
+ lva_legacy_of_the_knights_desc: "The Livonian Brothers of the Sword conquered this land in the name of Christ, and we have not forgotten their sacrifices nor their dedication to achieve these victories."
+ lva_religious_tolerance: "Baltic Crusade"
+ lva_religious_tolerance_desc: "We came into existence to spread the word of God to the pagan. Now, we must spread the word of God to those who believe in Him the wrong way."
+ 
  hun_the_anatolian_threat_title: "Reclaim Transylvania"
  hun_the_anatolian_threat_desc: "During the weakness of our Crown under the Polish rule, the Transylvanian nobles broke away from our control or were conquered by nomads from the Cuman steppes. It is time to re-assert our rulership over the region."
  hun_liberate_bulgaria_title: "Protect Bulgaria"
@@ -14,3 +28,29 @@
  hun_jagiellonian_union_title: "Old Piast Union"
  hun_jagiellonian_union_desc: "We should rekindle the old ties we shared under the House of Piast, but this time under our leadership."
  hun_old_alliances_desc: "Hungary and Poland have been ruled as one under the House of Piast for a long time. However, many of our nobles resented this situation, as Hungary was seen as the junior partner in this relationship. If this relationship is to end, we must re-evaluate our relations with the Poles."
+ 
+ # Persia stuff
+ per_end_the_turkish_threat_title: "End the Rhoman Threat"
+ per_end_the_turkish_threat_desc: "Our march into Anatolia has not ended yet. As long as the Eastern Roman Empire, with its long history of enmity with Persia, has a foothold beyond the Bosporus, our Empire is under their threat. We shall drive them out of Asia and secure our security with their blood."
+ per_end_the_turkish_threat_ct: "No province in §YAnatolia§! is held by any §YByzantine§! country which is NOT our subject."
+ per_protect_the_west_iranian_tt: "Every owned province in the §YPersia§!, §YAnatolia§!, and §YMashriq§! regions which is of the §YIranian§! culture group gains the following effects:"
+ per_butcher_black_sheep_title: "Expel the Caliph"
+ per_butcher_black_sheep_desc: "The decadent Abbasid dynasty has menaced the borders of Iran for far too long. No longer shall these arrogant caliphs lord over our people!"
+ arl_conquer_shirvan_title: "Conquer Northwards"
+ arl_conquer_shirvan_desc: "Consolidating the lands to our north is a necessary step towards solidifying our control of the region."
+ arl_conquer_tabriz_title: "Conquer Westwards"
+ arl_conquer_tabriz_desc: "Occupying the cities to our west will greatly demonstrate our strength and rightful control over Persia!"
+ 
+ # Horde stuff
+ mongols_tumu_crisis_title: "Vengeance at Zhongdu"
+ mongols_tumu_crisis_desc: "Our great empire was shattered by the disaster at Zhongdu when the Jin turned the full power of the fire-lance upon us from their walls. But they have grown weak, and their own vast empire of China has collapsed into division. Now is the time for vengeance!"
+ mongols_revenge_against_timur_title: "Seize Samarkand"
+ mongols_revenge_against_timur_desc: "The city of Samarkand is located on a vital artery of the historial Silk Route and is crucial to controlling the region of Khorasan. We should seize the city for ourselves!"
+ moghulistan_revenge_against_timur_title: "Seize Samarkand"
+ moghulistan_revenge_against_timur_desc: "The city of Samarkand is located on a vital artery of the historial Silk Route and is crucial to controlling the region of Khorasan. We should seize the city for ourselves!"
+ 
+ # China stuff
+ qng_three_feudatories_desc: "As our campaign reaches further south into China, we must consider whether it would be easier, at least in the short term, to delegate rule in the South to Han governors willing to bend the knee to our rule. We must find some way to exploit the situation in the South."
+ qng_incorporate_han_desc: "Conquering the Celestial Realm is no easy task. Defeating their pathetic generals and lackluster troops may well prove to be the easiest part of this great task, as their people number in the millions, and so we must find some way of ruling over them in some cooperative manner."
+ qng_balance_mandate_desc: "After the failures experienced by previous, subpar emperors, we will bravely fill the power vaccuum of the Celestial Realm and claim the favor of the Heavens in our name!"
+ qng_campaign_in_burma_desc: "Yet more Han rebels have fled to the hills of Burma, seeking refuge among the Shan and Bamar chiefs. We must show them there is nowhere to hide from those who righteously hold the Mandate!"

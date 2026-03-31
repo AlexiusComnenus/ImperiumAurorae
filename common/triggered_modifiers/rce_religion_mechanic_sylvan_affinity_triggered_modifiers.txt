@@ -1,0 +1,10 @@
+#rce_religion_mechanic_sylvan_affinity_religious_ideas_5_triggered_modifier = {
+#	potential = {
+#		rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+#	}
+#	trigger = {
+#		religious_ideas = 5
+#	}
+#
+#	rce_monthly_religion_mechanic_sylvan_affinity_change = 0.25
+#}

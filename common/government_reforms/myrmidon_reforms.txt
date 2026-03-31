@@ -1,0 +1,197 @@
+myrmidons_government = {
+	potential = {
+		OR = { 
+			tag = MYM
+			have_had_reform = myrmidons_government
+		}
+		religion = hellenic_pagan_reformed
+	}
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	modifiers = {
+		reduced_liberty_desire_on_same_continent = 20
+		auto_explore_adjacent_to_colony = yes
+		colony_development_boost = 1
+		governing_capacity_modifier = -0.5
+		can_fabricate_for_vassals = yes	
+	}
+	effect = {
+		custom_tooltip = mym_autonomy_explanation_tt
+	}
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
+	papacy = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	icon = "sparapet_office"
+	allow_normal_conversion = no
+	monastic = yes
+	custom_attributes = {
+		monastic_order = yes
+		locked_government_type = yes
+		#strong_marines = yes
+	}
+	#factions = { xizho greeks natives }
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
+	}
+}
+
+myrmidon_western_protectorate = {
+	icon = "legion_of_honor_reform"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = myrmidon_western_protectorate
+			have_had_reform = myrmidon_western_protectorate
+		}
+		religion = hellenic_pagan_reformed
+	}
+	lock_level_when_selected = yes
+	modifiers = {
+		governing_capacity_modifier = 0.25
+		envoy_travel_time = -0.25
+		missionaries = 1
+		vassal_naval_forcelimit_bonus = 0.25
+		vassal_forcelimit_bonus = 0.25
+		vassal_manpower_bonus = 0.25
+		vassal_sailors_bonus = 0.25
+		global_tariffs = 0.25
+	}
+	effect = {
+		custom_tooltip = mym_exarchates_marches_tt
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		subject_tax_modifier_25 = yes
+	}
+	effect = {
+	}
+}
+
+myrmidon_paradise_initiative = {
+	icon = "liberte_reform"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = myrmidon_paradise_initiative
+			have_had_reform = myrmidon_paradise_initiative
+		}
+		religion = hellenic_pagan_reformed
+	}
+	lock_level_when_selected = yes
+	modifiers = {
+		governing_capacity_modifier = 0.25
+		development_cost_in_primary_culture = -0.3
+		development_cost = 0.2
+		colonists = 1
+		culture_conversion_cost = -0.25
+		culture_conversion_time = -0.25
+		num_accepted_cultures = -100
+		relation_with_other_culture = -200
+		tolerance_own = 2
+		manpower_in_own_culture_provinces = 0.10
+	}
+	effect = {
+		custom_tooltip = mym_exarchates_intolerance_tt
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		same_religion_subject_bonus = yes
+	}
+	effect = {
+	}
+}
+
+myrmidon_exarchate_government = {
+	icon = "sparapet_office"
+	allow_normal_conversion = no
+	potential = {
+		overlord = {
+			OR = { 
+				tag = MYM
+				have_had_reform = myrmidons_government
+			}
+		}
+		religion = hellenic_pagan_reformed
+	}
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	modifiers = {
+		auto_explore_adjacent_to_colony = yes
+		colony_development_boost = 1
+		war_exhaustion = -0.05
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		force_general_leader = yes
+		winning_battles_increases_legitimacy = yes
+		generals_become_rulers = yes
+	}
+	effect = {
+		hidden_effect = {
+			convert_ruler_to_general = 80
+		}
+	}
+	rulers_can_be_generals = yes
+	has_term_election = no
+}
+
+mym_turtle_ships_gov = {
+	icon = "admiralty_reform"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			tag = MYM
+			was_tag = MYM
+		}
+	}
+	trigger = {
+		OR = { 
+			has_reform = mym_turtle_ships_gov
+			have_had_reform = mym_turtle_ships_gov
+		}
+	}
+	lock_level_when_selected = yes
+	modifiers = {
+		transport_attrition = -0.25
+		allowed_marine_fraction = 0.25
+		navy_tradition_decay = -0.01
+		hull_size_modifier = 0.1
+		ship_durability = 0.1
+		global_ship_cost = 0.25
+		naval_forcelimit_modifier = -0.25
+		has_geobukseon = yes
+		allowed_geobukseon_fraction = 0.25
+	}
+	effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = amphibious_specialization_reform_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = amphibious_specialization_reform_modifier
+		}
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Domination"
+				has_dlc = "Golden Century"
+				has_dlc = "Rule Britannia"
+				has_dlc = "Lions of the North"
+			}
+		}
+		custom_attributes = {
+			marine_buff = yes	#Marines -20% Manpower Usage
+		}
+	}
+}

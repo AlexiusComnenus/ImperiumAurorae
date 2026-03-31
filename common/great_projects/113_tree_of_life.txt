@@ -116,6 +116,7 @@ tree_of_life = {
 		country_modifiers = {
 			monarch_lifespan = 0.5
 			monarch_admin_power = 1
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 1
 		}
 
 		#what effects happen when this tier is achieved
@@ -148,6 +149,7 @@ tree_of_life = {
 			monarch_lifespan = 1
 			monarch_admin_power = 1
 			monarch_diplomatic_power = 1
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 2
 		}
 
 		#what effects happen when this tier is achieved
@@ -186,6 +188,7 @@ tree_of_life = {
 			monarch_admin_power = 1
 			monarch_diplomatic_power = 1
 			monarch_military_power = 1
+			rce_monthly_religion_mechanic_sylvan_affinity_change = 4
 		}
 
 		#what effects happen when this tier is achieved

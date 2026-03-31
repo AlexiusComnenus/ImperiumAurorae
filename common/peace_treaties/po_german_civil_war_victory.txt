@@ -26,9 +26,9 @@ po_german_civil_war_victory = {
 		all_provinces = 0.0 # All the giver's provinces
 		no_provinces = 80.0 # This is just a constant. Equivalent to a single province with with war score cost 1
 		owner_keeps = 0.0 # The provinces that are not of any of the types below
-		conquered = 1.0 # Provinces that are selected by a Demand Province treaty
-		returned_core = 1.0 # Provinces that are selected by a Return Core treaty
-		released_nation = 1.0 # Provinces that will become a part of a selected released-to-be nation
+		conquered = 0.0 # Provinces that are selected by a Demand Province treaty
+		returned_core = 0.0 # Provinces that are selected by a Return Core treaty
+		released_nation = 0.0 # Provinces that will become a part of a selected released-to-be nation
 		cancelled_subject = 0.0 # This one should not be relevant here since Giver can't be a cancelled subject. Including anyway for completeness
 		concede_colonial_region = 0.0 # Ditto
 	}
@@ -123,7 +123,16 @@ po_german_civil_war_victory = {
 	ai_weight = { # Defaults to always evaluate to 0
 		export_to_variable = {
 			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
-			value = 1000000
+			value = monthly_income
+			who = ROOT
+		}
+		multiply_variable = {
+			which = ai_value
+			value = 0
+		}
+		change_variable = {
+			which = ai_value
+			value = 10000
 		}
 		limit = { # if limit evaluates false, ai_weight will evaluate to 0 regardless
 			always = yes

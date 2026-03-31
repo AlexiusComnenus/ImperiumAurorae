@@ -1,0 +1,110 @@
+rce_uses_religion_mechanic_manichaeism_purity = {
+	custom_trigger_tooltip = {
+		tooltip = rce_uses_religion_mechanic_manichaeism_purity_tt
+		religion = manichean
+	}
+}
+
+rce_not_uses_religion_mechanic_manichaeism_purity = {
+	custom_trigger_tooltip = {
+		tooltip = rce_not_uses_religion_mechanic_manichaeism_purity_tt
+		NOT = { rce_uses_religion_mechanic_manichaeism_purity = yes }
+	}
+}
+
+rce_has_religion_mechanic_manichaeism_purity_value = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+		}
+		[[value]
+			check_variable = { which = rce_religion_mechanic_manichaeism_purity_value value = $value$ }
+		]
+		[[which]
+			check_variable = { which = rce_religion_mechanic_manichaeism_purity_value which = $which$ }
+		]
+	}
+}
+
+rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_any_religion_mechanic_manichaeism_purity_liturgical_focus_tt
+		OR = {
+			has_ruler_flag = rce_religion_mechanic_manichaeism_purity_liturgical_focus_moon
+			has_ruler_flag = rce_religion_mechanic_manichaeism_purity_liturgical_focus_sun
+		}
+	}
+}
+
+rce_has_not_any_religion_mechanic_manichaeism_purity_liturgical_focus = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_not_any_religion_mechanic_manichaeism_purity_liturgical_focus_tt
+		NOT = { has_ruler_flag = rce_religion_mechanic_manichaeism_purity_liturgical_focus_moon }
+		NOT = { has_ruler_flag = rce_religion_mechanic_manichaeism_purity_liturgical_focus_sun }
+	}
+}
+
+rce_has_religion_mechanic_manichaeism_purity_liturgical_focus = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_manichaeism_purity_liturgical_focus_$focus$_tt
+		has_ruler_flag = rce_religion_mechanic_manichaeism_purity_liturgical_focus_$focus$
+	}
+}
+
+rce_has_religion_mechanic_manichaeism_purity_minor_focus = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_manichaeism_purity_minor_focus_$focus$_tt
+		has_ruler_flag = rce_religion_mechanic_manichaeism_purity_minor_focus_$focus$
+	}
+}
+
+rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses = {
+	if = {
+		limit = {
+			rce_has_religion_mechanic_manichaeism_purity_value = { value = 66 }
+		}
+		custom_trigger_tooltip = {
+			tooltip = rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses_tt_less_than_3
+			NOT = {
+				calc_true_if = {
+					amount = 3
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			rce_has_religion_mechanic_manichaeism_purity_value = { value = 33 }
+		}
+		custom_trigger_tooltip = {
+			tooltip = rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses_tt_less_than_2
+			NOT = {
+				calc_true_if = {
+					amount = 2
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+					rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+				}
+			}
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = rce_religion_mechanic_manichaeism_purity_has_fewer_than_allowed_minor_focuses_tt_less_than_1
+			NOT = {
+				rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = air }
+				rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = wind }
+				rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = water }
+				rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = light }
+				rce_has_religion_mechanic_manichaeism_purity_minor_focus = { focus = fire }
+			}
+		}
+	}
+}

@@ -323,36 +323,10 @@ papal_subjugation = {
 
 	trigger = {	
 		overlord_of = PAP
-		NOT = { tag = ITA }
-		NOT = { tag = HLR }
-		if = {
-			limit = {
-				is_emperor = yes
-				has_dlc = "Emperor"
-			}
-			OR = {
-				PAP = {
-					NOT = { is_part_of_hre = yes }	#Needs to be written like that for localization purpose
-				}
-				NOT = { hre_reform_passed = emperor_privilegia_de_non_appelando }
-			}
-		}
-		else_if = {
-			limit = {
-				is_emperor = yes
-				NOT = { has_dlc = "Emperor" }
-			}
-			OR = {
-				PAP = {
-					NOT = { is_part_of_hre = yes }	#Needs to be written like that for localization purpose
-				}
-				NOT = { hre_reform_passed = privilegia_de_non_appelando }
-			}
-		}
 	}
 
 	diplomatic_reputation = 2
-	papal_influence = 10
+	papal_influence = 5
 	#icon = 9
 }
 
@@ -447,10 +421,10 @@ counter_revolution = {
 				truce_with = ROOT
 			} 
 		}
-		government = monarchy
+		NOT = { religion = lollard }
 	}
 
-	prestige = -5
+	prestige = -2.5
 	stability_cost_modifier = 0.3
 	global_unrest = 5
 }
@@ -476,10 +450,10 @@ reaction = {
 		revolution_target_exists = yes
 		is_revolutionary = no
 		is_free_or_tributary_trigger = yes
-		government = monarchy
 		revolution_target = {
 			war_with = ROOT
 		}  
+		NOT = { religion = lollard }
 
 	}
 
@@ -817,7 +791,8 @@ golden_age_of_piracy = {
 			privateer_power = { country = ROOT share = 1 }
 		}
 	}
-	privateer_efficiency = 0.2
+	light_ship_cost = -0.1
+	light_ship_power = 0.1
 }
 
 ######################################

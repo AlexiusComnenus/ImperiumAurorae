@@ -127,9 +127,13 @@ country_decisions = {
 					}
 				}
 	  		}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = NED
 			on_change_tag_effect = yes
-			restore_country_name = yes
+			if = {
+				NOT = { has_country_flag = magna_frisia_formed }
+				restore_country_name = yes
+			}
 			swap_non_generic_missions = yes
 			low_countries_region = {
 				limit = {

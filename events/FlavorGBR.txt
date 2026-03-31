@@ -64,6 +64,7 @@ country_event = {
 				add_government_reform = trade_company_government
 				change_religion = ROOT
 				change_primary_culture = ROOT
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 				define_ruler = {
 					name = "Thomas"
 					dynasty = "Smythe"
@@ -304,6 +305,7 @@ country_event = {
 				add_government_reform = trade_company_government
 				change_religion = ROOT
 				change_primary_culture = ROOT
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 				define_ruler = {
 					name = "Thomas"
 					dynasty = "Smythe"

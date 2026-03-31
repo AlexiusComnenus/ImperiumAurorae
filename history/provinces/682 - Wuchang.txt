@@ -5,7 +5,6 @@ is_city = yes
 culture = hubei
 religion = taoism
 trade_goods = salt
-fort_15th = yes
 base_tax = 8
 base_production = 8
 base_manpower = 3

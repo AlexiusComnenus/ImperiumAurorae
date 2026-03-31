@@ -82,8 +82,8 @@
  hansa_free_city_reform_desc: "A Free Imperial City with special rights and privileges granted by the Emperor, with the ability to form a new trade league."
  dom_ned_great_council_of_mechelen_reform: "Great Council of Mechelen"
  dom_ned_great_council_of_mechelen_reform_desc: "The Great Council of Mechelen was both a court of justice and parliament in Netherlands during the late Middle Ages and early modern period. It was responsible for interpreting and implementing the laws of the land and had significant influence over the governance and administration of the region."
- erfstadhouder_monarchy_reform: "Erfstadhouder Monarchy"
- erfstadhouder_monarchy_reform_desc: "Erfstadhouder, meaning hereditary city holder, is the name applied to the later 18th century governors or stewards of the Low Countries. Being turned into a hereditary title, it is now effectively equivelent to a king."
+ erfstadhouder_monarchy_reform: "Nederlandse Rijk"
+ erfstadhouder_monarchy_reform_desc: "The Empire of the Netherlands has centralized much of the power formerly belonging to Parliament into the hands of the Emperor. The Parliament has been sidelined to mostly an advisory body and rubber stamp for the Imperial Court's policies."
  
  #Renames
  #BATAVIAN_REPUBLIC_NAME: "Batavian Republic" #rename of Revolutionary Netherlands

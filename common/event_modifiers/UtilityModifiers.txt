@@ -1,0 +1,323 @@
+capitalautonomymod_2700 = {
+	min_local_autonomy = 60
+	local_autonomy = 0.20
+	local_unrest = 5
+}
+
+capitalautonomymod_2400 = {
+	min_local_autonomy = 50
+	local_autonomy = 0.18
+	local_unrest = 4.5
+}
+
+capitalautonomymod_2100 = {
+	min_local_autonomy = 40
+	local_autonomy = 0.16
+	local_unrest = 4
+}
+
+capitalautonomymod_1800 = {
+	min_local_autonomy = 30
+	local_autonomy = 0.14
+	local_unrest = 3.5
+}
+
+capitalautonomymod_1500 = {
+	min_local_autonomy = 25
+	local_autonomy = 0.12
+	local_unrest = 3
+}
+
+capitalautonomymod_1200 = {
+	min_local_autonomy = 20
+	local_autonomy = 0.10
+	local_unrest = 2.5
+}
+
+capitalautonomymod_900 = {
+	min_local_autonomy = 15
+	local_autonomy = 0.08
+	local_unrest = 2
+}
+
+capitalautonomymod_600 = {
+	min_local_autonomy = 10
+	local_autonomy = 0.04
+	local_unrest = 1.5
+}
+
+capitalautonomymod_300 = {
+	min_local_autonomy = 5
+	local_autonomy = 0.02
+	local_unrest = 1
+}
+
+small_refugee_influx = {
+	local_unrest = 1
+	local_autonomy = 0.03
+	local_production_efficiency = 0.15
+	local_tax_modifier = 0.2
+	trade_goods_size = 0.02
+}
+
+medium_refugee_influx = {
+	local_unrest = 2
+	local_autonomy = 0.06
+	local_production_efficiency = 0.3
+	local_tax_modifier = 0.4
+	trade_goods_size = 0.02
+}
+
+large_refugee_influx = {
+	local_unrest = 3
+	local_autonomy = 0.1
+	local_production_efficiency = 0.45
+	local_tax_modifier = 0.6
+	trade_goods_size = 0.02
+}
+
+ai_expand_infrastructure_1 = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    local_great_project_upgrade_cost = -0.05
+	supply_limit = 2.5
+	local_autonomy = -0.025
+	min_local_autonomy = -2.5
+	land_forcelimit = 0.25
+}
+
+ai_expand_infrastructure_2 = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    local_great_project_upgrade_cost = -0.05
+	supply_limit = 2.5
+	local_autonomy = -0.025
+	min_local_autonomy = -2.5
+	land_forcelimit = 0.25
+}
+
+ai_expand_infrastructure_3 = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    local_great_project_upgrade_cost = -0.05
+	supply_limit = 2.5
+	local_autonomy = -0.025
+	min_local_autonomy = -2.5
+	land_forcelimit = 0.25
+}
+
+ai_expand_infrastructure_4 = {
+    allowed_num_of_buildings = 1
+    allowed_num_of_manufactories = 1
+    regiment_recruit_speed = -0.15
+    ship_recruit_speed = -0.15
+    local_defensiveness = 0.10
+    garrison_growth = 0.10
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    local_ship_repair = 0.05
+    local_build_cost = -0.05
+    local_build_time = -0.05
+    local_great_project_upgrade_cost = -0.05
+	supply_limit = 2.5
+	local_autonomy = -0.025
+	min_local_autonomy = -2.5
+	land_forcelimit = 0.25
+}
+
+ai_reset_navy_modifier = {
+	global_ship_cost = -0.9
+	global_ship_recruit_speed = -0.9
+}
+
+recently_centralized_capital_state = {}
+
+centralized_state_modifier_ia_1 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_2 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_3 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_4 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_5 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_6 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_7 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_8 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_9 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+centralized_state_modifier_ia_10 = {
+	local_development_cost = -0.10
+	local_autonomy = -0.025
+	min_local_autonomy = -4
+	#local_governing_cost_increase = -5
+    local_production_efficiency = 0.20
+    local_tax_modifier = 0.40
+    local_manpower_modifier = 0.20
+    local_sailors_modifier = 0.20
+    province_trade_power_modifier = 0.20
+    trade_goods_size_modifier = 0.10
+}
+
+no_colonization_allowed_modifier = {
+	trade_goods_size = 0.01
+}
+
+recent_plague = {
+	trade_goods_size = 0.01
+}
+
+changing_primary_culture_modifier = {
+	development_cost_in_primary_culture = 0.2
+	culture_conversion_cost = 50
+	culture_conversion_time = 50
+	promote_culture_cost = 50
+	administrative_efficiency = -0.2
+	global_unrest = 2
+	move_capital_cost_modifier = 1000
+}
+
+changed_primary_culture_modifier = {
+	culture_conversion_cost = 1
+	culture_conversion_time = 1
+	administrative_efficiency = -0.1
+	global_unrest = 1
+}

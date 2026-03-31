@@ -3619,6 +3619,14 @@ country_event = {
 							province_id = 3099
 							province_id = 418 
 							province_id = 424 
+							province_id = 225
+							province_id = 359
+							province_id = 1946
+							province_id = 4199
+							province_id = 655
+							province_id = 806
+							province_id = 4638
+							province_id = 2658
 						}
 					}
 					
@@ -4641,18 +4649,18 @@ country_event = {
 						}
 					}
 					
-					if = { 
-						limit = { continent = europe }
-						add_permanent_province_modifier = { 
-							name = woad_type
-							duration = -1  
-							desc = woad_type_tooltip
-						}
-					}
+					#if = { 
+						#limit = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
+					#	limit = { province_id = 243 }
+					#	add_permanent_province_modifier = { 
+					#		name = woad_type
+					#		duration = -1  
+					#		desc = woad_type_tooltip
+					#	}
+					#}
 					
 					change_trade_goods = indigo
 				}
-				
 			}
 
 		}
@@ -4908,6 +4916,66 @@ country_event = {
 			4559 = { change_trade_goods = dyes } 
 			163 = { change_trade_goods = dyes } 
 			2983 = { change_trade_goods = paper }
+			4703 = {
+				change_trade_goods = tin
+			}
+			2802 = {
+				change_trade_goods = lead
+			}
+			1228 = {
+				change_trade_goods = tin
+			}
+			4171 = {
+				change_trade_goods = tin
+			}
+			2945 = {
+				change_trade_goods = lead
+			}
+			2944 = {
+				change_trade_goods = lead
+			}
+			976 = {
+				change_trade_goods = lead
+			}
+			2606 = {
+				change_trade_goods = lead
+			}
+			949 = {
+				change_trade_goods = lead
+			}
+			935 = {
+				change_trade_goods = lead
+			}
+			2509 = {
+				change_trade_goods = lead
+			}
+			2828 = {
+				change_trade_goods = copper
+			}
+			4607= {
+				change_trade_goods = copper
+			}
+			2818 = {
+				change_trade_goods = copper
+			}
+			827 = {
+				change_trade_goods = copper
+			}
+			4644 = {
+				change_trade_goods = copper
+			}
+			876 = {
+				change_trade_goods = copper
+			}
+			2494 = {
+				change_trade_goods = copper
+			}
+			2019 = {
+				change_trade_goods = copper
+			}
+			2607 = {
+				change_trade_goods = copper
+			}
 			1 = {
 				province_event = { id = prices_marcin.13 days = 365 }
 			}

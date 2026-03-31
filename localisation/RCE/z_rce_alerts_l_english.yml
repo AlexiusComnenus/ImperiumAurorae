@@ -1,0 +1,34 @@
+﻿l_english:
+ # GUIs:
+ rce_alert_button_religion_mechanic_tt: "§YReligion Mechanic§!"
+ rce_alert_button_religion_mechanic_tt_delayed: "[This.GetRCEAlertTextReligionMechanic] \n\nYou may want to navigate to the §YReligion§! tab. Clicking this alert will not bring you there. \n--------------\n§GClick to select whether you want to dismiss the alert.§!"
+
+ rce_alerts_popup_title: "Dismiss Alert '§YReligion Mechanic§!'?"
+ rce_alerts_popup_desc: "Do you want to dismiss the alert '§YReligion Mechanic§!'? \nThis alert shows when you, presumably, can use a custom religion mechanic. \n\nA dismissed alert can be reenabled again via a decision."
+
+ # Customizable Localization:
+ string_rce_alert_text_religion_mechanic_sylvan_affinity: "You have a high amount of §YSylvan Affinity§! ([This.RceGetReligionMechanicSylvanAffinityValue]). You may be able to spend them on focuses or to consecrate a grove."
+ string_rce_alert_text_religion_mechanic_four_tenets_system: "You have enough §YRuler Studies' Progress§! to pick a §YTeaching§!. You may want to pick it now."
+ string_rce_alert_text_religion_mechanic_manichaeism_purity_liturical_focus: "You have not selected a §YLiturgical Focus§! for your current ruler yet. You may want to pick it now."
+ string_rce_alert_text_religion_mechanic_manichaeism_purity: "Your current amount of §YPurity§! ([This.RceGetReligionMechanicManichaeismPurityValue]) allows you to pick more §YMinor Focuses§! than you have active at the moment. You may want to pick them now."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy_can_select_center_of_reformation_and_holy_site_interaction: "You are the current Patriarchy Controller and no §YCenter of Conversion§! has been selected. You may be able to do that now. \n\nYou have enough §YPatriarch Influence§! ([This.RceGetReligionMechanicNestorianPatriarchyValue]) to afford a holy site interaction. You may want to check if you fullfil the other conditions and can use a holy site interaction."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy_can_select_center_of_reformation: "You are the current Patriarchy Controller and no §YCenter of Conversion§! has been selected. You may be able to do that now."
+ string_rce_alert_text_religion_mechanic_nestorian_patriarchy: "You have enough §YPatriarch Influence§! ([This.RceGetReligionMechanicNestorianPatriarchyValue]) to afford a holy site interaction. You may want to check if you fullfil the other conditions and can use a holy site interaction."
+ string_rce_alert_text_religion_mechanic_sukha_can_sponsor_festival: "You can sponsor a festival to gain a bonus and increase your yearly Sukha gain. You may want to do that now."
+
+ # Decisions:
+ rce_religion_enable_alerts_decision_title: "Dismissed Alerts Settings (RCE)"
+ rce_religion_enable_alerts_decision_desc: "By using this decision you can reenable dismissed alerts from the §YReligions & Cultures Expanded§! mod."
+
+ # Events:
+ rce_alerts_events.EVTNAME100: "Dismissed Alerts"
+ rce_alerts_events.EVTDESC100: "Choose here, which alert you want to reenable. The alert will only show up afterwards, if its requirements are met."
+ rce_alerts_events100.EVTOPT0: "Cancel."
+ rce_alerts_events100.EVTOPT1: "Reenable the alert '§YReligion Mechanic§!'."
+
+ # Tooltips:
+ rce_alerts_events.100.tt.0: "No dismissed alert will be reenabled."
+ rce_alerts_events.100.tt.1: "The alert '§YReligion Mechanic§!' will show up again, once its requirements are met."
+
+ rce_alerts_events.1.tt.1: "The alert '§YReligion Mechanic§!' will be hidden. You can reenable it again via a §Ydecision§!."
+ rce_alerts_events.1.tt.2: "The alert '§YReligion Mechanic§!' will stay visible as long as its requirements are met."

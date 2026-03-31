@@ -1,0 +1,23 @@
+pap_railroad_building_edict = {
+	potential = {
+		has_country_flag = pap_railroads_flag
+	}
+	
+	allow = {
+		NOT = {
+			any_owned_province = {
+				has_state_edict = pap_railroad_building_edict
+			}
+		}
+	}
+	
+	modifier = {
+		trade_value_modifier = 0.01
+	}
+	
+	color = { 255 255 128 }
+	
+	ai_will_do = {
+		factor = 0
+	}
+}

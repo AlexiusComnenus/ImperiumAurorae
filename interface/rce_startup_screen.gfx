@@ -1,0 +1,63 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_rce_startup_screen_open_button"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_open_button.dds"
+	}
+	spriteType = {
+		name = "GFX_rce_startup_screen_bg"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_startup_screen_tab_button"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_tab_button.dds"
+		noOfFrames = 2
+		transparencecheck = yes
+	}
+	spriteType = {
+		name = "GFX_rce_startup_screen_religion_button"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_religion_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_startup_screen_culture_button"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_culture_button.dds"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_rce_startup_screen_formable_button"
+		textureFile = "gfx/interface/rce_startup_screen/rce_startup_screen_formable_button.dds"
+		noOfFrames = 2
+	}
+
+	# Text Icons:
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_sukha_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_sukha_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_four_tenets_system_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_four_tenets_system_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_sylvan_affinity_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_sylvan_affinity_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_nestorian_patriarchy_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_nestorian_patriarchy_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_manichaeism_purity_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_manichaeism_purity_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_bogomilist_church_aspects_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_bogomilist_church_aspects_mechanic.dds"
+	}
+	spriteType = {
+		name = "GFX_text_rce_startup_screen_icon_hindu_mechanic"
+		textureFile = "gfx/interface/rce_startup_screen/texticons/rce_startup_screen_icon_hindu_mechanic.dds"
+	}
+}

@@ -1,0 +1,320 @@
+chaos_and_panic_KOI_modifier = {
+ 	local_monthly_devastation = 0.5
+    local_unrest = 2
+    min_local_autonomy = 20
+}
+koi_cats_help_gaelic_soldiers = {
+    siege_ability = 0.05
+    global_manpower_modifier = 0.05
+}
+koi_tree_of_life_safe = {
+    stability_cost_modifier = -0.3
+    rce_monthly_religion_mechanic_sylvan_affinity_change = 1
+    church_loyalty_modifier = 0.1
+    reform_progress_growth = 0.25
+}
+koi_healthy_brains = {
+    monthly_reform_progress_modifier = 0.1
+    technology_cost = -0.05
+}
+koi_fun_and_games = {
+    development_cost_in_primary_culture = -0.05
+    diplomatic_reputation = 2
+}
+koi_sedated_population = {
+    global_unrest = -2
+    global_rebel_suppression_efficiency = 0.5
+    reduced_stab_impacts = yes
+    estate_interaction_cooldown_modifier = -0.2
+}
+koi_gaelic_druid_help = {
+    yearly_innovativeness = 0.2
+    advisor_pool = 2
+    build_cost = -0.10
+    advisor_cost = -0.15
+}
+koi_druid_technology = {
+    idea_cost = -0.1
+    technology_cost = -0.1
+    global_prosperity_growth = 0.5
+    naval_maintenance_modifier = -0.2
+}
+
+koi_tir_na_nog_1 = {
+    allowed_num_of_buildings = 2
+    allowed_num_of_manufactories = 1
+    local_development_cost = -1.5
+    local_own_coast_naval_combat_bonus = 1
+    institution_growth = 6
+    trade_value_modifier = 0.25
+    province_trade_power_value = 20
+    local_governing_cost_increase = -20 
+    tax_income = 24
+}
+koi_emergency_powers = {
+    all_estate_influence_modifier = -0.1
+    allow_free_estate_privilege_revocation = yes
+    all_estate_possible_privileges = -1
+    loyalty_change_on_revoked = -0.1 
+    global_unrest = 3
+    reform_progress_growth = -0.25
+}
+
+koi_druidic_convinctions_modifier = {
+    global_missionary_strength = 0.02
+    relation_with_other_culture = 10
+    ship_power_propagation = 0.25
+    transfer_trade_power_reasons = 15
+}
+koi_homegrown_methods = {
+    trade_goods_size = 1
+}
+koi_cat_accomodations = {
+    development_cost_in_primary_culture = -0.1
+}
+koi_human_friendly = {
+    relation_with_other_culture = 15
+    diplomatic_reputation = 1
+    improve_relation_modifier = 0.2
+}
+koi_human_unfriendly = {
+    relation_with_other_culture = -15
+    unjustified_demands = -0.2
+}
+koi_temp_levies = {
+    land_forcelimit = 8
+    land_maintenance_modifier = -0.2
+    discipline = -0.05
+}
+koi_sneaky_takeover = {
+    culture_conversion_cost = -0.4
+    culture_conversion_time = 1
+}
+koi_has_pallas_cat = {
+    land_attrition = -0.05
+    morale_damage = 0.05
+}
+koi_has_fishing_cat = {
+    naval_morale = 0.05
+    global_sailors_modifier = 0.2
+}
+koi_has_egyptian_mau = {
+    global_tax_modifier = -0.2
+    rce_monthly_religion_mechanic_sylvan_affinity_change = 1
+    production_efficiency = 0.1
+}
+koi_unlocked_big_cats = {
+    has_mamluks = yes
+    allowed_mamluks_fraction = 0.15
+}
+koi_big_cat_cav_buffs = {
+    is_mamluks_modifier = yes
+    cavalry_power = 0.20
+    shock_damage_received = -0.15 
+    morale_damage = 0.05
+    discipline = 0.025
+    infantry_cost = 1000
+}
+koi_starting_cav_debuff = {
+    cavalry_cost = 1000
+    cav_to_inf_ratio = -0.5
+}
+koi_has_caracal = {
+    trade_good_camel = -0.05
+}
+koi_has_chinese_mountain_cat = {
+    trade_good_lama = -0.05
+}
+koi_has_abyssinian_cat = {
+    institution_spread_from_true_faith = 0.15
+    embracement_cost = -0.2
+}
+koi_has_asiatic_cheetah = {
+    global_regiment_recruit_speed = -0.15
+    envoy_travel_time = -0.2 
+    build_time = -0.1
+}
+koi_has_bobcat = {
+    years_of_nationalism = -5 
+}
+koi_has_persian_cat = {
+    prestige_decay = -0.005 
+    monarch_diplomatic_power = 1 
+}
+koi_felinekind_united = {
+    prestige_decay = -0.01 
+    monarch_diplomatic_power = 1 
+    years_of_nationalism = -7.5
+    global_regiment_recruit_speed = -0.15
+    envoy_travel_time = -0.2 
+    build_time = -0.15
+    institution_spread_from_true_faith = 0.15
+    embracement_cost = -0.3
+    trade_good_lama = -0.075
+    trade_good_camel = -0.075
+    global_tax_modifier = -0.2
+    rce_monthly_religion_mechanic_sylvan_affinity_change = 2
+    production_efficiency = 0.15
+    naval_morale = 0.10
+    global_sailors_modifier = 0.25
+    land_attrition = -0.1
+    morale_damage = 0.1
+    manpower_recovery_speed = 0.10
+    administrative_efficiency = 0.05
+    core_creation = -0.15
+}
+koi_has_human_diplomats = {
+    province_warscore_cost = -0.1
+    ae_impact = -0.1
+}
+druidic_rep_mad_with_power = {
+    republican_tradition = -1.5
+    global_unrest = 2
+}
+koi_has_cat_armor = {
+    movement_speed = -0.10
+    fire_damage_received = -0.05
+    land_morale = 0.10 
+}
+koi_has_adapted_weaponry = {
+    fire_damage = 0.05
+    siege_ability = 0.05 
+}
+koi_armor_doctrine_change = {
+    land_maintenance_modifier = 0.15
+    mil_tech_cost_modifier = 0.1 
+}
+koi_total_infiltration = {
+    manpower_recovery_speed = -0.1
+    sailors_recovery_speed = -0.1
+    global_trade_power = -0.05
+    diplomatic_reputation = -1
+    yearly_corruption = 0.05
+    stability_cost_modifier = 0.25
+    land_attrition = 0.10
+}
+koi_long_range_mastery_1 = {
+    reduced_liberty_desire_on_other_continent = 5
+    global_autonomy = -0.025
+}
+koi_groves_expanded = {
+    trade_value_modifier = 0.5
+    local_tax_modifier = -10
+    local_development_cost_modifier = -0.2
+    local_manpower = 1 
+    local_sailors = 200
+    local_unrest = -5
+}
+koi_foraging_in_enemy_land_perfected = {
+    mercenary_cost = -0.25
+    mercenary_manpower = 0.25
+    land_attrition = -0.20
+}
+
+koi_long_range_mastery_2 = {
+    reduced_liberty_desire_on_other_continent = 10
+    global_autonomy = -0.025
+    liberty_desire_from_subject_development = -0.1 
+}
+
+koi_tir_na_nog_2 = {
+    allowed_num_of_buildings = 4
+    allowed_num_of_manufactories = 2
+    local_development_cost = -2.5
+    local_own_coast_naval_combat_bonus = 2
+    institution_growth = 6
+    trade_value_modifier = 0.5
+    province_trade_power_value = 20
+    local_governing_cost_increase = -30
+    local_development_cost_modifier = -0.2 
+    tax_income = 72
+    local_monthly_devastation = -1
+    local_manpower_modifier = 2.5 
+}
+
+koi_city_of_endless_irises = {
+    allowed_num_of_buildings = 2
+    allowed_num_of_manufactories = 2
+    local_development_cost = -1.5
+    trade_value_modifier = 0.5
+    province_trade_power_value = 50
+    local_governing_cost_increase = -20 
+    trade_goods_size_modifier = 0.5
+    local_development_cost_modifier = -0.1
+    local_manpower = 2
+    local_ship_cost = -0.2
+    local_ship_repair = 0.25
+    ship_recruit_speed = -0.5
+}
+
+unshackled_from_governing_distance = {
+    min_local_autonomy = -65
+    local_autonomy = -0.20
+    local_unrest = -5
+}
+
+koi_slightly_less_of_a_pussycat = {
+    global_sailors_modifier = 0.1 
+    vassal_sailors_bonus = 0.25
+}
+
+koi_slightly_less_of_a_pussycat_subject = {
+    naval_forcelimit = 5
+    global_sailors = 3000
+}
+
+koi_harsh_punishments = {
+    harsh_treatment_cost = -0.33
+    global_rebel_suppression_efficiency = 1
+    global_unrest = 4
+}
+koi_revolutionary_zeal = {
+    years_of_nationalism = -5
+    max_revolutionary_zeal = 20
+    yearly_revolutionary_zeal = 1
+}
+koi_abso_bonus = {
+    max_absolutism_effect = 0.1
+    yearly_absolutism = 1
+    autonomy_change_time = -0.20
+}
+koi_long_way = {
+    trade_steering = 0.15
+}
+koi_short_way = {
+    trade_efficiency = 0.1 
+}
+koi_seelie_and_unseelie = {
+    religion = yes
+    rce_monthly_religion_mechanic_sylvan_affinity_change = 0.5
+    fort_maintenance_modifier = -0.1
+    defensiveness = 0.10 
+}
+koi_keeper_of_the_last_king = {
+    religion = yes
+    max_hostile_attrition = 1
+}
+
+koi_terrible_wine = {
+    diplomatic_reputation = -4
+}
+
+koi_prosperous_isles = {
+    local_production_efficiency = 0.15
+    local_monthly_devastation = -0.05
+    local_centralize_state_cost = -0.05
+}
+
+koi_glas_gaibhnenn_blessing = {
+    supply_limit_modifier = 0.5
+    local_development_cost = -0.25
+    trade_goods_size_modifier = 0.25
+    local_development_cost_modifier = -0.05
+    local_manpower = 1
+}
+
+koi_long_range_mastery_3 = {
+    reduced_liberty_desire = 15
+    global_autonomy = -0.05
+    liberty_desire_from_subject_development = -0.2
+}

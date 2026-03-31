@@ -8,6 +8,7 @@ trade_goods = cloth
 base_tax = 7
 base_production = 3
 base_manpower = 3
+center_of_trade = 1
 add_core = MOR
 add_core = TLC
 discovered_by = MGE

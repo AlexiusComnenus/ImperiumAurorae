@@ -384,6 +384,10 @@ theocracy_gov_ideas = {
 			factor = 5
 			government = theocracy
 		}
+		modifier = {
+			factor = 10
+			tag = YOR 
+		}
 		modifier = { 
 			factor = 2
 			OR = {
@@ -452,7 +456,12 @@ indigenous_ideas = {
 
 innovativeness_ideas = {
 	category = ADM
-
+	
+	trigger = {
+		NOT = { has_estate_privilege = estate_nobles_ia_enforced_serfdom }
+		NOT = { has_estate_privilege = estate_church_ia_fundamentalism }
+	}
+	
 	bonus = {
 		advisor_cost = -0.2
 	}
@@ -469,6 +478,7 @@ innovativeness_ideas = {
 	}
 	dynamic_court = {
 		advisor_pool = 1
+		national_focus_years = -5
 	}
 	print_culture = {
 		global_institution_spread = 0.25
@@ -538,8 +548,13 @@ innovativeness_ideas = {
 }
 
 
+		
 religious_ideas = {
 	category = ADM
+	
+	trigger = {
+		NOT = { has_idea_group = humanist_ideas }
+	}
 
 	bonus = {
 		culture_conversion_cost = -0.25
@@ -570,6 +585,9 @@ religious_ideas = {
 		yearly_doom_reduction = 1
 		yearly_authority = 0.15
 		yearly_patriarch_authority = 0.005
+		rce_monthly_religion_mechanic_four_tenets_system_change = 0.3
+		rce_monthly_religion_mechanic_manichaeism_purity_change = 0.05
+		rce_monthly_religion_mechanic_sylvan_affinity_change = 0.25
 		prestige_per_development_from_conversion = 0.1
 	}
 	religious_tradition = {
@@ -643,6 +661,10 @@ religious_ideas = {
 
 spy_ideas = {
 	category = DIP
+	
+	trigger = {
+		NOT = { has_idea_group = diplomatic_ideas }
+	}
 
 	bonus = {
 		rebel_support_efficiency = 1
@@ -654,10 +676,6 @@ spy_ideas = {
 		can_transfer_vassal_wargoal = yes
 	}
 
-	state_propaganda = {
-		ae_impact = -0.2
-	}
-
 	efficient_spies = {
 		spy_offence = 0.5
 		siege_ability = 0.1
@@ -665,7 +683,6 @@ spy_ideas = {
 	
 	agent_training = {
 		diplomats = 1
-		advisor_cost = -0.15
 	}
 
 	vetting = {
@@ -675,7 +692,7 @@ spy_ideas = {
 	
 	privateers = {
 		capture_ship_chance = 0.25
-		privateer_efficiency = 0.33
+		privateer_efficiency = 0.1
 	}
 	
 	blackmailing = {
@@ -684,11 +701,19 @@ spy_ideas = {
 		num_of_pronoiars = 1
 	}
 
+	state_propaganda = {
+		province_warscore_cost = -0.20
+	}
+
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 1.1
 			personality = ai_militarist 
+		}
+		modifier = {
+			factor = 20
+			tag = YOR 
 		}
 		modifier = {
 			factor = 0.45
@@ -712,12 +737,18 @@ spy_ideas = {
 
 diplomatic_ideas = {
 	category = DIP
+	
+	trigger = {
+		NOT = { has_idea_group = spy_ideas }
+	}
+	
 	bonus = {
 		reduced_stab_impacts = yes
 	}
 	
 	grand_banquets = {
 		diplomats = 1
+		improve_relation_modifier = 0.25
 	}
 	foreign_embassies = {
 		dip_advisor_cost = -0.25
@@ -726,14 +757,16 @@ diplomatic_ideas = {
 		diplomatic_upkeep = 1
 	}
 	benign_diplomats = {
-		improve_relation_modifier = 0.25
 		diplomats = 1
+		reverse_relation_with_same_religion = 15
+		reverse_relation_with_heretic_religion = 15
+		reverse_relation_with_heathen_religion = 15
 	}
 	experienced_diplomats  = {
 		diplomatic_reputation = 2
 	}
 	flexible_negotiation = {
-		province_warscore_cost = -0.2
+		ae_impact = -0.2
 	}
 	diplomatic_corps = {
 		dip_tech_cost_modifier = -0.1
@@ -780,36 +813,53 @@ offensive_ideas = {
 	}
 	
 	bonus = {
-		recover_army_morale_speed = 0.1
+		recover_army_morale_speed = 0.1	
 		qizilbash_loyalty_modifier = 0.1
 	}
 
-	bayonet_leaders = {
-		leader_land_shock = 1
+	#bayonet_leaders = {	# Probably rename and change this
+	#	leader_land_shock = 1
+	#}
+	#national_conscripts = {	# This is for prof ideas
+	#	global_regiment_recruit_speed = -0.1
+	#}
+	#superior_firepower = { # Hmmm
+	#	leader_land_fire = 1
+	#}
+	ia_offensive_field_hospitals = {
+		land_attrition = -0.15
 	}
-	national_conscripts = {
-		global_regiment_recruit_speed = -0.1
+	ia_offensive_logistics = {
+		reinforce_speed = 0.25
+		reinforce_cost_modifier = -0.2
 	}
-	superior_firepower = {
-		leader_land_fire = 1
+	ia_offensive_forced_march = {
+		movement_speed = 0.10
+		force_march_free = yes
 	}
-	glorious_arms = {
+	glorious_arms = {	# Yeah this works fine
 		prestige_from_land = 1.0
+		#warscore_from_battles_modifier = 0.1
+		morale_damage = 0.1
 		num_of_pronoiars = 1
 	}
-	engineer_corps = {
+	engineer_corps = {	#Flagship ability
 		siege_ability = 0.20
 	}
-	grand_army = {
-		land_forcelimit_modifier = 0.15
-		special_unit_cost_modifier = -0.2
+	fort_breaker = {
+		assault_fort_ability = 0.2
+		artillery_barrage_cost = -0.2
 	}
-	napoleonic_warfare = {
+	#grand_army = {	# I feel like this goes in prof ideas
+	#	land_forcelimit_modifier = 0.15
+	#	special_unit_cost_modifier = -0.2
+	#}
+	napoleonic_warfare = {	# Ok I think?
 		discipline = 0.05
 	}
 
 	#shock_tactics = {
-	#	morale_damage = 0.1
+	#	#
 	#}
 	#
 	#melee_combat_training = {
@@ -827,7 +877,6 @@ offensive_ideas = {
 	#
 	#glory_on_the_battlefield = {
 	#	artillery_barrage_cost = -0.25
-	#	warscore_from_battles_modifier = 0.15
 	#}
 
 	ai_will_do = {
@@ -860,6 +909,10 @@ offensive_ideas = {
 			}
 		}
 		modifier = {
+			factor = 20
+			tag = YOR 
+		}
+		modifier = {
 			factor = 1.1 
 			national_focus = MIL 
 		}
@@ -869,6 +922,7 @@ offensive_ideas = {
 				has_idea_group = court_ideas 
 				has_idea_group = trade_ideas 
 				has_idea_group = economic_ideas
+				has_idea_group = spy_ideas
 			}
 		}
 		modifier = {
@@ -887,33 +941,44 @@ defensive_ideas = {
 	}
 	
 	bonus = {
+		shock_damage_received = -0.05
+		fire_damage_received = -0.05
+	}
+
+	ia_battlefield_commisions = {	# This has to change probably
+		army_tradition_from_battle = 1.0
+	}
+	ia_military_drill = {	# Rename this
+		land_morale = 0.15
+	}
+	ia_defensive_know_the_land = {
+		global_supply_limit_modifier = 0.25
+		#attack_bonus_in_capital_terrain = 1
+	}
+	ia_defensive_defence_in_depth = {
 		hostile_attrition = 1
 		max_hostile_attrition = 1 
 	}
-
-	battlefield_commisions = {
-		army_tradition_from_battle = 1.0
-	}
-	military_drill = {
-		land_morale = 0.15
-	}
-	improved_manuever = {
-		leader_land_manuever = 1
-	}
-	regimental_system = {
-		land_maintenance_modifier = -0.05
-		regiment_manpower_usage = -0.05
-	}
-	defensive_mentality = {
+	#improved_manuever = {	# Probably change this
+	#	leader_land_manuever = 1
+	#}
+	#regimental_system = {	# This can stay? but renamed? or maybe moved to prof ideas
+	#	land_maintenance_modifier = -0.05
+	#	regiment_manpower_usage = -0.05
+	#}
+	defensive_mentality = {	# The flagship
 		defensiveness = 0.25
 		fort_maintenance_modifier = -0.1
 	}
-	supply_trains = {
-		reinforce_speed = 0.3
+	#supply_trains = {	# Probably renamed
+	#	reinforce_speed = 0.3
+	#}
+	ia_defensive_last_stand = {
+		morale_damage_received = -0.05
 	}
-	improved_foraging = {
-		garrison_size = 0.25
-		land_attrition = -0.10	
+	improved_foraging = {	# Probably renamed, remove the land attrition for offensive ideas
+		garrison_size = 0.20
+		garrison_damage = 0.25
 		effect = {
 			hidden_effect = {
 				if = {
@@ -944,35 +1009,6 @@ defensive_ideas = {
 			}
 		}
 	}
-
-	#until_the_last_man = {
-	#	morale_damage_received = -0.1
-	#}
-	#
-	#improved_body_armor = {
-	#	shock_damage_received = -0.1
-	#}
-	#
-	#terrain_defence = {
-	#	fire_damage_received = -0.1
-	#}
-	#
-	#homeland_specialization = {
-	#	attack_bonus_in_capital_terrain = yes
-	#}
-	#
-	#guerilla_warfare_defense = {
-	#	global_defender_dice_roll_bonus = 1
-	#}
-	#
-	#relentless_charge = {
-	#	global_attacker_dice_roll_bonus = 1
-	#}
-	#
-	#ditch_defense = {
-	#	garrison_damage = 0.5
-	#	garrison_size = 0.25
-	#}
 	
 	ai_will_do = {
 		factor = 3.5
@@ -1000,7 +1036,7 @@ defensive_ideas = {
 		}
 		modifier = {
 			factor = 2.5
-			OR = { tag = SWI tag = PER tag = GEO tag = ERS }
+			OR = { tag = SWI tag = PER tag = GEO tag = ERS tag = KRM }
 		}
 		modifier = {
 			factor = 1.25
@@ -1150,7 +1186,7 @@ economic_ideas = {
 	}
 
 	bureaucracy = { 
-		global_tax_modifier = 0.15
+		global_tax_modifier = 0.25
 	}
 	national_bank = {
 		inflation_reduction = 0.1
@@ -1406,7 +1442,6 @@ exploration_ideas = {
 				tag = KOS
 				tag = NED
 				tag = MTH
-				tag = KOI
 				tag = ICE
 				tag = FLA
 				tag = HOL
@@ -1472,7 +1507,7 @@ maritime_ideas = {
 	}
 	naval_fighting_instruction = {
 		trade_steering = 0.25
-		privateer_efficiency = 0.25
+		privateer_efficiency = 0.10
 	}
 
 	ai_will_do = {
@@ -1796,6 +1831,8 @@ expansion_ideas = {
 				tag = Y11
 				tag = LFA
 				tag = FRM
+                tag = KOI
+				is_subject_of_type = myrmidon_exarchate
 			}
 		}
 		modifier = {
@@ -1819,6 +1856,7 @@ expansion_ideas = {
 			NOT = { tag = FRM }
 			NOT = { tag = JOM }
 			NOT = { tag = MYM }
+            NOT = { tag = KOI }
 		}
 		modifier = {
 			factor = 0.9
@@ -1919,6 +1957,12 @@ administrative_ideas = {
 
 humanist_ideas = {
 	category = ADM
+	
+	trigger = {
+		NOT = { has_idea_group = religious_ideas }
+		NOT = { has_estate_privilege = estate_nobles_ia_enforced_serfdom }
+		NOT = { has_estate_privilege = estate_church_ia_fundamentalism }
+	}
 
 	bonus = {
 		idea_cost = -0.1
@@ -2006,15 +2050,17 @@ influence_ideas = {
 
 	tribute_system = {
 		vassal_income = 0.25
+		vassal_sailors_bonus = 0.5
 	}
 	
 	additional_loyalist_recruitment = {
 		reduced_liberty_desire = 15
-		vassal_naval_forcelimit_bonus = 0.1
+		vassal_naval_forcelimit_bonus = 0.2
 	}
 	
 	integrated_elites = {
 		diplomatic_annexation_cost = -0.25
+		vassal_manpower_bonus = 0.5
 	}
 	buffer_states = {
 		diplomatic_upkeep = 1
@@ -2158,10 +2204,12 @@ court_ideas = {
 	long_echo = {
 		power_projection_from_insults = 1
 		diplomatic_reputation = 1
+		province_warscore_cost = -0.05
 	}
 	recognize_hierarchy = {
 		all_estate_loyalty_equilibrium = 0.1
 		loyalty_change_on_revoked = 0.05
+		yearly_corruption = -0.05
 	}
 	welcoming_ceremonies = {
 		prestige = 1 
@@ -2169,9 +2217,11 @@ court_ideas = {
 	}
 	tranquil_coordination = {
 		reform_progress_growth = 0.2
+		core_creation = -0.05
 	}
 	respected_authority = {
 		all_estate_possible_privileges = 1
+		advisor_cost = -0.20
 	}
 	palace_of_splendor = {
 		monthly_splendor = 2 
@@ -2253,18 +2303,14 @@ mercenary_ideas = {
 			factor = 100
 			OR = { tag = SWI primary_culture = swiss }
 		}
-		modifier = {
-			factor = 100
-			tag = SOI
-		}
-		modifier = {
-			factor = 2
-			culture_group = germanic
-		}
-		modifier = {
-			factor = 2
-			current_income_balance = 100
-		}
+		#modifier = {
+		#	factor = 2
+		#	culture_group = germanic
+		#}
+		#modifier = {
+		#	factor = 2
+		#	current_income_balance = 100
+		#}
 		modifier = {
 			factor = 2.5
 			OR = {

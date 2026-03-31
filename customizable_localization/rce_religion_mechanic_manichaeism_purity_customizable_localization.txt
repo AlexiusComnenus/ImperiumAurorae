@@ -1,0 +1,41 @@
+defined_text = {
+	name = RceGetReligionMechanicManichaeismPurityValue
+	random = no
+
+	text = {
+		trigger = {
+			rce_has_religion_mechanic_manichaeism_purity_value = { value = 0.001 }
+		}
+		localisation_key = "[This.rce_religion_mechanic_manichaeism_purity_value.GetValue]"
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = "0"
+	}
+}
+
+defined_text = {
+	name = RceGetReligionMechanicManichaeismPurityMonthlyGainValue
+	random = no
+
+	text = {
+		trigger = {
+			check_variable = { which = rce_monthly_religion_mechanic_manichaeism_purity_value value = 0.001 }
+		}
+		localisation_key = string_rce_get_religion_mechanic_manichaeism_purity_monthly_gain_value_positive
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { which = rce_monthly_religion_mechanic_manichaeism_purity_value value = 0 } }
+		}
+		localisation_key = string_rce_get_religion_mechanic_manichaeism_purity_monthly_gain_value_negative
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = string_rce_get_religion_mechanic_manichaeism_purity_monthly_gain_value_neutral
+	}
+}

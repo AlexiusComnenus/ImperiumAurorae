@@ -1,0 +1,17 @@
+# triggered by rce_on_monthly_tick_triggered_modifier province triggered modifier
+# global
+rce_on_monthly_tick_effect = {
+	if = {
+		limit = {
+			any_country = {
+				has_country_flag = rce_missionary_assigned_to_state
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = rce_missionary_assigned_to_state
+			}
+			clr_country_flag = rce_missionary_assigned_to_state
+		}
+	}
+}

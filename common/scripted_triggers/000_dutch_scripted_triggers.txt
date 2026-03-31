@@ -7,7 +7,7 @@ all_low_countries_tags = {
 		tag = ARS tag = NAM tag = CMB
 		tag = FRI tag = EFR tag = GRN
 		tag = VOC
-		tag = BUR tag = NED tag = LOT tag = BEL
+		tag = NED tag = LOT tag = BEL
 		AND = {
 			is_playing_custom_nation = yes 
 			OR = {

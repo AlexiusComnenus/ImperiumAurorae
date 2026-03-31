@@ -1,5 +1,5 @@
-owner = TTL
-controller = TTL
+owner = Z61
+controller = Z61
 capital = "St Gallen"
 is_city = yes
 culture = swiss
@@ -8,7 +8,6 @@ trade_goods = livestock
 base_tax = 3
 base_production = 2
 base_manpower = 2
-add_core = TTL
 add_core = Z61
 discovered_by = MGE
 discovered_by = eastern

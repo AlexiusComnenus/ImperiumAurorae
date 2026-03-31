@@ -53,11 +53,14 @@ visby_city = {
 		province_modifiers = {
 			ship_recruit_speed = -0.25
 			hostile_disembark_speed = 0.5
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
+			local_development_cost = -0.2
 		}
 		area_modifier = {
 		}
 		country_modifiers = {		
-			privateer_efficiency = 0.2	
+			privateer_efficiency = 0.025
 		}
 		on_upgraded = {
 		}
@@ -73,11 +76,14 @@ visby_city = {
 		province_modifiers = {
 			ship_recruit_speed = -0.33
 			hostile_disembark_speed = 1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
+			local_development_cost = -0.4
 		}
 		area_modifier = {
 		}
 		country_modifiers = {		
-			privateer_efficiency = 0.33
+			privateer_efficiency = 0.05
 			global_own_trade_power = 0.15
 		}
 		on_upgraded = {
@@ -94,11 +100,16 @@ visby_city = {
 		province_modifiers = {
 			ship_recruit_speed = -0.5
 			hostile_disembark_speed = 2
+			local_own_coast_naval_combat_bonus = 1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 5
+			local_development_cost = -0.5
+			local_development_cost_modifier = -0.2
 		}
 		area_modifier = {
 		}
 		country_modifiers = {		
-			privateer_efficiency = 0.5
+			privateer_efficiency = 0.10
 			global_own_trade_power = 0.25
 		}
 		on_upgraded = {
@@ -2321,6 +2332,8 @@ kronborg = {
 		}
 		province_modifiers = {
 			local_defensiveness = 0.15
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
 		}
 		area_modifier = {
 		}
@@ -2344,6 +2357,8 @@ kronborg = {
 		province_modifiers = {
 			local_defensiveness = 0.25
 			local_own_coast_naval_combat_bonus = 1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
 		}
 		area_modifier = {
 		}
@@ -2367,6 +2382,8 @@ kronborg = {
 		province_modifiers = {
 			local_defensiveness = 0.33
 			local_own_coast_naval_combat_bonus = 2
+			block_slave_raid = yes
+			hostile_fleet_attrition = 5
 		}
 		area_modifier = {
 		}
@@ -2924,6 +2941,9 @@ aljaferia_palace = {
 	type = monument
 
 	build_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = christian
+		}
 	}
 
 	on_built = {
@@ -2933,9 +2953,15 @@ aljaferia_palace = {
 	}
 
 	can_use_modifiers_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = christian
+		}
 	}
 
 	can_upgrade_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = christian
+		}
 	}
 
 	keep_trigger = {
@@ -3952,6 +3978,8 @@ venetian_arsenal_gp = {
 		province_modifiers = {
 			local_ship_repair = 0.1
 			local_ship_cost = -0.1
+			block_slave_raid = yes
+			hostile_fleet_attrition = 1
 		}
 		area_modifier = {
 			ship_recruit_speed = -0.1
@@ -3972,6 +4000,8 @@ venetian_arsenal_gp = {
 		province_modifiers = {
 			local_ship_repair = 0.5
 			local_ship_cost = -0.25
+			block_slave_raid = yes
+			hostile_fleet_attrition = 2.5
 		}
 		area_modifier = {
 			ship_recruit_speed = -0.5
@@ -3982,6 +4012,7 @@ venetian_arsenal_gp = {
 		}
 		country_modifiers = {
 			galley_power = 0.1
+			ship_durability = 0.05
 			allowed_galleass_fraction = 0.1
 			has_galleass = yes
 		}	
@@ -3998,6 +4029,8 @@ venetian_arsenal_gp = {
 		province_modifiers = {
 			local_ship_repair = 0.5
 			local_ship_cost = -0.25
+			block_slave_raid = yes
+			hostile_fleet_attrition = 5
 		}
 		area_modifier = {
 			local_has_galleass = yes
@@ -4006,6 +4039,7 @@ venetian_arsenal_gp = {
 		country_modifiers = {
 			allowed_galleass_fraction = 0.25
 			galley_power = 0.15
+			ship_durability = 0.1
 			has_galleass = yes
 		}
 		on_upgraded = { }
@@ -4271,20 +4305,35 @@ schonbrunn_palace = {
 	starting_tier = 0
 	type = monument
 	build_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
+		owner = { 
+			government = monarchy
+			OR = {
+				primary_culture = austrian
+				tag = AUH
+				was_tag = HAB
+			}
 		}
 	}
 	on_built = {}
 	on_destroyed = {}
 	can_use_modifiers_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
+		owner = { 
+			government = monarchy
+			OR = {
+				primary_culture = austrian
+				tag = AUH
+				was_tag = HAB
+			}
 		}
 	}
 	can_upgrade_trigger = {
-		province_is_or_accepts_religion_group = {
-			religion_group = christian
+		owner = { 
+			government = monarchy
+			OR = {
+				primary_culture = austrian
+				tag = AUH
+				was_tag = HAB
+			}
 		}
 	}
 	keep_trigger = {}

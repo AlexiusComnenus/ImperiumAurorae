@@ -450,6 +450,7 @@ emp_germany_hlr_slot_2_culturechange = {
 					OR = {
 						culture_group = germanic
 						has_owner_accepted_culture = yes
+						is_owned_by_trade_company = yes
 					}
 				}
 			}
@@ -511,8 +512,7 @@ emp_ger_slot_3_ita = {
 			owns = 116
 			num_of_owned_provinces_with = {
 				value = 20
-				culture_group = latin
-				continent = europe
+				region = italy_region
 			}
 			diplomat = 5
 		}
@@ -3314,7 +3314,7 @@ emp_ger_slot_1_colonial = {
 			}
 			2569 = {
 				development = 20
-				culture_group = germanic
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -3341,6 +3341,7 @@ emp_ger_slot_1_colonial = {
 			2569 = {
 				owner = {
 					change_primary_culture = karolian
+					ia_change_culture_without_consequence_effect = yes
 					set_capital = 2569
 					every_owned_province = {
 						change_culture = karolian
@@ -3991,7 +3992,15 @@ emp_ger_slot_4_colonial = {
 				name = hlr_world_wide_resources_mod
 				duration = -1
 			}
-			reset_golden_age = yes
+			custom_tooltip = golden_age_refresher_tt
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 600
+			}
 		}
 	}
 }

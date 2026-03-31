@@ -369,6 +369,7 @@ country_event = {
 		#		add_prestige = 100
 		#	}
 		#}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = LVA
 		on_change_tag_effect = yes
 		restore_country_name_effect = yes

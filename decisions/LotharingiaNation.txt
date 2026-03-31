@@ -47,6 +47,7 @@ country_decisions = {
 			#	move_capital_effect = yes
 			#	change_culture = alsatian
 			#}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = LOT
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes

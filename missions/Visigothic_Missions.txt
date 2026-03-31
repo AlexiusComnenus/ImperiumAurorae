@@ -319,8 +319,8 @@ visigoth_missions_column_2 = {
 		trigger = {
 			IF = {
 				limit = { ai = no }
-				army_size_percentage = 0.8
-				num_of_allies = 2
+				army_size_percentage = 1
+				num_of_allies = 1
 				treasury = 50
 			} ELSE {
 				is_at_war = yes
@@ -603,13 +603,17 @@ visigoth_missions_column_2 = {
 				tunisia_area = {
 					cede_province = TUN
 				}
-				create_union = TUN
-				add_historical_friend = TUN
 				TUN = {
 					change_government = monarchy
 					add_historical_friend = ROOT
 					override_country_name = regnum_vandalorum_name
 				}
+				create_union = TUN
+				create_subject = {
+					subject_type = brother_kingdom
+					subject = TUN
+				}
+				add_historical_friend = TUN
 			} else_if {
 				limit = {
 					OR = {
@@ -627,12 +631,16 @@ visigoth_missions_column_2 = {
 					cede_province = TUN
 					change_culture = vandal
 				}
-				create_union = TUN
 				add_historical_friend = TUN
 				TUN = {
 					change_government = monarchy
 					add_historical_friend = ROOT
 					override_country_name = regnum_vandalorum_name
+				}
+				create_union = TUN
+				create_subject = {
+					subject_type = brother_kingdom
+					subject = TUN
 				}
 			} ELSE {
 				northern_morocco_area = {
@@ -813,35 +821,89 @@ visigoth_missions_column_3 = {
 			}
 			add_government_reform = regnum_gothorum_reform
 			change_mil = 1
-			add_casus_belli = {
-				target = CAS
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					CAS = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = CAS
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
-			add_casus_belli = {
-				target = ARA
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					ARA = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = ARA
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
-			add_casus_belli = {
-				target = LON
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					LON = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = LON
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
-			add_casus_belli = {
-				target = TOU
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					TOU = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = TOU
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
-			add_casus_belli = {
-				target = NAV
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					NAV = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = NAV
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
-			add_casus_belli = {
-				target = GAL
-				type = cb_restore_personal_union
-				months = 1200
+			if = {
+				limit = {
+					GAL = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
+				add_casus_belli = {
+					target = GAL
+					type = cb_fabricated_claims
+					months = 1200
+				}
 			}
 			iberia_region = {
 				limit = {
@@ -898,10 +960,16 @@ visigoth_missions_column_3 = {
 				add_permanent_claim = VAL
 			}
 			if = {
-				limit = { exists = POR }
+				limit = {
+					POR = {
+						government = monarchy
+						is_subject = no
+						exists = yes
+					}
+				}
 				add_casus_belli = {
 					target = POR
-					type = cb_restore_personal_union
+					type = cb_fabricated_claims
 					months = 1200
 				}
 			}
@@ -977,6 +1045,15 @@ visigoth_missions_column_3 = {
 					TUN = { is_subject_of = ROOT }
 				}
 				country_event = { id = ia_flavor_val.6 }
+			}
+			custom_tooltip = golden_age_refresher_tt
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 600
 			}
 		}
 	}
@@ -1462,7 +1539,6 @@ visigoth_missions_column_4 = {
 				cede_province = MLO
 				add_core = MLO
 			}
-			create_union = MLO
 			add_historical_friend = MLO
 			MLO = {
 				change_government = monarchy
@@ -1470,6 +1546,12 @@ visigoth_missions_column_4 = {
 				override_country_name = regnum_langobardorum_name
 				set_capital = 104
 				change_primary_culture = old_lombard
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
+			}
+			create_union = MLO
+			create_subject = {
+				subject_type = brother_kingdom
+				subject = MLO
 			}
 			every_province = {
 				limit = { culture = lombard }

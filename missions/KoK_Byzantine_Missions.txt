@@ -2273,14 +2273,14 @@ MEE_BYZ_economy_3 = {
 				has_tax_building_trigger = yes
 				has_production_building_trigger = yes
 				has_manpower_building_trigger = yes
-				custom_trigger_tooltip = {
-					tooltip = BYZ_most_developed_city_in_the_world
-					NOT = {
-						any_province = {
-							higher_development_than = PREV
-						}
-					}
-				}
+				#custom_trigger_tooltip = {
+				#	tooltip = BYZ_most_developed_city_in_the_world
+				#	NOT = {
+				#		any_province = {
+				#			higher_development_than = PREV
+				#		}
+				#	}
+				#}
 			}
 		}
 		effect = {

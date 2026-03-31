@@ -1,1028 +1,2532 @@
-# Baguette writing, Alexios coding (poor Alexios)
+# Baguette writing
 
-hesse_missions_column_1 = {
+ia_hesse_missions_1 = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
-		tag = HES
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
-	
-	hes_nassau = {
-		icon = assert_our_sovereignty
-		required_missions = {
-			hes_fill_the_ranks
-		}
+
+	ia_hesse_frankfurt_question = {
+		icon = eastern_catholicization
 		position = 3
-		
+		required_missions = {
+			ia_hesse_muster_the_army
+		}
 		provinces_to_highlight = {
-			province_id = 83
+			province_id = 1876
 		}
-		
 		trigger = {
-			OR = {
-				owns = 83
-				NSA = {
-					alliance_with = ROOT
-					has_opinion = {
-						who = ROOT
-						value = 190
-					}
-					owns = 83
-				}
-				NSA = {
-					is_subject_of = ROOT
-					owns = 83
-				}
-			}
-		}
-		
-		effect = {
 			if = {
-				limit = { owns = 83 }
-				83 = {
-					add_core = ROOT
-					add_nationalism = -30
-					set_local_autonomy = 25
-				}
-			}
-			else = {
-				create_subject = {
-					subject_type = vassal
-					subject = NSA
-				}
-				add_dip_power = 50
-			}
-			
-		}
-	}
-	
-	hes_protect_mining_towns = {
-		icon = ansbach_succession
-		required_missions = {
-			hes_along_the_rhine
-		}
-		position = 6
-		
-		provinces_to_highlight = {
-			OR = {
-				province_id = 84
-				province_id = 2975
-				province_id = 69
-			}
-		}
-		
-		trigger = {
-			owns = 84
-			owns = 2975
-			owns = 69
-		}
-		
-		effect = {
-			country_event = { id = ia_flavor_hes.3 }
-		}
-	}
-	
-	hes_decadent_kingdom = {
-		icon = french_revolution
-		required_missions = {
-			
-		}
-		position = 8
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			mission_completed = hes_mend_broken_crown
-			OR = {
-				THU = { humiliated_by = ROOT }
-				NOT = { exists = THU }
-			}
-		}
-		
-		effect = {
-			thuringia_area = { add_permanent_claim = ROOT }
-			south_saxony_area = { add_permanent_claim = ROOT }
-			add_mil_power = 50
-			
-			hidden_effect = {
-				THU = {
-					country_event = {
-						id = ia_flavor_thu.2
-						days = 360
-						random = 120
-					}
-				}
-			}
-			
-			add_casus_belli = {
-				target = THU
-				type = cb_fabricated_claims
-				months = 1200
-			}
-		}
-	}
-	
-	hes_final_blow = {
-		icon = hungarian_union
-		required_missions = {
-			hes_decadent_kingdom
-		}
-		position = 9
-		
-		provinces_to_highlight = {
-			area = thuringia_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		
-		trigger = {
-			thuringia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			OR = {
-				THU = { is_subject_of = ROOT }
-				NOT = { exists = THU }
-			}
-		}
-		
-		effect = {
-			if = {
-				limit = { THU = { is_subject_of = ROOT }}
-				THU = { add_liberty_desire = -50 }
-				THU = { add_historical_friend = ROOT }
-				add_historical_friend = THU
-				
-				THU = { add_government_reform = hes_thuringian_realm_reform }
-				set_country_flag = hes_subjugate_thu
-			}
-			else = {
-				country_event = { id = ia_flavor_hes.5 }
-				set_country_flag = hes_conquer_thu
-			}
-			
-			hidden_effect = {
-				swap_non_generic_missions = yes	
-			}
-		}
-	}
-}
-
-hesse_missions_column_1_1 = {
-	slot = 1
-	generic = no
-	ai = yes
-	potential = {
-		tag = HES
-		has_country_flag = hes_subjugate_thu
-	}
-	has_country_shield = yes
-	
-	hes_restore_thuringia = {
-		icon = a_strong_government
-		required_missions = {
-			hes_final_blow
-		}
-		position = 10
-		
-		provinces_to_highlight = {
-			area = south_saxony_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		
-		trigger = {
-			south_saxony_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = THU
-			}
-			THU = { is_subject_of = ROOT }
-		}
-		
-		effect = {
-			THU = {
-				add_country_modifier = { name = hes_restored_thu	duration = -1 }
-			}
-			create_subject = {
-				subject_type = brother_kingdom
-				subject = THU
-			}
-		}
-	}
-}
-
-hesse_missions_column_1_2 = {
-	slot = 1
-	generic = no
-	ai = yes
-	potential = {
-		tag = HES
-		has_country_flag = hes_conquer_thu
-	}
-	has_country_shield = yes
-	
-	hes_relief_effort = {
-		icon = a_strong_government
-		required_missions = {
-			hes_final_blow
-		}
-		position = 10
-		
-		provinces_to_highlight = {
-			area = thuringia_area
-			OR = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
-				devastation = 0.1
-			}
-		}
-		
-		trigger = {
-			thuringia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-				NOT = { devastation = 0.1 }
+				limit = { ai = no }
 				OR = {
-					has_building = temple
-					has_building = cathedral
+					custom_trigger_tooltip = {
+					tooltip = hes_max_out_improve_relations_opinion_modifier_frn_tt
+						FRN = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = improved_relation
+								value = 100
+							}
+						}
+					}
+					NOT = { exists = FRN }
+					FRN = { is_subject_of = ROOT }
 				}
 			}
-			development_in_provinces = {
-				value = 30
-				area = thuringia_area
+			diplomat = 1 
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = { 
+						NOT = { exists = FRN }
+						owns = 1876
+					}
+				}
+				custom_tooltip = hes_frankfurt_question_conquest_yes_tt
+				add_core = 1876
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						OR = { 
+							NOT = { exists = FRN }
+							owns = 1876
+						}
+					}
+				}
+				custom_tooltip = hes_frankfurt_question_conquest_no_tt
+				tooltip = {
+					add_core = 1876
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							exists = FRN
+							FRN = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = improved_relation
+									value = 100
+								}
+							}
+						}
+						FRN = { is_subject_of = ROOT }
+					}
+				}
+				custom_tooltip = hes_frankfurt_question_relations_yes_tt
+				FRN = {
+					country_event = {
+						id = ia_hesse.1
+					}
+					custom_tooltip = EVENT_INSIGHT_INTRO
+					custom_tooltip = hes_frankfurt_question_tt
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						OR = {
+							AND = {
+								exists = FRN
+								FRN = {
+									has_opinion_modifier = {
+										who = ROOT
+										modifier = improved_relation
+										value = 100
+									}
+								}
+							}
+							FRN = { is_subject_of = ROOT }
+						}
+					}
+				}
+				custom_tooltip = hes_frankfurt_question_relations_no_tt
+				tooltip = {
+					FRN = {
+						country_event = {
+							id = ia_hesse.1
+						}
+						custom_tooltip = EVENT_INSIGHT_INTRO
+						custom_tooltip = hes_frankfurt_question_tt
+					}
+				}
 			}
 		}
-		
+	}
+	ia_hesse_meissen_occupation = {
+		icon = mission_alliances
+		position = 5
+		required_missions = {
+			ia_hesse_mend_succession
+		}
+		provinces_to_highlight = {
+			province_id = 61
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				custom_trigger_tooltip = {
+					tooltip = hes_max_out_improve_relations_opinion_modifier_sax_tt
+					SAX = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = improved_relation
+							value = 100
+						}
+					}
+				}
+			}
+			OR = {
+				MEI = {
+					is_subject_of = HES
+				}
+				owns_core_province = 61
+			}
+		}
 		effect = {
-			thuringia_area = {
-				add_base_manpower = 1
-				add_base_production = 1
-				add_base_tax = 1
-				add_province_modifier = { name = hes_ancestral_lands 	duration = -1 }
-				change_culture = ROOT
+			custom_tooltip = hes_mei_subject_cede_to_who_tt
+			if = {
+				limit = { 
+					exists = MEI 
+				}
+				south_saxony_area = {
+    				cede_province = MEI
+					add_core = MEI
+					remove_core = SAX
+				}
+			}
+			else_if = {
+				limit = {
+					61 = {
+						owned_by = ROOT
+					}
+				}
+				south_saxony_area = {
+    				cede_province = ROOT
+					add_core = ROOT
+					remove_core = SAX
+				}
+			}
+			59 = {
+				add_province_modifier = {
+					name = hes_saxon_grain_tax
+					duration = 10950
+				}
+			}
+			62 = {
+				add_province_modifier = {
+					name = hes_saxon_grain_tax
+					duration = 10950
+				}
+			}
+			4744 = {
+				add_province_modifier = {
+					name = hes_saxon_grain_tax
+					duration = 10950
+				}
+			}
+		}
+	}
+	ia_hesse_lands_inbetween = {
+		icon = assert_our_sovereignty
+		position = 6
+		required_missions = {
+			ia_hesse_once_a_tower
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = westphalia_area
+				area = north_westphalia_area
+			}
+		}
+		trigger = {
+			westphalia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			north_westphalia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = WES }
+		}
+		effect = {
+			if = {
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				WES = {
+					every_core_province = { remove_core = WES }
+				}
+				random_province = {
+					limit = {
+						OR = {
+							area = westphalia_area
+							area = north_westphalia_area
+						}
+					}
+					add_core = WES
+					cede_province = ROOT
+				}
+				release = WES
+				westphalia_area = {
+					cede_province = WES
+					add_core = WES
+				}
+				north_westphalia_area = {
+					cede_province = WES
+					add_core = WES
+				}
+				vassalize = WES
+				add_historical_friend = WES
+				WES = {
+					add_historical_friend = ROOT
+				}
+				custom_tooltip = hes_lands_inbetween_upgrade_dip_priv_tt
+			}
+			else = {
+				north_westphalia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				westphalia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				custom_tooltip = hes_lands_inbetween_upgrade_mil_priv_tt
+			}
+			set_country_flag = hes_lands_inbetween_privilige_improvement
+			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
+			hidden_effect = {
+				every_country = {
+					limit = { culture_group = germanic }
+					add_aggressive_expansion = {
+						who = ROOT
+						value = -15
+						apply_calc = no
+					}
+				}
 			}
 		}
 	}
 }
 
-hesse_missions_column_2 = {
+ia_hesse_missions_2 = {
 	slot = 2
 	generic = no
 	ai = yes
 	potential = {
-		tag = HES
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
-	
-	hes_a_shattered_succession = {
+
+	ia_hesse_shattered_succession = {
 		icon = academy_of_the_bran
-		required_missions = {
-			
-		}
 		position = 1
-		
-		#provinces_to_highlight = {
-		#}
-		
+		required_missions = {
+
+		}
+		provinces_to_highlight = {
+			province_id = 83
+		}
 		trigger = {
-			if = {
-				limit = { ai = no }
-				OR = {
-					NOT = { exists = NSA }
-					alliance_with = NSA
-					NSA = {
-						NOT = {
-							has_opinion = {
-								who = ROOT
-								value = -50
-							}
-						}
-					}
-				}
-				OR = {
-					NOT = { exists = THU }
-					is_rival = THU
-					THU = {
-						NOT = {
-							has_opinion = {
-								who = ROOT
-								value = -50
-							}
-						}
-					}
-				}
-			}
-			else = {
-				is_year = 1445
+			OR = {
+				is_rival = NSA
+				alliance_with = NSA
+				owns = 83
 			}
 		}
-		
 		effect = {
 			if = {
-				limit = { alliance_with = NSA }
-				add_historical_friend = NSA
-				NSA = { add_historical_friend = ROOT }
-				add_favors = {
-				   who = NSA
-				   amount = 20
+				limit = {
+					OR = {
+						is_rival = NSA
+						owns = 83
+					}
 				}
-				NSA = {
-					add_favors = {
-					   who = ROOT
-					   amount = 20
+				custom_tooltip = hes_shattered_succession_nsa_rival_yes_tt
+				83 = {
+					add_core = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						NOT = { is_rival = NSA }
+						NOT = { owns = 83 }
+					}
+				}
+				custom_tooltip = hes_shattered_succession_nsa_rival_no_tt
+				tooltip = {
+					83 = {
+						add_core = ROOT
 					}
 				}
 			}
-			else = {
-				83 = { add_permanent_claim = ROOT }
-				add_mil_power = 50
+			if = {
+				limit = { alliance_with = NSA }
+				custom_tooltip = hes_shattered_succession_nsa_ally_yes_tt
+				vassalize = NSA
+				add_historical_friend = NSA
+				add_favors = {
+   					who = NSA
+   					amount = 20
+				}
+				NSA = {
+					add_historical_friend = ROOT
+					add_favors = {
+   						who = ROOT
+   						amount = 20
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { alliance_with = NSA } }
+				custom_tooltip = hes_shattered_succession_nsa_ally_no_tt
+				tooltip = {
+					vassalize = NSA
+					add_historical_friend = NSA
+					add_favors = {
+   						who = NSA
+   						amount = 20
+					}
+					NSA = {
+						add_historical_friend = ROOT
+						add_favors = {
+   							who = ROOT
+   							amount = 20
+						}
+					}
+				}
+			}
+			if = {
+				limit = { ai = yes }
+				create_marriage = SAX
+			}
+			add_country_modifier = { #DELETE LATER
+				name = hes_mp_reform_buff
+				duration = -1
+			}
+			hidden_effect = { 
+				set_variable = {
+ 					which = HesseWonWarsAlongsideGermanKing
+    				value = 0
+				}
+				set_variable = {
+					which = HesBattlesWon
+					value = 0
+				}
 			}
 		}
 	}
-	
-	hes_fill_the_ranks = {
-		icon = expand_the_swiss_guard
-		required_missions = {
-			hes_a_shattered_succession
-		}
+	ia_hesse_muster_the_army = {
+		icon = establish_a_standing_army
 		position = 2
-		
-		#provinces_to_highlight = {
-		#}
-		
+		required_missions = {
+			ia_hesse_shattered_succession
+		}
+		provinces_to_highlight = {
+			province_id = 83
+		}
 		trigger = {
-			if = {
-				limit = { ai = no }
-				army_size_percentage = 1
-				is_monarch_leader = yes
-				treasury = 50
-			}
-			else = {
-				OR = {
-					is_year = 1446
-					is_at_war = yes
+			OR = {
+				owns_core_province = 83
+				NSA = {
+					is_subject_of = ROOT
 				}
 			}
+			army_size_percentage = 1
+			if = {
+				limit = { ai = no }
+				num_of_mercenaries = 1
+				is_monarch_leader = yes
+			}
+			treasury = 50
 		}
-		
 		effect = {
 			add_country_modifier = {
-				name = hes_fill_ranks_mod
+				name = hes_rally_loyalists
 				duration = 7300
 			}
 			define_general = {
-				shock = 5
 				fire = 2
+				shock = 5
 				manuever = 6
 				siege = 3
 				name = "Clodomir Ludowinger"
 			}
+			add_treasury = -50
 			hesse_area = {
 				add_permanent_claim = ROOT
 			}
-			add_treasury = -50
 			add_casus_belli = {
-				target = MAI
-				type = cb_fabricated_claims
-				months = 1200
+    			target = MAI
+    			type = cb_fabricated_claims
+    			months = 600
+			}
+			add_casus_belli = {
+    			target = THU
+    			type = cb_fabricated_claims
+    			months = 600
+			}
+			if = {
+				limit = { ai = yes }
+				add_casus_belli = {
+    				target = FRN
+    				type = cb_fabricated_claims
+    				months = 600
+				}
 			}
 		}
 	}
-	
-	hes_frankfurt = {
-		icon = develop_provence
-		required_missions = {
-			hes_fill_the_ranks
-		}
+	ia_hesse_depose_noble_regency = {
+		icon = Control_Junkers
 		position = 3
-		
-		provinces_to_highlight = {
-			province_id = 1876
-		}
-		
-		trigger = {
-			1876 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			1876 = {
-				NOT = { unrest = 0 }
-			}
-		}
-		
-		effect = {
-			if = {
-				limit = { 1876 = { OR = { has_building = marketplace	has_building = trade_depot}}}
-				1876 = { add_base_production = 2 }
-			}
-			else = {
-				1876 = { add_building = marketplace }
-			}
-			if = {
-				limit = { 1876 = { province_has_center_of_trade_of_level = 2 }}
-				1876 = { add_base_production = 3 }
-			}
-			else = {
-				1876 = { add_center_of_trade_level = 1 }
-			}
-			1876 = { add_nationalism = -10 }
-		}
-	}
-	
-	hes_mend_broken_crown = {
-		icon = carolingian_empire
 		required_missions = {
-			hes_frankfurt
-			hes_mainz
-			hes_nassau
+			ia_hesse_muster_the_army
 		}
-		position = 4
-		
-		#provinces_to_highlight = {
-		#}
-		
+		provinces_to_highlight = {
+			area = thuringia_area
+		}
 		trigger = {
+			OR = {
+				THU = {
+					is_subject_of = ROOT
+				}
+				thuringia_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
 			if = {
 				limit = { ai = no }
-				power_projection = 50
+				63 = {
+					num_of_units_in_province = {
+    					who = ROOT
+   						amount = 10
+					}
+				}
 			}
 		}
-		
 		effect = {
-			add_prestige = 25
-			add_country_modifier = {
-				name = hes_mended_crown
-				duration = 7300
+			if = {
+				limit = { THU = { is_subject_of = ROOT } }
+				custom_tooltip = hes_depose_noble_regency_thu_subject_yes_tt
+				create_union = THU
+				add_historical_friend = THU
+				add_opinion = {
+    				who = THU
+    				modifier = succesful_province_purchase
+    				multiplier = 4
+				}
+				THU = {
+					add_historical_friend = ROOT
+					add_opinion = {
+    					who = ROOT
+    					modifier = succesful_province_purchase
+    					multiplier = 4
+					}
+				}
 			}
-			change_mil = 1
-			change_dip = 1
-			north_rhine_area = { add_permanent_claim = ROOT }
-			lower_rhineland_area = { add_permanent_claim = ROOT }
+			else_if = {
+				limit = { NOT = { THU = { is_subject_of = ROOT } } }
+				custom_tooltip = hes_depose_noble_regency_thu_subject_no_tt
+				tooltip = {
+					create_union = THU
+					add_historical_friend = THU
+					add_opinion = {
+    					who = THU
+    					modifier = succesful_province_purchase
+    					multiplier = 4
+					}
+					THU = {
+						add_historical_friend = ROOT
+						add_opinion = {
+    						who = ROOT
+    						modifier = succesful_province_purchase
+    						multiplier = 4
+						}
+					}
+				}
+			}
+			if = {
+				limit = { thuringia_area = { owned_by = HES } }
+				custom_tooltip = hes_depose_noble_regency_thu_conquest_yes_tt
+				thuringia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+			}
+			else_if = {
+				limit = { NOT = { thuringia_area = { owned_by = HES } } }
+				custom_tooltip = hes_depose_noble_regency_thu_conquest_no_tt
+				tooltip = {
+					thuringia_area = {
+						add_nationalism = -30
+						set_local_autonomy = 0
+					}
+				}
+			}
+			custom_tooltip = " "
+			63 = {
+				spawn_rebels = {
+    				type = noble_rebels
+    				size = 3
+				}
+				add_devastation = 15
+			}
+			if = {
+				limit = { ai = yes }
+				create_alliance = MEI
+			}
 		}
 	}
-	
-	hes_along_the_rhine = {
-		icon = adriatic_access
+	ia_hesse_mend_succession = {
+		icon = mission_empire
+		position = 4
 		required_missions = {
-			hes_mend_broken_crown
+			ia_hesse_frankfurt_question
+			ia_hesse_depose_noble_regency
+			ia_hesse_treason_of_youngest
 		}
+		provinces_to_highlight = {
+			OR = {
+				area = thuringia_area
+				area = hesse_area
+				province_id = 4718
+			}
+		}
+		trigger = {
+			prestige = 50
+			power_projection = 50
+			stability = 2
+			thuringia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hesse_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			4718 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				alliance_with = MEI
+				NOT = { exists = MEI }
+			}
+		}
+		effect = {
+			change_adm = 1 
+			change_dip = 1
+			change_mil = 1
+			if = {
+				limit = { has_ruler_flag = alberich_is_alive }
+				custom_tooltip = hes_mend_succession_alberich_alive_yes_tt
+				add_ruler_modifier = {
+					name = hes_alberich_soldier_king
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = { NOT = { has_ruler_flag = alberich_is_alive } }
+				custom_tooltip = hes_mend_succession_alberich_alive_no_tt
+				tooltip = {
+					add_ruler_modifier = {
+						name = hes_alberich_soldier_king
+						duration = -1
+					}
+				}
+			}
+			add_country_modifier = {
+				name = hes_restorer_of_thu
+				duration = 7300
+			}
+			set_country_flag = hes_permanent_german_march
+			overlord = {
+				custom_tooltip = hes_wont_be_able_to_resign_tt
+				if = {
+					limit = { has_reform = saxon_feudalism }
+					create_subject = {
+    					subject_type = german_march
+    					subject = HES
+					}
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+ 					which = HesseWonWarsAlongsideGermanKing ####DELETE LATER
+    				value = 0
+				}
+				set_variable = {
+					which = HesBattlesWon
+					value = 0
+				}
+			}
+			if = {
+				limit = { alliance_with = MEI }
+				custom_tooltip = hes_mend_succession_mei_ally_alive_yes_tt
+				country_event = {
+					id = ia_hesse.4
+				}
+			}
+			else_if = {
+				limit = { NOT = { alliance_with = MEI } }
+				custom_tooltip = hes_mend_succession_mei_ally_alive_no_tt
+				tooltip = {
+					country_event = {
+						id = ia_hesse.4
+					}
+				}
+			}
+			else_if = {
+				limit = { NOT = { exists = MEI } }
+				custom_tooltip = hes_mend_succession_mei_dead_tt
+				add_core = 61
+			}
+		}
+	}
+	ia_hesse_once_a_tower = {
+		icon = dalmatian_conquest
 		position = 5
-		
+		required_missions = {
+			ia_hesse_mend_succession
+		}
+		trigger = {
+			diplomat = 2
+			army_organiser = 2
+			if = {
+				limit = { ai = no }
+				any_army = {
+					is_ruler_commanding_unit = yes
+					location = { province_id = 1762 }
+				} 
+			}  
+		}
+		effect = {
+			country_event = {
+				id = ia_hesse.5
+				days = 1
+			}
+			north_rhine_area = {
+				add_permanent_claim = ROOT
+			}
+			lower_rhineland_area = {
+				add_permanent_claim = ROOT
+			}
+			westphalia_area = {
+				add_permanent_claim = ROOT
+			}
+			north_westphalia_area = {
+				add_permanent_claim = ROOT
+			}
+			franconia_area = {
+				add_permanent_claim = ROOT
+			}
+			upper_franconia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ia_hesse_follow_the_rhine = {
+		icon = ansbach_succession
+		position = 6
+		required_missions = {
+			ia_hesse_once_a_tower
+		}
 		provinces_to_highlight = {
 			OR = {
 				area = north_rhine_area
 				area = lower_rhineland_area
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
-		
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 3
-				OR = {
-					area = north_rhine_area
-					area = lower_rhineland_area
-				}
+			north_rhine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		
 		effect = {
-			capital_scope = {
-				cavalry = ROOT
-				cavalry = ROOT
-			}
-			add_country_modifier = {
-				name = hes_rhine_campaign
-				duration = 7300
-			}
-			westphalia_area = { add_permanent_claim = ROOT }
-			north_westphalia_area = { add_permanent_claim = ROOT }
-		}
-	}
-	
-	hes_eliminate_koln = {
-		icon = boh_humiliate_austria
-		required_missions = {
-			hes_along_the_rhine
-		}
-		position = 6
-		
-		provinces_to_highlight = {
-			country_or_non_sovereign_subject_holds = KOL
-		}
-		
-		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 5
-				OR = {
-					area = westphalia_area
-					area = north_westphalia_area
-				}
-			}
-			NOT = { exists = KOL }
-		}
-		
-		effect = {
-			add_prestige = 20
-			add_mil_power = 100
 			if = {
-				limit = { accepted_culture = hannoverian }
-				add_dip_power = 100
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				set_country_flag = hes_allow_rhenish_tag_integration
+				custom_tooltip = hes_allow_rhenish_tag_integration_tt
+				custom_tooltip = hes_follow_the_rhine_upgrade_dip_priv_tt
 			}
 			else = {
-				add_accepted_culture = hannoverian
+				north_westphalia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				westphalia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				custom_tooltip = hes_follow_the_rhine_upgrade_mil_priv_tt
 			}
-			every_owned_province = {
-				limit = { 
-					OR = {
-						area = westphalia_area
-						area = north_westphalia_area
+			set_country_flag = hes_follow_the_rhine_privilige_improvement
+			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
+			hidden_effect = {
+				every_country = {
+					limit = { culture_group = germanic }
+					add_aggressive_expansion = {
+						who = ROOT
+						value = -15
+						apply_calc = no
 					}
 				}
-				add_base_manpower = 1
-				add_base_tax = 1
 			}
 		}
+	}
+	ia_hesse_formalise_the_union = {
+		icon = mission_diplomatic_relation
+		position = 7
+		required_missions = {
+			ia_hesse_follow_the_rhine
+			ia_hesse_up_the_main
+			ia_hesse_lands_inbetween
+		}
+		trigger = {
+			stability = 2
+			prestige = 50
+		}
+		effect = {
+			custom_tooltip = hes_add_on_rheinland_missions_tt
+			if = {
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				override_country_name = hes_name_change_dip
+				change_government_reform_progress = 300
+				set_country_flag = hes_allow_german_subject_integration
+				custom_tooltip = hes_allow_german_subject_integration_tt
+				custom_tooltip = hes_formalise_the_union_upgrade_dip_idea_tt
+			}
+			else = {
+				override_country_name = hes_name_change_mil
+				add_stability = 1
+				change_government_reform_progress = 200
+				set_country_flag = hes_allow_mil_idea_swap
+				custom_tooltip = hes_formalise_the_union_upgrade_mil_idea_tt
+			}
+			hidden_effect = {
+				swap_non_generic_missions = yes
+				swap_free_idea_group = yes
+			}
+		}
+
 	}
 }
 
-hesse_missions_column_3 = {
+ia_hesse_missions_3 = {
 	slot = 3
 	generic = no
 	ai = yes
 	potential = {
-		tag = HES
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
-	
-	hes_mainz = {
-		icon = a_worthy_navy
-		required_missions = {
-			hes_fill_the_ranks
-		}
+
+	ia_hesse_treason_of_youngest = {
+		icon = consolidate_the_stadholders
 		position = 3
-		
+		required_missions = {
+			ia_hesse_muster_the_army
+		}
 		provinces_to_highlight = {
-			province_id = 78
-		}
-		
-		trigger = {
-			owns_or_non_sovereign_subject_of = 78
-		}
-		
-		effect = {
-			country_event = {
-				id = ia_flavor_hes.1
+			OR = {
+				province_id = 78
+				province_id = 4718
 			}
 		}
-	}
-	
-	hes_dutch_merchants = {
-		icon = adjust_the_general_means
-		required_missions = {
-			hes_along_the_rhine
-		}
-		position = 6
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
 		trigger = {
 			OR = {
-				any_ally = {
-					OR = {
-						primary_culture = dutch
-						primary_culture = frisian
-						primary_culture = flemish
+				MAI = {
+					is_subject_of = ROOT
+				}
+				AND = {
+					78 = {
+						owned_by = ROOT
 					}
-					has_opinion = {
-						who = ROOT
-						value = 150
+					4718 = {
+						owned_by = ROOT
 					}
 				}
-				any_rival_country = {
-					OR = {
-						primary_culture = dutch
-						primary_culture = frisian
-						primary_culture = flemish
-					}
-					NOT = {
-						has_opinion = {
-							who = ROOT
-							value = -150
-						}
+			}
+			if = {
+				limit = { ai = no }
+				78 = {
+					num_of_units_in_province = {
+    					who = ROOT
+   						amount = 10
 					}
 				}
 			}
 		}
-		
 		effect = {
 			if = {
-				limit = {
-					any_ally = {
-						OR = {
-							primary_culture = dutch
-							primary_culture = frisian
-							primary_culture = flemish
-						}
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
+				limit = { MAI = { is_subject_of = ROOT } }
+				custom_tooltip = hes_depose_noble_regency_thu_subject_yes_tt
+				create_union = MAI
+				add_historical_friend = MAI
+				add_opinion = {
+    				who = MAI
+    				modifier = succesful_province_purchase
+    				multiplier = 4
 				}
-				random_ally = {
-					limit = {
-						OR = {
-							primary_culture = dutch
-							primary_culture = frisian
-							primary_culture = flemish
-						}
-						has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
+				MAI = {
 					add_historical_friend = ROOT
-					ROOT = { add_historical_friend = PREV }
-				}
-				add_country_modifier = {
-					name = hes_dutch_symbiosis
-					duration = -1
+					add_opinion = {
+    					who = ROOT
+    					modifier = succesful_province_purchase
+    					multiplier = 4
+					}
 				}
 			}
+			else_if = {
+				limit = { NOT = { MAI = { is_subject_of = ROOT } } }
+				custom_tooltip = hes_depose_noble_regency_thu_subject_no_tt
+				tooltip = {
+					create_union = MAI
+					add_historical_friend = MAI
+					add_opinion = {
+    					who = MAI
+    					modifier = succesful_province_purchase
+    					multiplier = 4
+					}
+					MAI = {
+						add_historical_friend = ROOT
+						add_opinion = {
+    						who = ROOT
+    						modifier = succesful_province_purchase
+    						multiplier = 4
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					78 = { owned_by = HES } 
+					4718 = { owned_by = HES } 
+				}
+				custom_tooltip = hes_depose_noble_regency_thu_conquest_yes_tt
+				78 = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				4718 = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+			}
+			else_if = {
+				limit = { 
+					NOT = { 
+						78 = { owned_by = HES } 
+						4718 = { owned_by = HES }
+					}
+				}
+				custom_tooltip = hes_depose_noble_regency_thu_conquest_no_tt
+				tooltip = {
+					78 = {
+						add_nationalism = -30
+						set_local_autonomy = 0
+					}
+					4718 = {
+						add_nationalism = -30
+						set_local_autonomy = 0
+					}
+				}
+			}
+			custom_tooltip = " "
+			78 = {
+				spawn_rebels = {
+    				type = noble_rebels
+    				size = 3
+				}
+				add_devastation = 15
+			}
+		}
+	}
+	ia_hesse_up_the_main = {
+		icon = conquer_franconia
+		position = 6
+		required_missions = {
+			ia_hesse_once_a_tower
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = franconia_area
+				area = upper_franconia_area
+			}
+		}
+		trigger = {
+			franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			upper_franconia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = { 
+				NOT = { exists = FKN }
+				FKN = {
+					vassal_of = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					has_estate_privilege = estate_nobles_hes_integration_of_houses
+					exists = FKN
+				}
+				add_historical_friend = FKN
+				FKN = {
+					add_historical_friend = ROOT
+					hidden_effect = {
+						add_government_reform = fkn_vintner_monarchy
+					}
+				}
+				custom_tooltip = hes_lands_inbetween_upgrade_dip_priv_tt
+			}
+			else_if = {
+				limit = {
+					has_estate_privilege = estate_nobles_hes_integration_of_houses
+					NOT = { exists = FKN }
+				}
+				FKN = {
+					every_core_province = { remove_core = FKN }
+				}
+				random_province = {
+					limit = {
+						OR = {
+							area = franconia_area
+							area = upper_franconia_area
+						}
+					}
+					add_core = FKN
+					cede_province = ROOT
+				}
+				release = FKN
+				franconia_area = {
+					add_core = FKN
+					cede_province = FKN
+				}
+				upper_franconia_area = {
+					add_core = FKN
+					cede_province = FKN
+				}
+				vassalize = FKN
+				add_historical_friend = FKN
+				FKN = {
+					add_historical_friend = ROOT
+					add_government_reform = fkn_vintner_monarchy
+				}
+				custom_tooltip = hes_up_the_main_upgrade_dip_priv_tt
+			}
 			else = {
-				add_country_modifier = {
-					name = hes_dutch_trade_war
-					duration = -1
+				franconia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				upper_franconia_area = {
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+				custom_tooltip = hes_up_the_main_upgrade_mil_priv_tt
+			}
+			set_country_flag = hes_up_the_main_privilige_improvement
+			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
+			hidden_effect = {
+				every_country = {
+					limit = { culture_group = germanic }
+					add_aggressive_expansion = {
+						who = ROOT
+						value = -15
+						apply_calc = no
+					}
 				}
 			}
 		}
 	}
-	
-	hes_bulwark_of_the_rhine = {
-		icon = a.e.i.o.u.
+	ia_hesse_new_reorganization = {
+		icon = avoid_fragmentation
+		position = 8
 		required_missions = {
-			hes_hessian_supremacy
-			hes_dutch_merchants
-			hes_eliminate_koln
-			hes_protect_mining_towns
+			ia_hesse_ease_their_burdens
+			ia_hesse_formalise_the_union
 		}
-		position = 7
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
 		trigger = {
-			always = yes
+
 		}
-		
 		effect = {
-			add_adm_power = 100
-			add_dip_power = 100
-			add_mil_power = 100
-			capital_scope = {
-				add_base_tax = 3
-				add_base_manpower = 3
-				add_base_production = 3
+			if = {
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				hidden_effect = {
+					random_ally = {
+						limit = {
+							primary_culture = bavarian
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						add_historical_friend = ROOT
+						ROOT = {
+							vassalize = PREV
+							add_historical_friend = PREV
+						}
+						every_province = {
+							limit = {
+								culture = bavarian
+								region = south_german_region
+							}
+							add_core = PREV
+						}
+					}
+					random_ally = {
+						limit = {
+							primary_culture = swiss
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						add_historical_friend = ROOT
+						ROOT = {
+							vassalize = PREV
+							add_historical_friend = PREV
+						}
+						every_province = {
+							limit = {
+								culture = swiss
+								region = south_german_region
+							}
+							add_core = PREV
+						}
+					}
+					random_ally = {
+						limit = {
+							primary_culture = swabian
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						add_historical_friend = ROOT
+						ROOT = {
+							vassalize = PREV
+							add_historical_friend = PREV
+						}
+						every_province = {
+							limit = {
+								culture = swabian
+								region = south_german_region
+							}
+							add_core = PREV
+						}
+					}
+				}
+				custom_tooltip = hes_reorganization_allies_turn_to_vassals_tt
+			}
+			if = {
+				limit = { 
+					has_estate_privilege = estate_nobles_hes_integration_of_houses
+					calc_true_if = {
+						all_country = {
+							primary_culture = bavarian
+							alliance_with = HES
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						amount = 1
+					}
+					calc_true_if = {
+						all_country = {
+							primary_culture = swabian
+							alliance_with = HES
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						amount = 1
+					}
+					calc_true_if = {
+						all_country = {
+							primary_culture = swiss
+							alliance_with = HES
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						amount = 1
+					}
+				}
+				custom_tooltip = hes_reorganisation_will_get_all_vassals_yes_tt
+			}
+			else_if = {
+				limit = { 
+					has_estate_privilege = estate_nobles_hes_integration_of_houses
+					NOT = {
+						calc_true_if = {
+							all_country = {
+								primary_culture = bavarian
+								alliance_with = HES
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+							amount = 1
+						}
+						calc_true_if = {
+							all_country = {
+								primary_culture = swabian
+								alliance_with = HES
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+							amount = 1
+						}
+						calc_true_if = {
+							all_country = {
+								primary_culture = swiss
+								alliance_with = HES
+								has_opinion = {
+									who = ROOT
+									value = 100
+								}
+							}
+							amount = 1
+						}
+					}
+				}
+				custom_tooltip = hes_reorganisation_will_get_all_vassals_no_tt
+			}
+			else = {
+				south_german_region = {
+					limit = {
+						culture_group = germanic
+						NOT = { culture = austrian }
+					}
+					add_permanent_claim = ROOT
+				}
 			}
 		}
 	}
 }
 
-hesse_missions_column_4 = {
+ia_hesse_missions_4 = {
 	slot = 4
 	generic = no
 	ai = yes
 	potential = {
-		tag = HES
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
-	
-	hes_standardize_drilling_methods = {
-		icon = army_reforms
-		required_missions = {
-			hes_rebuild_schloss_berlepsch
-		}
+
+	ia_hesse_strategic_marriage = {
+		icon = mission_gustavus
 		position = 2
-		
-		#provinces_to_highlight = {
+		required_missions = {
 			
-		#}
-		
-		trigger = {
-			num_of_regiments_at_full_drill = 15
-			army_professionalism = 0.20
 		}
-		
+		trigger = {
+			marriage_with = SAX
+			reverse_has_opinion = {
+				who = SAX
+				value = 60
+			}
+			if = {
+				limit = { ai = no }
+				SAX = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted_enemy
+					}
+				}
+			}
+		}
 		effect = {
-			add_country_modifier = {
-				name = new_hessian_drill
-				duration = 18250
+			change_religion = fraticelli
+			define_advisor = {
+    			type = inquisitor
+    			cost_multiplier = 0.2
+    			skill = 2
+    			culture = saxon
+    			religion = fraticelli
+			}
+			define_advisor = {
+    			type = diplomat
+    			cost_multiplier = 0.5
+    			skill = 1
+    			culture = saxon
+    			religion = fraticelli
 			}
 		}
 	}
-	
-	hes_officer_academy = {
-		icon = balance_of_power
+	ia_hesse_introducing_our_generals = {
+		icon = fra_military_reform
+		position = 4
 		required_missions = {
-			hes_standardize_drilling_methods
+			ia_hesse_marshals_of_saxons
 		}
-		position = 3
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
 		trigger = {
-			81 = {
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}
+			if = {
+				limit = { ai = no }
+				has_estate_privilege = estate_nobles_noble_officer_right
 			}
-			81 = {
-				OR = {
-					has_building = conscription_center
-					has_building = regimental_camp
-				}
+			has_leaders = {
+				value = 4
+        		type = general
+				include_monarch = no
+				include_heir = no
 			}
-			81 = {
-				base_manpower = 10
+			OR = {
+				army_tradition = 60
+				AND = {
+					army_tradition = 40
+					army_professionalism = 0.15 
+				}
 			}
 		}
-		
 		effect = {
-			81 = {
-				add_building = university
-				add_permanent_province_modifier = {
-					name = hes_officer_academy_mod
+			hidden_effect = {
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+    			remove_country_modifier = hes_armed_force_of_saxony_1
+    			add_country_modifier = {
+    				name = hes_armed_force_of_saxony_2
+    				duration = -1
+    			}
+			}
+			custom_tooltip = hes_introducing_our_generals_tt
+			custom_tooltip = hes_armed_of_sax_upgrade_1_tt
+			SAX = {
+				create_general = {
+					tradition = 100
+					culture = hessian 
+				}
+				create_general = { 
+					tradition = 100
+					culture = hessian
+				}
+				custom_tooltip = hes_as_long_as_we_are_subjects_for_sax_tt
+				add_country_modifier = {
+					name = hes_in_the_saxon_army_mod_for_saxony_1
 					duration = -1
 				}
 			}
 		}
 	}
-	
-	hes_hessian_quality = {
-		icon = establish_a_standing_army
+	ia_hesse_a_martial_academy = {
+		icon = found_the_vatican_library
+		position = 5
 		required_missions = {
-			hes_officer_academy
+			ia_hesse_introducing_our_generals
 		}
-		position = 4
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
 		trigger = {
-			army_professionalism = 0.4
-			has_global_modifier_value = {
-				which = discipline
-				value = 0.15
+			has_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = 50
+			}
+			has_idea = hes_marburg_university
+			custom_trigger_tooltip = {
+				tooltip = hes_a_martial_academy_tt
+				81 = {
+					has_building = university
+					owned_by = ROOT
+				}
+			}
+			army_organiser = 2
+			mil_power = 50
+			adm_power = 50 
+		}
+		effect = {
+			add_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = -50
+			}
+			country_event = { 
+    			id = ia_hesse.6
+    			days = 7
+			}
+			custom_tooltip = EVENT_INSIGHT_INTRO
+			custom_tooltip = ia_hesse_a_martial_academy_tt
+		}
+	}
+	ia_hesse_monopolize_the_saxon_ranks = {
+		icon = edict_of_potsdam
+		position = 6
+		required_missions = {
+			ia_hesse_a_martial_academy
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				has_estate_privilege = estate_nobles_noble_officer_right
+			}
+			has_leaders = {
+				value = 4
+        		type = general
+				include_monarch = no
+				include_heir = no
+			}
+			OR = {
+				army_tradition = 75
+				AND = {
+					army_tradition = 50
+					army_professionalism = 0.30
+				}
+			}
+			has_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = 75
 			}
 		}
-		
+		effect = {
+			add_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = -75
+			}
+			hidden_effect = {
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+				kill_leader = {
+    				type = general
+    			}
+    			remove_country_modifier = hes_armed_force_of_saxony_2
+    			add_country_modifier = {
+    				name = hes_armed_force_of_saxony_3
+    				duration = -1
+    			}
+    			SAX = {
+    				remove_country_modifier = hes_in_the_saxon_army_mod_for_saxony_1
+    				add_country_modifier = {
+    					name = hes_in_the_saxon_army_mod_for_saxony_2
+    					duration = -1
+    				}
+    			}
+			}
+			custom_tooltip = hes_introducing_our_generals_tt
+			custom_tooltip = hes_armed_of_sax_upgrade_2_tt
+			SAX = {
+				define_general = {
+    				shock = 6
+    				fire = 6
+    				manuever = 5
+    				siege = 2
+				}
+				define_general = {
+    				shock = 4
+    				fire = 4
+    				manuever = 5
+    				siege = 6
+				}
+				custom_tooltip = hes_hes_in_the_saxon_army_mod_for_saxony_upgrade_1_tt
+			}
+		}
+	}
+	ia_hesse_ease_their_burdens = {
+		icon = control_swabia
+		position = 7
+		required_missions = {
+			ia_hesse_monopolize_the_saxon_ranks
+			ia_hesse_strenghten_the_bond
+		}
+		trigger = {
+			diplomatic_reputation = 4
+			custom_trigger_tooltip = {
+				tooltip = hes_restructure_rhenish_cities_tt
+				OR = {
+					has_country_flag = hes_allow_german_subject_integration
+					has_country_flag = hes_allow_mil_idea_swap
+				}
+			}
+			has_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = 100
+			}
+			reverse_has_opinion = {
+				who = SAX
+				value = 150
+			}
+			if = {
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				calc_true_if = {
+					all_country = {
+						primary_culture = bavarian
+						alliance_with = HES
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					amount = 1
+				}
+				calc_true_if = {
+					all_country = {
+						primary_culture = swabian
+						alliance_with = HES
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					amount = 1
+				}
+				calc_true_if = {
+					all_country = {
+						primary_culture = swiss
+						alliance_with = HES
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					amount = 1
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
+				custom_tooltip = hes_as_long_as_we_are_subjects_tt
+				add_country_modifier = {
+					name = hes_appointed_royal_administrator
+					duration = -1
+				}
+				set_country_flag = hes_has_royal_administrator
+				custom_tooltip = hes_ease_their_burdens_tt
+			}
+			else = {
+				custom_tooltip = hes_as_long_as_we_are_subjects_tt
+				add_country_modifier = {
+					name = hes_granted_royal_permit
+					duration = -1
+				}
+			}
+			add_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = -100
+			}
+		}
+	}
+}
+
+ia_hesse_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_hesse_mask_weakness = {
+		icon = mission_landsknecht_soldier
+		position = 1
+		required_missions = {
+				
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				calc_true_if = {
+					all_country = {
+    					humiliated_by = ROOT
+    				}
+    				amount = 3
+    			}
+			}
+			OR = {
+				land_forcelimit = 10
+				is_subject_of_type = german_march
+			}
+		}
+		effect = {
+			add_prestige = 20
+			add_mil_power = 100
+		}
+	}
+	ia_hesse_marshals_of_saxons = {
+		icon = mission_plc_prevent_deluge
+		position = 3
+		required_missions = {
+			ia_hesse_mask_weakness
+			ia_hesse_strategic_marriage
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				reverse_has_opinion = {
+					who = SAX
+					value = 150
+				}
+			}
+			marriage_with = SAX
+			custom_trigger_tooltip = {
+				tooltip = hes_stronger_than_everyone_in_germany_tt
+				all_country = {
+  					OR = {
+    					NOT = { 
+    						capital_scope = { 
+    							OR = {
+    								region = north_german_region
+    								region = south_german_region
+    							}
+    						}
+  						}
+						NOT = { army_size = HES }
+						tag = SAX
+					}
+				}
+			}
+		}
 		effect = {
 			add_country_modifier = {
-				name = hes_hessian_finest
+				name = hes_new_emerging_power
+				duration = 10950
+			}
+			if = {
+				limit = { is_subject = yes }
+				custom_tooltip = hes_as_long_as_we_are_subjects_tt
+				add_country_modifier = {
+					name = hes_armed_force_of_saxony_1
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_lead_saxon_campaigns = {
+		icon = mission_rb_unite_the_clans
+		position = 5
+		required_missions = {
+			ia_hesse_marshals_of_saxons
+		}
+		trigger = {
+			if = {
+				limit = { is_subject_of_type = german_march }
+				custom_trigger_tooltip = {
+					tooltip = hes_lead_saxon_campaigns_tt
+					check_variable = {
+						which = HesseWonWarsAlongsideGermanKing
+						value = 20
+					}
+					check_variable = {
+						which = HesBattlesWon
+						value = 30
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = hes_become_a_german_march_already
+					treasury = 1000000
+				}
+			}
+			army_tradition = 80
+		}
+		effect = {
+			add_army_professionalism = 0.1
+			custom_tooltip = hes_as_long_as_we_are_subjects_tt
+			add_country_modifier = {
+				name = hes_pride_of_the_konig
+				duration = -1
+			}
+			SAX = {
+				custom_tooltip = hes_as_long_as_we_are_subjects_for_sax_tt
+				add_country_modifier = {
+					name = hes_hessian_overreliance_mod_for_sax
+					duration = -1
+				}
+			}
+			add_country_modifier = { ###DELETE LATER
+				name = hes_mp_buffs_military
+				duration = -1
+			}
+		}
+	}
+	ia_hesse_strenghten_the_bond = {
+		icon = Control_Junkers
+		position = 6
+		required_missions = {
+			ia_hesse_lead_saxon_campaigns
+		}
+		trigger = {
+			has_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = 50
+			}
+			statesman = 2
+			diplomatic_reputation = 4
+			prestige = 60
+		}
+		effect = {
+			add_government_power = {
+				mechanic_type = saxon_favor_mechanic
+				power_type = ia_court_influence
+				value = -50
+			}
+			country_event = {
+				id = ia_hesse.10
+			}
+			custom_tooltip = EVENT_INSIGHT_INTRO
+			custom_tooltip = hes_strenghten_the_bond_tt
+		}
+	}
+}
+
+ia_hesse_missions_1_military = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_hesse_adapt_the_alpine_towns_mission = {
+		icon = alpine_defenses
+		position = 14
+		required_missions = {
+			ia_hesse_restructure_rhenish_cities_mission
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1871
+				province_id = 4722
+			}
+		}
+		trigger = {
+			1871 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			4722 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+		}
+		effect = {
+			1871 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			4722 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+ia_hesse_missions_2_military = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_hesse_rebuild_schloss = {
+		icon = fight_bosnian_heresies
+		position = 10
+		required_missions = {
+			ia_hesse_prepare_reconstruction
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			1762 = {
+				province_has_current_tech_fort_trigger = yes
+			}
+		}
+		effect = {
+
+		}
+	}
+	ia_hesse_reinforce_walls = {
+		icon = fortress_of_belgrade
+		position = 11
+		required_missions = {
+			ia_hesse_rebuild_schloss
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			1762 = {
+				has_building = ramparts
+			}
+		}
+		effect = {
+
+		}
+	}
+	ia_hesse_train_the_swabian_forces_mission = {
+		icon = ven_standing_army_mission_2
+		position = 14
+		required_missions = {
+			ia_hesse_restructure_rhenish_cities_mission
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1880
+				province_id = 4712
+				province_id = 1872
+				province_id = 74
+			}
+		}
+		trigger = {
+			1880 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			4712 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			1872 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			74 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+		}
+		effect = {
+			1880 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			4712 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			1872 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			74 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+ia_hesse_missions_3_military = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_hesse_prepare_reconstruction = {
+		icon = mission_colonial
+		position = 9
+		required_missions = {
+			
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1762
+				province_id = 81
+				province_id = 4774
+			}
+		}
+		trigger = {
+			1762 = {
+				owned_by = ROOT
+				has_building = road_network
+			}
+			81 = {
+				owned_by = ROOT
+				has_building = road_network
+			}
+			4774 = {
+				owned_by = ROOT
+				has_building = road_network
+			}
+			if = {
+				limit = { ai = no }
+				capital_scope = {
+					has_state_edict = edict_encourage_development
+				}
+			}
+		}
+		effect = {
+			1762 = {
+				add_province_modifier = {
+					name = hes_reconstruction_effort
+					duration = 9125
+				}
+			}
+			81 = {
+				add_province_modifier = {
+					name = hes_reconstruction_effort
+					duration = 9125
+				}
+			}
+			4774 = {
+				add_province_modifier = {
+					name = hes_reconstruction_effort
+					duration = 9125
+				}
+			}
+		}
+	}
+	ia_hesse_first_regimental_city_mission = {
+		icon = mission_pol_revival_krakow
+		position = 12
+		required_missions = {
+			ia_hesse_expand_aufmarschplatz
+			ia_hesse_reinforce_walls
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			1762 = {
+				base_manpower = 20
+				num_of_buildings_in_province = 8
+			}
+		}
+		effect = {
+			1762 = {
+				remove_province_modifier = hes_dedicated_mil_district
+				remove_province_modifier = hes_expanded_mil_quarters
+				add_permanent_province_modifier = {
+					name = hes_regimental_city_local
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_restructure_rhenish_cities_mission = {
+		icon = mission_develop_visby
+		position = 13
+		required_missions = {
+			ia_hesse_first_regimental_city_mission
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1878
+				province_id = 2975
+				province_id = 69
+				province_id = 82
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = hes_restructure_rhenish_cities_tt
+				OR = {
+					has_country_flag = hes_allow_german_subject_integration
+					has_country_flag = hes_allow_mil_idea_swap
+				}
+			}
+			1878 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			2975 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			69 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			82 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+		}
+		effect = {
+			1878 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			2975 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			69 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			82 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_city_of_heildelberg_mission = {
+		icon = develop_konigsberg
+		position = 14
+		required_missions = {
+			ia_hesse_restructure_rhenish_cities_mission
+		}
+		provinces_to_highlight = {
+			province_id = 77
+		}
+		trigger = {
+			77 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+		}
+		effect = {
+			77 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_from_towns_to_cities_mission = {
+		icon = imperial_capitals
+		position = 15
+		required_missions = {
+			ia_hesse_city_of_heildelberg_mission
+			ia_hesse_expand_the_dual_capitals_mission
+			ia_hesse_incorporate_the_bavarians_mission
+			ia_hesse_adapt_the_alpine_towns_mission
+			ia_hesse_train_the_swabian_forces_mission
+		}
+		provinces_to_highlight = {
+			OR = {
+				has_province_flag = eligable_to_rebuild_regimental_town
+				AND = {
+					has_province_modifier = hes_regimental_town_local
+					NOT = {
+						base_manpower = 15
+						development = 30
+						num_of_buildings_in_province = 6
+						has_building = ramparts
+						has_building = soldier_households
+					}
+				}
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = from_towns_to_cities_mission_reqs_tt
+				all_province = {
+					OR = {
+						NOT = { has_province_modifier = hes_regimental_town_local }
+						AND = {
+							owned_by = ROOT
+							base_manpower = 15
+							development = 30
+							num_of_buildings_in_province = 6
+							has_building = ramparts
+							has_building = soldier_households
+						}
+					}
+					NOT = { has_province_flag = eligable_to_rebuild_regimental_town }
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = hes_regimental_town_local
+					}
+					remove_province_modifier = hes_regimental_town_local
+					add_permanent_province_modifier = {
+						name = hes_regimental_city_local
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = from_towns_to_cities_mission_reward_tt
+			tooltip = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_city_local
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_a_central_government_mission = {
+		icon = the_balance_of_power
+		position = 16
+		required_missions = {
+			ia_hesse_from_towns_to_cities_mission
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			1762 = {
+				owned_by = ROOT
+				development = 80
+				num_of_buildings_in_province = 10
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 4
+				}
+			}
+			land_forcelimit = 200
+			adm_power = 200
+			treasury = 1000
+			government_reform_progress = 50
+		}
+		effect = {
+			add_adm_power = -200
+			add_treasury = -1000
+			change_government_reform_progress = -50
+			1762 = {
+				remove_province_modifier = hes_regimental_city_local
+				add_permanent_province_modifier = {
+					name = hes_regimental_capital_local
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = hes_capital_of_german_armies
 				duration = -1
 			}
 		}
 	}
 }
 
-hesse_missions_column_5 = {
+ia_hesse_missions_4_military = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_hesse_dedicated_mil_district_mission = {
+		icon = mission_gustavus
+		position = 10
+		required_missions = {
+			ia_hesse_prepare_reconstruction
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				1762 = {
+					has_building = barracks
+					if = {
+						limit = { ai = no }
+						num_of_times_expanded_infrastructure = 1
+					}
+					base_manpower = 6
+				}
+			}
+			else = {
+				1762 = {
+					has_building = barracks
+					base_manpower = 6
+				}
+			}
+		}
+		effect = {
+			1762 = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = hes_dedicated_mil_district
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_expand_aufmarschplatz = {
+		icon = appease_the_estates
+		position = 11
+		required_missions = {
+			ia_hesse_dedicated_mil_district_mission
+		}
+		provinces_to_highlight = {
+			province_id = 1762
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				1762 = {
+					has_building = regimental_camp
+					if = {
+						limit = { ai = no }
+						num_of_times_expanded_infrastructure = 2
+					}
+					base_manpower = 12
+				}
+			}
+			else = {
+				1762 = {
+					has_building = regimental_camp
+					base_manpower = 12
+				}
+			}
+		}
+		effect = {
+			1762 = {
+				add_base_manpower = 4
+				add_province_modifier = {
+					name = hes_expanded_mil_quarters
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_hesse_expand_the_dual_capitals_mission = {
+		icon = ansbach_succession
+		position = 14
+		required_missions = {
+			ia_hesse_restructure_rhenish_cities_mission
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 4715
+				province_id = 67
+			}
+		}
+		trigger = {
+			4715 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			67 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+		}
+		effect = {
+			4715 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+			67 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+ia_hesse_missions_5_military = {
 	slot = 5
 	generic = no
 	ai = yes
 	potential = {
-		tag = HES
+		OR = {
+			tag = HES
+			AND = {
+				primary_culture = hessian
+				was_tag = HES
+			}
+		}
+		NOT = { tag = GER }
 	}
 	has_country_shield = yes
-	
-	hes_rebuild_schloss_berlepsch = {
-		icon = alpine_defenses
+
+	ia_hesse_incorporate_the_bavarians_mission = {
+		icon = duchy_of_bavaria
+		position = 14
 		required_missions = {
-			
+			ia_hesse_restructure_rhenish_cities_mission
 		}
-		position = 1
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			1762 = {
-				fort_level = 2
+		provinces_to_highlight = {
+			OR = {
+				province_id = 76
+				province_id = 65
+				province_id = 64
 			}
 		}
-		
-		effect = {
-			1762 = {
+		trigger = {
+			64 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
 				if = {
-					limit = {
-						NOT = {
-							has_great_project = {
-								type = schloss_berlepsch
-								tier = 1
-							}
-						}
-					}
-					add_great_project_tier = {
-						type = schloss_berlepsch
-						tier = 1
-					}
-				}
-				else = {
-					add_base_manpower = 1
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
 				}
 			}
-		}
-	}
-	
-	hes_old_berlepsch_chapel = {
-		icon = answer_the_roman_question
-		required_missions = {
-			hes_rebuild_schloss_berlepsch
-		}
-		position = 2
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			1762 = {
-				OR = {
-					has_building = temple
-					has_building = cathedral
-				}	
+			65 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
 			}
-			1762 = {
-				base_tax = 6	
+			76 = {
+				owned_by = ROOT
+				has_building = barracks
+				has_building = regimental_camp
+				has_building = courthouse
+				has_building = road_network
+				province_has_current_tech_fort_trigger = yes
+				base_manpower = 10
+				development = 20
+				if = {
+					limit = { ai = no }
+					num_of_times_expanded_infrastructure = 1
+				}
 			}
 		}
-		
 		effect = {
-			1762 = {
+			64 = {
 				add_permanent_province_modifier = {
-					name = hes_clerical_funding
+					name = hes_regimental_town_local
 					duration = -1
 				}
-				add_base_tax = 3
 			}
-		}
-	}
-	hes_restore_aufmarschplatz = {
-		icon = interest_of_holland
-		required_missions = {
-			hes_old_berlepsch_chapel
-		}
-		position = 3
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			1762 = {
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}	
-			}
-			1762 = {
-				OR = {
-					has_building = regimental_camp
-					has_building = conscription_center
-				}	
-			}
-			1762 = {
-				base_manpower = 10	
-			}
-		}
-		
-		effect = {
-			1762 = {
-				if = {
-					limit = { has_building = training_fields }
-					add_base_manpower = 2
-				}
-				else = {
-					remove_building = barracks
-					add_building = training_fields
-				}
-				
-				if = {
-					limit = { has_building = conscription_center }
-					add_base_manpower = 2
-				}
-				else = {
-					remove_building = regimental_camp
-					add_building = conscription_center
+			65 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
 				}
 			}
-		}
-	}
-	
-	hes_reinforce_walls = {
-		icon = fortress_of_belgrade
-		required_missions = {
-			hes_restore_aufmarschplatz
-		}
-		position = 4
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			1762 = {
-				fort_level = 2	
-			}
-			1762 = {
-				has_building = ramparts
-			}
-			1762 = {
-				base_manpower = 15	
-			}
-		}
-		
-		effect = {
-			1762 = {
-				if = {
-					limit = {
-						NOT = {
-							has_great_project = {
-								type = schloss_berlepsch
-								tier = 2
-							}
-						}
-					}
-					add_great_project_tier = {
-						type = schloss_berlepsch
-						tier = 1
-					}
-				}
-				else = {
-					add_base_manpower = 5
+			76 = {
+				add_permanent_province_modifier = {
+					name = hes_regimental_town_local
+					duration = -1
 				}
 			}
-		}
-	}
-	
-	hes_hessian_doctrine = {
-		icon = enlightened_absolutism
-		required_missions = {
-			hes_hessian_quality
-			hes_reinforce_walls
-		}
-		position = 5
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			army_professionalism = 0.6
-			num_of_regiments_at_full_drill = 30
-		}
-		
-		effect = {
-			add_country_modifier = {
-				name = hes_glorious_drill
-				duration = -1
-			}
-		}
-	}
-	
-	hes_hessian_supremacy = {
-		icon = generality_lands
-		required_missions = {
-			hes_hessian_doctrine
-		}
-		position = 6
-		
-		#provinces_to_highlight = {
-			
-		#}
-		
-		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = hes_supremacy_tt
-				check_variable = { which = HesWins value = 15 }
-			}
-		}
-		
-		effect = {
-			add_prestige = 50
-			add_power_projection = { 
-				type = 25_permanent_power_projection
-				amount = 15 
-			}
-			custom_tooltip = permanent_pp_tt
 		}
 	}
 }

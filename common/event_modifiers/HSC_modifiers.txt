@@ -31,6 +31,8 @@ mth_mutual_prosperity = {
 mth_common_works = {
 	local_build_cost = -0.15
 	local_development_cost = -0.15
+	allowed_num_of_buildings = 4
+	allowed_num_of_manufactories = 1
 }
 
 mth_irish_prosperity = {
@@ -147,4 +149,77 @@ last_king_in_residence = {
 	allowed_num_of_manufactories = -10
 	local_development_cost = 0.5
 	province_trade_power_value = 1
+}
+
+storyteller_overconfidence = {
+	morale_damage_received = -0.25
+	shock_damage_received = 0.20
+	fire_damage_received = 0.20
+}
+
+albion_sweeping_powers = {
+	reduced_liberty_desire = -15
+	all_estate_loyalty_equilibrium = -0.1
+	reform_progress_growth = -0.1
+}
+
+albion_scientific_divertment = {
+	innovativeness_gain = -0.25
+	technology_cost = 0.1
+}
+
+sought_boon_from_albion = {}
+
+albion_military_advisor = {
+	drill_gain_modifier = 1
+	drill_decay_modifier = -0.25
+	yearly_army_professionalism = 0.0025
+	army_tradition = 1
+}
+
+crossroads_gift_of_power = {
+	country_admin_power = 1
+	monthly_reform_progress_modifier = 0.20
+	administrative_efficiency = 0.05
+}
+
+crossroads_gift_of_charisma = {
+	country_diplomatic_power = 1
+	advisor_cost = -0.2
+	improve_relation_modifier = 0.25
+}
+
+crossroads_gift_of_vengeance = {
+	country_military_power = 1
+	fire_damage = 0.10
+	shock_damage = 0.15
+}
+
+crossroads_price_cooldown = {}
+
+crossroads_tasteless_province_mod = {
+	trade_value_modifier = -0.75
+}
+
+crossroads_lack_of_taste = {
+	land_morale = -0.05
+	global_trade_goods_size_modifier = -0.1
+}
+
+crossroads_essence_of_passion = {
+	manpower_recovery_speed = -0.33
+	development_cost_modifier = 0.1
+}
+
+crossroads_dreams_and_madness = {
+	global_unrest = 5
+	all_power_cost = 0.075
+}
+
+crossroads_warping_time = {
+	movement_speed = -0.15
+	land_attrition = 0.2
+	build_time = 0.5
+	great_project_upgrade_time = 1
+	build_cost = 0.1
 }

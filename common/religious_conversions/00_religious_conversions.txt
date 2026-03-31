@@ -26,6 +26,7 @@ propagate_religion_policy = {
 		
 		modifier = {
 			factor = 0
+			has_owner_religion = yes
 			owner = {
 				has_country_flag = immunity_against_propogate_religion
 			}
@@ -52,6 +53,13 @@ propagate_religion_policy = {
 		}
 		modifier = {
 			factor = 0
+			OR = {
+				religion = abolitionist
+				religion = lollard
+			}
+		}
+		modifier = {
+			factor = 0
 			religion = protestant
 			FROM = { religion = hellenic_pagan_reformed }
 		}
@@ -66,6 +74,7 @@ propagate_religion_policy = {
 			FROM = {
 				NOT = { has_country_flag = can_propagate_religion_in_abrahamic_provinces }
 				NOT = { religion = hellenic_pagan_reformed }
+				NOT = { religion = anglican }
 			}
 		}
 		modifier = {
@@ -73,17 +82,23 @@ propagate_religion_policy = {
 			religion_group = christian
 			FROM = {
 				NOT = { has_country_flag = can_propagate_religion_in_abrahamic_provinces }
-				#NOT = { has_government_attribute = can_spread_the_reformation }
+				NOT = { has_government_attribute = can_spread_the_reformation }
 				NOT = { has_reform = reformer_state_reform }
 				NOT = { religion = hellenic_pagan_reformed }
+				NOT = { religion = anglican }
 			}
 		}
 		modifier = {
 			factor = 10
-			religion = catholic
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
 			FROM = {
-				#has_government_attribute = can_spread_the_reformation
-				has_reform = reformer_state_reform
+				OR = {
+					has_government_attribute = can_spread_the_reformation
+					has_reform = reformer_state_reform
+				}
 			}
 		}
 		modifier = {
@@ -294,6 +309,36 @@ anglican_center_of_reformation = {
 		modifier = {
 			factor = 0
 			NOT = { continent = FROM }
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				num_of_cardinals = 1
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				num_of_cardinals = 2
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				num_of_cardinals = 3
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				num_of_cardinals = 4
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				num_of_cardinals = 5
+			}
 		}
 		modifier = {
 			factor = 2

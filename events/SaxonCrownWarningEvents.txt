@@ -1,0 +1,198 @@
+##########################################################
+# Saxon Crown Warning Events, moved from Hesse           #
+##########################################################
+
+namespace = ia_saxon_crown
+
+country_event = { # Saxonia has accumulated too much ae against you: first warning
+	id = ia_saxon_crown.1
+	title = ia_saxon_crown.1.t
+	desc = ia_saxon_crown.1.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			has_reform = saxon_feudalism
+			overlord = { has_reform = saxon_feudalism }
+		}
+	}
+	
+	trigger = {
+		overlord = { has_reform = saxon_feudalism }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_1 }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_2 }
+		NOT = { has_country_flag = sax_first_warning_flag }
+		NOT = { has_country_flag = sax_second_warning_flag }
+		overlord = {
+			OR = {
+				ai_attitude = {
+					who = ROOT
+					attitude = attitude_outraged
+				}
+				AND = {
+					NOT = {
+						has_opinion = {
+							who = ROOT
+							value = -50
+						}
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = aggressive_expansion
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ia_saxon_crown.1.a
+		
+		add_country_modifier = {
+			name = saxon_fief_sanctioned_1
+			duration = 3650
+		}
+		add_legitimacy = -10
+		add_prestige = -25
+		set_country_flag = sax_first_warning_flag
+		custom_tooltip = sax_first_warning_tt
+		hidden_effect = {
+			overlord = {
+				every_subject_country = {
+					add_aggressive_expansion = {
+						who = ROOT
+						value = 10
+						apply_calc = no
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Saxonia has accumulated too much ae against you: second warning
+	id = ia_saxon_crown.2
+	title = ia_saxon_crown.2.t
+	desc = ia_saxon_crown.2.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			has_reform = saxon_feudalism
+			overlord = { has_reform = saxon_feudalism }
+		}
+	}
+	
+	trigger = {
+		overlord = { has_reform = saxon_feudalism }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_1 }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_2 }
+		has_country_flag = sax_first_warning_flag
+		NOT = { has_country_flag = sax_second_warning_flag }
+		overlord = {
+			ai_attitude = {
+				who = ROOT
+				attitude = attitude_outraged
+			}
+		}
+	}
+	
+	option = {
+		name = ia_saxon_crown.2.a
+		
+		add_country_modifier = {
+			name = saxon_fief_sanctioned_2
+			duration = 3650
+		}
+		add_stability = -1
+		add_legitimacy = -20
+		add_prestige = -25
+		set_country_flag = sax_second_warning_flag
+		custom_tooltip = sax_second_warning_tt
+		hidden_effect = {
+			overlord = {
+				every_subject_country = {
+					add_aggressive_expansion = {
+						who = ROOT
+						value = 15
+						apply_calc = no
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Saxonia has accumulated too much ae against you: NOW DIE
+	id = ia_saxon_crown.3
+	title = ia_saxon_crown.3.t
+	desc = ia_saxon_crown.3.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			has_reform = saxon_feudalism
+			overlord = { has_reform = saxon_feudalism }
+		}
+	}
+	
+	trigger = {
+		overlord = { has_reform = saxon_feudalism }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_1 }
+		NOT = { has_country_modifier = saxon_fief_sanctioned_2 }
+		has_country_flag = sax_first_warning_flag
+		has_country_flag = sax_second_warning_flag
+		overlord = {
+			ai_attitude = {
+				who = ROOT
+				attitude = attitude_outraged
+			}
+			NOT = { has_any_disaster = yes }
+		}
+	}
+	
+	immediate = {
+		overlord = {
+			every_subject_country = {
+				limit = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_outraged
+					}
+				}
+				set_country_flag = join_war_against_upstart_flag
+			}
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_dismantle
+			}
+			every_subject_country = {
+				limit = {
+					has_country_flag = join_war_against_upstart_flag
+				}
+				join_all_offensive_wars_of = PREV
+			}
+		}
+	}
+	
+	after = {
+		every_country = {
+			limit = { has_country_flag = join_war_against_upstart_flag }
+			clr_country_flag = join_war_against_upstart_flag
+		}
+		clr_country_flag = sax_first_warning_flag
+		clr_country_flag = sax_second_warning_flag
+	}
+	
+	option = {
+		name = ia_saxon_crown.3.a
+		
+		
+	}
+}

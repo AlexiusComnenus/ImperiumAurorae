@@ -177,13 +177,15 @@ templar_missions_column_1 = {
 		effect = {
 			333 = {
 				add_province_triggered_modifier = beleares_flourishing
-				center_of_trade = 1
+				center_of_trade = 2
 			}
 			4560 = {
 				add_province_triggered_modifier = beleares_flourishing
+				center_of_trade = 1
 			}
 			4559 = {
 				add_province_triggered_modifier = beleares_flourishing
+				center_of_trade = 1
 				#change_trade_goods = glass
 			}
 		}
@@ -899,12 +901,13 @@ templar_missions_column_3 = {
 		position = 8
 		
 		trigger = {
-			if = {
-				limit = { ai = no }
-				treasury = 2000
-				manpower = 100
-			}
-			else = {
+			OR = {
+				AND = {
+					army_size = 150
+					land_forcelimit = 150
+					treasury = 2000
+					manpower = 150
+				}
 				is_year = 1575
 			}
 			#manpower_percentage = 0.9
@@ -968,6 +971,15 @@ templar_missions_column_3 = {
 		effect = {
 			country_event = {
 				id = ia_flavor_tem.4
+			}
+			custom_tooltip = golden_age_refresher_tt
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 600
 			}
 		}
 	}
@@ -1591,8 +1603,9 @@ templar_missions_column_5 = {
 		}
 		
 		effect = {
-			GRE = {
-				inherit = BYZ
+			if = { 
+				limit = { exists = BYZ }
+				old_byz_death_effect = yes
 			}
 			151 = {
 				add_core = LAE

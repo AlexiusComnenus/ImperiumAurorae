@@ -5,7 +5,6 @@ is_city = yes
 culture = tangut
 religion = vajrayana
 trade_goods = gems
-fort_15th = yes
 base_tax = 3
 base_production = 3
 base_manpower = 2

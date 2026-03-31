@@ -296,6 +296,14 @@ vassal=
 
 vassal=
 {
+	first="IRQ"
+	second="FRS"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
 	first="PUN"
 	second="Z38"
 	start_date="1444.11.11"

@@ -41,7 +41,7 @@ the_mercenary_registration_act = {
 	}
 
 	global_manpower_modifier = 0.1
-	mercenary_manpower = 0.2
+	mercenary_manpower = 0.25
 	
 	effect = {}
 	removed_effect = {}
@@ -913,6 +913,7 @@ noble_loyalty_act = {
 
 	nobles_loyalty_modifier = 0.1
 	cavalry_power = 0.15
+	yearly_corruption = -0.05
 	
 	effect = {}
 	removed_effect = {}
@@ -1428,6 +1429,7 @@ my_word_is_my_bond_policy = {
 
 	siege_ability = 0.15
 	artillery_level_modifier = 1
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}

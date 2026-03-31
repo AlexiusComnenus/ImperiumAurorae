@@ -92,9 +92,6 @@ germanic = {
 			Branislava Dagmar Danuta Dobravy
 		}
 	}
-	teuton = {
-		primary = TEU
-	}
 	ger_wallonian = {
 		dynasty_names = {
 			"van Namen" "van Rijsel" 
@@ -339,6 +336,9 @@ outremer_group = {
 	afrique_outremer = {
 		primary = TEM
 	}
+	teuton = {
+		primary = TEU
+	}
 	male_names = { Adolphe Adrien Aimable Alphonse Amédée Antoine Armand August Augustin
 	Charles Daniel Denis Édouard Elie Éttiene Eugène Félicien Félix Fernand
 	François Frédéric Georges Guillaume Gustave Henri Hubert Hugo Jacques Jean
@@ -576,23 +576,11 @@ byzantine = {
 	messalian = {
 		primary = PRO
 	}
-	ptolemaic = {
-		primary = EGY
-	}
 	pulian = {
 		primary = CLI
 	}
-	seleucian = {
-		primary = KRM
-		province = { local_has_tercio = yes }
-	}
 	tylosi = {
 		primary = ARB
-	}
-	yavana = {
-		primary = AFG
-	}
-	hellenistic = {
 	}
 	phrygian = {
 		male_names = {
@@ -680,6 +668,33 @@ byzantine = {
  			Cambysid Cambysid Cambysids Cambysid
  			Frataraka Frataraka Frataraka Frataraka
 		}
+	}
+}
+eastern_hellenistic = {
+	yavana = {
+		primary = JNP
+	}
+	hellenistic = {
+		primary = GRE
+	}
+	ptolemaic = {
+		primary = EGY
+	}
+	seleucian = {
+		primary = KRM
+		province = { local_has_tercio = yes }
+	}
+	
+	male_names = {
+		Admetos Alexandros Amyntos Antipatros Antimachos Asandros Kleitos Karanos Kleandros Koiranos Demeratos Demonikos Eudemos Euthydemos Eurybotas Gorgias Hephaestion Leonnatos
+		Meleagros Menandros Neoptolemos Nikanor Parmenion Perdikkas Polemon Polyperchon Ptolemaios Filippos Seleukos Socrates Stasanor Stasandros Tauron Timanthos Tlepolemos Zopyrion
+	}
+	female_names = {
+		Selene Kleopatra 
+	}
+	province = { local_has_qizilbash = yes }
+	dynasty_names = {
+		Seleukídai Asandrídai Eudemídai Polemonídai Stasandrídai Antigonídai Laomedonídai Menandrídai Kleitídai Menandrídai Euthydemídai
 	}
 }
 caucasian = {
@@ -914,6 +929,9 @@ xizho_group = {
 	}
 	feijiao = {
 		primary = Z42
+	}
+	xienjing = {
+		primary = MYM
 	}
 	
 	male_names = {

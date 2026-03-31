@@ -18,6 +18,7 @@ templar_order_government = {
 		reverse_relation_with_heretic_religion = -15
 		holy_orders_loyalty_modifier = 0.5
 		holy_orders_influence_modifier = 0.25
+		devotion = -1.5
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -31,7 +32,8 @@ templar_order_government = {
 		monastic_order = yes
 		pilgrim_protector = yes
 		locked_government_type = yes
-		strong_marines = yes
+		#strong_marines = yes
+		winning_battles_increases_legitimacy = yes
 	}
 	conditional = {
 		allow = { has_dlc = "Domination" }
@@ -173,6 +175,7 @@ brotherhood_government = {
 		relation_with_accepted_culture = 25
 		global_unrest = -1
 		reverse_relation_with_same_religion = 30
+		devotion = -1.5
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -184,6 +187,7 @@ brotherhood_government = {
 	custom_attributes = {
 		monastic_order = yes
 		locked_government_type = yes
+		winning_battles_increases_legitimacy = yes
 	}
 }
 
@@ -204,6 +208,7 @@ perkunas_government = {
 		tolerance_own = 2
 		defensiveness = 0.30
 		governing_capacity_modifier = -0.25
+		devotion = -1.5
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -217,43 +222,7 @@ perkunas_government = {
 	custom_attributes = {
 		monastic_order = yes
 		locked_government_type = yes
-	}
-}
-
-myrmidons_government = {
-	potential = {
-		OR = { 
-			tag = MYM
-			have_had_reform = myrmidons_government
-		}
-		religion = hellenic_pagan_reformed
-	}
-	lock_level_when_selected = yes
-	modifiers = {
-		missionary_maintenance_cost = -0.2
-		reduced_liberty_desire_on_same_continent = 20
-		auto_explore_adjacent_to_colony = yes
-		colony_development_boost = 1
-	}
-	rulers_can_be_generals = yes
-	heirs_can_be_generals = yes
-	papacy = yes
-	valid_for_nation_designer = yes
-	nation_designer_cost = 10
-	icon = "sparapet_office"
-	allow_normal_conversion = no
-	monastic = yes
-	custom_attributes = {
-		monastic_order = yes
-		locked_government_type = yes
-		strong_marines = yes
-	}
-	factions = { xizho greeks natives }
-	conditional = {
-		allow = { has_dlc = "Domination" }
-		government_abilities = {
-			naval_professionalism_mechanic
-		}
+		winning_battles_increases_legitimacy = yes
 	}
 }
 
@@ -277,6 +246,7 @@ jomsviking_government = {
 		may_perform_slave_raid = yes
 		coast_raid_range = 2
 		sea_repair = yes
+		devotion = -1
 	}
 	rulers_can_be_generals = yes
 	heirs_can_be_generals = yes
@@ -290,6 +260,7 @@ jomsviking_government = {
 		monastic_order = yes
 		locked_government_type = yes
 		strong_marines = yes
+		winning_battles_increases_legitimacy = yes
 	}
 	conditional = {
 		allow = { has_dlc = "Domination" }

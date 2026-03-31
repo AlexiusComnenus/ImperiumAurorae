@@ -254,6 +254,7 @@ estate_burghers_enforced_interfaith_dialogue = {
 	}
 	can_select = {
 		NOT = { has_estate_privilege = estate_church_enforced_one_faith }
+		NOT = { has_estate_privilege = estate_church_ia_fundamentalism }
 	}
 	benefits = {
 		tolerance_heathen = 2
@@ -1689,6 +1690,10 @@ estate_burghers_tropical_nation = {
 			technology_group = indian
 			tag = Y11
 			tag = MYM
+            AND = {
+                tag = KOI
+                has_country_flag = koi_bay_cat_rescued 
+            }
 		}
 	}
 	can_select = {
@@ -1698,6 +1703,10 @@ estate_burghers_tropical_nation = {
 			}
 			tag = Y11
 			tag = MYM
+            AND = {
+                tag = KOI
+                has_country_flag = koi_bay_cat_rescued
+            }
 		}
 	}
 	on_granted = {
@@ -3423,6 +3432,7 @@ estate_burghers_ARB_oasis_development = {
 					name = ARB_estate_burghers_arid_climate_development
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 		
@@ -3439,8 +3449,10 @@ estate_burghers_ARB_oasis_development = {
 					name = ARB_estate_burghers_desert
 					duration = -1
 				}
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
+		custom_tooltip = ia_reduces_capital_distance_penalty_tt
 	}
 	on_revoked = {
 		custom_tooltip = ARB_estate_burghers_arid_development_rt
@@ -3450,6 +3462,7 @@ estate_burghers_ARB_oasis_development = {
 					has_province_modifier = ARB_estate_burghers_arid_climate_development
 				}
 				remove_province_modifier = ARB_estate_burghers_arid_climate_development
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 		custom_tooltip = ARB_estate_burghers_desert_development_rt
@@ -3459,6 +3472,7 @@ estate_burghers_ARB_oasis_development = {
 					has_province_modifier = ARB_estate_burghers_desert
 				}
 				remove_province_modifier = ARB_estate_burghers_desert
+				province_event = { id = capital_autonomy.2 }
 			}
 		}
 	}

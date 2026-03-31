@@ -83,7 +83,7 @@ tor =
 tyr =
 {
 	global_sailors_modifier = 0.10
-	discipline = 0.05
+	discipline = 0.03
 	
 	potential = { OR = { religion = norse_pagan } }
 	trigger = {}

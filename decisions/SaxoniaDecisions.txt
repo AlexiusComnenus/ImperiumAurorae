@@ -65,6 +65,9 @@ country_decisions = {
 				}
 				remove_province_modifier = Kleinstaaterei
 				remove_province_modifier = Kleinstaaterei_lesser
+				hidden_effect = {
+					province_event = { id = capital_autonomy.2 }
+				}
 			}
 			every_subject_country = {
 				every_owned_province = {
@@ -77,6 +80,9 @@ country_decisions = {
 					}
 					remove_province_modifier = Kleinstaaterei
 					remove_province_modifier = Kleinstaaterei_lesser
+					hidden_effect = {
+						province_event = { id = capital_autonomy.2 }
+					}
 				}
 			}
 		}
@@ -458,6 +464,44 @@ country_decisions = {
 					save_global_event_target_as = saxon_king
 				}
 			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+				
+		}
+	}
+	
+	regenerate_saxon_favor = {
+		major = yes
+		potential = {
+			OR = {
+				AND = {
+					has_government_mechanic = saxon_favor_mechanic
+					NOT = { overlord = { has_reform = saxon_feudalism } }
+				}
+				AND = {
+					NOT = { has_government_mechanic = saxon_favor_mechanic }
+					overlord = { has_reform = saxon_feudalism }
+				}
+			}
+		}
+		
+		allow = {
+			OR = {
+				AND = {
+					has_government_mechanic = saxon_favor_mechanic
+					NOT = { overlord = { has_reform = saxon_feudalism } }
+				}
+				AND = {
+					NOT = { has_government_mechanic = saxon_favor_mechanic }
+					overlord = { has_reform = saxon_feudalism }
+				}
+			}
+		}
+		
+		effect = {
+			regenerate_government_mechanics = yes
 		}
 		
 		ai_will_do = {

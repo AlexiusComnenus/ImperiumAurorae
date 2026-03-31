@@ -294,6 +294,7 @@ country_event = {	# King without a Kingdom
 	picture = FORESTS_eventPicture
 	
 	trigger = {
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		OR = {
 			religion = druidic_pagan
 			religion = druidic_pagan_reformed
@@ -368,5 +369,1057 @@ country_event = {	# King without a Kingdom
 		name = gaeldom.7.b
 		ai_chance = { factor = 0 }
 		
+	}
+}
+
+country_event = {	# Rumours of Albion
+	id = gaeldom.8
+	title = gaeldom.8.t
+	desc = gaeldom.8.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	#major = yes
+	
+	option = {	# Investigate more
+		name = gaeldom.8.a
+		ai_chance = { factor = 100 }
+		add_years_of_income = -0.75
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.9
+				days = 100
+				random = 15
+			}
+		}
+	}	
+	
+	option = {	# This is a waste of time
+		name = gaeldom.8.b
+		ai_chance = { factor = 0 }
+		
+	}	
+}
+
+country_event = {	# Albion's Riddle Part 1: What am I?
+	id = gaeldom.9
+	title = gaeldom.9.t
+	desc = gaeldom.9.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	option = {	# Incorrect Solution
+		name = gaeldom.9.a
+		ai_chance = { factor = 0 }
+		trigger = { NOT = { has_country_flag = picked_wrong_riddle_option_phoenix } }
+		adm_power_cost = 100
+		set_country_flag = picked_wrong_riddle_option_phoenix
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.10
+				days = 100
+				random = 100
+			}
+		}
+	}
+	
+	option = {	# Riddle Solution: Dragon
+		name = gaeldom.9.b
+		ai_chance = { factor = 100 }
+		dip_power_cost = 100
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.11
+				days = 700
+				random = 150
+			}
+		}
+	}	
+	
+	option = {	# Incorrect Solution
+		name = gaeldom.9.c
+		ai_chance = { factor = 0 }
+		trigger = { NOT = { has_country_flag = picked_wrong_riddle_option_leviathan } }
+		mil_power_cost = 100
+		set_country_flag = picked_wrong_riddle_option_leviathan
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.10
+				days = 100
+				random = 100
+			}
+		}
+	}	
+}
+
+country_event = {	# Albion's Riddle Mistake, Try Again
+	id = gaeldom.10
+	title = gaeldom.10.t
+	desc = gaeldom.10.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	option = {	# Incorrect Solution, go back to guessing
+		name = gaeldom.10.a
+		ai_chance = { factor = 10 }
+		
+		country_event = { 
+			id = gaeldom.9
+			#days = 100
+			#random = 15
+		}
+	}
+}
+
+country_event = {	# Albion's Riddle Part 2: Where am I
+	id = gaeldom.11
+	title = gaeldom.11.t
+	desc = gaeldom.11.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	option = {	# Incorrect Solution
+		name = gaeldom.11.a
+		ai_chance = { factor = 0 }
+		trigger = { NOT = { has_country_flag = picked_wrong_riddle_option_stonehenge } }
+		adm_power_cost = 100
+		set_country_flag = picked_wrong_riddle_option_stonehenge
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.12
+				days = 150
+				random = 150
+			}
+		}
+	}
+	
+	option = {	# Incorrect Solution
+		name = gaeldom.11.b
+		ai_chance = { factor = 0 }
+		trigger = { NOT = { has_country_flag = picked_wrong_riddle_option_tree } }
+		dip_power_cost = 100
+		set_country_flag = picked_wrong_riddle_option_tree
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.12
+				days = 150
+				random = 150
+			}
+		}
+	}	
+	
+	option = {	# Correct Solution: Right Here
+		name = gaeldom.11.c
+		ai_chance = { factor = 100 }
+		mil_power_cost = 100
+		
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.13
+				#days = 100
+				#random = 15
+			}
+		}
+	}	
+}
+
+country_event = {	# Albion's Riddle Mistake, Try Again
+	id = gaeldom.12
+	title = gaeldom.12.t
+	desc = gaeldom.12.d
+	picture = NEGOTIATIONS_LUBLIN_eventPicture
+	
+	is_triggered_only = yes
+	#major = yes
+	
+	option = {	# Incorrect Solution, go back to guessing
+		name = gaeldom.12.a
+		ai_chance = { factor = 10 }
+		
+		country_event = { 
+			id = gaeldom.11
+			#days = 100
+			#random = 15
+		}
+	}
+}
+
+country_event = {	# Albion Reveals Itself
+	id = gaeldom.13
+	title = gaeldom.13.t
+	desc = gaeldom.13.d
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	# Congrats, you found him
+		name = gaeldom.13.a
+		ai_chance = { factor = 10 }
+		add_prestige_or_monarch_power = { amount = 50 }
+		set_country_flag = albion_in_court_flag
+		country_event = { id = gaeldom.22 }
+	}
+}
+
+country_event = {	# Storyteller Event
+	id = gaeldom.14
+	title = gaeldom.14.t
+	desc = gaeldom.14.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		NOT = { has_ruler_flag = pagan_storyteller_visited }
+	}
+	#major = yes
+	after = { set_ruler_flag = pagan_storyteller_visited }
+	
+	option = {	# A tale of wealth
+		name = gaeldom.14.a
+		ai_chance = { 
+			factor = 10
+		}
+		
+		add_years_of_income = 1
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.15
+				days = 100
+				random = 100
+			}
+		}
+	}
+	option = {	# A tale of power
+		name = gaeldom.14.b
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				OR = {
+					stability = 3
+					adm = 6
+					dip = 6
+					mil = 6
+				}
+			}
+		}
+		
+		add_stability = 1
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.16
+				days = 100
+				random = 100
+			}
+		}
+	}
+	option = {	# A tale of courage
+		name = gaeldom.14.c
+		ai_chance = { 
+			factor = 10 
+			modifier = {
+				factor = 0
+				OR = {
+					army_tradition = 55
+					is_monarch_leader = yes
+					is_at_war = no
+				}
+			}
+		}
+		
+		add_army_tradition = 50
+		set_ruler_flag = tale_of_courage_flag
+		define_ruler_to_general = {
+			fire = 7
+			shock = 7
+			manuever = 7
+			siege = 4
+		}
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.17
+				days = 100
+				random = 100
+			}
+		}
+	}
+	option = {	# A tale of simple things
+		name = gaeldom.14.e
+		ai_chance = { factor = 70 }
+		add_prestige_or_monarch_power = { amount = 2 }
+	}
+}
+
+country_event = {	# Storyteller outcome decider
+	id = gaeldom.15
+	title = gaeldom.15.t
+	desc = gaeldom.15.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.15.a
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.18
+				#days = 100
+				#random = 15
+			}
+		}
+	}
+	
+	option = {	# No Curse Got Lucky
+		name = gaeldom.15.b
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {	# Storyteller outcome decider
+	id = gaeldom.16
+	title = gaeldom.16.t
+	desc = gaeldom.16.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.16.a
+		ai_chance = { factor = 75 }
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.19
+				#days = 100
+				#random = 15
+			}
+		}
+	}
+	
+	option = {	# No Curse Got Lucky
+		name = gaeldom.16.b
+		ai_chance = { factor = 25 }
+	}
+}
+
+country_event = {	# Storyteller outcome decider
+	id = gaeldom.17
+	title = gaeldom.17.t
+	desc = gaeldom.17.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.17.a
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			country_event = { 
+				id = gaeldom.20
+				#days = 100
+				#random = 15
+			}
+		}
+	}
+	
+	option = {	# No Curse Got Lucky
+		name = gaeldom.17.b
+		ai_chance = { factor = 50 }
+	}
+}
+
+country_event = {	# Wealth goes bad
+	id = gaeldom.18
+	title = gaeldom.18.t
+	desc = gaeldom.18.d
+	picture = BANKRUPTCY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.18.a
+		ai_chance = { factor = 50 }
+		
+		add_years_of_income = -2
+	}
+}
+
+country_event = {	# Power goes bad
+	id = gaeldom.19
+	title = gaeldom.19.t
+	desc = gaeldom.19.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.19.a
+		ai_chance = { factor = 50 }
+		
+		add_stability = -3
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 3
+				unrest = 5
+				win = yes
+			}
+		}
+		if = {
+			limit = { total_development = 200 }
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 4
+					unrest = 5
+					win = yes
+				}
+			}
+		}
+		if = {
+			limit = { total_development = 400 }
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 5
+					unrest = 5
+					win = yes
+				}
+			}
+		}
+		if = {
+			limit = { total_development = 600 }
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 6
+					unrest = 5
+					win = yes
+				}
+			}
+		}
+		if = {
+			limit = { total_development = 800 }
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 7
+					unrest = 5
+					win = yes
+				}
+			}
+		}
+		if = {
+			limit = { total_development = 1000 }
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 8
+					unrest = 5
+					win = yes
+				}
+			}
+		}
+		if = {
+			limit = { total_development = 200 	government = monarchy }
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+				}
+			}
+		}
+	}
+}
+
+country_event = {	# Courage goes bad
+	id = gaeldom.20
+	title = gaeldom.20.t
+	desc = gaeldom.20.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.20.a
+		ai_chance = { factor = 50 }
+		
+		if = {
+			limit = { has_ruler_flag = tale_of_courage_flag }
+			kill_ruler = yes
+			add_army_tradition = -50
+			
+			add_country_modifier = {
+				name = storyteller_overconfidence
+				duration = 7300
+			}
+		}
+	}
+}
+
+country_event = {	# Ask for boon from Albion
+	id = gaeldom.21
+	title = gaeldom.21.t
+	desc = gaeldom.21.d
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Give Albion sweeping powers
+		name = gaeldom.21.a
+		ai_chance = { factor = 50 }
+		
+		custom_tooltip = albion_sweeping_powers_tt
+		add_country_modifier = {
+			name = albion_sweeping_powers
+			duration = 7300
+		}
+		country_event = { id = gaeldom.22 }
+	}
+	
+	option = {	# Sign over scientific efforts to Oxford
+		name = gaeldom.21.b
+		ai_chance = { factor = 50 }
+		
+		custom_tooltip = albion_scientific_divertment_tt
+		add_country_modifier = {
+			name = albion_scientific_divertment
+			duration = 7300
+		}
+		country_event = { id = gaeldom.22 }
+	}
+	
+	option = {	# Purge a list of disliked officials
+		name = gaeldom.21.c
+		ai_chance = { factor = 0 }
+		
+		custom_tooltip = albion_purge_tt
+		add_stability = -2
+		add_corruption = 1
+		kill_advisor = random
+		country_event = { id = gaeldom.22 }
+	}
+	
+	option = {	# Dec humiliate on a random rival
+		name = gaeldom.21.e
+		trigger = {
+			any_rival_country = { 
+				NOT = { truce_with = ROOT } 
+				NOT = { war_with = ROOT }
+				NOT = { is_in_war = { participants = ROOT } }
+			}
+			is_in_league_war = no
+		}
+		ai_chance = { factor = 0 }
+		custom_tooltip = albion_humiliation_war_tt
+		random_rival_country = {
+			limit = {
+				NOT = { truce_with = ROOT } 
+				NOT = { war_with = ROOT }
+				NOT = { is_in_war = { participants = ROOT } }
+			}
+			ROOT = {
+				declare_war_with_cb = {
+					who = PREV
+					casus_belli = cb_humiliate_rotw
+				}
+			}
+		}
+		country_event = { id = gaeldom.22 }
+	}
+	
+	option = { # Cancel
+		name = gaeldom.21.f
+	}
+}
+
+country_event = {	# Receive Boon from Albion
+	id = gaeldom.22
+	title = gaeldom.22.t
+	desc = gaeldom.22.d
+	picture = UNIVERSITY_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = sought_boon_from_albion
+				duration = 7300
+				#hidden = yes
+			}
+		}
+	}
+	
+	option = {	# Advisor help
+		name = gaeldom.22.a
+		ai_chance = { factor = 0 }
+		trigger = { NOT = { dragon_scientist = 1 } }
+		
+		hire_advisor = {
+			type = dragon_scientist
+			name = "Albion"
+			skill = 5
+			culture = dragon_culture
+			religion = ritualistic_pagan_reformed
+			cost_multiplier = 2
+		}
+	}
+	
+	option = {	# Help as a general
+		name = gaeldom.22.b
+		ai_chance = { factor = 50 }
+		trigger = { NOT = { has_leader = "Albion" } }
+		
+		define_general = {
+			shock = 8
+			fire = 4
+			manuever = 5
+			siege = 4
+			name = "Albion"
+			trait = grand_captain
+		}
+	}
+	
+	option = {	# Impart tactical/strategic knowledge to the army
+		name = gaeldom.22.c
+		ai_chance = { 
+			factor = 50 
+			modifier = {
+				factor = 0.1
+				is_at_war = yes
+			}
+		}
+		
+		add_country_modifier = {
+			name = albion_military_advisor
+			duration = 7300
+		}
+	}
+}
+
+country_event = {	# Last King Followup
+	id = gaeldom.23
+	title = gaeldom.23.t
+	desc = gaeldom.23.d
+	picture = FORESTS_eventPicture
+	
+	trigger = {
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		any_owned_province = {
+			has_province_modifier = last_king_in_residence
+		}
+	}
+	
+	fire_only_once = yes
+	major = yes
+	major_trigger = {
+		OR = {
+			ai = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = {
+				has_province_modifier = last_king_in_residence
+			}
+			save_event_target_as = last_king_province
+		}
+	}
+	
+	option = {
+		name = gaeldom.23.a
+		ai_chance = { factor = 100 }
+		goto = last_king_province
+		
+		custom_tooltip = unlocks_children_of_the_forest_tt
+		set_country_flag = children_of_the_forest_unlocked
+	}
+}
+
+country_event = { #Druidic Republic Immortal Ruler punish
+    id = gaeldom.24
+    title = gaeldom.24.title
+    desc = gaeldom.24.desc
+    picture = ANGRY_MOB_eventPicture
+
+    trigger = {
+        #religion = druidic_pagan
+        government = republic
+        ruler_has_personality = immortal_personality 
+        ruler_age = 80
+        NOT = { has_country_modifier = druidic_rep_mad_with_power }   
+        NOT = { government = dictatorship }
+       }
+    option = {
+        name = gaeldom.24.a
+        kill_ruler = yes
+        ai_chance = { 
+            factor = 100
+        }
+    }
+    option = {
+        name = gaeldom.24.b
+        add_ruler_modifier = { 
+            name = druidic_rep_mad_with_power
+            duration = 1460
+        }
+        add_republican_tradition = -30
+        custom_tooltip = gaeldom.24.tt
+        hidden_effect = {
+        every_owned_province = {
+            random = { 
+                chance = 30
+                create_revolt = 3
+                }
+            }
+        }
+    }
+}
+
+country_event = {	# Witch of the crossroads
+	id = gaeldom.25
+	title = gaeldom.25.t
+	desc = gaeldom.25.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	trigger = {
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		NOT = { has_ruler_flag = met_with_crossroads_witch }
+	}
+	#major = yes
+	immediate = { set_ruler_flag = met_with_crossroads_witch }
+	after = {
+		add_country_modifier = {
+			name = crossroads_price_cooldown
+			duration = 400
+			hidden = yes
+		}
+	}
+	
+	option = {	# Vengeance
+		name = gaeldom.25.a
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { is_at_war = yes }
+			}
+		}
+		add_ruler_modifier = {
+			name = crossroads_gift_of_vengeance
+			duration = 7300
+		}
+	}
+	option = {	# Charisma
+		name = gaeldom.25.b
+		ai_chance = { 
+			factor = 0
+		}
+		add_ruler_modifier = {
+			name = crossroads_gift_of_charisma
+			duration = 7300
+		}
+	}
+	option = {	# Domination
+		name = gaeldom.25.c
+		ai_chance = { 
+			factor = 0
+		}
+		add_ruler_modifier = {
+			name = crossroads_gift_of_power
+			duration = 7300
+		}
+	}
+	option = {	# Uh.... On second thought....
+		name = gaeldom.25.e
+		ai_chance = { 
+			factor = 50
+		}
+		
+	}
+}
+
+country_event = {	# Crossroads demands its price: random decider of price
+	id = gaeldom.26
+	title = gaeldom.26.t
+	desc = gaeldom.26.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		OR = {
+			has_country_modifier = crossroads_gift_of_vengeance
+			has_country_modifier = crossroads_gift_of_charisma
+			has_country_modifier = crossroads_gift_of_power
+		}
+		NOT = { has_country_modifier = crossroads_price_cooldown }
+	}
+	
+	after = {
+		#country_event = { id = gaeldom.27 }
+		add_country_modifier = {
+			name = crossroads_price_cooldown
+			duration = 1800
+			hidden = yes
+		}
+	}
+	
+	option = {	# All the flavors of the mortal realm.
+		name = gaeldom.26.a
+		ai_chance = { factor = 25 }
+		
+		every_owned_province = {
+			limit = {
+				OR = {
+					trade_goods = grain
+					trade_goods = wine 
+					trade_goods = fish
+					trade_goods = apiculture
+					trade_goods = rice
+					trade_goods = olive_oil
+					trade_goods = citrus
+					trade_goods = seafood
+					trade_goods = maize
+					trade_goods = maple_syrup
+					trade_goods = potato
+					trade_goods = tomato
+					trade_goods = millet
+					trade_goods = beer
+					trade_goods = cheese
+					trade_goods = champagne
+					trade_goods = sugar 
+					trade_goods = tobacco 
+					trade_goods = cocoa 
+					trade_goods = tea 
+					trade_goods = spices 
+					trade_goods = coffee 
+					trade_goods = palm_oil
+					trade_goods = cinnamon
+					trade_goods = saffron
+					trade_goods = opium
+					trade_goods = rum
+					trade_goods = dates
+					trade_goods = cloves
+					trade_goods = vanilla
+					trade_goods = nutmeg
+					trade_goods = cigars
+					trade_goods = chocolate
+				}
+			}
+			add_permanent_province_modifier = {
+				name = crossroads_tasteless_province_mod
+				duration = 1825
+			}
+		}
+		every_subject_country = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_goods = grain
+						trade_goods = wine 
+						trade_goods = fish
+						trade_goods = apiculture
+						trade_goods = rice
+						trade_goods = olive_oil
+						trade_goods = citrus
+						trade_goods = seafood
+						trade_goods = maize
+						trade_goods = maple_syrup
+						trade_goods = potato
+						trade_goods = tomato
+						trade_goods = millet
+						trade_goods = beer
+						trade_goods = cheese
+						trade_goods = champagne
+						trade_goods = sugar 
+						trade_goods = tobacco 
+						trade_goods = cocoa 
+						trade_goods = tea 
+						trade_goods = spices 
+						trade_goods = coffee 
+						trade_goods = palm_oil
+						trade_goods = cinnamon
+						trade_goods = saffron
+						trade_goods = opium
+						trade_goods = rum
+						trade_goods = dates
+						trade_goods = cloves
+						trade_goods = vanilla
+						trade_goods = nutmeg
+						trade_goods = cigars
+						trade_goods = chocolate
+					}
+				}
+				add_permanent_province_modifier = {
+					name = crossroads_tasteless_province_mod
+					duration = 1825
+				}
+			}
+		}
+		add_country_modifier = {
+			name = crossroads_lack_of_taste
+			duration = 1825
+		}
+		country_event = { id = gaeldom.27 }
+	}
+	
+	option = {	# The very essence of passion
+		name = gaeldom.26.b
+		ai_chance = { factor = 25 }
+		
+		add_country_modifier = {
+			name = crossroads_essence_of_passion
+			duration = 1825
+		}
+		country_event = { id = gaeldom.28 }
+	}
+	
+	option = {	# Hallucinations and madness
+		name = gaeldom.26.c
+		ai_chance = { factor = 25 }
+		
+		add_country_modifier = {
+			name = crossroads_dreams_and_madness
+			duration = 1825
+		}
+		country_event = { id = gaeldom.29 }
+	}
+	
+	option = {	# Warping time
+		name = gaeldom.26.e
+		ai_chance = { factor = 25 }
+		
+		add_country_modifier = {
+			name = crossroads_warping_time
+			duration = 1825
+		}
+		country_event = { id = gaeldom.30 }
+	}
+}
+
+country_event = {	# Bye bye taste buds
+	id = gaeldom.27
+	title = gaeldom.27.t
+	desc = gaeldom.27.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.27.a
+		ai_chance = { factor = 50 }
+		
+		add_country_modifier = {
+			name = crossroads_lack_of_taste
+			duration = 1825
+		}
+		custom_tooltip = lost_taste_tt
+	}
+}
+
+country_event = {	# Bye bye passion
+	id = gaeldom.28
+	title = gaeldom.28.t
+	desc = gaeldom.28.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.28.a
+		ai_chance = { factor = 50 }
+		
+		add_country_modifier = {
+			name = crossroads_essence_of_passion
+			duration = 1825
+		}
+	}
+}
+
+country_event = {	# Bye bye sanity
+	id = gaeldom.29
+	title = gaeldom.29.t
+	desc = gaeldom.29.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.29.a
+		ai_chance = { factor = 50 }
+		
+		add_country_modifier = {
+			name = crossroads_dreams_and_madness
+			duration = 1825
+		}
+	}
+}
+
+country_event = {	# Bye bye time
+	id = gaeldom.30
+	title = gaeldom.30.t
+	desc = gaeldom.30.d
+	picture = FETISHIST_FIRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Get Cursed
+		name = gaeldom.30.a
+		ai_chance = { factor = 50 }
+		
+		add_country_modifier = {
+			name = crossroads_warping_time
+			duration = 1825
+		}
 	}
 }

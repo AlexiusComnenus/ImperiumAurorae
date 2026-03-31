@@ -2771,8 +2771,10 @@ country_event = {
 				continent = europe
 			}
 			NOT = { alliance_with = ROOT }
+			NOT = { religion = lollard }
 		}
 		NOT = { has_country_flag = hlr_had_greatpower_coalition }
+		NOT = { is_in_league_war = yes }
 	}
 	
 	mean_time_to_happen = {
@@ -2787,8 +2789,10 @@ country_event = {
 					continent = europe
 				}
 				is_great_power = yes
+				NOT = { is_in_league_war = yes }
 				NOT = { tag = ROOT }
 				NOT = { alliance_with = ROOT }
+				NOT = { religion = lollard }
 			}
 			add_casus_belli = {
     				target = ROOT
@@ -5061,6 +5065,7 @@ country_event = {
 	option = {
 		name = hlrmod_flavor_event.63.c
 		ai_chance = { factor = 0 }
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = HLR
 		on_change_tag_effect = yes
 		restore_country_name_effect = yes
@@ -5117,6 +5122,7 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = hlr_had_greatpower_coalition
 		}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = HLR
 		on_change_tag_effect = yes
 		restore_country_name_effect = yes

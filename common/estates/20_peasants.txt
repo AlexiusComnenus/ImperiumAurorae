@@ -50,19 +50,24 @@ estate_peasants =
 			culture_group = owner
 			religion_group = owner
 		}
-		#modifier = {
-		#	factor = 1.5
-		#	base_manpower = 5
-		#}
-		#modifier = {
-		#	factor = 0.75
-		#	development = 20
-		#}
+		modifier = {
+			factor = 1.5
+			base_manpower = 5
+		}
 		modifier = {
 			factor = 0.5
-			NOT = { is_state_core = owner }
+			development = 20
+		}
+		modifier = {
+			factor = 1000
+			OR = { 
+				has_rebel_faction = anti_tax_rebels
+				has_rebel_faction = leadered_peasant_rebels
+			}
 		}
 	}
+	independence_government = republic
+	starting_reform = peasants_republic
 
 	# Influence modifiers
 	

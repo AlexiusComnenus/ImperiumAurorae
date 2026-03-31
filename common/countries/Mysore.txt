@@ -27,31 +27,21 @@ historical_units = {
 	tipu_sultan_rocket
 }
 monarch_names = {
-	"Bettada Devaraja #0" = 10
-	"Chamaraja #1" = 50
-	"Chidananda #0" = 0
-	"Chikka Krishna #0" = -1
-	"Chikkadevaraja #0" = 10
-	"Châma Râja #0" = 20
-	"Immadai Raja #0" = 10
-	"Kanthirava Narasaraja #0" = 20
-	"Krishnaraja #0" = 20
-	"Lakshmi #0" = -1
-	"Lakshmisa #0" = 0
-	"Lakshmisha #0" = 0
-	"Mahesh #0" = 0
-	"Mallappa #0" = 0
-	"Manjunatha #0" = 0
-	"Murthy #0" = 0
-	"Narayanan #0" = 0
-	"Raja Wadiyar #0" = 10
-	"Ramachandra #0" = 0
-	"Singaraya #0" = 0
-	"Sujaya #0" = -1
-	"Timmaraja #0" = 20
-	"Tirumalevaidya #0" = 0
-	"Venkayarya #0" = 0
-	"Yadu Raya #0" = 20
+	"Khosrow #5" = 30
+	"Hormizd #6" = 30
+	"Boran #1" = -10
+	"Yazdegerd #3" = 20
+	"Azarmidokht #1" = -10
+	"Peroz #2" = 20
+	"Shapur #5" = 30
+	"Shahrbaraz #0" = 20
+	"Ardashir #3" = 20
+	"Kavad #2" = 10
+	"Vistahm #1" = 10
+	"Bahrahm #6" = 40
+	"Jamasp #1" = 10
+	"Balash #1" = 10
+	"Adur Narseh #1" = 10
 }
 leader_names = {
 	"Balija"

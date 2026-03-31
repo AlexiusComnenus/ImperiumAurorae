@@ -113,6 +113,7 @@ country_decisions = {
 					complete_mission = tr_subjugate_novgorod
 				}
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = RUS
 			on_change_tag_effect = yes
 			restore_country_name = yes

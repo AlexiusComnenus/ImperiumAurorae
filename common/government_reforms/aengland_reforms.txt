@@ -180,6 +180,7 @@ aenglish_census = {
 
 	modifiers = {
 		expand_infrastructure_cost_modifier = -0.5
+		global_allowed_num_of_buildings = 1
 		build_cost = -0.1
 		build_time = -0.25
 		state_maintenance_modifier = -0.5
@@ -210,15 +211,21 @@ aenglish_mercenary_reform = {
 	modifiers = {
 		possible_condottieri = 1
 		allow_mercenary_drill = yes
-		ship_durability = 0.05
+		ship_durability = 0.1
 		global_manpower_modifier = -0.25
-		global_sailors_modifier = 1.25
+		global_sailors_modifier = 0.75
 		allowed_marine_fraction = 0.25
 	}
 	conditional = {
 		allow = { has_dlc = "Domination" }
 		government_abilities = {
 			hessian_militarization_mechanic
+		}
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
 		}
 	}
 	custom_attributes = {

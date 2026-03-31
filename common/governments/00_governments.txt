@@ -14,14 +14,16 @@ monarchy = {
 				negusa_nagast
 				solomonic_empire
 				#Specific:
+				dumnonia_monarchy_reform
+				fkn_vintner_monarchy
 				bohemian_germanic_monarchy
 				divine_merovingian_reform
-				true_immortal_reform
 				reichskoenigtum
 				westseaxe_monarchy_reform
 				aengland_tolerant_reform
 				aengland_intolerant_reform
 				diadochos_reform
+				upgraded_diadochos_reform
 				reign_of_majorian_reform
 				roman_diocese
 				deutches_reich_reform
@@ -221,6 +223,7 @@ monarchy = {
 		}
 		bureaucracy = {
 			reforms = {
+				rhenish_bureaucratic_apparatus
 				hlr_reichsbund
 				aenglish_census
 				fkn_marcher_lords_reform
@@ -262,6 +265,8 @@ monarchy = {
 		}
 		state_and_religion = {
 			reforms = {
+				haven_of_vengeance_reform
+				zunist_arbiter_reform
 				merovingian_divine_right_reform
 				hlr_catholic_orders_reform
 				bog_sponsor_public_schools_reform
@@ -312,6 +317,9 @@ monarchy = {
 		}
 		military_doctrines = {
 			reforms = {
+				koi_hands_and_paws_reform
+				order_of_st_jeanne_the_voice_of_god
+				mym_turtle_ships_gov
 				inca_mountaintop_cities_reform
 				aenglish_mercenary_reform
 				hussite_wagenburgs
@@ -426,6 +434,7 @@ monarchy = {
 		}
 		growth_of_administration = {
 			reforms = {
+				nov_national_institute_gov_reform
 				clergy_in_administration_reform
 				of_noble_bearing_reform
 				meritocratic_focus_reform
@@ -481,6 +490,7 @@ monarchy = {
 		}
 		legitimation_of_power = {
 			reforms = {
+				german_unification_reform
 				ia_legacy_of_rome
 				enlightened_sovereign_reform
 				machiavellianistic_rule_reform
@@ -683,7 +693,8 @@ republic = {
 	reform_levels = {
 		oligarchy_merchant_class_noble_elite = {
 			reforms = {
-				true_immortal_reform
+				german_free_city
+				myrmidon_exarchate_government
 				baetic_league_government
 				roman_republic
 				privateer_republic
@@ -805,6 +816,8 @@ republic = {
 		}
 		republic_and_religion = {
 			reforms = {
+				haven_of_vengeance_reform
+				zunist_arbiter_reform
 				merovingian_divine_right_reform
 				bog_sponsor_public_schools_reform
 				inti_sun_god_reform
@@ -856,6 +869,9 @@ republic = {
 		}
 		military_doctrines = {
 			reforms = {
+				koi_hands_and_paws_reform
+				order_of_st_jeanne_the_voice_of_god
+				mym_turtle_ships_gov
 				inca_mountaintop_cities_reform
 				aenglish_mercenary_reform
 				hussite_wagenburgs
@@ -864,6 +880,7 @@ republic = {
 				strengthen_the_comitatenses
 				expand_the_foederati
 				hes_military_reform
+				hes_military_reform_2
 				organized_military_staff_reform
 				military_engineering_reform
 				defensive_stance_reform
@@ -948,7 +965,7 @@ republic = {
 				feuillant_reform
 				two_chamber_reform
 				seize_executive_power_reform
-				proclaim_divine_guidance_reform
+				#proclaim_divine_guidance_reform
 				become_rev_empire_reform
 				#1.35
 				governing_senate_reform
@@ -963,6 +980,7 @@ republic = {
 				penal_colonies_reform
 				cultural_administration_reform
 				autonomous_taifas_reform
+                nov_national_institute_gov_reform
 				#1.36
 				superiority_of_the_state_reform
 				divided_aristocracy_reform
@@ -1018,6 +1036,7 @@ republic = {
 		}
 		guiding_principle_of_administration = {
 			reforms = {
+				german_unification_reform
 				political_principle_reform
 				moral_principle_reform
 				stability_principle_reform
@@ -1043,6 +1062,7 @@ republic = {
 		}
 		office_selection = {
 			reforms = {
+				rhenish_bureaucratic_apparatus
 				appointment_by_committee_reform
 				bureaucratic_aparatus_reform
 				universal_suffrage_reform
@@ -1328,8 +1348,10 @@ theocracy = {
 	reform_levels = {
 		theocratic_leadership = {
 			reforms = {
+				cat_clowder_hierarchy
+				blessed_theocatcy_reform
+				mhadi_reform
 				cultivators_order
-				true_immortal_reform
 				celestial_xizho_empire
 				mingjiao_reform
 				auroral_horde
@@ -1379,6 +1401,9 @@ theocracy = {
 		}
 		internal_vs_external_mission = {
 			reforms = {
+				true_immortal_reform
+				myrmidon_western_protectorate
+				myrmidon_paradise_initiative
 				antioch_hellenic_crusade_reform
 				internal_mission_reform
 				external_mission_reform
@@ -1418,6 +1443,8 @@ theocracy = {
 		}
 		religoius_doctrine = {
 			reforms = {
+				haven_of_vengeance_reform
+				zunist_arbiter_reform
 				merovingian_divine_right_reform
 				bog_sponsor_public_schools_reform
 				inti_sun_god_reform
@@ -1461,6 +1488,9 @@ theocracy = {
 		}
 		military_doctrines = {
 			reforms = {
+				koi_hands_and_paws_reform
+				order_of_st_jeanne_the_voice_of_god
+				mym_turtle_ships_gov
 				inca_mountaintop_cities_reform
 				aenglish_mercenary_reform
 				hussite_wagenburgs
@@ -1469,6 +1499,7 @@ theocracy = {
 				strengthen_the_comitatenses
 				expand_the_foederati
 				hes_military_reform
+				hes_military_reform_2
 				organized_military_staff_reform
 				military_engineering_reform
 				defensive_stance_reform
@@ -1545,8 +1576,8 @@ theocracy = {
 				partial_secularisation_reform
 				maintain_religious_head_reform
 				hereditary_religious_leadership_reform
-				crown_leader_reform
-				proclaim_republic_reform
+				#crown_leader_reform
+				#proclaim_republic_reform
 				battle_pope_reform
 				conciliarism_reform
 				#1.35
@@ -1556,6 +1587,9 @@ theocracy = {
 		}
 		clergy_in_administration = {
 			reforms = {
+				nov_national_institute_gov_reform
+				rhenish_bureaucratic_apparatus
+				divine_machinery
 				foreign_talents_reform
 				subservient_administrators_reform
 				religious_administrators_reform
@@ -1632,6 +1666,7 @@ theocracy = {
 		}
 		culture_within_the_state = {
 			reforms = {
+				german_unification_reform
 				religious_culture_reform
 				harmonization_of_cultures_reform
 				cultural_safe_haven_reform

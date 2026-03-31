@@ -5,6 +5,13 @@ nobatian_capital_mod = {
 	province_trade_power_modifier = 0.5
 }
 
+nobatian_nubia_mod = {
+	local_build_cost = -0.1
+	local_build_time = -0.25
+	local_development_cost = -0.15
+	min_local_autonomy = -10
+}
+
 z42_blessed_mint = {
 	local_gold_depletion_chance_modifier = -1
 	min_local_autonomy = 25
@@ -115,9 +122,10 @@ z42_starlight_university_mod = {
 }
 
 z42_college_of_alchemy = {
-	possible_policy = 1
 	free_policy = 1
-	global_trade_goods_size_modifier = 0.05
+	global_trade_goods_size_modifier = 0.1
+	alchemists_loyalty_modifier = 0.1
+	alchemists_influence_modifier = 0.1
 }
 
 z42_coffee_standards = {
@@ -133,7 +141,7 @@ z42_incense_monopoly = {
 z42_global_recognition = {
 	production_efficiency = 0.10
 	institution_spread_from_true_faith = 0.25
-	tolerance_own = 1
+	global_trade_power = 0.25
 }
 
 z42_attracting_imperial_talent = {
@@ -150,18 +158,18 @@ z42_formalized_talent_search = {
 }
 
 z42_winder_chasers_patronized = {
-	special_unit_forcelimit = 0.5
+	allowed_cossack_fraction = 0.2
 	cossacks_loyalty_modifier = 0.1
 	cossacks_influence_modifier = 0.1
 	cossacks_privilege_slots = 1
+	cav_to_inf_ratio = 0.15
 }
 
 z42_windchasers_in_their_element = {
 	is_cossack_modifier = yes
-	movement_speed = 0.25
+	fire_damage_received = -0.15
 	land_attrition = -0.25
 	cavalry_flanking = 0.50
-	cav_to_inf_ratio = 0.5
 }
 
 z42_windchaser_generals = {
@@ -169,6 +177,7 @@ z42_windchaser_generals = {
 	leader_land_shock = 1
 	cossacks_loyalty_modifier = 0.1
 	cossacks_privilege_slots = 1
+	cav_to_inf_ratio = 0.1
 }
 
 z42_exploration_modifier = {

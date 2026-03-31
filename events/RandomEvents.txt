@@ -10598,6 +10598,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = american
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:american_province = {
 			area = {
@@ -10641,6 +10642,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = brazilian
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:brazilian_province = {
 			area = {
@@ -10691,6 +10693,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = mexican
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:mexican_province = {
 			area = {
@@ -10764,6 +10767,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = platinean
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:platinean_province = {
 			area = {
@@ -10838,6 +10842,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = quebecois
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:quebecois_province = {
 			area = {
@@ -10911,6 +10916,7 @@ country_event = {
 				}
 			}
 			change_primary_culture = louisianans
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		event_target:louisianans_province = {
 			area = {
@@ -12896,9 +12902,11 @@ country_event = {
 	option = {
 		name = "EVTOPTA6428"
 		every_owned_province = {
-			OR = {
-				trade_goods = gold
-				trade_goods = silver
+			limit = {
+				OR = {
+					trade_goods = gold
+					trade_goods = silver
+				}
 			}
 			add_base_production = 1
 			add_base_tax = 1

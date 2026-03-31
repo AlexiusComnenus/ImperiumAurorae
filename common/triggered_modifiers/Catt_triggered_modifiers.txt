@@ -1,0 +1,18 @@
+koi_search_fever_colonization = {
+    potential = {
+        tag = KOI
+    }    
+    trigger = {
+        has_idea_group = expansion_ideas
+        has_country_flag = koi_purrpose_mission_completed_flag
+    }
+
+    colony_development_boost = 2
+    colony_cost_modifier = -0.5
+    may_explore = yes
+    auto_explore_adjacent_to_colony = yes 
+    range = 1
+    global_colonial_growth = 20
+    colonist_placement_chance = 0.15
+    native_uprising_chance = -0.5
+}

@@ -13,3 +13,15 @@ harmonized_taoism = {
 	production_efficiency = 0.1
 	religion = yes
 }
+
+chinese_fortresses_modifier = {
+	local_defensiveness = 1
+	local_assault_fort_ability = -0.5
+	local_fort_maintenance_modifier = 1.5
+}
+
+gjn_resurgent = {
+	all_power_cost = -0.05
+	imperial_mandate = 0.1
+}
+

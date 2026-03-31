@@ -554,7 +554,11 @@ country_decisions = {
 		}
 
 		allow = {
-			government_rank = 2
+			OR = {
+				government_rank = 2
+				prestige = 75
+				total_own_and_non_tributary_subject_development = 700
+			}
 			stability = 2
 			OR = {
 				AND = {
@@ -565,12 +569,18 @@ country_decisions = {
 						secondary_religion = iconoclast
 						secondary_religion = bogomilist
 					}
+					NOT = {
+						num_of_religion = {
+							religion = tengri_pagan
+							value = 0.6
+						}
+					}
 				}
 				AND = {
 					religion_group = christian
 					num_of_religion = {
 						religion = tengri_pagan
-						value = 0.3
+						value = 0.4
 					}
 				}
 			}

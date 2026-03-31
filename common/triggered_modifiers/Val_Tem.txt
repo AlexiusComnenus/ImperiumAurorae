@@ -69,6 +69,36 @@ TemplarLoyalty = {
 	liberty_desire = -1000
 }
 
+LivonianLoyalty = {
+	potential = {
+		OR = {
+			tag = LIV
+			was_tag = LIV
+		}
+		is_subject = yes
+	}
+	trigger = {
+		overlord = { tag = RIG }
+		RIG = { ai = yes }
+	}
+	liberty_desire = -1000
+}
+
+MhadiAICheats = {
+	potential = {
+		tag = YOR
+		religion = lollard
+	}
+	trigger = {
+		tag = YOR
+		ai = yes
+	}
+	overextension_impact_modifier = -0.5
+	war_exhaustion = -0.10
+	#manpower_recovery_speed = 0.5
+	#monthly_bell_progress = 0.5
+}
+
 val_lucky_nation = {
 	potential = {
 		OR = {
@@ -96,10 +126,10 @@ val_lucky_nation = {
 	interest = -1
 	missionary_maintenance_cost = -0.1
 	development_cost = -0.10
-	development_cost_modifier = -0.10
+	#development_cost_modifier = -0.10
 
 	#military
-	manpower_recovery_speed = 0.5
+	manpower_recovery_speed = 0.25
 	defensiveness = 0.1
 	siege_ability = 0.05
 	#morale_damage_received = -0.10
@@ -108,33 +138,33 @@ val_lucky_nation = {
 	leader_land_manuever = 2
 	leader_land_shock = 2
 	leader_siege = 2
-	land_forcelimit = 5
+	land_forcelimit = 2
 	land_forcelimit_modifier = 0.10
 	land_maintenance_modifier = -0.25
 	reinforce_cost_modifier = -0.25
 	global_regiment_cost = -0.25
-	fort_maintenance_modifier = -0.75
+	global_ship_cost = -0.25
+	fort_maintenance_modifier = -0.25
 
 	#diplomacy
 	spy_offence = 0.1
-	improve_relation_modifier = 1
 
 	#government
 	global_unrest = -5
 	years_of_nationalism = -5
 	republican_tradition = 0.5
 	legitimacy = 1
-	ae_impact = -0.25
+	ae_impact = -0.1
 	governing_capacity_modifier = 0.25
 	monarch_admin_power = 1	
 	monarch_admin_power = 1
 	monarch_military_power = 1
 	monarch_lifespan = 0.5
+	possible_policy = 3
+	free_policy = 6
 	country_admin_power = 1
 	country_military_power = 1
 	country_diplomatic_power = 1
-	possible_policy = 3
-	free_policy = 6
 	
 }
 
@@ -212,14 +242,14 @@ ai_chinese_emperor_boost = {
 			primary_culture = yi
 			culture_group = east_asian
 		}
-		technology_group = chinese
-		capital_scope = {
-			OR = {
-				region = north_china_region
-				region = xinan_region
-				region = south_china_region
-			}
-		}
+		#technology_group = chinese
+		#capital_scope = {
+		#	OR = {
+		#		region = north_china_region
+		#		region = xinan_region
+		#		region = south_china_region
+		#	}
+		#}
 		is_year = 1480
 	}
 	
@@ -242,7 +272,7 @@ ai_chinese_emperor_boost = {
 other_lucky_nation = {
 	potential = {
 		OR = {
-			tag = GBR
+			#tag = GBR
 			tag = SAX
 			tag = TRE
 			tag = PRU
@@ -273,7 +303,7 @@ other_lucky_nation = {
 			tag = GLL
 			tag = NRM
 			tag = AOL
-			tag = YZD
+			tag = KRM
 			tag = PER
 			tag = ERS
 			tag = GOL
@@ -297,7 +327,20 @@ other_lucky_nation = {
 			tag = GER
 			tag = LOT
 			tag = HLR
+			tag = NGC
+			tag = SGC
 			tag = FRM
+			tag = LFA
+			tag = KIE
+			tag = UKR
+			tag = Z47
+			tag = FKN
+			tag = BAV
+			tag = PAP
+			AND = {
+				tag = LIV
+				is_subject_of = RIG
+			}
 			AND = {
 				is_emperor_of_china = yes
 				is_year = 1480
@@ -327,7 +370,7 @@ other_lucky_nation = {
 	culture_conversion_cost = -0.5
 	culture_conversion_cost = -0.5
 	development_cost = -0.10
-	development_cost_modifier = -0.10
+	#development_cost_modifier = -0.10
 
 	#economy
 	global_tax_income = 24
@@ -340,22 +383,22 @@ other_lucky_nation = {
 	manpower_recovery_speed = 0.25
 	defensiveness = 0.1
 	siege_ability = 0.05
-	land_forcelimit = 5
+	land_forcelimit = 2
 	land_forcelimit_modifier = 0.10
 	land_maintenance_modifier = -0.25
 	reinforce_cost_modifier = -0.50
 	global_regiment_cost = -0.25
-	fort_maintenance_modifier = -0.75
+	global_ship_cost = -0.25
+	fort_maintenance_modifier = -0.25
 
 	#diplomacy
 	spy_offence = 0.1
-	improve_relation_modifier = 0.25
 
 	#government
 	global_unrest = -1
 	republican_tradition = 0.5
 	legitimacy = 1
-	ae_impact = -0.25
+	ae_impact = -0.1
 	governing_capacity_modifier = 0.25
 	monarch_admin_power = 1	
 	monarch_admin_power = 1
@@ -377,8 +420,8 @@ other_lucky_nation_2 = {
 			tag = UBV
 			tag = FLA
 			tag = HES
-			tag = BAV
 			tag = NOV
+			tag = NUM
 		}
 		ai = yes
 		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
@@ -394,7 +437,7 @@ other_lucky_nation_2 = {
 	global_institution_spread = 0.1
 	monthly_splendor = 1
 	development_cost = -0.10
-	development_cost_modifier = -0.10
+	#development_cost_modifier = -0.10
 
 	#economy
 	mercenary_cost = -0.4
@@ -410,7 +453,8 @@ other_lucky_nation_2 = {
 	land_maintenance_modifier = -0.25
 	reinforce_cost_modifier = -0.50
 	global_regiment_cost = -0.25
-	fort_maintenance_modifier = -0.50
+	global_ship_cost = -0.25
+	fort_maintenance_modifier = -0.25
 
 	#diplomacy
 	spy_offence = 0.1
@@ -435,20 +479,47 @@ early_game_protection = {
 	potential = {
 		NOT = { has_global_flag = ia_no_early_game_protection }
 		OR = {
-			#tag = VAL
+			tag = YOR
+			tag = VAL
 			tag = TEM
-			#tag = Z17
+			tag = Z17
 			tag = HSC
 			tag = FEO
 			tag = TRE
 			tag = RIG
 			tag = FLA
 			tag = BRI
-			tag = YZD
+			tag = KRM
 			tag = Z47
+			tag = Z44
+			tag = Z42
 			tag = GOL
 			tag = HAB
 			tag = NOV
+			tag = NUM
+			tag = MYM
+			tag = JOM
+			tag = Y11
+			tag = CSU
+			tag = AZT
+			tag = PAP
+			tag = CRN
+			#AND = {
+			#	tag = CRN
+			#	has_global_flag = ia_no_powerful_lucky_nations
+			#}
+			#AND = {
+			#	tag = VAL
+			#	has_global_flag = ia_no_powerful_lucky_nations
+			#}
+			#AND = {
+			#	tag = Z17
+			#	has_global_flag = ia_no_powerful_lucky_nations
+			#}
+			AND = {
+				tag = SAX
+				has_global_flag = ia_no_powerful_lucky_nations
+			}
 		}
 		ai = yes
 	}
@@ -474,6 +545,7 @@ early_game_protection = {
 	land_maintenance_modifier = -0.5
 	reinforce_cost_modifier = -0.50
 	global_regiment_cost = -0.5
+	land_forcelimit = 2
 
 	#diplomacy
 	spy_offence = 1
@@ -482,12 +554,12 @@ early_game_protection = {
 
 ai_colonial_nation_buff = {
 	potential = {
-		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
+		#NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		is_colonial_nation = yes
 		ai = yes
 	}
 	trigger = {
-		NOT = { has_global_flag = ia_no_powerful_lucky_nations }
+		#NOT = { has_global_flag = ia_no_powerful_lucky_nations }
 		is_colonial_nation = yes
 		ai = yes
 	}
@@ -508,8 +580,8 @@ ai_colonial_nation_buff = {
 	land_maintenance_modifier = -0.25
 	reinforce_cost_modifier = -0.50
 	global_regiment_cost = -0.5
-	land_forcelimit = 10
-	land_forcelimit_modifier = 0.10
+	land_forcelimit = 5
+	naval_maintenance_modifier = -0.25
 
 	#diplomacy
 

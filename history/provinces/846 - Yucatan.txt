@@ -8,6 +8,7 @@ trade_goods = fish
 base_tax = 4
 base_production = 4
 base_manpower = 1
+center_of_trade = 1
 add_core = COC
 discovered_by = mesoamerican
 add_province_triggered_modifier = mayan_chichen_itza

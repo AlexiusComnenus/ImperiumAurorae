@@ -1,0 +1,895 @@
+namespace = catt
+
+country_event = { #startup event
+	id = catt.1
+	title = catt.1.title
+	desc = catt.1.desc
+	picture = EP_ISLAND_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = KOI
+	}
+    immediate = {
+        hidden_effect = {
+            add_stability = -2
+        add_devotion = -80
+        4365 = {
+            add_devastation = 80
+            }
+            add_country_modifier = {
+            name = koi_starting_cav_debuff
+            duration = -1
+            }
+            set_variable = {
+            which = KoiFelinesEnlightened
+            value = 0
+            }
+            set_variable = {
+            which = KoiArmorEquips
+            value = 0
+            }
+        }
+    }
+	option = {
+		name = catt.1.a
+        custom_tooltip = catt.1.tt
+		ai_chance = { 
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Clowder murders
+    id = catt.2
+    title = catt.2.title
+    desc = catt.2.desc
+    picture = ASSASSINATION_eventPicture
+
+    trigger = {
+        has_reform = cat_clowder_hierarchy
+        NOT = { has_country_flag = koi_catsith_revolts }
+        all_owned_province = { 
+            NOT = {
+                has_province_modifier = chaos_and_panic_KOI_modifier
+                }
+            }
+        }
+    	mean_time_to_happen = {
+            months = 60
+        modifier = {
+		    factor = 0.75
+		    NOT = { stability = 2 }
+        }
+    }
+    option = {
+        name = catt.2.a
+        kill_ruler = yes
+        every_owned_province = {
+            add_province_modifier = { name = chaos_and_panic_KOI_modifier	duration = 1460 }           
+            }
+	}
+}
+
+country_event = { #Colonization start
+    id = catt.3
+    title = catt.3.title
+    desc = catt.3.desc
+    picture = COASTLINE_MAP_eventPicture
+
+    is_triggered_only = yes
+
+    option = {
+        name = catt.3.a
+        custom_tooltip = catt.3.tt
+        define_explorer = {
+            shock = 2
+            fire = 3
+            manuever = 4
+            siege = 0
+            name = "Oscar Do-bathadh"
+        }
+    }
+}
+
+country_event = { #Capital Trade Good Change
+    id = catt.4
+    title = catt.4.title
+    desc = catt.4.desc
+    picture = TRADEGOODS_eventPicture
+
+    is_triggered_only = yes
+    option = {
+        name = catt.4.a
+        ai_chance = { factor = 50 }
+        custom_tooltip = catt.4.a.tt
+        add_country_modifier = {
+            name = koi_healthy_brains
+            duration = -1
+        }
+    }
+    option = {
+        name = catt.4.b
+        ai_chance = { factor = 50 }
+        4365 = {
+            change_trade_goods = wool
+        }
+        add_country_modifier = {
+            name = koi_fun_and_games
+            duration = -1
+        }
+    }
+    option = {
+        name = catt.4.c
+        ai_chance = { factor = 0 }
+        4365 = {
+            change_trade_goods = opium
+            }
+        add_country_modifier = {
+            name = koi_sedated_population
+            duration = -1
+        }
+    }
+}
+
+province_event = { #Tir na nog revealed for cats
+    id = catt.5
+    title = catt.5.title
+    desc = catt.5.desc
+    picture = RUNESTONE_eventPicture
+
+    is_triggered_only = yes
+    option = {
+        name = catt.5.a
+        goto = 4365
+        4365 = {
+            center_of_trade = 2
+            add_province_modifier = {
+                name = koi_tir_na_nog_1
+                duration = -1
+            }
+        }
+        custom_tooltip = koi_tir_na_nog_revealed
+    }
+}
+
+
+country_event = { #Tir na nog for HSC
+    id = catt.6
+    title = catt.5.title
+    desc = catt.5.desc
+    picture = RUNESTONE_eventPicture
+
+    is_triggered_only = yes
+    major = yes
+    option = {
+        name = catt.5.b
+        goto = 4365
+        custom_tooltip = hsc_tir_na_nog_revealed
+    }
+}
+
+country_event = { #Purge landowners start
+    id = catt.7
+    title = catt.7.title
+    desc = catt.7.desc
+    picture = GUILLOTINE_eventPicture
+
+    is_triggered_only = yes
+    immediate = {
+        hidden_effect = {
+            set_country_flag = koi_catsith_revolts
+            set_country_flag = koi_catsith_revolts_cooldown
+        }
+    }
+    option = {
+        name = catt.7.a
+        add_stability = -4
+        4365 = {
+            noble_rebels = 3
+        }
+
+    }
+}
+
+country_event = { #random revolt during landowner purge
+    id = catt.8
+    title = catt.8.title
+    desc = catt.8.desc
+    picture = REVOLT_HUNGARIAN_eventPicture
+
+    trigger = {
+        has_country_flag = koi_catsith_revolts
+        had_country_flag = {
+        flag = koi_catsith_revolts_cooldown
+        days = 90
+        }
+    }
+    immediate = {
+        hidden_effect = {
+        clr_country_flag = koi_catsith_revolts_cooldown
+        set_country_flag = koi_catsith_revolts_cooldown
+            random_owned_province = {
+                limit = { NOT = { province_id = 4365 } 
+                continent = europe }
+                noble_rebels = 1
+            }
+            4365 = {
+                noble_rebels = 3
+            }
+        }
+    }
+     mean_time_to_happen = {
+        days = 280
+        modifier = {
+            factor = 0.75
+            has_country_modifier = koi_temp_levies
+        }
+        modifier = {
+            factor = 0.5
+            num_of_estate_privileges = {
+                estate = estate_nobles
+                value = 1
+                }
+        }
+    }
+    option = {
+        name = catt.8.a
+    }
+}
+
+country_event = { #Cath Palug Returns and takes over
+    id = catt.9
+    title = catt.9.title
+    desc = catt.9.desc
+    picture = PROTESTANT_GREAT_REFORMER_eventPicture
+
+    fire_only_once = yes
+    trigger = {
+        had_country_flag = { flag = koi_catsith_revolts days = 730 }
+    }
+    mean_time_to_happen = {
+        days = 30
+    }
+    option = {
+        name = catt.9.a
+        define_ruler = {
+            name = "Cath"
+            dynasty = "Palug"
+            adm = 4
+            dip = 5
+            mil = 6
+            age = 20
+            fixed = yes
+            female = yes
+        }
+    }
+    after = {
+        add_ruler_personality = just_personality
+        add_ruler_personality = powerful_druid_personality
+    }
+}
+
+country_event = { #New gov reform and purge ends
+    id = catt.10
+    title = catt.10.title
+    desc = catt.10.desc
+    picture = FAILED_REVOLUTION_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = KOI
+        had_country_flag = { flag = koi_catsith_revolts days = 1460 }
+    }
+    mean_time_to_happen = {
+    days = 1
+    }
+    immediate = {
+        hidden_effect = {
+         KOI = { clr_country_flag = koi_catsith_revolts
+        }
+        remove_country_modifier = koi_emergency_powers
+        remove_country_modifier = koi_temp_levies
+        }
+    }
+    option = {
+        name = catt.10.a
+        add_stability = 2
+        hidden_effect = {
+        set_variable = {
+            which = KoiUsedFawningButtons
+            value = 0
+            }
+        every_owned_province = {
+            limit = { NOT = { province_id = 4365 } }
+                add_devastation = 40
+                set_local_autonomy = 0
+            }
+            4365 = {
+                add_devastation = 60
+                add_base_tax = -1
+                add_base_production = -1
+                add_base_manpower = -1
+            }
+            add_government_reform = blessed_theocatcy_reform
+        }
+        custom_tooltip = catt.10.tt
+    }
+    after = {
+        set_government_rank = 2
+        set_country_flag = koi_has_reformed
+    }
+}
+
+country_event = { #branching mission
+    id = catt.11
+    title = catt.11.title
+    desc = catt.11.desc
+    picture = LIBERUM_VETO_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.11.a
+        custom_tooltip = koi_nothinghappens.tt
+        ai_chance = { 
+            factor = 100
+        }
+        add_country_modifier = {
+        name = koi_human_friendly
+        duration = -1
+        }
+    }
+    option = {
+        name = catt.11.b
+        custom_tooltip = catt.11.tt
+        ai_chance = { 
+            factor = 0
+        }
+        add_country_modifier = {
+        name = koi_human_unfriendly
+        duration = -1
+        }
+        hidden_effect = {
+            set_country_flag = koi_not_little_meowmeows
+        }
+    }
+    after = {
+        swap_non_generic_missions = yes
+        complete_mission = koi_humans_or_not_dummy
+    }
+}
+
+country_event = { #Meow Meows get pushed out
+    id = catt.12
+    title = catt.12.title
+    desc = catt.12.desc
+    picture = NATIVES_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.12.a
+        change_price = {
+            trade_goods = exotic_fur
+            key = cat_trophies
+            value = 0.5
+            duration = -1
+        }
+        hidden_effect = {
+        every_known_country = {
+            limit = { NOT = { primary_culture = cat } }
+        add_opinion = {
+            who = KOI
+            modifier = zim_exploited_merchants
+            multiplier = 2
+            }
+        }  
+    }
+        custom_tooltip = catt.12.tt
+}
+        after = {
+        set_country_flag = unite_felinekind_enabled
+        set_variable = {
+            which = KoiBigCatsRescued
+            value = 0
+        }
+    }
+}
+
+country_event = { #Egyptian Mau Decision
+    id = catt.13
+    title = catt.13.title
+    desc = catt.13.desc
+    picture = MYSTIC_IN_PRAYER_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.13.a
+        add_country_modifier = {
+        name = koi_has_egyptian_mau
+        duration = -1
+            }
+        }
+    }
+
+country_event = { #Enable Big Cat pseudo-cav special units
+    id = catt.14
+    title = catt.14.title
+    desc = catt.14.desc
+    picture = indiangfx_STREET_SPEECH_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.14.a
+        add_country_modifier = {
+        name = koi_unlocked_big_cats
+        duration = -1
+            }
+        add_country_modifier = {
+        name = koi_big_cat_cav_buffs
+        duration = -1
+            }
+        }
+        after = {
+        add_country_modifier = {
+        name = koi_unlocked_big_cats
+        duration = -1
+            }
+        remove_country_modifier = koi_starting_cav_debuff
+        }
+    }
+
+country_event = { #Paws and Hands gov reform enable
+    id = catt.15
+    title = catt.15.title
+    desc = catt.15.desc
+    picture = shinto_MILITARY_CAMP_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    immediate = {
+        set_country_flag = koi_paws_and_hands_enable
+    }
+    option = {
+        name = catt.15.a
+        ai_chance = { factor = 100 }
+        add_government_reform = koi_hands_and_paws_reform
+        }
+    option = {
+        name = catt.15.b
+        change_government_reform_progress = 50
+        ai_chance = { factor = 0 }
+    }
+        after = {
+        remove_country_modifier = koi_starting_cav_debuff
+        }
+    }
+
+country_event = { #Australia Moving Event
+    id = catt.16
+    title = catt.16.title
+    desc = catt.16.desc
+    picture = EP_POLYNESIAN_SHIPS_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.16.a #Doesnt have Australian cap, stay in Isle
+        trigger = {
+            capital_scope = {
+                    NOT = { region = australia_region }
+            }
+        }
+        4365 = {
+            add_province_modifier = {
+                name = koi_tir_na_nog_2
+                duration = -1
+                    }
+            hidden_effect = {
+            remove_province_modifier = koi_tir_na_nog_1
+                    }
+                }
+        if = {
+            limit = { capital_scope = { region = australia_region } }
+            set_capital = 4365
+        }
+    }
+    option = {
+        name = catt.16.b #Doesnt have Australian cap, doesnt have sydney, move to Australia
+        ai_chance = { factor = 100
+                    modifier = {
+                        factor = 0
+                        owns_or_non_sovereign_subject_of = 1090
+            } 
+        }
+        trigger = {
+            capital_scope = {
+                    NOT = { region = australia_region }
+            }
+        }
+        custom_tooltip = koi_annex_aussie_CN_and_subjects
+        custom_tooltip = koi_aussie_cap_no_sydney
+        hidden_effect = {
+        every_subject_country = {
+            limit = {
+                capital_scope = {
+                        region = australia_region
+                }
+            }
+            ROOT = {
+                inherit = PREV
+                }
+            }
+        }
+        random_province = {
+            limit = {
+                region = australia_region
+                province_has_center_of_trade_of_level = 1
+                OR = {
+                    owned_by = KOI
+                    owned_by_subject_of = KOI 
+                }
+            }
+            move_capital_effect = yes
+            add_base_manpower = 3
+            add_base_production = 3
+            add_base_tax = 3
+            change_culture = cat
+            change_religion = druidic_pagan
+        }
+        4365 = {
+            add_base_manpower = -3
+            add_base_production = -3
+            add_base_tax = -3
+            hidden_effect = {
+            add_province_modifier = {
+            name = unshackled_from_governing_distance
+            duration = -1
+                }
+            }
+        }
+    }
+    option = {
+        name = catt.16.c #Australian cap, wants to go back to Isle
+        trigger = {
+            capital_scope = {
+                    region = australia_region
+            }
+        }
+            4365 = {
+            move_capital_effect = yes
+            add_province_modifier = {
+                name = koi_tir_na_nog_2
+                duration = -1
+            }
+            hidden_effect = {
+            remove_province_modifier = koi_tir_na_nog_1
+            }
+        }
+    }
+    option = {
+        name = catt.16.d #Australian cap, stay and move resources over
+        ai_chance = { factor = 100
+                    modifier = {
+                        factor = 0
+                        owns_or_non_sovereign_subject_of = 1090
+            } 
+        }
+        trigger = {
+            capital_scope = {
+                    region = australia_region
+            }
+        }
+        4365 = {
+            add_base_manpower = -3
+            add_base_production = -3
+            add_base_tax = -3
+            hidden_effect = {
+            add_province_modifier = {
+            name = unshackled_from_governing_distance
+            duration = -1
+                    }
+                }
+            }
+        capital_scope = {
+            add_base_manpower = 3
+            add_base_production = 3
+            add_base_tax = 3
+            change_culture = cat
+            change_religion = druidic_pagan
+        }
+    }
+    option = {
+        name = catt.16.e #Either cap, owns Sydney
+        highlight = yes
+        trigger = {
+            owns_or_non_sovereign_subject_of = 1090
+        }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = {
+                any_subject_country = { 
+                    capital_scope = {
+                    region = australia_region
+                    }
+                }
+            }
+        custom_tooltip = koi_annex_aussie_CN_and_subjects
+        hidden_effect = {
+        every_subject_country = {
+            limit = {
+                capital_scope = {
+                        region = australia_region
+                }
+            }
+            ROOT = {
+                inherit = PREV
+                    }
+                }
+            }
+        }
+        4365 = {
+            add_base_manpower = -5
+            add_base_production = -5
+            add_base_tax = -5
+            hidden_effect = {
+            add_province_modifier = {
+            name = unshackled_from_governing_distance
+            duration = -1
+                    }
+                }
+        }
+        1090 = {
+            move_capital_effect = yes
+            add_base_manpower = 5
+            add_base_production = 5
+            add_base_tax = 5
+            change_culture = cat
+            change_religion = druidic_pagan
+            add_province_modifier = {
+                name = koi_city_of_endless_irises
+                duration = -1
+            }
+            rename_capital = "The Iris" 
+            change_province_name = "City of All Catts"
+        }
+    }
+}
+country_event = { #East or West Steering or Trade Eff
+    id = catt.17
+    title = catt.17.title
+    desc = catt.17.desc
+    picture = IMPERIAL_SEAL_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.17.a
+        add_country_modifier = {
+        name = koi_long_way
+        duration = -1
+            }
+        ai_chance = { factor = 100 }
+        }
+    option = {
+        name = catt.17.b
+        add_country_modifier = {
+        name = koi_short_way
+        duration = -1
+        }
+        ai_chance = { factor = 0 }
+    }
+}
+
+country_event = { #Failinis Trial Start
+    id = catt.18
+    title = catt.18.title
+    desc = catt.18.desc
+    picture = FORESTS_eventPicture
+
+    fire_only_once = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.18.a
+        set_country_flag = "Cats challenged Failinis"
+        add_mil_power = -150
+        custom_tooltip = catt.18.tt
+        hidden_effect = {
+            set_variable = {
+            which = KoiFailinisBattlesWon
+            value = 0
+            }
+            kill_leader = {
+            type = general
+            }
+            random_list = {
+                50 = {
+                    country_event = {
+                        id = catt.19 #success
+                        days = 30
+                    }
+                }
+                50 = {
+                    country_event = {
+                        id = catt.20 #fail
+                        days = 30
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = catt.18.b
+    }
+}
+
+country_event = { #Failinis Trial Win
+    id = catt.19
+    title = catt.19.title
+    desc = catt.19.desc
+    picture = MILITARY_CAMP_eventPicture
+
+    is_triggered_only = yes
+
+    option = {
+        name = catt.19.a
+        add_army_tradition = 10 
+        define_general = {
+            shock = 1
+            fire = 10
+            manuever = 6
+            siege = 5
+            name = "Neach-leantainn Failinis"
+            trait = trial_of_failinis_passer
+            female = yes
+        }
+    }
+}
+
+country_event = { #Failinis Trial Fail
+    id = catt.20
+    title = catt.20.title
+    desc = catt.20.desc
+    picture = FROZEN_VILLAGE_eventPicture
+
+    is_triggered_only = yes
+
+    option = {
+        name = catt.20.a
+        add_army_tradition = -10 
+    }
+}
+
+country_event = { #Found NW high american
+    id = catt.90
+    title = catt.90.title
+    desc = { 
+        trigger = { has_discovered = 756 }
+        desc = catt.92.desc
+    }
+    desc = { 
+        trigger = { has_discovered = 487 }
+        desc = catt.91.desc
+    }
+    desc = { 
+        trigger = { has_discovered = 1104 }
+        desc = catt.90.desc
+    }
+    picture = muslimgfx_NAVAL_MILITARY_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = KOI
+        OR = {
+            has_discovered = 756
+            has_discovered = 487
+            has_discovered = 1104
+        }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }   
+    option = {
+        set_country_flag = koi_found_high_americans
+        name = catt.90.a
+        custom_tooltip = catt.90.tt
+        ROOT = {
+            add_yearly_sailors = -8
+            add_navy_tradition = -30
+        }
+    }
+}
+
+country_event = { #Bathe Failinis Meme Decision Coalition Event
+    id = catt.93
+    title = catt.93.title
+    desc = catt.93.desc
+    picture = COSSACKS_IN_SIBERIA_eventPicture
+
+    major = yes
+    is_triggered_only = yes
+
+    option = {
+        name = catt.93.a
+        FKN = {
+            add_historical_rival = KOI 
+        }
+        add_country_modifier = {
+        name = koi_terrible_wine
+        duration = 3650
+        }
+    }
+}
+
+country_event = { #on_new_monarch Feast of Goibniu birding prevention
+    id = catt.94
+    title = catt.94.title
+    desc = catt.94.desc
+    picture = muslimgfx_NAVAL_MILITARY_eventPicture
+
+    is_triggered_only = yes
+    hidden = yes
+
+    trigger = {
+        religion = druidic_pagan
+        }
+    option = {
+        name = catt.94.a
+        random_list = {
+    80 = {
+        set_ruler_flag = goibniu_will_immortalize
+        }
+    20 = {
+        set_ruler_flag = goibniu_will_die
+            }
+        }
+    }
+}
+
+country_event = { #koi_nonhuman_merchants mission 10 random active trade node TP mission completion. No longer terrible dogshit, the implementation now doesnt take up half the fucking text file
+    id = catt.95
+    title = catt.95.title
+    desc = catt.95.desc
+    picture = muslimgfx_NAVAL_MILITARY_eventPicture
+
+    is_triggered_only = yes
+    hidden = yes
+
+    option = {
+        name = catt.95.a 
+                every_province = {
+                    limit = { NOT = { has_province_flag = koi_trade_node_check } }
+                        if = {
+                            limit = {
+                                has_trader = ROOT
+                            }
+                            add_trade_modifier = {
+                                who = ROOT
+                                duration = -1
+                                power = 20
+                                key = koi_catt_merchants_beloved
+                            }
+                        }
+                        every_trade_node_member_province = {
+                            set_province_flag = koi_trade_node_check
+                        }
+                    }
+                    every_province = {
+                        clr_province_flag = koi_trade_node_check
+                    }
+                }
+            }

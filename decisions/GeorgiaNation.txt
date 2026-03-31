@@ -63,6 +63,7 @@ country_decisions = {
 			}
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = GEO
 			on_change_tag_effect = yes
 			if = {

@@ -7,10 +7,13 @@ country_decisions = {
 			religion = fraticelli
 			NOT = { has_global_flag = catholic_antipopes_ended }
 			NOT = { has_reform = papacy_reform }
+			NOT = { FAP = { is_subject_of = ROOT } }
 		}
 		
 		allow = {
 			stability = 2
+			NOT = { has_country_modifier = ia_recently_been_force_converted_modifier }
+			NOT = { has_country_modifier = conversion_zeal }
 			if = {
 				limit = { is_subject = yes }
 				overlord = {
@@ -26,13 +29,16 @@ country_decisions = {
 				if = {
 					limit = { PAP = { is_subject = yes } }
 					PAP = {
-						overlord = {
-							religion = catholic
-							alliance_with = ROOT
-							reverse_has_opinion = {
-								who = ROOT
-								value = 100
+						OR = {
+							overlord = {
+								religion = catholic
+								alliance_with = ROOT
+								reverse_has_opinion = {
+									who = ROOT
+									value = 100
+								}
 							}
+							is_subject_of = ROOT
 						}
 					}
 				}
@@ -89,10 +95,13 @@ country_decisions = {
 			religion = catholic
 			NOT = { has_global_flag = catholic_antipopes_ended }
 			NOT = { has_reform = papacy_reform }
+			NOT = { PAP = { is_subject_of = ROOT } }
 		}
 		
 		allow = {
 			stability = 2
+			NOT = { has_country_modifier = ia_recently_been_force_converted_modifier }
+			NOT = { has_country_modifier = conversion_zeal }
 			if = {
 				limit = { is_subject = yes }
 				overlord = {
@@ -108,13 +117,16 @@ country_decisions = {
 				if = {
 					limit = { FAP = { is_subject = yes } }
 					FAP = {
-						overlord = {
-							religion = fraticelli
-							alliance_with = ROOT
-							reverse_has_opinion = {
-								who = ROOT
-								value = 100
+						OR = {
+							overlord = {
+								religion = fraticelli
+								alliance_with = ROOT
+								reverse_has_opinion = {
+									who = ROOT
+									value = 100
+								}
 							}
+							is_subject_of = ROOT
 						}
 					}
 				}
@@ -164,6 +176,125 @@ country_decisions = {
 		}
 	}
 	
+	convert_to_jansenism = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			num_of_religion = {
+				religion = anglican
+				value = 0.05
+			}
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+			NOT = { religion = anglican }
+			NOT = { religion = bogomilist }
+			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+			NOT = { tag = TEM }
+			NOT = { tag = VAL }
+		}
+		allow = {
+			dominant_religion = anglican
+			stability = 2
+			NOT = { has_country_modifier = ia_recently_been_force_converted_modifier }
+			NOT = { has_country_modifier = conversion_zeal }
+			NOT = { is_papal_controller = yes }
+			OR = {
+				liberty_desire = 50
+				is_subject = no
+				overlord = { religion = anglican }
+			}
+		}
+	 	effect = {
+			add_stability = -2
+			change_religion = anglican
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				religion = catholic
+				any_subject_country = { tag = PAP }
+			}
+			modifier = {
+				factor = 0
+				religion = fraticelli
+				OR = {
+					any_subject_country = { tag = FAP }
+					alliance_with = FAP
+				}
+			}
+			modifier = {
+				factor = 0
+				religion = catholic
+				OR = {
+					any_subject_country = { tag = PAP }
+					alliance_with = PAP
+				}
+			}
+			modifier = {
+				factor = 0
+				dynasty = "Meroveching"
+			}
+		}
+	}
+	
+	convert_to_templarite = {
+		major = yes
+		color = { 255 152 45 }
+		potential = {
+			num_of_religion = {
+				religion = protestant
+				value = 0.05
+			}
+			religion_group = christian
+			NOT = { religion = hellenic_pagan_reformed }
+			NOT = { religion = protestant }
+			NOT = { religion = bogomilist }
+			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+		}
+		allow = {
+			dominant_religion = protestant
+			stability = 2
+			NOT = { has_country_modifier = ia_recently_been_force_converted_modifier }
+			NOT = { has_country_modifier = conversion_zeal }
+			NOT = { is_papal_controller = yes }
+			OR = {
+				liberty_desire = 50
+				is_subject = no
+				overlord = { religion = protestant }
+			}
+		}
+	 	effect = {
+			add_stability = -2
+			change_religion = protestant
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				religion = fraticelli
+				OR = {
+					any_subject_country = { tag = FAP }
+					alliance_with = FAP
+				}
+			}
+			modifier = {
+				factor = 0
+				religion = catholic
+				OR = {
+					any_subject_country = { tag = PAP }
+					alliance_with = PAP
+				}
+			}
+			modifier = {
+				factor = 0
+				dynasty = "Meroveching"
+			}
+		}
+	}
+	
 	end_the_antipapacy_polish = {
 		major = yes
 		color = { 204 204 0 }
@@ -187,44 +318,40 @@ country_decisions = {
 				FAP = { is_subject_of = ROOT }
 			}
 			NOT = {
-				any_great_power = { religion = fraticelli }
+				any_great_power = { 
+					religion = fraticelli
+					NOT = { 
+						ROOT = { 
+							has_won_war_against = {
+								who = PREV
+								max_years_since = 20
+							}	
+						} 
+					} 
+				}
 			}
 		}
 		
 		effect = {
-			country_event = { id = papal_control.84 }
-			
-			add_reform_desire = -0.5
-			
 			custom_tooltip = mend_catholicism_tt
+			
 			hidden_effect = {
-				every_owned_province = {
+				every_province = {
 					limit = { religion = fraticelli }
 					change_religion = catholic
 				}
-				every_known_country = {
+				every_country = {
 					limit = {
 						religion = fraticelli
 					}
 					change_religion = catholic
-					every_owned_province = {
-						limit = { religion = fraticelli }
-						change_religion = catholic
-					}
-				}
-				every_known_country = {
-					limit = {
-						religion = catholic
-					}
-					every_owned_province = {
-						limit = { religion = fraticelli }
-						change_religion = catholic
-					}
 				}
 				set_global_flag = catholic_antipopes_ended
 				PAP = { inherit = FAP }
 				FAP = { every_core_province = { remove_core = FAP } }
 			}
+			
+			country_event = { id = papal_control.84 }
 		}
 	}
 	
@@ -251,44 +378,47 @@ country_decisions = {
 				PAP = { is_subject_of = ROOT }
 			}
 			NOT = {
-				any_great_power = { religion = catholic }
+				any_great_power = { 
+					religion = catholic 
+					NOT = { 
+						ROOT = { 
+							has_won_war_against = {
+								who = PREV
+								max_years_since = 20
+							}	
+						} 
+					} 
+				}
 			}
 		}
 		
 		effect = {
-			country_event = { id = papal_control.84 }
-			
-			add_reform_desire = -0.5
-			
 			custom_tooltip = mend_catholicism_tt
+			
 			hidden_effect = {
-				every_owned_province = {
-					limit = { religion = catholic }
-					change_religion = fraticelli
+				every_province = {
+					limit = { religion = fraticelli }
+					change_religion = catholic
 				}
-				every_known_country = {
-					limit = {
-						religion = catholic
-					}
-					change_religion = fraticelli
-					every_owned_province = {
-						limit = { religion = catholic }
-						change_religion = fraticelli
-					}
-				}
-				every_known_country = {
+				every_country = {
 					limit = {
 						religion = fraticelli
 					}
-					every_owned_province = {
-						limit = { religion = catholic }
-						change_religion = fraticelli
-					}
+					change_religion = catholic
+					add_prestige = 100
 				}
 				set_global_flag = catholic_antipopes_ended
 				FAP = { inherit = PAP }
 				PAP = { every_core_province = { remove_core = PAP } }
+				FAP = {
+					hidden_effect = { ia_save_historical_relations_effect = yes }
+					change_tag = PAP
+					on_change_tag_effect = yes
+					swap_non_generic_missions = yes
+				}
 			}
+			
+			country_event = { id = papal_control.84 }
 		}
 	}
 	

@@ -8,6 +8,7 @@ eternal_emperor = {
 	shock_damage = 0.15
 	siege_ability = 0.25
 	cavalry_flanking = 0.5
+	land_attrition = -0.50
 	force_march_free = yes
 	land_morale = 0.1
 	movement_speed = 0.15
@@ -19,10 +20,10 @@ aurora_trained = {
 		Z17 = {
 			has_estate = estate_aurora
 		}
-		religion = Z17
+		religion = hellenic_pagan_reformed
 	}
 	
-	shock_damage = 0.10
+	shock_damage = 0.15
 	cavalry_flanking = 0.5
 	movement_speed = 0.10
 }
@@ -46,8 +47,8 @@ templar_knight = {
 		}
 	}
 	
-	cavalry_power = 0.15
-	morale_damage_received = -0.25
+	cavalry_power = 0.10
+	morale_damage_received = -0.20
 }
 
 voice_of_god_generaltrait = {
@@ -57,10 +58,10 @@ voice_of_god_generaltrait = {
 		is_year = 1820
 	}
 	
-	morale_damage_received = -0.25
-	morale_damage = 0.10	
+	morale_damage_received = -0.20
+	morale_damage = 0.20	
 	land_attrition = -0.50
-	shock_damage_received = -0.25
+	shock_damage_received = -0.20
 	force_march_free = yes
 	army_tradition_from_battle = 1
 }
@@ -133,4 +134,49 @@ grand_captain = {
 	shock_damage = 0.15
 	land_attrition = -0.10
 	movement_speed = 0.10
+}
+
+pyre_champion = {
+	allow = {
+		is_admiral = no
+		religion = lollard
+	}
+	
+	reinforce_speed = 0.25
+	loot_amount = 1
+	available_province_loot = 0.5
+	morale_damage = 0.15
+}
+
+apostle_of_apocalypse_generaltrait = {
+	allow = {
+		is_admiral = no
+		tag = YOR
+		is_year = 1820
+	}
+	land_morale = 0.15
+	morale_damage = 0.5	
+	shock_damage = 0.2
+	shock_damage_received = 0.1
+	fire_damage = 0.2
+	fire_damage_received = 0.1
+	reinforce_speed = 0.25
+	loot_amount = 1
+	available_province_loot = 0.5
+	enable_forced_march = yes
+}
+
+trial_of_failinis_passer = {
+	allow = {
+		is_admiral = no
+		tag = KOI
+        is_year = 1820
+	    }
+    land_morale = 0.05
+	land_attrition = -0.25
+	fire_damage = 0.20
+	fire_damage_received = -0.30
+	shock_damage = -0.40
+    shock_damage_received = 0.1
+    siege_ability = 0.10
 }

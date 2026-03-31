@@ -842,118 +842,118 @@ dom_ned_fla_reconquest_group = {
 	}
 }
 
-dom_ned_big_small_slot2_group = {
-	slot = 2
-	generic = no
-	ai = yes
-	potential = {
-		OR = {
-			tag = NED
-			netherlands_tags = yes
-		}
-		NOT_was_flemish_tag = yes
-		NOT = { was_tag = BUR }
-		#has_country_flag = dom_ned_modded_missions
-		NOT = { map_setup = map_setup_random }
-		NOT = { has_country_flag = mission_branch_conquest_small }
-		NOT = { has_country_flag = mission_branch_conquest_large }
-		NOT = { has_country_flag = EFR_join_germany }
-	}
-	has_country_shield = yes
-		
-	dom_ned_fixed_garrison_system_unknown = { #Nine Years War? Ramp jaar?
-		icon = fixed_garrison_system
-		required_missions = { dom_ned_mission_unknown1 }
-		position = 4
-		
-		provinces_to_highlight = {
-			OR = {
-				area = holland_area
-				area = north_brabant_area
-				area = frisia_area
-			}
-		}
-		
-		trigger = {
-			calc_true_if = {
-				desc = emp_ned_fixed_garrison_system_tt
-				all_owned_province = {
-					OR = {
-						holland_area = {
-							type = all
-							owned_by = ROOT
-							is_core = ROOT
-						}
-						north_brabant_area = {
-							type = all
-							owned_by = ROOT
-							is_core = ROOT
-						}
-						frisia_area = {
-							type = all
-							owned_by = ROOT
-							is_core = ROOT
-						}
-					}
-					if = {
-						limit = {
-							ROOT = {
-								NOT = { mil_tech = 14 }
-							}
-						}
-						has_building = fort_15th
-					}
-					else_if = {
-						limit = {
-							ROOT = {
-								AND = {
-									mil_tech = 14
-									NOT = { mil_tech = 19 }
-								}
-							}
-						}
-						has_building = fort_16th
-					}
-					else_if = {
-						limit = {
-							ROOT = {
-								AND = {
-									mil_tech = 19
-									NOT = { mil_tech = 24 }
-								}
-							}
-						}
-						has_building = fort_17th
-					}
-					else_if = {
-						limit = {
-							ROOT = {
-								mil_tech = 24
-							}
-						}
-						has_building = fort_18th
-					}
-				}
-				amount = 3
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = "ned_fixed_garrisons"
-				duration = -1
-			}
-			custom_tooltip = ned_waterlinie_option_tt
-			#hidden_effect = {
-				set_country_flag = dutch_waterlinie_inundation_decision_true
-			#}
-			custom_tooltip = tooltip_wip
-			#can now inundate for a while to gain extra defensiveness + attrition
-		}
-		ai_weight = {
-			factor = 500	#Historical mission
-		}
-	}
-	
+#dom_ned_big_small_slot2_group = {
+#	slot = 2
+#	generic = no
+#	ai = yes
+#	potential = {
+#		OR = {
+#			tag = NED
+#			netherlands_tags = yes
+#		}
+#		NOT_was_flemish_tag = yes
+#		NOT = { was_tag = BUR }
+#		#has_country_flag = dom_ned_modded_missions
+#		NOT = { map_setup = map_setup_random }
+#		NOT = { has_country_flag = mission_branch_conquest_small }
+#		NOT = { has_country_flag = mission_branch_conquest_large }
+#		NOT = { has_country_flag = EFR_join_germany }
+#	}
+#	has_country_shield = yes
+#		
+#	dom_ned_fixed_garrison_system_unknown = { #Nine Years War? Ramp jaar?
+#		icon = fixed_garrison_system
+#		required_missions = { dom_ned_mission_unknown1 }
+#		position = 4
+#		
+#		provinces_to_highlight = {
+#			OR = {
+#				area = holland_area
+#				area = north_brabant_area
+#				area = frisia_area
+#			}
+#		}
+#		
+#		trigger = {
+#			calc_true_if = {
+#				desc = emp_ned_fixed_garrison_system_tt
+#				all_owned_province = {
+#					OR = {
+#						holland_area = {
+#							type = all
+#							owned_by = ROOT
+#							is_core = ROOT
+#						}
+#						north_brabant_area = {
+#							type = all
+#							owned_by = ROOT
+#							is_core = ROOT
+#						}
+#						frisia_area = {
+#							type = all
+#							owned_by = ROOT
+#							is_core = ROOT
+#						}
+#					}
+#					if = {
+#						limit = {
+#							ROOT = {
+#								NOT = { mil_tech = 14 }
+#							}
+#						}
+#						has_building = fort_15th
+#					}
+#					else_if = {
+#						limit = {
+#							ROOT = {
+#								AND = {
+#									mil_tech = 14
+#									NOT = { mil_tech = 19 }
+#								}
+#							}
+#						}
+#						has_building = fort_16th
+#					}
+#					else_if = {
+#						limit = {
+#							ROOT = {
+#								AND = {
+#									mil_tech = 19
+#									NOT = { mil_tech = 24 }
+#								}
+#							}
+#						}
+#						has_building = fort_17th
+#					}
+#					else_if = {
+#						limit = {
+#							ROOT = {
+#								mil_tech = 24
+#							}
+#						}
+#						has_building = fort_18th
+#					}
+#				}
+#				amount = 3
+#			}
+#		}
+#		effect = {
+#			add_country_modifier = {
+#				name = "ned_fixed_garrisons"
+#				duration = -1
+#			}
+#			custom_tooltip = ned_waterlinie_option_tt
+#			#hidden_effect = {
+#				set_country_flag = dutch_waterlinie_inundation_decision_true
+#			#}
+#			custom_tooltip = tooltip_wip
+#			#can now inundate for a while to gain extra defensiveness + attrition
+#		}
+#		ai_weight = {
+#			factor = 500	#Historical mission
+#		}
+#	}
+#	
 	#fla_flemish_cloth = {
 	#	icon = mission_have_manufactories
 	#	required_missions = { fla_commercial_infrastructure }
@@ -987,7 +987,7 @@ dom_ned_big_small_slot2_group = {
 	#		factor = 500	#Tall
 	#	}
 	#}
-}
+#}
 
 dom_ned_big_slot2_group = {
 	slot = 2

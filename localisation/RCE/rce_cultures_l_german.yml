@@ -1,0 +1,50 @@
+﻿l_german:
+ # Culture Groups:
+ aramaic_culture_group: "Aramäisch"
+
+ # Cultures:
+ avshars_culture: "Afscharisch"
+ farsi_culture: "Farsisch"
+ azeri_culture: "Aserisch"
+ qashqai_culture: "Qaschqaiisch"
+ kalmyk_culture: "Kalmückisch"
+ oghuz_culture: "Oghusisch"
+ coptic_culture: "Koptisch"
+ assyrian_culture: "Assyrisch"
+ manichaean_culture: "Manichäisch"
+ chaldean_culture: "Chaldäisch"
+
+ # Events:
+ rce_culture_aramaic_culture_group_events.EVTNAME1: "Entstehung der chaldäischen Kultur"
+ rce_culture_aramaic_culture_group_events.EVTDESC1: "Die lange Zeit, in der die Bevölkerung von [407.GetName] unter [407.Religion.GetGroupName]en und [407.Culture.GetGroupName]en Einflüssen lebten, hat dazu geführt, dass in der Provinz eine neue Kultur entstanden ist."
+ rce_culture_aramaic_culture_group_events1.EVTOPT1: "Interessant."
+
+ rce_culture_aramaic_culture_group_events.EVTNAME2: "Entstehung der babylonischen Kultur"
+ rce_culture_aramaic_culture_group_events.EVTDESC2: "Die lange Zeit, in der die Bevölkerung von [410.GetName] unter [410.Religion.GetGroupName]en und [410.Culture.GetGroupName]en Einflüssen lebten, hat dazu geführt, dass in der Provinz eine neue Kultur entstanden ist."
+ rce_culture_aramaic_culture_group_events2.EVTOPT1: "Interessant."
+
+ rce_culture_aramaic_culture_group_events.EVTNAME3: "Entstehung der phönizischen Kultur"
+ rce_culture_aramaic_culture_group_events.EVTDESC3: "Die lange Zeit, in der die Bevölkerung von [1855.GetName] unter [1855.Religion.GetGroupName]en und [1855.Culture.GetGroupName]en Einflüssen lebten, hat dazu geführt, dass in der Provinz eine neue Kultur entstanden ist."
+ rce_culture_aramaic_culture_group_events3.EVTOPT1: "Interessant."
+
+ rce_culture_oghuz_culture_events.EVTNAME1: "Entstehung der türkischen Kultur"
+ rce_culture_oghuz_culture_events.EVTDESC1: "Mit unserer Expansion in Länder unter dem Einfluss arabischer Kulturen hat mehr und mehr von diesem arabischen Einfluss die oghusische Bevölkerung beeinflusst. Inzwischen ist die Kultur in [Root.GetName] so sehr beeinflusst worden, dass eine neue Kultur entstanden ist."
+ rce_culture_oghuz_culture_events1.EVTOPT1: "Interessant."
+
+ rce_culture_oghuz_culture_events.EVTNAME2: "[Root.GetName] in der arabischen Welt"
+ rce_culture_oghuz_culture_events.EVTDESC2: "Die arabische Kultur hat uns in den letzten Jahrzehnten immer mehr beeinflusst, was dazu führte, dass sich die Kultur in vielen Provinzen zur türkischen Kultur gewandelt hat. Jetzt ist es an der Zeit zu entscheiden, wie unsere Zukunft aussehen soll. Behalten wir unsere oghusischen Wurzeln oder nehmen wir die türkische Kultur an?"
+ rce_culture_oghuz_culture_events2.EVTOPT1: "Nehmt die türkische Kultur an."
+ rce_culture_oghuz_culture_events2.EVTOPT2: "Bleibt bei Euren Wurzeln."
+ rce_culture_oghuz_culture_events.2.tt: "Die passive Ausbreitung der Kultur '§YTürkisch§!' in unseren Provinzen wird beendet."
+
+ rce_culture_oghuz_culture_events.EVTNAME3: "Die neuen Bräuche des türkischen Volkes"
+ rce_culture_oghuz_culture_events.EVTDESC3: "Die arabische Kultur hat in jüngster Zeit einige unserer Provinzen beeinflusst, was zur Entstehung der türkischen Kultur in unserem Reich geführt hat. Sollen wir abwarten, wie sich die Situation entwickelt, oder versuchen, einen weiteren arabischen Einfluss in unserem Land zu verhindern?"
+ rce_culture_oghuz_culture_events3.EVTOPT1: "Das muss aufhören."
+ rce_culture_oghuz_culture_events3.EVTOPT2: "Lasst uns abwarten, was passiert."
+ rce_culture_oghuz_culture_events.3.tt: "Die passive Ausbreitung der Kultur '§YTürkisch§!' in unseren Provinzen wird fortgesetzt."
+
+ # Decisions:
+ rce_culture_decision_convert_to_assyrian_culture_title: "Assyrische Kultur annehmen"
+ rce_culture_decision_convert_to_assyrian_culture_desc: "Wir besitzen eine wichtige Provinz der assyrischen Kultur und sind [Root.Religion.GetGroupName] beeinflusst, also sollten wir die assyrische Kultur annehmen."
+ rce_culture_decision_convert_to_manichaean_culture_title: "Manichäische Kultur annehmen"
+ rce_culture_decision_convert_to_manichaean_culture_desc: "Wir besitzen eine wichtige Provinz der manichäischen culture Kultur und sind [Root.Religion.GetGroupName] beeinflusst, also sollten wir die manichäische Kultur annehmen."

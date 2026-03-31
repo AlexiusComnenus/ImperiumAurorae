@@ -317,24 +317,24 @@ cb_change_government_great_peasants_war = {
 	valid_for_subject = no
 
 	prerequisites = {
-		OR = {
-			has_global_flag = condemned_peasant_republics
-			AND = {
-				is_emperor = yes
-				has_global_flag = great_peasants_war_flag
-			}
-		}
-		is_part_of_hre = yes
-		NOT = { has_reform = peasants_republic }
+		#OR = {
+		#	has_global_flag = condemned_peasant_republics
+		#	AND = {
+		#		is_emperor = yes
+		#		has_global_flag = great_peasants_war_flag
+		#	}
+		#}
+		#is_part_of_hre = yes
+		NOT = { has_government_attribute = is_peasants_republic }
 		FROM = {
 			has_reform = peasants_republic
-			is_part_of_hre = yes
-		}
-		OR = {
-			is_emperor = yes
-			is_neighbor_of = FROM
+			is_free_or_tributary_trigger = yes
 		}
 		NOT = { government = republic }
+		OR = {
+			government = theocracy
+			government = monarchy
+		}
 	}
 
 	war_goal = war_goal_change_government
@@ -387,16 +387,6 @@ cb_humiliate = {
 	war_goal = humiliate
 }
 
-
-# Temporary claim CB (mostly used by missions)
-cb_conquest = {
-
-	prerequisites = {
-		claim = FROM
-	}
-
-	war_goal = take_claim
-}
 
 # We can take core provinces at no badboy
 cb_core = {
@@ -471,10 +461,13 @@ cb_triggered_independence_war = {
 cb_nationalist = {
 
 	prerequisites = {
-		dip_tech = 23
+		OR = {
+			dip_tech = 23
+			has_reform = german_unification_reform
+		}
 		is_free_or_tributary_trigger = yes
 		culture_group_claim = FROM
-		is_revolutionary = no
+		#is_revolutionary = no
 	}
 
 	war_goal = take_province_nationalist
@@ -751,6 +744,10 @@ cb_crusade = {
 		NOT = { religion_group = FROM }
 		NOT = {	has_matching_religion = FROM }
 		OR = {
+			NOT = { religion = anglican }
+			NOT = { has_global_flag = irenicist_reforms_passed }
+		}
+		OR = {
 			AND = {
 				crusade_target = { tag = FROM }
 				religion = catholic
@@ -834,6 +831,10 @@ cb_heretic = {
 			cb_on_religious_enemies = yes
 			FROM = { has_ruler_flag = hussite_heretic }
 		}
+		OR = {
+			NOT = { religion = anglican }
+			NOT = { has_global_flag = irenicist_reforms_passed }
+		}
 		religion_group = from
 		NOT = {	has_matching_religion = FROM }
 		OR = {
@@ -874,15 +875,25 @@ cb_external_perfectionism = {
 
 # Excommunication War
 cb_excommunication = {
-	valid_for_subject = no
+	valid_for_subject = yes
+
+	prerequisites_self = {
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+		is_excommunicated = no
+		is_revolutionary = no
+	}
 
 	prerequisites = {
 		FROM = {
 			is_excommunicated = yes
-			religion = catholic
+			OR = {
+				religion = catholic
+				religion = fraticelli
+			}
 		}
-		religion = catholic
-		is_excommunicated = no
 		FROM = {
 			is_neighbor_of = ROOT
 			any_owned_province = {
@@ -895,12 +906,6 @@ cb_excommunication = {
 				}
 			}
 		}
-		OR = {
-			hre_religion_treaty = no
-			capital_scope = { is_part_of_hre = no }
-			FROM = { capital_scope = { is_part_of_hre = no } }
-		}
-		is_revolutionary = no
 	}
 
 	war_goal = take_province_excommunication
@@ -1031,6 +1036,11 @@ cb_super_badboy = {
 		NOT = { FROM = { is_in_coalition_war = yes } }
 		num_of_coalition_members = 3
 		is_revolutionary = no
+		NOT = {
+			FROM = {
+				has_reform = mhadi_reform
+			}
+		}
 	}
 
 	war_goal = superiority_punitive
@@ -1443,7 +1453,7 @@ cb_hundred_years_union = {
 	is_triggered_only = yes
 	months = 360
 	
-	prerequisites = {
+	prerequisites_self = {
 		OR = {
 			tag = ENG
 			tag = GBR
@@ -1456,15 +1466,16 @@ cb_hundred_years_union = {
 cb_force_join_hre = {
 	valid_for_subject = no
 
-	prerequisites = {
+	prerequisites_self = {
 		has_dlc = "Emperor"
-		ROOT = {
-			is_emperor = yes
-			hre_reform_passed = emperor_reichsstabilitaet
-			can_use_peace_treaty = {
-				who = FROM
-				treaty = po_join_empire
-			}
+		is_emperor = yes
+		hre_reform_passed = emperor_reichsstabilitaet
+	}
+
+	prerequisites = {
+		can_use_peace_treaty = {
+			who = FROM
+			treaty = po_join_empire
 		}
 		FROM = {
 			religion_group = ROOT
@@ -1510,8 +1521,15 @@ cb_world_crusade = {
 	holy_war = yes
 
 	prerequisites_self = {
-		has_government_attribute = has_upgraded_holy_wars
+		OR = {
+			has_country_flag = enabled_great_holy_war_cb
+			has_government_attribute = has_upgraded_holy_wars
+		}
 		is_revolutionary = no
+		OR = {
+			NOT = { religion = anglican }
+			NOT = { has_global_flag = irenicist_reforms_passed }
+		}
 	}
 	
 	prerequisites = {
@@ -1546,6 +1564,10 @@ cb_war_against_heresy = {
 		NOT = { religion = FROM }
 		NOT = {	has_matching_religion = FROM }
 		is_revolutionary = no
+		OR = {
+			NOT = { religion = anglican }
+			NOT = { has_global_flag = irenicist_reforms_passed }
+		}
 	}
 
 	war_goal = superiority_world_crusade
@@ -1654,9 +1676,12 @@ cb_force_migration = {
 cb_native_american_tribal_feud = {
 	valid_for_subject = no
 
-	prerequisites = {
+	prerequisites_self = {
 		has_dlc = "Conquest of Paradise"
 		is_native_tribe = yes
+	}
+
+	prerequisites = {
 		FROM = {
 			is_native_tribe = yes
 			if = {
@@ -1690,19 +1715,32 @@ cb_native_american_tribal_feud = {
 cb_push_back_colonizers = {
 	valid_for_subject = no
 
-	prerequisites = {
+	prerequisites_self = {
 		has_dlc = "Conquest of Paradise"
 		is_native_tribe = yes
-		FROM = {
-			is_native_tribe = no
-			OR = {
-				is_neighbor_of = ROOT
-				any_owned_province = {
-					tribal_land_of = ROOT
-				}
-			}
-		}
 	}
+    prerequisites = {
+        FROM = {
+            is_native_tribe = no
+            NOT = {
+                OR = { 
+                    technology_group = north_american
+                    technology_group = mesoamerican
+                    technology_group = south_american
+                    technology_group = andean
+                    technology_group = aboriginal_tech
+                    technology_group = polynesian_tech
+                    technology_group = high_american
+                }
+            }
+            OR = {
+                is_neighbor_of = ROOT
+                any_owned_province = {
+                    tribal_land_of = ROOT
+                }
+            }
+        }
+    } 
 
 	war_goal = push_back_colonizers
 }
@@ -1728,13 +1766,17 @@ cb_claim_norwegian_throne = {
 # CB for enforcing becoming an elector
 cb_enforce_electorate_right = {
 	valid_for_subject = no
-	prerequisites = {
+
+	prerequisites_self = {
 		is_part_of_hre = yes
 		is_elector = no
 		is_emperor = no
 		any_subject_country = {
 			is_elector = yes
 		}
+	}
+
+	prerequisites = {
 		FROM = {
 			is_emperor = yes
 		}
@@ -1843,4 +1885,250 @@ conquer_china_cb = {
 	}
 
 	war_goal = take_capital_imperial
+}
+
+cb_spread_islam = {
+	valid_for_subject = no
+	holy_war = yes
+	
+	prerequisites_self = {
+		mission_completed = ARB_caliphal_ambitions
+	}
+	prerequisites = {
+		FROM = {
+			NOT = { religion_group = muslim }
+		}
+		OR = {
+			AND = {
+				mission_completed = ARB_sicily
+				FROM = {
+					capital_scope = {
+						region = italy_region
+					}
+				}
+			}
+			AND = {
+				mission_completed = ARB_tours
+				FROM = {
+					capital_scope = {
+						OR = {
+							region = france_region
+							region = iberia_region
+						}
+					}
+				}
+			}
+			AND = {
+				has_country_flag = ARB_cb_on_fetishists_in_south_africa_flag
+				FROM = {
+					capital_scope = {
+						superregion = southern_africa_superregion
+					}
+				}
+			}
+			AND = {
+				mission_completed = ARB_ottomans
+				FROM = {
+					capital_scope = { region = balkan_region }
+				}
+			}
+		}
+	}
+	
+	war_goal = ARB_spread_islam_wargoal
+}
+
+# Force Conversion Only CB - must be fabricated
+cb_spread_the_true_faith = {
+	valid_for_subject = no
+	holy_war = yes
+	is_triggered_only = yes
+	months = 60
+
+	war_goal = superiority_spread_the_true_faith
+}
+
+cb_gothic_invasion = {
+	valid_for_subject = no
+
+	prerequisites_self = {
+		has_country_flag = enable_gothic_invasion_cb_flag
+	}
+	
+	prerequisites = {
+		is_neighbor_of = FROM
+		FROM = {
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+
+	war_goal = take_capital_imperial
+}
+
+cb_roman_ambition = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = ITA_unlock_roman_ambition_flag
+	}
+	prerequisites = {
+		FROM = {
+			any_owned_province = {
+				OR = {
+					is_claim = ROOT
+					is_permanent_claim = ROOT
+					is_core = ROOT
+				}
+				BYZ_roman_empire_decision_trigger = yes
+			}
+		}
+	}
+	
+	war_goal = ITA_roman_ambition_wargoal
+}
+
+cb_ita_scramble_for_america = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = ITA_cb_for_america_flag
+	}
+	prerequisites = {
+		FROM = {
+			any_owned_province = {
+				OR = {
+					continent = south_america
+					continent = new_world
+					continent = north_america
+				}
+			}
+		}
+	}
+	
+	war_goal = ITA_scramble_for_america_wargoal
+}
+
+cb_ger_scramble_for_africa = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = GER_unlock_cb_on_african_natives_flag
+	}
+	prerequisites = {
+		FROM = {
+			OR = {
+				technology_group = east_african 
+				technology_group = central_african  
+				technology_group = sub_saharan  
+			}
+			any_owned_province = {
+				continent = africa
+			}
+		}
+	}
+	
+	war_goal = GER_scramble_for_africa_wargoal
+}
+
+cb_ger_claim_a_piece = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = GER_unlock_cb_on_european_colonists_flag
+	}
+	prerequisites = {
+		FROM = {
+			OR = {
+				technology_group = western 
+				technology_group = eastern
+			}
+			any_owned_province = {
+				continent = africa
+			}
+		}
+	}
+	
+	war_goal = GER_claim_a_piece_wargoal
+}
+
+cb_ita_dismantle_hre = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		mission_completed = JHC_ITA_humiliate_austria
+		hre_size = 1
+		NOT = { has_global_flag = flavor_ita_7_fired }
+	}
+	prerequisites = {
+		FROM = {
+			is_emperor = yes
+		}
+	}
+	
+	war_goal = ITA_dismantle_hre_wargoal
+}
+
+cb_sunset_invasion = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = SUN_cb_on_europeans
+	}
+	prerequisites = {
+		FROM = {
+			any_owned_province = {
+				OR = {
+					superregion = europe_superregion
+					region = maghreb_region
+				}
+			}
+		}
+	}
+	
+	war_goal = SUN_sunset_invasion_wargoal
+}
+
+cb_sunrise_invasion = {
+	valid_for_subject = no
+	
+	prerequisites_self = {
+		has_country_flag = SUN_unlock_sunrise_invasion_cb_flag
+	}
+	prerequisites = {
+		FROM = {
+			any_owned_province = {
+				OR = {
+					superregion = china_superregion
+					superregion = far_east_superregion
+				}
+			}
+		}
+	}
+	
+	war_goal = SUN_sunrise_invasion_wargoal
+}
+
+cb_reconquest_of_china = {
+	valid_for_subject = yes
+	
+	prerequisites_self = {
+		has_country_flag = TIM_cb_to_get_china_flag
+	}
+	prerequisites = {
+		FROM = {
+			any_owned_province = {
+				superregion = china_superregion
+			}
+		}
+	}
+	
+	war_goal = TIM_yuan_reconquest
+}
+
+cb_tim_crush_rebellion = {
+	is_triggered_only = yes
+	
+	war_goal = TIM_crush_rebellion
 }

@@ -197,8 +197,13 @@ Byz_Splinter_3 = {
 			
 				}
 			}
-			BYZ = { change_tag = GRE }
+			if = {
+				limit = { exists = BYZ }
+				old_byz_death_effect = yes
+			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = BYZ
+			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			swap_non_generic_missions = yes
 			set_government_rank = 3
@@ -211,6 +216,7 @@ Byz_Splinter_3 = {
 				limit = { 
 					NOT = { was_tag = TRE }
 					NOT = { was_tag = Z44 }
+					NOT = { has_idea_group = BYZ_ideas }
 				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}

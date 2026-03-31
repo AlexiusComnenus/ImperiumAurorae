@@ -274,6 +274,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		always = no
 		if = {
 			limit = {
 				event_target:EmperorOfChina = {
@@ -287,9 +288,7 @@ country_event = {
 		}
 		num_of_ports = 1
 		any_country = {
-			capital_scope = { 
-				continent = europe
-			}
+			capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 			any_known_country = {
 				tag = ROOT
 			}
@@ -384,8 +383,6 @@ country_event = {
 		NOT = { religion_group = christian }
 		num_of_ports = 1
 		OR = {
-			has_country_modifier = mng_closed_china
-			has_country_modifier = mng_open_china
 			AND = {
 				north_china_region = {
 					has_discovered = TEM
@@ -393,16 +390,16 @@ country_event = {
 				south_china_region = {
 					has_discovered = TEM
 				}
-				calc_true_if = {
-					all_province = {
-						OR = {
-							region = north_china_region
-							region = south_china_region
-						}
-						owner = { religion_group = christian }
+			}
+			calc_true_if = {
+				all_province = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
 					}
-					amount = 3 # Taiwan is three provinces, so at least one non-Taiwanese province must be taken
+					owner = { religion = protestant }
 				}
+				amount = 1
 			}
 		}
 		NOT = { has_country_flag = mng_jesuits_have_arrived }
@@ -2160,7 +2157,7 @@ country_event = { #The Great Tax Reform
 		if = { 
 			limit = { 
 				any_ally = {
-					capital_scope = { continent = europe } 
+					capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } } 
 					OR = {
 						any_owned_province = {
 							NOT = { continent = europe } 
@@ -2177,7 +2174,7 @@ country_event = { #The Great Tax Reform
 			}
 			random_ally = {
 				limit = {
-					capital_scope = { continent = europe } 
+					capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 					OR = {
 						any_owned_province = {
 							NOT = { continent = europe } 

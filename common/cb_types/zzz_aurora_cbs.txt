@@ -9,6 +9,7 @@ cb_antioch_crusade = {
 		}
 		is_subject = no
 		is_revolutionary = no
+		religion = hellenic_pagan_reformed
 	}
 	
 	prerequisites = {
@@ -28,9 +29,43 @@ cb_antioch_crusade = {
 				#}
 			}
 		}
+		OR = {
+			FROM = { NOT = { religion = anglican } }
+			NOT = { has_global_flag = daohellenic_irenicist_truce_flag }
+		}
 	}
 
 	war_goal = antioch_celestial_crusade
+}
+
+cb_imperial_realm_war_lite = {
+	valid_for_subject = no
+	ai_peace_desire = -50
+
+	prerequisites_self = {
+		is_emperor = yes
+		is_subject = no
+		is_revolutionary = no
+		OR = {
+			hre_reform_passed = emperor_reichskrieg
+			hre_reform_passed = emperor_renovatio
+		}
+	}
+	
+	prerequisites = {
+		FROM = {
+			NOT = { is_part_of_hre = yes }
+			any_neighbor_country = { 
+				OR = {
+					tag = ROOT
+					overlord = { tag = ROOT }
+					is_part_of_hre = yes
+				}
+			}
+		}
+	}
+
+	war_goal = superiority_reichskrieg
 }
 
 cb_take_mandate = {
@@ -115,6 +150,15 @@ cb_german_civil_war = {
 	is_triggered_only = yes
 
 	war_goal = german_civil_war_wargoal
+}
+
+cb_mhadi_ritual_war = {
+	valid_for_subject = no
+	ai_peace_desire = -1000
+	
+	is_triggered_only = yes
+
+	war_goal = mhadi_ritual_war_wargoal
 }
 
 #cb_spread_the_revolution = {
@@ -312,7 +356,7 @@ cb_saxon_independence = {
 
 	is_triggered_only = yes
 
-	war_goal = defend_capital_independence
+	war_goal = defend_capital_saxon_league
 }
 
 cb_humiliate_fiefs = {
@@ -375,7 +419,7 @@ cb_bogomilist_crusade = {
 	holy_war = yes
 
 	prerequisites_self = {
-		is_revolutionary = no
+		#is_revolutionary = no
 		has_country_flag = nov_allowed_to_holy_war
 		religion = bogomilist
 	}
@@ -426,4 +470,29 @@ cb_ia_liberation = {
 	}
 	
 	war_goal = ia_liberation
+}
+
+# Coalition CB
+cb_super_badboy_mhadi = {
+	coalition = yes
+
+	prerequisites = {
+		coalition_target = FROM
+		num_of_coalition_members = 2
+		FROM = {
+			has_reform = mhadi_reform
+		}
+	}
+
+	war_goal = superiority_punitive_mhadi
+}
+
+# Temporary claim CB (mostly used by missions)
+cb_conquest = {
+
+	prerequisites = {
+		claim = FROM
+	}
+
+	war_goal = take_claim
 }

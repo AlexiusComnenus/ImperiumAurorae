@@ -1,3 +1,11 @@
+is_allowed_to_recruit_mercenaries = {
+	custom_trigger_tooltip = {
+		tooltip = is_allowed_to_recruit_mercenaries_tt
+		NOT = { has_country_modifier = dan_sca_refocus_on_personal_armies }
+		NOT = { religion = lollard }
+	}
+}
+
 has_production_building_trigger = {
 	custom_trigger_tooltip = {
 		tooltip = has_production_building_trigger_tooltip
@@ -143,12 +151,16 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_aen_bastion_guard }
 		NOT = { mercenary_company = merc_aen_order_of_the_lionhearted }
 		NOT = { mercenary_company = merc_aen_hessian_foreign_legion }
+		NOT = { mercenary_company = merc_crazed_horde }
+		NOT = { mercenary_company = merc_pyre_zealots }
+		NOT = { mercenary_company = merc_flameheralds }
+		NOT = { mercenary_company = merc_children_of_the_forest }
 	}
 }
 
 was_never_end_game_tag_trigger = {	#Country Scope
 	OR = {
-		NOT = { end_game_tags_blocked = yes }
+		#NOT = { end_game_tags_blocked = yes }
 		custom_trigger_tooltip = {
 			tooltip = was_never_end_game_tag_trigger_tt
 			AND = {
@@ -201,6 +213,8 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = UKR }
 				NOT = { was_tag = AVE }
 				NOT = { was_tag = FRW }
+				NOT = { was_tag = AZT }
+				NOT = { was_tag = LAE }
 				NOT = { has_country_flag = nov_endgame_tag_flag }
 				NOT = { tag = MUG }
 				NOT = { tag = TUR }
@@ -251,6 +265,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = UKR }
 				NOT = { tag = AVE }
 				NOT = { tag = FRW }
+				NOT = { tag = AZT }
 				NOT = { was_tag = FRA }
 				NOT = { was_tag = MUG }
 				NOT = { was_tag = TUR }
@@ -292,6 +307,8 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = HSC }
 				NOT = { was_tag = GLL }
 				NOT = { was_tag = SOI }
+				NOT = { was_tag = LAE }
+                NOT = { was_tag = HES }
 				NOT = { tag = FRA }
 				NOT = { tag = MUG }
 				NOT = { tag = TUR }
@@ -333,9 +350,38 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = HSC }
 				NOT = { tag = GLL }
 				NOT = { tag = SOI }
+                NOT = { tag = HES }
 			}
 		}
 	}
+}
+
+was_never_german_regional_tag_trigger = {	#Country Scope
+	NOT = { was_tag = BRA }
+	NOT = { was_tag = PRU }
+	NOT = { was_tag = POM }
+	NOT = { was_tag = SAX }
+	NOT = { was_tag = BAV }
+	NOT = { was_tag = HAB }
+	NOT = { was_tag = SWA }
+	NOT = { was_tag = FKN }
+	NOT = { was_tag = WES }
+	NOT = { was_tag = LOT }
+	NOT = { was_tag = SWI }
+	NOT = { was_tag = HSA }
+	
+	NOT = { tag = BRA }
+	NOT = { tag = PRU }
+	NOT = { tag = POM }
+	NOT = { tag = SAX }
+	NOT = { tag = BAV }
+	NOT = { tag = HAB }
+	NOT = { tag = SWA }
+	NOT = { tag = FKN }
+	NOT = { tag = WES }
+	NOT = { tag = LOT }
+	NOT = { tag = SWI }
+	NOT = { tag = HSA }
 }
 
 has_any_estates = {
@@ -362,5 +408,91 @@ has_any_estates = {
 			has_estate = estate_holy_orders
 			has_estate = estate_aurora
 		}
+	}
+}
+
+is_tatar_nation = {
+	OR = {
+		tag = Z00
+		tag = CRI
+		tag = KAZ
+		tag = SIB
+		tag = BSH
+		tag = AST
+		tag = QAS
+		tag = KLM
+	}
+}
+
+was_tatar_nation = {
+	OR = {
+		was_tag = Z00
+		was_tag = CRI
+		was_tag = KAZ
+		was_tag = SIB
+		was_tag = BSH
+		was_tag = AST
+		was_tag = QAS
+		was_tag = KLM
+	}
+}
+
+is_mongol_nation = {
+	OR = {
+		tag = OIR
+		tag = KHA
+		tag = KRC
+		tag = HMI
+		tag = SYG
+		tag = KSD
+		tag = KLK
+		tag = ZUN
+		tag = Z03
+		tag = Z04
+	}
+}
+
+was_mongol_nation = {
+	OR = {
+		was_tag = OIR
+		was_tag = KHA
+		was_tag = KRC
+		was_tag = HMI
+		was_tag = SYG
+		was_tag = KSD
+		was_tag = KLK
+		was_tag = ZUN
+		was_tag = Z03
+		was_tag = Z04
+	}
+}
+
+is_moghulistan_nation = {
+	OR = {
+		tag = GOL
+		tag = CHH
+		tag = KAS
+		tag = NOG
+		tag = CHG
+		tag = SHY #Technically not Moghulistan, but part of Central Asia
+		tag = BUK #Technically not Moghulistan, just an extension of Uzbek
+		tag = KZH
+		tag = KOK
+		tag = KHI
+	}
+}
+
+was_moghulistan_nation = {
+	OR = {
+		was_tag = GOL
+		was_tag = CHH
+		was_tag = KAS
+		was_tag = NOG
+		was_tag = CHG
+		was_tag = SHY #Technically not Moghulistan, but part of Central Asia
+		was_tag = BUK #Technically not Moghulistan, just an extension of Uzbek
+		was_tag = KZH
+		was_tag = KOK
+		was_tag = KHI
 	}
 }

@@ -43,132 +43,112 @@ righteousness_loss_offensive_war = {
 		is_in_war = {
 			attacker_leader = ROOT
 		}
-		NOT = {
+		any_war_enemy_country = {
 			is_in_war = {
 				attacker_leader = ROOT
-				casus_belli = cb_take_mandate
+			}
+			NOT = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_take_mandate
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_take_mandate
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_disloyal_vassal
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_hre_attacked
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_insult
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_dishonored_call
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_religious_conformance
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_change_government
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_change_government_great_peasants_war
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_core
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_hegemon
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_defender_of_the_faith
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_imperial_ban
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_imperial_ban_incident
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_liberate_elector
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_super_badboy
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_support_rebels
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_chinese_unification
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_forced_break_alliance
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_reintegrate_into_hre
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_imperial_realm_war
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_imperial_realm_war_lite
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_ia_liberation
+					}
+					is_in_war = {
+						attacker_leader = ROOT
+						casus_belli = cb_super_badboy_mhadi
+					}
+				}
 			}
 		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_restore_personal_union
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_disloyal_vassal
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_hre_attacked
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_insult
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_dishonored_call
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_religious_conformance
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_change_government
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_change_government_great_peasants_war
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_core
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_hegemon
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_defender_of_the_faith
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_imperial_ban
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_imperial_ban_incident
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_liberate_elector
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_super_badboy
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_support_rebels
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_chinese_unification
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_forced_break_alliance
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_reintegrate_into_hre
-			}
-		}
-		NOT = {
-			is_in_war = {
-				attacker_leader = ROOT
-				casus_belli = cb_imperial_realm_war
-			}
-		}
+		
 	}
 	monthly_righteousness = -1
 }

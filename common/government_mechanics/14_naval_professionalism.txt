@@ -9,53 +9,116 @@ naval_professionalism_mechanic = {
 		naval_professionalism = {
 			max = 100
 			base_monthly_growth = 0
+			gui = prussian_militarization_gov_mech_3_power
 			scaled_modifier = {
 				modifier = {
-					global_ship_trade_power = 0.25
+					global_ship_trade_power = 0.5
 					disengagement_chance = 0.1
-					number_of_cannons_modifier = 0.1
+					sunk_ship_morale_hit_recieved = -0.2
+					sailor_maintenance_modifer = -0.4
+					sailors_recovery_speed = 0.5
+					global_ship_recruit_speed = -0.4
+					global_ship_cost = -0.2
 					monthly_naval_professionalism = -1
 				}
 			}
 		}
 	}
 	
-#	interactions = {
-#		boost_naval_professionalism = {
-#			icon = GFX_boost_naval_professionalism_button
-#			trigger = {
-#				dip_power_cost = 50
-#				not = {
-#					has_government_power = {
-#						mechanic_type = naval_professionalism_mechanic
-#						power_type = naval_professionalism
-#						value = 100
-#					}
-#				}
-#			}
-#			effect = { 
-#				dip_power_cost = 50
-#				add_government_power = {
-#					mechanic_type = naval_professionalism_mechanic
-#					power_type = naval_professionalism
-#					value = 10
-#				}
-#			}
-#			cooldown_years = 0
-#			ai_chance = {
-#				factor = 0
-#				modifier = {
-#					factor = 10
-#					not = {
-#						has_government_power = {
-#							mechanic_type = naval_professionalism_mechanic
-#							power_type = naval_professionalism
-#							value = 90
-#						}
-#					}
-#					mil_power = 500
-#				}
-#			}
-#		}
-#	}
+	interactions = {
+		boost_naval_professionalism = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_upgrade
+			trigger = {
+				dip_power_cost = 50
+				not = {
+					has_government_power = {
+						mechanic_type = naval_professionalism_mechanic
+						power_type = naval_professionalism
+						value = 90
+					}
+				}
+			}
+			effect = { 
+				dip_power_cost = 50
+				add_government_power = {
+					mechanic_type = naval_professionalism_mechanic
+					power_type = naval_professionalism
+					value = 10
+				}
+			}
+			cooldown_years = 0
+			ai_chance = {
+				factor = 0
+			}
+		}
+		transfer_soldiers_to_navy = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_march_divided_fight_united
+			trigger = {
+				has_government_power = {
+					mechanic_type = naval_professionalism_mechanic
+					power_type = naval_professionalism
+					value = 10
+				}
+				years_of_manpower = 1
+				army_tradition = 25
+			}
+			effect = { 
+				add_government_power = {
+					mechanic_type = naval_professionalism_mechanic
+					power_type = naval_professionalism
+					value = -10
+				}
+				add_army_tradition = -20
+				add_navy_tradition = 15
+				add_yearly_manpower = -1
+				add_yearly_sailors = 1
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 0
+			}
+		}
+		equip_marines_interaction = {
+			gui = prussian_militarization_gov_mech_3_interaction
+			icon = GFX_prussian_militarization_rewrite_military_manual
+			trigger = {
+				has_government_power = {
+					mechanic_type = naval_professionalism_mechanic
+					power_type = naval_professionalism
+					value = 40
+				}
+				years_of_income = 1.0
+			}
+			effect = { 
+				add_years_of_income = -1
+				add_country_modifier = {
+					name = naval_prof_marines_mod
+					duration = 1825
+				}
+				capital_scope = {
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+					marine_infantry = ROOT
+				}
+			}
+			cooldown_years = 5
+			ai_chance = {
+				factor = 100
+				modifier = {
+					factor = 0
+					not = { treasury = 1000 }
+				}
+			}
+		}
+	}
+	
 }

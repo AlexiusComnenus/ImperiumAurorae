@@ -1,10 +1,10 @@
 merovingian_ideas = {
 	start = {
-		legitimacy = 2
+		legitimacy = 1.5
 		diplomatic_reputation = 2
 	}
 	bonus = {
-		prestige = 2
+		prestige = 1.5
 	}
 	trigger = {
 		OR = { 

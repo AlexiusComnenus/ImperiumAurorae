@@ -204,7 +204,7 @@ promote_military_faction_decision = {
 	}
 	member = {
 		nobles_loyalty_modifier = 0.05
-		manpower_recovery_speed = 0.10	
+		manpower_recovery_speed = 0.15	
 	} 
 	emperor = { 
 		nobles_loyalty_modifier = 0.1 
@@ -225,8 +225,8 @@ promote_bureaucratic_faction_decision = {
 	} 
 	emperor = { 
 		church_loyalty_modifier = 0.1
-		tolerance_own = 1 
-		adm_tech_cost_modifier = -0.05
+		state_governing_cost = -0.075 
+		adm_tech_cost_modifier = -0.1
 	}
 	disabled_by = promote_military_faction_decision
 }
@@ -335,7 +335,11 @@ modernize_the_banners_decision = {
 study_foreign_ship_designs_decision = {
 	empire = celestial_empire 
 	trigger = { 
-		navy_tradition = 50 
+		OR = {
+			navy_tradition = 50
+			grand_shipyard = 25
+			shipyard = 25
+		}
 		OR = { 
 			num_of_heavy_ship = 50
 			full_idea_group = naval_ideas

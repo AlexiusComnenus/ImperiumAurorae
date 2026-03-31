@@ -82,16 +82,18 @@ soi_missions_column_1 = {
 			religious_unity = 0.80
 			if = {
 				limit = { ai = no }
-				NOT = {
-					estate_influence = {
-						estate = estate_church
-						influence = 40
+				OR = {
+					NOT = {
+						estate_influence = {
+							estate = estate_church
+							influence = 40
+						}
 					}
-				}
-				NOT = {
-					estate_territory = {
-						estate = estate_church
-						territory = 15
+					NOT = {
+						estate_territory = {
+							estate = estate_church
+							territory = 15
+						}
 					}
 				}
 			}
@@ -229,6 +231,8 @@ soi_missions_column_1 = {
 		effect = {
 			183 = {
 				add_building = university
+				add_or_upgrade_tax_building = yes
+				add_or_upgrade_production_building = yes
 				add_permanent_province_modifier = {
 					name = university_of_lutetia
 					duration = -1
@@ -466,13 +470,13 @@ soi_missions_column_2 = {
 		trigger = {
 			if = {
 				limit = { ai = no }
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				num_of_owned_provinces_with = {
 					value = 5
 					fort_level = 2
 				}
 			}
 			else = {
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				num_of_owned_provinces_with = {
 					value = 3
 					fort_level = 2
 				}
@@ -730,7 +734,7 @@ soi_missions_column_2_2 = {
 					type = any
 					tier = 2
 				}
-				num_of_times_improved_by_owner = 5
+				development = 30
 			}
 			development_in_provinces = {
 				value = 250
@@ -784,7 +788,7 @@ soi_missions_column_2_2 = {
 			114 = {
 				NOT = { unrest = 0 }
 				num_of_buildings_in_province = 5
-				num_of_times_improved_by_owner = 5
+				development = 30
 			}
 			is_at_war = no
 		}
@@ -997,7 +1001,7 @@ soi_missions_column_3 = {
 			}
 			else = {
 				is_at_war = no
-				is_year = 1580
+				is_year = 1520
 			}
 		}
 		
@@ -1047,7 +1051,7 @@ soi_missions_column_3 = {
 			}
 			else = {
 				is_at_war = no
-				is_year = 1580
+				is_year = 1560
 			}
 		}
 		
@@ -1344,7 +1348,7 @@ soi_missions_column_4 = {
 						unrest = 0
 					}
 				}
-				NOT = { num_of_loans = 1 }
+				#NOT = { num_of_loans = 1 }
 				religious_unity = 0.80
 				NOT = { num_of_rebel_armies = 1 }
 				NOT = { num_of_rebel_controlled_provinces = 1 }
@@ -1485,14 +1489,14 @@ soi_missions_column_4 = {
 					value = 1
 					fort_level = 2
 					num_of_buildings_in_province = 4
-					num_of_times_improved_by_owner = 5
+					num_of_times_improved = 5
 					area = pyrenees_area
 				}
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 					value = 1
 					fort_level = 2
 					num_of_buildings_in_province = 4
-					num_of_times_improved_by_owner = 5
+					num_of_times_improved = 5
 					area = languedoc_area
 				}
 			}
@@ -1594,7 +1598,7 @@ soi_missions_column_4 = {
 			if = {
 				limit = { ai = no }
 				219 = {
-					num_of_times_improved_by_owner = 5
+					development = 30
 					num_of_buildings_in_province = 5
 					province_has_center_of_trade_of_level = 2
 				}
@@ -1717,7 +1721,7 @@ soi_missions_column_4 = {
 			if = {
 				limit = { ai = no }
 				341 = {
-					num_of_times_improved_by_owner = 5
+					development = 30
 					num_of_buildings_in_province = 5
 					province_has_center_of_trade_of_level = 2
 					is_state_core = ROOT
@@ -1767,6 +1771,15 @@ soi_missions_column_4 = {
 			add_country_modifier = {
 				name = soi_legacy_of_rome
 				duration = -1
+			}
+			custom_tooltip = golden_age_refresher_tt
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 240
 			}
 		}
 	}
@@ -1847,7 +1860,7 @@ soi_missions_column_5 = {
 			}
 			add_ruler_modifier = {
 				name = vengeance_for_koln_and_trier
-				duration = -1
+				duration = 9125
 			}
 			low_countries_region = {
 				add_permanent_claim = ROOT
@@ -1928,7 +1941,7 @@ soi_missions_column_5 = {
 				limit = { ai = no }
 				80 = {
 					num_of_buildings_in_province = 5
-					num_of_times_improved_by_owner = 10
+					development = 30
 				}
 				treasury = 1000
 				adm_power = 100
@@ -2088,14 +2101,14 @@ soi_missions_column_5 = {
 				limit = { ai = no }
 				1868 = {
 					num_of_buildings_in_province = 5
-					num_of_times_improved_by_owner = 8
+					development = 35
 					fort_level = 2
 				}
 				2957 = {
 					fort_level = 2
 					has_manpower_building_trigger = yes
 					has_forcelimit_building_trigger = yes
-					num_of_times_improved_by_owner = 4
+					development = 30
 				}
 			}
 			is_at_war = no
@@ -2469,7 +2482,7 @@ soi_missions_column_3_bottom_tge = {
 			if = {
 				limit = { ai = no }
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 5
+					value = 4
 					trade_goods = indigo
 					has_production_building_trigger = yes
 					base_production = 10
@@ -2487,7 +2500,7 @@ soi_missions_column_3_bottom_tge = {
 			}
 			else = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 5
+					value = 4
 					trade_goods = indigo
 				}
 			}
@@ -2704,7 +2717,7 @@ soi_missions_column_5_bottom_tge = {
 			if = {
 				limit = { ai = no }
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 4
+					value = 3
 					OR = { 
 						trade_goods = lumber
 						trade_goods = woodworking
@@ -2719,7 +2732,7 @@ soi_missions_column_5_bottom_tge = {
 			}
 			else = {
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 4
+					value = 3
 					OR = { 
 						trade_goods = lumber
 						trade_goods = woodworking
@@ -2743,6 +2756,18 @@ soi_missions_column_5_bottom_tge = {
 						add_base_production = 8
 						add_base_tax = 4
 						add_base_manpower = 2
+					}
+				}
+				every_owned_province = {
+					limit = {
+						OR = { 
+							trade_goods = lumber
+							trade_goods = woodworking
+						}
+					}
+					add_province_modifier = {
+						name = roman_construction_industry
+						duration = -1
 					}
 				}
 			}

@@ -378,8 +378,18 @@ pagan = {
 		
 		}
 		
-			uses_karma = yes
-		
+		#uses_karma = yes
+
+		on_convert = {
+			change_religion = druidic_pagan
+			rce_set_religion_mechanic_sylvan_affinity_value = { value = 0 }
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			add_country_modifier = {
+				name = ia_recently_been_force_converted_modifier
+				duration = 7300
+				hidden = yes
+			}
+		}
 		
 		heretic = {  ELUVEITIE ASTERIX  }
 	}
@@ -406,8 +416,18 @@ pagan = {
 		
 		}
 		
-			uses_karma = yes
-		
+		#uses_karma = yes
+
+		on_convert = {
+			change_religion = druidic_pagan_reformed
+			rce_set_religion_mechanic_sylvan_affinity_value = { value = 0 }
+			rce_export_monthly_religion_mechanic_sylvan_affinity_value_gain = yes
+			add_country_modifier = {
+				name = ia_recently_been_force_converted_modifier
+				duration = 7300
+				hidden = yes
+			}
+		}
 		
 		heretic = {  ELUVEITIE ASTERIX  }
 	}
@@ -964,7 +984,16 @@ pagan = {
 		
 		}
 		
-			can_have_secondary_religion = yes
+		can_have_secondary_religion = yes
+		holy_sites = { 4678 454 284 1816 731 }
+
+		blessings = {
+			tengri_blessed_ruler
+			tengri_recruit_riders
+			tengri_resupply_stations
+			tengri_righteous_conquests
+			tengri_enhanced_shamans
+		}
 		
 		
 		heretic = {  GOAT_SKULL  }
@@ -1070,54 +1099,6 @@ pagan = {
 		
 		
 		heretic = {  SERAPIS  }
-	}
-	zun_pagan = {
-		icon = 43
-		color = { 255 230 13 }
-		country = {
-			
-			no_religion_penalty = yes
-			trade_steering = 0.15
-		
-		}
-		province = {
-			local_hostile_attrition = 1
-			local_missionary_strength = 0.02
-		
-		}
-		country_as_secondary = {
-			
-			tolerance_own = 3
-			hostile_attrition = 1
-		
-		}
-		fervor = yes
-		
-		heretic = {  DARKNESS  }
-	}
-	zun_pagan_reformed = {
-		icon = 43
-		color = { 230 255 0 }
-		country = {
-			
-			no_religion_penalty = yes
-			trade_steering = 0.2
-		
-		}
-		province = {
-			local_hostile_attrition = 1
-			max_attrition = 1
-			
-		}
-		country_as_secondary = {
-			
-			tolerance_own = 3
-			hostile_attrition = 1
-		
-		}
-		fervor = yes
-		
-		heretic = {  DARKNESS  }
 	}
 	
 }

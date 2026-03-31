@@ -1,22 +1,22 @@
 government = theocracy
-add_government_reform = gaelic_council_elders
+add_government_reform = cat_clowder_hierarchy
 government_rank = 1
 technology_group = western
 religion = druidic_pagan
 primary_culture = cat
 capital = 4365
+historical_friend = HSC
 1444.11.11= {
 	monarch = {
-		name = "Momo"
-		dynasty = "von Furrington"
+		name = "Gar"
+		dynasty = "Reimse"
 		adm = 2
-		dip = 6
-		mil = 5
-		birth_date = 1192.1.1
+		dip = 2
+		mil = 2
+		birth_date = 1392.1.1
 		religion = druidic_pagan
 		culture = cat
-		female = yes
 	}
-	add_ruler_personality = midas_touched_personality
-	add_ruler_personality = immortal_personality
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = embezzler_personality
 }

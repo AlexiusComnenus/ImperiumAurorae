@@ -2533,10 +2533,11 @@ wandering_knights_of_rhodes = {
 		NOT = { religion = hellenic_pagan_reformed }
 		capital_scope = { continent = europe }
 		religion_group = christian
+		is_allowed_to_recruit_mercenaries = yes
 	}
 	modifier = { 
-		shock_damage = 0.05
-		morale_damage = 0.05
+		shock_damage = 0.1
+		morale_damage = 0.1
 	}
 }
 

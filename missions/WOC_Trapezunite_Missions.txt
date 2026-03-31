@@ -1350,6 +1350,7 @@ woc_trebizond_fourth = {
 						primary_culture = georgian
 					}
 					change_primary_culture = georgian_new
+					hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 					if = {
 						limit = {
 							has_heir = yes

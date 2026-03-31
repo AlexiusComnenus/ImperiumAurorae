@@ -1,0 +1,468 @@
+harmonized_apocalyptic = {
+	spy_offence = 0.01
+}
+
+harmonized_antitheist = {
+	global_spy_defence = 0.01
+}
+
+mhadi_festival_failed = {
+	tolerance_own = -2
+	monthly_fervor_increase = -8
+	stability_cost_modifier = 0.25
+	land_morale = -0.10
+	naval_morale = -0.10
+}
+
+mhadi_festival_successful = {
+	tolerance_own = 1
+	monthly_fervor_increase = 8
+	stability_cost_modifier = -0.25
+}
+
+mhadi_recent_bell_toll = {
+	manpower_in_true_faith_provinces = 0.25
+}
+
+first_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.05
+	local_defender_dice_roll_bonus = 1
+	local_development_cost = -0.1
+	local_manpower_modifier = 0.2
+	local_production_efficiency = 0.2
+	local_hostile_attrition = 0.5
+	max_attrition = 0.5
+	local_manpower = 2
+}
+
+second_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.1
+	local_defender_dice_roll_bonus = 1
+	local_development_cost = -0.2
+	local_manpower_modifier = 0.4
+	local_production_efficiency = 0.4
+	local_hostile_attrition = 1
+	max_attrition = 1
+	local_manpower = 4
+}
+
+third_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.15
+	local_defender_dice_roll_bonus = 1
+	local_development_cost = -0.4
+	local_manpower_modifier = 0.6
+	local_production_efficiency = 0.6
+	local_hostile_attrition = 1.5
+	max_attrition = 1.5
+	local_manpower = 6
+}
+
+fourth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.2
+	local_defender_dice_roll_bonus = 2
+	local_development_cost = -0.8
+	local_manpower_modifier = 0.8
+	local_production_efficiency = 0.8
+	local_hostile_attrition = 2
+	max_attrition = 2
+	local_manpower = 8
+}
+
+fifth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.25
+	local_defender_dice_roll_bonus = 2
+	local_development_cost = -1.6
+	local_manpower_modifier = 1
+	local_production_efficiency = 1
+	local_hostile_attrition = 2.5
+	max_attrition = 2.5
+	local_manpower = 10
+	local_development_cost_modifier = -0.05
+}
+
+sixth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.3
+	local_defender_dice_roll_bonus = 2
+	local_development_cost = -3.2
+	local_manpower_modifier = 1.2
+	local_production_efficiency = 1.2
+	local_hostile_attrition = 3
+	max_attrition = 3
+	local_manpower = 12
+	local_development_cost_modifier = -0.1
+}
+
+seventh_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.35
+	local_defender_dice_roll_bonus = 2
+	local_development_cost = -6
+	local_manpower_modifier = 1.4
+	local_production_efficiency = 1.4
+	local_hostile_attrition = 3.5
+	max_attrition = 3.5
+	local_manpower = 14
+	local_development_cost_modifier = -0.15
+}
+
+eighth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.4
+	local_defender_dice_roll_bonus = 3
+	local_development_cost = -8
+	local_manpower_modifier = 1.6
+	local_production_efficiency = 1.6
+	local_hostile_attrition = 4
+	max_attrition = 4
+	local_manpower = 16
+	local_development_cost_modifier = -0.2
+}
+
+ninth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.45
+	local_defender_dice_roll_bonus = 3
+	local_development_cost = -11
+	local_manpower_modifier = 1.8
+	local_production_efficiency = 1.8
+	local_hostile_attrition = 4.5
+	max_attrition = 4.5
+	local_manpower = 18
+	local_development_cost_modifier = -0.25
+}
+
+tenth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.5
+	local_defender_dice_roll_bonus = 3
+	local_development_cost = -14
+	local_manpower_modifier = 2
+	local_production_efficiency = 2
+	local_hostile_attrition = 5
+	max_attrition = 5
+	local_manpower = 20
+	local_development_cost_modifier = -0.3
+}
+
+eleventh_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.55
+	local_defender_dice_roll_bonus = 3
+	local_development_cost = -16
+	local_manpower_modifier = 2.2
+	local_production_efficiency = 2.2
+	local_hostile_attrition = 5.5
+	max_attrition = 5.5
+	local_manpower = 22
+	local_development_cost_modifier = -0.35
+}
+
+twelfth_bell_toll_capital_modifier = {
+	local_warscore_cost_modifier = 100
+	local_defensiveness = 0.6
+	local_defender_dice_roll_bonus = 4
+	local_development_cost = -20
+	local_manpower_modifier = 2.4
+	local_production_efficiency = 2.4
+	local_hostile_attrition = 6
+	max_attrition = 6
+	local_manpower = 24
+	local_development_cost_modifier = -0.4
+}
+
+first_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.05
+	army_tradition_from_battle = 0.1
+	prestige_from_land = 0.1
+	assault_fort_ability = 0.1
+	manpower_recovery_speed = 0.10
+	drill_decay_modifier = -0.05
+	innovativeness_gain = -0.05
+	yearly_innovativeness = -0.05
+	defensiveness = -0.025
+	raze_power_gain = 0.05
+	global_regiment_cost = -0.025
+	#monthly_bell_progress = -0.05
+	land_forcelimit = 4
+	ae_impact = 0.2
+	improve_relation_modifier = -0.05
+	overextension_impact_modifier = -0.12
+}
+
+second_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.1
+	army_tradition_from_battle = 0.2
+	prestige_from_land = 0.2
+	assault_fort_ability = 0.2
+	manpower_recovery_speed = 0.2
+	drill_decay_modifier = -0.1
+	innovativeness_gain = -0.1
+	yearly_innovativeness = -0.1
+	defensiveness = -0.05
+	raze_power_gain = 0.1
+	global_regiment_cost = -0.05
+	#monthly_bell_progress = -0.1
+	stability_cost_to_declare_war = -1
+	land_forcelimit = 8
+	ae_impact = 0.4
+	improve_relation_modifier = -0.1
+	overextension_impact_modifier = -0.23
+}
+
+third_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.15
+	army_tradition_from_battle = 0.3
+	prestige_from_land = 0.3
+	assault_fort_ability = 0.3
+	manpower_recovery_speed = 0.3
+	drill_decay_modifier = -0.15
+	innovativeness_gain = -0.15
+	yearly_innovativeness = -0.15
+	defensiveness = -0.075
+	raze_power_gain = 0.15
+	global_regiment_cost = -0.075
+	#monthly_bell_progress = -0.15
+	stability_cost_to_declare_war = -1
+	land_forcelimit = 12
+	ae_impact = 0.6
+	improve_relation_modifier = -0.15
+	overextension_impact_modifier = -0.33
+}
+
+fourth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.2
+	army_tradition_from_battle = 0.4
+	prestige_from_land = 0.4
+	assault_fort_ability = 0.4
+	manpower_recovery_speed = 0.4
+	drill_decay_modifier = -0.2
+	innovativeness_gain = -0.2
+	yearly_innovativeness = -0.2
+	defensiveness = -0.1
+	raze_power_gain = 0.2
+	global_regiment_cost = -0.1
+	#monthly_bell_progress = -0.2
+	stability_cost_to_declare_war = -2
+	land_forcelimit = 16
+	ae_impact = 0.8
+	improve_relation_modifier = -0.2
+	overextension_impact_modifier = -0.42
+}
+
+fifth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.25
+	army_tradition_from_battle = 0.5
+	prestige_from_land = 0.5
+	assault_fort_ability = 0.5
+	manpower_recovery_speed = 0.5
+	drill_decay_modifier = -0.25
+	innovativeness_gain = -0.25
+	yearly_innovativeness = -0.25
+	defensiveness = -0.125
+	raze_power_gain = 0.25
+	global_regiment_cost = -0.125
+	#monthly_bell_progress = -0.25
+	stability_cost_to_declare_war = -2
+	land_forcelimit = 20
+	ae_impact = 1
+	improve_relation_modifier = -0.25
+	overextension_impact_modifier = -0.50
+	development_cost_modifier = 0.05
+}
+
+sixth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.3
+	army_tradition_from_battle = 0.6
+	prestige_from_land = 0.6
+	assault_fort_ability = 0.6
+	manpower_recovery_speed = 0.6
+	drill_decay_modifier = -0.3
+	innovativeness_gain = -0.3
+	yearly_innovativeness = -0.3
+	defensiveness = -0.15
+	raze_power_gain = 0.3
+	global_regiment_cost = -0.15
+	#monthly_bell_progress = -0.3
+	stability_cost_to_declare_war = -3
+	land_forcelimit = 24
+	ae_impact = 1.2
+	improve_relation_modifier = -0.3
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.57
+	development_cost_modifier = 0.1
+}
+
+seventh_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.35
+	army_tradition_from_battle = 0.7
+	prestige_from_land = 0.7
+	assault_fort_ability = 0.7
+	manpower_recovery_speed = 0.7
+	drill_decay_modifier = -0.35
+	innovativeness_gain = -0.35
+	yearly_innovativeness = -0.35
+	defensiveness = -0.175
+	raze_power_gain = 0.35
+	global_regiment_cost = -0.175
+	#monthly_bell_progress = -0.35
+	stability_cost_to_declare_war = -3
+	land_forcelimit = 28
+	ae_impact = 1.4
+	improve_relation_modifier = -0.35
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.63
+	development_cost_modifier = 0.15
+}
+
+eighth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.4
+	army_tradition_from_battle = 0.8
+	prestige_from_land = 0.8
+	assault_fort_ability = 0.8
+	manpower_recovery_speed = 0.8
+	drill_decay_modifier = -0.4
+	innovativeness_gain = -0.4
+	yearly_innovativeness = -0.4
+	defensiveness = -0.2
+	raze_power_gain = 0.4
+	global_regiment_cost = -0.2
+	#monthly_bell_progress = -0.4
+	stability_cost_to_declare_war = -4
+	land_forcelimit = 32
+	ae_impact = 1.6
+	improve_relation_modifier = -0.4
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.68
+	development_cost_modifier = 0.2
+}
+
+ninth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.45
+	army_tradition_from_battle = 0.9
+	prestige_from_land = 0.9
+	assault_fort_ability = 0.9
+	manpower_recovery_speed = 0.9
+	drill_decay_modifier = -0.45
+	innovativeness_gain = -0.45
+	yearly_innovativeness = -0.45
+	defensiveness = -0.225
+	raze_power_gain = 0.45
+	global_regiment_cost = -0.225
+	#monthly_bell_progress = -0.45
+	stability_cost_to_declare_war = -4
+	land_forcelimit = 36
+	ae_impact = 1.8
+	improve_relation_modifier = -0.45
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.72
+	development_cost_modifier = 0.25
+}
+
+tenth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.5
+	army_tradition_from_battle = 1
+	prestige_from_land = 1
+	assault_fort_ability = 1
+	manpower_recovery_speed = 1
+	drill_decay_modifier = -0.5
+	innovativeness_gain = -0.5
+	yearly_innovativeness = -0.5
+	defensiveness = -0.25
+	raze_power_gain = 0.5
+	global_regiment_cost = -0.25
+	#monthly_bell_progress = -0.5
+	stability_cost_to_declare_war = -5
+	land_forcelimit = 40
+	ae_impact = 2
+	improve_relation_modifier = -0.5
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.75
+	development_cost_modifier = 0.3
+}
+
+eleventh_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.55
+	army_tradition_from_battle = 1.1
+	prestige_from_land = 1.1
+	assault_fort_ability = 1.1
+	manpower_recovery_speed = 1.10
+	drill_decay_modifier = -0.55
+	innovativeness_gain = -0.55
+	yearly_innovativeness = -0.55
+	defensiveness = -0.275
+	raze_power_gain = 0.55
+	global_regiment_cost = -0.275
+	#monthly_bell_progress = -0.55
+	stability_cost_to_declare_war = -5
+	land_forcelimit = 44
+	ae_impact = 2.2
+	improve_relation_modifier = -0.55
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.77
+	development_cost_modifier = 0.35
+}
+
+twelfth_bell_toll_modifier = {
+	warscore_cost_vs_other_religion = -0.6
+	army_tradition_from_battle = 1.2
+	prestige_from_land = 1.2
+	assault_fort_ability = 1.2
+	manpower_recovery_speed = 1.2
+	drill_decay_modifier = -0.6
+	innovativeness_gain = -0.6
+	yearly_innovativeness = -0.6
+	defensiveness = -0.3
+	raze_power_gain = 0.6
+	global_regiment_cost = -0.3
+	#monthly_bell_progress = -0.6
+	stability_cost_to_declare_war = -6
+	land_forcelimit = 48
+	ae_impact = 2.4
+	improve_relation_modifier = -0.6
+	ignore_coring_distance = yes
+	overextension_impact_modifier = -0.78
+	development_cost_modifier = 0.4
+}
+
+yor_pyre_templars_enable = {
+	can_recruit_rajputs = yes
+	allowed_rajput_fraction = 0.2
+}
+
+yor_pyre_templars_modifier = {
+	is_rajput_modifier = yes
+	fire_damage_received = -0.25
+	shock_damage_received = -0.5
+	morale_damage_received = -0.5
+	drill_decay_modifier = -0.5
+	reinforce_cost_modifier = 1.5
+	reinforce_speed = -0.75
+	land_attrition = -0.75
+	regiment_manpower_usage = 4
+	land_maintenance_modifier = 0.5
+}
+
+yor_the_end_comes = {
+	all_power_cost = 0.25
+	development_cost_modifier = 0.25
+	manpower_recovery_speed = -0.5
+	movement_speed = 0.25
+	siege_ability = 0.25
+	land_maintenance_modifier = -0.25
+}
+
+yor_despoiled_country_side = {
+	local_monthly_devastation = 1
+	local_autonomy = 0.25
+	min_local_autonomy = 25
+}
+
+test_modifier_oe = {
+	overextension_impact_modifier = -0.5
+}

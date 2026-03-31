@@ -7,6 +7,7 @@ estate_alchemists = {
 		OR = { 
 			religion = hellenic_pagan_reformed
 			culture_group = east_asian
+			culture_group = xizho_group
 			religion = taoism
 			has_harmonized_with = taoism
 			has_government_attribute = enables_estate_alchemists
@@ -52,6 +53,13 @@ estate_alchemists = {
 					has_building = plantations
 				}
 			}
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = IA_ALCHEMISTS_IMMORTALITY
+		trigger = {
+			ruler_has_personality = immortal_personality
 		}
 		influence = 5
 	}
@@ -120,6 +128,13 @@ estate_alchemists = {
 			}
 		}
 		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = IA_ALCHEMISTS_IMMORTALITY
+		trigger = {
+			ruler_has_personality = immortal_personality
+		}
+		loyalty = 10
 	}
 	loyalty_modifier = {
 		desc = IA_ALCHEMISTS_UNIVERSITY

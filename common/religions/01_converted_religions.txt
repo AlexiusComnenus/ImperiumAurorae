@@ -31,11 +31,11 @@ christian = {
 	arianism = {
 		color = { 120 120 0 }
 		icon = 107
-		allowed_conversion = {
-			reformed
-			protestant
-			orthodox
-		}
+		#allowed_conversion = {
+		#	reformed
+		#	protestant
+		#	orthodox
+		#}
 		country = {
 			global_tax_modifier = 0.1
 			stability_cost_modifier = -0.1
@@ -55,6 +55,11 @@ christian = {
 			remove_country_modifier = the_declaration_of_indulgence
 			remove_country_modifier = de_heretico_comburendo
 			remove_country_modifier = the_conventicle_act
+			add_country_modifier = {
+				name = ia_recently_been_force_converted_modifier
+				duration = 7300
+				hidden = yes
+			}
 		}
 
 		heretic = { BOGOMILIST WALDENSIAN HUSSITE LOLLARD SOCINIAN }

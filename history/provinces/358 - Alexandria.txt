@@ -22,3 +22,4 @@ discovered_by = nomad_group
 discovered_by = ottoman
 discovered_by = western
 add_province_triggered_modifier = coptic_alexandria
+add_building = university

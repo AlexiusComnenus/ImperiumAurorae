@@ -7,10 +7,11 @@ grain = {
 	is_valuable = yes
 	color = { 0.96 0.93 0.58 }
 	modifier = {
-		land_forcelimit_modifier = 0.20
+		land_forcelimit_modifier = 0.15
 	}
 	province = {
-		land_forcelimit = 0.5
+		land_forcelimit = 0.25
+		local_manpower_modifier = 0.1
 	}
 	chance = {
 		factor = 35
@@ -116,7 +117,7 @@ wine = {
 	is_valuable = yes
 	color = { 0.36 0.13 0.28 }
 	modifier = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	province = {
 		local_unrest = -1
@@ -338,7 +339,7 @@ cloth = {
 		merc_maintenance_modifier = -0.15
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 10
@@ -544,7 +545,7 @@ salt = {
 	is_valuable = yes
 	color = { 0.999 0.999 0.999 }
 	modifier = {
-		land_maintenance_modifier = -0.05
+		land_maintenance_modifier = -0.075
 	}
 	province = {
 		local_defensiveness = 0.15
@@ -617,7 +618,7 @@ naval_supplies = {
 	is_valuable = yes
 	color = { 0.11 0.17 0.4 }
 	modifier = {
-		naval_forcelimit_modifier = 0.20
+		naval_forcelimit_modifier = 0.15
 	}
 	province = {
 		naval_forcelimit = 0.5
@@ -714,7 +715,7 @@ copper = {
 	is_valuable = yes
 	color = { 0.85 0.46 0.15 }
 	modifier = {
-		global_regiment_recruit_speed = -0.2
+		artillery_cost = -0.10
 	}
 	province = {
 		regiment_recruit_speed = -0.2
@@ -726,7 +727,7 @@ copper = {
 			area = newfoundland_area
 		}
 		modifier = {
-			factor = 0
+			factor = 0.2
 			OR = {
 				has_terrain = steppe
 				has_terrain = desert
@@ -761,6 +762,30 @@ copper = {
 			NOT = { region = west_siberia_region }
 			NOT = { region = east_siberia_region }
 			NOT = { region = central_africa_region }
+			NOT = { province_id = 2828 }
+			NOT = { province_id = 4607 }
+			NOT = { province_id = 2818 }
+			NOT = { province_id = 827 }
+			NOT = { province_id = 4644 }
+			NOT = { province_id = 876 }
+			NOT = { province_id = 2494 }
+			NOT = { province_id = 2019 }
+			NOT = { province_id = 2607 }
+		}
+		modifier = {
+			factor = 1000
+			is_random_new_world = no
+			OR = {
+				province_id = 2828
+				province_id = 4607
+				province_id = 2818
+				province_id = 827
+				province_id = 4644
+				province_id = 876
+				province_id = 2494
+				province_id = 2019
+				province_id = 2607
+			}
 		}
 		modifier = {
 			factor = 0
@@ -822,6 +847,32 @@ copper = {
 			factor = 1.6
 			FROM = {
 				has_country_flag = copper_chance_flag_high
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = {
+				OR = {
+					has_increased_trade_goods_discovery = { trade_goods = copper }
+					colonial_parent = { has_increased_trade_goods_discovery = { trade_goods = copper } }
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			FROM = {
+				OR = {
+					tag = MYM
+					overlord = { tag = MYM }
+				}
 			}
 		}
 	}
@@ -983,7 +1034,7 @@ iron = {
 		local_build_time = -0.2
 	}
 	chance = {
-		factor = 10
+		factor = 15
 		modifier = {
 			factor = 0
 			area = newfoundland_area
@@ -1055,6 +1106,32 @@ iron = {
 				has_country_flag = iron_chance_flag_high
 			}
 		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+		}
+		modifier = {
+			factor = 1.5
+			FROM = {
+				OR = {
+					has_increased_trade_goods_discovery = { trade_goods = iron }
+					colonial_parent = { has_increased_trade_goods_discovery = { trade_goods = iron } }
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			FROM = {
+				OR = {
+					tag = MYM
+					overlord = { tag = MYM }
+				}
+			}
+		}
 	}
 }
 
@@ -1065,9 +1142,11 @@ slaves = {
 	color = { 0.0 0.0 0.0 }
 	modifier = {
 		global_tariffs = 0.25
+		trade_steering = 0.25
 	}
 	province = {
 		local_missionary_strength = 0.01
+		local_unrest = 3
 	}
 	chance = {
 		factor = 15
@@ -1237,10 +1316,10 @@ tea = {
 	is_valuable = yes
 	color = { 0.07 0.33 0.09 }
 	modifier = {
-		advisor_cost = -0.10
+		advisor_cost = -0.15
 	}
 	province = {
-		garrison_growth = 0.25
+		local_production_efficiency = 0.15
 	}
 	chance = {
 		factor = 15
@@ -1374,7 +1453,7 @@ chinaware = {
 	}
 	province = {
 		local_autonomy = -0.1
-
+		local_production_efficiency = 0.1
 	}
 
 	chance = {
@@ -1435,7 +1514,7 @@ spices = {
 	is_valuable = yes
 	color = { 0.4 0.65 0.38 }
 	modifier = {
-		spy_offence = 0.25
+		improve_relation_modifier = 0.2
 	}
 	province = {
 		local_monthly_devastation = -0.1
@@ -1531,10 +1610,11 @@ coffee = {
 	is_valuable = yes
 	color = { 0.22 0.15 0.09 }
 	modifier = {
-		global_institution_spread = 0.05
+		global_institution_spread = 0.25
+		yearly_innovativeness = 0.1
 	}
 	province = {
-		local_institution_spread = 0.1
+		local_institution_spread = 0.25
 	}
 	chance = {
 		factor = 15
@@ -1625,7 +1705,7 @@ cotton = {
 		global_colonial_growth = 20
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 20
@@ -1727,7 +1807,7 @@ sugar = {
 	is_valuable = yes
 	color = { 0.74 0.95 0.68 }
 	modifier = {
-		war_exhaustion_cost = -0.2
+		war_exhaustion = -0.025
 	}
 	province = {
 		local_unrest = -1
@@ -1819,7 +1899,7 @@ tobacco = {
 	is_valuable = yes
 	color = { 0.33 0.56 0.38 }
 	modifier = {
-		global_spy_defence = 0.25
+		global_tax_modifier = 0.20
 	}
 	province = {
 		 province_trade_power_modifier = 0.10
@@ -1914,10 +1994,10 @@ cocoa = {
 	is_valuable = yes
 	color = { 0.45 0.21 0.09 }
 	modifier = {
-		manpower_recovery_speed = 0.05
+		manpower_recovery_speed = 0.1
 	}
 	province = {
-		local_manpower_modifier = 0.10
+		local_manpower_modifier = 0.15
 	}
 
 	chance = {
@@ -2083,7 +2163,7 @@ dyes = {
 	is_valuable = yes
 	color = { 155 0 24 }
 	modifier = {
-		caravan_power = 0.2
+		caravan_power = 0.25
 	}
 	province = {
 		 province_trade_power_modifier = 0.10
@@ -2350,7 +2430,7 @@ incense = {
 	is_valuable = yes
 	color = { 0.89 0.79 0.47 }
 	modifier = {
-		tolerance_own = 0.5
+		tolerance_own = 1
 	}
 	province = {
 		trade_value_modifier = 0.1
@@ -2697,6 +2777,8 @@ coal = {
 				NOT = { has_province_flag = GER_specific_coal }
 				owner = {
 					NOT = { has_country_flag = earlier_coal_available }
+					NOT = { culture_group = east_asian }
+					NOT = { is_emperor_of_china = yes }
 				}
 			}
 			provincial_institution_progress = {
@@ -2718,18 +2800,18 @@ coal = {
 			}
 		}
 		else = {
-			provincial_institution_progress = {
-				which = global_trade
-				value = 100
-			}
-			owner = {
-				has_institution = global_trade
-			}
+			#provincial_institution_progress = {
+			#	which = global_trade
+			#	value = 100
+			#}
+			#owner = {
+			#	has_institution = global_trade
+			#}
 		}
 	}
 	
 	modifier = {
-		global_trade_goods_size_modifier = 0.1
+		global_trade_goods_size_modifier = 0.20
 	}
 	
 	province = {
@@ -2749,7 +2831,7 @@ beer = {
 	is_valuable = yes
 	color = {  0.90 0.60 0.00  }
 	modifier = {
-		land_morale = 0.05
+		recover_army_morale_speed = 0.075
 	}
 	province = {
 		local_years_of_nationalism = -2
@@ -2820,10 +2902,10 @@ apiculture = {
 	is_valuable = yes
 	color = { 0.90 0.90 0.10 }
 	modifier = {
-		manpower_recovery_speed = 0.05
+		manpower_recovery_speed = 0.1
 	}
 	province = {
-		local_defensiveness = 0.1
+		local_defensiveness = 0.15
 	}
 	chance = {
 		factor = 10
@@ -3163,10 +3245,10 @@ rice = {
 	is_valuable = yes
 	color = { 0.80 0.80 0.65 } 
 	modifier = { 
-		global_manpower_modifier = 0.10 
+		global_manpower_modifier = 0.15
 	} 
 	province = {
-		local_manpower_modifier = 0.25
+		local_manpower_modifier = 0.20
 	}
 	chance = { 
 		factor = 10
@@ -3286,7 +3368,7 @@ opium = {
 	is_valuable = yes
 	color = { 0.72 0.30 0.99 } 
 	modifier = { 
-		yearly_corruption = -0.1
+		global_foreign_trade_power = 0.25
 	} 
 	province = {
 		local_unrest = -1
@@ -3343,7 +3425,8 @@ rum = {
 	is_valuable = yes
 	color = { 0.40 0.20 0.20 }
 	modifier = { 
-		privateer_efficiency = 0.2
+		privateer_efficiency = 0.1
+		naval_morale_damage_received = -0.1
 	}
 	province = { 
 		ship_recruit_speed = -0.25
@@ -3524,10 +3607,10 @@ olive_oil = {
 	is_valuable = yes
 	color = { 0.80 0.87 0.29 }
 	modifier = {
-		global_prov_trade_power_modifier = 0.1
+		global_prov_trade_power_modifier = 0.2
 	}
 	province = {
-		trade_value_modifier = 0.10
+		local_manpower_modifier = 0.15
 	}
 	chance = {
 		factor = 10
@@ -3576,7 +3659,7 @@ amber = {
 		development_cost = -0.05
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 0
@@ -3657,7 +3740,7 @@ marble = {
 		fort_maintenance_modifier = -0.15
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 0
@@ -3668,7 +3751,7 @@ lead = {
 	is_valuable = yes
 	color = { 0.36 0.36 0.54 } 
 	modifier = { 
-		infantry_cost = -0.15
+		infantry_cost = -0.10
 	} 
 	province = { 
 		local_regiment_cost = -0.15
@@ -3698,7 +3781,7 @@ lead = {
 		modifier = {
 			factor = 0
 			normal_or_historical_nations = yes
-			OR = {
+			#OR = {
 				NOT = { region = west_siberia_region }
 				NOT = { region = east_siberia_region }
 				NOT = { region = central_africa_region }
@@ -3712,8 +3795,28 @@ lead = {
 				NOT = { area = inner_ontario_area }
 				NOT = { area = maryland_area }
 				NOT = { area = ofaie_area }
-			}
+			#}
+			NOT = { province_id = 2945 }
+			NOT = { province_id = 2944 }
+			NOT = { province_id = 976 }
+			NOT = { province_id = 2606 }
+			NOT = { province_id = 949 }
+			NOT = { province_id = 935 }
+			NOT = { province_id = 2509 }
 			is_random_new_world = no
+		}
+		modifier = {
+			factor = 1000
+			is_random_new_world = no
+			OR = {
+				province_id = 2945
+				province_id = 2944
+				province_id = 976
+				province_id = 2606
+				province_id = 949
+				province_id = 935
+				province_id = 2509
+			}
 		}
 		modifier = {
 			factor = 1.2
@@ -3746,6 +3849,33 @@ lead = {
 			factor = 1.6
 			FROM = {
 				has_country_flag = lead_chance_flag_high
+			}
+		}
+		
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = {
+				OR = {
+					has_increased_trade_goods_discovery = { trade_goods = lead }
+					colonial_parent = { has_increased_trade_goods_discovery = { trade_goods = lead } }
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			FROM = {
+				OR = {
+					tag = MYM
+					overlord = { tag = MYM }
+				}
 			}
 		}
 	}
@@ -3848,15 +3978,14 @@ mercury = {
 		}
 		modifier = {
 			factor = 0
-				NOT = { has_global_flag = No_Mercury }
+			has_global_flag = No_Mercury
 		}
 		modifier = {
-			factor = 0
+			factor = 10000
 			OR = {
-				FROM = { is_tribal = yes }
-				FROM = { technology_group = north_american }
-				FROM = { technology_group = aboriginal_tech }
-				FROM = { technology_group = south_american }
+				province_id = 806
+				province_id = 4638
+				province_id = 2658
 			}
 		}
 		modifier = {
@@ -3877,14 +4006,15 @@ mercury = {
 				}
 			}
 			normal_or_historical_nations = yes
-			NOT = { province_id = 18 }
+			NOT = { province_id = 806 }
+			NOT = { province_id = 4638 }
+			NOT = { province_id = 2658 }
 			NOT = { continent = africa }
 			NOT = { region = australia_region }
 		}
 		modifier = {
 			factor = 0
 			OR = {
-				island = yes
 				AND = {
 					has_terrain = desert
 					NOT = { region = australia_region }
@@ -4060,7 +4190,7 @@ tin = {
 			area = newfoundland_area
 		}
 		modifier = {
-			factor = 0
+			factor = 0.2
 			OR = {
 				has_terrain = steppe
 				has_terrain = desert
@@ -4149,6 +4279,32 @@ tin = {
 				has_country_flag = tin_chance_flag_high
 			}
 		}
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = {
+				OR = {
+					has_increased_trade_goods_discovery = { trade_goods = tin }
+					colonial_parent = { has_increased_trade_goods_discovery = { trade_goods = tin } }
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			FROM = {
+				OR = {
+					tag = MYM
+					overlord = { tag = MYM }
+				}
+			}
+		}
 	}
 }
 
@@ -4156,10 +4312,10 @@ dates = {
 	is_valuable = yes
 	color = { 0.50 0.20 0.14 }
 	modifier = { 
-		manpower_recovery_speed = 0.05
+		manpower_recovery_speed = 0.1
 	}
 	province = { 
-		local_manpower_modifier = 0.1
+		local_manpower_modifier = 0.15
 	}
 	chance = { factor = 0 }
 }
@@ -4168,10 +4324,10 @@ cheese = {
 	is_valuable = yes
 	color = { 0.88 0.66 0.37 }
 	modifier = { 
-		garrison_size = 0.15 
+		manpower_recovery_speed = 0.1
 	}
 	province = { 
-		local_culture_conversion_cost = -0.20
+		local_manpower_modifier = 0.15
 	}
 	chance = { 
 		factor = 13
@@ -4255,6 +4411,7 @@ citrus = {
 	color = { 0.97 0.95 0.35 } 
 	modifier = { 
 		naval_attrition = -0.15
+		range = 0.25
 	}
 	province = { 
 		trade_value_modifier = 0.10
@@ -4499,10 +4656,10 @@ nutmeg = {
 	is_valuable = yes
 	color = { 0.82 0.41 0.06 }
 	modifier = { 
-		global_foreign_trade_power = 0.10
+		global_foreign_trade_power = 0.20
 	}
 	province = { 
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = { 
 		factor = 50 
@@ -4551,10 +4708,10 @@ maize = {
 	is_valuable = yes
 	color = { 0.98 0.93 0.36 } 
 	modifier = { 
-		land_maintenance_modifier = -0.05
+		land_maintenance_modifier = -0.1
 	}
 	province = { 
-		local_manpower_modifier = 0.15
+		local_manpower_modifier = 0.2
 	} 
 	chance = { 
 		factor = 25
@@ -4727,7 +4884,7 @@ metalworking = {
 	color = {  0.00 0.4 0.4 }
 	is_latent = yes
 	modifier = {
-		global_trade_goods_size =  0.1
+		global_trade_goods_size = 0.1
 	}
 	province = {
 		
@@ -4742,7 +4899,7 @@ silver = {
 	color = { 0.33 0.38 0.44 }
 	province = {
 		trade_goods_size_modifier = -0.3
-		local_gold_depletion_chance_modifier = -0.2
+		local_gold_depletion_chance_modifier = -0.3
 	}
 	chance = {
 		factor = 20
@@ -4877,7 +5034,7 @@ exotic_animals = {
 vanilla = { 
 	is_valuable = yes
 	color = { 0.38 0.25 0.32 }  
-	modifier = { vassal_forcelimit_bonus = 0.2 } 
+	modifier = { improve_relation_modifier = 0.2 } 
 	province = {
 		province_trade_power_modifier = 0.1
 	}
@@ -4968,7 +5125,7 @@ ebony = {
 		global_allowed_num_of_buildings = 1
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 15
@@ -5328,10 +5485,10 @@ potato = {
 	is_valuable = yes
 	color = { 0.60 0.40 0.40 } 
 	modifier = { 
-		reinforce_cost_modifier = -0.05
+		reinforce_speed = 0.10
 	}
 	province = { 
-		local_fort_maintenance_modifier = -0.15
+		local_manpower_modifier = 0.2
 	} 
 	chance = { 
 		factor = 25
@@ -5438,10 +5595,11 @@ steam_engine = {
 	color = { 0.62 0.99 0.22 }
 	is_latent = yes
 	modifier = {
-		technology_cost = -0.025
+		technology_cost = -0.05
 	}
 	province = {
-		local_development_cost = -0.1
+		local_development_cost = -0.25
+		trade_goods_size_modifier = 0.25
 	}
 	chance = {
 		factor = 0
@@ -5461,6 +5619,14 @@ zinc = {
 	chance = {
 		factor = 5
 		
+		modifier = {
+			factor = 0
+				NOT = { has_global_flag = tradegood_marcin }
+		}
+		modifier = {
+			factor = 0
+				has_global_flag = No_Zinc
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -5549,6 +5715,33 @@ zinc = {
 				has_country_flag = zinc_chance_flag_high
 			}
 		}
+		
+		modifier = {
+			factor = 1.25
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+		}
+		modifier = {
+			factor = 2
+			FROM = {
+				OR = {
+					has_increased_trade_goods_discovery = { trade_goods = zinc }
+					colonial_parent = { has_increased_trade_goods_discovery = { trade_goods = zinc } }
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			FROM = {
+				OR = {
+					tag = MYM
+					overlord = { tag = MYM }
+				}
+			}
+		}
 	}
 }
 
@@ -5559,6 +5752,7 @@ optics = {
 	is_latent = yes
 	modifier = {
 		leader_naval_manuever = 1
+		max_admiral_maneuver = 1
 	}
 	province = {
 		local_state_maintenance_modifier = -0.25
@@ -5603,8 +5797,7 @@ tomato = {
 	is_valuable = yes
 	color = { 255 102 26 } 
 	modifier = { 
-		placed_merchant_power = 5
-		
+		manpower_recovery_speed = 0.1
 	}
 	province = { 
 		local_manpower_modifier = 0.15
@@ -5669,10 +5862,10 @@ champagne = {
 	is_valuable = yes
 	color = { 120 150 141 }
 	modifier = {
-		reform_progress_growth = 0.10
+		reform_progress_growth = 0.2
 	}
 	province = {	
-		local_unrest = -1
+		local_unrest = -2
 	}
 	chance = {
 		factor = 0
@@ -5711,7 +5904,7 @@ sea_turtle = {
 	is_valuable = yes
 	color = { 209 43 138 }
 	modifier = {
-		native_assimilation = 0.25
+		diplomatic_upkeep = 1
 	}
 	province = {	
 		province_trade_power_modifier = 0.10
@@ -5777,10 +5970,11 @@ uniforms = {
 	color = { 153 0 51 }
 	is_latent = yes
 	modifier = {
-		recover_army_morale_speed = 0.05
+		land_morale = 0.05
 	}
 	province = {	
 		local_production_efficiency = 0.1
+		local_manpower_modifier = 0.1
 	}
 	chance = {
 		factor = 0
@@ -5795,7 +5989,7 @@ marble_sculpture = {
 		great_project_upgrade_cost = -0.15
 	}
 	province = {	
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 	}
 	chance = {
 		factor = 0
@@ -5857,7 +6051,7 @@ millet = {
 		manpower_in_own_culture_provinces = 0.15
 	}
 	province = {	
-		local_garrison_size = 0.10
+		local_manpower_modifier = 0.2
 	}
 	chance = {
 		factor = 0
@@ -5915,7 +6109,7 @@ auroral_silk = {
 		num_accepted_cultures = 2
 	}
 	province = {
-		local_development_cost = -0.05
+		local_development_cost = -0.1
 		local_production_efficiency = 0.1
 	}
 	chance = {

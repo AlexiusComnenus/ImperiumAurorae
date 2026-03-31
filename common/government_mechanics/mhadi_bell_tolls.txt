@@ -1,0 +1,72 @@
+ia_apocalypse_mechanic = {
+	alert_icon_gfx = GFX_alerticons_government_mechanics
+	alert_icon_index = 15
+	available = {
+		has_reform = mhadi_reform
+	}
+
+	powers = {
+		bell_progress = {
+			gui = end_time_gov_mech
+			min = 0
+			max = 100
+			base_monthly_growth = 0
+			scaled_modifier = {
+				start_value = 0 
+				end_value = 100 
+				modifier = {
+					#overextension_impact_modifier = -0.95
+					manpower_in_true_faith_provinces = 1
+					fire_damage = 0.1
+					shock_damage = 0.2
+					fire_damage_received = 0.15
+					shock_damage_received = 0.15
+				}
+			}
+			on_max_reached = {
+				country_event = { id = mhadi.2 }
+			}
+			is_good = yes
+		}
+		
+	}
+	
+#	interactions = {
+#		boost_naval_professionalism = {
+#			icon = GFX_boost_naval_professionalism_button
+#			trigger = {
+#				dip_power_cost = 50
+#				not = {
+#					has_government_power = {
+#						mechanic_type = naval_professionalism_mechanic
+#						power_type = naval_professionalism
+#						value = 100
+#					}
+#				}
+#			}
+#			effect = { 
+#				dip_power_cost = 50
+#				add_government_power = {
+#					mechanic_type = naval_professionalism_mechanic
+#					power_type = naval_professionalism
+#					value = 10
+#				}
+#			}
+#			cooldown_years = 0
+#			ai_chance = {
+#				factor = 0
+#				modifier = {
+#					factor = 10
+#					not = {
+#						has_government_power = {
+#							mechanic_type = naval_professionalism_mechanic
+#							power_type = naval_professionalism
+#							value = 90
+#						}
+#					}
+#					mil_power = 500
+#				}
+#			}
+#		}
+#	}
+}

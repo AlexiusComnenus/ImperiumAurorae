@@ -1,0 +1,50 @@
+﻿l_english:
+ # Culture Groups:
+ aramaic_culture_group: "Aramaic"
+
+ # Cultures:
+ avshars_culture: "Avshars"
+ farsi_culture: "Farsi"
+ azeri_culture: "Azeri"
+ qashqai_culture: "Qashqai"
+ kalmyk_culture: "Kalmyk"
+ oghuz_culture: "Oghuz"
+ coptic_culture: "Coptic"
+ assyrian_culture: "Assyrian"
+ manichaean_culture: "Manichaean"
+ chaldean_culture: "Chaldean"
+
+ # Events:
+ rce_culture_aramaic_culture_group_events.EVTNAME1: "Emergence of the Chaldean culture"
+ rce_culture_aramaic_culture_group_events.EVTDESC1: "The long time the population of [407.GetName] has been living under [407.Religion.GetGroupName] and [407.Culture.GetGroupName] influences has lead to a different culture emerging in the province."
+ rce_culture_aramaic_culture_group_events1.EVTOPT1: "Interesting."
+
+ rce_culture_aramaic_culture_group_events.EVTNAME2: "Emergence of the Babylonian culture"
+ rce_culture_aramaic_culture_group_events.EVTDESC2: "The long time the population of [410.GetName] has been living under [410.Religion.GetGroupName] and [410.Culture.GetGroupName] influences has lead to a different culture emerging in the province."
+ rce_culture_aramaic_culture_group_events2.EVTOPT1: "Interesting."
+
+ rce_culture_aramaic_culture_group_events.EVTNAME3: "Emergence of the Phoenician culture"
+ rce_culture_aramaic_culture_group_events.EVTDESC3: "The long time the population of [1855.GetName] has been living under [1855.Religion.GetGroupName] and [1855.Culture.GetGroupName] influences has lead to a different culture emerging in the province."
+ rce_culture_aramaic_culture_group_events3.EVTOPT1: "Interesting."
+
+ rce_culture_oghuz_culture_events.EVTNAME1: "Emergence of the Turkish culture"
+ rce_culture_oghuz_culture_events.EVTDESC1: "With our expansion into lands under the influence of Arabian cultures, more and more of that Arabian influence has affected the Oghuz people. By now the culture in [Root.GetName] has been influenced that much that a new culture has emerged."
+ rce_culture_oghuz_culture_events1.EVTOPT1: "Interesting."
+
+ rce_culture_oghuz_culture_events.EVTNAME2: "[Root.GetName] in the Arabian world"
+ rce_culture_oghuz_culture_events.EVTDESC2: "The Arabian culture has influenced us more and more over the last decades, leading to many provinces changing to the Turkish culture. It is now time to decide how our future should look. Do we keep our Oghuz roots or do we embrace the Turkish culture?"
+ rce_culture_oghuz_culture_events2.EVTOPT1: "Embrace the Turkish culture."
+ rce_culture_oghuz_culture_events2.EVTOPT2: "Stick to our roots."
+ rce_culture_oghuz_culture_events.2.tt: "The passive spread of the §YTurkish§! culture in our lands will stop."
+
+ rce_culture_oghuz_culture_events.EVTNAME3: "The New Customs of the Turkish People"
+ rce_culture_oghuz_culture_events.EVTDESC3: "The Arabian culture has recently influenced some of our provinces, leading to the emergence of the Turkish culture in our realm. Should we wait and see how the situation develops or try to prevent any further Arabian influence in our lands?"
+ rce_culture_oghuz_culture_events3.EVTOPT1: "This must stop."
+ rce_culture_oghuz_culture_events3.EVTOPT2: "Let's see what happens."
+ rce_culture_oghuz_culture_events.3.tt: "The passive spread of the §YTurkish§! culture in our lands will continue."
+
+ # Decisions:
+ rce_culture_decision_convert_to_assyrian_culture_title: "Adopt the Assyrian culture"
+ rce_culture_decision_convert_to_assyrian_culture_desc: "We own an important province of the Assyrian culture and have [Root.Religion.GetGroupName] influences, so we should adopt the Assyrian culture."
+ rce_culture_decision_convert_to_manichaean_culture_title: "Adopt the Manichaean culture"
+ rce_culture_decision_convert_to_manichaean_culture_desc: "We own an important province of the Manichaean culture and have [Root.Religion.GetGroupName] influences, so we should adopt the Manichaean culture."

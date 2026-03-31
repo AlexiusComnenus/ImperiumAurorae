@@ -3,7 +3,6 @@ gotland_pirate_island = {
 	allow_normal_conversion = no
 	legacy_equivalent = pirate_republic
 	lock_level_when_selected = yes
-	can_change_primary_culture = no
 	modifiers = {
 		naval_forcelimit_modifier = 0.5
 		capture_ship_chance = 0.33
@@ -52,6 +51,12 @@ gotland_pirate_island = {
 		elections_increase_factions_influence = yes
 		cannot_become_dictatorship = yes
 	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
+	}
 	
 }
 
@@ -60,7 +65,6 @@ gotland_pirate_realm = {
 	allow_normal_conversion = no
 	legacy_equivalent = pirate_republic
 	lock_level_when_selected = yes
-	can_change_primary_culture = no
 	modifiers = {
 		naval_forcelimit_modifier = 0.75
 		capture_ship_chance = 0.33
@@ -110,6 +114,12 @@ gotland_pirate_realm = {
 		elections_increase_factions_influence = yes
 		cannot_become_dictatorship = yes
 	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
+	}
 	
 }
 
@@ -144,5 +154,11 @@ danelaw_gov = {
 		allowed_marine_fraction = 0.25
 		has_marines = yes
 		overlord_naval_forcelimit_modifier = 0.1
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
 	}
 }

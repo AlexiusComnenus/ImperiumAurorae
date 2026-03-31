@@ -969,6 +969,7 @@ country_event = {
 	picture = DEBATE_REPUBLICAN_eventPicture
 	
 	trigger = {
+		always = no
 		has_dlc = "Common Sense"
 		uses_devotion = yes
 		NOT = {
@@ -983,6 +984,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 3
 	}
+	is_triggered_only = yes
 		
 	option = {
 		name = devotion_events.21.a

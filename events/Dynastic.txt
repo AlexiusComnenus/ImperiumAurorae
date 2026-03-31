@@ -1243,7 +1243,7 @@ country_event = {
 	option = {
 		name = "EVTOPTA9470"
 		trigger = {
-			NOT = { dynasty = "von Habsburg" }
+			NOT = { dynasty = "Meroveching" }
 		}
 		event_target:marriage_policy_paid_off_here = {
 			define_heir = { #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
@@ -1260,7 +1260,7 @@ country_event = {
 	option = {
 		name = "EVTOPTB9470"
 		trigger = {
-			dynasty = "von Habsburg"
+			dynasty = "Meroveching"
 		}
 		event_target:marriage_policy_paid_off_here = {
 			define_heir = { #Generated immediately, rather than in the followup event, so that the actual heir matches the tooltip for ROOT.
@@ -2494,7 +2494,7 @@ country_event = {
 		name = dynastic_events.8.a
 		trigger = {
 			FROM = {
-				NOT = { dynasty = "von Habsburg" }
+				NOT = { dynasty = "Meroveching" }
 			}
 		}
 		custom_tooltip = dynastic_events.8.a.tt
@@ -2503,7 +2503,7 @@ country_event = {
 		name = dynastic_events.8.b
 		trigger = {
 			FROM = {
-				dynasty = "von Habsburg"
+				dynasty = "Meroveching"
 			}
 		}
 		custom_tooltip = dynastic_events.8.a.tt

@@ -820,7 +820,7 @@ country_event = {
 	major = yes
 
 	trigger = {
-		capital_scope = { continent = europe }
+		capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } }
 		OR = {
 			has_discovered = 4457
 			has_discovered = 2030

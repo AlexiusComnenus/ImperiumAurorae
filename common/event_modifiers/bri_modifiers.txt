@@ -14,6 +14,16 @@ bri_prowess_on_sea = {
 	global_ship_cost = -0.25
 }
 
+bri_rallied_soldiers = {
+	manpower_recovery_speed = 0.25
+	land_maintenance_modifier = -0.2
+}
+
+bri_rallied_sailors = {
+	global_sailors_modifier = 0.5
+	galley_power = 0.15
+}
+
 breton_golden_age = {
 	core_creation = -0.10
 	development_cost_in_primary_culture = -0.20
@@ -242,7 +252,12 @@ soi_bureaucratic_support = {
 roman_construction_materials = {
 	build_cost = -0.05
 	build_time = -0.15
-	development_cost = -0.01
+	development_cost = -0.05
+}
+
+roman_construction_industry = {
+	trade_goods_size_modifier = 0.20
+	local_development_cost_modifier = -0.20
 }
 
 soi_marble_empire_modifier = {

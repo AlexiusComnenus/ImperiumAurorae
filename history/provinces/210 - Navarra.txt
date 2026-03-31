@@ -8,6 +8,7 @@ trade_goods = iron
 base_tax = 6
 base_production = 3
 base_manpower = 4
+center_of_trade = 1
 add_core = CAS
 add_core = NAV
 discovered_by = MGE

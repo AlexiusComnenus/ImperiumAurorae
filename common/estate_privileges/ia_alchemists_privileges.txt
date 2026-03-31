@@ -226,11 +226,11 @@ estate_alchemists_right_of_counsel = {
 		custom_tooltip = increases_chances_of_eureka_tt
 	}
 	ai_will_do = {
-		factor = 10
-		modifier = {
-			factor = 0
-			is_absolutism_active = yes
-		}
+		factor = 100
+		#modifier = {
+		#	factor = 0
+		#	is_absolutism_active = yes
+		#}
 	}
 }
 
@@ -239,7 +239,7 @@ estate_alchemists_court_alchemist = {
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	influence = 0.05
-	loyalty = 0.05
+	loyalty = 0.1
 	penalties = {
 		administrative_efficiency = -0.025
 		all_estate_loyalty_equilibrium = -0.05
@@ -250,6 +250,7 @@ estate_alchemists_court_alchemist = {
 	benefits = {
 		monarch_lifespan = 0.25
 		heir_chance = 0.5
+		rce_monthly_religion_mechanic_four_tenets_system_change = 0.2
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
@@ -275,6 +276,7 @@ estate_alchemists_court_alchemist = {
 		modifier = {
 			factor = 0
 			NOT = { is_emperor_of_china = yes }
+			NOT = { has_reform = free_city }
 		}
 		modifier = {
 			factor = 30
@@ -303,7 +305,7 @@ estate_alchemists_elixirs_for_the_troops = {
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }
 		modifier = { 
-			discipline = -0.06
+			#discipline = -0.06
 			morale_damage = 0.12
 			reinforce_speed = 0.36
 			recover_army_morale_speed = 0.36
@@ -362,7 +364,7 @@ estate_alchemists_cutting_edge_research = {
 		custom_tooltip = increases_chances_of_eureka_tt
 	}
 	ai_will_do = {
-		factor = 0
+		factor = 50
 		modifier = {
 			factor = 0
 			NOT = {

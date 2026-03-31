@@ -2,6 +2,8 @@ civil_reforms = {
 	global_unrest = -2
 	tolerance_of_heretics_capacity = 1
 	tolerance_heretic = 1
+	yearly_corruption = -0.05
+	stability_cost_modifier = -0.1
 }
 
 austria_electors = {
@@ -58,13 +60,12 @@ hab_contested_bohemia = {
 
 hab_crown_land = {
 	country_admin_power = 1
+	monthly_reform_progress_modifier = 0.25	
 }
 
 hab_absolutist_legacy = {
 	max_absolutism_effect = 0.1
 	max_absolutism = 10
-	max_revolutionary_zeal = 25
-	yearly_revolutionary_zeal = 0.5
 }
 
 hab_economic_growth = {
@@ -75,11 +76,14 @@ hab_economic_growth = {
 hab_tax_reform = {
 	all_estate_influence_modifier = -0.05
 	global_tax_modifier = 0.25
+	yearly_corruption = -0.05
 }
 
 hab_enlightened_government = {
 	global_unrest = -2
-	stability_cost_modifier = -0.1
+	yearly_corruption = -0.1
+	governing_capacity_modifier = 0.1
+	monthly_reform_progress_modifier = 0.25
 }
 
 hab_religious_conviction = {
@@ -149,6 +153,7 @@ hab_prosperous_heartland = {
 	local_production_efficiency = 0.25
 	local_tax_modifier = 0.25
 	local_centralize_state_cost = -0.5
+	min_local_autonomy = -12
 }
 
 boh_no_heirs = {

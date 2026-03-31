@@ -1,0 +1,200 @@
+country_decisions = {
+	hes_integrate_all_rhenish_tags_decision = {
+		major = yes
+		potential = {
+			has_country_flag = hes_allow_rhenish_tag_integration
+			NOT = { has_country_flag = hes_used_rhenish_integration }
+		}
+		
+		allow = {
+			all_subject_country = { 
+				OR = {
+					NOT = { primary_culture = hessian }
+					AND = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						trust = { who = ROOT value = 60 } 
+					}
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = hes_integrate_rhenish_subjects_tt
+			every_subject_country = {
+				limit = {
+					all_owned_province = { culture = hessian }
+					NOT = { liberty_desire = 51 }
+				}
+				set_country_flag = hes_to_annex_flag
+			}
+			every_subject_country = {
+				limit = {
+					has_country_flag = hes_to_annex_flag
+				}
+				disband_all_units = yes
+				ROOT = { inherit = PREV }
+			}
+			set_country_flag = hes_used_rhenish_integration
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	hes_regimental_system_tutorial_decision = {
+		potential = {
+			any_province = {
+				OR = {
+					has_province_modifier = hes_regimental_capital_local
+					has_province_modifier = hes_regimental_city_local
+					has_province_modifier = hes_regimental_town_local
+				}
+			}
+			ai = no
+			culture_group = germanic
+			NOT = { has_country_flag = hessian_regimental_system_tutorial_passed }
+		}
+		
+		allow = {
+
+		}
+		
+		effect = {
+			country_event = {
+				id = ia_hesse.105
+			}
+			set_country_flag = hessian_regimental_system_tutorial_passed
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	hes_integrate_WES_decision = {
+		major = yes
+		potential = {
+			tag = HES
+			WES = { 
+				is_subject_of = HES
+			}
+			has_country_flag = hes_allow_german_subject_integration
+			NOT = { has_country_flag = hes_integrated_WES }
+		}
+		
+		allow = {
+			all_subject_country = { 
+				OR = {
+					NOT = { tag = WES }
+					AND = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						trust = { who = ROOT value = 60 } 
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_dip_power = -200
+			WES = {
+				disband_all_units = yes
+				ROOT = { inherit = PREV }
+			}
+			set_country_flag = hes_integrated_wes
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	hes_integrate_FKN_decision = {
+		major = yes
+		potential = {
+			tag = HES
+			FKN = { 
+				is_subject_of = HES
+			}
+			has_country_flag = hes_allow_german_subject_integration
+			NOT = { has_country_flag = hes_integrated_FKN }
+		}
+		
+		allow = {
+			all_subject_country = { 
+				OR = {
+					NOT = { tag = FKN }
+					AND = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+						trust = { who = ROOT value = 60 } 
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_dip_power = -200
+			FKN = {
+				disband_all_units = yes
+				ROOT = { inherit = PREV }
+			}
+			set_country_flag = hes_integrated_wes
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+	hes_regimental_system_rebuild_wiped_out_regimental_everything = {
+		major = yes
+		color = { 25 0 255 }
+		potential = {
+			any_province = {
+				OR = {
+					has_province_flag = eligable_to_rebuild_regimental_town
+					has_province_flag = eligable_to_rebuild_regimental_city
+					has_province_flag = eligable_to_rebuild_regimental_capital
+				}
+			}
+			culture_group = germanic
+			NOT = { has_country_flag = hes_rebuilding_event_happening }
+		}
+		provinces_to_highlight = {
+			OR = {
+				has_province_flag = eligable_to_rebuild_regimental_town
+				has_province_flag = eligable_to_rebuild_regimental_city
+				has_province_flag = eligable_to_rebuild_regimental_capital
+    		}
+			owned_by = ROOT
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = hes_regimental_system_rebuild_wiped_out_regimental_everything_tt
+				any_owned_province = {
+					OR = {
+						has_province_flag = eligable_to_rebuild_regimental_town
+						has_province_flag = eligable_to_rebuild_regimental_city
+						has_province_flag = eligable_to_rebuild_regimental_capital
+					}
+				}
+			}
+			government_reform_progress = 75
+			NOT = {
+				has_country_modifier = hes_rebuilding_regimental_town
+				has_country_modifier = hes_rebuilding_regimental_city
+				has_country_modifier = hes_rebuilding_regimental_capital
+			}
+		}
+		effect = {
+			country_event = {
+				id = ia_hesse.106
+			}
+		}
+	}
+}

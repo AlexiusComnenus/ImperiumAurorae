@@ -1,0 +1,78 @@
+giftaction = {
+	effect = {
+		# Vanilla:
+		change_asha_vahishta = { value = 1 }
+
+		# Religions & Cultures Expanded:
+		#rce_add_religion_mechanic_sukha_value = { value = 3 }
+		if = {
+			limit = {
+				rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+				religion = FROM
+				NOT = { has_country_modifier = rce_religion_mechanic_manichaeism_purity_gift_cooldown_modifier }
+			}
+			rce_add_religion_mechanic_manichaeism_purity_value = { value = 3 }
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_gift_cooldown_modifier
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+}
+
+insultaction = {
+	effect = {
+		# Vanilla:
+		change_asha_vahishta = { value = -5 }
+
+		# Religions & Cultures Expanded:
+		if = {
+			limit = {
+				rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+				NOT = { religion_group = FROM }
+				NOT = { has_country_modifier = rce_religion_mechanic_manichaeism_purity_insult_cooldown_modifier }
+			}
+			rce_add_religion_mechanic_manichaeism_purity_value = { value = 3 }
+			add_country_modifier = {
+				name = rce_religion_mechanic_manichaeism_purity_insult_cooldown_modifier
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+}
+
+guaranteeaction = {
+	# Compatibility with Force Revoke Guarantee/More Favor Actions:
+	condition = {
+		tooltip = MORE_FAVOR_ACTIONS_REMOVED_GUARANTEE_TT
+		potential = {
+			has_country_flag = revoked_guarantee_from_@FROM
+		}
+		allow = {
+			had_country_flag = { flag = revoked_guarantee_from_@FROM days = 3650 }
+		}
+	}
+	condition = {
+		potential = {
+			religion = lollard
+		}
+		allow = { 
+			FROM = { religion = lollard }
+		}
+	}
+
+	effect = {
+		# Vanilla:
+		change_asha_vahishta = { value = 1 }
+
+		# Religions & Cultures Expanded:
+		#if = {
+		#	limit = {
+		#		NOT = { truce_with = FROM }
+		#	}
+		#	rce_add_religion_mechanic_sukha_value = { value = 3 }
+		#}
+	}
+}

@@ -198,6 +198,7 @@ francia_missions_1_conquest = {
 		trigger = {
 			OR = {
 				CAT = { is_subject_of = ROOT }
+				ARA = { is_subject_of = ROOT }
 				catalonia_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT
@@ -219,6 +220,17 @@ francia_missions_1_conquest = {
 				}
 				aragon_area = { add_core = CAT }
 				valencia_area = { add_core = CAT }
+			}
+			else_if = {
+				limit = { ARA = { is_subject_of = ROOT } }
+				ARA = {
+					add_country_modifier = {
+						name = frw_cat_bonus
+						duration = -1
+					}
+				}
+				aragon_area = { add_core = ARA }
+				valencia_area = { add_core = ARA }
 			}
 		}
 	}
@@ -271,12 +283,30 @@ francia_missions_1_conquest = {
 			country_or_non_sovereign_subject_holds = VAL
 		}
 		trigger = {
-			iberia_region = {
-				type = all
-				NOT = { country_or_non_sovereign_subject_holds = VAL }
+			OR = {
+				AND = {
+					iberia_region = {
+						type = all
+						#NOT = { country_or_non_sovereign_subject_holds = VAL }
+						controller = {
+							NOT = { tag = VAL }
+							NOT = { is_subject_of = VAL }
+						}
+					}
+					#war_with = VAL
+					is_in_war = {
+						attacker_leader = FRW
+						defender_leader = VAL
+					}
+				}
+				NOT = { exists = VAL }
 			}
 		}
 		effect = {
+			if = {
+				limit = { exists = VAL }
+				country_event = { id = ia_flavor_frw.4 }
+			}
 			add_country_modifier = {
 				name = frw_visigoths_vanquished
 				duration = -1
@@ -395,7 +425,7 @@ francia_missions_1_continued = {
 					dip = 6
 					diplomatic_reputation = 10
 				}
-				religious_unity = 1
+				religious_unity = 0.9
 			}
 			dynasty = "Meroveching"
 			reform_level = 4
@@ -419,7 +449,10 @@ francia_missions_1_continued = {
 			
 		}
 		trigger = {
-			is_defender_of_faith_of_tier = 4
+			OR = {
+				is_defender_of_faith_of_tier = 4
+				any_ally = { is_defender_of_faith_of_tier = 4  tag = PAP }
+			}
 			government_rank = 3
 			dynasty = "Meroveching"
 			calc_true_if = {
@@ -427,7 +460,7 @@ francia_missions_1_continued = {
 					dynasty = Meroveching
 					is_subject = no
 				}
-				amount = 5
+				amount = 3
 			}
 		}
 		effect = {
@@ -570,49 +603,70 @@ francia_missions_2 = {
 		}
 		trigger = {
 			religion = catholic
-			OR = {
-				NOT = { exists = PAP }
-				PAP = { is_subject_of = ROOT }
-				PAP = {
-					is_subject = yes
-					NOT = { is_subject_of = ROOT }
-					overlord = {
-						has_spy_network_from = {
-							who = ROOT
-							value = 75
+			if = {
+				limit = { PAP = { has_reform = kingdom_of_god_reform } }
+				OR = {
+					AND = {
+						alliance_with = PAP
+						papal_influence = 190
+					}
+					is_papal_controller = yes
+				}
+			}
+			else = {
+				OR = {
+					NOT = { exists = PAP }
+					PAP = { is_subject_of = ROOT }
+					PAP = {
+						is_subject = yes
+						NOT = { is_subject_of = ROOT }
+						overlord = {
+							has_spy_network_from = {
+								who = ROOT
+								value = 75
+							}
 						}
 					}
 				}
+				202 = { country_or_non_sovereign_subject_holds = ROOT }
 			}
-			202 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
-			202 = {
-				add_core = PAP
-				cede_province = PAP
-			}
-			PAP = { set_capital = 202 }
 			if = {
-				limit = { PAP = { is_subject = yes 	NOT = { is_subject_of = ROOT } } }
-				hidden_effect = {
-					PAP = { overlord = { save_event_target_as = pope_overlord } }
+				limit = { PAP = { has_reform = kingdom_of_god_reform } }
+				add_country_modifier = {
+					name = frw_papal_endorsement
+					duration = -1
 				}
-				PAP = {
-					every_owned_province = {
-						limit = { NOT = { is_capital = yes } }
-						remove_core = PAP
-						cede_province = event_target:pope_overlord
+			}
+			else = {
+				202 = {
+					add_core = PAP
+					cede_province = PAP
+				}
+				PAP = { set_capital = 202 }
+				if = {
+					limit = { PAP = { is_subject = yes 	NOT = { is_subject_of = ROOT } } }
+					hidden_effect = {
+						PAP = { overlord = { save_event_target_as = pope_overlord } }
+					}
+					PAP = {
+						every_owned_province = {
+							limit = { NOT = { is_capital = yes } }
+							remove_core = PAP
+							cede_province = event_target:pope_overlord
+						}
 					}
 				}
+				create_subject = {
+					subject = PAP
+					subject_type = papal_puppet
+				}
+				lazio_area = {
+					add_core = PAP
+				}
+				italy_region = { add_permanent_claim = PAP }
 			}
-			create_subject = {
-				subject = PAP
-				subject_type = papal_puppet
-			}
-			lazio_area = {
-				add_core = PAP
-			}
-			italy_region = { add_permanent_claim = PAP }
 		}
 	}
 	
@@ -672,6 +726,21 @@ francia_missions_2 = {
 		effect = {
 			set_country_flag = fra_unlock_gendarmes
 			custom_tooltip = frw_unlocks_gendarmes_tt
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_reform = gendarmes_reform
+							has_reform = musketeers_reform
+						}
+					}
+				}
+				add_government_reform = gendarmes_reform
+			}
+			add_country_modifier = {
+				name = frw_elite_knights
+				duration = -1
+			}
 		}
 	}
 }
@@ -827,7 +896,9 @@ francia_missions_3 = {
 						limit = { culture_group = french }
 						change_culture = frankish
 					}
+					ia_change_culture_without_consequence_effect = yes
 				}
+				ia_change_culture_without_consequence_effect = yes
 			}
 			set_country_flag = frw_assimilation_enabled_flag
 		}
@@ -930,7 +1001,7 @@ francia_missions_3 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			land_forcelimit = 100
+			land_forcelimit = 80
 			
 			if = {
 				limit = { ai = no }
@@ -1242,7 +1313,7 @@ francia_missions_4 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			num_of_infantry	= 90
+			num_of_infantry	= 80
 			mil_tech = 12
 			has_global_modifier_value = {
 				which = infantry_power
@@ -1252,6 +1323,21 @@ francia_missions_4 = {
 		effect = {
 			set_country_flag = frw_unlock_musketeers
 			custom_tooltip = frw_unlocks_musketeers_tt
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							has_reform = gendarmes_reform
+							has_reform = musketeers_reform
+						}
+					}
+				}
+				add_government_reform = musketeers_reform
+			}
+			add_country_modifier = {
+				name = frw_elite_musketeers
+				duration = -1
+			}
 		}
 	}
 }

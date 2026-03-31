@@ -468,8 +468,8 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 3
-						shock = 8
-						manuever = 5
+						shock = 9
+						manuever = 4
 						siege = 3
 						trait = aurora_trained
 						name = root_name_male
@@ -478,8 +478,8 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 3
-						shock = 8
-						manuever = 5
+						shock = 9
+						manuever = 4
 						siege = 3
 						trait = aurora_trained
 						female = yes
@@ -494,8 +494,8 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 2
-						shock = 7
-						manuever = 4
+						shock = 8
+						manuever = 3
 						siege = 2
 						trait = aurora_trained
 						name = root_name_male
@@ -504,8 +504,8 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 2
-						shock = 7
-						manuever = 4
+						shock = 8
+						manuever = 3
 						siege = 2
 						trait = aurora_trained
 						female = yes
@@ -579,7 +579,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 3
-						shock = 7
+						shock = 8
 						manuever = 4
 						siege = 3
 						trait = aurora_trained
@@ -589,7 +589,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 3
-						shock = 7
+						shock = 8
 						manuever = 4
 						siege = 3
 						trait = aurora_trained
@@ -605,7 +605,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 2
-						shock = 6
+						shock = 7
 						manuever = 3
 						siege = 2
 						trait = aurora_trained
@@ -615,7 +615,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 2
-						shock = 6
+						shock = 7
 						manuever = 3
 						siege = 2
 						trait = aurora_trained
@@ -630,7 +630,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 1
-						shock = 5
+						shock = 6
 						manuever = 2
 						siege = 1
 						trait = aurora_trained
@@ -640,7 +640,7 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 1
-						shock = 5
+						shock = 6
 						manuever = 2
 						siege = 1
 						trait = aurora_trained
@@ -741,7 +741,7 @@ country_event = {
 		}
 		define_consort = {
 			name = "Long'er"
-			culture = xizho
+			culture = dragon_culture
 			dynasty = "Yang"
 			adm = 6
 			dip = 5
@@ -756,10 +756,10 @@ country_event = {
 		add_ruler_personality = immortal_wisdom_personality
 		change_dip = 1
 		change_mil = 1
-		set_ai_personality = {
-			personality = ai_balanced
-			locked = yes
-		}
+		#set_ai_personality = {
+		#	personality = ai_balanced
+		#	locked = yes
+		#}
 		set_global_flag = dragon_princess_arrived_flag
 		hidden_effect = {
 			Z62 = {
@@ -898,6 +898,7 @@ country_event = {
 				culture_group = latin
 			}
 			change_primary_culture = idali
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		else_if = {
 			limit = {
@@ -907,18 +908,21 @@ country_event = {
 				}
 			}
 			change_primary_culture = falanke
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		else_if = {
 			limit = {
 				culture_group = iberian
 			}
 			change_primary_culture = xibanya
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		else_if = {
 			limit = {
 				culture_group = maghrebi
 			}
 			change_primary_culture = beifei
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 		}
 		add_accepted_culture = xizho
 		capital_scope = {
@@ -931,7 +935,7 @@ country_event = {
 			}
 			change_culture = ROOT
 		}
-		add_stability = 2
+		add_stability = 1
 		add_legitimacy = 10
 		add_republican_tradition = 5
 	}
@@ -1039,10 +1043,12 @@ country_event = {  # TGE missions show
 	desc = antioch.19.d
 	picture = BIG_BOOK_eventPicture
 	
-	major = yes
+	#major = yes
 	hidden = yes
+	is_triggered_only = yes
 	
 	trigger = {
+		always = no
 		is_emperor = yes
 		tag = Z17
 		has_global_flag = tradegood_marcin
@@ -1078,6 +1084,54 @@ country_event = {  # TGE missions show
 			}
 			4171 = {
 				change_trade_goods = tin
+			}
+			2945 = {
+				change_trade_goods = lead
+			}
+			2944 = {
+				change_trade_goods = lead
+			}
+			976 = {
+				change_trade_goods = lead
+			}
+			2606 = {
+				change_trade_goods = lead
+			}
+			949 = {
+				change_trade_goods = lead
+			}
+			935 = {
+				change_trade_goods = lead
+			}
+			2509 = {
+				change_trade_goods = lead
+			}
+			2828 = {
+				change_trade_goods = copper
+			}
+			4607= {
+				change_trade_goods = copper
+			}
+			2818 = {
+				change_trade_goods = copper
+			}
+			827 = {
+				change_trade_goods = copper
+			}
+			4644 = {
+				change_trade_goods = copper
+			}
+			876 = {
+				change_trade_goods = copper
+			}
+			2494 = {
+				change_trade_goods = copper
+			}
+			2019 = {
+				change_trade_goods = copper
+			}
+			2607 = {
+				change_trade_goods = copper
 			}
 		}
 	}
@@ -1857,6 +1911,13 @@ country_event = {	# Aurorize Silk
 		every_owned_province = {
 			limit = { trade_goods = silk }
 			change_trade_goods = auroral_silk
+			if = {
+				limit = { has_province_flag = auroral_silk_source_province_flag }
+				add_permanent_province_modifier = {
+					name = auroral_silk_source
+					duration = -1
+				}
+			}
 		}
 	}
 }
@@ -1884,6 +1945,7 @@ country_event = {	# De-Aurorize Silk
 		every_owned_province = {
 			limit = { trade_goods = auroral_silk 	NOT = { has_province_modifier = soi_counterfeiting_silk } }
 			change_trade_goods = silk
+			remove_province_modifier = auroral_silk_source
 		}
 	}
 }
@@ -1904,7 +1966,7 @@ country_event = {  # Proclamation of the Aurora
 		hidden_effect = {
 			every_known_country = {
 				limit = {
-					NOT = { is_subject = yes }
+					is_free_or_tributary_trigger = yes
 					same_continent = ROOT
 				}
 				country_event = {
@@ -2132,7 +2194,7 @@ country_event = {  # War of Harmony, Antioch Call to Arms
 	}
 }
 
-country_event = { # end the war after 30 years
+country_event = { # end the war after 20 years
 	id = antioch.106
 	title = antioch.106.t
 	desc = antioch.106.d

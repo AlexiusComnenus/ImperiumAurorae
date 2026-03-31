@@ -1,0 +1,172 @@
+custom_window = {
+	name = rce_state_missionary_window
+	potential = {
+		owned_by = FROM
+		is_state = yes
+		FROM = { ai = no }
+	}
+}
+
+custom_icon = {
+	name = rce_state_missionary_button_glow
+	potential = {
+		has_province_modifier = rce_missionary_assigned_to_state_modifier
+	}
+}
+custom_button = {
+	name = rce_state_missionary_button
+	# there is no AI decision equivalent, AI will not use this feature
+	trigger = {
+		hidden_trigger = {
+			if = {
+				limit = {
+					NOT = { has_province_modifier = rce_missionary_assigned_to_state_modifier }
+				}
+				FROM = {
+					NOT = { has_country_flag = rce_missionary_assigned_to_state }
+					num_of_missionaries = 1
+				}
+				area_for_scope_province = {
+					type = all
+					owned_by = FROM
+					is_core = FROM
+					religion = FROM
+				}
+			}
+			else = {
+				had_province_flag = { flag = rce_missionary_assigned_to_state_flag days = 365 }
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				has_province_modifier = rce_missionary_assigned_to_state_modifier
+			}
+			custom_tooltip = rce_state_missionary_button_tt_currently_active
+			if = {
+				limit = {
+					NOT = { had_province_flag = { flag = rce_missionary_assigned_to_state_flag days = 365 } }
+				}
+				custom_tooltip = rce_state_missionary_button_tt_blocked_cannot_remove_before_1_year
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					FROM = {
+						NOT = { num_of_missionaries = 1 }
+					}
+				}
+				custom_tooltip = rce_state_missionary_button_tt_blocked_no_missionary
+			}
+			if = {
+				limit = {
+					NOT = {
+						area_for_scope_province = {
+							type = all
+							owned_by = FROM
+							is_core = FROM
+						}
+					}
+				}
+				custom_tooltip = rce_state_missionary_button_tt_blocked_state_not_owned
+			}
+			if = {
+				limit = {
+					NOT = {
+						area_for_scope_province = {
+							type = all
+							religion = FROM
+						}
+					}
+				}
+				custom_tooltip = rce_state_missionary_button_tt_blocked_state_not_converted
+			}
+			if = {
+				limit = {
+					FROM = {
+						has_country_flag = rce_missionary_assigned_to_state
+					}
+				}
+				custom_tooltip = rce_state_missionary_button_tt_blocked_recently_used
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				set_country_flag = rce_missionary_assigned_to_state
+			}
+			if = {
+				limit = {
+					has_province_modifier = rce_missionary_assigned_to_state_modifier
+					had_province_flag = { flag = rce_missionary_assigned_to_state_flag days = 365 }
+				}
+				every_province_in_state = {
+					clr_province_flag = rce_missionary_assigned_to_state_flag
+					set_variable = { which = rce_missionary_assigned_to_state_year value = 0 }
+					if = {
+						limit = {
+							has_province_modifier = rce_missionary_assigned_to_state_main_modifier
+						}
+						remove_province_modifier = rce_missionary_assigned_to_state_main_modifier
+					}
+					if = {
+						limit = {
+							has_province_modifier = rce_missionary_assigned_to_state_modifier
+						}
+						remove_province_modifier = rce_missionary_assigned_to_state_modifier
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_province_modifier = rce_missionary_assigned_to_state_modifier }
+				}
+				add_province_modifier = {
+					name = rce_missionary_assigned_to_state_main_modifier
+					duration = -1
+					hidden = yes
+				}
+				every_province_in_state = {
+					clr_province_flag = rce_missionary_assigned_to_state_flag
+					set_province_flag = rce_missionary_assigned_to_state_flag
+					export_to_variable = {
+						which = rce_missionary_assigned_to_state_year
+						value = trigger_value:is_year
+					}
+					add_province_modifier = {
+						name = rce_missionary_assigned_to_state_modifier
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	frame = {
+		number = 2
+		trigger = {
+			has_province_modifier = rce_missionary_assigned_to_state_modifier
+		}
+	}
+	frame = {
+		number = 1
+		trigger = {
+			always = yes
+		}
+	}
+	tooltip = rce_state_missionary_button_tt
+}
+custom_icon = {
+	name = rce_state_missionary_button_overlay
+	potential = {
+		has_province_modifier = rce_missionary_assigned_to_state_modifier
+		NOT = { had_province_flag = { flag = rce_missionary_assigned_to_state_flag days = 365 } }
+	}
+	frame = {
+		number = 2
+		trigger = {
+			always = yes
+		}
+	}
+}

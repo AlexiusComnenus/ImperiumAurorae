@@ -19,27 +19,61 @@ province_event = {
 
 	trigger = {
 		has_dlc = "Emperor"
-		current_age = age_of_revolutions
+		OR = {
+			had_global_flag	= {
+				flag = ivycurse_cured
+				days = 3650
+			}
+			is_year = 1630
+		}
 		development = 30
-		enlightenment = 100
 		owner = {
-			is_great_power = yes
-			has_institution = enlightenment
 			is_free_or_tributary_trigger = yes
 			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+			NOT = { is_emperor = yes }
+			NOT = { tag = TEM }
+			NOT = { tag = VAL }
 			#NOT = { has_reform = celestial_empire }
 		}
+		OR = {
+			owner = {
+				is_great_power = yes
+			}
+			owner = {
+				total_own_and_non_tributary_subject_development = 1200
+			}
+			is_year = 1660
+		}
 		NOT = { has_province_modifier = religious_center }
+		OR = {
+			region = north_german_region
+			region = south_german_region
+			is_year = 1660
+		}
 	}
 	mean_time_to_happen = {
-		years = 600
+		months = 600
 		modifier = {
 			factor = 20
 			NOT = { continent = europe }
 		}
 		modifier = {
+			factor = 0.25
+			OR = {
+				region = north_german_region
+				region = south_german_region
+			}
+		}
+		modifier = {
 			factor = 0.75
 			is_capital = yes
+		}
+		modifier = {
+			factor = 0.25
+			owner = {
+				is_great_power = yes
+			}
 		}
 		modifier = {
 			factor = 1.5
@@ -342,19 +376,19 @@ province_event = {
 		#Time-based checks
 		modifier = {
 			factor = 0.8
-			is_year = 1750
+			is_year = 1650
 		}
 		modifier = {
 			factor = 0.8
-			is_year = 1765
+			is_year = 1665
 		}
 		modifier = {
 			factor = 0.8
-			is_year = 1780
+			is_year = 1680
 		}
 		modifier = {
 			factor = 0.5
-			is_year = 1800
+			is_year = 1700
 		}
 	}
 	fire_only_once = yes
@@ -373,6 +407,12 @@ province_event = {
 	option = {
 		name = center_of_revolution.1000.A
 		spawn_center_of_revolution = root
+		change_religion = abolitionist
+		enable_religion = abolitionist
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 9000
+		}
 		set_province_flag = first_revolution_center
 		set_global_flag = first_revolution_center_spawned #to check time since spawn for backup center
 		
@@ -415,12 +455,13 @@ province_event = {
 		}
 		NOT = { has_global_flag = no_more_revolutions_ever }
 		development = 30
-		enlightenment = 100
 		owner = {
-			is_great_power = yes
-			has_institution = enlightenment
 			is_free_or_tributary_trigger = yes
 			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+			NOT = { is_emperor = yes }
+			NOT = { tag = TEM }
+			NOT = { tag = VAL }
 			#NOT = { has_reform = celestial_empire }
 		}
 		NOT = { has_province_modifier = religious_center }
@@ -714,6 +755,11 @@ province_event = {
 			}
 		}
 		spawn_center_of_revolution = root
+		change_religion = abolitionist
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 9000
+		}
 	}
 	option = {
 		name = center_of_revolution.1001.B
@@ -723,6 +769,11 @@ province_event = {
 			}
 		}
 		spawn_center_of_revolution = root
+		change_religion = abolitionist
+		add_permanent_province_modifier = {
+			name = "religious_zeal_at_conv"
+			duration = 9000
+		}
 	}
 }
 
@@ -747,6 +798,13 @@ country_event = {
 		if = {
 			limit = { is_revolution_target = yes }
 			set_revolution_target = ---
+		}
+		if = {
+			limit = { is_subject = yes }
+			change_religion = overlord
+		}
+		else = {
+			change_religion = FROM
 		}
 		if = {
 			limit = {

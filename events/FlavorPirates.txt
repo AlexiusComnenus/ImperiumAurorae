@@ -29,20 +29,6 @@ country_event = {
 				num_of_cities = 2
 			}
 		}
-		OR = {
-			482 = {
-				recent_treasure_ship_passage = yes
-			}
-			482 = {
-				privateer_power = { share = 5 }
-			}
-			any_country = {
-				capital_scope = {
-					region = carribeans_region
-				}
-				war_exhaustion = 5
-			}
-		}
 	}
 
 	immediate = {
@@ -76,6 +62,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			capital_scope = {
 				build_to_forcelimit = {
@@ -119,6 +106,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			capital_scope = {
 				build_to_forcelimit = {
 					infantry = 0.8
@@ -160,44 +148,10 @@ country_event = {
 	trigger = {
 		has_dlc = "Golden Century"
 		not = { exists = LIB }
-		capital_scope = {
-			continent = africa
-		}
 		NOT = { has_reform = pirate_republic_reform }
-		kongo_region = {
-			owner = {
-				capital_scope = {
-					continent = europe
-				}
-			}
-		}
-		OR = {
-			india_superregion = {
-				owner = {
-					capital_scope = {
-						continent = europe
-					}
-				}
-			}
-			east_indies_superregion = {
-				owner = {
-					capital_scope = {
-						continent = europe
-					}
-				}
-			}
-		}
 		has_global_flag = golden_age_of_piracy
 		owns_core_province = 4024
 		num_of_cities = 2
-		OR = {
-			4024 = {
-				recent_treasure_ship_passage = yes
-			}
-			4024 = {
-				privateer_power = { share = 5 }
-			}
-		}
 	}
 
 	immediate = {
@@ -226,6 +180,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			capital_scope = {
 				build_to_forcelimit = {
@@ -271,6 +226,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			capital_scope = {
 				build_to_forcelimit = {
 					infantry = 0.8
@@ -379,6 +335,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			capital_scope = {
 				build_to_forcelimit = {
@@ -423,6 +380,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			capital_scope = {
 				build_to_forcelimit = {
 					infantry = 0.8
@@ -526,6 +484,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = andalucian
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			capital_scope = {
 				build_to_forcelimit = {
@@ -572,6 +531,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = andalucian
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			capital_scope = {
 				build_to_forcelimit = {
 					infantry = 0.8
@@ -629,43 +589,20 @@ country_event = {
 		NOT = { has_reform = pirate_republic_reform }
 		OR = {
 			AND = {
-				owns_core_province = 487
+				owns_core_province = 481
 				is_subject = no
 				num_of_cities = 2
 			}
 			any_subject_country = {
-				owns_core_province = 487
+				owns_core_province = 481
 				num_of_cities = 2
-			}
-		}
-		487 = { # must be privateering in node
-			privateer_power = {
-				country = ROOT
-				share = 5
-			}
-		}
-		OR = {
-			487 = {
-				recent_treasure_ship_passage = yes
-			}
-			487 = {
-				trade_share = {
-					country = ROOT
-					share = 10
-				}
-			}
-			any_country = {
-				capital_scope = {
-					region = carribeans_region
-				}
-				war_exhaustion = 5
 			}
 		}
 	}
 
 	immediate = {
 		hidden_effect = {
-			487 = {
+			481 = {
 				discover_country = PRY
 				add_core = PRY
 			}
@@ -696,7 +633,7 @@ country_event = {
 		trigger = {
 			ai = no
 		}
-		487 = {
+		481 = {
 			owner = {
 				release = PRY
 			}
@@ -707,6 +644,7 @@ country_event = {
 			adopt_reform_progress = ROOT
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			add_republican_tradition = 50
 			capital_scope = {
@@ -738,7 +676,7 @@ country_event = {
 	}
 	option = { # pirates get released
 		name = "pirates.6.b"
-		487 = {
+		481 = {
 			owner = {
 				release = PRY
 			}
@@ -749,6 +687,7 @@ country_event = {
 			adopt_reform_progress = ROOT
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			add_republican_tradition = 50
 			capital_scope = {
 				build_to_forcelimit = {
@@ -791,14 +730,6 @@ country_event = {
 		has_dlc = "Golden Century"
 		NOT = { exists = TOR }
 		NOT = { has_reform = pirate_republic_reform }
-		489 = {
-			OR = {
-				religion = protestant
-				religion = anglican
-				religion = reformed
-				religion = hussite
-			}
-		}
 		has_global_flag = golden_age_of_piracy
 		OR = {
 			AND = {
@@ -809,20 +740,6 @@ country_event = {
 			any_subject_country = {
 				owns_core_province = 489
 				num_of_cities = 2
-			}
-		}
-		OR = {
-			489 = {
-				recent_treasure_ship_passage = yes
-			}
-			489 = {
-				privateer_power = { share = 1 }
-			}
-			any_country = {
-				capital_scope = {
-					region = carribeans_region
-				}
-				war_exhaustion = 5
 			}
 		}
 	}
@@ -856,6 +773,7 @@ country_event = {
 			add_government_reform = pirate_republic_reform
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			discover_provinces = ROOT
 			adopt_reform_progress = ROOT
 			add_republican_tradition = 50
@@ -899,6 +817,7 @@ country_event = {
 			add_republican_tradition = 50
 			change_religion = ROOT
 			change_primary_culture = ROOT
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			adopt_reform_progress = ROOT
 			capital_scope = {
 				build_to_forcelimit = {
@@ -958,7 +877,7 @@ country_event = {
 	option = {
 		name = "pirates.8.a"
 		ai_chance = {
-			factor = 1
+			factor = 100
 			modifier = {
 				factor = 0
 				MAJ = {
@@ -980,7 +899,7 @@ country_event = {
 	option = {
 		name = "pirates.8.b"
 		ai_chance = {
-			factor = 1
+			factor = 0
 		}
 		add_stability = 1
 	}
@@ -1015,6 +934,9 @@ country_event = {
 	}
 
 	option = {
+		ai_chance = {
+			factor = 100
+		}
 		name = "pirates.9.a"
 		change_government = republic
 		add_government_reform = pirate_republic_reform
@@ -1032,6 +954,9 @@ country_event = {
 	}
 
 	option = {
+		ai_chance = {
+			factor = 0
+		}
 		name = "pirates.9.b"
 		add_stability = -1
 	}
@@ -1059,6 +984,9 @@ country_event = {
 			1516 = {
 				privateer_power = { country = ROOT share = 5 }
 			}
+			capital_scope = {
+				region = carribeans_region
+			}
 		}
 		OR = {
 			any_country = {
@@ -1072,13 +1000,20 @@ country_event = {
 					1516 = {
 						privateer_power = { country = PREV share = 5 }
 					}
+					capital_scope = {
+						region = carribeans_region
+					}
 				}
 			}
 			1516 = { # or just have a whole lot of privateers
 				privateer_power = { country = ROOT share = 25 }
 			}
+			is_year = 1550
 		}
-		has_privateers = yes
+		OR = {
+			has_privateers = yes
+			ai = yes
+		}
 	}
 	mean_time_to_happen = {
 		months = 3
@@ -1118,6 +1053,9 @@ country_event = {
 	}
 
 	option = {
+		ai_chance = {
+			factor = 100
+		}
 		name = "pirates.21.a"
 		change_government = republic
 		add_government_reform = pirate_republic_reform
@@ -1135,6 +1073,9 @@ country_event = {
 	}
 
 	option = {
+		ai_chance = {
+			factor = 0
+		}
 		name = "pirates.21.b"
 		add_stability = -1
 	}

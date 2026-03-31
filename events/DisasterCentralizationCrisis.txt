@@ -14,6 +14,10 @@ country_event = {
 		
 		custom_tooltip = saxon_crisis_desc_tt
 		add_stability = -3
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -40
+		}
 		hidden_effect = {
 			country_event = { id = saxon_crisis.1  days = 500 }
 			set_variable = { which = SaxScore value = 0 }
@@ -70,6 +74,15 @@ country_event = {		#	Bodyguard
 	immediate = {
 		hidden_effect = {
 			country_event = { id = saxon_crisis.2  days = 500 }
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			every_subject_country = {
+				limit = { ai = no }
+				country_event = { id = saxon_crisis.201	days = 10 }
+			}
 		}
 	}
 	
@@ -147,6 +160,15 @@ country_event = {		#	Zollbund
 	immediate = {
 		hidden_effect = {
 			country_event = { id = saxon_crisis.3  days = 500 }
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			every_subject_country = {
+				limit = { ai = no }
+				country_event = { id = saxon_crisis.202	days = 10 }
+			}
 		}
 	}
 	
@@ -259,6 +281,15 @@ country_event = {		#	Standardization of weights and measures
 		}
 	}
 	
+	after = {
+		hidden_effect = {
+			every_subject_country = {
+				limit = { ai = no }
+				country_event = { id = saxon_crisis.203	days = 10 }
+			}
+		}
+	}
+	
 	option = {	# Enforce full economic unity
 		name = saxon_crisis.3.a
 		
@@ -318,6 +349,15 @@ country_event = {		#	Language
 	immediate = {
 		hidden_effect = {
 			country_event = { id = saxon_crisis.5  days = 500 }
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			every_subject_country = {
+				limit = { ai = no }
+				country_event = { id = saxon_crisis.204	days = 10 }
+			}
 		}
 	}
 	
@@ -822,309 +862,83 @@ country_event = {
         }
 		
 		hidden_effect = {
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = dutch
-						primary_culture = flemish
-						primary_culture = frisian
-						primary_culture = wallonian
-					}
-					NOT = { tag = event_target:new_netherlands }
-				}
-				event_target:new_netherlands = {
-					inherit = PREV
-				}
-			}
 			event_target:new_netherlands = {
-				if = {
-					limit = { 
-						NOT = { tag = NED }
-						NOT = { exists = NED }
-					}
-					change_tag = NED
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = hannoverian
-					}
-					NOT = { tag = event_target:new_westphalia }
-				}
-				event_target:new_westphalia = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 1
 				}
 			}
 			event_target:new_westphalia = {
-				if = {
-					limit = { 
-						NOT = { tag = WES }
-						NOT = { exists = WES }
-					}
-					change_tag = WES
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = prussian
-					}
-					NOT = { tag = event_target:new_prussia }
-				}
-				event_target:new_prussia = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 3
 				}
 			}
 			event_target:new_prussia = {
-				if = {
-					limit = { 
-						NOT = { tag = PRU }
-						NOT = { exists = PRU }
-					}
-					change_tag = PRU
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = hessian
-					}
-					NOT = { tag = event_target:new_hesse }
-				}
-				event_target:new_hesse = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 5
 				}
 			}
 			event_target:new_hesse = {
-				if = {
-					limit = { 
-						NOT = { tag = HES }
-						NOT = { exists = HES }
-					}
-					change_tag = HES
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = franconian
-					}
-					NOT = { tag = event_target:new_franconia }
-				}
-				event_target:new_franconia = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 7
 				}
 			}
 			event_target:new_franconia = {
-				if = {
-					limit = { 
-						NOT = { tag = FKN }
-						NOT = { exists = FKN }
-					}
-					change_tag = FKN
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = swabian
-						AND = { primary_culture = alsatian	NOT = { exists = LOT } }
-					}
-					NOT = { tag = event_target:new_swabia }
-				}
-				event_target:new_swabia = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 9
 				}
 			}
 			event_target:new_swabia = {
-				if = {
-					limit = { 
-						NOT = { tag = SWA }
-						NOT = { exists = SWA }
-					}
-					change_tag = SWA
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = swiss
-					}
-					NOT = { tag = event_target:new_switzerland }
-				}
-				event_target:new_switzerland = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 11
 				}
 			}
 			event_target:new_switzerland = {
-				if = {
-					limit = { 
-						NOT = { tag = SWI }
-						NOT = { exists = SWI }
-					}
-					change_tag = SWI
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = bavarian
-					}
-					NOT = { tag = event_target:new_bavaria }
-				}
-				event_target:new_bavaria = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 13
 				}
 			}
 			event_target:new_bavaria = {
-				if = {
-					limit = { 
-						NOT = { tag = BAV } 
-						NOT = { exists = BAV }
-					}
-					change_tag = BAV
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = austrian
-					}
-					NOT = { tag = event_target:new_austria }
-				}
-				event_target:new_austria = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 15
 				}
 			}
 			event_target:new_austria = {
-				if = {
-					limit = { 
-						NOT = { tag = HAB }
-						NOT = { exists = HAB }
-					}
-					change_tag = HAB
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = polish
-					}
-					NOT = { tag = event_target:new_poland }
-				}
-				event_target:new_poland = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 17
 				}
 			}
 			event_target:new_poland = {
-				if = {
-					limit = { 
-						NOT = { tag = POL }
-						NOT = { exists = POL }
-					}
-					change_tag = POL
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
-				}
-			}
-			every_subject_country = {
-				limit = {
-					OR = {
-						primary_culture = pommeranian
-					}
-					NOT = { tag = event_target:new_pommerania }
-				}
-				event_target:new_pommerania = {
-					inherit = PREV
+				country_event = {
+					id = saxon_crisis.300
+					days = 19
 				}
 			}
 			event_target:new_pommerania = {
-				if = {
-					limit = { 
-						NOT = { tag = POM }
-						NOT = { exists = POM }
-					}
-					change_tag = POM
-					on_change_tag_effect = yes
-					restore_country_name_effect = yes
-					swap_non_generic_missions = yes
-					if = {
-						limit = { has_custom_ideas = no }
-						country_event = { id = ideagroups.1 } #Swap Ideas
-					}
+				country_event = {
+					id = saxon_crisis.300
+					days = 21
 				}
 			}
 		}
     }
+	
+	after = {
+		hidden_effect = {
+			every_subject_country = {
+				limit = { ai = no }
+				country_event = { id = saxon_crisis.205	days = 20 }
+			}
+		}
+	}
 	
 	option = {
 		name = saxon_crisis.5.a
@@ -1416,7 +1230,9 @@ country_event = {		#	Legislature
 	immediate = {
 		hidden_effect = {
 			country_event = { id = saxon_crisis.9  days = 500 }
+			
 			every_subject_country = {
+				country_event = { id = saxon_crisis.210  days = 300 }
 				#limit = { is_subject_of_type = saxon_daimyo }
 				every_known_country = {
 					limit = { 
@@ -1515,28 +1331,45 @@ country_event = {		#	Hidden event to trigger independence or war or just end it
 				}
 				if = {
 					limit = {
-						any_subject_country = { liberty_desire = 50 }
+						any_subject_country = { 
+							liberty_desire = 50
+							OR = {
+								is_subject_of_type = saxon_daimyo
+								is_subject_of_type = german_march
+							}	
+						}
+					}
+					random_subject_country = {
+						limit = { 
+							liberty_desire = 50
+							OR = {
+								is_subject_of_type = saxon_daimyo
+								is_subject_of_type = german_march
+							}
+						}
+						save_global_event_target_as = sax_independence_war_leader
 					}
 					random_subject_country = {
 						limit = { 
 							liberty_desire = 50 
 							ai = no
+							OR = {
+								is_subject_of_type = saxon_daimyo
+								is_subject_of_type = german_march
+							}	
 						}
 						save_global_event_target_as = sax_independence_war_leader
-					}
-					if = {
-						limit = { NOT = { has_saved_event_target = sax_independence_war_leader } }
-						random_subject_country = {
-							limit = { 
-								liberty_desire = 50
-							}
-							save_global_event_target_as = sax_independence_war_leader
-						}
 					}
 					
 					
 					every_subject_country = {
-						limit = { liberty_desire = 50 }
+						limit = { 
+							liberty_desire = 50 
+							OR = {
+								is_subject_of_type = saxon_daimyo
+								is_subject_of_type = german_march
+							}	
+						}
 						set_country_flag = sax_disloyal_fiefdom
 						grant_independence = yes
 						form_coalition_against = ROOT
@@ -1547,6 +1380,8 @@ country_event = {		#	Hidden event to trigger independence or war or just end it
 							casus_belli = cb_saxon_independence
 						}
 						set_country_flag = sax_disloyal_fiefdom
+						country_event = { id = saxon_crisis.209 }
+						country_event = { id = ia_prices.1 	days = 300 }
 					}
 					
 					country_event = {
@@ -1555,7 +1390,7 @@ country_event = {		#	Hidden event to trigger independence or war or just end it
 					}
 					
 					every_enemy_country = {
-						limit = { NOT = { religion = hellenic_pagan_reformed } }
+						limit = { capital_scope = { OR = { superregion = europe_superregion 	superregion = eastern_europe_superregion } } }
 						country_event = {
 							id = saxon_crisis.18
 							days = 10
@@ -1806,7 +1641,7 @@ country_event = {		#	Nobles Plot
 					type = noble_rebels
 					size = 3
 					estate = estate_nobles
-					as_if_faction = yes
+					#as_if_faction = yes
 				}
 			}
 			random_owned_province = {
@@ -1836,7 +1671,7 @@ country_event = {		#	Nobles Plot
 				type = noble_rebels
 				size = 3
 				estate = estate_nobles
-				as_if_faction = yes
+				#as_if_faction = yes
 			}
 		}
 		random_owned_province = {
@@ -2112,6 +1947,7 @@ country_event = {		#	Guarantee autonomy
 			OR = {
 				tag = PRU
 				tag = NED
+				tag = HAB
 				ai = no
 			}
 			is_subject_of_type = saxon_daimyo
@@ -2130,6 +1966,7 @@ country_event = {		#	Guarantee autonomy
 					OR = {
 						tag = PRU
 						tag = NED
+						tag = HAB
 						ai = no
 					}
 					is_subject_of_type = saxon_daimyo
@@ -2321,7 +2158,9 @@ country_event = {		#	End of Disaster
 			}
 			
 		}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = GER
+		on_change_tag_effect = yes
 		#swap_free_idea_group = yes
 		country_event = { id = ideagroups.1 }
 		add_government_reform = deutches_reich_reform
@@ -2369,7 +2208,9 @@ country_event = {		#	End of Disaster
 				}
 			}
 		}
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = GER
+		on_change_tag_effect = yes
 		#swap_free_idea_group = yes
 		country_event = { id = ideagroups.1 }
 		add_government_reform = deutches_reich_reform
@@ -2396,7 +2237,9 @@ country_event = {		#	End of Disaster
 			has_reform = saxon_feudalism
 		}
 		
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = GER
+		on_change_tag_effect = yes
 		swap_non_generic_missions = yes
 		override_country_name = DEUTSCHE_BUND
 	}
@@ -2425,5 +2268,737 @@ country_event = {		#	End of Disaster
 		remove_country_modifier = sax_partial_zollbund
 		remove_country_modifier = sax_full_zollbund
 		remove_country_modifier = sax_secret_police
+	}
+}
+
+country_event = {		#	Events for the subject: bodyguard
+	id = saxon_crisis.201
+	title = saxon_crisis.201.t
+	desc = saxon_crisis.201.d
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.201.a
+		trigger = { overlord = { has_country_modifier = sax_secret_police } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_treasury = -2000
+				add_adm_power = -100
+				add_dip_power = -100
+				
+				add_country_modifier = {
+					name = sax_secret_police
+					duration = -1
+				}
+				
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -20
+				}
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.201.b
+		trigger = { overlord = { has_country_modifier = sax_professional_bodyguard } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_treasury = -1000
+				add_mil_power = -100
+				
+				add_country_modifier = {
+					name = sax_professional_bodyguard
+					duration = -1
+				}
+				
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.201.c
+		trigger = { overlord = { has_country_modifier = sax_feudal_kingsguard } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_country_modifier = {
+					name = sax_feudal_kingsguard
+					duration = -1
+				}
+				
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+			}
+		}
+	}
+}
+
+country_event = {		#	Events for the subject: Zollbund
+	id = saxon_crisis.202
+	title = saxon_crisis.202.t
+	desc = saxon_crisis.202.d
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.202.a
+		trigger = { overlord = { has_country_modifier = sax_full_zollbund } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_country_modifier = {
+					name = sax_full_zollbund
+					duration = -1
+				}
+				
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -20
+				}
+				
+				add_dip_power = -300
+				
+				custom_tooltip = sax_every_subject_share_modifier_tt
+				custom_tooltip = sax_will_upset_nobles_greatly_tt
+				custom_tooltip = sax_will_advance_unification_greatly_tt
+				
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.202.b
+		trigger = { overlord = { has_country_modifier = sax_partial_zollbund } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+				
+				add_dip_power = -150
+				
+				custom_tooltip = sax_every_subject_share_modifier_tt
+				custom_tooltip = sax_will_upset_nobles_tt
+				custom_tooltip = sax_will_advance_unification_tt
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.202.c
+		trigger = { overlord = { NOT = { has_country_modifier = sax_full_zollbund }	NOT = { has_country_modifier = sax_partial_zollbund } } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+			}
+		}
+	}
+}
+
+country_event = {		#	Events for the subject: Weights and Measures
+	id = saxon_crisis.203
+	title = saxon_crisis.203.t
+	desc = saxon_crisis.203.d
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.203.a
+		trigger = { overlord = { has_country_modifier = sax_unified_weights_and_measures } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_country_modifier = {
+					name = sax_unified_weights_and_measures
+					duration = -1
+				}
+				
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+				
+				add_adm_power = -200
+				
+				custom_tooltip = sax_every_subject_share_modifier_tt
+				custom_tooltip = sax_will_upset_nobles_tt
+				custom_tooltip = sax_will_advance_unification_tt
+				
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.203.b
+		trigger = { overlord = { NOT = { has_country_modifier = sax_unified_weights_and_measures } } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+			}
+		}
+	}
+}
+
+country_event = {		#	Events for the subject: Language
+	id = saxon_crisis.204
+	title = saxon_crisis.204.t
+	desc = saxon_crisis.204.d
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.204.a
+		trigger = { overlord = { has_country_flag = sax_max_language_flag } }
+		
+		add_prestige = -20
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -20
+				}
+				
+				add_dip_power = -400
+				add_adm_power = -200
+				
+				custom_tooltip = sax_will_upset_nobles_massively_tt
+				custom_tooltip = sax_will_advance_unification_greatly_tt
+				
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.204.b
+		trigger = { overlord = { has_country_flag = sax_medium_language_flag } }
+		add_prestige = -10
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+				
+				add_dip_power = -150
+				
+				custom_tooltip = sax_will_upset_nobles_greatly_tt
+				custom_tooltip = sax_will_advance_unification_tt
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.204.c
+		trigger = { overlord = { NOT = { has_country_flag = sax_max_language_flag }	NOT = { has_country_flag = sax_medium_language_flag } } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+			}
+		}
+	}
+}
+
+country_event = {		#	Events for the subject: Grand Reorganization
+	id = saxon_crisis.205
+	title = saxon_crisis.205.t
+	desc = saxon_crisis.205.d
+	picture = CONSPIRACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.205.a
+		trigger = { has_country_modifier = centralization_blessing }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			add_country_modifier = {
+				name = centralization_blessing
+				duration = 3650
+			}
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 10
+				}
+				add_legitimacy = 10
+				custom_tooltip = centralization_blessing_tt_1
+			}
+		}
+	}
+	
+	option = {	
+		name = saxon_crisis.205.b
+		trigger = { overlord = { has_country_modifier = sax_divide_and_conquer } }
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			add_country_modifier = {
+				name = centralization_sabotaged
+				duration = 3650
+			}
+			overlord = {
+				add_estate_loyalty = {
+					estate = estate_nobles
+					loyalty = -10
+				}
+				add_country_modifier = {
+					name = sax_divide_and_conquer
+					duration = 3650
+				}
+				custom_tooltip = centralization_sabotaged_tt_1
+			}
+		}
+	}
+}
+
+country_event = {		#	Events for the subject: Independence War
+	id = saxon_crisis.209
+	title = saxon_crisis.209.t
+	desc = saxon_crisis.209.d
+	picture = BYZ_CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.209.a
+		
+		custom_tooltip = sax_has_happened_tt
+		tooltip = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_saxon_independence
+			}
+		}
+		custom_tooltip = sax_invited_rivals_to_join_tt
+	}
+}
+
+country_event = {		#	Events for the subject: Independence War WARNING
+	id = saxon_crisis.210
+	title = saxon_crisis.210.t
+	desc = saxon_crisis.210.d
+	picture = BYZ_CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = saxon_crisis.210.a
+		
+		custom_tooltip = prepare_for_independence_war_tt
+	}
+}
+
+country_event = {		#	Handler event for merging subjects
+	id = saxon_crisis.300
+	title = saxon_crisis.300.t
+	desc = saxon_crisis.300.d
+	picture = BYZ_CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {	
+		name = saxon_crisis.300.a
+		
+		if = {
+			limit = {
+				OR = {
+					primary_culture = dutch
+					primary_culture = flemish
+					primary_culture = frisian
+					primary_culture = wallonian
+				}
+			}
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = dutch
+							primary_culture = flemish
+							primary_culture = frisian
+							primary_culture = wallonian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = NED }
+					NOT = { exists = NED }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = NED
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = hannoverian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = hannoverian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = WES }
+					NOT = { exists = WES }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = WES
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = prussian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = prussian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = PRU }
+					NOT = { exists = PRU }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = PRU
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = hessian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = hessian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = HES }
+					NOT = { tag = WES }
+					NOT = { exists = HES }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = HES
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = franconian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = franconian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = FKN }
+					NOT = { exists = FKN }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = FKN
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+				if = {
+					limit = { NOT = { government = monarchy } }
+					change_government = monarchy
+				}
+				add_government_reform = fkn_vintner_monarchy
+			}
+		}
+		else_if = {
+			limit = { primary_culture = swabian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = swabian
+							AND = { primary_culture = alsatian	NOT = { exists = LOT }  ai = yes }
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = SWA }
+					NOT = { exists = SWA }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = SWA
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = swiss }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = swiss
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = SWI }
+					NOT = { exists = SWI }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = SWI
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = bavarian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = bavarian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = BAV } 
+					NOT = { exists = BAV }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = BAV
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = austrian }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = austrian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = HAB }
+					NOT = { exists = HAB }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = HAB
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = polish }
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = polish
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { tag = POL }
+					NOT = { exists = POL }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = POL
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+		}
+		else_if = {
+			limit = { primary_culture = pommeranian }
+			if = {
+				limit = { 
+					NOT = { tag = POM }
+					NOT = { exists = POM }
+				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
+				change_tag = POM
+				on_change_tag_effect = yes
+				restore_country_name_effect = yes
+				swap_non_generic_missions = yes
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+			overlord = {
+				every_subject_country = {
+					limit = {
+						OR = {
+							primary_culture = pommeranian
+						}
+						NOT = { tag = ROOT }
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+		}
 	}
 }

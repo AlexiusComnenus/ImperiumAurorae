@@ -13,6 +13,12 @@ on_startup = {
 		ia_flavor_bog.1
 		capital_autonomy.1
 		great_jin_events.1
+		dotfset.38
+		ia_flavor_mym.2
+		ia_check_goods_used.1
+		mhadi.4
+		ia_flavor_pap.1
+        catt.1
 	}
 	initialize_schools_effect = yes
 }
@@ -29,12 +35,72 @@ on_death_election = {
 	}
 }
 
+on_monarch_death = {
+	events = {
+		catholic_flavor.11
+		great_jin_events.2
+	}
+}
+
+on_loan_repaid = {
+	#on_loan_repaid_estate_privileges_effect = yes
+	if = {
+		limit = { 
+			ROOT = {
+				economic_ideas = 3
+			}
+		}
+		ROOT = { add_inflation = -0.05 }
+	}
+}
+
+on_defender_of_faith_loss = {
+	if = {
+		limit = {
+			has_global_flag = papacy_permanent_dotf_flag
+		}
+		set_defender_of_the_faith = {
+			who = PAP
+			religion = catholic
+		}
+	}
+}
+
+on_defender_of_faith_claim = {
+}
+
+on_force_conversion_effect = {
+	add_country_modifier = {
+		name = ia_recently_been_force_converted_modifier
+		duration = 5475
+		hidden = yes
+	}
+}
+
+# country : no heir in theocracy
+on_heir_needed_theocracy = {
+	events = {
+		mhadi.12
+	}
+}
+
 on_war_won = {
 	events = {
-		ia_flavor_hes.4
 		ia_flavor_nov.4
 		ia_flavor_eng.13
-		saxon_province.1
+		ia_flavor_pap.12
+	}
+	if = {
+		limit = { 
+			ROOT = { has_reform = saxon_feudalism }
+			HES = { is_subject_of_type = german_march }
+		}
+		HES = {
+			change_variable = {
+				which = HesseWonWarsAlongsideGermanKing
+				value = 1
+			}
+		}
 	}
 }
 
@@ -44,9 +110,68 @@ on_main_war_won = {
 	}
 }
 
+on_bankruptcy = {
+	if = {
+		limit = { ai = yes }
+		add_country_modifier = {
+			name = ai_deathspiral_prevention_service
+			duration = 3650
+		}
+		add_years_of_income = 5
+		add_yearly_manpower = 2
+		add_adm_power = 500
+		add_dip_power = 500
+		add_mil_power = 500
+	}
+}
+
 on_heir_death = {
 	events = {
 		antioch.8
+	}
+}
+
+on_cawa_raised = {
+	ROOT = {
+		owner = {
+			add_manpower = -0.5
+		}
+	}
+}
+
+on_streltsy_raised = {
+	#THIS = {
+	#	add_manpower = -1
+	#	owner = {
+	#		add_manpower = -1
+	#	}
+	#}
+	ROOT = {
+		owner = {
+			add_manpower = -1
+		}
+	}
+	#FROM = {
+	#	add_manpower = -1
+	#	owner = {
+	#		add_manpower = -1
+	#	}
+	#}
+}
+
+on_janissaries_raised = {
+	ROOT = {
+		owner = {
+			add_manpower = -0.1
+		}
+	}
+}
+
+on_hussars_raised = {
+	ROOT = {
+		owner = {
+			add_manpower = -1
+		}
 	}
 }
 
@@ -70,23 +195,112 @@ on_yearly_pulse_2 = {
 		dotfset.26
 		dotfset.24
 		ia_flavor_sax.27
-		ia_flavor_hes.2
+		ia_saxon_crown.1
+        ia_saxon_crown.2
+        ia_saxon_crown.3
 		ia_flavor_thu.1
 		ia_flavor_val.12
 		ia_flavor_val.13
+		flavor_rig.14
+		flavor_rig.15
+		flavor_rig.16
+		norse_events.10
 		incident_AOL.1
-		dotfset.27
 		ia_flavor_sax.29
 		celestial_empire_events.4
+		celestial_empire_events.5
+		celestial_empire_events.7
 		ia_flavor_tem.31
 		antioch.31
 		antioch.30
 		dotfset.29
 		dotfset.30
 		dotfset.31
+		dotfset.37
+		dotfset.27
+		dotfset.39
 		saxon_fief.85
+		saxon_province.1
+		saxon_province.2
 		fix_tag_traits.1
 		fix_tag_traits.2
+		mhadi.3
+		mhadi.6
+		mhadi.7
+		mhadi.13
+		ia_flavor_tem.32
+		ia_flavor_tem.33
+		ia_flavor_tem.35
+		anglican_events.18
+		flavor_pap.7
+		ia_flavor_pap.8
+		ia_flavor_pap.9
+		ia_flavor_tem.39
+        gaeldom.24
+		gaeldom.26
+	}
+	if = {
+		limit = { 
+			is_in_war = {
+				casus_belli = cb_final_crusade
+			}
+		}
+		country_event = { id = ia_flavor_tem.36 }
+	}
+	if = {
+		limit = {
+			tag = RIG
+			ai = yes
+			NOT = { is_year = 1457 }
+		}
+		capital_scope = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	if = {
+		limit = {
+			OR = { tag = PAP	tag = FAP }
+			ai = yes
+			NOT = { has_country_modifier = papal_blessing }
+		}
+		add_country_modifier = {
+			name = papal_blessing
+			duration = 7300
+		}
+	}
+	if = {
+		limit = {
+			OR = { tag = PAP	tag = FAP }
+			ai = yes
+			NOT = { has_country_modifier = papal_sanction_for_holy_war }
+		}
+		add_country_modifier = {
+			name = papal_sanction_for_holy_war
+			duration = 7300
+		}
+	}
+	if = {
+		limit = {
+			OR = { tag = PAP	tag = FAP }
+			ai = yes
+			NOT = { has_country_modifier = usury_forgiven }
+		}
+		add_country_modifier = {
+			name = usury_forgiven
+			duration = 7300
+		}
+	}
+	if = {
+		limit = {
+			has_global_flag = papacy_permanent_dotf_flag
+			PAP = { NOT = { is_defender_of_faith = yes } }
+		}
+		set_defender_of_the_faith = {
+			who = PAP
+			religion = catholic
+		}
 	}
 	random_events = {
 		250 = ia_flavor_sax.22
@@ -95,6 +309,9 @@ on_yearly_pulse_2 = {
 		200 = peasantsevents.3
 		280 = peasantsevents.5
 		10 = alchemistevents.5
+		100 = gaeldom.14
+		50 = gaeldom.25
+		100 = china_events.43
 		
 		1000 = 0
 	}
@@ -103,13 +320,24 @@ on_yearly_pulse_2 = {
 on_yearly_pulse_3 = {
 	events = {
 		saxon_fief.86
+		ia_prices.2
+		ia_flavor_pap.14
+	}
+	random_events = {
+		100 = mhadi.18
+		100 = mhadi.19
+		500 = anglican_events.16
+		500 = anglican_events.17
+		
+		800 = 0
 	}
 }
 
 on_monthly_pulse = {
-	#events = {
-	#	ia_flavor_tem.25
-	#}
+	events = {
+		#ia_flavor_tem.25
+		ia_flavor_fkn.12
+	}
 	if = {
 		limit = { 
 			is_in_war = {
@@ -118,17 +346,116 @@ on_monthly_pulse = {
 		}
 		country_event = { id = ia_flavor_tem.25 }
 	}
+	if = {
+		limit = { 
+			has_global_flag = mhadi_is_ending_the_world_flag
+			tag = YOR
+		}
+		country_event = { id = mhadi.15 }
+		country_event = { id = mhadi.16 }
+	}
+}
+
+on_colony_finished = { #ROOT - Province
+	events = {
+		capital_autonomy.2
+		ia_flavor_mym.1
+	}
 }
 
 on_province_owner_change = {
 	events = {
 		capital_autonomy.2
+		ia_flavor_mym.1
+		devastation_mechanic.2
+		ia_hesse.102
+	}
+	if = {
+		limit = {
+			NOT = { has_province_flag = mym_in_capacity_flag }
+			owner = { OR = { tag = MYM 	has_reform = myrmidons_government } }
+		}
+		add_province_modifier = {
+			name = mym_perma_autonomy_1
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				has_province_modifier = sax_efficient_peasants
+			}
+			#FROM = { has_reform = sax_feudalism_reform }
+			NOT = { owner = { has_reform = sax_feudalism_reform } }
+		}
+		remove_province_modifier = sax_efficient_peasants
+	}
+
+	if = {
+		limit = {
+			owner = { has_reform = sax_feudalism_reform }
+			#NOT = { FROM = { has_reform = sax_feudalism_reform } }
+			OR = {	
+				trade_goods = grain
+				trade_goods = wool
+				trade_goods = fish
+				trade_goods = livestock
+				trade_goods = beer
+				trade_goods = apiculture
+				trade_goods = lumber
+				trade_goods = cheese
+				trade_goods = seafood
+				trade_goods = potato
+				trade_goods = tomato
+			}
+		}
+		add_province_modifier = {
+			name = sax_efficient_peasants
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = rhenish_bureaucratic_apparatus_province_mods
+			}
+		}
+		if = {
+			limit = {
+				has_owner_culture = yes
+				culture = hessian
+			}
+			add_province_modifier = {
+				name = rhenish_bureaucractic_apparatus_positive_modifier
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					NOT = { culture = hessian }
+					has_owner_culture = no
+				}
+			}
+			add_province_modifier = {
+				name = rhenish_bureaucractic_apparatus_negative_modifier
+				duration = -1
+			}
+		}
 	}
 }
 
 on_conquest = {
 	events = {
 		dotfset.32
+	}
+}
+
+on_primary_culture_changed = {
+	add_stability = -1
+	add_country_modifier = {
+		name = changed_primary_culture_modifier
+		duration = 7300
 	}
 }
 
@@ -223,14 +550,14 @@ on_capital_moved = {
 
 on_conquistador_empty = {
 	random_events = {
-		10 = seven_cities_events.1
-		10 = seven_cities_events.2
-		10 = seven_cities_events.3
-		10 = seven_cities_events.4
-		10 = seven_cities_events.5
-		10 = seven_cities_events.6
-		10 = seven_cities_events.7
-		10 = seven_cities_events.8
+		100 = seven_cities_events.1
+		500 = seven_cities_events.2
+		100 = seven_cities_events.3
+		100 = seven_cities_events.4
+		100 = seven_cities_events.5
+		100 = seven_cities_events.6
+		100 = seven_cities_events.7
+		100 = seven_cities_events.8
 
 		10 = seven_cities_events.100
 		10 = seven_cities_events.101
@@ -239,48 +566,111 @@ on_conquistador_empty = {
 		10 = seven_cities_events.104
 		10 = seven_cities_events.105
 
-		50 = seven_cities_events.200
-		50 = seven_cities_events.201
-		50 = seven_cities_events.202
-		50 = seven_cities_events.203
-		50 = seven_cities_events.204
-		50 = seven_cities_events.205
-		50 = seven_cities_events.206
-		50 = seven_cities_events.207
-		50 = seven_cities_events.208
-		50 = seven_cities_events.209
-		50 = seven_cities_events.210
-		50 = seven_cities_events.211
-		50 = seven_cities_events.212
-		50 = seven_cities_events.213
-		50 = seven_cities_events.214
-		50 = seven_cities_events.215
-		50 = seven_cities_events.216
-		50 = seven_cities_events.217
-		50 = seven_cities_events.218
-		50 = seven_cities_events.219
-		50 = seven_cities_events.220
-		50 = seven_cities_events.221
-		50 = seven_cities_events.222
-		50 = seven_cities_events.223
+		1 = seven_cities_events.200
+		100 = seven_cities_events.201
+		100 = seven_cities_events.202
+		1 = seven_cities_events.203
+		100 = seven_cities_events.204
+		100 = seven_cities_events.205
+		1 = seven_cities_events.206
+		100 = seven_cities_events.207
+		100 = seven_cities_events.208
+		1 = seven_cities_events.209
+		100 = seven_cities_events.210
+		100 = seven_cities_events.211
+		1 = seven_cities_events.212
+		100 = seven_cities_events.213
+		100 = seven_cities_events.214
+		1 = seven_cities_events.215
+		100 = seven_cities_events.216
+		100 = seven_cities_events.217
+		1 = seven_cities_events.218
+		100 = seven_cities_events.219
+		100 = seven_cities_events.220
+		1 = seven_cities_events.221
+		100 = seven_cities_events.222
+		100 = seven_cities_events.223
 
-		10 = seven_cities_events.302
+		1 = seven_cities_events.302
 		10 = seven_cities_events.303
 		10 = seven_cities_events.308
 		10 = seven_cities_events.309
 
 		10 = seven_cities_events.400
 		10 = seven_cities_events.401
-		10 = seven_cities_events.402
+		50 = seven_cities_events.402
 		10 = seven_cities_events.405
 		10 = seven_cities_events.406
 		10 = seven_cities_events.407
 		10 = seven_cities_events.408
 		10 = seven_cities_events.409
-		10 = seven_cities_events.410
+		50 = seven_cities_events.410
 		10 = seven_cities_events.413
 		10 = seven_cities_events.414
 
 		300 = 0
+	}
+}
+
+on_new_monarch = {
+    events = {
+        catt.94
+    }
+}
+
+on_battle_won_country = {
+    if = {
+        limit = { 
+            tag = KOI
+            mission_completed = koi_adapt_weaponry
+        }
+        change_variable = {
+            which = KoiFailinisBattlesWon
+            value = 1
+        }
+	}
+	if = {
+		limit = {
+			ROOT = { tag = HES }
+			ROOT = { is_at_war = yes }
+		}
+        change_variable = {
+            which = HesBattlesWon
+            value = 1
+        }
+	}
+}
+
+on_province_culture_converted = {
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = rhenish_bureaucratic_apparatus_province_mods
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					culture = hessian
+				}
+			}
+			add_province_modifier = {
+				name = rhenish_bureaucractic_apparatus_positive_modifier
+				duration = -1
+			}
+			remove_province_modifier = rhenish_bureaucractic_apparatus_negative_modifier
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					NOT = { culture = hessian }
+				}
+			}
+			add_province_modifier = {
+				name = rhenish_bureaucractic_apparatus_negative_modifier
+				duration = -1
+			}
+			remove_province_modifier = rhenish_bureaucractic_apparatus_positive_modifier
+		}
 	}
 }

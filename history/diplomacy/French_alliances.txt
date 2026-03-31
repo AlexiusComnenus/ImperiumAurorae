@@ -25,3 +25,17 @@ royal_marriage = {
 	start_date = 1432.6.4
 	end_date = 1467.4.22
 }
+
+royal_marriage = {
+	first = KRM
+	second = JNP
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}
+
+royal_marriage = {
+	first = LOR
+	second = MLO
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}

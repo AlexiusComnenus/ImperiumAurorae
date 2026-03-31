@@ -17,7 +17,7 @@
 244 = "Gwersyllbom" #Lancashire
 247 = "Manceinion" #Cumbria
 246 = "Castellnewydd" #Northumberland
-239 = "Caerloyw" #Gloucester
+239 = { "Caer Lleon" "Caerloyw" }#Gloucester
 4372 = "Caerlwytgoed" #Coventry
 4371 = "Caerfuddal" #Sussex
 4376 = "Caerlyr" #Leicester

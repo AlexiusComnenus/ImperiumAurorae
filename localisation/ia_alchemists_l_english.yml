@@ -14,6 +14,7 @@
  IA_ALCHEMISTS_SULFUR: "Controls a source of Sulfur: §Y$VAL$%§!"
  IA_ALCHEMISTS_LEAD: "Controls a source of Lead: §Y$VAL$%§!"
  IA_ALCHEMISTS_SILK: "Produces Auroral Silk: §Y$VAL$%§!"
+ IA_ALCHEMISTS_IMMORTALITY: "Ruler is Ascended: §Y$VAL$%§!"
  alchemist_advisor: "Alchemist"
  alchemist_advisor_desc: "Alchemists are dedicated to studying the hidden secrets of the world, especially as regards minerals and plants, then bending the rules of nature in pursuit of acension."
  recruit_alchemist_decision_title: "Scout a talented Court Alchemist"

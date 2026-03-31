@@ -32,9 +32,17 @@
 329 = { "Sebasteia" "Sebastopolis" }
 330 = { "Trebizond" "Trapezous" }
 331 = { "Theodosiopolis" "Theodosiopolis" }
+412 = { "Tareiana" "Tareiana" }
+413 = "Laodikea"
+414 = { "Medes" "Ekbatana" }
+427 = "Hekatompylos"
+428 = "Rhages"
+431 = { "Hormirzad" "Hormirzad" }
 1764 = { "Mesambria" "Mesambria" }
 1846 = { "Armeniakon" "Amasea" }
 1848 = { "Baris" "Baris" }
+2214 = "Hyrkania"
+2220 = { "Rhambakia" "Alexandreia he en Karman"}
 2296 = { "Abydos" "Pigai" }
 2297 = { "Thrakesion" "Magnesia" }
 2298 = { "Attalia" "Attalia" }
@@ -45,6 +53,7 @@
 2304 = { "Chaldia" "Amissos" }
 2305 = { "Acilisene" "Acilisene" }
 2750 = { "Philippopolis" "Philippopolis" }
+4289 = { "Susa" "Susa" }
 4307 = { "Colonia" "Colonia" }
 4308 = { "Laodicea" "Laodicea" }
 4309 = { "Tralles" "Tralles" }

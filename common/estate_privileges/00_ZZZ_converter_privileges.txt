@@ -66,10 +66,136 @@ estate_church_papal_emissary = {
 	}
 }
 
+estate_church_for_the_faith = {
+	icon = privilege_recruit_inouisitor
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	is_valid = {
+		OR = {
+			has_dlc = "Emperor"
+			has_dlc = "Lions of the North"
+		}
+		OR = {
+			has_country_flag = improved_expansionist_zealotry
+			any_known_country = {
+				NOT = { religion = root }
+			}
+			has_country_modifier = recently_force_converted_protagonist_timer
+			has_country_modifier = recently_annexed_other_religion_timer
+		}
+	}
+	can_select = {
+		OR = {
+			has_country_flag = improved_expansionist_zealotry
+			any_known_country = {
+				NOT = { religion = root }
+			}
+		}
+		NOT = { has_estate_privilege = estate_church_inwards_perfection }
+	}
+	on_granted = {
+		if = {
+			limit = { has_government_attribute = free_expansionist_zealotry }
+			custom_tooltip = estate_church_for_the_faith_effect_tooltip_a
+		}
+		else = {
+			custom_tooltip = estate_church_for_the_faith_effect_tooltip
+		}
+	}
+	on_revoked = {
+		if = {
+			limit = { has_government_attribute = free_expansionist_zealotry }
+			custom_tooltip = estate_church_for_the_faith_effect_tooltip_a
+		}
+		else = {
+			custom_tooltip = estate_church_for_the_faith_effect_tooltip
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			any_known_country = {
+				NOT = { religion = root }
+				war_with = root
+			}
+			NOT = { has_country_flag = improved_expansionist_zealotry }
+		}
+		modifier = {
+			church_loyalty_modifier = 0.1
+			land_morale = 0.05
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			any_known_country = {
+				NOT = { religion = root }
+				war_with = root
+			}
+			has_country_flag = improved_expansionist_zealotry
+		}
+		modifier = {
+			church_loyalty_modifier = 0.1
+			land_morale = 0.15
+			war_exhaustion = -0.05
+			max_absolutism = 5
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			NOT = {
+				any_known_country = {
+					NOT = { religion = root }
+					OR = {
+						war_with = root
+						truce_with = root
+					}
+				}
+			}
+			NOT = { has_country_modifier = recently_force_converted_protagonist_timer }
+			NOT = { has_country_modifier = recently_annexed_other_religion_timer }
+			NOT = { has_country_flag = improved_expansionist_zealotry }
+			NOT = { has_government_attribute = free_expansionist_zealotry }
+		}
+		modifier = {
+			church_loyalty_modifier = -0.1
+			land_morale = -0.05
+		}
+		is_bad = yes
+	}
+	conditional_modifier = {
+		trigger = {
+			has_government_attribute = free_expansionist_zealotry
+		}
+		modifier = {
+			max_absolutism = 5
+		}
+	}
+	penalties = {
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	ai_will_do = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			NOT = {
+				religion = protestant
+			}
+			NOT = { at_war_with_religious_enemy = yes }
+		}
+	}
+}
+
 estate_church_clerical_ministers = {
 	icon = privilege_recruit_minister
 	max_absolutism = -5
 	influence = 0.10
+	is_valid = {
+		NOT = { religion_group = pagan }
+		NOT = { religion = hellenic_pagan_reformed }
+		NOT = { religion = lollard }
+	}
 	conditional_modifier = {
 		trigger = {
 			if = {
@@ -196,6 +322,14 @@ estate_church_clerical_ministers = {
 		}
 		modifier = {
 			yearly_patriarch_authority = 0.005
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			rce_uses_religion_mechanic_manichaeism_purity = yes
+		}
+		modifier = {
+			rce_monthly_religion_mechanic_manichaeism_purity_change = 0.05
 		}
 	}
 	penalties = {

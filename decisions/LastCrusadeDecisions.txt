@@ -1,10 +1,36 @@
 country_decisions = {
+	ai_decision_desire_gibraltar = {
+		potential = {
+			ai = yes
+			OR = {
+				NOT = { 226 = { country_or_non_sovereign_subject_holds = ROOT } }
+				NOT = { 1751 = { country_or_non_sovereign_subject_holds = ROOT } }
+			}
+			OR = {
+				tag = VAL
+				226 = { country_or_non_sovereign_subject_holds = ROOT }
+				1751 = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		allow = {
+			owns = 226
+			owns = 1751
+		}
+		effect = {
+			# Literally Nothing, this is to make the AI desire controlling the goddamn strait
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		ai_importance = 1000
+	}
+	
 	templars_return_land_to_valencia = {
 		major = yes
 		potential = {
 			ai = yes
 			tag = TEM
-			any_owned_province = {
+			any_owned_or_subject_province = {
 				region = iberia_region
 				NOT = { area = baleares_area }
 			}
@@ -12,11 +38,10 @@ country_decisions = {
 		
 		allow = {
 			is_at_war = no
-			any_ally = { tag = VAL }
 		}
 		
 		effect = {
-			every_owned_province = {
+			every_owned_or_subject_province = {
 				limit = {
 					region = iberia_region
 					NOT = { area = baleares_area }
@@ -26,6 +51,34 @@ country_decisions = {
 					limit = { is_core = ROOT }
 					remove_core = ROOT
 					add_core = VAL
+				}
+			}
+		}
+	}
+	valencia_return_land_to_templars = {
+		major = yes
+		potential = {
+			ai = yes
+			tag = VAL
+			any_owned_or_subject_province = {
+				area = baleares_area
+			}
+		}
+		
+		allow = {
+			is_at_war = no
+		}
+		
+		effect = {
+			every_owned_or_subject_province = {
+				limit = {
+					area = baleares_area
+				}
+				cede_province = TEM
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+					add_core = TEM
 				}
 			}
 		}
@@ -55,6 +108,7 @@ country_decisions = {
 		
 		effect = {
 			balkan_region = {
+				limit = { owner = { war_with = ROOT } }
 				add_core = LAE
 			}
 			151 = { 
@@ -69,6 +123,7 @@ country_decisions = {
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
+				set_country_flag = crusader_state_flag
 			}
 			create_march = LAE
 			
@@ -112,6 +167,7 @@ country_decisions = {
 		
 		effect = {
 			italy_region = {
+				limit = { owner = { war_with = ROOT } }
 				add_core = ITA
 			}
 			118 = { 
@@ -126,6 +182,7 @@ country_decisions = {
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
+				set_country_flag = crusader_state_flag
 			}
 			create_march = ITA
 			
@@ -179,6 +236,7 @@ country_decisions = {
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
+				set_country_flag = crusader_state_flag
 			}
 			create_march = TUN
 			
@@ -232,11 +290,14 @@ country_decisions = {
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
+				set_country_flag = crusader_state_flag
 			}
 			po_valley_area = {
+				limit = { owner = { war_with = ROOT } }
 				add_core = MLO
 			}
 			lombardy_area = {
+				limit = { owner = { war_with = ROOT } }
 				add_core = MLO
 			}
 			

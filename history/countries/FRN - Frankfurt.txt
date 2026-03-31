@@ -7,6 +7,7 @@ primary_culture = hessian
 capital = 1876
 fixed_capital = 1876
 mercantilism = 25
+historical_friend = HES
 1434.6.11= {
 	monarch = {
 		name = "Theodelinda"

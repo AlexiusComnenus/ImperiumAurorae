@@ -675,7 +675,8 @@ cannon_foundry = {
 		FROM = {
 			mil_tech = 7
 			OR = {
-				innovativeness = 10
+				innovativeness = 15
+				overlord = { innovativeness = 15 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			check_variable = {
@@ -815,7 +816,15 @@ cannon_foundry = {
 			}
 			
 		}
-		
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
+		}
 	}
 }
 
@@ -836,7 +845,8 @@ metalworking_workshop = {
 		FROM = {
 			mil_tech = 16
 			OR = {
-				innovativeness = 15
+				innovativeness = 25
+				overlord = { innovativeness = 25 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			check_variable = {
@@ -945,7 +955,15 @@ metalworking_workshop = {
 					trade_goods = metalworking
 				}
 			}
-			
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
 		}
 	}
 }
@@ -964,9 +982,10 @@ munition_factory = {
 			NOT = { has_latent_trade_goods = coal }
 		}
 		FROM = {
-			mil_tech = 15
+			mil_tech = 10
 			OR = {
-				innovativeness = 15
+				innovativeness = 25
+				overlord = { innovativeness = 25 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			check_variable = {
@@ -1074,7 +1093,15 @@ munition_factory = {
 					trade_goods = munitions
 				}
 			}
-			
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
 		}
 	}
 }
@@ -1097,7 +1124,8 @@ wood_workshop = {
 		FROM = {
 			adm_tech = 10
 			OR = {
-				innovativeness = 5
+				innovativeness = 10
+				overlord = { innovativeness = 10 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1157,9 +1185,10 @@ leather_workshop = {
 		}
 		
 		FROM = {
-			adm_tech = 14
+			adm_tech = 10
 			OR = {
-				innovativeness = 7
+				innovativeness = 10
+				overlord = { innovativeness = 10 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1191,7 +1220,7 @@ leather_workshop = {
 	}	
 	
 	ai_will_do = {
-		factor = 700
+		factor = 1200
 	
 		modifier = {	
 			factor = 0
@@ -1225,7 +1254,8 @@ fur_workshop = {
 		FROM = {
 			dip_tech = 5
 			OR = {
-				innovativeness = 5
+				innovativeness = 15
+				overlord = { innovativeness = 15 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1257,7 +1287,7 @@ fur_workshop = {
 	}	
 	
 	ai_will_do = {
-		factor = 700
+		factor = 1400
 		
 		modifier = {	
 			factor = 0
@@ -1283,7 +1313,8 @@ Instruments_workshop = {
 		FROM = {
 			dip_tech = 12
 			OR = {
-				innovativeness = 15
+				innovativeness = 50
+				overlord = { innovativeness = 50 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1336,7 +1367,15 @@ Instruments_workshop = {
 					trade_goods = String_Instruments
 				}
 			}
-			
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
 		}
 
 	}
@@ -1363,7 +1402,8 @@ sculpture_workshop = {
 		FROM = {
 			adm_tech = 7
 			OR = {
-				innovativeness = 7
+				innovativeness = 15
+				overlord = { innovativeness = 15 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			
@@ -1438,7 +1478,8 @@ jewellery_workshop = {
 		FROM = {
 			dip_tech = 11
 			OR = {
-				innovativeness = 20
+				innovativeness = 30
+				overlord = { innovativeness = 30 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1503,9 +1544,13 @@ uniforms_workshop = {
 
 	build_trigger = {
 		FROM = {
-			mil_tech = 21
 			OR = {
-				innovativeness = 7
+				mil_tech = 15
+				has_country_flag = participated_in_german_civil_war_flag
+			}
+			OR = {
+				innovativeness = 25
+				overlord = { innovativeness = 25 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1575,7 +1620,8 @@ steam_factory = {
 			has_institution = enlightenment
 			
 			OR = {
-				innovativeness = 35
+				innovativeness = 80
+				overlord = { innovativeness = 80 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 		}
@@ -1603,7 +1649,8 @@ steam_engine_manu = {
 			adm_tech = 24
 			has_institution = enlightenment
 			OR = {
-				innovativeness = 30
+				innovativeness = 70
+				overlord = { innovativeness = 70 }
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			check_variable = {
@@ -1740,7 +1787,16 @@ steam_engine_manu = {
 			FROM = {
 				steam_engine = 3
 			}
-		}	
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
+		}
 	}
 }
 
@@ -1857,7 +1913,7 @@ spectacle_factory = {
 		FROM = {
 			dip_tech = 9
 			OR = {
-				innovativeness = 15
+				innovativeness = 30
 				NOT = { has_dlc = "Rule Britannia" }
 			}
 			check_variable = {
@@ -1966,6 +2022,15 @@ spectacle_factory = {
 			factor = 0
 			FROM = {
 				optics = 3
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
 			}
 		}
 
@@ -2092,6 +2157,15 @@ cigars_factory = {
 				cigars = 3
 			}
 		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
+			}
+		}
 
 	}
 }
@@ -2213,6 +2287,15 @@ chocolate_factory = {
 			factor = 0
 			FROM = {
 				chocolate = 3
+			}
+		}
+		modifier = {
+			factor = 0
+			ROOT = {
+				OR = {
+					has_urban_goods = yes
+					has_mining_goods = yes
+				}
 			}
 		}
 

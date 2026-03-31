@@ -1,0 +1,10 @@
+#rce_religion_mechanic_manichaeism_purity_religious_ideas_5_triggered_modifier = {
+#	potential = {
+#		rce_uses_religion_mechanic = { mechanic = manichaeism_purity }
+#	}
+#	trigger = {
+#		religious_ideas = 5
+#	}
+#
+#	rce_monthly_religion_mechanic_manichaeism_purity_change = 0.05
+#}

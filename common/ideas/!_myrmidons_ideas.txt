@@ -1,10 +1,10 @@
 myrmidons_ideas = {
 	start = {
 		infantry_power = 0.15
-		stability_cost_modifier = -0.2
+		same_religion_advisor_cost = -0.15
 	}
 	bonus = {
-		siege_ability = 0.25
+		siege_ability = 0.20
 	}
 	trigger = {
 		tag = MYM
@@ -22,22 +22,25 @@ myrmidons_ideas = {
 		development_cost = -0.1
 	}
 	ZZZ_hellenic_exceptionalism = {
-		idea_cost = -0.2
+		idea_cost = -0.05
+		technology_cost = -0.05
 	}
 	ZZZ_legacy_of_the_legions = {
-		army_tradition = 0.5
 		discipline = 0.05
 	}
 	ZZZ_mare_nostrum = {
-		heavy_ship_power = 0.2
+		naval_morale = 0.10
 	}
 	ZZZ_myrmidon_taxes = {
 		global_tax_modifier = 0.30
 	}
 	ZZZ_myrmidon_ranks = {
-		global_manpower_modifier = 0.33
+		drill_decay_modifier = -0.25
+		navy_tradition_decay = -0.01
+		sailor_maintenance_modifer = -0.25
 	}
 	ZZZ_legacy_of_alexander = {
-		province_warscore_cost = -0.25
+		province_warscore_cost = -0.10
+		vassal_manpower_bonus = 0.5
 	}
 }

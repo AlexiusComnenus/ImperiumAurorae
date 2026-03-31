@@ -19,15 +19,10 @@ PlsJustDie = {
 GoColonize = {
 	potential = {
 		OR = {
-			tag = KOS
-			tag = KCL
 			tag = JOM
 			tag = MYM
 			tag = Y11
-			tag = ICE
-			tag = KOI
 		}
-		always = no
 	}
 	trigger = {
 		ai = yes
@@ -41,7 +36,7 @@ GoColonize = {
 	native_uprising_chance = -1
 	native_assimilation = 0.25
 	may_explore = yes
-	global_tax_income = 72
+	global_tax_income = 36
 	colony_cost_modifier = -1
 }
 

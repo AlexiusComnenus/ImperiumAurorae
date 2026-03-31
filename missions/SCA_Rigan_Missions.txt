@@ -1311,9 +1311,21 @@ rig_develop_and_teuton_mission_slot = {
 					NOT = { liberty_desire = 10 }
 				}
 			}
-			baltic_region = {
-				country_or_non_sovereign_subject_holds = ROOT
-				type = all
+			if = {
+				limit = { alliance_with = PAP }
+				baltic_region = {
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						country_or_non_sovereign_subject_holds = PAP
+					}
+					type = all
+				}
+			}
+			else = {
+				baltic_region = {
+					country_or_non_sovereign_subject_holds = ROOT
+					type = all
+				}
 			}
 		}
 		effect = {

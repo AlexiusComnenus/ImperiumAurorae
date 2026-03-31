@@ -31,6 +31,7 @@ country_decisions = {
 			#		move_capital_effect = yes
 			#	}
 			#}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = FIN
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes
@@ -78,6 +79,7 @@ country_decisions = {
 			#		move_capital_effect = yes
 			#	}
 			#}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = TRA
 			on_change_tag_effect = yes
 			restore_country_name_effect = yes

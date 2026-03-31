@@ -6,9 +6,13 @@ ardabil_missions_1 = {
 		has_dlc = "King of Kings"
 	}
 	potential = {
-		culture_group = iranian
+		OR = {
+			culture_group = iranian
+			primary_culture = seleucian
+		}
 		NOT = { tag = PER }
 		NOT = { tag = ERS }
+		NOT = { tag = HIN }
 		has_dlc = "King of Kings"
 	}
 	has_country_shield = yes
@@ -63,9 +67,13 @@ ardabil_missions_2 = {
 		has_dlc = "King of Kings"
 	}
 	potential = {
-		culture_group = iranian
+		OR = {
+			culture_group = iranian
+			primary_culture = seleucian
+		}
 		NOT = { tag = PER }
 		NOT = { tag = ERS }
+		NOT = { tag = HIN }
 		has_dlc = "King of Kings"
 	}
 	has_country_shield = yes
@@ -82,19 +90,89 @@ ardabil_missions_2 = {
 				name = "thriving_arms_industry"
 				duration = 9125
 			}
-			tabriz_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+			if = {
+				limit = { tag = KRM }
+				isfahan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
+				farsistan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
 			}
-			shirvan_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
+			else_if = {
+				limit = { OR = { tag = AFG 	tag = KOZ } }
+				herat_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
+				kerman_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else_if = {
+				limit = { OR = { tag = ISF 	tag = YZD } }
+				iraq_e_ajam_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				farsistan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else_if = {
+				limit = { tag = FRS }
+				isfahan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				khuzestan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				tabriz_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				shirvan_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
 			}
 		}
 	}
@@ -103,18 +181,48 @@ ardabil_missions_2 = {
 		icon = mission_into_persia_1
 		required_missions = { arl_build_army_mission }
 		position = 2
-		provinces_to_highlight = {
-			area = tabriz_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		#provinces_to_highlight = {
+		#	area = tabriz_area
+		#	NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		#}
 		trigger = {
-			tabriz_area = {
-				type = all 
-				country_or_non_sovereign_subject_holds = ROOT
+			if = {
+				limit = { tag = KRM }
+				farsistan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { OR = { tag = AFG 	tag = KOZ } }
+				kerman_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { OR = { tag = ISF 	tag = YZD } }
+				farsistan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { tag = FRS }
+				khuzestan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else = {
+				tabriz_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
 			}
 		}
 		effect = {
-			416 = { add_core = ROOT }
+			add_prestige_or_monarch_power = { amount = 25 }
 			add_war_exhaustion = -2
 		}
 	}
@@ -165,9 +273,13 @@ ardabil_missions_3 = {
 		has_dlc = "King of Kings"
 	}
 	potential = {
-		culture_group = iranian
+		OR = {
+			culture_group = iranian
+			primary_culture = seleucian
+		}
 		NOT = { tag = PER }
 		NOT = { tag = ERS }
+		NOT = { tag = HIN }
 		has_dlc = "King of Kings"
 	}
 	has_country_shield = yes
@@ -201,9 +313,13 @@ ardabil_missions_4 = {
 		has_dlc = "King of Kings"
 	}
 	potential = {
-		culture_group = iranian
+		OR = {
+			culture_group = iranian
+			primary_culture = seleucian
+		}
 		NOT = { tag = PER }
 		NOT = { tag = ERS }
+		NOT = { tag = HIN }
 		has_dlc = "King of Kings"
 	}
 	has_country_shield = yes
@@ -212,14 +328,44 @@ ardabil_missions_4 = {
 		icon = mission_persianate_empire
 		required_missions = { arl_build_army_mission }
 		position = 2
-		provinces_to_highlight = {
-			area = shirvan_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		#provinces_to_highlight = {
+		#	area = shirvan_area
+		#	NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		#}
 		trigger = {
-			shirvan_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			if = {
+				limit = { tag = KRM }
+				isfahan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { OR = { tag = AFG 	tag = KOZ } }
+				herat_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { OR = { tag = ISF 	tag = YZD } }
+				iraq_e_ajam_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else_if = {
+				limit = { tag = FRS }
+				isfahan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+			else = {
+				shirvan_area = {
+					type = all 
+					country_or_non_sovereign_subject_holds = ROOT
+				}
 			}
 		}
 		effect = {
@@ -318,9 +464,13 @@ ardabil_missions_5 = {
 		has_dlc = "King of Kings"
 	}
 	potential = {
-		culture_group = iranian
+		OR = {
+			culture_group = iranian
+			primary_culture = seleucian
+		}
 		NOT = { tag = PER }
 		NOT = { tag = ERS }
+		NOT = { tag = HIN }
 		has_dlc = "King of Kings"
 	}
 	has_country_shield = yes
@@ -336,7 +486,7 @@ ardabil_missions_5 = {
 				num_of_qizilbash = 3
 			}
 			else = {
-				monthly_mil = 8
+				monthly_mil = 10
 			}
 		}
 		effect = {

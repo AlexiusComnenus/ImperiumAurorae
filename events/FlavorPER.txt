@@ -3684,6 +3684,7 @@ country_event = {
 		#set_country_flag = has_overriden_name_flag
 		#set_country_flag = has_overriden_color_flag
 		#hidden_effect = { set_country_flag = eranshahr_ideas }
+		hidden_effect = { ia_save_historical_relations_effect = yes }
 		change_tag = ERS
 		on_change_tag_effect = yes
 		country_event = {

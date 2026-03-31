@@ -1,0 +1,1757 @@
+catt_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+	}
+	has_country_shield = yes
+	koi_hire_levies = {
+        icon = gory_to_the_black_army
+        required_missions = {
+        koi_help_gaeldom
+        }
+        position = 2
+        trigger = {
+        	AND = {
+			estate_territory = {
+    			estate = estate_nobles
+   				territory = 60
+			}
+			has_estate_privilege = estate_nobles_levies
+			}
+        }
+        effect = {
+        	custom_tooltip = koi_prepare_reform_tt
+        	add_country_modifier = {
+        	name = koi_temp_levies
+        	duration = -1
+        	}
+        }
+	}
+	koi_infiltration_tactics = {
+		position = 6
+		icon = contracts_of_correspondence
+		required_missions = {
+			koi_clowder_reform
+		}
+		trigger = {
+		        	custom_trigger_tooltip = {
+	tooltip = koi_nobles_culled_check
+	has_country_flag = koi_has_reformed
+		}
+		if = {
+			limit = { ai = no }
+			OR = {
+				calc_true_if = {
+					all_country = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+						}
+					}
+					amount = 10
+				}
+				calc_true_if = {
+					all_country = {
+					has_spy_network_from = {
+						who = ROOT
+						value = 90
+						}
+					}
+					amount = 4
+				}
+			}
+			OR = {
+				ruler_has_personality = intricate_web_weaver_personality
+			custom_trigger_tooltip = {
+				employed_advisor = {
+					type = spymaster
+					skill = 4
+					}
+				tooltip = employing_level_4_spymaster
+				}
+			}
+	    }
+	    else = {
+	    	is_year = 1550 
+	    }
+	}
+        effect = {
+        	custom_tooltip = koi_infiltration_tactics_tt
+        	set_country_flag = koi_total_infiltration_enabled
+        }
+	}
+	koi_seaborn_felines = {
+		position = 7
+		icon = mission_rb_a_mighty_fleet
+		required_missions = {
+			koi_infiltration_tactics
+			koi_tail_end_of_the_world
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				OR = {
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						value = 40
+						has_shipyard_building_trigger = yes
+						has_dock_building_trigger = yes
+					}
+					AND = {
+						num_of_heavy_ship = 40
+						sailors = 40000
+					}
+				}
+			}
+			else_if = {
+				limit = { is_subject = yes }
+				4365 = {
+					has_shipyard_building_trigger = yes
+					has_dock_building_trigger = yes
+				}
+			}
+			else = { 
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 20
+					has_shipyard_building_trigger = yes
+					has_dock_building_trigger = yes
+				}
+			}
+		}
+        effect = {
+        	add_country_modifier = {
+				name = koi_slightly_less_of_a_pussycat
+				duration = -1
+        	}
+        	every_subject_country = {
+        		limit = { primary_culture = cat }
+        		add_country_modifier = {
+					name = koi_slightly_less_of_a_pussycat_subject
+					duration = -1
+        		}
+        	}
+        }
+	}
+	koi_spread_fairies = {
+		position = 8
+		icon = mission_norse_faith
+		required_missions = {
+			koi_seaborn_felines
+		}
+		trigger = {
+		if = {
+			limit = { ai = no }
+			any_country = {
+				religion = druidic_pagan
+				is_defender_of_faith_of_tier = 4 
+					}
+				}
+		else = {
+			any_country = {
+				religion = druidic_pagan
+				is_defender_of_faith_of_tier = 3
+					}
+				}
+	    	}
+        effect = {
+        	every_country = {
+        		limit = { religion = druidic_pagan }
+        		add_country_modifier = {
+        		name = koi_seelie_and_unseelie
+        		duration = -1
+        		}
+        	}
+        	every_country = {
+        		limit = {
+        			any_owned_province = { 
+        			has_province_modifier = last_king_in_residence
+        			religion = druidic_pagan
+        			}
+     			}
+        		add_country_modifier = {
+        				name = koi_keeper_of_the_last_king
+        				duration = -1
+        			}
+        		}
+        	}
+        }
+	koi_shared_prosperity = {
+		position = 9
+		icon = mission_rb_conquer_the_isles
+		required_missions = {
+			koi_spread_fairies
+		}
+		trigger = {
+			british_isles_region = { 
+				type = all
+				OR = {
+				AND = {
+				is_prosperous = yes
+				development = 25
+					}
+				religion = druidic_pagan
+				}
+			}
+		treasury = 15000
+	    }
+        effect = {
+        	add_treasury = -15000 
+        	british_isles_region = {
+				add_permanent_province_modifier = {
+					name = koi_prosperous_isles
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+catt_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+    has_country_shield = yes
+	potential = {
+        tag = KOI
+	}
+	koi_help_gaeldom = {
+        icon = mission_bridge_the_heresy
+        required_missions = {
+        
+        }
+        position = 1
+        provinces_to_highlight = {
+            province_id = 249
+        }
+        trigger = {
+        if = {
+        	limit = { ai = no }
+        	manpower = 4
+            alliance_with = HSC
+            249 = { owned_by = HSC }
+            HSC = { 
+                has_opinion = {  
+                    who = ROOT
+                    value = 190
+                        }
+                    }
+                }
+        else = {
+        manpower = 4
+            alliance_with = HSC
+            249 = { owned_by = HSC }
+            HSC = { 
+                has_opinion = {  
+                    who = ROOT
+                    value = 150
+                        }
+                    }
+                }
+            }
+        effect = {
+        	add_stability = 1
+            add_devotion = 10
+            ROOT = {
+            	add_manpower = -4
+            }
+            HSC = {
+            	add_manpower = 4
+            	add_country_modifier = {
+            	name = koi_cats_help_gaelic_soldiers
+            	duration = 3650
+            	}
+            }
+            add_country_modifier = {
+				name = koi_tree_of_life_safe
+				duration = 9125
+        	}
+        	if = { 
+        		limit = { ai = yes }
+        		add_stability = 3
+            	add_devotion = 60
+            	create_explorer = { tradition = 50 } 
+        	}
+	}
+}
+	koi_shiny_finds = {
+		position = 3
+		icon = mission_west_african_ports
+		required_missions = {
+			koi_purrpose
+		}
+        trigger = {
+        	custom_trigger_tooltip = {
+				tooltip = koi_met_high_americans
+				ROOT = { has_country_flag = koi_found_high_americans
+				}
+        	}
+      		AND = {
+      			1098 = {
+					has_discovered = ROOT
+				}
+				1306 = {
+					has_discovered = ROOT
+				}
+				1096 = {
+					has_discovered = ROOT
+				}
+				1097 = {
+					has_discovered = ROOT
+				}
+        	}
+        }
+        effect = {
+        	if = {
+        	limit = { ai = no }
+        	add_ruler_personality = expansionist_personality
+        	sao_tome_area = {
+        		add_permanent_claim = ROOT
+        	}
+        	1098 = {
+        		add_permanent_claim = ROOT
+        	}
+        	1096 = {
+        		add_permanent_claim = ROOT
+        	}
+        	south_atlantic_islands_area = {
+        		add_permanent_claim = ROOT
+        	}
+        	define_advisor = {
+    			type = colonial_governor
+    			name = "Cad e Fiain"
+    			skill = 2
+    			female = yes
+    			max_age = 20
+    			cost_multiplier = 0.25
+				}
+			}
+			else = {
+			1098 = { 
+				add_siberian_construction = 100
+			}
+			}
+    	}
+    }
+    koi_successful_landing = {
+		position = 4
+		icon = mission_launch_a_flagship
+		required_missions = {
+			koi_shiny_finds
+			koi_capital_goods
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1098
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+        trigger = {
+        	if = {
+        	limit = { ai = no }
+        	1098 = {
+        		owned_by = ROOT
+        		is_state = yes
+        		development = 15
+        	}
+        	AND = {
+        		num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+        		OR = {
+					area = sao_tome_area
+					province_id = 1096
+					area = south_atlantic_islands_area
+				}
+				value = 4
+				is_state = yes
+				}
+			}
+		}
+		else = {
+			1098 = {
+        		owned_by = ROOT
+        		is_state = yes
+        	}
+		}
+    }
+        effect {
+        	1098 = {
+        		center_of_trade = 1
+        		hidden_effect = {
+        		rename_capital = "The Scratching Post" 
+        		change_province_name = "Eilean Bheathaichean"
+        		}
+        	}
+        	mascarenes_area = {
+        		add_permanent_claim = ROOT
+        	}	
+        	1101 = {
+        		add_permanent_claim = ROOT
+        	}
+        	1999 = {
+        		add_permanent_claim = ROOT
+        	}
+        	1998 = {
+        		add_permanent_claim = ROOT
+        	}
+        	
+        	custom_tooltip = koi_successful_landing_tt
+        }
+
+    }
+    koi_tail_end_of_the_world = {
+		position = 6
+		icon = mission_rb_take_gibraltar
+		required_missions = {
+			koi_clowder_reform
+		}
+		trigger = {
+        	custom_trigger_tooltip = {
+	tooltip = koi_nobles_culled_check
+	has_country_flag = koi_has_reformed
+		}
+		if = {
+			limit = { ai = no }
+		mascarenes_area = {
+		type = all
+			owner = {
+				OR = {
+				tag = KOI
+				is_in_trade_league_with = KOI
+					}
+				}
+			}
+		}
+		has_discovered = 1411
+	    }
+        effect = {
+        australia_region = {
+        		add_permanent_claim = ROOT
+        	}
+        add_country_modifier = {
+        		name = koi_long_range_mastery_1
+        		duration = -1
+        		} 
+        	if = {
+        		limit = { ai = yes }
+        	random_province = {
+        			limit = { is_empty = yes
+        			region = australia_region
+        			 } 
+        			add_siberian_construction = 400 
+        			}
+        		}
+        	}
+    	}
+	koi_nonhuman_merchants = {
+		position = 7
+		icon = personal_diplomacy
+		required_missions = {
+			koi_tail_end_of_the_world
+		}
+		trigger = {
+		custom_trigger_tooltip = {
+		tooltip = koi_nonhuman_merchants_tt
+			check_variable = {
+				which = KoiUsedFawningButtons
+				value = 10
+				}
+			}
+			num_of_merchants = 10
+			OR = {
+				calc_true_if = {
+				all_known_country = { 
+					is_in_trade_league_with = ROOT 
+					}
+					amount = 16
+				}
+				calc_true_if = {
+				all_trade_node = { 
+						trade_share = {
+						country = KOI
+						share = 15
+						}
+					}
+				amount = 10 
+				}
+			}
+	    }
+        effect = {
+        custom_tooltip = koi_worsteventeverwritten_tt
+        	hidden_effect = {
+        		country_event = {
+        		id = catt.95
+        		}
+        	}
+        }
+	}
+	koi_east_or_west_focus = {
+		position = 8
+		icon = mission_sail_to_the_east_indies
+		required_missions = {
+			koi_nonhuman_merchants
+		}
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 5
+					OR = {
+					superregion = east_indies_superregion
+					superregion = india_superregion
+						}
+					province_has_center_of_trade_of_level = 1
+					is_owned_by_trade_company = yes 
+					is_territorial_core = ROOT
+					}
+				calc_true_if = {
+				all_known_country = { 
+					is_in_trade_league_with = ROOT 
+					capital_scope = {
+						OR = {
+							superregion = east_indies_superregion
+							superregion = india_superregion
+							}
+						}
+					}
+					amount = 5
+					}
+				AND = {
+					LFA = {
+						humiliated_by = ROOT
+						}
+					FRM = {
+				    	humiliated_by = ROOT
+						}
+					1361 = { #Malaca
+						trade_share = {
+							country = KOI
+							share = 25
+						}
+					}
+					1357 = { #Moluccas
+						trade_share = {
+							country = KOI
+							share = 25
+						}
+					}
+				}
+			}
+	    }
+        effect = {
+        	country_event = {
+        		id = catt.17
+        	}
+        	custom_tooltip = koi_east_or_west_tt
+        }
+	}
+	koi_glas_gaibhnenn_spread = {
+		position = 9
+		icon = mission_rb_conquer_wales
+		required_missions = {
+			koi_east_or_west_focus
+			koi_spread_fairies
+			koi_whiskers_of_nature
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 12
+				OR = {
+				trade_goods = livestock
+				trade_goods = leather
+				}
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+				province_has_current_tech_trade_trigger = yes
+				development = 35
+			}
+			OR = {
+				trading_bonus = {
+				trade_goods = livestock
+				value = yes
+				}
+				num_of_trading_bonuses = 5
+			}
+	    }
+        effect = {
+        	custom_tooltip = koi_whiskers_of_nature_tt
+        	tooltip = {
+        	    add_province_modifier = {
+        			name = koi_glas_gaibhnenn_blessing
+        			duration = -1
+        		}
+        	}
+        	hidden_effect = {
+        	every_owned_or_non_tributary_subject_province = { 
+        		limit = {
+        		OR = {
+				trade_goods = livestock
+				trade_goods = leather
+				}
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+				province_has_current_tech_trade_trigger = yes
+				development = 35
+				}
+        		add_province_modifier = {
+        			name = koi_glas_gaibhnenn_blessing
+        			duration = -1
+        			}
+        		}
+        	}
+        }
+	}
+}
+
+catt_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+	}
+	has_country_shield = yes
+	koi_purrpose = {
+		position = 2
+		icon = mission_plus_ultra
+		required_missions = {
+			koi_help_gaeldom
+			koi_anarchy_aversion
+		}
+        trigger = {
+        	expansion_ideas = 1
+        	num_of_light_ship = 15
+        	if = {
+        		limit = { ai = no }
+        	estate_loyalty = {
+        		estate = estate_nobles
+        		loyalty = 60
+        	}
+        	num_of_light_ship = 10
+        	4365 = {
+        		num_of_buildings_in_province = 3
+        		}
+        	}
+        	else = {
+        	4365 = {
+        		num_of_buildings_in_province = 1
+        		}
+        	}
+        }
+        effect = {
+        	country_event = {
+        		id = catt.3
+        	}
+			set_country_flag = koi_purrpose_mission_completed_flag
+        	if = {
+        		limit = { ai = yes }
+        		north_atlantic_region = {
+        		    discover_country = KOI
+        		}
+        		american_east_coast_region = {
+        			discover_country = KOI
+        		}
+        		west_african_sea_region = {
+        			discover_country = KOI
+        		}
+        		south_atlantic_region = {
+        			discover_country = KOI
+        		}
+				sao_tome_area = {
+					discover_country = KOI
+				}
+				1098 = {
+					discover_country = KOI
+				}
+				1096 = {
+					discover_country = KOI
+				}
+				south_atlantic_islands_area = {
+					discover_country = KOI
+					}
+				canada_region = {
+					discover_country = KOI
+				}	
+        	}
+        }
+	}
+	koi_capital_goods = {
+		position = 3
+		icon = mission_rb_colonise_spice_islands
+		required_missions = {
+			koi_purrpose
+		}
+		provinces_to_highlight = {
+            province_id = 4365
+        }
+        trigger = {
+        if = {
+        limit = { ai = no }
+        	estate_loyalty = {
+        		estate = estate_church
+        		loyalty = 60
+        		}
+        		4365 = {
+        		AND = {
+        		num_of_buildings_in_province = 4
+        		development = 25
+        		}
+        		NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+        		}
+        	}
+        else = {
+        	4365 = {
+        		AND = {
+        		num_of_buildings_in_province = 3
+        			}
+        		}
+        	}
+        }
+        effect {
+        	country_event = {
+        	id = catt.4
+        	}
+        	custom_tooltip = koi_capital_goods_tt
+        	hidden_effect = {
+        	4365 = {
+        	add_province_modifier = { 
+        			name = koi_homegrown_methods
+        			duration = -1
+        		}
+        	}
+        }
+        }
+	}	
+	koi_prepare_reform = {
+		position = 4
+		icon = mission_alliances
+		required_missions = {
+			koi_priests_and_cats
+			koi_capital_goods
+		}
+        trigger = {
+        if = {
+        limit = { ai = no }
+        	AND = { 
+        		estate_loyalty = {
+    				estate = estate_burghers
+    				loyalty = 60
+				}
+				num_of_estate_privileges = {
+					estate = estate_burghers
+					value = 5
+				}
+				num_of_estate_agendas_completed = {
+    				estate = estate_burghers
+    				value = 4
+				}
+        	}
+        	4365 = {
+				province_has_center_of_trade_of_level = 3
+				}
+        }
+        else = {
+        	    4365 = {
+				province_has_center_of_trade_of_level = 2
+				}
+        }
+			all_owned_province = { 
+				NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+			}
+				calc_true_if = {
+					all_province = {
+					religion = druidic_pagan
+					}
+					amount = 40
+       				desc = prepare_reform_prov_check
+					}
+				}
+        effect {
+        custom_tooltip = koi_prepare_reform_tt
+        	add_country_modifier = {
+            	name = koi_emergency_powers
+            	duration = -1
+        }
+        add_army_professionalism = 0.1 
+    }
+}
+    koi_clowder_reform = {
+		position = 5
+		icon = spa_reform_tercios
+		required_missions = {
+			koi_prepare_reform
+			koi_successful_landing
+			koi_human_teachings
+		}
+        trigger = {
+        if = {
+        limit = { ai = no }
+        NOT = {
+        	num_of_estate_privileges = {
+				estate = estate_nobles
+				value = 1
+			}
+		}
+			4365 = {
+				num_of_units_in_province = {
+    				amount = 10
+				}
+				NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+			}
+			}
+		else = {
+			4365 = {
+				NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+			}
+		}
+        }
+        effect {
+        	country_event = {
+        		id = catt.7
+        	}
+        	custom_tooltip = koi_clowder_reform_tt
+        }
+    }
+    koi_expand_the_outposts = {
+    	position = 6
+		icon = mission_invade_island
+		required_missions = {
+			koi_clowder_reform
+		}
+		trigger = {
+        	custom_trigger_tooltip = {
+	tooltip = koi_nobles_culled_check
+	has_country_flag = koi_has_reformed
+		}
+		if = {
+			limit = { ai = no }
+		num_of_owned_provinces_with = {
+			value = 3
+			is_island = yes 
+			development = 25
+			has_province_modifier = trade_post_modifier
+			culture = cat
+			province_has_current_tech_fort_trigger = yes
+			}
+		}
+		else = {
+			num_of_owned_provinces_with = {
+			value = 2
+			is_island = yes 
+			development = 25
+			has_province_modifier = trade_post_modifier
+			culture = cat
+			}
+		}
+	}
+        effect = {
+         if = {
+        	limit = {
+        	NOT = {
+				num_of_owned_provinces_with = {
+				value = 1
+				is_island = yes 
+				development = 25
+				has_province_modifier = trade_post_modifier
+				culture = cat
+				area = mascarenes_area
+					}
+        		}
+        	}
+        		custom_tooltip = koi_expand_mescarenes_pls_tt
+        }
+        	else = {
+        	random_owned_province = {
+        		limit = { 
+        			area = mascarenes_area 
+        			development = 25
+        			has_province_modifier = trade_post_modifier
+        		}
+        		center_of_trade = 1
+        		hidden_effect = {
+        		rename_capital = "The Catt Tunnel" 
+        		change_province_name = "Outpost of Catt"
+        		}
+        	}
+        }
+        hidden_effect = {
+        	india_superregion = { 
+        		limit = {
+        		has_port = yes 
+        		province_has_center_of_trade_of_level = 1
+        		}
+        	add_permanent_claim = ROOT
+        	}
+        	east_indies_superregion = {
+        		limit = {
+        		has_port = yes 
+        		province_has_center_of_trade_of_level = 1
+        		}
+        	add_permanent_claim = ROOT
+        		}
+        	}
+        custom_tooltip = koi_expand_the_outposts_tt
+        }
+	}
+	koi_a_move_to_australia = {
+    	position = 7
+		icon = colonize_australia
+		required_missions = {
+			koi_expand_the_outposts
+			koi_perfect_foraging
+			koi_tail_end_of_the_world
+		}
+		trigger = {
+		if = {
+			limit = { ai = no }
+			dip_tech = 11
+			is_ahead_of_time_in_technology = { tech = dip }
+			4365 = {
+			light_ships_in_province = 20
+			}
+		} 
+			OR = {
+				any_country = { 
+					capital_scope = {
+					region = australia_region
+					}
+					is_colonial_nation_of = ROOT
+					any_owned_province = { 
+						province_has_center_of_trade_of_level = 1
+					} 
+				}
+				ROOT = {
+					capital_scope = {
+					region = australia_region
+					}
+					num_of_owned_provinces_with = {
+						value = 10
+						region = australia_region
+						is_core = ROOT
+				}
+			}
+		}
+	}
+        effect = {
+        country_event = {
+			id = catt.16
+			}
+        if = {
+			limit = {
+				1090 = {
+					NOT = { owned_by = KOI }
+					NOT = { owned_by_subject_of = KOI }
+					}
+				}
+		custom_tooltip = koi_move_to_australia_plsgetsydney
+			}
+		custom_tooltip = koi_upgrade_long_range_1_to_2
+		hidden_effect = {
+			remove_country_modifier = koi_long_range_mastery_1
+			add_country_modifier = {
+				name = koi_long_range_mastery_2
+				duration = -1
+				}
+			}
+        }
+	}
+	koi_whiskers_of_nature = {
+    	position = 8
+		icon = mission_a_million_rice_fields
+		required_missions = {
+			koi_a_move_to_australia
+		}
+		trigger = {
+		if = {
+			limit = { ai = no }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 8
+				OR = {
+				has_terrain = grasslands
+				has_terrain = steppe
+				}
+				custom_trigger_tooltip = {
+				tooltip = has_no_manus_built_condensed
+				has_no_manufactory_trigger = yes
+				}
+				has_tax_building_trigger = yes
+				base_production = 10
+				base_tax = 6
+			}
+	    }
+	    else = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 8
+				OR = {
+				has_terrain = grasslands
+				has_terrain = steppe
+				}
+				has_tax_building_trigger = yes
+				base_production = 10
+				base_tax = 6
+			}
+	    }
+	}
+        effect = {
+        	custom_tooltip = koi_whiskers_of_nature_tt
+        	tooltip = {
+        	    add_province_modifier = {
+        			name = koi_groves_expanded
+        			duration = -1
+        		}
+        	}
+        	hidden_effect = {
+        	every_owned_or_non_tributary_subject_province = { 
+        		limit = {
+        			OR = {
+				has_terrain = grasslands
+				has_terrain = steppe
+				}
+				custom_trigger_tooltip = {
+				tooltip = has_no_manus_built_condensed
+				has_no_manufactory_trigger = yes
+				}
+				OR = {
+				has_building = temple
+				has_building = cathedral
+				}
+				base_production = 10
+				base_tax = 6
+        		}
+        		add_province_modifier = {
+        			name = koi_groves_expanded
+        			duration = -1
+        			}
+        		}
+        	} 
+        }
+	}
+	koi_farther_than_the_eye_can_see = {
+    	position = 9
+		icon = mission_explore_the_world
+		required_missions = {
+			koi_whiskers_of_nature
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = koi_has_done_circumnavigation
+				OR = {
+				has_country_flag = circumnavigation_first
+				has_country_flag = circumnavigation_done
+				}
+			}
+	    }
+        effect = {
+            northern_polynesia_area = {
+        		add_permanent_claim = ROOT
+			}
+        	custom_tooltip = koi_upgrade_long_range_2_to_3
+			hidden_effect = {
+			remove_country_modifier = koi_long_range_mastery_2
+			add_country_modifier = {
+				name = koi_long_range_mastery_3
+				duration = -1
+				}
+			}
+        }
+	}
+	koi_pawfect_society = {
+    	position = 10
+		icon = the_fountain_of_youth
+		required_missions = {
+			koi_lessons_of_failinis
+			koi_farther_than_the_eye_can_see
+			koi_shared_prosperity
+			koi_glas_gaibhnenn_spread
+		}
+		trigger = {
+				OR = {
+					in_golden_age = yes
+					has_had_golden_age = yes
+				}
+				OR = {
+					total_own_and_non_tributary_subject_development = 4000
+					NOT = { great_power_rank = 4 }
+				}
+	    }
+        effect = {
+        	custom_tooltip = ARB_golden_age_renewal_tt
+			hidden_effect = {
+			if = {
+				limit = { has_had_golden_age = yes } 
+				reset_golden_age = yes 
+			}
+			else_if = {
+				limit = { in_golden_age = yes } 
+				extend_golden_age = 600
+				}
+			}
+        }
+	}
+}
+
+catt_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+	}
+	has_country_shield = yes
+	koi_anarchy_aversion = {
+		position = 1
+		icon = mission_control_unrest
+		required_missions = {
+
+		}
+		provinces_to_highlight = {
+            province_id = 4365
+        }
+        trigger = {
+        if = {
+        	limit = { ai = no }
+        	4365 = {
+        	 	NOT = { devastation = 5
+        	 	has_province_modifier = chaos_and_panic_KOI_modifier }
+        	 	num_of_times_expanded_infrastructure = 1
+        	}
+        	stability = 3
+        	devotion = 80
+        }
+        else = {
+        	4365 = {
+        	 	NOT = { devastation = 5
+        	 	has_province_modifier = chaos_and_panic_KOI_modifier }
+        	 	development = 14
+        		}
+        	stability = 1
+        	devotion = 70
+        	}
+        }
+        effect {
+        	add_sailors = 500
+        	add_treasury = 200
+        	custom_tooltip = koi_anarchy_aversion_tt
+        }
+	}
+	koi_priests_and_cats = {
+		position = 3
+		icon = mission_aztec_religious_classes
+		required_missions = {
+			koi_purrpose
+		}
+        trigger = {
+        if = {
+        limit = { ai = no }
+        	HSC = {
+        		AND = {
+        			alliance_with = ROOT
+        			has_opinion_modifier = {
+						who = ROOT
+						modifier = sent_gift
+				}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = scornfully_insulted_enemy
+					}
+					trust = { who = ROOT value = 80 }
+        	}
+        }
+    }
+    else = {
+    	    HSC = {
+        		AND = {
+        			alliance_with = ROOT
+					trust = { who = ROOT value = 80 }
+        	}
+        }
+    }
+        has_reform = holy_groves_reform
+        if = {
+        limit = { ai = no }
+        4365 = { num_free_building_slots = 1 }
+        }
+    }
+        effect {
+        if = {
+        limit = { ai = no }
+        	4365 = {
+				add_building_construction = {
+					building = fort_15th
+					speed = 0.25
+					cost = 0
+        		}
+        	}
+        }
+        	add_country_modifier = {
+            	name = koi_gaelic_druid_help
+            	duration = 5475
+            }
+            add_country_modifier = {
+        		name = koi_druid_technology
+            	duration = 3650
+        	}
+            HSC = {
+                    	add_country_modifier = {
+            	name = koi_gaelic_druid_help
+            	duration = 5475
+            }
+             	add_historical_friend = ROOT
+    	}
+    	 	add_historical_friend = HSC
+    }
+}
+    koi_human_teachings = {
+		position = 4
+		icon = mission_scholar_officials
+		required_missions = {
+			koi_priests_and_cats
+		}
+        trigger = {
+        if = {
+        	limit = { ai = no }
+        	4365 = {
+        		NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+        		num_of_times_expanded_infrastructure = 2
+        		has_building = ramparts
+        	}
+        	num_of_owned_provinces_with = {
+				value = 3
+				has_owner_culture = yes
+				is_city = yes
+			}
+        }
+        else = {
+            4365 = {
+        		NOT = { has_province_modifier = chaos_and_panic_KOI_modifier }
+        	}
+        	num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 2
+				has_owner_culture = yes
+				is_city = yes
+			}	
+        }
+        }
+        effect {
+        if = {
+        	limit = { ai = no }
+        	hidden_effect = {
+        	4365 = {
+        	province_event = {
+        		id = catt.5
+        		days = 1825
+        		}
+        	}
+        		HSC = {
+        			country_event = {
+        				id = catt.6
+        				days = 1825
+        			}
+        		}
+        	}
+        }
+        else = {
+        	        	hidden_effect = {
+        	4365 = {
+        	province_event = {
+        		id = catt.5
+        		}
+        	}
+        		HSC = {
+        			country_event = {
+        				id = catt.6
+        			}
+        		}
+        	}
+        }
+        	custom_tooltip = koi_human_teachings_tt
+        	if = {
+        	limit = { NOT = { has_country_modifier = koi_druid_technology } }
+        	add_country_modifier = {
+        		name = koi_druid_technology
+            	duration = 5475
+        	}
+        }
+        else = {
+        	extend_country_modifier = {
+        		name = koi_druid_technology
+            	duration = 5475
+        		}
+        	}
+    	}
+	}
+	koi_perfect_foraging = {
+		position = 6
+		icon = mission_clear_the_delta
+		required_missions = {
+			koi_clowder_reform
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = koi_nobles_culled_check
+				has_country_flag = koi_has_reformed
+			}
+			mil_power = 400
+			if = {
+				limit = { ai = no }
+				OR = {
+					full_idea_group = quantity_ideas
+					full_idea_group = mercenary_ideas
+					#has_global_modifier_value = {
+					#	which = land_attrition
+					#	value = 0.3
+					#}
+					AND = {
+						num_of_mercenaries = 30
+						is_in_deficit = no
+					}
+				}
+			}
+			else = {
+				OR = { 
+					num_of_regiments_at_full_drill = 10
+					full_idea_group = quantity_ideas
+					full_idea_group = mercenary_ideas
+					full_idea_group = quality_ideas
+					full_idea_group = defensive_ideas
+					full_idea_group = offensive_ideas
+				}
+			}
+		}
+		
+        effect = {
+        	add_mil_power = -400
+        	add_country_modifier = {
+        		name = koi_foraging_in_enemy_land_perfected
+        		duration = 9125
+        	}
+        	HSC = {
+        	    add_country_modifier = {
+        		name = koi_foraging_in_enemy_land_perfected
+        		duration = 9125
+        		}
+        	}
+        	set_country_flag = koi_unlocked_mercs
+        	custom_tooltip = koi_perfect_foraging_tt
+        }
+	}
+	koi_develop_cat_armor = {
+		position = 7
+		icon = form_the_swiss_guard
+		required_missions = {
+			koi_perfect_foraging
+		}
+		trigger = {
+			mil_power = 500
+			monthly_mil = 13
+			if = {
+        		limit = { ai = no }
+			is_in_war = {
+				duration = 730
+			}
+        }
+    }
+        effect = {
+        	add_mil_power = -500
+        	add_country_modifier = {
+        		name = koi_has_cat_armor
+        		duration = -1
+        	}
+        	set_country_flag = koi_armor_equipped
+        	custom_tooltip = koi_develop_cat_armor_tt
+        }
+	}
+	koi_adapt_weaponry = {
+		position = 8
+		icon = mission_guns_of_urban
+		required_missions = {
+			koi_develop_cat_armor
+		}
+		trigger = {
+			OR = {
+				 army_professionalism = 0.60
+				 army_tradition = 75 
+			}
+			if = {
+				limit = { ai = no }
+				OR = {
+				AND = {
+					spy_ideas = 7
+					innovativeness_ideas = 7
+				}
+				has_global_modifier_value = {
+					which = infantry_power
+					value = 0.25
+				}
+				num_of_owned_provinces_with = {
+					value = 5
+					base_manpower = 10
+					has_building = university
+				}	
+			}
+		}
+    }
+        effect = {
+        	add_country_modifier = {
+        		name = koi_has_adapted_weaponry
+        		duration = -1
+        	}
+        hidden_effect = {
+            set_variable = {
+            which = KoiFailinisBattlesWon
+            value = 0
+            	}
+        	}
+        }
+	}
+	koi_lessons_of_failinis = {
+		position = 9
+		icon = per_sword_of_our_faith
+		required_missions = {
+			koi_adapt_weaponry
+		}
+		trigger = {
+		custom_trigger_tooltip = {
+			check_variable = {
+			which = KoiFailinisBattlesWon
+			value = 50
+			}
+			tooltip = KoiFailinisExplain
+		}
+			has_leader_with = {
+				total_pips = 21
+			}
+	    }
+        effect = {
+        	set_country_flag = KoiEnableFailinisTrials
+        	custom_tooltip = koi_lessons_of_failinis_tt
+        	hidden_effect = {
+        	set_variable = {
+   				 which = KoiFailinisBattlesWon
+    			 value = 0
+				}
+        	}
+        }
+	}
+}
+
+catt_missions_5_absolutism_branch = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+        }
+	has_country_shield = yes
+	koi_hand_out_harsh_punishments = {
+		position = 1
+		icon = french_revolution
+		required_missions = {
+
+		}
+		trigger = {
+			has_country_modifier = rce_religion_mechanic_sylvan_affinity_verpiancioji_summer_modifier 
+			has_reform = maintain_religious_head_reform
+			custom_trigger_tooltip = {
+				tooltip = antioch_survive_ivycurse_tt
+				OR = {
+					had_country_flag = {
+						flag = ivycurse_cured_selfish
+						days = 7300
+					}
+					had_global_flag	= {
+						flag = ivycurse_cured
+						days = 730
+					}
+					#has_country_flag = ivycurse_cured_selfish
+					#has_global_flag = ivycurse_cured
+					has_global_flag = ivycurse_disabled
+				}
+			}
+	    }
+        effect = {
+        	add_country_modifier = {
+        	name = koi_harsh_punishments
+        	duration = 7300
+        	}
+        	HSC = {
+        		add_country_modifier = {
+        		name = koi_harsh_punishments
+        		duration = 7300
+        		}
+        	}
+        }
+    }
+    koi_absolutist_or_rev_state = {
+		position = 2
+		icon = crush_the_revolution
+		required_missions = {
+			koi_hand_out_harsh_punishments
+		}
+		trigger = {
+			OR = {
+				AND = {
+				is_revolutionary = yes
+				num_of_revolutionary_guard = 25
+				}
+				AND = {
+				crown_land_share = 70
+				absolutism = 80
+				}
+			}
+	    }
+        effect = {
+        	if = {
+        		limit = { NOT = { is_revolutionary = yes } }
+        		add_country_modifier = {
+        		name = koi_abso_bonus
+        		duration = -1
+        		}
+        	}
+        	else = {
+        		add_country_modifier = {
+        		name = koi_revolutionary_zeal
+        		duration = -1
+        		}
+        	}
+        }
+    }
+}
+
+catt_missions_5_branching_feline_supremacy = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+        has_country_flag = koi_not_little_meowmeows
+	}
+	has_country_shield = yes
+	koi_humans_or_not_dummy = {
+		position = 6
+		icon = ven_scales_of_power
+		required_missions = {
+			koi_clowder_reform
+		}
+        trigger = {
+
+        }
+        effect = {
+
+        }
+	}
+	koi_swipe_at_humanity = {
+		position = 7
+		icon = mission_rb_unite_the_clans
+		required_missions = {
+			koi_humans_or_not_dummy
+		}
+		trigger = {
+			calc_true_if = {
+				all_known_country = { 
+					is_in_trade_league_with = ROOT 
+					primary_culture = cat
+				}
+				amount = 6
+			}
+			num_of_war_reparations = 7
+			colony = 3
+			total_development = 400
+			num_of_strong_trade_companies = 3
+        }
+        effect = {
+        	add_power_projection_mission = { 
+				amount = 25 
+				}
+        	add_country_modifier = {
+        	name = koi_sneaky_takeover
+        	duration = -1
+        	}
+        	set_country_flag = koi_feline_accomodations
+        	custom_tooltip = koi_swipe_at_humanity_tt
+        	country_event = {
+        			id = catt.12
+        			days = 1825
+        	}
+        }
+	}
+	koi_unite_felinekind = {
+		position = 8
+		icon = mission_conquer_bengal_tau
+		required_missions = {
+			koi_swipe_at_humanity
+		}
+		provinces_to_highlight = {
+			OR = {
+            province_id = 4679
+            province_id = 2039
+            province_id = 361
+            province_id = 2074
+            province_id = 2890
+            province_id = 1196
+            province_id = 425
+            province_id = 2108
+            province_id = 1175
+            province_id = 2183
+            province_id = 1212
+            province_id = 4806
+            province_id = 433
+            province_id = 2480
+            province_id = 428
+            }
+        }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = koi_all_felines_gathered				 	
+				check_variable = {
+					which = KoiFelinesEnlightened
+					value = 15
+				}
+			}
+			custom_trigger_tooltip = {
+			tooltip = koi_feline_province_check	
+			calc_true_if = {
+				4679 = { owns_or_subject_of = KOI }
+				2039 = { owns_or_subject_of = KOI }
+				361 = { owns_or_subject_of = KOI }
+				2074 = { owns_or_subject_of = KOI }
+				2890 = { owns_or_subject_of = KOI }
+				1196 = { owns_or_subject_of = KOI }
+				425 = { owns_or_subject_of = KOI }
+				2108 = { owns_or_subject_of = KOI }
+				1175 = { owns_or_subject_of = KOI }
+				2183 = { owns_or_subject_of = KOI }
+				1212 = { owns_or_subject_of = KOI }
+				4806 = { owns_or_subject_of = KOI }
+				433 = { owns_or_subject_of = KOI }
+				2480 = { owns_or_subject_of = KOI }
+				428 = { owns_or_subject_of = KOI }
+				amount = 5
+				}
+			}
+			NOT = { great_power_rank = 4 }
+		}
+		effect = {
+			custom_tooltip = koi_felinekind_unite_modifiers
+			hidden_effect = {
+				remove_country_modifier = koi_has_persian_cat
+				remove_country_modifier = koi_has_bobcat
+				remove_country_modifier = koi_has_asiatic_cheetah
+				remove_country_modifier = koi_has_abyssinian_cat
+				remove_country_modifier = koi_has_chinese_mountain_cat
+				remove_country_modifier = koi_has_caracal
+				remove_country_modifier = koi_has_egyptian_mau
+				remove_country_modifier = koi_has_fishing_cat
+				remove_country_modifier = koi_has_pallas_cat
+			}
+			add_country_modifier = {
+			name = koi_felinekind_united
+			duration = -1
+			}
+		}
+	}	
+}
+
+catt_missions_5_branching_human_cooperation = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+        tag = KOI
+        NOT = { has_country_flag = koi_not_little_meowmeows }
+	}
+	has_country_shield = yes
+	koi_humans_or_not = {
+		position = 6
+		icon = ven_scales_of_power
+		required_missions = {
+			koi_clowder_reform
+		}
+        trigger = {
+        	custom_trigger_tooltip = {
+				tooltip = koi_nobles_culled_check
+				has_country_flag = koi_has_reformed
+			}
+			OR = {
+				calc_true_if = {
+					all_known_country = { 
+						is_in_trade_league_with = ROOT 
+						NOT = { primary_culture = cat } 
+					}
+					amount = 3
+				}
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 15
+					has_owner_culture = no
+				}
+			}
+		}
+        effect = {
+        	country_event = { 
+				id = catt.11
+			}
+		}
+	}
+	koi_human_diplomats = {
+		position = 7
+		icon = mission_establish_the_prikazy
+		required_missions = {
+			koi_humans_or_not
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+			custom_trigger_tooltip = {
+				tooltip = koi_human_diplomats_tt
+				num_of_trusted_allies = 3 
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 180
+							}
+						}
+					amount = 3
+					}
+				}
+			}
+			else = {
+			num_of_trusted_allies = 1
+			}
+		}
+		effect = {
+			add_country_modifier = {
+			name = koi_has_human_diplomats
+			duration = -1
+			}
+		}
+	}
+	koi_paws_and_hands = {
+		position = 8
+		icon = mission_cocoa
+		required_missions = {
+			koi_human_diplomats
+		}
+		trigger = {
+			reform_level = 7
+			if = {
+				limit = { ai = no }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 50
+				NOT = { culture = cat }
+			}
+		}
+			splendor = 800
+			stability = 3
+			prestige = 80
+			all_owned_province = {
+				NOT = { nationalism = 5 }
+			}
+		}
+		effect = {
+			country_event = {
+        		id = catt.15
+        	}
+        	custom_tooltip = koi_enable_feast_of_goibniu
+        	set_country_flag = koi_feast_enabled
+		}
+	}
+}

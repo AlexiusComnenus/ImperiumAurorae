@@ -120,6 +120,10 @@ estate_holy_orders = {
 				who = TEM
 				value = 100
 			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
+			}
 		}
 		influence = 10
 	}
@@ -132,6 +136,10 @@ estate_holy_orders = {
 					value = 0
 				}
 			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
+			}
 		}
 		influence = -10
 	}
@@ -143,6 +151,10 @@ estate_holy_orders = {
 					who = TEM
 					value = -100
 				}
+			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
 			}
 		}
 		influence = -15
@@ -190,6 +202,10 @@ estate_holy_orders = {
 					value = 100
 				}
 			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
+			}
 		}
 		loyalty = 10
 	}
@@ -204,6 +220,10 @@ estate_holy_orders = {
 					}
 				}
 			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
+			}
 		}
 		loyalty = -5
 	}
@@ -217,6 +237,10 @@ estate_holy_orders = {
 						value = -100
 					}
 				}
+			}
+			OR = {
+				NOT = { religion = catholic }
+				NOT = { has_global_flag = pap_control_of_holy_orders_flag }
 			}
 		}
 		loyalty = -10

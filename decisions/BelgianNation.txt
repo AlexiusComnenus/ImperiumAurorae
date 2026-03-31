@@ -74,6 +74,7 @@ country_decisions = {
 			92 = { #Brussels
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = BEL
 			on_change_tag_effect = yes
 			restore_country_name = yes

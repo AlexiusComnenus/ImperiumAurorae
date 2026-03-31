@@ -1,0 +1,89 @@
+defined_text = {
+	name = RceGetReligionMechanicSylvanAffinityValue
+	random = no
+
+	text = {
+		trigger = {
+			rce_has_religion_mechanic_sylvan_affinity_value = { value = 0.001 }
+		}
+		localisation_key = "[This.rce_religion_mechanic_sylvan_affinity_value.GetValue]"
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = "0"
+	}
+}
+
+defined_text = {
+	name = RceGetReligionMechanicSylvanAffinityTotalMonthlyGainValue
+	random = no
+
+	text = {
+		trigger = {
+			check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_value value = 0.001 }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_total_monthly_gain_value_positive
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_value value = 0 } }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_total_monthly_gain_value_negative
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_total_monthly_gain_value_neutral
+	}
+}
+
+defined_text = {
+	name = RceGetReligionMechanicSylvanAffinityMonthlyGainValue
+	random = no
+
+	text = {
+		trigger = {
+			check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_value_base value = 0.001 }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_value_positive
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_value_base value = 0 } }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_value_negative
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_value_neutral
+	}
+}
+
+defined_text = {
+	name = RceGetReligionMechanicSylvanAffinityMonthlyGainModifierValue
+	random = no
+
+	text = {
+		trigger = {
+			check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_modifier_value_base value = 0.001 }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_modifier_value_positive
+	}
+	text = {
+		trigger = {
+			NOT = { check_variable = { which = rce_monthly_religion_mechanic_sylvan_affinity_modifier_value_base value = 0 } }
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_modifier_value_negative
+	}
+	text = {
+		trigger = {
+			always = yes
+		}
+		localisation_key = string_rce_get_religion_mechanic_sylvan_affinity_monthly_gain_modifier_value_neutral
+	}
+}

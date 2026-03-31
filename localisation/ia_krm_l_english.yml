@@ -43,11 +43,18 @@
  #Government
  diadochos_reform: "Diadochos"
  diadochos_reform_desc: "The Diadochi were the generals who claimed to be the proper successors to Alexander after his unfortunate death without an heir."
+ upgraded_diadochos_reform: "Seleucid Realm"
+ upgraded_diadochos_reform_desc: "With the reconquest of the Persian realm, Seleucia can truly stake its claim to Alexander's Empire. We shall carry on his legacy of genius military leadership!"
  diadochi_name_duchy: "Diadochos Administration"
  diadochi_name_kingdom: "Diadochos Satrapy"
  diadochi_name_empire: "Diadochos Empire"
  diadochia_chiliarch: "Chiliarch"
  diadochia_satrap: "Satrap"
+ SELEUCID_NAME: "Seleucia"
+ SELEUCID_NAME_ADJ: "Seleucid"
+
+ zunist_arbiter_reform: "The Final Arbiter"
+ zunist_arbiter_reform_desc: "Zoroaster and the mangled, self-aggrandizing systems of belief which crawled out of his heretical teachings have been a bane for the only source of light and warmth which matters: The Sun. Rituals where young men are brought to the highest peaks of Persia to make offerings to Zun have been shunned and nearly extinguished by the monotheist blasphemers. Let us re-appropriate their Great Fires into the temples of Zun, wipe the followers of Zoroaster off the face of the Earth, and through it all, Zun shall be the final arbiter of all our fates. §OEVERYTHING THE SUNLIGHT TOUCHES BELONGS TO US AND OUR FAITH!§!"
 
  #Modifiers
  

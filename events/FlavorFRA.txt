@@ -3309,7 +3309,7 @@ country_event = { #The Holy Lands of Jerusalem
 			}
 		}
 		vassalize = KOJ 
-		KOJ = { change_primary_culture = ROOT }
+		KOJ = { change_primary_culture = ROOT 	hidden_effect = { ia_change_culture_without_consequence_effect = yes } }
 		
 		add_country_modifier = {
 			name = fra_jerusalem_modifier

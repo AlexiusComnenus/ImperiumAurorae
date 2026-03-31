@@ -283,7 +283,7 @@ africa = {
 	
 }
 
-north_america = 
+north_america = {
 	#Greenland
 	1104 1105 1804
 	#The Carribean

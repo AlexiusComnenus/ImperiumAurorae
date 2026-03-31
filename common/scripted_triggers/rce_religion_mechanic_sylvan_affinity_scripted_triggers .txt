@@ -1,0 +1,72 @@
+rce_uses_religion_mechanic_sylvan_affinity = {
+	custom_trigger_tooltip = {
+		tooltip = rce_uses_religion_mechanic_sylvan_affinity_tt
+		OR = {
+			religion = druidic_pagan
+			religion = druidic_pagan_reformed
+		}
+	}
+}
+
+rce_not_uses_religion_mechanic_sylvan_affinity = {
+	custom_trigger_tooltip = {
+		tooltip = rce_not_uses_religion_mechanic_sylvan_affinity_tt
+		NOT = { rce_uses_religion_mechanic_sylvan_affinity = yes }
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_value = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = sylvan_affinity }
+		}
+		[[value]
+			check_variable = { which = rce_religion_mechanic_sylvan_affinity_value value = $value$ }
+		]
+		[[which]
+			check_variable = { which = rce_religion_mechanic_sylvan_affinity_value which = $which$ }
+		]
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_sergetoja_modifier_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_sergetoja_modifier_active
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_nukirpeja_modifier_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_nukirpeja_modifier_active
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_audeja_modifier = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_audeja_modifier_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_audeja_modifier_active
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_verpiancioji_modifier_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_verpiancioji_modifier_active
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_selected_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selected
+	}
+}
+
+rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity = {
+	custom_trigger_tooltip = {
+		tooltip = rce_has_religion_mechanic_sylvan_affinity_seasonal_affinity_$season$_tt
+		has_country_flag = rce_religion_mechanic_sylvan_affinity_seasonal_affinity_$season$
+	}
+}

@@ -9,6 +9,7 @@ base_tax = 4
 base_production = 3
 base_manpower = 3
 add_core = LOR
+add_core = LUX
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

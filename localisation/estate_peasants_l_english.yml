@@ -203,6 +203,7 @@
  #Obsolete
  estate_peasants_homeland_defense: "Defense of the Homeland"
  estate_peasants_homeland_defense_desc: "With recent invasions into our homelands, the Peasantry have requested increased autonomy so they can properly defend their lands."
+ peasants_defense_explanation_tt: "If we are the §YPrimary Defender§! in a §YDefensive War§!, we will gain an additional §G5% Morale§! and §G-50% reinforcement cost§!!.\nIf we are §Rlosing a war by more than 25% warscore§!, we will gain an additional §G+1 hostile attrition§!, §G+15% Defensiveness§!, and §G-10% infantry cost§!!"
  estate_peasants_serfdom: "Serfdom"
  estate_peasants_serfdom_desc: "In Feudal Societies most of the peasantry fell under Serfdom. A system where they were bound to land and worked there for their overlords."
  #UNIQUES

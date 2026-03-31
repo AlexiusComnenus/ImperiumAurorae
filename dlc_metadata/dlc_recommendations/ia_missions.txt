@@ -15,6 +15,7 @@ missions_yes_ACE = {
 				tag = Z21
 				tag = NRM
 				primary_culture = alsatian
+				primary_culture = franconian
 				tag = SAX
 				tag = HES
 				tag = FLA
@@ -24,6 +25,13 @@ missions_yes_ACE = {
 				tag = HAB
 				tag = NOV
 				tag = GRA
+				tag = FKN
+				tag = LOT
+				tag = SOI
+				tag = YOR
+				tag = PAP
+				tag = MYM
+                tag = KOI
 			}
 		}
 	}
@@ -41,11 +49,12 @@ missions_yes_ACE = {
 				tag = TRE
 				tag = FEO
 				culture_group = east_asian
-				culture_group = byzantine
+				AND = { culture_group = byzantine NOT = { primary_culture = turkish } }
 				tag = GOT
 				tag = VEN
 				tag = HUN
 				tag = GEO
+				tag = KRM
 			}
 		}
 	}

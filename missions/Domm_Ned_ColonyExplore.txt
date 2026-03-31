@@ -1308,7 +1308,7 @@ dom_ned_exploration_start_2_group = {
 		
 	dom_ned_brazilian_exp = {
 		icon = colonize_brazil
-		required_missions = { dom_ned_groot_desseyn }
+		required_missions = { dom_ned_settle_suriname }
 		#position = 13
 		completed_by = 1650.1.1
 		
@@ -1333,46 +1333,24 @@ dom_ned_exploration_start_2_group = {
 			#		is_city = yes
 			#	}
 			#}
-			OR = {
-			custom_trigger_tooltip = {
-				tooltip = ned_brazilconquer_tt
-				any_war_enemy_country = {
-					culture_group = iberian 
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						colonial_region = colonial_brazil
-						value = 5
-						controlled_by = root
-					}
-				}
-			}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					colonial_region = colonial_brazil
-					value = 10
-					is_city = yes
-				}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				colonial_region = colonial_brazil
+				value = 10
+				is_city = yes
 			}
 		}
 		
 		effect = {
-			#placeholder code
-			random_war_enemy_country = {
-				limit = { culture_group = iberian } 
-				random_owned_province = {
-					limit = { colonial_region = colonial_brazil }
-					cede_province = root
-				}
-			}
-			#
-			add_power_projection = {
-				type = ned_desseyn_powerp_brazil
-				amount = 10
-			}
+			
+			#add_power_projection = {
+			#	type = ned_desseyn_powerp_brazil
+			#	amount = 10
+			#}
 			add_country_modifier = {
 				name = "ned_brazil_mod"
 				duration = 5475
 			}
 			add_prestige_or_monarch_power = { amount = 25 }
-			clr_country_flag = dom_ned_desseyn_challenge
 		}
 	}	
 	
@@ -1719,24 +1697,16 @@ dom_ned_exploration_start_3_group = {
 						share = 33
 					}
 				}
-				#custom_trigger_tooltip = {
-				#	tooltip = EST_CRUSHED_NOMADIC_TRIBES
-				#	NOT = { has_country_flag = nomadic_tribes_estate_in_power
-				#	}
-				#}
-				#custom_trigger_tooltip
-				any_war_enemy_country = {
-					culture_group = iberian 
-					OR = {
-						angola_namibia_area = {
-							owned_by = this
-						}
-						west_africa_coast_area = {
-							owned_by = this
-						}
-						colonial_brazil = {
-							owned_by = this
-						}
+				492 = {
+					trade_share = {
+						country = ROOT
+						share = 33
+					}
+				}
+				2935 = {
+					trade_share = {
+						country = ROOT
+						share = 33
 					}
 				}
 			}
@@ -1748,15 +1718,8 @@ dom_ned_exploration_start_3_group = {
 	#		}
 		effect = {
 			add_country_modifier = {
-					name = ned_west_indies_charter
-					duration = 7300
-			}
-			define_admiral = {
-				name = "Piet Hein"
-				fire = 5
-				shock = 5
-				manuever = 5
-				siege = 5
+				name = ned_west_indies_charter
+				duration = -1
 			}
 		}
 	}
@@ -1769,12 +1732,9 @@ dom_ned_exploration_start_3_group = {
 		
 		provinces_to_highlight = {
 			OR = {
-				area = angola_namibia_area
-				area = west_africa_coast_area
-				AND = {
-					colonial_region = colonial_brazil
-					is_city = yes
-				}
+				province_id = 2258
+				province_id = 1139
+				province_id = 1167
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			has_discovered = ROOT
@@ -1784,16 +1744,15 @@ dom_ned_exploration_start_3_group = {
 			#OR = {
 				#custom_trigger_tooltip
 				any_war_enemy_country = {
-					culture_group = iberian 
 					OR = {
-						angola_namibia_area = {
-							owned_by = this
+						2258 = {
+							country_or_non_sovereign_subject_holds = PREV
 						}
-						west_africa_coast_area = {
-							owned_by = this
+						1139 = {
+							country_or_non_sovereign_subject_holds = PREV
 						}
-						colonial_brazil = {
-							owned_by = this
+						1167 = {
+							country_or_non_sovereign_subject_holds = PREV
 						}
 					}
 				}					
@@ -1804,30 +1763,15 @@ dom_ned_exploration_start_3_group = {
 		}
 		
 		effect = {
-			custom_tooltip = dom_ned_desseyn_success_tt
-			tooltip = {
-				#change_ruler_stat = {
-				#	stat = mil
-				#	amount = 1
-				#}
-				add_power_projection = {
-					type = ned_desseyn_powerp_brazil
-					amount = 10
-				}
-				add_power_projection = {
-					type = ned_desseyn_powerp_luanda
-					amount = 10
-				}
-				add_power_projection = {
-					type = ned_desseyn_powerp_gold_coast
-					amount = 10
-				}
+			define_admiral = {
+				name = "Piet Hein"
+				fire = 5
+				shock = 5
+				manuever = 6
+				siege = 4
+				trait = bestevaer_personality
 			}
-			custom_tooltip = zim_amongst_the_great_powers_tt
-			custom_tooltip = dom_ned_desseyn_failure_tt
-			hidden_effect = {
-				set_country_flag = dom_ned_desseyn_challenge
-			}
+			set_country_flag = piet_hein_begun_flag
 		}
 	}
 	
@@ -1838,9 +1782,7 @@ dom_ned_exploration_start_3_group = {
 		completed_by = 1623.1.1
 		
 		provinces_to_highlight = {
-			#area = angola_namibia_area
-			#NOT = { country_or_non_sovereign_subject_holds = ROOT }
-			#has_discovered = ROOT
+			province_id = 1167
 		}
 		
 		trigger = {
@@ -1851,8 +1793,15 @@ dom_ned_exploration_start_3_group = {
 			#	}
 			#	controlled_by = ROOT
 			#}
-			angola_namibia_area = {
-				controlled_by = ROOT
+			1167 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			has_country_flag = piet_hein_begun_flag
+			NOT = {
+				had_country_flag = {
+					flag = piet_hein_begun_flag
+					days = 1825
+				}
 			}
 		}
 		
@@ -1862,7 +1811,7 @@ dom_ned_exploration_start_3_group = {
 				type = ned_desseyn_powerp_luanda
 				amount = 10
 			}
-			clr_country_flag = dom_ned_desseyn_challenge
+			custom_tooltip = permanent_pp_tt
 		}
 	}
 }
@@ -2057,14 +2006,23 @@ dom_ned_exploration_start_4_group = {
 		completed_by = 1623.1.1
 		
 		provinces_to_highlight = {
-			area = west_africa_coast_area
+			OR = {
+				province_id = 2258
+				province_id = 1139
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			has_discovered = ROOT
 		}
 		
 		trigger = {
-			west_africa_coast_area = {
-				owned_by = ROOT
+			2258 = { country_or_non_sovereign_subject_holds = ROOT }
+			1139 = { country_or_non_sovereign_subject_holds = ROOT }
+			has_country_flag = piet_hein_begun_flag
+			NOT = {
+				had_country_flag = {
+					flag = piet_hein_begun_flag
+					days = 1825
+				}
 			}
 		}
 		
@@ -2074,7 +2032,7 @@ dom_ned_exploration_start_4_group = {
 				type = ned_desseyn_powerp_gold_coast
 				amount = 10
 			}
-			clr_country_flag = dom_ned_desseyn_challenge
+			custom_tooltip = permanent_pp_tt
 		}
 	}
 	

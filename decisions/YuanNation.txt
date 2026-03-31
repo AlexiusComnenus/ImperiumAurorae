@@ -89,34 +89,31 @@ country_decisions = {
 				NOT = {
 					any_province = {
 						culture = mongol
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						NOT = { country_or_subject_holds = ROOT }
 					}
 				}
 				NOT = {
 					any_province = {
 						culture = oirats
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						NOT = { country_or_subject_holds = ROOT }
 					}
 				}
 				NOT = {
 					any_province = {
 						culture = khalkha
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						NOT = { country_or_subject_holds = ROOT }
 					}
 				}
 				NOT = {
 					any_province = {
 						culture = chahar
-						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						NOT = { country_or_subject_holds = ROOT }
 					}
 				}
 			}
 			if = {
 				limit = {
 					has_dlc = "Mandate of Heaven"
-					any_country = {
-						is_emperor_of_china = yes
-					}
 				}
 				is_emperor_of_china = yes
 			}
@@ -147,6 +144,7 @@ country_decisions = {
 				change_province_name = Zhongdu
 				rename_capital = Zhongdu 
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = YUA
 			remove_non_electors_emperors_from_empire_effect = yes
 			china_superregion = {

@@ -603,6 +603,19 @@ murud_janjira = {
 	#can we build it?
 	build_trigger = {
 		#anyone
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	#what to do when it's built
@@ -618,11 +631,37 @@ murud_janjira = {
 	#can our country use it?
 	can_use_modifiers_trigger = {
 		#anyone
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
 		#anyone
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	#can our country keep it or is it destroyed when we get hold of it?
@@ -1360,6 +1399,12 @@ el_escorial = {
 			culture_group = iberian
 			culture = visigothic
 		}
+		owner = {
+			OR = {
+				culture_group = iberian
+				culture = visigothic
+			}
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -1375,13 +1420,31 @@ el_escorial = {
 
 	#can our country use it?
 	can_use_modifiers_trigger = {
-		culture_group = iberian
+		OR = {
+			culture_group = iberian
+			culture = visigothic
+		}
+		owner = {
+			OR = {
+				culture_group = iberian
+				culture = visigothic
+			}
+		}
 		province_is_or_accepts_culture = yes
 	}
 
 	#can our country upgrade it?
 	can_upgrade_trigger = {
-		culture_group = iberian
+		OR = {
+			culture_group = iberian
+			culture = visigothic
+		}
+		owner = {
+			OR = {
+				culture_group = iberian
+				culture = visigothic
+			}
+		}
 		province_is_or_accepts_culture = yes
 	}
 
@@ -2239,6 +2302,19 @@ mehrangarh_fort = {
 	type = monument
 
 	build_trigger = {
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	on_built = {
@@ -2248,9 +2324,35 @@ mehrangarh_fort = {
 	}
 
 	can_use_modifiers_trigger = {
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	can_upgrade_trigger = {
+		OR = {
+			has_owner_culture = yes
+			has_owner_accepted_culture = yes
+		}
+		owner = {
+			OR = {
+				culture_group = western_aryan
+				culture_group = dravidian
+				culture_group = eastern_aryan
+				culture_group = hindusthani
+				culture_group = eastern_hellenistic
+			}
+		}
 	}
 
 	keep_trigger = {

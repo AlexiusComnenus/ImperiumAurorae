@@ -74,11 +74,12 @@ nap_republican_rebels = {
 	# Country scope
 	can_negotiate_trigger = {
 		is_lesser_in_union = no
+		OR = { tag = NAP	was_tag = NAP }
 	}
 	
 	# Country scope
 	can_enforce_trigger = {
-		always = yes
+		OR = { tag = NAP	was_tag = NAP }
 	}
 	
 	# Localisation for their demands

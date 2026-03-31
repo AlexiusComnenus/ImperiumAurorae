@@ -1975,7 +1975,14 @@ novgorod_missions_column_5_branching_bogomil = {
 				duration = -1
 			}
 			
+			if = {
+				limit = { NOT = { government = republic } }
+				change_government = republic
+			}
 			add_government_reform = bogomilist_veche_republic
+			hidden_effect = {
+				capital_scope = { spawn_center_of_revolution = THIS }
+			}
 		}
 	}
 	
@@ -1995,7 +2002,10 @@ novgorod_missions_column_5_branching_bogomil = {
 				all_country = {
 					custom_trigger_tooltip  = {
 						tooltip = is_ruled_by_peasants_tt
-						has_government_attribute = is_peasants_republic
+						OR = { 
+							has_government_attribute = is_peasants_republic
+							is_revolutionary = yes
+						}
 					}
 				}
 				amount = 20

@@ -57,6 +57,7 @@ country_decisions = {
 			senior_union_with = HUN
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = PLC
 			on_change_tag_effect = yes
 			inherit = HUN
@@ -205,6 +206,7 @@ country_decisions = {
 			senior_union_with = POL
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = PLC
 			on_change_tag_effect = yes
 			if = { 
@@ -368,6 +370,7 @@ country_decisions = {
 			MAZ = { exists = no }
 		}
 		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = PLC
 			on_change_tag_effect = yes
 			if = { 

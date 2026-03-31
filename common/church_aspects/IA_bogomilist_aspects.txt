@@ -75,7 +75,7 @@ bog_full_liberty_to_elect = {
 		idea_cost = -0.05
 	}
 	ai_will_do = {
-		factor = 1
+		factor = 100
 		modifier = {
 			factor = 2
 			is_at_war = no
@@ -83,6 +83,11 @@ bog_full_liberty_to_elect = {
 		modifier = {
 			factor = 0
 			is_at_war = yes
+			num_of_aspects = 3
+		}
+		modifier = {
+			factor = 0
+			average_autonomy_above_min = 15
 		}
 	}
 }
@@ -103,7 +108,7 @@ bog_lift_taxation = {
 		development_cost = -0.10
 	}
 	ai_will_do = {
-		factor = 15
+		factor = 100
 		modifier = {
 			factor = 5
 			is_at_war = no
@@ -111,6 +116,11 @@ bog_lift_taxation = {
 		modifier = {
 			factor = 0
 			is_at_war = yes
+			num_of_aspects = 3
+		}
+		modifier = {
+			factor = 0
+			NOT = { current_income_balance = 1 }
 		}
 	}
 }
@@ -131,7 +141,7 @@ bog_reject_material_temptations = {
 		country_admin_power = 1
 	}
 	ai_will_do = {
-		factor = 15
+		factor = 100
 		modifier = {
 			factor = 5
 			is_at_war = no
@@ -139,6 +149,11 @@ bog_reject_material_temptations = {
 		modifier = {
 			factor = 0
 			is_at_war = yes
+			num_of_aspects = 3
+		}
+		modifier = {
+			factor = 0
+			NOT = { current_income_balance = 1 }
 		}
 	}
 }
@@ -150,9 +165,12 @@ bog_eternal_struggle = {
 		hidden_effect = {
 			bogomilism_clear_old_aspects_effect = yes
 			add_war_exhaustion = 2
-			add_country_modifier = {
-				name = bog_eternal_struggle_modifier
-				duration = -1
+			if = {
+				limit = { ai = no }
+				add_country_modifier = {
+					name = bog_eternal_struggle_modifier
+					duration = -1
+				}
 			}
 		}
 	}
@@ -164,15 +182,18 @@ bog_eternal_struggle = {
 		modifier = {
 			factor = 0
 			is_at_war = yes
-			OR = {
-				war_score = 50
-				manpower_percentage = 0.9
-			}
+			manpower_percentage = 0.5
+			NOT = { has_church_aspect = bog_eternal_struggle }
 		}
 		modifier = {
 			factor = 0
-			manpower_percentage = 0.50
+			manpower_percentage = 0.8
 			is_at_war = no
+		}
+		modifier = {
+			factor = 0
+			is_at_war = no
+			NOT = { has_church_aspect = bog_eternal_struggle }
 		}
 	}
 }

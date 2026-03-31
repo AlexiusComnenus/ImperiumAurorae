@@ -3,10 +3,12 @@ fervor_trade = {
 	potential = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		global_trade_power = 0.1
@@ -40,6 +42,7 @@ fervor_trade = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				has_country_flag = ned_buff_fervor_actions
 			}
 		}
@@ -51,10 +54,12 @@ fervor_war = {
 	potential = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		land_morale = 0.1
@@ -75,6 +80,7 @@ fervor_war = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				has_country_flag = ned_buff_fervor_actions
 			}
 		}	
@@ -86,10 +92,12 @@ fervor_stability = {
 	potential = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		development_cost = -0.1
@@ -116,6 +124,7 @@ fervor_stability = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				has_country_flag = ned_buff_fervor_actions
 			}
 		}
@@ -127,10 +136,12 @@ fervor_diplomacy = {
 	potential = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { NOT = { has_country_flag = ned_buff_fervor_actions } }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		diplomatic_reputation = 2
@@ -152,6 +163,7 @@ fervor_diplomacy = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				has_country_flag = ned_buff_fervor_actions
 			}
 		}
@@ -163,10 +175,12 @@ fervor_trade_buffed = {
 	potential = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		global_trade_power = 0.15
@@ -200,6 +214,7 @@ fervor_trade_buffed = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				NOT = { has_country_flag = ned_buff_fervor_actions }
 			}
 		}	
@@ -211,10 +226,12 @@ fervor_war_buffed = {
 	potential = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		land_morale = 0.15
@@ -235,6 +252,7 @@ fervor_war_buffed = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				NOT = { has_country_flag = ned_buff_fervor_actions }
 			}
 		}		
@@ -246,10 +264,12 @@ fervor_stability_buffed = {
 	potential = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		development_cost = -0.15
@@ -276,6 +296,7 @@ fervor_stability_buffed = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				NOT = { has_country_flag = ned_buff_fervor_actions }
 			}
 		}	
@@ -287,10 +308,12 @@ fervor_diplomacy_buffed = {
 	potential = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	trigger = {
 		FROM = { has_country_flag = ned_buff_fervor_actions }
 		FROM = { NOT = { religion = lollard } }
+		FROM = { NOT = { religion = abolitionist } }
 	}
 	effect = {
 		diplomatic_reputation = 3
@@ -312,6 +335,7 @@ fervor_diplomacy_buffed = {
 			factor = 0
 			OR = { 
 				religion = lollard
+				religion = abolitionist
 				NOT = { has_country_flag = ned_buff_fervor_actions }
 			}
 		}	
@@ -367,6 +391,7 @@ fervor_mhadi_press_assault = {
 	effect = {
 		global_attacker_dice_roll_bonus = 1	
 		assault_fort_ability = 0.5
+		artillery_levels_available_vs_fort = 1
 	}
 	ai_will_do = {
 		factor = 1
@@ -398,6 +423,7 @@ fervor_mhadi_fervent_defence = {
 	effect = {
 		global_defender_dice_roll_bonus = 1
 		hostile_attrition = 1
+		war_exhaustion = -0.10
 	}
 	ai_will_do = {
 		factor = 1
@@ -430,6 +456,8 @@ fervor_mhadi_despoilation = {
 		global_tax_modifier = 0.25
 		country_military_power = 1
 		global_monthly_devastation = 0.3
+		loot_amount = 1
+		available_province_loot = 1
 	}
 	ai_will_do = {
 		factor = 1
@@ -445,6 +473,138 @@ fervor_mhadi_despoilation = {
 		modifier = {
 			factor = 0
 			NOT = { religion = lollard }
+		}
+	}	
+}
+
+fervor_abolitionist_armor_of_disbelief = {
+	cost = 4
+	potential = {
+		FROM = { religion = abolitionist }
+	}
+	trigger = {
+		FROM = { religion = abolitionist }
+	}
+	effect = {
+		shock_damage_received = -0.10
+		fire_damage_received = -0.10
+		morale_damage_received = -0.10
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 100
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 20 }
+			has_active_fervor = no
+		}		
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}	
+		modifier = {
+			factor = 0
+			NOT = { religion = abolitionist }
+		}
+	}	
+}
+
+fervor_abolitionist_sin_and_materialism = {
+	cost = 4
+	potential = {
+		FROM = { religion = abolitionist }
+	}
+	trigger = {
+		FROM = { religion = abolitionist }
+	}
+	effect = {
+		development_cost = -0.1
+		manpower_recovery_speed = 0.33
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			is_at_war = yes
+			NOT = { manpower_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { fervor = 20 }
+			has_active_fervor = no
+		}		
+		modifier = {
+			factor = 10
+			is_at_war = no
+			OR = { 
+				religious_unity = 0.9
+				NOT = { manpower_percentage = 0.2 }
+			}
+		}	
+		modifier = {
+			factor = 0
+			NOT = { religion = abolitionist }
+		}
+	}	
+}
+
+fervor_abolitionist_burn_holy_books = {
+	cost = 4
+	potential = {
+		FROM = { religion = abolitionist }
+	}
+	trigger = {
+		FROM = { religion = abolitionist }
+	}
+	effect = {
+		missionaries = 1
+		global_missionary_strength = 0.03
+		country_admin_power = 1
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = { fervor = 20 }
+			has_active_fervor = no
+		}		
+		modifier = {
+			factor = 10
+			is_at_war = no
+			NOT = { religious_unity = 0.9 }
+		}	
+		modifier = {
+			factor = 0
+			NOT = { religion = abolitionist }
+		}
+	}	
+}
+
+fervor_abolitionist_secular_education = {
+	cost = 4
+	potential = {
+		FROM = { religion = abolitionist }
+	}
+	trigger = {
+		FROM = { religion = abolitionist }
+	}
+	effect = {
+		technology_cost = -0.1
+		free_policy = 1
+	}
+	ai_will_do = {
+		factor = 2.5
+		modifier = {
+			factor = 0
+			NOT = { fervor = 20 }
+			has_active_fervor = no
+		}
+		modifier = {
+			factor = 0
+			NOT = { religion = abolitionist }
 		}
 	}	
 }

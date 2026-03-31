@@ -8,6 +8,7 @@ trade_goods = fish
 base_tax = 1
 base_production = 1
 base_manpower = 1
+center_of_trade = 1
 add_core = HDA
 discovered_by = north_american
 native_size = 25

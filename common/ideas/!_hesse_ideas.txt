@@ -1,0 +1,132 @@
+HES_ideas = {
+	start = {
+		discipline = 0.05
+		army_tradition = 0.5
+	}
+	bonus = {
+		monthly_reform_progress = 0.20
+	}
+	trigger = {
+		tag = HES
+		NOT = {
+			OR = {
+				has_country_flag = hes_allow_mil_idea_swap
+				has_country_flag = hes_allow_german_subject_integration
+			}
+		}
+	}
+	
+	free = yes
+	
+	hes_sons_of_konrad = {
+		diplomatic_reputation = 1
+	}
+	hes_shoulder_to_shoulder = {
+		land_morale = 0.10
+	}
+	hes_the_werhpflicht = {
+		land_forcelimit_modifier = 0.10
+		manpower_recovery_speed = 0.05
+	}
+	hes_marburg_university = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+	}
+	hes_new_branched_administration = {
+		centralize_state_cost = -0.1
+		governing_capacity_modifier = 0.1 
+	}
+	hes_urbanize_the_rhine = {
+		development_cost_in_primary_culture = -0.10
+	}	
+	hes_dedicated_military_industry = {
+		global_regiment_cost = -0.05
+		production_efficiency = 0.10
+	}
+}
+
+HES_dip_ideas = {
+	start = {
+		discipline = 0.05
+		army_tradition = 0.5
+	}
+	bonus = {
+		monthly_reform_progress = 0.25
+	}
+	trigger = {
+		tag = HES
+		has_country_flag = hes_allow_german_subject_integration
+	}
+	
+	free = yes
+	
+	hes_sons_of_konrad_dip_upgrade = {
+		diplomatic_reputation = 1
+		improve_relation_modifier = 0.2
+	}
+	hes_shoulder_to_shoulder = {
+		land_morale = 0.10
+	}
+	hes_the_werhpflicht = {
+		land_forcelimit_modifier = 0.10
+		manpower_recovery_speed = 0.05
+	}
+	hes_marburg_university = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+	}
+	hes_new_branched_administration = {
+		centralize_state_cost = -0.1
+		governing_capacity_modifier = 0.1 
+	}
+	hes_urbanize_the_rhine = {
+		development_cost_in_primary_culture = -0.10
+	}	
+	hes_dedicated_military_industry = {
+		global_regiment_cost = -0.05
+		production_efficiency = 0.10
+	}
+}
+
+HES_mil_ideas = {
+	start = {
+		discipline = 0.05
+		army_tradition = 0.5
+	}
+	bonus = {
+		monthly_reform_progress = 0.25
+	}
+	trigger = {
+		tag = HES
+		has_country_flag = hes_allow_mil_idea_swap
+	}
+	
+	free = yes
+	
+	hes_sons_of_konrad_mil_upgrade = {
+		diplomatic_reputation = 1
+		prestige = 0.5
+	}
+	hes_shoulder_to_shoulder = {
+		land_morale = 0.10
+	}
+	hes_the_werhpflicht = {
+		land_forcelimit_modifier = 0.10
+		manpower_recovery_speed = 0.05
+	}
+	hes_marburg_university = {
+		technology_cost = -0.05
+		idea_cost = -0.05
+	}
+	hes_new_branched_administration = {
+		centralize_state_cost = -0.1
+		governing_capacity_modifier = 0.1 
+	}
+	hes_urbanize_the_rhine = {
+		development_cost_in_primary_culture = -0.10
+	}	
+	hes_dedicated_military_industry = {
+		global_regiment_cost = -0.05
+		production_efficiency = 0.10
+	}
+}

@@ -1,0 +1,57 @@
+rce_on_monthly_tick_triggered_modifier = {
+	hidden = yes
+
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		OR = {
+			NOT = { is_month = 1 }
+			AND = {
+				is_month = 2
+				NOT = { is_month = 3 }
+			}
+			AND = {
+				is_month = 4
+				NOT = { is_month = 5 }
+			}
+			AND = {
+				is_month = 6
+				NOT = { is_month = 7 }
+			}
+			AND = {
+				is_month = 8
+				NOT = { is_month = 9 }
+			}
+			AND = {
+				is_month = 10
+				NOT = { is_month = 11 }
+			}
+		}
+	}
+
+	on_activation = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = rce_on_monthly_tick_triggered_modifier_initial_setup }
+			}
+			rce_on_monthly_tick_effect = yes
+		}
+		else = {
+			clr_global_flag = rce_on_monthly_tick_triggered_modifier_initial_setup
+		}
+	}
+
+	on_deactivation = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = rce_on_monthly_tick_triggered_modifier_initial_setup }
+			}
+			rce_on_monthly_tick_effect = yes
+		}
+		else = {
+			clr_global_flag = rce_on_monthly_tick_triggered_modifier_initial_setup
+		}
+	}
+}

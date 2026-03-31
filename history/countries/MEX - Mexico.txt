@@ -1,6 +1,6 @@
 government = republic
 government_rank = 1
-technology_group = western
+technology_group = high_american
 religion = catholic
 primary_culture = mexican
 capital = 852

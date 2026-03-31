@@ -5,6 +5,7 @@ trade_goods = unknown
 base_tax = 1
 base_production = 1
 base_manpower = 1
+center_of_trade = 1
 discovered_by = AZT
 discovered_by = MAY
 discovered_by = ZAP

@@ -75,6 +75,36 @@ lot_carolingian_revenge_modifier = {
 	max_absolutism = 10	
 }
 
+durandal_modifier = {
+	infantry_shock = 0.10
+	prestige = 0.5
+}
+
+lot_order_of_paladins = {
+	has_musketeer = yes
+	allowed_musketeer_fraction = 0.1
+}
+
+lot_paladins_resurgent = {
+	allowed_musketeer_fraction = 0.1
+}
+
+lot_order_of_paladins_modifiers = {
+	is_musketeer_modifier = yes
+	fire_damage = -0.15
+	morale_damage_received = -0.1
+	infantry_shock = 0.5
+	global_regiment_cost = 0.5
+	reinforce_speed = -0.5
+	land_attrition = -0.5
+	drill_decay_modifier = -0.25
+}
+
+lot_carolingian_paladins_returned = {
+	morale_damage = 0.15
+	is_musketeer_modifier = yes
+}
+
 #################
 #GOLDEN REPUBLIC#
 #################

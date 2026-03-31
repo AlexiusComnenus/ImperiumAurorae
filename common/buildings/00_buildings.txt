@@ -118,7 +118,7 @@ marketplace = {
 
 ##Roads stuff
 canal_system = {
-	cost = 170
+	cost = 160
 	time = 12
 	
 	build_trigger = {
@@ -142,12 +142,16 @@ canal_system = {
 			type = production
 			value = 1
 		}
+		province_event = { id = capital_autonomy.2 }
 	}
 	
 	modifier = {
 		trade_value_modifier = 0.1
 		local_development_cost = -0.05
 		allowed_num_of_buildings = 1
+		min_local_autonomy = -2.5
+		local_friendly_movement_speed = 0.1
+		local_hostile_movement_speed = 0.075
 	}
 	
 	ai_will_do = {
@@ -180,7 +184,7 @@ canal_system = {
 }
 
 road_network = {
-	cost = 90
+	cost = 80
 	time = 12
 	
 	build_trigger = {
@@ -208,12 +212,15 @@ road_network = {
 			type = production
 			value = 1
 		}
+		province_event = { id = capital_autonomy.2 }
 	}
 	
 	modifier = {
 		local_friendly_movement_speed = 0.2
+		local_hostile_movement_speed = 0.15
 		province_trade_power_modifier = 0.2
 		allowed_num_of_buildings = 1
+		min_local_autonomy = -2.5
 	}
 	 
 	ai_will_do = {
@@ -361,6 +368,7 @@ temple = {
 	time = 12
 	modifier = {
 		local_tax_modifier = 0.4
+		local_missionary_strength = 0.01
 	}
 	build_trigger = {
 		if = {
@@ -1016,6 +1024,21 @@ fort_15th = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = { 
+				owner = { technology_group = chinese }
+				OR = {
+					region = south_china_region
+					region = xinan_region
+					region = north_china_region
+				}
+				NOT = { has_province_modifier = chinese_fortresses_modifier } 
+			}
+			add_permanent_province_modifier = {
+				name = chinese_fortresses_modifier
+				duration = -1
+			}
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings made obsolete!
@@ -1056,6 +1079,12 @@ fort_15th = {
 			}
 			remove_province_modifier = ned_low_countries_fort_buff_buffed
 		}
+		if = {
+			limit = {
+				has_province_modifier = chinese_fortresses_modifier
+			}
+			remove_province_modifier = chinese_fortresses_modifier
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings destroyed!
@@ -1080,6 +1109,7 @@ coastal_defence = {
 	modifier = {
 		blockade_force_required = 0.5
 		hostile_disembark_speed = 1.0
+		allowed_num_of_buildings = 1
 		block_slave_raid = yes
 	}
 
@@ -1102,11 +1132,13 @@ courthouse = {
 	modifier = {
 		local_state_maintenance_modifier = -0.25
 		local_autonomy = -0.1
-		local_governing_cost = -0.25
+		local_governing_cost = -0.10
+		local_governing_cost_increase = -2.5
 		allowed_num_of_buildings = 1
-		min_local_autonomy = -5
+		min_local_autonomy = -7.5
 	}
 	build_trigger = {
+		development = 15
 		if = {
 			limit = { FROM = { ai = yes } }
 			FROM = { NOT = { num_of_loans = 4 } }
@@ -1302,7 +1334,9 @@ regimental_camp = {
 	cost = 100
 	time = 12
 	modifier = {
-		land_forcelimit = 0.25
+		land_forcelimit = 0.20
+		local_regiment_cost = -0.05
+		regiment_recruit_speed = -0.1
 	}
 
 #	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -1503,6 +1537,21 @@ fort_16th = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = { 
+				owner = { technology_group = chinese }
+				OR = {
+					region = south_china_region
+					region = xinan_region
+					region = north_china_region
+				}
+				NOT = { has_province_modifier = chinese_fortresses_modifier } 
+			}
+			add_permanent_province_modifier = {
+				name = chinese_fortresses_modifier
+				duration = -1
+			}
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings made obsolete!
@@ -1531,6 +1580,12 @@ fort_16th = {
 			}
 			remove_province_modifier = ned_low_countries_fort_buff_buffed
 		}
+		if = {
+			limit = {
+				has_province_modifier = chinese_fortresses_modifier
+			}
+			remove_province_modifier = chinese_fortresses_modifier
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings destroyed!
@@ -1558,11 +1613,13 @@ naval_battery = {
 		blockade_force_required = 1.0
 		hostile_disembark_speed = 2.0
 		hostile_fleet_attrition = 5
+		allowed_num_of_buildings = 1
 		block_slave_raid = yes
+		#local_own_coast_naval_combat_bonus = 1
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 100
 	}
 }
 
@@ -1576,7 +1633,7 @@ cathedral = {
 	time = 12
 	modifier = {
 		local_missionary_strength = 0.03
-		local_tax_modifier = 0.6
+		local_tax_modifier = 0.8
 	}
 	on_built = {
 		on_built_tax_building_effect = yes
@@ -1742,7 +1799,7 @@ university = {
 
 	ai_will_do = {
 		# Hard coded AI sees no value in this above the 0.01 ducats base. Let's multiply that
-		factor = 12 # Base of 0.01 ducats per MONTH
+		factor = 1000 # Base of 0.01 ducats per MONTH
 		modifier = {
 			factor = 10
 			development = 16
@@ -2120,6 +2177,21 @@ fort_17th = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = { 
+				owner = { technology_group = chinese }
+				OR = {
+					region = south_china_region
+					region = xinan_region
+					region = north_china_region
+				}
+				NOT = { has_province_modifier = chinese_fortresses_modifier } 
+			}
+			add_permanent_province_modifier = {
+				name = chinese_fortresses_modifier
+				duration = -1
+			}
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings made obsolete!
@@ -2147,6 +2219,12 @@ fort_17th = {
 				has_province_modifier = ned_low_countries_fort_buff_buffed
 			}
 			remove_province_modifier = ned_low_countries_fort_buff_buffed
+		}
+		if = {
+			limit = {
+				has_province_modifier = chinese_fortresses_modifier
+			}
+			remove_province_modifier = chinese_fortresses_modifier
 		}
 		
 	}
@@ -2274,9 +2352,17 @@ town_hall = {
 	modifier = {
 		local_state_maintenance_modifier = -0.5
 		local_autonomy = -0.2
-		local_governing_cost = -0.5
+		local_governing_cost = -0.2
+		local_governing_cost_increase = -6
 		allowed_num_of_buildings = 1
-		min_local_autonomy = -10
+		min_local_autonomy = -15
+	}
+	build_trigger = {
+		development = 20
+		if = {
+			limit = { FROM = { ai = yes } }
+			FROM = { NOT = { num_of_loans = 4 } }
+		}
 	}
 
 	on_built = {
@@ -2364,12 +2450,12 @@ town_hall = {
 			FROM = { treasury = 400 }
 		}
 		#Provinces in the Capital Area don't need a courthouse
-		modifier = {
-			factor = 0
-			area_for_scope_province = {
-				is_capital_of = FROM
-			}
-		}
+		#modifier = {
+		#	factor = 0
+		#	area_for_scope_province = {
+		#		is_capital_of = FROM
+		#	}
+		#}
 	}
 }
 
@@ -2466,7 +2552,9 @@ conscription_center = {
 #	}
 
 	modifier = {
-		land_forcelimit = 0.5
+		land_forcelimit = 0.4
+		local_regiment_cost = -0.1
+		regiment_recruit_speed = -0.2
 	}
 	on_built = {
 		add_development_from_upgrading_or_building = {
@@ -2651,6 +2739,21 @@ fort_18th = {
 				duration = -1
 			}
 		}
+		if = {
+			limit = { 
+				owner = { technology_group = chinese }
+				OR = {
+					region = south_china_region
+					region = xinan_region
+					region = north_china_region
+				}
+				NOT = { has_province_modifier = chinese_fortresses_modifier } 
+			}
+			add_permanent_province_modifier = {
+				name = chinese_fortresses_modifier
+				duration = -1
+			}
+		}
 	}
 
 	# THIS = Province, FROM = Destroyer, Will not be called on buildings made obsolete!
@@ -2678,6 +2781,12 @@ fort_18th = {
 				has_province_modifier = ned_low_countries_fort_buff_buffed
 			}
 			remove_province_modifier = ned_low_countries_fort_buff_buffed
+		}
+		if = {
+			limit = {
+				has_province_modifier = chinese_fortresses_modifier
+			}
+			remove_province_modifier = chinese_fortresses_modifier
 		}
 	}
 
@@ -2860,7 +2969,7 @@ textile = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 1000
 	}
 }
 
@@ -3041,7 +3150,7 @@ farm_estate = {
 	}
 
 	ai_will_do = {
-		factor = 1000
+		factor = 1
 	}
 }
 
@@ -3124,7 +3233,7 @@ furnace = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 1000
 	}
 }
 
@@ -3187,6 +3296,13 @@ ramparts = {
 }
 
 soldier_households = {
+	build_trigger = {
+		OR = {
+			development = 20
+			base_manpower = 10
+		}
+	}
+	
 	manufactory = {
 		all
 	}
@@ -3211,10 +3327,10 @@ soldier_households = {
 	}
 
 	modifier = {
-		local_manpower = 0.75
+		local_manpower = 0.4
 	}
 	bonus_modifier = {
-		local_manpower = 0.75
+		local_manpower = 0.3
 	}
 	onmap = no
 	show_separate = yes # Means as a manufactory it will be shown according to the old way
@@ -3263,7 +3379,7 @@ soldier_households = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 2000
 	}
 }
 
@@ -3349,6 +3465,7 @@ state_house = {
 	}
 
 	build_trigger = {
+		development = 25
 		NOT = {
 			area_for_scope_province = {
 				owner = {
@@ -3378,16 +3495,16 @@ state_house = {
 	}
 
 	modifier = {
-		statewide_governing_cost = -0.2
-		min_local_autonomy = -5
-		local_governing_cost = -0.15
-		local_governing_cost_increase = -10
+		statewide_governing_cost = -0.15
+		min_local_autonomy = -10
+		#local_governing_cost = -0.10
+		local_governing_cost_increase = -15
 		allowed_num_of_buildings = 1
 	}
 	bonus_modifier = {
-		statewide_governing_cost = -0.2
+		statewide_governing_cost = -0.1
 		min_local_autonomy = -5
-		local_governing_cost = -0.15
+		#local_governing_cost = -0.10
 		local_governing_cost_increase = -10
 	}
 	onmap = no
@@ -3411,6 +3528,22 @@ state_house = {
 
 	ai_will_do = {
 		factor = 1
+		modifier = {
+			factor = 1000
+			OR = {
+				trade_goods = paper
+				trade_goods = gems
+				trade_goods = tropical_wood
+				trade_goods = glass
+				trade_goods = chinaware
+				trade_goods = lumber
+				trade_goods = ebony
+				trade_goods = amber
+				trade_goods = steam_engine
+				trade_goods = optics
+				
+			}
+		}
 	}
 }
 

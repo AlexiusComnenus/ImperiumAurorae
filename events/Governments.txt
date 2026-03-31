@@ -8,6 +8,7 @@ country_event = {
 	picture = COURT_eventPicture
 	
 	trigger = {
+		always = no
 		government = monarchy
 		has_parliament = no
 		reform_level = 5
@@ -20,6 +21,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 12
 	}
+	is_triggered_only = yes
 	
 	option = {
 		name = "EVTOPTA9479"

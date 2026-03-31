@@ -20,6 +20,7 @@
 
  #Modifiers
  nobatian_capital_mod: "Restored City of Soba"
+ nobatian_nubia_mod: "Nubian Development Project"
  z42_blessed_mint: "Auroral Blessed Mint"
  z42_supplier_of_gold: "§OImperial Supplier of Gold§!"
  z42_great_nobatia_mod: "§PGreat Nobatia§!"
@@ -89,8 +90,8 @@
  z42_livestock_reward_tt_2: "Our §YLivestock§!-producing provinces that meet the mission requirements will gain a §Gpowerful local modifier§!."
  z42_mountains_of_grain_title: "Mountains of Grain"
  z42_mountains_of_grain_desc: "While lower Egypt is indeed a fertile breadbasket, there is so much more space in the south. With a little support from the Imperial Alchemists, we can develop terrace farms in the Abyssinian mountains to produce mountains of grain for the entire Empire."
- z42_cattle_of_the_empire_title: "Cattle of the Empire"
- z42_cattle_of_the_empire_desc: "The relatively arid land in Nubia might not be the best for growing crops, but nomadic herders have raised livestock for centuries. With the support of the Imperial Alchemists again to stabilize the soil quality and proper regulations to avoid over-grazing, we can supply the Empire with meat!"
+ z42_cattle_of_the_empire_title: "Livestock of the Empire"
+ z42_cattle_of_the_empire_desc: "The relatively arid land in Nubia might not be the best for growing crops, but nomadic herders have raised livestock for centuries. With the support of the Imperial Alchemists again to stabilize the soil quality and proper regulations to avoid over-grazing, we can supply the Empire with meat and draft animals!"
  z42_livestock_reward_tt: "Gain 5 years of production income of Livestock"
  z42_grain_reward_tt: "Gain 5 years of production income of §YGrain§! and §YPotatoes§!."
  z42_protect_elephants_title: "Regulate the Ivory Trade"

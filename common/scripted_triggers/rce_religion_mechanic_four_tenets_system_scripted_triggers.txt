@@ -1,0 +1,59 @@
+rce_uses_religion_mechanic_four_tenets_system = {
+	custom_trigger_tooltip = {
+		tooltip = rce_uses_religion_mechanic_four_tenets_system_tt
+		religion = hellenic_pagan_reformed
+	}
+}
+
+rce_not_uses_religion_mechanic_four_tenets_system = {
+	custom_trigger_tooltip = {
+		tooltip = rce_not_uses_religion_mechanic_four_tenets_system_tt
+		NOT = { rce_uses_religion_mechanic_four_tenets_system = yes }
+	}
+}
+
+rce_has_religion_mechanic_four_tenets_system_value = {
+	if = {
+		limit = {
+			rce_uses_religion_mechanic = { mechanic = four_tenets_system }
+		}
+		[[value]
+			check_variable = { which = rce_religion_mechanic_four_tenets_system_value value = $value$ }
+		]
+		[[which]
+			check_variable = { which = rce_religion_mechanic_four_tenets_system_value which = $which$ }
+		]
+	}
+}
+
+rce_has_religion_mechanic_four_tenets_system_ability_1 = {
+	OR = {
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_1
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_2
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_1_modifier_3
+	}
+}
+
+rce_has_religion_mechanic_four_tenets_system_ability_2 = {
+	OR = {
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_1
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_2
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_2_modifier_3
+	}
+}
+
+rce_has_religion_mechanic_four_tenets_system_ability_3 = {
+	OR = {
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_1
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_2
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_3_modifier_3
+	}
+}
+
+rce_has_religion_mechanic_four_tenets_system_ability_4 = {
+	OR = {
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_1
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_2
+		has_ruler_modifier = rce_religion_mechanic_four_tenets_system_ability_4_modifier_3
+	}
+}

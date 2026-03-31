@@ -4,6 +4,8 @@ monarch_power = MIL
 # no bonus for MIL currently
 ahead_of_time = {
 	monthly_russian_modernization = 0.05
+	yearly_army_professionalism = 0.0015
+	ahead_of_time_benefit_mil = 1
 }
 
 # Pre-era techs

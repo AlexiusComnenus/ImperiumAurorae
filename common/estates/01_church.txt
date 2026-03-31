@@ -4,6 +4,7 @@ estate_church = {
 	# If true, country will get estate
 	trigger = {
 		NOT = { religion = bogomilist }
+		NOT = { religion = abolitionist }
 		NOT = { has_government_attribute = disables_estate_church }
 		NOT = { has_disabled_estate = { estate = estate_church } }
 		if = {
@@ -194,8 +195,13 @@ estate_church = {
 	custom_name = {
 		desc = estate_klirikoi
 		trigger = {
-			tag = BYZ
-			culture_group = byzantine
+			OR = {
+				tag = BYZ
+				AND = {
+					culture_group = byzantine
+					NOT = { primary_culture = turkish }
+				}
+			}
 		}
 	}
 	custom_name = {
@@ -219,6 +225,7 @@ estate_church = {
 				religion = mahayana
 				religion = vajrayana
 			}
+			NOT = { has_reform = celestial_empire }
 		}
 	}
 	custom_name = {
@@ -255,6 +262,12 @@ estate_church = {
 		desc = estate_way_teachers
 		trigger = {
 			religion = hellenic_pagan_reformed
+		}
+	}
+	custom_name = {
+		desc = estate_heralds_jade
+		trigger = {
+			religion = lollard
 		}
 	}
 	custom_name = {
@@ -313,7 +326,7 @@ estate_church = {
 	custom_name = {
 		desc = estate_mobeds
 			trigger = {
-				religion = zoroastrian
+				religion_group = zoroastrian_group
 			}
 	}
 	custom_name = {
@@ -427,6 +440,7 @@ estate_church = {
 		estate_church_yakobs_churches
 		estate_church_one_faith_one_culture
 		estate_church_religious_diplomats
+		estate_church_ia_fundamentalism
 		estate_church_heir_shrine
 		estate_church_embrace_singluar_cult
 		estate_church_flexible_cults

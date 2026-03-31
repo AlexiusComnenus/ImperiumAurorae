@@ -1,0 +1,56 @@
+irenicist_charity_province_modifier = {
+	local_unrest = -3
+	local_autonomy = -0.025
+	local_missionary_strength = 0.025
+}
+
+irenicist_pacifism_modifier = {
+	religion = yes
+	
+	global_unrest = -2
+	tolerance_heretic = 2
+	tolerance_heathen = 2
+	relation_with_heretics = 25
+	relation_with_heathens = 25
+	reverse_relation_with_same_religion = 25
+	reverse_relation_with_heathen_religion = 25
+	improve_relation_modifier = 0.25
+}
+
+elite_revolutionary_guard_modifier = {
+	is_revolutionary_guard_modifier = yes
+	discipline = 0.025
+	land_morale = 0.05
+	fire_damage = 0.05
+	shock_damage = 0.10
+	land_maintenance_modifier = 1.0
+	regiment_manpower_usage = 0.25
+}
+
+elite_revolutionary_guard_modifier_country = {
+	special_unit_forcelimit = -0.25
+}
+
+professional_revolutionary_guard_modifier = {
+	is_revolutionary_guard_modifier = yes
+	drill_decay_modifier = -0.25
+	land_attrition = -0.25
+	land_maintenance_modifier = 0.5
+}
+
+mass_revolutionary_guard_modifier = {
+	is_revolutionary_guard_modifier = yes
+	drill_decay_modifier = 0.5
+}
+
+mass_revolutionary_guard_modifier_country = {
+	special_unit_forcelimit = 0.25
+}
+
+vanguard_revolutionary_guard_modifier = {
+	is_revolutionary_guard_modifier = yes
+	shock_damage_received = -0.05
+	fire_damage_received = -0.05
+	morale_damage_received = -0.1
+	land_maintenance_modifier = 0.5
+}

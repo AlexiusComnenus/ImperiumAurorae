@@ -203,7 +203,7 @@ country_event = {
 	desc = "flavor_hol.EVTDESC3502"
 	picture = ELECTION_REPUBLICAN_eventPicture
 	
-	fire_only_once = yes
+	#fire_only_once = yes
 	
 	trigger = {
 		tag = NED
@@ -213,9 +213,7 @@ country_event = {
 		#is_subject = no
 	}
 	
-	mean_time_to_happen = {
-		months = 96
-	}
+	is_triggered_only = yes
 	
 	option = {
 		name = "flavor_hol.EVTOPTB3502" #Confederacy on Republican Model

@@ -1,0 +1,19 @@
+country_decisions = {
+	rce_religion_enable_alerts_decision = {
+		color = { 180 180 180 }
+		potential = {
+			ai = no
+			has_country_flag = rce_alert_religion_mechanic_disabled
+			NOT = { has_country_flag = rce_alerts_events_100_active }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			country_event = { id = rce_alerts_events.100 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

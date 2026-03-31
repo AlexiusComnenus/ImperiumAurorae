@@ -8,6 +8,8 @@
  recruit_templar_general_title: "Recruit a Veteran of the Order as General"
  recruit_templar_general_desc: "We will recruit a Templar General"
  templarite_crusade_tt: "Unlocks the §YTemplarite Crusade§! Casus Belli"
+ ORDER_OF_ST_JEANNE_NAME: "Order of St. Jeanne"
+ ORDER_OF_ST_JEANNE_NAME_ADJ: "Templar"
  
 
  #Mechanics Tooltips
@@ -16,7 +18,7 @@
  cb_templar_crusade:0 "Templarite Crusade"
  cb_templar_crusade_desc:0 "Ours is the only path to Heaven. Their souls must be saved!"
  voice_of_god_personality: "Voice of God"
- voice_of_god_generaltrait: "Voice of God"
+ voice_of_god_generaltrait: "Angelic Radiance"
  templar_knight: "Knight Templar"
  templar_knight_die_desc: "Their chivalrous behavior and dedication to God will inspire soldiers for decades to come."
  dawnsbane_leader: "Dawnsbane Warrior"
@@ -43,6 +45,8 @@
  mend_the_schism_templarite_decision_title: "End the Corrupt Papacies"
  mend_the_schism_templarite_decision_desc: "Christendom must be made whole. The corrupt papacies must end."
  mend_catholicism_templarite_tt: "§GEvery follower of the false Catholic Papacies will convert to Templarite!§!"
+ convert_to_templarite_title: "Convert to Templarite"
+ convert_to_templarite_desc: "Change our religion to Templarite, as the majority of our people follow this faith. Deus Vult!"
  
  
  #Diplo Tooltips
@@ -74,6 +78,8 @@
  templar_crusade_reform_desc:0 "Under the misguidance of puppet popes and powerhungry kings, Christendom has forgotten the meaning of Crusade. Let us set the record straight."
  foreign_talents_reform:0 "Foreign Talent in Administration"
  foreign_talents_reform_desc:0 "Many pilgrims and knights errant travel through our land. We should recruit the best and brightest of these to benefit our army and administration."
+ order_of_st_jeanne_the_voice_of_god: "Order of Saint Jeanne the Voice of God"
+ order_of_st_jeanne_the_voice_of_god_desc: "Blessed be Her light\n Cursed be Her pain\n For every soul that wrongs Her name\n I will make them kneel again"
  
  #Modifiers
  
@@ -130,6 +136,10 @@
  dusk_funded_dusksworn: "Funding for Dusksworn"
  recently_recruited_dawnwsbane: "Recently recruited Dawnsbane General"
  templarite_schism_mender: "§VSword-arm of God§!"
+ templarite_last_crusade_victory: "§VVictory in the Last Crusade§!"
+ templarite_last_crusade_draw: "§RPopular Ennui§!"
+ templarite_last_crusade_failure: "§RPopular Ennui§!"
+ disloyal_crusader_state_mod: "Unruly Crusader State"
 
  #Missions
 
@@ -321,3 +331,28 @@
  ia_flavor_tem.31.t: "Legion of Dusk Departs"
  ia_flavor_tem.31.d: "Now that we no longer have need of their services, the Legion of the Grim Dusk is departing to pursue their eternal vengeance elsewhere."
  ia_flavor_tem.31.a: "Farewell!"
+ ia_flavor_tem.32.t: "The Voice of God Departs"
+ ia_flavor_tem.32.d: "This morning, all of the Templars present in the primary Templar Fortress received a divine revelation: Her holy mission now complete, the Voice of God would remain in Heaven to enjoy her eternal retirement, and no longer return to the mortal realm. Though a bittersweet moment for many Templars who have always known the Voice of God as their leader and inspiration, this is a day to celebrate the victory of our faith over the Antichrist!"
+ ia_flavor_tem.32.a: "Amen!"
+ ia_flavor_tem.33.t: "The Voice of God: Failure"
+ ia_flavor_tem.33.d: "A sense of defeat and desparation has washed over the entire Templar Order of late. Without any particular explanation, everyone seems to have come to the same realization: the Voice of God would not be returning any longer. Our lackluster performance in the Last Crusade must have made her forsake us, or perhaps God will no longer entertain our failures..."
+ ia_flavor_tem.33.a: "No! Please come back!"
+ templarites_share_modifier_tt: "All §YTemplarite§! nations will share this modifier!"
+ ia_flavor_tem.34.t: "Crisis of Faith"
+ ia_flavor_tem.34.d: "Ever since the death of millions in the Last Crusade, our people have begun to doubt the Templarite faith. Though their whispers are usually kept away from the ears of state officials, recently the people of one of our provinces have openly evicted the local Knight-Commander from their church and installed instead an Irenicist preacher! \n\n 'So much death -- what was it all for? Why would God demand this of His faithful?' -- Rallying cry of Irenicist preachers"
+ ia_flavor_tem.34.a: "Heresy!"
+ ia_flavor_tem.34.b: "We must show them the error of their ways!"
+ ia_flavor_tem.35.t: "The Sacred Order of Saint Jeanne the Voice of God"
+ ia_flavor_tem.35.d: "Candles flicker in the dark, whispers echo through the halls\nFootsteps dare to profane the ground your light once blessed\nTheir shadows stain the sacred glass, hiding sins they tried to mask.\nBut I, your chosen, see them all: the wicked dressed in white! \n\nThey whisper you’ve fallen, they say your wings turned black\nBut even angels bleed, and I will cleanse their lies with wrath!\n\nNo prayer can hide you now, not from the flame of judgment\nI offer sin as sacrifice and burn in her holy name\nYou can cry for mercy, but I’ve already prayed it through\nThis temple is mine to guard, and you are unworthy of her mercy!\n\nI saw Her rage split heaven wide, a storm of light and ash entwined\nThey called Her mad, a light that drowned in shadow, but I called Her mine to sanctify!\n\nSo kneel before the faith you broke and choke on every sacred word\nFor you who have forsaken Her light shall burn with the sinners you serve! \n\nShe wept for the lost… I smile for the found\nHer tears became my gospel; Her silence, my vow\nYou dare to curse Her name? Then meet Her shadow’s grace\n For every saint needs someone to clean the blood She leaves behind...\n\nYour prayer can’t hide you now from the flame that burns so bright\nMy faith is Her damnation and I’ll wear Her mark in light\nEven if heaven turns away I’ll guard Her to the end\nI will cleanse all lies with wrath and pray your soul condemned\n\n Blessed be Her light\n Cursed be Her pain\n For every soul that wrongs Her name\n I will make them kneel again"
+ ia_flavor_tem.35.a: "Sancta!"
+ ia_flavor_tem.37.t: "Rise of Abolitionism"
+ ia_flavor_tem.37.d: "Why should we be slaves of the uncaring, evil gods? What have the gods ever done for us, other than demand our faith and send us to die in their name? Enough is enough! \n\n We remember when the Templarite God sent millions to die! We remember when the powerhunger of the gods lead to the Ivycurse and swathed the entire world in death! §RALL GODS MUST DIE, AND WE SHALL KILL THEM!§! \n\n So, my brothers and sisters, don the §JArmor of Disbelief§!, shake off the grasp of the §RDivine Propaganda§!, and join us in fighting for a brighter future where we humans determine our own fate, not the whims of cruel and petty gods!"
+ ia_flavor_tem.37.a: "The Revolution spreads..."
+ ia_flavor_tem.37.b: "We must suppress this!"
+ ia_flavor_tem.38.t: "The Knight Left Behind"
+ ia_flavor_tem.38.d: "And it feels like an eternity\nSince I had you here with me\nSince I had to learn to be\nSomeone you don't know\n\nTo be with you in paradise\nWhat I wouldn’t sacrifice\nWhy’d you have to chase the light\nSomewhere I can’t go"
+ ia_flavor_tem.38.a: "As I walk this world alone"
+ ia_flavor_tem.39.t: "Crusader State leaves the nest"
+ ia_flavor_tem.39.d: "Our Crusader State, [too_big_crusader_state.GetName], has in a recent Diet of its estates concluded that the Crusade being over, it is ready now to spread its wings and emerge upon the world as an independent state. While we would be able to decline to grant them their desired independence, this would severely strain our relationship. Perhaps it would be better to have a loyal ally than a disloyal subject?"
+ ia_flavor_tem.39.a: "Independence they shall have!"
+ ia_flavor_tem.39.b: "They are not ready!"

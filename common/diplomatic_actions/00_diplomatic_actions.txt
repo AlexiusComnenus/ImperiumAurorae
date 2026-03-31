@@ -182,11 +182,13 @@ declarewar = {
 			is_emperor = yes
 			NOT = { has_global_flag = antioch_ai_hacks_1 }
 			NOT = { has_country_modifier = antioch_unified_house }
+			ai = no
 		}
 		allow = { 
 			OR = { 
 				FROM = { is_part_of_hre = yes }
 				is_year = 1494
+				FROM = { any_owned_province = { is_part_of_hre = yes } }
 			}
 		}
 	}
@@ -246,6 +248,22 @@ declarewar = {
 		}
 		if = {
 			limit = {
+				OR = {
+					has_country_modifier = tenth_bell_toll_modifier
+					has_country_modifier = eleventh_bell_toll_modifier
+					has_country_modifier = twelfth_bell_toll_modifier
+				}
+				FROM = { 
+					OR = { 
+						NOT = { is_in_coalition = yes } 
+						NOT = { num_of_coalition_members = 6 }
+					}
+				}
+			}
+			FROM = { country_event = { id = mhadi.21 } }
+		}
+		if = {
+			limit = {
 				has_country_flag = teu_joined_the_hre
 				tag = TEU
 				is_part_of_hre = yes
@@ -267,6 +285,47 @@ declarewar = {
 			emperor = {
 				country_event = { id = fix_tag_traits.3 }
 			}
+		}
+	}
+}
+
+requestpeace = {
+	condition = {
+		potential = {
+			has_global_flag = mhadi_is_ending_the_world_flag
+		}
+		allow = {
+			NOT = { exists = YOR }
+		}
+	}
+}
+
+warningaction = {
+	condition = {
+		potential = {
+			always = yes
+		}
+		allow = {
+			is_year = 1495
+		}
+	}
+}
+
+grant_freecity = {
+	condition = {
+		potential = {
+			FROM = { has_government_attribute = is_pirate_republic_reform }
+		}
+		allow = {
+			NOT = { FROM = { has_government_attribute = is_pirate_republic_reform } }
+		}
+	}
+	condition = {
+		potential = {
+			FROM = { has_government_attribute = monastic_order }
+		}
+		allow = {
+			NOT = { FROM = { has_government_attribute = monastic_order } }
 		}
 	}
 }
@@ -446,6 +505,14 @@ allianceaction = {
 			NOT = { FROM = { has_government_attribute = cannot_form_alliances } }
 		}
 	}
+	condition = {
+		potential = {
+			religion = lollard
+		}
+		allow = { 
+			FROM = { religion = lollard }
+		}
+	}
 	effect = {
 		change_asha_vahishta = { value = 2 }
 	}
@@ -453,6 +520,24 @@ allianceaction = {
 
 enforce_peace = {
 	#do this before the peace is enforced, or there is no war enemy country
+	condition = {
+		potential = {
+			FROM = {
+				is_subject = yes
+			}
+		}
+		allow = { 
+			NOT = {
+				FROM = {
+					OR = {
+						is_subject_of_type = german_march
+						is_subject_of_type = saxon_daimyo
+						is_subject_of_type = daimyo_vassal
+					}
+				}
+			}
+		}
+	}
 	pre_effect = {
 		if = {
 			limit = {
@@ -566,18 +651,23 @@ callaction = {
 		tooltip = CANNOT_CALL_AGAINST_HISTORICAL_FRIENDS
 		potential = {
 			NOT = { is_subject_of = FROM }
+			NOT = { FROM = { is_subject_of = ROOT } }
+			FROM = { ai = yes }
 			FROM = { 
 				any_known_country = {
 					FROM = { historical_friend_with = PREV }
 				}
 			}
 		}
-		allow = { 
-			NOT = {
-				any_war_enemy_country = { 
-					FROM = { historical_friend_with = PREV }
-					is_free_or_tributary_trigger = yes
+		allow = {
+			OR = {
+				NOT = {
+					any_war_enemy_country = { 
+						FROM = { historical_friend_with = PREV }
+						is_free_or_tributary_trigger = yes
+					}
 				}
+				is_in_league_war = yes
 			}
 		}
 	}
@@ -601,6 +691,14 @@ insultaction = {
 giftaction = {
 	effect = {
 		change_asha_vahishta = { value = 1 }
+	}
+	condition = {
+		potential = {
+			religion = lollard
+		}
+		allow = { 
+			FROM = { religion = lollard }
+		}
 	}
 }
 fabricate_claim = {
@@ -626,10 +724,26 @@ takeondebt = {
 	effect = {
 		change_asha_vahishta = { value = 2 }
 	}
+	condition = {
+		potential = {
+			religion = lollard
+		}
+		allow = { 
+			FROM = { religion = lollard }
+		}
+	}
 }
 influence_nation = {
 	effect = {
 		change_asha_vahishta = { value = 2 }
+	}
+	condition = {
+		potential = {
+			religion = lollard
+		}
+		allow = { 
+			FROM = { religion = lollard }
+		}
 	}
 }
 intervene_in_war = {
@@ -719,6 +833,16 @@ annexationaction = {
 	condition = {
 		tooltip = CANNOT_ANNEX
 		potential = {
+			tag = RIG
+			ai = yes
+		}
+		allow = {
+			ai = no
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX
+		potential = {
 			FROM = {
 				has_country_flag = recently_released_for_cores_flag
 				NOT = {
@@ -749,7 +873,10 @@ annexationaction = {
 			NOT = { crown_land_share = 50 }
 		}
 		allow = {
-			crown_land_share = 50
+			OR = {
+				crown_land_share = 50
+				has_country_flag = hes_has_royal_administrator
+			}
 		}
 	}
 	condition = {
@@ -836,6 +963,14 @@ vassalaction = {
 				}
 			}
 			FROM = { is_at_war = no }
+		}
+	}
+	condition = {
+		potential = {
+			FROM = { is_part_of_hre = yes }
+		}
+		allow = {
+			is_part_of_hre = yes
 		}
 	}
 }
@@ -939,6 +1074,23 @@ tributary_state_action = {
 			}
 		}
 	}
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			FROM = { NOT = { has_reform = steppe_horde } }
+			FROM = { NOT = { culture_group = ROOT } }
+		}
+	}
+	#condition = {
+	#	potential = {
+	#		always = yes
+	#	}
+	#	allow = {
+	#		always = no
+	#	}
+	#}
 	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
 		add_entry = {
 			name = neighboring_vassal_tt
@@ -978,6 +1130,23 @@ ask_for_tributary_state_action = {
 			}
 		}
 	}
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			FROM = { NOT = { has_reform = steppe_horde } }
+			FROM = { NOT = { culture_group = ROOT } }
+		}
+	}
+	#condition = {
+	#	potential = {
+	#		always = yes
+	#	}
+	#	allow = {
+	#		always = no
+	#	}
+	#}
 	
 	ai_acceptance = { # This works similarly to variable_arithmetic_trigger, but does not support triggers generally. Instead, "limit" will be evaluated first and the rest ignored if it isn't passed.
 		add_entry = {

@@ -632,7 +632,7 @@ incident_abbasids = {
 
 incident_abyssinia = {
 	event = ia_flavor_z42.1
-	default_option = 1
+	default_option = 0
 	
 	can_stop = {
 		NOT = { exists = ETH }
@@ -654,7 +654,7 @@ incident_abyssinia = {
 			}
 		}
 		modifier = {
-			factor = 2
+			factor = 5
 			has_opinion = {
 				who = Z42
 				value = 100
@@ -665,12 +665,16 @@ incident_abyssinia = {
 	1 = { # offer support
 		factor = 3
 		modifier = {
-			factor = 2
+			factor = 3
 			NOT = {
 				has_opinion = {
 					who = Z42
-					value = 80
+					value = 100
 				}
+			}
+			has_opinion = {
+				who = Z42
+				value = 10
 			}
 		}
 		modifier = {

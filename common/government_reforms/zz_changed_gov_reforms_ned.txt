@@ -47,9 +47,8 @@ stadthalter_monarchy_reform = {
 		}
 	}
 	trigger = {
-		is_lesser_in_union = no
 		OR = {
-			government_rank = 2
+			tag = HLR
 			tag = NED
 			tag = LOT
 		}
@@ -63,7 +62,7 @@ stadthalter_monarchy_reform = {
 		reduced_liberty_desire_on_other_continent = 10
 		has_voc_indiamen = yes
 		allowed_voc_indiamen_fraction = 0.2
-		max_absolutism = -20
+		max_absolutism = -50
 		no_stability_loss_on_monarch_death = yes
 		monarch_diplomatic_power = 2
 	}
@@ -111,7 +110,7 @@ dutch_republic = {
 	}
 	trigger = {
 		OR = {
-			government_rank = 2
+			tag = HLR
 			tag = NED
 			tag = LOT
 		}
@@ -125,7 +124,7 @@ dutch_republic = {
 		heavy_ship_power = 0.1
 		trade_efficiency = 0.1
 		reduced_liberty_desire_on_other_continent = 10
-		max_absolutism = 10
+		max_absolutism = -10
 		has_voc_indiamen = yes
 		allowed_voc_indiamen_fraction = 0.2
 	}
@@ -199,7 +198,6 @@ dutch_theocracy_reform = {
 	}
 	trigger = {
 		OR = {
-			government_rank = 2
 			mission_completed = dom_utr_archbishopric
 			mission_completed = dom_lie_archbishop
 		}
@@ -287,11 +285,17 @@ watergeuzen_reform = {
 		heavy_ship_power = 0.1
 		capture_ship_chance = 0.2
 		allowed_marine_fraction = 0.1
-		sea_repair = yes
+		#sea_repair = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			naval_professionalism_mechanic
+		}
 	}
 	
 	ai = {
-		factor = 1000
+		factor = 1
 	}
 }
 

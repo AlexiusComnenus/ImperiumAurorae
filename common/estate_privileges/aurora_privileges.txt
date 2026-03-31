@@ -41,6 +41,7 @@ establish_aurora = {
 		special_unit_forcelimit = 0.2
 		allow_free_estate_privilege_revocation = yes
 		can_recruit_hussars = yes
+		amount_of_hussars = 10
 		cav_to_inf_ratio = 0.25
 	}
 	mechanics = {
@@ -78,7 +79,7 @@ greek_katafraktoi = {
 	}
 	benefits = {
 		special_unit_forcelimit = 0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 		max_general_shock = 1
 	}
 	mechanics = {
@@ -113,7 +114,7 @@ kurdish_skirmishers = {
 	}
 	benefits = {
 		special_unit_forcelimit = 0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 		max_general_shock = 1
 	}
 	mechanics = {
@@ -148,7 +149,7 @@ persian_cataphracts = {
 	}
 	benefits = {
 		special_unit_forcelimit = 0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 		max_general_shock = 1
 	}
 	mechanics = {
@@ -183,7 +184,7 @@ french_chevaliers = {
 	benefits = {
 		special_unit_forcelimit = 0.1
 		general_cost = -0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 		max_general_shock = 1
 	}
 	mechanics = {
@@ -218,7 +219,7 @@ slavic_hussars = {
 	}
 	benefits = {
 		special_unit_forcelimit = 0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 		max_general_shock = 1
 	}
 	mechanics = {
@@ -252,7 +253,7 @@ landsknecht_auxiliaries = {
 	}
 	benefits = {
 		special_unit_forcelimit = 0.1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 	}
 	mechanics = {
 	}
@@ -280,7 +281,7 @@ romanian_stakes = {
 	benefits = {
 		force_march_free = yes
 		hostile_attrition = 1
-		amount_of_hussars = 5
+		amount_of_hussars = 4
 	}
 	mechanics = {
 	}

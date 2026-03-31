@@ -1,0 +1,120 @@
+Major Changes List
+
+- Trade Goods Expanded: keep an eye on your advanced trade goods and strategic resources
+
+- Estate Disaster Changes: the default 3 estates will start ticking up their coup disasters at 90% influence instead of 100%.
+Being at war WILL NOT stop or slow them! Once the disaster starts ticking, you must bring their influence below *80%* to stop it.
+BEWARE OF CALL DIET SPAM
+
+- Governing Distance: the further a province is from your capital, the more min autonomy and autonomy gain it will have.
+This is modified by various factors like proximity to the sea and terrain. Roads and Canals will decrease the governing distance. 
+Courthouses, Town halls, and State Houses reduce autonomy and directly counteract the effects of governing distance.
+
+- War exhaustion: The price to reduce war exhaustion with dip mana increases the more dev your country has. 
+On the other hand, the more dev you have, the faster war exhaustion will gradually decrease over time.
+
+- Unrest: Separatist rebels can defect in 1.5 years instead of 5! Also, non-accepted cultures are massively more punishing.
+
+- Corruption: Corruption cannot be paid down using money. Instead, you have to decrease corruption over time using mana.
+These buttons can be found in the bottom right of the Stability and Unrest tab, if you can't see them, you can enable them in the decisions menu.
+
+- Idea group changes:
+Aristocratic Ideas gained 5% cav to inf ratio, -50% fabricate claims cost replaced with -10% core creation cost
+Plutocratic Ideas gained -5% regiment costs, Development Cost -> Development Cost Modifier
+Divine Ideas -33% war exhaustion cost reduction changed to -0.025 war exhaustion reduction over time
+Horde Ideas **NO CHANGES**
+Innovativeness Ideas **NO CHANGES** but note the shadowbuff as -0.05 monthly war exhaustion is a BIG DEAL (tm) now
+Religious Ideas gained 5% manpower from true faith, 25% resistance vs reformation centres, 5 reverse relation with same religion
+Espionage Ideas nerfed by -0.1 yearly corruption, still a shadowbuff in reality as yearly corruption is a lot more valuable than vanilla
+Diplomatic Idea **Subject Nations should no longer pick diplomatic ideas; they may still spawn with them if released**
+Offensive Ideas **Exclusive with Defensive Ideas** 
+Defensive Ideas **Exclusive with Offensive Ideas** lost 8% garrison size, gained -10% land attrition
+Trade Ideas: Completely reworked, now focused on dominating land trade nodes and keeping competitors out
+Economic Ideas: Basically the same, but some ideas have been rearranged order wise
+Exploration Ideas: **Primitives are now banned from taking Explo Ideas** **Subjects CAN take Explo Ideas**
+Maritime Ideas: Completely reworked, from being basically a military idea group to focusing on naval trade nodes and steering across long chains.
+Quality Ideas: **Exclusive with Quantity Ideas**
+Quantity Ideas: **Exclusive with Quality Ideas**
+Expansion Ideas: **Subjects CAN take Expansion Ideas**
+Administrative Ideas: Gained -25% State Maintenance Cost, -30% Promote Culture Cost changed to +2 Num Accepted Cultures
+Humanist Ideas: Gained -20% Other Religion Advisor Cost, 15% manpower in Accepted Cultures
+Influence Ideas: **Subjects should no longer take Influence Ideas, they may still spawn with them if released**
+Naval Ideas: **NO CHANGES**
+Mercenary Ideas: Lost 10% mercenary manpower, Lost Mercenaries Allowed To Drill **AI is capable of taking Merc Ideas now**
+Infrastructure Ideas: **NO CHANGES**
+
+- Policy Changes:
+Court of Wards and Livery (ARI/ECO) gained 10% tax modifier
+Formalized Measures (PLU/ECO) 10 Tax -> 10 Prod eff
+Agricultural Cultivations (ECO/QUANT) gained -5% land Maintenance
+Edict of Resistance (DEF/REL) gained -1 Global Unrest
+Spy Discovery Act (DEF/ADM) -25% harsh treatment cost replaced with 20% Spy Defence
+Enforce Religious Law (REL/SPY) gained 10 max absolutism
+Tolerance Act (REL/PLU) gained 1 tolerance heretics, 3 tolerance heathens, lost 50% rival fort maintenance
+Pioneer Act (OFF/EXPA) gained 5% settler chance
+Land Inheritance Act (ADM/PLU) gained 10% tax eff
+Witchcraft Act (REL/ARI) -1 global unrest replaced with +2 totf
+Education Act (INN/PLU) gained -5% advisor cost
+Exchange of Ideas (HUM/TRA) gained -5% tech cost
+Foreign Advisors (INF/INN) gained -5% advisor cost
+Overseas Dominions (INF/EXPA) gained 15% global tariffs
+Enlightened Aristocracy (HUM/ARI) 25% religious unity replaced with 50% inno gain
+Harbour Administration (NAV/ADM) -20% embracement cost replaced with 10% global ship repair
+Cultural Recognition Act (HUM/PLU) gained 1 num accepted cultures, 15% institution spread
+Dissolution Act (ECO/DIP) gained 15% tax eff
+Cultural Understanding (SPY/HUM) gained 25% improve relations
+Citrus Statute (HUM/MARI) gained 10% tax eff
+Banking System (INN/TRA) gained -0.25 interest per annum
+Anti-Heresy Act (OFF/REL) 20% religious unity replaced with 10% manpower in true faith
+Omnism (HUM/DIV) Gained 1 tolerance of heretics and heathens, gained 1 MAX tolerance of heretics and heathens
+Plutocratic Rule (INF/PLU) gained -20% mercantilism cost
+Theocratic Rule (INF/DIV) gained 10% manpower in true faith
+Toilet Paper Act (COU/INN) gained -5% dev cost
+Zealous Court Act (COU/REL) gained 1 totf
+Financial Miracle Act (COU/ECO) gained -10% same culture advisor cost
+Big Govt Act (COU/ECO) gained 15% tax eff
+Humanitarian Admin Act (COU/HUM) gained global unrest -2
+Blessed Construction (COU/DIV) gained -5% build cost, -25% build time
+Efficient War Taxes (MERC/ECO) gained 15% tax eff, replaced 100% possible condos with -50% war taxes cost
+Peace Keeping Forces (MERC/HUM) gained 100% possible condos
+Innovative Payment Techniques (COU/MERC) gained -10% merc maintenance
+Plutocratic Ethos (COU/PLU) gained 0.2 yearly RT
+Recruiting Act (MAR/ECO) gained 25% sailors
+Cloth Quality Act (TRA/QUAL) gained 5% trade eff
+Colonial Companies (EXPL/PLU) gained 10 global colonists growth
+Protected Shipping Lanes (MAR/PLU) gained 20% ship trade power
+Multilingual Diplomats (HUM/DIP) gained 1 diplo rep
+Native Assimilation Act (HUM/EXPL) gained 5 colonists growth, 50% native assimilation
+Foreign Aid Act (HUM/INF) gained 20% improve relations
+Terms of Surrender (NAV/DIP) gained -5% province warscore cost
+Fortified Trading Posts (NAV/TRA) gained 25% trade steering
+Cooperation Act (NAV/INF) replaced 33% caravan power with 50 reasons to transfer trade
+Foreign Support Act (SPY/ECO) gained 50% rebel support eff, 20% spy offence
+Diplomatic Defense Act (DIP/DEF) gained 10% improve relations
+Naval Supremacy (NAV/MAR) replaced with +1 prestige, -20% liberty desire on other continents
+Nomadic Migrations (HOR/EXPL) gained 5% settler chance
+Passports to Merchants (HOR/TRA) gained 10% domestic trade power
+Smooth Integration Act (INF/DIP) gained -10% diplomatic annexation cost
+Merchants For Hire (MERC/TRA) gained 17% ship trade power, 25% trade power abroad
+Client State Act (MERC/INF) gained 50% vassal forcelimit
+Mining Act (EXPA/QUAL) gained 10% goods produced
+Modern Siege Weapons (INN/OFF) gained 5% siege ability
+Superior Fortifications (INN/DEF) gained 5% defensiveness
+Military Zeal Act (QUAL/REL) gained 5% morale damage, 5% siege ability
+Field Priests (REL/QUAN) gained 10% recover morale speed
+Inspirational Leaders (HUM/QUAL) gained 10% manpower eff
+Foreign Conscription Centers (INF/OFF) -25% reinforce cost replaced with 15% reinforce speed
+Noble Loyalty Act (ARI/SPY) gained 5% cav combat
+Nobles in Navy (ARI/MAR) gained -0.5% navy tradition decay
+Deserteur Act (SPY/QUAL) gained -0.5% army tradition decay
+Best Defence Policy (HOR/INN) gained -2.5% damage received
+WIELDERS OF THE FLAMING SWORD (REL/DIV) gained 10% shock damage
+Fear Tactics (HOR/DIP) gained 5% siege ability
+Psychological Warfare (HOR/SPY) 50% cavalry flanking replaced with 20% morale damage
+My Word is my Bond (DIV/SPY) gained 5% siege ability
+Render Unto Caesar (DIV/EXPL) gained 5% land forcelimit
+Mobile Siege Engines (INF/OFF) gained 5% movement speed
+Handpicked Recruits (INF/QUAL) gained 0.25% yearly AP
+Mass Conscription (INF/QUAN) replaced 20% reinforce cost with 10% global manpower
+Sharp Wits Act (COU/OFF) gained 5% morale damage
+Special Forces (COU/QUAL) gained 15% special units force limit, 0.3% yearly AP

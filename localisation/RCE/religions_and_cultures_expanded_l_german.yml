@@ -1,0 +1,200 @@
+﻿l_german:
+ # GUIs:
+ rce_state_missionary_button_tt: "§YKlerikale Verwaltung§! \nEuer Missionar wird die Administration in dem Staat [Root.GetAreaName] für Euch übernehmen. \n\nSobald er zugewiesen wurde, kann der Missionar nicht mehr für die Konvertierung von Provinzen genutzt werden. Beim nächsten Monatsbeginn wird er vollständig entfernt, bis er wieder von dieser Aufgabe entbunden wird. Ihn von dieser Aufgabe zu entbinden wird ihn nicht automatisch wieder zu der automatischen Provinzkonvertierung hinzufügen, wenn er dort vorher zugewiesen war. \nDer Missionar kann erst nach §Y1 Jahr§! wieder von der Aufgabe entbunden werden. \n--------------\nDies wird die folgenden Auswirkungen auf den Staat haben: [rce_state_missionary_button_tt_nestorian_patriarch_influence_modifier] \n[statewide_governing_cost]: §G-20.0%§! \n[local_tax_modifier]: §G+25.0%§! \n[local_development_cost]: §G-5.0%§! \n[local_culture_conversion_time]: §G-10.0%§! \n[local_unrest]: §R+2.00§! \n[local_monthly_autonomy]: §R+0.05§!"
+ rce_state_missionary_button_tt_currently_active: "Ein Missionar wurde §Y[Root.GetAreaName]§! zugewiesen."
+ rce_state_missionary_button_tt_blocked_no_missionary: "§RIhr habt keine Missionare, die Ihr zuweisen könntet.§W"
+ rce_state_missionary_button_tt_blocked_state_not_owned: "§RIhr besitzt nicht alle Provinzen in dem Staat §Y[Root.GetAreaName]§! als Eure Kernprovinzen.§W"
+ rce_state_missionary_button_tt_blocked_state_not_converted: "§RAlle Provinzen in diesem Staat müssen Eurer Religion folgen. Mindestens §Y1§! Provinz in dem Staat §Y[Root.GetAreaName]§! folgt nicht dem §Y[From.Religion.GetName]en§! Glauben.§W"
+ rce_state_missionary_button_tt_blocked_recently_used: "§RIhr könnt nur einmal pro Monat einen Missionar einem Staat zuweisen.§W"
+ rce_state_missionary_button_tt_blocked_cannot_remove_before_1_year: "--------------\n§RIhr müsst §Y1 Jahr§! warten, bis Ihr einen Missionar von seiner Aufgabe in einem Staat entbinden könnt. Der Missionar wurde dem Staat im Jahr §Y[This.rce_missionary_assigned_to_state_year.GetValue]§! zugewiesen.§W"
+
+ # Customizable Localization:
+ rce_state_missionary_button_tt_nestorian_patriarch_influence_modifier: "\n[rce_yearly_religion_mechanic_nestorian_patriarchy_change]: §G+0.50§!"
+
+ # Event Modifiers:
+ rce_missionary_assigned_to_state_main_modifier: "Klerikale Verwaltung"
+ rce_missionary_assigned_to_state_modifier: "Klerikale Verwaltung"
+ rce_religion_reformed_modifier: "Zentralisierung des Glaubens"
+ rce_religion_jainism_estate_jains_guaranteed_autonomy_mod: "Autonomie der Jaina garantiert"
+ desc_rce_religion_jainism_estate_jains_guaranteed_autonomy_mod: "Der Staat hat den Jaina größere Autonomie gewährt."
+ harmonized_tibetan_buddhism: "Harmonisiert mit dem 'Nang Chos'-Glauben"
+ desc_harmonized_tibetan_buddhism: "Wir haben den 'Nang Chos'-Glauben in unser Land und nationalen Ethos eingebunden."
+ rce_formable_nestorian_kingdom_of_god_modifier: "Königreich Gottes"
+ desc_rce_formable_nestorian_kingdom_of_god_modifier: "Der Patriarch hat sich selbst zum Verwalter des Königreichs Gottes auf Erden ausgerufen."
+
+ # Tooltips:
+ RCE_UNTIL_MONARCH_DEATH: "bis zum Tod des Herrschers"
+ RCE_UNTIL_MONARCH_DEATH_OR_1_YEAR: "für §Y365 Tage§! oder bis zum Tod des Herrschers"
+ rce_religion_reform_religion_decision_tt: "\n§Y[Root.GetName]§! kann nun der §YVerteidiger des [Root.Religion.GetName]en Glaubens§! werden."
+ RCE_CANNOT_CLAIM_DOF_RELIGION_NOT_REFORMED_TT_EASTERN: "Ein Land, das einer §YÖstlichen§! Religion folgt, muss zunächst seinen Glauben zentralisieren, bevor es den Titel des Verteidiger des Glaubens erwerben kann!"
+ RCE_CANNOT_CLAIM_DOF_RELIGION_NOT_REFORMED_TT_DHARMIC: "Ein Land, das einer §YDharmischen§! Religion folgt, muss zunächst seinen Glauben zentralisieren, bevor es den Titel des Verteidiger des Glaubens erwerben kann!"
+ RCE_CANNOT_CLAIM_DOF_RELIGION_NOT_REFORMED_TT_PAGAN: "Ein Land, das einer §YHeidnischen§! Religion folgt, muss zunächst seinen Glauben zentralisieren, bevor es den Titel des Verteidiger des Glaubens erwerben kann!"
+ rce_tooltip_effect_text: "§YEffekt:§!"
+
+ # Decisions:
+ rce_religion_reform_religion_decision_title: "Zentralisiert den [Root.Religion.GetName]en Glauben"
+ rce_religion_reform_religion_decision_desc: "Der [Root.Religion.GetName]e Glaube ist keine zentralisierte Religion. Dies birgt im Vergleich zu diesen Nachteile. Wir sollten nach einer stärkeren Zentralisierung streben, um konkurrenzfähig zu werden."
+ rce_formable_decision_assyria_title: "Gründet Assyrien"
+ rce_formable_decision_assyria_desc: "Da wir die assyrische Kultur erlangt haben, müssen wir das assyrische Volk in der Nation Assyrien vereinen!"
+ rce_formable_decision_empire_of_light_title: "Gründet das Reich des Lichts"
+ rce_formable_decision_empire_of_light_desc: "Wir müssen das manichäische Volk in einem spirituellen Reich vereinen!"
+ rce_formable_decision_coptic_egypt_title: "Gründet Kemet"
+ rce_formable_decision_coptic_egypt_desc: "Gründet die Nation Kemet, wobei Ihr die reiche Geschichte des Nildeltas zur Schaffung eines modernen Staats in der Region einbezieht."
+ rce_formable_decision_nestorian_kingdom_of_god_title: "Das Königreich Gottes ausrufen"
+ rce_formable_decision_nestorian_kingdom_of_god_desc: "Mit den Gebieten des Balkans und Anatoliens unter der Herrschaft des Patriarchen statt der eines Kaisers oder Königs ist es nun berechtigt, das Königreich Gottes auf Erden auszurufen."
+
+ # Vanilla Events:
+ hindu_events.1.j: "Ich folge Kali."
+ hindu_events.1.k: "Ich folge Hanuman."
+
+ # Events:
+ rce_events.EVTNAME1: "Console: Religion ändern"
+ rce_events.EVTDESC1: "Wählt hier aus, zu welcher neuen oder geänderten Religion Ihr konvertieren möchtet."
+ rce_events1.EVTOPT1: "Abbrechen."
+
+ rce_events.EVTNAME2: "Console: Religiöse Macht erhalten"
+ rce_events.EVTDESC2: "Wählt hier aus, ob Ihr etwas Macht für eine neue Religionsmechanik erhalten wollt, falls Ihr über eine verfügt."
+ rce_events2.EVTOPT1: "Gib mir Macht."
+ rce_events2.EVTOPT2: "Abbrechen."
+
+ # Countries:
+ ## Tags:
+ NPA: "Konstantinopel"
+ NPA_ADJ: "Patriarchal"
+ ## Renames:
+ RCE_FORMABLE_ASSYRIA: "Assyrien"
+ RCE_FORMABLE_ASSYRIA_ADJ: "Assyrisch"
+ RCE_FORMABLE_EMPIRE_OF_LIGHT: "Reich des Lichts"
+ RCE_FORMABLE_EMPIRE_OF_LIGHT_ADJ: "Manichäisch"
+ RCE_FORMABLE_COPTIC_EGYPT: "Kemet"
+ RCE_FORMABLE_COPTIC_EGYPT_ADJ: "Kemetisch"
+ RCE_FORMABLE_CHAHAMANA_NADU: "Chauhan Nadu"
+ RCE_FORMABLE_CHAHAMANA_NADU_ADJ: "Chauhanisch"
+ RCE_FORMABLE_NESTORIAN_KINGDOM_OF_GOD: "Königreich Gottes"
+ RCE_FORMABLE_NESTORIAN_KINGDOM_OF_GOD_ADJ: "Patriarchal"
+
+ # Government Reforms:
+ nestorian_patriarchy_constantinople_reform: "Patriarchat"
+ nestorian_patriarchy_constantinople_reform_desc: "Eine politische Struktur, in der die Nation von einem geistlichen Führer, den Patriarchen und somit dem höchsten Amt der Nestorianischen Kirche, regiert wird."
+
+ # Government Names:
+ RCE_GOV_NAME_NESTORIAN_PATRIARCHY: "Patriarchat"
+ RCE_GOV_RULER_NESTORIAN_PATRIARCHY: "Patriarch"
+ RCE_GOV_RULER_NESTORIAN_PATRIARCHY_fem: "Matriarch"
+
+ # Vanilla Modifier Names (for customizable localization):
+ RCE_CHURCH_LOYALTY_EQUILIBRIUM_MODIFIER: "Loyalitätsgleichgewicht ([Root.GetKlerusName])"
+
+ # Peace Treaties:
+ rce_peace_treaty_convert_heathen_desc: "@[From.GetTag] §Y[From.GetName]§! wird zum §Y[Root.Religion.GetName]en§! Glauben konvertieren. @[Root.GetTag] §Y[Root.GetName]§! erhält §G+5.0§! Prestige."
+ CB_ALLOWED_rce_peace_treaty_convert_heathen: "Religion erzwingen (Heiden)"
+ PEACE_rce_peace_treaty_convert_heathen: "Religion erzwingen"
+
+ rce_peace_treaty_religion_mechanic_nestorian_patriarchy_disable_center_of_reformation_desc: "Das §Y[From.Religion.GetName]e§! Zentrum der Konvertierung in §Y[rce_religion_mechanic_nestorian_patriarchy_current_center_of_reformation.GetName]§! wird zerstört. Der Kontrolleur des Patriarchats kann kein Zentrum der Konvertierung mehr auswählen, erst der nächste Kontrolleur des Patriarchats wird dazu wieder in der Lage sein."
+ CB_ALLOWED_rce_peace_treaty_religion_mechanic_nestorian_patriarchy_disable_center_of_reformation: "Zentrum der Konvertierung zerstören"
+ PEACE_rce_peace_treaty_religion_mechanic_nestorian_patriarchy_disable_center_of_reformation: "Zentrum der Konvertierung zerstören"
+
+ # Casus Bellis:
+ cb_rce_religion_mechanic_nestorian_patriarchy_excommunication: "Exkommunizierter Herrscher"
+ cb_rce_religion_mechanic_nestorian_patriarchy_excommunication_desc: "Ihr Herrscher wurde exkommuniziert."
+ cb_rce_religion_mechanic_nestorian_patriarchy_remove_center_of_reformation: "Zentrum der Konvertierung zerstören"
+ cb_rce_religion_mechanic_nestorian_patriarchy_remove_center_of_reformation_desc: "Sie sind der derzeitige Kontrolleur des Nestorischen Patriarchats. Wir müssen sie dazu zwingen, das Zentrum der Konvertierung, das den Nestorianischen Glauben in unseren Ländereien verbreitet, zu zerstören!"
+
+ # War Goals:
+ rce_religion_mechanic_nestorian_patriarchy_excommunication_war_goal: "Eroberung einer Provinz"
+ rce_religion_mechanic_nestorian_patriarchy_excommunication_war_goal_desc: "Kriegsziel ist die Eroberung einer Provinz."
+ rce_religion_mechanic_nestorian_patriarchy_remove_center_of_reformation_war_goal: "Überlegenheit demonstrieren"
+ rce_religion_mechanic_nestorian_patriarchy_remove_center_of_reformation_war_goal_desc: "Das Kriegsziel ist es, dem Feind durch siegreich geschlagene Kämpfe Überlegenheit zu demonstrieren."
+
+ # War Names:
+ RCE_RELIGION_MECHANIC_NESTORIAN_PATRIARCHY_EXCOMMUNICATION_WAR_NAME: "$ORDER$ $FIRST$er Krieg gegen das Nestorianische Patriarchat"
+
+ # State Edicts:
+ rce_religion_mechanic_nestorian_patriarchy_state_edict_silk_road_missionaries_upgraded: "Missionare der Seidenstraße"
+ rce_religion_mechanic_nestorian_patriarchy_state_edict_silk_road_missionaries: "Missionare der Seidenstraße"
+
+ # Estate Privileges:
+ rce_religion_mechanic_nestorian_patriarchy_estate_church_privilege_patriarchal_emissary: "Patriarchale Abgesandte"
+ rce_religion_mechanic_nestorian_patriarchy_estate_church_privilege_patriarchal_emissary_desc: "Die patriarchalen Legaten und andere Gesandte sollen nicht nur in unseren Ländern willkommen sein, sondern [Root.GetMderdie] [Root.Monarch.GetTitle] sollte auch verpflichtet sein, ihrem Urteil stets zu gehorchen und sich nicht in die Beziehungen zwischen dem lokalen [Root.GetKlerusName] und dem Patriarchen einzumischen."
+
+ rce_religion_jainism_estate_jains_guaranteed_autonomy: "Garantierte Autonomie der Jaina"
+ rce_religion_jainism_estate_jains_guaranteed_autonomy_desc: "Der [Root.GetJainaName]-Stand wird von unseren Untertanen sehr geschätzt. Ihm eine größere Autonomie zu gewähren, wäre ein wirksames Mittel, um seine Unterstützung für die [Root.GovernmentName] zu sichern und sicherzustellen, dass unsere Differenzen mit ihm nicht in einem religiösen Konflikt ausbrechen."
+ rce_religion_jainism_estate_jains_guaranteed_autonomy_effect_tooltip: "Jede im Besitz befindliche Provinz, die dem §YJainistischen§! Glauben folgt, erhält: \n[local_missionary_strength]: §R-100.0%§! \n[local_religious_unity_contribution]: §G-100.0%§!"
+ rce_religion_jainism_estate_jains_guaranteed_autonomy_revoke_effect_tooltip: "Entfernt den Modifikator §Y'Autonomie der Jaina garantiert'§! von allen im Besitz befindlichen §YJainistischen§! Provinzen."
+
+ # Ideas:
+ rce_anatolian_beyliks_ideas: "Anatolische Beyliks-Ideen"
+ rce_anatolian_beyliks_ideas_start: "Anatolische Beyliks-Traditionen"
+ rce_anatolian_beyliks_ideas_bonus: "Anatolische Beyliks-Ambitionen"
+
+ rce_NPA_ideas: "Patriarchale Ideen"
+ rce_NPA_ideas_start: "Patriarchale Traditionen"
+ rce_NPA_ideas_bonus: "Patriarchale Ambitionen"
+ rce_NPA_ideas_1: "Hüter der Sehnsuchtsstadt der Welt"
+ rce_NPA_ideas_1_desc: "Da Konstantinopel das schlagende Herz der nestorianischen Kirche ist, liegt es an uns, sie zu verteidigen und zu pflegen. Es ist lange her, dass sie an der Spitze Europas stand, und deshalb ist es unsere Pflicht, sie wieder auf diese Position zu heben.\n\n"
+ rce_NPA_ideas_2: "Vermächtnis des Nestorius"
+ rce_NPA_ideas_2_desc: "Der 386 geborene Nestorius hat das Wesen Christi richtig erkannt, auch wenn ihn viele wegen seiner Wahrheiten gemieden haben. Nach seinen Ideen zu leben und sein Wort zu verbreiten, ist die wichtigste Aufgabe für jeden, der sich selbst als Anhänger seines Ritus bezeichnet.\n\n"
+ rce_NPA_ideas_3: "Seidenstraßenhandel"
+ rce_NPA_ideas_3_desc: "Günstig am Ende der Seidenstraße gelegen, ist der Bosporus das natürliche Ziel aller asiatischen Waren, und alle asiatischen Waren gehören unseren Händlern, um den Wohlstand aller Nestorianer zu sichern.\n\n"
+ rce_NPA_ideas_4: "Vermittler zwischen Griechen und Türken"
+ rce_NPA_ideas_4_desc: "Wenn wir inmitten einer jahrhundertealten Rivalität den Zusammenhalt zwischen unseren anatolischen und europäischen Ländern gewährleisten wollen, müssen wir lernen, zwischen den beiden Völkern zu vermitteln, idealerweise durch einen gemeinsamen Glauben.\n\n"
+ rce_NPA_ideas_5: "Tor zum Osten"
+ rce_NPA_ideas_5_desc: "West und Ost, Persien und Rom, Indien und Griechenland, seit Jahrtausenden diente dieses Land als Tor zu den fernen Ländern Asiens. Unsere Missionare sind bereits den einst von Alexander gebauten und beschrittenen Straßen gefolgt, Verbindungen und Freunde an weit entferten Orten sind dazu bereit, uns in unseren Kämpfen zu folgen.\n\n"
+ rce_NPA_ideas_6: "Wiedereinführung des östlichen Ritus"
+ rce_NPA_ideas_6_desc: "Die nestorianische Kirche hat bessere Zeiten erlebt, aber es ist eine Weile her, dass sich die mongolischen Höfe als wahre Gläubige bezeichneten. Doch die gegenwärtige Ära ist von einem Wiederaufleben geprägt, und wir sitzen an ihrer Spitze.\n\n"
+ rce_NPA_ideas_7: "Verteidigung des Landes"
+ rce_NPA_ideas_7_desc: "Wir sind ein friedliches Volk und Toleranz gehört zu unseren Grundprinzipien, aber viele andere teilen diese Einstellung nicht und deshalb werden wir nicht davor zurückschrecken, unsere Werte, unser Land und unsere Bevölkerung mit aller Heftigkeit zu verteidigen, die wir aufbringen können.\n\n"
+
+ rce_assyria_ideas: "Assyrische Ideen"
+ rce_assyria_ideas_start: "Assyrische Traditionen"
+ rce_assyria_ideas_bonus: "Assyrische Ambitionen"
+ rce_assyria_ideas_1: "Ein Land zwischen Flüssen"
+ rce_assyria_ideas_1_desc: "Mesopotamien, das fruchtbare Land zwischen den mächtigen Flüssen Euphrat und Tigris, ist unsere Heimat. Trotz ihres Niedergangs in den letzten Jahrhunderten sind sie immer noch in der Lage, große urbane Zentren zu unterstützen. Unser Volk wird an seine Ufer zurückkehren und die große alte Metropole wieder aufbauen.\n\n"
+ rce_assyria_ideas_2: "Wiege der Zivilisation"
+ rce_assyria_ideas_2_desc: "Als Geburtsort der Zivilisation, des Rechts, der Religion und der Kultur befinden wir uns im Epizentrum der Menschheit. Bagdad war einst Babylon, Mosul war einst Ninive, verschiedene Namen, aber der gleiche Ruhm. Die Länder von Schina werden Türme sehen, die Babel in den Schatten stellen.\n\n"
+ rce_assyria_ideas_3: "Kinder eines Großreiches"
+ rce_assyria_ideas_3_desc: "Das assyrische Reich ist eine ferne Erinnerung, vielleicht nur ein Mythos unserer Vorfahren. Aber egal, wie real es war, wir sind die Kinder dieses Reiches, Nachfahren von Göttern und Königen von unermesslicher Größe. Es sollte unser Geburtsrecht sein, diese Länder von Urislem bis Susa wieder zu regieren, um ein Reich zu erschaffen, das unsere Vorfahren stolz macht.\n\n"
+ rce_assyria_ideas_4: "Träume einer sterbenden Kultur"
+ rce_assyria_ideas_4_desc: "An den Rand gedrängt, ist unser Volk nur noch zu einer Minderheit in den Außenbezirken von Mossul geworden. Aber wir haben trotzdem durchgehalten, wir haben überlebt, unsere Widerstandskraft ist nicht einmal von unseren hebräischen Brüdern übertroffen. Es ist an der Zeit, die Träume einer aussterbenden Kultur wiederzubeleben und dafür zu sorgen, dass unsere Bräuche und Sprache an allen Höfen von Rom bis Isfahan zu finden sind.\n\n"
+ rce_assyria_ideas_5: "Zentrum des Fruchtbaren Halbmonds"
+ rce_assyria_ideas_5_desc: "Der Fruchtbare Halbmond hat schon bessere Zeiten erlebt, aber mit unserer Fähigkeit, selbst die kargsten Ländereien in ausgedehntes Ackerland zu verwandeln, wären wir mit ein bisschen Technik und harter Arbeit in der Lage, Wunder auf den großen Flüssen zu vollbringen.\n\n"
+ rce_assyria_ideas_6: "Staatskasse für ausländische Banner"
+ rce_assyria_ideas_6_desc: "Unser Volk ist klein und dünn verteilt, unsere Armeen mit ausländischen Bannern zu verstärken, ist der einzige Weg für uns, ein Königreich zu schaffen, das die Ewigkeit überdauert. Daher ist die Einrichtung einer Mischung aus Wehrpflicht und Söldnern von entscheidender Bedeutung für unser Überleben. Eine Praxis, die bereits unsere Vorfahren perfektioniert haben.\n\n"
+ rce_assyria_ideas_7: "Formalisierung der aramäischen Sprache"
+ rce_assyria_ideas_7_desc: "Die aramäische Sprache hat viele verschiedene Ableger und lokale Variationen überall im Halbmond. Wir müssen eine einheitliche nationale Identität etablieren, wenn wir als Volk näher zusammenwachsen wollen. Genau diese Sprache zu standardisieren, sollte uns helfen, dies zu erreichen.\n\n"
+
+ rce_empire_of_light_ideas: "Manichäische Ideen"
+ rce_empire_of_light_ideas_start: "Manichäische Traditionen"
+ rce_empire_of_light_ideas_bonus: "Manichäische Ambitionen"
+ rce_empire_of_light_ideas_1: "Die Sieben-Gebete-Armee"
+ rce_empire_of_light_ideas_1_desc: "Die Texte besagen, dass die Gottergebenen sieben Gebete verrichten sollen, um den Kampf gegen die Dunkelheit zu ehren. Diese Gebete können viele Formen annehmen; indem wir unseren Soldaten Zeit geben, um zu beten, können wir sicherstellen, dass ihre Vorhaben gegen die Feinde des Lichts wahr werden.\n\n"
+ rce_empire_of_light_ideas_2: "Sieg über die fünf Reiche der Dunkelheit"
+ rce_empire_of_light_ideas_2_desc: "Die fünft Reiche der Dunkelheit versuchen, das Licht zu korrumpieren und auszulöschen. Es ist offensichtlich, dass die Dunkelheit durch jene handelt, die das Licht nicht sehen wollen, also müssen wir die Gläubigen versammeln, um den Sieg zu sichern.\n\n"
+ rce_empire_of_light_ideas_3: "Ein leuchtender Kreuzzug"
+ rce_empire_of_light_ideas_3_desc: "Wir werden mit den mächtigen Engeln zusammen leben. Um die heilige Kirche zu bewachen und zu beschützen. Und den Gegnern und Feinden des Friedens die Köpfe abzuschneiden. Mögen Raphael, Michael, Gabriel und Sarael, zusammen mit all den mächtigsten Engeln den Frieden und den Glauben für die ganze Kirche des Lichts erhöhen.\n\n"
+ rce_empire_of_light_ideas_4: "Die Lehren von Mani"
+ rce_empire_of_light_ideas_4_desc: "Gelobt, lebendig, wachsam und unsterblich bist du, oh schöne Gestalt, Herr Jesus der Herrliche, am meisten geliebt von allen Königen des Lichts, Herrscher, Messias! \n\nGib uns, Herr, von deinen guten Gaben, denn du bist der Anfang aller guten Gaben! \n\nDu bist der Arzt! Du bist, Herr, der Erlöser, der Retter! \n- Lobeshymne der Größeren.\n\n"
+ rce_empire_of_light_ideas_5: "Reinigung mit Feuer"
+ rce_empire_of_light_ideas_5_desc: "Das Feuer, das reinigt, ist sowohl ein Mittel der Erneuerung als auch ein Mittel unseres gerechten Zornes gegen diejenigen, die sich weigern, das Licht zu sehen und darauf bestehen, Dunkelheit und Schatten zu verbreiten.\n\n"
+ rce_empire_of_light_ideas_6: "Unterstützung religiöser Kunst"
+ rce_empire_of_light_ideas_6_desc: "Monumente für alle Propheten, Jesus und Buddha, Mani und Zarathustra, Balladen und Schriften, nur ein kultivierter Geist kann die Welt, die wir verteidigen, wirklich verstehen!\n\n"
+ rce_empire_of_light_ideas_7: "Helft ihnen, das Licht zu sehen"
+ rce_empire_of_light_ideas_7_desc: "Nicht alle, die sich anfangs den Lehren Manis widersetzen, tun dies mit Böswilligkeit. Es ist unsere Pflicht, auch diejenigen zu lehren und ihnen zu helfen, sie zu verstehen und nach ihnen zu leben, die sich mit der Wahrheit schwer tun.\n\n"
+
+ rce_coptic_egypt_ideas: "Kemetische Ideen"
+ rce_coptic_egypt_ideas_start: "Kemetische Traditionen"
+ rce_coptic_egypt_ideas_bonus: "Kemetische Ambitionen"
+ rce_coptic_egypt_ideas_1: "Zentralisierungsbemühungen"
+ rce_coptic_egypt_ideas_1_desc: "Unsere Nation darf nicht länger zurückfallen, während die Großmächte um uns herum ihre Herrschaft und ihre absolute Macht festigen. Wir müssen eine Reihe von Urbanisierungsreformen in die Wege leiten, die unserem Volk helfen werden und unseren Status verbessern.\n\n"
+ rce_coptic_egypt_ideas_2: "Nachfahren der Pharaonen"
+ rce_coptic_egypt_ideas_2_desc: "Wir sind die Kinder von Menes, Echnaton und Ramses.  Jedoch war es der Verrat von Tjahapimu, der den Aufstieg des letzten einheimischen Herrschers von Ägypten, Nektanebo II, im Jahr 340 v. Chr. bezeugte. Es liegt in unserem Blut, die einheimische Herrschaft in Ägypten wiederherzustellen und es unter unserer Hand gedeihen zu sehen!\n\n"
+ rce_coptic_egypt_ideas_3: "Nilproduktion"
+ rce_coptic_egypt_ideas_3_desc: "Der Nil hat unser Volk seit Jahrtausenden ernährt, und um die Erträge effizienter nutzen zu können, sollten wir unsere Produktionsmethoden an den Westen angleichen und eine angemessene Infrastruktur am gesamten Ufer des Nils ausbauen.\n\n"
+ rce_coptic_egypt_ideas_4: "Schiffsbauer aus dem Mittelmeer"
+ rce_coptic_egypt_ideas_4_desc: "Ein Großteil unseres Territoriums liegt an der Mittelmeerküste, weshalb unser Volk sehr geschickt darin ist, unsere Schiffe instand zu setzen und auf See zu warten.\n\n"
+ rce_coptic_egypt_ideas_5: "Wahres Volk Ägyptens"
+ rce_coptic_egypt_ideas_5_desc: "Perser, Mazedonier, Römer, Araber und Tscherkassier. Dieses Land wurde immer wieder von äußeren Feinden unterworfen, aber erst als die arabische Herrschaft drängte unser Volk an die Ränder des Nils und seiner Städte. Wir müssen diese Eindringlinge vertreiben, damit der Nil endlich heilen kann.\n\n"
+ rce_coptic_egypt_ideas_6: "Kreuzung der Kontinente"
+ rce_coptic_egypt_ideas_6_desc: "Unsere geografische Lage gibt uns eine sehr vorteilhafte Position: Sie erlaubt es uns, den Handel zu manipulieren und unseren Einfluss auf die globalen Märkte verhältnismäßig leicht geltend zu machen.\n\n"
+ rce_coptic_egypt_ideas_7: "Monumentale Baumeister"
+ rce_coptic_egypt_ideas_7_desc: "Die großen Pyramiden, das einzige der großen Wunder, die noch bestehen und stolz die Landschaft bestimmen, sind ein Beweis für unsere Fähigkeit, mit unseren Monumenten den Himmel zu berühren. Wir sind die größten Baumeister, wir sind in der Lage, leeren Sand in Metropolen und abgelegene Oasen in geschäftige Handelszentren zu verwandeln, die die Italiener vor Ehrfurcht erblassen lassen würden.\n\n"

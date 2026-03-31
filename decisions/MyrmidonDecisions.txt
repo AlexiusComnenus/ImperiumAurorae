@@ -1,0 +1,788 @@
+country_decisions = {
+	establish_mexican_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = mexico_region
+			}
+		}
+		allow = {
+			NOT = { exists = MEX }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = mexico_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = mexico_region
+					}
+					add_core = MEX
+					remove_core = ROOT
+				}
+			}
+			release = MEX
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = MEX
+			}
+			hidden_effect = {
+				MEX = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_centralamerican_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = central_america_region
+			}
+		}
+		allow = {
+			NOT = { exists = CAM }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = central_america_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = central_america_region
+					}
+					add_core = CAM
+					remove_core = ROOT
+				}
+			}
+			release = CAM
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = CAM
+			}
+			hidden_effect = {
+				CAM = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_venezuelan_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = colombia_region
+			}
+		}
+		allow = {
+			NOT = { exists = VNZ }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = colombia_region
+				NOT = { province_id = 835 }
+				NOT = { province_id = 828 }
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = colombia_region
+						NOT = { province_id = 835 }
+						NOT = { province_id = 828 }
+					}
+					add_core = VNZ
+					remove_core = ROOT
+				}
+			}
+			release = VNZ
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = VNZ
+			}
+			hidden_effect = {
+				VNZ = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_brazilian_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = brazil_region
+			}
+		}
+		allow = {
+			NOT = { exists = BRZ }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = brazil_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = brazil_region
+					}
+					add_core = BRZ
+					remove_core = ROOT
+				}
+			}
+			release = BRZ
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = BRZ
+			}
+			hidden_effect = {
+				BRZ = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_laplata_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = la_plata_region
+			}
+		}
+		allow = {
+			NOT = { exists = LAP }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = la_plata_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = la_plata_region
+					}
+					add_core = LAP
+					remove_core = ROOT
+				}
+			}
+			release = LAP
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = LAP
+			}
+			hidden_effect = {
+				LAP = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_peruvian_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				OR = {
+					region = peru_region
+					region = upper_peru_region
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = PEU }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				OR = {
+					region = peru_region
+					region = upper_peru_region
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						OR = {
+							region = peru_region
+							region = upper_peru_region
+						}
+					}
+					add_core = PEU
+					remove_core = ROOT
+				}
+			}
+			release = PEU
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = PEU
+			}
+			hidden_effect = {
+				PEU = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_louisiana_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				OR = {
+					region = mississippi_region
+					region = great_plains_region
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = LOU }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				OR = {
+					region = mississippi_region
+					region = great_plains_region
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						OR = {
+							region = mississippi_region
+							region = great_plains_region
+						}
+					}
+					add_core = LOU
+					remove_core = ROOT
+				}
+			}
+			release = LOU
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = LOU
+			}
+			hidden_effect = {
+				LOU = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_quebec_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				OR = {
+					region = canada_region
+					region = hudson_bay_region
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = QUE }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				OR = {
+					region = canada_region
+					region = hudson_bay_region
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						OR = {
+							region = canada_region
+							region = hudson_bay_region
+						}
+					}
+					add_core = QUE
+					remove_core = ROOT
+				}
+			}
+			release = QUE
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = QUE
+			}
+			hidden_effect = {
+				QUE = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_texan_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = rio_grande_region
+			}
+		}
+		allow = {
+			NOT = { exists = TEX }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = rio_grande_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = rio_grande_region
+					}
+					add_core = TEX
+					remove_core = ROOT
+				}
+			}
+			release = TEX
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = TEX
+			}
+			hidden_effect = {
+				TEX = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_californian_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = california_region
+			}
+		}
+		allow = {
+			NOT = { exists = CAL }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = california_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = california_region
+					}
+					add_core = CAL
+					remove_core = ROOT
+				}
+			}
+			release = CAL
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = CAL
+			}
+			hidden_effect = {
+				CAL = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_alaskan_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = cascadia_region
+			}
+		}
+		allow = {
+			NOT = { exists = ALA }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = cascadia_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = cascadia_region
+					}
+					add_core = ALA
+					remove_core = ROOT
+				}
+			}
+			release = ALA
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = ALA
+			}
+			hidden_effect = {
+				ALA = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_illinois_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = great_lakes_region
+			}
+		}
+		allow = {
+			NOT = { exists = ILI }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = great_lakes_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = great_lakes_region
+					}
+					add_core = ILI
+					remove_core = ROOT
+				}
+			}
+			release = ILI
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = ILI
+			}
+			hidden_effect = {
+				ILI = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_florida_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = southeast_america_region
+			}
+		}
+		allow = {
+			NOT = { exists = FLO }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = southeast_america_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = southeast_america_region
+					}
+					add_core = FLO
+					remove_core = ROOT
+				}
+			}
+			release = FLO
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = FLO
+			}
+			hidden_effect = {
+				FLO = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	establish_vermont_subject = {
+		potential = {
+			OR = {
+				tag = MYM
+				has_reform = myrmidons_government
+			}
+			num_of_owned_provinces_with = {
+				value = 1
+				is_city = yes
+				region = northeast_america_region
+			}
+		}
+		allow = {
+			NOT = { exists = VRM }
+			is_at_war = no
+			num_of_owned_provinces_with = {
+				value = 5
+				is_city = yes
+				region = northeast_america_region
+			}
+		}
+		effect = {
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_city = yes
+						region = northeast_america_region
+					}
+					add_core = VRM
+					remove_core = ROOT
+				}
+			}
+			release = VRM
+			create_subject = {
+				subject_type = myrmidon_exarchate
+				subject = VRM
+			}
+			hidden_effect = {
+				VRM = {
+					change_technology_group = high_american
+					change_unit_type = high_american
+					change_primary_culture = ROOT
+					change_religion = ROOT
+					change_government = republic
+					add_government_reform = myrmidon_exarchate_government
+					kill_ruler = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

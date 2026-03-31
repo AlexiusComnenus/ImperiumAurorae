@@ -234,8 +234,9 @@ Aengland_Missions_1 = {
 				full_idea_group = religious_ideas
 				full_idea_group = humanist_ideas
 				AND = {
-					NOT = { religious_unity = 0.75 }
+					religious_unity = 0.75
 					is_religion_enabled = protestant
+					current_age = age_of_reformation
 				}
 			}
 		}
@@ -269,21 +270,21 @@ Aengland_Missions_2 = {
 				NOT = { exists = WLS }
 				has_won_war_against = {
 					who = WLS
-					max_years_since = 30
+					max_years_since = 50
 				}
 			}
 			OR = {
 				NOT = { exists = CRN }
 				has_won_war_against = {
 					who = CRN
-					max_years_since = 30
+					max_years_since = 50
 				}
 			}
 			OR = {
 				NOT = { exists = ENG }
 				has_won_war_against = {
 					who = ENG
-					max_years_since = 30
+					max_years_since = 50
 				}
 			}
 		}
@@ -659,9 +660,15 @@ Aengland_Missions_3 = {
 					area = wessex_area
 				}
 			}
-			NOT = { exists = WLS }
-			NOT = { exists = CRN }
-			NOT = { exists = ENG }
+			british_isles_region = {
+				type = all
+				NOT = { country_or_non_sovereign_subject_holds = WLS }
+				NOT = { country_or_non_sovereign_subject_holds = CRN }
+				NOT = { country_or_non_sovereign_subject_holds = ENG }
+			}
+			#NOT = { exists = WLS }
+			#NOT = { exists = CRN }
+			#NOT = { exists = ENG }
 		}
 		
 		effect = {

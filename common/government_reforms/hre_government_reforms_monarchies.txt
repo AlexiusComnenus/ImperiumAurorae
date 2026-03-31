@@ -42,6 +42,8 @@ hlr_catholic_orders_reform = {
 		has_reform = hlr_catholic_orders_reform
 	}
 	modifiers = {
+		leader_cost = -0.10
+		manpower_in_true_faith_provinces = 0.10
 		church_loyalty_modifier = 0.1
 	}
 	

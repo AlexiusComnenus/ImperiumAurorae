@@ -1,3 +1,69 @@
+# Below Limit Trigger | LAND | MARINES
+ia_below_limit_marines = {
+	has_global_modifier_value = {
+		which = has_marines
+		value = 1
+	}
+	variable_arithmetic_trigger = {
+		export_to_variable = {
+			which = iaTriggerCalcMarineFraction1
+			value = modifier:allowed_marine_fraction
+		}
+		export_to_variable = {
+			which = iaTriggerCalcLandForceLimit1
+			value = land_forcelimit
+		}
+		multiply_variable = {
+			which = iaTriggerCalcMarineFraction1
+			which = iaTriggerCalcLandForceLimit1
+		}
+		export_to_variable = {
+			which = iaTriggerCalcMarineFraction2
+			value = modifier:allowed_marine_fraction
+		}
+		export_to_variable = {
+			which = iaTriggerCalcLandForceLimit2
+			value = land_forcelimit
+		}	
+		export_to_variable = {
+			which = iaTriggerCalcSpecialForceLimit2
+			value = modifier:special_unit_forcelimit
+		}
+		multiply_variable = {
+			which = iaTriggerCalcMarineFraction2
+			which = iaTriggerCalcLandForceLimit2
+		}		
+		multiply_variable = {
+			which = iaTriggerCalcMarineFraction2
+			which = iaTriggerCalcSpecialForceLimit2
+		}
+		change_variable = {
+			which = iaTriggerCalcMarineFraction1
+			which = iaTriggerCalcMarineFraction2
+		}		
+		subtract_variable = {            
+			which = iaTriggerCalcMarineFraction1
+			value = 1
+		}
+		#export_to_variable = {
+		#	which = drayTriggerCalcAddedTercio
+		#	value = modifier:amount_of_tercio
+		#}
+		#change_variable = {
+		#	which = iaTriggerCalcMarineFraction1
+		#	which = drayTriggerCalcAddedTercio
+		#}			
+		export_to_variable = {
+			which = iaTriggerCalcNumberOfMarines
+			value = trigger_value:num_of_marines
+		}
+		check_variable = {
+			which = iaTriggerCalcMarineFraction1
+			which = iaTriggerCalcNumberOfMarines
+		}		
+	}
+}
+
 # Below Limit Trigger | LAND | TERCIOS
 dray_below_limit_tercio = {
 	has_global_modifier_value = {

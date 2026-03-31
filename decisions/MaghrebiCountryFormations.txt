@@ -68,6 +68,7 @@ country_decisions = {
 			344 = {
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = MOR
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
@@ -224,6 +225,7 @@ country_decisions = {
 			338 = {
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = ALG
 			on_change_tag_effect = yes
 			if = {
@@ -360,6 +362,7 @@ country_decisions = {
 			341 = {
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = TUN
 			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
@@ -467,6 +470,7 @@ country_decisions = {
 			354 = {
 				move_capital_effect = yes
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = TRP
 			on_change_tag_effect = yes
 			if = {

@@ -1,0 +1,255 @@
+mym_perma_autonomy_1 = {
+	min_local_autonomy = 75
+}
+
+mym_autonomy_counter_1 = {
+	min_local_autonomy = -25
+}
+
+mym_early_no_range = {
+	range = -1
+	administrative_efficiency = -0.2
+	manpower_recovery_speed = -0.5
+	all_estate_influence_modifier = -0.5
+	all_estate_possible_privileges = -5
+}
+
+mym_enable_frontiers = {
+	colonists = 1
+	colony_cost_modifier = -0.5
+}
+
+mym_growth_spree_hispaniola = {
+	global_colonial_growth = 20
+	development_cost_in_primary_culture = -0.1
+}
+
+mym_growth_spree_cuba = {
+	global_colonial_growth = 20
+	development_cost_in_primary_culture = -0.1
+}
+
+mym_island_administration = {
+	own_coast_naval_combat_bonus = 1.0
+	transport_attrition = -0.5
+	allowed_marine_fraction = 0.25
+	global_sailors_modifier = 0.25
+	global_manpower_modifier = -0.10
+}
+
+mym_dont_touch_me_lol = {
+	local_development_cost = -0.2
+	local_build_cost = -0.2
+	local_core_creation = 100
+	local_warscore_cost_modifier = 100
+	hostile_disembark_speed = 5
+	block_slave_raid = yes
+	hostile_fleet_attrition = 100
+	global_tax_income = 12	
+}
+
+mym_cartagena_and_panama = {
+	min_local_autonomy = -50
+	local_development_cost_modifier = -0.25
+	local_defensiveness = 0.25
+	local_defender_dice_roll_bonus = 1
+	local_colonial_growth = 100
+}
+
+mym_expansion_spree = {
+	global_colonial_growth = 25
+	colony_development_boost = 1
+	fabricate_claims_cost = -0.75
+	no_claim_cost_increasement = yes
+	can_chain_claim = yes
+	cb_on_primitives = yes
+	core_creation = -0.25
+}
+
+mym_guarantee_good_stats = {
+	monarch_admin_power = 2
+	monarch_diplomatic_power = 2
+	monarch_military_power = 2
+}
+
+mym_exarchates_success = {
+	vassal_manpower_bonus = 0.25
+	vassal_forcelimit_bonus = 0.25
+	vassal_sailors_bonus = 0.5
+	vassal_naval_forcelimit_bonus = 0.5
+	reduced_liberty_desire = 10
+}
+
+mym_mex_gold_fleets = {
+	global_ship_cost = -0.1
+	global_ship_recruit_speed = -0.25
+	naval_forcelimit_modifier = 0.5
+	has_voc_indiamen = yes
+	allowed_voc_indiamen_fraction = 0.25
+	light_ship_power = 0.25
+}
+
+mym_great_treasure_fleets = {
+	has_voc_indiamen = yes
+	allowed_voc_indiamen_fraction = 0.10
+	light_ship_power = 0.3
+	global_tariffs = 0.25
+	treasure_fleet_income = 0.25
+	global_ship_trade_power = 0.25
+}
+
+mym_exarchate_subject_metal_bonus = {
+	global_trade_goods_size_modifier = 0.20
+}
+
+mym_metals_of_new_world = {
+	trade_efficiency = 0.1
+}
+
+mym_rule_the_seas = {
+	max_flagships = 1
+	ship_trade_power_modifier = 0.5
+	embargo_efficiency = 1
+	ship_power_propagation = 0.5
+	merchants = 2
+	reduced_trade_penalty_on_non_main_tradenode = 0.5
+	global_trade_power = 0.2
+}
+
+mym_paradise_dawns = {
+	reduced_liberty_desire = 20
+	development_cost_modifier = -0.10
+	prestige_decay = -0.02
+	global_unrest = -3
+	stability_cost_modifier = -0.5
+}
+
+mym_enabled_exploration = {
+	may_explore = yes
+}
+
+mym_intolerant_exarchates_modifier = {
+	num_accepted_cultures = -100
+	culture_conversion_cost = -0.25
+	culture_conversion_time = -0.25
+	tolerance_heretic = -2
+	tolerance_heathen = -2
+	global_missionary_strength = 0.03
+	development_cost_in_primary_culture = -0.3
+	development_cost = 0.2
+}
+
+mym_fountain_alchemy_labs = {
+	alchemists_loyalty_modifier = 0.1
+	alchemists_influence_modifier = 0.05
+	innovativeness_gain = 0.25
+	technology_cost = -0.025
+}
+
+mym_fountain_civilian = {
+	monarch_lifespan = 1
+	development_cost = -0.05
+	state_governing_cost = -0.1
+	global_prosperity_growth = 0.5
+	monarch_admin_power = 1
+	expand_infrastructure_cost_modifier = -0.25
+	centralize_state_cost = -0.1
+}
+
+mym_fountain_military = {
+	monarch_lifespan = 1
+	monarch_military_power = 1
+	manpower_recovery_speed = 0.10
+	sailors_recovery_speed = 0.2
+	transport_attrition = -0.1
+	land_attrition = -0.10
+	reinforce_speed = 0.15
+}
+
+mym_baby_boom = {
+	manpower_recovery_speed = 0.25
+	global_colonial_growth = 15
+}
+
+mym_jamaica_capital = {
+	local_development_cost_modifier = -0.25
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 1
+	local_governing_cost_increase = -10
+	local_tax_modifier = 0.5
+	trade_goods_size_modifier = 0.25
+}
+
+mym_eastern_capital = {
+	local_development_cost_modifier = -0.25
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 1
+	statewide_governing_cost = -0.25
+	local_governing_cost_increase = -10
+	local_centralize_state_cost = -0.25
+}
+
+mym_western_capital = {
+	local_development_cost_modifier = -0.25
+	allowed_num_of_manufactories = 1
+	allowed_num_of_buildings = 1
+	statewide_governing_cost = -0.25
+	local_governing_cost_increase = -10
+	local_centralize_state_cost = -0.25
+}
+
+mym_trade_cities = {
+	local_development_cost_modifier = -0.10
+	local_development_cost = -0.2
+	province_trade_power_value = 10
+	province_trade_power_modifier = 1
+	local_governing_cost_increase = -5
+	local_centralize_state_cost = -0.25
+}
+
+mym_plantations_bonus = {
+	local_development_cost = -0.5
+	trade_goods_size_modifier = 0.25
+	trade_value_modifier = 0.25
+}
+
+mym_monopoly_on_stimulants = {
+	naval_morale_damage_received = -0.10
+	movement_speed = 0.10
+	movement_speed_in_fleet_modifier = 1
+	alchemists_loyalty_modifier = 0.1
+	alchemists_influence_modifier = 0.05
+}
+
+mym_monopoly_on_sweets = {
+	global_unrest = -2
+	diplomatic_reputation = 2
+	improve_relation_modifier = 0.2
+	trade_steering = 0.25
+}
+
+mym_optics_industry_modifier = {
+	leader_naval_manuever = 1
+	leader_naval_fire = 1
+	max_admiral_maneuver = 1
+}
+
+mym_textiles_industry_modifier = {
+	land_morale = 0.05
+	naval_morale = 0.05
+	development_cost = -0.05
+}
+
+mym_munitions_industry_modifier = {
+	fire_damage = 0.15
+	infantry_fire = 0.25
+	is_marine_modifier = yes
+}
+
+mym_turtle_ships_modifier = {
+	hull_size_modifier = 4
+	engagement_cost = 2
+	number_of_cannons_modifier = 0.5
+	is_geobukseon_modifier = yes	
+	galley_cost = 7
+}

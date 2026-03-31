@@ -147,6 +147,11 @@ gain_consort_aspect = {
 			factor = 2
 			ruler_age = 60
 		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+			NOT = { has_country_modifier = anglican_militarized_church_aspect }
+		}
 	}
 }
 
@@ -174,7 +179,7 @@ dissolve_monasteries_aspect = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 2
+			factor = 4
 			estate_influence = {
 				estate = estate_church
 				influence = 70
@@ -188,6 +193,11 @@ dissolve_monasteries_aspect = {
 					territory = 10
 				}
 			}
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+			NOT = { has_country_modifier = anglican_militarized_church_aspect }
 		}
 	}
 }
@@ -207,6 +217,10 @@ monopoly_aspect = {
 		modifier = {
 			factor = 2
 			trade_income_percentage = 0.4
+		}
+		modifier = {
+			factor = 0
+			treasury = 2000
 		}
 		modifier = {
 			factor = 0
@@ -233,8 +247,8 @@ stability_aspect = {
 	ai_will_do = {
 		factor = 3
 		modifier = {
-			factor = 0.5
-			stability = 0
+			factor = 6
+			NOT = { stability = 1 }
 		}
 		modifier = {
 			factor = 0.5
@@ -247,6 +261,11 @@ stability_aspect = {
 		modifier = {
 			factor = 0
 			stability = 3
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+			NOT = { has_country_modifier = anglican_militarized_church_aspect }
 		}
 	}
 }
@@ -340,13 +359,22 @@ expel_heretics_aspect = {
 			factor = 0
 			has_country_modifier = expelling_heretics
 		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
 	}
 }
 
 diplomats_of_the_reformation_aspect = {
 	sprite = "GFX_diplomats_of_the_reformation_aspect"
 	cost = 100
-	trigger = {}
+	trigger = {
+		if = {
+			limit = { has_global_flag = irenicist_reforms_passed }
+			is_at_war = no
+		}
+	}
 	effect = {
 		custom_tooltip = diplomats_of_the_reformation_aspect_tt
 		hidden_effect = {
@@ -355,20 +383,78 @@ diplomats_of_the_reformation_aspect = {
 					religion_group = christian
 					NOT = { religion = hellenic_pagan_reformed }
 					NOT = { religion = anglican }
+					NOT = { religion = protestant }
 				}
 				add_opinion = {
 					who = ROOT
 					modifier = anglican_reformation_diplomacy
+					multiplier = 50
 				}
 				reverse_add_opinion = {
 					who = ROOT
 					modifier = anglican_reformation_diplomacy
+					multiplier = 50
+				}
+			}
+			if = {
+				limit = { NOT = { has_global_flag = irenicist_reforms_passed } }
+				every_known_country = {
+					limit = {
+						religion = protestant
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = anglican_reformation_diplomacy
+						multiplier = 50
+					}
+					reverse_add_opinion = {
+						who = ROOT
+						modifier = anglican_reformation_diplomacy
+						multiplier = 50
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = daohellenic_irenicist_truce_flag } 
+				every_known_country = {
+					limit = {
+						religion = hellenic_pagan_reformed
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = anglican_reformation_diplomacy
+						multiplier = 50
+					}
+					reverse_add_opinion = {
+						who = ROOT
+						modifier = anglican_reformation_diplomacy
+						multiplier = 50
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = irenicist_reforms_passed }
+				add_country_modifier = {
+					name = irenicist_pacifism_modifier
+					duration = 1825
 				}
 			}
 		}
 	}
 	ai_will_do = {
-		factor = 2
+		factor = 1
+		modifier = {
+			factor = 50
+			has_global_flag = irenicist_reforms_passed
+		}
+		modifier = {
+			factor = 0
+			has_country_modifier = irenicist_pacifism_modifier
+		}
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
 	}
 }
 
@@ -386,7 +472,7 @@ icons_of_the_church_aspect = {
 		}
 	}
 	ai_will_do = {
-		factor = 3
+		factor = 100
 		modifier = {
 			factor = 0
 			is_at_war = no

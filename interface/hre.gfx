@@ -139,8 +139,21 @@ spriteTypes = {
 		name = "GFX_zoroastrian_blessing_select_glow"
 		texturefile = "gfx//interface//zoroastrian_blessing_select_glow.dds"
 		loadType = "INGAME"
-	}		
-	
+	}
+
+	spriteType = {
+		name = "GFX_tengri_pagan_blessing_select"
+		texturefile = "gfx//interface//tengri_pagan_blessing_select.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+
+	spriteType = {
+		name = "GFX_tengri_pagan_blessing_select_glow"
+		texturefile = "gfx//interface//tengri_pagan_blessing_select_glow.dds"
+		loadType = "INGAME"
+	}
+
 	spriteType = {
 		name = "GFX_hre_bg_extended"
 		texturefile = "gfx//interface//hre_bg_extended.dds"

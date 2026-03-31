@@ -1,6 +1,6 @@
 government = monarchy
 add_government_reform = feudalism_reform
-government_rank = 1
+government_rank = 2
 technology_group = western
 religion = hussite
 primary_culture = austrian
@@ -58,4 +58,5 @@ capital = 134
 		target = TIR
 		months = 600
 	}
+	add_truce_with = BOH
 }

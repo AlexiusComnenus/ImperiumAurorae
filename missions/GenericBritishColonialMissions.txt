@@ -6,7 +6,6 @@ Generic_British_Colonial_Missions_2 = {
 		OR = { 
 			primary_culture = anglo_saxon
 			culture_group = gaelic
-			culture_group = cat_group
 		}
 		capital_scope = { region = british_isles_region }
 		NOT = { tag = GER }
@@ -186,7 +185,6 @@ Generic_British_Colonial_Missions_3 = {
 		OR = { 
 			primary_culture = anglo_saxon
 			culture_group = gaelic
-			culture_group = cat_group
 		}
 		capital_scope = { region = british_isles_region }
 		NOT = { tag = GER }
@@ -519,7 +517,6 @@ Generic_British_Colonial_Missions_4 = {
 		OR = { 
 			primary_culture = anglo_saxon
 			culture_group = gaelic
-			culture_group = cat_group
 		}
 		capital_scope = { region = british_isles_region }
 		NOT = { tag = GER }
@@ -959,7 +956,6 @@ Generic_British_Colonial_Missions_5 = {
 		OR = { 
 			primary_culture = anglo_saxon
 			culture_group = gaelic
-			culture_group = cat_group
 		}
 		capital_scope = { region = british_isles_region }
 		NOT = { tag = GER }

@@ -1,0 +1,12 @@
+bookmark =
+{
+	name = newworld_bookmark
+	desc = newworld_bookmark_desc
+	date = "1444.11.11"
+	center = 487
+	
+	
+	country = MYM
+	country = Y11
+	country = JOM
+}

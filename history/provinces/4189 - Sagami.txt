@@ -8,6 +8,7 @@ trade_goods = iron
 base_tax = 3
 base_production = 2
 base_manpower = 3
+add_core = HJO
 add_core = ASK
 discovered_by = ANU
 discovered_by = KHA

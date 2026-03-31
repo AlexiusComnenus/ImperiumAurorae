@@ -55,6 +55,10 @@
  frw_kingdom_of_bavaria: "Siezed Crown of Bavaria"
  frw_imperium_francorum_modifier: "§VImperium Francorum§!"
  frw_mustering_the_army: "Mustering the Banners"
+ frw_elite_musketeers: "§VPaladins of the Blessed Crown§!"
+ frw_elite_knights: "§VPaladins of the Blessed Crown§!"
+ frw_papal_endorsement: "§VPapal Endorsement§!"
+ frw_swelling_courage: "Swelling Courage"
  
  #Missions
  frw_hegemony_requirements_tt: "All other §YGreat Powers§! must either have a §Gweaker army§! than us or have §Rlost a war§! against us in the past §Y50 years§!"
@@ -187,6 +191,13 @@
  fra_dismantle_saxonia_desc: "The ill-fated charade that calls themselves the Kings of Germany is naught but a sad state of affairs and clear delusional thinking. All they know to do is hold their eons-old defeat of Charlemagne over our heads and pretend to be superior. Their complacency and self-righteousness shall be their downfall!"
  
  # events
+ ia_flavor_frw.5.t: "§RThe Fall of Valentia§!"
+ ia_flavor_frw.5.d: "We lost and now we will lose all of Iberia. RIP"
+ ia_flavor_frw.5.a: "It's all over..."
+ ia_flavor_frw.4.t: "§RThe Fall of Valentia§!"
+ ia_flavor_frw.4.d: "At long last, our ancient rivals the Goths have been defeated, their strongholds in Iberia all taken and at our mercy. Though this hatred started as a one-sided rivalry with the Goths holding a grudge borne of envy against us for being too successful, they have more than earned their downfall in the atrocities they visited upon our peoples as soon as they held the upper hand. Now, we shall show them that they reap what they sow..."
+ ia_flavor_frw.4.a: "Down with the Goths!"
+ fall_of_valencia_tt: "The Goths will lose all of their Iberian holdings, and we shall sweep in to claim their ashes!"
  ia_flavor_frw.3.t: "Iberian Strategy"
  ia_flavor_frw.3.d: "How shall we handle our strategy in Iberia? We could simply invade and conquer the entire region. Alternatively, we could support one of the Iberians against the Visigoths, gaining a valued ally instead of having to handle unrest from conquest."
  ia_flavor_frw.3.a: "All shall belong to Francia!"

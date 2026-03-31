@@ -87,7 +87,7 @@
  lot_conquest_france_desc:0 "The Western boundary of $COUNTRY$ is marked with loyal fiefs which no longer bear loyalties to the French crowns. Now, however, we must bring them all into the fold under the united banner of $CAPITAL$."
  lot_cultural_unity_title:0 "Cultural Unity"
  lot_cultural_unity_desc:0 "The Austrasian language dominates high society in the lowly French region. Its prestige sees the Franks attempting to use it in common life, not only in a professional capacity."
- 
+ lot_cloth_income_tt: "Gain §G2 years of income§! from §YCloth§! and §YUniforms§! provinces."
  lot_set_example_title:0 "Set the Example"
  lot_set_example_desc:0 "$COUNTRY$ is in a unique position to prove it to be a progressive authority, unlike many in Europe given the times. With this philosophy comes peace and a sort of unorthodox unity."
  lot_humanist_ideology_title:0 "Humanist Ideology"
@@ -108,6 +108,10 @@
  lot_strengthen_the_vroedschappen_desc: "The 'vroedschap', the humble city council, is the foundation upon which our great system of government rests. To curry favor with it is to curry favor with the nation itself."
  lot_dutch_polder_title: "Create Dutch Polders"
  lot_dutch_polder_desc: "If we are to finish the Polders in Holland it will improve our knowledge of land reclamation. With plenty of lakes in our nation, we can drain them with sophisticated windmills, the land that is left can then be turned into new farmland. These so called Polders will greatly improve our production."
+ lot_search_for_durandal_title: "Search for §J<<Durandal>>§!"
+ lot_search_for_durandal_desc: "Granted to §JRoland the Paladin§! by Karl the Great at the behest of an angel, §J<<Durandal>>§! has cleft mountain in twain and slain kings. Lost when Roland died in a last stand at the Gap of Roland, it is now time to search the area and recover our rightful weapon."
+ lot_reestablish_paladins_title: "Re-establish the Paladins"
+ lot_reestablish_paladins_desc: "The Twelve Peers served Karl the Great faithfully and sadly died in various battles, sacrificing their lives for King and Cross. We shall honor their legacy by re-establishing the Order of Paladins, the greatest of whome shall wield §J<<Durandal>>§! in our service."
  
  ###events
  LOT_events.1.t:0 "Fate of the Austrasian Capital?"
@@ -140,6 +144,12 @@
  lot_humanist_rule: "Humanist Rule"
  lot_iron_fist: "§RIron Fist of Austrasia§!"
  lot_carolingian_revenge_modifier: "§VRevenge of the Carolingians§!"
+ durandal_modifier: "§J<<Durandal, the Flaming Sword>>§!"
+ durandal_modifier_desc: "Granted to §JRoland the Paladin§! by Karl the Great at the behest of an angel, §J<<Durandal>>§! has cleft mountain in twain and slain kings. Originally lost when Roland died in a last stand at the Gap of Roland, we have rediscovered this legendary sword and can once against entrust it to a capable Count and Captain."
+ lot_order_of_paladins: "§JOrder of Paladins§!"
+ lot_order_of_paladins_modifiers: "§JOrder of Paladins§!"
+ lot_paladins_resurgent: "§JPaladins Resurgent§!"
+ lot_carolingian_paladins_returned: "§JPaladins in Empire's Heart§!"
  
  lot_defeated_republicans:0 "Defeated the Republicans"
  
@@ -147,8 +157,8 @@
  franzosisch:0 "Französisch"
 
  ###monuments
- aachener_dom:0 "Aachener Dom"
- schloss_nanzig:0 "Schloss Nanzig"
+ aachener_dom:0 "§PAachener Dom§!"
+ schloss_nanzig:0 "§PSchloss Nanzig§!"
  
  ###custom tooltips
  zyp_lot_aac_tooltip:0 "§YThis will give us religious missions.§!"
@@ -158,7 +168,7 @@
  glr_abdication:0 "§ROur ruler must abdicate.§! §YAn election will be held immediately.§!"
  maghreb_claims:0 "We will gain claims on the §YMaghreb Region.§!"
  africa_claims:0 "We will gain claims on the §YAfrican Continent.§!"
- LOT_SIEZED_OR_DESTROYED_GERMANIC_CROWN: "We have §Gbecome King of Germany§! or §Rdestroyed the German Crown§!!"
+ LOT_SIEZED_OR_DESTROYED_GERMANIC_CROWN: "We have §Gbecome King of Germany§! or §Rdestroyed the German Crown§!! \n The §YGerman Crown§! is considered destroyed under one of the following conditions: \n The §YGerman Kingdom§! has been disbanded \n We have imposed the §RDismantlement§! peace term against @[GER.GetTag] [GER.GetName] \n @[GER.GetTag] [GER.GetName] is pathetic in strength compared to us and is §Rnot§! a §YGreat Power§!, or doesn't exist"
  permanent_pp_tt: "This §YPower Projection§! is §Gpermanent§!!"
  
  glr_lost_lot:0 "§RIf our government is changed from a republic, we will become Austrasia again.§!"

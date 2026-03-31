@@ -2137,6 +2137,660 @@ guiTypes = {
 				clicksound = back_click
 			}
 		}
+		
+		######################################################
+		## START Religions & Cultures Expanded Custom GUI 2 ##
+		######################################################
+
+		##################################
+		### Four Tenets System Mechanic ###
+		##################################
+		windowType = {
+			name = "rce_religion_mechanic_four_tenets_system_window"
+			position = { x = 30 y = 237 }
+			scripted = yes
+
+			iconType = {
+				name = "rce_religion_mechanic_four_tenets_system_banner"
+				position = { x = 8 y = 0 }
+				spriteType = "GFX_war_overview_land_banner"
+				alwaystransparent = yes
+			}
+			instantTextBoxType = {
+				name = "rce_religion_mechanic_four_tenets_system_title"
+				position = { x = 27 y = 8 }
+				font = "vic_18"
+				format = centre
+				maxWidth = 200
+				maxHeight = 20
+				fixedsize = yes
+				scripted = yes
+			}
+
+			guiButtonType = {
+				name = "rce_religion_mechanic_four_tenets_system_meditate_button"
+				position = { x = 257 y = 1 }
+				spriteType = "GFX_rce_religion_mechanic_four_tenets_system_meditate_button"
+				scripted = yes
+			}
+
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_2_bar_window"
+				position = { x = 43 y = 51 }
+
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_bar_bg"
+					position = { x = 0 y = 5 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_bg"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_bar"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_bar_full"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_full"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_bar_frame"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_frame"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_3_bar_window"
+				position = { x = 143 y = 51 }
+
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_bar_bg"
+					position = { x = 0 y = 5 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_bg"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_bar"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_bar_full"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_full"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_bar_frame"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_frame"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_4_bar_window"
+				position = { x = 243 y = 51 }
+
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_bar_bg"
+					position = { x = 0 y = 5 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_bg"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_bar"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_bar_full"
+					position = { x = 0 y = 4 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_full"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_bar_frame"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_bar_frame"
+					scripted = yes
+				}
+			}
+
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_1_window"
+				position = { x = 0 y = 40 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_1_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_1_button_selected"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button_selected"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_1_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_ability_1_icon_strip"
+					alwaystransparent = yes
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_2_window"
+				position = { x = 100 y = 40 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_button_selected"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button_selected"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_2_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_ability_2_icon_strip"
+					alwaystransparent = yes
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_3_window"
+				position = { x = 200 y = 40 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_button_selected"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button_selected"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_3_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_ability_3_icon_strip"
+					alwaystransparent = yes
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "rce_religion_mechanic_four_tenets_system_ability_4_window"
+				position = { x = 300 y = 40 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_button_selected"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_button_selected"
+					alwaystransparent = yes
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_four_tenets_system_ability_4_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_four_tenets_system_ability_4_icon_strip"
+					alwaystransparent = yes
+					scripted = yes
+				}
+			}
+		}
+
+		################################
+		### Sylvan Affinity Mechanic ###
+		################################
+		windowType = {
+			name = "rce_religion_mechanic_sylvan_affinity_window"
+			position = { x = 32 y = 237 }
+			scripted = yes
+
+			windowType = {
+				name = "main_buttons_window"
+				position = { x = 0 y = 9 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button"
+					position = { x = 38 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_consecrate_new_grove_button"
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_select_seasonal_affinity_button"
+					position = { x = 106 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_select_seasonal_affinity_button"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "side_buttons_window"
+				position = { x = 0 y = 0 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_sergetoja_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_sergetoja_button"
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_nukirpeja_button"
+					position = { x = 0 y = 45 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_nukirpeja_button"
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_audeja_button"
+					position = { x = 170 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_audeja_button"
+					scripted = yes
+				}
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_verpiancioji_button"
+					position = { x = 170 y = 45 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_verpiancioji_button"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "values_window"
+				position = { x = 221 y = 44 }
+
+				windowType = {
+					name = "total_value_window"
+					position = { x = 0 y = 0 }
+
+					iconType = {
+						name = "background"
+						position = { x = 0 y = 0 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_value_bg"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_total_value_title"
+						position = { x = 6 y = 3 }
+						format = left
+						font = "vic_18"
+						maxWidth = 90
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_total_value"
+						position = { x = 95 y = 3 }
+						format = right
+						font = "vic_18"
+						maxWidth = 45
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+				}
+				windowType = {
+					name = "monthly_value_window"
+					position = { x = 0 y = 25 }
+
+					iconType = {
+						name = "background"
+						position = { x = 0 y = 0 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_value_bg"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_monthly_value_title"
+						position = { x = 6 y = 3 }
+						format = left
+						font = "vic_18"
+						maxWidth = 90
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_monthly_value"
+						position = { x = 95 y = 3 }
+						format = right
+						font = "vic_18"
+						maxWidth = 45
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+				}
+			}
+
+			windowType = {
+				name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selection_window"
+				position = { x = -39 y = -9 }
+				scripted = yes
+
+				iconType = {
+					name = "background"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selection_bg"
+				}
+
+				windowType = {
+					name = "spring_window"
+					position = { x = 56 y = 13 }
+
+					iconType = {
+						name = "season_icon"
+						position = { x = 4 y = 4 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_spring_icon"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_spring_title"
+						position = { x = 85 y = 4 }
+						format = center
+						font = "vic_29"
+						maxWidth = 280
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_spring_desc"
+						position = { x = 85 y = 28 }
+						format = center
+						font = "vic_18"
+						maxWidth = 280
+						maxHeight = 55
+						fixedsize = yes
+						vertical_alignment = center
+						scripted = yes
+					}
+					guiButtonType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_spring_button"
+						position = { x = 372 y = 27 }
+						spriteType = "GFX_standard_button_71"
+						buttonText = "SELECT"
+						buttonFont = "vic_18"
+						scripted = yes
+					}
+				}
+				windowType = {
+					name = "summer_window"
+					position = { x = 56 y = 97 }
+
+					iconType = {
+						name = "season_icon"
+						position = { x = 4 y = 4 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_summer_icon"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_summer_title"
+						position = { x = 85 y = 5 }
+						format = center
+						font = "vic_29"
+						maxWidth = 280
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_summer_desc"
+						position = { x = 85 y = 28 }
+						format = center
+						font = "vic_18"
+						maxWidth = 280
+						maxHeight = 55
+						fixedsize = yes
+						vertical_alignment = center
+						scripted = yes
+					}
+					guiButtonType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_summer_button"
+						position = { x = 372 y = 27 }
+						spriteType = "GFX_standard_button_71"
+						buttonText = "SELECT"
+						buttonFont = "vic_18"
+						scripted = yes
+					}
+				}
+				windowType = {
+					name = "fall_window"
+					position = { x = 56 y = 181 }
+
+					iconType = {
+						name = "season_icon"
+						position = { x = 4 y = 4 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_fall_icon"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_fall_title"
+						position = { x = 85 y = 4 }
+						format = center
+						font = "vic_29"
+						maxWidth = 280
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_fall_desc"
+						position = { x = 85 y = 28 }
+						format = center
+						font = "vic_18"
+						maxWidth = 280
+						maxHeight = 55
+						fixedsize = yes
+						vertical_alignment = center
+						scripted = yes
+					}
+					guiButtonType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_fall_button"
+						position = { x = 372 y = 27 }
+						spriteType = "GFX_standard_button_71"
+						buttonText = "SELECT"
+						buttonFont = "vic_18"
+						scripted = yes
+					}
+				}
+				windowType = {
+					name = "winter_window"
+					position = { x = 56 y = 265 }
+
+					iconType = {
+						name = "season_icon"
+						position = { x = 4 y = 4 }
+						spriteType = "GFX_rce_religion_mechanic_sylvan_affinity_seasonal_affinity_winter_icon"
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_winter_title"
+						position = { x = 85 y = 4 }
+						format = center
+						font = "vic_29"
+						maxWidth = 280
+						maxHeight = 20
+						fixedsize = yes
+						scripted = yes
+					}
+					instantTextBoxType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_winter_desc"
+						position = { x = 85 y = 28 }
+						format = center
+						font = "vic_18"
+						maxWidth = 280
+						maxHeight = 55
+						fixedsize = yes
+						vertical_alignment = center
+						scripted = yes
+					}
+					guiButtonType = {
+						name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_winter_button"
+						position = { x = 372 y = 27 }
+						spriteType = "GFX_standard_button_71"
+						buttonText = "SELECT"
+						buttonFont = "vic_18"
+						scripted = yes
+					}
+				}
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_sylvan_affinity_seasonal_affinity_selection_close_button"
+					position = { x = 245 y = 353 }
+					spriteType = "GFX_standard_button_71"
+					buttonText = "BACK"
+					buttonFont = "vic_18"
+					clicksound = back_click
+					shortcut = "ESCAPE"
+					scripted = yes
+				}
+			}
+		}
+
+		###################################
+		### Manichaeism Purity Mechanic ###
+		###################################
+		windowType = {
+			name = "rce_religion_mechanic_manichaeism_purity_window"
+			position = { x = 37 y = 235 }
+			scripted = yes
+
+			windowType = {
+				name = "value_window"
+				position = { x = 4 y = 9 }
+
+				iconType = {
+					name = "background"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_value_bg"
+				}
+
+				instantTextBoxType = {
+					name = "rce_religion_mechanic_manichaeism_purity_value_text"
+					position = { x = 5 y = 5 }
+					format = center
+					font = "vic_22"
+					maxWidth = 80
+					maxHeight = 20
+					fixedsize = yes
+					scripted = yes
+				}
+			}
+
+			guiButtonType = {
+				name = "rce_religion_mechanic_manichaeism_purity_knowledge_button"
+				position = { x = 0 y = 46 }
+				spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_knowledge_button"
+				scripted = yes
+			}
+
+			windowType = {
+				name = "top_row_buttons_window"
+				position = { x = 60 y = 5 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_wind_button"
+					position = { x = 58 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_wind_button"
+					scripted = yes
+				}
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_light_button"
+					position = { x = 197 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_light_button"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "bottom_row_buttons_window"
+				position = { x = 60 y = 47 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_air_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_air_button"
+					scripted = yes
+				}
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_water_button"
+					position = { x = 58 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_water_button"
+					scripted = yes
+				}
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_fire_button"
+					position = { x = 197 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_fire_button"
+					scripted = yes
+				}
+			}
+			windowType = {
+				name = "center_buttons_window"
+				position = { x = 160 y = 0 }
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_moon_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_moon_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_manichaeism_purity_moon_selected_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_moon_button"
+					scripted = yes
+				}
+
+				guiButtonType = {
+					name = "rce_religion_mechanic_manichaeism_purity_sun_button"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_sun_button"
+					scripted = yes
+				}
+				iconType = {
+					name = "rce_religion_mechanic_manichaeism_purity_sun_selected_icon"
+					position = { x = 0 y = 0 }
+					spriteType = "GFX_rce_religion_mechanic_manichaeism_purity_sun_button"
+					scripted = yes
+				}
+			}
+		}
+
+		######################################################
+		##  END Religions & Cultures Expanded Custom GUI 2  ##
+		######################################################
+		
+		
 		################# deity SELECTION
 		windowType = {
 			name = "deity_selection_screen"

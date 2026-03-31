@@ -1,3 +1,45 @@
+german_unification_reform = {
+	icon = "constitution"
+	allow_normal_conversion = no
+	potential = {
+		culture_group = germanic
+		#is_revolutionary = no
+	}
+	trigger = {
+		#is_subject = no
+		government_rank = 3
+		OR = {
+			tag = GER
+			#tag = LOT
+			tag = HLR
+			tag = NGC
+			tag = SGC
+		}
+	}
+	#lock_level_when_selected = yes
+	can_change_primary_culture = no
+	valid_for_nation_designer = no
+	
+	#fixed_rank = 2
+	
+	modifiers = {
+		relation_with_same_culture_group = -50
+		relation_with_same_culture = -50
+		same_culture_advisor_cost = -0.2
+	}
+	
+	custom_attributes = {
+	}
+	
+	effect = {
+		custom_tooltip = access_nationalism_cb_tt
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
 saxon_feudalism = {
 	icon = "constitution"
 	allow_normal_conversion = no
@@ -72,10 +114,6 @@ saxon_fief_reform = {
 		global_tax_modifier = 0.40
 		production_efficiency = -0.15
 		global_foreign_trade_power = -0.20
-		global_unrest = 4
-		province_warscore_cost = 0.5
-		ae_impact = 0.25
-		development_cost_modifier = 0.15
 	}
 	custom_attributes = {
 		locked_government_type = yes
@@ -83,6 +121,53 @@ saxon_fief_reform = {
 		nobility_loyalty_hit_on_integration = yes
 		gain_monarch_power_from_force_converting = yes
 	}
+	#government_abilities = {
+	#	saxon_favor_mechanic
+	#}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+german_free_city = {
+	icon = "free_city"
+	allow_normal_conversion = no
+	potential = {
+		culture_group = germanic
+	}
+	trigger = {
+		NOT = {
+			num_of_owned_provinces_with = {
+				value = 4
+				is_overseas = no
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	modifiers = {
+		trade_efficiency = 0.1
+		development_cost = -0.1
+		production_efficiency = 0.1
+		burghers_influence_modifier = 0.1
+		burghers_loyalty_modifier = 0.1
+	}
+	fixed_rank = 1
+	
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+		}
+		can_use_trade_post = yes
+	}
+	custom_attributes = {
+		locked_government_type = yes
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	duration = 4
 	
 	ai = {
 		factor = 1000 # should always be picked if available
@@ -112,6 +197,7 @@ sax_feudalism_reform = {
 	}
 	modifiers = {
 		vassal_forcelimit_bonus = 0.25
+		vassal_manpower_bonus = 0.25
 		vassal_income = 0.10
 		monarch_power_tribute = 1
 		global_institution_spread = -0.2
@@ -239,11 +325,6 @@ hes_military_reform = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = no
 	potential = {
-		OR = {
-			tag = HES
-			was_tag = HES
-		}
-		culture_group = germanic
 		primary_culture = hessian
 	}
 	#trigger = {
@@ -272,10 +353,6 @@ hes_military_reform_2 = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = no
 	potential = {
-		OR = {
-			tag = HES
-			was_tag = HES
-		}
 		OR = {
 			has_reform = hes_military_reform_2
 			have_had_reform = hes_military_reform_2
@@ -418,11 +495,57 @@ fkn_marcher_lords_reform = {
 	}
 	modifiers = {
 		vassal_forcelimit_bonus = 1
+		vassal_manpower_bonus = 1
 		vassal_income = 0.20
 		diplomatic_upkeep = 1
+		liberty_desire_from_subject_development = -0.15	
 	}
 	custom_attributes = {
 		subject_tax_modifier_25 = yes
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+fkn_vintner_monarchy = {
+	icon = "vodka_monopoly"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		primary_culture = franconian
+	}
+	trigger = {
+		#OR = {
+		#	has_reform = fkn_vintner_monarchy
+		#	have_had_reform = fkn_vintner_monarchy
+		#}
+		OR = {
+			tag = FKN
+			was_tag = FKN
+		}
+	}
+	modifiers = {
+		global_trade_goods_size_modifier = 0.1
+		centralize_state_cost = -0.1
+		diplomatic_reputation = 1
+		core_creation = 0.1
+		global_tax_modifier = -0.2
+		heir_chance = -100
+	}
+	
+	custom_attributes = {
+		locked_government_type = yes
+		centralize_state_development = yes 
+		#centralize_state_half_refund = yes
+	}
+	effect = {
+		custom_tooltip = fkn_vintner_elections_tt
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
 	}
 }
 
@@ -434,10 +557,10 @@ fkn_franken_council = {
 		primary_culture = franconian
 	}
 	trigger = {
-		OR = {
-			has_reform = fkn_franken_council
-			have_had_reform = fkn_franken_council
-		}
+		#OR = {
+		#	has_reform = fkn_franken_council
+		#	have_had_reform = fkn_franken_council
+		#}
 		OR = {
 			tag = FKN
 			was_tag = FKN
@@ -454,6 +577,10 @@ fkn_franken_council = {
 		}
 		has_parliament = yes
 	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
 }
 
 hussite_wagenburgs = {
@@ -469,6 +596,10 @@ hussite_wagenburgs = {
 	modifiers = {
 		global_defender_dice_roll_bonus = 1
 		shock_damage_received = -0.10
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
 	}
 }
 
@@ -535,7 +666,7 @@ bohemian_elective_kingdom_reform = {
 		}
 	}
 	ai = {
-		factor = 1
+		factor = 1000
 	}
 }
 
@@ -564,6 +695,71 @@ bohemian_germanic_monarchy = {
 	#	}
 	#	has_parliament = yes
 	#}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+rhenish_bureaucratic_apparatus = {
+	icon = "provincial_government"
+	potential = {
+		primary_culture = hessian
+	}
+	
+	modifiers = {
+		culture_conversion_time = -0.25 
+		reform_progress_growth = 0.2
+	}
+
+	custom_attributes = {
+		centralize_state_development = yes
+		rhenish_bureaucratic_apparatus_province_mods = yes
+	}
+
+	effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_owner_culture = yes
+					culture = hessian
+				}
+				add_province_modifier = {
+					name = rhenish_bureaucractic_apparatus_positive_modifier
+					duration = -1
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						NOT = { culture = hessian }
+						has_owner_culture = no
+					}
+				}
+				add_province_modifier = {
+					name = rhenish_bureaucractic_apparatus_negative_modifier
+					duration = -1
+				}
+			}
+		}
+	}
+
+	removed_effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = rhenish_bureaucractic_apparatus_positive_modifier
+				}
+				remove_province_modifier = rhenish_bureaucractic_apparatus_positive_modifier
+			}
+			every_owned_province = {
+				limit = {
+					has_province_modifier = rhenish_bureaucractic_apparatus_negative_modifier
+				}
+				remove_province_modifier = rhenish_bureaucractic_apparatus_negative_modifier
+			}
+		}
+	}
 	
 	ai = {
 		factor = 1000 # should always be picked if available

@@ -1241,6 +1241,7 @@ venice_missions_slot_2 = {
 			}
 		}
 		effect = {
+			custom_tooltip = golden_age_refresher_tt
 			if = {
 				limit = { has_dlc = "Mandate of Heaven" }
 				if = {

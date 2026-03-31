@@ -1,5 +1,5 @@
 ﻿l_english:
- taoism: "Taoism"
+ taoism: "Taoist"
  taoism_religion_desc: "Originally started as the philosophical school of Daoism, Taoism evolved into a pantheistic syncretic religion adopting many of the local deities and spirits of the various regions of China. As opposed to Confucianism, which was institutionalized and integrated into the government functions during the Han Dynasty, Taoism remained unorganized and thus evolved much more from its original form. According to taoism, any living being may through enough dedication and practice (Xiuxing) ascend to a higher plane of existence, culminating in becoming a Xien or a Shen depending on their innate talent and willingness to withstand the heavenly tests (Tienjie)."
  
  horse_artillery_unit: "Horse Artillery"
@@ -153,6 +153,9 @@ enact_weisuo_draft_decision_tooltip: "Immediately draft all able-bodied recruits
  ven_undo_create_ia_tributary_action_title: "Revoke Autonomy"
  ven_undo_create_ia_tributary_action_desc: "We will revoke the autonomy of our §GIntegrated Tributary§! and turn them back into a vassal."
  ven_undo_create_ia_tributary_action_tooltip: "We will revoke the autonomy of our §GIntegrated Tributary§! and turn them back into a vassal."
+ ia_incorporate_vassal_action_title: "Incorporate Vassal"
+ ia_incorporate_vassal_action_desc: "We may designate our vassal into an §GIncorporated Vassal§!. §YThey will be cheaper to annex than regular vassals, pay twice as much tax, and only consider their own strength in loyalty calculations, but have higher Liberty Desire from development§! \n §RThis action cannot be undone!§!\n §REvery incorporated vassal costs 100 governing capacity!§!"
+ ia_incorporate_vassal_action_tooltip: "Designate our vassal as an §GIncorporated Vassal§!." 
  
  #Government
  mingjiao_reform: "Mingjiao"
@@ -161,6 +164,8 @@ enact_weisuo_draft_decision_tooltip: "Immediately draft all able-bodied recruits
  #Modifiers
  gjn_collapse_of_authority: "Collapse of Authority"
  gjn_collapse_of_authority_desc: "The Jin Dynasty's claim on the Mandate is extraordinarily tenous. With warlords in open uprising across China and the Han people eager to overthrow their Jurchen overlords, the Celestial Emperor's authority barely extends out of the capital."
+ chinese_fortresses_modifier: "Chinese Fortress"
+ gjn_resurgent: "§VGreat Jin Resurgent§!"
  
  #Missions
  chi_independence_ia_title: "Fall of the Great Jin"
@@ -170,6 +175,24 @@ enact_weisuo_draft_decision_tooltip: "Immediately draft all able-bodied recruits
  great_jin_events.1.t: "Jin Dynasty in Crisis"
  great_jin_events.1.d: "While [Root.Monarch.GetName] successfully turned back the Mongol Hordes at the walls of Zhongdu using the newly developed Zhen Tian Lei, the rule of the Jin Dynasty over China is virtually nonexistent. With [Root.Monarch.GetName] having taken power in a palace coup, his legitimacy was questionable and numerous Han local leaders throughout China have claimed that it is time to overthrow the barbarian tyrants. Riling up the local peasants and Han garrisons, many self-proclaimed emperors claiming the name of past dynasties have risen in open opposition to our rule. Those commanders who have remained nominally loyal to us ignore orders from the capital at their discretion and plot their own moves. Even in our capital area, the majority-Han people stir in unrest..."
  great_jin_events.1.a: "Will [Root.Monarch.GetName] be able to stem the tide?"
+ gjn_lose_mandate_tt: "Unless our current ruler manages to §Grestore order§!, we will surely §Rlose the Mandate of Heaven§!! \n\nRequirements:\n - Keep the §YMandate of Heaven§!\n - At least 60 §YMeritocracy§!\n - At least 1 §YStability§! (Reminder: ruler death costs at least 1 stability)\n - At least 50 §YMandate§! OR §Gpass 1 Mandate Reform§!"
+ gjn_explosion_tt: "We will §Rlose all subjects§! as well as §Yall provinces in China proper§!!"
+ great_jin_events.2.t: "The Death of Wanyan Zhezhong"
+ great_jin_events.2.d: "The Zhezhong Emperor was known as the last great hope of the Great Jin Dynasty. Through his valiant efforts, the Mongols were stopped at the gates of Zhongdu, and his proactive hand in military affairs kept the Jin from collapsing entirely as the myriad warlords of the South started breaking away. But now he has passed to the world beyond; were his efforts enough to save the Great Jin?"
+ great_jin_events.2.a: "Alas, they were not!"
+ great_jin_events.2.b: "The Great Jin stands strong!"
  celestial_empire_events.4.t: "Mandate of Heaven Lost!"
  celestial_empire_events.4.d: "After many years of corruption and mismanagement, our subjects have lost faith in us and our right to claim to be the Son of Heaven. Instead, @[new_chinese_emperor.GetTag] [new_chinese_emperor.GetName] are now being lauded as the rightful rulers of China."
  celestial_empire_events.4.a: "How dare they!"
+ celestial_empire_events.5.t: "Offer to Taiwan"
+ celestial_empire_events.5.d: "During the chaos surrounding the fall of the Jin Dynasty, a sect of pugilists fled to Taiwan and somehow set up a semi-functional state there in cooperation with the native peoples. Now that our dynasty has reclaimed the Mandate of Heaven and established serenity in the Middle Kingdom, it may be time to invite this breakaway back to the fold, as a proper subject of the Celestial Emperor."
+ celestial_empire_events.5.a: "Send the missive!"
+ celestial_empire_events.5.b: "It is too much work."
+ celestial_empire_events.6.t: "Missive from the Celestial Emperor"
+ celestial_empire_events.6.d: "A letter in the name of the Celestial Emperor has arrived, inviting us to send a tributary mission to the Celestial Court to offer our fealty to the Master of All Under Heaven. While the language in the letter is nothing but courteous, the undertone is clear: we can do this the easy way or the hard way."
+ celestial_empire_events.6.a: "Send the mission!"
+ celestial_empire_events.6.b: "We will never bow to tyrants!"
+ celestial_empire_events.7.t: "Offer to Lan Fang"
+ celestial_empire_events.7.d: "During the Mongol invasions and the collapse of the Jin Dynasty, various peasant and merchant groups from the Yue regions fled over the sea to find a new homeland. Now that the Middle Kingdom is once again stable and under the rule of a rightful Celestial Emperor, we should offer them the honor of returning to the fold."
+ celestial_empire_events.7.a: "Send the missive!"
+ celestial_empire_events.7.b: "It is too much work."

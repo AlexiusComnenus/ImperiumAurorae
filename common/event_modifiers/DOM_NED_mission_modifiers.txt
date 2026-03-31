@@ -87,8 +87,14 @@ ned_reunited_friesland = {
 }
 
 ned_big_prosperous_burghers = {
-	burghers_loyalty_modifier = 0.05
-	nobles_loyalty_modifier = 0.05
+	burghers_loyalty_modifier = 0.1
+	trade_efficiency = 0.1
+	global_trade_power = 0.1
+}
+
+ned_chambers_of_commerce_modifier = {
+	global_allowed_num_of_buildings = 1
+	global_prosperity_growth = 0.25
 }
 
 dom_gel_diplomatic_ties = {
@@ -110,8 +116,6 @@ ned_seabeggars = {
 	allowed_marine_fraction = 0.1 
 	land_forcelimit = 3
 	has_voc_indiamen = yes
-	has_man_of_war = yes
-	allowed_man_of_war_fraction = 0.5
 	allowed_voc_indiamen_fraction = 0.25
 }
 
@@ -183,11 +187,11 @@ ned_japanese_dutch_friendship = {
 }
 
 fri_zuiderzee_pirates = {
-	privateer_efficiency = 0.2 
+	privateer_efficiency = 0.1
 	capture_ship_chance = 0.1 
 }
 efr_pirate_homebase = {
-	privateer_efficiency = 0.2 
+	privateer_efficiency = 0.1
 	capture_ship_chance = 0.1 
 }
 

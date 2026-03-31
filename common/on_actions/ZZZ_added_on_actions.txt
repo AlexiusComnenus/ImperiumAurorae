@@ -188,53 +188,6 @@ on_battle_lost_country = {
 
 on_province_owner_change = {
 	
-
-	if = {
-		limit = {
-			OR = {
-				has_province_modifier = sax_efficient_peasants
-			}
-			FROM = { has_reform = sax_feudalism_reform }
-			NOT = { owner = { has_reform = sax_feudalism_reform } }
-		}
-		remove_province_modifier = sax_efficient_peasants
-	}
-
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					has_province_modifier = sax_efficient_peasants
-				}
-			}
-			owner = { has_reform = sax_feudalism_reform }
-			NOT = { FROM = { has_reform = sax_feudalism_reform } }
-		}
-		hidden_effect = {
-			if = {
-				limit = {
-					OR = {	
-						trade_goods = grain
-						trade_goods = wool
-						trade_goods = fish
-						trade_goods = livestock
-						trade_goods = beer
-						trade_goods = apiculture
-						trade_goods = lumber
-						trade_goods = cheese
-						trade_goods = seafood
-						trade_goods = potato
-						trade_goods = tomato
-					}
-				}
-				add_province_modifier = {
-					name = sax_efficient_peasants
-					duration = -1
-				}
-			}
-		}
-	}
-
 	###########  MODDED
 	if = {
 		limit = {

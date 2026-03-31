@@ -27,4 +27,5 @@ add_accepted_culture = czech
 	add_prestige = 48
 	add_treasury = 64
 	add_truce_with = SAX
+	add_truce_with = HAB
 }

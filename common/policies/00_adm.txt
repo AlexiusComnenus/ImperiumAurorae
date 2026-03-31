@@ -15,7 +15,7 @@ the_combination_act = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0
 			NOT = { production_income_percentage = 0.1 }
@@ -52,7 +52,7 @@ the_court_of_wards_and_liveries = {
 	}
 		
 	global_tax_modifier = 0.20
-	cavalry_cost = -0.10
+	yearly_corruption = -0.05
 
 	effect = {}
 	removed_effect = {}
@@ -108,23 +108,23 @@ formalized_measures = {
 	}	
 
 	production_efficiency = 0.10
-	republican_tradition = 0.2
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 1
+		factor = 2
 		modifier = {
 			factor = 0.75
-			NOT = { tax_income_percentage = 0.25 }
+			NOT = { production_income_percentage = 0.25 }
 		}			
 		modifier = {
 			factor = 1.5
-			tax_income_percentage = 0.45
+			production_income_percentage = 0.45
 		}
 		modifier = {
 			factor = 1.5
-			tax_income_percentage = 0.7
+			production_income_percentage = 0.7
 		}
 	}
 }
@@ -187,7 +187,7 @@ the_espionage_act = {
 		full_idea_group = spy_ideas
 	}
 
-	stability_cost_modifier = -0.25
+	yearly_corruption = -0.05
 	diplomats = 1
 	
 	effect = {}
@@ -237,7 +237,7 @@ the_royal_commission_act = {
 		full_idea_group = administrative_ideas
 	}
 
-	yearly_corruption = -0.15
+	yearly_corruption = -0.05
 	advisor_cost = -0.2
 	
 	effect = {}
@@ -304,7 +304,7 @@ public_welfare_act = {
 	}
 	
 	development_cost_in_primary_culture = -0.1
-	stability_cost_modifier = -0.25
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
@@ -347,7 +347,7 @@ the_spy_discovery_act = {
 		full_idea_group = administrative_ideas
 	}
 
-	advisor_pool = 2
+	yearly_corruption = -0.05 
 	global_spy_defence = 0.2
 
 	effect = {}
@@ -626,7 +626,7 @@ the_education_act = {
 		full_idea_group = plutocracy_ideas
 	}
 
-	prestige = 0.5
+	yearly_corruption = -0.05 
 	advisor_cost = -0.15
 
 	effect = {}
@@ -694,7 +694,7 @@ the_loyalty_act = {
 	}
 	
 	global_autonomy = -0.05
-	fabricate_claims_cost = -0.25
+	yearly_corruption = -0.05 
  
 
 	effect = {}
@@ -806,6 +806,7 @@ foreign_advisors = {
 	
 	advisor_cost = -0.15
 	ae_impact = -0.1
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -914,7 +915,8 @@ enlightened_aristocracy = {
 	}	
 	
 	production_efficiency = 0.1
-	innovativeness_gain = 0.5
+	innovativeness_gain = 0.25
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -979,6 +981,7 @@ the_liberation_act = {
 	
 	global_unrest = -1
 	years_of_nationalism = -5
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -1017,7 +1020,7 @@ visionary_thinkers = {
 		full_idea_group = quality_ideas
 	}	
 	
-	innovativeness_gain = 0.5
+	yearly_corruption = -0.05 
 	army_tradition_decay = -0.01
 	
 	effect = {}
@@ -1170,7 +1173,7 @@ cultural_recognition_act = {
 	}	
 	
 	num_accepted_cultures = 2
-	global_institution_spread = 0.25
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -1349,6 +1352,7 @@ taxation_with_representation = {
 	
 	production_efficiency = 0.1
 	global_manpower_modifier = 0.1
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
@@ -1462,6 +1466,7 @@ diplomatic_cooperation_act = {
 
 	advisor_cost = -0.15
 	diplomatic_reputation = 1
+	yearly_corruption = -0.05 
 
 
 	effect = {}
@@ -1487,6 +1492,7 @@ the_banking_system = {
 
 	interest = -0.5
 	trade_efficiency = 0.1
+	yearly_corruption = -0.05 
 
 
 	effect = {}
@@ -1664,7 +1670,7 @@ calming_the_tides_policy = {
 	}
 	
 	global_unrest = -2
-	prestige = 0.5
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -1745,6 +1751,7 @@ otto_per_mille = {
 	
 	core_creation = -0.05
 	years_of_nationalism = -5
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -1873,6 +1880,7 @@ ora_et_labora_policy = {
 	
 	global_trade_goods_size_modifier = 0.05
 	land_attrition = -0.2
+	yearly_corruption = -0.05 
 	
 	effect = {}
 	removed_effect = {}
@@ -1985,6 +1993,7 @@ disruptive_innovation_policy = {
 	
 	development_cost = -0.05
 	global_institution_spread = 0.2
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
@@ -2109,7 +2118,7 @@ head_of_state_act = {
 		full_idea_group = innovativeness_ideas 
 	}
 	
-	no_stability_loss_on_monarch_death = yes  
+	yearly_corruption = -0.05  
 	monarch_lifespan = 0.25
 	development_cost = -0.05
 
@@ -2134,7 +2143,8 @@ zealous_court_act = {
 	}
 	
 	warscore_cost_vs_other_religion = -0.05
-	tolerance_own = 2
+	tolerance_own = 1
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
@@ -2160,8 +2170,8 @@ financial_miracle_act = {
 		full_idea_group = economic_ideas 
 	}
 	
-	production_efficiency = 0.1
-	same_culture_advisor_cost = -0.2
+	production_efficiency = 0.15
+	yearly_corruption = -0.05
 
 	effect = {}
 	removed_effect = {}
@@ -2185,6 +2195,7 @@ subject_obligations_act = {
 	
 	reduced_liberty_desire = 15
 	global_tariffs = 0.1
+	yearly_corruption = -0.05 
 
 	effect = {}
 	removed_effect = {}
@@ -2207,7 +2218,7 @@ big_government_act = {
 	}
 	
 	core_creation = -0.05
-	global_tax_modifier = 0.3
+	yearly_corruption = -0.1
 
 	effect = {}
 	removed_effect = {}
@@ -2234,7 +2245,8 @@ humanitarian_administration_act = {
 	}
 	
 	num_accepted_cultures = 2
-	global_unrest = -2
+	global_unrest = -1
+	yearly_corruption = -0.05
 
 	effect = {}
 	removed_effect = {}
@@ -2332,7 +2344,7 @@ peace_keeping_force_act = {
 		full_idea_group = humanist_ideas 
 	}
 	
-	harsh_treatment_cost = -0.25
+	yearly_corruption = -0.05 
 	global_rebel_suppression_efficiency = 1
 	possible_condottieri = 1
 

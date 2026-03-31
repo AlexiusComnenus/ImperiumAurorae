@@ -3,141 +3,141 @@
 
 
 # Food
-grain = { base_price = 2.5 }
+grain = { base_price = 2 }
 rice = { base_price = 2 }
-wine = { base_price = 2.5 }
-champagne = { base_price = 3.00 }
-fish = { base_price = 2.5 }
-salt = { base_price = 3 }
-beer = { base_price = 2.5 }
-apiculture = { base_price = 2.5 }
-whaling	= { base_price = 3.0 }
-cheese = { base_price = 2.75 }
-citrus = { base_price = 3.25 }
-seafood = { base_price = 2.75 }
-olive_oil = { base_price = 3.0 }
-maize = { base_price = 2.5 }
-potato = { base_price = 2.5 }
+wine = { base_price = 2.2 }
+champagne = { base_price = 2.5 }
+fish = { base_price = 2 }
+salt = { base_price = 2.4 }
+beer = { base_price = 2 }
+apiculture = { base_price = 2 }
+whaling	= { base_price = 2.4 }
+cheese = { base_price = 2.2 }
+citrus = { base_price = 2.6 }
+seafood = { base_price = 2.2 }
+olive_oil = { base_price = 2.4 }
+maize = { base_price = 2 }
+potato = { base_price = 2 }
 
 # Textiles
-cloth = { base_price = 3 }
-wool = { base_price = 2.5 }
+cloth = { base_price = 2.4 }
+wool = { base_price = 2 }
 fur = { base_price = 2 }
-carpet = { base_price = 3 }
-silk = { base_price = 4 }
-auroral_silk = { base_price = 6 }
-cotton = { base_price = 3 }
+carpet = { base_price = 2.4 }
+silk = { base_price = 3.2 }
+auroral_silk = { base_price = 4.8 }
+cotton = { base_price = 2.4 }
 
 #Trade Goods
-naval_supplies = { base_price = 2 }
-tar = { base_price = 2.75 }
-sulfur = { base_price = 3.5 }
-lumber	= { base_price = 2 }
-marble = { base_price = 3.00 }
-gunpowder = { base_price = 3.5 }
-jade = { base_price = 3.5 }
-amber = {  base_price = 3.5 }
-exotic_animals = { base_price = 4 }
-rum = { base_price = 2.5 }
-horses = { base_price = 3.25 }
-pearls = { base_price = 4 }
-ebony = { base_price = 3.5 }
-tropical_wood = { base_price = 2 }
-dyes = { base_price = 4 }
-indigo = { base_price = 4 }
-llama = { base_price = 2.5 }
-sea_turtle = { base_price = 3 }
+naval_supplies = { base_price = 1.5 }
+tar = { base_price = 2.2 }
+sulfur = { base_price = 3 }
+lumber	= { base_price = 1.5 }
+marble = { base_price = 2.4 }
+gunpowder = { base_price = 3.2 }
+jade = { base_price = 3 }
+amber = {  base_price = 3 }
+exotic_animals = { base_price = 3 }
+rum = { base_price = 2 }
+horses = { base_price = 2.6 }
+pearls = { base_price = 3.2 }
+ebony = { base_price = 3 }
+tropical_wood = { base_price = 1.5 }
+dyes = { base_price = 3.2 }
+indigo = { base_price = 3.2 }
+llama = { base_price = 2 }
+sea_turtle = { base_price = 2.4 }
 	
 # Metals
-copper = { base_price = 3 }
-iron = { base_price = 3 }
-tin	= { base_price = 3 }
-lead = { base_price = 3.5 }
-mercury = { base_price = 3 } 
+copper = { base_price = 2.4 }
+iron = { base_price = 2.4 }
+tin	= { base_price = 2.4 }
+lead = { base_price = 2.8 }
+mercury = { base_price = 2.4 } 
 gold = { base_price = 0 goldtype = yes }
 silver = { base_price = 0 goldtype = yes }
-zinc = { base_price = 3 }
-fur_clothing = { base_price = 3.5 }
+zinc = { base_price = 2.4 }
 
 
 # African Resources
 slaves = { base_price = 2.5 }
-ivory = { base_price = 4 }
-palm_oil = { base_price = 2.5 }
-dates	= { base_price = 2.5 }
-camel =	{ base_price = 2.5  }
-elephants = { base_price = 3 }
-exotic_fur = { base_price = 4 }
-millet = { base_price = 2.5 }
+ivory = { base_price = 3.2 }
+palm_oil = { base_price = 2 }
+dates	= { base_price = 2 }
+camel =	{ base_price = 2  }
+elephants = { base_price = 2.8 }
+exotic_fur = { base_price = 3.2 }
+millet = { base_price = 2 }
 
 #Spices 
-vanilla = { base_price = 5.5 }
-spices = { base_price = 4 }
-cinnamon = { base_price = 4.25 }
-saffron = { base_price = 5.5 }
-cloves = { base_price = 5.5 }
-nutmeg = { base_price = 4.75 }
+vanilla = { base_price = 4.4 }
+spices = { base_price = 3.4 }
+cinnamon = { base_price = 3.4 }
+saffron = { base_price = 4.4 }
+cloves = { base_price = 4.4 }
+nutmeg = { base_price = 4 }
 
 #Special
-leather = { base_price = 3.50 }
-metalworking = { base_price = 3.5 }
-munitions = { base_price = 4 }
-woodworking = { base_price = 3.5 }
-jewellery = { base_price = 6 }
-optics = { base_price = 4 }
+leather = { base_price = 2.8 }
+fur_clothing = { base_price = 3 }
+metalworking = { base_price = 3 }
+munitions = { base_price = 3.2 }
+woodworking = { base_price = 2.8 }
+jewellery = { base_price = 5 }
+optics = { base_price = 3.2 }
 marble_sculpture = { base_price = 4 }
-chocolate = { base_price = 4 }
-cigars = { base_price = 4.25 }
-jade_sculptures = { base_price = 4 }
-String_Instruments = { base_price = 4.50 }
+chocolate = { base_price = 3.2 }
+cigars = { base_price = 3.3 }
+jade_sculptures = { base_price = 5 }
+String_Instruments = { base_price = 3.6 }
 # Eastern Resources
 tea = { base_price = 2 }
-opium = { base_price = 3 }
+opium = { base_price = 2.2 }
 chinaware = { base_price = 3 }
 
 # New World Resources
-coffee = { base_price = 3 }
-sugar = { base_price = 3 }
-tobacco = {	base_price = 3 }
-cocoa = { base_price = 3 }
-maple_syrup = { base_price = 3.5 }
-tomato = { base_price = 2.75 }
+coffee = { base_price = 2.4 }
+sugar = { base_price = 2.4 }
+tobacco = {	base_price = 2.4 }
+cocoa = { base_price = 2.4 }
+maple_syrup = { base_price = 2.6 }
+tomato = { base_price = 2.2 }
 
 #Additional Trade Goods
 livestock = {
-	base_price = 2
+	base_price = 1.6
 }
 
 incense = {
-	base_price = 3.5
-}
-
-glass = {
 	base_price = 3
 }
 
+glass = {
+	base_price = 2.4
+}
+
 gems = {
-	base_price = 4
+	base_price = 3.2
 }
 
 paper = {
-	base_price = 3.5
+	base_price = 2.8
 }
 
 coal = {
-	base_price = 5
+	base_price = 4
 }
 
 steam_engine = {
-	base_price = 5
+	base_price = 4
 }
 unknown = {
 	base_price = 0
 }
 
 cannon = {
-	base_price = 4.25
+	base_price = 3.8
 }
 uniforms = {
-	base_price = 4.25
+	base_price = 3.4
 }

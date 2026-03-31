@@ -30,28 +30,28 @@ gra_republican_zeal = {
 } 
 
 gra_cap_center = {
-	reform_progress_growth = 0.5
+	reform_progress_growth = 0.2
 	advisor_cost = -0.15
 	development_cost = -0.05
 	republican_tradition = -0.2
 }
 
 gra_cap_center_big = {
-	reform_progress_growth = 0.75
+	reform_progress_growth = 0.3
 	advisor_cost = -0.15
 	development_cost = -0.10
 }
 
 gra_cap_atlantic = {
-	heavy_ship_power = 0.15
-	naval_morale = 0.15
+	heavy_ship_power = 0.10
+	naval_morale = 0.10
 	global_colonial_growth = 30
 	global_manpower_modifier = -0.10
 }
 
 gra_cap_atlantic_big = {
-	heavy_ship_power = 0.25
-	naval_morale = 0.25
+	heavy_ship_power = 0.1
+	naval_morale = 0.1
 	global_colonial_growth = 50
 }
 
@@ -65,22 +65,22 @@ gra_cap_med = {
 gra_cap_med_big = {
 	galley_power = 0.25
 	trade_efficiency = 0.25
-	global_trade_power = 0.2
+	global_trade_power = 0.25
 }
 
 gra_cap_tree = {
-	drill_gain_modifier = 0.75
-	drill_decay_modifier = -0.25
-	movement_speed = 0.15
+	drill_gain_modifier = 0.5
+	drill_decay_modifier = -0.2
+	movement_speed = 0.1
 	land_attrition = -0.20
 	monthly_piety = -0.001
 	diplomatic_reputation = -1
 }
 
 gra_cap_tree_big = {
-	drill_gain_modifier = 1.0
-	drill_decay_modifier = -0.40
-	movement_speed = 0.25
+	drill_gain_modifier = 0.75
+	drill_decay_modifier = -0.3
+	movement_speed = 0.15
 	land_attrition = -0.30
 	fire_damage = 0.10
 	monthly_piety = -0.001
@@ -90,15 +90,15 @@ gra_cap_mountain = {
 	attack_bonus_in_capital_terrain = 1
 	defensiveness = 0.20
 	global_spy_defence = 0.3
-	same_culture_advisor_cost = -0.25
+	same_culture_advisor_cost = -0.15
 	all_estate_loyalty_equilibrium = -0.05
 }
 
 gra_cap_mountain_big = {
 	global_defender_dice_roll_bonus = 1
-	defensiveness = 0.33
+	defensiveness = 0.2
 	global_spy_defence = 0.5
-	same_culture_advisor_cost = -0.30
+	same_culture_advisor_cost = -0.25
 }
 
 gra_capital_buff = {

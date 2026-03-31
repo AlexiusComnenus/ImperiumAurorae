@@ -208,8 +208,17 @@ suez_canal = {
 	#can we build it?
 	build_trigger = {
 		FROM = {
-			owns_or_vassal_of = 4316
-			owns_or_vassal_of = 2315
+			OR = {
+				AND = {
+					owns_or_vassal_of = 4316
+					owns_or_vassal_of = 2315
+				}
+				AND = {
+					4316 = { is_part_of_hre = yes }
+					2315 = { is_part_of_hre = yes }
+					is_part_of_hre = yes
+				}
+			}
 			OR = {
 				adm_tech = 22
 				mission_completed = mam_highway_empire
@@ -402,7 +411,7 @@ panama_canal = {
 				limit = {
 					NOT = { mission_completed = SUN_panama_canal }
 					NOT = { mission_completed = SUNm_panama_canal }
-					NOT = { tag = MYM 	religion = hellenic_pagan_reformed }
+					NOT = { has_country_flag = mym_enable_panama_flag	}
 				}
 				adm_tech = 22
 			}

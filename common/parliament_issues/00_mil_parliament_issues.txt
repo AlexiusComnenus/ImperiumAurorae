@@ -87,7 +87,11 @@ backing_war_effort = {
 	}
 
 	ai_will_do = {
-		factor = 1
+		factor = 20
+		modifier = {
+			factor = 0
+			is_at_war = no
+		}
 	}
 }
 

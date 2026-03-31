@@ -1,0 +1,104 @@
+kingdom_of_god_reform = {
+	icon = "kingdom_of_god"
+	potential = {
+		has_reform = papacy_reform
+		OR = {
+			has_reform = kingdom_of_god_reform
+			have_had_reform = kingdom_of_god_reform
+		}
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+	}
+	effect = {
+		hidden_effect = {
+			country_event = {
+				id = flavor_sca.2
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			remove_country_modifier = sca_administrative_focus
+			remove_country_modifier = sca_diplomatic_focus
+			remove_country_modifier = sca_military_focus
+			remove_country_modifier = sca_administrative_focus_non_heir
+			remove_country_modifier = sca_diplomatic_focus_non_heir
+			remove_country_modifier = sca_military_focus_non_heir
+		}
+	}
+	modifiers = {
+		monarch_military_power = 2
+		manpower_in_true_faith_provinces = 0.15
+		#land_morale = 0.1
+		prestige = 1
+		devotion = 1
+		appoint_cardinal_cost = -0.3
+	}
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	fixed_rank = 3
+	custom_attributes = {
+		education_focus_enabled = yes
+	}
+	government_abilities = {
+		prayer_power_mechanic
+	}
+}
+
+papacy_reform = {
+	valid_for_nation_designer = no
+	icon = "papacy"
+	allow_normal_conversion = yes
+	legacy_equivalent = papal_government
+	papacy = yes
+	allow_convert = no
+	lock_level_when_selected = yes
+	fixed_rank = 2
+	potential = {
+		OR = {
+			tag = PAP
+			tag = FAP
+		}
+	}
+
+	modifiers = {
+		prestige_per_development_from_conversion = 0.33
+		tolerance_own = 2
+		church_loyalty_modifier = 0.2
+		relation_with_heathens = -15
+		reverse_relation_with_heathen_religion = -15
+		relation_with_heretics = -50
+		reverse_relation_with_heretic_religion = -50
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		is_elective = yes
+		has_polish_election = yes
+	}
+}
+
+divine_machinery = {
+	valid_for_nation_designer = no
+	icon = "black_market_consortium"
+	allow_normal_conversion = yes
+	potential = {
+		tag = PAP
+		religion = catholic
+	}
+	trigger = {
+		OR = {
+			has_reform = divine_machinery
+			have_had_reform = divine_machinery
+		}
+	}
+	
+	modifiers = {
+		tolerance_own = 2
+		global_trade_goods_size_modifier = 0.25
+		yearly_corruption = -0.1
+		free_policy = 1
+	}
+}

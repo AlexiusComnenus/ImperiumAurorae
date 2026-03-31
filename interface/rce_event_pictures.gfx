@@ -1,0 +1,15 @@
+spriteTypes = {
+	# Normal
+	spriteType = {
+		name = "RCE_FOREST_eventPicture"
+		texturefile = "gfx/event_pictures/rce_event_pictures/RCE_FOREST_eventPicture.dds"
+		alwaystransparent = yes
+	}
+
+	# The Great Exhibition
+	spriteType = {
+		name = "RCE_FOREST_TGE_eventPicture"
+		texturefile = "gfx/event_pictures/rce_event_pictures/RCE_FOREST_TGE_eventPicture.dds"
+		alwaystransparent = yes
+	}
+}

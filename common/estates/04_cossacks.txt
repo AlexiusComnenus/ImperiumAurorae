@@ -51,13 +51,11 @@ estate_cossacks = {
 				OR = {
 					has_unlocked_estate = { estate = estate_cossacks }
 					AND = {
-						unit_type = eastern
+						#unit_type = eastern
 						religion_group = christian
-						OR = {
-							has_estate = estate_cossacks
-							any_owned_province = {
-								has_terrain = steppe
-							}
+						#has_estate = estate_cossacks
+						any_owned_province = {
+							has_terrain = steppe
 						}
 					}
 				}

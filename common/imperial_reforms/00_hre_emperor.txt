@@ -58,6 +58,7 @@ emperor_reichsstabilitaet = {
 	}
 	on_effect = {
 		custom_tooltip = "EXPAND_EMPIRE_CB"
+		custom_tooltip = ia_expand_empire_cb_tt
 	}
 }
 

@@ -9,6 +9,7 @@ base_tax = 7
 base_production = 3
 base_manpower = 4
 add_core = DLH
+add_core = ODH
 add_core = Z11
 add_permanent_claim = HIN
 discovered_by = MGE

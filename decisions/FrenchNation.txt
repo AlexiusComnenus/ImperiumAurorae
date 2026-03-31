@@ -74,12 +74,14 @@ country_decisions = {
 				183 = { #Paris
 					move_capital_effect = yes
 				}
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRA
 				on_change_tag_effect = yes
 				restore_country_name = yes
 				swap_non_generic_missions = yes
 			}
 			else = {
+				hidden_effect = { ia_save_historical_relations_effect = yes }
 				change_tag = FRW
 				on_change_tag_effect = yes
 				restore_country_name = yes

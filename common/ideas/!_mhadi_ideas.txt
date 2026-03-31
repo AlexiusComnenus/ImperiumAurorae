@@ -13,14 +13,15 @@ mhadi_ideas = {
 	free = yes
 
 	YOR_war_slavery = {
-		core_creation = -0.20
-	}
-	YOR_eternal_war = {
-		mil_tech_cost_modifier = -0.1
-		free_mil_policy = 1
+		governing_cost = -0.1
+		global_autonomy = -0.05
 	}
 	YOR_total_conscription = {
 		manpower_in_true_faith_provinces = 0.33
+	}
+	YOR_useless_forts = {
+		artillery_barrage_cost = -0.5
+		assault_fort_ability = 0.4
 	}
 	YOR_all_for_one = {
 		free_concentrate_development = yes
@@ -34,8 +35,8 @@ mhadi_ideas = {
 		movement_speed = 0.25
 		reinforce_speed = 0.25
 	}
-	YOR_useless_forts = {
-		artillery_barrage_cost = -1
-		assault_fort_ability = 1
+	YOR_eternal_war = {
+		mil_tech_cost_modifier = -0.1
+		free_mil_policy = 1
 	}
 }

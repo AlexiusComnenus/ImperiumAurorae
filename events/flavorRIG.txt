@@ -694,3 +694,168 @@ country_event = {
 		}
 	}
 }
+
+# Vassalize Livonian Order
+country_event = {
+	id = flavor_rig.14
+	title = flavor_rig.14.t
+	desc = flavor_rig.14.desc
+	picture = SAD_MERCHANT_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = RIG
+		ai = yes
+		LIV = { ai = yes }
+		is_free_or_tributary_trigger = yes
+		LIV = { is_free_or_tributary_trigger = yes }
+		is_year = 1450
+		LIV = { exists = yes }
+		is_at_war = no
+		LIV = { is_at_war = no }
+	}
+	
+	option = {	# Livonians become subject
+		name = flavor_rig.14.a
+		create_subject = {
+			subject_type = crusader_state_subject
+			subject = LIV
+		}
+		capital_scope = {
+			if = {
+				limit = { has_fort_building_trigger = no }
+				add_building = fort_15th
+			}
+			add_base_tax = 1
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Tranfer provinces to the Livonian Order
+country_event = {
+	id = flavor_rig.15
+	title = flavor_rig.15.t
+	desc = flavor_rig.15.desc
+	picture = SAD_MERCHANT_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = RIG
+		ai = yes
+		#LIV = { ai = yes }
+		any_subject_country = {
+			OR = {
+				tag = LIV
+				was_tag = LIV
+			}
+		}
+		num_of_owned_provinces_with = {
+			value = 9
+			continent = europe
+			is_overseas = no
+		}
+	}
+	immediate = {
+		random_subject_country = {
+			limit = {
+				OR = {
+					tag = LIV
+					was_tag = LIV
+				}
+			}
+			save_event_target_as = rigas_loyal_vassal
+		}
+	}
+	
+	option = {	# Transfer province
+		name = flavor_rig.14.a
+		every_owned_province = {
+			limit = {
+				NOT = { is_core = ROOT }
+			}
+			add_core = event_target:rigas_loyal_vassal
+			cede_province = event_target:rigas_loyal_vassal
+		}
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 9
+					continent = europe
+					is_overseas = no
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { province_has_center_of_trade_of_level = 1 }
+					NOT = {
+						has_great_project = {
+							type = any
+							tier = 1
+						}
+					}
+				}
+				add_core = event_target:rigas_loyal_vassal
+				cede_province = event_target:rigas_loyal_vassal
+				remove_core = event_target:rigas_loyal_vassal
+			}
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = flavor_rig.16
+	title = flavor_rig.16.t
+	desc = flavor_rig.16.desc
+	picture = SAD_MERCHANT_eventPicture
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = RIG
+		ai = yes
+		LIV = { exists = no }
+		OR = {
+			is_free_or_tributary_trigger = yes
+			is_subject_of_type = trade_protectorate
+			is_subject_of_type = saxon_daimyo
+			is_subject_of_type = german_march
+			is_subject_of_type = ia_advanced_tributary_state
+		}
+		is_year = 1450
+		any_owned_province = { is_core = LIV }
+	}
+	
+	option = {	# Livonians respawn, become subject
+		name = flavor_rig.16.a
+		release = LIV
+		create_subject = {
+			subject_type = crusader_state_subject
+			subject = LIV
+		}
+		capital_scope = {
+			if = {
+				limit = { has_fort_building_trigger = no }
+				add_building = fort_15th
+			}
+			add_base_tax = 1
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
