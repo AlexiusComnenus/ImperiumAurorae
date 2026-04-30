@@ -2116,12 +2116,14 @@ ulm_minster_great_project = {
 			factor = 1000
 		}
 		province_modifiers = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
 		}
 		country_modifiers = {
 			prestige = 0.25
-			church_loyalty_modifier = 0.05
+			church_loyalty_modifier = 0.025
 		}
 		on_upgraded = {
 		}
@@ -2135,6 +2137,8 @@ ulm_minster_great_project = {
 			factor = 2500
 		}
 		province_modifiers = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
 		}
@@ -2142,7 +2146,7 @@ ulm_minster_great_project = {
 			free_city_imperial_authority = 0.1
 			prestige = 0.5
 			tolerance_own = 0.5
-			church_loyalty_modifier = 0.1
+			church_loyalty_modifier = 0.05
 		}
 		on_upgraded = {
 		}
@@ -2156,14 +2160,17 @@ ulm_minster_great_project = {
 			factor = 5000
 		}
 		province_modifiers = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
 		}
 		area_modifier = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
 		}
 		country_modifiers = {
-			free_city_imperial_authority = 0.2
 			prestige = 1
 			tolerance_own = 1
-			church_loyalty_modifier = 0.15
+			church_loyalty_modifier = 0.10
 		}
 		on_upgraded = {
 		}
@@ -2777,6 +2784,112 @@ palace_of_the_popes = {
 				}
 				202 = { add_cardinal = yes }
 			}
+		}
+	}
+}
+
+dujiangyan = {
+	start = 679 #Chengdu
+	date = 100.01.01
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+	}
+
+	on_built = {
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+	}
+
+	can_upgrade_trigger = {
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost_modifier = -0.05
+			local_governing_cost = -0.2
+		}
+		area_modifier = {
+			local_monthly_devastation = -0.05
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_development_cost_modifier = -0.1
+			allowed_num_of_buildings = 1
+		}
+		area_modifier = {
+			local_governing_cost = -0.2
+		}
+		region_modifier = { 
+			local_monthly_devastation = -0.05
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+			local_development_cost_modifier = -0.1
+			allowed_num_of_buildings = 1
+			local_governing_cost = -0.4
+		}
+		country_modifiers = {
+			global_monthly_devastation = -0.05
+		}
+		on_upgraded = {
 		}
 	}
 }

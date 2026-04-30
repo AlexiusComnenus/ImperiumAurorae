@@ -1,0 +1,33 @@
+﻿l_english:
+ estate_industrialists: "Industrialists"
+ estate_industrialists_desc: "Industrialist estate represent wealthy owners of multiple manufactories, disregarding matters of faith and trade for raw produce, caring only for protecting and exploiting their wealth within the binds of the government."
+#Static Modifiers
+ EST_VAL_LOW_PRODUCTION_INCOME: "Production less than 25% of Total Income: §Y$VAL$%§!"
+ EST_VAL_VERY_HIGH_PRODUCTION_INCOME: "Production more than 50% of Total Income: §Y$VAL$%§!"
+ EST_VAL_LONGTERM_CERTAINTY: "Generational Cooperation with Leadership: §Y$VAL$%§!"
+ EST_VAL_MIDDLE_CERTAINTY: "Infrequent Leadership Changes: §Y$VAL$§!"
+ EST_VAL_GREAT_UNCERTAINTY: "Frequent Leadership Changes: §Y$VAL$%§!"
+ EST_VAL_LOW_PRODUCTION_INCOME_LOY: "Production less than 25% of Total Income: §Y$VAL$§!"
+ EST_VAL_VERY_HIGH_PRODUCTION_INCOME_LOY: "Production more than 50% of Total Income: §Y$VAL$§!"
+ EST_VAL_LONGTERM_CERTAINTY_LOY: "Generational Cooperation with Leadership: §Y$VAL$§!"
+ EST_VAL_MIDDLE_CERTAINTY_LOY: "Infrequent Leadership Changes: §Y$VAL$§!"
+ EST_VAL_GREAT_UNCERTAINTY_LOY: "Frequent Leadership Changes: §Y$VAL$§!"
+ estate_industrialists_ownership: "Land Share"
+#Preload Modifiers
+ estate_industrialists_privilege_slots: "[Country.GetIndustrialistsName] Max Privileges"
+ estate_industrialists_loyalty_modifier: "[Country.GetIndustrialistsName] Loyalty"
+ estate_industrialists_influence_modifier: "[Country.GetIndustrialistsName] Influence"
+#Privileges
+ estate_industrialists_rheinholzfallergilde:0 "Rheinholzfällergilde"
+ estate_industrialists_rheinholzfallergilde_desc:0 "WIP"
+ estate_industrialists_maurerzunfts_codified_laws_of_construction:0 "Maurerzunft's Codified Laws of Construction"
+ estate_industrialists_maurerzunfts_codified_laws_of_construction_desc:0 "WIP"
+
+#Privilege Modifiers
+ estate_industrialists_rheinholzfallergilde_forest: "Rheinholzfällergilde: Forest Handling"
+ estate_industrialists_rheinholzfallergilde_woods: "Rheinholzfällergilde: Woods Handling"
+
+#Tooltips for unlocks and upgrades
+ unlock_privilege_estate_industrialists_rheinholzfallergilde_tt:0 "Enable the [Root.GetIndustrialistsName] privilege '§YRheinholzfällergilde§!'."
+ unlock_privilege_estate_industrialists_maurerzunfts_codified_laws_of_construction_tt:0 "Enable the [Root.GetIndustrialistsName] privilege '§YMaurerzunft's Codified Laws of Construction§!'."
+ industrialist_workplace_accidents_decrease_tt: "§RWorkplace accidents§! will be less likely to happen!"

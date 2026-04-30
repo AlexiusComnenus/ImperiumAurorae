@@ -8,9 +8,9 @@
  NGC_ADJ: "North German"
  SGC_ADJ: "South German"
  Kleinstaaterei: "§RKleinstaaterei§!"
- Kleinstaaterei_desc: "Applies a §R6x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
+ Kleinstaaterei_desc: "Applies a §R6x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], an independent @[NED.GetTag] [NED.GetName] or an independent, reorganized @[HES.GetTag] [HES.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
  Kleinstaaterei_lesser: "Declining §RKleinstaaterei§!" 
- Kleinstaaterei_lesser_desc: "Applies a §R3x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], or an independent @[NED.GetTag] [NED.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
+ Kleinstaaterei_lesser_desc: "Applies a §R3x§! modifier to the §YGoverning Distance§! mechanic. Certain nations such as @[GER.GetTag] [GER.GetName], @[NGC.GetTag] [NGC.GetName], @[SGC.GetTag] [SGC.GetName], @[AUH.GetTag] [AUH.GetName], @[HLR.GetTag] [HLR.GetName], @[GMA.GetTag] [GMA.GetName], an independent @[NED.GetTag] [NED.GetName] or an independent, reorganized @[HES.GetTag] [HES.GetName] are able to remove this modifier from provinces with §G0 unrest§!."
  CANNOT_JOIN_LEAGUE_GERMAN_KING: "The King of Germany cannot join Religious Leagues"
  
  has_resolved_centralization_chain: "Has resolved all events of the Centralization Reforms."

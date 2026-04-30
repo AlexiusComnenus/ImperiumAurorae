@@ -10,7 +10,7 @@ peasant_war = {
 			government = republic
 		}
 		#NOT = { has_reform = celestial_empire }
-		NOT = { has_reform = steppe_horde }		
+		NOT = { has_reform = steppe_horde }
 		uses_doom = no
 		#is_free_or_tributary_trigger = yes
 		num_of_cities = 5
@@ -30,6 +30,7 @@ peasant_war = {
 			current_age = age_of_reformation
 			current_age = age_of_discovery
 		}
+		NOT = { has_country_modifier = recently_became_peasant_republic_modifier }
 		#is_at_war = no
 		#has_any_disaster = no
 		if = {
@@ -122,6 +123,10 @@ peasant_war = {
 		modifier = {
 			factor = 1
 			num_of_loans = 5
+		}	
+		modifier = {
+			factor = -10
+			has_country_modifier = recently_became_peasant_republic_modifier
 		}	
 		modifier = {
 			factor = 1

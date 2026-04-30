@@ -328,6 +328,9 @@ country_event = { #If you own the reg thing, apply state buffs to german provinc
 		days = 1
 	}
 	trigger = {
+		ROOT = {
+			culture_group = germanic
+		}
 		any_owned_province = {
 			OR = {
 				has_province_modifier = hes_regimental_capital_local
@@ -343,9 +346,6 @@ country_event = { #If you own the reg thing, apply state buffs to german provinc
 					} 
 				}
 			}
-		}
-		ROOT = {
-			culture_group = germanic
 		}
 	}
 	immediate = {
@@ -619,13 +619,13 @@ country_event = { #in the rare case of culture shift or if on_province_owner_cha
 	}
 	trigger = {
 		any_owned_province = {
+			owner = {
+				NOT = { culture_group = germanic }
+			}
 			OR = {
 				has_province_modifier = hes_regimental_capital_local
 				has_province_modifier = hes_regimental_city_local
 				has_province_modifier = hes_regimental_town_local
-			}
-			owner = {
-				NOT = { culture_group = germanic }
 			}
 		}
 	}

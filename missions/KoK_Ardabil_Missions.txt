@@ -491,6 +491,7 @@ ardabil_missions_5 = {
 		}
 		effect = {
 			add_army_tradition = 20
+			create_general = { tradition = 70 add_siege = 3 }
 		}
 	}
 
@@ -554,6 +555,9 @@ ardabil_missions_5 = {
 			}
 			else = {
 				change_government_reform_progress = 100
+			}
+			unlock_estate_privilege = {
+				estate_privilege = estate_burghers_mountain_expansion
 			}
 			hidden_effect = {
 				if = {

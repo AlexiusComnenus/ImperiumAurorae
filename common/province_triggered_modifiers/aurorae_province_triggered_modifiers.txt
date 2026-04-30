@@ -246,3 +246,28 @@ hes_saxon_funding = {
 		}
 	}
 }
+
+rhe_german_mining_tax = {
+	potential = {
+		always = yes
+	}
+
+	trigger = {
+		owner = {
+			is_subject = yes
+			OR = {
+				tag = HES
+				tag = RHE
+			}
+			overlord = { 
+				has_reform = saxon_feudalism
+			}
+		}
+	}
+	trade_goods_size_modifier = -0.5
+	on_deactivation = {
+		4742 = {
+			remove_province_triggered_modifier = rhe_german_mining_tax
+		}
+	}
+}

@@ -134,6 +134,7 @@ estate_jains = {
 		estate_jains_MUG_gujarati_trade
 		estate_jains_MUG_support_malaccan_viceroyalty
 		estate_jains_MUG_debase_the_ruppee
+		estate_burghers_mountain_expansion
 	}
 	
 	agendas = {

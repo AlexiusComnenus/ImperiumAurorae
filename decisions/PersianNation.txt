@@ -226,6 +226,7 @@ country_decisions = {
 					NOT = { primary_culture = seleucian }
 				}
 				change_primary_culture = persian
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			}
 			set_country_flag = formed_persia_flag
 			if = {

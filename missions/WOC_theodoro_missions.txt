@@ -892,6 +892,11 @@ feo_4 = {
 				loyalty = 20
 			}
 			create_general_with_pips = { tradition = 60 add_shock = 1 }
+			every_owned_province = {
+				limit = { culture = crimean }
+				change_culture = goths
+				add_devastation = 20
+			}
 		} 
 	}
 

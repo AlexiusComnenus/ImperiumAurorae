@@ -105,11 +105,33 @@ hes_appointed_royal_administrator = {
 	diplomatic_annexation_cost = -0.4
 }
 
-hes_mp_reform_buff = {
+hes_dedicated_mil_district = {
+	local_manpower_modifier = 0.3
+	global_manpower_modifier = 0.01
+}
+
+hes_expanded_mil_quarters = {
+	land_forcelimit = 0.5
+	regiment_recruit_speed = -0.20
+}
+
+hes_reconstruction_effort = {
+	local_tax_modifier = -0.5
+	local_development_cost = -0.2
+	local_build_cost = -0.2
+	local_build_cost = -0.5
+}
+
+hes_building_the_schloss = {
+	local_great_project_upgrade_cost = -0.3
+	local_great_project_upgrade_time = -0.5
+}
+
+hes_mp_reform_buff = { ###DELETE WHEN BAGUETTE MAKES UP HIS MIND ABOUT WHERE HE WANTS THE BUFFS TO BE
 	monthly_reform_progress = 0.5 
 }
 
-hes_mp_buffs_military = {
+hes_mp_buffs_military = { ###DELETE WHEN BAGUETTE MAKES UP HIS MIND ABOUT WHERE HE WANTS THE BUFFS TO BE
 	infantry_power = 0.2
 	special_unit_forcelimit = 0.5
 	morale_damage_received = -0.2
@@ -128,6 +150,7 @@ rhenish_bureaucractic_apparatus_negative_modifier = {
 	local_governing_cost = 0.20
 	local_governing_cost_increase = 20
 }
+
 ##########################
 
 #Regimental towns, cities and capital mechanic
@@ -599,7 +622,7 @@ hussite_clerical_poverty_aspect_bonus = {
 }
 
 hussite_punishment_of_sins_aspect_bonus = {
-	all_estate_loyalty_equilibrium = 0.05
+	all_estate_loyalty_equilibrium = 0.1
 }
 
 hussite_bread_and_wine_aspect_bonus = {
@@ -628,7 +651,8 @@ hussite_taborite_resurgence_aspect_bonus = {
 }
 
 hussite_freedom_to_preach_aspect_bonus = {
-	no_religion_penalty = yes
+	tolerance_heretic = 3
+	tolerance_heathen = 3
 }
 
 non_germanic_land_penalty_sax = {

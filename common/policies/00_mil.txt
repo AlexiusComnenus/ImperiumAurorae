@@ -1373,8 +1373,8 @@ psychological_warfare_policy = {
 		full_idea_group = spy_ideas
 	}
 
-	morale_damage = 0.2
-	cavalry_power = 0.1
+	morale_damage = 0.1
+	siege_ability = 0.1
 
 	effect = {}
 	removed_effect = {}
@@ -1668,8 +1668,8 @@ sharp_wits_act = {
 		full_idea_group = offensive_ideas 
 	}
 	
-	power_projection_from_insults = 0.25
-	morale_damage = 0.15
+	power_projection_from_insults = 0.5
+	morale_damage = 0.10
 
 	effect = {}
 	removed_effect = {}

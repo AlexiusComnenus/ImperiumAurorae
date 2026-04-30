@@ -416,7 +416,7 @@ got_pirate_slot_3 = {
 			add_mercantilism = 3
 			45 = {
 				set_center_level_2_center_of_trade = yes
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = got_free_pirate_port
 					duration = -1
 				}
@@ -682,28 +682,30 @@ got_pirate_slot_4 = {
 			}
 		}
 		trigger = {
-			1926 = {
-				privateer_power = {
-					country = ROOT
-					share = 15
-				}
-			}
-			calc_true_if = {
-				desc = got_pirate_raid_the_baltics_at
-				all_province = {
-					OR = {
-						region = scandinavia_region
-						region = baltic_region
-						region = north_german_region
-						region = russia_region
-					}
-					has_port = yes
-					OR = {
-						country_or_non_sovereign_subject_holds = ROOT
-						has_province_modifier = slaves_raided
+			OR = {
+				1926 = {
+					privateer_power = {
+						country = ROOT
+						share = 15
 					}
 				}
-				amount = 20
+				calc_true_if = {
+					desc = got_pirate_raid_the_baltics_at
+					all_province = {
+						OR = {
+							region = scandinavia_region
+							region = baltic_region
+							region = north_german_region
+							region = russia_region
+						}
+						has_port = yes
+						OR = {
+							country_or_non_sovereign_subject_holds = ROOT
+							has_province_modifier = slaves_raided
+						}
+					}
+					amount = 20
+				}
 			}
 		}
 		effect = {
@@ -752,7 +754,7 @@ got_pirate_slot_4 = {
 		effect = {
 			add_mercantilism = 3
 			43 = {
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = got_free_pirate_port
 					duration = -1
 				}
@@ -922,7 +924,7 @@ got_pirate_slot_5 = {
 			add_mercantilism = 3
 			38 = {
 				set_center_level_2_center_of_trade = yes
-				add_province_modifier = {
+				add_permanent_province_modifier = {
 					name = got_free_pirate_port
 					duration = -1
 				}

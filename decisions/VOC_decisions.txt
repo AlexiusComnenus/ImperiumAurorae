@@ -34,6 +34,7 @@ country_decisions = {
 					add_government_reform = trade_company_government
 					change_religion = ROOT
 					change_primary_culture = ROOT
+					hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 					add_adm_power = 100
 					add_dip_power = 100
 					add_mil_power = 100

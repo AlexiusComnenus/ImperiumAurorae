@@ -38,6 +38,21 @@ cb_antioch_crusade = {
 	war_goal = antioch_celestial_crusade
 }
 
+# Coalition CB
+cb_super_badboy_mhadi = {
+	coalition = yes
+
+	prerequisites = {
+		coalition_target = FROM
+		num_of_coalition_members = 2
+		FROM = {
+			has_reform = mhadi_reform
+		}
+	}
+
+	war_goal = superiority_punitive_mhadi
+}
+
 cb_imperial_realm_war_lite = {
 	valid_for_subject = no
 	ai_peace_desire = -50
@@ -191,7 +206,9 @@ cb_spread_the_commune = {
 			NOT = { is_subject_of = ROOT }
 			is_revolutionary = no
 			NOT = { has_reform = peasants_republic }
+			NOT = { has_government_attribute = is_peasants_republic }
 			NOT = { has_reform = saxon_feudalism }
+			NOT = { has_government_attribute = papacy }
 			OR = {
 				NOT = { is_emperor_of_china = yes }
 				AND = {
@@ -202,8 +219,8 @@ cb_spread_the_commune = {
 			is_emperor = no
 			NOT = { tag = Z17 }
 			NOT = { tag = TEM }
-			NOT = { tag = PAP }
-			NOT = { tag = FAP }
+			#NOT = { tag = PAP }
+			#NOT = { tag = FAP }
 		}
 		OR = {
 			has_reform = almohad_commune_reform
@@ -470,21 +487,6 @@ cb_ia_liberation = {
 	}
 	
 	war_goal = ia_liberation
-}
-
-# Coalition CB
-cb_super_badboy_mhadi = {
-	coalition = yes
-
-	prerequisites = {
-		coalition_target = FROM
-		num_of_coalition_members = 2
-		FROM = {
-			has_reform = mhadi_reform
-		}
-	}
-
-	war_goal = superiority_punitive_mhadi
 }
 
 # Temporary claim CB (mostly used by missions)

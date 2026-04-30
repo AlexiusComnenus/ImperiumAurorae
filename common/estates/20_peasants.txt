@@ -270,6 +270,7 @@ estate_peasants =
 		estate_peasants_land_rights
 		estate_peasants_armed_citizenry
 		estate_peasants_levies
+		estate_peasants_for_the_faith
 		estate_peasants_advisors
 		estate_peasants_statutory_rights
 		estate_peasants_lowered_taxes

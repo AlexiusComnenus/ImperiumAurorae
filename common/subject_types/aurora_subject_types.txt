@@ -25,8 +25,8 @@ german_march = {
 	base_liberty_desire = -15.0
 	can_be_annexed = no
 	relative_power_class = 1
-	forcelimit_to_overlord = 0.1
-	manpower_to_overlord = 0.1
+	forcelimit_to_overlord = 0.25
+	manpower_to_overlord = 0.25
 	is_march = yes
 	#forms_trade_companies = no
 	can_have_subjects_of_other_types = yes
@@ -105,6 +105,14 @@ german_march = {
 			overlord = {
 				has_government_attribute = same_religion_subject_bonus
 				religion = PREV
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
 			}
 		}
 	}
@@ -195,6 +203,14 @@ aurora_beneficiary = {
 			overlord = {
 				has_government_attribute = same_religion_subject_bonus
 				religion = PREV
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
 			}
 		}
 	}
@@ -315,6 +331,15 @@ personal_union = {
 		}
 		modifier = pu_subject_bonus
 	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
+				has_government_attribute = personal_union_war_contribution
+			}
+		}
+	}
 
 	overlord_opinion_modifier = in_union
 	subject_opinion_modifier = in_union
@@ -373,8 +398,8 @@ saxon_daimyo = {
 	can_be_integrated = no
 	overlord_enforce_peace_attacking = yes
 	can_have_subjects_of_other_types = yes
-	forcelimit_to_overlord = 0.25
-	manpower_to_overlord = 0.25
+	forcelimit_to_overlord = 0.15
+	manpower_to_overlord = 0.15
 	joins_overlords_wars = no
 	restoration_cb = cb_disloyal_vassal
 	max_government_rank = 2
@@ -542,6 +567,14 @@ druidic_brotherhood = {
 			}
 		}
 	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
+			}
+		}
+	}
 	
 	can_fight = {
 		neighboring_primitives = yes
@@ -648,6 +681,14 @@ crusader_state_subject = {
 			}
 		}
 	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
+			}
+		}
+	}
 	
 	can_fight = {
 		#independent_nations = yes
@@ -751,7 +792,7 @@ trade_protectorate = {
 	bestow_gifts = yes
 	send_additional_troops = yes
 	demand_artifacts = yes
-	enforce_religion = no
+	enforce_religion = yes
 	embargo_rivals = yes
 
 	# Modifiers:
@@ -1191,6 +1232,14 @@ danelaw_subject = {
 			overlord = {
 				has_government_attribute = same_religion_subject_bonus
 				religion = PREV
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
 			}
 		}
 	}
@@ -1691,6 +1740,14 @@ myrmidon_exarchate = {
 			}
 		}
 	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
+			}
+		}
+	}
 
 	overlord_opinion_modifier = is_vassal
 	subject_opinion_modifier = is_vassal
@@ -1782,6 +1839,14 @@ hereditary_pronoia_subject_type = {
 			custom_trigger_tooltip = {
 				tooltip = BYZ_pronoia_land_forcelimit_penalty_tt
 				NOT = { overlord = { has_country_flag = BYZ_no_pronoia_forcelimit_penalty } }
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
 			}
 		}
 	}
@@ -1962,6 +2027,14 @@ march = {
 			overlord = {
 				has_government_attribute = same_religion_subject_bonus
 				religion = PREV
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = influence_ideas_march_bonus
+		trigger = {
+			overlord = {
+				full_idea_group = influence_ideas
 			}
 		}
 	}

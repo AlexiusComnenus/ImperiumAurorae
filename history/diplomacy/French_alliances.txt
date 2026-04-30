@@ -13,6 +13,13 @@ royal_marriage = {
 }
 
 royal_marriage = {
+	first = Z21
+	second = SAX
+	start_date = 1432.6.4
+	end_date = 1467.4.22
+}
+
+royal_marriage = {
 	first = NRM
 	second = BER
 	start_date = 1432.6.4

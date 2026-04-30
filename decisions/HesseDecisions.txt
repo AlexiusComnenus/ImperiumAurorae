@@ -144,7 +144,7 @@ country_decisions = {
 				disband_all_units = yes
 				ROOT = { inherit = PREV }
 			}
-			set_country_flag = hes_integrated_wes
+			set_country_flag = hes_integrated_fkn
 		}
 		
 		ai_will_do = {

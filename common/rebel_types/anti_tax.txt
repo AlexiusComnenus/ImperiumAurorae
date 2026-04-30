@@ -147,6 +147,7 @@ anti_tax_rebels = {
 			}
 			add_local_autonomy = 20
 		}
+		add_stability = 1
 		#create_independent_estate = {
 		#	estate = estate_peasants
 		#	play_as = no
@@ -167,6 +168,7 @@ anti_tax_rebels = {
 			remove_country_modifier = obsolete_forces
 			remove_country_modifier = isolate_rebels
 			add_prestige = -50
+			add_stability = 1
 			if = {
 				limit = {
 					NOT = { tag = Z17 }

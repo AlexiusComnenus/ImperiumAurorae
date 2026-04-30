@@ -46,7 +46,10 @@ po_spread_commune = {
 		}
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
-		always = yes
+		FROM = { 
+			NOT = { has_government_attribute = is_peasants_republic } 
+			NOT = { has_government_attribute = papacy }
+		}
 	}
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
 		FROM = { 
@@ -58,10 +61,9 @@ po_spread_commune = {
 			}
 			kill_ruler = yes
 			add_opinion = {
-				who = THIS
+				who = ROOT
 				modifier = released_us_freely
 			}
-			
 			add_government_reform = peasants_republic
 			if = {
 				limit = { NOT = { total_development = 200 } }

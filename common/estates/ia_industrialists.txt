@@ -1,0 +1,165 @@
+estate_industrialists = {
+	icon = 22
+
+	color = { 43 45 47 }
+
+	# If true, country will get estate
+	trigger = {
+		OR = {
+			has_country_flag = rheinland_unlocked_industrialists_early
+			has_institution = manufactories
+		}
+		NOT = {
+			OR = {
+				government = tribal
+				government = native
+			}
+			OR = {
+				religion_group = apocalyptic_group
+				has_estate = estate_alchemists
+				religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	country_modifier_neutral = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	country_modifier_angry = {
+		global_trade_goods_size_modifier = -0.1
+	}
+	
+	influence_from_dev_modifier = 0.5
+
+	land_ownership_modifier = {
+		estate_industrialists_loyalty_modifier = 0.2
+	}
+	
+	base_influence = 30
+	
+	loyalty_modifier = {
+		desc = EST_VAL_LOW_PRODUCTION_INCOME_LOY
+		trigger = {
+			NOT = { production_income_percentage = 0.25 }
+		}	
+		loyalty = -5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_VERY_HIGH_PRODUCTION_INCOME_LOY
+		trigger = {
+			production_income_percentage = 0.5
+		}	
+		loyalty = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_LOW_PRODUCTION_INCOME
+		trigger = {
+			NOT = { production_income_percentage = 0.25 }
+		}	
+		influence = -5
+	}
+	influence_modifier = {
+		desc = EST_VAL_VERY_HIGH_PRODUCTION_INCOME
+		trigger = {
+			production_income_percentage = 0.5
+		}	
+		influence = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_LONGTERM_CERTAINTY_LOY
+		trigger = {
+			OR = {
+				AND = {
+					government = monarchy
+					NOT = { has_government_attribute = is_elective }
+				}
+				government = dictatorship
+				has_reform = dynastic_rulership_reform
+			}
+		}
+		loyalty = 10
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_MIDDLE_CERTAINTY_LOY
+		trigger = {
+			OR = {
+				government = theocracy
+				AND = {
+					government = republic
+					NOT = { has_government_attribute = has_term_election }
+				}
+				AND = {
+					government = monarchy
+					has_government_attribute = is_elective
+				}
+			}
+		}
+		loyalty = 5
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_GREAT_UNCERTAINTY_LOY
+		trigger = {
+			government = republic
+			has_government_attribute = has_term_election
+		}
+		loyalty = -5
+	}
+	influence_modifier = {
+		desc = EST_VAL_LONGTERM_CERTAINTY
+		trigger = {
+			OR = {
+				AND = {
+					government = monarchy
+					NOT = { has_government_attribute = is_elective }
+				}
+				government = dictatorship
+				has_reform = dynastic_rulership_reform
+			}
+		}
+		influence = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_MIDDLE_CERTAINTY
+		trigger = {
+			OR = {
+				government = theocracy
+				AND = {
+					government = republic
+					NOT = { has_government_attribute = has_term_election }
+				}
+				AND = {
+					government = monarchy
+					has_government_attribute = is_elective
+				}
+			}
+		}
+		influence = -5
+	}
+	influence_modifier = {
+		desc = EST_VAL_GREAT_UNCERTAINTY
+		trigger = {
+			government = republic
+			has_government_attribute = has_term_election
+		}
+		influence = -10
+	}
+	
+	privileges = {
+		estate_industrialists_rheinholzfallergilde
+		estate_industrialists_maurerzunfts_codified_laws_of_construction
+	}
+
+	agendas = {
+		estate_industrial_conquer_good
+		estate_industrial_workshop
+		estate_industrial_manufactory
+		estate_industrial_production_dev
+		estate_industrial_blast_furnaces
+	}
+}

@@ -540,7 +540,7 @@ dray_build_to_limit_hussar = {
 		}
 	}
 	multiply_variable = { which = drayHussarsDev value = 0.025 }
-	change_variable = { which = drayHussarsAmount which = drayHussarsDev }	
+	#change_variable = { which = drayHussarsAmount which = drayHussarsDev }	
 	export_to_variable = { which = tempvarhussars value = modifier:amount_of_hussars }
 	change_variable = { which = drayHussarsAmount which = tempvarhussars }	
 	export_to_variable = { which = drayCalcSpecialForceLimit value = modifier:special_unit_forcelimit }

@@ -754,6 +754,7 @@ country_event = {  # Grew too much ultimatum
 		}
 		
 		event_target:saxon_king = {
+			white_peace = ROOT
 			create_subject = {
 				subject_type = saxon_daimyo
 				subject = ROOT
@@ -1627,6 +1628,7 @@ country_event = {  # Religious Question
 	
 	option = {	# enforce templarite
 		name = ia_flavor_sax.20.b
+		trigger = { is_religion_enabled = protestant }
 		ai_chance = { 
 			factor = 50
 			modifier = {

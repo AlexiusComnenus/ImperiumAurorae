@@ -1,5 +1,5 @@
 estate_aurora = {
-	icon = 4
+	icon = 19
 	
 
 	# If true, country will get estate

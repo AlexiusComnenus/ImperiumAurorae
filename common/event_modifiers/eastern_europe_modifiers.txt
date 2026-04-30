@@ -88,7 +88,8 @@ nov_orthodox_zealotry = {
 
 nov_rise_of_bogomilism = {
 	global_unrest = -2
-	global_tax_modifier = -0.20
+	global_missionary_strength = 0.01
+	manpower_in_true_faith_provinces = 0.20
 	missionaries = 1
 	religion = yes
 }

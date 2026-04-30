@@ -81,7 +81,7 @@ country_event = {
 	picture = SIEGE_eventPicture
 
 	trigger = {
-		tag = GRA
+		is_subject = no
 	}
 	
 	is_triggered_only = yes
@@ -647,6 +647,7 @@ country_event = {
 		name = ia_flavor_gra.7.a
 		add_prestige = 100
 		set_government_rank = 3
+		override_country_name = rabitat_al_andalus_name
 		ai_chance = {
 			factor = 5
 		}

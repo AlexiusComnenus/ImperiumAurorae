@@ -1,3 +1,11 @@
+recently_became_peasant_republic_modifier = {
+}
+
+influence_ideas_march_bonus = {
+	discipline = 0.05
+	global_manpower_modifier = 0.25
+}
+
 capitalautonomymod_2700 = {
 	min_local_autonomy = 60
 	local_autonomy = 0.20
@@ -50,6 +58,10 @@ capitalautonomymod_300 = {
 	min_local_autonomy = 5
 	local_autonomy = 0.02
 	local_unrest = 1
+}
+
+capital_1_govcap = {
+	local_governing_cost_increase = 1
 }
 
 small_refugee_influx = {

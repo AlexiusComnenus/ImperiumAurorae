@@ -1,0 +1,113 @@
+rhe_new_emerging_class = { 
+	estate_industrialists_privilege_slots = -3
+	estate_industrialists_loyalty_modifier = 0.1
+	estate_industrialists_influence_modifier = -0.1
+	monthly_reform_progress = 0.1
+}
+
+rhe_funding_prospects = {
+	global_tax_income = -36
+	adm_advisor_cost = 0.25 
+}
+
+rhe_unregulated_deforestation = {
+	local_build_cost = -0.15
+	local_development_cost = -0.2
+	local_monthly_devastation = 0.2
+	local_governing_cost = 0.2
+}
+
+rhe_forest_expropriation = {
+	church_loyalty_modifier = -0.1
+	nobles_loyalty_modifier = -0.1
+}
+
+rhe_great_fire = {
+	local_monthly_devastation = 0.1
+	local_build_cost = 0.3
+	local_development_cost = 0.3
+}
+
+rhe_infrastructure_laid_out = {
+	local_build_cost = -0.1
+	local_development_cost = -0.1
+	local_build_time = -0.1
+}
+
+rhe_bustling_city = {
+	local_governing_cost = 0.5
+	local_build_cost = -0.2
+	local_development_cost = -0.2
+}
+
+rhe_coal_mining_pits = {
+	trade_goods_size = 1
+	local_production_efficiency = 0.2
+	trade_goods_size_modifier = 0.1
+	picture = "obsidian"
+}
+
+rhe_administrative_capitals = {
+	local_centralize_state_cost = -0.25
+	reform_progress_growth = 0.05
+}
+
+rhe_coal_unknown_uses = {
+	trade_value_modifier = -0.5
+	trade_value = -1
+}
+
+rhe_ignoring_tradition = {
+	tolerance_own = -1
+	tolerance_heathen = 1
+	tolerance_of_heathens_capacity = 1
+	production_efficiency = 0.1
+}
+
+rhe_improved_prod_buildings = {
+	local_prosperity_growth = 0.05
+}
+
+rhe_factories_never_sleep = {
+	production_efficiency = 0.2
+	global_unrest = -2
+}
+
+rhe_mining_towns = {
+	trade_value_modifier = 0.5
+	trade_goods_size = 2
+	trade_goods_size_modifier = 0.2
+}
+
+rhe_industrial_pioneers = { 
+	estate_industrialists_privilege_slots = 3
+	estate_industrialists_loyalty_modifier = 0.2
+	estate_industrialists_influence_modifier = -0.2
+}
+
+rhe_hearth_of_the_rhine = {
+	local_development_cost_modifier = -0.25
+	trade_goods_size = 3
+	trade_goods_size_modifier = 0.4
+	trade_value_modifier = 0.75
+	local_centralize_state_cost = -0.2
+}
+
+rhe_invest_in_the_complex = {
+	local_great_project_upgrade_cost = -0.25
+	local_great_project_upgrade_time = -0.5 
+}
+
+rhe_regional_raumordnungsgesetz = {
+	centralize_state_cost = -0.15
+}
+
+#Modifiers for Industrialists Unique to Rhineland from Missions
+
+estate_industrialists_rheinholzfallergilde_forest = {
+	local_development_cost = -0.15
+}
+
+estate_industrialists_rheinholzfallergilde_woods = {
+	local_development_cost = -0.1
+}

@@ -755,6 +755,7 @@ diplomatic_ideas = {
 	}
 	cabinet = {
 		diplomatic_upkeep = 1
+		monarch_diplomatic_power = 1 
 	}
 	benign_diplomats = {
 		diplomats = 1
@@ -1195,7 +1196,7 @@ economic_ideas = {
 		gold_depletion_chance_modifier = -0.25
 	}
 	nationalistic_enthusiasm = {
-		land_maintenance_modifier = -0.05
+		land_maintenance_modifier = -0.1
 	}
 	debt_and_loans = {
 		interest = -0.5
@@ -1716,7 +1717,7 @@ quantity_ideas = {
 		reinforce_cost_modifier = -0.33
 	}
 	the_old_and_infirm = {
-		land_maintenance_modifier = -0.05
+		land_maintenance_modifier = -0.1
 	}
 	expanded_supply_trains = {
 		land_attrition = -0.25
@@ -2049,8 +2050,9 @@ influence_ideas = {
 	}
 
 	tribute_system = {
-		vassal_income = 0.25
+		vassal_income = 0.15
 		vassal_sailors_bonus = 0.5
+		monarch_power_tribute = 1
 	}
 	
 	additional_loyalist_recruitment = {
@@ -2073,7 +2075,7 @@ influence_ideas = {
 		liberty_desire_from_subject_development = -0.1
 	}
 	marcher_lords = {
-		vassal_forcelimit_bonus = 1
+		vassal_forcelimit_bonus = 0.5
 	}
 
 	ai_will_do = {
@@ -2229,7 +2231,7 @@ court_ideas = {
 	}
 	court_embassies = {
 		possible_dip_policy = 1 
-		monarch_diplomatic_power = 1 
+		monarch_admin_power = 1
 	}
 
 	ai_will_do = {

@@ -467,9 +467,35 @@ ia_embezzle_crown_funds = {
 			is_subject_of_type = saxon_daimyo
 			is_subject_of_type = german_march
 		}
-		has_spy_network_in = {
-			who = FROM
-			value = 40
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 40
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 40
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 32
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 32
+			}
 		}
 		has_government_power = {
 			mechanic_type = saxon_favor_mechanic
@@ -484,9 +510,20 @@ ia_embezzle_crown_funds = {
 			power_type = ia_court_influence
 			value = -40
 		}
-		add_spy_network_in = {
-			who = FROM
-			value = -40
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -32
+			}
+		}
+		else = {
+			add_spy_network_in = {
+				who = FROM
+				value = -40
+			}
 		}
 		FROM = {
 			add_treasury = -250
@@ -520,9 +557,35 @@ ia_undermine_crown_authority = {
 			is_subject_of_type = saxon_daimyo
 			is_subject_of_type = german_march
 		}
-		has_spy_network_in = {
-			who = FROM
-			value = 65
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 65
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 65
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 52
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 52
+			}
 		}
 		has_government_power = {
 			mechanic_type = saxon_favor_mechanic
@@ -537,9 +600,20 @@ ia_undermine_crown_authority = {
 			power_type = ia_court_influence
 			value = -80
 		}
-		add_spy_network_in = {
-			who = FROM
-			value = -65
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -52
+			}
+		}
+		else = {
+			add_spy_network_in = {
+				who = FROM
+				value = -65
+			}
 		}
 		FROM = {
 			if = {
@@ -635,9 +709,35 @@ ia_gain_favor_with_blackmail = {
 				is_subject_of_type = german_march
 			}
 		}
-		has_spy_network_in = {
-			who = FROM
-			value = 45
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 45
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 45
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 36
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 36
+			}
 		}
 	}
 
@@ -647,9 +747,20 @@ ia_gain_favor_with_blackmail = {
 			power_type = ia_court_influence
 			value = 10
 		}
-		add_spy_network_in = {
-			who = FROM
-			value = -45
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -36
+			}
+		}
+		else = {
+			add_spy_network_in = {
+				who = FROM
+				value = -45
+			}
 		}
 	}
 
@@ -2112,9 +2223,39 @@ suborn_germanic_fief_action = {
 			}
 			FROM = {
 				overlord = {
-					has_spy_network_from = {
-						who = ROOT
-						value = 20
+					if = {
+						limit = {
+							NOT = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 20
+								}
+							}
+							ROOT = {
+								NOT = { full_idea_group = spy_ideas }
+							}
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 20
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_spy_network_from = {
+									who = ROOT
+									value = 16
+								}
+							}
+							ROOT = {
+								full_idea_group = spy_ideas
+							}
+						}
+						has_spy_network_from = {
+							who = ROOT
+							value = 16
+						}
 					}
 				}
 			}
@@ -2139,9 +2280,22 @@ suborn_germanic_fief_action = {
 		add_treasury = -50
 		FROM = {
 			overlord = {
-				add_spy_network_from = {
-					who = ROOT
-					value = -15
+				if = {
+					limit = {
+						ROOT = {
+							full_idea_group = spy_ideas
+						}
+					}
+					add_spy_network_from = {
+						who = ROOT
+						value = -16
+					}
+				}
+				else = {
+					add_spy_network_from = {
+						who = ROOT
+						value = -20
+					}
 				}
 			}
 		}
@@ -2168,18 +2322,61 @@ suborn_germanic_reputation_action = {
 
 	is_allowed = {
 		FROM = {
-			has_spy_network_from = {
-				who = ROOT
-				value = 25
+			if = {
+				limit = {
+					NOT = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 25
+						}
+					}
+					ROOT = {
+						NOT = { full_idea_group = spy_ideas }
+					}
+				}
+				has_spy_network_from = {
+					who = ROOT
+					value = 25
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_spy_network_from = {
+							who = ROOT
+							value = 20
+						}
+					}
+					ROOT = {
+						full_idea_group = spy_ideas
+					}
+				}
+				has_spy_network_from = {
+					who = ROOT
+					value = 20
+				}
 			}
 		}
 	}
 
 	on_accept = {
 		FROM = {
-			add_spy_network_from = {
-				who = ROOT
-				value = -25
+			if = {
+				limit = {
+					ROOT = {
+						full_idea_group = spy_ideas
+					}
+				}
+				add_spy_network_from = {
+					who = ROOT
+					value = -20
+				}
+			}
+			else = {
+				add_spy_network_from = {
+					who = ROOT
+					value = -25
+				}
 			}
 		}
 		FROM = {
@@ -2460,9 +2657,35 @@ ia_grand_dismantlement_action = {
 		FROM = { OR = { is_rival = ROOT 	is_enemy = ROOT } }
 		NOT = { truce_with = FROM }
 		FROM = { ai = yes }
-		has_spy_network_in = {
-			who = FROM
-			value = 90
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 90
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 90
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 72
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 72
+			}
 		}
 		mil_power = 200
 		dip_power = 100
@@ -2477,9 +2700,20 @@ ia_grand_dismantlement_action = {
 	on_accept = {
 		add_mil_power = -200
 		add_dip_power = -100
-		add_spy_network_in = {
-			who = FROM
-			value = -90
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -72
+			}
+		}
+		else = {
+			add_spy_network_in = {
+				who = FROM
+				value = -90
+			}
 		}
 		add_casus_belli = {
 			target = FROM
@@ -2521,9 +2755,35 @@ ia_create_liberation_action = {
 		#FROM = { OR = { is_rival = ROOT 	is_enemy = ROOT } }
 		NOT = { truce_with = FROM }
 		#FROM = { ai = yes }
-		has_spy_network_in = {
-			who = FROM
-			value = 25
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 25
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 25
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 20
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 20
+			}
 		}
 		dip_power = 50
 		NOT = {
@@ -2538,6 +2798,17 @@ ia_create_liberation_action = {
 		if = {
 			limit = { ai = no }
 			add_dip_power = -50
+		}
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -20
+			}
+		}
+		else = {
 			add_spy_network_in = {
 				who = FROM
 				value = -25
@@ -3820,9 +4091,35 @@ ia_koi_total_infiltration = {
 	}
 
 	is_allowed = {
-		has_spy_network_in = {
-			who = FROM
-			value = 90
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 90
+					}
+				}
+				NOT = { full_idea_group = spy_ideas }
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 90
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_spy_network_in = {
+						who = FROM
+						value = 72
+					}
+				}
+				full_idea_group = spy_ideas
+			}
+			has_spy_network_in = {
+				who = FROM
+				value = 72
+			}
 		}
 		FROM = {
 			NOT = {
@@ -3833,9 +4130,20 @@ ia_koi_total_infiltration = {
 	}
 
 	on_accept = {
-		add_spy_network_in = {
-			who = FROM
-			value = -90
+		if = {
+			limit = {
+				full_idea_group = spy_ideas
+			}
+			add_spy_network_in = {
+				who = FROM
+				value = -72
+			}
+		}
+		else = {
+			add_spy_network_in = {
+				who = FROM
+				value = -90
+			}
 		}
 		FROM = {
 			add_country_modifier = {
@@ -3859,6 +4167,7 @@ ia_subject_revolutionary_status = {
 	require_acceptance = no
 
 	is_visible = {
+		NOT = { has_government_attribute = is_peasants_republic }
 		FROM = { is_subject_of = ROOT }
 		OR = {
 			AND = {

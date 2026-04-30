@@ -13,6 +13,11 @@ country_decisions = {
 					tag = NED
 					is_subject = no
 				}
+				AND = {
+					tag = HES
+					has_country_flag = hes_allow_kleinstaat_removal
+					is_subject = no
+				}
 			}
 			
 			OR = {

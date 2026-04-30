@@ -85,6 +85,7 @@ country_decisions = {
 					NOT = { primary_culture = kanauji }
 				}
 				change_primary_culture = kanauji
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			}
 			upper_doab_area = {
 				limit = {

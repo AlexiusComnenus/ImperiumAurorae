@@ -2359,7 +2359,7 @@ gra_missions_1_early = {
 		}
 		effect = { #This is what you get after you finished your mission.
 			dip_power_cost = 100
-			224{
+			224 = {
 				add_province_modifier = {
 					name = "gra_sevilla_admiralty"
 					duration = -1 #permanent
@@ -2437,6 +2437,14 @@ gra_missions_1_early = {
 				name = "gra_new_trade"
 				duration = 18250 #50 years
 			}
+			if = {
+				limit = { KOS = { is_subject_of = ROOT } }
+				KOS = { change_religion = ROOT }
+			}
+			if = {
+				limit = { KCL = { is_subject_of = ROOT } }
+				KCL = { change_religion = ROOT }
+			}
 		}
 	}
 }
@@ -2460,34 +2468,44 @@ gra_missions_2_early = {
 		effect = { #This is what you get after you finished your mission.
 			custom_tooltip = gra_great_mosques_tt
 			random_owned_province {
-				limit{
+				limit = {
 					has_building = temple
 				}
 				add_base_tax = 1
 			}
 			random_owned_province {
-				limit{
+				limit = {
 					has_building = temple
 				}
 				add_base_tax = 1
 			}
 			random_owned_province {
-				limit{
+				limit = {
 					has_building = temple
 				}
 				add_base_tax = 1
 			}
 			random_owned_province {
-				limit{
+				limit = {
 					has_building = temple
 				}
 				add_base_tax = 1
 			}
 			random_owned_province {
-				limit{
+				limit = {
 					has_building = temple
 				}
 				add_base_tax = 1
+			}
+			custom_tooltip = gra_every_temple_upgrade_tt
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = temple
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
 			}
 		}
 	}
@@ -2533,17 +2551,17 @@ gra_missions_2_early = {
 			northern_morocco_area = {
 				type = all
 				OR = {
-					owned_by = GRA
+					country_or_non_sovereign_subject_holds = GRA
 					owner = {
 						alliance_with = GRA
 					}
 				}
 			}
-			num_of_owned_provinces_with = {
-				is_core = ROOT
-				area = northern_morocco_area
-				value = 2
-			}
+			#num_of_owned_provinces_with = {
+			#	is_core = ROOT
+			#	area = northern_morocco_area
+			#	value = 2
+			#}
 		}
 		effect = { #This is what you get after you finished your mission.
 			macaronesia_area = {
@@ -2602,14 +2620,19 @@ gra_missions_3_early = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			upper_andalucia_area {
-				type = all
-				owned_by = ROOT
-			}
-			lower_andalucia_area {
-				type = all
-				owned_by = ROOT
+			OR = {
+				AND = {
+					upper_andalucia_area {
+						type = all
+						owned_by = ROOT
+					}
+					lower_andalucia_area {
+						type = all
+						owned_by = ROOT
+					}
 				}
+				NOT = { exists = ADU }
+			}
 		}
 		effect = { #This is what you get after you finished your mission.
 			add_republican_tradition = 25
@@ -2818,9 +2841,14 @@ gra_missions_4_early = {
 		required_missions = { granada_jaen_defense } 
 		
 		trigger = {
-			upper_andalucia_area {
+			upper_andalucia_area = {
 				type = all
-				has_building = barracks
+				has_manpower_building_trigger = yes
+				base_manpower = 5
+			}
+			lower_andalucia_area = {
+				type = all
+				has_manpower_building_trigger = yes
 				base_manpower = 5
 			}
 			mil_power_cost = 100
@@ -2829,6 +2857,10 @@ gra_missions_4_early = {
 			mil_power_cost = 100
 			upper_andalucia_area = {
 				add_province_triggered_modifier = "gra_local_militia"
+			}
+			add_country_modifier = {
+				name = gra_local_militias
+				duration = -1
 			}
 		}
 	}
@@ -2899,15 +2931,15 @@ gra_missions_4_early = {
 		required_missions = { granada_push_north } 
 		provinces_to_highlight = {
 			OR = {
-				province_id = 216
+				#province_id = 216
 				area = castille_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			216 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			#216 = {
+			#	country_or_non_sovereign_subject_holds = ROOT
+			#}
 			castille_area {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
@@ -2942,6 +2974,7 @@ gra_missions_4_early = {
 				}
 				add_permanent_claim = ROOT
 			}
+			add_mil_power = 100
 		}
 	}
 }
@@ -2976,7 +3009,10 @@ gra_missions_5_early = {
 		required_missions = { granada_sunni_army } 
 		
 		trigger = {
-			piety = 0
+			if = {
+				limit = { ai = no }
+				NOT = { piety = -0.95 }
+			}
 			army_size = 15
 		}
 		effect = { #This is what you get after you finished your mission.
@@ -3002,6 +3038,10 @@ gra_missions_5_early = {
 			country_event = { 
 				id = ia_flavor_gra.3
 			}
+			add_country_modifier = {
+				name = gra_swelling_hope
+				duration = 10950
+			}
 			alentejo_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -3026,7 +3066,7 @@ gra_missions_5_early = {
 			has_institution = renaissance
 			treasury = 200
 			225 = {
-				has_building = temple
+				has_tax_building_trigger = yes
 				development = 20
 				renaissance = 100
 			}
@@ -3058,6 +3098,12 @@ gra_missions_5_early = {
 			}
 		}
 		effect = { #This is what you get after you finished your mission.
+			custom_tooltip = gra_unlocks_tercios_tt
+			set_country_flag = gra_unlock_tercios_flag
+			add_country_modifier = {
+				name = gra_tercios_limit
+				duration = -1
+			}
 			aragon_area = {
 				limit = {
 					NOT = { is_core = ROOT }

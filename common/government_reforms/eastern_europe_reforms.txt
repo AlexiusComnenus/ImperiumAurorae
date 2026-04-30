@@ -229,7 +229,8 @@ bogomilist_veche_republic = {
 	}
 	uses_revolutionary_zeal = yes
 	revolutionary = yes
-	legacy_equivalent = veche_republic_legacy
+	can_change_primary_culture = no
+	papacy = yes
 	modifiers = {
 		has_streltsy = yes
 		max_revolutionary_zeal = 25

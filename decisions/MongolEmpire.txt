@@ -151,6 +151,7 @@ country_decisions = {
 				change_government = monarchy
 				#set_legacy_government = despotic_monarchy
 				change_primary_culture = ROOT
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 				change_religion = ROOT
 				define_ruler = {
 					dynasty = ROOT

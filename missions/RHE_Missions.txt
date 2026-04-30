@@ -1,0 +1,1401 @@
+ia_rheinland_missions_1_eco = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = RHE
+			AND = {
+				tag = HES
+				has_country_flag = hes_allow_rhenish_eco_missions
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_rheinland_rheinholzfallergilde = {
+		icon = mission_rb_monopolize_the_channel
+		position = 19
+		required_missions = {
+			ia_rheinland_deforest_the_rhine
+		}
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = ia_rhe_did_wildfire_or_lenght_check_tt
+				OR = {
+					had_country_flag = {
+						flag = rhe_enable_wildfires_in_rhineland
+						days = 14600
+					}
+					has_country_flag = rhe_great_fire_happened
+				}
+			}
+			adm_power = 200
+			treasury = 500
+		}
+		effect = {
+			add_adm_power = -200
+			add_treasury = -500
+			unlock_estate_privilege = {
+				estate_privilege = estate_industrialists_rheinholzfallergilde
+			}
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = rhe_unregulated_deforestation
+				}
+			}
+			custom_tooltip = ia_rheinland_rheinholzfallergilde_rewards_tt
+		}
+	}
+	ia_rheinland_regulate_maurerzunft = {
+		icon = mission_pol_develop_countryside
+		position = 20
+		required_missions = {
+			ia_rheinland_the_foundations
+			ia_rheinland_rheinholzfallergilde
+		}
+		provinces_to_highlight = {
+
+		}
+		trigger = {
+			total_development = 400
+			calc_true_if = {
+				all_owned_province = {
+					num_of_buildings_in_province = 6
+				}
+				amount = 12
+			}
+			adm_power = 100
+			government_reform_progress = 50
+		}
+		effect = {
+			add_adm_power = -100
+			change_government_reform_progress = -50
+			unlock_estate_privilege = {
+				estate_privilege = estate_industrialists_maurerzunfts_codified_laws_of_construction
+			}
+			set_estate_privilege = estate_industrialists_maurerzunfts_codified_laws_of_construction
+		}
+	}
+	ia_rheinland_first_raumordnungsgesetz = {
+		icon = adjust_the_general_means
+		position = 22
+		required_missions = {
+			ia_rheinland_reinforce_administration
+			ia_rheinland_regulate_maurerzunft
+		}
+		provinces_to_highlight = {
+
+		}
+		trigger = {
+			total_development = 700
+			calc_true_if = {
+				all_owned_province = {
+					development = 25
+				}
+				amount = 10
+			}
+			adm_power = 200
+			any_owned_province = {
+				has_province_modifier = centralized_state_modifier_ia_8
+			} 
+		}
+		effect = {
+			add_adm_power = -200
+			add_country_modifier = {
+				name = rhe_regional_raumordnungsgesetz
+				duration = -1
+			}
+		}
+	}
+}
+
+ia_rheinland_missions_2_eco = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = RHE
+			AND = {
+				tag = HES
+				has_country_flag = hes_allow_rhenish_eco_missions
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_rheinland_deforest_the_rhine = {
+		icon = mission_expand_into_the_forest
+		position = 18
+		required_missions = {
+			ia_rheinland_new_emerging_class
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 81
+				province_id = 4774
+				province_id = 1762
+				area = north_rhine_area
+				area = lower_rhineland_area
+				area = westphalia_area
+				area = north_westphalia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				81 = {
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				4774 = {
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				1762 = {
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+					num_of_units_in_province = {
+    					who = ROOT
+    					type = all
+    					amount = 1
+					}
+					has_state_edict = edict_encourage_development
+				}
+			}
+			else = {
+				81 = {
+					owned_by = ROOT
+				}
+				4774 = {
+					owned_by = ROOT
+				}
+				1762 = {
+					owned_by = ROOT
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+			    export_to_variable = {
+        			variable_name = RheinlandUnregulatedDeforestationYear
+        			value = trigger_value:is_year
+    			}
+				81 = {
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				4774 = {
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				1762 = {
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				north_rhine_area = {
+					type = all
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				lower_rhineland_area = {
+					type = all
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				westphalia_area = {
+					type = all
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+				north_westphalia_area = {
+					type = all
+					kill_units = {
+    					who = owner
+    					amount = 1
+					}
+					add_province_modifier = {
+						name = rhe_unregulated_deforestation
+						duration = -1
+					}
+				}
+			}
+			set_country_flag = rhe_enable_wildfires_in_rhineland
+			custom_tooltip = rhe_deforestation_event_enable_tt
+			tooltip = {
+				add_province_modifier = {
+					name = rhe_unregulated_deforestation
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = rhe_forest_expropriation
+				duration = 14600
+			}
+		}
+	}
+	ia_rheinland_the_foundations = {
+		icon = mission_colonial
+		position = 19
+		required_missions = {
+			ia_rheinland_deforest_the_rhine
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = hesse_area
+				area = north_rhine_area
+				area = lower_rhineland_area
+				area = westphalia_area
+				area = north_westphalia_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { has_building = road_network }
+			}
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				hesse_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+					has_state_edict = edict_encourage_development
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+					has_state_edict = edict_encourage_development
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+					has_state_edict = edict_encourage_development
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+					has_state_edict = edict_encourage_development
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+					has_state_edict = edict_encourage_development
+				}
+			}
+			else = {
+				hesse_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+					has_building = road_network
+				}
+			}
+		}
+		effect = {
+			hidden_effect = {
+				hesse_area = {
+					type = all
+					add_province_modifier = {
+						name = rhe_infrastructure_laid_out
+						duration = -1
+					}
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+					add_province_modifier = {
+						name = rhe_infrastructure_laid_out
+						duration = -1
+					}
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+					add_province_modifier = {
+						name = rhe_infrastructure_laid_out
+						duration = -1
+					}
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+					add_province_modifier = {
+						name = rhe_infrastructure_laid_out
+						duration = -1
+					}
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+					add_province_modifier = {
+						name = rhe_infrastructure_laid_out
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = ia_rheinland_the_foundations_tt
+			tooltip = {
+				add_province_modifier = {
+					name = rhe_infrastructure_laid_out
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_rheinland_regional_administration = {
+		icon = hispanic_monarchy
+		position = 20
+		required_missions = {
+			ia_rheinland_the_foundations
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 69
+				province_id = 85
+				province_id = 1876
+			}
+		}
+		trigger = {
+			69 = {
+				owned_by = ROOT
+				development = 20
+				has_courthouse_building_trigger = yes
+			}
+			85 = {
+				owned_by = ROOT
+				development = 20
+				has_courthouse_building_trigger = yes
+			}
+			1876 = {
+				owned_by = ROOT
+				development = 20
+				has_courthouse_building_trigger = yes
+			}
+			if = {
+				limit = { ai = no }
+				statesman = 2
+			}
+			adm_power = 150
+			government_reform_progress = 50
+		}
+		effect = {
+			change_government_reform_progress = -50
+			add_adm_power = -150
+			69 = {
+				add_permanent_province_modifier = {
+					name = rhe_administrative_capitals
+					duration = -1
+				}
+			}
+			85 = {
+				add_permanent_province_modifier = {
+					name = rhe_administrative_capitals
+					duration = -1
+				}
+			}
+			1876 = {
+				add_permanent_province_modifier = {
+					name = rhe_administrative_capitals
+					duration = -1
+				}
+			}
+		}
+	}
+	ia_rheinland_reinforce_administration = {
+		icon = mission_the_sudebnik
+		position = 21
+		required_missions = {
+			ia_rheinland_regional_administration
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 85
+				province_id = 69
+				province_id = 82
+				province_id = 1876
+				province_id = 1742
+			}
+			NOT = { development = 30 }
+			NOT = { has_building = state_house }
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				85 = {
+					owned_by = ROOT
+					development = 30
+					has_building = state_house
+				}
+				69 = {
+					owned_by = ROOT
+					development = 30
+					has_building = state_house
+				}
+				82 = {
+					owned_by = ROOT
+					development = 30
+					has_building = state_house
+				}
+				1876 = {
+					owned_by = ROOT
+					development = 30
+					has_building = state_house
+				}
+				1742 = {
+					owned_by = ROOT
+					development = 30
+					has_building = state_house
+				}
+			}
+			statesman = 3
+			adm_power = 100
+			if = {
+				limit = {
+					government = monarchy
+					NOT = { has_reform = rhenish_bureaucratic_apparatus }
+				}
+				government_reform_progress = 50
+				reform_level = 3
+			}
+			if = {
+				limit = {
+					government = theocracy
+					NOT = { has_reform = rhenish_bureaucratic_apparatus }
+				}
+				government_reform_progress = 50
+				reform_level = 7
+			}
+			if = {
+				limit = {
+					government = republic
+					NOT = { has_reform = rhenish_bureaucratic_apparatus }
+				}
+				government_reform_progress = 50
+				reform_level = 12
+			}
+			north_westphalia_area = {
+				type = all
+				owned_by = ROOT
+				has_province_modifier = centralized_state_modifier_ia_4
+			}
+			hesse_area = {
+				type = all
+				owned_by = ROOT
+				has_province_modifier = centralized_state_modifier_ia_4
+			}
+			north_rhine_area = {
+				type = all
+				owned_by = ROOT
+				has_province_modifier = centralized_state_modifier_ia_4
+			}
+		}
+		effect = {
+			1742 = {
+				add_permanent_province_modifier = {
+					name = rhe_administrative_capitals
+					duration = -1
+				}
+			}
+			82 = {
+				add_permanent_province_modifier = {
+					name = rhe_administrative_capitals
+					duration = -1
+				}
+			}
+			add_adm_power = -100
+			if = {
+				limit = { NOT = { has_reform = rhenish_bureaucratic_apparatus } }
+				change_government_reform_progress = -50
+				add_government_reform = rhenish_bureaucratic_apparatus
+			}
+		}
+	}
+	ia_rheinland_hearth_of_the_rhine = {
+		icon = industrialized_rhineland
+		position = 22
+		required_missions = {
+			ia_rheinland_reinforce_administration
+			ia_rheinland_the_pioneers
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 69
+				province_id = 84
+				province_id = 85
+				province_id = 2975
+			}
+		}
+		trigger = {
+			development_in_provinces = {
+				value = 150
+				OR = {
+					province_id = 69
+					province_id = 84
+					province_id = 85
+					province_id = 2975
+				}
+			}
+			production_income_percentage = 0.60
+		}
+		effect = {
+			custom_tooltip = ia_rheinland_the_foundations_tt
+			tooltip = {
+				add_province_modifier = {
+					name = rhe_hearth_of_the_rhine
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				2975 = {
+					add_permanent_province_modifier = {
+						name = rhe_hearth_of_the_rhine
+						duration = -1
+					}
+				}
+				69 = {
+					add_permanent_province_modifier = {
+						name = rhe_hearth_of_the_rhine
+						duration = -1
+					}
+					change_province_name = "Düsseldorf"
+					rename_capital = "Düsseldorf" 
+				}
+				84 = {
+					add_permanent_province_modifier = {
+						name = rhe_hearth_of_the_rhine
+						duration = -1
+					}
+				}
+				85 = {
+					add_permanent_province_modifier = {
+						name = rhe_hearth_of_the_rhine
+						duration = -1
+					}
+				}
+			}
+			custom_tooltip = "we need to decide new monu reqs because this mission is supposed to be the early unlock"
+			69 = {
+				add_province_modifier = {
+					name = rhe_invest_in_the_complex
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+ia_rheinland_missions_3_eco = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = RHE
+			AND = {
+				tag = HES
+				has_country_flag = hes_allow_rhenish_eco_missions
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_rheinland_new_emerging_class = {
+		icon = contracts_of_correspondence
+		position = 17
+		required_missions = {
+
+		}
+		trigger = {
+
+		}
+		effect = {
+			set_country_flag = rheinland_unlocked_industrialists_early
+			custom_tooltip = rhe_enable_early_industrialists_tt
+			add_country_modifier = {
+				name = rhe_new_emerging_class
+				duration = -1
+			}
+		}
+	}
+	ia_rheinland_coal_basins = {
+		icon = mission_have_manufactories
+		position = 19
+		required_missions = {
+			ia_rheinland_search_for_rhine_prospects
+		}
+		provinces_to_highlight = {
+			province_id = 69
+		}
+		trigger = {
+			69 = {
+				owned_by = ROOT
+				trade_goods = coal
+				base_production = 8
+				has_production_building_trigger = yes
+			}
+			OR = {
+				is_ahead_of_time_in_technology = { tech = adm }
+				innovativeness = 40
+			}
+		}
+		effect = {
+			69 = {
+				add_base_production = 4
+				add_permanent_province_modifier = {
+					name = rhe_coal_mining_pits
+					duration = -1
+				}
+			}
+			custom_tooltip = rhe_enable_early_coal_decision_tt
+			set_country_flag = rhe_enable_early_coal_decision
+		}
+	}
+	ia_rheinland_nighttime_work = {
+		icon = mission_abolish_mestnichestvo
+		position = 20
+		required_missions = {
+			ia_rheinland_coal_basins
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				has_latent_trade_goods = coal
+				trade_goods = coal
+			}
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				trade_goods = coal
+			}
+			trade_goods_produced_amount = {
+				trade_goods = coal
+				amount = 8
+			}
+			OR = {
+				is_ahead_of_time_in_technology = { tech = adm }
+				innovativeness = 50
+			}
+			OR = {
+				is_subject = no
+				liberty_desire = 51
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = rhe_ignoring_tradition
+				duration = -1
+			}
+			custom_tooltip = rhe_prod_buildings_give_alot_of_prosperity_now_tt
+			hidden_effect = {
+				set_country_flag = rhe_prod_building_prosperity_bonus
+				every_owned_province = {
+					limit = {
+						has_production_building_trigger = yes
+					}
+					add_province_modifier = {
+						name = rhe_improved_prod_buildings
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	ia_rheinland_endlos_feuerschein = {
+		icon = mission_humiliate_lubeck
+		position = 21
+		required_missions = {
+			ia_rheinland_nighttime_work
+		}
+		provinces_to_highlight = {
+			OR = {
+				NOT = { culture = hessian }
+				trade_goods = coal
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_owned_provinces_with = {
+					value = 8
+					trade_goods = coal
+					num_of_times_expanded_infrastructure = 2
+				}
+				num_of_owned_provinces_with = {
+					value = 30
+					culture = hessian
+				}
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					value = 8
+					trade_goods = coal
+				}
+			}
+			num_of_trading_bonuses = 3
+			OR = {
+				is_ahead_of_time_in_technology = { tech = adm }
+				innovativeness = 60
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = rhe_factories_never_sleep
+				duration = -1
+			}
+			69 = {
+				add_building = furnace
+			}
+			custom_tooltip = rhe_remove_coal_debuffs_tt
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = rhe_coal_unknown_uses
+				}
+			}
+			custom_tooltip = industrialist_workplace_accidents_decrease_tt
+		}
+	}
+}
+
+ia_rheinland_missions_4_eco = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = RHE
+			AND = {
+				tag = HES
+				has_country_flag = hes_allow_rhenish_eco_missions
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_rheinland_search_for_rhine_prospects = {
+		icon = powerhouse_of_the_north
+		position = 18
+		required_missions = {
+			ia_rheinland_new_emerging_class
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = north_rhine_area
+				area = lower_rhineland_area
+				province_id = 1762
+			}
+		}
+		trigger = {
+			north_rhine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_rhineland_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1762 = {
+				num_of_units_in_province = {
+    				who = ROOT
+    				type = all
+    				amount = 5
+				}
+			}
+			OR = {
+				natural_scientist = 2
+				adm_power = 100
+			}
+		}
+		effect = {
+			1762 = {
+				kill_units = {
+    				who = owner
+    				amount = 5
+				}
+			}
+			if = {
+				limit = {
+					NOT = { natural_scientist = 2 }
+				}
+				add_adm_power = -100
+			}
+			add_country_modifier = {
+				name = rhe_funding_prospects
+				duration = 3650
+			}
+			custom_tooltip = ia_rheinland_search_for_rhine_prospects_tt
+			hidden_effect = {
+				84 = {
+					province_event = { #lead
+    					id = ia_rhe.1
+    					days = 365
+    					random = 730
+					}
+				}
+				1760 = {
+					province_event = { #iron
+    					id = ia_rhe.2
+    					days = 1460
+    					random = 730
+					}
+				}
+				80 = {
+					province_event = { #amber
+    					id = ia_rhe.3
+    					days = 2920
+    					random = 730
+					}
+				}
+				69 = {
+					province_event = { #coal
+						id = ia_rhe.7
+						days = 600
+						random = 3050
+					}
+				}
+			}
+		}
+	}
+	ia_rheinland_gelena_deposits = {
+		icon = mission_kon_conquer_lub
+		position = 19
+		required_missions = {
+			ia_rheinland_search_for_rhine_prospects
+		}
+		provinces_to_highlight = {
+			province_id = 84
+		}
+		trigger = {
+			84 = {
+				owned_by = ROOT
+				trade_goods = lead
+				base_tax = 6
+				base_production = 6
+				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
+			}
+		}
+		effect = {
+			hidden_effect = {
+				84 = {
+					province_event = {
+						id = ia_rhe.6
+					}
+				}
+			}
+			tooltip = {
+				province_event = {
+					id = ia_rhe.6
+				}
+			}
+		}
+	}
+	ia_rheinland_expand_mining_operations = {
+		icon = mission_dalaskogen
+		position = 20
+		required_missions = {
+			ia_rheinland_pyrite_veins
+			ia_rheinland_coal_basins
+			ia_rheinland_gelena_deposits
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 69
+				province_id = 84
+				province_id = 4768
+				province_id = 83
+				province_id = 1760
+			}
+		}
+		trigger = {
+			if = {
+				69 = {
+					owned_by = ROOT
+					base_production = 12
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+				84 = {
+					owned_by = ROOT
+					base_production = 12
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+				4768 = {
+					owned_by = ROOT
+					base_production = 12
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+				83 = {
+					owned_by = ROOT
+					base_production = 12
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+				1760 = {
+					owned_by = ROOT
+					base_production = 12
+					has_production_building_trigger = yes
+					num_of_times_expanded_infrastructure = 1
+				}
+			}
+			else = {
+				69 = {
+					base_production = 9
+					has_production_building_trigger = yes
+				}
+				84 = {
+					base_production = 9
+					has_production_building_trigger = yes
+				}
+				4768 = {
+					base_production = 9
+					has_production_building_trigger = yes
+				}
+				83 = {
+					base_production = 9
+					has_production_building_trigger = yes
+				}
+				1760 = {
+					base_production = 9
+					has_production_building_trigger = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = ia_rheinland_the_foundations_tt
+			tooltip = {
+				add_province_modifier = {
+					name = rhe_mining_towns
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				69 = {
+					add_permanent_province_modifier = {
+						name = rhe_mining_towns
+						duration = -1
+					}
+				}
+				84 = {
+					add_permanent_province_modifier = {
+						name = rhe_mining_towns
+						duration = -1
+					}
+				}
+				4768 = {
+					add_permanent_province_modifier = {
+						name = rhe_mining_towns
+						duration = -1
+					}
+				}
+				83 = {
+					add_permanent_province_modifier = {
+						name = rhe_mining_towns
+						duration = -1
+					}
+				}
+				1760 = {
+					add_permanent_province_modifier = {
+						name = rhe_mining_towns
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+	ia_rheinland_the_pioneers = {
+		icon = mission_state_manufactories
+		position = 21
+		required_missions = {
+			ia_rheinland_expand_mining_operations
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = hesse_area
+				area = north_rhine_area
+				area = lower_rhineland_area
+				area = westphalia_area
+				area = north_westphalia_area
+			}
+		}
+		trigger = {
+			hidden_trigger = {
+				hesse_area = {
+					type = all
+					owned_by = ROOT
+				}
+				north_rhine_area = {
+					type = all
+					owned_by = ROOT
+				}
+				lower_rhineland_area = {
+					type = all
+					owned_by = ROOT
+				}
+				westphalia_area = {
+					type = all
+					owned_by = ROOT
+				}
+				north_westphalia_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+			development_in_provinces = {
+				value = 350
+				OR = {
+					area = hesse_area
+					area = north_rhine_area
+					area = lower_rhineland_area
+					area = westphalia_area
+					area = north_westphalia_area
+				}
+			}
+			is_ahead_of_time_in_technology = { tech = adm }
+			is_ahead_of_time_in_technology = { tech = dip }
+			is_ahead_of_time_in_technology = { tech = mil }
+			if = {
+				limit = { ai = no }
+				num_of_estate_agendas_completed = {
+    				estate = estate_industrialists
+    				value = 5
+				}
+				is_most_powerful_estate = estate_industrialists
+			}
+		}
+		effect = {
+			change_government_reform_progress = 200
+			add_country_modifier = {
+				name = rhe_industrial_pioneers
+				duration = -1
+			}
+			custom_tooltip = rhe_enable_dev_from_manus_tt
+			set_country_flag = rhe_enabled_dev_from_manus
+		}
+	}
+}
+
+ia_rheinland_missions_5_eco = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = RHE
+			AND = {
+				tag = HES
+				has_country_flag = hes_allow_rhenish_eco_missions
+			}
+		}
+		NOT = { tag = GER }
+	}
+	has_country_shield = yes
+
+	ia_rheinland_pyrite_veins = {
+		icon = mission_iron_and_copper
+		position = 19
+		required_missions = {
+			ia_rheinland_search_for_rhine_prospects
+		}
+		provinces_to_highlight = {
+			province_id = 1760
+		}
+		trigger = {
+			1760 = {
+				owned_by = ROOT
+				trade_goods = iron
+				development = 15
+				num_of_buildings_in_province = 4
+			}
+		}
+		effect = {
+			hidden_effect = {
+				1760 = {
+					province_event = {
+						id = ia_rhe.5 
+					}
+				}
+			}
+			tooltip = {
+				province_event = {
+					id = ia_rhe.5 
+				}
+			}
+		}
+	}
+	ia_rheinland_eyes_in_goslar = {
+		icon = found_batavia
+		position = 20
+		required_missions = {
+			ia_rheinland_pyrite_veins
+		}
+		provinces_to_highlight = {
+			province_id = 4742
+		}
+		trigger = {
+			OR = {
+				owns_or_non_sovereign_subject_of = 4742
+				AND = {
+					overlord = {
+						owns = 4742
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					diplomatic_reputation = 4
+					if = {
+						limit = { has_government_mechanic = saxon_favor_mechanic }
+						has_government_power = {
+							mechanic_type = saxon_favor_mechanic
+							power_type = ia_court_influence
+							value = 50
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { owns_or_non_sovereign_subject_of = 4742 }
+				custom_tooltip = ia_rheinland_eyes_in_goslar_direct_yes_tt
+				add_core = 4742
+				4742 = {
+					cede_province = ROOT
+				}
+				add_nationalism = -30
+				set_local_autonomy = 0
+			}
+			else_if = { 
+				limit = { NOT = { owns_or_non_sovereign_subject_of = 4742 } }
+				custom_tooltip = ia_rheinland_eyes_in_goslar_direct_no_tt
+				tooltip = {
+					add_core = 4742
+					4742 = {
+						cede_province = ROOT
+					}
+					add_nationalism = -30
+					set_local_autonomy = 0
+				}
+			}
+			custom_tooltip = " "
+			if = {
+				limit = {
+					overlord = {
+						owns = 4742
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+					diplomatic_reputation = 4
+					if = {
+						limit = { has_government_mechanic = saxon_favor_mechanic }
+						has_government_power = {
+							mechanic_type = saxon_favor_mechanic
+							power_type = ia_court_influence
+							value = 50
+						}
+					}
+				}
+				custom_tooltip = ia_rheinland_eyes_in_goslar_vassal_of_german_king_yes_tt
+				if = {
+					limit = { has_government_mechanic = saxon_favor_mechanic }
+					add_government_power = {
+						mechanic_type = saxon_favor_mechanic
+						power_type = ia_court_influence
+						value = -50
+					}
+				}
+				add_core = 4742
+				4742 = {
+					cede_province = ROOT
+					add_province_triggered_modifier = rhe_german_mining_tax
+				}
+				hidden_effect = {
+					overlord = {
+						4742 = {
+							remove_core = PREV
+						}
+					}
+				}
+			}
+			else_if = { 
+				limit = {
+					NOT = {
+						overlord = {
+							owns = 4742
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+						}
+						diplomatic_reputation = 4
+						if = {
+							limit = { has_government_mechanic = saxon_favor_mechanic }
+							has_government_power = {
+								mechanic_type = saxon_favor_mechanic
+								power_type = ia_court_influence
+								value = 50
+							}
+						}
+					}
+				}
+				custom_tooltip = ia_rheinland_eyes_in_goslar_vassal_of_german_king_no_tt
+				tooltip = {
+					add_core = 4742
+					if = {
+						limit = { has_government_mechanic = saxon_favor_mechanic }
+						add_government_power = {
+							mechanic_type = saxon_favor_mechanic
+							power_type = ia_court_influence
+							value = -50
+						}
+					}
+					4742 = {
+						cede_province = ROOT
+						add_province_triggered_modifier = rhe_german_mining_tax
+					}
+				}
+			}
+		}
+	}
+}

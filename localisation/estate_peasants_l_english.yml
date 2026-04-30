@@ -1,8 +1,8 @@
 ﻿l_english:
  
  #PEASANTRY
- estate_privileges_and_agendas_events.3.cho.a: "The Proposal of the [Root.GetPeasantsName]"
- estate_privileges_and_agendas_events.6.cho.a: "The [Root.GetPeasantsName]"
+ estate_privileges_and_agendas_events.3.cho.a: "The Proposal of the [Root.GetPeasantryName]"
+ estate_privileges_and_agendas_events.6.cho.a: "The [Root.GetPeasantryName]"
  estate_peasants: "Peasantry"
  estate_peasants_desc: "The Peasantry represents a part of the third estate that was generally not wealthy. In many nations they held no privileges and were subject to serfdom."
  peasants_loyalty_modifier: "Peasantry Loyalty Equilibrium"
@@ -40,24 +40,26 @@
  estate_peasants_armed_citizenry: "Armed Citizenry"
  estate_peasants_armed_citizenry_desc: "Local Inhabitants have been defending the country and have gotten experienced with running the armed defences."
  estate_peasants_levies: "Local Levies"
- estate_peasants_levies_desc: "By requesting that the [Root.GetPeasantsName] join in local levies, they will have to train and won't be able to generate as much revenue."
+ estate_peasants_levies_desc: "By requesting that the [Root.GetPeasantryName] join in local levies, they will have to train and won't be able to generate as much revenue."
  estate_peasants_advisors: "Rural Advisory Board"
- estate_peasants_advisors_desc: "There can be no better source of advice than the [Root.GetPeasantsName], who are able more than anyone else to inform us of matters involving the rural communities."
+ estate_peasants_advisors_desc: "There can be no better source of advice than the [Root.GetPeasantryName], who are able more than anyone else to inform us of matters involving the rural communities."
+ estate_peasants_for_the_faith: "Encourage Religious Zealotry"
+ estate_peasants_for_the_faith_desc: "Rural folk are often superstitious. By encouraging their grassroots faith and directing it towards zealous opposition against our enemies, we can ensure that the entire nation stands united against external foes."
  #estate_peasants_advisors_desc: "Rural Advisory Board"
  estate_peasants_monopoly_of_metals: "Monopoly of Metals"
  estate_peasants_monopoly_of_metals_effect_tooltip: "§RNo income from §YIron§! or §YCopper§!§!"
  estate_peasants_monopoly_of_metals_mod: "Monopoly on Mining and Smelting"
- estate_peasants_monopoly_of_metals_desc: "Without iron, our militias would be toothless. Only the [Root.GetPeasantsName] can be trusted with administering its revenues, for it is their own freedom that would be at stake were supply to be disrupted."
+ estate_peasants_monopoly_of_metals_desc: "Without iron, our militias would be toothless. Only the [Root.GetPeasantryName] can be trusted with administering its revenues, for it is their own freedom that would be at stake were supply to be disrupted."
  #estate_peasants_monopoly_of_metals_desc: "Monopoly of Metals"
  estate_peasants_monopoly_of_livestock: "Monopoly of Livestock"
  estate_peasants_monopoly_of_livestock_effect_tooltip: "§RNo income from §YLivestock§!§!"
  estate_peasants_monopoly_of_livestock_mod: "Monopoly on Livestock"
- estate_peasants_monopoly_of_livestock_desc: "Our livestock farmers do valuable work feeding our great nation. Who better to administer their incomes than the [Root.GetPeasantsName], it is their expertise!"
+ estate_peasants_monopoly_of_livestock_desc: "Our livestock farmers do valuable work feeding our great nation. Who better to administer their incomes than the [Root.GetPeasantryName], it is their expertise!"
   #estate_peasants_monopoly_of_metals_desc: "Monopoly of Metals"
  estate_peasants_upstalbeam: "Gather Upstalbeam"
- estate_peasants_upstalbeam_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantsName] to call the upstalbeam on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantsName]."
+ estate_peasants_upstalbeam_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantryName] to call the upstalbeam on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantryName]."
  estate_peasants_local_assembly: "Local Assembly"
- estate_peasants_local_assembly_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantsName] to call a local assembly on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantsName]."
+ estate_peasants_local_assembly_desc: "The estates are a powerful institution within our [Root.GovernmentName]. With the right of the [Root.GetPeasantryName] to call a local assembly on their own whims, the [Root.Monarch.GetTitle] has no other choice but to agree with the wishes of the [Root.GetPeasantryName]."
  upstalbeam_unlocked_tt: "Requires the completion of the mission: §YReunite the Upstalbeam§! "
  #estate_peasants_diet_right_desc: "Gather Opstalboom"
  estate_peasants_force_conscription: "Forced Conscription"
@@ -75,7 +77,7 @@
  estate_peasants_grain_dole_desc: "By subsidizing grain and bread to our poorest citizens, we will lower the unrest in our large settlements."
  estate_peasants_minor_nobility: "Minor Nobility"
  estate_peasants_minor_nobility_desc: "Local landowners are slowly exercizing their power and building large castle like structures on their estates. They have effectively become a minor nobility."
- minor_nobility_enforced: "Minor Nobility Privilege will be enacted, doing the following: \n[Root.GetPeasantsName] loses -5.00% of Land.\nMinor Nobility will gain 5.00% of Land."
+ minor_nobility_enforced: "Minor Nobility Privilege will be enacted, doing the following: \n[Root.GetPeasantryName] loses -5.00% of Land.\nMinor Nobility will gain 5.00% of Land."
  estate_nobles_minor_nobility: "Minor Nobility"
  estate_nobles_minor_nobility_desc: "Within our Peasant Republic, Local landowners are slowly exercizing their power and building large castle like structures on their estates. They have effectively become a minor nobility. While they still lack enough power to fully represent themselves, they are however collectivizing."
  estate_peasants_pious_peasants: "Pious Peasants"
@@ -99,38 +101,38 @@
  
  #Agendas
  estate_peasants_hire_advisor: "Hire a Military Advisor"
- estate_peasants_hire_advisor_desc: "The [Root.GetPeasantsName] desire the [Root.Monarch.GetTitle] to hire a new military advisor."
+ estate_peasants_hire_advisor_desc: "The [Root.GetPeasantryName] desire the [Root.Monarch.GetTitle] to hire a new military advisor."
  estate_peasants_fire_advisor: "Fire our Military Advisor"
- estate_peasants_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetPeasantsName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!" #RETEXTUALIZE LATER
+ estate_peasants_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the [Root.GetPeasantryName]. They demand that we fire [Root.Mil_Advisor.GetHerHim]!" #RETEXTUALIZE LATER
  estate_peasants_support_independence: "Support [agenda_country.GetAdjective] Independence"
- estate_peasants_support_independence_desc: "The [Root.GetPeasantsName] draw attention to the plight of [agenda_country.GetUsableName], a nation cruelly subjugated by our rivals, [agenda_rival_country.GetUsableName]. They enjoin us to take up the cause of justice and support [agenda_country.GetAdjective] independence."
+ estate_peasants_support_independence_desc: "The [Root.GetPeasantryName] draw attention to the plight of [agenda_country.GetUsableName], a nation cruelly subjugated by our rivals, [agenda_rival_country.GetUsableName]. They enjoin us to take up the cause of justice and support [agenda_country.GetAdjective] independence."
  estate_peasants_retake_core: "Retake [agenda_province.GetName]"
- estate_peasants_retake_core_desc: "The [Root.GetPeasantsName] bemoan the fact that [agenda_province.GetName], an integral part of our nation, is not under our control. They demand that we reclaim the land that is rightfully ours!" #RETEXTUALIZE LATER
+ estate_peasants_retake_core_desc: "The [Root.GetPeasantryName] bemoan the fact that [agenda_province.GetName], an integral part of our nation, is not under our control. They demand that we reclaim the land that is rightfully ours!" #RETEXTUALIZE LATER
  estate_peasants_regain_liberty: "Regain our Liberty"
- estate_peasants_regain_liberty_desc: "The [Root.GetPeasantsName] chafe under the rule of our [agenda_country.GetAdjective] overlords. They demand action to restore [Root.GetAdjective] liberty!" #RETEXTUALIZE LATER
+ estate_peasants_regain_liberty_desc: "The [Root.GetPeasantryName] chafe under the rule of our [agenda_country.GetAdjective] overlords. They demand action to restore [Root.GetAdjective] liberty!" #RETEXTUALIZE LATER
  estate_peasants_protect_our_culture: "Protect the [Root.GetAdjective] Population in [agenda_province.GetName]"
- estate_peasants_protect_our_culture_desc: "The [Root.GetPeasantsName] claim that our [Root.Culture.GetName] brothers in [agenda_province.GetName] face considerable oppression at the hands of their [agenda_country.GetAdjective] masters. They demand that we seize the province and bring them into our nation!" #RETEXTUALIZE LATER
+ estate_peasants_protect_our_culture_desc: "The [Root.GetPeasantryName] claim that our [Root.Culture.GetName] brothers in [agenda_province.GetName] face considerable oppression at the hands of their [agenda_country.GetAdjective] masters. They demand that we seize the province and bring them into our nation!" #RETEXTUALIZE LATER
  estate_peasants_build_up_manpower_reserves: "Build up our Manpower Reserves"
- estate_peasants_build_up_manpower_reserves_desc: "The depletion of our manpower reserves is worrying to the [Root.GetPeasantsName], who warn that [Root.GetUsableName] would be left defenseless should our enemies seek to take advantage of the situation. They advocate that we consolidate for a time and allow our reserves to recover." #RETEXTUALIZE LATER
+ estate_peasants_build_up_manpower_reserves_desc: "The depletion of our manpower reserves is worrying to the [Root.GetPeasantryName], who warn that [Root.GetUsableName] would be left defenseless should our enemies seek to take advantage of the situation. They advocate that we consolidate for a time and allow our reserves to recover." #RETEXTUALIZE LATER
  #
  estate_peasants_build_fort_building_in_y: "Fortify [agenda_province.GetName]"
  estate_peasants_build_trade_building_in_y: "Expand Trade Infrastructure in [agenda_province.GetName]"
  estate_peasants_build_manufactory_in_y: "Build a Manufactory in [agenda_province.GetName]"
- estate_peasants_build_fort_building_in_y_desc: "The [Root.GetPeasantsName] call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
- estate_peasants_build_trade_building_in_y_desc: "The [Root.GetPeasantsName] claim that the marketplace in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger market, which they say will greatly increase the prosperity of the province and the country as a whole."
- estate_peasants_build_manufactory_in_y_desc: "The [Root.GetPeasantsName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
+ estate_peasants_build_fort_building_in_y_desc: "The [Root.GetPeasantryName] call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
+ estate_peasants_build_trade_building_in_y_desc: "The [Root.GetPeasantryName] claim that the marketplace in [agenda_province.GetName] is too small to suit their needs. They request that we invest in a larger market, which they say will greatly increase the prosperity of the province and the country as a whole."
+ estate_peasants_build_manufactory_in_y_desc: "The [Root.GetPeasantryName] of [agenda_province.GetName] request that we fund the construction of a new [agenda_province.GetManufactory]. They claim that it will be a highly profitable investment, doubling the province's output of [agenda_province.GetTradeGoodsName]."
  estate_peasants_relations_with_X: "Improve Relations with [agenda_country.GetUsableName]" 
- estate_peasants_relations_with_X_desc: "The [Root.GetPeasantsName] see [agenda_country.GetUsableName] as a valuable potential ally. They recommend that we seek closer ties with them."
+ estate_peasants_relations_with_X_desc: "The [Root.GetPeasantryName] see [agenda_country.GetUsableName] as a valuable potential ally. They recommend that we seek closer ties with them."
  estate_peasants_befriend_rival_of_rival: "Befriend [rival_country.GetUsableName]'s Rivals"
- estate_peasants_befriend_rival_of_rival_desc: "The [Root.GetPeasantsName] are concerned at the threat posed by our rivals in [rival_country.GetUsableName]. They recommend that we befriend their rivals, [agenda_country.GetUsableName], so that together way may stand strong against them."
+ estate_peasants_befriend_rival_of_rival_desc: "The [Root.GetPeasantryName] are concerned at the threat posed by our rivals in [rival_country.GetUsableName]. They recommend that we befriend their rivals, [agenda_country.GetUsableName], so that together way may stand strong against them."
  estate_peasants_get_allies: "Build Alliances"
- estate_peasants_get_allies_desc: "The [Root.GetPeasantsName] are worried at [Root.GetUsableName]'s diplomatic isolation. They advocate that we find more allies for our nation."
+ estate_peasants_get_allies_desc: "The [Root.GetPeasantryName] are worried at [Root.GetUsableName]'s diplomatic isolation. They advocate that we find more allies for our nation."
  estate_peasants_build_an_army: "Build an Army for our Nation"
- estate_peasants_build_an_army_desc: "The [Root.GetPeasantsName] consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
+ estate_peasants_build_an_army_desc: "The [Root.GetPeasantryName] consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
  estate_peasants_bigger_army_than_rival: "Protect against [agenda_country.GetUsableName]"
- estate_peasants_bigger_army_than_rival_desc: "The [Root.GetPeasantsName] are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
+ estate_peasants_bigger_army_than_rival_desc: "The [Root.GetPeasantryName] are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
  estate_peasants_develop_x: "Increase Manpower in [agenda_province.GetName]"
- estate_peasants_develop_x_desc: "The [Root.GetPeasantsName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
+ estate_peasants_develop_x_desc: "The [Root.GetPeasantryName] request that we invest in the prosperity of their lands in [agenda_province.GetName]."
  
  #estate_burghers_build_a_fleet
  estate_trade_company_build_a_fleet: "Build a Navy for our Nation"
@@ -180,19 +182,19 @@
  string_trade_company: "Trade Companies"
  
  #
- estate_peasants_call_diet_title: "[Root.GetPeasantsName]: Call Local Assembly"
+ estate_peasants_call_diet_title: "[Root.GetPeasantryName]: Call Local Assembly"
  estate_peasants_call_diet_desc: "[Root.EstateDecisionDescription]"
- estate_peasants_gather_upstalbeam_title: "[Root.GetPeasantsName]: Gather Upstalbeam"
+ estate_peasants_gather_upstalbeam_title: "[Root.GetPeasantryName]: Gather Upstalbeam"
  estate_peasants_gather_upstalbeam_desc: "[Root.EstateDecisionDescription]"
- estate_peasants_demand_more_troops_title: "[Root.GetPeasantsName]: Raise Additional Levies"
+ estate_peasants_demand_more_troops_title: "[Root.GetPeasantryName]: Raise Additional Levies"
  estate_peasants_demand_more_troops_desc: "[Root.EstateDecisionDescription]"
- enable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Call Local Assembly§!"
- enable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
- enable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantsName]: Forced Conscription§!"
- disable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Call Local Assembly§!"
- disable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Gather Upstalbeam§!"
- disable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantsName]: Forced Conscription§!"
- auto_complete_estate_agenda_estate_peasants_tt: "[Root.GetEstateAgendaAutoCompletionFirstString] §Y[Root.GetPeasantsName]§! [Root.GetEstateAgendaAutoCompletionSecondString]"
+ enable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantryName]: Call Local Assembly§!"
+ enable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantryName]: Gather Upstalbeam§!"
+ enable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.EnableEstateDecisionText] §Y[Root.GetPeasantryName]: Forced Conscription§!"
+ disable_estate_action_CALL_DIET_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantryName]: Call Local Assembly§!"
+ disable_estate_action_GATHER_UPSTALBEAM_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantryName]: Gather Upstalbeam§!"
+ disable_estate_action_DEMAND_MORE_TROOPS_PEASANTS_tt: "[Root.DisableEstateDecisionText] §Y[Root.GetPeasantryName]: Forced Conscription§!"
+ auto_complete_estate_agenda_estate_peasants_tt: "[Root.GetEstateAgendaAutoCompletionFirstString] §Y[Root.GetPeasantryName]§! [Root.GetEstateAgendaAutoCompletionSecondString]"
  
  #Outdated values:
  IR_14P_EST_LOW_DEVELOPMENT_PROVINCE: "City with less than §Y5§! development: §Y$VAL$%§!"

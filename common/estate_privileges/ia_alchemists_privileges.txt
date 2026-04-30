@@ -31,7 +31,7 @@ estate_alchemists_land_rights = {
 		exempt_from_seize_land
 	}
 	ai_will_do = {
-		factor = 5
+		factor = 10
 		modifier = {
 			factor = 1.4
 			num_of_territories = 5
@@ -50,7 +50,7 @@ estate_alchemists_land_rights = {
 				NOT = { crown_land_share = 25 }
 				estate_influence = {
 					estate = estate_alchemists
-					influence = 75
+					influence = 50
 				}
 			}
 			NOT = { has_estate_privilege = estate_alchemists_land_rights }
@@ -69,10 +69,10 @@ estate_alchemists_land_rights = {
 				}
 			}
 		}
-		modifier = {
-			factor = 0
-			NOT = { governing_capacity_percentage = 0.5 }
-		}
+		#modifier = {
+		#	factor = 0
+		#	NOT = { governing_capacity_percentage = 0.5 }
+		#}
 		modifier = {
 			factor = 0.8
 			OR = {
@@ -124,39 +124,8 @@ estate_alchemists_land_rights = {
 		}
 		#Tag specific convincement - after tech 17 (+250 governing capacity) it should not play a role anymore
 		modifier = {
-			factor = 1.25
-			tag = MOS
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = RUS
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = TUR
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = MNG
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = FRA
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = SPA
-			NOT = { adm_tech = 17 }
-		}
-		modifier = {
-			factor = 1.25
-			tag = PLC
-			NOT = { adm_tech = 17 }
+			factor = 2
+			tag = Z17
 		}
 		#Has already a similar privilege active
 		modifier = {
@@ -300,17 +269,18 @@ estate_alchemists_elixirs_for_the_troops = {
 		#global_regiment_cost = 0.15
 	}
 	benefits = {
-		global_regiment_cost = 0.10
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }
 		modifier = { 
 			#discipline = -0.06
+			global_regiment_cost = 0.12
 			morale_damage = 0.12
 			reinforce_speed = 0.36
-			recover_army_morale_speed = 0.36
+			recover_army_morale_speed = 0.12
 			shock_damage = 0.12
 			shock_damage_received = -0.12
+			fire_damage_received = 0.12
 		}
 	}
 	ai_will_do = {

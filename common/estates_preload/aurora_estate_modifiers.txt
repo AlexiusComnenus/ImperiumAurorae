@@ -99,3 +99,27 @@ estate_alchemists = {
 		}
 	}
 }
+
+estate_industrialists = {
+	modifier_definition = {
+		type = loyalty
+		key = estate_industrialists_loyalty_modifier
+		trigger = {
+			has_estate = estate_industrialists
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = estate_industrialists_influence_modifier
+		trigger = {
+			has_estate = estate_industrialists
+		}
+	}
+	modifier_definition = {
+		type = privileges
+		key = estate_industrialists_privilege_slots
+		trigger = {
+			has_estate = estate_industrialists
+        }
+	}
+}

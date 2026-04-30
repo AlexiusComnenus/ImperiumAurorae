@@ -260,3 +260,35 @@ ia_change_culture_without_consequence_effect = {
 	add_stability = 1
 	remove_country_modifier = changed_primary_culture_modifier
 }
+
+rhe_add_prod_from_manu = {
+	if = {
+		limit = {
+			FROM = { has_country_flag = rhe_enabled_dev_from_manus }
+			NOT = { rhe_gained_dev_from_manu = { building = $building$ } }
+		}
+		add_base_$type$ = $value$
+		hidden_effect = {
+			set_province_flag = rhe_built_manu_dev_$building$
+		}
+	}
+}
+
+rhe_remove_prod_from_manu = {
+	if = {
+		limit = {
+			FROM = { has_country_flag = rhe_enabled_dev_from_manus }
+			rhe_gained_dev_from_manu = { building = $building$ }
+		}
+		add_base_$type$ = -$value$
+		if = {
+			limit = {
+				NOT = { base_$type$ = 1 }
+			}
+			set_base_$type$ = 1
+		}
+		hidden_effect = {
+			clr_province_flag = rhe_built_manu_dev_$building$
+		}
+	}
+}

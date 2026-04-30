@@ -285,6 +285,7 @@ ia_sax_mission_1 = {
 						primary_culture = teuton
 						primary_culture = anglo_saxon
 						primary_culture = baltic_german
+						historical_friend_with = ROOT
 						NOT = {
 							any_owned_province = {
 								culture_group = germanic

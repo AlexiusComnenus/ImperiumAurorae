@@ -81,7 +81,11 @@ war_of_the_roses = {
 		modifier = {
 			factor = 0.5
 			MIL = 3
-		}		
+		}	
+		modifier = {
+			factor = 0.5
+			always = yes
+		}	
 		
 	}
 	

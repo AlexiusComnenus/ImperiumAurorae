@@ -156,7 +156,7 @@ pap_blessed_armaments = {
 pap_religion_as_science_modifier = {
 	religion = yes
 	
-	ia_prayer_energy_gain_modifier = 0.25
+	monthly_ia_prayer_energy = 0.1
 	technology_cost = -0.05
 }
 

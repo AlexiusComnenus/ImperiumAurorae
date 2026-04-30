@@ -162,7 +162,7 @@ country_event = {
 			#		}
 			#	}
 			#}
-			country_event = { id = ia_flavor_tem.8   days = 3650 }
+			#country_event = { id = ia_flavor_tem.8   days = 3650 }
 			enable_religion = reformed
 		}
 		

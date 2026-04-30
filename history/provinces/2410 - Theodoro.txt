@@ -5,6 +5,7 @@ is_city = yes
 culture = goths
 religion = orthodox
 trade_goods = wine
+fort_15th = yes
 base_tax = 3
 base_production = 4
 base_manpower = 4

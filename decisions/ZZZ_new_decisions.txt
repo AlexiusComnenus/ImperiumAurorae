@@ -148,6 +148,7 @@ country_decisions = {
 			set_government_rank = 3
 			change_primary_culture = manchu_new
 			set_ruler_culture = manchu_new
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			if = {
 				limit = {
 					has_heir = yes
@@ -174,6 +175,7 @@ country_decisions = {
 					}
 					change_primary_culture = manchu_new
 					set_ruler_culture = manchu_new
+					hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 					if = {
 						limit = {
 							has_heir = yes

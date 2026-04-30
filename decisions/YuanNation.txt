@@ -185,6 +185,7 @@ country_decisions = {
 				}
 				change_primary_culture = altaic_new
 				set_ruler_culture = altaic_new
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 				if = {
 					limit = {
 						has_heir = yes
@@ -225,6 +226,7 @@ country_decisions = {
 							}
 						}
 						change_primary_culture = altaic_new
+						hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 						set_ruler_culture = altaic_new
 						if = {
 							limit = {

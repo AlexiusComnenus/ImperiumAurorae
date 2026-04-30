@@ -7,12 +7,9 @@ country_event = {
 	
 	trigger = {
 		papacy_active = yes
-		owns = 118		# Rome
+		owns = 43		# Danzig
 		normal_or_historical_nations = yes
 		religion = catholic
-		NOT = { tag = ITA }
-		NOT = { tag = ROM }
-		NOT = { tag = HLR }
 		NOT = { exists = PAP }
 		NOT = { has_country_flag = no_support }
 	}
@@ -52,7 +49,7 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA1081" # We will never support such a state
-		ai_chance = { factor = 25 }
+		ai_chance = { factor = 0 }
 		add_prestige = -10
 		add_stability = -1
 		every_country = {
@@ -68,12 +65,8 @@ country_event = {
 		name = "EVTOPTB1081" # Rome is rightfully theirs
 		ai_chance = { 
 			factor = 75 
-			modifier = {
-				factor = 0
-				is_core = 118
-			}
 		}
-		118 = {
+		43 = {
 			add_core = PAP
 			cede_province = PAP
 			if = {
@@ -86,6 +79,10 @@ country_event = {
 		add_prestige = 25
 		PAP = {
 			change_religion = catholic
+		}
+		create_subject = {
+			subject = PAP
+			subject_type = papal_puppet
 		}
 	}
 }
@@ -104,8 +101,8 @@ country_event = {
 		#government = theocracy
 		NOT = { has_ruler_flag = refused_papacy }
 		is_at_war = no
-		NOT = { tag = TEU }
-		NOT = { tag = LIV }
+		NOT = { tag = KOS }
+		NOT = { tag = KCL }
 		num_of_cities = 2
 		#NOT = { num_of_cities = 5 }
 		any_owned_province = {
@@ -113,7 +110,8 @@ country_event = {
 			religion = catholic
 			continent = europe
 		}
-		118 = {
+		is_free_or_tributary_trigger = yes
+		43 = {
 			owner = {
 				OR = {
 					NOT = { religion = catholic }
@@ -145,11 +143,11 @@ country_event = {
 		}
 		modifier = {
 			factor = 0.75
-			NOT = { num_of_cities = 3 }
+			num_of_cities = 10
 		}
 		modifier = {
 			factor = 0.5
-			NOT = { num_of_cities = 2 }
+			num_of_cities = 20
 		}
 	}
 	
@@ -200,6 +198,10 @@ country_event = {
 		add_prestige = 25
 		PAP = {
 			change_religion = catholic
+		}
+		create_subject = {
+			subject = PAP
+			subject_type = papal_puppet
 		}
 	}
 	option = {

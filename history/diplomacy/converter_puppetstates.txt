@@ -574,7 +574,7 @@ dependency=
 
 dependency=
 {
-	subject_type="saxon_daimyo"
+	subject_type="german_march"
 	first="SAX"
 	second="KOL"
 	start_date="1444.11.11"
@@ -600,7 +600,7 @@ dependency=
 
 dependency=
 {
-	subject_type="saxon_daimyo"
+	subject_type="german_march"
 	first="SAX"
 	second="HES"
 	start_date="1444.11.11"
@@ -672,7 +672,7 @@ dependency=
 
 dependency=
 {
-	subject_type="saxon_daimyo"
+	subject_type="german_march"
 	first="SAX"
 	second="HOL"
 	start_date="1444.11.11"

@@ -34,12 +34,14 @@ gra_cap_center = {
 	advisor_cost = -0.15
 	development_cost = -0.05
 	republican_tradition = -0.2
+	monthly_piety = 0.001
 }
 
 gra_cap_center_big = {
 	reform_progress_growth = 0.3
 	advisor_cost = -0.15
 	development_cost = -0.10
+	monthly_piety = 0.001
 }
 
 gra_cap_atlantic = {
@@ -74,6 +76,7 @@ gra_cap_tree = {
 	movement_speed = 0.1
 	land_attrition = -0.20
 	monthly_piety = -0.001
+	fire_damage = 0.10
 	diplomatic_reputation = -1
 }
 
@@ -110,5 +113,19 @@ gra_capital_buff = {
 }
 
 gra_iberian_integration = {
-		local_governing_cost = -0.75
+		local_governing_cost = -0.25
+}
+
+gra_swelling_hope = {
+	land_morale = 0.10
+	manpower_recovery_speed = 0.25
+}
+
+gra_tercios_limit = {
+	allowed_tercio_fraction = 0.1
+}
+
+gra_local_militias = {
+	defensiveness = 0.10
+	infantry_power = 0.1
 }

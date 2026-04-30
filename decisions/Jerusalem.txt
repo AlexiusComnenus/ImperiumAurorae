@@ -92,7 +92,10 @@ country_decisions = {
 					}
 				}
 				release = KOJ
-				KOJ = { change_primary_culture = ROOT }
+				KOJ = { 
+					change_primary_culture = ROOT 
+					hidden_effect = { ia_change_culture_without_consequence_effect = yes }
+				}
 				vassalize = KOJ
 			}
 			if = {

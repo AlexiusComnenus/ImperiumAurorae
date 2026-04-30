@@ -109,6 +109,10 @@ country_event = {
 		BYZ = {
 			set_in_empire = yes
 		}
+		hidden_effect = {
+			BYZ = { remove_historical_rival = Z17 }
+			remove_historical_rival = BYZ
+		}
 	}
 }
 

@@ -266,7 +266,7 @@ ia_hesse_missions_1 = {
 				}
 				custom_tooltip = hes_lands_inbetween_upgrade_mil_priv_tt
 			}
-			set_country_flag = hes_lands_inbetween_privilige_improvement
+			set_country_flag = hes_lands_inbetween_privilege_improvement
 			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
 			hidden_effect = {
 				every_country = {
@@ -380,10 +380,6 @@ ia_hesse_missions_2 = {
 			if = {
 				limit = { ai = yes }
 				create_marriage = SAX
-			}
-			add_country_modifier = { #DELETE LATER
-				name = hes_mp_reform_buff
-				duration = -1
 			}
 			hidden_effect = { 
 				set_variable = {
@@ -631,16 +627,6 @@ ia_hesse_missions_2 = {
 					}
 				}
 			}
-			hidden_effect = {
-				set_variable = {
- 					which = HesseWonWarsAlongsideGermanKing ####DELETE LATER
-    				value = 0
-				}
-				set_variable = {
-					which = HesBattlesWon
-					value = 0
-				}
-			}
 			if = {
 				limit = { alliance_with = MEI }
 				custom_tooltip = hes_mend_succession_mei_ally_alive_yes_tt
@@ -746,7 +732,7 @@ ia_hesse_missions_2 = {
 				}
 				custom_tooltip = hes_follow_the_rhine_upgrade_mil_priv_tt
 			}
-			set_country_flag = hes_follow_the_rhine_privilige_improvement
+			set_country_flag = hes_follow_the_rhine_privilege_improvement
 			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
 			hidden_effect = {
 				every_country = {
@@ -773,7 +759,71 @@ ia_hesse_missions_2 = {
 			prestige = 50
 		}
 		effect = {
+			custom_tooltip = hes_formalise_union_kleinstaaterei_declines_in_homeland
+			hidden_effect = {
+				lower_rhineland_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+				north_rhine_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+				franconia_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+				upper_franconia_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+				westphalia_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+				north_westphalia_area = {
+					if = {
+						limit = { has_province_modifier = Kleinstaaterei }
+						remove_province_modifier = Kleinstaaterei
+						add_permanent_province_modifier = {
+							name = Kleinstaaterei_lesser
+							duration = -1
+						}
+					}
+				}
+			}
 			custom_tooltip = hes_add_on_rheinland_missions_tt
+			set_country_flag = hes_allow_rhenish_eco_missions
 			if = {
 				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
 				override_country_name = hes_name_change_dip
@@ -794,7 +844,6 @@ ia_hesse_missions_2 = {
 				swap_free_idea_group = yes
 			}
 		}
-
 	}
 }
 
@@ -1009,7 +1058,9 @@ ia_hesse_missions_3 = {
 				add_historical_friend = FKN
 				FKN = {
 					add_historical_friend = ROOT
-					add_government_reform = fkn_vintner_monarchy
+					hidden_effect = {
+						add_government_reform = fkn_vintner_monarchy
+					}
 				}
 				custom_tooltip = hes_up_the_main_upgrade_dip_priv_tt
 			}
@@ -1024,7 +1075,7 @@ ia_hesse_missions_3 = {
 				}
 				custom_tooltip = hes_up_the_main_upgrade_mil_priv_tt
 			}
-			set_country_flag = hes_up_the_main_privilige_improvement
+			set_country_flag = hes_up_the_main_privilege_improvement
 			custom_tooltip = hes_lose_fifteen_ae_with_germany_tt
 			hidden_effect = {
 				every_country = {
@@ -1049,6 +1100,8 @@ ia_hesse_missions_3 = {
 
 		}
 		effect = {
+			custom_tooltip = hes_allow_kleinstaaterei_removal_tt
+			set_country_flag = hes_allow_kleinstaat_removal
 			if = {
 				limit = { has_estate_privilege = estate_nobles_hes_integration_of_houses }
 				hidden_effect = {
@@ -1338,10 +1391,13 @@ ia_hesse_missions_4 = {
 			ia_hesse_introducing_our_generals
 		}
 		trigger = {
-			has_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = 50
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 50
+				}
 			}
 			has_idea = hes_marburg_university
 			custom_trigger_tooltip = {
@@ -1356,10 +1412,13 @@ ia_hesse_missions_4 = {
 			adm_power = 50 
 		}
 		effect = {
-			add_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = -50
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -50
+				}
 			}
 			country_event = { 
     			id = ia_hesse.6
@@ -1393,17 +1452,23 @@ ia_hesse_missions_4 = {
 					army_professionalism = 0.30
 				}
 			}
-			has_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = 75
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 75
+				}
 			}
 		}
 		effect = {
-			add_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = -75
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -75
+				}
 			}
 			hidden_effect = {
 				kill_leader = {
@@ -1466,10 +1531,13 @@ ia_hesse_missions_4 = {
 					has_country_flag = hes_allow_mil_idea_swap
 				}
 			}
-			has_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = 100
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 100
+				}
 			}
 			reverse_has_opinion = {
 				who = SAX
@@ -1523,17 +1591,21 @@ ia_hesse_missions_4 = {
 				set_country_flag = hes_has_royal_administrator
 				custom_tooltip = hes_ease_their_burdens_tt
 			}
-			else = {
+			else_if = {
+				limit = { has_estate_privilege = estate_nobles_hes_justification_through_power }
 				custom_tooltip = hes_as_long_as_we_are_subjects_tt
 				add_country_modifier = {
 					name = hes_granted_royal_permit
 					duration = -1
 				}
 			}
-			add_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = -100
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -100
+				}
 			}
 		}
 	}
@@ -1686,20 +1758,26 @@ ia_hesse_missions_5 = {
 			ia_hesse_lead_saxon_campaigns
 		}
 		trigger = {
-			has_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = 50
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				has_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = 50
+				}
 			}
 			statesman = 2
 			diplomatic_reputation = 4
 			prestige = 60
 		}
 		effect = {
-			add_government_power = {
-				mechanic_type = saxon_favor_mechanic
-				power_type = ia_court_influence
-				value = -50
+			if = {
+				limit = { has_government_mechanic = saxon_favor_mechanic }
+				add_government_power = {
+					mechanic_type = saxon_favor_mechanic
+					power_type = ia_court_influence
+					value = -50
+				}
 			}
 			country_event = {
 				id = ia_hesse.10
@@ -1741,9 +1819,9 @@ ia_hesse_missions_1_military = {
 		trigger = {
 			1871 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -1755,9 +1833,9 @@ ia_hesse_missions_1_military = {
 			}
 			4722 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -1816,7 +1894,78 @@ ia_hesse_missions_2_military = {
 			}
 		}
 		effect = {
-
+			if = {
+				limit = {
+					1762 = {
+						has_great_project = {
+							type = schloss_berlepsch
+							tier = 1
+						}
+					}
+				}
+				custom_tooltip = hes_rebuild_schloss_rewards_yes_tt
+				1762 = {
+					add_base_tax = 3
+					add_base_production = 3
+					add_base_manpower = 3
+				}
+				add_treasury = 500
+			}
+			else_if = {
+				limit = {
+					1762 = {
+						NOT = {
+							has_great_project = {
+								type = schloss_berlepsch
+								tier = 1
+							}
+						}
+					}
+				}
+				custom_tooltip = hes_rebuild_schloss_rewards_no_tt
+				tooltip = {
+					1762 = {
+						add_base_tax = 3
+						add_base_production = 3
+						add_base_manpower = 3
+					}
+					add_treasury = 500
+				}
+			}
+			if = {
+				limit = {
+					1762 = {
+						has_great_project = {
+							type = schloss_berlepsch
+							tier = 1
+						}
+					}
+				}
+				custom_tooltip = hes_rebuild_schloss_tier_no_tt
+				tooltip = {
+					add_great_project_tier = {
+					    type = schloss_berlepsch
+				    	tier = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					1762 = {
+						NOT = {
+							has_great_project = {
+								type = schloss_berlepsch
+								tier = 1
+							}
+						}
+					}
+				}
+				custom_tooltip = hes_rebuild_schloss_tier_yes_tt
+				add_great_project_tier = {
+				    type = schloss_berlepsch
+				    tier = 1
+				}
+			}
 		}
 	}
 	ia_hesse_reinforce_walls = {
@@ -1834,7 +1983,84 @@ ia_hesse_missions_2_military = {
 			}
 		}
 		effect = {
-
+			1762 = {
+				add_province_modifier = {
+					name = hes_building_the_schloss
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					1762 = {
+						has_great_project = {
+							type = schloss_berlepsch
+							tier = 2
+						}
+					}
+				}
+				custom_tooltip = hes_reinforce_walls_rewards_yes_tt
+				1762 = {
+					add_base_tax = 5
+					add_base_production = 5
+					add_base_manpower = 5
+				}
+				add_treasury = 1500
+			}
+			else_if = {
+				limit = {
+					1762 = {
+						NOT = {
+							has_great_project = {
+								type = schloss_berlepsch
+								tier = 2
+							}
+						}
+					}
+				}
+				custom_tooltip = hes_reinforce_walls_rewards_no_tt
+				tooltip = {
+					1762 = {
+						add_base_tax = 5
+						add_base_production = 5
+						add_base_manpower = 5
+					}
+					add_treasury = 1500
+				}
+			}
+			if = {
+				limit = {
+					1762 = {
+						has_great_project = {
+							type = schloss_berlepsch
+							tier = 2
+						}
+					}
+				}
+				custom_tooltip = hes_reinforce_walls_tier_no_tt
+				tooltip = {
+					add_great_project_tier = {
+					    type = schloss_berlepsch
+				    	tier = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					1762 = {
+						NOT = {
+							has_great_project = {
+								type = schloss_berlepsch
+								tier = 2
+							}
+						}
+					}
+				}
+				custom_tooltip = hes_reinforce_walls_tier_yes_tt
+				add_great_project_tier = {
+				    type = schloss_berlepsch
+				    tier = 1
+				}
+			}
 		}
 	}
 	ia_hesse_train_the_swabian_forces_mission = {
@@ -1854,9 +2080,9 @@ ia_hesse_missions_2_military = {
 		trigger = {
 			1880 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -1868,9 +2094,9 @@ ia_hesse_missions_2_military = {
 			}
 			4712 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -1882,9 +2108,9 @@ ia_hesse_missions_2_military = {
 			}
 			1872 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -1896,9 +2122,9 @@ ia_hesse_missions_2_military = {
 			}
 			74 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2059,9 +2285,9 @@ ia_hesse_missions_3_military = {
 			}
 			1878 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2073,9 +2299,9 @@ ia_hesse_missions_3_military = {
 			}
 			2975 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2087,9 +2313,9 @@ ia_hesse_missions_3_military = {
 			}
 			69 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2101,9 +2327,9 @@ ia_hesse_missions_3_military = {
 			}
 			82 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2153,9 +2379,9 @@ ia_hesse_missions_3_military = {
 		trigger = {
 			77 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2313,7 +2539,7 @@ ia_hesse_missions_4_military = {
 			if = {
 				limit = { ai = no }
 				1762 = {
-					has_building = barracks
+					has_manpower_building_trigger = yes
 					if = {
 						limit = { ai = no }
 						num_of_times_expanded_infrastructure = 1
@@ -2323,7 +2549,7 @@ ia_hesse_missions_4_military = {
 			}
 			else = {
 				1762 = {
-					has_building = barracks
+					has_manpower_building_trigger = yes
 					base_manpower = 6
 				}
 			}
@@ -2351,7 +2577,7 @@ ia_hesse_missions_4_military = {
 			if = {
 				limit = { ai = no }
 				1762 = {
-					has_building = regimental_camp
+					has_forcelimit_building_trigger = yes
 					if = {
 						limit = { ai = no }
 						num_of_times_expanded_infrastructure = 2
@@ -2361,7 +2587,7 @@ ia_hesse_missions_4_military = {
 			}
 			else = {
 				1762 = {
-					has_building = regimental_camp
+					has_forcelimit_building_trigger = yes
 					base_manpower = 12
 				}
 			}
@@ -2391,9 +2617,9 @@ ia_hesse_missions_4_military = {
 		trigger = {
 			4715 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2405,9 +2631,9 @@ ia_hesse_missions_4_military = {
 			}
 			67 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2467,9 +2693,9 @@ ia_hesse_missions_5_military = {
 		trigger = {
 			64 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2481,9 +2707,9 @@ ia_hesse_missions_5_military = {
 			}
 			65 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10
@@ -2495,9 +2721,9 @@ ia_hesse_missions_5_military = {
 			}
 			76 = {
 				owned_by = ROOT
-				has_building = barracks
-				has_building = regimental_camp
-				has_building = courthouse
+				has_manpower_building_trigger = yes
+				has_forcelimit_building_trigger = yes
+				has_courthouse_building_trigger = yes
 				has_building = road_network
 				province_has_current_tech_fort_trigger = yes
 				base_manpower = 10

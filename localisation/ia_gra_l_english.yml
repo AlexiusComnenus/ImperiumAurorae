@@ -21,11 +21,15 @@
  BAETIC_LEAGUE_ADJ2:0 "Baetic"
  
  #Missions
- 
+ gra_every_temple_upgrade_tt: "Every province with a §YMosque§! will be §Gupgraded§! to a §YGreat Mosque§!!"
+ gra_unlock_tercios_flag: "Unlocked Tercios"
+ gra_unlocks_tercios_tt: "We will unlock the §YTercio Companies§! government reform, giving us access to §GSpecial Units§!!"
+ rabitat_al_andalus_name: "Rabitat Al Andalus"
+ rabitat_al_andalus_name_ADJ: "Andalusian"
  granada_cadiz_navy_title:0 "The Quadisian Navy"
  granada_cadiz_navy_desc:0 "Ever since the Christians conquered the northern Moroccan cities, our navy has been in disrepair. The fact that about half the navy is in the Zikri followers' hands doesn't help either. Putting the shipyards to work is necessary to avoid suffering another defeat."
  granada_across_gibraltar_title:0 "Across Jabal Tarik"
- granada_across_gibraltar_desc:0 "Across the straight where Tarik launched his invasion, there are now Christhans. Not any Christians, but those that have proved more hostile to us. Diplomatic relations with our brethen in the other side is essential to protect our independance."
+ granada_across_gibraltar_desc:0 "Across the strait where Tarik launched his invasion, there are now Christians. Not any Christians, but those that have proved more hostile to us. Diplomatic relations with our brethen in the other side is essential to protect our independance."
  granada_sevilla_admiralty_title:0 "Isbiliyan Admiralty"
  granada_sevilla_admiralty_desc:0 "An Andalusian admiral is not someone you should underestimate. The Isbiliyan Naval School is among the best officer schools in the Mediterranean. And with our investment, it will be second only to Antioch."
  granada_malaga_trade_title:0 "Flourishing Malaqan Trade"
@@ -36,7 +40,7 @@
  granada_great_mosques_desc:0 "Al-Andalus used to be a land of great mosques. With collective effort we can reestablish some of our leading institutions, and attract more people to our faith."
  granada_christian_cities_title:0 "End Christian Occupation"
  granada_christian_cities_desc:0 "North Morocco is used by the christians as a bargaining chip against us. This cannot stand, and continued Christian aggression will only meet one response: war."
- granada_secure_straight_title:0 "Secure the Straight"
+ granada_secure_straight_title:0 "Secure the Strait"
  granada_secure_straight_desc:0 "Securing North Morocco is not just a religious quest, but also a practical objective: controling both sides of the straigth will grant us a monoply on trade passing through."
  granada_protect_almeria_title:0 "Protect the Marriyan Coast"
  granada_protect_almeria_desc:0 "Foreign pirate raids have always been a problem for anyone near the sea. For us, this threat has historically come from the Arian kingdoms of Carthage. We must build the necessary protections in our maritime cities, specifically in Marriya."
@@ -58,8 +62,8 @@
  granada_granada_militias_desc:0 "One of the most ambitious defensive projects: meant to make the mountains unsurpassable. But to achieve it we must have the support of the locals."
  granada_push_north_title:0 "Push North"
  granada_push_north_desc:0 "The kingdoms to our North are weak in their infighting, as we once were. It is now our time to strike."
- granada_bane_fraticelli_title:0 "Bane of the Fraticelli"
- granada_bane_fraticelli_desc:0 "Some of the Christians fashion themselves after a poverty lifestyle and as such rebelled against an oppulent Pope. We laugh at their miserable conditions and mark them as our next target."
+ granada_bane_fraticelli_title:0 "Bane of the Iberians"
+ granada_bane_fraticelli_desc:0 "The Iberians crowns have slowly encroached upon Andalusia and launched crusade after crusade. Now, they may taste the steel and fire they gave to our people."
  granada_sunni_army_title:0 "Raise the Sunni Army"
  granada_sunni_army_desc:0 "While there is not total agreement between the republican and monarchical factions in our government, there is one thing we have in common: our faith. We must raise an army that is loyal to our cause, or at least part of it."
  granada_military_piety_title:0 "Military Piety"
@@ -122,6 +126,9 @@
  gra_cap_mountain_big:0 "Highland Capital"
  gra_capital_buff:0 "Capital of the Baetic League"
  gra_iberian_integration:0 "Al-Andalus Centralized Taifa"
+ gra_swelling_hope: "Swelling Hope"
+ gra_tercios_limit: "Tercio Availability"
+ gra_local_militias: "Loyal Militias"
  
  #Opinion Modifiers
  

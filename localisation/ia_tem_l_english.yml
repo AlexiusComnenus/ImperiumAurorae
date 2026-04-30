@@ -356,3 +356,7 @@
  ia_flavor_tem.39.d: "Our Crusader State, [too_big_crusader_state.GetName], has in a recent Diet of its estates concluded that the Crusade being over, it is ready now to spread its wings and emerge upon the world as an independent state. While we would be able to decline to grant them their desired independence, this would severely strain our relationship. Perhaps it would be better to have a loyal ally than a disloyal subject?"
  ia_flavor_tem.39.a: "Independence they shall have!"
  ia_flavor_tem.39.b: "They are not ready!"
+ ia_flavor_tem.40.t: "Revival of the Templar Order"
+ ia_flavor_tem.40.d: "Due to the evil plots of the enemies of our faith, the Templar Order has lost its temporal possessions. Shall we pick up their mantle?"
+ ia_flavor_tem.40.a: "Deus Vult!"
+ ia_flavor_tem.40.b: "No, it is not our place."

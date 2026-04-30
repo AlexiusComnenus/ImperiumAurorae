@@ -80,6 +80,7 @@ country_decisions = {
 	  				tag = BUR
 	  			}
 	  			change_primary_culture = dutch
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 				97 = {
 					move_capital_effect = yes
 				}

@@ -53,6 +53,7 @@ country_decisions = {
 			change_tag = ROM
 			on_change_tag_effect = yes
 			change_primary_culture = roman
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			custom_tooltip = restore_roman_empire_tt
 			hidden_effect = {
 				every_owned_province = {

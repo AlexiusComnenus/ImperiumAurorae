@@ -1,0 +1,140 @@
+namespace = ia_rhe
+
+province_event = { #Search the Rhine, Lead
+	id = ia_rhe.1
+	title = ia_rhe.1.t
+	desc = ia_rhe.1.d
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.1.a
+		add_base_production = 2
+		change_trade_goods = lead
+	}
+}
+
+province_event = { #Search the Rhine, Iron
+	id = ia_rhe.2
+	title = ia_rhe.2.t
+	desc = ia_rhe.2.d
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.2.a
+		add_base_production = 2
+		change_trade_goods = iron
+	}
+}
+
+province_event = { #Search the Rhine, Amber
+	id = ia_rhe.3
+	title = ia_rhe.3.t
+	desc = ia_rhe.3.d
+	picture = TRADE_GOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.3.a
+		add_base_production = 2
+		change_trade_goods = amber
+	}
+}
+
+province_event = { #Wildfire event
+	id = ia_rhe.4
+	title = ia_rhe.4.t
+	desc = ia_rhe.4.d
+	picture = WITCHBURNING_eventPicture
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		months = 240
+
+		modifier = {
+			factor = 1.5
+			natural_scientist = 1
+		}
+	}
+
+	trigger = {
+		has_province_modifier = rhe_unregulated_deforestation
+	}
+
+	option = {
+		name = ia_rhe.4.a
+		add_base_tax = -3
+		add_base_production = -3
+		add_base_manpower = -3
+		add_devastation = 50
+		add_province_modifier = {
+			name = rhe_great_fire
+			duration = 3650
+		}
+		owner = {
+			set_country_flag = rhe_great_fire_happened
+		}
+	}
+}
+
+province_event = { #From Fields to Mines (Pyrite Veins mission)
+	id = ia_rhe.5
+	title = ia_rhe.5.t
+	desc = ia_rhe.5.d
+	picture = FALUN_COPPER_MINE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.5.a
+		add_base_tax = -4
+		add_base_production = 8
+		add_or_upgrade_production_building = yes
+		add_building = weapons
+	}
+}
+
+province_event = { #A new mining town (Gelena Deposits mission)
+	id = ia_rhe.6
+	title = ia_rhe.6.t
+	desc = ia_rhe.6.d
+	picture = FREE_CITY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.5.a
+		add_base_tax = 3
+		add_base_production = 5
+		add_province_modifier = {
+			name = rhe_bustling_city
+			duration = 3650
+		}
+		custom_tooltip = rhe_mining_town_expand_infra_dev_bonus_tt
+	}
+}
+
+province_event = { #Search the Rhine, Coal
+	id = ia_rhe.7
+	title = ia_rhe.7.t
+	desc = ia_rhe.7.d
+	picture = TRADE_GOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ia_rhe.7.a
+		add_base_production = 1
+		change_trade_goods = coal
+		add_permanent_province_modifier = {
+			name = rhe_coal_unknown_uses
+			duration = -1
+		}
+		custom_tooltip = rhe_coal_unusable_till_furnaces_tt
+	}
+}

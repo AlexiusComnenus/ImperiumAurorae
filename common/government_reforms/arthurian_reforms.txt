@@ -3,6 +3,7 @@ dumnonia_monarchy_reform = {
 	allow_normal_conversion = no
 	lock_level_when_selected = yes
 	can_change_primary_culture = no
+	maintain_dynasty = yes
 	potential = {
 		tag = ENG
 	}

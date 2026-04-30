@@ -5,3 +5,23 @@ technology_group = indian
 religion = zun_pagan
 primary_culture = afghani
 capital = 2226
+1444.11.11= {
+	monarch = {
+		name = "Raddaj"
+		dynasty = "Zunbil"
+		adm = 4
+		dip = 4
+		mil = 4
+		birth_date = 1400.4.14
+	}
+}
+1444.11.11= {
+	add_prestige = 20
+	add_treasury = 40
+	define_ruler_to_general = {
+		fire = 5
+		shock = 4
+		manuever = 4
+		siege = 3
+	}
+}

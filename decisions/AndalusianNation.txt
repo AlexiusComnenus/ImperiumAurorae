@@ -5,6 +5,7 @@ country_decisions = {
 		potential = {
 			normal_or_historical_nations = yes
 			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = gra_republican_missions }
 			NOT = { has_country_flag = formed_andalusia_flag }
 			OR = {
 				ai = no
@@ -155,6 +156,7 @@ country_decisions = {
 					NOT = { primary_culture = andalucian }
 				}
 				change_primary_culture = andalucian
+				hidden_effect = { ia_change_culture_without_consequence_effect = yes }
 			}
 			if = {
 				limit = { 

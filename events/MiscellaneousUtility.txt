@@ -2162,6 +2162,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = philosopher
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2171,6 +2172,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = natural_scientist
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2180,6 +2182,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = artist
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2189,6 +2192,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = treasurer
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2198,6 +2202,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = theologian
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2207,6 +2212,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = master_of_mint
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2216,6 +2222,7 @@ country_event = {  # splendour advisors -- admin
 		define_advisor = {
 			type = inquisitor
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2241,6 +2248,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = statesman
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2250,6 +2258,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = naval_reformer
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2259,6 +2268,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = trader
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2268,6 +2278,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = spymaster
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2277,6 +2288,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = colonial_governor
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2286,6 +2298,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = diplomat
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2295,6 +2308,7 @@ country_event = {  # splendour advisors -- diplo
 		define_advisor = {
 			type = navigator
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2320,6 +2334,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = army_reformer
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2329,6 +2344,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = army_organiser
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2338,6 +2354,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = commandant
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2347,6 +2364,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = quartermaster
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2356,6 +2374,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = recruitmaster
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2365,6 +2384,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = fortification_expert
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2374,6 +2394,7 @@ country_event = {  # splendour advisors -- mil
 		define_advisor = {
 			type = grand_captain
 			skill = 2
+			cost_multiplier = 0.75
 		}
 	}
 	
@@ -2587,6 +2608,34 @@ country_event = {  # Spawn transports
 			transport = ROOT
 			transport = ROOT
 		}		
+	}
+}
+
+country_event = {  # Make sure everyone has at least 1 govcap
+	id = dotfset.40
+	title = dotfset.40.t
+	desc = dotfset.40.d
+	picture = AULIC_COUNCIL_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = {	# Bye-bye AI expanded infra
+		name = dotfset.40.a
+		every_owned_province = {
+			limit = {
+				NOT = { is_capital = yes }
+				has_province_modifier = capital_1_govcap
+			}
+			remove_province_modifier = capital_1_govcap
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = capital_1_govcap
+				duration = -1
+				hidden = yes
+			}
+		}
 	}
 }
 

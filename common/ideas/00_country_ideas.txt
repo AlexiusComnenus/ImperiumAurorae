@@ -3507,7 +3507,7 @@ GRA_ideas = {
 	free = yes
 	
 	people_of_the_book = {
-		tolerance_heathen = 5
+		tolerance_heathen = 3
 		tolerance_of_heathens_capacity = 3
 	}
 	recover_al_andalus = {

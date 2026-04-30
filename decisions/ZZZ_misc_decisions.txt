@@ -145,7 +145,13 @@ country_decisions = {
 				change_government_reform_progress = 50
 			}
 			else_if = {
-				limit = { ai = no 	has_government_attribute = centralize_state_half_refund }
+				limit = { 
+					ai = no 	
+					OR = {
+						has_government_attribute = centralize_state_half_refund 
+						capital_scope = { has_province_modifier = hab_prosperous_heartland }
+					}
+				}
 				add_adm_power = 25
 				change_government_reform_progress = 25
 			}		

@@ -766,7 +766,6 @@ state_opera = {
 		}
 		country_modifiers = {
 			prestige_decay = -0.005
-			advisor_cost = -0.025
 		}
 		on_upgraded = {
 		}
@@ -787,8 +786,7 @@ state_opera = {
 		}
 		country_modifiers = {
 			prestige_decay = -0.005
-			advisor_cost = -0.025
-			monthly_splendor = 0.25
+			monthly_splendor = 1
 		}
 		on_upgraded = {
 		}
@@ -4533,7 +4531,14 @@ grassalkovich_palace = {
 			advisor_cost = -0.05
 			global_manpower_modifier = 0.10
 			land_forcelimit_modifier = 0.05
-			own_territory_dice_roll_bonus = 1
+		}
+		conditional_modifier = {
+			trigger = { 
+				owner = { all_owned_province = { culture = slovak } }
+			}
+			modifier = { 
+				own_territory_dice_roll_bonus = 1
+			}
 		}
 		on_upgraded = {
 		}
@@ -4557,7 +4562,14 @@ grassalkovich_palace = {
 			advisor_cost = -0.1
 			global_manpower_modifier = 0.20
 			land_forcelimit_modifier = 0.10
-			own_territory_dice_roll_bonus = 2
+		}
+		conditional_modifier = {
+			trigger = { 
+				owner = { all_owned_province = { culture = slovak } }
+			}
+			modifier = { 
+				own_territory_dice_roll_bonus = 2
+			}
 		}
 		on_upgraded = {
 		}

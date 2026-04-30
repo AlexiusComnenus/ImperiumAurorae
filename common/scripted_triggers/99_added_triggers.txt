@@ -63,6 +63,7 @@ can_have_center_of_reformation_trigger_aurora = { #Province Scope
 			religion = $RELIGION$
 		}
 	}
+	NOT = { area = macaronesia_area }
 	NOT = { has_climate = arctic }
 	NOT = { has_climate = arid }
 	NOT = { has_terrain = coastal_desert }
@@ -70,4 +71,8 @@ can_have_center_of_reformation_trigger_aurora = { #Province Scope
 	NOT = { has_terrain = desert }
 	NOT = { has_terrain = glacier }
 	NOT = { has_climate = tropical }
+}
+
+rhe_gained_dev_from_manu = {
+	has_province_flag = rhe_built_manu_dev_$building$
 }
