@@ -1739,6 +1739,14 @@ country_event = {
 	picture = BAD_WITH_MONARCH_eventPicture
 
 	fire_only_once = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 
 	trigger = {
 		OR = {

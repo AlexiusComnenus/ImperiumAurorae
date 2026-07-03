@@ -143,10 +143,52 @@ novgorod_missions_column_1 = {
 		}
 	}
 	
-	nov_reestablish_hanseatic_ties = {
-		icon = mission_galleass
+	nov_local_defenses = {
+		icon = prosperity_for_all
 		required_missions = {
 			
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				estate_loyalty = {
+					estate = estate_peasants
+					loyalty = 60
+				}
+				estate_influence = {
+					estate = estate_peasants
+					influence = 60
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 2
+				fort_level = 2
+				is_overseas = no
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_militia_garrisons
+				duration = -1
+			}
+			add_country_modifier = {
+				name = nov_defensive_fervor
+				duration = 10950
+			}
+		}
+	}
+	
+	nov_hit_and_run_tactics = {
+		icon = polish_subjects
+		required_missions = {
+			nov_local_defenses
+			nov_organize_the_regulars
 		}
 		position = 4
 		
@@ -154,45 +196,58 @@ novgorod_missions_column_1 = {
 		#}
 		
 		trigger = {
-			RIG = {
-				is_subject = no
-				has_opinion = {
-					who = ROOT
-					value = 150
-				}
-			}
-			OR = {
-				RIG = {
-					is_in_trade_league_with = ROOT
-				}
-				RIG = {
-					alliance_with = ROOT
-					trust = { who = ROOT value = 60 }
-				}
-			}
 			if = {
 				limit = { ai = no }
-				diplomat = 2
+				has_leader_with = {
+					manuever = 5
+				}
+				OR = {
+					army_tradition = 75
+					army_professionalism = 0.25
+				}
 			}
 		}
 		
 		effect = {
-			RIG = { add_historical_friend = ROOT }
-			add_historical_friend = RIG
-			add_trust = {
-				who = RIG
-				value = 20
-				mutual = yes
-			}
 			add_country_modifier = {
-				name = nov_reopening_the_baltic_routes
+				name = nov_hit_and_run_generals
 				duration = -1
 			}
-			RIG = {
-				add_country_modifier = {
-					name = nov_reopening_the_baltic_routes
-					duration = -1
+		}
+	}
+	
+	nov_hit_and_run_tactics_advanced = {
+		icon = revenge_for_nicopolis
+		required_missions = {
+			nov_hit_and_run_tactics
+		}
+		position = 5
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				has_leader_with = {
+					manuever = 6
 				}
+			}
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 20
+					has_manpower_building_trigger = yes
+					has_forcelimit_building_trigger = yes
+				}
+				army_tradition = 95
+				army_professionalism = 0.6
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = nov_damage_mitigation_drills
+				duration = -1
 			}
 		}
 	}
@@ -646,6 +701,38 @@ novgorod_missions_column_2 = {
 		}
 	}
 	
+	nov_organize_the_regulars = {
+		icon = the_italian_league
+		required_missions = {
+			
+		}
+		position = 3
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_streltsy = 2
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				is_overseas = no
+				has_manpower_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			add_army_professionalism = 0.05
+			
+			add_country_modifier = {
+				name = nov_organized_regulars
+				duration = -1
+			}
+		}
+	}
+	
 	nov_settle_cherdyn = {
 		icon = renovate_berlin
 		required_missions = {
@@ -681,6 +768,61 @@ novgorod_missions_column_2 = {
 				}
 			}
 			
+		}
+	}
+	
+	nov_reestablish_hanseatic_ties = {
+		icon = mission_galleass
+		required_missions = {
+			
+		}
+		position = 6
+		
+		#provinces_to_highlight = {
+		#}
+		
+		trigger = {
+			RIG = {
+				#is_subject = no
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			OR = {
+				RIG = {
+					is_in_trade_league_with = ROOT
+				}
+				RIG = {
+					alliance_with = ROOT
+					trust = { who = ROOT value = 60 }
+				}
+				RIG = { is_subject_of = ROOT }
+			}
+			if = {
+				limit = { ai = no }
+				diplomat = 2
+			}
+		}
+		
+		effect = {
+			RIG = { add_historical_friend = ROOT }
+			add_historical_friend = RIG
+			add_trust = {
+				who = RIG
+				value = 20
+				mutual = yes
+			}
+			add_country_modifier = {
+				name = nov_reopening_the_baltic_routes
+				duration = -1
+			}
+			RIG = {
+				add_country_modifier = {
+					name = nov_reopening_the_baltic_routes
+					duration = -1
+				}
+			}
 		}
 	}
 	

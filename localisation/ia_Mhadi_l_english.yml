@@ -104,6 +104,7 @@
  harmonized_apocalyptic: "Harmonized Apocalyptic"
  yor_despoiled_country_side: "Despoiled Countryside"
  mhadi_recent_bell_toll: "Recent Bell Toll"
+ yor_basilica_ate_the_moon: "Moon Affected by Cultists"
  
  #Events
  mhadi.1.title: "§RTitus 2:9§!"
@@ -212,7 +213,10 @@
  mhadi.22.desc: "The nation of @[From.GetTag][From.GetName] has been invaded by the omnicidal Mhadi and is calling for our aid! Their envoy argues that though we are not formally obligated to defend them, the threat from the Mhadi is universal and all civilized nations must stand together to resist their threat, or their next target might be us...."
  mhadi.22.a: "Hah! That's the most amusing thing we've heard today!"
  mhadi.22.b: "First they came for..."
- 
+ mhadi.23.title: "Moonlight Miracle"
+ mhadi.23.desc: "Everything was perfect. Three weeks of festivals after the completion of the Basilica haven't drained the city, only emboldened the spirit of its residents. The Apostle promised all followers that this night, a miracle will be performed.\n\nThat night, tens of thousands of people gathered around the Basilica, waiting, the burning of sinners on pyres making for a melody to fill the quiet. And then, they saw it. The moon rose up from behind the Basilica, watching above the murals depicting battles in which martyrs have been created, human bones arranged into pristine memento mori, interpretations of deities which will help humanity usher in the end and more art lining the walls of the Basilica which seemed to reach the clouds. A shape began manifesting itself within the moonlight, glowing a faint shade of jade to contrast against the smoke. A booming voice could be heard in every mind at once, saying the same thing: "§RYOU, MY CHILDREN, WILL ALL BE BROUGHT TO THE GARDEN OF EDEN§!"\n\nAs the crowd rejoiced, the shapes in the sky began to change, the smoke and light combining and contrasting to create a vision of the promised paradise. "§RWITNESS THE MOON TEAR OPEN, THIS WORLD FILLED WITH FILTH IS BEGGING TO BE ENDED. WITNESS THE FUTURE OF THOSE WHO SIN§!"\n\nThe crowd, driven mad by the vision and the voice, began to eat itself alive. Those who retained a grip on their sanity saw a great dragon appear within the vision, its jaws locked around the moon..."
+ mhadi.23.a: "And thus the Dragon swallowed the moon, and the world was bathed in darkness."
+ basilica_every_other_country_loses_1_stab_and_short_debuff_tt: "Every country which does not follow the §YJade Dragon Cult§! will §Rlose 1 stability§! and receive a debuff for a short time!"
  #Missions
  yor_establish_pyre_templars_title: "Pyre Templars"
  yor_establish_pyre_templars_desc: "Reborn in Flames"
@@ -222,3 +226,9 @@
  yor_begin_ritual_desc: "§RTHE END IS NIGH§!"
  yor_the_end_title: "§RTHE END§!"
  yor_the_end_desc: "§RTHE END OF THE WORLD§!"
+
+#Great Projects
+ basilica_of_ending:0 "Basilica of Ending"
+ basilica_of_ending_desc:0 "A grand paragon of Tamil architecture, it combines symbolism of all religions which make up the end time beliefs of the Jade Dragon Cult. It serves as a place to store the many vessels for the Apostle of the Apocalypse and ITS work."
+ mhadi_basilica_increase_max_templars_1:0 "Increases the maximum capacity of §RPyre Templars§! brought forth by Pyre Festivals by §Y10§!"
+ mhadi_basilica_increase_max_templars_2:0 "Increases the maximum capacity of §RPyre Templars§! brought forth by Pyre Festivals by §Y20§!"

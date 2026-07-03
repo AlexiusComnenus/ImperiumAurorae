@@ -246,14 +246,6 @@ dependency=
 
 vassal=
 {
-	first="BNG"
-	second="Z37"
-	start_date="1444.11.11"
-	end_date="1836.1.1"
-}
-
-vassal=
-{
 	first="BRA"
 	second="OPL"
 	start_date="1444.11.11"
@@ -286,6 +278,33 @@ dependency=
 	end_date="1836.1.1"
 }
 
+dependency=
+{
+	subject_type="march"
+	first="BNG"
+	second="MEN"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="march"
+	first="BNG"
+	second="Z37"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+dependency=
+{
+	subject_type="march"
+	first="MAM"
+	second="NPL"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
 vassal=
 {
 	first="IRQ"
@@ -304,8 +323,24 @@ vassal=
 
 vassal=
 {
+	first="YEM"
+	second="MHR"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
 	first="PUN"
 	second="Z38"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="OMA"
+	second="ORM"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }
@@ -766,6 +801,14 @@ vassal=
 vassal=
 {
 	first="IRQ"
+	second="ASY"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+
+vassal=
+{
+	first="IRQ"
 	second="HED"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
@@ -775,6 +818,13 @@ vassal=
 {
 	first="YEM"
 	second="MDA"
+	start_date="1444.11.11"
+	end_date="1836.1.1"
+}
+vassal=
+{
+	first="GUG"
+	second="LDK"
 	start_date="1444.11.11"
 	end_date="1836.1.1"
 }

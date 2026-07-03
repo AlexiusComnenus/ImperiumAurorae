@@ -1,0 +1,79 @@
+﻿l_english:
+ #government stuff
+ the_four_noble_truths_magga: "Magga"
+ the_four_noble_truths_magga_desc: "The Truth of the Path to the Cessation of Suffering. It is summerized by the three higher trainings: Morality, Concentration and Wisdom. Through these basic principles, many find peace in their lives, but if the [Root.Monarch.GetTitle] believes our current capital of [Root.Capital.GetName] was a poor choice for leading the faithful, we could relocate at the cost of damaging the delicate trust we share with other Vajrayana schools.\n "
+ authority_of_religious_head: "§YAuthority of the Gelug School§!"
+ the_four_noble_truths_button_didnt_use_during_life_of_ruler_tt: "Hasn't used this Ability during the Life of the Current\n     §Y[Root.Monarch.GetTitle]§!"
+ use_tibet_ability_again: "Allows us to use the @TIB §YTibetan Itinerant Capital§! Ability again without having to wait for the passing and reincarnation of the current §Y[Root.Monarch.GetTitle]§!!"
+ tibet_rank_2: "Heaven's Dwelling"
+ tibet_ruler_2: "Dalai Lama"
+
+#modifiers
+ tib_generic_interlinked_faiths: "Interlinked Faiths"
+ tib_generic_intermediate_state: "Intermediate State"
+ tib_generic_living_tonba_shenrab: "The Living Tonba Shenrab"
+ tib_generic_living_saddha: "Saddha"
+
+#events
+ flavor_tib.1.t: "Chasms of Culture"
+ flavor_tib.1.d: "Centuries. Centuries have passed ever since Padmasambhava's journey across Tibet with a noble quest, to tame and seal a pact with the spirits, demons and ghosts which Bön shamans warned about. His mission was to encounter each spirit and offer them to redirect their rage born from suffering into becoming the protectors of Tibet instead of its bane. He was, unfortunately, executed by a Manichaen governor in Lhasa, based on short-sighted judgement, cutting his quest short.\n\nThe Tibetan people have been deeply scarred by the loss ever since. The two primary faiths have managed to mingle in ways unheard of in the rest of the world, but it always felt... hollow, incomplete, since the Bön have mostly remained within their shamanistic and animist origins. Many communities, families, chiefs, kings and monestaries rule Tibet from inbetween the mountains, with uncountable local schools and small variations of both faiths being practiced.\n\nBut the world will not wait for Tibetans to recover. The news of the Xhizo migration which displaced many cultures and religions spread quickly even into such isolated tribes through raiders, refugees and political chaos, and the many rulers of Tibet fear something similar might strike them soon, You must unite and modernize these tribes, or go out as a footnote in distant stories of these lands."
+ flavor_tib_1_tt: "§Y[Root.GetName]§! gets a permanent claim on all provinces within §YTibet§! which follow our faith."
+ flavor_tib.1.a: "Perhaps one more try is enough?"
+#ideas
+ the_third_dissemination: "The Third Dissemination"
+ the_third_dissemination_desc: "There have been 2 Disseminations of the Vajrayana Buddhist faith in the mountains of Tibet. First in the 8th century, then another one during the 10-11th century. Due to a multitude of reasons, both failed in the end to fully overtake the local Bön faiths, including an early assassinations of the one Born from a Lotus (Also called Guru Riponche by Vajrayana followers) by a Manichean governor, and an unlucky streak of events during the second, mostly consisting of supernatural disasters. But the faiths do not see each other with much antagonism, instead symbiotically co-existing. One single period of stability might give the Tibetans enough leeway and control to merge the 2 faiths fully, in either direction"
+#missions
+ tib_generic_dethrow_our_rivals_title: "Dethrow our Rivals"
+ tib_generic_dethrow_our_rivals_desc: "Our rise to prominence begins here! By dethrowing a rivaling tribe of the same proclaimed faith, we will establish ourselves as a strong power within Tibet, with our future success being inevitable!"
+ tib_generic_dethrow_our_rivals_humiliation_yes_tt: "£yes£ If we complete this mission by §Thumiliating our rival§!, we will receive an additional:"
+ tib_generic_dethrow_our_rivals_humiliation_no_tt: "£no£ If we complete this mission by §Thumiliating our rival§!, we will receive an additional:"
+ tib_generic_interlinking_of_faiths_title: "Interlinking of Faiths"
+ tib_generic_interlinking_of_faiths_desc: "The Ancient shamanistic faith of the Bön and the Buddhist Varjayana faith have shared the mountains through the Tibetan people for centuries. Many of their practices have been taken over by each other, and the concept of trying to eliminate each other does not make sense from the perspective of Tibetans, as the faiths are symbiotic from the view of the Bön and interdependant from the view of the Lamas. Our tribe understands this, and thus we will continue the process of interfaith dialogue, letting more differentiating beliefs seep into the minds of shamans and monks."
+ tib_generic_protect_capital_title: "Protect [Root.Capital.GetName]"
+ tib_generic_protect_capital_desc: "Strenght isn't found in the vast amount of individual families and monestaries holding their own plots of land and performing individual worship, but in the collection of villages which band together into the biggest population centre in [Root.GetName]"
+ tib_generic_unite_western_tibet_title: "Unite Western Tibet"
+ tib_generic_unite_western_tibet_desc: "The minor princes and kings of Western Tibet being united means we can look outwards, towards the muslim powers controlling many areas culturally and, in the past, spiritually similar to ours"
+ tib_generic_unite_eastern_tibet_title: "Unite Eastern Tibet"
+ tib_generic_unite_eastern_tibet_desc: "Eastern Tibetan plateau lowers into the vast territories of China and the steppes of Mongolia and Central Asia. While the use of this corridor for the purposes of trade is questionable, yet they are an integral part of Tibet"
+ tib_generic_unite_eastern_tibet_tt: "Gets a permanent claim on §Yevery province of Tangut and Bai culture§!."
+ tib_generic_unite_the_monestaries_title: "Unite the Monestaries"
+ tib_generic_unite_the_monestaries_desc: "Monestaries and shaman ritual sites are the primary gathering places of knowledge and intellectual dialogue in our country, as the common folk focus on issues of everyday life. Let us designate new gathering spots within recently conquered lands, letting our advisors and ruler easier pick up on the intricacies present within higher circles"
+ tib_generic_prove_our_worth_title: "Prove our Worth"
+ tib_generic_prove_our_worth_desc: "The time has come! It is our time to ready our wings and fly down the mountains like birds, and show that neither the rulers nor warriors of [Root.GetName] can be manipulated and stepped on by outside powers!"
+ tib_generic_prove_our_worth_tt: "Has at least §G75%§! warscore in a war against any country with its capital outside the §YTibet§! region"
+ tib_generic_intermediate_realm_title: "Intermediate Realm"
+ tib_generic_intermediate_realm_desc: "The Indermediate realm, also known as Bardo, is a concept in Vajrayana Buddhism through which every person goes through after death and before rebirth. The six stages of Bardo can be very well applied to the faiths of the Tibetan lands, their molding and nourishing by us allowing the rebirth of a belief system which shall promise inner peace and enlightenment to all who follow it"
+ tib_generic_intermediate_realm_every_heathen_apart_from_mani_tt: "Every province which is §YHeathen to our Faith§!, is in §YTibet region§! and isn't §YManichean§! will receive the following:"
+ tib_generic_tibet_resurgent_title: "Tibet Resurgent"
+ tib_generic_tibet_resurgent_desc: "The frozen mountain peaks and the ancient spirits protecting these lands have proven themselves capable to stand and project influence beyond the difficult terrain of the Tibetan Plateau. [Root.GetName] will be spoken of in distant ancestries, with $MONARCH$ as the one religious reformer, conqueror and political leader of Tibet who's name will echo worldwide across history. Onward!"
+ tib_generic_tibet_resurgent_tt: "We own all provinces of §YTibetan Culture§!, and at least one of the following:\n - We own the entire §YKashmir area§!\n - We own all provinces of §YTangut Culture§!\n - We own all provinces of §YBai Culture§!"
+
+
+
+
+
+
+
+
+#Nepali Stuff
+ npl_into_tibet_indoturkish_vice_title: "Indo-Turkish Vice"
+ npl_into_tibet_indoturkish_vice_desc: "Fate is a cruel mistress, as ours has showed. Displaced from the native lands where our people reside, held as puppets for foreign masters which refuse to follow basic religious or cultural principle and used as pawns in the great game these foreign masters play. It must end. Through radical means involving untested military techniques and blatant diplomatic sabotage, we can get an edge on our overlords and, hopefully, defeat them to forge our own destiny"
+ npl_into_tibet_himalayan_kingdom_title: "A Himalayan Kingdom"
+ npl_into_tibet_himalayan_kingdom_desc: "The yoke of the foreign invaders has been broken, and while they may remain with significant political power and trade influence within North India, they will not dare attack us again. Now, we must redirect our sights to our cultural homeland, reclaim it and, hopefully, banish the muslims from there once and for all"
+ npl_into_tibet_bludgeon_the_turks_title: "Bludgeon the Turks"
+ npl_into_tibet_bludgeon_the_turks_desc: "The Ottoman Pedishah may claim that they are tolerant to the religiously diverse Nepali peoples, but tolerance in the eyes of Islam is far from being treated with respect and as an equal. We have enough power to crush them, and to prevent them from using our populace as political pawns in the Muslim Great Game ever again"
+ npl_into_tibet_bludgeon_the_turks_tt: "Owns all §YNepali culture§! provinces"
+ npl_into_tibet_gorkhali_intimidation_tactics_title: "Gorkhali Intimidation"
+ npl_into_tibet_gorkhali_intimidation_tactics_desc: "The Gorkhali are the elite soldiers of Nepal, trained with Kukri blades to break the enemy spirit quickly by showing how vicious and merciless they will be if the enemy would lose. We have long dreamed of going further up into the mountains which have repelled any of our ambitions for the longest time, and now that we have the manpower to sustain a proper campaign, the Tibetans shall meet our blades"
+ npl_into_tibet_curiosities_of_the_north_title: "Curiosities from the North"
+ npl_into_tibet_curiosities_of_the_north_desc: "The more our campaign goes on, the more we are mesmerized by these lands. Our campaign didn't go as we planned, since many local spiritual leaders and monestaries would rather surrender than try to face us in battle, and through that, we have gained a degree of mutual understanding and legitimacy. Could this lead to something greater?"
+ npl_into_tibet_merging_lasting_shifting_title: "Merging, Shifting"
+ npl_into_tibet_merging_lasting_shifting_desc: "It is time. Complete acceptance and mutual understanding between our peoples has been reached, and we ourselves are ready. May this union of cultures benefit us all, and may it save our souls."
+ npl_into_tibet_merging_lasting_shifting_at:0 "until we become §YSino-Tibetan§! or §YTibetan§! culture gets demoted"
+ 
+ npl_into_tibet_sharp_and_ready: "Sharp and Ready"
+ npl_tibetan_acceptance: "Tibetan Symbiotism"
+
+ flavor_tib.100.t: "Ever-encompassing Himalayas"
+ flavor_tib.100.d: "Steepness and frost meets every step of the brave Gorkhalis sent out across Tibet with the goal of subjugating every Tibetan chief, king and monestary under our thumb. In these harsh conditions, even little charity is deeply cherished, which, surprisingly, is what many Gorkhali regiments have been met with. Whether it was from fear, or from a genuine desire to show compassion as dictated by the Buddha, that does not matter; the effect it had on the men was irreversible.\n\n"The spirits protecting Tibet didn't try to fight us or hinder us." Proclaimed [random leader name] to the [RulerTitle], the leader of our Gorkhali regiments. He had been around many Tibetan courts and monestaries, learning the language and beliefs in order to try and better negotiate with Tibetan rulers, with that being his explanation as to why they were welcomed with relative warmth. The Tibetan populace, superstitious as ever, saw that the spirits didn't fight our advances, and believed that we are holy messangers rather than negative conquerors.\n\nMany Gorkhalis have felt the same regarding this occurance, believing that Tibet isn't to be ruled as a conquered lands and peoples, but rather, we assimilate into their culture ourselves to better defend both our peoples from outsiders. The estates and highly educated are displeased with our forceful adaptation of Tibetan scripure with the help of Tibetan Lama's and Bön shamans, but soon they will realize that, just like everything else, our nation is also impermanent and interdependant with Tibet."
+ flavor_tib.100.a: "We cannot remain dreaming"

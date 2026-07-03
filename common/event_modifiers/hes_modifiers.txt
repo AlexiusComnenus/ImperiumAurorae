@@ -127,8 +127,16 @@ hes_building_the_schloss = {
 	local_great_project_upgrade_time = -0.5
 }
 
-hes_mp_reform_buff = { ###DELETE WHEN BAGUETTE MAKES UP HIS MIND ABOUT WHERE HE WANTS THE BUFFS TO BE
-	monthly_reform_progress = 0.5 
+hes_capital_of_german_armies = {
+	land_forcelimit_modifier = 0.2
+	land_morale = 0.1
+}
+
+hes_bustling_military_district = {
+	land_forcelimit = 5
+	local_manpower = 5
+	local_tax_modifier = 0.3
+	trade_goods_size_modifier = 0.2
 }
 
 hes_mp_buffs_military = { ###DELETE WHEN BAGUETTE MAKES UP HIS MIND ABOUT WHERE HE WANTS THE BUFFS TO BE
@@ -230,6 +238,21 @@ hes_regimental_town_state = {
 	local_development_cost_modifier = -0.1
 	local_tax_modifier = -0.1
 	picture = "global_manpower"
+}
+
+hes_rebuilding_regimental_capital = {
+	country_admin_power = -2
+	country_diplomatic_power = -1
+	country_military_power = -1
+}
+
+hes_rebuilding_regimental_city = {
+	country_admin_power = -1
+	country_military_power = -1
+}
+
+hes_rebuilding_regimental_town = {
+	country_admin_power = -1
 }
 
 ##########################

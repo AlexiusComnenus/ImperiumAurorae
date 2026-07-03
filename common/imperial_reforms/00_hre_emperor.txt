@@ -162,7 +162,7 @@ emperor_harmony_edict = {
 	province = {
 		local_institution_spread = 0.20
 		local_development_cost = -0.05
-		local_warscore_cost_modifier = 0.25
+		local_warscore_cost_modifier = 0.10
 		local_core_creation = 0.25
 	}
 	on_effect = {

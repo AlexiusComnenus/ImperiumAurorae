@@ -20,6 +20,7 @@ on_startup = {
 		ia_flavor_pap.1
         catt.1
 		dotfset.40
+        flavor_tib.1
 	}
 	initialize_schools_effect = yes
 }
@@ -111,6 +112,17 @@ on_main_war_won = {
 	}
 }
 
+# country
+# root = winning country, from = location
+on_siege_won_country = {
+	if = {
+		limit = {
+			FROM = { fort_level = 1 }
+		}
+		add_army_tradition = -1
+	}
+}
+
 on_bankruptcy = {
 	if = {
 		limit = { ai = yes }
@@ -135,7 +147,15 @@ on_heir_death = {
 on_cawa_raised = {
 	ROOT = {
 		owner = {
-			add_manpower = -0.5
+			if = {
+				limit = { manpower = 0.5 }
+				add_manpower = -0.5
+			}
+			else = {
+				add_manpower = -0.5
+				add_treasury = -50
+				add_mil_power = -10
+			}
 		}
 	}
 }
@@ -149,7 +169,15 @@ on_streltsy_raised = {
 	#}
 	ROOT = {
 		owner = {
-			add_manpower = -1
+			if = {
+				limit = { manpower = 1 }
+				add_manpower = -1
+			}
+			else = {
+				add_manpower = -1
+				add_treasury = -100
+				add_mil_power = -20
+			}
 		}
 	}
 	#FROM = {
@@ -183,9 +211,18 @@ on_five_year_pulse_2 = {
 		100 = alchemistevents.2
 		100 = alchemistevents.3
 		100 = alchemistevents.4
+		#Peasants
 		100 = peasantsevents.1
 		100 = peasantsevents.2
 		100 = peasantsevents.4
+		#Industrialists
+		100 = ia_estate_industrialists_events.2
+		100 = ia_estate_industrialists_events.3
+		100 = ia_estate_industrialists_events.4
+		100 = ia_estate_industrialists_events.5
+		100 = ia_estate_industrialists_events.6
+		100 = ia_estate_industrialists_events.7
+		100 = ia_estate_industrialists_events.8
 	}
 }
 
@@ -240,6 +277,11 @@ on_yearly_pulse_2 = {
 		ia_flavor_tem.39
         gaeldom.24
 		gaeldom.26
+		ia_flavor_kor.1
+		ia_flavor_kor.2
+		ia_flavor_kor.3
+		ia_flavor_eng.26
+		ia_flavor_eng.27
 	}
 	if = {
 		limit = { 
@@ -304,6 +346,13 @@ on_yearly_pulse_2 = {
 			religion = catholic
 		}
 	}
+	if = {
+		limit = {
+			NOT = { has_global_flag = tradegood_marcin }
+			ai = yes
+		}
+		country_event = { id = marcin_events.103 }
+	}
 	random_events = {
 		250 = ia_flavor_sax.22
 		250 = ia_flavor_sax.23
@@ -314,8 +363,190 @@ on_yearly_pulse_2 = {
 		100 = gaeldom.14
 		50 = gaeldom.25
 		100 = china_events.43
+		50 = ia_estate_industrialists_events.100
+		50 = ia_estate_industrialists_events.102
+		50 = ia_estate_industrialists_events.103
 		
 		1000 = 0
+	}
+}
+
+# ROOT = Overlord, FROM = Minor
+on_dependency_gained = {
+	if = {
+		limit = { is_emperor_of_china = yes }
+		if = {
+			limit = {
+				FROM = { owns_or_non_sovereign_subject_of = 2107 }
+			}
+			FROM = { 
+				override_country_name = ANDONG_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { owns_or_non_sovereign_subject_of = 4678 }
+			}
+			FROM = { 
+				override_country_name = ANBEI_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { owns_or_non_sovereign_subject_of = 723 }
+			}
+			FROM = { 
+				override_country_name = CHANYU_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { OR = { owns_or_non_sovereign_subject_of = 613 	owns_or_non_sovereign_subject_of = 2373 } }
+			}
+			FROM = { 
+				override_country_name = ANNAN_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { OR = { owns_or_non_sovereign_subject_of = 710 	owns_or_non_sovereign_subject_of = 2121 } }
+			}
+			FROM = { 
+				override_country_name = ANXI_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { owns_or_non_sovereign_subject_of = 454 }
+			}
+			FROM = { 
+				override_country_name = SOGDIANA_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { OR = { owns_or_non_sovereign_subject_of = 451 	owns_or_non_sovereign_subject_of = 446 } }
+			}
+			FROM = { 
+				override_country_name = TOKHARISTAN_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { owns_or_non_sovereign_subject_of = 461 }
+			}
+			FROM = { 
+				override_country_name = KUNLING_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+	}
+}
+
+# ROOT = Overlord, FROM = Minor
+on_dependency_lost = {
+	if = {
+		limit = { FROM = { has_country_flag = chinese_protectorate_name_flag } }
+		restore_country_name = yes
+		clr_country_flag = chinese_protectorate_name_flag
+	}
+}
+
+on_country_creation = {
+	if = {
+		limit = {
+			tag = TEM
+		}
+		change_government = theocracy
+	}
+	if = {
+		limit = {
+			tag = YIN
+		}
+		change_government = theocracy
+		change_religion = manichean
+		add_government_reform = mingjiao_reform
+	}
+}
+
+on_country_released = {
+	if = {
+		limit = {
+			tag = TEM
+		}
+		change_government = theocracy
+		adopt_reform_progress = FROM
+	}
+	if = {
+		limit = {
+			tag = YIN
+		}
+		change_government = theocracy
+		adopt_reform_progress = FROM
+		change_religion = manichean
+		add_government_reform = mingjiao_reform
+	}
+	if = {
+		limit = {
+			FROM = { 
+				OR = {
+					has_reform = antioch_hellenic_crusade_reform 
+					has_reform = nobatia_hellenic_crusade_reform
+				}
+			}
+			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+			NOT = { tag = TEM }
+		}
+		change_religion = FROM
+		change_government = monarchy
+		adopt_reform_progress = FROM
+		add_country_modifier = {
+			name = global_holy_war_released_modifier
+			duration = 3650
+			hidden = yes
+		}
+		capital_scope = {
+			change_religion = FROM
+		}
+	}
+	if = {
+		limit = {
+			FROM = { has_country_flag = eng_liberation_wars_protectorate_acceptance_flag }
+			NOT = { is_part_of_hre = yes }
+			NOT = { tag = PAP }
+			NOT = { tag = FAP }
+			NOT = { tag = TEM }
+		}
+		FROM = {
+			create_subject = {
+				subject_type = trade_protectorate
+				subject = ROOT
+			}
+		}
+	}
+}
+
+on_mandate_of_heaven_gained = {
+	if = {
+		limit = { have_had_reform = mingjiao_reform }
+		change_government = theocracy
+		add_government_reform = mingjiao_reform
+		add_government_reform = celestial_theocracy
+		#add_devotion = 40
+	}
+	if = {
+		limit = { have_had_reform = celestial_xizho_empire }
+		change_government = theocracy
+		add_government_reform = celestial_xizho_empire
+		add_devotion = 40
 	}
 }
 
@@ -743,5 +974,27 @@ on_adm_tech_taken = {
 		every_owned_province = {
 			remove_province_modifier = rhe_coal_unknown_uses
 		}
+	}
+}
+
+on_colonial_nation_established = {
+	if = {
+		limit = {
+			FROM = {
+				has_estate_privilege = estate_industrialists_exploitation_of_the_new_world
+			}
+		}
+		ROOT = {
+			add_country_modifier = {
+				name = estate_industrialists_exploited_cns
+				duration = -1
+			}
+		}
+	}
+}
+
+on_institution_embracement = {
+	events = {
+		ia_estate_industrialists_events.1
 	}
 }

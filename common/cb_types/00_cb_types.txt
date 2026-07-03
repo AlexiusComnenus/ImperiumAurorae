@@ -1366,24 +1366,32 @@ cb_take_mandate = {
 	prerequisites = {
 		has_dlc = "Mandate of Heaven"
 		is_subject = no
-		is_neighbor_of = FROM
+		OR = {
+			is_neighbor_of = FROM
+			any_subject_country = { is_neighbor_of = FROM }
+		}
 		NOT = { has_reform = shogunate }
 		FROM = { is_emperor_of_china = yes }
 		OR = {
-			religion_group = pagan
 			religion_group = eastern
-			religion_group = zoroastrian_group
+			culture_group = xizho_group
+			culture_group = east_asian
+			has_reform = chinese_warlord
+			has_reform = steppe_horde
 		}
 		NOT = { truce_with = FROM }
 		is_revolutionary = no
 		
 		OR = {
-			ai = no
-			culture_group = east_asian
-			any_owned_province = {
-				culture_group = east_asian
-				has_owner_accepted_culture = yes
-			}
+			government = monarchy
+			NOT = { has_government_attribute = locked_government_type }
+			has_reform = celestial_xizho_empire
+			has_reform = mingjiao_reform
+		}
+		OR = {
+			NOT = { has_government_attribute = papacy }
+			has_reform = celestial_xizho_empire
+			has_reform = mingjiao_reform
 		}
 	}
 

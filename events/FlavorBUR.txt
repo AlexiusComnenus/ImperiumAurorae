@@ -958,6 +958,14 @@ country_event = {
 	is_triggered_only = yes
 
 	major = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 
 	immediate = {
 		hidden_effect = {

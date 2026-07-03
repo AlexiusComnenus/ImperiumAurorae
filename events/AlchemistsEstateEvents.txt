@@ -215,7 +215,11 @@ country_event = {
 			is_colony = no
 			is_territory = no
 		}
-		has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+		OR = {
+			has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+			has_estate_privilege = estate_alchemists_elixirs_of_eternal_restlessness
+			has_estate_privilege = estate_alchemists_elixirs_of_rejuvenation
+		}
 	}
 	
 	immediate = {
@@ -248,8 +252,20 @@ country_event = {
 			}
 		}
 		modifier = {
-			factor = 10.0
+			factor = 5.0
 			has_estate_privilege = estate_alchemists_cutting_edge_research
+		}
+		modifier = {
+			factor = 2.0
+			has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+		}
+		modifier = {
+			factor = 2.0
+			has_estate_privilege = estate_alchemists_elixirs_of_eternal_restlessness
+		}
+		modifier = {
+			factor = 2.0
+			has_estate_privilege = estate_alchemists_elixirs_of_rejuvenation
 		}
 	}
 	

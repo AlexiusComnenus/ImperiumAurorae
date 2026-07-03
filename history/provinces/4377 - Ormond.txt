@@ -5,6 +5,7 @@ is_city = yes
 culture = irish
 religion = catholic
 trade_goods = livestock
+fort_15th = yes
 base_tax = 3
 base_production = 3
 base_manpower = 2

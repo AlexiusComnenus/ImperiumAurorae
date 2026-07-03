@@ -1,20 +1,19 @@
 ck2_converter_generated = yes
 graphical_culture = asiangfx
-color = { 63 175 117 }
+#color = { 63 175 117 }
+color = { 90 220 231 }
 monarch_names = {
-	"Felful #1" = 10
 	"Jiazhen #0" = 0
 	"Que #1" = 10
-	"Said #3" = 10
 	"Sui #0" = 0
 	"Warru #1" = 10
 	"Wenwei #0" = 0
-	"Xiaowan #0" = -1
+	"Xiaowan #0" = -10
 	"Xun #1" = 10
 	"Yaxiang #1" = 10
 	"Ye #1" = 10
 	"Yixing #0" = 0
 	"Zalghîn #2" = 10
 	"Zhaodu #0" = 0
-	"Zhuzhu #0" = -1
+	"Zhuzhu #0" = -10
 }

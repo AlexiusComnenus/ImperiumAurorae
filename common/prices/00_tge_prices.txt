@@ -39,7 +39,7 @@ jade = { base_price = 3 }
 amber = {  base_price = 3 }
 exotic_animals = { base_price = 3 }
 rum = { base_price = 2 }
-horses = { base_price = 2.6 }
+horses = { base_price = 3 }
 pearls = { base_price = 3.2 }
 ebony = { base_price = 3 }
 tropical_wood = { base_price = 1.5 }

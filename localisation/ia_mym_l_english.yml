@@ -42,8 +42,8 @@
  
  #Government
 
- myrmidons_government:0 "Order of the Myrmidons"
- myrmidons_government_desc:0 "The Myrmidons bring the Enlightenment of the Auroral Prince and seek to spread their ideals through the new world. However, their long journey across the Atlantic and the near impossibility of resupply from the CHE for a long time pose severe difficulties."
+ myrmidons_government: "Order of the Myrmidons"
+ myrmidons_government_desc: "The Myrmidons bring the Enlightenment of the Auroral Prince and seek to spread their ideals through the new world. However, their long journey across the Atlantic and the near impossibility of resupply from the CHE for a long time pose severe difficulties."
  mym_autonomy_explanation_tt: "Any provinces outside of our §YAdministrative Capacity§! will have §Rextremely high autonomy§!! Expand the §YAdministrative Capacity§! via the §Gmissions§!."
  myrmidon_exarchate_government: "Myrmidon Exarchate"
  myrmidon_exarchate_government_desc: "An Exarch appointed from among the ranks of the Myrmidon Order presides over a regional council of representatives from various local settlements. This regional council has the latitude to make domestic decisions without consulting the Myrmidon headquarters for every mundane matter."
@@ -61,6 +61,23 @@
  myrmidon_western_protectorate_desc: "Though the original Project Paradise has been cancelled, this does not mean we have no purpose. The Templarites threaten all of us with their zealotry, and thus our role is to protect the New World from their invasion."
  mym_turtle_ships_gov: "Turtle Ship Doctrine"
  mym_turtle_ships_gov_desc: "Not one life shall be wasted on the sea! Our armored leviathans may not be very fast on the high seas, but they shall truly be unsinkable marvels!"
+ y11_naval_tradition: "Naval Expertise"
+ y11_naval_tradition_desc: "The people of Terra Brasilis grow up by the sea and on the sea. We learn to swim before we learn to walk."
+ y11_new_shipyards: "New Shipyards"
+ y11_new_shipyards_desc: "A new nation in a new world requires new shipyards to build a new navy."
+ y11_call_of_neptune: "Call of Neptune"
+ y11_call_of_neptune_desc: "Neptune calls our name, and we answer."
+ y11_marine_proficiency: "Marine Proficiency"
+ y11_marine_proficiency_desc: "Our sailors protect us not only on the sea, but also on the land."
+ y11_roman_administration: "Roman Administration"
+ y11_roman_administration_desc: "We may have come to a distant land, but our administration still functions on Roman principles."
+ y11_trade_infrastructure: "Trade Infrastructure"
+ y11_trade_infrastructure_desc: "Though we no longer have a convenient Mare Nostrum to dominate, we shall establish the infrastructure to turn the entire Atlantic into a new Mare Nostrum."
+ y11_reclaimer_enthusiasm: "Reclaimer Enthusiasm"
+ y11_reclaimer_enthusiasm_desc: "Since the establishment of our nation in a new land, there have always been those clamping at the bit to reclaim our old homelands. We can harness this enthusiasm and turn it into talented admirals for our navy."
+ nova_roma_ideas: "Nova Roman Ideas"
+ nova_roma_ideas_start: "Nova Roman Traditions"
+ nova_roma_ideas_bonus: "Nova Roman Ambition"
  
  #Modifiers
  mym_perma_autonomy_1: "§ROutside Administrative Capacity§!!"
@@ -98,6 +115,7 @@
  mym_textiles_industry_modifier: "Myrmidon Textiles Industry"
  mym_munitions_industry_modifier: "Elite Marines"
  mym_turtle_ships_modifier: "Myrmidon Turtle Ships"
+ y11_marines_modifier: "Nova Roman Marines"
  
  #Missions
  mym_land_on_big_island_title: "Land on Hispaniola"
@@ -205,4 +223,4 @@
  ia_flavor_mym.6.a: "The betterment of the people!"
  ia_flavor_mym.6.b: "The military must be prioritized."
  theocracy.1.ia1: "A Veteran Knight"
- theocracy.1.ia2: "A Talented Alchemist"
+ theocracy.1.ia2: "A Talented Cultivator"

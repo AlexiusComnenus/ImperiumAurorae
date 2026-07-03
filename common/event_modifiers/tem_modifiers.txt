@@ -297,8 +297,12 @@ recently_recruited_templar = {
 dusk_chapterhouse_mod = {
 	fort_level = 1
 	local_defensiveness = 0.15
-	local_defender_dice_roll_bonus = 1
-	local_garrison_damage = 0.5
+	#local_defender_dice_roll_bonus = 1
+	#local_garrison_damage = 0.5
+	has_tercio = yes
+	local_has_tercio = yes
+	amount_of_tercio = 15
+	allowed_tercio_fraction = 0.01
 }
 
 dusk_sponsored_merc_connections = {

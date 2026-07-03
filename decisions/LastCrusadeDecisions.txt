@@ -46,12 +46,12 @@ country_decisions = {
 					region = iberia_region
 					NOT = { area = baleares_area }
 				}
-				cede_province = VAL
 				if = {
 					limit = { is_core = ROOT }
 					remove_core = ROOT
 					add_core = VAL
 				}
+				cede_province = VAL
 			}
 		}
 	}
@@ -74,12 +74,12 @@ country_decisions = {
 				limit = {
 					area = baleares_area
 				}
-				cede_province = TEM
 				if = {
 					limit = { is_core = ROOT }
 					remove_core = ROOT
 					add_core = TEM
 				}
+				cede_province = TEM
 			}
 		}
 	}
@@ -107,23 +107,26 @@ country_decisions = {
 		}
 		
 		effect = {
-			balkan_region = {
-				limit = { owner = { war_with = ROOT } }
-				add_core = LAE
-			}
 			151 = { 
-				cede_province = LAE 
+				add_core = LAE
+				cede_province = ROOT 
 				set_in_empire = no
 			}
+			release = LAE
 			LAE = {
 				change_government = monarchy
 				change_religion = protestant
+				change_primary_culture = outremer
 				define_ruler = {
 					dynasty = ROOT
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
 				set_country_flag = crusader_state_flag
+			}
+			balkan_region = {
+				limit = { owner = { war_with = ROOT } }
+				add_core = LAE
 			}
 			create_march = LAE
 			
@@ -166,23 +169,26 @@ country_decisions = {
 		}
 		
 		effect = {
-			italy_region = {
-				limit = { owner = { war_with = ROOT } }
-				add_core = ITA
-			}
 			118 = { 
-				cede_province = ITA  
+				add_core = ITA
+				cede_province = ROOT  
 				set_in_empire = no
 			}
+			release = ITA
 			ITA = {
 				change_government = monarchy
 				change_religion = protestant
+				change_primary_culture = italian
 				define_ruler = {
 					dynasty = ROOT
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
 				set_country_flag = crusader_state_flag
+			}
+			italy_region = {
+				limit = { owner = { war_with = ROOT } }
+				add_core = ITA
 			}
 			create_march = ITA
 			
@@ -225,18 +231,25 @@ country_decisions = {
 		
 		effect = {
 			341 = { 
-				cede_province = TUN  
+				add_core = TUN
+				cede_province = ROOT  
 				set_in_empire = no
 			}
+			release = TUN
 			TUN = {
 				change_government = monarchy
 				change_religion = protestant
+				change_primary_culture = vandal
 				define_ruler = {
 					dynasty = ROOT
 				}
 				join_all_offensive_wars_of = ROOT
 				join_all_defensive_wars_of = ROOT
 				set_country_flag = crusader_state_flag
+			}
+			tunisia_area = {
+				limit = { owner = { war_with = ROOT } }
+				add_core = TUN
 			}
 			create_march = TUN
 			
@@ -279,9 +292,11 @@ country_decisions = {
 		
 		effect = {
 			104 = { 
-				cede_province = MLO  
+				add_core = MLO
+				cede_province = ROOT  
 				set_in_empire = no
 			}
+			release = MLO
 			MLO = {
 				change_government = monarchy
 				change_religion = protestant

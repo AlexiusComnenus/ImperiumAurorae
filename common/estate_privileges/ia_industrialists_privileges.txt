@@ -2,6 +2,7 @@ estate_industrialists_rheinholzfallergilde = {
 	icon = privilege_dev_cost_forest
 	max_absolutism = -10
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
 	loyalty = 0.1
 	influence = 0.1
 	is_valid = {
@@ -53,10 +54,32 @@ estate_industrialists_rheinholzfallergilde = {
 			}
 		}
 	}
+	on_invalid = {
+		custom_tooltip = estate_burghers_forest_expansion_rt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_province_modifier = estate_industrialists_rheinholzfallergilde_forest
+						has_province_modifier = estate_industrialists_rheinholzfallergilde_woods
+					}
+				}
+				remove_province_modifier = estate_industrialists_rheinholzfallergilde_forest
+				remove_province_modifier = estate_industrialists_rheinholzfallergilde_woods
+			}
+		}
+	}
 	penalties = {
 	}
 	benefits = {
 		development_cost_modifier = -0.05
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.2
+		}
 	}
 	ai_will_do = {
 		factor = 100
@@ -67,6 +90,7 @@ estate_industrialists_maurerzunfts_codified_laws_of_construction = {
 	icon = privilege_aged_paper
 	max_absolutism = -5
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
 	loyalty = 0.05
 	influence = 0.05
 	is_valid = {
@@ -82,6 +106,1085 @@ estate_industrialists_maurerzunfts_codified_laws_of_construction = {
 	benefits = {
 		monthly_reform_progress = 0.1
 		great_project_upgrade_cost = -0.25
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.1
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_industrialists_land_contracts = {
+	icon = privilege_grant_autonomy
+	land_share = 10
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
+	loyalty = 0.05
+	influence = 0.05
+	can_select = {
+	}
+	on_granted = {
+	}
+	penalties = {
+		state_maintenance_modifier = 0.25
+	}
+	benefits = {
+		governing_capacity = 150
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.1
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_industrialists
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_industrialists_land_contracts }
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					governing_capacity_percentage = 0.9
+					NOT = { has_estate_privilege = estate_industrialists_land_contracts }
+				}
+				#The trigger below should make sure that the AI actually keeps this privilege when enacting it early game
+				AND = {
+					governing_capacity_percentage = 0.6
+					has_estate_privilege = estate_industrialists_land_contracts
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { governing_capacity_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 40 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 60 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_industrialists_land_contracts }
+		}
+		modifier = {
+			factor = 0.8
+			OR = {
+				NOT = { crown_land_share = 30 }
+				AND = {
+					is_absolutism_active = yes
+					NOT = { crown_land_share = 50 }
+				}
+			}
+			NOT = { has_estate_privilege = estate_industrialists_land_contracts }
+		}
+		modifier = {
+			factor = 0.8
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1
+		}
+		modifier = {
+			factor = 10
+			governing_capacity_percentage = 1.2
+		}
+		modifier = {
+			factor = 8
+			NOT = { adm_tech = 12 }
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 5
+			NOT = { adm_tech = 12 }
+			NOT = { government_rank = 1 }
+			governing_capacity_percentage = 0.65
+		}
+	}
+}
+
+
+estate_industrialists_land_of_potential = {
+	icon = privilege_diplo_power
+	land_share = 10
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	loyalty = -0.05
+	can_select = {
+		custom_trigger_tooltip = {
+			tooltip = no_other_dip_privilege
+			NOT = { has_estate_privilege = estate_burghers_land_of_commerce }
+			NOT = { has_estate_privilege = estate_jains_diplomacy }
+		}
+	}
+	on_granted = {
+	}
+	penalties = {
+	}
+	benefits = {
+		country_diplomatic_power = 1
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.2
+		}
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+estate_industrialists_elevate_social_status = {
+	icon = privilege_industrialists_prestige
+	land_share = 5
+	max_absolutism = 0
+	loyalty = 0.25
+	influence = 0.15
+	can_select = {
+		has_any_disaster = no
+		estate_territory = {
+    		estate = estate_industrialists
+   			territory = 25
+		}
+		NOT = { has_estate_privilege = estate_nobles_supremacy_over_crown }
+		hidden_trigger = {
+			NOT = { has_estate_privilege = estate_brahmins_supremacy_over_crown }
+		}
+		NOT = { has_estate_privilege = estate_industrialists_allow_selfregulation }
+		NOT = { has_estate_privilege = estate_peasants_champions_of_industry }
+	}
+	on_granted = {
+		custom_tooltip = industrialist_workplace_accidents_decrease_tt
+		custom_tooltip = estate_industrialists_elevate_social_status_tt
+		hidden_effect = {
+			set_country_flag = "Industrialists Elevated"
+		}
+	}
+	on_revoked = {
+		hidden_effect = {
+			clr_country_flag = "Industrialists Elevated"
+		}
+	}
+	on_invalid = {
+		hidden_effect = {
+			clr_country_flag = "Industrialists Elevated"
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.5
+		global_trade_goods_size_modifier = -0.15
+		all_estate_loyalty_equilibrium = -0.15
+	}
+	benefits = {
+		yearly_corruption = -0.03
+		estate_industrialists_privilege_slots = 1
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 100
+			AND = {
+				yearly_corruption_increase = 0.1
+				overextension_percentage = 0
+			}
+		}
+		modifier = {
+			factor = 2
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 0.1
+			has_estate_loyalty_modifier = {
+    			estate = estate_industrialists
+    			modifier = EST_VAL_GREAT_UNCERTAINTY_LOY
+			}
+		}
+	}
+}
+
+estate_industrialists_allow_selfregulation = {
+	icon = privilege_industrialists_selfregulation
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	influence = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = estate_industrialists_elevate_social_status }
+	}
+	on_granted = {
+		custom_tooltip = industrialist_workplace_accidents_increase_tt
+		custom_tooltip = estate_industrialists_allow_selfregulation_tt
+	}
+	penalties = {
+	}
+	benefits = {
+		estate_industrialists_privilege_slots = 1
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			global_trade_goods_size_modifier = 0.35
+			trade_steering = 0.4
+			global_autonomy = 0.1
+			autonomy_change_time = 1
+			production_efficiency = -0.25
+		}
+	}
+	mechanics = {
+		exempt_from_seize_land
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			is_year = 1660
+			monthly_income = 40
+		}
+		modifier = {
+			factor = 10
+			NOT = { monthly_income = 40 }
+		}
+	}
+}
+
+estate_industrialists_technocrat_board_of_advice = {
+	icon = privilege_recruit_minister
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	influence = 0.05
+	loyalty = 0.05
+	can_select = {
+		NOT = { has_estate_privilege = estate_burghers_commercial_board_of_advice }
+	}
+	penalties = {
+		stability_cost_modifier = 0.1
+	}
+	benefits = {
+		dip_advisor_cost = -0.15
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.1
+		}
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 3
+			uses_meritocracy = yes
+		}
+	}
+}
+
+estate_industrialists_reinforce_contracts = {
+	icon = privilege_industrialists_land_rights
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
+	influence = 0.1
+	loyalty = 0.05
+	can_select = {
+		has_estate_privilege = estate_industrialists_land_contracts
+	}
+	on_granted = {
+		custom_tooltip = industrialist_workplace_accidents_increase_tt
+	}
+	modifier_by_land_ownership = {
+		global_autonomy = 0.15
+		development_cost = -0.20
+	}
+	penalties = {
+		min_autonomy = 5
+		min_autonomy_in_territories = 0.05
+	}
+	benefits = {
+
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.05
+			state_maintenance_modifier = 0.5
+		}
+	}
+	mechanics = {
+		no_estate_crownland_loss_from_developing
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				all_owned_province = {
+					development = 20
+				}
+				NOT = { num_of_provinces_in_states = 11 }
+			}
+		}
+	}
+}
+
+estate_industrialists_introduce_rebates = {
+	icon = privilege_gold_mint
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	is_valid = {
+		if = {
+			limit = { has_estate_privilege = estate_industrialists_introduce_rebates }
+			variable_arithmetic_trigger = {
+				custom_tooltip = " "
+				export_to_variable = {
+					which = total_income_value_rebate_priv
+					value = trigger_value:monthly_income
+				}
+				export_to_variable = {
+					which = tax_percentage_value_rebate_priv
+					value = trigger_value:tax_income_percentage
+				}
+				multiply_variable = {
+    				which = total_income_value_rebate_priv
+    				which = tax_percentage_value_rebate_priv
+				}
+				check_variable = { 
+					which = total_income_value_rebate_priv 
+					value = 10
+				}
+			}
+		}
+		else = {
+			variable_arithmetic_trigger = {
+				custom_tooltip = " "
+				export_to_variable = {
+					which = total_income_value_rebate_priv
+					value = trigger_value:monthly_income
+				}
+				export_to_variable = {
+					which = tax_percentage_value_rebate_priv
+					value = trigger_value:tax_income_percentage
+				}
+				multiply_variable = {
+    				which = total_income_value_rebate_priv
+    				which = tax_percentage_value_rebate_priv
+				}
+				check_variable = { 
+					which = total_income_value_rebate_priv 
+					value = 70
+				}
+			}
+		}
+	}
+	penalties = {
+		global_tax_income = -720
+	}
+	benefits = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.02
+			state_maintenance_modifier = 0.1
+		}
+	}
+	on_invalid = {
+		remove_estate_privilege = estate_industrialists_introduce_rebates
+	}
+	on_granted = {
+		custom_tooltip = estate_industrialists_introduce_rebates_tt
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					tax_income_percentage = 0.5
+					NOT = { has_estate_privilege = estate_industrialists_introduce_rebates }
+				}
+				AND = {
+					NOT = { current_income_balance = 1 }
+					has_estate_privilege = estate_industrialists_introduce_rebates
+				}
+			}
+		}
+	}
+}
+
+estate_industrialists_demand_workers_on_the_frontlines = {
+	icon = privilege_land_force_limit
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	influence = 0.05
+	can_select = {
+
+	}
+	on_granted = {
+		custom_tooltip = industrialist_workplace_accidents_increase_tt
+		enable_estate_action = {
+			estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+		}
+	}
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.25
+		}
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			manpower = 1000
+		}
+		modifier = {
+			factor = 3
+			is_at_war = yes
+			NOT = { manpower_percentage = 0.41 }
+		}
+	}
+}
+
+estate_industrialists_technocrat_education = {
+	icon = privilege_technology
+	loyalty = 0.0
+	influence = 0.05
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	is_valid = {
+
+	}
+	can_select = {
+		if = {
+			limit = { has_estate = estate_brahmins }
+			NOT = { has_estate_privilege = estate_brahmins_clerical_education }
+		}
+		if = {
+			limit = { has_estate = estate_dhimmi }
+			NOT = { has_estate_privilege = estate_dhimmi_dhimmi_education }
+		}
+		if = {
+			limit = { has_estate = estate_alchemists }
+			NOT = { has_estate_privilege = estate_alchemists_public_education }
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			NOT = { has_estate_privilege = estate_church_clerical_education }
+		}
+	}
+	on_granted = {
+		scaling_with_influence_privilege_tooltip = {
+			estate_privilege = estate_industrialists_technocrat_education
+		}
+	}
+	on_revoked = {
+		scaling_with_influence_privilege_tooltip = {
+			estate_privilege = estate_industrialists_technocrat_education
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			NOT = {
+				estate_loyalty = {
+					estate = estate_industrialists
+					loyalty = 30
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = -0.10
+			idea_cost = 0.1
+			adm_tech_cost_modifier = 0.1 
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_industrialists
+				loyalty = 30
+			}
+			NOT = {
+				estate_loyalty = {
+					estate = estate_industrialists
+					loyalty = 60
+				}
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.025
+			idea_cost = -0.05
+			adm_tech_cost_modifier = -0.025
+		}
+	}
+	influence_scaled_conditional_modifier = {	#Modifier that are applied if the specified conditions are true. At 100% Influence you gain 100% of the modifier.
+		trigger = {
+			estate_loyalty = {
+				estate = estate_industrialists
+				loyalty = 60
+			}
+		}
+		modifier = {
+			reform_progress_growth = 0.15
+			idea_cost = -0.1
+			adm_tech_cost_modifier = -0.075
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.25
+		}
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+estate_industrialists_fund_natural_sciences = {
+	icon = privilege_possible_dip_policy
+	loyalty = 0.0
+	influence = 0.05
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	is_valid = {
+
+	}
+	can_select = {
+	}
+	on_granted = {
+		enable_estate_action = {
+			estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+		}
+	}
+	on_revoked = {
+		disable_estate_action = {
+			estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+		}
+	}
+	on_invalid = {
+		disable_estate_action = {
+			estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.15
+		}
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_industrialists_technology_sharing = {
+	icon = privilege_technology_sharing
+	loyalty = 0.05
+	influence = 0.1
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
+	is_valid = {
+		num_of_allies = 1
+	}
+	can_select = {
+		num_of_allies = 1
+	}
+	on_granted = {
+		add_mercantilism = -10
+		custom_tooltip = estate_industrialists_technology_sharing_tt
+	}
+	benefits = {
+	}
+	conditional_modifier = {
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					has_estate_privilege = estate_industrialists_technology_sharing
+				}
+				amount = 1
+			}
+			NOT = {
+				calc_true_if = {
+					all_ally = {
+						has_estate_privilege = estate_industrialists_technology_sharing
+					}
+					amount = 2
+				}
+			}
+		}
+		modifier = { 
+			dip_tech_cost_modifier = -0.015
+			idea_cost = -0.015
+			mercantilism_cost = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					has_estate_privilege = estate_industrialists_technology_sharing
+				}
+				amount = 2
+			}
+			NOT = {
+				calc_true_if = {
+					all_ally = {
+						has_estate_privilege = estate_industrialists_technology_sharing
+					}
+					amount = 3
+				}
+			}
+		}
+		modifier = { 
+			dip_tech_cost_modifier = -0.03
+			idea_cost = -0.03
+			mercantilism_cost = 0.2
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					has_estate_privilege = estate_industrialists_technology_sharing
+				}
+				amount = 3
+			}
+			NOT = {
+				calc_true_if = {
+					all_ally = {
+						has_estate_privilege = estate_industrialists_technology_sharing
+					}
+					amount = 4
+				}
+			}
+		}
+		modifier = { 
+			dip_tech_cost_modifier = -0.045
+			idea_cost = -0.045
+			mercantilism_cost = 0.3
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					has_estate_privilege = estate_industrialists_technology_sharing
+				}
+				amount = 4
+			}
+			NOT = {
+				calc_true_if = {
+					all_ally = {
+						has_estate_privilege = estate_industrialists_technology_sharing
+					}
+					amount = 5
+				}
+			}
+		}
+		modifier = { 
+			dip_tech_cost_modifier = -0.06
+			idea_cost = -0.06
+			mercantilism_cost = 0.4
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			calc_true_if = {
+				all_ally = {
+					has_estate_privilege = estate_industrialists_technology_sharing
+				}
+				amount = 5
+			}
+		}
+		modifier = { 
+			dip_tech_cost_modifier = -0.075
+			idea_cost = -0.075
+			mercantilism_cost = 0.5
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.04
+			state_maintenance_modifier = 0.4
+		}
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+estate_industrialists_monopoly_on_strategic_resources = {
+	icon = privilege_monopoly_of_goods_iron
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
+	loyalty = 0.1
+	is_valid = {
+	}
+	can_select = {
+		any_owned_province = {
+			is_strategic_resource = yes
+		}
+	}
+	on_granted = {
+		if = {
+			limit = {
+				any_owned_province = {
+					is_strategic_resource = yes
+				}
+			}
+			add_mercantilism = 1
+		}
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				is_strategic_resource = yes
+			}
+			custom_tooltip = MONOPOLY_INCOME_STRATEGIC_RESOURCES_DESC
+		}
+		custom_tooltip = estate_industrialists_monopoly_on_strategic_resources_effect_tooltip
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				is_strategic_resource = yes
+			}
+			add_province_modifier = {
+				name = estate_industrialists_monopoly_on_strategic_resources_mod
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_industrialists_monopoly_on_strategic_resources_revoke_tooltip
+	}
+	on_revoked_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+		}
+	}
+	on_invalid = {
+		custom_tooltip = estate_industrialists_monopoly_on_strategic_resources_revoke_tooltip
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+
+	}
+	cooldown_years = 10
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = buffed_monopolies
+		}
+		modifier = {
+			max_absolutism = 10
+			estate_industrialists_privilege_slots = 1
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.5
+		}
+	}
+	on_cooldown_expires = {
+		country_event = { id = monopoly_privileges.13 }
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_industrialists_monopoly_on_war_advanced_goods = {
+	icon = privilege_monopoly_of_goods_advanced_war
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 10 } }
+	loyalty = 0.1
+	is_valid = {
+	}
+	can_select = {
+		any_owned_province = {
+			is_war_advanced_good = yes
+		}
+	}
+	on_granted = {
+		if = {
+			limit = {
+				any_owned_province = {
+					is_war_advanced_good = yes
+				}
+			}
+			add_mercantilism = 1
+		}
+		add_years_of_owned_provinces_production_income = {
+			years = 8
+			trigger = {
+				is_war_advanced_good = yes
+			}
+			custom_tooltip = MONOPOLY_INCOME_WAR_ADVANCED_GOODS_DESC
+		}
+		custom_tooltip = estate_industrialists_monopoly_on_war_advanced_goods_effect_tooltip
+	}
+	on_granted_province = {
+		if = {
+			limit = {
+				is_war_advanced_good = yes
+			}
+			add_province_modifier = {
+				name = estate_industrialists_monopoly_on_war_advanced_goods_mod
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_war_advanced_goods_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_war_advanced_goods_mod
+		}
+	}
+	on_revoked = {
+		custom_tooltip = estate_industrialists_monopoly_on_war_advanced_goods_revoke_tooltip
+	}
+	on_revoked_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_war_advanced_goods_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_war_advanced_goods_mod
+		}
+	}
+	on_invalid = {
+		custom_tooltip = estate_industrialists_monopoly_on_war_advanced_goods_revoke_tooltip
+	}
+	on_invalid_province = {
+		if = {
+			limit = {
+				has_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+			}
+			remove_province_modifier = estate_industrialists_monopoly_on_strategic_resources_mod
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+
+	}
+	cooldown_years = 10
+	conditional_modifier = {
+		trigger = {
+			has_country_flag = buffed_monopolies
+		}
+		modifier = {
+			max_absolutism = 10
+			estate_industrialists_privilege_slots = 1
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.03
+			state_maintenance_modifier = 0.5
+		}
+	}
+	on_cooldown_expires = {
+		country_event = { id = monopoly_privileges.14 }
+	}
+	ai_will_do = { #having the AI use these could lead to an unstoppable downwards spiral if it can't work out how to get rid of them
+		factor = 0
+	}
+}
+
+estate_industrialists_exploitation_of_the_new_world = {
+	icon = privilege_colonial_exploitation
+	max_absolutism = -5
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
+	conditional_modifier = { trigger = { has_country_flag = "Industrialists Elevated" } modifier = { max_absolutism = 5 } }
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+	}
+	can_select = {
+		colony = 1
+	}
+	benefits = {
+		treasure_fleet_income = 0.25
+		global_tariffs = 0.5
+		build_cost = -0.05
+		build_time = -0.05
+	}
+	penalties = {
+	}
+	on_granted = { 
+		every_subject_country = {
+			limit = {
+				is_colonial_nation = yes 
+			}
+			add_country_modifier = {
+				name = estate_industrialists_exploited_cns
+				duration = -1
+			}
+		}
+	}
+	on_revoked = {
+		every_subject_country = {
+			limit = {
+				is_colonial_nation = yes 
+			}
+			remove_country_modifier = estate_industrialists_exploited_cns
+		}
+	}
+	on_invalid = {
+		every_subject_country = {
+			limit = {
+				is_colonial_nation = yes 
+			}
+			remove_country_modifier = estate_industrialists_exploited_cns
+		}
+	}
+	conditional_modifier = {
+		trigger = { has_government_mechanic = russian_modernization_mechanic }
+		modifier = { monthly_russian_modernization = -0.03 }
+	}
+	conditional_modifier = {
+		trigger = { has_country_flag = "Industrialists Elevated" }
+		modifier = {
+			yearly_corruption = -0.01
+			state_maintenance_modifier = 0.15
+		}
 	}
 	ai_will_do = {
 		factor = 0

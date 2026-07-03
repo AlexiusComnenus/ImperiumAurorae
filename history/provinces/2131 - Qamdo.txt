@@ -1,5 +1,5 @@
-owner = UTS
-controller = UTS
+owner = Z41
+controller = Z41
 capital = "Qamdo"
 is_city = yes
 culture = tibetan
@@ -9,7 +9,7 @@ base_tax = 2
 base_production = 3
 base_manpower = 1
 add_core = KAM
-add_core = UTS
+add_core = Z41
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

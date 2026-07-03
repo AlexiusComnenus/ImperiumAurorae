@@ -1,0 +1,1323 @@
+# This is all on Alexios to write the code (poor me)
+
+tripolitania_missions_column_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z62
+	}
+	has_country_shield = yes
+	
+	z62_investigate_black_liquid = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			area = fezzan_area
+			OR = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				NOT = { has_building = road_network }
+			}
+		}
+		
+		trigger = {
+			fezzan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				has_building = road_network
+			}
+		}
+		
+		effect = {
+			change_innovativeness = 2
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_refinery_methodology = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_investigate_black_liquid
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			area = fezzan_area
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			fezzan_area = {
+				type = all
+				owned_by = ROOT
+			}
+			OR = {
+				innovativeness = 15
+				full_idea_group = innovativeness_ideas
+			}
+			if = {
+				limit = { ai = no }
+				alchemist_advisor = 2
+			}
+		}
+		
+		effect = {
+			2474 = { change_trade_goods = coal }
+			4567 = { change_trade_goods = sulfur }
+			2449 = { change_trade_goods = sulfur }
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_industrial_oil = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_refinery_methodology
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			2474 = { trade_goods = coal }
+			if = {
+				limit = { ai = no }
+				2474 = {
+					num_of_buildings_in_province = 5
+					num_of_times_improved = 10
+				}
+			}
+			else = {
+				OR = {
+					2474 = {
+						num_of_buildings_in_province = 5
+						num_of_times_improved = 10
+					}
+					is_year = 1484
+				}
+			}
+		}
+		
+		effect = {
+			2474 = {
+				add_building = furnace
+			}
+		}
+	}
+	
+	z62_incendiary_artillery = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_fire_weaponry
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			OR = {
+				innovativeness = 50
+				full_idea_group = innovativeness_ideas
+			}
+			if = {
+				limit = { ai = no }
+				trade_goods_produced_amount = {
+					trade_goods = gunpowder
+					amount = 16
+				}
+			}
+			num_of_artillery = 25
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_incendiary_artillery_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+tripolitania_missions_column_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z62
+	}
+	has_country_shield = yes
+	
+	z62_sulfur_byproduct = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_refinery_methodology
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			tripolitania_area = {
+				type = all
+				owned_by = ROOT
+			}
+			if = {
+				limit = { ai = no }
+				trade_goods_produced_amount = {
+					trade_goods = sulfur
+					amount = 8
+				}
+			}
+			else = {
+				OR = {
+					trade_goods_produced_amount = {
+						trade_goods = sulfur
+						amount = 8
+					}
+					is_year = 1484
+				}
+			}
+		}
+		
+		effect = {
+			2452 = { change_trade_goods = gunpowder }
+			355 = { change_trade_goods = gunpowder }
+		}
+	}
+	
+	z62_fire_weaponry = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_sulfur_byproduct
+			z62_industrial_oil
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			OR = {
+				innovativeness = 30
+				full_idea_group = innovativeness_ideas
+			}
+			if = {
+				limit = { ai = no }
+				trade_goods_produced_amount = {
+					trade_goods = gunpowder
+					amount = 8
+				}
+			}
+			OR = {
+				full_idea_group = theocracy_gov_ideas
+				full_idea_group = quality_ideas
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_fire_weaponry_modifier
+				duration = -1
+			}
+		}
+	}
+	
+	z62_firebombs_for_cultivators = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_fire_weaponry
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			num_of_musketeers = 25
+			estate_loyalty = {
+				estate = estate_alchemists
+				loyalty = 60
+			}
+			estate_influence = {
+				estate = estate_alchemists
+				influence = 50
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_firebombs_for_cultivators_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+tripolitania_missions_column_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z62
+	}
+	has_country_shield = yes
+	
+	z62_pacify_vandalia = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_license_to_expand
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = tunisia_area
+				owned_by = TUN
+			}
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				tunisia_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+				TUN = {
+					OR = {
+						exists = no
+						is_subject_of = ROOT
+					}
+				}
+			}
+			else = {
+				OR = {
+					tunisia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					TUN = {
+						OR = {
+							exists = no
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			maghreb_region = {
+				add_permanent_claim = ROOT
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_barbary_coast = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_pacify_vandalia
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = kabylia_area
+				area = algiers_area
+				area = hautes_plaines_area
+				area = barbary_coast_area
+				area = ouled_nail_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				OR = {
+					area = kabylia_area
+					area = algiers_area
+					area = hautes_plaines_area
+					area = barbary_coast_area
+					area = ouled_nail_area
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_mil_power = 100
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_beyond_atlas = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_barbary_coast
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = marrekesh_area
+				area = northern_morocco_area
+				area = southern_morocco_area
+				area = western_morocco_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			1751 = { country_or_non_sovereign_subject_holds = ROOT }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				OR = {
+					area = marrekesh_area
+					area = northern_morocco_area
+					area = southern_morocco_area
+					area = western_morocco_area
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_country_modifier = {
+				name = z62_beyond_atlas_modifier
+				duration = -1
+			}
+			1751 = {
+				add_permanent_province_modifier = {
+					name = z62_great_western_gate_modifier
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					ai = yes
+				}
+				1751 = {
+					add_latest_building = { builder = ROOT fort = yes }
+					add_building = ramparts
+				}
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_greek_fire = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_fire_weaponry
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			OR = {
+				has_spy_network_in = {
+					who = BYZ
+					value = 75
+				}
+				AND = {
+					NOT = { exists = BYZ }
+					151 = { is_part_of_hre = yes }
+				}
+				AND = {
+					BYZ = { is_part_of_hre = yes }
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_greek_fire_modifier
+				duration = -1
+			}
+		}
+	}
+	
+	z62_millet_for_the_people = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_camel_breeding
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					trade_goods = millet
+					has_production_building_trigger = yes
+					has_building = farm_estate
+					base_production = 5
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					trade_goods = millet
+				}
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = millet
+				key = z62_millet_tt
+				value = 0.25
+				duration = -1
+			}
+			add_country_modifier = {
+				name = z62_agricultural_flourishing
+				duration = 7300
+			}
+		}
+	}
+	
+	z62_palm_oil = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_millet_for_the_people
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					trade_goods = palm_oil
+					has_production_building_trigger = yes
+					base_production = 8
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					trade_goods = palm_oil
+				}
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = palm_oil
+				key = z62_palm_oil_tt
+				value = 0.5
+				duration = -1
+			}
+			custom_tooltip = pap_agricultural_fields_tt
+			tooltip = {
+				capital_scope = {
+					add_permanent_province_modifier = {
+						name = z62_palm_plantations
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = palm_oil
+					}
+					add_permanent_province_modifier = {
+						name = z62_palm_plantations
+						duration = -1
+					}
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							trade_goods = palm_oil
+						}
+						add_permanent_province_modifier = {
+							name = z62_palm_plantations
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+tripolitania_missions_column_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z62
+	}
+	has_country_shield = yes
+	
+	z62_license_to_expand = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			
+		}
+		position = 1
+		
+		provinces_to_highlight = {
+			
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				army_size_percentage = 1
+				emperor = {
+					has_opinion = {
+						who = ROOT
+						value = 150
+					}
+				}
+			}
+			else = {
+				OR = {
+					army_size_percentage = 1
+					emperor = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					is_at_war = yes
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_imperial_war_support
+				duration = 7300
+			}
+			tunisia_area = {
+				add_permanent_claim = ROOT
+			}
+			fezzan_area = {
+				add_permanent_claim = ROOT
+			}
+			tripolitania_area = {
+				add_permanent_claim = ROOT
+			}
+			north_saharan_area = {
+				limit = { NOT = { province_id = 2450 } }
+				# No attack on Y05 Nalut
+				add_permanent_claim = ROOT
+			}
+			add_casus_belli = {
+				target = KNI
+				type = cb_vassalize_mission
+				months = 600
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_protect_the_desert = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_license_to_expand
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				area = fezzan_area
+				area = tripolitania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			fezzan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			2448 = {
+				nationalist_rebels = 2
+				add_devastation = 33
+				add_base_tax = -10
+				add_base_production = -10
+				add_base_manpower = -10
+				change_culture = ROOT
+				change_religion = ROOT
+				set_local_autonomy = 0
+				add_nationalism = -30
+			}
+			2449 = {
+				nationalist_rebels = 2
+				add_devastation = 33
+				add_base_tax = -10
+				add_base_production = -10
+				add_base_manpower = -10
+				change_culture = ROOT
+				change_religion = ROOT
+				set_local_autonomy = 0
+				add_nationalism = -30
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_oasis_development = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_protect_the_desert
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			province_id = 2450
+		}
+		
+		trigger = {
+			OR = {
+				Y05 = {
+					alliance_with = ROOT
+					trust = { who = ROOT value = 80 }
+					has_opinion = {
+						who = ROOT
+						value = 160
+					}
+					is_state_core = 2450
+				}
+				2450 = {
+					is_state_core = ROOT
+					owned_by = ROOT
+					development = 15
+					num_of_buildings_in_province = 3
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = ARB_unlock_oasis_development
+			set_country_flag = ARB_unlock_oasis_development_flag
+			
+			2450 = {
+				center_of_trade = 2
+			}
+			
+			if = {
+				limit = { exists = Y05 }
+				add_historical_friend = Y05
+				Y05 = { add_historical_friend = ROOT }
+				2450 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 36500
+						power = 100
+						key = STRONG_MERCHANTS
+					}
+				}
+			}
+		}
+	}
+	
+	z62_cross_the_sahara = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_oasis_development
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			owned_by = AOL
+		}
+		
+		trigger = {
+			has_global_flag = army_of_light_spawned_flag
+			2474 = { country_or_non_sovereign_subject_holds = ROOT }
+			if = {
+				limit = { ai = no }
+				OR = {
+					alliance_with = AOL
+					overlord_of = AOL
+				}
+			}
+		}
+		
+		effect = {
+			2475 = { 
+				add_siberian_construction = 500
+				change_religion = ROOT
+				change_culture = ROOT
+			}
+			custom_tooltip = unlocks_decision_vassalize_AOL_tt
+			set_country_flag = allowed_to_vassalize_aol_flag
+		}
+	}
+	
+	z62_camel_breeding = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_cross_the_sahara
+		}
+		position = 5
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = camel
+					has_production_building_trigger = yes
+					base_production = 5
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = camel
+				}
+			}
+		}
+		
+		effect = {
+			1149 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 36500
+					power = 50
+					key = STRONG_CAMELS_TT
+				}
+			}
+			1132 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 36500
+					power = 50
+					key = STRONG_CAMELS_TT
+				}
+			}
+			custom_tooltip = pap_agricultural_fields_tt
+			tooltip = {
+				capital_scope = {
+					add_permanent_province_modifier = {
+						name = z62_camel_grounds
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = camel
+					}
+					add_permanent_province_modifier = {
+						name = z62_camel_grounds
+						duration = -1
+					}
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							trade_goods = camel
+						}
+						add_permanent_province_modifier = {
+							name = z62_camel_grounds
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	z62_supply_salt = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_camel_breeding
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = salt
+					has_production_building_trigger = yes
+					base_production = 5
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = salt
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = ia_flavor_z62.1 }
+			custom_tooltip = pap_agricultural_fields_tt
+			tooltip = {
+				capital_scope = {
+					add_permanent_province_modifier = {
+						name = z62_salt_fields
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = salt
+					}
+					add_permanent_province_modifier = {
+						name = z62_salt_fields
+						duration = -1
+					}
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							trade_goods = salt
+						}
+						add_permanent_province_modifier = {
+							name = z62_salt_fields
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	z62_gold_mines = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_supply_salt
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					trade_goods = gold
+					base_production = 10
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 3
+					trade_goods = gold
+				}
+			}
+		}
+		
+		effect = {
+			custom_tooltip = pap_agricultural_fields_tt
+			tooltip = {
+				capital_scope = {
+					add_province_modifier = {
+						name = z62_gold_mints
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						trade_goods = gold
+					}
+					add_province_modifier = {
+						name = z62_gold_mints
+						duration = -1
+					}
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							trade_goods = gold
+						}
+						add_province_modifier = {
+							name = z62_gold_mints
+							duration = -1
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	z62_transsaharan_trade = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_carmine_dye_industry
+			z62_gold_mines
+			z62_palm_oil
+		}
+		position = 8
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			1149 = {
+				is_strongest_trade_power = ROOT
+			}
+			1132 = {
+				is_strongest_trade_power = ROOT
+			}
+			341 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_transsaharan_trade_reward
+				duration = -1
+			}
+			341 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 500
+					key = z62_transsaharan_trade_dominance
+				}
+			}
+		}
+	}
+}
+
+tripolitania_missions_column_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z62
+	}
+	has_country_shield = yes
+	
+	
+	z62_fortress_malta = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_license_to_expand
+		}
+		position = 2
+		
+		provinces_to_highlight = {
+			province_id = 126
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			126 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		effect = {
+			sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				add_permanent_claim = ROOT
+			}
+			
+			126 = {
+				add_province_modifier = {
+					name = z62_malta_infrastructure
+					duration = -1
+				}
+			}
+			
+			custom_tooltip = fortress_malta_tt
+			if = {
+				limit = { KNI = { is_subject_of = ROOT } }
+				create_subject = {
+					subject_type = crusader_state_subject
+					subject = KNI
+				}
+				KNI = {
+					add_country_modifier = {
+						name = z62_naval_march
+						duration = -1
+					}
+				}
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_conquer_sicily = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_fortress_malta
+		}
+		position = 3
+		
+		provinces_to_highlight = {
+			OR = {
+				area = western_sicily_area
+				area = sicily_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = z62_sicilian_trade_interdiction
+				duration = -1
+			}
+			add_mercantilism = 5
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_imperial_south_italy = {
+		icon = king_of_naples
+		required_missions = {
+			z62_conquer_sicily
+		}
+		position = 4
+		
+		provinces_to_highlight = {
+			OR = {
+				area = naples_area
+				area = apulia_area
+				area = calabria_area
+				area = sicily_area
+				area = western_sicily_area
+			}
+			is_part_of_hre = no
+		}
+		
+		trigger = {
+			naples_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			apulia_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			calabria_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			sicily_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			western_sicily_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 20 }
+			add_country_modifier = {
+				name = sicilian_galleys
+				duration = -1
+			}
+		}
+		ai_weight = {
+			factor = 1000	#Historical mission
+		}
+	}
+	
+	z62_ivory_trade = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_camel_breeding
+		}
+		position = 6
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 7
+					OR = { 
+						trade_goods = elephants
+						trade_goods = ivory
+					}
+					NOT = { num_of_buildings_in_province = 2 }
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 6
+					OR = { 
+						trade_goods = elephants
+						trade_goods = ivory
+					}
+				}
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = ivory
+				key = z62_ivory_tt
+				value = 0.25
+				duration = -1
+			}
+			custom_tooltip = pap_agricultural_fields_tt
+			tooltip = {
+				capital_scope = {
+					add_permanent_province_modifier = {
+						name = z62_elephant_preserves
+						duration = -1
+					}
+					add_base_manpower = -5
+					add_base_production = -5
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = { 
+							trade_goods = elephants
+							trade_goods = ivory
+						}
+					}
+					add_permanent_province_modifier = {
+						name = z62_elephant_preserves
+						duration = -1
+					}
+					add_base_manpower = -5
+					add_base_production = -5
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							OR = { 
+								trade_goods = elephants
+								trade_goods = ivory
+							}
+						}
+						add_permanent_province_modifier = {
+							name = z62_elephant_preserves
+							duration = -1
+						}
+						add_base_manpower = -5
+						add_base_production = -5
+					}
+				}
+			}
+		}
+	}
+	
+	z62_carmine_dye_industry = {
+		icon = mng_nomadic_frontier
+		required_missions = {
+			z62_ivory_trade
+		}
+		position = 7
+		
+		provinces_to_highlight = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = dyes
+					has_production_building_trigger = yes
+					base_production = 10
+					num_of_buildings_in_province = 5
+				}
+			}
+			else = {
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 4
+					trade_goods = dyes
+				}
+			}
+		}
+		
+		effect = {
+			change_price = {
+				trade_goods = dyes
+				key = z62_carmine_tt
+				value = 0.25
+				duration = -1
+			}
+			add_country_modifier = {
+				name = z62_lucky_red
+				duration = 7300
+			}
+		}
+	}
+}

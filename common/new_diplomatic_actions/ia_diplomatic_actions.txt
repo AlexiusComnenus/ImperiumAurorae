@@ -996,7 +996,7 @@ call_integrated_tributary_into_wars = {
 	require_acceptance = no
 
 	is_visible = {
-		is_at_war = yes
+		#is_at_war = yes
 		FROM = {
 			is_subject_of = ROOT
 			is_subject_of_type = ia_advanced_tributary_state
@@ -1119,6 +1119,162 @@ call_integrated_tributary_into_wars = {
 	}
 }
 
+call_overlord_into_wars = {
+	category = influence
+	
+	alert_index = 10 
+	alert_tooltip = ICON_CALLALLY
+
+	require_acceptance = yes
+
+	is_visible = {
+		#is_at_war = yes
+		FROM = {
+			overlord_of = ROOT
+		}
+		OR = {
+			is_subject_of_type = ia_advanced_tributary_state
+			is_subject_of_type = trade_protectorate
+		}
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				is_at_war = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = ROOT_IS_NOT_AT_WAR_TT
+				is_at_war = yes
+			}
+		}
+		if = {
+			limit = {
+				FROM = { is_at_war = yes }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FROM_IS_AT_WAR_TT
+				FROM = { is_at_war = no }
+			}
+		}
+		is_in_war = { attacker_leader = ROOT }
+		NOT = {
+			any_war_enemy_country = {
+				OR = {
+					is_subject_of = FROM
+					alliance_with = FROM
+				}
+			}
+		}
+	}
+	on_accept = {
+		FROM = { join_all_offensive_wars_of = ROOT }
+		add_liberty_desire = -25
+	}
+	on_decline = {
+	}
+	
+	ai_acceptance = {
+		add_entry = {
+			name = BASE_REJECTION
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = -500
+			}
+		}
+		add_entry = {
+			name = AI_TRUST_TOWARDS_ROOT
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = ROOT
+			}			
+			subtract_variable = { 
+				which = ai_value
+				value = 50
+			}
+			#1 trust = +4 ai points
+			multiply_variable = {
+				which = ai_value
+				value = 4
+			}
+		}
+        add_entry = {
+            name = DIPLO_OPPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = 1
+			}
+        }
+        add_entry = {
+            name = our_liberty_desire_tt
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:liberty_desire
+			}
+			multiply_variable = {
+				which = ai_value 
+				value = -1.5
+			}
+        }
+		add_entry = {
+			name = AI_DIPLOMATIC_REPUTATION
+			export_to_variable = {
+				variable_name = ai_value
+				value = trigger_value:diplomatic_reputation
+			}
+			#1 rep = 5
+			multiply_variable = {
+				which = ai_value
+				value = 5
+			}
+		}
+		add_entry = {
+			name = hates_your_enemies_tt
+			limit = { 
+				any_war_enemy_country = {
+					OR = {
+						is_rival = FROM
+						is_enemy = FROM
+					}
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value
+				value = monthly_income
+				who = ROOT
+			}
+			multiply_variable = {
+				which = ai_value
+				value = 0
+			}
+			change_variable = {
+				which = ai_value
+				value = 250
+			}
+		}
+	}
+
+	ai_will_do = { # this is a trigger
+		NOT = { war_score = -20 }
+	}
+}
+
 ia_incorporate_vassal_action = {
 	category = influence
 
@@ -1146,8 +1302,9 @@ ia_incorporate_vassal_action = {
 
 	ai_will_do = {
 		government_rank = 2
-		NOT = { governing_capacity_percentage = 0.75 }
+		NOT = { governing_capacity_percentage = 0.6 }
 		NOT = { tag = RIG }
+		NOT = { tag = Z17 }
 		FROM = {
 			OR = {
 				NOT = { has_country_flag = recently_released_for_cores_flag }
@@ -2740,11 +2897,14 @@ ia_create_liberation_action = {
 	is_visible = {
 		is_subject = no
 		is_revolutionary = no
-		FROM = {
-			any_neighbor_country = { 
-				OR = {
-					tag = ROOT
-					overlord = { tag = ROOT }
+		if = {
+			limit = { NOT = { has_country_flag = eng_liberation_wars_bonus_flag } }
+			FROM = {
+				any_neighbor_country = { 
+					OR = {
+						tag = ROOT
+						overlord = { tag = ROOT }
+					}
 				}
 			}
 		}
@@ -2906,7 +3066,11 @@ ia_offer_tributary_celestial = {
 	alert_tooltip = ICON_TRIBUTARY
 
 	is_visible = {
-		is_emperor_of_china = yes
+		OR = {
+			is_emperor_of_china = yes
+			has_government_attribute = has_tributaries
+		}
+		NOT = { has_reform = saxon_feudalism }
 		is_subject = no
 		FROM = { is_subject = no }
 		FROM = { NOT = { has_reform = free_city } }
@@ -2967,7 +3131,7 @@ ia_offer_tributary_celestial = {
 			}
 		}
 		if = {
-			limit = { ai = yes }
+			limit = { is_emperor_of_china = yes }
 			FROM = {
 				NOT = {
 					any_owned_province = {
@@ -2995,6 +3159,7 @@ ia_offer_tributary_celestial = {
 			is_neighbor_of = FROM
 			any_subject_country = { is_neighbor_of = FROM }
 		}
+		NOT = { has_reform = saxon_feudalism }
 	}
 	on_accept = {
 		create_subject = {
@@ -3253,7 +3418,7 @@ ia_offer_tributary_celestial = {
 		}
 		add_entry = {
 			name = is_ai_celestial_empire_TT
-			limit = { ROOT = { ai = yes } FROM = { NOT = { is_part_of_hre = yes } } }
+			limit = { ROOT = { ai = yes  is_emperor_of_china = yes } FROM = { NOT = { is_part_of_hre = yes } } }
 			#export_to_variable = { variable_name = ai_value value = 1 }
 			#multiply_variable = { which = ai_value value = 200 }
 			export_to_variable = {
@@ -3402,12 +3567,21 @@ ia_request_tributary_celestial = {
 	alert_tooltip = ICON_ASK_TRIBUTARY
 
 	is_visible = {
-		FROM = { is_emperor_of_china = yes }
+		FROM = {
+			OR = {
+				is_emperor_of_china = yes
+				has_government_attribute = has_tributaries
+			}
+			NOT = { has_reform = saxon_feudalism }
+		}
 		is_subject = no
 		FROM = { is_subject = no }
 		NOT = { has_reform = free_city }
 		NOT = { has_reform = steppe_horde }
 		NOT = { has_reform = great_mongol_state_reform }
+		NOT = { is_emperor = yes }
+		NOT = { is_emperor_of_china = yes }
+		NOT = { has_reform = saxon_feudalism }
 	}
 	is_allowed = {
 		if = {
@@ -3444,7 +3618,7 @@ ia_request_tributary_celestial = {
 			}
 		}
 		if = {
-			limit = { FROM = { ai = yes } }
+			limit = { FROM = { is_emperor_of_china = yes } }
 			ROOT = {
 				NOT = {
 					any_owned_province = {

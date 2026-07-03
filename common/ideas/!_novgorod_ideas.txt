@@ -19,9 +19,10 @@ NOV_ideas = {
 	
 	nov_druzhina_companions = {
 		infantry_power = 0.1
+		allowed_streltsy_fraction = 0.05
 	}
 	nov_republic_army = {
-		global_manpower_modifier = 0.20
+		global_manpower_modifier = 0.30
 	}
 	nov_integration_of_the_druzhina = {
 		diplomatic_annexation_cost = -0.1
@@ -36,7 +37,7 @@ NOV_ideas = {
 		development_cost = -0.10
 	}
 	nov_western_demands = {
-		production_efficiency = 0.10
+		production_efficiency = 0.15
 	}
 	nov_meritocracy = {
 		advisor_cost = -0.20

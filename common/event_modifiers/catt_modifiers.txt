@@ -65,6 +65,7 @@ koi_druidic_convinctions_modifier = {
     relation_with_other_culture = 10
     ship_power_propagation = 0.25
     transfer_trade_power_reasons = 15
+    global_prov_trade_power_modifier = 0.25
 }
 koi_homegrown_methods = {
     trade_goods_size = 1
@@ -191,7 +192,7 @@ koi_total_infiltration = {
     diplomatic_reputation = -1
     yearly_corruption = 0.05
     stability_cost_modifier = 0.25
-    land_attrition = 0.10
+    land_attrition = 0.05
 }
 koi_long_range_mastery_1 = {
     reduced_liberty_desire_on_other_continent = 5
@@ -279,10 +280,12 @@ koi_abso_bonus = {
     autonomy_change_time = -0.20
 }
 koi_long_way = {
-    trade_steering = 0.15
+    trade_steering = 0.25
+    trade_efficiency = 0.1
 }
 koi_short_way = {
-    trade_efficiency = 0.1 
+    trade_efficiency = 0.2
+    trade_steering = 0.1
 }
 koi_seelie_and_unseelie = {
     religion = yes

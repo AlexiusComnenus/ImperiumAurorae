@@ -692,47 +692,54 @@ koi_feast_of_goibniu = {
 	major = yes
 	potential = {
 		religion = druidic_pagan
-		KOI = { has_country_flag = koi_feast_enabled } 
+		has_global_flag = koi_feast_enabled
 		NOT = { ruler_has_personality = immortal_personality }
 	}
 	provinces_to_highlight = {
-	province_id = 4365
+		province_id = 4365
 	}
 	allow = {
-		custom_trigger_tooltip = {
-			tooltip = koi_cats_liveninelives
-			NOT = { culture = cat }
+		if = {
+			limit = { culture = cat }
+			custom_trigger_tooltip = {
+				tooltip = koi_cats_liveninelives
+				NOT = { culture = cat }
+			}
 		}
-		KOI = {
-			has_opinion = {
-				who = FROM
-				value = 180
+		OR = {
+			owns = 4365
+			any_known_country = {
+				religion = druidic_pagan
+				owns = 4365
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
 			}
 		}
 	}
 	ai_will_do = {
-	factor = 1
-	modifier = {
-	 	factor = 0
-	 	AND = {
-	 	NOT = { mil = 5 
-	 	dip = 5
-	 	adm = 5 
-	 			}
+		factor = 1
+		modifier = {
+	 		factor = 0
+	 		NOT = { 
+	 			mil = 5 
+	 			dip = 5
+	 			adm = 5 
 			}
 		}
 	}
 	effect = {
-	tooltip = {
-	random_list = {
-    80 = {
-        add_ruler_personality = immortal_personality 
-    	}
-    20 = {
-    	custom_tooltip = koi_feast_of_goibniu_tt
-    				}
-        		}
-			}
+		tooltip = {
+			random_list = {
+    			80 = {
+        			add_ruler_personality = immortal_personality 
+    			}
+    			20 = {
+    				custom_tooltip = koi_feast_of_goibniu_tt
+    			}
+        	}
+		}
 		hidden_effect = {
 			if = {
 				limit = { has_ruler_flag = goibniu_will_immortalize }

@@ -549,6 +549,10 @@ ia_mym_mission_2 = {
 		effect = {
 			custom_tooltip = mym_enables_panama_tt
 			set_country_flag = mym_enable_panama_flag
+			835 = { #Panama
+				add_reform_center = hellenic_pagan_reformed
+				custom_tooltip = ia_gain_cor_tt
+			}
 		}
 	}
 	

@@ -1,5 +1,5 @@
-owner = BNG
-controller = BNG
+owner = MEN
+controller = MEN
 capital = "Maibang"
 is_city = yes
 culture = assamese
@@ -9,7 +9,7 @@ base_tax = 1
 base_production = 3
 base_manpower = 2
 add_core = ASS
-add_core = BNG
+add_core = MEN
 add_permanent_claim = Z10
 discovered_by = MGE
 discovered_by = eastern

@@ -1,6 +1,6 @@
 government = monarchy
 add_government_reform = korean_monarchy
-government_rank = 1
+government_rank = 2
 technology_group = chinese
 religion = confucianism
 primary_culture = korean
@@ -101,6 +101,12 @@ add_harmonized_religion = mahayana
 		who = MJZ
 		modifier = opinion_KOR_supported_war_for_north
 	}
+	set_estate_privilege = estate_nobles_ia_enforced_serfdom
+	set_estate_privilege = estate_nobles_noble_officer_right
+	add_corruption = 25
+	add_ruler_modifier = { name = lifespan_protection	hidden = yes	duration = 3650 }
+	set_ruler_flag = sejong_flag
+	set_heir_flag = munjong_flag
 }
 1450.5.18= {
 	monarch = {

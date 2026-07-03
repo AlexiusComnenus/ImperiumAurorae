@@ -8,7 +8,10 @@ country_decisions = {
 			NOT = { has_country_flag = formed_romania_flag }
 			NOT = { tag = HLR }
 			NOT = { tag = PAP }
-			primary_culture = romanian
+			OR = {
+				primary_culture = romanian
+				primary_culture = transylvanian
+			}
 			is_colonial_nation = no
 			OR = {
 				is_former_colonial_nation = no
@@ -22,11 +25,11 @@ country_decisions = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 158	# Transylvania
-				province_id = 159	# Silistria
+				#province_id = 159	# Silistria
 				province_id = 160	# Oltenia
 				province_id = 161	# Wallachia
-				province_id = 268	# Bessarabia
-				province_id = 1756	# Budjak
+				#province_id = 268	# Bessarabia
+				province_id = 157	# Oradea
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -38,11 +41,11 @@ country_decisions = {
 			is_at_war = no
 			NOT = { exists = RMN }
 			owns_core_province = 158	# Transylvania
-			owns_core_province = 159	# Silistria
+			#owns_core_province = 159	# Silistria
 			owns_core_province = 160	# Oltenia
 			owns_core_province = 161	# Wallachia
-			owns_core_province = 268	# Bessarabia
-			owns_core_province = 1756	# Budjak
+			#owns_core_province = 268	# Bessarabia
+			owns_core_province = 157	# Oradea
 		}
 		effect = {
 			hidden_effect = { ia_save_historical_relations_effect = yes }
@@ -63,12 +66,6 @@ country_decisions = {
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
-			}
-			268 = {
-				change_culture = romanian
-			}
-			159 = {
-				change_culture = romanian
 			}
 			add_prestige = 25
 			if = {

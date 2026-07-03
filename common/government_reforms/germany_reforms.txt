@@ -164,8 +164,8 @@ german_free_city = {
 	}
 	custom_attributes = {
 		locked_government_type = yes
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 	}
 	duration = 4
 	
@@ -762,6 +762,80 @@ rhenish_bureaucratic_apparatus = {
 	}
 	
 	ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+estate_industrialists_enabled_reform_nonrev = {
+    icon = black_market_consortium
+    potential = {
+        has_institution = manufactories
+        NOT = {
+        	OR = {
+        		religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+				has_estate = estate_alchemists
+				has_government_attribute = is_pirate_republic_reform
+				is_colonial_nation = yes
+        	}
+        }
+        is_revolutionary = no
+    }
+    trigger = {
+        always = yes
+    }
+
+    modifiers = {
+        global_regiment_cost = -0.05
+        naval_maintenance_modifier = -0.05
+        burghers_loyalty_modifier = -0.1 
+    }
+    effect = {
+        if = {
+        	limit = { has_estate = estate_peasants }
+
+        }
+    }
+    custom_attributes = {
+    	enables_estate_industrialists = yes   
+    }
+    ai = {
+		factor = 1000 # should always be picked if available
+	}
+}
+
+estate_industrialists_enabled_reform_rev = {
+    icon = black_market_consortium
+    potential = {
+        has_institution = manufactories
+        NOT = {
+        	OR = {
+        		religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+				has_estate = estate_alchemists
+				is_colonial_nation = yes
+        	}
+        }
+        is_revolutionary = yes
+    }
+    trigger = {
+        always = yes
+    }
+
+    modifiers = {
+        global_regiment_cost = -0.05
+        naval_maintenance_modifier = -0.05
+    }
+
+    custom_attributes = {
+    	enables_estate_industrialists = yes
+    	disables_estate_burghers = yes
+    	disables_estate_vaisyas = yes
+    	disables_estate_jains = yes
+    }
+    ai = {
 		factor = 1000 # should always be picked if available
 	}
 }

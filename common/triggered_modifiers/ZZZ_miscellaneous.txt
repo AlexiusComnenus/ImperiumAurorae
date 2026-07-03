@@ -119,6 +119,31 @@ ia_defensive_ideas_last_stand_modifier = {
 	shock_damage = 0.15
 }
 
+eng_clarion_call = {
+	potential = {
+		ENG = { has_country_flag = eng_clarion_call_flag }
+		ENG = { any_war_enemy_country = { religion = abolitionist } }
+		any_war_enemy_country = { religion = abolitionist }
+		NOT = { religion = abolitionist }
+	}
+	trigger = {
+		OR = {
+			is_in_war = {
+				attackers = ENG
+				attackers = ROOT
+			}
+			is_in_war = {
+				defenders = ENG
+				defenders = ROOT
+			}
+		}
+	}
+	
+	reinforce_speed = 0.25
+	manpower_recovery_speed = 0.25
+	movement_speed = 0.2
+}
+
 ######################################
 # Fraticelli control of Rome.
 ######################################

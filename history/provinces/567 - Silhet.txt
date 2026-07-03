@@ -1,5 +1,5 @@
-owner = BNG
-controller = BNG
+owner = MEN
+controller = MEN
 capital = "Sylhet"
 is_city = yes
 culture = indo_turkish
@@ -8,7 +8,7 @@ trade_goods = cotton
 base_tax = 1
 base_production = 2
 base_manpower = 2
-add_core = BNG
+add_core = MEN
 add_core = TUR
 discovered_by = MGE
 discovered_by = eastern

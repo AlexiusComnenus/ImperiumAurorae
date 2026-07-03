@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = nayankara_reform
+add_government_reform = autocracy_reform
 government_rank = 2
 technology_group = indian
 religion = zoroastrian 
@@ -9,7 +9,7 @@ capital = 4468
 1400.1.1= {
 	monarch = {
 		name = "Mithra"
-		dynasty = "Sassanid"
+		dynasty = "Sasan"
 		ADM = 2
 		DIP = 1
 		MIL = 3
@@ -17,4 +17,17 @@ capital = 4468
 	clear_scripted_personalities = yes
 	add_ruler_personality = bold_fighter_personality
 	add_ruler_personality = intricate_web_weaver_personality
+}
+1443.9.21 = {
+	heir = {
+		name = "Shapur"
+		monarch_name = "Shapur"
+		dynasty = "Sasan"
+		adm = 4
+		dip = 4
+		mil = 2
+		birth_date = 1443.9.21
+		death_date = 1508.9.21
+		claim = 89
+	}
 }

@@ -9,6 +9,7 @@ base_tax = 3
 base_production = 1
 base_manpower = 2
 add_core = TLG
+add_core = MYS
 add_permanent_claim = ORI
 discovered_by = MGE
 discovered_by = eastern

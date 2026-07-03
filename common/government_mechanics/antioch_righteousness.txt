@@ -17,12 +17,13 @@ righteousness_mechanic = {
 				modifier = {
 					monthly_righteousness = -2
 					war_exhaustion = -0.05
-					defensiveness = 0.75
+					defensiveness = 0.5
 					war_exhaustion_cost = -1
 					global_unrest = -4
 					auroraloyalists_influence = 0.20
 					manpower_in_own_culture_provinces = 0.25
 					manpower_in_accepted_culture_provinces = 0.25
+					land_morale = 0.10
 				}
 			}
 			reverse_scaled_modifier = {
@@ -93,7 +94,7 @@ righteousness_mechanic = {
 					hostile_attrition = 1.5
 					max_hostile_attrition = 3
 					own_territory_dice_roll_bonus = 1
-					global_defender_dice_roll_bonus = 1	
+					#global_defender_dice_roll_bonus = 1	
 					enable_forced_march = yes
 					force_march_free = yes
 				}

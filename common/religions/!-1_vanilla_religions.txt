@@ -771,6 +771,13 @@ christian = {
 			protestant
 			reformed
 		}
+		will_get_center = { #Refered to even for initial CoR Spawn
+			any_owned_province = {
+				can_have_center_of_reformation_trigger_aurora = {
+					RELIGION = hellenic_pagan_reformed
+				}
+			}
+		}
 		
 		#personal_deity = yes
 
@@ -1109,7 +1116,7 @@ christian = {
 
 		will_get_center = { #Refered to even for initial CoR Spawn
 			any_owned_province = {
-				can_have_center_of_reformation_trigger_aurora= {
+				can_have_center_of_reformation_trigger_aurora = {
 					RELIGION = reformed
 				}
 			}

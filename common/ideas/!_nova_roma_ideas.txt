@@ -2,7 +2,6 @@ nova_roma_ideas = {
 	start = {
 		admiral_cost = -0.25
 		global_ship_cost = -0.25
-		allowed_marine_fraction = 0.25
 	}
 
 	bonus = {
@@ -14,31 +13,39 @@ nova_roma_ideas = {
 	}
 	free = yes
 
-	naval_tradition = {
+	y11_naval_tradition = {
 		navy_tradition = 1
 		naval_tradition_from_trade = 0.5
 	}
-	new_shipyards = {
+	y11_new_shipyards = {
 		naval_forcelimit_modifier = 0.15
 		global_ship_recruit_speed = -0.1
 	}
-	call_of_neptune = {
+	y11_call_of_neptune = {
 		cavalry_power = 0.1
 		heavy_ship_power = 0.1
-		global_sailors_modifier = 0.25
 	}
-	marine_proficiency = {
-		land_morale = 0.10
-		morale_damage = 0.025
+	y11_marine_proficiency = {
+		allowed_marine_fraction = 0.25
+		infantry_power = 0.10
+		effect = {
+			add_country_modifier = {
+				name = y11_marines_modifier
+				duration = -1
+			}
+		}
+		removed_effect = {
+			remove_country_modifier = y11_marines_modifier
+		}
 	}
-	roman_administration = {
+	y11_roman_administration = {
 		administrative_efficiency = 0.075
 	}
-	trade_infrastructure = {
+	y11_trade_infrastructure = {
 		trade_steering = 0.15
 		global_ship_trade_power = 0.2
 	}
-	reclaimer_enthusiasm = {
+	y11_reclaimer_enthusiasm = {
 		free_navy_leader_pool = 10
 		leader_naval_fire = 1
 		leader_naval_manuever = 1

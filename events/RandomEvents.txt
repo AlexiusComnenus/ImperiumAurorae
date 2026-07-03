@@ -2576,9 +2576,25 @@ country_event = {
 	}
 	
 	option = {
+		name = "ia_inno_comet_option"		# Fascinating!
+		ai_chance = {
+			factor = 1000
+		}
+		highlight = yes
+		trigger = {
+			has_idea = empiricism
+		}
+		define_advisor = {
+			type = natural_scientist
+			skill = 3
+			discount = yes
+		}
+	}
+	
+	option = {
 		name = "personality_options.5060.a"		# Fascinating!
 		ai_chance = {
-			factor = 1
+			factor = 1000
 		}
 		highlight = yes
 		trigger = {

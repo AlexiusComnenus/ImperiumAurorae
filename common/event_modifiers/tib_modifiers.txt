@@ -1,0 +1,34 @@
+tib_generic_interlinked_faiths = {
+	tolerance_heathen = 1
+	defensiveness = 0.15
+}
+tib_generic_intermediate_state = {
+	local_religious_unity_contribution = -1
+	local_missionary_strength = -1
+	local_tax_modifier = 0.25
+	local_tolerance_of_heathens = 5
+}
+tib_generic_living_tonba_shenrab = {
+	tolerance_heathen = 2
+	core_creation = -0.1
+}
+tib_generic_living_saddha = {
+	global_missionary_strength = 0.02
+	monthly_karma = 0.05
+}
+
+
+
+
+
+
+###NEPALI STUFF
+npl_into_tibet_sharp_and_ready = {
+	movement_speed = 0.05
+	siege_ability = 0.10 
+	discipline = 0.025
+}
+npl_tibetan_acceptance = {
+	num_accepted_cultures = 1
+	manpower_in_accepted_culture_provinces = 0.10
+}

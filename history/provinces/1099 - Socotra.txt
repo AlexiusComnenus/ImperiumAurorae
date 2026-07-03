@@ -1,5 +1,5 @@
-owner = YEM
-controller = YEM
+owner = MHR
+controller = MHR
 capital = "Suqutra"
 is_city = yes
 culture = mahri_culture
@@ -9,7 +9,6 @@ base_tax = 3
 base_production = 3
 base_manpower = 1
 add_core = MHR
-add_core = YEM
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

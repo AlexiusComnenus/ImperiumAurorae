@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = ODH
+controller = ODH
 capital = "Bareily"
 is_city = yes
 culture = pahari
@@ -9,8 +9,7 @@ base_tax = 4
 base_production = 2
 base_manpower = 2
 add_core = GHR
-add_core = MAM
-add_core = Z11
+add_core = ODH
 add_permanent_claim = HIN
 discovered_by = MGE
 discovered_by = eastern

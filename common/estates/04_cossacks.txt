@@ -52,17 +52,24 @@ estate_cossacks = {
 					has_unlocked_estate = { estate = estate_cossacks }
 					AND = {
 						#unit_type = eastern
-						religion_group = christian
+						#religion_group = christian
 						#has_estate = estate_cossacks
 						any_owned_province = {
 							has_terrain = steppe
 						}
 					}
 				}
+				OR = {
+					government = monarchy
+					government = theocracy
+					government = republic
+				}
 				NOT = { has_government_attribute = is_pirate_republic_reform }
 				#NOT = { has_reform = cossacks_reform }
 				NOT = { is_revolutionary_republic_trigger = yes }
 				NOT = { government = native }
+				NOT = { primitives = yes }
+				NOT = { has_estate = estate_nomadic_tribes }
 				NOT = { has_reform = siberian_tribe }
 				is_nomad = no
 				is_colonial_nation = no
@@ -131,6 +138,7 @@ estate_cossacks = {
 			OR = {
 				religion = hellenic_pagan_reformed
 				culture_group = xizho_group
+				culture_group = east_asian
 			}
 		}
 	}

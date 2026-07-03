@@ -99,7 +99,7 @@ NDiplomacy = {
 	MAX_CLIENT_STATES = 10,							-- Max client states for one country
 
 	ALLOW_LEADER_DEMAND_TOGGLE = 0,					-- Whether or not player is allowed to set if warleader can negotiate for them
-	VASSALIZE_BASE_DEVELOPMENT_CAP = 200, 			-- Countries with more total development than this cannot be vassalized
+	VASSALIZE_BASE_DEVELOPMENT_CAP = 10000, 			-- Countries with more total development than this cannot be vassalized
 
 	MARCH_BASE_DEVELOPMENT_CAP = 10000, 				-- Countries with more total development than this cannot be made into a march
 
@@ -568,7 +568,7 @@ NCountry = {
 
 	ALLOW_ZERO_BASE_VALUES = 0,						-- Affects base tax, base manpower, and base production
 
-	COUNTRY_DEVELOPMENT_SCALE = 6000,
+	COUNTRY_DEVELOPMENT_SCALE = 12000,
 	OVERSEAS_CLIENT_STATES = 0,					-- Allow overseas client states?
 
 	ESTATE_DROP_LOYALTY_IF_LOST_PRIVILEDGE = -0.2,
@@ -805,7 +805,7 @@ NCountry = {
 	FACTION_BOOST_SIZE = 10,
 	WAREXHAUSTION_REDUCTION = 2,
 	HARSH_TREATMENT_IN_MONTHS = 180,
-	RECENT_UPRISING_IN_MONTHS = 120,
+	RECENT_UPRISING_IN_MONTHS = 96,
 	UNREST_REVOLT_FACTOR = 0.5, -- How much does each point of unrest contribute to chance of revolt uprising increasing (base)
 	UPRISING_INCREASE = 10, -- Number of percent that the progress increases
 	PROVOKE_REVOLT_SIZE_FACTOR = 0.5, -- Extra strength of revolt when using provoke revolt
@@ -874,7 +874,7 @@ NCountry = {
 	MONTHS_TO_CORE_MINIMUM = 6,						-- Minimum amount of months it will take to core a province after all modifiers.
 	MONTHS_TO_CORE = 36,							-- How many months it will take to core a province.
 	MONTHS_TO_CHANGE_CULTURE = 10,					-- How many months it will take to change culture in a province, per development.
-	RELEASED_NATION_ARMY_SIZE = 0.5,				-- Newly released nations get an army of this size
+	RELEASED_NATION_ARMY_SIZE = 1,					-- Newly released nations get an army of this size
 	STARTING_ARMY_SIZE = 0.75,						-- Percentage of force limit
 	STARTING_ARMY_SIZE_AT_WAR = 1.0,				-- Percentage of force limit
 	STARTING_ARMY_SIZE_REBEL_THREAT = 0.05,			-- Percentage of rebel threat added to percentage of force limit
@@ -1346,9 +1346,9 @@ NMilitary = {
 	EXTRA_LAND_REINFORCE_COST = 2.00,				-- extra cost for reinforcing land units (as a multiplier of maintenance).
 	MERCENARY_REINFORCE_COST_MULTIPLIER = -1.0,			-- Mercs no longer costs anything to reinfroce
 	MERCENARY_BASE_COST = 10.0,					-- base cost added for a mercenary regiment
-	TRADITION_GAIN_LAND = 20,						-- Tradition gain base value from land combat.
-	TRADITION_GAIN_NAVAL = 40,						-- Tradition gain base value from naval combat.
-	CONDOTTIERI_TRADITION_BONUS = 0.5,				-- This modifies army tradition gained from fighting with condottieris
+	TRADITION_GAIN_LAND = 30,						-- Tradition gain base value from land combat.
+	TRADITION_GAIN_NAVAL = 50,						-- Tradition gain base value from naval combat.
+	CONDOTTIERI_TRADITION_BONUS = 1.5,				-- This modifies army tradition gained from fighting with condottieris
 	FRONT_LINE_MODIFIER = 1.0, 						-- _MDEF_FRONT_LINE_MODIFIER_
 	BACK_LINE_MODIFIER = 0.5, 						-- _MDEF_BACK_LINE_MODIFIER_
 	BACK_LINE_REINFORCE_SPEED = 2, 					-- How many regiments can reinforce per day
@@ -2580,8 +2580,8 @@ NReligion = {
 
 	RELIGIOUS_LEAGUE_COOLDOWN = 5,								-- Minimum years between joining/leaving religious league
 	RELIGIOUS_LEAGUE_WAR_BONUS_DURATION = 100,					-- How many years the 'Joined League War' bonus lasts
-	MAX_CHRISTIAN_RELIGIOUS_CENTERS = 3,						-- The number of spawned centers of reformation wont exceed this number
-	MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE = 150.0,				-- When spreading the religion to other provinces the distance wont exceed this number
+	MAX_CHRISTIAN_RELIGIOUS_CENTERS = 4,						-- The number of spawned centers of reformation wont exceed this number
+	MAX_RELIGIOUS_CENTER_SPREAD_DISTANCE = 300.0,				-- When spreading the religion to other provinces the distance wont exceed this number
 	CONVERSION_ZEAL_DURATION = 10950,							-- Amount of days in which you cannot convert the province back.
 	KARMA_FOR_CONVERSION = 0.1,
 	MIN_CARDINALS = 7,											-- Least amount of cardinals/ Starting cardinals
@@ -2627,7 +2627,7 @@ NReligion = {
 	NOT_SAME_MUSLIM_SCHOOL_ROYAL_MARRIAGE_ACCEPTANCE = 15,	-- Royal marriage acceptance (positive and negative) for different religious schools
 	SAME_MUSLIM_SCHOOL_ALLIANCE_ACCEPTANCE = 15,			-- Alliance acceptance value for same religious schools
 	SAME_MUSLIM_SCHOOL_ROYAL_MARRIAGE_ACCEPTANCE = 15,		-- Royal marriage acceptance for same religious schools
-	RELIGIOUS_CONVERSION_AUTONOMY_WEIGHT = 0.05,			-- How much autonomy affects selection of province to spread religion to (from e.g. Centers of Reformation).
+	RELIGIOUS_CONVERSION_AUTONOMY_WEIGHT = 0.1,			-- How much autonomy affects selection of province to spread religion to (from e.g. Centers of Reformation).
 	RELIGIOUS_CONVERSION_DEVELOPMENT_WEIGHT = 0.05,			-- How much development affects selection of province to spread religion to (from e.g. Centers of Reformation).
 
 	EXPEL_RELIGIOUS_MINORITY_THRESHOLD = -0.1,				-- Minimum conversion chance required to expel a religious minority from a province

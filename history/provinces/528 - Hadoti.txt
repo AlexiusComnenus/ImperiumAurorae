@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = AYD
+controller = AYD
 capital = "Kota"
 is_city = yes
 culture = vindhyan
@@ -8,7 +8,7 @@ trade_goods = cotton
 base_tax = 1
 base_production = 1
 base_manpower = 2
-add_core = MAM
+add_core = AYD
 add_core = BND
 add_permanent_claim = HIN
 discovered_by = MGE

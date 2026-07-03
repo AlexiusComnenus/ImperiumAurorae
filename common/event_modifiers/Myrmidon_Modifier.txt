@@ -252,4 +252,5 @@ mym_turtle_ships_modifier = {
 	number_of_cannons_modifier = 0.5
 	is_geobukseon_modifier = yes	
 	galley_cost = 7
+	naval_maintenance_modifier = 7
 }

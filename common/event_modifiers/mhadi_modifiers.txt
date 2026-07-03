@@ -466,3 +466,13 @@ yor_despoiled_country_side = {
 test_modifier_oe = {
 	overextension_impact_modifier = -0.5
 }
+
+yor_basilica_ate_the_moon = {
+	stability_cost_modifier = 0.2
+	recover_army_morale_speed = -0.10 
+}
+
+yor_ai_monument_help = {
+	local_great_project_upgrade_cost = -0.50
+	local_great_project_upgrade_time = -0.40
+}

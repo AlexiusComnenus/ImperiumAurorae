@@ -1540,6 +1540,14 @@ country_event = { #Holland Straubing
 	picture = COURT_eventPicture
 	
 	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 		
 	option = { #accept
 		ai_chance = {

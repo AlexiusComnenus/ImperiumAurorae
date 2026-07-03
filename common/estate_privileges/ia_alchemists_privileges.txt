@@ -261,19 +261,25 @@ estate_alchemists_elixirs_for_the_troops = {
 	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 1 } }
 	loyalty = -0.05
 	can_select = {
+		NOT = {
+			OR = {
+				has_estate_privilege = estate_alchemists_elixirs_of_rejuvenation
+				has_estate_privilege = estate_alchemists_elixirs_of_eternal_restlessness
+			}
+		}
 	}
 	on_granted = {
 		custom_tooltip = alchemists_research_accidents_tt
 	}
 	penalties = {
 		#global_regiment_cost = 0.15
+		country_military_power = -1
 	}
 	benefits = {
 	}
 	influence_scaled_conditional_modifier = {
 		trigger = { always = yes }
 		modifier = { 
-			#discipline = -0.06
 			global_regiment_cost = 0.12
 			morale_damage = 0.12
 			reinforce_speed = 0.36
@@ -461,5 +467,77 @@ estate_alchemists_public_education = {
 				}
 			}
 		}
+	}
+}
+
+estate_alchemists_elixirs_of_eternal_restlessness = {
+	icon = privilege_alchemists_dark_vial
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	land_share = 5
+	max_absolutism = -5
+	loyalty = -0.05
+	is_valid = {
+		has_global_flag = alchemists_unlock_unethical_elixirs
+	}
+	can_select = {
+		NOT = {
+			OR = {
+				has_estate_privilege = estate_alchemists_elixirs_of_rejuvenation
+				#has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+			}
+		}
+	}
+	on_granted = {
+		custom_tooltip = alchemists_research_accidents_tt
+	}
+	modifier_by_land_ownership = {
+		recover_army_morale_speed = -0.25
+		war_exhaustion = 0.15
+		production_efficiency = 0.5
+		global_unrest = -4
+		assault_fort_ability = 0.5
+	}
+	penalties = {
+		country_admin_power = -1
+	}
+	benefits = {
+		force_march_free = yes
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+estate_alchemists_elixirs_of_rejuvenation = {
+	icon = privilege_alchemists_light_vial
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	land_share = 5
+	max_absolutism = -5
+	loyalty = -0.05
+	is_valid = {
+		has_global_flag = alchemists_unlock_unethical_elixirs
+	}
+	can_select = {
+		NOT = {
+			OR = {
+				has_estate_privilege = estate_alchemists_elixirs_of_eternal_restlessness
+				#has_estate_privilege = estate_alchemists_elixirs_for_the_troops
+			}
+		}
+	}
+	on_granted = {
+		custom_tooltip = alchemists_research_accidents_tt
+	}
+	modifier_by_land_ownership = {
+		culture_conversion_time = -0.2
+		manpower_in_own_culture_provinces = 0.25
+	}
+	penalties = {
+		country_diplomatic_power = -1
+	}
+	benefits = {
+		development_cost_in_primary_culture = -0.1
+	}
+	ai_will_do = {
+		factor = 0
 	}
 }

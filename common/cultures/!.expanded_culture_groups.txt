@@ -682,7 +682,9 @@ eastern_hellenistic = {
 	}
 	seleucian = {
 		primary = KRM
-		province = { local_has_tercio = yes }
+	}
+	bactrian = {
+		primary = KHO
 	}
 	
 	male_names = {
@@ -692,7 +694,7 @@ eastern_hellenistic = {
 	female_names = {
 		Selene Kleopatra 
 	}
-	province = { local_has_qizilbash = yes }
+	province = { local_has_qizilbash = yes  local_has_tercio = yes }
 	dynasty_names = {
 		Seleukídai Asandrídai Eudemídai Polemonídai Stasandrídai Antigonídai Laomedonídai Menandrídai Kleitídai Menandrídai Euthydemídai
 	}
@@ -932,6 +934,12 @@ xizho_group = {
 	}
 	xienjing = {
 		primary = MYM
+	}
+	nanfei = {
+		primary = Z42
+	}
+	xifei = {
+		primary = AOL
 	}
 	
 	male_names = {
@@ -1242,6 +1250,33 @@ tibetan_group = {
 		primary = TIB
 		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
 	}
+    nepali_tibetan = {
+        dynasty_names = {
+			Se Rmu Ldong Stong Dbra Dru Nyang Sbas Gnon Chespong Thonmi Mgar Bri Mong Zhang Mchims Bal Lang Cogro Bro Dbas 
+			Shudpu Gnyags Mgus Mjang Snang Sgro Rma Snyiba Khu Khun Mkar Rlangs Rinspungs Zhingshag Phjongsrgjas Nganlam Sba Lig 
+			Khjungpo Dbas Mnyammed Malla Ghorka Limbu
+		}
+		male_names = {
+			"Gendun Drup" "Trakpa Chunge" "Sangye Gyantesen Pal Zangpo" "Dön-yö Dorje" "Ngawang Namgyal" "Töndup Tseten" "Phüntso Namgye" "Karma Tseten" "Lhawang Dorje" "Karma Ten-Kyong" "Gusri" "Dayan" "Tenzin Dalai" 
+			"Lhabzang" "Tsewang Arabtan" "Phola Sonam Topbgye" "Gyurme Namgyal" "Lozang Gyastro" "Tsangyang Gyatso" 
+			"Kelzang Gyatso" "Jamphel Gyatso" "Lungtok Gyatso" "Tsultrim Gyatso" "Gendun Gyastro" "Sonam Gyastro" "Desi Sangay Gyatso"
+			"Ngwaang Yeshi Gyatso" "Chang-chub" "Sakya Gyantsen" "Trakpa Richen" "Trakpa Chang-chub" 
+			"Trakpa Chungne" "Sangye Gyamtso" "Lobsang Yeshe" "Palden Yeshi" "Ngapoi Takna" "Jigme Wangyal" "Tashi Chophel" "Bapu Gendun" "Rabtan" "Sengge" "Galdan" "Gushi" Dorjee Dote Kalden
+            Jayajyotimalla Jayayakshamalla Ratmamalla Suryamalla Amaramalla Narendramalla Mahendramalla Sadashivamalla 
+			Shivasimhamalla Lakshminarasimhamalla Pratapamalla Jayanripendramalla Parthivendramalla Bhupendramalla 
+			Bhaskaramalla Mahendrasimhamalla Jayaprakasamalla Bhimsen Amar Singh Ranjur Singh Bhakti
+		}
+		female_names = {
+			"Kamala" "Indira" Dawa Dechen Diki Choden Dohna Dolkar Karma Sonam Sangmu
+            Devaladevi Kaushalyawati Rajendralakshmi Maiya Nanu Nani Maya Pragya Anu Chameli Nirmala Anushka Sarmila Komal 
+			Rita Kamala Goma Srijana Bhawana Pramila Saraswati Laxmi Ganga Radha Radhika Krishna Bishnu Sarita Kalpana 
+			Shanti Aayusha Ramita Gita Sita Sangita Mira Ranjita Ranju Manju Punam Maili Kaili Saili Jamuna Shova Pratiksha 
+			Sanjila Anita Nilam Nira Urmila Kopila Pavitra Iswari Khusbhu Rina Junu Tika Kali Rasmi Rupa Puja Aarati 
+			Mankumari Dhankumari Bechani Mangita Uru Lalita Rekha Prabha Shushila Laila Renu Muna Amrita Seti Gauri 
+			Kaushilya Rama Madhu Madhurima Renuka Chandrakala Fulkumari Indrakala Sabitri Archana Kamana Puspa Putali 
+			Suntali Dipa Ambika Dipshika Sabita Suravi Ramabati Mainabati Kabita Champa Kusum Rampyari
+		}
+    }
 }
 malay = {
 }

@@ -1,17 +1,22 @@
 government = monarchy
-add_government_reform = autocracy_reform
+add_government_reform = beylik_government
 government_rank = 1
 technology_group = ottoman
 religion = sunni
-primary_culture = turkish
-capital = 2297
+primary_culture = indo_turkish
+capital = 4501
+add_accepted_culture = rajput
 1388.1.1= {
 	monarch = {
 		name = "Hizir I"
 		dynasty = "Saruhanoglu"
 		adm = 1
 		dip = 2
-		mil = 0
+		mil = 3
 	}
 	add_piety = -0.1
+}
+1444.10.1= {
+	set_estate_privilege = estate_dhimmi_guaranteed_autonomy
+	set_estate_privilege = estate_dhimmi_tolerance
 }

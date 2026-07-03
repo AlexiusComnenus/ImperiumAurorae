@@ -1,5 +1,5 @@
 government = monarchy
-add_government_reform = indian_sultanate_reform
+add_government_reform = beylik_government
 government_rank = 1
 technology_group = indian
 religion = sunni

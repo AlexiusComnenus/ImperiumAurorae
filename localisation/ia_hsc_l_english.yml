@@ -1,6 +1,6 @@
 ﻿l_english: 
- PRYDAIN_NAME: "Prydain"
- PRYDAIN_NAME_ADJ: "Prydain"
+ PRYDAIN_NAME: "Prydein"
+ PRYDAIN_NAME_ADJ: "Brythonic"
 
  #Mechanics Tooltips
  mechanic_always_archdruid_personality_yes: "Rulers are practically guaranteed to be §YPowerful Druids§!"
@@ -86,7 +86,7 @@
  #Government
  gaelic_council_elders: "Council of Archdruids"
  gaelic_council_elders_desc: "The eldest and wisest of the Druids of the realm are chosen to serve on the Council of Archdruids and guide the nation forward."
- archdruid_tt: "Archdruid"
+ archdruid_tt: "Àrd-dhruid"
  druidic_state_tt: "Druidic Council"
  druidic_state_tt_2: "Realm of Sanctity"
  druidic_state_tt_3: "Realm of Sacred Nature"

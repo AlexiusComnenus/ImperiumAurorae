@@ -43,4 +43,6 @@ mercantilism = 25
 		group = christian
 		school = harmonic_cultivation_school
 	}
+	custom_tooltip = ARB_unlock_oasis_development
+	set_country_flag = ARB_unlock_oasis_development_flag
 }

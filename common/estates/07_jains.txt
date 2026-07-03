@@ -36,13 +36,16 @@ estate_jains = {
 	country_modifier_happy = {
 		build_cost = -0.1
 		build_time = -0.1
+		yearly_corruption = -0.1
 	}
 	country_modifier_neutral = {
 		build_cost = -0.10
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		interest = 1
 		global_unrest = 2
+		yearly_corruption = 0.2
 	}
 	land_ownership_modifier = {
 		jains_loyalty_modifier = 0.2

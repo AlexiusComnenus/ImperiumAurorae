@@ -1,15 +1,13 @@
-owner = ETH
-controller = ETH
+owner = ADA
+controller = ADA
 capital = "Maydh"
 is_city = yes
 culture = somali
 religion = sunni
 trade_goods = incense
-fort_15th = yes
 base_tax = 1
 base_production = 2
 base_manpower = 1
-add_core = ETH
 add_core = ADA
 discovered_by = MGE
 discovered_by = eastern

@@ -33,18 +33,20 @@ saxon_favor_mechanic = {
 			icon = GFX_prussian_militarization_march_divided_fight_united
 			trigger = {
 				overlord = { has_reform = saxon_feudalism }
-				has_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = 30
-				}
+				#has_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = 30
+				#}
 			}
+			cost_type = ia_court_influence
+			cost = 30
 			effect = { 
-				add_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = -30
-				}
+				#add_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = -30
+				#}
 				add_loan = {
 					fixed_interest = 0
 					duration = 60
@@ -86,18 +88,20 @@ saxon_favor_mechanic = {
 					is_subject_of_type = saxon_daimyo
 					is_subject_of_type = german_march
 				}
-				has_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = 50
-				}
+				#has_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = 50
+				#}
 			}
+			cost_type = ia_court_influence
+			cost = 50
 			effect = { 
-				add_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = -50
-				}
+				#add_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = -50
+				#}
 				add_yearly_manpower = 1
 				overlord = {
 					add_country_modifier = {
@@ -121,18 +125,20 @@ saxon_favor_mechanic = {
 			icon = GFX_prussian_militarization_upgrade	
 			trigger = {
 				overlord = { has_reform = saxon_feudalism }
-				has_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = 90
-				}
+				#has_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = 90
+				#}
 			}
+			cost_type = ia_court_influence
+			cost = 90
 			effect = { 
-				add_government_power = {
-					mechanic_type = saxon_favor_mechanic
-					power_type = ia_court_influence
-					value = -90
-				}
+				#add_government_power = {
+				#	mechanic_type = saxon_favor_mechanic
+				#	power_type = ia_court_influence
+				#	value = -90
+				#}
 				custom_tooltip = ia_sweet_talk_tt
 				hidden_effect = {
 					overlord = {

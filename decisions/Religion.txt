@@ -564,8 +564,11 @@ country_decisions = {
 				religion_group = muslim
 				is_node_in_trade_company_region = yes
 			}
+			NOT = { government = theocracy }
+			NOT = { has_government_attribute = papacy }
 		}
 		allow = {
+			NOT = { government = theocracy }
 			if = {
 				limit = { OR = { government = monarchy government = tribal } }
 				legitimacy = 90
@@ -601,8 +604,6 @@ country_decisions = {
 			else = {
 				change_religion = capital
 			}
-			add_stability = 1
-			add_legitimacy = 10
 			clr_country_flag = sultan_titles_for_non_muslims
 			remove_country_modifier = islamic_titles
 		}
@@ -636,6 +637,7 @@ country_decisions = {
 				religion_group = zoroastrian_group
 				is_node_in_trade_company_region = yes
 			}
+			NOT = { has_government_attribute = papacy }
 		}
 		allow = {
 			if = {
@@ -648,12 +650,23 @@ country_decisions = {
 			}
 			has_regency = no
 			is_free_or_tributary_trigger = yes
-			dominant_religion = zoroastrian
+			OR = {
+				dominant_religion = zoroastrian
+				dominant_religion = manichean
+			}
 		}
 		effect = {
-			change_religion = zoroastrian
-			add_stability = 1
-			add_legitimacy = 10
+			if = {
+				limit = { capital_scope = { religion = zoroastrian } }
+				change_religion = zoroastrian
+			}
+			else_if = {
+				limit = { capital_scope = { religion = manichean } }
+				change_religion = manichean
+			}
+			else = {
+				change_religion = capital
+			}
 			country_event = {
 				id = flavor_per.72
 			}
@@ -698,6 +711,7 @@ country_decisions = {
 	adopt_vajrayana = {
 		potential = {
 			religion_group = pagan
+			NOT = { has_government_attribute = papacy }
 			OR = {
 				dominant_religion = vajrayana
 				AND = {

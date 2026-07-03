@@ -80,6 +80,7 @@
  medium_refugee_influx: "Moderate Refugee Influx"
  large_refugee_influx: "Major Refugee Influx"
  simon_manus_modifier: "Doctrine of Simon Manus"
+ recently_abdicated_pope_modifier: "Recent Papal Abdication"
  
  #Missions
  pap_chosen_magnate_tt: "We will promise the crown of Poland to our §Ychosen ally magnate§!. When the §RIndependence War§! begins, they will receive §Ycores§! on all of @[POL.GetTag] [POL.GetName]'s provinces and §Gbecome our vassal§!!"

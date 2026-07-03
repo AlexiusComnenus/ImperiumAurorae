@@ -175,7 +175,7 @@ bog_eternal_struggle = {
 		}
 	}
 	modifier = {
-		manpower_recovery_speed = 2.5
+		manpower_recovery_speed = 1.5
 	}
 	ai_will_do = {
 		factor = 200

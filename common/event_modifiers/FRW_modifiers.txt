@@ -72,10 +72,10 @@ frw_warrior_kings = {
 }
 
 frw_general_stat_boost = {
-	leader_land_fire = 2
+	leader_land_fire = 3
 	leader_land_manuever = 3
-	leader_land_shock = 2
-	leader_siege = 2
+	leader_land_shock = 3
+	leader_siege = 3
 	max_general_fire = 4
 	max_general_maneuver = 4
 	max_general_shock = 4

@@ -128,7 +128,7 @@ country_event = {
 			NOT = { devastation = 1 }
 			region_for_scope_province = { is_capital_of = ROOT }
 		}
-		NOT = { is_great_power = yes }
+		#NOT = { is_great_power = yes }
 	}
 	
 	is_triggered_only = yes

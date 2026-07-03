@@ -593,6 +593,43 @@ country_decisions = {
 		ai_importance = 100
 	}
 	
+	vassalize_army_of_light_decision = {
+		potential = {
+			is_part_of_hre = yes
+			religion = hellenic_pagan_reformed
+			has_country_flag = allowed_to_vassalize_aol_flag
+		}
+		
+		allow = {
+			is_at_war = no
+			AOL = {
+				exists = yes
+				is_at_war = no
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+				trust = { who = ROOT value = 90 }
+			}
+			army_strength = {
+				who = AOL
+				value = 3
+			}
+		}
+		
+		effect = {
+			create_subject = {
+				subject_type = crusader_state_subject
+				subject = AOL
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		ai_importance = 100
+	}
+	
 	recruit_alchemist_decision = {
 		potential = {
 			OR = {

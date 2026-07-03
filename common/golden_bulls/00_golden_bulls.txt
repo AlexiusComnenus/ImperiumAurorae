@@ -17,13 +17,15 @@ illius_qui_se_pro_divini = {
 		}
     }
     ai_will_do = {
-        factor = 0
+        factor = 1
     }
 }
 
 apostolicae_servitutis = {
     modifier = {
-        curia_powers_cost = -0.5
+        papal_influence = 2
+		papal_influence_from_cardinals = 1.0
+		curia_treasury_contribution = 0.5
     }
 	potential = {
 	}
@@ -31,7 +33,7 @@ apostolicae_servitutis = {
         is_papal_controller = yes
     }
     ai_will_do = {
-        factor = 0
+        factor = 1
     }
 }
 
@@ -78,6 +80,7 @@ libertas_ecclesiae = {
 		imperial_reform_catholic_approval = 5
     }
 	potential = {
+		always = no
 	}
     trigger = {
         is_papal_controller = yes

@@ -1,12 +1,17 @@
 government = monarchy
-add_government_reform = autocracy_reform
-government_rank = 1
-technology_group = mesoamerican
-religion = nahuatl
+add_government_reform = aztec_empire_reform
 primary_culture = aztek
-capital = 852
+religion = nahuatl
+technology_group = mesoamerican
+capital = 852	# Mexico
+fixed_capital = 852 # Cannot move capital away from this province & no power cost to move to it
 add_army_professionalism = 0.1
-1391.1.1= {
+if = {
+	limit = { has_dlc = "Winds of Change" }
+	set_estate_privilege = estate_nobles_AZT_triple_alliance
+}
+
+1391.1.1 = {
 	monarch = {
 		name = "Huitzilihuitl"
 		dynasty = "Acamapichtli"
@@ -15,7 +20,8 @@ add_army_professionalism = 0.1
 		mil = 1
 	}
 }
-1397.1.1= {
+
+1397.1.1 = {
 	heir = {
 		name = "Ohimalpopoca"
 		monarch_name = "Ohimalpopoca"
@@ -28,7 +34,8 @@ add_army_professionalism = 0.1
 		mil = 0
 	}
 }
-1415.1.1= {
+
+1415.1.1 = {
 	monarch = {
 		name = "Ohimalpopoca"
 		dynasty = "Acamapichtli"
@@ -37,7 +44,8 @@ add_army_professionalism = 0.1
 		mil = 0
 	}
 }
-1415.1.1= {
+
+1415.1.1 = {
 	heir = {
 		name = "Itzcoatl"
 		monarch_name = "Itzcoatl"
@@ -50,7 +58,8 @@ add_army_professionalism = 0.1
 		mil = 2
 	}
 }
-1426.1.1= {
+
+1426.1.1 = {
 	monarch = {
 		name = "Itzcoatl"
 		dynasty = "Acamapichtli"
@@ -59,7 +68,8 @@ add_army_professionalism = 0.1
 		mil = 2
 	}
 }
-1426.1.1= {
+
+1426.1.1 = {
 	heir = {
 		name = "Moctezuma Ilhuicamina"
 		monarch_name = "Moctezuma I Ilhuicamina"
@@ -73,17 +83,21 @@ add_army_professionalism = 0.1
 		leader = {	name = "Moctezuma I"           	type = general	fire = 3	shock = 4	manuever = 4	siege = 0}
 	}
 }
-1440.8.14= {
+
+1440.8.14 = {
 	monarch = {
 		name = "Moctezuma I Ilhuicamina"
 		dynasty = "Acamapichtli"
 		adm = 4
 		dip = 3
 		mil = 5
-		leader = {	name = "Moctezuma I"           	type = general	fire = 3	shock = 4	manuever = 4	siege = 0}
 	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = legendary_conqueror_personality
+	set_ruler_flag = azt_montezuma
 }
-1440.8.14= {
+
+1440.8.14 = {
 	heir = {
 		name = "Axayacatl"
 		monarch_name = "Axayacatl"
@@ -96,7 +110,8 @@ add_army_professionalism = 0.1
 		mil = 3
 	}
 }
-1468.11.22= {
+
+1468.11.22 = {
 	monarch = {
 		name = "Axayacatl"
 		dynasty = "Acamapichtli"
@@ -105,7 +120,8 @@ add_army_professionalism = 0.1
 		mil = 3
 	}
 }
-1468.11.22= {
+
+1468.11.22 = {
 	heir = {
 		name = "Tizoc"
 		monarch_name = "Tizoc"
@@ -118,7 +134,8 @@ add_army_professionalism = 0.1
 		mil = 3
 	}
 }
-1481.10.30= {
+
+1481.10.30 = {
 	monarch = {
 		name = "Tizoc"
 		dynasty = "Acamapichtli"
@@ -127,7 +144,8 @@ add_army_professionalism = 0.1
 		mil = 3
 	}
 }
-1481.10.30= {
+
+1481.10.30 = {
 	heir = {
 		name = "Ahuitzotl"
 		monarch_name = "Ahuitzotl"
@@ -141,7 +159,8 @@ add_army_professionalism = 0.1
 		leader = {	name = "Ahuitzotl"             	type = general	fire = 3	shock = 5	manuever = 3	siege = 0}
 	}
 }
-1486.4.14= {
+		
+1486.4.14 = {
 	monarch = {
 		name = "Ahuitzotl"
 		dynasty = "Acamapichtli"
@@ -151,7 +170,8 @@ add_army_professionalism = 0.1
 		leader = {	name = "Ahuitzotl"             	type = general	fire = 3	shock = 5	manuever = 3	siege = 0}
 	}
 }
-1486.4.14= {
+
+1486.4.14 = {
 	heir = {
 		name = "Moctezuma"
 		monarch_name = "Moctezuma II Xocoytzin"
@@ -165,7 +185,8 @@ add_army_professionalism = 0.1
 		leader = {	name = "Moctezuma II"          	type = general	fire = 2	shock = 3	manuever = 2	siege = 0}
 	}
 }
-1502.9.16= {
+		
+1502.9.16 = {
 	monarch = {
 		name = "Moctezuma II Xocoytzin"
 		dynasty = "Acamapichtli"
@@ -175,7 +196,8 @@ add_army_professionalism = 0.1
 		leader = {	name = "Moctezuma II"          	type = general	fire = 2	shock = 3	manuever = 2	siege = 0}
 	}
 }
-1502.9.16= {
+
+1502.9.16 = {
 	heir = {
 		name = "Cuauhtemoc"
 		monarch_name = "Cuauhtemoc"
@@ -188,7 +210,8 @@ add_army_professionalism = 0.1
 		mil = 0
 	}
 }
-1520.6.30= {
+
+1520.6.30 = {
 	monarch = {
 		name = "Cuauhtemoc"
 		dynasty = "Acamapichtli"
@@ -197,6 +220,7 @@ add_army_professionalism = 0.1
 		mil = 0
 	}
 }
-1521.8.13= {
+
+1521.8.13 = {
 	government_rank = 1
 }

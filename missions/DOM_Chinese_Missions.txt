@@ -433,6 +433,7 @@ chinese_kingdoms_1 = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	
 	solidify_our_borders = {
@@ -648,6 +649,7 @@ ming_missions_1_b = {
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	has_country_shield = yes 
 
@@ -1640,6 +1642,7 @@ chinese_kingdoms_2 = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	
 	conquer_xinan = {
@@ -1810,6 +1813,7 @@ ming_missions_2_b = {
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	has_country_shield = yes 
 	
@@ -2412,6 +2416,7 @@ chinese_kingdoms_3 = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	
 	chi_independence_ia = {
@@ -4338,6 +4343,7 @@ chinese_kingdoms_4 = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	
 	conquer_south_china = {
@@ -4983,6 +4989,7 @@ ming_missions_4_b = {
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	has_country_shield = yes 	
 	
@@ -5295,6 +5302,7 @@ ming_missions_4_moh = {
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	has_country_shield = yes 
 
@@ -5443,6 +5451,7 @@ chinese_kingdoms_5 = {
 		has_dlc = "Domination"
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	
 	settle_internal_affairs = {
@@ -6229,6 +6238,7 @@ ming_missions_5_b = {
 		#}
 		OR = { has_reform = chinese_warlord 	have_had_reform = chinese_warlord }
 		NOT = { is_or_was_tag = { tag = GJN } }
+		NOT = { is_or_was_tag = { tag = MCH } }
 	}
 	has_country_shield = yes 
 	

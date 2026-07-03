@@ -155,6 +155,7 @@ is_not_free_merc_company = {
 		NOT = { mercenary_company = merc_pyre_zealots }
 		NOT = { mercenary_company = merc_flameheralds }
 		NOT = { mercenary_company = merc_children_of_the_forest }
+		NOT = { mercenary_company = merc_wyvern_dragoons }
 	}
 }
 
@@ -164,6 +165,8 @@ was_never_end_game_tag_trigger = {	#Country Scope
 		custom_trigger_tooltip = {
 			tooltip = was_never_end_game_tag_trigger_tt
 			AND = {
+				NOT = { is_emperor_of_china = yes }
+				NOT = { has_country_flag = temp_block_formations_flag }
 				NOT = { was_tag = MUG }
 				NOT = { was_tag = TUR }
 				NOT = { was_tag = BYZ }
@@ -183,7 +186,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = GBR }
 				NOT = { was_tag = ITA }
 				NOT = { was_tag = GER }
-				NOT = { was_tag = MNG }
 				NOT = { was_tag = MGE }
 				NOT = { was_tag = SYN }
 				NOT = { was_tag = ADU }
@@ -235,7 +237,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = GBR }
 				NOT = { tag = ITA }
 				NOT = { tag = GER }
-				NOT = { tag = MNG }
 				NOT = { tag = MGE }
 				NOT = { tag = SYN }
 				NOT = { tag = ADU }
@@ -287,7 +288,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = AVE }
 				NOT = { was_tag = ITA }
 				NOT = { was_tag = GER }
-				NOT = { was_tag = MNG }
 				NOT = { was_tag = MGE }
 				NOT = { was_tag = SYN }
 				NOT = { was_tag = ADU }
@@ -330,7 +330,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = AVE }
 				NOT = { tag = ITA }
 				NOT = { tag = GER }
-				NOT = { tag = MNG }
 				NOT = { tag = MGE }
 				NOT = { tag = SYN }
 				NOT = { tag = ADU }
@@ -494,5 +493,96 @@ was_moghulistan_nation = {
 		was_tag = KZH
 		was_tag = KOK
 		was_tag = KHI
+	}
+}
+
+province_is_buddhist_or_accepts_buddhism = {
+	OR = {
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_at
+			OR = {
+				AND = {
+					religion = buddhism
+					OR = {
+						has_owner_religion = yes
+						owner = { has_harmonized_with = buddhism }
+						owner = { secondary_religion = buddhism }
+					}
+				}
+				AND = {
+					religion = vajrayana
+					OR = {
+						has_owner_religion = yes
+						owner = { has_harmonized_with = vajrayana }
+						owner = { secondary_religion = vajrayana }
+					}
+				}
+				AND = {
+					religion = mahayana
+					OR = {
+						has_owner_religion = yes
+						owner = { has_harmonized_with = mahayana }
+						owner = { secondary_religion = mahayana }
+					}
+				}
+                AND = {
+					religion = bon_reformed
+					OR = {
+						has_owner_religion = yes
+						owner = { has_harmonized_with = bon_reformed }
+						owner = { secondary_religion = bon_reformed }
+					}
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_bt
+			owner = {
+				OR = {
+					has_harmonized_with = buddhism
+					has_harmonized_with = vajrayana
+					has_harmonized_with = mahayana
+				}
+			}
+			has_owner_religion = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_ct
+			owner = {
+				OR = {
+					secondary_religion = buddhism
+					secondary_religion = vajrayana
+					secondary_religion = mahayana
+				}
+			}
+			has_owner_religion = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_dt
+			religion = shinto
+			has_owner_religion = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_et
+			owner = { has_personal_deity = buddha }
+			has_owner_religion = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = province_is_buddhist_or_accepts_buddhism_ft
+			owner = { has_adopted_cult = buddhism_cult }
+			has_owner_religion = yes
+		}
+		#For the case the province has a religion which the player has already harmonized with and cannot convert
+		#It's a hidden trigger because the tooltip is already super flooded and it is incredibly niche
+		hidden_trigger = {
+			owner = {
+				OR = {
+					has_harmonized_with = buddhism
+					has_harmonized_with = vajrayana
+					has_harmonized_with = mahayana
+				}
+				has_harmonized_with = ROOT
+			}
+		}
 	}
 }

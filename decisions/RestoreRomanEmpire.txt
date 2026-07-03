@@ -23,6 +23,7 @@ country_decisions = {
 				tag = SOI
 				tag = Y11
 				tag = ITA
+				tag = ETR
 			}
 		}
 		provinces_to_highlight = {

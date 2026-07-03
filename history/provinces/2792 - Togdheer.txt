@@ -1,5 +1,5 @@
-owner = ETH
-controller = ETH
+owner = MRE
+controller = MRE
 capital = "Togdheer"
 is_city = yes
 culture = somali
@@ -8,7 +8,6 @@ trade_goods = slaves
 base_tax = 1
 base_production = 2
 base_manpower = 1
-add_core = ETH
 add_core = MRE
 discovered_by = MGE
 discovered_by = eastern

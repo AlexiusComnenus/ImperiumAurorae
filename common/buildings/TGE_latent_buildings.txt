@@ -1631,6 +1631,7 @@ steam_factory = {
 	
 	modifier = {
 		local_production_efficiency = 1.75
+		local_state_maintenance_modifier = 0.75
 	}
 	
 	allow_in_gold_provinces = no

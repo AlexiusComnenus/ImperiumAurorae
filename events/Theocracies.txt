@@ -1412,7 +1412,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = theocracy.1.ia2		# A Talented Alchemist!
+		name = theocracy.1.ia2		# A Talented Cultivator!
 		trigger = {
 			NOT = { has_country_flag = KOL_secondogeniture_of_BAV }
 			has_estate = estate_alchemists
@@ -1424,7 +1424,7 @@ country_event = {
 			}
 			add_estate_loyalty = {
 				estate = estate_alchemists
-				loyalty = 15
+				loyalty = 10
 			}
 		}
 		if = {
@@ -1433,7 +1433,7 @@ country_event = {
 			}
 			add_estate_loyalty = {
 				estate = estate_church
-				loyalty = -10
+				loyalty = -5
 			}
 		}
 		if = {
@@ -1442,7 +1442,7 @@ country_event = {
 			}
 			add_estate_loyalty = {
 				estate = estate_nobles
-				loyalty = -10
+				loyalty = -5
 			}
 		}
 

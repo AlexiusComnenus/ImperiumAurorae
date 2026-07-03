@@ -565,3 +565,37 @@ feo_heart_of_steppes = {
 	}
 	
 }
+
+# CHANGED LHASA
+
+vajrayana_lhasa = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	
+	#viewer = {
+	#}
+	
+	trigger = {
+		owner = {
+			religion = vajrayana
+            religion = bon_reformed
+		}
+	}
+	
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+    global_missionary_strength = 0.01
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+

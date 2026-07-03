@@ -5,6 +5,7 @@ technology_group = ottoman
 religion = sunni
 primary_culture = turkish
 capital = 418
+historical_rival = BYZ
 1444.11.11= {
 	monarch = {
 		name = "Kaya"

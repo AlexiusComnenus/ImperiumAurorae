@@ -178,6 +178,7 @@ anti_tax_rebels = {
 					NOT = { tag = PAP }
 					NOT = { tag = FAP }
 					NOT = { has_reform = saxon_feudalism }
+					NOT = { has_government_attribute = papacy }
 				}
 				change_government = republic
 				add_government_reform = peasants_republic

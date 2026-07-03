@@ -1,5 +1,5 @@
-owner = ETH
-controller = ETH
+owner = HDY
+controller = HDY
 capital = "Badeqe"
 is_city = yes
 culture = oromo
@@ -8,7 +8,7 @@ trade_goods = grain
 base_tax = 2
 base_production = 2
 base_manpower = 1
-add_core = ETH
+add_core = HDY
 add_core = JIM
 discovered_by = MGE
 discovered_by = eastern

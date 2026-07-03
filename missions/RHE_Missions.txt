@@ -426,39 +426,35 @@ ia_rheinland_missions_2_eco = {
 		effect = {
 			hidden_effect = {
 				hesse_area = {
-					type = all
+					limit = { owned_by = ROOT }
 					add_province_modifier = {
 						name = rhe_infrastructure_laid_out
 						duration = -1
 					}
 				}
 				north_rhine_area = {
-					type = all
-					owned_by = ROOT
+					limit = { owned_by = ROOT }
 					add_province_modifier = {
 						name = rhe_infrastructure_laid_out
 						duration = -1
 					}
 				}
 				lower_rhineland_area = {
-					type = all
-					owned_by = ROOT
+					limit = { owned_by = ROOT }
 					add_province_modifier = {
 						name = rhe_infrastructure_laid_out
 						duration = -1
 					}
 				}
 				westphalia_area = {
-					type = all
-					owned_by = ROOT
+					limit = { owned_by = ROOT }
 					add_province_modifier = {
 						name = rhe_infrastructure_laid_out
 						duration = -1
 					}
 				}
 				north_westphalia_area = {
-					type = all
-					owned_by = ROOT
+					limit = { owned_by = ROOT }
 					add_province_modifier = {
 						name = rhe_infrastructure_laid_out
 						duration = -1

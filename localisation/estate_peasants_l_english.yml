@@ -66,6 +66,8 @@
  #estate_peasants_force_conscription_desc: "Forced Conscription"
  estate_trade_company_monopoly_of_wic_effect_tooltip: "§RNo income from §YSlaves§!, §YSugar§!, §YTobacco§! §YCoffee§! or §YTropical Wood§!§!"
  MONOPOLY_INCOME_WIC_DESC: "from slaves, sugar, tobacco, coffee or tropical wood production."
+ estate_peasants_champions_of_industry: "Champions of Industry"
+ estate_peasants_champions_of_industry_desc: "Manufactories aren't yet fully entrusted into the hands of the Technocrats, instead, workers are handpicked and set as an example for all, in order to boost work morale and teach the Technocrats that in our realm, no little person shall be exploited without us coming down on them."
  #UNIQUES
  estate_peasants_frisian_freedom: "Frisian Freedom"
  estate_peasants_frisian_freedom_desc: "The Frisian Freedom or in Frisian, Fryske Frijheid, was a system of heavy autonomy in the region of Friesland in the middle ages, in which peasants were not constrained by feudalism and had the their own economic interest in mind. There were local elections in which Chieftains would be elected who represented them in the Upstalbeam."
@@ -262,3 +264,4 @@
  peasantsevents.1.t:0 "Advancement of the $ESTATE_PEASANTS$"
  peasantsevents.1.d:0 "As the teeming masses that compose the state, the $ESTATE_PEASANTS$ have dominated the social scene recently. After several successful harvests and major parades the $ESTATE_PEASANTS$ have gained great influence in [Root.Capital.GetCapitalName], bringing attention to the issues that humble farmers might care about."
  peasantsevents.1.a:0 "Ok."
+ estate_peasants_accepts_industrialists_with_restrictions_tt:0 "The §Y[Root.GetPeasantryName]§! will accept the §YTechnocrats§! and get a temporary privilege to ensure no abuse of power happens."

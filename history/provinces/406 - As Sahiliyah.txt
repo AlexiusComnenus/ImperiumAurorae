@@ -1,5 +1,5 @@
-owner = IRQ
-controller = IRQ
+owner = ASY
+controller = ASY
 capital = "Sahiliyah"
 is_city = yes
 culture = assyrian
@@ -8,7 +8,6 @@ trade_goods = livestock
 base_tax = 1
 base_production = 3
 base_manpower = 2
-add_core = IRQ
 add_core = ASY
 add_permanent_claim = IRQ
 discovered_by = MGE

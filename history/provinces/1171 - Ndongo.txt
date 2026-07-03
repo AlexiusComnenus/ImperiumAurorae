@@ -16,3 +16,7 @@ discovered_by = LOA
 discovered_by = NDO
 discovered_by = central_african
 discovered_by = sub_saharan
+
+latent_trade_goods = {
+	coal
+}

@@ -1,6 +1,6 @@
 government = theocracy
 add_government_reform = cultivators_order
-government_rank = 1
+government_rank = 2
 technology_group = eastern
 religion = hellenic_pagan_reformed
 primary_culture = beifei
@@ -42,5 +42,9 @@ elector = yes
 	set_religious_school = {
 		group = christian
 		school = draconic_inquisition_school
+	}
+	add_country_modifier = {
+		name = martial_artist_regiments_modifier
+		duration = -1
 	}
 }

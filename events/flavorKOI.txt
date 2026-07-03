@@ -3,7 +3,24 @@ namespace = catt
 country_event = { #startup event
 	id = catt.1
 	title = catt.1.title
-	desc = catt.1.desc
+    desc = {
+        trigger = { 
+            OR = {
+                BRI = { ai = no }
+                CRN = { ai = no }
+                HSC = { ai = no }
+            }
+        }
+        desc = "catt_1_2_desc"
+    }
+    desc = {
+        trigger = { 
+            BRI = { ai = yes }
+            CRN = { ai = yes }
+            HSC = { ai = yes }
+        }
+        desc = "catt_1_1_desc"
+    }
 	picture = EP_ISLAND_eventPicture
 
 	is_triggered_only = yes
@@ -13,28 +30,42 @@ country_event = { #startup event
 	}
     immediate = {
         hidden_effect = {
-            add_stability = -2
-        add_devotion = -80
-        4365 = {
-            add_devastation = 80
+            if = {
+                limit = { ai = no }
+                    add_stability = -2
+                    add_devotion = -80
+                4365 = {
+                    add_devastation = 80
+                }
             }
             add_country_modifier = {
-            name = koi_starting_cav_debuff
-            duration = -1
+                name = koi_starting_cav_debuff
+                duration = -1
             }
             set_variable = {
-            which = KoiFelinesEnlightened
-            value = 0
+                which = KoiFelinesEnlightened
+                value = 0
             }
             set_variable = {
-            which = KoiArmorEquips
-            value = 0
+                which = KoiArmorEquips
+                value = 0
+            }
+            set_variable = {
+                which = KoiFailinisBattlesWon
+                value = 0
             }
         }
     }
 	option = {
 		name = catt.1.a
         custom_tooltip = catt.1.tt
+        tooltip = {
+            add_stability = -2
+            add_devotion = -80
+            4365 = {
+                add_devastation = 80
+            }
+        }
 		ai_chance = { 
 			factor = 100
 		}
@@ -231,7 +262,7 @@ country_event = { #random revolt during landowner purge
             num_of_estate_privileges = {
                 estate = estate_nobles
                 value = 1
-                }
+            }
         }
     }
     option = {
@@ -261,7 +292,6 @@ country_event = { #Cath Palug Returns and takes over
             dip = 5
             mil = 6
             age = 20
-            fixed = yes
             female = yes
         }
     }
@@ -284,26 +314,25 @@ country_event = { #New gov reform and purge ends
         had_country_flag = { flag = koi_catsith_revolts days = 1460 }
     }
     mean_time_to_happen = {
-    days = 1
+        days = 1
     }
     immediate = {
         hidden_effect = {
-         KOI = { clr_country_flag = koi_catsith_revolts
-        }
-        remove_country_modifier = koi_emergency_powers
-        remove_country_modifier = koi_temp_levies
+            clr_country_flag = koi_catsith_revolts
+            remove_country_modifier = koi_emergency_powers
+            remove_country_modifier = koi_temp_levies
         }
     }
     option = {
         name = catt.10.a
         add_stability = 2
         hidden_effect = {
-        set_variable = {
-            which = KoiUsedFawningButtons
-            value = 0
+            set_variable = {
+                which = KoiUsedFawningButtons
+                value = 0
             }
-        every_owned_province = {
-            limit = { NOT = { province_id = 4365 } }
+            every_owned_province = {
+                limit = { NOT = { province_id = 4365 } }
                 add_devastation = 40
                 set_local_autonomy = 0
             }
@@ -320,6 +349,15 @@ country_event = { #New gov reform and purge ends
     after = {
         set_government_rank = 2
         set_country_flag = koi_has_reformed
+        if = {
+            limit = { 1098 = { owned_by = KOI } }
+            1098 = {
+                add_province_modifier = {
+                    name = unshackled_from_governing_distance
+                    duration = -1
+                }
+            }
+        }
     }
 }
 

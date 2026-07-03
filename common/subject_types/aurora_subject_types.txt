@@ -87,6 +87,7 @@ german_march = {
 			NOT = {
 				development_of_overlord_fraction = 0.25
 			}
+			ai = yes
 		}
 		expiration_message_overlord = MARCHTOOLARGE
 		expiration_message_subject = MARCHTOOLARGEUS
@@ -595,7 +596,7 @@ crusader_state_subject = {
 	count = vassal
 	
 	# Triggers:
-	is_potential_overlord = { religion_group = christian	NOT = { religion = hellenic_pagan_reformed } } 			# This part is not copied in copy_from. Actual default is equivalent to always = yes
+	#is_potential_overlord = { religion_group = christian	NOT = { religion = hellenic_pagan_reformed } } 			# This part is not copied in copy_from. Actual default is equivalent to always = yes
 	
 	# Graphics:
 	sprite = GFX_icon_crusader_state_vassal
@@ -737,14 +738,14 @@ trade_protectorate = {
 	max_government_rank = 2
 	should_quit_wars_on_activation = no
 	can_have_subjects_of_other_types = yes
-	uses_military_focus = no
+	uses_military_focus = yes
 	overlord_protects_external = yes
 	counts_for_borders = no
 	counts_as_overlord_holding = yes
-	can_use_claims = no
+	can_use_claims = yes
 	share_rebel_popup = no
 	can_transfer_in_peace = no
-	can_set_mil_focus = no
+	can_set_mil_focus = yes
 	can_send_missionary_to_subject = no
 	overlord_can_fabricate_for = no
 	does_overlord_size_count_for_warscore_cost = no
@@ -818,6 +819,13 @@ trade_protectorate = {
 			total_development = 250
 		}
 	}
+	modifier_overlord = {
+		modifier = eng_round_table_seat_protectorates
+		trigger = {
+			overlord = { has_reform = dumnonia_chivalric_realm }
+			capital_scope = { continent = europe }
+		}
+	}
 	modifier_subject = {
 		modifier = gbr_emperor_of_india_subject_bonus
 		trigger = {
@@ -848,6 +856,12 @@ trade_protectorate = {
 			ROOT = {
 				NOT = { mil_tech = FROM }
 			}
+		}
+	}
+	modifier_subject = {
+		modifier = eng_chivalric_protectorates
+		trigger = {
+			FROM = { has_country_flag = eng_chivalric_protectorates_flag }
 		}
 	}
 }
@@ -2038,4 +2052,81 @@ march = {
 			}
 		}
 	}
+}
+
+eyalet = {
+	copy_from = default
+	
+	# Graphics:
+    sprite = GFX_icon_eyalet
+	diplomacy_overlord_sprite = GFX_icon_diplomacy_lead_eyalet
+	diplomacy_subject_sprite = GFX_icon_diplomacy_am_eyalet 
+
+	# Properties:
+	transfer_trade_power = yes
+	joins_overlords_wars = no
+	can_be_annexed = no
+	has_power_projection = no
+	gets_help_with_rebels = yes
+	forms_trade_companies = no
+	takes_diplo_slot = yes
+	extend_trading_range = yes
+	counts_for_borders = yes
+	max_government_rank = 2
+	can_be_co_belligerented = yes
+	must_accept_cta_from_overlord = yes
+	can_gain_favors = yes
+	favors_cost_to_join_offensive_wars = 20   #Defines how much favors the overlord need to invest to call the subject into an offensive war
+	favors_cost_to_join_defensive_wars = 10   #Defines how much favors the overlord need to invest to call the subject into a defensive war
+	opinion_cost_to_join_offensive_wars = 40   #Defines how much opinion the subject loses of the overlord to call the subject into an offensive war. Applied if you do not have Leviathan
+	opinion_cost_to_join_defensive_wars = 20   #Defines how much opinion the subject loses of the overlord to call the subject into a defensive war. Applied if you do not have Leviathan
+	opinion_on_subject_integration = 0
+
+	liberty_desire_development_ratio = 0.1
+	liberty_desire_same_dynasty = -5.0
+	pays_overlord = 1.25
+	forcelimit_to_overlord = 0.1						# Percent of subject FL to use as base for modifiers
+	naval_forcelimit_to_overlord = 0.1					# Percent of subject FL to use as base for modifiers
+	manpower_to_overlord = 0.1							# Percent of subject FL to use as base for modifiers
+	sailors_to_overlord = 0.1							# Percent of subject FL to use as base for modifiers
+
+	relative_power_class = 2
+	should_quit_wars_on_activation = yes
+
+	restoration_cb = cb_disloyal_eyalet
+
+	# Subject Interactions:
+	support_loyalists = yes
+	place_relative_on_throne = yes
+	sacrifice_ruler = yes
+	sacrifice_heir = yes
+	divert_trade = yes
+	seize_territory = yes
+	siphon_income = yes
+
+	# Modifiers:
+	modifier_subject = clear # Use this to clear after copy_from.
+	modifier_subject = {
+		modifier = subject_tax_modifier
+		trigger = {
+			overlord = {
+				has_government_attribute = subject_tax_modifier_25
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = same_religion_subject_bonus_mod
+		trigger = {
+			overlord = {
+				has_government_attribute = same_religion_subject_bonus
+				religion = PREV
+			}
+		}
+	}
+	modifier_subject = {
+		modifier = eyalet_modifier
+	}
+
+	overlord_opinion_modifier = is_eyalet
+	subject_opinion_modifier = is_eyalet
 }

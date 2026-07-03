@@ -1,0 +1,117 @@
+namespace = flavor_tib
+normal_or_historical_nations = yes
+
+country_event = {
+	id = flavor_tib.1
+	title = "flavor_tib.1.t"
+	desc = "flavor_tib.1.d"
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		culture = tibetan
+	}
+    immediate = {
+        hidden_effect = {
+            hindusthan_region = {
+                discover_country = ROOT
+            }
+            bengal_region = {
+                discover_country = ROOT
+            }
+            tibet_region = {
+                discover_country = ROOT
+            }
+            568 = {
+                discover_country = ROOT
+            }
+            2170 = {
+                discover_country = ROOT
+            }
+            central_asia_region = {
+                discover_country = ROOT
+            }
+            mongolia_region = {
+                discover_country = ROOT
+            }
+            gansu_area = {
+                discover_country = ROOT
+            }
+            west_gansu_area = {
+                discover_country = ROOT
+            }
+        }
+    }
+	option = {	
+		name = "flavor_tib.1.a"
+        hidden_effect = {
+            tibet_region = {
+                limit = { religion = ROOT }
+                add_permanent_claim = ROOT
+            }
+        }
+        custom_tooltip = flavor_tib_1_tt
+        if = {
+            limit = { ai = yes }
+            set_ai_personality = {
+                personality = ai_militarist
+                locked = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = flavor_tib.100
+    title = "flavor_tib.100.t"
+    desc = "flavor_tib.100.d"
+    picture = RELIGION_eventPicture
+    
+    is_triggered_only = yes
+
+    option = {  
+        name = "flavor_tib.100.a"
+        add_estate_loyalty = {
+            estate = all
+            loyalty = -25
+        }
+        every_owned_province = {
+            limit = { culture = tibetan }
+            add_nationalism = -20
+        }
+        custom_tooltip = tib_generic_intermediate_realm_every_heathen_apart_from_mani_tt
+        tooltip = {
+            random_owned_province = {
+                limit = { 
+                    culture = tibetan
+                    region = tibet_region
+                    NOT = { 
+                        religion_group = ROOT
+                        religion = manichean
+                    }
+                }
+                add_province_modifier = {
+                    name = tib_generic_intermediate_state
+                    duration = 5475
+                }
+            }
+        }
+        hidden_effect = {
+            every_owned_province = {
+                limit = {
+                    culture = tibetan
+                    NOT = {
+                        religion_group = ROOT
+                        religion = manichean
+                    }
+                    region = tibet_region
+                }
+                add_province_modifier = {
+                    name = tib_generic_intermediate_state
+                    duration = 3650
+                }
+            }
+        }
+    }
+}

@@ -360,6 +360,14 @@ country_event = {
 	picture = KING_DOING_GREAT_eventPicture
 	is_triggered_only = yes
 	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
+	
 	option = {	# From this day forward we shall be known as the Kingdom of Prussia!
 		name = flavor_liv.4.a
 		#if = {

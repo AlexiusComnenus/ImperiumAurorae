@@ -6,10 +6,6 @@ country_decisions = {
 			normal_or_historical_nations = yes
 			was_never_end_game_tag_trigger = yes
 			NOT = { has_country_flag = formed_england_flag }
-			OR = {
-				ai = no
-				is_playing_custom_nation = no
-			}
 			NOT = { tag = ENG }
 			NOT = { tag = AVE }
 			NOT = { tag = HLR }
@@ -41,8 +37,13 @@ country_decisions = {
 		}
 		allow = {
 			is_at_war = no
-			is_free_or_tributary_trigger = yes
-			is_nomad = no			
+			#is_free_or_tributary_trigger = yes
+			is_nomad = no
+			OR = {
+				dynasty = "Pendraig"
+				tag = WLS
+				tag = CRN
+			}
 			NOT = { exists = ENG }
 			owns_core_province = 242		# Gwynedd
 			owns_core_province = 237		# Oxfordshire
@@ -62,66 +63,6 @@ country_decisions = {
 				}
 				set_government_rank = 2
 			}
-			home_counties_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			yorkshire_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			east_midlands_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			west_midlands_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			east_anglia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			wales_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			wessex_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-				}
-				add_permanent_claim = ENG
-			}
-			#Cumbria
-			247 = {
-				if = {
-					limit = {
-						NOT = { owned_by = ROOT }
-					}
-					add_permanent_claim = ENG
-				}
-			}
-			#Northumberland
-			246 = {
-				if = {
-					limit = {
-						NOT = { owned_by = ROOT }
-					}
-					add_permanent_claim = ENG
-				}
-			}
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
@@ -140,6 +81,18 @@ country_decisions = {
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 			set_capital = 239
+			239 = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+			}
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_country_flag = dum_counting_virtues } }
+					set_variable = { which = DumVirtues value = 0 }
+					set_country_flag = dum_counting_virtues
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -168,6 +121,52 @@ country_decisions = {
 		}
 		ai_will_do = {
 			factor = 10
+		}
+	}
+	
+	albion_activate_as_general = {
+		potential = {
+			has_country_flag = permanent_albion_general_flag
+			has_country_flag = albion_in_court_flag
+			NOT = { has_leader = "Albion" }
+		}
+		allow = {
+			has_country_flag = permanent_albion_general_flag
+			has_country_flag = albion_in_court_flag
+			NOT = { has_leader = "Albion" }
+		}
+		effect = {
+			define_general = {
+				shock = 8
+				fire = 4
+				manuever = 5
+				siege = 4
+				name = "Albion"
+				trait = grand_captain
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	eng_begin_sword_trial = {
+		major = yes
+		potential = {
+			has_reform = dumnonia_monarchy_reform
+			NOT = { has_country_flag = arthurian_trial_ongoing }
+			NOT = { has_ruler_modifier = failed_to_draw_excalibur }
+			NOT = { has_ruler_modifier = wielding_excalibur }
+		}
+		allow = {
+			has_reform = dumnonia_monarchy_reform
+			NOT = { has_regency = yes }
+		}
+		effect = {
+			country_event = { id = ia_flavor_eng.14 }
+		}
+		ai_will_do = {
+			factor = 100
 		}
 	}
 	

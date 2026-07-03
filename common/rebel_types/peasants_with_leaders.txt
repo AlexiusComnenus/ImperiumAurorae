@@ -117,12 +117,12 @@ leadered_peasant_rebels = {
 			remove_country_modifier = support_troops
 			remove_country_modifier = obsolete_forces
 			remove_country_modifier = isolate_rebels
-			add_prestige = -50
 			if = {
 				limit = {
 					NOT = { tag = Z17 }
 					NOT = { is_emperor = yes }
 					NOT = { has_government_attribute = is_peasants_republic }
+					NOT = { has_government_attribute = papacy }
 					NOT = { tag = TEM }
 					NOT = { tag = PAP }
 					NOT = { tag = FAP }

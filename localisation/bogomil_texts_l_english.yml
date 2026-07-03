@@ -28,7 +28,7 @@
  bog_reject_material_temptations_tt: "§RCommerce shall suffer!§!"
  bog_eternal_struggle: "Eternal Struggle Against Evil"
  bog_eternal_struggle_modifier: "Eternal Struggle Against Evil"
- desc_bog_eternal_struggle: "The Great Evil is forever locked in a conflict against God and his servants of Righteousness. To arms, all Bogomils!\n Has the following additional effects:\n §R+2§! War Exhaustion (immediate)\n §R+0.10§! War Exhaustion\n §R-10%§! Discipline\n §R-20%§! Production Efficiency\n §R+10%§! Development Cost"
+ desc_bog_eternal_struggle: "The Great Evil is forever locked in a conflict against God and his servants of Righteousness. To arms, all Bogomils!\n Has the following additional effects:\n §R+2§! War Exhaustion (immediate)\n §R+0.10§! War Exhaustion\n §R-20%§! Production Efficiency\n §R+10%§! Development Cost"
  ia_flavor_bog.1.t: "The Bogomils of Bosnia"
  ia_flavor_bog.1.d: "The Bogomil religious movement has a long history in the Balkans, with their simplistic and anti-authoritarian approach winning many followers among the peasantry sick of their fickle feudal overlords. Particularly in Bosnia, many of the rural folk follow this sect already in secret, with even some of the lords embracing it openly in Herzegovina in defiance to their lieges and both the Catholic and Orthodox Churches. Now, with Church politics having settled down a little from their recent upheaval, the Pope in Danzig has sent us orders to root out the heretics, and our Venetian overlords have encouraged us to obey them. How shall we respond?"
  ia_flavor_bog.1.a: "Follow His Holyness's Will!"

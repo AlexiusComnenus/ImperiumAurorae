@@ -110,8 +110,6 @@ hansa_free_city_reform = {
 		trade_city_reform = trading_city
 	}
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
 		is_merchant_republic = yes
 		elections_increase_factions_influence = yes
 	}
@@ -325,8 +323,8 @@ bataafs_republiek = {
 	}
 	
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 		locked_government_type = yes
 	}
 

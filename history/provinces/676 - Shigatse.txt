@@ -1,5 +1,5 @@
-owner = Z58
-controller = Z58
+owner = UTS
+controller = UTS
 capital = "Shigatse"
 is_city = yes
 culture = tibetan
@@ -8,7 +8,7 @@ trade_goods = incense
 base_tax = 4
 base_production = 1
 base_manpower = 2
-add_core = Z58
+add_core = UTS
 add_permanent_claim = UTS
 discovered_by = MGE
 discovered_by = eastern

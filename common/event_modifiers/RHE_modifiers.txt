@@ -101,13 +101,3 @@ rhe_invest_in_the_complex = {
 rhe_regional_raumordnungsgesetz = {
 	centralize_state_cost = -0.15
 }
-
-#Modifiers for Industrialists Unique to Rhineland from Missions
-
-estate_industrialists_rheinholzfallergilde_forest = {
-	local_development_cost = -0.15
-}
-
-estate_industrialists_rheinholzfallergilde_woods = {
-	local_development_cost = -0.1
-}

@@ -88,6 +88,13 @@ country_event = {		#	Bodyguard
 	
 	option = {	# Establish a secret police
 		name = saxon_crisis.1.a
+		ai_chance = { 
+			factor = 20 
+			modifier = {
+				factor = 2
+				NOT = { dip = 4 }
+			}
+		}
 		
 		add_treasury = -2000
 		add_adm_power = -100
@@ -119,6 +126,9 @@ country_event = {		#	Bodyguard
 	
 	option = {	# Establish a loyal bodyguard
 		name = saxon_crisis.1.b
+		ai_chance = { 
+			factor = 60 
+		}
 		
 		add_treasury = -1000
 		add_mil_power = -100
@@ -136,6 +146,9 @@ country_event = {		#	Bodyguard
 	
 	option = {	# Keep the feudal Kingsguard
 		name = saxon_crisis.1.c
+		ai_chance = { 
+			factor = 20
+		}
 		
 		add_country_modifier = {
 			name = sax_feudal_kingsguard
@@ -292,6 +305,13 @@ country_event = {		#	Standardization of weights and measures
 	
 	option = {	# Enforce full economic unity
 		name = saxon_crisis.3.a
+		ai_chance = { 
+			factor = 70 
+			modifier = {
+				factor = 3
+				adm = 5
+			}
+		}
 		
 		add_country_modifier = {
 			name = sax_unified_weights_and_measures
@@ -330,6 +350,9 @@ country_event = {		#	Standardization of weights and measures
 	
 	option = {	# Don't press the issue
 		name = saxon_crisis.3.b
+		ai_chance = { 
+			factor = 30
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -363,6 +386,17 @@ country_event = {		#	Language
 	
 	option = {	# Enforce full linguistic unity
 		name = saxon_crisis.4.a
+		ai_chance = { 
+			factor = 60 
+			modifier = {
+				factor = 2
+				dip = 4
+			}
+			modifier = {
+				factor = 2
+				adm = 4
+			}
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -391,6 +425,9 @@ country_event = {		#	Language
 	
 	option = {	# Only require official documents in Saxon
 		name = saxon_crisis.4.b
+		ai_chance = { 
+			factor = 30
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -418,6 +455,9 @@ country_event = {		#	Language
 	
 	option = {	# Don't press the issue
 		name = saxon_crisis.4.c
+		ai_chance = { 
+			factor = 10
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -942,6 +982,17 @@ country_event = {
 	
 	option = {
 		name = saxon_crisis.5.a
+		ai_chance = { 
+			factor = 50 
+			modifier = {
+				factor = 2
+				dip = 4
+			}
+			modifier = {
+				factor = 2
+				adm = 4
+			}
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -963,6 +1014,17 @@ country_event = {
 	
 	option = {
 		name = saxon_crisis.5.b
+		ai_chance = { 
+			factor = 50 
+			modifier = {
+				factor = 2
+				mil = 4
+			}
+			modifier = {
+				factor = 20
+				any_subject_country = { ai = no }
+			}
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -1007,6 +1069,13 @@ country_event = {		#	Army Reform
 	
 	option = {	# Embrace conscription!
 		name = saxon_crisis.6.a
+		ai_chance = { 
+			factor = 9
+			modifier = {
+				factor = 2
+				mil = 4
+			}
+		}
 		
 		add_country_modifier = {
 			name = sax_mass_conscription
@@ -1046,6 +1115,9 @@ country_event = {		#	Army Reform
 				ruler_has_personality = charismatic_negotiator_personality
 			}
 		}
+		ai_chance = { 
+			factor = 1000
+		}
 		
 		add_country_modifier = {
 			name = sax_mass_conscription
@@ -1081,6 +1153,13 @@ country_event = {		#	Army Reform
 	
 	option = {	# Don't press the issue
 		name = saxon_crisis.6.c
+		ai_chance = { 
+			factor = 1 
+			modifier = {
+				factor = 2
+				dip = 4
+			}
+		}
 		
 		add_estate_loyalty = {
 			estate = estate_nobles
@@ -2108,6 +2187,14 @@ country_event = {		#	End of Disaster
 	picture = DIPLOMACY_SIGNING_eventPicture
 	
 	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 	
 	immediate = {
 		hidden_effect = {

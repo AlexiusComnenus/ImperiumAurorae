@@ -23,7 +23,7 @@ aurora_trained = {
 		religion = hellenic_pagan_reformed
 	}
 	
-	shock_damage = 0.15
+	shock_damage = 0.2
 	cavalry_flanking = 0.5
 	movement_speed = 0.10
 }
@@ -59,9 +59,9 @@ voice_of_god_generaltrait = {
 	}
 	
 	morale_damage_received = -0.20
-	morale_damage = 0.20	
 	land_attrition = -0.50
 	shock_damage_received = -0.20
+	land_morale = 0.1
 	force_march_free = yes
 	army_tradition_from_battle = 1
 }
@@ -101,12 +101,13 @@ soi_logistics_genius = {
 	
 	land_attrition = -0.20
 	movement_speed = 0.15
-	siege_ability = 0.25
+	siege_ability = 0.1
 }
 
 dawnsbane_leader = {
 	allow = {
-		always = no
+		is_admiral = no
+		any_war_enemy_country = { tag = Z17 }
 	}
 	
 	shock_damage_received = -0.15
@@ -120,7 +121,7 @@ horde_breaker_leader = {
 	}
 	
 	morale_damage_received = -0.10
-	shock_damage_received = -0.10
+	shock_damage_received = -0.15
 }
 
 grand_captain = {
@@ -154,8 +155,7 @@ apostle_of_apocalypse_generaltrait = {
 		tag = YOR
 		is_year = 1820
 	}
-	land_morale = 0.15
-	morale_damage = 0.5	
+	morale_damage = 0.1
 	shock_damage = 0.2
 	shock_damage_received = 0.1
 	fire_damage = 0.2

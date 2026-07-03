@@ -113,6 +113,127 @@ country_decisions = {
         }
 	}
 	
+	adopt_chinese_name_decision = {
+		major = yes
+        color = { 235 102 255 }
+		potential = {
+			NOT = { has_country_flag = chinese_protectorate_name_flag }
+			is_subject = yes
+			overlord = { is_emperor_of_china = yes }
+			OR = {
+				owns_or_non_sovereign_subject_of = 2107
+				owns_or_non_sovereign_subject_of = 4678
+				owns_or_non_sovereign_subject_of = 723
+				owns_or_non_sovereign_subject_of = 613
+				owns_or_non_sovereign_subject_of = 2373
+				owns_or_non_sovereign_subject_of = 710
+				owns_or_non_sovereign_subject_of = 2121
+				owns_or_non_sovereign_subject_of = 454
+				owns_or_non_sovereign_subject_of = 451
+				owns_or_non_sovereign_subject_of = 446
+				owns_or_non_sovereign_subject_of = 461
+			}
+		}
+
+
+		allow = {
+			NOT = { has_country_flag = chinese_protectorate_name_flag }
+			is_subject = yes
+			NOT = { liberty_desire = 50 }
+			overlord = { is_emperor_of_china = yes }
+		}
+
+
+		effect = {
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 2107
+				}
+				override_country_name = ANDONG_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 4678
+				}
+				override_country_name = ANBEI_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 723
+				}
+				override_country_name = CHANYU_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					OR = { owns_or_non_sovereign_subject_of = 613 	owns_or_non_sovereign_subject_of = 2373 }
+				}
+					override_country_name = ANNAN_PROTECTORATE_NAME
+					set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					OR = { owns_or_non_sovereign_subject_of = 710 	owns_or_non_sovereign_subject_of = 2121 }
+				}
+					override_country_name = ANXI_PROTECTORATE_NAME
+					set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 454
+				}
+				override_country_name = SOGDIANA_PROTECTORATE_NAME
+				set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					OR = { owns_or_non_sovereign_subject_of = 451 	owns_or_non_sovereign_subject_of = 446 }
+				}
+					override_country_name = TOKHARISTAN_PROTECTORATE_NAME
+					set_country_flag = chinese_protectorate_name_flag
+			}
+			else_if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 461
+				}
+					override_country_name = KUNLING_PROTECTORATE_NAME
+					set_country_flag = chinese_protectorate_name_flag
+			}
+		}
+		ai_will_do = {
+            factor = 1
+        }
+	}
+	
+	restore_chinese_name_decision = {
+		major = yes
+        color = { 235 102 255 }
+		potential = {
+			has_country_flag = chinese_protectorate_name_flag
+			NOT = { overlord = { is_emperor_of_china = yes } }
+		}
+
+
+		allow = {
+			has_country_flag = chinese_protectorate_name_flag
+			OR = {
+				NOT = { is_subject = yes }
+				NOT = { overlord = { is_emperor_of_china = yes } }
+			}
+		}
+
+
+		effect = {
+			restore_country_name = yes
+			clr_country_flag = chinese_protectorate_name_flag
+		}
+		ai_will_do = {
+            factor = 1
+        }
+	}
+	
 	capital_centralize_state_decision = {
 		potential = {
 			always = yes
@@ -462,6 +583,7 @@ country_decisions = {
 			ai = no
 			NOT = { has_global_flag = ivycurse_disabled }
 			NOT = { has_global_flag = ivycurse_enabled }
+			NOT = { is_year = 1445 }
 		}
 		allow = {
 			ai = no
@@ -913,6 +1035,7 @@ country_decisions = {
 		potential = {
 			ai = yes
 			religion = hellenic_pagan_reformed
+			NOT = { has_government_attribute = papacy }
 			#NOT = { has_government_attribute = monastic_order }
 			NOT = { has_reform = celestial_xizho_empire }
 			government = theocracy
@@ -922,6 +1045,7 @@ country_decisions = {
 			religion = hellenic_pagan_reformed
 			NOT = { has_government_attribute = monastic_order }
 			NOT = { has_reform = celestial_xizho_empire }
+			NOT = { has_government_attribute = papacy }
 			government = theocracy
 		}
 		effect = {
@@ -1001,11 +1125,16 @@ country_decisions = {
 			ai = no
 			stability = 2
 			NOT = { is_papal_controller = yes }
+			NOT = { has_country_modifier = recently_abdicated_pope_modifier }
 		}
 		effect = {
 			add_stability = -2
 			add_prestige = -20
 			exile_ruler_as = { name = abdicated_pope }
+			add_country_modifier = {
+				name = recently_abdicated_pope_modifier
+				duration = 3650
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -1047,6 +1176,7 @@ country_decisions = {
 			NOT = { has_reform = templar_order_government }
 			NOT = { has_reform = regnum_gothorum_reform }
 			NOT = { has_reform = imperium_gothorum_reform }
+			NOT = { has_government_attribute = papacy }
 		}
 		allow = {
 			dominant_culture = capital
@@ -1059,6 +1189,12 @@ country_decisions = {
 			add_country_modifier = {
 				name = changing_primary_culture_modifier
 				duration = -1
+			}
+			hidden_effect = {
+				capital_scope = {
+					export_to_variable = { which = new_primary_culture value = trigger_value:culture }
+					PREV = { set_variable = { which = new_primary_culture which = PREV } }
+				}
 			}
 			country_event = {
 				id = ia_change_primary_culture_events.1

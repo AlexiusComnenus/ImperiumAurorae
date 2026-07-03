@@ -39,6 +39,12 @@ apostolic_finisher = {
 	reverse_relation_with_same_religion = 20
 }
 
+z17_son_of_heaven = {
+	imperial_mandate = 0.5
+	imperial_authority = 0.25
+	governing_capacity = 250
+}
+
 defeated_rum = {
 	army_tradition = 0.5
 }

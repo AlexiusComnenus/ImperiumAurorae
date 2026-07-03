@@ -12,6 +12,7 @@ fort_15th = yes
 extra_cost = 16
 center_of_trade = 2
 add_core = KRM
+add_core = ORM
 add_permanent_claim = PER
 discovered_by = MGE
 discovered_by = eastern

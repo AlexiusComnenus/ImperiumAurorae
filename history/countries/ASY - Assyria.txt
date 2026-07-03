@@ -3,3 +3,4 @@ government_rank = 1
 technology_group = eastern
 religion = nestorian
 primary_culture = assyrian
+capital = 2310

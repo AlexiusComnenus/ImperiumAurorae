@@ -400,6 +400,14 @@ country_event = {  # Rise of the Gauls
     is_triggered_only = yes
 	major = yes
 	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
+	
 	option = {	# Hoorah!
 		name = ia_flavor_bri.6.a
 		ai_chance = { factor = 100 }
@@ -449,6 +457,14 @@ country_event = {  # Rise of Domnonée
     is_triggered_only = yes
 	major = yes
 	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
+	
 	option = {	# Hoorah!
 		name = ia_flavor_bri.7.a
 		ai_chance = { factor = 100 }
@@ -491,6 +507,14 @@ country_event = {  # Rise of the Soissons
 	picture = BYZ_BYZANTINE_EMPEROR_eventPicture
     is_triggered_only = yes
 	major = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 	
 	option = {	# Hoorah!
 		name = ia_flavor_bri.8.a
@@ -561,7 +585,10 @@ province_event = {
 			OR = {
 				tag = SOI
 				was_tag = SOI
+				tag = ETR
+				was_tag = ETR
 			}
+			culture_group = roman_group
 			has_country_flag = soi_assimilation_on
 		}
 	}

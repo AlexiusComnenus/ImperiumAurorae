@@ -56,10 +56,11 @@ country_event = {
 		ai_chance = { factor = 80 }
 		add_imperial_influence = -10
 		custom_tooltip = aol_everyone_contributes_tt
+		set_global_flag = army_of_light_spawned_flag
 		hidden_effect = {
 			1249 = {
 				cede_province = emperor
-				change_culture = emperor
+				change_culture = xifei
 				change_religion = emperor
 				add_core = AOL
 				add_institution_embracement = {
@@ -77,7 +78,7 @@ country_event = {
 			}
 			1162 = {
 				cede_province = emperor
-				change_culture = emperor
+				change_culture = xifei
 				change_religion = emperor
 				add_core = AOL
 				add_institution_embracement = {
@@ -120,12 +121,25 @@ country_event = {
 				change_government = theocracy
 				add_government_reform = auroral_horde
 				define_general = {
-					fire = 6
+					fire = 4
 					shock = 10
 					manuever = 6
 					siege = 10
 					trait = aurora_trained
 					name = "Xuenyuan Wangliang"
+				}
+				define_leader_to_ruler = {
+					name = "Xuenyuan Wangliang"
+					adm = 5
+					dip = 2
+					mil = 6
+					fixed = yes
+					claim = 100
+				}
+				add_ruler_modifier = {
+					name = keep_jacoba_alive
+					duration = -1
+					hidden = yes
 				}
 			}
 			niger_region = { add_permanent_claim = AOL }
@@ -139,11 +153,12 @@ country_event = {
 			factor = 20
 		}
 		emperor = { add_treasury = -500 	add_manpower = -20 }
+		set_global_flag = army_of_light_spawned_flag
 		
 		hidden_effect = {
 			1249 = {
 				cede_province = emperor
-				change_culture = emperor
+				change_culture = xifei
 				change_religion = emperor
 				add_core = AOL
 				add_institution_embracement = {
@@ -161,7 +176,7 @@ country_event = {
 			}
 			1162 = {
 				cede_province = emperor
-				change_culture = emperor
+				change_culture = xifei
 				change_religion = emperor
 				add_core = AOL
 				add_institution_embracement = {
@@ -196,12 +211,25 @@ country_event = {
 				change_government = theocracy
 				add_government_reform = auroral_horde
 				define_general = {
-					fire = 6
+					fire = 4
 					shock = 10
 					manuever = 6
 					siege = 10
 					trait = aurora_trained
 					name = "Xuenyuan Wangliang"
+				}
+				define_leader_to_ruler = {
+					name = "Xuenyuan Wangliang"
+					adm = 5
+					dip = 2
+					mil = 6
+					fixed = yes
+					claim = 100
+				}
+				add_ruler_modifier = {
+					name = keep_jacoba_alive
+					duration = -1
+					hidden = yes
 				}
 				add_treasury = 200 	
 				add_manpower = 10

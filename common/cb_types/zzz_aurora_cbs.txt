@@ -83,32 +83,6 @@ cb_imperial_realm_war_lite = {
 	war_goal = superiority_reichskrieg
 }
 
-cb_take_mandate = {
-	valid_for_subject = no
-
-	prerequisites = {
-		has_dlc = "Mandate of Heaven"
-		is_subject = no
-		is_neighbor_of = FROM
-		NOT = { has_reform = shogunate }
-		FROM = { is_emperor_of_china = yes }
-		culture_group = xizho_group
-		NOT = { truce_with = FROM }
-		is_revolutionary = no
-		
-		OR = {
-			ai = no
-			culture_group = xizho_group
-			any_owned_province = {
-				culture_group = east_asian
-				has_owner_accepted_culture = yes
-			}
-		}
-	}
-
-	war_goal = take_capital_take_mandate
-}
-
 cb_templar_crusade = {
 	valid_for_subject = no
 	holy_war = yes

@@ -69,12 +69,14 @@ estate_holy_orders = {
 		interest = -1
 	}
 	country_modifier_neutral = {
-		cav_to_inf_ratio = 0.1
+		manpower_in_true_faith_provinces = 0.1
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		manpower_in_true_faith_provinces = -0.15
 		interest = 1
 		global_unrest = 2
+		yearly_corruption = 0.2
 	}
 	land_ownership_modifier = {
 		holy_orders_loyalty_modifier = 0.2

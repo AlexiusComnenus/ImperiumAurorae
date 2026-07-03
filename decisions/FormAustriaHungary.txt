@@ -156,7 +156,10 @@ country_decisions = {
 					remove_core = HUN
 				}
 			}
-			add_government_reform = austrian_dual_monarchy
+			if = {
+				limit = { government = monarchy }
+				add_government_reform = austrian_dual_monarchy
+			}
 		}
 		ai_will_do = {
 			factor = 400

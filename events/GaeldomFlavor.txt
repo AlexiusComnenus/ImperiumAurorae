@@ -145,9 +145,9 @@ country_event = {
 			random_list = {
 				50 = {
 					define_general = {
-						shock = 2
+						shock = 3
 						fire = 8
-						manuever = 6
+						manuever = 5
 						siege = 4
 						trait = war_druid
 						name = root_name_male
@@ -155,9 +155,9 @@ country_event = {
 				}
 				50 = {
 					define_general = {
-						shock = 2
+						shock = 3
 						fire = 8
-						manuever = 6
+						manuever = 5
 						siege = 4
 						trait = war_druid
 						female = yes
@@ -192,7 +192,8 @@ country_event = {
 				}
 			}
 		}
-		else = {
+		else_if = {
+			limit = { army_tradition = 25 }
 			random_list = {
 				50 = {
 					define_general = {
@@ -210,6 +211,31 @@ country_event = {
 						fire = 6
 						manuever = 3
 						siege = 2
+						trait = war_druid
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 1
+						fire = 5
+						manuever = 2
+						siege = 1
+						trait = war_druid
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 1
+						fire = 5
+						manuever = 2
+						siege = 1
 						trait = war_druid
 						female = yes
 						name = root_name_female

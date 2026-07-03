@@ -882,10 +882,25 @@ offer_protectorate = {
 	alert_tooltip = offer_protectorate_alert_tooltip
 
 	is_visible = {
-		has_government_attribute = can_establish_trade_protectorates
+		OR = {
+			has_government_attribute = can_establish_trade_protectorates
+			AND = {
+				NOT = { is_emperor_of_china = yes }
+				NOT = { is_emperor = yes }
+				is_great_power = yes 
+				OR = {
+					current_age = age_of_absolutism
+					current_age = age_of_revolutions
+				}
+			}
+		}
 		is_subject = no
 		FROM = { is_subject = no }
 		FROM = { NOT = { has_reform = free_city } }
+		FROM = { NOT = { is_great_power = yes } }
+		FROM = { NOT = { is_elector = yes } }
+		FROM = { NOT = { is_emperor = yes } }
+		FROM = { NOT = { is_emperor_of_china = yes } }
 	}
 	is_allowed = {
 		if = {
@@ -942,6 +957,11 @@ offer_protectorate = {
 				}
 			}
 		}
+		FROM = { NOT = { has_reform = free_city } }
+		FROM = { NOT = { is_great_power = yes } }
+		FROM = { NOT = { is_elector = yes } }
+		FROM = { NOT = { is_emperor = yes } }
+		FROM = { NOT = { is_emperor_of_china = yes } }
 	}
 	on_accept = {
 		create_subject = {
@@ -4984,8 +5004,10 @@ invite_to_zoroastrian_community = {
 
 	is_visible = {
 		has_government_mechanic = the_three_royal_fires_mechanic
+		religion_group = zoroastrian_group
 		is_subject = no
 		FROM = { is_subject = no }
+		FROM = { NOT = { has_government_attribute = papacy } }
 		NOT = { religion = from }
 	}
 	is_allowed = {
@@ -5051,6 +5073,7 @@ invite_to_zoroastrian_community = {
 				has_country_flag = gained_first_invitation_charge
 			}
 		}
+		FROM = { NOT = { has_government_attribute = papacy } }
 	}
 	on_accept = {
 		change_variable = {
@@ -5264,7 +5287,7 @@ invite_to_zoroastrian_community = {
 			}
 			change_variable = {
 				which = ai_value
-				value = -1000
+				value = 25
 			}
 		}
 		add_entry = {

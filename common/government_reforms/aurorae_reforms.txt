@@ -92,8 +92,8 @@ cossacks_reform = {
 	}
 
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 60
@@ -155,8 +155,8 @@ kongsi_federation = {
 		peasants_loyalty_modifier = 0.10
 	}
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 		allow_draft_transport_ships = yes
 		disables_estate_nobles = yes
 		enables_estate_peasants = yes
@@ -751,8 +751,8 @@ prussian_republic_reform = {
 	}
 	
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = yes
 		generals_become_rulers = yes
 	}
 	
@@ -910,14 +910,12 @@ veche_republic = {
 		}
 		custom_attributes = {
 			weaker_russian_ability = yes
-			enables_plutocratic_idea_group = yes
-			enables_aristocratic_idea_group = no
 			elections_increase_factions_influence = yes
 		}
 	}
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 		elections_increase_factions_influence = yes
 	}
 	duration = 6
@@ -958,15 +956,13 @@ federal_republic = {
 		has_parliament = yes
 		custom_attributes = {
 			blocked_call_diet = yes
-			enables_plutocratic_idea_group = yes
-			enables_aristocratic_idea_group = no
 			disables_estate_nobles = yes
 		}
 	}
 	
 	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
+		#enables_plutocratic_idea_group = yes
+		#enables_aristocratic_idea_group = no
 		disables_estate_nobles = yes
 	}
 	duration = 4
@@ -1543,21 +1539,21 @@ cultivators_order = {
 		OR = {
 			religion = hellenic_pagan_reformed
 			religion = taoism
-			religion = mahayana
+			#religion = mahayana
 		}
 	}
 	nation_designer_trigger = {
 		OR = {
 			religion = hellenic_pagan_reformed
 			religion = taoism
-			religion = mahayana
+			#religion = mahayana
 		}
 	}
 	trigger = {
-		OR = {
-			has_reform = cultivators_order
-			have_had_reform = cultivators_order
-		}
+		#OR = {
+		#	has_reform = cultivators_order
+		#	have_had_reform = cultivators_order
+		#}
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 10
@@ -1565,25 +1561,36 @@ cultivators_order = {
 	heirs_can_be_generals = yes
 	papacy = yes
 	
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	queen = yes
 	lock_level_when_selected = yes
-	can_change_primary_culture = no
-	monastic = yes
+	#monastic = yes
 	modifiers = {
 		alchemists_influence_modifier = 0.15
 		alchemists_loyalty_modifier = 0.1
-		infantry_cost = 0.2
-		infantry_shock = 0.5
-		global_manpower_modifier = -0.25
-		mercenary_manpower = -0.5
+		#infantry_cost = 0.2
+		#infantry_shock = 0.5
+		#global_manpower_modifier = -0.25
+		#mercenary_manpower = -0.5
 		monarch_lifespan = 0.5
 		governing_capacity_modifier = -0.25
+		rce_monthly_religion_mechanic_four_tenets_system_change = 0.5
+		has_musketeer = yes
+		allowed_musketeer_fraction = 0.2
 	}
 	custom_attributes = {
 		monastic_order = yes
 		locked_government_type = yes
 		enables_estate_alchemists = yes
+	}
+	effect = {
+		add_country_modifier = {
+			name = martial_artist_regiments_modifier
+			duration = -1
+		}
+	}
+	removed_effect = {
+		remove_country_modifier = martial_artist_regiments_modifier
 	}
 	ai = {
 		factor = 1000 #unique
@@ -1597,7 +1604,7 @@ celestial_xizho_empire = {
 		tag = Z17
 	}
 	legacy_equivalent = celestial_empire_legacy
-	is_eligible_for_hre_emperor = yes
+	#is_eligible_for_hre_emperor = yes
 	maintain_dynasty = yes
 	queen = yes
 	royal_marriage = no
@@ -1798,6 +1805,8 @@ auroral_horde = {
 	}
 	nomad = yes
 	monastic = yes
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
 	papacy = yes
 	raze_province = yes
 	modifiers = {

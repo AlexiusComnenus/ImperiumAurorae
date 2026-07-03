@@ -133,6 +133,7 @@ age_of_discovery = {
 			}
 			modifier = {
 				ae_impact = -0.1
+				war_exhaustion = -0.03
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -147,6 +148,7 @@ age_of_discovery = {
 			}
 			modifier = {
 				can_transfer_vassal_wargoal = yes
+				vassal_forcelimit_bonus = 0.25
 			}
 			ai_will_do = {
 				factor = 10
@@ -173,6 +175,7 @@ age_of_discovery = {
 			}
 			modifier = {
 				cav_to_inf_ratio = 0.2
+				cavalry_cost = -0.15
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -413,6 +416,7 @@ age_of_reformation = {
 				set_country_flag = religion_enforced_edict
 			}
 			modifier = {
+				global_heretic_missionary_strength = 0.015
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -426,6 +430,7 @@ age_of_reformation = {
 			}
 			modifier = {
 				siege_blockade_progress = 1
+				global_naval_barrage_cost = -0.25
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -472,6 +477,7 @@ age_of_reformation = {
 			}
 			modifier = {
 				ship_power_propagation = 0.2
+				leader_naval_manuever = 1
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {
@@ -486,6 +492,7 @@ age_of_reformation = {
 			}
 			modifier = {
 				institution_spread_from_true_faith = 0.5
+				embracement_cost = -0.15
 				num_of_age_rewards = 1
 			}
 			ai_will_do = {

@@ -1,5 +1,5 @@
-owner = BNG
-controller = BNG
+owner = TUR
+controller = TUR
 capital = "Phedap"
 is_city = yes
 culture = nepali
@@ -9,7 +9,7 @@ fort_15th = yes
 base_tax = 1
 base_production = 3
 base_manpower = 2
-add_core = BNG
+add_core = TUR
 add_core = NPL
 discovered_by = MGE
 discovered_by = eastern

@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = NPL
+controller = NPL
 capital = "Dang"
 is_city = yes
 culture = nepali
@@ -8,9 +8,7 @@ trade_goods = wool
 base_tax = 6
 base_production = 1
 base_manpower = 2
-add_core = MAM
 add_core = NPL
-add_core = Z11
 discovered_by = MGE
 discovered_by = eastern
 discovered_by = indian

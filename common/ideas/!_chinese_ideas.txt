@@ -115,7 +115,7 @@ tng_ideas = {
     tng_cosmopolitan_society = {
         female_advisor_chance = 0.25
 		may_recruit_female_generals = yes
-		innovativeness_gain = 0.25
+		innovativeness_gain = 0.5
 		num_accepted_cultures = 2
     }
     tng_nomadic_traditions = {

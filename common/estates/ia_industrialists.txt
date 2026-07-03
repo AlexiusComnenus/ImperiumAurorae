@@ -6,20 +6,19 @@ estate_industrialists = {
 	# If true, country will get estate
 	trigger = {
 		OR = {
-			has_country_flag = rheinland_unlocked_industrialists_early
-			has_institution = manufactories
+			has_country_flag = rhe_unlocked_industrialists_early
+			has_government_attribute = enables_estate_industrialists
 		}
 		NOT = {
 			OR = {
 				government = tribal
 				government = native
-			}
-			OR = {
 				religion_group = apocalyptic_group
 				has_estate = estate_alchemists
 				religion = druidic_pagan
 				religion = norse_pagan
 				religion = norse_pagan_reformed
+				is_colonial_nation = yes
 			}
 		}
 	}
@@ -27,18 +26,24 @@ estate_industrialists = {
 	# These scale with loyalty & power
 	country_modifier_happy = {
 		global_trade_goods_size_modifier = 0.1
+		technology_cost = -0.1
+		innovativeness_gain = 0.5
 	}
 	country_modifier_neutral = {
 		global_trade_goods_size_modifier = 0.05
+		innovativeness_gain = 0.25
 	}
 	country_modifier_angry = {
 		global_trade_goods_size_modifier = -0.1
+		technology_cost = 0.1
+		global_manpower_modifier = -0.25
+		innovativeness_gain = -0.5 
 	}
 	
 	influence_from_dev_modifier = 0.5
 
 	land_ownership_modifier = {
-		estate_industrialists_loyalty_modifier = 0.2
+		estate_industrialists_loyalty_modifier = 0.1
 	}
 	
 	base_influence = 30
@@ -76,56 +81,33 @@ estate_industrialists = {
 		trigger = {
 			OR = {
 				AND = {
+					government = republic
+					has_government_attribute = has_term_election
+				}
+				AND = {
 					government = monarchy
 					NOT = { has_government_attribute = is_elective }
-				}
-				government = dictatorship
-				has_reform = dynastic_rulership_reform
-			}
-		}
-		loyalty = 10
-	}
-	loyalty_modifier = {
-		desc = EST_VAL_MIDDLE_CERTAINTY_LOY
-		trigger = {
-			OR = {
-				government = theocracy
-				AND = {
-					government = republic
-					NOT = { has_government_attribute = has_term_election }
-				}
-				AND = {
-					government = monarchy
-					has_government_attribute = is_elective
 				}
 			}
 		}
 		loyalty = 5
 	}
 	loyalty_modifier = {
-		desc = EST_VAL_GREAT_UNCERTAINTY_LOY
+		desc = EST_VAL_MIDDLE_CERTAINTY_LOY
 		trigger = {
-			government = republic
-			has_government_attribute = has_term_election
+			OR = {
+				government = dictatorship
+				has_reform = dynastic_rulership_reform
+				AND = {
+					government = monarchy
+					has_government_attribute = is_elective
+				}
+			}
 		}
 		loyalty = -5
 	}
-	influence_modifier = {
-		desc = EST_VAL_LONGTERM_CERTAINTY
-		trigger = {
-			OR = {
-				AND = {
-					government = monarchy
-					NOT = { has_government_attribute = is_elective }
-				}
-				government = dictatorship
-				has_reform = dynastic_rulership_reform
-			}
-		}
-		influence = 5
-	}
-	influence_modifier = {
-		desc = EST_VAL_MIDDLE_CERTAINTY
+	loyalty_modifier = {
+		desc = EST_VAL_GREAT_UNCERTAINTY_LOY
 		trigger = {
 			OR = {
 				government = theocracy
@@ -133,6 +115,32 @@ estate_industrialists = {
 					government = republic
 					NOT = { has_government_attribute = has_term_election }
 				}
+			}
+		}
+		loyalty = -10
+	}
+	influence_modifier = {
+		desc = EST_VAL_LONGTERM_CERTAINTY
+		trigger = {
+			OR = {
+				AND = {
+					government = republic
+					has_government_attribute = has_term_election
+				}
+				AND = {
+					government = monarchy
+					NOT = { has_government_attribute = is_elective }
+				}
+			}
+		}
+		influence = 10
+	}
+	influence_modifier = {
+		desc = EST_VAL_MIDDLE_CERTAINTY
+		trigger = {
+			OR = {
+				government = dictatorship
+				has_reform = dynastic_rulership_reform
 				AND = {
 					government = monarchy
 					has_government_attribute = is_elective
@@ -144,22 +152,82 @@ estate_industrialists = {
 	influence_modifier = {
 		desc = EST_VAL_GREAT_UNCERTAINTY
 		trigger = {
-			government = republic
-			has_government_attribute = has_term_election
+			OR = {
+				government = theocracy
+				AND = {
+					government = republic
+					NOT = { has_government_attribute = has_term_election }
+				}
+			}
 		}
 		influence = -10
 	}
+	loyalty_modifier = {
+		desc = EST_VAL_HAS_COAL_LOY
+		trigger = {
+			any_owned_province = {
+				trade_goods = coal
+			}
+		}	
+		loyalty = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_HAS_COAL
+		trigger = {
+			any_owned_province = {
+				trade_goods = coal
+			}
+		}	
+		influence = 5
+	}
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_industrialists }
+		}
+		influence = -40
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			has_any_estate_disaster_active = yes
+			has_not_own_estate_disaster_active = { estate = estate_industrialists }
+		}
+		loyalty = -20
+	}
+	custom_name = {
+		desc = estate_technocrats
+		trigger = {
+			NOT = { has_country_flag = rheinland_unlocked_industrialists_early }
+		}
+	}
 	
 	privileges = {
+		estate_industrialists_land_contracts
+		estate_industrialists_land_of_potential
+		estate_industrialists_technocrat_board_of_advice
+		estate_industrialists_reinforce_contracts
+		estate_industrialists_elevate_social_status
+		estate_industrialists_allow_selfregulation
 		estate_industrialists_rheinholzfallergilde
 		estate_industrialists_maurerzunfts_codified_laws_of_construction
+		estate_industrialists_exploitation_of_the_new_world
+		estate_industrialists_introduce_rebates
+		estate_industrialists_demand_workers_on_the_frontlines
+		estate_industrialists_technocrat_education
+		estate_industrialists_fund_natural_sciences
+		estate_industrialists_technology_sharing
+		estate_industrialists_monopoly_on_strategic_resources
+		estate_industrialists_monopoly_on_war_advanced_goods
 	}
-
 	agendas = {
-		estate_industrial_conquer_good
-		estate_industrial_workshop
-		estate_industrial_manufactory
-		estate_industrial_production_dev
-		estate_industrial_blast_furnaces
+		estate_industrialists_conquer_good
+		estate_industrialists_workshop
+		estate_industrialists_furnace
+		estate_industrialists_production_dev
+		estate_industrialists_destroy_church
+		estate_industrialists_send_merchant
+		estate_industrialists_humiliate_wealthy_neighbor
 	}
 }

@@ -52,7 +52,6 @@ lot_everlasting_prestige = {
 }
 
 lot_humanist_rule = {
-	no_religion_penalty = yes
 	tolerance_of_heretics_capacity = 2
 	tolerance_of_heathens_capacity = 2
 	tolerance_heretic = 1
@@ -92,16 +91,19 @@ lot_paladins_resurgent = {
 lot_order_of_paladins_modifiers = {
 	is_musketeer_modifier = yes
 	fire_damage = -0.15
+	fire_damage_received = -0.1
 	morale_damage_received = -0.1
-	infantry_shock = 0.5
-	global_regiment_cost = 0.5
+	infantry_shock = 1
+	infantry_cost = 0.5
+	land_maintenance_modifier = 0.5
 	reinforce_speed = -0.5
 	land_attrition = -0.5
 	drill_decay_modifier = -0.25
 }
 
 lot_carolingian_paladins_returned = {
-	morale_damage = 0.15
+	shock_damage = 0.15
+	fire_damage_received = -0.1
 	is_musketeer_modifier = yes
 }
 

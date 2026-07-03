@@ -18,7 +18,7 @@ po_impose_protectorate = {
 	
 	category = 6 # Any number between 0 and 6. Represents the tab under which it will be listed. 6 corresponds to "treaties". This value currently defaults to 6.
 	power_projection = vassalized_rival # "power_projection" will only be applied if giver is your rival.
-	power_cost_base = 0.0 # Base factor for diplomatic power cost when treaty is not allowed by casus belli. Scales with war score cost.
+	power_cost_base = 1.0 # Base factor for diplomatic power cost when treaty is not allowed by casus belli. Scales with war score cost.
 	prestige_base = 0.5 # Base factor for prestige gain and loss. Scales with war score cost.
 	ae_base = 0.33 # Base factor for aggressive expansion. Scales with war score cost.
 	warscore_cost = {

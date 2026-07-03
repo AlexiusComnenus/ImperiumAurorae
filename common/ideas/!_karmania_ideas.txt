@@ -1,19 +1,33 @@
 diadochi_ideas = {
 	start = {
-		core_creation = -0.15
+		core_creation = -0.20
 		years_of_nationalism = -5
 	}
 	bonus = {
-		ae_impact = -0.2
+		province_warscore_cost = -0.15
 	}
 	trigger = {
-		culture = seleucian
+		OR = {
+			tag = KRM
+			tag = JNP
+		}
 	}
 	free = yes
 	
 	krm_phalanx = {
-		has_tercio = yes
-		allowed_tercio_fraction = 0.25
+		#has_tercio = yes
+		#allowed_tercio_fraction = 0.25
+		has_musketeer = yes
+		allowed_musketeer_fraction = 0.20
+		effect = {
+			add_country_modifier = {
+				name = krm_phalanx_modifier
+				duration = -1
+			}
+		}
+		removed_effect = {
+			remove_country_modifier = krm_phalanx_modifier
+		}
 	}
 	krm_indian_ocean_traders = {
 		global_ship_trade_power = 1

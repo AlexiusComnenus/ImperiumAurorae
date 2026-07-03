@@ -18,7 +18,7 @@
  trade_protectorate_title: "Protectorate"
  trade_protectorate_title_plural: "Protectorates"
  is_trade_protectorate: "Is Protectorate"
- mechanic_can_establish_trade_protectorates_yes: "§YCan Establish §YProtectorates§!!"
+ mechanic_can_establish_trade_protectorates_yes: "Can Establish §YProtectorates§!!"
  diplomatic_corps_desc: "Through the establishment of a professional Diplomatic Corps we ensure that the lessons of senior diplomats are passed on to the younger generation.\n\n Unlocks the ability to §Yform heathen royal marriages§! if we are a monarchy!\n"
  marcher_lords_desc: "By granting considerable autonomy to vassals in border regions, these 'Marcher Lords' will be able to raise large military armies to support us in our wars.\n\n §YMarch-type subjects§! will further gain §G25% Manpower§! and §G5% Discipline§!!\n"
  ab_rival_change: "Bureaucratic Consolidation"

@@ -37,4 +37,8 @@ add_harmonized_religion = confucianism
 		duration = -1
 		hidden = yes
 	}
+	add_country_modifier = {
+		name = martial_artist_regiments_modifier
+		duration = -1
+	}
 }

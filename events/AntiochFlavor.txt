@@ -518,13 +518,14 @@ country_event = {
 				}
 			}
 		}
-		else = {
+		else_if = {
+			limit = { army_tradition = 25 }
 			random_list = {
 				50 = {
 					define_general = {
 						fire = 1
-						shock = 6
-						manuever = 3
+						shock = 7
+						manuever = 2
 						siege = 1
 						trait = aurora_trained
 						name = root_name_male
@@ -533,9 +534,34 @@ country_event = {
 				50 = {
 					define_general = {
 						fire = 1
-						shock = 6
-						manuever = 3
+						shock = 7
+						manuever = 2
 						siege = 1
+						trait = aurora_trained
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 5
+						manuever = 2
+						siege = 0
+						trait = aurora_trained
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						fire = 1
+						shock = 5
+						manuever = 2
+						siege = 0
 						trait = aurora_trained
 						female = yes
 						name = root_name_female
@@ -939,7 +965,7 @@ country_event = {
 			}
 			change_culture = ROOT
 		}
-		add_stability = 1
+		#add_stability = 1
 		add_legitimacy = 10
 		add_republican_tradition = 5
 	}
@@ -968,7 +994,14 @@ province_event = {
 			culture_group = latin
 			culture_group = french
 			culture_group = iberian
+			culture_group = mande
+			culture_group = sahelian
+			culture_group = west_african
+			culture_group = kongo_group
 			culture_group = maghrebi
+			culture_group = southern_african
+			culture_group = african
+			culture_group = great_lakes_group
 			culture = turkish
 			culture = al_suryah_arabic
 			AND = {
@@ -1037,6 +1070,27 @@ province_event = {
 				}
 			}
 			change_culture = feijiao
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture_group = sahelian
+					culture_group = mande
+					culture_group = west_african
+				}
+			}
+			change_culture = xifei
+		}
+		else_if = {
+			limit = {
+				OR = {
+					culture_group = great_lakes_group
+					culture_group = kongo_group
+					culture_group = southern_african
+					culture_group = african
+				}
+			}
+			change_culture = nanfei
 		}
 	}
 }
@@ -1950,6 +2004,79 @@ country_event = {	# De-Aurorize Silk
 			limit = { trade_goods = auroral_silk 	NOT = { has_province_modifier = soi_counterfeiting_silk } }
 			change_trade_goods = silk
 			remove_province_modifier = auroral_silk_source
+		}
+	}
+}
+
+province_event = {
+	id = antioch.32
+	title = antioch.32.t
+	desc = antioch.32.d
+	picture = east_asian_CITY_DEVELOPMENT_eventPicture
+	goto = ROOT
+	hidden = yes
+	
+	trigger = {
+		has_owner_religion = yes
+		has_owner_accepted_culture = yes
+		OR = {
+			region = persia_region
+			region = khorasan_region
+			region = central_asia_region
+			region = bengal_region
+			region = coromandel_region
+			region = deccan_region
+			region = hindusthan_region
+			region = west_india_region
+			region = mashriq_region
+			region = caucasia_region
+			region = anatolia_region
+		}
+		NOT = { culture_group = eastern_hellenistic }
+		
+		owner = {
+			culture_group = eastern_hellenistic
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = antioch.32.a
+		
+		if = {
+			limit = {
+				OR = {
+					region = persia_region
+					region = mashriq_region
+					region = caucasia_region
+					region = anatolia_region
+				}
+			}
+			change_culture = seleucian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					region = khorasan_region
+					region = central_asia_region
+				}
+			}
+			change_culture = bactrian
+		}
+		else_if = {
+			limit = {
+				OR = {
+					region = bengal_region
+					region = coromandel_region
+					region = deccan_region
+					region = hindusthan_region
+					region = west_india_region
+				}
+			}
+			change_culture = yavana
 		}
 	}
 }

@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = ODH
+controller = ODH
 capital = "Qannauj"
 is_city = yes
 culture = avadhi
@@ -11,8 +11,6 @@ base_manpower = 2
 extra_cost = 8
 center_of_trade = 1
 add_core = ODH
-add_core = MAM
-add_core = Z11
 add_permanent_claim = HIN
 discovered_by = MGE
 discovered_by = eastern

@@ -974,7 +974,9 @@ nobatia_missions_column_4 = {
 		
 		effect = {
 			add_mil_power = 50
-			darfur_central_sahara_area = { add_permanent_claim = ROOT }
+			2801 = { add_permanent_claim = ROOT }
+			2802 = { add_permanent_claim = ROOT }
+			1219 = { add_permanent_claim = ROOT }
 			sennar_area = { add_permanent_claim = ROOT }
 		}
 	}

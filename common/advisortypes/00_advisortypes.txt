@@ -1826,6 +1826,10 @@ army_reformer = {
 	
 	ai_will_do = {
 		factor = 1.8
+		modifier = {
+			factor = 100
+			is_at_war = yes
+		}
 	}
 }
 
@@ -2000,6 +2004,10 @@ commandant = {
 	
 	ai_will_do = {
 		factor = 1.8
+		modifier = {
+			factor = 100
+			is_at_war = yes
+		}
 	}
 }
 
@@ -2156,7 +2164,7 @@ recruitmaster = {
 	ai_will_do = {
 		factor = 1.1
 		modifier = {
-			factor = 1.5
+			factor = 25
 			is_at_war = no
 		}
 	}
@@ -2189,7 +2197,7 @@ fortification_expert = {
 	}
 	
 	# Bonus
-	defensiveness = 0.25
+	defensiveness = 0.20
 
 	skill_scaled_modifier = {
 		trigger = {

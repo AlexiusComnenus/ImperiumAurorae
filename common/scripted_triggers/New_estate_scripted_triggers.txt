@@ -60,3 +60,7 @@ has_estate_agenda_of_estate_trade_company = {
 	#}
 	always = no
 }
+
+has_exempt_from_seize_land_for_estate_industrialists = {
+	has_estate_privilege = estate_industrialists_allow_selfregulation
+}

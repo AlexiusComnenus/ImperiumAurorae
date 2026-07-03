@@ -50,11 +50,12 @@ estate_church = {
 		devotion = 0.5
 		church_power_modifier = 0.1
 		monthly_fervor_increase = 1
-		stability_cost_modifier = -0.1
+		stability_cost_modifier = -0.2
 	}
 	country_modifier_neutral = {
 		global_tax_modifier = 0.2
 		monthly_ia_complacency = 0.08
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		global_tax_modifier = -0.2
@@ -62,9 +63,10 @@ estate_church = {
 		devotion = -0.5
 		church_power_modifier = -0.25
 		monthly_fervor_increase = -1
-		stability_cost_modifier = 0.1
+		stability_cost_modifier = 0.2
 		global_unrest = 2
 		monthly_ia_complacency = 0.12
+		yearly_corruption = 0.2
 	}
 
 	land_ownership_modifier = {
@@ -432,6 +434,7 @@ estate_church = {
 		estate_church_brahmins_at_court
 		estate_church_lao_animism
 		estate_church_administrative_privileges
+        estate_church_ia_defenders_of_the_ancient_wealds
 		estate_church_monopoly_of_incense
 		estate_church_monopoly_of_wool
 		estate_church_monopoly_of_wine

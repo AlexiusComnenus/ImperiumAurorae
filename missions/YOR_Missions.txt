@@ -101,6 +101,16 @@ ia_yor_mission_3 = {
 		
 		effect = {
 			country_event = { id = mhadi.11 }
+            if = {
+                limit = { ai = yes }
+                539 = {
+                    add_province_modifier = {
+                        name = yor_ai_monument_help
+                        duration = -1
+                        hidden = yes
+                    }
+                }
+            }
 		}
 	}
 	

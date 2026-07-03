@@ -7,6 +7,7 @@ primary_culture = greek
 capital = 151
 fixed_capital = 151
 add_accepted_culture = anatolian
+historical_rival = RUM
 
 set_estate_privilege = estate_nobles_deteriorating_army
 set_estate_privilege = estate_burghers_exkousseiai_for_latins

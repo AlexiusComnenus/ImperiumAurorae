@@ -103,4 +103,126 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
+	
+	etrurian_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_etruria_flag }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = ITA }
+			NOT = { tag = TUS }
+			NOT = { tag = ETR }
+			#OR = {
+			#	ai = no
+			#	AND = {
+			#		ai = yes
+			#		num_of_cities = 3
+			#		NOT = { exists = TUS }
+			#		NOT = { exists = ETR }
+			#	}
+			#}
+			OR = {
+				primary_culture = tuscan
+				primary_culture = romagnan
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2978	# Arezzo
+				province_id = 116	# Firenze
+				province_id = 115	# Pisa
+				province_id = 113	# Ferrara
+				province_id = 114	# Romagna
+				province_id = 4730	# Bologna
+				
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_nomad = no
+			is_at_war = no
+			NOT = { exists = ETR }
+			owns_core_province = 2978	# Arezzo
+			owns_core_province = 116	# Firenze
+			owns_core_province = 115	# Pisa
+			owns_core_province = 113	# Ferrara
+			owns_core_province = 114	# Romagna
+			owns_core_province = 4730	# Bologna
+		}
+		effect = {
+			hidden_effect = { ia_save_historical_relations_effect = yes }
+			change_tag = ETR
+			on_change_tag_effect = yes
+			change_primary_culture = etrurian
+			hidden_effect = { ia_change_culture_without_consequence_effect = yes }
+			set_country_flag = soi_assimilation_on
+			set_ruler_culture = etrurian
+			hidden_effect = {
+				every_province = {
+					limit = {
+						OR = {
+							culture = tuscan
+							culture = romagnan
+						}
+					}
+					change_culture = etrurian
+				}
+			}
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				set_heir_culture = etrurian
+			}
+			if = {
+				limit = {
+					has_consort = yes
+				}
+				set_consort_culture = etrurian
+			}
+			every_province = {
+				limit = {
+					OR = {
+						culture = tuscan
+						culture = romagnan
+					}
+					NOT = { owned_by = ROOT }
+					continent = europe
+				}
+				add_permanent_claim = ETR
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					NOT = { has_idea_group = TUS_ideas }
+					is_playing_custom_nation = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_prestige = 25
+			set_country_flag = formed_etruria_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
 }

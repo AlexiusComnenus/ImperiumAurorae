@@ -263,13 +263,14 @@ antioch_missions_column_1 = {
 			}
 			118 = { #Rome
 				add_reform_center = hellenic_pagan_reformed
+				custom_tooltip = ia_gain_cor_tt
 			}
 			add_government_power = {
 				mechanic_type = righteousness_mechanic
 				power_type = righteousness
 				value = 10
 			}
-			custom_tooltip = borked_tooltip_tt
+			#custom_tooltip = borked_tooltip_tt
 		}
 		ai_weight = {
 			factor = 1000	#Historical mission
@@ -2024,16 +2025,17 @@ antioch_missions_column_5_bottom = {
 		position = 10
 		
 		trigger = {
-			Z17 = {
-				is_emperor_of_china	= yes
-			}
+			is_emperor_of_china	= yes
 		}
 		
 		effect = {
 			add_mandate = 100
-			set_meritocracy = 100
-			country_event = { id = antioch.200 }
-			add_government_reform = celestial_xizho_empire
+			add_country_modifier = {
+				name = z17_son_of_heaven
+				duration = -1
+			}
+			#country_event = { id = antioch.200 }
+			#add_government_reform = celestial_xizho_empire
 		}
 	}
 	antioch_establish_cataphracts = {

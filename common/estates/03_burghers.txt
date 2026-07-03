@@ -35,14 +35,17 @@ estate_burghers = {
 		trade_efficiency = 0.2
 		development_cost = -0.1
 		monthly_ia_complacency = -0.10
+		yearly_corruption = -0.1
 	}
 	country_modifier_neutral = {
 		trade_efficiency = 0.2
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		trade_efficiency = -0.1
 		development_cost = 0.1
 		global_unrest = 2
+		yearly_corruption = 0.2
 	}
 	land_ownership_modifier = {
 		burghers_loyalty_modifier = 0.2

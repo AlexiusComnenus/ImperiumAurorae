@@ -12,6 +12,7 @@ extra_cost = 8
 center_of_trade = 1
 add_core = KSH
 add_core = JNP
+add_core = KOZ
 add_permanent_claim = HIN
 discovered_by = MGE
 discovered_by = eastern

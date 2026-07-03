@@ -1124,4 +1124,48 @@ spriteTypes = {
 		name = "privilege_aztec_artisans"
 		texturefile = "gfx/interface/privileges/privilege_aztec_artisans.dds"
 	}
+	spriteType = {
+		name = "privilege_industrialists_prestige"
+		texturefile = "gfx/interface/privileges/privilege_industrialists_prestige.dds"
+	}
+	spriteType = {
+		name = "privilege_industrialists_selfregulation"
+		texturefile = "gfx/interface/privileges/privilege_industrialists_selfregulation.dds"
+	}
+	spriteType = {
+		name = "privilege_industrialists_land_rights"
+		texturefile = "gfx/interface/privileges/privilege_industrialists_land_rights.dds"
+	}
+	spriteType = {
+		name = "privilege_possible_dip_policy"
+		texturefile = "gfx/interface/privileges/privilege_possible_dip_policy.dds"
+	}
+	spriteType = {
+		name = "privilege_technology_sharing"
+		texturefile = "gfx/interface/privileges/privilege_technology_sharing.dds"
+	}
+	spriteType = {
+		name = "privilege_monopoly_of_goods_advanced_war"
+		texturefile = "gfx/interface/privileges/privilege_monopoly_of_goods_advanced_war.dds"
+	}
+	spriteType = {
+		name = "privilege_colonial_exploitation"
+		texturefile = "gfx/interface/privileges/privilege_colonial_exploitation.dds"
+	}
+	spriteType = {
+		name = "privilege_reduced_stab_impacts"
+		texturefile = "gfx/interface/privileges/privilege_reduced_stab_impacts.dds"
+	}
+	spriteType = {
+		name = "privilege_alchemists_light_vial"
+		texturefile = "gfx/interface/privileges/privilege_alchemists_light_vial.dds"
+	}
+	spriteType = {
+		name = "privilege_alchemists_dark_vial"
+		texturefile = "gfx/interface/privileges/privilege_alchemists_dark_vial.dds"
+	}
+	spriteType = {
+		name = "privilege_peasants_champions"
+		texturefile = "gfx/interface/privileges/privilege_peasants_champions.dds"
+	}
 }

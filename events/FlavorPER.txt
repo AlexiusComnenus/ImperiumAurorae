@@ -3675,6 +3675,14 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1
 	}
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 	#Embrace the Eranshahr Identity
 	option = {
 		name = flavor_per.66.a

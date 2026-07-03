@@ -1,15 +1,13 @@
-owner = BNG
-controller = BNG
+owner = KMT
+controller = KMT
 capital = "Purnia"
 is_city = yes
 culture = kochi
 religion = buddhism
 trade_goods = silk
-fort_15th = yes
 base_tax = 5
 base_production = 5
 base_manpower = 5
-add_core = BNG
 add_core = KMT
 discovered_by = MGE
 discovered_by = eastern

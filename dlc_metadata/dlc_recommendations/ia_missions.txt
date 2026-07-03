@@ -32,6 +32,7 @@ missions_yes_ACE = {
 				tag = PAP
 				tag = MYM
                 tag = KOI
+                tag = CRN
 			}
 		}
 	}

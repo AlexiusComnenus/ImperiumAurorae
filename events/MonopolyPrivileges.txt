@@ -516,3 +516,85 @@ country_event = {
 		}
 	}
 }
+
+# Extension of Strategic Goods monopoly
+country_event = {
+	id = monopoly_privileges.13
+	title = monopoly_privileges.13.t
+	desc = monopoly_privileges.13.d
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_estate_monopoly_modifier = { privilege = estate_industrialists_monopoly_on_strategic_resources }
+	}
+	
+	option = {
+		name = monopoly_privileges.1.a
+		reapply_estate_privilege = { privilege = estate_industrialists_monopoly_on_strategic_resources }
+		if = {
+			limit = {
+				has_estate_privilege = estate_industrialists_allow_selfregulation
+			}
+			add_country_modifier = {
+				name = industrialists_strategic_goods_reapplied
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = monopoly_privileges.1.b
+		custom_tooltip = monopoly_privileges.13.b.tooltip
+
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_strategic_resource = yes
+				}
+				apply_estate_monopoly_modifier = { privilege = estate_industrialists_monopoly_on_strategic_resources }
+			}
+		}
+	}
+}
+
+# Extension of Advanced War Goods monopoly
+country_event = {
+	id = monopoly_privileges.14
+	title = monopoly_privileges.14.t
+	desc = monopoly_privileges.14.d
+	picture = TRADEGOODS_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		remove_estate_monopoly_modifier = { privilege = estate_industrialists_monopoly_on_war_advanced_goods }
+	}
+	
+	option = {
+		name = monopoly_privileges.1.a
+		reapply_estate_privilege = { privilege = estate_industrialists_monopoly_on_war_advanced_goods }
+		if = {
+			limit = {
+				has_estate_privilege = estate_industrialists_allow_selfregulation
+			}
+			add_country_modifier = {
+				name = industrialists_advanced_war_goods_reapplied
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = monopoly_privileges.1.b
+		custom_tooltip = monopoly_privileges.14.b.tooltip
+
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_war_advanced_good = yes
+				}
+				apply_estate_monopoly_modifier = { privilege = estate_industrialists_monopoly_on_war_advanced_goods }
+			}
+		}
+	}
+}

@@ -1,0 +1,132 @@
+martial_artist_regiments_modifier = {
+	is_musketeer_modifier = yes
+	
+	fire_damage = -0.15
+	land_morale = -0.10
+	infantry_cost = 1
+	land_maintenance_modifier = 0.5
+	reinforce_speed = -0.5
+	
+	morale_damage = 0.25
+	land_attrition = -0.75
+	land_morale_constant = 0.5
+	infantry_shock = 0.5
+}
+
+z62_imperial_war_support = {
+	global_regiment_cost = -0.10
+	core_creation = -0.1
+}
+
+z62_malta_infrastructure = {
+	local_great_project_upgrade_cost = -0.25
+	local_great_project_upgrade_time = -0.25
+	allowed_num_of_buildings = 2
+	local_has_galleass = yes
+}
+
+z62_naval_march = {
+	naval_forcelimit = 10
+	naval_forcelimit_modifier = 0.25
+	has_galleass = yes
+	allowed_galleass_fraction = 0.5
+	galley_cost = -0.5
+}
+
+z62_sicilian_trade_interdiction = {
+	global_ship_trade_power = 0.5
+	ship_power_propagation = 0.5
+	embargo_efficiency = 0.5
+	privateer_efficiency = 0.1
+}
+
+z62_beyond_atlas_modifier = {
+	may_explore = yes
+	naval_tradition_from_trade = 0.5
+	naval_tradition_from_battle = 0.5
+}
+
+z62_great_western_gate_modifier = {
+	local_defensiveness = 0.5
+	local_garrison_damage = 1
+	local_defender_dice_roll_bonus = 1
+	local_own_coast_naval_combat_bonus = 1
+	block_slave_raid = yes
+	hostile_fleet_attrition = 5
+}
+
+z62_camel_grounds = {
+	local_development_cost_modifier = -0.25
+	trade_goods_size_modifier = 0.25
+}
+
+z62_salt_fields = {
+	local_development_cost_modifier = -0.20
+	trade_value_modifier = 0.25
+	province_trade_power_value = 15
+}
+
+z62_gold_mints = {
+	local_gold_depletion_chance_modifier = -0.5
+	local_governing_cost_increase = 10
+	trade_goods_size_modifier = 0.25
+	allowed_num_of_buildings = 2
+	local_autonomy = -0.1
+	min_local_autonomy = -25
+}
+
+z62_agricultural_flourishing = {
+	development_cost = -0.1
+	build_cost = -0.1
+	manpower_recovery_speed = 0.33
+}
+
+z62_lucky_red = {
+	land_morale = 0.10
+	reform_progress_growth = 0.33
+}
+
+z62_palm_plantations = {
+	local_development_cost_modifier = -0.20
+	trade_goods_size = 1
+	local_tax_modifier = 0.25
+	allowed_num_of_manufactories = 1
+}
+
+z62_transsaharan_trade_reward = {
+	placed_merchant_power = 20
+	caravan_power = 0.5
+	merchants = 1
+	trade_steering = 0.25
+}
+
+z62_elephant_preserves = {
+	allowed_num_of_buildings = -2
+	local_build_cost = 0.5
+	local_development_cost = 0.5
+	trade_goods_size = 1.6
+	min_local_autonomy = -25
+	local_autonomy = -0.05
+}
+
+z62_incendiary_artillery_modifier = {
+	artillery_power = 0.10
+	artillery_barrage_cost = -0.25
+	artillery_levels_available_vs_fort = 1
+	artillery_level_modifier = 0.5
+}
+
+z62_fire_weaponry_modifier = {
+	fire_damage = 0.10
+	assault_fort_ability = 0.25
+}
+
+z62_firebombs_for_cultivators_modifier = {
+	is_musketeer_modifier = yes
+	infantry_fire = 1
+}
+
+z62_greek_fire_modifier = {
+	number_of_cannons_modifier = 0.1
+	naval_morale_damage = 0.15
+}

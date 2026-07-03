@@ -15,7 +15,7 @@ jewish_ideas = {
 	free = yes
 
 	end_of_diaspora = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	national_myths_restored = {
 		discipline = 0.05

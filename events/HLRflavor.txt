@@ -4550,6 +4550,7 @@ country_event = {
 	#Reichskönigtum Lotharingien
 	option = {
 		name = hlrmod_flavor_event.55.b
+		trigger = { always = no }
 		custom_tooltip = hlr_lotharingia_release.tooltip
 		hidden_effect = {
 		every_owned_province = {
@@ -4573,6 +4574,7 @@ country_event = {
 				name = rit_deep_ties
 				duration = -1
 			}
+			add_historical_friend = ROOT
 			set_government_rank = 2
 			add_government_reform = reichskoenigtum
 			add_manpower = 30

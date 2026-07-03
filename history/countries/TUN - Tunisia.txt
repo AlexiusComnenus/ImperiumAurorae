@@ -6,3 +6,12 @@ religion = arianism
 primary_culture = vandal
 capital = 341
 fixed_capital = 341
+1444.11.11= {
+	monarch = {
+		name = "Gaiseric"
+		adm = 3
+		dip = 2
+		mil = 5
+		birth_date = 1410.04.17
+	}
+}

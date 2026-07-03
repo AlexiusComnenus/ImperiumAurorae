@@ -68,6 +68,10 @@ celestial_empire = {
 	conditional = {
 		allow = { has_dlc = "Mandate of Heaven" }
 		has_meritocracy = yes
+		has_harem = yes
+		custom_attributes = {
+			has_harem_events = yes
+		}
 		#factions = {}
 	}
 	
@@ -87,7 +91,7 @@ chinese_warlord = {
 			culture_group = east_asian
 			has_reform = chinese_warlord
 		}
-		technology_group = chinese
+		#technology_group = chinese
 		capital_scope = {
 			OR = {
 				region = north_china_region
@@ -105,7 +109,7 @@ chinese_warlord = {
 			culture_group = east_asian
 			has_reform = chinese_warlord
 		}
-		technology_group = chinese
+		#technology_group = chinese
 		capital_scope = {
 			OR = {
 				region = north_china_region
@@ -153,6 +157,12 @@ chinese_warlord = {
 	custom_attributes = {
 		has_unify_china_cb = yes
 		cw_blocks_all_alliances = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			has_weaker_harem_events = yes
+		}
 	}
 }
 
@@ -247,5 +257,50 @@ wei_suo_system_reform = {
 	
 	ai = {
 		factor = 1000
+	}
+}
+
+celestial_theocracy = {
+	icon = "chinese_soldier"
+	allow_normal_conversion = no
+	potential = {
+		if = {
+			limit = {
+				has_dlc = "Mandate of Heaven"
+			}
+			is_emperor_of_china = yes
+		}
+	}
+	can_change_primary_culture = no
+	allow_force_tributary = no
+	valid_for_nation_designer = no
+	lock_level_when_selected = yes
+
+	fixed_rank = 3
+
+	modifiers = {
+		prestige = 0.5
+		church_influence_modifier = -0.1
+		nobles_influence_modifier = -0.1
+		burghers_influence_modifier = -0.1
+		governing_capacity = 500
+	}
+	
+	ai = {
+		factor = 1000 # should always be picked if available
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+		has_unify_china_cb = yes
+	}
+
+	conditional = {
+		allow = { has_dlc = "Mandate of Heaven" }
+		has_meritocracy = yes
+	}
+	
+	government_abilities = {
+		ia_complacency_mechanic
 	}
 }

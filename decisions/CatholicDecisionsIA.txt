@@ -8,6 +8,7 @@ country_decisions = {
 			NOT = { has_global_flag = catholic_antipopes_ended }
 			NOT = { has_reform = papacy_reform }
 			NOT = { FAP = { is_subject_of = ROOT } }
+			NOT = { has_government_attribute = papacy }
 		}
 		
 		allow = {
@@ -20,7 +21,7 @@ country_decisions = {
 					religion = catholic
 					reverse_has_opinion = {
 						who = ROOT
-						value = 175
+						value = 130
 					}
 				}
 				NOT = { liberty_desire = 30 }
@@ -96,6 +97,7 @@ country_decisions = {
 			NOT = { has_global_flag = catholic_antipopes_ended }
 			NOT = { has_reform = papacy_reform }
 			NOT = { PAP = { is_subject_of = ROOT } }
+			NOT = { has_government_attribute = papacy }
 		}
 		
 		allow = {
@@ -108,7 +110,7 @@ country_decisions = {
 					religion = fraticelli
 					reverse_has_opinion = {
 						who = ROOT
-						value = 175
+						value = 130
 					}
 				}
 				NOT = { liberty_desire = 30 }
@@ -184,7 +186,7 @@ country_decisions = {
 				religion = anglican
 				value = 0.05
 			}
-			religion_group = christian
+			#religion_group = christian
 			NOT = { religion = hellenic_pagan_reformed }
 			NOT = { religion = anglican }
 			NOT = { religion = bogomilist }
@@ -192,6 +194,7 @@ country_decisions = {
 			NOT = { tag = FAP }
 			NOT = { tag = TEM }
 			NOT = { tag = VAL }
+			NOT = { has_government_attribute = papacy }
 		}
 		allow = {
 			dominant_religion = anglican
@@ -253,6 +256,7 @@ country_decisions = {
 			NOT = { religion = bogomilist }
 			NOT = { tag = PAP }
 			NOT = { tag = FAP }
+			NOT = { has_government_attribute = papacy }
 		}
 		allow = {
 			dominant_religion = protestant

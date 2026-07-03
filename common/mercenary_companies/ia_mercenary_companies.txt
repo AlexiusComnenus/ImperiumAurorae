@@ -504,13 +504,39 @@ merc_koi_catt_infantry = {
     trigger = {
         is_allowed_to_recruit_mercenaries = yes
 		has_country_flag = koi_unlocked_mercs
-		}
+	}
     modifier = {
     	fire_damage = 0.15
     	land_attrition = -0.50
     	land_maintenance_modifier = -0.50
     	allow_mercenary_drill = yes
     	regiment_manpower_usage = -0.25
+    }
+}
+
+merc_wyvern_dragoons = {
+    regiments_per_development = 0.06
+    cavalry_weight = 1
+    artillery_weight = 0
+    cost_modifier = 1.5
+	home_province = 4366
+	sprites = { dlc003_pol_sprite_pack }
+	mercenary_desc_key = FREE_OF_ARMY_PROFESSIONALISM_COST
+    trigger = {
+        is_allowed_to_recruit_mercenaries = yes
+		has_country_flag = unlock_wyvern_dragoons_flag
+	}
+    modifier = {
+		can_bypass_forts = yes
+    	movement_speed = 0.25
+    	land_attrition = -0.50
+    	allow_mercenary_drill = yes
+		shock_damage_received = -0.3
+		shock_damage = -0.5
+		cavalry_flanking = 2
+		cav_to_inf_ratio = 1
+		cavalry_shock = -2
+		cavalry_fire = 2
     }
 }
 

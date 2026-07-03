@@ -1,8 +1,8 @@
-government = monarchy
-add_government_reform = feudal_theocracy
-government_rank = 2
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
 technology_group = chinese
-religion = manichean
+religion = vajrayana
 primary_culture = tibetan
 capital = 2131
 1444.11.11= {

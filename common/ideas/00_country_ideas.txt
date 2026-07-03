@@ -154,7 +154,7 @@ ENG_ideas = {
 		global_institution_spread = 0.5
 	}
 	arthurian_courage = {
-		land_morale = 0.15
+		land_morale = 0.10
 	}
 	arthurian_justice = {
 		global_unrest = -2
@@ -200,7 +200,7 @@ GBR_ideas = {
 		global_tariffs = 0.15
 	}
 	the_british_parliament = {
-		global_unrest = -1
+		global_unrest = -2
 		num_of_parliament_issues = 1
 	}
 	#british_merchant_navy = {
@@ -283,7 +283,7 @@ EIC_ideas = {
 	free = yes		#will be added at load.
 
 	eic_governors_general = {
-		global_unrest = -1
+		global_unrest = -2
 		governing_capacity_modifier = 0.1
 	}
 	eic_indian_trade = {
@@ -540,7 +540,7 @@ ICE_ideas = {
 	free = yes
 	
 	ICE_althingi = {
-		global_unrest = -1
+		global_unrest = -2
 		reform_progress_growth = 0.15
 	}
 	ICE_hrafna_floki = {
@@ -712,7 +712,7 @@ RUS_ideas = {
 		ae_impact = -0.15
 	}
 	siberian_frontier = {
-		may_establish_frontier = yes
+		colonists = 1
 		auto_explore_adjacent_to_colony = yes
 	}
 	russian_artillery_yard = {
@@ -892,7 +892,7 @@ FRA_ideas = {
 	}
 	estates_general = {
 		reform_progress_growth = 0.1
-		global_unrest = -1 
+		global_unrest = -2 
 	}
 	native_trading_principles = {
 		native_uprising_chance = -0.5
@@ -1187,7 +1187,7 @@ PGA_ideas = {
 		defensiveness = 0.2
 	}
 	PGA_umbrian_hegemony = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	PGA_five_conclaves = {
 		tolerance_own = 2
@@ -1364,7 +1364,7 @@ LUC_ideas = {
 		production_efficiency = 0.1
 	}
 	LUC_black_party = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	LUC_jacobin_state = {
 		legitimacy = 1
@@ -1579,7 +1579,7 @@ DAL_ideas = {
 	
 	DAL_kingdom_of_dalmatia = {
 		reform_progress_growth = 0.15
-		global_unrest = -1
+		global_unrest = -2
 	}
 	DAL_principalities = {
 		global_foreign_trade_power = 0.15
@@ -2077,7 +2077,7 @@ MUG_ideas = {
 		discipline = 0.05
 	}
 	control_of_the_ulema = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	mughal_ibadat_khana = {
 		idea_cost = -0.1
@@ -2271,7 +2271,7 @@ SCO_Ideas = {
 	free = yes
 	
 	break_the_black_douglas = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	modernised_royal_scots_navy = {
 		global_ship_cost = -0.1
@@ -2280,7 +2280,7 @@ SCO_Ideas = {
 		global_manpower_modifier = 0.2
 	}
 	comets = {
-		stability_cost_modifier = -0.10
+		stability_cost_modifier = -0.20
 	}
 	royal_revenue = {
 		global_tax_modifier = 0.2
@@ -2314,7 +2314,7 @@ HUN_ideas = {
 	free = yes
 	
 	hun_renaissanse_knowledge = {
-		global_unrest = -1
+		global_unrest = -2
 		effect = {
 			if = {
 				limit = {
@@ -2614,7 +2614,7 @@ SIC_ideas = {
 		technology_cost = -0.05
 	}
 	sic_constitions_of_melfi = {
-		global_unrest = -1
+		global_unrest = -2
 		possible_policy = 1
 	}
 	sic_noble_admirals = {
@@ -3000,7 +3000,7 @@ MJZ_ideas = {
 		devotion = 0.5
 		republican_tradition = 0.15
 		meritocracy = 0.5
-		global_unrest = -1
+		global_unrest = -2
 	}
 	jurchen_foreign_service = {
 		leader_land_shock = 1
@@ -3511,7 +3511,7 @@ GRA_ideas = {
 		tolerance_of_heathens_capacity = 3
 	}
 	recover_al_andalus = {
-		manpower_recovery_speed = 0.20
+		manpower_recovery_speed = 0.25
 		recover_army_morale_speed = 0.10
 	}
 	beacon_of_learning = {
@@ -3738,7 +3738,7 @@ RAG_ideas = {
 		global_ship_recruit_speed = -0.05
 	}
 	non_bene_pro_toto_libertas_venditur_auro = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	palace_of_the_rector = {
 		global_tax_modifier = 0.2
@@ -3765,7 +3765,7 @@ RYU_ideas = {
 		ae_impact = -0.25
 	}
 	reform_the_ryukyuan_religion = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ryu_shuri_castle = {
 		prestige = 1
@@ -3788,11 +3788,11 @@ RYU_ideas = {
 ASS_ideas = {
 	start = { #Ahomization
 		global_manpower_modifier = 0.10
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	bonus = {
-		diplomatic_reputation = 1
+		diplomatic_reputation = 2
 	}
 	
 	trigger = {
@@ -3841,6 +3841,7 @@ TUS_ideas = {
 		OR = {
 			tag = TUS
 			tag = LAN #Florence
+			tag = ETR
 		}
 	}
 	free = yes
@@ -4315,7 +4316,7 @@ HUR_ideas = {
 		trade_steering = 0.20
 	}
 	harsh_justice = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	missionary_welcome = {
 		diplomatic_reputation = 1
@@ -4594,7 +4595,7 @@ KUR_ideas = {
 		defensiveness = 0.20
 	}	
 	privilegium_gotthardinum = {
-		global_unrest = -1
+		global_unrest = -2
 	}		
 	duchy_of_mercantilism = {
 		global_foreign_trade_power = 0.1
@@ -4640,7 +4641,7 @@ PRO_ideas = {
 		horde_unity = 1
 	}
 	composite_monarchy = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	tarascon_castle = {
 		defensiveness = 0.15
@@ -5104,7 +5105,7 @@ KBO_ideas = {
 	}
 	
 	sayfawad_dynasty = { 
-		global_unrest = -1
+		global_unrest = -2
 	}
 	alumas_reforms = {
 		global_trade_goods_size_modifier = 0.10
@@ -5309,7 +5310,7 @@ AJU_ideas = {
 		global_ship_cost = -0.1
 	}
 	istunka_tournament = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	gareen_imams = {
 		missionaries = 1
@@ -5331,7 +5332,7 @@ AJU_ideas = {
 
 RYA_ideas = {
 	start = {
-		global_unrest = -1
+		global_unrest = -2
 		recover_army_morale_speed = 0.10
 	}
 	
@@ -5604,7 +5605,7 @@ HRZ_ideas = {
 		vassal_income = 0.25
 	}
 	HRZ_herceg = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	HRZ_shifting_allegiances = {
 		diplomatic_upkeep = 1
@@ -5697,7 +5698,7 @@ AIR_ideas = {
 
 mossi_ideas = {
 	start = {
-		global_unrest = -1
+		global_unrest = -2
 		cavalry_power = 0.1
 	}
 	
@@ -5819,7 +5820,7 @@ TAR_ideas = {
 	}
 	
 	no_mercy = { 
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	merchant_officials = {
@@ -6006,7 +6007,7 @@ ATH_ideas = {
 		prestige = 1
 	}
 	latin_contracts = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	archbishop_of_athens = {
 		global_missionary_strength = 0.01
@@ -6121,7 +6122,7 @@ PRM_ideas = {
 		cavalry_cost = -0.1
 	}	
 	the_old_traditions = {
-		global_unrest = -1		
+		global_unrest = -2
 	}
 	the_great_perm = {
 		trade_efficiency = 0.10		
@@ -6207,7 +6208,7 @@ MPC_ideas = {
 		trade_steering = 0.2
 	}
 	mpc_idea_5 = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	mpc_idea_6 = {
 		diplomatic_reputation = 1
@@ -6262,7 +6263,7 @@ INC_ideas = {
 CHM_ideas = {
 	start = {
 		global_tax_modifier = 0.2
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	bonus = {
@@ -6304,7 +6305,7 @@ MCA_ideas = {
 	}
 	
 	bonus = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	trigger = {
@@ -6524,7 +6525,7 @@ BUL_ideas = {
 		global_heretic_missionary_strength = 0.02		
 	}
 	bul_idea_3 = {
- 		global_unrest = -1
+ 		global_unrest = -2
 	}
 	bul_idea_4 = {
 		infantry_cost = -0.1
@@ -6613,7 +6614,7 @@ NAX_ideas = {
 		army_tradition = 0.5
 	}
 	archipelago_feudalism = {
-		global_unrest = -1		
+		global_unrest = -2
 	}
 	latin_roots = {
 		technology_cost = -0.05
@@ -6642,7 +6643,7 @@ TUA_ideas = {
 		land_attrition = -0.1
 	}
 	ge_home_of_fisherfolk = {
-		global_unrest = -1		
+		global_unrest = -2
 	}
 	yam_growers = {
 		production_efficiency = 0.1
@@ -6805,7 +6806,7 @@ WLS_ideas = {
 		prestige = 1
 	}
 	cyfraith_hywel = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	unbennaeth_prydain = {
 		legitimacy = 1
@@ -6884,7 +6885,7 @@ GUA_ideas = {
 	}
 	
 	bonus = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	trigger = {
@@ -7019,7 +7020,7 @@ LXA_ideas = {
 		improve_relation_modifier = 0.15		
 	}
 	lxa_white_elephant = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	flowering_of_culture = {
 		stability_cost_modifier = -0.1
@@ -7221,7 +7222,7 @@ HAM_ideas = {
 		defensiveness = 0.25
 	}
 	first_constitution = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	johanneum = {
 		idea_cost = -0.1
@@ -7339,7 +7340,7 @@ ZAZ_ideas = {
 		development_cost = -0.1
 	}
 	zaz_hetmanate = {
-		global_unrest = -1		
+		global_unrest = -2
 	}
 	zaz_steppe_riders = {
 		land_attrition = -0.15
@@ -7351,7 +7352,8 @@ ZAZ_ideas = {
 		power_projection_from_insults = 1
 	}
 	zaz_zaporzhian_tolerance = {
-		religious_unity = 0.25	
+		tolerance_heathen = 2
+		tolerance_heretic = 2
 	}
 	zaz_army_first = {
 		cavalry_cost = -0.1
@@ -7548,7 +7550,7 @@ SUK_ideas = {
 		global_missionary_strength = 0.01
 	}
 	father_governs_children = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ramkhamhaeng_stele = {
 		legitimacy = 1
@@ -7845,7 +7847,7 @@ BRE_ideas = {
 SHL_ideas = {
 	start = {
 		global_manpower_modifier = 0.15
-		global_unrest = -1
+		global_unrest = -2
 	}
 	bonus = {
 		light_ship_power = 0.15
@@ -8112,10 +8114,11 @@ CAT_ideas = {
         advisor_cost = -0.1
     }
 	cat_catalan_constitutions = {
-		global_unrest = -1
+		global_unrest = -2
     }
 	cat_fortifying_catalonia = {
 		fort_maintenance_modifier = -0.1
+		defensiveness = 0.1
 	}
 	cat_miquelets = {
         manpower_recovery_speed = 0.15
@@ -8199,7 +8202,7 @@ PGR_ideas = {
 		horde_unity = 1
     }
     pgr_rajo_tigo_selo = {
-		global_unrest = -1
+		global_unrest = -2
     }
     pgr_high_education = {
 		global_institution_spread = 0.1
@@ -8232,7 +8235,7 @@ CMI_ideas = {
 		tolerance_own = 2
 	}
 	cmi_dragon_boats = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	cmi_unity_of_the_tribes = {
 		land_morale = 0.1
@@ -8347,7 +8350,7 @@ MLB_ideas = {
 	free = yes
 	
 	mlb_sanamahism = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	mlb_martial_traditions = {
 		land_morale = 0.1
@@ -8669,7 +8672,7 @@ KGR_ideas = {
 	}
 
 	bonus = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	trigger = {
@@ -8704,7 +8707,7 @@ KGR_ideas = {
 KAS_ideas = {
 	start = {
 		trade_efficiency = 0.1
-		global_unrest = -1
+		global_unrest = -2
 	}
 
 	bonus = {
@@ -8803,7 +8806,7 @@ LON_ideas = {
 		army_tradition = 0.5
 	}
 	lon_leonese_cortes = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	lon_conquistadores = {
 		colonists = 1
@@ -8949,7 +8952,7 @@ MAZ_ideas = {
     }
 
     bonus = {
-        global_unrest = -1
+        global_unrest = -2
     }
 
 	trigger = {
@@ -9256,7 +9259,7 @@ MRA_ideas = {
 		global_tax_modifier = 0.2
 	}
 	mra_control_of_the_slave_trade = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -9399,7 +9402,7 @@ ANT_ideas = {
 	free = yes
   
 	ant_tampon_tany = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ant_sorabe = {
 		idea_cost = -0.1
@@ -9445,7 +9448,7 @@ BTS_ideas = {
 		privateer_efficiency = 0.10
 	}
 	bts_indivisable_many = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	bts_gifts_and_hostages = {
 		global_autonomy = -0.05
@@ -9467,7 +9470,7 @@ BTS_ideas = {
 
 MIR_ideas = {
 	start = {  
-		global_unrest = -1
+		global_unrest = -2
 		manpower_recovery_speed = 0.1
 	}
   
@@ -9538,7 +9541,7 @@ TBK_ideas = {
 		caravan_power = 0.2
 	}
 	tbk_break_the_power_of_the_makambala = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	tbk_welcome_the_swahili_merchants = {
 		merchants = 1
@@ -9561,7 +9564,7 @@ LUB_ideas = {
 	free = yes
   
 	lub_bamfumus = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	lub_royal_village_shrines = {
 		legitimacy = 1
@@ -9625,7 +9628,7 @@ KUB_ideas = {
 		horde_unity = 1
 	}
 	kub_courtly_competition = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -9706,7 +9709,7 @@ RZW_ideas = {
 		discipline = 0.05
 	}
 	rzw_mwari_cult = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	rzw_vashambadzi = {
 		trade_efficiency = 0.1
@@ -9852,7 +9855,7 @@ KAF_ideas = {
 		global_trade_goods_size_modifier = 0.1
 	}
 	kaf_autonomous_kings = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	kaf_strengthen_ties_with_ethiopian_church = {
 		legitimacy = 1
@@ -9965,7 +9968,7 @@ WUR_ideas = {
 		global_manpower_modifier = 0.15
 	}
 	wur_poor_conrad = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	wur_swabian_circle = {
 		manpower_recovery_speed = 0.15
@@ -10011,7 +10014,7 @@ SLO_ideas = {
 		infantry_cost = -0.1
 	}
 	slo_literary_language = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	slo_slovak_national_awakening = {
 		land_morale = 0.1
@@ -10166,7 +10169,7 @@ ANS_ideas = {
 		development_cost = -0.1
 	}
 	ans_wolf_of_ansbach = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ans_fayencemanufaktur = {
 		global_trade_goods_size_modifier = 0.1
@@ -10354,7 +10357,7 @@ GHR_ideas = {
 		land_morale = 0.1
 	}
 	ghr_land_of_serene_beauty = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ghr_source_of_the_ganges = {
 		legitimacy = 1
@@ -10494,7 +10497,7 @@ IMG_ideas = {
 	}
 	
 	IMG_revised_clan_law = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	IMG_triple_alliance = {
@@ -10581,7 +10584,7 @@ HSK_ideas = {
 	}
 	
 	hsk_branches_and_retainers = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 	hsk_sakai_city = {
@@ -10691,7 +10694,7 @@ YMN_ideas = {
 	}
 	
 	ymn_reunification_of_branches = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	
 }
@@ -10881,7 +10884,7 @@ OTM_ideas = {
 
 OUC_ideas = {
 	start = {
-		global_unrest = -1
+		global_unrest = -2
 		global_ship_cost = -0.1
 	}
 	
@@ -11077,7 +11080,7 @@ STK_ideas = {
 		global_tax_modifier = 0.2
 	}
 	stk_suppression_of_ikki = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	stk_kashima_jingu = {
 		infantry_power = 0.1
@@ -11279,7 +11282,7 @@ ISK_ideas = {
 		global_own_trade_power = 0.1
 	}
 	isk_minister_of_samurai_dokoro = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	isk_bridge_of_heaven = {
 		diplomatic_reputation = 1
@@ -11364,7 +11367,7 @@ KKC_ideas = {
 	
 	
 	kkc_disinguished_family_in_kyushu = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	kkc_land_of_fire = {
 		prestige = 1
@@ -11457,7 +11460,7 @@ RFR_ideas = { # Nanbu clan
 		diplomats = 1
 	}
 	rfr_downfall_of_rebllious_vassals = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	rfr_morioka_castle = {
 		global_tax_modifier = 0.2
@@ -11656,7 +11659,7 @@ EST_ideas = {
 		diplomatic_reputation = 1
 	}
 	est_national_awakening = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -12110,7 +12113,7 @@ TNT_ideas = {
 		tolerance_own = 1
 	}
 	TNT_republican_slaughter = {
-		global_unrest = -1
+		global_unrest = -2
 		yearly_absolutism = 0.5
 	}
 	TNT_south_tyrol_identity = {
@@ -12326,7 +12329,7 @@ MAI_ideas = {
 		defensiveness = 0.25
 	}
 	mai_fifth_season = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -12627,7 +12630,7 @@ QAR_ideas = {
 		reduced_liberty_desire = 10
 	}
 	qar_patron_of_iranian_culture = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	qar_irrigation_and_public_works = {
 		global_tax_modifier = 0.2
@@ -13054,7 +13057,7 @@ HDR_ideas = {
 		global_manpower_modifier = 0.15
 	}
 	hdr_hawtas = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	hdr_encouraging_the_incense_trade = {
 		trade_efficiency = 0.1
@@ -13110,7 +13113,7 @@ HSN_ideas = {
 KTB_ideas = {
 	start = {
 		years_of_nationalism = -5
-		global_unrest = -1
+		global_unrest = -2
 	}
 	bonus = {
 		land_morale = 0.1
@@ -13216,7 +13219,7 @@ TKG_ideas = {
 		tolerance_own = 2
 	}
 	tkg_famine_policies = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -13406,7 +13409,7 @@ HJO_ideas = {
 		idea_cost = -0.1
 	}
 	hjo_tokusei = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	hjo_castles_of_hojo = {
 		defensiveness = 0.2
@@ -13539,7 +13542,7 @@ ASA_ideas = {
 
 KID_ideas = {
 	start = {
-		global_unrest = -1
+		global_unrest = -2
 		defensiveness = 0.20
 	}
 
@@ -13802,7 +13805,7 @@ ORD_ideas = {
 		global_tax_modifier = 0.2
 	}
 	ord_locals_in_line = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	ord_irish_rivalries = {
 		global_spy_defence = 0.2
@@ -14006,7 +14009,7 @@ KOI_ideas = {
 		naval_morale = 0.15
 	}
 	mann_act_of_settlement = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	mann_burn_the_heretic = {
 		global_heretic_missionary_strength = 0.02
@@ -14201,7 +14204,7 @@ BRB_ideas = {
 	free = yes
 	
 	brb_charter_of_liberty = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	brb_marsh_warfare = {
 		leader_land_manuever = 1
@@ -14262,7 +14265,7 @@ LIE_ideas = {
 		global_institution_spread = 0.1
 	}
 	lie_rights_of_man = {
-		global_unrest = -1
+		global_unrest = -2
 	}	
 }
 
@@ -14322,7 +14325,7 @@ EFR_ideas = {
 	}
 	free = yes
 	efr_chiefs = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	efr_saxon_feud = {
 		army_tradition_decay = -0.01
@@ -14485,7 +14488,7 @@ DLH_ideas = {
 		army_tradition = 0.5
 	}
 	dlh_suppress_rebellion = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	dlh_expansionism = {
 		core_creation = -0.1
@@ -14939,7 +14942,7 @@ RIG_ideas = {
 LTG_ideas = {
 	start = {
 		manpower_recovery_speed = 0.15
-		global_unrest = -1
+		global_unrest = -2
 	}
 	bonus = {
 		fire_damage_received = -0.1
@@ -15561,7 +15564,7 @@ ADU_ideas = {
 	free = yes        #will be added at load.
     
 	adu_stand_against_the_reconquista = {
-		fire_damage_received = -0.15
+		fire_damage_received = -0.10
 	}
 	adu_taifa_adminstration = {
 		vassal_forcelimit_bonus = 1
@@ -16282,7 +16285,7 @@ TIW_ideas = {
 	}
 	TIW_marriage = {
 		heir_chance = 0.5
-		global_unrest = -1
+		global_unrest = -2
 	}
 	TIW_isolationism = {
 		land_morale = 0.1
@@ -16447,7 +16450,7 @@ LAR_ideas = {
 		republican_tradition = 0.3
 		meritocracy = 1
 		horde_unity = 1
-		global_unrest = -1
+		global_unrest = -2
 	}
 	LAR_ceremonial_scarring = {
 		shock_damage = 0.1
@@ -16685,7 +16688,7 @@ SUN_ideas = {
 		tolerance_own = 1
 	}
 	sunda_galuh = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 	defensive_moats = {
 		defensiveness = 0.2
@@ -17083,7 +17086,7 @@ CRB_ideas = {
 		production_efficiency = 0.1
 	}
 	crb_royal_lineage = {
-		global_unrest = -1
+		global_unrest = -2
 	}
 }
 
@@ -17197,7 +17200,7 @@ ISR_ideas = {
 	free = yes
 	
 	end_of_diaspora = {
-		global_unrest = -1
+		global_unrest = -2
 		church_power_modifier = 0.15
 	}
 	national_myths_restored = {
@@ -17260,7 +17263,7 @@ OYO_ideas = {
 		global_trade_power = 0.1
 	}
 	oyo_feudal_unity = {
-		global_unrest = -1
+		global_unrest = -2
 		stability_cost_modifier = -0.05
 	}
 }

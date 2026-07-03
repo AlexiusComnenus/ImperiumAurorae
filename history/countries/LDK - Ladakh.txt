@@ -1,7 +1,7 @@
 government = tribal
 add_government_reform = tribal_kingdom
 government_rank = 1
-technology_group = indian
+technology_group = chinese
 religion = vajrayana
 primary_culture = tibetan
 capital = 2074

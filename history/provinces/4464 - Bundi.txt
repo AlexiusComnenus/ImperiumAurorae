@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = SRU
+controller = SRU
 capital = "Bundi"
 is_city = yes
 culture = rajput
@@ -9,7 +9,7 @@ base_tax = 1
 base_production = 3
 base_manpower = 2
 add_core = MER
-add_core = MAM
+add_core = SRU
 add_core = RJP
 add_permanent_claim = HIN
 discovered_by = MGE

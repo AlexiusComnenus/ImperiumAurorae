@@ -31,6 +31,36 @@ nov_arkhangelsk_settlers = {
 	local_build_cost = -0.20
 }
 
+nov_militia_garrisons = {
+	garrison_size = 0.25
+}
+
+nov_defensive_fervor = {
+	garrison_damage = 0.25
+	defensiveness = 0.25
+}
+
+nov_hit_and_run_generals = {
+	max_general_maneuver = 1
+	leader_land_manuever = 1
+	regiment_manpower_usage = -0.1
+	reinforce_speed = 0.10
+}
+
+nov_damage_mitigation_drills = {
+	fire_damage_received = -0.15
+	shock_damage_received = -0.15
+	fire_damage = -0.2
+	shock_damage = -0.2
+	#morale_damage_received = 0.1
+}
+
+nov_organized_regulars = {
+	is_streltsy_modifier = yes
+	shock_damage_received = -0.10
+	recover_army_morale_speed = 0.2
+}
+
 nov_arkhangelsk_city = {
 	local_development_cost = -0.50
 	province_trade_power_modifier = 0.1
@@ -213,9 +243,11 @@ nov_integrating_ugrics = {
 nov_respecting_the_ancestors = {
 	local_missionary_strength = -0.10
 	local_tolerance_of_heathens = 5
+	local_tolerance_of_heretics = 5
 	local_religious_unity_contribution = -1
 	local_religious_conversion_resistance = 1.5
-	local_tax_modifier = 0.15
+	local_tax_modifier = 0.2
+	local_production_efficiency = 0.1
 }
 
 nov_beacon_of_liberty_tier_1 = {

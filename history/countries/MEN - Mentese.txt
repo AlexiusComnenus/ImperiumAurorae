@@ -1,10 +1,10 @@
 government = monarchy
-add_government_reform = autocracy_reform
+add_government_reform = beylik_government
 government_rank = 1
 technology_group = ottoman
 religion = sunni
-primary_culture = turkish
-capital = 319
+primary_culture = indo_turkish
+capital = 567
 religious_school = hanafi_school
 1399.1.1= {
 	monarch = {
@@ -15,4 +15,9 @@ religious_school = hanafi_school
 		mil = 2
 	}
 	add_piety = 0.2
+}
+
+1444.10.1= {
+	set_estate_privilege = estate_dhimmi_guaranteed_autonomy
+	set_estate_privilege = estate_dhimmi_tolerance
 }

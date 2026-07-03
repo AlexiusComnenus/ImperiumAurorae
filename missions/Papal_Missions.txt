@@ -713,7 +713,11 @@ papal_missions_column_4 = {
 						estate = estate_nobles
 						territory = 25
 					}
-					has_estate_privilege = estate_nobles_command_of_the_military
+					AND = {
+						has_estate_privilege = estate_nobles_levies
+						has_estate_privilege = estate_nobles_officer_corp
+						has_estate_privilege = estate_nobles_noble_officer_right
+					}
 				}
 				num_of_cavalry = 10
 			}

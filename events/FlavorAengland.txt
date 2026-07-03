@@ -288,6 +288,14 @@ country_event = {
 
 	is_triggered_only = yes
 	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
+	
 	option = {	# Form tag
 		name = ia_flavor_aen.8.a
 		hidden_effect = { ia_save_historical_relations_effect = yes }

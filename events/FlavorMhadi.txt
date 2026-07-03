@@ -630,6 +630,136 @@ country_event = {	# Pyre Festival
 				limit = { has_country_modifier = fourth_bell_toll_modifier NOT = { num_of_rajput = 25 } }
 				capital_scope = { rajput_infantry = ROOT }
 			}
+			else_if = {
+				limit = { 
+					has_country_modifier = twelfth_bell_toll_modifier 
+					NOT = { num_of_rajput = 85 }
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 3
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = eleventh_bell_toll_modifier 
+					NOT = { num_of_rajput = 80 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 3
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = tenth_bell_toll_modifier	 
+					NOT = { num_of_rajput = 75 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 3
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = ninth_bell_toll_modifier	 
+					NOT = { num_of_rajput = 70 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 3
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = eighth_bell_toll_modifier 
+					NOT = { num_of_rajput = 65 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 3
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = twelfth_bell_toll_modifier 
+					NOT = { num_of_rajput = 75 }
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 2
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = eleventh_bell_toll_modifier 
+					NOT = { num_of_rajput = 70 }
+                    any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 2
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = tenth_bell_toll_modifier	 
+					NOT = { num_of_rajput = 65 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 2
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = ninth_bell_toll_modifier	 
+					NOT = { num_of_rajput = 60 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 2
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
+			else_if = {
+				limit = { 
+					has_country_modifier = eighth_bell_toll_modifier 
+					NOT = { num_of_rajput = 55 } 
+					any_owned_province = {
+					    has_great_project = {
+						    type = basilica_of_ending
+						    tier = 2
+					    }
+                    }
+				}
+				capital_scope = { rajput_infantry = ROOT }
+			}
 		}
 		#if = {
 		#	limit = { ai = yes }
@@ -1944,5 +2074,32 @@ country_event = {	# Mhadi trucebreak: ask for help
 		}
 		
 		join_all_defensive_wars_of = FROM
+	}
+}
+
+country_event = {	# Basilica Built to t3
+	id = mhadi.23
+	title = mhadi.23.title
+	desc = mhadi.23.desc
+	picture = BYZ_BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	major = yes
+	
+	option = {	# Oopsies the moon is gone
+		name = mhadi.23.a
+		add_yearly_manpower = -4
+		custom_tooltip = basilica_every_other_country_loses_1_stab_and_short_debuff_tt
+		hidden_effect = {
+			every_country = {
+				limit = { NOT = { religion = lollard } }
+				add_stability = -1
+				add_country_modifier = { 
+   					name = yor_basilica_ate_the_moon
+    				duration = 1460
+				}
+			}
+		}
 	}
 }

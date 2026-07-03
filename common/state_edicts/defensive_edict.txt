@@ -8,7 +8,8 @@ edict_defensive_edict = {
 	}
 	
 	modifier = {
-		local_defensiveness = 0.33
+		local_defensiveness = 0.15
+		local_hostile_attrition = 1
 	}
 	
 	color = {  46 114 55  }
@@ -20,13 +21,13 @@ edict_defensive_edict = {
 	}
 	
 	ai_will_do = {
-		factor = 100
+		factor = 10
 		modifier = {
 			factor = 0
 			is_at_war = no
 		}
 		modifier = {
-			factor = 3
+			factor = 3000
 			any_province_in_state = {
 				has_siege = yes
 			}

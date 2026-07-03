@@ -379,6 +379,21 @@ pagan = {
 		}
 		
 		#uses_karma = yes
+		allowed_center_conversion = {
+			catholic
+			fraticelli
+			protestant
+			reformed
+			anglican
+			druidic_pagan_reformed
+		}
+		will_get_center = { #Refered to even for initial CoR Spawn
+			any_owned_province = {
+				can_have_center_of_reformation_trigger_aurora = {
+					RELIGION = druidic_pagan
+				}
+			}
+		}
 
 		on_convert = {
 			change_religion = druidic_pagan

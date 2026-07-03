@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = ODH
+controller = ODH
 capital = "Khairabad"
 is_city = yes
 culture = avadhi
@@ -10,8 +10,6 @@ base_tax = 3
 base_production = 3
 base_manpower = 2
 add_core = ODH
-add_core = MAM
-add_core = Z11
 add_permanent_claim = HIN
 discovered_by = MGE
 discovered_by = eastern

@@ -51,6 +51,7 @@ estate_nobles = {
 		rr_royalists_influence = 0.1
 		monthly_ia_complacency = 0.08
 		monthly_ia_court_influence = 0.1
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		manpower_recovery_speed = -0.1
@@ -60,6 +61,7 @@ estate_nobles = {
 		rr_royalists_influence = -0.1
 		monthly_ia_complacency = 0.12
 		monthly_ia_court_influence = -0.2
+		yearly_corruption = 0.2
 	}
 	land_ownership_modifier = {
 		nobles_loyalty_modifier = 0.2
@@ -451,6 +453,9 @@ estate_nobles = {
 	color = { 200 0 50 }
 	
 	privileges = {
+		estate_nobles_ia_noblesse_oblige
+		estate_nobles_hes_integration_of_houses
+		estate_nobles_hes_justification_through_power
 		estate_nobles_land_rights
 		estate_nobles_nobility_primacy
 		estate_nobles_officer_corp
@@ -543,8 +548,6 @@ estate_nobles = {
 		estate_nobles_four_class_system
 		estate_nobles_hungarian_nobility_privileges
 		estate_nobles_austrian_nobility_privileges
-		estate_nobles_hes_integration_of_houses
-		estate_nobles_hes_justification_through_power
 	}
 
 	agendas = {

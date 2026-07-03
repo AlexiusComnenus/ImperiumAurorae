@@ -88,5 +88,8 @@ spriteTypes = {
 		name = "GFX_great_project_the_great_wall_of_china_ningyuan"	
 		texturefile = "gfx//interface//great_projects//great_project_the_great_wall_of_china_ningyuan.dds"
 	}
-
+    spriteType = {
+		name = "GFX_great_project_basilica_of_ending"	
+		texturefile = "gfx//interface//great_projects//great_project_basilica_of_ending.dds"
+	}
 }

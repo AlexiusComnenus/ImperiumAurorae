@@ -72,6 +72,7 @@ country_decisions = {
 		}
 		effect = {
 			add_prestige = 25
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = MCH
 			swap_non_generic_missions = yes
 			on_change_tag_effect = yes
@@ -187,7 +188,7 @@ country_decisions = {
 		major = yes
 		potential = {
 			tag = MCH
-			was_never_end_game_tag_trigger = yes
+			#was_never_end_game_tag_trigger = yes
 			normal_or_historical_nations = yes
 			OR = {
 				ai = no
@@ -212,7 +213,7 @@ country_decisions = {
 		provinces_to_highlight = {
 			OR = {
 				province_id = 704		# Liaoxi
-				province_id = 723		# Xilin Gol
+				#province_id = 723		# Xilin Gol
 				province_id = 726		# Liaodong
 				province_id = 1816		# Beijing
 			}
@@ -220,7 +221,7 @@ country_decisions = {
 		}
 		allow = {
 			owns = 704		# Liaoxi
-			owns = 723		# Xilin Gol
+			#owns = 723		# Xilin Gol
 			owns = 726		# Liaodong
 			owns = 1816		# Beijing
 			1816 = {		# Beijing
@@ -253,6 +254,7 @@ country_decisions = {
 				change_culture = ROOT
 				add_core = QNG
 			}
+			hidden_effect = { ia_save_historical_relations_effect = yes }
 			change_tag = QNG
 			swap_non_generic_missions = yes
 			on_change_tag_effect = yes

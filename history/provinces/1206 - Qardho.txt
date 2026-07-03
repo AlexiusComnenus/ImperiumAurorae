@@ -1,5 +1,5 @@
-owner = ETH
-controller = ETH
+owner = MRE
+controller = MRE
 capital = "Qardho"
 is_city = yes
 culture = somali
@@ -8,7 +8,6 @@ trade_goods = incense
 base_tax = 2
 base_production = 1
 base_manpower = 1
-add_core = ETH
 add_core = MRE
 discovered_by = MGE
 discovered_by = eastern

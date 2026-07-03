@@ -6,6 +6,7 @@ country_decisions = {
 		potential = {
 			tag = SOI
 			NOT = { has_country_flag = enthroned_majorian }
+			government = monarchy
 		}
 		allow = {
 			has_reform = roman_diocese

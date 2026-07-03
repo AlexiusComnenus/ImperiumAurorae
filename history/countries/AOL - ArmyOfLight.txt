@@ -3,4 +3,4 @@ add_government_reform = monastic_order_reform
 government_rank = 1
 technology_group = eastern
 religion = hellenic_pagan_reformed
-primary_culture = xizho
+primary_culture = xifei

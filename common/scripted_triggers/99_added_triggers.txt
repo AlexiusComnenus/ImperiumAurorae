@@ -43,10 +43,10 @@ frloc_tags_art_pl_masc_cons_dansles_05c = {
 
 can_have_center_of_reformation_trigger_aurora = { #Province Scope
 	#$RELIGION$ needs to match the religion of the center that is being spawned.
-	continent = europe
-	OR = {
-		religion_group = christian
-	}
+	#continent = europe
+	#OR = {
+	#	religion_group = christian
+	#}
 	is_in_capital_area = yes
 	is_reformation_center = no
 	expelling_minorities = no
@@ -67,12 +67,34 @@ can_have_center_of_reformation_trigger_aurora = { #Province Scope
 	NOT = { has_climate = arctic }
 	NOT = { has_climate = arid }
 	NOT = { has_terrain = coastal_desert }
-	NOT = { has_terrain = steppe }
+	#NOT = { has_terrain = steppe }
 	NOT = { has_terrain = desert }
 	NOT = { has_terrain = glacier }
-	NOT = { has_climate = tropical }
+	#NOT = { has_climate = tropical }
 }
 
 rhe_gained_dev_from_manu = {
 	has_province_flag = rhe_built_manu_dev_$building$
+}
+
+is_strategic_resource = {
+	OR = {
+		trade_goods = copper
+		trade_goods = zinc
+		trade_goods = tin
+		trade_goods = iron
+		trade_goods = lead
+		trade_goods = glass
+		trade_goods = tobacco
+		trade_goods = cocoa
+	}
+}
+
+is_war_advanced_good = {
+	OR = {
+		trade_goods = cannon
+		trade_goods = uniforms
+		trade_goods = munitions
+		trade_goods = optics
+	}
 }

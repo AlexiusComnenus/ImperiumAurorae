@@ -20,7 +20,7 @@ order_of_saint_anthony_ideas = {
 		merchants = 1
 	}
 	ZZZ_order_in_every_town = {
-		global_unrest = -1.5
+		global_unrest = -2
 	}
 	ZZZ_mission_to_the_unknown = {
 		colonists = 1

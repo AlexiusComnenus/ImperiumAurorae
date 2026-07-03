@@ -23,9 +23,11 @@ estate_alchemists = {
 		#technology_cost = -0.1
 		production_efficiency = 0.2
 		build_cost = 0.05
+		yearly_corruption = 0.1
 	}	
 	country_modifier_angry = {
 		all_power_cost = 0.1
+		yearly_corruption = 0.2
 	}
 	land_ownership_modifier = {
 		alchemists_loyalty_modifier = 0.2
@@ -182,6 +184,16 @@ estate_alchemists = {
 		loyalty = 2.5
 	}
 	color = { 25 100 25 }
+	custom_name = {
+		desc = estate_cultivators
+		trigger = {
+			OR = {
+				religion = hellenic_pagan_reformed
+				religion = taoism
+				has_reform = mingjiao_reform
+			}
+		}
+	}
 	
 	privileges = {
 		estate_alchemists_land_rights
@@ -190,6 +202,8 @@ estate_alchemists = {
 		estate_alchemists_public_education
 		estate_alchemists_cutting_edge_research
 		estate_alchemists_elixirs_for_the_troops
+		estate_alchemists_elixirs_of_eternal_restlessness
+		estate_alchemists_elixirs_of_rejuvenation
 	}
 
 	agendas = {

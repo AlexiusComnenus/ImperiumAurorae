@@ -13,6 +13,10 @@
  
 
  #Mechanics Tooltips
+ last_crusade_ended: "Last Crusade Ended"
+ last_crusade_draw_flag: "Last Crusade Drew"
+ last_crusade_victorious_flag: "Last Crusade Victorious"
+ last_crusade_defeated_flag: "Last Crusade Defeated"
  ia_reduces_capital_distance_penalty_tt: "The §RTerrain Penalty§! from the §YCapital Distance Mechanic§! will not apply to qualifying provinces."
  mechanic_pilgrim_protector_yes:0 "Can protect §YPilgrims§!"
  cb_templar_crusade:0 "Templarite Crusade"
@@ -243,7 +247,7 @@
  ia_flavor_tem.2.c:0 "Conquest is the simplest solution."
  ia_flavor_tem.2.e: "On second thought, we are not ready yet."
  ia_flavor_tem.3.t:0 "The Final Crusade"
- ia_flavor_tem.3.d:0 "It is finally time to retake the Holy Land from the vile heathens! We depart in a month!"
+ ia_flavor_tem.3.d:0 "It is finally time to retake the Holy Land from the vile heathens! We depart in 6 months!\n§RNOTICE: During the Last Crusade, occupied cores will automatically change ownership. Additionally, occupied provinces will gain devastation and lose development due to religiously-motivated atrocities against the local populace!§!"
  ia_flavor_tem.3.a:0 "Deus Vult!"
  ia_flavor_tem.4.t:0 "To Slay an Immortal"
  ia_flavor_tem.4.d:0 "The famed Knights of the Aurora have been scattered to the winds. The walls of Antioch are breached, and our armies close in on the Imperial Palace. An apprehension lies in the air -- is victory finally in our grasp? $MONARCHTITLE$ $MONARCH$, wielding the §M(Lance of Longinus)§!, steps into the throne room, where he finds the Prince of the Aurora sitting upon the throne. There are many different accounts of what happened next, but all agree that when the dust settles, $MONARCHTITLE$ $MONARCH$ is victorious."

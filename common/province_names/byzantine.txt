@@ -16,8 +16,8 @@
 2348 = "Chios"
 2343 = "Adrramyta"
 2447 = "Tamatarha"
-149 = { "Adrianople" "Adrianople" }
-151 = { "Constantinople" "Constantinople" }
+149 = { "Hadrianoupoli" "Hadrianoupoli" }
+151 = { "Konstantinoupoli" "Konstantinoupoli" }
 316 = { "Optimatoi" "Nikomedeia" }
 317 = { "Opsikion" "Prussa" }
 318 = { "Smyrna" "Smyrna" }

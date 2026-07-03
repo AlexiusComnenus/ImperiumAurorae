@@ -13,7 +13,7 @@ tripolitania_ideas = {
 
 	z62_assimilation_of_berbers = {
 		galley_power = 0.15
-		culture_conversion_time = -0.5
+		culture_conversion_time = -0.33
 	}
 	z62_the_western_gate = {
 		global_foreign_trade_power = 0.15
@@ -23,7 +23,7 @@ tripolitania_ideas = {
 		land_attrition = -0.20
 	}
 	z62_nomadic_recruits = {
-		cavalry_flanking = 0.50
+		reinforce_speed = 0.15
 		caravan_power = 0.25
 	}
 	z62_disciples_of_alchemy = {

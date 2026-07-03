@@ -4162,6 +4162,7 @@ country_event = {
 							province_id = 4311
 							province_id = 4570
 							province_id = 857
+							province_id = 346
 						}
 					}
 					
@@ -4985,6 +4986,7 @@ country_event = {
 	
 	option = {
 		name = marcin_events.no
+		trigger = { ai = no }
 		country_event = { id = marcin_events.101 }
 	}
 	

@@ -4793,3 +4793,251 @@ citadel_of_aleppo = {
 		on_upgraded = {}
 	}
 }
+
+kashi_vishwanath = {
+	start = 2095 #Varanasi
+	date = 1194.01.01
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+	}
+
+	on_built = {
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+		owner = {
+			NOT = { 
+				is_or_was_tag = { tag = MUG }
+			}
+		}
+	}
+
+	can_upgrade_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+		owner = {
+			NOT = { 
+				is_or_was_tag = { tag = MUG } 
+			}
+		}
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			brahmins_hindu_loyalty_modifier = 0.05
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.25
+		}
+		area_modifier = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
+		}
+		country_modifiers = {
+			ae_impact = -0.05
+			brahmins_hindu_loyalty_modifier = 0.1
+		}
+		on_upgraded = {			
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.5
+		}
+		area_modifier = {
+			local_development_cost = -0.4
+			local_tax_modifier = 0.5
+		}
+		country_modifiers = {
+			ae_impact = -0.1
+			brahmins_hindu_loyalty_modifier = 0.15
+		}
+		on_upgraded = {			
+		}
+	}
+}
+
+khajuraho = {
+	start = 4466 #Mahoba
+	date = 850.01.01
+	time = { months = 0	}
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 10
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+	}
+
+	on_built = {
+	}
+
+	on_destroyed = {
+	}
+
+	can_use_modifiers_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+	}
+
+	can_upgrade_trigger = {
+		province_is_or_accepts_religion_group = {
+			religion_group = dharmic
+		}
+	}
+
+	keep_trigger = {
+	}
+
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+		province_modifiers = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			monthly_heir_claim_increase = 0.1
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 240
+		}
+		cost_to_upgrade = {
+			factor = 2500
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.25
+		}
+		area_modifier = {
+			local_development_cost = -0.25
+			local_tax_modifier = 0.25
+		}
+		country_modifiers = {
+			monthly_heir_claim_increase = 0.2
+			heir_chance = 0.33
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 480
+		}
+		cost_to_upgrade = {
+			factor = 5000
+		}
+		province_modifiers = {
+			local_tax_modifier = 0.5
+		}
+		area_modifier = {
+			local_development_cost = -0.4
+			local_tax_modifier = 0.5
+		}
+		country_modifiers = {
+			monthly_heir_claim_increase = 0.3
+			heir_chance = 0.5
+		}
+		on_upgraded = {
+		}
+	}
+}

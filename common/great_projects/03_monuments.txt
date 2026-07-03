@@ -3850,3 +3850,153 @@ tuileries_garden = {
 		}
 	}
 }
+
+basilica_of_ending = {
+	# province it starts in
+	start = 539
+	
+	date = 1368.01.01
+	time = {
+		months = 0
+	}
+	build_cost = 0
+	
+	can_be_moved = no
+	
+	move_days_per_unit_distance = 10
+	
+	starting_tier = 0
+	
+	type = monument
+	
+	build_trigger = {
+		owner = {
+			religion = lollard
+			mission_completed = yor_invite_the_apostle
+		}
+	}
+	on_built = {
+	}
+	on_destroyed = {
+	}
+	can_use_modifiers_trigger = {
+		owner = {
+			religion = lollard
+			mission_completed = yor_invite_the_apostle
+		}
+	}
+	can_upgrade_trigger = {
+		owner = {
+			religion = lollard
+			mission_completed = yor_invite_the_apostle
+		}
+	}
+
+	#can our country keep it or is it destroyed when we get hold of it?
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+		cost_to_upgrade = {
+			factor = 0
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+		}
+		on_upgraded = {
+		}
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 300
+		}
+		cost_to_upgrade = {
+			factor = 10000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 0.5
+			monthly_fervor_increase = 1
+			all_estate_loyalty_equilibrium = 0.05
+		}
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+		}
+	}
+
+
+	tier_2 = {
+		upgrade_time = {
+			months = 600
+		}
+		cost_to_upgrade = {
+			factor = 20000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 0.5
+			monthly_fervor_increase = 1.5
+			all_estate_loyalty_equilibrium = 0.05
+		}
+		#what effects happen when this tier is achieved
+		on_upgraded = {
+			owner = {
+				change_adm = 1
+			}
+			custom_tooltip = mhadi_basilica_increase_max_templars_1
+		}
+	}
+
+	tier_3 = {
+		upgrade_time = {
+			months = 1200
+		}
+		cost_to_upgrade = {
+			factor = 30000
+		}
+		province_modifiers = {
+		}
+		area_modifier = {
+		}
+		country_modifiers = {
+			tolerance_own = 1
+			monthly_fervor_increase = 2
+			all_estate_loyalty_equilibrium = 0.1
+		}
+
+		conditional_modifier = {
+			trigger = { 
+				owner = {
+					is_in_war = {
+    					casus_belli = cb_mhadi_ritual_war
+					}
+				}
+			}
+			modifier = {
+				land_morale = 0.05
+				morale_damage_received = -0.05
+			}
+		}
+		on_upgraded = {
+			custom_tooltip = mhadi_basilica_increase_max_templars_2
+			province_event = { 
+    			id = mhadi.23
+    			days = 21
+			}
+		}
+	}
+}

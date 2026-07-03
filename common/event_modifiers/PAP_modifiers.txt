@@ -2,6 +2,8 @@ ia_recently_been_force_converted_modifier = {
 	
 }
 
+recently_abdicated_pope_modifier = {}
+
 naval_prof_marines_mod = {
 	is_marine_modifier = yes
 	infantry_power = 0.10
@@ -28,11 +30,11 @@ pap_angelized_winged_guard = {
 	religion = yes
 
 	is_hussars_modifier = yes
-	land_morale = 0.5
+	#land_morale = 0.5
 	shock_damage_received = -0.40
 	fire_damage_received = -0.20
-	shock_damage = 1
-	discipline = 0.1
+	shock_damage = 0.5
+	#discipline = 0.1
 }
 
 pap_recently_used_gospel_of_bullets = {
@@ -42,12 +44,12 @@ pap_recently_used_gospel_of_bullets = {
 pap_gospel_of_bullets = {
 	religion = yes
 
-	fire_damage = 0.25
+	fire_damage = 0.1
 	backrow_artillery_damage = 0.25
-	fire_damage_received = -0.25
+	#fire_damage_received = -0.25
 	infantry_fire = 0.25
 	cavalry_fire = 0.5
-	morale_damage = 0.5
+	#morale_damage = 0.5
 }
 
 pap_control_of_holy_orders = {
@@ -79,8 +81,8 @@ pap_enable_winged_guard = {
 }
 
 pap_horse_breeding_infrastructure = {
-	cavalry_cost = -0.15
-	movement_speed = 0.10
+	cavalry_cost = -0.10
+	cav_to_inf_ratio = 0.10
 }
 
 pap_arm_of_god = {
@@ -121,12 +123,12 @@ pap_well_fed = {
 }
 
 pap_cossacks_accord = {
-	cavalry_power = 0.10
+	cav_to_inf_ratio = 0.10
 	cavalry_cost = -0.10
 	cossacks_influence_modifier = 0.05
 	cossacks_loyalty_modifier = 0.1
 	cossacks_privilege_slots = 1
-	allowed_cossack_fraction = 0.2
+	allowed_cossack_fraction = 0.1
 }
 
 pap_veil_of_veronica = {
@@ -150,7 +152,7 @@ pap_blessed_armaments = {
 	trade_value_modifier = 0.5
 	local_production_efficiency = 0.5
 	local_manpower_modifier = 1
-	amount_of_hussars = 0.8
+	#amount_of_hussars = 0.8
 }
 
 pap_religion_as_science_modifier = {

@@ -1,0 +1,1624 @@
+namespace = ia_estate_industrialists_events
+
+#They Spawn, one time event per country
+country_event = {
+	id = ia_estate_industrialists_events.1
+	title = ia_estate_industrialists_events.1.t
+	desc = {
+		trigger = { 
+			OR = {
+				religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+		desc = "ia_estate_industrialists_events_1_1"
+	}
+	desc = {
+		trigger = { 
+			has_estate = estate_alchemists
+		}
+		desc = "ia_estate_industrialists_events_1_2"
+	}
+	desc = {
+		trigger = { 
+			NOT = {
+				OR = {
+					has_estate = estate_alchemists
+					religion = druidic_pagan
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+				}
+			}
+		}
+		desc = "ia_estate_industrialists_events_1_3"
+	}
+	picture = { 
+		trigger = {
+			OR = {
+				religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+		picture = CHURCH_ESTATE_1_eventPicture
+	}
+	picture = { 
+		trigger = {
+			has_estate = estate_alchemists
+		}
+		picture = east_asian_ANGRY_MOB_eventPicture
+	}
+	picture = { 
+		trigger = {
+			NOT = {
+				OR = {
+					has_estate = estate_alchemists
+					religion = druidic_pagan
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+				}
+			}
+		}
+		picture = ENLIGHTENMENT_eventPicture
+	}
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_institution = manufactories
+		NOT = {
+			has_institution = enlightenment
+			OR = {
+				government = tribal
+				government = native
+				religion_group = apocalyptic_group
+				has_government_attribute = is_pirate_republic_reform
+				is_colonial_nation = yes
+			}
+		}
+	}
+	
+	#druidic
+	option = {
+		name = ia_estate_industrialists_events.1.a
+		trigger = {
+			OR = {
+				religion = druidic_pagan
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+			is_revolutionary = no
+		}
+		change_government_reform_progress = 50
+		custom_tooltip = unlock_privilege_estate_church_ia_defenders_of_the_ancient_wealds_tt
+		if = {
+			limit = {
+				NOT = { has_global_flag = estate_church_unlock_defenders_of_the_ancient_wealds }
+			}
+			hidden_effect = {
+				set_global_flag = estate_church_unlock_defenders_of_the_ancient_wealds
+			}
+		}
+	}
+	#alchemists
+	option = {
+		name = ia_estate_industrialists_events.1.b
+		trigger = {
+			has_estate = estate_alchemists
+		}
+		change_government_reform_progress = 50
+		custom_tooltip = unlock_privilege_estate_alchemists_unethical_elixir_privileges_tt
+		if = {
+			limit = {
+				NOT = { has_global_flag = alchemists_unlock_unethical_elixirs }
+			}
+			hidden_effect = {
+				set_global_flag = alchemists_unlock_unethical_elixirs
+			}
+		}
+	}
+	#peasant estate owners accept them
+	option = {
+		highlight = yes
+		name = ia_estate_industrialists_events.1.c
+		trigger = {
+			has_estate = estate_peasants
+			hidden_trigger = {
+				NOT = {
+					OR = {
+						religion = druidic_pagan
+						religion = norse_pagan
+						religion = norse_pagan_reformed
+						has_estate = estate_alchemists
+					}
+				}
+			}
+		}
+		if = {
+			limit = { 
+				is_revolutionary = yes
+				reform_level = 8
+			}
+			custom_tooltip = estate_peasants_accepts_industrialists_with_restrictions_tt
+			set_estate_privilege = estate_peasants_champions_of_industry
+			custom_tooltip = estate_industrialists_enabled_tt
+			hidden_effect = {
+				add_government_reform = estate_industrialists_enabled_reform_rev
+			}
+		}
+		else_if = { 
+			limit = { 
+				is_revolutionary = no
+				reform_level = 8
+			}
+			custom_tooltip = estate_peasants_accepts_industrialists_with_restrictions_tt
+			set_estate_privilege = estate_peasants_champions_of_industry
+			custom_tooltip = estate_industrialists_enabled_tt
+			hidden_effect = {
+				add_government_reform = estate_industrialists_enabled_reform_nonrev
+			}
+		}
+		else_if = { 
+			limit = {
+				NOT = { reform_level = 8 }
+			}
+			custom_tooltip = estate_industrialists_insufficient_reform_progress_tt
+			change_government_reform_progress = 50
+		}
+	}
+	#Regular Acceptance
+	option = {
+		name = ia_estate_industrialists_events.1.d
+		trigger = {
+			NOT = {
+				OR = {
+					religion = druidic_pagan
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+					has_estate = estate_alchemists
+					has_estate = estate_peasants
+				}
+			}
+		}
+		if = {
+			limit = { 
+				is_revolutionary = yes
+				reform_level = 8
+			}
+			custom_tooltip = estate_industrialists_enabled_tt
+			hidden_effect = {
+				add_government_reform = estate_industrialists_enabled_reform_rev
+			}
+		}
+		else_if = { 
+			limit = { 
+				is_revolutionary = no
+				reform_level = 8
+			}
+			custom_tooltip = estate_industrialists_enabled_tt
+			hidden_effect = {
+				add_government_reform = estate_industrialists_enabled_reform_nonrev
+			}
+		}
+		else_if = { 
+			limit = {
+				NOT = { reform_level = 8 }
+			}
+			custom_tooltip = estate_industrialists_insufficient_reform_progress_tt
+			change_government_reform_progress = 50
+		}
+	}
+	#not interested
+	option = {
+		name = ia_estate_industrialists_events.1.e
+		trigger = {
+			NOT = {
+				OR = {
+					religion = druidic_pagan
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+					has_estate = estate_alchemists
+				}
+			}
+		}
+		change_government_reform_progress = 50
+	}
+}
+
+country_event = {
+	id = ia_estate_industrialists_events.2
+	title = ia_estate_industrialists_events.2.t
+	desc = ia_estate_industrialists_events.2.d
+	picture = BURGHER_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_industrialists
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_ADVANCE
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_DECLINE
+			}
+		}
+	}
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1.5
+	}
+
+	option = {
+		name = ia_estate_industrialists_events.2.a
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_ADVANCE
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+country_event = {
+	id = ia_estate_industrialists_events.3
+	title = ia_estate_industrialists_events.3.t
+	desc = ia_estate_industrialists_events.3.d
+	picture = BURGHER_ESTATE_eventPicture
+	
+	trigger = {
+		has_estate = estate_industrialists
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_ADVANCE
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_DECLINE
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	} 
+	
+	option = {
+		name = ia_estate_industrialists_events.3.a
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_DECLINE
+			influence = -10
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #second prospering times 
+	id = ia_estate_industrialists_events.4
+	title = ia_estate_industrialists_events.4.t
+	desc = ia_estate_industrialists_events.4.d
+	picture = ECONOMY_eventPicture
+	goto = invest_province
+	trigger = {
+		has_estate = estate_industrialists
+		any_owned_or_non_tributary_subject_province = {
+			has_building = furnace
+		}
+		num_of_cities = 25
+		OR = {
+			has_idea_group = innovativeness_ideas
+			advisor = artist
+			stability = 3
+		}
+		stability = 1
+		has_country_flag = prosper_time_event
+		NOT = { has_country_flag = prosper_time_again }
+	}
+
+	mean_time_to_happen = {
+		months = 600
+
+		modifier = {
+			factor = 0.75
+			full_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 0.9
+			advisor = philosopher
+		}
+		modifier = {
+			factor = 0.9
+			artist = 3
+		}
+		modifier = {
+			factor = 0.9
+			artist = 2
+		}
+	}
+	immediate = {
+		set_country_flag = prosper_time_again
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = { has_climate = arctic }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = { has_climate = arctic }
+					NOT = { development = 20 }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = { has_climate = arctic }
+					NOT = { development = 15 }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = { has_climate = arctic }
+					NOT = { development = 10 }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+			random_owned_province = {
+				limit = {
+					is_overseas = no
+					is_city = yes
+					is_capital = no
+					NOT = { has_terrain = glacier }
+					NOT = { has_climate = arctic }
+					NOT = { development = 5 }
+					NOT = {
+						OR = {
+							has_province_modifier = birth_of_a_new_city_adm
+							has_province_modifier = birth_of_a_new_city_dip
+							has_province_modifier = birth_of_a_new_city_mil
+						}
+					}
+				}
+				save_event_target_as = invest_province
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTA1075"
+		ai_chance = { factor = 50 }		
+		add_adm_power = 25
+		event_target:invest_province = {
+			add_base_tax = 5
+			add_base_production = 3
+			add_base_manpower = 3
+			add_province_modifier = {
+				name = birth_of_a_new_city_adm
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTC1075"
+		ai_chance = { factor = 50 }
+		add_dip_power = 25
+		event_target:invest_province = {
+			add_base_tax = 3
+			add_base_production = 5
+			add_base_manpower = 3
+			add_province_modifier = {
+				name = birth_of_a_new_city_dip
+				duration = -1
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB1075"
+		ai_chance = { factor = 0 }
+		add_mil_power = 25	
+		event_target:invest_province = {
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 5
+			add_province_modifier = {
+				name = birth_of_a_new_city_mil
+				duration = -1
+			}
+		}
+	}
+    option = {
+		name = "ia_prospering_time_decline_tt"			# Maybe Later
+		trigger = { ai = no }
+		clr_country_flag = prosper_time_again
+	}
+}
+
+country_event = { #Indus vs Nobles
+	id = ia_estate_industrialists_events.5
+	title = ia_estate_industrialists_events.5.t
+	desc = ia_estate_industrialists_events.5.d
+	picture = PARLIAMENT_eventPicture
+	goto = disputed_workforce_province
+	trigger = {
+		has_estate = estate_industrialists
+		OR = {
+			AND = {
+				has_estate = estate_nobles
+				estate_influence = {
+					estate = estate_nobles
+					influence = 30
+				}
+			}
+			AND = {
+				has_estate = estate_rajput
+				estate_influence = {
+					estate = estate_rajput
+					influence = 30
+				}
+			}
+			AND = {
+				has_estate = estate_maratha
+				estate_influence = {
+					estate = estate_maratha
+					influence = 30
+				}
+			}
+		}
+		estate_territory = { 
+			estate = estate_industrialists
+			territory = 1
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_WORKFORCE_APPROPRIATED
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_WORKFORCE_KEPT
+			}
+		}
+		any_owned_province = {
+			has_production_building_trigger = yes
+			has_manpower_building_trigger = yes
+			is_city = yes
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_production_building_trigger = yes
+					has_manpower_building_trigger = yes
+					is_city = yes
+				}
+				save_event_target_as = disputed_workforce_province
+			}
+		}
+	}
+
+	option = {
+		name = ia_estate_industrialists_events.5.a
+		ai_chance = {
+			factor = 100
+		}
+		event_target:disputed_workforce_province = {
+			add_base_manpower = 1
+		}
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_rajput }
+			add_estate_loyalty = {
+				estate = estate_rajput
+				loyalty = 15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_maratha }
+			add_estate_loyalty = {
+				estate = estate_maratha
+				loyalty = 15
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = -15
+		}
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_WORKFORCE_APPROPRIATED
+			influence = -10
+			duration = 5475
+		}
+	}
+	option = {
+		name = ia_estate_industrialists_events.5.b
+		event_target:disputed_workforce_province = {
+			add_base_production = 1
+		}
+		if = {
+			limit = { has_estate = estate_nobles }
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_rajput }
+			add_estate_loyalty = {
+				estate = estate_rajput
+				loyalty = -15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_maratha }
+			add_estate_loyalty = {
+				estate = estate_maratha
+				loyalty = -15
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 15
+		}
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_WORKFORCE_KEPT
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Indus Education of heir
+	id = ia_estate_industrialists_events.6
+	title = ia_estate_industrialists_events.6.t
+	desc = ia_estate_industrialists_events.6.d
+	picture = QUEEN_AND_MALE_HEIR_eventPicture
+
+	trigger = {
+		has_estate = estate_industrialists
+		has_heir = yes
+		NOT = {
+			heir_age = 15
+			heir_adm = 6
+			heir_dip = 6
+			has_heir_flag = educated_by_technocrats
+			has_estate_influence_modifier = {
+				estate = estate_industrialists
+				modifier = EST_VAL_INDUSTRIALISTS_SWAY_OVER_HEIR
+			}
+		}
+		estate_influence = {
+			estate = estate_industrialists
+			influence = 40
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+
+		modifier = {
+			factor = 1.2
+			has_estate_privilege = estate_industrialists_technocrat_education
+		}
+	}
+
+	option = {
+		name = ia_estate_industrialists_events.6.a
+		if = {
+			limit = {
+				heir_has_good_adm_personality = no
+				heir_has_good_dip_personality = no
+				heir_has_good_mil_personality = no
+				heir_has_bad_adm_personality = no
+				heir_has_bad_dip_personality = no
+				heir_has_bad_mil_personality = no
+			}
+			random = {
+    			chance = 25
+    			add_heir_personality = integrator_personality
+			}
+		}
+		change_heir_adm = 1
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_SWAY_OVER_HEIR
+			influence = 15
+			duration = 5475
+		}
+	}
+	option = {
+		name = ia_estate_industrialists_events.6.b
+		if = {
+			limit = {
+				heir_has_good_adm_personality = no
+				heir_has_good_dip_personality = no
+				heir_has_good_mil_personality = no
+				heir_has_bad_adm_personality = no
+				heir_has_bad_dip_personality = no
+				heir_has_bad_mil_personality = no
+			}
+			random = {
+    			chance = 25
+    			add_heir_personality = silver_tongue_personality
+			}
+		}
+		change_heir_dip = 1
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_industrialists
+			desc = EST_VAL_INDUSTRIALISTS_SWAY_OVER_HEIR
+			influence = 15
+			duration = 5475
+		}
+	}
+	option = {
+		name = ia_estate_industrialists_events.6.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige_or_monarch_power = { amount = 10 }
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = -10
+		}
+		add_heir_claim = -15
+	}
+	after = {
+		hidden_effect = {
+			set_heir_flag = educated_by_technocrats
+		}
+	}
+}
+
+country_event = { #Indus and Merchants Catfight
+	id = ia_estate_industrialists_events.7
+	title = ia_estate_industrialists_events.7.t
+	desc = ia_estate_industrialists_events.7.d
+	picture = DIPLOMACY_SIGNING_eventPicture
+	trigger = {
+		has_estate = estate_industrialists
+		estate_influence = {
+			estate = estate_industrialists
+			influence = 40
+		}
+		OR = {
+			AND = {
+				has_estate = estate_burghers
+				estate_influence = {
+					estate = estate_burghers
+					influence = 30
+				}
+			}
+			AND = {
+				has_estate = estate_jains
+				estate_influence = {
+					estate = estate_jains
+					influence = 30
+				}
+			}
+			AND = {
+				has_estate = estate_vaisyas
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 30
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Establish New Contract Laws to favor Industrialists
+		name = ia_estate_industrialists_events.7.a
+		add_years_of_trade_income = {
+			years = -2.5
+		}
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 10
+		}
+		if = {
+			limit = { has_estate = estate_burghers }
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_jains }
+			add_estate_loyalty = {
+				estate = estate_jains
+				loyalty = -15
+			}
+		}
+		if = {
+			limit = { has_estate = estate_vaisyas }
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -15
+			}
+		}
+		add_country_modifier = {
+			name = industrialists_recently_modified_contract_law
+			duration = 5475
+		}
+	}
+	option = { #Favor the Merchants
+		name = ia_estate_industrialists_events.7.b
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = -20
+		}
+		if = {
+			limit = { has_estate = estate_burghers }
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_jains }
+			add_estate_loyalty = {
+				estate = estate_jains
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = { has_estate = estate_vaisyas }
+			add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = 10
+			}
+		}
+		add_country_modifier = {
+			name = industrialists_vetus_contractus 
+			duration = 5475
+		}
+	}
+}
+
+country_event = { #Indus and Church Argue
+	id = ia_estate_industrialists_events.8
+	title = ia_estate_industrialists_events.8.t
+	desc = ia_estate_industrialists_events.8.d
+	picture = ADULT_BAPTISME_eventPicture
+	goto = indus_against_church_province
+	trigger = {
+		has_estate = estate_industrialists
+		estate_territory = {
+    		estate = estate_industrialists
+    		territory = 20
+		}
+		OR = {
+			AND = {
+				has_estate = estate_church
+				estate_territory = {
+    				estate = estate_church
+    				territory = 10
+				}
+			}
+			AND = {
+				has_estate = estate_brahmins
+				estate_territory = {
+    				estate = estate_brahmins
+    				territory = 10
+				}
+			}
+		}
+		any_owned_province = {
+			NOT = {
+				has_building = cathedral
+				has_building = counting_house
+			}
+			is_city = yes
+			development = 25
+		}
+		NOT = {
+			OR = {
+				has_country_modifier = industrialists_religion_ignored
+				has_country_modifier = industrialists_religion_prioritized
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = { 
+					NOT = {
+						has_building = cathedral
+						has_building = counting_house
+					}
+					is_city = yes
+					development = 25
+				}
+				save_event_target_as = indus_against_church_province
+			}
+		}
+	}
+
+	option = { #Let the Industrialists disconnect from religion
+		name = ia_estate_industrialists_events.8.a
+		event_target:indus_against_church_province = {
+			add_building = counting_house
+			add_base_production = 1
+			add_base_tax = -1
+		}
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 15
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = -20
+			}
+			change_estate_land_share = {
+    			estate = estate_church
+    			share = -2
+			}
+		}
+		if = {
+			limit = { has_estate = estate_brahmins }
+			add_estate_loyalty = {
+				estate = estate_brahmins
+				loyalty = -20
+			}
+			change_estate_land_share = {
+    			estate = estate_brahmins
+    			share = -2
+			}
+		}
+		change_estate_land_share = {
+    		estate = estate_industrialists
+    		share = 2
+		}
+		add_country_modifier = {
+			name = industrialists_religion_ignored
+			duration = -1
+		}
+	}
+	option = { #This is still a pious state
+		name = ia_estate_industrialists_events.8.b
+		event_target:indus_against_church_province = {
+			add_building = cathedral
+			add_base_production = -1
+			add_base_tax = 1
+		}
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = -15
+		}
+		if = {
+			limit = { has_estate = estate_church }
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 20
+			}
+			change_estate_land_share = {
+    			estate = estate_church
+    			share = 2
+			}
+		}
+		if = {
+			limit = { has_estate = estate_brahmins }
+			add_estate_loyalty = {
+				estate = estate_brahmins
+				loyalty = 20
+			}
+			change_estate_land_share = {
+    			estate = estate_brahmins
+    			share = 2
+			}
+		}
+		change_estate_land_share = {
+    		estate = estate_industrialists
+    		share = -2
+		}
+		add_country_modifier = {
+			name = industrialists_religion_prioritized
+			duration = -1
+		}
+	}
+}
+
+####REVOLTS, ACCIDENTS AND FIGHTS
+country_event = { #Workplace Accident
+	id = ia_estate_industrialists_events.100
+	title = ia_estate_industrialists_events.100.t
+	desc = ia_estate_industrialists_events.100.d
+	picture = ACCUSATION_eventPicture
+	goto = industrialists_workplace_accident_province
+
+	trigger = {
+		has_estate = estate_industrialists
+		estate_territory = {
+    		estate = estate_industrialists
+    		territory = 10
+		}
+		num_of_states = 2
+		NOT = {
+			OR = {
+				has_country_modifier = industrialists_insulted
+				any_owned_province = {
+					has_province_modifier = industrialists_workers_in_active_revolt
+				}
+				any_owned_province = {
+					has_province_modifier = industrialists_neglected_worker_accident
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_state = yes
+				}
+				save_event_target_as = industrialists_workplace_accident_province
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 1.1
+			estate_territory = {
+    			estate = estate_industrialists
+    			territory = 51
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_allow_selfregulation
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_reinforce_contracts
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_demand_workers_on_the_frontlines
+		}
+		modifier = {
+			factor = 1.25
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_semi_ignorance
+			}
+		}
+		modifier = {
+			factor = 1.25
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_ignorance
+			}
+		}
+		modifier = {
+			factor = 0.75
+			mission_completed = ia_rheinland_endlos_feuerschein
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_peasants_champions_of_industry
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_industrialists_elevate_social_status
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_blockade
+			}
+		}
+	}
+	
+	option = { #Blame them and hand that land back to the government
+		name = ia_estate_industrialists_events.100.a
+		add_years_of_income = -0.75
+		add_country_modifier = {
+			name = industrialists_insulted
+			duration = 1825
+		}
+		change_estate_land_share = {
+    		estate = estate_industrialists
+    		share = -1
+		}
+		if = {
+			limit = { has_estate = estate_peasants }
+			add_estate_loyalty = {
+    			estate = estate_peasants
+    			loyalty = 20
+			}
+		}
+	}
+	option = { #Apologize on their behalf but don't do anything else
+		name = ia_estate_industrialists_events.100.b
+		add_prestige = -25
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = -10
+		}
+		event_target:industrialists_workplace_accident_province = {
+			add_province_modifier = {
+				name = industrialists_neglected_worker_accident
+    			duration = 1825
+			}
+		}
+		random_list = {
+    		80 = {
+    			if = {
+    				limit = { has_estate = estate_peasants }
+    				add_estate_loyalty = {
+    					estate = estate_peasants
+    					loyalty = -10
+					}
+    			}
+    			else = {
+        			add_absolutism = -5
+        			add_revolutionary_zeal = -5
+    			}
+    		}
+    		20 = {
+    			event_target:industrialists_workplace_accident_province = {
+        			province_event = {
+        				id = ia_estate_industrialists_events.101
+        				days = 30
+        			}
+        		}
+    		}
+		}
+	}
+	option = { #Favor The Industrialists on the issue
+		name = ia_estate_industrialists_events.100.c
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = 15
+		}
+		if = {
+			limit = { has_estate = estate_peasants }
+			add_estate_loyalty = {
+    			estate = estate_peasants
+    			loyalty = -20
+			}
+		}
+		event_target:industrialists_workplace_accident_province = {
+			add_province_modifier = {
+				name = industrialists_workers_in_active_revolt
+    			duration = 1825
+			}
+			province_event = {
+        		id = ia_estate_industrialists_events.101
+        		days = 30
+        	}
+		}
+	}
+}
+
+province_event = {
+	id = ia_estate_industrialists_events.101
+	title = ia_estate_industrialists_events.101.t
+	desc = ia_estate_industrialists_events.101.d
+	picture = ANGRY_MOB_eventPicture
+	goto = ROOT
+	
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			owner = {
+				save_event_target_as = industrialists_worker_riot_receiver
+			}
+		}
+	}
+	
+	option = {
+		name = ia_estate_industrialists_events.101.a
+		ROOT = {
+			spawn_rebels = {
+ 			    size = 3
+    			type = anti_tax_rebels
+			}
+		}
+		every_neighbor_province = {
+			limit = {
+				owned_by = event_target:industrialists_worker_riot_receiver
+			}
+			spawn_rebels = {
+ 				size = 2
+	    		type = anti_tax_rebels
+			}
+			add_province_modifier = {
+				name = industrialists_workers_in_active_revolt
+	    		duration = 730
+			}
+		}
+	}
+	option = {
+		name = ia_estate_industrialists_events.101.b
+		ROOT = {
+			add_scaled_local_adm_power = -5
+			add_devastation = 15
+		}
+		every_neighbor_province = {
+			limit = {
+				owned_by = event_target:industrialists_worker_riot_receiver
+			}
+			add_scaled_local_adm_power = -5
+			add_devastation = 15
+			add_province_modifier = {
+				name = industrialists_workers_in_active_revolt
+    			duration = 1460
+			}
+		}
+	}
+}
+
+country_event = { #Smog Epidemic
+	id = ia_estate_industrialists_events.102
+	title = ia_estate_industrialists_events.102.t
+	desc = ia_estate_industrialists_events.102.d
+	picture = muslimgfx_COUNTRY_COLLAPSE_eventPicture
+	goto = industrialists_smog_province
+	
+	trigger = {
+		has_estate = estate_industrialists
+		any_owned_province = {
+			trade_goods = coal
+		}
+		NOT = {
+			any_owned_province = {
+				OR = {
+					has_province_modifier = industrialists_smog_blockade
+					has_province_modifier = industrialists_smog_semi_ignorance
+					has_province_modifier = industrialists_smog_ignorance
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				80 = {
+					trigger = {
+						any_owned_province = {
+							has_building = furnace
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_building = furnace
+						}
+						save_event_target_as = industrialists_smog_province
+					}
+				}
+				20 = {
+					random_owned_province = {
+						limit = {
+							NOT = { has_building = furnace }
+						}
+						save_event_target_as = industrialists_smog_province
+					}
+				}
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 4
+			NOT = {
+				any_owned_province = {
+					has_building = furnace
+				}
+			}
+		}
+	}
+	
+	option = { #Disallow enterance to the location till it clears up
+		name = ia_estate_industrialists_events.102.a
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = -20
+		}
+		event_target:industrialists_smog_province = {
+			add_province_modifier = {
+				name = industrialists_smog_blockade
+				duration = 7300
+			}
+		}
+		custom_tooltip = industrialist_workplace_accidents_decrease_temp_tt
+	}
+	option = { #Force them back as soon as possible
+		name = ia_estate_industrialists_events.102.b
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = -10
+		}
+		event_target:industrialists_smog_province = {
+			add_province_modifier = {
+				name = industrialists_smog_semi_ignorance
+				duration = 3650
+			}
+			add_base_tax = -1
+			add_base_manpower = -1
+		}
+		custom_tooltip = industrialist_workplace_accidents_increase_temp_tt
+	}
+	option = { #Who Cares for their lives?
+		name = ia_estate_industrialists_events.102.c
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = 10
+		}
+		event_target:industrialists_smog_province = {
+			add_province_modifier = {
+				name = industrialists_smog_ignorance
+				duration = 3650
+			}
+			add_base_tax = -1
+			add_base_production = 1
+			add_base_manpower = -2
+		}
+		custom_tooltip = industrialist_workplace_accidents_increase_temp_tt
+	}
+}
+
+country_event = { #Manufactory Brawl
+	id = ia_estate_industrialists_events.103
+	title = ia_estate_industrialists_events.103.t
+	desc = ia_estate_industrialists_events.103.d
+	picture = SOLDIER_INFIGHTING_eventPicture
+	goto = industrialists_brawl_province
+	
+	trigger = {
+		has_estate = estate_industrialists
+		any_owned_province = {
+			has_production_manufactory_trigger = yes
+		}
+		NOT = {
+			has_country_modifier = industrialists_agitated_workforce
+			any_owned_province = {
+				OR = {
+					has_province_modifier = industrialists_contained_brawl
+					has_province_modifier = industrialists_head_of_factory_killed
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_list = {
+				20 = {
+					random_owned_province = {
+						limit = { has_production_manufactory_trigger = yes }
+						save_event_target_as = industrialists_brawl_province
+					}
+				}
+				40 = {
+					trigger = {
+						any_owned_province = {
+							has_owner_culture = no
+							has_owner_accepted_culture = no
+							has_production_manufactory_trigger = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_culture = no
+							has_owner_accepted_culture = no
+							has_production_manufactory_trigger = yes
+						}
+						save_event_target_as = industrialists_brawl_province
+					}
+				}
+				40 = {
+					trigger = {
+						any_owned_province = {
+							has_owner_religion = no
+							has_production_manufactory_trigger = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_owner_religion = no
+							has_production_manufactory_trigger = yes
+						}
+						save_event_target_as = industrialists_brawl_province
+					}
+				}
+			}
+			event_target:industrialists_brawl_province = {
+				set_province_flag = industrialists_brawl_province
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+		modifier = {
+			factor = 1.1
+			estate_territory = {
+    			estate = estate_industrialists
+    			territory = 51
+			}
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_allow_selfregulation
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_reinforce_contracts
+		}
+		modifier = {
+			factor = 1.25
+			has_estate_privilege = estate_industrialists_demand_workers_on_the_frontlines
+		}
+		modifier = {
+			factor = 1.25
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_semi_ignorance
+			}
+		}
+		modifier = {
+			factor = 1.25
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_ignorance
+			}
+		}
+		modifier = {
+			factor = 0.75
+			mission_completed = ia_rheinland_endlos_feuerschein
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_peasants_champions_of_industry
+		}
+		modifier = {
+			factor = 0.75
+			has_estate_privilege = estate_industrialists_elevate_social_status
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				has_province_modifier = industrialists_smog_blockade
+			}
+		}
+	}
+	
+	option = { #Don't respond
+		name = ia_estate_industrialists_events.103.a
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = -25
+		}
+		event_target:industrialists_brawl_province = {
+			add_province_modifier = {
+				name = industrialists_head_of_factory_killed
+				duration = 3650
+			}
+		}
+		custom_tooltip = ia_estate_industrialists_events_103_tt
+		hidden_effect = {
+			add_years_of_owned_provinces_manpower = {
+				years = -1
+				trigger = {
+					has_province_flag = industrialists_brawl_province
+				}
+			}
+		}
+	}
+	option = { #Compensate them, but nothing else
+		name = ia_estate_industrialists_events.103.b
+		event_target:industrialists_brawl_province = {
+			add_province_modifier = {
+				name = industrialists_contained_brawl
+				duration = 3650
+			}
+		}
+		add_years_of_income = -0.25
+		add_mil_power = -100
+		custom_tooltip = ia_estate_industrialists_events_103_tt
+		hidden_effect = {
+			add_years_of_owned_provinces_manpower = {
+				years = -2
+				trigger = {
+					has_province_flag = industrialists_brawl_province
+				}
+			}
+		}
+	}
+	option = { #The Army Intervenes
+		name = ia_estate_industrialists_events.103.c
+		add_estate_loyalty = {
+    		estate = estate_industrialists
+    		loyalty = 15
+		}
+		add_country_modifier = {
+			name = industrialists_agitated_workforce
+			duration = 3650
+		}
+		event_target:industrialists_brawl_province = {
+			add_base_production = -1
+		}
+		custom_tooltip = ia_estate_industrialists_events_103_tt
+		hidden_effect = {
+			add_years_of_owned_provinces_manpower = {
+				years = -3
+				trigger = {
+					has_province_flag = industrialists_brawl_province
+				}
+			}
+		}
+	}
+	after = {
+		event_target:industrialists_brawl_province = {
+			clr_province_flag = industrialists_brawl_province
+		}
+	}
+}

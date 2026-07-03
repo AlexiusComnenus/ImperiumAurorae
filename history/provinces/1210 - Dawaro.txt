@@ -4,6 +4,7 @@ capital = "Gende Belo"
 culture = harari
 religion = sunni
 trade_goods = grain
+fort_15th = yes
 base_tax = 1
 base_production = 1
 base_manpower = 1

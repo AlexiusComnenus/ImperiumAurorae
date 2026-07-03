@@ -4,8 +4,14 @@ government_rank = 2
 technology_group = ottoman
 religion = sunni
 primary_culture = indo_turkish
-capital = 4486
+capital = 4479
 add_accepted_culture = bengali
+historical_rival = MAM
+historical_rival = HIN
+1444.10.1= {
+	set_estate_privilege = estate_dhimmi_guaranteed_autonomy
+	set_estate_privilege = estate_dhimmi_tolerance
+}
 1444.11.11= {
 	monarch = {
 		name = "Kurboga"

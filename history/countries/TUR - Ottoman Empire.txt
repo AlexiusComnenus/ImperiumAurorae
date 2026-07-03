@@ -1,18 +1,17 @@
 government = monarchy
-add_government_reform = ottoman_government
+add_government_reform = beylik_government
 government_rank = 1
 technology_group = ottoman
 religion = sunni
 primary_culture = indo_turkish
-capital = 149
+capital = 557
 religious_school = hanafi_school
 add_army_professionalism = 0.1
-historical_rival = BYZ
-historical_rival = HAB
+add_accepted_culture = nepali
 historical_rival = MAM
-national_focus = MIL
 1444.10.1= {
 	set_estate_privilege = estate_dhimmi_guaranteed_autonomy
+	set_estate_privilege = estate_dhimmi_tolerance
 }
 1439.1.1= {
 	leader = {

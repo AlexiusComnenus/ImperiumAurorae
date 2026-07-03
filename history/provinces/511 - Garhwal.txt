@@ -1,5 +1,5 @@
-owner = MAM
-controller = MAM
+owner = NPL
+controller = NPL
 capital = "Devalgarh"
 is_city = yes
 culture = pahari
@@ -8,7 +8,7 @@ trade_goods = cotton
 base_tax = 3
 base_production = 2
 base_manpower = 2
-add_core = MAM
+add_core = NPL
 add_core = GHR
 discovered_by = MGE
 discovered_by = eastern

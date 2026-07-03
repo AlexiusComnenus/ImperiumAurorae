@@ -188,10 +188,10 @@ country_event = {
 	option = {
 		name = ia_change_primary_culture_events.1.a
 		ai_chance = {
-			factor = 0
+			factor = 10
 		}
 		
-		change_primary_culture = capital
+		change_primary_culture = variable:new_primary_culture
 		remove_country_modifier = changing_primary_culture_modifier
 		add_country_modifier = {
 			name = changed_primary_culture_modifier
@@ -2419,7 +2419,6 @@ country_event = {  # Reset Navies
 		ai = yes
 		is_at_war = no
 		is_bankrupt = no
-		NOT = { num_of_loans = 5 }
 		OR = {
 			AND = {
 				dip_tech = 10
@@ -2441,6 +2440,7 @@ country_event = {  # Reset Navies
 				dip_tech = 25
 				NOT = { has_country_flag = had_dip_25_naval_reset_flag }
 			}
+			navy_size_percentage = 1.11
 		}
 	}
 	
@@ -2840,5 +2840,61 @@ province_event = {	# refugees province event
 	option = {
 		name = "devastation_mechanic.3.a"
 		
+	}
+}
+
+namespace = cossack_horses
+
+province_event = {	# Livestock to horses event
+	id = cossack_horses.3
+	title = cossack_horses.3.title
+	desc = cossack_horses.3.desc
+	picture = FARMING_eventPicture
+	
+	#hidden = yes
+	#is_triggered_only = yes
+	goto = ROOT
+	
+	trigger = {
+		trade_goods = livestock
+		owner = { has_estate = estate_cossacks }
+		development = 15
+	}
+
+	mean_time_to_happen = {
+		days = 3650
+		modifier = {
+			factor = 0.75
+			owner = {
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			owner = {
+				estate_loyalty = {
+					estate = estate_cossacks
+					loyalty = 60
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "cossack_horses.3.a"
+		change_trade_goods = horses
+	}
+	
+	option = {	# Nah keep it as is
+		name = "cossack_horses.3.b"
+		trigger = { owner = { ai = no } }
+		add_province_modifier = {
+			name = block_horse_conversion
+			duration = -1
+			hidden = yes
+		}
 	}
 }

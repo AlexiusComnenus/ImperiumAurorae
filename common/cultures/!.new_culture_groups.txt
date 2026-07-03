@@ -327,6 +327,26 @@ roman_group = {
 	britannian = { primary = ROM }
 	hyperborean = { primary = ROM }
 	novaroman = { primary = Y11 }
+	etrurian = {
+		primary = ETR
+		dynasty_names = {
+			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+			Venala Ventese Veru Zalle
+		}
+		male_names = {
+			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+			Vel Velchaie Velthur Venel Vetus Vipie
+		}
+		female_names = {
+			Prima Secunda Tertia Quarta Quinta Septa Septima Octava Nona Decima Undecima Duodecima
+		}
+	}
 	# IR-CK2 Old Italic cultures
 	sabellian = {
 		dynasty_names = {
@@ -339,6 +359,7 @@ roman_group = {
 		}
 	}
 	old_ligurian = {
+		primary = SPI
 		dynasty_names = {
 			Alpinus Apuanus Bagiennus Beretinus Bimbellus Brinias Boax Casuentillanus
 			Cavaturinus Celelas Cerdicias Decias Dectuminus Docilius Ectinus Eguiturus
@@ -1131,26 +1152,6 @@ pre_indo_european_group = {
 		}
 
 	}
-	etrurian = {
-		primary = ETR
-		dynasty_names = {
-			Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
-			Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
-			Venala Ventese Veru Zalle
-		}
-		male_names = {
-			Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
-			Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
-			Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
-			Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
-			Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
-			Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
-			Vel Velchaie Velthur Venel Vetus Vipie
-		}
-		female_names = {
-			Prima Secunda Tertia Quarta Quinta Septa Septima Octava Nona Decima Undecima Duodecima
-		}
-	}
 
 	rhaetian = {
 		dynasty_names = {
@@ -1197,7 +1198,7 @@ cat_group = {
 		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
 		}
 		country = { global_unrest = -4	relation_with_same_culture = 50		monarch_lifespan = 9 }
-		province = { local_unrest = 8	local_autonomy = 0.075		local_missionary_strength = -0.05 	local_culture_conversion_cost = 10 	local_culture_conversion_time = 10 local_sailors_modifier = -0.9 local_manpower_modifier = 0.5 }
+		province = { local_unrest = 8	local_autonomy = 0.075		local_missionary_strength = -0.05 	local_culture_conversion_cost = 1 	local_culture_conversion_time = 0.5 local_sailors_modifier = -0.9 local_manpower_modifier = 0.5 }
 	}
 }
 bear_group = {

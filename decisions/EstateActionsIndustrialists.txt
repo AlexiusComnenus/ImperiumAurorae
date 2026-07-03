@@ -1,0 +1,72 @@
+#Industrialists
+country_decisions = {
+	estate_industrialists_demand_workers = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+			}
+			has_estate = estate_industrialists
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			estate_action_off_cooldown = {
+				estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+				days = 5475
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+			}
+			estate_action = {
+				estate_action = DEMAND_WORKERS_INDUSTRIALISTS
+			}
+			increase_estate_action_counter = {
+				estate = estate_industrialists
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 100
+				is_at_war = yes
+				NOT = { manpower_percentage = 0.41 }
+			}
+		}
+	}
+	estate_industrialists_recruit_natural_scientist_decision = {
+		color = { 195 160 20 }
+		potential = {
+			has_enabled_estate_action = {
+				estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+			}
+			has_estate = estate_industrialists
+		}
+		allow = {
+			has_not_any_estate_disaster_active = yes
+			estate_influence = {
+				estate = estate_industrialists
+				influence = 40
+			}
+			estate_action_off_cooldown = {
+				estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+				days = 10950
+			}
+		}
+		effect = {
+			set_estate_action_cooldown = {
+				estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+			}
+			estate_action = {
+				estate_action = RECRUIT_NATURAL_SCIENTIST_INDUSTRIALISTS
+			}
+			increase_estate_action_counter = {
+				estate = estate_industrialists
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

@@ -32,6 +32,62 @@ grand_duchy_monarchy = {
 	}
 }
 
+chinese_title_names = {
+	rank = {
+		1 = chinese_duchy_name
+		2 = chinese_kingdom_name
+		3 = chinese_empire_name
+	}
+
+	ruler_male = {
+		1 = chinese_duke_name
+		2 = chinese_king_name
+		3 = chinese_emperor_name
+	}
+
+	ruler_female = {
+		1 = chinese_duke_name
+		2 = chinese_king_name
+		3 = chinese_emperor_name
+	}
+	
+	consort_male  = {
+		1 = chinese_consort_duchy_name
+		2 = chinese_consort_kingdom_name
+		3 = chinese_consort_empire_name
+	}
+
+	consort_female = {
+		1 = chinese_consort_duchy_name
+		2 = chinese_consort_kingdom_name
+		3 = chinese_consort_empire_name
+	}
+
+	heir_male = {
+		1 = chinese_heir_kingdom_name
+		2 = chinese_heir_kingdom_name
+		3 = chinese_heir_empire_name
+	}
+
+	heir_female = {
+		1 = chinese_heir_kingdom_name
+		2 = chinese_heir_kingdom_name
+		3 = chinese_heir_empire_name
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			culture_group = east_asian
+			has_reform = chinese_warlord
+			AND = {
+				is_emperor_of_china = yes
+				NOT = { is_emperor = yes }
+			}
+		}
+	}
+}
+
 hre_county = {
 	rank = {
 		1 = COUNTY
@@ -1367,5 +1423,29 @@ gov_blessed_theocatcy = {
 	
 	trigger = {
 		has_reform = blessed_theocatcy_reform
+	}
+}
+
+gov_caliphate = {
+    rank = {
+		1 = caliphate_name_tt
+		2 = caliphate_name_tt
+		3 = caliphate_name_tt
+	}
+	
+	ruler_male = {
+		1 = caliphate_name_ruler
+		2 = caliphate_name_ruler
+		3 = caliphate_name_ruler
+	}
+	
+	ruler_female = {
+		1 = caliphate_name_ruler
+		2 = caliphate_name_ruler
+		3 = caliphate_name_ruler
+	}
+	
+	trigger = {
+		has_reform = caliphate_reform
 	}
 }

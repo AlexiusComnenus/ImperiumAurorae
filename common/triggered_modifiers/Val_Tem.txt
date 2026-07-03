@@ -337,6 +337,7 @@ other_lucky_nation = {
 			tag = FKN
 			tag = BAV
 			tag = PAP
+			tag = JNP
 			AND = {
 				tag = LIV
 				is_subject_of = RIG

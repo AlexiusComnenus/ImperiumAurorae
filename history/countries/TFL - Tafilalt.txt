@@ -1,8 +1,8 @@
-government = tribal
-add_government_reform = tribal_despotism
+government = monarchy
+add_government_reform = iqta
 government_rank = 1
 technology_group = muslim
-religion = yazidi
+religion = shiite
 primary_culture = moroccan
 capital = 346
 fixed_capital = 346

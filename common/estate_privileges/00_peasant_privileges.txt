@@ -315,7 +315,7 @@ estate_peasants_armed_citizenry = {
 	benefits = {
 		country_military_power = 1
 		infantry_cost = -0.1
-		reinforce_cost_modifier = -0.10
+		army_tradition = 0.5
 	}
 	conditional_modifier = {
 		trigger = { has_government_mechanic = russian_modernization_mechanic }
@@ -1181,6 +1181,7 @@ estate_peasants_homeland_defense = {
 		land_forcelimit_modifier = 0.25
 		global_manpower_modifier = 0.25
 		infantry_cost = -0.2
+		army_tradition_from_battle = 0.5
 	}
 	conditional_modifier = {
 		trigger = { is_at_war = yes		NOT = { war_score = -25 } }
@@ -1195,6 +1196,7 @@ estate_peasants_homeland_defense = {
 		modifier = {
 			reinforce_cost_modifier = -0.5	
 			land_morale = 0.05
+			garrison_damage = 0.5
 		}
 	}
 	can_revoke = {
@@ -1407,8 +1409,9 @@ estate_peasants_collective_landownership = {
 	}
 	modifier_by_land_ownership = {
 		global_manpower_modifier = 0.5
-		global_trade_goods_size_modifier = -0.25
-		infantry_cost = -0.20	
+		global_trade_goods_size_modifier = -0.16
+		infantry_cost = -0.25
+		army_tradition_decay = -0.012	
 	}
 	ai_will_do = {
 		factor = 1000
@@ -1472,19 +1475,55 @@ estate_peasants_public_works = {
 	influence = 0.10
 	loyalty = 0.05
 	is_valid = {
-		NOT = { total_development = 600 }
-		NOT = { monthly_income = 60 }
+		OR = {
+			religion = bogomilist
+			has_government_attribute = is_peasants_republic
+		}
+		if = {
+			limit = { current_age = age_of_discovery }
+			OR = {
+				NOT = { total_development = 400 }
+				NOT = { monthly_income = 40 }
+			}
+		}
+		else_if = {
+			limit = { current_age = age_of_reformation }
+			OR = {
+				NOT = { total_development = 600 }
+				NOT = { monthly_income = 80 }
+			}
+		}
+		else_if = {
+			limit = { current_age = age_of_absolutism }
+			OR = {
+				NOT = { total_development = 800 }
+				NOT = { monthly_income = 120 }
+			}
+		}
+		else_if = {
+			limit = { current_age = age_of_revolutions }
+			OR = {
+				NOT = { total_development = 1000 }
+				NOT = { monthly_income = 160 }
+			}
+		}
+		else = {
+			OR = {
+				NOT = { total_development = 600 }
+				NOT = { monthly_income = 60 }
+			}
+		}
 	}
 	can_select = {
 		is_at_war = no
 	}
 	penalties = {
-		stability_cost_to_declare_war = 1
 		global_manpower_modifier = -0.25
+		#reinforce_speed = -0.2
 	}
 	benefits = {
 		development_cost = -0.05
-		build_cost = -0.3
+		build_cost = -0.2
 	}
 	ai_will_do = {
 		factor = 0
@@ -1539,3 +1578,39 @@ estate_peasants_frisian_karelsprivilege = {
 	}
 }
 
+estate_peasants_champions_of_industry = {
+	icon = privilege_peasants_champions
+	max_absolutism = -10
+	conditional_modifier = { trigger = { has_absolutism_reduction_for_estate_privileges = yes } modifier = { max_absolutism = 2 } }
+	influence = 0.1
+	loyalty = 0.1
+	cooldown_years = 30
+	is_valid = {
+		has_institution = manufactories
+	}
+	can_select = {
+		always = no
+	}
+    on_granted = {
+        custom_tooltip = industrialist_workplace_accidents_decrease_tt
+    }
+	benefits = {
+        peasants_privilege_slots = 1
+        estate_industrialists_influence_modifier = -0.2
+	}
+	loyalty_scaled_conditional_modifier = {
+		trigger = {
+			always = yes
+		}
+		modifier = {
+			yearly_corruption = -0.3
+			global_trade_goods_size_modifier = 0.25
+		}
+	}
+	penalties = {
+		harsh_treatment_cost = 0.5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

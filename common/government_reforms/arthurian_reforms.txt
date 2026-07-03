@@ -13,9 +13,9 @@ dumnonia_monarchy_reform = {
 	valid_for_nation_designer = no
 
 	modifiers = {
-		#legitimacy = -2
-		#max_absolutism = -20
-		#reform_progress_growth = -0.1
+		legitimacy = -2
+		max_absolutism = -20
+		reform_progress_growth = -0.1
 		prestige_from_land = 0.5
 		army_tradition_from_battle = 0.50
 	}
@@ -26,6 +26,87 @@ dumnonia_monarchy_reform = {
 	custom_attributes = {
 		locked_government_type = yes
 		winning_battles_increases_legitimacy = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+dumnonia_peasants_reform = {
+	icon = peasants
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			has_reform = dumnonia_peasants_reform
+			have_had_reform = dumnonia_peasants_reform
+			tag = ENG
+			overlord = { has_reform = dumnonia_peasants_reform }
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = dumnonia_peasants_reform
+			have_had_reform = dumnonia_peasants_reform
+			overlord = { has_reform = dumnonia_peasants_reform }
+		}
+	} 
+	valid_for_nation_designer = no
+
+	modifiers = {
+		global_tax_modifier = -0.15
+		production_efficiency = 0.1
+		peasants_influence_modifier = 0.1
+		peasants_loyalty_modifier = 0.1
+		max_absolutism = -10
+	}
+	
+	custom_attributes = {
+		enables_estate_peasants = yes
+	}
+
+	ai = {
+		factor = 1000
+	}
+}
+
+dumnonia_chivalric_realm = {
+	icon = free_city
+	allow_normal_conversion = no
+	lock_level_when_selected = yes
+	potential = {
+		OR = {
+			has_reform = dumnonia_chivalric_realm
+			have_had_reform = dumnonia_chivalric_realm
+			tag = ENG
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = dumnonia_chivalric_realm
+			have_had_reform = dumnonia_chivalric_realm
+		}
+	} 
+	valid_for_nation_designer = no
+
+	modifiers = {
+		max_absolutism = -25
+		administrative_efficiency = -0.05
+		diplomatic_upkeep = 2
+		diplomatic_reputation = 2
+		liberty_desire_from_subject_development = -0.15	
+		yearly_corruption = -0.1
+		state_maintenance_modifier = 0.5
+	}
+	
+	custom_attributes = {
+		subject_tax_modifier_25 = yes
+		same_religion_subject_bonus = yes
+		can_establish_trade_protectorates = yes
+	}
+	effect = {
+		custom_tooltip = can_enforce_chivalry_tt
 	}
 
 	ai = {

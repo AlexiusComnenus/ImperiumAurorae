@@ -1,0 +1,44 @@
+########################################
+# Tripolitania Events     	           #
+########################################
+
+namespace = ia_flavor_z62
+
+# Salt Monopoly?
+country_event = {
+	id = ia_flavor_z62.1
+	title = ia_flavor_z62.1.t
+	desc = ia_flavor_z62.1.d
+	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
+
+	is_triggered_only = yes
+	#fire_only_once = yes
+	major = yes
+	
+	option = {
+		name = ia_flavor_z62.1.a
+		
+		change_price = {
+			trade_goods = salt
+			key = imperial_monopoly_tt
+			value = 0.25
+			duration = -1
+		}
+	}
+	
+	option = {
+		name = ia_flavor_z62.1.b
+		
+		change_price = {
+			trade_goods = salt
+			key = saharan_salt_overflow_tt
+			value = -0.25
+			duration = -1
+		}
+		add_years_of_owned_provinces_production_income = {
+			years = 10
+			trigger = { trade_goods = salt }
+			custom_tooltip = 10_years_of_salt_tt
+		}
+	}
+}

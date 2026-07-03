@@ -245,6 +245,7 @@ country_event = {
 		clr_country_flag = estate_trade_company_present_agenda
 		clr_country_flag = estate_qizilbash_present_agenda
 		clr_country_flag = estate_ghulams_present_agenda
+		clr_country_flag = estate_industrialists_present_agenda
 		clear_estate_agenda_cache = ROOT
 	}
 
@@ -1136,6 +1137,51 @@ country_event = {
 			}
 		}
 	}
+	option = {
+		name = estate_privileges_and_agendas_events.3.indus
+		trigger = { has_country_flag = estate_industrialists_present_agenda }
+		start_estate_agenda = estate_industrialists
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				NOT = {
+					estate_loyalty = {
+						loyalty = 30
+						estate = estate_industrialists
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					estate_loyalty = {
+						loyalty = 20
+						estate = estate_industrialists
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				estate_influence = {
+					influence = 70
+					estate = estate_industrialists
+				}
+			}
+			modifier = {
+				factor = 2
+				is_absolutism_active = yes
+				num_of_estate_privileges = {
+					estate = estate_industrialists
+					value = 1
+				}
+				estate_loyalty = {
+					estate = estate_industrialists
+					higher_than_influence = no
+				}
+			}
+		}
+	}
 }
 
 country_event = {
@@ -1509,6 +1555,20 @@ country_event = {
 			factor = 0
 		}
 	}
+	#Grant Industrialists land
+	option = {
+		name = estate_privileges_and_agendas_events.6.indus
+		trigger = { has_estate = estate_industrialists }
+		give_estate_land_share_gigantic = { estate = estate_industrialists }
+		add_estate_loyalty = {
+			estate = estate_industrialists
+			loyalty = 10
+			short = yes
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 #Seize crownland
@@ -1847,6 +1907,22 @@ country_event = {
 			factor = 0
 		}
 	}
+	#Seize from Industrialists
+	option = {
+		name = estate_privileges_and_agendas_events.7.indus
+		trigger = {
+			has_estate = estate_industrialists
+			NOT = { estate_has_exempt_from_seize_land_privilege = { estate = estate_industrialists } }
+			estate_territory = {
+				estate = estate_industrialists
+				territory = 5
+			}
+		}
+		seize_land_estate_effect = { estate = estate_industrialists }
+		ai_chance = {
+			factor = 0
+		}
+	}
 }
 
 #Select Grand Vizier from Estate
@@ -1869,7 +1945,12 @@ country_event = {
 	#Select Grand Vizier from Burghers
 	option = {
 		name = estate_privileges_and_agendas_events.8.b
-		trigger = { has_estate_privilege = estate_burghers_commercial_board_of_advice }
+		trigger = { 
+            OR = { 
+                has_estate_privilege = estate_burghers_commercial_board_of_advice
+                has_estate_privilege = estate_industrialists_technocrat_board_of_advice
+            }
+        }
 		select_grand_vizier_from_estate = { estate = estate_burghers type = dip }
 		ai_chance = { factor = 0 }
 	}
@@ -1989,6 +2070,7 @@ country_event = {
 			NOT = { has_estate_privilege = estate_maratha_advisor }
 			NOT = { has_estate_privilege = estate_vaisyas_advisor }
 			NOT = { has_estate_privilege = estate_ghulams_advisor }
+            NOT = { has_estate_privilege = estate_industrialists_technocrat_board_of_advice }
 		}
 		adm_power_cost = -50
 		dip_power_cost = -50

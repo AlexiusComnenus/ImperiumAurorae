@@ -27,18 +27,20 @@ prayer_power_mechanic = {
 			gui = prussian_militarization_gov_mech_3_interaction
 			icon = GFX_prussian_militarization_march_divided_fight_united
 			trigger = {
-				has_government_power = {
-					mechanic_type = prayer_power_mechanic
-					power_type = ia_prayer_energy
-					value = 50
-				}
+				#has_government_power = {
+				#	mechanic_type = prayer_power_mechanic
+				#	power_type = ia_prayer_energy
+				#	value = 50
+				#}
 			}
+			cost_type = ia_prayer_energy
+			cost = 50
 			effect = { 
-				add_government_power = {
-					mechanic_type = prayer_power_mechanic
-					power_type = ia_prayer_energy
-					value = -50
-				}
+				#add_government_power = {
+				#	mechanic_type = prayer_power_mechanic
+				#	power_type = ia_prayer_energy
+				#	value = -50
+				#}
 				if = {
 					limit = {
 						NOT = { has_leader = "Archangel Michael" }
@@ -54,7 +56,7 @@ prayer_power_mechanic = {
 				}
 				add_country_modifier = {
 					name = pap_angelized_winged_guard
-					duration = 90
+					duration = 365
 				}
 			}
 			cooldown_years = 5
@@ -108,22 +110,24 @@ prayer_power_mechanic = {
 			gui = prussian_militarization_gov_mech_3_interaction
 			icon = GFX_prussian_militarization_upgrade	
 			trigger = {
-				has_government_power = {
-					mechanic_type = prayer_power_mechanic
-					power_type = ia_prayer_energy
-					value = 90
-				}
+				#has_government_power = {
+				#	mechanic_type = prayer_power_mechanic
+				#	power_type = ia_prayer_energy
+				#	value = 90
+				#}
 				has_country_flag = gospel_of_bullets_unlocked_flag
 			}
+			cost_type = ia_prayer_energy
+			cost = 90
 			effect = { 
-				add_government_power = {
-					mechanic_type = prayer_power_mechanic
-					power_type = ia_prayer_energy
-					value = -90
-				}
+				#add_government_power = {
+				#	mechanic_type = prayer_power_mechanic
+				#	power_type = ia_prayer_energy
+				#	value = -90
+				#}
 				add_country_modifier = {
 					name = pap_gospel_of_bullets
-					duration = 90
+					duration = 365
 				}
 				add_country_modifier = {
 					name = pap_recently_used_gospel_of_bullets

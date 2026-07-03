@@ -581,6 +581,25 @@ christian = {
 			land_morale = 0.1
 		}
 		heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }
+		
+		on_convert = {
+			change_religion = bogomilist
+
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = ia_recently_been_force_converted_modifier
+				duration = 7300
+				hidden = yes
+			}
+			add_church_power = 100
+		}
 
 		uses_church_power = yes				# Uses church power/aspect mechanics
 		aspects = {

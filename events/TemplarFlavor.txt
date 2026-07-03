@@ -210,6 +210,16 @@ country_event = {  # Final Crusade
 					duration = 730
 					hidden = yes
 				}
+				every_war_enemy_country = { white_peace = PREV }
+			}
+			guinea_region = {
+				add_core = AOL
+			}
+			sahel_region = {
+				add_core = AOL
+			}
+			niger_region = {
+				add_core = AOL
 			}
 		}
 		add_country_modifier = {
@@ -391,6 +401,14 @@ country_event = {  # Prophetess arrives
 	picture = wihgfx_FEMALE_GENERAL_eventPicture
 	is_triggered_only = yes
 	fire_only_once = yes
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
 	
 	option = {
 		name = ia_flavor_tem.8.a
@@ -674,6 +692,14 @@ country_event = {  # Jeanne resurrects
 		NOT = { has_global_flag = block_jeanne_respawning }
 	}
 	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
+	}
+	
 	mean_time_to_happen = {
 		months = 60
 		modifier = {
@@ -847,11 +873,12 @@ country_event = {  # Templar knight turns up
 				}
 			}
 		}
-		else = {
+		else_if = {
+			limit = { army_tradition = 25 }
 			random_list = {
 				50 = {
 					define_general = {
-						shock = 5
+						shock = 4
 						fire = 1
 						manuever = 6
 						siege = 1
@@ -865,6 +892,31 @@ country_event = {  # Templar knight turns up
 						fire = 1
 						manuever = 6
 						siege = 1
+						trait = templar_knight
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 3
+						fire = 0
+						manuever = 5
+						siege = 0
+						trait = templar_knight
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 3
+						fire = 0
+						manuever = 5
+						siege = 0
 						trait = templar_knight
 						female = yes
 						name = root_name_female
@@ -1395,6 +1447,9 @@ province_event = {
 			culture_group = west_african
 			culture_group = kongo_group
 			culture_group = maghrebi
+			culture_group = southern_african
+			culture_group = african
+			culture_group = great_lakes_group
 		}
 		
 		owner = {
@@ -1627,18 +1682,18 @@ country_event = {  # Legion of Dusk interaction menu
 			duration = 3650
 		}
 		
-		capital_scope = {
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-			tercio_infantry = ROOT
-		}
+		#capital_scope = {
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#	tercio_infantry = ROOT
+		#}
 	}
 	
 	option = {
@@ -1678,7 +1733,7 @@ country_event = {  # Legion of Dusk interaction menu
 	
 	option = {
 		name = ia_flavor_tem.29.c2
-		ai_chance = { factor = 100 }
+		ai_chance = { factor = 0 }
 		
 		trigger = {
 			OR = {
@@ -1777,11 +1832,12 @@ country_event = {  # Recruit Dawnsbane General
 				}
 			}
 		}
-		else = {
+		else_if = {
+			limit = { army_tradition = 25 }
 			random_list = {
 				50 = {
 					define_general = {
-						shock = 2
+						shock = 3
 						fire = 4
 						manuever = 3
 						siege = 0
@@ -1791,9 +1847,34 @@ country_event = {  # Recruit Dawnsbane General
 				}
 				50 = {
 					define_general = {
-						shock = 2
+						shock = 3
 						fire = 4
 						manuever = 3
+						siege = 0
+						trait = dawnsbane_leader
+						female = yes
+						name = root_name_female
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					define_general = {
+						shock = 2
+						fire = 3
+						manuever = 2
+						siege = 0
+						trait = dawnsbane_leader
+						name = root_name_male
+					}
+				}
+				50 = {
+					define_general = {
+						shock = 2
+						fire = 3
+						manuever = 2
 						siege = 0
 						trait = dawnsbane_leader
 						female = yes
@@ -2305,6 +2386,14 @@ country_event = {  # Revive Templar Roulette
 		is_religion_enabled = protestant
 		NOT = { current_age = age_of_discovery }
 		NOT = { has_ruler_flag = refused_to_become_templars }
+	}
+	
+	immediate = {
+		set_country_flag = temp_block_formations_flag
+	}
+	
+	after = {
+		clr_country_flag = temp_block_formations_flag
 	}
 	
 	mean_time_to_happen = {
